@@ -1,0 +1,2850 @@
+#2200
+The Dark Woods~
+   Here the woods get much darker and the trees are closer. The thick woods 
+make it impossible to see any further than the small area you occupy now.
+The trees prevent light from above, and still all the wind that tries to
+blow. As a result, the air is thick with the stench of dead and rotting
+plants and animals who could not survive here. To the north, you can see
+some light where the woods are not as thick, but to the south only more 
+darkness lays.
+~
+22 0 3
+D0
+~
+~
+0 0 5268 0
+D2
+Dark woods block the view.
+~
+~
+0 -1 2201 0
+D4
+The sky is almost completely blocked by the black trees that loom over you.
+~
+~
+0 -1 -1 0
+S
+#2201
+The Dark Woods~
+   Huge skeletal trees line the path, reaching out with long, eerie fingers.
+The ground is a rotting carpet of dead plants and fungi that call these
+woods home. The smell of decay only gets worse as the path winds to the 
+south. To the north, perhaps relief can be found.
+~
+22 a 3
+D0
+Dark woods obscure the view.
+~
+~
+0 -1 2200 0
+D2
+An intersection of paths can be seen.
+~
+~
+0 -1 2202 0
+D5
+The ground is layer after layer of digusting ooze and slime, as everything in
+the forest seems to have died and rotted along this path.
+~
+~
+0 -1 -1 0
+E
+tree trees~
+The trees are huge and black, long dead, but still alive somehow.
+~
+S
+#2202
+The Small Intersection In The Forest~
+   The forest path splits here in three directions. Small paths lead to the
+east, north, and south. The trees above leave a gap which allows light to fill
+the intersection. It is almost as though you are in a circle that provides 
+sanctuary in this land of darkness. Blood mingles with the dirt on the ground 
+here. Something has been scrawled on the ground in the bloody dirt.
+~
+22 0 3
+D0
+Dark woods are to the north.
+~
+~
+0 -1 2201 0
+D1
+Dense forest obscures the view.
+~
+~
+0 -1 2204 0
+D2
+The edge of the forest and some hills can be seen.
+~
+~
+0 -1 2203 0
+E
+bloody dirt scrawl~
+BeWAre tHe SwAmP oGreS......
+~
+S
+#2203
+The Edge Of The Forest And Hills~
+   You stand at the edge of a dark forest. A path leads north into the forest
+and its deadly darkness and silence. Looking west, you see a path that leads
+up into a foothills region. Standing here on the boundary between light and
+darkness, you feel very vulnerable and alone.
+~
+22 0 4
+D0
+An intersection of paths is to the north.
+~
+~
+0 -1 2202 0
+D3
+A rocky path leads off to the west.
+~
+~
+0 -1 2209 0
+S
+#2204
+In The Dense Forest~
+   You walk along a small path leading through a dark forest. No sounds can be
+heard and little light penetrates the canopy of trees above you. The air here
+smells musty and you long for a fresh breath. You see an intersection of paths
+to the west. The path you are on leads south into the darkening woods.
+~
+22 a 3
+D2
+A path winds into the dark forest.
+~
+~
+0 -1 2205 0
+D3
+An intersection of paths can be seen here.
+~
+~
+0 -1 2202 0
+S
+#2205
+The Dark Forest Path~
+   You continue on through a dark and gloomy forest. The path under your feet
+is a quagmire. Walking becomes increasingly difficult as your feet become 
+mired down with muck. The main path stretches to the north and south, each way 
+is shrouded in darkness. Off to the east, a path enters the stench-filled
+swamp.
+~
+22 a 4
+D0
+The dense forest blocks your view.
+~
+~
+0 -1 2204 0
+D1
+A swampy path goes to the east.
+~
+~
+0 -1 2227 0
+D2
+The path takes a turn here.
+~
+~
+0 -1 2206 0
+S
+#2206
+A Turn In The Path~
+   The forest path stretches north and west. The path to the north is a 
+quagmire, but passable, while the western path seems to enter the hills. The
+sounds of the swamp creatures frenzied feeding seems to come from the north-
+east.
+~
+22 a 3
+D0
+The path grows quite dark to the north.
+~
+~
+0 -1 2205 0
+D3
+A bloody intersection rests in a clearing.
+~
+~
+0 -1 2207 0
+S
+#2207
+The Bloody Intersection~
+   The carnage in this small clearing seems almost unimaginable. Someone, or 
+something, seems to have had an incredible battle here. Blood covers nearly
+everything in the clearing, and the smell of death hangs heavy in the air.
+Broken blades and armour litter the ground, not needed by their owners 
+anymore. Looking at the tracks would lead you to believe the dead and wounded 
+were dragged off on the paths leading south and east. There is also a path to 
+the west.
+~
+22 a 4
+D1
+The path turns here.
+~
+~
+0 -1 2206 0
+D2
+A path goes up the rocky hillside.
+~
+~
+0 -1 2210 0
+D3
+A rocky path goes to the west.
+~
+~
+0 -1 2208 0
+E
+blades armour~
+These are all useless now, rust and blood, as well as the elements, have taken
+their toll on them.
+~
+S
+#2208
+The Rocky Path~
+   The path here, which winds through low, rocky hills, is strewn with rubble.
+Travel is rough, taking it's toll on even the heartiest adventurer. To the 
+east is a small clearing, or to the north the rock filled path continues into 
+the hills.
+~
+22 0 5
+D0
+A rocky path leads north.
+~
+~
+0 0 2209 0
+D1
+A bloody intersection sits in a clearing.
+~
+~
+0 0 2207 0
+E
+rock rocks rubble path~
+The path is clogged with rocks of all sizes, and even trees and their fallen 
+branches.
+~
+S
+#2209
+The Rocky Path~
+   The path here is very rocky and treacherous. The path continues into the 
+hills to the north and south. The path to the east looks easier to travel, 
+but it leads into a dark, creepy forest.
+~
+22 0 5
+D0
+A rockslide has closed this direction off to you.
+~
+~
+0 0 4 0
+D1
+The forest's edge and some hills rest to the east.
+~
+~
+0 -1 2203 0
+D2
+A rocky path wanders to the south.
+~
+~
+0 -1 2208 0
+S
+#2210
+Up the Rocky Hillside~
+   You are climbing on a rocky hillside. As you scramble about, loose rocks
+and small boulders bounce and fall down below you. Looking to the east and
+west, you see more stable ground. The hillside itself goes on higher to the
+south and it drops away to the north. 
+~
+22 c 5
+D0
+A bloody intersection rests in a clearing.
+~
+~
+0 -1 2207 0
+D1
+The ground seems to level out to the south.
+~
+~
+0 -1 2212 0
+D2
+A huge tree waits in a small clearing.
+~
+~
+0 -1 2214 0
+D3
+Sparse foothills rise up to the west.
+~
+~
+0 -1 2211 0
+S
+#2211
+The Sparse Foothills~
+   You are in foothills that are sparsely covered by withered bushes and
+stunted trees. There are little signs of life here. Only bare rock and dry 
+dirt can be seen. Looking east, you see a small pass that will allow you to
+leave the foothills. The foothills themselves extend to the south.
+~
+22 0 4
+D1
+A path goes up the rocky hillside.
+~
+~
+0 -1 2210 0
+D2
+The foothills continue to the south.
+~
+~
+0 -1 2213 0
+E
+bush bushes withered~
+These poor bushes never stood a chance in these dry, dusty hills. They are
+beaten down by the wind and blowing dust, twisted and stunted in terrible
+shapes.
+~
+S
+#2212
+Standing On Level Ground~
+   You are standing at the edge of the steep foothills. Looking down, you see 
+what appears to be a marshy, dark forest. It reeks of death and decay. Even 
+here, you catch its scent on the winds. From here, you can travel south,
+deeper into the foothills or to the west where a small pass will allow you to
+climb down.
+~
+22 0 4
+D2
+A dark cave opens up to the south.
+~
+~
+0 -1 2215 0
+D3
+The path goes up a rocky hillside.
+~
+~
+0 -1 2210 0
+S
+#2213
+In The Foothills~
+   You are in the barren, wind-swept foothills. Looking around, all you see
+are dead plants and boulders. From the south, you get a whiff of salty air. 
+Barren paths lead off east, north, and south into more dry, dusty hills.
+~
+22 0 4
+D0
+Sparse foothills wind to the north.
+~
+~
+0 -1 2211 0
+D1
+A huge tree waits in a clearing.
+~
+~
+0 -1 2214 0
+D2
+The hills look out over the shore to the south.
+~
+~
+0 -1 2217 0
+S
+#2214
+Before The Huge Tree~
+   You enter a large ring of boulders. Sheltered by this wall of stones, a 
+small cluster of plants have sprung up, clinging to the defense of the rocks 
+that block the dusty wind. The circle of boulders seems to be a marker, 
+perhaps a warning of some kind. The hills have paths leading off in all four
+directions.
+~
+22 0 4
+D0
+The path goes up a rocky hillside.
+~
+~
+0 -1 2210 0
+D1
+A dark cave looms to the east.
+~
+~
+0 -1 2215 0
+D2
+Hills look out over the shorline to the south.
+~
+~
+0 -1 2218 0
+D3
+The foothills wind off through the west.
+~
+~
+0 -1 2213 0
+S
+#2215
+Before the Dark Cave~
+   The opening of a huge, dark cave gapes before you. The rocks and boulders 
+outside of the cave are covered with blood stains and all types of gnawed and 
+shattered bones are scattered about. An unbearable stench comes from within 
+the cave itself. The dark cave entrance looms to the east. The hill paths lead 
+towards the north, south, and west.
+~
+22 0 4
+D0
+The ground levels out to the north.
+~
+~
+0 -1 2212 0
+D1
+To the east, you enter a dark cave.
+~
+~
+0 -1 2216 0
+D2
+The hills rise up overlooking the shoreline.
+~
+~
+0 -1 2219 0
+D3
+A huge tree waits in a clearing.
+~
+~
+0 -1 2214 0
+E
+cave entrance east e~
+The cave looks pretty dark, and stinks enough to wither the plants outside the
+cave opening. Perhaps it is the home of something that won't like you coming 
+in.
+~
+S
+#2216
+Inside The Horrid Cave~
+   The stench is overwhelming. You can hardly breathe as you enter the cave.
+Looking around, you realize that some bizarre and horrible creature uses this
+cave as a home. Skeletal remains lie all over. Several half-eaten corpses are
+rotting away in the gloomy darkness. In the back of the cave, you see a large 
+pile of rotting cloth, fur, and plant matter. Safety and fresh air are off 
+back towards the west.
+~
+22 ad 0
+D3
+This way will take you back out of this horrible cave.
+~
+~
+0 -1 2215 0
+E
+pile nest~
+It seems to be the nest of the nasty thing that calls this cave home. From the
+looks of it, anything will suffice for nest-making. You can pick out corpses
+of small, and not so small, animals, as well as feathers, fur and clothes. All
+of it makes for one big rotting, stinking mess.
+~
+S
+#2217
+Atop The Black Cliffs~
+   Standing at the edge of the foothills, you are able to look down over a
+rocky valley. A vast glacier lies a distance to the south. A few birds have
+made their nests here in the rocks and you are heartened by the presence of
+life. It is possible to climb down to the shore here. North takes you to the
+hills, or east to the edge of the hills along the cliff face.  
+~
+22 0 4
+D0
+The foothills wander off to the north.
+~
+~
+0 -1 2213 0
+D1
+The hills looking over the shore continue to the east.
+~
+~
+0 -1 2218 0
+S
+#2218
+Atop The Black Cliffs~
+   You stand on a barren section of hills that overlook an a rocky valley.
+The stiff wind has blown the rocks smooth here and you have to lean forward
+a bit to keep your balance. The fresh air fills your nostrils and you notice
+signs of life in the rocky crags here. You can climb down towards the rocky
+ground below, or head north into the hills themselves. The rocky summit you
+are standing on leads east and west along the cliff's edge.  
+~
+22 0 4
+D0
+A huge tree stands in a clearing.
+~
+~
+0 -1 2214 0
+D1
+The hills rise above the shoreline.
+~
+~
+0 -1 2219 0
+D3
+The hills overlook the shoreline to the west.
+~
+~
+0 -1 2217 0
+D5
+The rocky shore stretches out below the hills.
+~
+~
+0 -1 2221 0
+S
+#2219
+Atop The Black Cliffs~
+   You stand on a rocky summit overlooking an icy glacier far just to the
+south. The brisk wind blows hard across the rocks here and they have been
+worn smooth with time. A hardy looking bush has somehow managed to get a
+holding and grow here, quite against the odds considering the harsh weather.
+Looking around, you see some gentle foothills leading to the north, while
+the rocky cliff edge leads to the west.  
+~
+22 0 4
+D0
+A cave opening can be seen to the north.
+~
+~
+0 -1 2215 0
+D3
+The hills that overlook the shoreline rise to the west.
+~
+~
+0 -1 2218 0
+S
+#2220
+A Rocky Flat~
+   The ground here is covered in all manner of rocks. Over many hundreds of
+years, they have fallen from the enormous cliff face that lies directly to
+the north. Every so often, a small slide of pebbles dislodge themselves and
+come careering down the rock face to rest at your feet.  
+~
+22 0 4
+D1
+The rocky shoreline stretches out to the east.
+~
+~
+0 -1 2221 0
+D2
+The edge of a vast sea laps the shore to the south.
+~
+~
+0 -1 2223 0
+E
+southeast altar blue light eerie~
+It is hard to tell from here, but the best you can make out is an altar of
+some kind, with blue light radiating from it.
+~
+S
+#2221
+A Rocky Flat~
+   Stretching high up into the sky before you lies an intimidating sheer
+cliff face. Its craggy black rock bearing down upon you, almost as if
+casting a watchful eye over the ground below it. Loose rocks tumble to the
+ground, the thundering noise echoing all through you. Looking upward, it
+appears as though a series of rough steps have been carved out of the rock,
+leading up to the top of the cliff.  
+~
+22 0 4
+D1
+The rocky shore stretches far out of sight.
+~
+~
+0 -1 2222 0
+D2
+A portal seems to rest right on top of the Blood Sea.
+~
+~
+0 -1 2224 0
+D3
+The rocky shore stretches far out of sight.
+~
+~
+0 -1 2220 0
+D4
+The hills that overlook the shore rise up before you.
+~
+~
+0 -1 2218 0
+E
+sea vast~
+The sea looks endless from here. No matter how far you try to look or how hard
+you stare, there is only water as far as the eye can see.
+~
+S
+#2222
+A Rocky Flat~
+   The ground here is covered in all manner of rocks. Over many hundreds of
+years, they have fallen from the enormous cliff face that lies directly to
+the north. Every so often, a small slide of pebbles dislodge themselves and
+come careering down the rock face to rest at your feet.  
+~
+22 0 4
+D2
+This way will take you right up to the edge of the sea.
+~
+~
+0 0 2225 0
+D3
+The rocky shoreline stretches off to the west.
+~
+~
+0 0 2221 0
+E
+southwest altar blue eerie light~
+It is quite far away, but you can make out an altar bathed in a blue light.
+~
+S
+#2223
+A Rocky Flat~
+   Small pockets of ice still collect between the rocks and boulders, but
+gone the majority of the sheet ice that covers the land only a little way
+south. A safe footing is hard to get, with the rocks being slippery with ice
+and quite unstable. A few green shoots have managed to push their way up
+from tiny gaps in the rocky floor, but that is the only sign of life on this
+uninviting flat.  
+~
+22 0 4
+D0
+The rocky shoreline can be seen to the north.
+~
+~
+0 -1 2220 0
+D1
+From here, all you can see is that there is some sort of altar, radiating a
+blue light sitting on the edge of the Blood Sea.
+~
+~
+0 -1 2224 0
+D2
+~
+~
+0 0 2226 0
+E
+blue altar light eerie~
+From here, all you can see is that there is some sort of altar, radiating a 
+blue light sitting on the edge of the Blood Sea.
+~
+E
+ocean sea water~
+The ocean disappears off at the horizon, without a single piece of land or 
+even a ship to disrupt your view. 
+~
+S
+#2224
+A Rocky Flat~
+   A huge rounded boulder dominates the landscape here. It looks as though
+it has been resting in the same spot for many years, as a thick blanket of
+pale green lichen covers almost an entire side of it. Prickly nettles,
+covered in thorns have managed to establish themselves amongst the rocks,
+giving the terrain a slightly more lifelike presence.  
+~
+22 0 4
+D0
+The rocky shore stretches out to the north.
+~
+~
+0 -1 2221 0
+D1
+You can stand right at the edge of the Blood Sea.
+~
+~
+0 -1 2225 0
+D3
+You can stand right at the edge of the Blood Sea.
+~
+~
+0 -1 2223 0
+E
+platform altar~
+The altar is made from solid stone, apparently for the purpose of containing
+the portal to the south of you. The warm blue light highlights the ancient 
+runes carved on the stone floor. Years of wind and salt have swept the stone
+smooth, and many runes are indistinct, but at one time the carving was a 
+masterpiece.
+~
+E
+small inscriptions inscription~
+"Enter all ye who wish to join the Brotherhood!"
+~
+E
+portal blue~
+You see a misty, swirling blue portal of light. You think you can see glimpses 
+of something moving within the portal, or perhaps on the other side...
+~
+S
+#2225
+The Rocky Flat~
+   Traverssing these rocky plains is not an easy task. With every footfall,
+black rocks of all shapes and sizes shift under your feet. A thick black
+moss has begun to grow on a few of the larger ones, giving them a very
+slippery surface. A few dry twigs lie on the ground, although it is doubtful
+anything has ever grown down here, more likely the strong wind has carried
+them off the cliff which towers over you just to the north.  
+~
+22 0 4
+D0
+The rocky shore spreads out to the north.
+~
+~
+0 -1 2222 0
+D3
+You can't see much from here except that there is an altar bathed in a blue
+light to the west of here.
+~
+~
+0 -1 2224 0
+E
+altar blue light~
+You can't see much from here except that there is an altar bathed in a blue
+light to the west of here.
+~
+S
+#2226
+A Melting Glacier~
+   The glacial ground seems to have begun to melt away almost immediately
+here. Some patches still have a thick covering of solid ice, while others
+have almost melted totally away, creating small icy pools of water in the
+gaps between the rocks. To the south, you see an unusual looking area carved
+out of the ice, while to the north, a rocky flat extends toward a towering
+cliff face.  
+~
+22 0 4
+D0
+~
+~
+0 0 2223 0
+D2
+This doorway looks in on a temple made from solid ice. It reflects the blue
+light, making it look even colder.
+~
+~
+0 -1 2253 0
+S
+#2227
+The Swampy Path~
+   This damp path leads into a deep, dark swamp. The trees above block out all 
+light and stifle the wind. You smell swamp gas and hear damp, sucking sounds 
+all around you. The path leads east, slipping deeper into the swamp, or west, 
+into the dark woods.
+~
+22 acd 3
+D1
+A swampy path disappears to the east.
+~
+~
+0 -1 2228 0
+D3
+A path stretches off into the dark forest.
+~
+~
+0 -1 2205 0
+S
+#2228
+The Swampy Path~
+   The path here is a thick, slimy concotion, difficult for walking in. All 
+around you are pools of quicksand, some with small animal tracks leading in, 
+but never out. Unlike the forest to the west, this swamp is teeming with life 
+and sound. Some harmless, some not. The wet path heads east and west into more 
+swampland.
+~
+22 ad 3
+D1
+A squishy path disappears into the swamp.
+~
+~
+0 -1 2229 0
+D3
+A squishy path disappears into the swamp.
+~
+~
+0 -1 2227 0
+E
+quicksand pools pool~
+Some of the quicksand pits are the size of a pond. You see a small frog make 
+a fatal error by leaping right into the pit, and slowly start to sink from
+view.
+~
+S
+#2229
+The Swampy Path~
+   You weave your way through the treacherous swamp. Gas rises all around you
+and a damp mist covers the ground, making it hard to travel without carefully 
+picking your way around obstacles. Large, gnarled trees rise above you, their 
+moss covered branches block out all traces of the sun. The path here leads 
+east and west.
+~
+22 ad 3
+D1
+The path through the swamp takes a turn.
+~
+~
+0 -1 2230 0
+D3
+The slimy path through the swamp runs to the west.
+~
+~
+0 -1 2228 0
+E
+tree trees branches branch~
+All the trees in this swamp are black and decayed looking, yet they seem to 
+grow depite their hideous appearance.
+~
+S
+#2230
+The Turn in the Swampy Path~
+   You come upon a bend in the swampy path. The ground here is fairly sturdy,
+as this place is elevated above the rest of the swamp. Looking around, you see
+a dark, mist filled swamp. Small paths lead south, and west into the mist.
+~
+22 adh 3
+D2
+The path slips off into the swamp.
+~
+~
+0 -1 2231 0
+D3
+The path slips off into the swamp.
+~
+~
+0 -1 2229 0
+S
+#2231
+The Swampy Path~
+   You tread lightly through the murky water and sludge that makes up the path
+you follow. To the south, there is a thick wall of mist. You can see nothing
+within it. Harder ground rises to the north.
+~
+22 adh 3
+D0
+The ground seems a little firmer to the north.
+~
+~
+0 -1 2230 0
+D2
+The mist seems to form a barrier around this section of the swamp. You can't
+see into it, or hear any noise from it. Only a brave adventurerer would enter.
+~
+~
+0 -1 2233 0
+E
+path water sludge~
+The path here is deep in some places with greenish-black water that looks 
+quite unhealthy. Yet judging from the sounds in the swamp, something must live
+and thrive on it.
+~
+E
+wall mist~
+The mist seems to form a barrier around this section of the swamp. You can't 
+see into it, or hear any noise from it. Only a brave adventurerer would enter.
+~
+S
+#2232
+Lost in the Mist~
+   You wander around, hopelessly lost. Swirling mist obscures your vision and 
+clouds your mind. You lose all concept of direction. Small, quiet giggles can 
+be heard all around. You can wander in any direction.
+~
+22 adh 4
+D0
+All you can see is a choking mist that prevents light and sound from entering.
+~
+~
+0 -1 2236 0
+D1
+All you can see is a choking mist that prevents light and sound from entering.
+~
+~
+0 -1 2233 0
+D2
+All you can see is a choking mist that prevents light and sound from entering.
+~
+~
+0 -1 2235 0
+D3
+All you can see is a choking mist that prevents light and sound from entering.
+~
+~
+0 -1 2234 0
+S
+#2233
+Lost in the Mist~
+   The mist swirls around you, seeming to taunt you and dare you to escape. You 
+feel a slight electric charge in the air, as the mist floats around, stroking
+your hair and your cheek, almost lovingly. You can wander in any direction.
+~
+22 adh 3
+D0
+Thick mist prevents you from seeing anywhere but the end of your nose, and
+even that is difficult.
+~
+~
+0 -1 2231 0
+D1
+Thick mist prevents you from seeing anywhere but the end of your nose, and
+even that is difficult.
+~
+~
+0 -1 2234 0
+D2
+Thick mist prevents you from seeing anywhere but the end of your nose, and
+even that is difficult.
+~
+~
+0 -1 2236 0
+D3
+Thick mist prevents you from seeing anywhere but the end of your nose, and
+even that is difficult.
+~
+~
+0 -1 2232 0
+S
+#2234
+Lost in the Mist~
+   You try to peer through the mist, but to no avail, anything ahead is hidden
+from view. The mist swirls about, covering you in a damp sheen. There is no 
+sound, all light is eagerly devoured by the mist. You feel abandoned and lost.
+Misery and dispair fill your soul. The path goes in all directions.
+~
+22 adh 4
+D0
+Mist chokes your lungs and clogs your eyes. You can't see anything.
+~
+~
+0 -1 2236 0
+D1
+Mist chokes your lungs and clogs your eyes. You can't see anything.
+~
+~
+0 -1 2235 0
+D2
+Mist chokes your lungs and clogs your eyes. You can't see anything.
+~
+~
+0 -1 2237 0
+D3
+Mist chokes your lungs and clogs your eyes. You can't see anything.
+~
+~
+0 -1 2233 0
+S
+#2235
+Lost in the Mist~
+   You stumble along the quagmire that makes up the path here. The swamp seems
+to have swallowed you up and denied you exit. This mist is your jailor. You 
+cannot tell where you are, or where you may have been. All around you, quiet 
+laughter fills the air. You may choose to go in any direction.
+~
+22 adh 4
+D0
+Mist is everywhere, thick and misty.
+~
+~
+0 -1 2232 0
+D1
+Mist is everywhere, thick and misty.
+~
+~
+0 -1 2236 0
+D2
+Mist is everywhere, thick and misty.
+~
+~
+0 -1 2234 0
+D3
+Mist is everywhere, thick and misty.
+~
+~
+0 -1 2234 0
+S
+#2236
+Lost in the Mist~
+   You wander through the never ending mist, with no sense of direction. Your 
+only hope is to continue on and pray. It is so dense now, you can barely hear
+your own breathing or footsteps. Travel is possible in any direction.
+~
+22 adh 4
+D0
+Mist is all you see, unending, unyielding mist.
+~
+~
+0 -1 2233 0
+D1
+Mist is all you see, unending, unyielding mist.
+~
+~
+0 -1 2237 0
+D2
+Mist is all you see, unending, unyielding mist.
+~
+~
+0 -1 2232 0
+D3
+Mist is all you see, unending, unyielding mist.
+~
+~
+0 -1 2235 0
+S
+#2237
+Lost in the Mist~
+   You wander through the thick mist. It swirls all about you and makes it hard
+to breathe. The ground below you makes a soft squishing sound as you trudge
+on, but this noise is absorbed by the mist and does not travel. You can go in
+any direction.
+~
+22 adh 4
+D0
+Mist blocks anything that might be in any direction, all you see is mist.
+~
+~
+0 -1 2234 0
+D1
+Mist blocks anything that might be in any direction, all you see is mist.
+~
+~
+0 -1 2238 0
+D2
+Mist blocks anything that might be in any direction, all you see is mist.
+~
+~
+0 -1 2232 0
+D3
+Mist blocks anything that might be in any direction, all you see is mist.
+~
+~
+0 -1 2236 0
+S
+#2238
+Lost in the Mist~
+   Through the sea of seemingly endless mist, you can see trees and hills 
+rising to the east. The mist itself seems to thicken to the west, but grows
+much lighter to the east.
+~
+22 adh 3
+D0
+Choking, endless, boring mist is all you are permitted to see.
+~
+~
+0 -1 -1 0
+D1
+A solid path leads out of the mist.
+~
+~
+0 -1 2239 0
+D2
+Choking, endless, boring mist is all you are permitted to see.
+~
+~
+0 -1 -1 0
+D3
+Choking, endless, boring mist is all you are permitted to see.
+~
+~
+0 -1 2237 0
+S
+#2239
+The Solid Path~
+   A solid path rises out of the misty swamp. It leads north, into what 
+appears to be a forested area. The trees allow some light and air to
+penetrate and you can see the sky above. A thick bank of mist is to your west.
+~
+22 0 4
+D0
+A path leads through the forest.
+~
+~
+0 -1 2240 0
+D3
+A thick wall of mist obscures any view to the west.
+~
+~
+0 -1 2238 0
+S
+#2240
+A Forested Path~
+   The path here leads north through a thick forest. High bushes and forest
+undergrowth line both sides of the trail. Looking north, you see a thin line
+of smoke rising up above the tree line. You also notice a crude wooden gate
+farther north on the trail. The trail itself leads south into murky territory.
+~
+22 c 3
+D0
+To the north is a wooden gate.
+~
+~
+0 -1 2241 0
+D2
+A solid path leads off into darkness.
+~
+~
+0 -1 2239 0
+E
+gate wooden crude~
+This gate looks like it was made out of anything that used to be, or looked
+like, wood. It is a dreadful piece of carpentry.
+~
+S
+#2241
+The Gate Before the Ogre Village~
+   You stand before a huge pair of crude, wooden gates. They are thrown open.
+Looking inside the gates, you see a ramshackle little village. Large humanoid 
+creatures are milling to and fro. Ogres! You can head north through the gate
+or south into the relative safety of the forest.
+~
+22 0 3
+D0
+Going through the gates will take you into the Ogre's village.
+~
+gate gates~
+1 0 2243 0
+D2
+The path takes you into the forest.
+~
+~
+0 0 2240 0
+E
+gate gates crude wooden~
+The gates are the Ogres pathetic attempt at security and maybe craftsmanship.
+Ogres are not notorious for their big brains, only big muscles.
+~
+S
+#2242
+Among the Crude Huts~
+   You walk among the huts of the ogre village. The village appears to be cut
+from the heart of the forest itself, and anything usable from the woods nearby
+was implemented into these huts. Logs, some with branches still on them, make 
+up the dwellings, with bark and moss covering the roofs and chinking holes.
+The swamp, nearby, provides the ogres with a prime hunting ground. Small paths 
+lead north and east.
+~
+22 0 1
+D0
+You can see an area that looks like a gathering place.
+~
+~
+0 -1 2245 0
+D1
+The gates stand off to the east.
+~
+~
+0 -1 2243 0
+E
+huts crude dwellings~
+These pathetic little homes show off how few skills Ogres actually have. 
+The only use thing keeping these homes upright is sheer willpower.
+~
+S
+#2243
+Inside the Gates~
+   You stand just north of the gates to the village. Looking around, you see 
+many crude huts and cooking fires. The smell of cooking flesh is in the air,
+and judging from the number of bones and bits of fur strewn about, Ogres have
+big appetites. To the north, you see a huge fire pit. Behind it there appears 
+to be a hut of sorts. Small paths lead east and west among the crude huts. The 
+gates to the south provide an exit from the village.
+~
+22 0 1
+D0
+The firepit used for cooking is to the north.
+~
+~
+0 -1 2246 0
+D1
+This way goes among the huts of the village.
+~
+~
+0 -1 2244 0
+D2
+The gates leading in and out of the village are to the south.
+~
+gate gates~
+1 -1 2241 0
+D3
+This way goes among the huts of the village.
+~
+~
+0 -1 2242 0
+E
+bone bones~
+The bones have been chewed, gnawed, and even craked open so the marrow 
+could be sucked out. They are tossed here and there as the Ogres finshed 
+with them
+~
+E
+fur bits~
+Fur in tiny tufts is scattered about the ground, like little furry animals
+fought here.
+~
+E
+huts hut village~
+The small, ramshackle homes built by the Ogres look ready to topple any 
+minute. You pity whoever is inside one when the walls tumble.
+~
+S
+#2244
+Among the Crude Huts~
+   You walk through the crude village. Smaller huts made of sticks and skins
+surround you. Every so often, you can hear grunts and snarls inside the huts.
+The smell here is unbearable. You wonder how any type of creature could 
+possibly live in such squallor. Small paths lead west and north here.
+~
+22 0 1
+D0
+The village dump sits festering to the north.
+~
+~
+0 -1 2247 0
+D3
+The gates for the village sit to the west.
+~
+~
+0 -1 2243 0
+E
+smaller huts sticks skins~
+The little huts here must belong to the weaker Ogres, who could not build
+the larger huts like their neighbors. The sticks look none to sturdy, and 
+the skins are ragged and moth-eaten.
+~
+S
+#2245
+The Gathering Place~
+   This appears to be the clearing the Ogres use to assemble. It is quite
+large and has a raised mound in the center that supports a rough-hewn throne 
+made from logs, sticks and vines. The ground in front of the throne is worn
+down to dirt, as if it is sat on quite often. You get the impression that
+this place is a crude sort of audience hall for the Ogre royalty. Small paths
+lead east and south.
+~
+22 0 1
+D1
+The firepit used for community cooking is to the east.
+~
+~
+0 -1 2246 0
+D2
+The path wanders among the huts.
+~
+~
+0 -1 2242 0
+E
+throne~
+The throne is made from a motley assortment of sticks and logs. Vines seem to
+be holding the rickety mess together. It really does not look strong enough
+to support the great weight of an Ogre.
+~
+S
+#2246
+The Firepit Before the Lodge~
+   There is a huge hole dug here, lined with rocks, apparently for community 
+fires and cooking. The heat from the burning embers makes you sweat as you 
+stand here. Large spits above the pit are empty but they appear to be large 
+enough to hold hapless adventurers. A large lodge is towards the north, while 
+paths lead east, west, and south into the village itself.
+~
+22 0 1
+D0
+Through the door to the north sits a large lodge.
+~
+door~
+1 -1 2248 0
+D1
+The dump for the village sits to the east.
+~
+~
+0 -1 2247 0
+D2
+The gates in and out of the village are to the south.
+~
+~
+0 -1 2243 0
+D3
+The area where the Ogres gather is to your west.
+~
+~
+0 -1 2245 0
+E
+lodge~
+This is, by far, the largest structure in the village. It is, by no means, any 
+more well built, just bigger. The roof is covered with a colorful assortment
+of bark, mud, and moss that has taken root and is growing on the lodge like a 
+living roof. The logs that make up the building material for the walls were
+never shaved, so that twigs and branches that were growing off them still poke
+out here and there. Mud chinks the large gaps between the logs, and judging 
+from the smell, the mud came straight out of the swamp.
+~
+E
+pit fire hole~
+This great pit was dug a long time ago and lined with smooth, round rocks that 
+are blackened with soot. Embers glow along the bottom of the pit as this fire
+is never put out, just banked so that it can be re-started later at the next 
+meal.
+~
+S
+#2247
+The Village Dump~
+   The smell here overpowers you. All around you are the rotting remains of 
+the village's refuse. Partially eaten corpses, rotting food, and other truly
+disgusting things have been discarded here. Paths lead south and west towards
+fresher air.
+~
+22 0 1
+D2
+The path wanders among the huts of the village.
+~
+~
+0 -1 2244 0
+D3
+The firepit that serves the village is to the west.
+~
+~
+0 -1 2246 0
+E
+dump~
+The pit is filled with blackened, rotting things. Most of it is no longer
+identifiable, due to the rot and black slimy mold that covers everything.
+~
+S
+#2248
+The Entryway to the Lodge~
+   You are at the entry hall to a large lodge. Animal pelts and other trophies
+line the walls here. The floor is dirt, or so filthy it appears to be dirt, 
+and odd, clawed footprints are gouged all over the floor, probably Ogre 
+tracks. The lodge stretches north, while the doors to the south provide an 
+exit into the village.
+~
+22 d 0
+D0
+The throne for the Ogre royalty can be seen from here.
+~
+~
+0 -1 2249 0
+D2
+The community firepit is just outside the door to the lodge.
+~
+door~
+1 -1 2246 0
+E
+pelts trophies~
+These poor animals never stood a chance against the brute force of the Ogres.
+The heads are not exactly neatly mounted, they look like they were torn from
+the animals bodies and hung on the walls using whatever was handy. The pelts
+were never properly removed and tanned. They hang askew over the walls and
+they look like they are crawling with bugs.
+~
+S
+#2249
+The Throne Room~
+   You stand in a large, crudely decorated throne room. A huge throne adorned
+with human skulls sits against the west wall. A crude, blood stained altar
+is against the east wall. Sticks covered in a sticky substance are lit and 
+hang on the walls providing light for the room, leaving the ceiling coated 
+with smoky film. A doorway covered with the pelt of some unfortunate animal
+covers a door leading to the north, or south will take you to the entryway.
+~
+22 d 0
+D0
+The Cheiftains private quarters lay just beyond the filthy pelt covering the
+door.
+~
+~
+0 -1 2250 0
+D2
+The entryway for the lodge is at the south end of this room.
+~
+~
+0 -1 2248 0
+E
+altar east e~
+This altar is stone, and bare, except for the blood dried all over it in dark
+brown patches. Maybe this is where skulls are acquired for the throne.
+~
+E
+sticks torch torches light~
+Sticks dipped in a sticky, tarlike substance smoke and stink along the walls,
+providing light for the room
+~
+E
+throne skulls~
+This throne is different from the one outside. This one is made entirely
+from human skulls, probably travellers stupid enough to come into the Ogre
+village. They are yellowed and cracked from the weight of Ogre royalty 
+resting on them all these years. Some of the skulls, if you look carefully,
+are whiter than others, quite fresh looking. Perhaps only recently removed
+from their owners heads.
+~
+S
+#2250
+The Chieftain's Room~
+   This appears to be the Ogre chieftain's private quarters. A huge pile of 
+dirty, lice infested furs sit in the far corner. Large chests fill the room,
+apparently the spoils of raids or hapless travellers. All of them are open and
+empty. The walls are filled with the heads and skulls of dead enemies. A 
+mouldering fur pelt covers the doorway to the south.
+~
+22 d 0
+D2
+A rotting fur pelt covers the door back to the throne room.
+~
+~
+0 -1 2249 0
+E
+heads skulls~
+The heads are on their way to becoming skulls as they hang on the wall 
+rotting. The skulls still have bits of dried flesh and hair hanging from them.
+The size and shape of the skulls varies, since they all came from different
+creatures.
+~
+E
+chest chests~
+The chests are all thrown open, showing you their empty insides. Dust
+and dead bugs are the only treasures they hold now.
+~
+S
+#2251
+The Frigid Wastelands~
+   You wander through the frigid wastelands. Your breath forms into an icy
+cloud above your head, and the cold goes straight to your bones. Swirling snow
+snow and wind make impossible for you to discern any directions.
+~
+22 q 5
+D0
+Frozen ice and snow are all you can see, continuing on forever.
+~
+~
+0 -1 2259 0
+D1
+Frozen ice and snow are all you can see, continuing on forever.
+~
+~
+0 -1 2252 0
+D2
+Frozen ice and snow are all you can see, continuing on forever.
+~
+~
+0 -1 2255 0
+D3
+Frozen ice and snow are all you can see, continuing on forever.
+~
+~
+0 -1 2257 0
+S
+#2252
+The Frigid Wastelands~
+   You wander through the frigid wastelands. The cold wind wraps you like a 
+blanket, making you quite tired, but to sleep would be to die. Swirling snow 
+and wind make it impossible to discern any directions.
+~
+22 q 5
+D0
+~
+~
+0 0 2253 0
+D1
+~
+~
+0 0 2254 0
+D2
+~
+~
+0 0 2256 0
+D3
+~
+~
+0 0 2251 0
+S
+#2253
+The Glacier Temple~
+   This small temple is carved completely out of ice. The walls are heavily
+coated with frost, and your breath seems to freeze and adhere to the
+ceiling. To the north is an eerie portal, glowing with blue light that
+reflects off the icy walls and floor. To the south, there is a frozen arch
+leading to the outdoors, but you can only see the snow blown about by the
+frozen wind, howling in the distance. To the north, the ice seems to melt
+away, exposing the rocky ground underneath.  
+~
+22 dq 0
+D0
+You may enter the portal to the north.
+~
+~
+0 -1 2226 0
+D2
+~
+~
+0 0 2252 0
+S
+#2254
+The Frigid Wastelands~
+   The wastelands stretch out for an eternity in all directions. The wind
+howls in your ears, and tears at your clothes. Each direction looks like the 
+last, giving you no clue as to where you are.
+~
+22 q 5
+D0
+It is impossible to discern any direction here, as the wind blows stinging
+snow and ice all around you.
+~
+~
+0 -1 2259 0
+D1
+It is impossible to discern any direction here, as the wind blows stinging
+snow and ice all around you.
+~
+~
+0 -1 2255 0
+D2
+It is impossible to discern any direction here, as the wind blows stinging
+snow and ice all around you.
+~
+~
+0 -1 2257 0
+D3
+It is impossible to discern any direction here, as the wind blows stinging
+snow and ice all around you.
+~
+~
+0 -1 2252 0
+S
+#2255
+The Frigid Wastelands~
+   You wander through the frigid wastelands. Your breath is a cloud before you 
+and the cold cuts to the bone. Swirling snow and wind make it impossible for 
+you to discern any directions.
+~
+22 q 5
+D0
+All the directions look exactly alike through the wind and blinding snow.
+~
+~
+0 -1 2251 0
+D1
+All the directions look exactly alike through the wind and blinding snow.
+~
+~
+0 -1 2256 0
+D2
+All the directions look exactly alike through the wind and blinding snow.
+~
+~
+0 -1 2258 0
+D3
+All the directions look exactly alike through the wind and blinding snow.
+~
+~
+0 -1 2259 0
+S
+#2256
+The Frigid Wastelands~
+   You wander through the frigid wastelands. Your breath is a cloud before you.
+The cold cuts to the bone. Swirling snow and wind make it impossible for you
+to discern any directions.
+~
+22 q 5
+D0
+Blinding snow swirls and dances in the wind, making each direction look like
+the last.
+~
+~
+0 -1 2252 0
+D1
+Blinding snow swirls and dances in the wind, making each direction look like
+the last.
+~
+~
+0 -1 2257 0
+D2
+Blinding snow swirls and dances in the wind, making each direction look like
+the last.
+~
+~
+0 -1 2259 0
+D3
+Blinding snow swirls and dances in the wind, making each direction look like
+the last.
+~
+~
+0 -1 2255 0
+S
+#2257
+The Frigid Wastelands~
+   A vast field of snow lays all around you, the wind causes it to shift and 
+move, making it impossible to see in any direction. Your body becomes coated 
+in snow, each breath a painful chore as the frigid wind chokes your lungs.
+~
+22 q 5
+D0
+White dazzles your eyes and you realize you can see only snow and ice.
+~
+~
+0 -1 2254 0
+D1
+White dazzles your eyes and you realize you can see only snow and ice.
+~
+~
+0 -1 2258 0
+D2
+White dazzles your eyes and you realize you can see only snow and ice.
+~
+~
+0 -1 2251 0
+D3
+White dazzles your eyes and you realize you can see only snow and ice.
+~
+~
+0 -1 2256 0
+S
+#2258
+The Frigid Wastelands~
+   You wander through the frigid wastelands. Your breath is a cloud before
+you and the cold cuts to the bone. Swirling snow and wind make it impossible 
+for you to discern any direction.
+~
+22 q 5
+D0
+Snow and ice blown about by the wind obscure your view.
+~
+~
+0 -1 2255 0
+D1
+Snow and ice blown about by the wind obscure your view.
+~
+~
+0 -1 2259 0
+D2
+The edge of the wastelands can barely be seen.
+~
+~
+0 -1 2260 0
+D3
+Snow and ice blown about by the wind obscure your view.
+~
+~
+0 -1 2254 0
+S
+#2259
+The Frigid Wastelands~
+   You wander through the frigid wastelands. Your breath is a cloud before you
+and the cold cuts to the bone. Swirling snow and wind make it impossible for 
+you to discern any directions.
+~
+22 q 5
+D0
+White, white, and more white. Nothing else can be seen. Anywhere. At all.
+~
+~
+0 -1 2256 0
+D1
+White, white, and more white. Nothing else can be seen. Anywhere. At all.
+~
+~
+0 -1 2251 0
+D2
+White, white, and more white. Nothing else can be seen. Anywhere. At all.
+~
+~
+0 -1 2254 0
+D3
+White, white, and more white. Nothing else can be seen. Anywhere. At all.
+~
+~
+0 -1 2258 0
+S
+#2260
+The Edge Of The Frigid Wastes~
+   You stand at the base of a steep, rocky cliff. To the north, a vast arctic
+wasteland stretches out. The snow falls lightly here,though, and the wind is 
+not as bad as it seems to be off to the north. You can climb up the rocky 
+cliff or head north into the arctic wastes.
+~
+22 cq 5
+D0
+The frigid wastes spread out endlessly in front of you.
+~
+~
+0 -1 2258 0
+D4
+You can probably climb the rocks and snow, but what could be so important
+so high up?
+~
+~
+0 -1 2261 0
+S
+#2261
+On The Cliffside~
+   You cling to the side of a rocky cliff. Looking down, you are terrified by
+the sheer distance to the ground below. You can climb up higher into the
+cliffs but the area above is obscured by clouds and you cannot tell what lies 
+waiting above. Maybe you belong down on the ground?
+~
+22 dq 5
+D4
+It seems climbable to the top, but who knows how far that is or what might be
+there waiting.
+~
+~
+0 -1 2262 0
+D5
+The ground seems a long way from here, farther than seems safe.
+~
+~
+0 -1 2260 0
+S
+#2262
+Before The Gates Of Shurmak's Keep~
+   You stand at the edge of a high cliff. A vast mountain in front of you
+reaches high into the clouds, much higher than you can see. Directly south of
+you are a massive set of gates, seemingly carved from ice, which lead to the
+mountain. They stand tall and forbidding, yet you may pass through them. Only
+creatures of an immense size and strength could have created these. The story
+persists that this was once the mountain city of a mad, demented tyrant with
+amazing magical skills. They say he built a city, within this very mountain,
+and housed in it only the most cursed of beings, the Minotaur. Some were
+created, some are the offspring of enslaved women, forced to bear young for
+the Minotaurs. Old people who still tell the story say the Minotaurs, in their 
+never ending quest for food, particularly human flesh, destroyed the tyrant 
+and began to fend for themselves, no longer wanting to serve a mad overlord 
+who kept them underfed and trapped within this mountain. Now, the Minotaurs 
+roam freely, feeding on whatever, and whoever, they find in their midst. A 
+huge Minotaur named Shurmak holds this town in his power, ruling with an iron
+fist. Indeed, he destroyed the tyrant who made him the creature he is today.
+~
+22 q 5
+D2
+Huge gates lie to the south.
+~
+gate huge gates ice~
+1 -1 2264 0
+D5
+The path winds down the cliffs.
+~
+~
+0 -1 2261 0
+E
+gate gates ice huge~
+The gates to the city are made almost completely of ice. Looking closely, you
+can see intricate carvings in the gates. They appear to be of creatures that
+are half man and half bull.
+~
+S
+#2263
+The City Streets Of Shurmak~
+   You walk among the ice and snow covered shops that make up this part of the
+city. Doors and windows are tightly closed, to keep out the damp cold that
+pervades the mountain city. Snow blows in through the huge mountain entrance,
+coating everything in fine powder. The streets wind south and east, further 
+into the mountain.
+~
+22 dq 1
+D1
+The gates of Shurmak stand outside the mountain's massive entrance.
+~
+~
+0 -1 2264 0
+D2
+This is one of the city streets that disappears into the mountain city.
+~
+~
+0 -1 2266 0
+E
+shops doors windows shop door window~
+The majority of the shops in the city are tightly sealed and seem no longer
+used.
+~
+S
+#2264
+Inside The Gates Of Shurmak's Keep~
+   You stand just inside the gates to the city of Shurmak. The city starts
+here, descending deeper into the mountain, out of sight. The buildings that
+are visible from this point seem to be carved from, or into, the mountain 
+itself. This entire city was made from the mountain by enslaved Dwarves. Years
+of their sweat and blood coaxed an entire city from the heart of the mountain.
+To this very day, the Dwarves mourn the loss of so many of their kind, for 
+thousands were kidnapped to aid in construction. Most were never seen again.
+Snow and ice coat everything around you, making the walking areas slippery and
+dangerous. A main street leads south, while smaller walkways go to the east
+and west. North will take you to the gates of the city.
+~
+22 q 1
+D0
+The gates to the city stand guarding the entrance.
+~
+gates gate huge ice~
+1 -1 2262 0
+D1
+A city street winds through the mountain.
+~
+~
+0 -1 2265 0
+D2
+The town square stands in the center of the city.
+~
+~
+0 -1 2267 0
+D3
+A city street winds through the mountain.
+~
+~
+0 -1 2263 0
+E
+gate gates~
+The gates are intricately carved from solid ice. Closer examination shows 
+delicate carvings of men, bulls, and creatures that are a mix of both.
+~
+S
+#2265
+The City Streets Of Shurmak~
+   The slick, ice coated streets are made from mountain rock, worn smooth
+with time and use. Around you are small shops, set in among the homes here,
+to serve the inhabitants of this mountan city. Light glows from some of the 
+windows, and large figures move around in them, casting weird shadows all 
+around you. The ice reflects the light of the windows, creating a glare
+that makes it hard to see the occupants themselves, only the shadows that are
+distorted in the light. Small, icy streets lead west and south.
+~
+22 dq 1
+D2
+A city street winds through the mountain.
+~
+~
+0 -1 2268 0
+D3
+The gates of the city stand frozen outside the mountain's entrance.
+~
+~
+0 -1 2264 0
+E
+shop shops~
+The shops are tightly sealed against the cold, and they seem to be unused.
+~
+S
+#2266
+The City Streets Of Shurmak~
+   Careful footing is required on the ice-coated rock street that runs through
+town. To the south of you seems to be the tavern for the locals to realx and 
+remove the chill from their bodies, if only temporarily. Firelight can be seen 
+through the frosted window, casting an orange glow over the ice around you. 
+The street here runs to the north and the east.
+~
+22 dq 1
+D0
+The icy street winds along through the mountain.
+~
+~
+0 0 2263 0
+D1
+The square that marks the center of town is here.
+~
+~
+0 -1 2267 0
+D2
+A large stone building lies to the south. Sounds of life come from within the
+tavern.
+~
+~
+0 -1 2269 0
+E
+tavern inn~
+The frozen sign, painted in a shaky hand, shows this to be "Ye Inn of the 
+Broken Horn". This building, unlike the others, seems to be in use.
+~
+S
+#2267
+The Square Of Shurmak~
+   This appears to be the heart of the city buried in this frozen mountain. At
+one time a bubbling fountain graced the center of town, but now it is a
+sculpture, frozen in time forever by the numbing cold here. Arcs of water hang,
+suspended in mid-air, while snow gathers around the elaborately carved base.
+The wind howls and snatches at your clothes as it whips through the entrance 
+into the mountain, and passes through the center of it. To the north are
+massive, icy gates that loom over you even from here. The street runs east and
+west, and to the south you see an equipment shop.
+~
+22 dq 1
+D0
+Icy gates stand guarding the entrance to the mountain.
+~
+~
+0 -1 2264 0
+D1
+The city street wanders in an icy path through the mountain.
+~
+~
+0 -1 2268 0
+D2
+Looking south, you see an old shop.
+~
+~
+0 -1 2270 0
+D3
+The city street wanders in an icy path through the mountain.
+~
+~
+0 -1 2266 0
+E
+fountain water sculpture carved base~
+Water is frozen in arcs high above your head, since the fountain itself is
+a towering affair. The center is a circle of leaping fish, each with a geyser
+of water spraying from it's pursed lips. The huge, round base is carved with
+faeries and gnomes prancing about, ironically celebrating spingtime. Peering 
+deep within the block of ice in the pool, you can see coins frozen forever in
+the bottom.
+~
+E
+equipment shop~
+This abandoned looking building must have been the sole supplier for the 
+town at one time.
+~
+S
+#2268
+The Streets Of Shurmak~
+   Small homes and shops line the street, all carved from the mountain rock,
+as is the street. Thick ice coats unused parts of the street, as well as homes
+and buildings that seem abandoned. The wind races down the street, from the 
+gaping entrance to the mountain, making the cold almost unbearable. The 
+streets run in all directions, but the east seems most intriguing, due to the 
+fact a massive dwelling sits shrouded in snow and shadows. To the south, the 
+old general store sits empty.
+~
+22 dq 1
+D0
+The icy street continues along through the mountain.
+~
+~
+0 -1 2265 0
+D1
+The road leads to a more seprate part of the mountain, the private keep where
+Shurmak himself resides.
+~
+~
+0 -1 2275 0
+D2
+The general store stands open here.
+~
+~
+0 -1 2271 0
+D3
+The town square rests in the center of the mountain city.
+~
+~
+0 -1 2267 0
+E
+homes shops buildings~
+All the structures inside of the mountain were either built into, or carved
+out of, the rock of the mountain itself. As a result, some are in small
+recesses and niches, while others jut out from the walls of the mountain.
+~
+S
+#2269
+The Inn Of The Broken Horn~
+   The tavern consists of one main room, with a fireplace at each end, making
+the room very warm. A long, scarred counter takes up one wall, serving as the
+bar. A few make-shift tables and chairs are scattered about, but no one sits
+in them. As a matter of fact, the whole room is warm and lit, but unoccupied.
+The door is to the north, taking you back out into the freezing mountain.
+~
+22 dq 0
+D0
+The door leads back out into the cold.
+~
+~
+0 -1 2266 0
+E
+fireplace~
+Each of the two fireplaces is lit and burns brightly. Large kettles hang over
+the fires, but they are empty. A faint aroma in the air indicates that soup
+or stew was probably simmered in these pots on many a cold night.
+~
+E
+counter bar~
+The battered wood of the bar is carved with little doodles and pictures, but
+many of the scratches look just like claw marks.
+~
+S
+#2270
+The Minotaur Equipment Shop~
+   This is the building that served as the equipment shop, but not for a long 
+time. Dust coats the stock that lines the shelves, and the room is cold and
+empty. To the back is a huge desk, that served the proprieter here, still
+littered with papers and ink bowls.
+~
+22 dq 0
+D0
+The door leads back out into town.
+~
+~
+0 -1 2267 0
+E
+desk huge~
+Whoever used this desk was a very busy man. Papers are scattered everywhere
+and a bowl of ink was spilled long ago. Now the puddle of ink is just a dried,
+cracked pile of dust. The desk itself is a massive piece of furniture, with a
+large chair to accompany it.
+~
+E
+shelves stock~
+Anything of value that was left here is either long gone or rotted away. The
+items on the shelves are no longer identifiable due to the state of decay.
+~
+S
+#2271
+The Minotaur General Store~
+   You enter a small store that is dark and cold. Old empty shelves line the
+walls and snow blows across the dirty stone floor. It is evident that this
+store was once used, but it is no more. A small doorway leads north out into
+the chilling snow and wind.
+~
+22 dq 0
+D0
+The door leads back out into town.
+~
+~
+0 0 2268 0
+E
+shelves~
+The shelves are empty. Nothing was left behind here.
+~
+S
+#2272
+{wMorag's Training Room{x~
+{r   This room is the room of a fighting master. The smell of sweat and blood
+hangs heavy in the air. The whole, huge room is littered with weapons, armour
+and varous implements of training worthy students who were permitted to enter
+this training area. Judging from the amount of blood coating the stone floor,
+many were unsuccesful in their training efforts. A red door leads east.{x
+~
+22 dq 0
+D1
+~
+~
+0 0 2288 0
+E
+armour armor~
+The armour that is scattered around the room is punctured and dented from the
+abuse heaped on it by students and master alike.
+~
+E
+weapons~
+Most of the weapons here are large, wooden training swords. Many are broken
+and splintered from use.
+~
+E
+floor stone~
+Blood is splattered everywhere, in some places a few drops, but in most, large
+pools of it have dried. The coppery smell of it fills your nose.
+~
+E
+red door~
+It looks like it leads back to the hall.
+~
+S
+#2273
+{wZalkoth's Dark Study{x~
+{D   Black stone makes up the walls, floor, and even the ceiling in this unholy
+place. Hideous objects are stored in jars on shelves along the wall. Terror
+fills your soul as you see the crude, red pentagram on the floor. This room
+is the dwelling of an evil, terrible creature who would snatch your soul
+and condemn you to hell for all eternity. A black door takes you to the east,
+and maybe salvation.{x
+~
+22 adq 0
+D1
+~
+~
+0 0 2289 0
+E
+shelves jars~
+Who knows what is in these murky jars. Each is filled with a cloudy liquid 
+that is almost impossible to see in. Strange shapes are shadowed in the glass,
+some look like fingers, even whole hands. In a jar that seems to be a recent
+addition, a whole bat is preserved.
+~
+E
+pentagram floor~
+The pentagram fills the floor from corner to corner, and seems to be drawn 
+with a reddish-brown sticky substance. Blood is the first thing that leaps
+to mind.
+~
+E
+black door~
+It looks like it leads back to the hall.
+~
+S
+#2274
+{wBartoth's Inner Sanctum{x~
+{W   This is a holy room, reserved for meditation and prayer. A feeling of 
+goodness and joy lift your spirits as you linger here. Only a being of
+supreme goodness could occupy such a place. White is the dominant color here, 
+covering the walls and floors. It is also quite barren, obviously the quarters
+of a pious man. A white door to the east takes you to the hall.{x
+~
+22 dq 0
+D1
+~
+~
+0 0 2292 0
+E
+white door~
+It looks like it leads out to the hall
+~
+S
+#2275
+The Road To The Keep Of Shurmak~
+   The road here becomes worse as it climbs uphill, towards the top of the 
+mountain. Even here wind and snow find there way in, and the rocks are coated
+in slippery ice. The wind freezes your breath as it leaves your body, leaving
+a cloud hanging in front of you. You can see light penetrating the darkness
+to the east and west.
+~
+22 cdq 5
+D1
+Apparently finer, more seprate quarters are housed to the east.
+~
+~
+0 -1 2277 0
+D3
+The icy street winds through the mountain.
+~
+~
+0 -1 2268 0
+S
+#2276
+A Small Guard House~
+   A guardhouse built from the rocks extracted during construction stands here
+to guard the way to the main quarters. There are skins hanging over the windows 
+to keep out the cold, and indeed, the room is warm enough with the small fire 
+that burns in a grate. There is just room enough for two cots, that are quite 
+a bit larger than human-sized. A small table has been squeezed in, and the 
+remnents of a game of knucklebones litters the surface. A solid wooden door
+leads to the south.
+~
+22 dq 0
+D2
+The door takes you back out to the gates opening in a huge cave.
+~
+~
+0 -1 2277 0
+E
+knucklebones game table~
+Knucklebones is quite a popular game amongst the guards it would seem. Who
+knows where the knuckles came from, but they look to be the same size as
+most human knuckles.
+~
+S
+#2277
+Before The Cave Of Shurmak~
+   A huge cavern opens up in front of you, with cliffs soaring over your head. 
+The size here is immense, and this is obviously where the twisted wizard 
+resided long ago. Judging from the quality of the home made here, quite a few
+humans had occupied this area. That might explain shops, and even the homes
+built in town, now occupied by the Minotaurs. Apparently, living here with his
+self-made army, the old man thought he could live forever. Indeed, he 
+prophesized that if anything were to happen to him, he would return, wreaking
+vengence on those who sought to destroy him. Large gates, carved from what
+looks like a single piece of stone stand open to the massive cavern.
+~
+22 dq 1
+D0
+A small guardhouse sits guarding the way into Shurmak's cave.
+~
+~
+0 -1 2276 0
+D1
+A large gate lies to the east.
+~
+gate~
+2 2250 2279 0
+D2
+A small guardhouse sits guarding the way into Shurmak's cave.
+~
+~
+0 -1 2278 0
+D3
+A larger cavern can be seen to the west.
+~
+~
+0 -1 2275 0
+D4
+The dwarves handiwork is most notable here in this cave. Only dwarves could 
+take a mountain of solid rock and create quarters like this. The ceiling of
+the cave is far above, disappearing into the darkness. Everything in here 
+is huge and skillfully built from the mountain rock. 
+~
+~
+0 -1 -1 0
+E
+gate gates~
+These gates look like wrought iron, but closer examination shows that they
+are indeed the same stone as everything else. The carving is a masterpiece of
+Dwarven artistry.
+~
+S
+#2278
+A Small Guard House~
+   A small, warm room was built for the guardians who watch this road. Skins 
+cover the beds and windows to keep out the cold. A small grate holds a fire to
+warm the snug room. A heavy wooden door leads to the north.
+~
+22 dq 0
+D0
+The road to the larger cave waits just outside this door, passing through
+large stone gates.
+~
+~
+0 -1 2277 0
+S
+#2279
+The Entryway To The Cave Of Shurmak~
+   This frigid entry opens into the cave of Shurmak. The ceiling vaults high
+into the mountain, with massive pillars supporting it. The stone floor here
+looks swept and polished, except for the light dust of snow that swirls around
+your feet. Massive stone gates stand to the west, apparently no longer used 
+security. A larger hall leads off to the east, deeper into the cavernous keep.
+~
+22 dq 0
+D1
+A large hall leads further into the cavern.
+~
+~
+0 -1 2280 0
+D3
+A huge gate lies to the west.
+~
+gate~
+2 2250 2277 0
+E
+floor down d~
+The floor looks like one solid peice of stone, that's how smooth and carefully
+laid out it is. It has been polished to a mirror-like finish, and is slick to
+walk on.
+~
+E
+up u ceiling~
+The stone pillars don't really hold up the ceiling, but they are so big they
+look as though they should. Finely carved from the rock that formed here 
+naturally, they are a piece of art that could only be created by dwarves.
+~
+S
+#2280
+The Hall~
+   This cavernous hall was carved out of the deepest part of the mountain, 
+soaring high above your head. Pillars disappear overhead as they reach to the 
+top of the mountain. Statues and pillars alike, were carved from the existing 
+rock, and many are embedded still in the mountain walls, carved in relief to 
+create the illusion of rooms. The statues are massive affairs, depicting the 
+old man himself, before his downfall, and the demons he worshipped. Thousands 
+of candles light up the room, being held by iron candle holders that stand on 
+the floor and tower above you. To the east more light is visible and west are 
+the gates that guard the entrance to the keep.
+~
+22 dq 0
+D1
+The grand hall is visible to the east.
+~
+~
+0 -1 2281 0
+D3
+The entrance to the keep is to the west.
+~
+~
+0 -1 2279 0
+E
+down d floor~
+The floor is the same, beautifully polished stone that is on all the floors.
+~
+E
+up u ceiling~
+The ceiling is overhead, concealed by the shadows. Collumns carved with care
+stretch from the floor all the way to the top of the cave, out of sight.
+~
+E
+candle holder iron~
+Each candle holder is about 7 feet tall, and wrought from sturdy iron. There
+are large, iron circles atop each base, and candles can be set in the small
+holders that make up the circle. It seems each one can hold 20 candles.
+~
+E
+man master~
+This is one scary looking man. His mouth is twisted in a cruel sneer, and 
+his eyes look like they could turn you to stone, if they weren't stone 
+themselves. He was big, but stooped in the shoulders, and his long robes
+cover the rest of his body. The statues hands are large with long ragged 
+nails. In life he must have been quite a sight. Looking closely, under his
+foot, you see a bull's head crushed to a pulp.
+~
+E
+statues~
+Most of the staues are of twisted demons and the cruelest gods in Hell. But
+one stands alone, different from the rest. That one is the master himself.
+~
+S
+#2281
+The Grand Hall~
+   This is the main hall of the keep that Shurmak now occupies. More
+massive pillars line the halls, and the floor here seems to be of a polished
+stone that reflects the candles that light the room. The ceiling disappears
+up into the dark top of the mountain. Tapestries hang on the walls,
+depicting the story of how the Minotaurs came to be, as well as the
+tyrannical hold the old wizard had over them, and all who entered his home.
+The hall continues to the south, and a smaller hall branches to the west. 
+~
+22 dq 0
+D2
+The Great Hall opens up before you to the south.
+~
+~
+0 -1 2282 0
+D3
+A smaller hall runs to the west.
+~
+~
+0 -1 2280 0
+E
+down d~
+The floor is smooth and polished, looking as though it is made from one sheet 
+of stone.
+~
+E
+up u ceiling~
+The ceiling disappears high above your head, where no light can reach.
+~
+E
+3.tapestry third~
+This tapestry shows us the final result of the wizards work. Dwarf bodies 
+litter the mountainside, seemingly worked to death. The wizard lords over his
+mountain kingdom as armies make their way up the sides, only to be crushed 
+and devoured by the Minotaurs he keeps under his power. The largest, most 
+cruel looking Minotaur depicted here must surely be the legendary Shurmak, 
+who was inevitably responsible for the death of the wizard himself.
+~
+E
+2.tapestry second~
+Thousands of Dwarves toil endlessly on and within the mountain in the
+background of this picture. To the foreground, once again we see a demented
+man, this time he uses his power to twist mortal men into the hideous Minotaur
+shape they are now. 
+~
+E
+1.tapestry first~
+This tapestry shows Dwarves being herded up the side of this very mountain.
+They go unwillingly, but they cannot help it. A huge wizard looms over them,
+and he seems to have them in his power. Even this poor weave cannot disguise
+the look of madness in the wizards crazy eyes.
+~
+E
+tapestries walls tapestry wall~
+There are three tapestries hanging on the walls in the hall. Each one tells a
+different tale.
+~
+S
+#2282
+The Great Hall~
+   Pillars carved in relief from the walls of the mountain soar high into
+the darkness overhead. Candles light the hallway, showing off statues of
+twisted demons, once worshipped by someone. The hollow eyes in each statue
+seem to follow your progression through the halls, perhaps measuring your
+worth. The hall runs to the north, but a small hall to the south will take
+you further into the mountain keep.  
+~
+22 dq 0
+D0
+A grand hall opens to the north.
+~
+~
+0 -1 2281 0
+D2
+The guardpost watches over the road into the main cave.
+~
+~
+0 -1 2287 0
+E
+down d~
+Polished stone covers the floor, it looks as if it is one large piece.
+~
+E
+up u pillars~
+The ceiling disappears high above your head, out of the reach of any light.
+Pillars carved from mountain rock stretch all the way up to the ceiling, 
+seeming to support it.
+~
+E
+statues demons~
+These statues are all hideous beyond belief. Possibly no one alive today knows
+who they are or what they stood for, but it couldn't be anything good.
+~
+S
+#2283
+Standing Before The Throne~
+   You stand before the throne of Shurmak. This golden throne is so huge
+that it takes up almost the entire wall, stretching far above the floor. If
+you were to sit in it, it would swallow you with its massive size. Only a
+creature of immense size could use a throne such as this. Who, or what,
+could fill such a chair is something that troubles your soul. Back to the
+north, the hall will take you to other areas of the keep.  
+~
+22 dq 0
+D0
+~
+~
+0 0 2284 0
+D1
+A huge golden throne sits under the eastern wall.
+~
+throne huge golden gold~
+1 -1 2285 0
+E
+throne huge gold golden~
+The golden throne is huge, with intricate carvings etched deep in the soft 
+gold. Nymphs, trees, faeries and all sorts of fantastical creatures are 
+depicted in the fabulous golden surface. While the throne is huge, it does
+not seem immovable.
+~
+S
+#2284
+The Great Hall~
+   You are in a great hall. Candles light the room and their light shimmers
+off the marble floor below you. To the north, you see a huge golden throne.
+Looking up, you grow dizzy at the height to which the vaulted ceiling rises.
+If possible, more statues stand as silent guardians over this hallway, which
+leads north and south.
+~
+22 dq 0
+D0
+~
+~
+0 0 2297 0
+D2
+~
+~
+0 0 2283 0
+E
+statues~
+The statues here are all of unknown things. Demons with evil eyes glare right
+back at you as you examine them.
+~
+E
+ceiling up u~
+The ceiling vaults high above your head, disappearing out of the candle's 
+light.
+~
+E
+down d floor~
+The floor is highly polished and quite slick to walk on. It appears as though
+it is one solid piece of stone.
+~
+S
+#2285
+The Secret Hallway~
+   You are in a small, dimly lit hall. Judging from the way it is carefully 
+hidden, the average person is not supposed to be here. A doorway made of gold
+is to the west, and to the east is a massive, heavy stone door.
+~
+22 dq 0
+D1
+A huge stone door dominates the east wall.
+~
+~
+0 2259 2286 0
+D3
+The back side of the Golden Minotaur Throne sits in the western wall.
+~
+gold throne huge secret~
+1 -1 2283 0
+E
+gold throne huge secret~
+This is the backside of the the throne, which has been carefully made into
+a secret door.
+~
+E
+door stone~
+This formidable looking door, has an equally impressive looking lock. This
+door is meant to keep people out, or something in.
+~
+S
+#2286
+Entry To The Royal Chambers~
+   This room is plusher than the rest of the keep, obviously made for human
+comfort, not the massive creatures that live here now. Candles sit on
+delicate tables, giving the room a soft light. Perhaps the Minotaurs like to
+be reminded of the humans they once were, since the furniture here was never
+intended for them to sit on. Lovely tapestry covered sofas and chairs fill
+the room, with small tassled pillows to make them even more enjoyable to sit
+in. Silk covers the stone walls, along with colorful tapestries telling
+faerie tales. One small chair lies broken in the corner, as if someone too
+large tried to sit on it. A curtained door lies to the east, and a stone
+door occupies most of the west wall.  
+~
+22 dq 0
+D1
+The living room adjoins here.
+~
+~
+0 -1 2295 0
+D3
+A huge stone door sits in the western wall.
+~
+~
+0 2259 2285 0
+E
+tapestry tapestries~
+The tapestries that cover the wall seem to tell fables you remember hearing
+long ago as a child.
+~
+E
+door stone~
+This huge door made from solid stone takes up most of the western wall. It 
+looks as though it was made later than the rest of the room, since it does
+not fit the rest of the room scheme.
+~
+S
+#2287
+The Guard Post~
+   The hall here has been built into a guard post of sorts. It appears as
+through it would be quite easy to defend in times of emergency. Obviously,
+something important lies beyond. A small hall leads south, while the main
+hall can be seen to the north. 
+~
+22 dq 0
+D0
+The great hall sits just to the north.
+~
+~
+0 -1 2282 0
+S
+#2288
+The Guarded Hall~
+   This stone paved hall is dimly lit by torches hanging in the rock
+walls.  There are colored doorsways lining both sides of this hall, to
+the west is a red doorway, and to the east is a silver doorway. The hall
+continues north and south. 
+~
+22 dq 0
+D0
+A guard's post sits to the north.
+~
+~
+0 -1 2287 0
+D1
+~
+~
+0 0 2290 0
+D2
+The guarded hall continues on south.
+~
+~
+0 -1 2289 0
+D3
+~
+~
+0 0 2272 0
+E
+red~
+{rThis huge red door has the name "{wMorag{r" etched on it in gilded script.{x
+~
+E
+silver~
+{cThis huge yellow door has the name "{wPaltor{c" carved on it in black script.{x
+~
+S
+#2289
+The Guarded Hall~
+   This stone pave hall has rows of huge doors, each a different colour. 
+To the east is a maroon doorway, and to the west is a black doorway. 
+Torches cast a dim glow on the stone paving, providing enough light to see
+by, but not much more.
+~
+22 dq 0
+D0
+The guarded hall continues.
+~
+~
+0 -1 2288 0
+D1
+~
+~
+0 0 2291 0
+D2
+The guarded hall continues.
+~
+~
+0 -1 2292 0
+D3
+~
+~
+0 0 2273 0
+E
+black~
+{DThis black, scarred door has the name "{wZalkoth{D" on it, etched in gilded script.{x
+~
+E
+maroon~
+{mThis large maroon door has the name "{wKazmar{m" on it, carved in gilded script.{x
+~
+S
+#2290
+{wPaltor's Sanctum{x~
+{c   This is the temple, of sorts, for a holy man. Religous statues that look
+as though they were scavenged from churches all over the land line the room.
+An altar with small holy icons and relics is littered with candles, lit during
+prayer. Incense smells strongly here, and herbs were thrown on the fire in the
+huge fireplace to add to the spicy scent. The occupant would seem to be a 
+studying cleric. A yellow door leads west.{x
+~
+22 dq 0
+D3
+~
+~
+0 0 2288 0
+E
+altar icons relics~
+The altar is a simple affair, carved from wood and covered in the wax of a 
+thousand candles. Icons in the shape of saints are scattered about, and relics
+ranging from splinters of wood to whole statues surround the altar.
+~
+E
+yellow door~
+The only entrance to the temple, it probably leads to the hall.
+~
+S
+#2291
+Kazmar's Arcane Study~
+{m   Shelves filled with spell components line the walls of this room. The
+floor is marked with all sorts of archane symbols, and a huge fireplace
+with a cauldron bubbling on it fills the far wall. The smell from the
+cauldron is terrible, it spits a thick, viscous substance periodically,
+which you might be careful not to get on you. Everything here seems to be
+the work of a mage practicing his craft.{x
+~
+22 dq 0
+D3
+~
+~
+0 0 2289 0
+E
+shelves components~
+The shelves are covered with drying herbs and odd things in little jars. One
+jar seems to vibrate and move around a little.
+~
+E
+fireplace cauldron~
+A horrible stench rises from the steam in the cauldron, and strange, lumpy 
+things seem to squirm in the thick goo.
+~
+E
+floor down d~
+The floor has been chalked with strange symbols and phrases in a tongue you
+don't understand. 
+~
+E
+maroon door~
+Since it is the only exit, it must lead to the hall.
+~
+S
+#2292
+The Guarded Hall~
+   You walk down a quiet hall. The stone walls are wet with moisture, and
+the chill here is bone deep. Coloured doors can be seen in the walls here.
+To your east, you see a green doorway. To your west, you see a white
+doorway. The hall itself leads north and south. 
+~
+22 dq 0
+D0
+The guarded hallway runs to the north.
+~
+~
+0 -1 2289 0
+D1
+~
+~
+0 0 2294 0
+D2
+The hall ends to the south.
+~
+~
+0 -1 2297 0
+D3
+~
+~
+0 0 2274 0
+E
+white~
+{WThis large white door has the name "{wBartoth{W" on it, etched in black script.{x
+~
+E
+green~
+{gThis huge green door has the name "{wLortuk{g" on it, carved in golden letters.{x
+~
+S
+#2293
+The Harem Room~
+   This is obviously a room for young women, judging from the furnishings
+and the scent of perfume in the air. Minotaurs usually steal young girls
+from their families and force them to bear their young. Unfortunately, the
+young, being half Minotaur, kill their mothers within a year to satisfy the
+craving for human flesh that is their curse. The beds here are covered in
+soft fabrics and made up neatly. Assorted amusements, including books and
+musical instruments are scattered about the room. Pretty carpets cover the
+stone floor, keeping out the chill with the aid of a huge fireplace
+crackling in the corner. Curtains cover the large, arched doors to the south
+and west.  
+~
+22 dq 0
+D2
+~
+~
+0 0 2296 0
+D3
+~
+~
+0 0 2295 0
+E
+beds bed~
+The beds are covered with fine, expensive looking coverings. They look warm 
+and snug.
+~
+E
+down d carpets~
+The carpets on the floor are pretty and feminine looking. Obviously the girls
+are treated with some small comforts.
+~
+S
+#2294
+{wLortuk's Humble Abode{x~
+{g   Lush green plants fill this room, which is surprising considering the lack
+of light. It is quite warm in here, to aid the plants in their growing. The 
+plants are well kept, neatly pruned and watered. Herbs even grow in small 
+pots, and flowers are interspersed with them, making this a pleasant room 
+indeed. A large green door leads west.{x
+~
+22 dq 0
+D3
+~
+~
+0 0 2292 0
+E
+plants herbs flowers~
+All the plants in this room are lush and healthy. For such a cold, forbidding
+place, this little touch of life is surprising. Perhaps this is a remnant of 
+a former occupation.
+~
+E
+green door~
+It looks like it leads back to the hall.
+~
+S
+#2295
+The Main Living Room~
+   This room looks more like the quarters for a Minotaur. The furniture here
+is oversized, made from logs, and quite sturdy. Tapestries still cover the
+walls and torches are stuck in crevices in the stones, illuminating the room
+nicely. Rugs scattered about cover the stone floor and a fireplace keeps the
+chill to a minimum. The huge arched door to the west is hung with dark
+curtains.  
+~
+22 dq 0
+D1
+~
+~
+0 0 2293 0
+D3
+The royal chambers are just through the curtains.
+~
+~
+0 -1 2286 0
+E
+tapestries walls~
+All the tapestries in this room are of faeries, gnomes and other mythical 
+creatures. Each one looks like it tells an old fable.
+~
+S
+#2296
+{wThe Master Bedroom{x~
+   {CA bed of massive proportions fills half of the room. It is heaped high
+with furs to keep the sleeper warm at night. The biggest fireplace you have
+seen yet occupies a long wall, throwing light and warmth into the room. A
+few chests are scattered about the room, their locks rusted with time. 
+These may be what held the treasure of the mad wizard Shurmak overthrew so
+many years ago. In fact these are his very quarters. A large curtain covers
+the only exit to the north.{x
+~
+22 dq 0
+D0
+The main living room is just through the curtains.
+~
+~
+0 -1 2293 0
+E
+chests~
+These chests look quite battered and abused, now they are empty of whatever
+treasure they once contained.
+~
+S
+#2297
+The End Of The Guarded Hall~
+   The last two doors here are a large brown doorway to the west and a big
+blue doorway to the east. The corridor leads back to the north along the
+rows of coloured doors. The torches here gutter and flicker as a draft
+sweeps through the hall. To the south a large hall begins to take shape.
+~
+22 dq 0
+D0
+The guarded hall runs to the north.
+~
+~
+0 -1 2292 0
+D1
+~
+~
+0 0 2298 0
+D2
+~
+~
+0 0 2284 0
+D3
+~
+~
+0 0 2299 0
+E
+brown~
+{yThis large brown door has the name "{wVorant{y" carved on it in gilded script.{x
+~
+E
+blue~
+{bThis huge grey door has the name "{wMaltu{b" etched in gilded script on it.{x
+~
+S
+#2298
+{wMaltu's Dismal Domicile{x~
+{b   This room is filthy and full of all sorts of odds and ends. Everything
+seems to have a catagory, and is in it's own little pile. Items ranging from
+food to string have been carefully hoarded and saved for the time when they
+will become useful to the owner. The only door here is the gray door to the
+west.{x
+~
+22 dq 0
+D3
+~
+~
+0 0 2297 0
+E
+items odds food string~
+All this stuff is piled up all over the room, some of it even begining to rot
+and decay. There is a musty smell to the room, like old things long forgotten.
+~
+E
+grey door~
+It seems to lead back into the hall.
+~
+S
+#2299
+{wVarant's Green Room{x~
+{y   This room is full of reminders of the forest. The furniture is made from
+pine, and their scent fills the air. The floor is actually dirt, the only dirt
+seen here in the whole mountain. An axe and various forest equipment hangs on
+the wall, almost as a reminder of a past occupation. A brown door is to the 
+east.{x
+~
+22 dq 0
+D1
+~
+~
+0 0 2297 0
+E
+equipment axe wall walls~
+Several small axes and one large axe hang on the walls. Pine boughs that
+look fresh and green hang over the door, giving off a woodsy scent.
+~
+E
+brown door~
+The huge door seems to lead you back to the hall.
+~
+S
+$~

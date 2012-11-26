@@ -1,0 +1,944 @@
+#20500
+troll~
+the Monstrous Troll~
+A monstrous Troll snarls at you viciously.
+~
+The troll is gigantic by usual standards, standing a full eight feet tall,
+and must be at least four feet wide. Its skin is dark green in colour,
+blistered with numerous warts and boils. A thick shock of dark black hair
+tops its hideous head. Through large yellow teeth it snarls at you.
+~
+cdfgno k -500 X 0 
+40 5 -10 20d20+400
+0 150000
+8 8 0 3 2 6
+T 50 4d6+16 24
+A 10 8 $n picks a grub out of its hair and flicks it towards you.
+A 10 8 $n explodes a boil at you, pus everywhere. 
+A 10 8 $n snarls loudly.
+E 5 100 20500 -1
+#20501
+orc~
+the Grotesque Orc~
+A grotesque Orc stares at you with blood-lust in its eyes.
+~
+This beast is one disgusting creature. It is covered with dirt and dried
+blood with entrails from some poor creature hanging from the corners of its
+mouth. Standing about six feet tall, it looks like forty stones of pure
+fighting muscle. Yellow, blood-shot eyes stare at you with some feral
+madness in them.
+~
+cdfgno k -450 X 0 
+45 4 -10 23d23+450
+0 280000
+8 8 1 3 13 6
+T 50 4d5+20 25
+A 10 8 $n coughs some blood and bile over himself.
+A 10 8 $n farts in your general direction.
+E 11 70 20503 -1
+E 5 20 20502 -1
+E 16 60 20501 -1
+>fight_prog    20~
+ drool $n
+~
+|
+#20502
+hobgoblin goblin mistress~
+the Hobgoblin Mistress~
+A powerful Hobgoblin chants spells to herself.
+~
+The hobgoblin is dark grey in colour and stands bent double. The small,
+pitch black eyes hide the intelligence of this creature. Well known to be
+masters of all kinds of magic lore, the hobgoblin chants strange
+incarnations. A wicked looking wand is pointed at you, as if she expects
+trouble.
+~
+cdglno cdk -350 X 0 
+45 -5 -10 23d23+450
+0 280000
+8 8 2 3 13 5
+T 100 5d15+15 26
+A 5 8 $n prods you in the ribs.
+A 5 8 $n points her staff at you and utters a curse.
+A 5 8 $n mumbles strange words at you.
+E 17 70 20504 -1
+>fight_prog    30~
+ cast 'frost' $n
+~
+>rand_prog    5~
+ cast 'blind' $r
+~
+>rand_prog    20~
+ steal skin $r
+~
+|
+#20503
+green blob~
+the Green Blob~
+A green Blob slowly digests the rock floor.
+~
+A large mass of green slime, the blob slowly digests the rock and anything
+else around by secreting a powerful acid from its mouth. It sucks the
+residue up through a thick silicatious, not unlike how a fly digests its
+food.
+~
+cdeglno dk -500 X 0 
+15 14 2 8d8+150
+0 9900
+8 8 0 14 0 4
+T 100 2d4+8 22
+A 10 8 $n evaluates you as a possible meal.
+A 10 8 $n sprays acid on the wall close to your face.
+A 10 8 $n belches some acid close to your feet.
+E -1 60 20505 -1
+#20504
+stone statue guardian moria~
+the Guardian of Moria~
+A stone Guardian stands here, watching the entrance to Moria.
+~
+Having the appearance of a knight of olde, this immense statue has been 
+carved from a solid piece of granite. Its surface is smooth to the touch,
+but feels strangely warm. The large eye-sockets are empty, but somehow
+radiate warmth and friendliness. He stands here at the entrance to Moria,
+protecting the foolish who may enter.
+~
+bdglmno ck 800 X 0 
+40 0 -10 20d20+400
+0 150000
+8 8 1 3 0 5
+T 66 5d7+20 23
+A 1 8 $n says 'These tunnels are infested with complete evil.'
+A 2 8 $n warns you 'Leave this evil place before it is too late.'
+A 3 8 $n tells you 'Entering here is certain death for you.'
+A 5 8 $n says 'There is nothing before you but evil, turn back now.'
+E 5 20 20537 -1
+E 12 10 20509 -1
+E 16 10 20508 -1
+E 15 5 20507 -1
+E 14 7 20506 -1
+>fight_prog    60~
+   bash $n
+~
+|
+#20505
+lurker midnight~
+the Midnight Lurker~
+A Midnight Lurker skittles into the shadows.
+~
+The lurker is a large bodied spider with eight sprawling legs. Her body is 
+about five feet long, completely black and covered with large, spiky red
+hairs. Each leg sprawls at least six feet away from the body. Large fangs
+protrude from her cavernous mouth, dripping with venom.
+~
+cdgno ks -600 X 0 
+20 12 0 10d10+200
+0 25000
+8 8 2 4 14 4
+T 100 3d10+10 22
+A 10 8 $n drips a trail of venom as she lumbers past you.
+A 10 8 $n spins a silky web in the corner.
+A 10 8 $n clicks her teeth at you.
+E 18 100 20510 -1
+>rand_prog    20~
+  snarl $r
+~
+>fight_prog    40~
+  mpechoat $n The Midnight Lurker sinks her fangs deep inside YOU !!
+  mpechoaround $n The Midnight Lurker sinks her fangs deep into $n !!
+  mpcast 'poison' $n
+~
+|
+#20506
+werewolf wolf animal~
+the Werewolf~
+A flea infected animal crouches ready to spring at you.
+~
+The animal is half wolf, half human. It stands about as tall as a large 
+human but has the demeanour of a vicious beast. Its fur is matted with 
+grease and dirt, crawling with fleas and lice. Large claws are pointed at 
+you, ready to scratch your eyes out. Its back haunches are pure muscle,
+allowing it to spring at your throat in an instant.
+~
+bcdfgno djk -450 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 1 2 1 5
+T 50 5d6+20 24
+A 10 8 $n shakes himself, sending fleas and lice everywhere.
+A 10 8 $n growls at you with deep, throaty snarl. 
+E 5 100 20512 -1
+E 13 9 20511 -1
+#20507
+spirit sorrel~
+the Spirit of Sorrel~
+A ghostly Spirit blinks in and out of existence.
+~
+Fading in and out of existence, before your very eyes, is the spirit of
+Sorrel. The rear wall can be seen shining through his very being, becoming
+less clear as Sorrel momentarily becomes more opaque. Two ghastly holes
+stare at you, where once eyes would have existed. A large gaping mouth 
+vibrates the air around you to make a crude speech sound.
+~
+bdeglnoq bdhkt 600 X 0 
+25 11 -2 13d13+250
+0 45500
+8 8 0 7 1 4
+T 100 2d7+17 26
+A 6 8 $n passes straight through you, making you shudder.
+A 8 8 $n whispers to you, 'I am an innocent man !'
+A 10 8 $n pleads to you, 'You believe me, don't you ?'
+E 0 20 20514 -1
+E 17 14 20513 -1
+>fight_prog    30~
+ cast 'col' $r
+~
+>rand_prog    2~
+ shout Free me from this torment !!
+~
+|
+#20508
+man skinny troglodyte~
+the Troglodyte~
+A skinny looking man stares at you with terror in his eyes.
+~
+This man has nearly no fat or muscle on him at all, in fact he is almost all
+skin and bones. Like most cave dwellers, or troglodytes, he has a thick,
+long beard, iron grey in colour. His dirty appearance and his unkempt hair
+give him a wild look. He appears to radiate a sense of strong determination,
+probably the force that has kept him alive all this time down in this hell 
+hole.
+~
+bcdgho dk 0 X 0 
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 4
+T 100 1d7+8 27
+A 2 8 $n tells you, 'You shouldn't be here, its dangerous for the soul.'
+A 3 8 $n says 'Take anything I have, but leave me in peace.'
+A 5 8 $n offers you some food scraps.
+A 7 8 $n grovels on the floor in front of you for mercy.
+A 8 8 $n scratches his thick beard.
+A 9 8 $n cringes from you as he says 'Leave me alone, please.'
+A 10 8 $n cowers in the corner away from you.
+E 5 100 20512 -1
+E 18 80 20517 -1
+E 1 50 20516 -1
+E 1 100 20515 -1
+>rand_prog    20~
+ worship $r
+~
+>rand_prog    10~
+ take all
+  mpdelay 20
+  say Did you want this ?
+  mpdelay 20
+  shrug
+  mpdelay 15
+ drop all
+~
+|
+#20509
+troll king~
+the Troll King~
+The King of Trolls roars at you as you enter his home.
+~
+This is the biggest, meanest, ugliest and most powerful troll you have ever
+seen. At least nine feet tall, his broad shoulders are a powerhouse of force
+waiting to smash into you. His huge arms, almost reaching down to the floor,
+are solid muscle, whilst his chest has the hardness of stone. A few old
+battle scars etch his face, and an eyepatch covers his right eye.
+~
+bdglno hk -700 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 1 3 2 5
+T 100 3d10+8 6
+T 100 3d9+35 24
+A 5 8 $n points to the pictures on the northern wall.
+A 7 8 $n munches on a dwarven leg bone and smirks at you.
+A 10 8 $n waves a human scalp in front of you and cackles gleefully.
+A 15 8 $n says 'Get out of here, or prepare to die.'
+E 5 22 20520 -1
+E 6 50 20519 -1
+E 18 15 20518 -1
+>fight_prog    50~
+   bash $n
+~
+>fight_prog    10~
+    say I HAVE KILLED MORE OF YOUR KIND THAN I CARE TO REMEMBER !!
+~
+>fight_prog    10~
+    shout YOUR KING IS UNDER ATTACK, TAKE VENGEANCE !!
+~
+>fight_prog    20~
+    sneer $r
+~
+|
+#20510
+elland hobgoblin goblin~
+Elland~
+Elland is pouring over his cauldrons brewing a fantastic potion.
+~
+Working before you is the arch-mage Elland, a hobgoblin skilled in the
+terrible lore of his kind. Power seems to erupt from his lips, as he chants
+mystic words over his black cauldrons. His long, spiny fingers clutch at a
+wooden staff which emits a faint humming noise. He seems to ignore your
+presence here, as though you are totally insignificant.
+~
+bdeglnoq dhk -500 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 1 3 13 5
+T 100 3d8+6 6
+T 100 5d9+25 26
+A 2 8 $n shouts, 'If you want them, I have them all here.'
+A 4 8 $n grumbles, 'Out of werewolf testicles again.'
+A 6 8 $n closes his eyes and utters some mystical words.
+A 8 8 $n throws some bats wings into the cauldron.
+A 10 8 $n looks at you and turns away, continuing with his work.
+E 17 40 20528 -1
+E 17 100 20524 1
+E 12 15 20523 -1
+E 3 12 20522 -1
+E 8 3 20521 -1
+>fight_prog    40~
+  cast 'agony' $n
+~
+>fight_prog    10~
+ say FLEE NOW, whilst you are still alive !
+~
+>fight_prog    20~
+ emote twists his mouth in a strange way.
+~
+>time_prog    */*/*/*/*/2,4,6,8,10,12,14,16,18,20,22~
+   say Where did I put that scroll?
+   mpdelay 15
+   think
+   mpdelay 20
+   open door west
+   mpdelay 10
+   west
+   mpdelay 40
+   east
+   mpdelay 15
+   smile
+   mpdelay 20
+   close door west
+~
+|
+#20511
+bear brown~
+the large brown Bear~
+A ferocious looking bear wonders why you woke him from his sleep.
+~
+The bear is absolutely monstrous. It must be about twelve feet long and has
+a thick shaggy fur coat covering its massive body. Its giant paws are all
+tipped with razor tipped claws, each about four inches. Large ears, keen
+eyes and a big nose make this animal a prime hunter.
+~
+dgino k 0 X 0 
+40 5 -10 20d20+400
+0 160000
+8 8 1 4 14 6
+T 50 4d3+28 24
+A 2 8 $n sharpens his claws on the rock wall.
+A 4 8 $n seems rather confused about what's happening.
+A 6 8 $n looks at you in a half awake glare.
+A 8 8 $n scratches an itch on its backside.
+A 10 8 $n dreams of springtime and all that that entails.
+E -1 100 20530 -1
+E 3 40 20529 -1
+>rand_prog    10~
+ snore
+~
+>rand_prog    10~
+ emote coughs some mucus at you as he snores.
+~
+>fight_prog    20~
+  bash $n
+~
+>fight_prog    50~
+  disarm $r
+~
+|
+#20512
+ice block monster~
+the Ice Monster~
+Basking in the cold temperature, an Ice Monster rises to attack you!
+~
+A large block of ice, eight feet cubed, makes up the main body. Appendages,
+that could crudely be defined as arms, legs and a head are made from smaller
+blocks, and joined to the main body by an unknown force. As the monster
+moves, a nerve-rending scraping side can be heard, as the blocks of ice
+slide over one another. This doesn't, however, appear to hinder the thing in
+any way.
+~
+bcdfglno dk -400 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 0 1 1 6
+T 100 2d15+8 6
+T 100 6d5+32 23
+A 25 8 $n chills you with a blast from its mouth.
+E 16 65 20533 -1
+E 0 10 20532 -1
+>fight_prog    40~
+  cast 'frost' $n
+~
+|
+#20513
+ice block~
+the Ice Block~
+A Block of Ice slides along the floor.
+~
+The block of ice, two feet cubed, is completely crystal clear. There are no
+air bubbles, cracks or any imperfections whatsoever in it. If it wasn't for
+the reflection from your light, it would be almost impossible to see it. By
+some unknown mechanism, the block is able to slide across the floor, almost
+as if it is alive.
+~
+cdgmno ks -200 X 0 
+20 12 0 10d10+200
+0 25000
+8 8 0 0 0 5
+T 50 2d3+14 23
+A 2 8 $n makes you daydream of a chilled drink on a long, hot summer's day.
+A 4 8 $n warns you, 'Beware the master, none survive his wrath.'
+A 6 8 $n chews on an icicle and burps loudly.
+A 8 8 $n moves away from your body heat.
+A 10 8 $n freezes the air around your feet with its chill breath.
+E -1 100 20534 -1
+>fight_prog    60~
+ cast 'chill touch' $r
+~
+>fight_prog    10~
+ cast 'ice bolt' $n
+~
+>fight_prog    20~
+  emote screams in terror as the heat from your body burns him fiercely.
+  cast 'cure c'
+  cast 'cure c'
+~
+|
+#20514
+air guardian watcher~
+the Air Guardian~
+The Air Guardian stands here, the first watcher of Hell.
+~
+Deep down in the centre of Moria, the Air Guardian stands as the first
+watcher of the passage to Hell. Conjured by the very Gods themselves, the
+guardian's sole purpose is to prevent the supreme evil from escaping.
+Created from the strongest of winds that blow through the land, immense
+natural forces can be called upon to uphold its bidding.
+~
+bcdglnoqy dhk 900 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 0 3 0 6
+T 50 5d5+25 26
+A 4 8 $n says 'You have been brave to make it this far, turn back now.'
+A 6 8 $n says 'I have guarded these tunnels for ten millennia.'
+A 8 8 $n says 'Don't venture any further into these tunnels.'
+A 10 8 $n says 'Supreme evil only lies ahead.'
+E 5 50 20537 -1
+E 7 10 20536 -1
+E 6 10 20535 -1
+>fight_prog    10~
+  shout BEWARE FELLOW GUARDIANS, EVIL COMES OUR WAY !!
+~
+>fight_prog    30~
+   kick $n
+~
+>fight_prog    20~
+   cast 'cure c'
+   cast 'cure c'
+~
+>fight_prog    30~
+   cast 'lightning bolt' $r
+~
+>fight_prog    10~
+   say WHY HAVE YOU ATTACKED ME, I AM THE GUARDIAN OVER EVIL!!
+~
+>rand_prog    2~
+  cast 'heal' $r
+~
+>rand_prog    7~
+  smile $r
+  mpdelay 15
+  say I see the goodness in you.
+~
+|
+#20515
+water guardian watcher~
+the Water Guardian~
+The Water Guardian stands here, the second watcher of Hell.
+~
+The Water Guardian stands as the second watcher of the way to Hell. Conjured
+by the mighty Gods, the guardian contains the explosive force of the oceans
+in its very being. Its skin, if you can call it that, ripples like a wave on
+the sea, straining to keep the mighty forces inside. In its depths are a
+turbulent mass of kempt up energy.
+~
+bcdglnoqx dhk 900 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 0 3 0 6
+T 100 3d10+8 6
+T 100 4d7+34 26
+A 2 8 $n tells you 'Your very soul is in jeopardy.'
+A 4 8 $n says 'I cannot stop you venturing further, but be warned.'
+A 6 8 $n sighs loudly.
+A 8 8 $n warns you, 'You don't understand what lies ahead.'
+A 10 8 $n says 'I feel the evil get stronger day by day.'
+E 5 50 20537 -1
+E 8 10 20539 -1
+E 9 10 20538 -1
+>fight_prog    10~
+  shout THE EVIL SPREADS FELLOW GUARDIANS, PREPARE FOR BATTLE !!
+~
+>fight_prog    15~
+  cast 'cure c'
+  cast 'cure c'
+  cast 'cure c'
+~
+>fight_prog    30~
+  cast 'col' $r
+~
+>rand_prog    20~
+  poke $r
+  mpdelay 15
+  say Just you be warned.
+~
+|
+#20516
+earth guardian watcher~
+the Earth Guardian~
+The Earth Guardian stands here, the third watcher of Hell.
+~
+The third guardian conjured by the Gods, that of Earth, was formed from the
+very body of the living land. Like a giant clay golem, the guardian stands
+forever to watch these tunnels for the sign of evil trying to escape to the
+realms above, away from its banished abode. You can feel the colossal power
+of earthquakes and volcanoes rumbling deep within its body. Standing twelve
+feet tall and four feet across at the shoulders, it completely dwarves you.
+~
+bcdglnoqyA dhk 900 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 0 3 0 6
+T 100 3d10+11 6
+T 100 3d7+38 26
+A 2 8 $n pulls a worm out of his body and swallows it whole.
+A 4 8 $n sighs, 'The evilness spreads through the Earth like cancer.'
+A 6 8 $n tells you, 'The Gods don't realise how powerful He has become.'
+A 8 8 $n says 'I remember when the evil was not this bad.'
+A 10 8 $n says 'This is your third warning, time is running out.'
+E 5 50 20537 -1
+E 13 7 20541 -1
+E 10 10 20540 -1
+>rand_prog    5~
+ emote suddenly erupts in a jet of lava, splashing the walls.
+ mpdelay 10
+ emote quickly reforms its shape.
+ mpdelay 15
+ sigh
+ mpdelay 5
+ say Sorry, I had a curry last night.
+ mpdelay 10
+ blush
+~
+>rand_prog    5~
+ cast 'cure c' $r
+ mpdelay 15
+ say That should help you, I can do so little to aide you.
+ mpdelay 15
+ smile $r
+~
+>rand_prog    20~
+ smile $r
+ mpdelay 15
+ say You are very brave people, you don't deserve your fate.
+~
+>fight_prog    30~
+  cast 'earthquake'
+~
+>fight_prog    10~
+  cast 'heal'
+~
+>fight_prog    20~
+  shout Evil is amongst us, masquerading as good !!
+  mpdelay 10
+  grimace $n
+~
+>fight_prog    20~
+  kick $n
+~
+|
+#20517
+stone guardian watcher~
+the Stone Guardian~
+The Stone Guardian stands here, the fourth guardian of Hell.
+~
+A massive stone figure, the fourth guardian stands like a rock cliff in
+front of you. This guardian embodies all the material wealth of the land,
+conjured into an incredibly dense being capable of withstanding the fiercest
+of attacks. He is harder than diamond, denser than lead but moves with the
+ease of a flesh and blood creature. Tiny yellow lights glow in his eye
+sockets in sharp contrast to the blackness of his body.
+~
+bcdglnoqxA dhk 900 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 0 3 0 6
+T 50 2d7+36 26
+A 2 8 $n sighs 'It wont be long before He tries to break free from here.'
+A 4 8 $n says 'He sends creatures up here to test us every so often.'
+A 6 8 $n stamps his feet, making the whole room shake.
+A 8 8 $n looks at you with his glowing yellow eyes.
+A 10 8 $n says 'I sometimes think the Gods have forgotten about us.'
+E 5 50 20537 -1
+E 14 6 20543 -1
+E 12 6 20542 -1
+>fight_prog    12~
+  cast 'heal'
+~
+>fight_prog    30~
+   bash $n
+~
+>fight_prog    30~
+   cast 'breath' $r
+~
+>rand_prog    4~
+ cast 'blind' $r
+ mpdelay 10
+ sigh
+ mpdelay 15
+ say Sorry, wrong spell.
+ mpdelay 10
+ cast 'cure b' $r
+ mpdelay 10
+ smile
+ mpdelay 20
+ say Hmm, let me help you a little in your journey.
+ mpdelay 10
+ cast 'heal' $r
+ mpdelay 15
+ say I hope that makes you feel a little better.
+ mpdelay 15
+ bow $r
+~
+>rand_prog    5~
+ say If you meet Him, be very careful with your equipment.
+ mpdelay 20
+ say He can turn people against their will very easily.
+~
+>rand_prog    5~
+ punch guardian
+ mpdelay 15
+ roll
+ mpdelay 20
+ say 20 tonnes of rock I am, harder than anything in the world.
+ mpdelay 5
+ strut
+ mpdelay 20
+ say The Gods built me to last an eternity.
+ mpdelay 15
+ smile $r
+~
+|
+#20518
+fire guardian watcher~
+the Fire Guardian~
+The Fire Guardian stands here, the final guardian of Hell.
+~
+You shield your face from the heat as you look at this being. Conjured from
+all of the chaos in the world, this is the most powerful of the guardians.
+The creature continually changes shape as tongues of flame burst out towards
+you, coalescing into a different form. You can feel the rage the guardian
+feels for the evil close by and towards anybody that would try to stop him
+from his task. The room glows in the bright reds, oranges and yellows that
+make up his body.
+~
+bcdglnoqxA dhk 900 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 0 3 0 6
+T 50 1d7+43 26
+A 4 8 $n says 'These are your final warnings.'
+A 7 8 $n looks at you with dismay.
+A 10 8 $n turns a golden yellow colour, then back to orange.
+E 17 100 20546 -1
+E 11 10 20545 -1
+E 5 10 20544 -1
+E 5 50 20537 -1
+>greet_prog    100~
+ mpdelay 20
+ if isfollow($n)
+   mpat 0 smile
+ else
+   say Below me lies the realm of the damned, the abode of Satan.
+   mpdelay 30
+   say I cannot let you pass this way.
+   mpdelay 30
+   say I am asking you to turn back now, I beg you, for your own safety.
+   mpdelay 30
+   say To go down there, you will have to get past me.
+   mpdelay 20
+   sigh
+ endif
+~
+>fight_prog    30~
+ cast 'firestorm' $n
+~
+>fight_prog    14~
+  cast 'heal'
+~
+|
+#20519
+devil she~
+the She-Devil~
+A rather beautiful Devil is grooming her forked tail.
+~
+Built to the same proportions as an average human female, this devil has an
+almost exotic attractiveness to it. She twirls her tail at the men in your
+party, who seem to have a definite interest in her. Temptation is a deadly
+sin, and that is the only purpose that this poor creature was created for.
+~
+cdghmno k -400 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 2 3 1 4
+T 50 1d13+12 28
+A 4 8 $n say 'Want to see a good time?'
+A 7 8 $n twirls her tail in a seductive manner.
+A 10 8 $n smiles at you with warm affection.
+E 17 10 20548 -1
+E 14 8 20547 -1
+>rand_prog    10~
+ emote utters the words 'dgfhtjfk'.
+ mpdelay 20
+ emote changes into your ultimate dream lover.
+ mpdelay 15
+ beckon $r
+ mpdelay 15
+ smile $r
+~
+>fight_prog    30~
+ shout MASTER ! HELP ME, PLEASE ! KILL $n !!
+ mpdelay 20
+ say YOU WILL ALL DIE FOR THIS !
+ mpdelay 10
+ cackle
+~
+>rand_prog    10~
+ smile $r
+ mpdelay 20
+ say My master has been awaiting you. He has heard of your past deeds.
+ mpdelay 20
+ say You killed the Fire Guardian. We need your kind.
+ mpdelay 10
+ worship $r
+~
+|
+#20520
+devil sprite little~
+the Little Devil~
+A little Devil runs about your feet, snarling viciously.
+~
+The little sprite is no more than three feet tall and as thin as a rake. It
+has little horns on the top of its head and a pixie like face, which grins
+up at you with a cheeky smile. A long tail swishes high into the air behind
+it, brushing you as it moves around.
+~
+cdgh hks -400 X 0 
+20 10 0 10d10+200
+0 25000
+8 8 1 3 1 4
+T 66 3d5+12 22
+A 5 8 $n says 'Welcome to Hell.'
+A 10 8 $n beams a vibrant smile at you.
+A 15 8 $n skips around your feet merrily.
+E 8 25 20549 -1
+>rand_prog    20~
+ bounce $r
+ steal 50000 gold coins $r
+~
+>rand_prog    20~
+ swing $r
+ steal recall $r
+ junk recall
+ mpdelay 10
+ stare
+~
+>rand_prog    20~
+ hug $r
+ steal skin $r
+ junk skin
+~
+|
+#20521
+evil soul~
+the Evil Soul~
+An Evil Soul wanders through the tunnels, shrieking loudly.
+~
+The evil soul hovers above the ground. A dirty grey colour, you can see
+almost totally through it. This is the remains of a poor soul that was sold
+to the devil in a vain attempt to better oneself in the mortal life. Now, it
+is destined to wander these tunnels for all eternity, until a good hearted
+being ends its misery. It radiates evil.
+~
+dfgmnoq dkst -800 X 0 
+40 5 -10 20d20+400
+0 150000
+8 8 0 2 0 6
+T 50 4d5+20 26
+A 25 8 $n glares at you through piercing red eyes.
+E 19 20 20551 -1
+E 18 15 20550 -1
+>fight_prog    30~
+ cast 'death' $n
+ mpdelay 10
+ say DIE $n !!
+~
+>fight_prog    10~
+ cackle
+ mpdelay 10
+ say YOUR SOUL ALREADY BELONGS TO HIM !!!!
+ mpdelay 10
+ laugh $n
+~
+>fight_prog    30~
+ cast 'energy' $n
+ mpdelay 10
+ say Ah, that experience felt good.
+~
+>rand_prog    10~
+ cast 'curse' $r
+ say You are all damned !!
+~
+|
+#20522
+protector devil hell~
+the Protector of Hell~
+A huge Devil protects the Mighty Satan.
+~
+Standing beside the Great Throne of Evil, this huge devil stands protector
+and loyal servant of Satan. He stands at least ten feet tall, with a
+monstrous head that has two great horns. A gigantic tail whips behind him, a
+lethal weapon in itself. Completely red in colour, the creatures skin is
+covered in numerous scars and blisters, the evidence of some severe torture
+in the past. He will do anything his Master bids.
+~
+bdglmno dk -900 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 1 3 1 6
+T 100 3d10+12 6
+T 110 4d5+38 24
+A 2 8 $n scratches behind his horns.
+A 3 8 $n awaits only his Masters command to attack you.
+A 4 8 $n growls at you.
+A 5 8 $n makes a show of his whip.
+E 2 12 20555 -1
+E 5 100 20554 -1
+E 6 17 20553 -1
+E 16 10 20552 -1
+>rand_prog    2~
+  punch $r
+  mpdelay 20
+  say Get out of here, NOW !
+~
+>rand_prog    2~
+  worship satan
+  mpdelay 20
+  say Master, what is your bidding?
+~
+>fight_prog    50~
+ bash $n
+~
+>fight_prog    40~
+ kick $r
+~
+|
+#20523
+devil satan~
+Satan~
+Satan is relaxing here on his huge golden throne.
+~
+Satan, Lord of all Evil, one of the most feared beings in mortal legend is
+even more frightening that you could imagine. A pale white colour, he is
+immense in size. Large, bulbous, red veins streak his entire body. He is
+shrouded in a black aura which can only be the souls he is torturing. It
+hurts to look at him, he radiates so much evil and harm. His face is always
+twisting in and out reality, in the most sickening way. His two hands have
+six claws each, twelve lethal swords ready to slash your skin apart. 
+~
+bcdeglnoq dhk -1000 X 0 
+52 -10 -10 26d26+2520
+0 600000
+6 6 0 2 0 5
+T 33 4d5+30 24
+A 1 6 $n says 'Serving evil leads to great rewards. Kneel before me !'
+A 2 6 $n tells you 'Kill one of your group and I will reward you VERY well'
+A 3 6 $n says 'You would serve me well.'
+A 4 6 $n says 'I have been watching your progress for the last few months.'
+A 5 6 $n says 'I see you have come at last. I have been waiting for you.'
+E 5 7 20562 -1
+E 5 100 20554 -1
+E 8 28 20561 -1
+E 6 30 20560 -1
+E 1 100 20559 -1
+E 16 28 20558 -1
+E 4 18 20557 -1
+E 17 20 20556 -1
+>greet_prog    100~
+ mpdelay 20
+ if isfollow($n)
+   mpat 0 smile
+ else
+   say Welcome to my home $n.
+   mpdelay 20
+   say You should find it to your liking here.
+   mpdelay 10
+   cackle
+ endif
+~
+>rand_prog    5~
+ say Come, serve me.
+ mpdelay 15
+ snap $r
+~
+>rand_prog    5~
+  say $r is my new servant.
+  mpdelay 15
+  cackle
+  mpdelay 10
+  beckon $r
+~
+>rand_prog    10~
+ stand
+ cast 'curse' $r
+ mpdelay 10
+ cast 'blind' $r
+ mpdelay 20
+ say You will serve me.
+ mpdelay 20
+ sit
+~
+>rand_prog    10~
+ stand
+ mpdelay 20
+ emote walks over to the torture chamber and whips a slave.
+ mpdelay 15
+ grin
+ mpdelay 20
+ sit
+~
+>fight_prog    30~
+ cast 'agony' $n
+ cackle $r
+~
+>fight_prog    10~
+ say ATTACKING ME WAS THE WORST THING YOU COULD HAVE IMAGINED
+~
+|

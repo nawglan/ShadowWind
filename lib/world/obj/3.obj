@@ -1,0 +1,17 @@
+#301
+ship ship1~
+{yThe Ship To Port Halyon{x~
+{yThe passenger ship to Port Halyon is docked here.{x~
+~
+12 0 0 0 
+0 0 0 0 0
+0 0 0
+#302
+ferry ship2 ship~
+a ship to Caryllion~
+{yA passenger ship to Caryllion is docked here.{x~
+~
+12 0 0 0 
+0 0 0 0 0
+999999 0 0
+$~

@@ -1,0 +1,3406 @@
+#24600
+The Crevice Between The Paths~
+   You have entered a small crevice through the two paths. It is very smelly
+and damp in here. The exits don't seem to lead anywhere except back the way
+you came. However, on the north side there seems to be a thicket of some sort.
+There are some carvings at the foot of the thicket.
+~
+246 acg 5
+D0
+You see a thicket to the North, it looks as if it could lead somewhere.
+~
+thicket door~
+1 -1 24601 0
+D1
+************************************************************
+~
+~
+0 0 -1 0
+D2
+~
+~
+0 0 14099 0
+E
+(null)~
+
+~
+E
+carvings writing carving writings~
+The carvings are scratched into the thicket, and read,
+   
+   "Beware of the Thicket Beast!"
+~
+E
+thicket scrub bush~
+The thicket is very dense to your north, surrounded by scrub acacia brush,
+and with very little signs of life. You can tell it would be easy to get
+lost here.
+~
+S
+#24601
+In The Entrance To The Manigua Thicket~
+   You have entered the Manigua thicket. All around you is scrub acacia
+brush, with very little signs of life. There are very large paw prints in the
+thicket. It appears something has been dragged through the scrubs here,
+with very little resistance. As you look around, you notice that the thicket 
+you have passed through has closed and locked through a blinding flash of
+bright light, and you cant seem to locate a handle to reopen it.
+~
+246 0 3
+D0
+You see more of the thicket to your North.
+~
+~
+0 0 24602 0
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24602 0
+D2
+You see a thicket bush through which you came.
+~
+thicket door~
+1 -1 24600 0
+D3
+You see more of the thicket to your West.
+~
+~
+0 0 24602 0
+E
+thicket scrub acacia brush~
+As you stare across the thicket, you notice the claw marks and track marks
+indicating a small struggle. It appears some type of beast has dragged 
+his victim through this exact spot.
+~
+S
+#24602
+In The Manigua Thicket~
+   You are in the Manigua Thicket. All around you is scrub acacia brush, with 
+very little signs of life. There are very large paw prints in the thicket,
+indicating there has been some type of minor struggle here. You also 
+notice you are becoming lost, and the exits don't look the same.
+~
+246 0 3
+D0
+You see more of the thicket to your North.
+~
+~
+0 0 24602 0
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24603 0
+D2
+You see more of the thicket to your South.
+~
+~
+0 0 24602 0
+D3
+You see more of the thicket to your West.
+~
+~
+0 0 24608 0
+E
+thicket scrub acacia brush~
+As you stare across the thicket, you notice the claw marks and track marks
+indicating a small struggle. It appears some type of beast has dragged 
+his victim through this exact spot.
+~
+S
+#24603
+In The Manigua Thicket~
+   You are in the Manigua Thicket. All around you is scrub acacia brush, with 
+very little signs of life. There are very large paw prints in the thicket,
+indicating there has been some type of minor struggle here. You also 
+notice you are becoming lost, and the exits don't look the same.
+~
+246 0 3
+D0
+You see more of the thicket to your North.
+~
+~
+0 0 24604 0
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24602 0
+D2
+You see more of the thicket to your South.
+~
+~
+0 0 24602 0
+D3
+You see more of the thicket to your West.
+~
+~
+0 0 24602 0
+E
+thicket scrub acacia brush~
+As you stare across the thicket, you notice the claw marks and track marks
+indicating a small struggle. It appears some type of beast has dragged 
+his victim through this exact spot.
+~
+S
+#24604
+In The Manigua Thicket~
+   You are in the Manigua Thicket. All around you is scrub acacia brush, with 
+very little signs of life. There are very large paw prints in the thicket,
+indicating there has been some type of minor struggle here. You also 
+notice you are becoming lost, and the exits don't look the same.
+~
+246 0 3
+D0
+You see more of the thicket to your North.
+~
+~
+0 0 24602 0
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24602 0
+D2
+You see more of the thicket to your South.
+~
+~
+0 0 24602 0
+D3
+You see more of the thicket to your West.
+~
+~
+0 0 24605 0
+E
+thicket scrub acacia brush~
+As you stare across the thicket, you notice the claw marks and track marks
+indicating a small struggle. It appears some type of beast has dragged 
+his victim through this exact spot.
+~
+S
+#24605
+In The Manigua Thicket~
+   You are in the Manigua Thicket. All around you is scrub acacia brush, with 
+very little signs of life. There are very large paw prints in the thicket,
+indicating there has been some type of minor struggle here. You also 
+notice you are becoming lost, and the exits don't look the same.
+~
+246 0 3
+D0
+You see more of the thicket to your North.
+~
+~
+0 0 24606 0
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24602 0
+D2
+You see more of the thicket to your South.
+~
+~
+0 0 24602 0
+D3
+You see more of the thicket to your West.
+~
+~
+0 0 24602 0
+E
+thicket scrub acacia brush~
+As you stare across the thicket, you notice the claw marks and track marks
+indicating a small struggle. It appears some type of beast has dragged 
+his victim through this exact spot.
+~
+S
+#24606
+In The Manigua Thicket~
+   You are in the Manigua Thicket. All around you is scrub acacia brush, with 
+very little signs of life. There are very large paw prints in the thicket,
+indicating there has been some type of minor struggle here. You also 
+notice you are becoming lost, and the exits don't look the same.
+~
+246 0 3
+D0
+You see more of the thicket to your North.
+~
+~
+0 0 24606 0
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24602 0
+D2
+You see more of the thicket to your South.
+~
+~
+0 0 24602 0
+D3
+You see what appears to be a clearing in the thicket to your west.
+~
+~
+0 0 24607 0
+E
+thicket scrub acacia brush~
+As you stare across the thicket, you notice the claw marks and track marks
+indicating a small struggle. It appears some type of beast has dragged 
+his victim through this exact spot.
+~
+S
+#24607
+The Stone Entrance~
+   You have embarked towards the stone portal, and notice there is no turning
+back now. All around you is bright light illuminated by huge stones that
+are shifting before your eyes. The stones shift shapes and directions just as
+you enter. You are now totally surrounded by a bright light, and all 
+directions appear to lead to the same place.
+~
+246 dghj 2
+D0
+You see a blinding light in that direction.
+~
+~
+0 0 24612 0
+D1
+You see a blinding light in that direction.
+~
+~
+0 0 24612 0
+D2
+You see a blinding light in that direction.
+~
+~
+0 0 24612 0
+D3
+You see a blinding light in that direction.
+~
+~
+0 0 24612 0
+D4
+You see a blinding light in that direction.
+~
+~
+0 0 24612 0
+D5
+You see a blinding light in that direction.
+~
+~
+0 0 24612 0
+S
+#24608
+In The Manigua Thicket~
+   You are in the Manigua Thicket. This part of the thicket appears different,
+with blood stains covering the ground, and most of the twigs and vines are 
+broken. The damaged part of the thicket is leading to your west, all other
+directions appear to be normal.
+~
+246 0 3
+D0
+You see more of the thicket to your North.
+~
+~
+0 0 24602 0
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24602 0
+D2
+You see more of the thicket to your South.
+~
+~
+0 0 24602 0
+D3
+You see what appears to be part of the thicket, although most of the twigs 
+have been trampled on, and there is a clear path of blood stains there.
+~
+~
+0 0 24609 0
+E
+thicket scrub acacia brush blood stains~
+As you stare across the thicket, you notice the claw marks and track marks
+indicate a much larger beast than previously thought. It appears this 
+beast is a very large, and the blood stains in the thicket indicate his 
+victim did not live through the battle.
+~
+E
+twigs vines twig vine~
+You exam the twigs and vines to find little extra detail. The only good for
+these vines and twigs is to mark a path for others to follow. They crack and
+create a trail as you run your hands through them.
+~
+S
+#24609
+The Clearing In The Thicket~
+   You have reached a clearing in the thicket. All around you are the remains
+of what appears to be food for the beast that reigns this thicket. Among the
+remains you can make out only that whoever dared venture here was at one time
+living. You can see the entrance to his lair down, and to your east the
+thicket returns to its previous state.
+~
+246 cdefh 2
+D1
+You see more of the thicket to your East.
+~
+~
+0 0 24608 0
+D5
+You see the a very large lair, with a blood trail only interrupted by what
+seems to be claw marks.
+~
+~
+0 0 24610 0
+E
+thicket scrub acacia brush blood stains~
+As you stare across the thicket, you notice the claw marks and track marks
+indicate a much larger beast than previously thought. It appears this 
+beast is a very large, and the blood stains in the thicket indicate his 
+victim did not live through the battle.
+~
+E
+skeleton skeletons remains~
+You pick through the remains of some poor soul that dared adventure here,
+but there is not much left to examine. The skull is torn into 3 peices, and 
+old blood covers its outer scale. As you pick through the rest of the
+skeleton you can't seem to find his arms or legs. quite strange indeed.
+~
+S
+#24610
+The Lair Of The Thicket Beast~
+   You have entered an enormous lair, all around you there are skeletons of 
+past foes, who did not return to warn other adventurers about this demon of
+the thicket. Just seeing the sheer amount of blood that lies in puddles on
+the hollow ground sends chills down your spine.
+~
+246 adf 0
+D0
+On the North wall, there is nothing but claw marks of this beast's victims as
+they fought to get away.
+~
+~
+0 0 -1 0
+D1
+On the East wall you see blood trickling down, still fresh from the beast's
+last victim.
+~
+~
+0 0 -1 0
+D2
+On the South wall, there is nothing but claw marks of this beast's victims as
+they fought to get away.
+~
+~
+0 0 -1 0
+D3
+On the West wall, there is nothing but claw marks of this beast's victims as
+they fought to get away.
+~
+~
+0 0 -1 0
+D4
+Above you is the way you came, it actually seems to glow in that direction.
+~
+~
+0 0 24609 0
+D5
+On the bottom of the chamber is a trapdoor, its covered in blood as well as 
+everything else in the room.
+~
+trapdoor~
+2 24601 24612 0
+E
+skeleton skeletons remains~
+You pick through the remains of some poor soul that dared adventure here,
+but there is not much left to examine. The skull is torn into 3 peices, and 
+old blood covers its outer scale. As you pick through the rest of the
+skeleton you can't seem to find his arms or legs. quite strange indeed.
+~
+S
+#24612
+The Stone Portal~
+   You have reached a place bursting with energy. You're surrounded by abnormal
+stone shapes of all sizes and colors. There is a stone to your north, but when
+you go to touch it, it is gone. A wisp of air catches you from the west, and
+a strange smell seems to be coming from the north. As you look south, you
+see total darkness, then you turn around and it's so bright you cannot see.
+~
+246 ce 2
+D0
+You see more stones in that direction.
+~
+~
+0 0 24612 0
+D1
+You see more stones in that direction.
+~
+~
+0 0 24612 0
+D2
+You see more stones in that direction.
+~
+~
+0 0 24612 0
+D3
+To your west you can make out what seems to be some type of Avenue made of
+stone.
+~
+~
+0 0 24613 0
+E
+stones stone~
+As you look closer at the stones you notice that they are not actually
+different colors, but the light from the shadows all around you is
+reflecting off them. As the light shifts directions, the stones seem to move
+along with it. Just as one turns, you catch a glimpse of blood trickling 
+down the sides.
+~
+S
+#24613
+The Avenue~
+   You enter an avenue made of clay stones. There are post holes on either 
+side of the avenue which indicate a fence of some sort used to reside here. 
+Every now and then, you can feel the aura of heat gleaming off the corner of 
+a stone to your west. 
+~
+246 a 1
+D0
+There is a Deadly, Sacrificial Pit in that direction.
+~
+~
+0 0 24611 0
+D2
+There is a Deadly, Sacrificial Pit in that direction. 
+~
+~
+0 0 24611 0
+D3
+To your west the avenue stops, and becomes more of a trail. you can make out
+a huge stone that appears to be radiating power from within as it glows with
+such an intensity it is hard to keep focused for long.
+~
+~
+0 0 24614 0
+E
+light gleaming~
+The light is coming from the huge stone ahead, and appears to be the cause of
+the portal you entered.
+~
+E
+stones stone~
+On each stone there are carvings in foreign tongue that you can not 
+distinguish, although you can tell there are many different languages and
+cultures reflected by the many stones of the avenue you are crossing.
+~
+S
+#24614
+At The Slaughter Stone~
+   You have arrived at one of the largest stones you have seen yet. It stands 
+anywhere from two hundred to three hundred feet tall, and radiates an energy
+so powerful it is impossible to actually touch the stone. Dripping down the 
+stone you see trickles of blood. The blood never seems to make it to the 
+ground, being sucked into the stone.
+~
+246 a 1
+D0
+To your north you see the beginning of a gigantic circle made purely of stone.
+~
+~
+0 0 24615 0
+D1
+To your east you can make out what seems to be some type of Avenue made of
+stone.
+~
+~
+0 0 24613 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+blood~
+The blood looks very fresh, and it's aura catches your nose as you flinch in
+disgust.
+~
+E
+stone stones slaughter~
+This particular stone is perfectly smooth and radiates so much energy, it 
+would be impossible to actually touch it. The blood trickling down the stone
+is being sucked into the stone, and therefore none of it ever hits the ground.
+~
+S
+#24615
+The Beginning Of The Stone Circle~
+   As you go around the circle of stone, you notice carvings on particular
+stones. There is dried blood on one of the stones, and writing underneath
+that. The ground is perfectly level, and without debris. The stone continues
+around the circle.
+~
+246 a 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24616 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+To your south you see a gigantic stone illuminating the room there, it is
+by far the largest stone you can see in plain sight, and radiates a strange
+aura as you glare at it.
+~
+~
+0 0 24614 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+scratchings scratching carvings note writing writings~
+"
+	Whoever has dared to go this far:
+
+I have seen the stone circle, and it has made me insane. I must return and
+relieve the dieties of their life, although they have been expecting me and
+have received many reinforcements. To the lower chambers I will have to go  
+and rid this city of these mercenaries or creatures of Jostoricath.
+Garathorm will be rid of such evil and destruction forever. For if I fail,
+surely others will follow, as you have....And I wish you luck, for you have
+a long journey ahead of you.... "  
+
+it is abruptly cut off from there.
+~
+E
+blood stone stones~
+As you look at the stones, you notice one in particular with blood on it, 
+setting it apart from the rest. After wiping the dried blood away you read 
+the carvings and notes of a former adventurer, and from the looks of the 
+blood, he would be deceased.
+~
+S
+#24616
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 a 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24617 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+To your south, you see the beginning of the stone circle.
+~
+~
+0 0 24615 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stones stone~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24617
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 a 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24618 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24616 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stones stone~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24618
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The 
+ground is perfectly level, and light gleams back and forth through the 
+stones.
+~
+246 a 1
+D0
+The stone circle comes to a sharp bend to your north.
+~
+~
+0 0 24619 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24617 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stones stone~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24619
+A Sharp Bend In The Stone Circle~
+   You have reached a sharp bend in the stone circle. Around you there are
+the same types of stones you have seen in the circle. All are very smooth,
+and occasionally a drop of blood or two can be seen trickling down the sides.
+There is one exception. To the west of the bend, there what appears to be an 
+altar of some sort. On the altar is a glowing torch, although it is not lit.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24618 0
+D3
+The bend continues in that direction, towards an altar.
+~
+~
+0 0 24620 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is
+perfectly flat on all edges.
+~
+S
+#24620
+The First Altar Of The Stones~
+   All around you are more stones, each stone is in perfect condition. As you
+reach the middle part of the bend, a stone is turned over behind you, and the
+only exit would seem to be north. This place was the first altar built by the
+people that worship here.
+~
+246 ad 1
+D0
+To your north you see a bend in the circle.
+~
+~
+0 0 24621 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones torch~
+As you look across the stones you notice one that was apparently used as an 
+altar some time before. It has a torch set upon it, and although it is 
+definitely producing light, it is not lit. 
+~
+S
+#24621
+A Sharp Bend In The Stone Circle~
+   You have reached the end of the bend. The stones here are starting to show
+signs of wear and tear, although they are still abnormally level and clean.
+You can either go south, or follow the circle to your west.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones. block that direction.
+~
+~
+0 0 -1 0
+D2
+An altar lies in that direction.
+~
+~
+0 0 24620 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24622 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your west would indicate an increasingly larger amount
+of dust and debris, as the stones to your east are completely spotless.
+~
+S
+#24622
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24621 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24623 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your west would indicate an increasingly larger amount
+of dust and debris, as the stones to your east are showing an increasing less
+amount of wear and debris.
+~
+S
+#24623
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24622 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24624 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your west would indicate an increasingly larger amount
+of dust and debris, as the stones to your east are showing an increasing less
+amount of wear and debris.
+~
+S
+#24624
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24623 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle crosses a dark pit in that direction.
+~
+~
+0 0 24625 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your west would indicate an increasingly larger amount
+of dust and debris, as the stones to your east are showing an increasing less
+amount of wear and debris.
+~
+S
+#24625
+By The Pit Stones~
+   You are on the crossing over a dark pit. To your north and south, the 
+view is blocked by stones that are in essence, floating above the ground in
+a vertical position. To your west, you see the entrance to some chambers above
+this pit. Levitating stones block your path to the north and south.
+~
+246 ad 1
+D0
+Levitating stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24624 0
+D2
+Levitating stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The pit stones continue in that direction.
+~
+~
+0 0 24626 0
+D4
+Levitating stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your west would indicate an increasingly larger amount
+of dust and debris, as the stones to your east are showing an increasing less
+amount of wear and debris.
+~
+S
+#24626
+In The Middle Of The Pit Stones~
+   You are over the middle of a steep pit. As you look down into the pi, you
+see many bodies of past adventurers. You notice the spikes on the sides of the
+pit that would make any attempt to go down futile. To your north, there is a
+large stone door levitating in the air, and to your west and east, the pit
+continues.
+~
+246 ad 1
+D0
+To your north you examine a very large and sturdy stone door. The door glows
+with an aura that words could not describe. It's keyhole would apparently be
+nothing special, and could most likely be picked.
+~
+door~
+1 0 24627 0
+D1
+The pit stones continue in that direction.
+~
+~
+0 0 24625 0
+D2
+Levitating stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The pit stones continue in that direction.
+~
+~
+0 0 24630 0
+E
+stones~
+You examine the stones and become dumbfounded, they appear to be levitating.
+The are again of the same quality, but unlike the other pit stones they do not
+show the appearance of dust on their bottom hinges.
+~
+E
+door~
+To your north is a levitating door. It radiates the darkness around you, and
+as you touch it, he feels utterly cold.
+~
+S
+#24627
+The Quarters Of The High Priest~
+   You have entered the only luxurious spot so far in your journeys beyond
+the portal. In your north corner lies a bed, where a stone priest once
+slept, while on the other side of the bed is a clear path off into the pit.
+On your western wall a is picture of worship, above the top it reads "The 
+Altar God, to praise and worship". The picture shows a being so immense and
+magical, it actually glows. To your east and west are other rooms, probably
+decorated in the same fashion.
+~
+246 ad 1
+D0
+There is a Deadly, Sacrificial Pit that way which will mean certain death.
+~
+~
+0 0 24690 0
+D1
+To your east is a door made entirely of light, and when you go to touch it a
+small keyhole forms, your finger is obviously not the key though.
+~
+door light~
+2 24602 24628 0
+D2
+To your south, you can go back the way you came. Provided you can pick the
+lock.
+~
+door~
+1 0 24626 0
+D3
+To your west is a door much different than the one to your east. This door is 
+almost completely dark, and you couldn't even find the keyhole unless you use
+your hands..
+~
+door dark~
+2 24603 24629 0
+S
+#24628
+The Vault Of The Stone Priest~
+   You have entered a magnificent vault lined with jewelled impressions made 
+of a bright blue light. The floor is transparent and looking below you, the 
+sight is so disturbing, its not possible to look at for more than a second 
+or two at a time. West will take you to the Quarters of the Stone Priest.
+~
+246 d 0
+D0
+The light continues forever in that direction, although each movement brings
+you back to the starting point.
+~
+~
+0 -1 24628 0
+D1
+The light continues forever in that direction, although each movement brings
+you back to the starting point.
+~
+~
+0 -1 24628 0
+D2
+The light continues forever in that direction, although each movement brings
+you back to the starting point.
+~
+~
+0 -1 24628 0
+D3
+The light ends to your west and you can make out the room you came through 
+from the crevices around the door of bricked stone that seems to have 
+materialized in front of your very eyes without you noticing.
+~
+light door~
+2 24602 24627 0
+D5
+The Deadly, Sacrificial Pit lies there, and would mean certain death.
+~
+~
+0 -1 24690 0
+S
+#24629
+Dark Office Of The Stone Priest~
+   You have entered an extremely dark room. As you gaze across the room,
+shining your light you notice that there is a desk and a chair on the north
+wall. Other than that it is almost impossible to see anything. Even as you
+shine your light on the desk in the room, it seems to dim the closer it gets
+to it. Your only exit is west back into the priest's chambers, provided you
+have the key.
+~
+246 d 0
+D0
+The wall is extremely dark, you cannot see in front of you, but your hands 
+tell you there is no exit in that direction.
+~
+~
+0 0 -1 0
+D1
+Back to your east is a door, the priest's chambers are in that direction.
+~
+door dark~
+2 24603 24627 0
+D2
+The wall is extremely dark, you cannot see in front of you, but your hands 
+tell you there is no exit in that direction.
+~
+~
+0 0 -1 0
+D3
+The wall is extremely dark, you cannot see in front of you, but your hands
+tell you there is no exit in that direction.
+~
+~
+0 0 -1 0
+S
+#24630
+By The Pit Stones~
+   You are over the crossing of a dark pit, to your north and south your view
+is blocked by stones that are levitating perfectly above the ground. To your 
+east, you can see the entrance to some chambers above the pit. Levitating
+stones block your way north and south.
+~
+246 ad 1
+D0
+Levitating stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The pit stones continue in that direction.
+~
+~
+0 0 24626 0
+D2
+Levitating stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24631 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your east would indicate an increasingly larger
+amount of dust and debris, as the stones to your west are showing an
+increasing less amount of wear.
+~
+S
+#24631
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth throughout the stones.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle crosses a dark pit in that direction.
+~
+~
+0 0 24630 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Up ahead there is a bend in the stone circle..
+~
+~
+0 0 24632 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your east would indicate an increasingly larger amount
+of dust and debris, as the stones to your west are showing an increasing less
+amount of wear, and a bend in the stones is not far away.
+~
+S
+#24632
+A Sharp Bend In The Stone Circle~
+   You have reached a sharp bend in the stone circle. Around you there are the 
+same type stones you have become accustomed to in the circle. All are very 
+smooth and occasionally a drop of blood or two can be seen trickling down. 
+There is one exception. To the south of this bend there is what appears to 
+be an altar of some sort. On the altar is a torch glowing with light, 
+although it is not lit.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24631 0
+D2
+The bend continues in that direction towards an altar.
+~
+~
+0 0 24633 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is
+perfectly flat on all edges.
+~
+S
+#24633
+The Second Altar Of The Stones~
+   All around you are more stones, each stone is in perfect condition. As you
+reach the middle part of the bend, a stone is turned over behind you, and the
+only exit would seem to be north. This place was the second altar build by the
+people that worshiped here.
+~
+246 adj 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+To your west you see the a bend in the circle.
+~
+~
+0 0 24634 0
+E
+stone stones torch~
+As you look across the stones you notice one that was apparently used as an 
+altar some time before. It has a torch set upon it, and although it is 
+definitely producing light, it is not lit. 
+~
+S
+#24634
+A Sharp Bend In The Stone Circle~
+   You have reached the end of the bend. The stones here are starting to show
+signs of wear and tear, although they are still abnormally level and clean.
+You can either go south, or follow the circle to your west where the stones
+seem to be leading you.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+You see an altar in that direction.
+~
+~
+0 0 24633 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24635 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stones stone~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24635
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24634 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24636 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24636
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. Your
+attention is gained by some stones on the wall with the aura of light
+surrounding them.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24635 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24637 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones carvings light aura~
+As you scan over the stones, you see a set of carvings on one stone in a
+foreign tongue. As your looking at it, a magical aura surrounds the stone
+and translates the writings. This is what it reads:
+
+"   BEWARE!!!
+
+Be forewarned...The deities in the Circle of Altars are mere prisoners in
+this realm of sacrifice. They have no pity, and only serve their master,
+which neither of them have been successful in doing separately. Your only
+chance is to get them to work together against a common foe, perhaps whoever
+imprisoned them..."
+
+With that the message is gone, leaving you dumbfounded.
+~
+S
+#24637
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24636 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24638 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24638
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24637 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24639 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24639
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24638 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24640 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24640
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. Up
+ahead to your south, you can make out a bend in the tunnel.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24639 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle comes to a sharp bend to your south.
+~
+~
+0 0 24641 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. Up ahead, you notice the stones start to bend,
+and will force you to follow their path.
+~
+S
+#24641
+A Sharp Bend In The Stone Circle~
+   You have reached a sharp bend in the stone circle. Around you there are the
+same type stones you have become accustomed to in the circle. All are very
+smooth and occasionally a drop of blood or two can be seen trickling down.
+There is one exception. To the east of this bend there is what appears to
+be an altar of some sort. On the altar is a torch glowing with light, 
+although it is not lit.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24640 0
+D1
+The bend continues in that direction, towards an altar.
+~
+~
+0 0 24642 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is
+perfectly flat on all edges.
+~
+S
+#24642
+The Third Altar Of The Stones~
+   All around you are more stones, each stone is in perfect condition. As you
+reach the middle part of the bend, a stone is turned over behind you, and the
+only exit would seem to be north. This place maintains the third altar built
+by the people that worship here.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+To your south you see a bend in the stone circle.
+~
+~
+0 0 24643 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones torch~
+As you look across the stones you notice one that was apparently used as an 
+altar some time before. It has a torch set upon it, and although it is 
+definitely producing light, it is not lit. 
+~
+S
+#24643
+A Sharp Bend In The Stone Circle~
+   You have reached the end of the bend. The stones here are starting to show
+signs of wear and tear, although they are still abnormally level and clean.
+Up ahead to your east you can hear sounds coming from the walls. You only
+exits are to your north and east.
+~
+246 ad 1
+D0
+The altar lies to your north.
+~
+~
+0 0 24642 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24644 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 4 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the. Then again, the stones keep
+shifting and molding your entrances and exits in each direction. They are
+truly leading you.
+~
+S
+#24644
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24645 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+You see the end of a sharp bend in that direction.
+~
+~
+0 0 24643 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. 
+~
+S
+#24645
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24646 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24644 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. 
+~
+S
+#24646
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+A glowing door stands in that direction.
+~
+door~
+2 24604 24689 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24647 0
+D2
+A glowing door stands in that direction.
+~
+door~
+2 24605 24691 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24645 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. On the northern and southern walls, there are
+stones aligned in a repeated pattern. These patterns coincide with the doors
+on each wall respectively.
+~
+E
+glowing door~
+The images around you are doors. They are wavering in color and size, to open
+one would obviously be a gesture of power in itself, as these rooms appear to
+hold something unnatural and powerful.
+~
+S
+#24647
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+A glowing door stands in that direction.
+~
+door~
+2 24606 24692 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24648 0
+D2
+A glowing door stands in that direction.
+~
+door~
+2 24607 24693 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24646 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. On the northern and southern walls, there are 
+stones aligned in a repeated pattern. These patterns coincide with the doors
+on each wall respectively.
+~
+E
+glowing door~
+The images around you are doors. They are wavering in color and size, to open
+one would obviously be a gesture of power in itself, as these rooms appear to
+hold something unnatural and powerful.
+~
+S
+#24648
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+A glowing door stands in that direction.
+~
+door~
+1 4 24694 0
+D1
+The stone circle comes to a sharp bend to your east.
+~
+~
+0 0 24649 0
+D2
+A glowing door stands in that direction.
+~
+door~
+1 4 24695 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24647 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. On the northern and southern walls, there are 
+stones aligned in a repeated pattern. These patterns coincide with the doors
+on each wall respectively.
+~
+E
+glowing door~
+The images around you are doors. They are wavering in color and size, to open
+one would obviously be a gesture of power in itself, as these rooms appear to
+hold something unnatural and powerful.
+~
+S
+#24649
+A Sharp Bend In The Stone Circle~
+   You have reached a sharp bend in the stone circle. Around you there are the
+same type stones you have become accustomed to in the circle. All are very
+smooth and occasionally a drop of blood or two can be seen trickling down.
+There is one exception. To the north of this bend there is what appears to
+be an altar of some sort. On the altar is a torch glowing with light, 
+although it is not lit.
+~
+246 ad 1
+D0
+The bend continues in that direction, towards an altar.
+~
+~
+0 0 24650 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24648 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is
+perfectly flat on all edges. There is a glow that seems to get brighter as
+you travel around the stone circle, and the energy you feel from the air is
+starting to weigh upon you.
+~
+S
+#24650
+The Altar Of The Sun~
+   You enter into the Altar of the Sun. In the middle of this room stands a
+stone of unusual size and composition. The stone is yellow, however generates
+a white light. Laying on the altar are some skeletal remains, a sacrifice to
+the Sun god. You can follow the altar to your east where it leads back to the
+circle.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+To your east you see a sharp bend in the stone circle.
+~
+~
+0 0 24651 0
+D2
+You see the beginning of the bend to your south..
+~
+~
+0 0 24649 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones torch~
+As you look across the stones you notice one that is currently being used as
+an altar. It has a torch set upon it, and although it is definitely producing
+light, it is not lit. From the torch you see that the remains of the poor
+soul on the altar is its source of power. 
+~
+E
+skeleton remains~
+As you pick through the skeleton on the altar, you notice it is a fresh
+sacrifice. The smell of flesh still burns in the air, and the bones are still
+warm. It is apparent his sacrifice was being burned to death.
+~
+S
+#24651
+A Sharp Bend In The Stone Circle~
+   You have reached the end of the bend. The stones here are starting to show
+signs of wear and tear, although they are still abnormally level and clean.
+You can either go west or north from here.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24652 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The altar lies in that direction.
+~
+~
+0 0 24650 0
+E
+stone stones~
+You examine the stones to find little detail. The only thing interesting is 
+the extreme flatness and cleanliness of the stones, although following the
+bottom of the stones to your east would indicate wear and tear not seen on
+any of the other stones so far. Then again, the stones keep shifting and
+molding your entrances and exits in each direction.
+~
+S
+#24652
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+r~
+0 0 24653 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24651 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. On the northern and southern walls, there are 
+stones aligned in a repeated pattern. These patterns shift and shape to form
+north and south directionals.
+~
+S
+#24653
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24654 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24652 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. On the northern and southern walls, there are 
+stones aligned in a repeated pattern. These patterns shift and shape to form north and south directionals.
+~
+S
+#24654
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24655 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24653 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. On the northern and southern walls, there are 
+stones aligned in a repeated pattern. These patterns shift and shape to form
+north and south directionals.
+~
+S
+#24655
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24656 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24654 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. On the northern and southern walls, there are 
+stones aligned in a repeated pattern. These patterns shift and shape to form
+north and south directionals.
+~
+S
+#24656
+A Sharp Bend In The Stone Circle~
+   You have reached a sharp bend in the stone circle. Around you there are the
+same type stones you have become accustomed to in the circle. All are very 
+smooth and occasionally a drop of blood or two can be seen trickling down. 
+There is one exception. To the west of this bend there is what appears to 
+be an altar of some sort. On the altar is a torch glowing with light, 
+although it is not lit.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+The stone circle continues in that direction.
+~
+~
+0 0 24655 0
+D3
+The bend continues in that direction, towards an altar.
+~
+~
+0 0 24657 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is
+perfectly flat on all edges.
+~
+S
+#24657
+The Altar Of Hydroglix~
+   All around you are more stones, each stone is in perfect condition. You 
+come around the bend to find a beautiful altar of stone that resembles a hot
+ball of fire. The altar seems to glow, and on the bottom, is a memorial for
+Hydroglix.
+~
+246 ad 1
+D0
+To your north you see a sharp bend in the stone circle.
+~
+~
+0 0 24658 0
+D1
+The beginning of the bend continues in that direction.
+~
+~
+0 0 24656 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+memorial bottom~
+On the bottom you see a memorial dedicated to Hydroglix, it talks about the 
+way the gods of the past worked together grouping to destroy their enemies.
+It also curses all that enter this room, and talks about the power of the 
+Hydroglix compared to other gods of the stones. The last thing on the altar
+you see starts "Then Jostoricath turned......" The words seem to stop there
+abrubtly.
+~
+E
+stone stones torch~
+As you look across the stones you notice one that was apparently used as an 
+altar some time before. It has a torch set upon it, and although it is 
+definitely producing light, it is not lit. On the bottom of the Altar is a
+memorial for Hydroglix.
+~
+S
+#24658
+A Sharp Bend In The Stone Circle~
+   You have reached the end of the bend. The stones here are starting to show
+signs of wear and tear, although they are still abnormally level and clean.
+You can either go south from where you came, or follow the circle to your 
+west.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+You see the altar of Hydroglix in that direction.
+~
+~
+0 0 24657 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24659 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. 
+~
+S
+#24659
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The end of a sharp bend is in that direction.
+~
+~
+0 0 24658 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24660 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. 
+~
+S
+#24660
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24659 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24661 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. 
+~
+S
+#24661
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The end of a sharp bend is in that direction.
+~
+~
+0 0 24660 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+The stone circle continues in that direction.
+~
+~
+0 0 24662 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. 
+~
+S
+#24662
+Around the Stone Circle~
+   As you travel around the stone circle you see stones of all shapes and 
+sizes. Some of them tend to change color as you go through them. The ground
+is perfectly level, and light gleams back and forth through the stones. 
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The end of a sharp bend is in that direction.
+~
+~
+0 0 24661 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+You see the beginning of a sharp bend in the stone circle.
+~
+~
+0 0 24663 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges. 
+~
+S
+#24663
+A Sharp Bend in the Stone Circle~
+   You have reached a sharp bend in the stone circle. Around you there are the
+same type stones you have become accustomed to in the circle. All are very 
+smooth and occasionally a drop of blood or two can be seen trickling down. 
+There is one exception. To the south of this bend there is what appears to 
+be an altar of some sort. On the altar is a torch glowing with light, 
+although you see no flame from within.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The stone circle continues in that direction.
+~
+~
+0 0 24662 0
+D2
+The bend continues towards an altar in that direction.
+~
+~
+0 0 24664 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+The stones are perfectly even, each stone appears to have its place, and is
+perfectly flat on all edges.
+~
+S
+#24664
+The Altar of Zacchariath~
+   All around you are more stones, each stone is in perfect condition. You 
+come around the bend to find a altar that is rather different from that 
+others. It is made purely of earthen stone. Even though it is a clay like
+substance, it has the strength of steel. On the bottom of the altar is a 
+memorial for Zacchariath.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+The beginning of a sharp bend is in that direction.
+~
+~
+0 0 24663 0
+D2
+To your south you see a sharp bend in the stone circle.
+~
+~
+0 0 24665 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+memorial zacchariath~
+As you glance across the stone, you come across a memorial to Zacchariath.
+As you read through it, it talks about a powerful battlemage, who grew with
+power and got cocky. He was banished from Garathorm and became part
+of the stone population. He became a deity here and this is his altar.
+~
+E
+stone stones torch~
+As you look across the stones you notice one that was apparently used as an 
+altar some time before. It has a torch set upon it, and although it is 
+definitely producing light, it is not lit. On the bottom part of the stone is
+a memorial to Zacchariath.
+~
+S
+#24665
+A Sharp Bend In The Stone Circle~
+   You have reached the end of the bend. The stones here are starting to show
+signs of wear and tear, although they are still abnormally level and clean.
+You can either go east, or follow the circle to your south where the stones
+seem to be leading you.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+You see an altar in that direction.
+~
+~
+0 0 24664 0
+D2
+You see the beginning of the a city in that direction.
+~
+~
+0 0 24666 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stones stone~
+The stones are perfectly even, each stone appears to have its place, and is 
+perfectly flat on all edges.
+~
+S
+#24666
+Inside The Stone City~
+   You seem have found the beginning of the stone population, and as you've
+seen it is heavily guarded from the outside world. To your north you see
+the outskirts of the Stone Circle, while to your south is more of circle. 
+Further beyond to your south you see a bend.
+~
+246 ad 1
+D0
+The stone circle continues in that direction.
+~
+~
+0 0 24665 0
+D1
+Stones block that direction.
+~
+~
+0 0 24696 0
+D2
+You see more of the stone circle in that direction.
+~
+~
+0 0 24667 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+S
+#24667
+Inside The Stone City~
+   You continue along around the circle. All around you is the hustle
+of the stone city's life. The ground under your feet has been transformed
+into a stone path. Everything around you is decorated in stone jewelry of
+all sorts, and occasionally you catch a procession of priests scramble 
+through towards the altars.
+~
+246 ad 1
+D0
+To your north you see more of the stone city.
+~
+~
+0 0 24666 0
+D1
+Stones block that direction.
+~
+~
+0 0 24697 0
+D2
+To your south you see a trio of altars, and a pattern of huge stones with
+each stone reflecting light back and forth. They seem to glow.
+~
+~
+0 0 24668 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+S
+#24668
+The Altar Of Power~
+   There is a large stone here, used as an altar. The stone glows with a 
+magical gleam and a humming noise catches your ear. Occasionally,
+one of the stone inhabitants contributes to the altar. As the light gleaming
+back and forth through the stones change, you notice the shape of the 
+stones change, and shift to form a more complete passage.
+~
+246 ad 1
+D0
+To your north you see more of the stone city.
+~
+~
+0 0 24667 0
+D1
+To your east, you see another altar.
+~
+~
+0 0 24669 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+S
+#24669
+The Altar Of Arms~
+   There is a large stone here, used as an altar. The stone glows with a
+magical gleam, and a humming noise catches your ear. Occasionally, one of
+the stone inhabitants contributes to the altar. As the light gleams back and
+forth through the stones, you notice the shape and locations of the stones
+immediately shift and disintigrate before your eyes. It seems you have
+activated something in the stones, and located a more perfect passage.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+To your south is a large altar.
+~
+~
+0 0 24670 0
+D3
+To your west is an altar.
+~
+~
+0 0 24668 0
+S
+#24670
+The Great Altar Of The Eclipse~
+   There is a large stone here, used as an altar. The stone glows with a 
+magical gleam and a humming noise catches your ear. Occasionally, one of
+the stone inhabitants contributes to the altar. As the light gleams back and
+forth through the stones, you notice the shape of the stones change, and
+shift to form a more complete passage. You notice carvings on a sign on the
+western wall.
+~
+246 ad 1
+D0
+To your north, you see another altar.
+~
+~
+0 0 24669 0
+D1
+To your east is the GREAT stone, completely blocking anyway past while it
+is closed.
+~
+stone~
+2 24600 24671 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+stone stones~
+You run your fingers across the stones to find a surprise. They SHOCK you.
+It is very apparent this is where the power of the stones centers at. After
+further examination, and looking around, all stones are angled towards the
+eclipse stone.
+~
+S
+#24671
+Inside The Great Stone~
+   As you enter the great stone, you see a rather bland coffin-like room.
+The stones are dull, and everything is gray. You start to hear a strange
+buzzing noise, and all around you the lights flicker back and forth across
+the stones. The sparkling starts first, then the stones shape and shift
+colors. Around you a beautiful procession of altars is forming, and a 
+bustling city lies all around you. Your now on a path, to your east is more
+of the path towards the altar city of stone, and back to your west, you can
+leave through the Great Stone.
+~
+246 ad 1
+D0
+A wooden gate blocks that direction, across the gate are fields of grass, or
+is it just an illusion?
+~
+~
+0 0 -1 0
+D1
+To your east the path continues, towards the insides of the city.
+~
+~
+0 0 24672 0
+D2
+A wooden gate blocks that direction, across the gate are fields of grass, or
+is it just an illusion?
+~
+~
+0 0 -1 0
+D3
+To your west you can leave the great stone and re-enter the Eclipse altar.
+~
+stone~
+2 24600 24670 0
+S
+#24672
+Through The Path~
+   You follow the path as you exit the great stone. There is a picket fence to
+your north and south, and across those fences are orchards filled with ripe fruit.
+The path leads to your east, and goes back to the west.
+~
+246 ad 1
+D0
+A picket fence lies in that direction, directly across from the fence lies a
+orchard of trees, or is it just an illusion?
+~
+~
+0 0 -1 0
+D1
+To your east the path continues, towards the insides of the city.
+~
+~
+0 0 24673 0
+D2
+A picket fence lies in that direction, directly across from the fence lies a
+orchard of trees, or is it just an illusion?
+~
+~
+0 0 -1 0
+D3
+To your west is the great stone, the way you got into this city.
+~
+~
+0 0 24671 0
+S
+#24673
+Through The Path~
+   You have come across a dead end in the path to the east, although it does
+continue to the north. To the south, the path empties into oblivion. Going in 
+that direction could be harmful to your health, as there is no telling if it even 
+has an end. To the north lies the inner part of Sacrifice City.
+~
+246 ad 1
+D0
+To your north lies the inner city.
+~
+~
+0 0 24674 0
+D2
+The Deadly, Sacrificial Pit is that direction, and would mean certain death.
+~
+~
+0 0 24698 0
+D3
+To your west is the path from the great stone to the city.
+~
+~
+0 0 24672 0
+S
+#24674
+Inside The City Of Sacrifice~
+   You have entered the outskirts of a large altar, there are stones glowing
+in bright light, and skeletons on the ground before you. As you look across
+them one is immediately turned to stone and starts to gleam with the others
+then floats to add to the altar.
+~
+246 ad 1
+D0
+To your north lies more of the altar.
+~
+~
+0 0 24676 0
+D1
+To your east lies a hole in the stones.
+~
+~
+0 0 24675 0
+D2
+To your south lies the end of the path, outside the altar.
+~
+~
+0 0 24673 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+S
+#24675
+The Burrow In The Altar~
+   You have entered the burrow in the altar. Sealed by a see-through stone,
+are the future victims of this occult. The walls are all made of stone, and
+it is unusually dark here, as compared to the areas you've seen so far.
+~
+246 ad 1
+D0
+Stones block that direction. Through the stones, you can see the faces of
+fear that await their sacrificial death.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction. Through the stones, you can see the faces of
+fear that await their sacrificial death.
+~
+~
+0 0 -1 0
+D2
+Stones block that direction. Through the stones, you can see the faces of
+fear that await their sacrificial death.
+~
+~
+0 0 -1 0
+D3
+To you west is the entrance to the city of sacrifice
+~
+~
+0 0 24674 0
+S
+#24676
+The Plaza~
+   As you travel through the Altar you come to more of an opening. The few 
+people that are around, refuse to look at you, and you neither can see their
+faces or eyes. Its very gloomy here, as if the population is waiting for 
+something. You can exit to your north and east, or head towards the path to
+south.
+~
+246 ad 1
+D0
+To your north you see the a path, the debris of the normal city life is not
+there, indicating this path is very heavily used.
+~
+~
+0 0 24682 0
+D1
+To your east the plaza continues.
+~
+~
+0 0 24678 0
+D2
+To your south is the entrance to the City of Sacrifice.
+~
+~
+0 0 24674 0
+D3
+To your west is the outer edge of the altar. Along the walls you notice the
+stones seem to be shifting in order to create a message, maybe you should
+investigate more?
+~
+~
+0 0 -1 0
+E
+stone stones message carvings~
+As you study the stones, you eyes cross and a tiny message appears in front 
+of you, it reads as follows:
+
+   THE HIGH PRIEST'S ARE AWARE,
+HELP CAN BE FOUND ON THE WAY.
+
+~
+S
+#24677
+The Waiting Room~
+   This is the room where my timed mobs wait! If your in here, please
+report this to Farrot immediately, and for gods sake don't kill the mob.
+~
+246 ad 1
+D5
+~
+~
+0 0 1203 0
+S
+#24678
+The Plaza~
+   The plaza widens here inside the altar. Everyone around you is carrying
+unusually large amounts of gold and jewelry, you notice this because of the
+bulges in their clothing and armor, and an occasional gold piece slipping
+from beneath their haunches to the ground. These actions appear to be some
+sort of routine.
+~
+246 ad 1
+D0
+To your north is a fountain, surrounded by benches. Apparently this is a
+waiting room of some sort.
+~
+~
+0 0 24681 0
+D1
+To your east is the corner of the plaza.
+~
+~
+0 0 24679 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+To your west the plaza continues.
+~
+~
+0 0 24676 0
+S
+#24679
+Corner Of The Plaza~
+   You have entered the corner of the plaza. This place is very smelly, and is
+where the not so fortunate inhabitants of this city stay. Trash and debris 
+lies all around the floor here. Your only exits are to your north and west.
+~
+246 ad 1
+D0
+To your north is a magnificent section of living.
+~
+~
+0 0 24680 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+To your west is the plaza.
+~
+~
+0 0 24678 0
+S
+#24680
+Corner Of The Plaza~
+   You have crossed to the far corner of the plaza. You can see that this room
+is a much cleaner section to live in than it's southern predecessor. There are
+sleeping spaces, and storage space in the room as well. A large fountain is to 
+the west, while to the south, is a run-down living section.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+There are cabinets and storage spaces on your eastern side of the wall, but
+other than that it is impassable.
+~
+~
+0 0 -1 0
+D2
+To your south is the scum of this city, condemned to live in filth.
+~
+~
+0 0 24679 0
+D3
+To your west is the fountain, surrounded by benches. Apparently this is a
+waiting room of some sort.
+~
+~
+0 0 24681 0
+S
+#24681
+The Golden Fountain~
+   You have reached the center of the area. There is a beautiful fountain
+in the middle. The fountain curves around and has 10 faucets in a beautiful
+context. The water has a gold tint, but appears to be safe for drinking. To 
+your north is a guard station. To you west is a magnificent entrance that
+attracts your attention.
+~
+246 ad 1
+D0
+To your north is a guards hall. On the Door is a sign, simply said. 
+		"KEEP OUT"
+~
+door~
+2 24609 24684 0
+D1
+To your east are quarters for sleeping and bunking.
+~
+~
+0 0 24680 0
+D2
+To your south is a plaza.
+~
+~
+0 0 24678 0
+D3
+To your west is an arched entranceway. The arches are decorated in gold
+and jewelry, and stretches high into the sky. You should definitely look at
+this more closely.
+~
+~
+0 0 24682 0
+S
+#24682
+The Arched Entrance~
+   You have entered a shimmering archway made of layered stone, it has a 
+flowing appearance, as if the stones are flowing downwards. At the columns
+of the archway are golden rods, each rod completely full of gold and jewels.
+As you enter, strange sounds of music can be heard in the distance. In the 
+context of the songs you hear phrases regarding the greed of the land, and
+the power of the people. A strange chill runs down your spine.
+~
+246 acd 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+To your east is a fountain of gold, you can hear the water trickling down as
+you look that direction.
+~
+~
+0 0 24681 0
+D2
+To your south is the plaza of the altar. Sounds of people rustling about
+catch your attention.
+~
+~
+0 0 24676 0
+D3
+To your west you see the Great Altar of Jostoricath, the leader of this
+stone culture. He stares at you from inside the altar, wondering whether or
+not to let you in. There is a field of gold surrounding the altar.
+~
+field gold~
+2 24608 24685 0
+D5
+You see below you an endless fall into the DEADLY sacrificial pit, one wrong
+move and WHAM you are DEAD!
+~
+~
+0 0 24690 0
+S
+#24683
+The Chief Guard's Office~
+   You have wandered intot he chief's office. On the walls are the trophies
+of his victims. The Criminals, judged and killed for their misdeeds by one
+man. Around the room you see the normalities of gold and jewels lying about.
+In the corner of the room is a large desk, above it is a painting of one of
+the dieties of the land. He looks much more powerful than any of the other
+creatures you have met here. The name under the picture is Jostoricath. Your
+only exit is east, back through the door.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+To your east is the guards hall.
+~
+door stone~
+1 -1 24684 0
+D2
+Stones block that direction. Wait, one stone seems to be loose.
+~
+stone~
+1 24699 24694 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+desk~
+In the corner of the wall stands an oak desk. It is very sturdy, and could
+not be tampered with easily. The legs mold into the stone floor.
+~
+E
+picture pictures~
+In the northern corner of the room there is a sturdy desk there, above it
+lies this picture. The border of the picture is made out of a substance you
+have never seen before, it looks very valuable. The picture depicts a 
+creature previously undefined. He stands about 12 feet tall, and about three
+feet around, pure muscle. The hands on the picture eminate a dizzying effect
+and it is apparent this picture was sculpted shortly after a battle of some
+sort.
+~
+S
+#24684
+The Guards Hall~
+   You have entered the guards hall. As you swing around, you see the room in
+its full light. Around the walls are tables and chairs. In the eastern corner
+of the wall there is a buffet type table. This appears to be the room where 
+they serve the public. On the northern wall is a podium, obviously used a 
+lot due to the cracks along the middle of its columns, and on your western 
+wall is nothing but stones.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+To your south is the golden fountain.
+~
+door golden~
+2 24609 24681 0
+D3
+As you look more closely, you see a loose stone, maybe this could be a door
+somewhere?
+~
+stone door~
+1 -1 24683 0
+E
+stone stones~
+As you exam the stones on the walls, you notice there is one loose stone,
+possible a door. It's on the west wall, you should look further.
+~
+E
+buffet table chair chairs~
+As you scan over the buffet table and chairs you are amazed by the quality
+and craftsman ship of the wood. It's oak, with sculpted designs and the
+chairs are high back chairs. Each one is in such a dramatic style it is 
+suited for a king.
+~
+E
+podium~
+In the northern corner stands a sturdy oak podium. It's plated in gold, and
+a jewelled plaque on the front of it says simply "Speaker of the Faith". The
+podium does not look like it is used much.
+~
+S
+#24685
+The Circle Of The Altars~
+   You have reached the middle of the altars, and before you is The Altar Of
+Jostoricath, deity of the stone circle. Although you see two more lesser
+altars to your north and south, this one catches your attention in particular
+Unlike the other two altars that are made out of silver, this one is made out
+of gold coins, as you glare at it, it looks as if it could be a LOT of coins.
+The other two altars both have their small fortunes as well, but don't near
+compare to this one.
+~
+246 ad 1
+D0
+To your north is an altar of silver and jewels. Around the bottom of the
+altar glows a name, Eldora. The deity of poor, and keeper of the sacrifice.
+~
+~
+0 0 24686 0
+D1
+To your east is the arched entrance, it even looks more beautiful from this
+angle.
+~
+entrance~
+1 24608 24682 0
+D2
+So your south is an altar of gold stone. Around the bottom of the altar glows
+a name, Shrodiack. The deity of wealth, and keeper of jewels.
+~
+~
+0 0 24687 0
+D3
+There seems to be a tunnel towards your west, and a coin slot for a keyhole.
+~
+tunnel coin~
+2 24609 24699 0
+S
+#24686
+The Silver Altar~
+   You enter a room decorated entirely silver. Before you stands one of the
+main altars, underneath the altar reads the name Eldora, The deity of poor,
+and keeper of the sacrifice. The walls are shifting stones back and forth, 
+they seem to be cleaning themselves. On northern side of the room, beyond the
+altar is a silver chest.
+~
+246 ad 1
+D0
+Stones block that direction.
+~
+~
+0 0 -1 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+To your south is the intersection of the altars.
+~
+~
+0 0 24685 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+altar stone~
+You glare across the altar of Eldora and a sense of presence fills your
+spine. On the bottom of the altar reads Eldora, deity of poor, and keeper of
+the sacrifice. Below that you now notice more lettering, and although you 
+don't first understand it, it slowly fades into a readable language. It reads
+
+For the wind blows a cold blow
+The deity knows what all know
+The sacrifice of soul
+The sacrifices I show
+Eternal damnation, for
+prison is all I know.
+~
+S
+#24687
+The Golden Altar~
+   You enter a room decorated entirely with gold stone. Before you stands one
+of the main altars, underneath the altar reads the name Shrodiack. The deity
+of wealth, and keeper of jewels. The walls are still shifting in patterns
+around you, but the thing that attracts your attention the most is the
+extreme cleanliness of the room. There is not a single piece of dust on the 
+walls, and even you seem to have been cleaned as you entered.
+~
+246 ad 1
+D0
+To your north is the intersection of the altars.
+~
+~
+0 0 24685 0
+D1
+Stones block that direction.
+~
+~
+0 0 -1 0
+D2
+Stones block that direction.
+~
+~
+0 0 -1 0
+D3
+Stones block that direction.
+~
+~
+0 0 -1 0
+E
+altar stone~
+You glare across the gold of Shrodiack and a sense of presence fills your
+spine. On the bottom of the altar reads Shrodiack, deity of wealth, and
+keeper of jewels. Below that you notice more lettering, and although you
+don't first understand it, it slowly fades into a readable language. It reads
+
+For the wind blows a cold blow
+The deity knows what all know
+The sacrifice of soul
+The sacrifices I show
+Eternal damnation, for
+prison is all I know.
+~
+S
+#24688
+The Grand Stone Of Jostoricath~
+   As you enter this labyrinth of Jostoricath, you are overwhelmed by the
+gold. Gold on the floor, ceiling, even the Stone Of Jostoricath, all
+decorated extravagantly with gold tapestries. The altar is the most
+beutiful you've had eyes to catch on this trip. The altar is shaped like
+two coins, each through the middle of the other, and it floats above the
+ground. In the corner is a large throne, where Jostoricath rests.
+~
+246 dfgj 1
+D0
+Gold coins block that direction.
+~
+~
+0 0 -1 0
+D1
+~
+~
+0 0 24699 0
+D2
+Gold coins block that direction.
+~
+~
+0 0 -1 0
+D3
+Gold coins block that direction.
+~
+~
+0 0 -1 0
+D4
+Gold coins block that direction.
+~
+~
+0 0 -1 0
+E
+altar stone gold coins coin~
+As you glance upon the coins, you come upon the altar, symbolizing the coins
+with a shape of two coins, one in the middle of the other. As you reach out
+to touch it, it shifts shape, and although the bottom of the altar stays
+constant, the top had become evenly flat. You also notice that this altar
+is not movable, even for the strongest foe. 
+~
+S
+#24689
+Chamber Of Elements~
+   You enter the stone chamber of the elements. This room is the resting place
+of the elementals. On the wall you see different plaques and pictures to
+decorate this Necromancer. Along the north wall is his sleeping quarters, a 
+finely crafted oak bed. Hanging above you is a lamp made of gold, it looks
+like it could be worth a lot.
+~
+246 d 0
+D0
+To your north side of the chamber, although impassable, is a finely crafted
+bed.
+~
+~
+0 0 -1 0
+D1
+To your east side of the chamber, although impassable, are a lot of trophies
+and plaques.
+~
+~
+0 0 -1 0
+D2
+To your south is a large door, back the way you came.
+~
+door~
+2 24604 24646 0
+D3
+To your west side of the chamber, although impassable, are a lot of trophies
+and plaques.
+~
+~
+0 0 -1 0
+E
+trophies plaques~
+Large trophies and plaques line both the eastern and western side of the
+room. Each plaque and trophy is unique, and as you study them, it is apparent
+this room belongs to a mercenary of some sort.
+~
+S
+#24691
+The Room Of The Sun~
+   As you enter this room, the light here begins to brighten, and you have to
+squint your eyes as a pinch of pain sets in. The only thing you happened to
+catch before the light burned your eyes, was a bed on the southern wall.
+~
+246 d 0
+D0
+You squint your eyes to look at the north wall, between the cracks you see
+a door there
+~
+door~
+2 24605 24646 0
+D1
+You squint your eyes to look at the eastern wall, but you can see nothing
+there.
+~
+~
+0 0 -1 0
+D2
+You squint your eyes to look at the southern wall and notice a bed there,
+it has a spring sticking out of it.
+~
+~
+0 0 -1 0
+D3
+You squint your eyes to look at the western wall, but you can see nothing
+there.
+~
+~
+0 0 -1 0
+S
+#24692
+Chamber Of The White Alchemist~
+   You enter the Alchemist's chambers to find a spotless area of potions,
+scrolls, and stones. Each stacked neatly in its own place. Each stone in
+their respective stack seems to be doing something different. One stack of
+stones glows with a bright light, another hums softly, and yet another stack
+seems to hover just above the ground. The Alchemist who contains this cavern
+seems to be an enchanter of sorts. It is possible that this is she that has
+woven these stones together around the circle and inside the city. Your only
+apparent exit is south.
+~
+246 d 0
+D0
+To your north is a stone wall, very spotless and obviously not an exit.
+~
+~
+0 0 -1 0
+D1
+To your east is a stone wall, very spotless and obviously not an exit.
+~
+~
+0 0 -1 0
+D2
+To your south is a door leading out of this room.
+~
+door~
+2 24606 24647 0
+D3
+To your west is a stone wall, very spotless and obviously not an exit.
+~
+~
+0 0 -1 0
+S
+#24693
+Chamber Of The Dark Alchemist~
+   You enter the Alchemist's chambers to find this room in a total wreck!
+Stones lie all over the place, some glow, some hum, some don't seem to have
+any effects, and still some seem to be floating. Among the potions laying
+scattered across the floor, are scrolls of different types. The Alchemist who
+contains this cavern seems to be an enchanter of sorts. It is possible that 
+this is he that has woven these stones together around the circle and inside
+the city. Your only apparent exit is north.
+~
+246 d 0
+D0
+To your north is a door leading out of this chamber.
+~
+door~
+2 24607 24647 0
+D1
+Beyond the scattered potions and scrolls you can tell there is not an exit in
+that direction.
+~
+~
+0 0 -1 0
+D2
+Beyond the scattered potions and scrolls you can tell there is not an exit in
+that direction.
+~
+~
+0 0 -1 0
+D3
+Beyond the scattered potions and scrolls you can tell there is not an exit in
+that direction.
+~
+~
+0 0 -1 0
+S
+#24694
+Cell Block~
+   As you pick your way into one of the cell blocks here, you have entered
+where this city keeps its prisoners. The very first thing you notice is the
+bars, they are all made of stone. As you reach out to test the strength, it
+is obvious they are made of steel. Your can exit to your south, or there is
+a door to your north.
+~
+246 d 0
+D0
+To your north you catch a small lever in the bars, below the lever is a sort
+of keyhole.
+~
+bar lever~
+2 -1 24683 0
+D1
+Stone bars block that direction.
+~
+~
+0 0 -1 0
+D2
+To your south is the way you came, through the stone door.
+~
+door~
+1 4 24648 0
+D3
+Stone bars block that direction.
+~
+~
+0 0 -1 0
+S
+#24695
+Cell Block~
+   As you picked your way into one of the cell blocks here, you have entered
+where this city keeps its prisoners. The very first thing you notice is the
+bars, they are all made of stone. As you reach out to test the strength of
+the bars it is apparent they carry the strength of steel. Your only exit is
+to your north.
+~
+246 d 0
+D0
+To your north is the way you came, through the stone door.
+~
+door~
+1 4 24648 0
+D1
+Stone bars block that direction.
+~
+~
+0 0 -1 0
+D2
+Stone bars block that direction.
+~
+~
+0 0 -1 0
+D3
+Stone bars block that direction.
+~
+~
+0 0 -1 0
+S
+#24699
+Tunnel Inside The Altar~
+   You enter a tunnel inside the altar, and the air immediately gives you
+paranoia. It's very quaint in here, and the ground beneath you is filled
+with a swamp like substance although it is in no way water. You dont seem
+to be able to go back the way you came, and the only exit is west.
+~
+246 adfhj 0
+D3
+~
+~
+0 0 24688 0
+S
+$~

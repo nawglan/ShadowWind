@@ -1,0 +1,36 @@
+#3143
+-goal- EXPERIENCE
+-flags- ad
+-knowledge-
+Thou hath done well. Please accept some additional experience for your efforts
+to curtail the hobgoblin invasion.
+~
+-classlist- r
+-racelist- j
+-value- 20000
+-needs- OBJECT
+-vnum- 3000
+-amount- 1
+-needs- OBJECT
+-vnum- 3001
+-amount- 1
+-needs- MONEY
+-amount- 3140
+-needs- OBJECT
+-vnum- 3002
+-amount- 1
+-keywords- hiding place
+-message-
+The Mayor says, 'You might consider looking under Mungo's bar.'
+~
+-keywords- hobgoblin
+-message-
+The Mayor says, 'They are invading this fair city! Please seek out their
+hiding place and return the head of their king to me. They MUST be stopped.'
+~
+-keywords- king
+-message-
+The Mayor says, 'I have heard that he is a fierce warrior. I might suggest
+that you find others of your calibur to assist you in defeating this menace.'
+~
+S

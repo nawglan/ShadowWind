@@ -1,0 +1,266 @@
+{b---{B===================================================================={b---
+                          {wShadowwind  N E W S
+                         {b~~~~~~~~~~~~~~~~~~~~~
+{CLegend{B:  {W/ {b= {cchanged/bugfix{B, {W+ {b= {cadded{B, {W- {b= {cremoved{B, {W! {b= {cimportant notice{B.
+{b---{B===================================================================={b---
+
+{cVersion {c0{B.{c5c
+{c~~~~~~~~~~~~~
+
+{W**** {Y10{W-{Y22{W-{Y98 {W*
+{W- {c Unstability in the code has required us to pull out a backup of 
+   the source to stop the crashes, the updte from the 18th is now out
+   of the game.
+
+{W**** {Y10{W-{Y19{W-{Y98 {W*
+{W- {c Chat channel has been removed. It will be returned after it has
+   been made into a non-mud channel. This change comes because several
+   people who should know better, seem unable to control their comments
+   in a public forum.
+
+{W**** {Y10{W-{Y18{W-{Y98 {W*
+{W/ {cLook Command has been Reformated to show race
+{W/ {cFly no longer shows as a flag for PC's but changes the standing
+   description.
+{W/ {cAFK moved to the left with the rest of the flags.
+{W/ {cHidden flag changed colors to {W({DHidden{W){c and linkless flag changed
+   to {W({RLinkless{W){c to match the new format of look. 
+{W/ {cFixed bug with identify spell so that mortals can cast it now.
+{W/ {cFixed bug with loading multiple quests for a zone.
+{W+ {cAdded Levitate to the look format.
+{W+ {cNew Immortal Description for look.
+{W+ {cNew bash restrictions Ogre can bash giants but not small creatures, 
+   gnome and halfing can bash very small, everyone else can't bash giant 
+   or very small, No dragons can be bashed.
+{W/ {cFly now cancels levitate and levitate cancels fly, it would be a good
+   trick to be levitate-flying.
+{W+ {cImmortals now have roomtitles seperate from titles that show up on the
+   who command, to set your who command title do set <pc> title <title> to
+   set your immortal roomtitle do set <pc> roomtitle <title>.
+{W/ {cWhen in combat look now shows your position in battle if you have been
+   bashed or if your standing.
+
+{W**** {Y10{W-{Y11{W-{Y98 {W*
+{W/ {c Fixed our new recurring crash bug related to cityguards.
+{W/ {c Pets have been restricted in their use of certain player skills.
+{W/ {c Pets are now only able to use lights.
+{W/ {c Fixed where and vnum to now work with the assign code.
+{W/ {c Non-theives can no longer circle (duh).
+{W/ {c Color sparse and normal are now gone. All or none. And who list
+   color funkiness is fixed.
+{W+ {c Added in the quest code.  Look for quests in a Park near you.
+{W/ {c Fixed crash bug with quests, added rest of quest messages.
+{W/ {c Fixed assigning of quests to the respective mobs.
+{W/ {c Fixed bug that crashed mud if some messages were missing.
+{W/ {c Fixed a bug that prevented exp as rewards.
+{W/ {c Spiced up Circle/Backstab/Switch.
+{W/ {c Changed Mob Aware Description added for the backstab skill.
+{W/ {c Some skill and spell messages have been changed to be more in keeping 
+   with our theme.
+{W/ {c Mortally wounded, incap and stunned mobs may now be circled in combat.
+{W/ {c Fixed the bug when you backstab and kill with it it won't let you 
+   backstab again.
+{W/ {c Guards no longer knock out Immorts! *Grin*
+{W/ {c You now must be fighting in order to switch targets.
+{W/ {c Fixed dim door crash bug.
+{W/ {c Mana is no longer lost if your target wasn't ever there on dim door.
+{W/ {c Fixed the curse bug when trying to curse an object.
+{W/ {c Cursed items will not be dropable.
+{W/ {c Object oriented curse code is finished.
+{W+ {c Rare load mobs exist, first is in Drow.
+{W/ {c Yochlol can be found again.
+{W/ {c Lick and pet socials have been fixed.
+{W/ {c Changed the end echo at the completion of spells.
+{W+ {c If your not an ogre you can no longer bash giants, more modifications
+   to come for bash!
+{W/ {c Ordering your pets now echo's what you order instead of Okay.
+{W/ {c Open, Close commands now show you the action on the user end instead 
+   of Okay.
+{W/ {c Remove curse for objects now works, more modifications to come for 
+   remove curse on PC's.
+{W+ {c When you fail a locate object it doesn't leave you hanging it now 
+   sends a message.
+{W/ {c Some spells now have been spiced up with ansi, for you viewing 
+   enjoyment.
+{W/ {c Display for TankCond and EnemyCond now match the colors if you look
+   at the mobs in battle.
+{W/ {c Fixed the percentage tables for Display, to match percentage tables 
+   for look.
+{W/ {c New color scheme for Display Conditions.
+{W/ {c Remove curse when casted upon a pc now zaps of the equipment that 
+   is cursed from the pc and makes it fall to the ground.
+
+{W**** {Y10{W-{Y03{W-{Y98 {W*
+{W/ {c Made a few miscellaneous changes to the worlds tonight. No I will not
+   go into further detail, suffice to say we live in an everchanging world
+   and something you were sure of yesterday, may have changed today. In
+   other words, be careful - you have been warned.
+
+{W**** {Y09{W-{Y26{W-{Y98 {W*
+{W! {c Circan's personal crash bug is gone. Just so you know where we're
+   at in terms of stability, the last umpteen crashes were from that bug.
+   So, AS FAR AS I KNOW, there are no current crash bugs, or if there are,
+   this last one was crashing us before they had a chance to show
+   themselves.
+{W! {c Dodge has been improved a bit, but it may not be permanent
+   depending on how things work out. So no complaints if it gets toned
+   down again :)
+
+{W**** {Y09{W-{Y23{W-{Y98 {W*
+{W! {c Be sure you know the policy, as the rules are there for a reason.
+   If you do not understand, then ask, but ask US, not the other players. 
+   The only way to know for sure is to ask those who created the rules. 
+   Otherwise, it can, and most likely will bite you in the ass. Using your
+   characters to help your other characters is definitely aginst the    
+   rules. Also, as this may be unclear as well, if you are part of a
+   group, and one of your other characters would be beneficial to that
+   group and you logoff, bring the other character on to use there
+   beneficial skills or spells, then log back off and return to the group
+   with your original character, it is unacceptable. This is happening all
+   too often, and is definitely now, and always has been aginst the rules.
+ 
+{W- {c Vamp is removed as of now.
+
+{W**** {Y09{W-{Y22{W-{Y98 {W*
+{W/ {cNewbie weapons should no longer sink to the bottom of the sea.
+{W/ {cShopkeepers are now !KILL again, like they were meant to be months
+   ago.
+{W/ {cJust a wee reminder to familiarise yourselves with all aspects of
+   our policy. In particular the sections on multiplaying and PK.
+{W+ {cCheck out the new map in the map shop! More to come in time.. :)
+
+{W**** {Y09{W-{Y18{W-{Y98 {W*
+{W/ {cFixed a memory leak in the corpse code.
+{W/ {cFixed a bug with empty pid files.
+{W/ {cAdded assign to the command list for admins.
+{W! {cPlayer Killing has been updated in our policy to include the
+   continued abuse of spells being cast upon mobs in order to harm
+   and or kill another player, we have asked that this stop, but as
+   of this time it has not, so. be warned, with out any further 
+   warning whatsoever, if you are part of the cause your character 
+   will be deleted, if you login and complain about it with another
+   charcater, well.. just think before you speak. ;)
+
+   {cConsider this your last, and I do stress, {CFinal {cwarning on this
+   matter.
+
+{W**** {Y09{W-{Y14{W-{Y98 {W*
+{W+ {cAdded info in HELP MAILING LIST about the new Admin/Player list
+
+{W**** {Y09{W-{Y07{W-{Y98 {W*
+{W! {c Today somehow the system tossed up a lung, and approx 24 hours
+   worth of game play is missing, files from those who were online were
+   a wonderful 0 bytes in size so.. a backup was placed in, the backup
+   was 24 hours old. Sorry for the problems, and yes, everyone that 
+   played durring this time lost something, some more than others, we 
+   are sorry but there will be no reimbs.. :P Please understand.
+
+   Also, because of this we have adopted a new update procidure,
+   every hour on the hour we backup the player data and object files
+   each in there own format to prevent the (hopefully) possability of
+   ever loosing both objects and data again.
+
+{W**** {Y09{W-{Y04{W-{Y98 {W*
+{W/ {c Some minor bug fixes.
+{W+ {c Added preliminary code for automated quests (more info to come soon)
+{W+ {c Added switch for immos to turn off obj melting.
+{W+ {c Added/fixed charmie communication.
+
+{W**** {Y08{W-{Y30{W-{Y98 {W*
+{W/ {c Death will nolonger transfer you to the Master of Sin, but you will
+   be transfered, enjoy. ;-)
+
+{W**** {Y08{W-{Y23{W-{Y98 {W*
+{W- {c Removed ALL Royal Sceptres from ALL rent files. It is a non-rentable
+   item and you all know it. Hoarding these is classed as bug abuse. If I
+   find it happening again, with any other non-rentable item, expect my
+   wrath to far harsher.
+{W/ {c Fixed specialization so that enchanters can specialize in enchantments.
+{W/ {c Can nolonger wake those that have been knocked out.
+
+{W**** {Y08{W-{Y19{W-{Y98 {W*
+{W/ {c Fixed reply.
+
+{W**** {Y08{W-{Y18{W-{Y98 {W*
+{W/ {c Some miscellaneous bug fixes.
+{W- {c Removed priest from new char creation, affected classes will now have
+   cleric as an option.
+
+{W**** {Y08{W-{Y14{W-{Y98 {W*
+{W+ {c Disintegrate and Prismatic spray are done.
+{W/ {c Fixed yet another bug with flame blade and spiritual hammer.
+
+{W**** {Y08{W-{Y13{W-{Y98 {W*
+{W+ {c Major/minor globe of invunerability is in. Basically minor protects from
+   1-4th circle spells, while major protects from 5-8, mebby 9th.
+{W/ {c Fixed problems with flame blade and spiritual hammer.
+{W/ {c "Hopefully" fixed the crossover spam experienced during fighting.
+
+{W**** {Y08{W-{Y10{W-{Y98 {W*
+{W/ {c Those that cast magic might want to type att or stats.
+{W/ {c Spell dispel magic has been implemented.
+{W/ {c All cases of arn't have been replaced with aren't.
+
+{W**** {Y08{W-{Y07{W-{Y98 {W*
+{W/ {c Helper mobs now only help same race.
+{W/ {c Finally fixed the bug with long ideas or bug reports... If you crash
+   the mud now using either of these commands, you will be drawn, quartered,
+   and left with 0 moves in the Castle.
+{W! {c Cityguards will now knock you out (most of the time).  Also, the elite
+   gateguard is harder to kill so be careful.
+{W+ {c A plaque at Lauri's Garden.
+
+{W**** {Y08{W-{Y06{W-{Y98 {W*
+{W/ {c Fixed another bug with consent.
+{W/ {c Tweeked the food/hunger cycle.
+{W/ {c Disengage will lag a bit as it was intended to.
+{W/ {c Mobs should now return to their default positions.
+{W/ {c Tweeked the hit/move gain for ogres/trolls.
+{W/ {c Sentinel mobs may nolonger be sentinel when hunting so watch out who
+   you piss off.
+{W! {c Read the MOTD...
+
+{W**** {Y08{W-{Y04{W-{Y98 {W*
+{W/ {c Fixed a bug with consent.
+{W/ {c Fixed a bug with player rent files.
+{W/ {c Fixed a bug with flame blade and spiritual hammer.
+{W! {c Shortened news.
+{W! {c Races now need different amounts of food to be happy.
+
+{W**** {Y08{W-{Y03{W-{Y98 {W*
+{W/ {c Consent can now be given to more than one person.
+{W/ {c You can have more than one person's consent.
+{W/ {c Summoning is now possible for shaman, cleric, and priest types.
+{W/ {c Closed yet another loophole in the fight code.
+
+{W**** {Y07{W-{Y31{W-{Y98 {W*
+{W/ {c Several MOB's in lower Moria will defend themselves slightly better
+
+{W**** {Y07{W-{Y29{W-{Y98 {W*
+{W/ {c Fixed some bugs in stats/att.
+{W/ {c Increased amount you can type when providing an idea or bug report.
+{W! {c Enchanted objects can only be enchanted once.  If you have an object
+   that has been enchanted to provide exceptional AC, I would strongly
+   suggest that you lose it now.  Exploiting a bug is not recommended.
+{W/ {c Fixed some problems within the fight code.
+{W/ {c Fixed some problems with isname (order fire, etc).
+{W/ {c Fixed yet another bug within the cityguard code.
+{W/ {c Fixed damage messages for fireshield/iceshield when damage is <= 0.
+
+{W**** {Y07{W-{Y22{W-{Y98 {W*
+{W/ {c Improved host lookup performance (NO LAG!!!)
+{W/ {c Fixed some bugs with dragging objects.
+{W/ {c Removed unused functions and cleaned up structs used by the MUD.
+{W/ {c Fixed some problems with fire/ice shield (may still need work).
+{W/ {c Protection from <blah> now work as was intended.
+{W/ {c Fire shield now gives moderate protection from fire based spells
+   but NOT from cold based spells.
+{W/ {c Ice shield now gives moderate protection from cold based spells
+   but NOT from fire based spells.
+{W/ {c Fixed some problems with hunting code (cityguards)
+{W/ {c Fixed some problems with teleport code. (still testing for players)
+{W/ {c Wilks should now be able to zoom all over the world, expect to find
+   him in the most unlikely of places. 8)
+
+{b---{B===================================================================={b---
+{DEOF{x

@@ -1,0 +1,2134 @@
+#5100
+At The Adamantium Gates~
+   You approach the ancient, gleaming gates and are instantly awestruck at
+the sheer intricacy and strength you behold in them. A collossal cavern can
+be seen beyond the gates, with giant stalactites and stalagmites into which
+houses, walkways, and guardhouses have been carved. A dim green glow, its
+source indiscernable, illuminates the whole area. Thin black figures can be
+seen hurrying along the passages between stalagmites, which are the equivalent
+of streets for this underground home of the Drow.
+~
+51 ad 0
+D0
+The massive gates lead directly onto the city street.
+~
+gates adamantium~
+2 5199 5101 0
+D1
+A tunnel leads out into darkness.
+~
+~
+0 0 5178 0
+D2
+Some {madamantite{x gates lie to the south.
+~
+gates adamantite~
+1 0 10287 0
+E
+gate~
+A large adamantite gate with giant spider shaped emblems stands here.~
+S
+#5101
+The City Street Outside The Adamantium gates~
+   You are upon an east-west concourse running between huge pillars of
+rock that disappear into the darkness above. A huge statue of a spider
+stands grinning at you to the north, wearing the head of a female drow
+twisted with evil. Massive adamantium gates stand to the south, blocking 
+passage to and from the city. 
+~
+51 d 0
+D1
+The street continues to the east.
+~
+~
+0 0 5106 0
+D2
+Massive adamantium gates stand like guardians at the base of the cavern wall.
+~
+gates adamantium~
+2 5199 5100 0
+D3
+The street continues in that direction.
+~
+~
+0 0 5150 0
+E
+statue spider~
+A horrible deity to behold, the goddess of the drow and her followers
+insist upon the worship of spiders. The goddess is represented as a 
+massive bulbous black widow, with long thin legs and a huge silk-spinning
+abdomen. The leering drow face staring at you sends a deep shudder running
+though your body.
+~
+E
+gates~
+A large adamantite gate with giant spider shaped emblems stands here.~
+S
+#5102
+The City Street~
+   You are passing along the city street in the southern section of the
+drow city. A huge bulbous statue of a spider rises high above you on the 
+eastern side, and a door has been carved into the rock on the west. The
+street continues to the north and south.
+~
+51 ad 0
+D0
+The city street continues along between the pillars of rock.
+~
+~
+0 0 5103 0
+D2
+The city street continues.
+~
+~
+0 0 5150 0
+D3
+A simple granite door stands upon the pillar's side.
+~
+door granite~
+1 0 5185 0
+S
+#5103
+The City Street~
+   You are on a city street in the southwestern corner of the giant cavern
+in which the drow have made their home. The street passes south, underneath a 
+huge statue of a giant spider, and to the north where it takes a turn east.
+A door has been carved into the side of a large stalagmite to the east.
+~
+51 ad 0
+D0
+The street continues a ways before it turns to the east.
+~
+~
+0 0 5114 0
+D1
+A door has been carved into the side of a large stalagmite to the east.
+~
+door~
+1 0 5186 0
+D2
+The street continues.
+~
+~
+0 0 5102 0
+E
+house~
+You see the 3rd house of the city.~
+S
+#5104
+The Main Chamber In The Third House~
+   You are inside the main chamber of the house of the third ruling family
+in the drow hierarchy. It is ornately decorated in bas relief, with many
+small spider statuettes and murals depicting various battle scenes in which
+the house has been victorious. A red carpeted stairway leads down to the
+entrance to the house, while another leads upwards to the abode of the
+Matron Mother.
+~
+51 ad 0
+D4
+A beautiful stairway leads up to the chamber where the Matron Mother Resides.
+~
+~
+0 0 5105 0
+D5
+A red carpeted stairway leads down to the House's entrance.
+~
+~
+0 0 5181 0
+E
+statues~
+The statues are of various sizes of carved adamantite depicting ancestral
+matrons of the 3rd house.~
+E
+murals~
+There are several murals.  Some are of great battles.  One shows a
+ceremony worshipping Lloth.~
+S
+#5105
+The Third Throne~
+   Ascending the staircase, you see elaborate silk webs covering the walls
+and ceilings, the work of drow artisans at their best. A bloodstained altar
+stands grimly at the western end of the chamber, a reminder of the House's
+enemies. A mithril throne sits majestically at the northern end of the chamber.
+~
+51 ad 0
+D5
+An ornate staircase descends to the main chamber of the house.
+~
+~
+0 0 5104 0
+E
+altar~
+The altar is made of adamantite and is covered with both fresh and
+long dried blood.~
+S
+#5106
+City Street~
+   Passing between rows of giant stone stalagmites, the street winds its
+way east and west. A small door is carved into one wall to the south, from
+which the soft sound of moaning can be heard.
+~
+51 ad 0
+D1
+The street continues a ways to the east, then turns north.
+~
+~
+0 0 5110 0
+D2
+A small door is carved into the rock wall.
+~
+door~
+1 0 5122 0
+D3
+The street outside the city gates lies to the west.
+~
+~
+0 0 5101 0
+S
+#5107
+The City Street~
+   You are on the city street near the center of the massive cavern in
+which the drow city is housed. An ornate door bearing the symbol of a
+longsword with a spider-shaped pommel has been cut into the side of a
+huge stalagmite to the east. The street leads south and north, where a
+huge pool filled with crystal clear water can be seen.
+~
+51 ad 0
+D0
+The street leads into a large open courtyard, in the middle of which a pool
+of water lies.
+~
+~
+0 0 5183 0
+D1
+A large door with the carved symbol of a sword stands to the east.
+~
+door~
+1 0 5118 0
+D2
+The street continues along to the south.
+~
+~
+0 0 5123 0
+S
+#5108
+The Main Chamber In The Second House~
+   You are inside the main chamber of the house of the second ruling family
+in the drow hierarchy. It is ornately decorated in bas relief, with many
+small spider statuettes and murals depicting various battle scenes in which
+the house has been victorious. A red carpeted stairway leads down to the
+entrance to the house, while another leads upwards to the abode of the
+Matron Mother.
+~
+51 ad 0
+D4
+A beautiful staircase leads upwards.
+~
+~
+0 0 5109 0
+D5
+A red carpeted staircase leads downwards to the entrance to the second house.
+~
+~
+0 0 5182 0
+E
+spiders~
+The spiders look menacing, you would not like to meet one in battle.~
+E
+murals~
+The murals show many spiders in battle.~
+S
+#5109
+The Second Throne~
+   Ascending the staircase, you see elaborate silk webs covering the walls
+and ceilings, the work of drow artisans at their best. A bloodstained altar
+stands grimly at the western end of the chamber, a reminder of the House's
+enemies. A mithril throne sits majestically at the northern end of the chamber.
+~
+51 ad 0
+D5
+A beautiful staircase leads downwards to the main chamber of the house.
+~
+~
+0 0 5108 0
+E
+altar~
+The altar is made of adamantite.~
+S
+#5110
+A Bend In The City Street~
+   The city street here takes a turn around a large pillar of rock, heading
+west towards the city entrance and north towards the city center. The cavern
+walls rise upwards to the south and east, sheer and unclimbable.
+~
+51 acd 0
+D0
+The city street continues towards the city center.
+~
+~
+0 0 5123 0
+D3
+The street continues towards the city gates.
+~
+gate~
+1 -1 5106 0
+S
+#5111
+The Main Chamber Of The First House~
+   You stand inside the main chamber of the house of the first ruling family
+in the drow hierarchy. It is ornately decorated in bas relief, with many
+small spider statuettes and murals depicting various battle scenes in which
+the house has been victorious. A red carpeted stairway leads down to the
+entrance to the house, while another leads upwards to the abode of the
+Matron Mother.
+~
+51 ad 0
+D4
+A beautiful staircase leads upwards towards the dwelling chamber of the matron
+mother of the first house.
+~
+~
+0 0 5112 0
+D5
+A large staircase leads downwards toward the courtyard.
+~
+~
+0 0 5179 0
+E
+murals~
+The murals and paintings show several bloody battles.~
+E
+paintings~
+The murals and paintings show several bloody battles.~
+E
+queen~
+You see a painting of the evil spider queen Lloth.~
+S
+#5112
+Before The Chamber Of The First Matron Mother~
+   This is a small, but ornate guard room before the chamber wherein dwells
+the matron mother of the first house, the ruling family of the city. A large
+straicase leads down to the house's main chamber, while a heavily barred door
+stands upon the northern wall.
+~
+51 ad 0
+D0
+A thick door stands upon the northern wall, leading into the chamber of the
+matron mother.
+~
+door~
+2 5198 5113 0
+D5
+A large staircase leads downwards.
+~
+~
+0 0 5111 0
+S
+#5113
+The First Throne~
+   With a sense of awe and wonderment you push aside the drow-woven silk
+webs andawesome chamber. Ornate murals and tapestries cover
+the walls, and elaborate carvings make up the entire floor. A grisly altar
+stands at the western end of the chamber, covered in crawling spiders. The 
+throne itself sits like a goddess in its own right in the northern portion
+of the room, dwarfed in elegance only by its beautiful, but deadly occupant.
+~
+51 ad 0
+D1
+Brushing aside the silky webs, you spy a majestic archway leading to a wide
+walkway above the city streets.
+~
+spiderweb~
+1 0 5192 0
+D2
+A large door, hidden behind the spiderwebs, leads out of the chamber.
+~
+door~
+2 5198 5112 0
+E
+table~
+You see a table and chairs.~
+E
+chairs~
+You see a table and chairs.~
+S
+#5114
+A Bend In The City Street~
+   You are at a bend in the street, heading east towards the city center and
+south along a row of pillars housing the commonfolk of the drow city. One
+such dwelling lies directly to the west, through a granite doorway. High
+above the cavern floor to the north, you can just make out a wide walkway
+cutting through the dim green glow which pervades the entire cavern. Leading
+from the top of a tall stalagmite to the basal apex of an elaborately 
+decorated stalactite, the walkway must obviously be used by drow of great 
+importance.
+~
+51 acd 0
+D1
+The street contines to the east towards the city center.
+~
+~
+0 0 5117 0
+D2
+The street continues, apssing by many commoners' dwellings.
+~
+~
+0 0 5103 0
+D3
+A granite doorway leads into a small dwelling carved out of the rock wall.
+~
+door~
+1 0 5189 0
+S
+#5115
+The City Street Outside The Third House~
+   You reach the end of this portion of the city street. A large metal gate
+leads north into a courtyard at the base of the stalagmite housing the third
+ruling drow family. The din of the city is lower here, due to the distance from
+the main areas.
+~
+51 ad 0
+D0
+Beyond the large gates you can see the dwelling place of the third
+ruling drow family.
+~
+gates~
+1 0 5181 0
+D3
+The city street leads back into the more travelled areas of the city.
+~
+~
+0 0 5195 0
+S
+#5116
+The Mages' Academy~
+   You have entered a large cavern hewn from the rock of a huge stalagmite.
+This place is used as a training grounds for young drow, instructed by one
+of the city's best. All about you, instruments of the craft are placed,
+hanging from racks upon the walls or lined up upon benches. 
+~
+51 acd 0
+D3
+A large door leads back outside.
+~
+door~
+1 0 5199 0
+S
+#5117
+The City Street~
+   You are midway along an east-west stetch of road. A doorway leads into a
+large stalagmite to the north, and the street continues both to the west and
+to the east. 
+~
+51 ad 0
+D0
+A granite door leads inside.
+~
+door granite~
+1 0 5120 0
+D1
+The street continues towards the city center.
+~
+~
+0 0 5121 0
+D3
+The street continues to the west.
+~
+~
+0 0 5114 0
+E
+temple~
+The entrance to the Temple of Lloth.~
+S
+#5118
+The Warriors' Academy~
+   You have entered a large cavern hewn from the rock of a huge stalagmite.
+This place is used as a training grounds for young drow, instructed by one
+of the city's best. All about you, instruments of the craft are placed,
+hanging from racks upon the walls or lined up upon benches.
+~
+51 acd 0
+D3
+A large door leads outside.
+~
+door~
+1 0 5107 0
+S
+#5119
+Entrance To The Temple Of Lloth~
+   You are inside the main foyer of the great temple to the goddess of the
+drow. The doors, walls, and decorations are ancient and elaborate almost to
+the limit of the imagination, made of gold and adamantium. 
+~
+51 ad 0
+D3
+A pair of huge double doors lead out of the temple.
+~
+doubledoors~
+1 0 5193 0
+D4
+A large ornate staircase leads upwards.
+~
+~
+0 0 5126 0
+S
+#5120
+The Assassins' Academy~
+   You have entered a large cavern hewn from the rock of a huge stalagmite.
+This place is used as a training grounds for young drow, instructed by one
+of the city's best. All about you, instruments of the craft are placed,
+hanging from racks upon the walls or lined up upon benches.
+~
+51 acd 0
+D2
+A large door leads outside.
+~
+door~
+1 0 5117 0
+S
+#5121
+The City Street~
+   You are on the city street, immediately west from the center of the city
+and the large pool of crystal clear water therein. A door leads to a small
+dwelling to the south, and the street continues to the east and west.
+~
+51 ad 0
+D1
+The center of the drow city lies in that direction.
+~
+~
+0 0 5183 0
+D2
+A small door leads into a commoner's dwelling.
+~
+door~
+1 0 5188 0
+D3
+~
+~
+0 0 5117 0
+S
+#5122
+A Slave Chamber~
+   The foul stench of feces and urine assails your nostrils even as you step
+inside this long chamber. The room extends far into the cave wall, with row
+after row of straw pallets stretching out into the darkness. This would seem
+to be a chamber where slaves of the drow are kept.
+~
+51 ad 0
+D0
+~
+door~
+1 0 5106 0
+E
+straw~
+It doesn't look very comfortable...~
+S
+#5123
+The City Street~
+   You are midway along a north-south city street in the southern portion
+of this immense cavern. The great cavern wall rises high above your head 
+on the eastern side of the road, while a door leads inside a pillar of rock
+to the west. The street continues north and south.
+~
+51 ad 0
+D0
+The street continues in that direction towards a shimmering pool of water.
+~
+~
+0 0 5107 0
+D2
+The street bends immediately to the south.
+~
+~
+0 0 5110 0
+D3
+A small door opens into a commoner's dwelling.
+~
+door~
+1 0 5187 0
+S
+#5124
+The Main Chamber In The Fourth house~
+   You are inside the main chamber of the house of the fourth ruling family
+in the drow hierarchy. It is ornately decorated in bas relief, with many
+small spider statuettes and murals depicting various battle scenes in which
+the house has been victorious. A red carpeted stairway leads down to the
+entrance to the house, while another leads upwards to the abode of the
+Matron Mother.
+~
+51 ad 0
+D4
+A beautiful staircase leads upwards.
+~
+~
+0 0 5125 0
+D5
+A red carpeted staircase leads downwards.
+~
+~
+0 0 5180 0
+S
+#5125
+The Fourth Throne~
+   Ascending the staircase, you see elaborate silk webs covering the walls
+and ceilings, the work of drow artisans at their best. A bloodstained altar
+stands grimly at the western end of the chamber, a reminder of the House's
+enemies. A mithril throne sits majestically at the northern end of the chamber.
+~
+51 ad 0
+D5
+A beautiful staircase leads downwards.
+~
+~
+0 0 5124 0
+S
+#5126
+Entranceway To The Temple Of Lloth~
+   You stand in the entrance way to the temple which opens up to the north
+into a large hallway going east and west.  Small statues of spiders line the
+entrance way's walls.
+~
+51 ad 0
+D0
+~
+~
+0 0 5127 0
+D5
+An ornate staircase leads downwards.
+~
+~
+0 0 5119 0
+E
+statues~
+Looking at the statues makes you shiver.~
+S
+#5127
+A Hallway~
+     You are in a long hallway lined with adamantite.  The walls are engraved
+with pictures of elves and spiders.  The hallway continues east and west.  As
+you look down the hallway you can make out one or two figures moving away from
+you.  To the north is an obsidian stairway.
+~
+51 ad 0
+D0
+~
+~
+0 0 5135 0
+D1
+~
+~
+0 0 5128 0
+D2
+~
+~
+0 0 5126 0
+D3
+~
+~
+0 0 5131 0
+E
+pictures~
+These are pictures of several battles between spiders and elves.
+The spiders were victorious in all of them.~
+E
+elves~
+The elves, those still standing, look bloodied and defeated.~
+E
+spiders~
+The spiders are everywhere, swarming the elves.~
+E
+figures~
+They are gone before you can get a good look.~
+S
+#5128
+A Long Hallway~
+     You are in a long hallway lined with adamantite.  The walls are engraved
+with pictures of elves and spiders.  The hallway continues east and west.  As
+you look down the hallway you can make out one or two figures moving away
+from you.
+~
+51 ad 0
+D1
+~
+~
+0 0 5129 0
+D3
+~
+~
+0 0 5127 0
+E
+pictures~
+These are pictures of several battles between spiders and elves.
+The spiders were victorious in all of them.~
+E
+elves~
+The elves, those still standing, look bloodied and defeated.~
+E
+spiders~
+The spiders are everywhere, swarming the elves.~
+E
+figures~
+They are gone before you can get a good look.~
+S
+#5129
+A Long Hallway~
+     You are in a long hallway lined with adamantite.  The walls are engraved
+with pictures of elves and spiders.  The hallway continues east and west.  As
+you look down the hallway you can make out one or two figures moving away from
+you.
+~
+51 ad 0
+D1
+~
+~
+0 0 5130 0
+D3
+~
+~
+0 0 5128 0
+E
+pictures~
+These are pictures of several battles between spiders and elves.
+The spiders were victorious in all of them.~
+E
+elves~
+The elves, those still standing, look bloodied and defeated.~
+E
+spiders~
+The spiders are everywhere, swarming the elves.~
+E
+figures~
+They are gone before you can get a good look.~
+S
+#5130
+A Long Hallway~
+     You are in a long hallway lined with adamantite.  The walls are engraved
+with pictures of elves and spiders.  The hallway continues east and west.  As
+you look down the hallway you can make out one or two figures moving away from
+you.
+~
+51 ad 0
+D1
+~
+~
+0 0 5134 0
+D3
+~
+~
+0 0 5129 0
+E
+pictures~
+These are pictures of several battles between spiders and elves.
+The spiders were victorious in all of them.~
+E
+elves~
+The elves, those still standing, look bloodied and defeated.~
+E
+spiders~
+The spiders are everywhere, swarming the elves.~
+E
+figures~
+They are gone before you can get a good look.~
+S
+#5131
+A Long Hallway~
+     You are in a long hallway lined with adamantite.  The walls are engraved
+with pictures of elves and spiders.  The hallway continues east and west.  As
+you look down the hallway you can make out one or two figures moving away from
+you.
+~
+51 ad 0
+D1
+~
+~
+0 0 5127 0
+D3
+~
+~
+0 0 5132 0
+E
+pictures~
+These are pictures of several battles between spiders and elves.
+The spiders were victorious in all of them.~
+E
+elves~
+The elves, those still standing, look bloodied and defeated.~
+E
+spiders~
+The spiders are everywhere, swarming the elves.~
+E
+figures~
+They are gone before you can get a good look.~
+S
+#5132
+A Long Hallway~
+     You are in a long hallway lined with adamantite.  The walls are engraved
+with pictures of elves and spiders.  The hallway continues east and west.  As
+you look down the hallway you can make out one or two figures moving away from
+you.  To the south is a door.
+~
+51 ad 0
+D1
+~
+~
+0 0 5131 0
+D2
+~
+door~
+1 0 5133 0
+D3
+~
+~
+0 0 5134 0
+E
+pictures~
+These are pictures of several battles between spiders and elves.
+The spiders were victorious in all of them.~
+E
+elves~
+The elves, those still standing, look bloodied and defeated.~
+E
+spiders~
+The spiders are everywhere, swarming the elves.~
+E
+figures~
+They are gone before you can get a good look.~
+S
+#5133
+The Warrior's Barracks~
+   A long rectangular room stretches out before you, with countless rows of
+beds reaching out to the far wall. By each bed sits a large footlocker and
+a peculiar rack that you decide must be used for stowing weapons. Beyond these
+items, the room and its stone walls are bare.
+~
+51 ad 0
+D0
+A door leads back to the hallway.
+~
+door~
+1 0 5132 0
+E
+beds~
+All of the beds are a mess.~
+E
+clothes~
+All kinds of clothes have been thrown around the room.~
+S
+#5134
+A Long Hallway~
+     You are in a long hallway lined with adamantite.  The walls are engraved
+with pictures of elves and spiders.  The hallway continues east and west.  As
+you look down the hallway you can make out one or two figures moving away from
+you.
+~
+51 ad 0
+D1
+~
+~
+0 0 5132 0
+D3
+~
+~
+0 0 5130 0
+E
+pictures~
+These are pictures of several battles between spiders and elves.
+The spiders were victorious in all of them.~
+E
+elves~
+The elves, those still standing, look bloodied and defeated.~
+E
+spiders~
+The spiders are everywhere, swarming the elves.~
+E
+figures~
+They are gone before you can get a good look.~
+S
+#5135
+The Grand Stairway~
+   You are standing at the bottom of a giant obsidian and adamantite
+stairway, rising up further into the temple. Its gilted edges are trimmed
+with gold and silver, beautiful and resplendant.
+~
+51 ad 0
+D2
+~
+~
+0 0 5127 0
+D4
+~
+~
+0 0 5136 0
+S
+#5136
+The Grand Hallway~
+   You are standing at the top of a giant obsidian and adamantite stairway,
+at the beginning of a short but elegant hallway. An arched doorway stands
+at the east wall. At the northern end of the hall you spy a similar door
+leading west, and another wide, gilt-edged stairway leading up to a huge 
+set of golden double doors.
+~
+51 ad 0
+D0
+~
+~
+0 0 5138 0
+D1
+~
+door~
+1 -1 5137 0
+D5
+~
+~
+0 0 5135 0
+S
+#5137
+The Mages' Barracks~
+   The mages' living quarters are rather clean, with the exception of a few
+used component containers. Additionaly, it is very well decorated. Cots line
+the walls for the mages to sleep on, leaving floor room only about the door
+on the west wall.
+~
+51 ad 0
+D3
+~
+door~
+1 -1 5136 0
+E
+containers~
+The component containers are empty.~
+E
+cots~
+The cots are all neatly made and look fairly comfortable.~
+S
+#5138
+The Grand Hallway~
+   You are walking down a grand hallway, heavily decorated with adamantite
+and gold. To the north the hall ends at a flight of stairs, and a door leads
+west.
+~
+51 ad 0
+D2
+~
+~
+0 0 5136 0
+D3
+~
+door~
+1 -1 5139 0
+D4
+~
+~
+0 0 5140 0
+S
+#5139
+The Clerics' Barracks~
+     The bed chamber is brightly decorated with spider shaped statues, murals
+and the like.  Large beds line the floor making this a comfortable room to
+live in.
+~
+51 ad 0
+D1
+~
+door~
+1 -1 5138 0
+E
+statues~
+The spider shaped statues seem to be watching you.~
+E
+murals~
+The murals are of battle scenes with many clerics prominently depicted.~
+S
+#5140
+The Grand Stairway~
+   You are at the top of the second set of obsidian and adamantite stairs,
+immediately before a massive set of golden, finely detailed doors. This is
+obviously a place of some importance, for no effort was spared in making it
+the most elaborate, ornate, and utterly breathtaking area you have seen in
+the city or temple thus far.
+~
+51 ad 0
+D0
+~
+doors golden~
+1 -1 5141 0
+D5
+~
+~
+0 0 5138 0
+S
+#5141
+The Grand Temple Of Lloth~
+   You are at the southern end of a huge chamber, similar in structure to
+a cathedral, with all the soaring arches and incredible architecture you
+have come to expect from the drow. Beyond you the chamber continues, towards
+a bloodstained altar and dais that betray the true nature of this temple's
+creators. A huge set of golden doubledoors stand on the south wall, and a 
+simple wooden door leads east.
+~
+51 ad 0
+D0
+~
+~
+0 0 5142 0
+D1
+~
+door~
+1 0 5146 0
+D2
+~
+doors golden~
+1 -1 5140 0
+E
+pit~
+The sacrificial pit is in the center of the auditorium.  Perhaps you should
+move closer for a better view...~
+E
+altar~
+You can make out an engraving above the altar.~
+S
+#5142
+The Grand Temple Of Lloth~
+   You are at the northen end of a huge chamber, similar in structure to
+a cathedral, with all the soaring arches and incredible architecture you
+have come to expect from the drow. Beyond you the chamber continues, towards
+a bloodstained altar and dais that betray the true nature of this temple's
+creators. 
+~
+51 ad 0
+D0
+~
+~
+0 0 5145 0
+D2
+~
+~
+0 0 5141 0
+E
+pit~
+The sacrificial pit is in the center of the auditorium.  You can see
+movement in the pit...~
+E
+altar~
+You can make out an engraving above the altar.~
+S
+#5143
+Old DT, Now Waiting Room~
+As you climb down into the pit, thousands of spiders cover you, tearing your
+fragile body to shreds.  
+ 
+Lloth thanks you for your sacrifice.
+~
+51 0 0
+D5
+~
+~
+0 0 1203 0
+S
+#5144
+Western Side Of Chamber~
+     You are on the western side of the main chamber overlooking a sacrificial
+pit.  To the north is an altar.
+~
+51 ad 0
+D0
+~
+~
+0 0 5145 0
+D2
+~
+~
+0 0 5141 0
+E
+pit~
+The sacrificial pit is in the center of the auditorium.  You can see
+movement in the pit...~
+E
+altar~
+You can make out an engraving above the altar.~
+S
+#5145
+The Horrible Bloodstained Altar~
+     You are standing in front of a highly and freshly bloodstained altar.
+Engraved on the top of the altar is a giant spider with a human head.  Looking
+down from the altar you see a large sacrificial pit with thousands of swarming
+spiders looking for their next meal!
+~
+51 ad 0
+D0
+~
+~
+0 0 5148 0
+D2
+~
+~
+0 0 5142 0
+E
+pit~
+There is no way you can fight all those spiders before they'll drain
+the life out of you...~
+E
+spider~
+It is and engraving of the spider queen Lloth~
+S
+#5146
+Slave Cells~
+     This is the main room to the cell chambers for the slaves to be 
+sacrificed.  You notice there are no guards around.
+~
+51 ad 0
+D0
+~
+~
+1 -1 5147 0
+D3
+~
+door~
+1 0 5141 0
+S
+#5147
+Slave Pen~
+     Rotten meat and bread lie about the floor while shackles hang from the 
+walls.  The room reeks of death.  You almost become nauseous and decide to leave
+the room since you were obviously too late to save the slave.
+~
+51 ad 0
+D2
+~
+~
+1 -1 5146 0
+E
+meat~
+No one is that hungry.~
+E
+bread~
+The bread is stale and turning green.~
+S
+#5148
+The Bloodstained Dais~
+   You stand upon a dais at the rear of the huge altar, where the most
+important of drow priestesses alone may tread without fear. You can almost
+feel the palpable stench of evil in the air, which even now is blowing about
+and forming a thick mass of mist!
+~
+51 acd 0
+D2
+~
+~
+0 0 5145 0
+E
+illusion~
+The female drow slowly changes into a giant spider.~
+S
+#5149
+The Drow Treasury~
+   You are taken aback as you enter this tiny chamber, for it is dark, unlit,
+and unfurnished. There are no traces of the fine detailing done to the 
+temple outside, the walls are simply carved from the rock. The moldy stench
+of something rotten hangs in the air.
+~
+51 ad 0
+E
+treasure~
+There is very little treasure left in here.~
+S
+#5150
+A Bend In The City Street~
+   You are at a corner in the ornate city street. The huge walls of the cavern
+rise up to the west and south, blocking your way. The street continues to the
+north and east. You notice a strange green glow coming from the western wall.
+~
+51 acd 0
+D0
+The street continues.
+~
+~
+0 0 5102 0
+D1
+The city entrance lies to the east.
+~
+~
+0 0 5101 0
+D3
+A large but thin boulder looks suspiciously like an opening.
+~
+boulder~
+1 0 5184 0
+S
+#5151
+A Damp Alcove~
+   You enter a small alcove in the face of the cliff, damp and cold from its
+proximity to the sea. Water trickles from the walls into the sandy ground. A
+thin layer of misty air wavers about. The cave is otherwise featureless.
+~
+51 ad 0
+D0
+Feeling along the wall, you are amazed at your luck in discovering a 
+small lever underneath a small pile of moss. You pull it, and hear a 
+soft click, followed by a grating noise, as a hidden door on the wall
+unlocks.
+~
+door~
+1 0 5152 0
+E
+ground sand sandy floor~
+Bending down upon one knee and bringing your light closer to the ground,
+you examine the sandy floor of the cave. To your surprise, the mostly 
+smooth sand is scuffed slightly around the north wall of the cave, in the
+shape of footprints!
+~
+S
+#5152
+A Dark Tunnel~
+   Walking through the damp tunnel, you disturb small insects who flee as
+the edge of your light reaches their hiding spots along the wall and ground.
+The rough, uneven rock walls are about six feet apart, and the ceiling about
+eight feet from the floor. The tunnel takes a turn to the east, and continues
+south towards the outside world.
+~
+51 ad 0
+D1
+The tunnel makes a sharp bend to the east.
+~
+~
+0 0 5153 0
+D2
+The tunnel ends at a wall into which is carved a narrow door.
+~
+door hidden~
+1 0 5151 0
+S
+#5153
+A Dark Tunnel~
+   You are at a sharp bend in this damp tunnel. The sandy floor begins to
+change into rock as the tunnel slopes downwards. Here, the dampness common
+to the rest of the tunnel seems to give way to slightly drier air, though
+the salty smell of the nearby ocean lingers. A few small crabs skitter away
+as you make your careful steps farther along the tunnel, which leads to
+the north, and back to the west.
+~
+51 ad 0
+D0
+The tunnel delves deeper into the earth.
+~
+~
+0 0 5154 0
+D3
+Taking the tunnel in that direction eventually leads outside.
+~
+~
+0 0 5152 0
+S
+#5154
+A Dark Tunnel~
+   You are at a point in this rough-hewn tunnel which slopes very sharply
+downwards the further north you travel. A ways down the tunnel, you think
+you might be able to make out a cave opening up, but the blackness is really
+to thick to be able to tell for sure. You may head farther into the earth to
+the north, or travel towards the surface to the south.
+~
+51 ad 0
+D0
+The tunnel slopes sharply downwards as you continue north.
+~
+~
+0 0 5155 0
+D2
+The tunnel continues that way.
+~
+~
+0 0 5153 0
+S
+#5155
+A Dark Tunnel~
+   You are at the end of the tunnel, right before the entrance to a small
+but smelly cave. You cannot really tell what lies inside, for a jutting
+side of rock blocks your light and vision. The small insects and crustaceans
+which were so abundant in the upper portion of the tunnel are curiously
+absent here. The cave opens up to the north and the tunnel leads back to
+the south.
+~
+51 acd 0
+D0
+The tunnel opens up into a small but evil-smelling cave.
+~
+~
+0 0 5156 0
+D1
+Dragging your hands along the cold rock wall, your fingers happen to discover
+a small crack in the wall.
+~
+wall crack~
+1 0 5157 0
+D2
+The tunnel slopes sharply upwards to the south.
+~
+~
+0 0 5154 0
+S
+#5156
+A Smelly Cave~
+   You find yourself in a strangely shaped cave, thick with a strange, rotting
+smell. The cave ceiling reaches perhaps a dozen feet above you, and the floor
+dips down two feet from the tunnel leading here. 
+~
+51 ad 0
+D2
+A dark tunnel leads out of the cave.
+~
+~
+0 0 5155 0
+S
+#5157
+A Sharply Sloping Tunnel~
+   You are at the top of a steep incline in the tunnel, leading almost straight
+down into the blackness. It is a good thing the dampness is relatively absent 
+here, for the climb down would surely be much more dangerous were the floor
+wet and slippery. 
+~
+51 ad 0
+D3
+A boulder blocks an opening in the western wall.
+~
+boulder wall~
+1 0 5155 0
+D5
+You could climb down the steep slope, but be careful not to slip.
+~
+~
+0 0 5158 0
+S
+#5158
+A Narrow Ledge~
+   You are on a small ledge set into the side of the wall, with just barely
+enough room to stand. Above you you can see another such ledge, though that
+one looks larger and could hold more than one person at once. The tunnel
+continues almost straight downwards, though you cannot climb down from here,
+it is too dangerous. This ledge continues to the east, where you think you
+can see a safer area to climb down.
+~
+51 adi 0
+D1
+The ledge runs a fair distance to the east, where you might be able to climb
+even further downwards.
+~
+~
+0 0 5159 0
+D4
+You can climb upwards using the many rocky outcroppings set into the wall
+to reach a flat area above.
+~
+~
+0 0 5157 0
+S
+#5159
+A Narrow Ledge~
+   You are at the eastern end of a small ledge in the tunnel wall where you
+may rest during the climb. The tunnel continues above and below you, though
+progress upwards is impossible from here.
+~
+51 acdi 0
+D3
+The narrow ledge continues in that direction.
+~
+~
+0 0 5158 0
+D5
+Small hand and footholds make progress downwards possible.
+~
+~
+0 0 5160 0
+S
+#5160
+A Wider Tunnel~
+   You arrive at the base of the vertical tunnel. From here a wider tunnel
+opens up to the north, the walls more even and smooth. Above you opens up 
+a long shaft, which you may ascend if you desire. The earth is quiet, and 
+begins to seem to press down upon you at this depth.
+~
+51 ad 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 5161 0
+D4
+You may climb up the tunnel wall to a small ledge some fifteen feet above you.
+~
+~
+0 0 5159 0
+S
+#5161
+A Wide Tunnel~
+   This tunnel is rapidly becoming wider and smoother as you progress further
+into the depths of the earth. As a matter of fact, the walls are beginning to
+look like they were carved, instead of naturally formed. The tunnel takes a
+turn to the south, and continues east.
+~
+51 ad 0
+D1
+The tunnel continues that way. From far down that way you think you can 
+hear ... voices?
+~
+~
+0 0 5162 0
+D2
+The wide tunnel ends a fair distance to the south.
+~
+~
+0 0 5160 0
+S
+#5162
+A Wide Tunnel~
+   You are at a bend in the tunnel, where it begins once again to slope
+downwards, leading deeper into the depths of the earth. Smooth hewn walls
+leave no doubt in your mind that this area was carved by someone or something.
+You may head north or west.
+~
+51 ad 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 5163 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 5161 0
+S
+#5163
+A Wide Tunnel~
+   Travelling further into the darkness, you begin to have to slow yourself
+for risk of tumbling down the ever increasing grade of the descending tunnel.
+Small pebbles tumble away from your feet, to stop a few feet away, and their
+echoes make eerie noises in the tight confines of the tunnel. The way east
+is actually more of a climb downwards, though to the south the incline is much
+easier to manage.
+~
+51 ad 0
+D2
+An inclined tunnel leads upwards to the north, back to the surface.
+~
+~
+0 0 5162 0
+D5
+You'd have to get down on all fours to climb down that steep slope.
+~
+~
+0 0 5164 0
+S
+#5164
+A Wide Tunnel~
+   At the base of a long slide to the west, the tunnel once again levels out.
+The rocky ceiling here is higher than before, reaching a full dozen feet into
+the air. The cool dampness of the surface tunnels is completely absent, and
+you begin to notice a definite dryness and warmth coming from the east. You 
+may continue along the tunnel to the east, or ascend the steep incline.
+~
+51 ad 0
+D1
+The tunnel continues that way, where it turns to the north.
+~
+~
+0 0 5165 0
+D4
+It is fairly steep, but if you are careful you could surely manage.
+~
+~
+0 0 5163 0
+S
+#5165
+A Bend In The Tunnel~
+   You are at a slow bend in the wide tunnel. A large cave opens up to the
+north, though it retreats too far into the blackness for you to discern its
+contents. The tunnel also continues to the west.
+~
+51 ad 0
+D0
+You cannot see, smell, or hear anything from the cave, but you still get
+a feeling of unease as you contemplate entering it.
+~
+~
+0 0 5166 0
+D2
+A sudden chill runs down your spine as you spy the outline of a secret door
+on the south wall at the end of the tunnel. Here in the deep, dark confines
+of the earth, you are not alone.
+~
+secret door hidden~
+1 0 5167 0
+D3
+The wide tunnel continues in that direction.
+~
+~
+0 0 5164 0
+S
+#5166
+The Large Cave~
+   You are in a spacious cave deep somewhere in the earth, and can almost
+feel the infinite weight of the rock above you, pressing in. The cave walls
+are at least twenty feet apart from each other, though the back half of the
+cave is enclosed in darkness and you cannot see into it...
+~
+51 acd 0
+D2
+The tunnel leading back outside lies in that direction.
+~
+~
+0 0 5165 0
+S
+#5167
+The Secret Tunnel~
+   You find yourself in a narrow but smooth floored tunnel. The walls and 
+ceiling are each completely finished, the rock carved softer than sandpaper.
+You see dim light, the first besides your own that you have seen, in the
+shape of the outline of a door, to the east. the light is a strange colour,
+howver, a luminescent green.
+~
+51 ad 0
+D0
+A door, concealed from the other side but easily visible from here, is on
+the northern wall of this section of the tunnel.
+~
+secret door~
+1 0 5165 0
+D1
+You may travel to the east towards the dim green light.
+~
+~
+0 0 5168 0
+S
+#5168
+A Secret Tunnel~
+   You are at the eastern end of a narrow secret tunnel. No pretense of
+natural erosion has been made here, the walls are carved for ease of travel
+and not to imitate natural rock formations. A dim green glow comes from the
+door to the east...dare you approach?
+~
+51 ad 0
+D1
+A thick granite door leads farther into...who knows?
+~
+door granite~
+1 0 5169 0
+D3
+The secret tunnel continues.
+~
+~
+0 0 5167 0
+S
+#5169
+A Small Glowing Chamber~
+   You are inside a small chamber carved into the earth. Green fungus grows
+about, illuminating the room with an eerie glow. Small spiders skitter around
+the walls, ceiling, and floor, casting creepy little shadows about. A large
+granite door leads into a tunnel to the west, while another similar one opens
+to the north. 
+~
+51 cd 0
+D0
+A thick granite door, almost hot to the touch, leads out of the chamber.
+~
+door granite~
+1 0 5170 0
+D3
+A thick granite door leads into a narrow tunnel.
+~
+door granite~
+1 0 5168 0
+S
+#5170
+A Thin Underground Bridge~
+   You are completely taken back with the enormity of the cavern you have 
+just entered. You are almost three quarters of the way to the ceiling, on
+a thin rock bridge which seems to twist and turn its way to the other side 
+of this cave. Waves of heat rise from the floor hundreds of feet below, for
+it is made apparently of cooling lava. Uniformly gray except for the glowing
+red nuclei and tendrils of lava seeping from each. The bridge continues north.
+~
+51 dfgi 0
+D0
+The narrow bridge continues in that direction. Be careful not to fall off, it
+would surely mean the end of you.
+~
+~
+0 0 5172 0
+D2
+A massive granite door is set in the wall where the bridge ends.
+~
+granite door~
+1 0 5169 0
+S
+#5171
+A Thin Underground Bridge~
+   You arrive at a dead end, where the bridge simply stops going. You are close
+to the western wall of the cavern, though you cannot reach it. The only way
+you may continue is back the way you came.
+~
+51 dfgi 0
+D1
+The only way back is to the east, unless you wish to jump into the lava.
+~
+~
+0 0 5172 0
+S
+#5172
+A Thin Underground Bridge~
+   Carefully balancing yourself as you advance along the bridge, you can't
+help but shiver at the thought of plunging down into the heat of the lava
+hundreds of feet below. The temperature is making you sweat profusely, and
+you decide it is imperative to get out of this cavern as soon as possible.
+The thin span, supported by narrow pillars of rock rising from the lava,
+makes splits into two seperate exits here. You may travel to the west, east,
+or to the south.
+~
+51 dfg 0
+D1
+The bridge continues that way.
+~
+~
+0 0 5173 0
+D2
+The bridge continues that way.
+~
+~
+0 0 5170 0
+D3
+The bridge continues that way.
+~
+~
+0 0 5171 0
+S
+#5173
+A Thin Underground Bridge~
+   You make your way along the treacherously narrow bridge, careful not to
+slip. Pebbles skitter off the edge from underneath the soles of your boots,
+an omnipresent reminder of the danger inherent in this crossing. The bridge
+gradually bends from the west to the north, continuing in both directions.
+~
+51 dfgi 0
+D0
+The thin bridge continues in that direction.
+~
+~
+0 0 5174 0
+D3
+The bridge continues in that direction.
+~
+~
+0 0 5172 0
+S
+#5174
+A Thin Underground Bridge~
+   You are upon a very narrow bridge in the center of this huge underground
+cavern. Cooling lava, hundreds of feet below, lights the area with a dim red
+glow. The bridge here splits into three different exits. One leads north to
+one end of the cavern, one to the south, and one to the west to a small
+ledge on the cavern wall.
+~
+51 dfg 0
+D0
+The narrow bridge ends some distance to the north.
+~
+~
+0 0 5175 0
+D2
+The bridge continues to the south for a ways, after which it turns west.
+~
+~
+0 0 5173 0
+D3
+The bridge ends at a short ledge on the cavern wall.
+~
+~
+0 0 5176 0
+S
+#5175
+A Thin Underground Bridge~
+   A ways past the split in the bridge to the south, the thin walkway ends.
+Cautiously approaching the edge, you find yourself still over three dozen
+feet from the northern cavern wall. The only way is back to the south to 
+the junction and from there, another path than this one.
+~
+51 dfgi 0
+D2
+The narrow bridge continues in that direction.
+~
+~
+0 0 5174 0
+S
+#5176
+A Thin Underground Bridge~
+   You are on an extremely narrow rock-hewn bridge near the western wall of
+a huge cavern, the floor of which is over seven hundred feet below and 
+consists of cooling lava. The bridge on the western side stops at a small
+ledge in the cavern wall, and continues to the east towards a junction.
+~
+51 dfg 0
+D1
+The narrow bridge continues in that direction.
+~
+~
+0 0 5174 0
+D3
+A large granite door has been carved into the cavern wall.
+~
+door granite~
+1 0 5177 0
+S
+#5177
+The Tunnel Of Ornate Arches~
+   You are in the center of a large tunnel, deep inside the bowels of the
+earth. The ceiling rises at least two dozen feet above your head, supported
+by massive, frescoed arches and pillars. The din and clamor of intelligent
+beings can be heard from the north, from which direction a green glow can
+also be seen. The tunnel continues to the north, and a huge granite door 
+stands on the eastern wall.
+~
+51 ad 0
+D0
+The ornate hallway continues.
+~
+~
+0 0 5178 0
+D1
+A large granite door stands upon the eastern wall.
+~
+door granite~
+1 0 5176 0
+S
+#5178
+The Tunnel Of Ornate Arches~
+   You are in the center of a large tunnel, deep inside the bowels of the
+earth. The ceiling rises at least two dozen feet above your head, supported
+by massive, frescoed arches and pillars. The din and clamor of intelligent
+beings can be heard from the west, where huge gates set into the tunnel
+can be seen.
+~
+51 ad 0
+D2
+The tunnel leads away into the blackness.
+~
+~
+0 0 5177 0
+D3
+Massive gates can be seen, with spindly dark figures guarding.
+~
+~
+0 0 5100 0
+S
+#5179
+The Entrance To The First House~
+   You are in a large courtyard surrounding a towering pillar of rock into
+which this drow family has carved their home. Massive gates lead to the
+city street, and a stairway begins at the base of the pillar, leading to
+the inner chambers.
+~
+51 acd 0
+D1
+Massive gates lead out to the city street.
+~
+gates~
+1 0 5197 0
+D4
+The staircase leads upwards to the house's main chamber.
+~
+~
+0 0 5111 0
+S
+#5180
+The Entrance To The Fourth House~
+   You are in a large courtyard surrounding a towering pillar of rock into
+which this drow family has carved their home. Massive gates lead to the
+city street, and a stairway begins at the base of the pillar, leading to
+the inner chambers.
+~
+51 acd 0
+D2
+Massive gates lead out to the city street.
+~
+gates~
+1 0 5199 0
+D4
+The staircase leads up to the house's main chamber.
+~
+~
+0 0 5124 0
+S
+#5181
+The Entrance To The Third House~
+   You are in a large courtyard surrounding a towering pillar of rock into
+which this drow family has carved their home. Massive gates lead to the
+city street, and a stairway begins at the base of the pillar, leading to
+the inner chambers.
+~
+51 acd 0
+D2
+Massive gates lead out to the city street.
+~
+gates~
+1 0 5115 0
+D4
+The staircase leads up to the house's main chamber.
+~
+~
+0 0 5104 0
+S
+#5182
+The Entrance To The Second House~
+   You are in a large courtyard surrounding a towering pillar of rock into
+which this drow family has carved their home. Massive gates lead to the
+city street, and a stairway begins at the base of the pillar, leading to
+the inner chambers.
+~
+51 acd 0
+D2
+Massive gates lead out to the city street.
+~
+gates~
+1 0 5196 0
+D4
+The staircase leads up to the house's main chamber.
+~
+~
+0 0 5108 0
+S
+#5183
+The Center Of The Drow City~
+   You are in the relative center of the drow city, at the intersection
+of two of the main streets. The merchants and commoners you would expect
+in any other city are completely absent here, the only traffic you can
+see are the many guards and soldiers who constantly scan the area for 
+intruders such as yourself. 
+~
+51 cd 0
+D0
+The street leads north to a quieter section of the city.
+~
+~
+0 0 5194 0
+D1
+The street continues to the east, but ends not too far away.
+~
+~
+0 0 5198 0
+D2
+The street continues south towards the entrance to the city.
+~
+~
+0 0 5107 0
+D3
+The street continues to the west, towards some commoner's dwellings.
+~
+~
+0 0 5121 0
+S
+#5184
+The Fungus Forest~
+   You pass along a long, low ceilinged tunnel ang emerge into a large cave.
+The entire place is aglow with an eerie green light, which seems to be comingcoming
+from a variety of strange fungi covering the walls, floor and ceiling. This
+seems to be a harvesting place, a garden of some sort, that the drow use to
+supplement their normally carnivorous diet.
+~
+51 d 0
+D1
+A long tunnel leads back to the city street.
+~
+boulder~
+1 0 5150 0
+S
+#5185
+A Small Dwelling In The Stalagmite~
+   You find yourself inside a small commoner's abode. The diminuative size
+of the place in any other city would normally be an indication of its owners
+poverty, but this may not be the case here. The place is filled with items
+of obvious value, small mithril statues, elaborate paintings and furniture.
+It soon becomes apparent to you that the small size of the dwelling must be
+due to the relative lack of space in this underground realm.
+~
+51 ac 0
+D1
+A door leads back onto the city street.
+~
+door~
+1 0 5102 0
+S
+#5186
+A Small Dwelling In The Stalagmite~
+   You find yourself inside a small commoner's abode. The diminuative size
+of the place in any other city would normally be an indication of its owners
+poverty, but this may not be the case here. The place is filled with items
+of obvious value, small mithril statues, elaborate paintings and furniture.
+It soon becomes apparent to you that the small size of the dwelling must be
+due to the relative lack of space in this underground realm.
+~
+51 acd 0
+D3
+A door leads back to the city street.
+~
+door~
+1 0 5103 0
+S
+#5187
+A Small Dwelling In The Stalactite~
+   You find yourself inside a small commoner's abode. The diminuative size
+of the place in any other city would normally be an indication of its owners
+poverty, but this may not be the case here. The place is filled with items
+of obvious value, small mithril statues, elaborate paintings and furniture.
+It soon becomes apparent to you that the small size of the dwelling must be
+due to the relative lack of space in this underground realm.
+~
+51 acd 0
+D1
+A door leads back onto the city street.
+~
+door~
+1 0 5123 0
+S
+#5188
+A Small Dwelling In The Stalagmite~
+   You find yourself inside a small commoner's abode. The diminuative size
+of the place in any other city would normally be an indication of its owners
+poverty, but this may not be the case here. The place is filled with items
+of obvious value, small mithril statues, elaborate paintings and furniture.
+It soon becomes apparent to you that the small size of the dwelling must be
+due to the relative lack of space in this underground realm.
+~
+51 acd 0
+D0
+A door leads back onto the city street.
+~
+door~
+1 0 5121 0
+S
+#5189
+A Small Dwelling In The Stalagmite~
+   You find yourself inside a small commoner's abode. The diminuative size
+of the place in any other city would normally be an indication of its owners
+poverty, but this may not be the case here. The place is filled with items
+of obvious value, small mithril statues, elaborate paintings and furniture.
+It soon becomes apparent to you that the small size of the dwelling must be
+due to the relative lack of space in this underground realm.
+~
+51 acd 0
+D1
+A door leads back onto the city street.
+~
+door~
+1 0 5114 0
+S
+#5190
+The Forge~
+   As you step into the room, your eyes and nostrils are instantly assailed
+by a thick choking smoke that fills the room. Metal racks line the walls,
+each holding numerous unfinished or broken pieces of equipment. At the end
+of the cavern, a huge forge is glowing bright orange. A large water barrel
+sits off to one side, to cool the forgemaster's finished handiwork.
+~
+51 cd 0
+D1
+A thick door leads back onto the city street.
+~
+door~
+1 0 5194 0
+S
+#5191
+The Forge~
+   As you step into the room, your eyes and nostrils are instantly assailed
+by a thick choking smoke that fills the room. Metal racks line the walls,
+each holding numerous unfinished or broken pieces of equipment. At the end
+of the cavern, a huge forge is glowing bright orange. A large water barrel
+sits off to one side, to cool the forgemaster's finished handiwork.
+~
+51 cd 0
+D3
+A large door leads back onto the city street.
+~
+door~
+1 0 5194 0
+S
+#5192
+An Ornate Walkway High Above The City~
+   Vertigo almost sends you sprawling as you step along this narrow bridge
+almost threescore yards above the rock floor of the cavern below. The span 
+you traverse connects the top of a huge stalagmite with the bottom end of
+a stalactite of equal size. Below you upon the streets you see the tiny f
+figures of drow running about trying to find a way up to you.
+~
+51 ad 0
+D1
+The ornate walkway continues towards the stalactite and a huge set of golden
+double doors at its base.
+~
+~
+0 0 5193 0
+D3
+A silky curtain of spiderweb opens into a beautifully decorated chamber.
+~
+spiderweb~
+1 0 5113 0
+S
+#5193
+An Ornate Walkway High Above The City~
+   Vertigo almost sends you sprawling as you step along this narrow bridge
+almost threescore yards above the rock floor of the cavern below. The span
+you traverse connects the top of a huge stalagmite with the bottom end of
+a stalactite of equal size. Below you upon the streets you see the tiny f
+figures of drow running about trying to find a way up to you.
+~
+51 ad 0
+D1
+A huge set of golden double doors lead into the stalactite.
+~
+doubledoors~
+1 0 5119 0
+D3
+The walkway continues towards the top of the stalagmite.
+~
+~
+0 0 5192 0
+S
+#5194
+The City Street~
+   You are upon the city street, just north of the busy city center. Two
+massive stalagmites tower above you to either side of the street, with a large
+granite door set into the base of each. The street seems quieter to the north,
+where it ends at a junction heading to the east and west.
+~
+51 ad 0
+D0
+The city street continues towards a junction.
+~
+~
+0 0 5195 0
+D1
+A massive grey door is set into the base of a stalagmite.
+~
+door~
+1 0 5191 0
+D2
+The city center lies a ways to the south.
+~
+~
+0 0 5183 0
+D3
+A massive grey door is set into the base of a stalagmite.
+~
+door~
+1 0 5190 0
+S
+#5195
+A Junction In The City Street~
+   The ornate city street splits into a three way junction here, heading to
+the east, west and south. Looking high above you, you spy a thin walkway
+connecting the top of a tall stalagmite a ways to the west to the bottom of a
+giant stalagmite which disappears into the darkness at the cavernous ceiling.
+~
+51 acd 0
+D1
+The street continues.
+~
+~
+0 0 5115 0
+D2
+The street continues.
+~
+~
+0 0 5194 0
+D3
+The street continues.
+~
+~
+0 0 5196 0
+S
+#5196
+The City Street Outside The Second House~
+   You are on the ornate city street just to the south of the massive gates
+that lead into the courtyard of the house of the second ruling drow family.
+The street continues to the east towards a junction, and to the west where
+another such gate blocks the way farther.
+~
+51 ad 0
+D0
+Massive gates lead into the courtyard.
+~
+gates~
+1 0 5182 0
+D1
+The street to the east branches off to the south and continues east.
+~
+~
+0 0 5195 0
+D3
+The street ends a short ways to the west.
+~
+~
+0 0 5197 0
+S
+#5197
+The City Street Outside The First House~
+   You are at the western end of this ornate street, where gates lead into
+the abode of the prime ruling drow family. The stalagmite which houses this
+eminent family is huge, reaching almost halfway to the cavern ceiling. 
+Straining your eyes, you can barely make out a walkway of some sort that
+leads from the top of this huge rock pillar to the base of a giant stalactite
+hanging slightly to the east.
+~
+51 ad 0
+D1
+The street continues.
+~
+~
+0 0 5196 0
+D3
+Massive gates lead into the courtyard of the first house.
+~
+gates~
+1 0 5179 0
+S
+#5198
+The City Street~
+   You are upon the city street a ways east of the center of the drow city.
+The way to the north and south is blocked by massive pillars of rock. The
+street continues to the east and west.
+~
+51 ad 0
+D1
+The street continues.
+~
+~
+0 0 5199 0
+D3
+The city center lies that way.
+~
+~
+0 0 5183 0
+S
+#5199
+The City Street Outside The Fourth House~
+   You reach the end of an east-west city street to the east of the city
+center. A huge door is set into a stalagmite on the east side, while iron gates
+open up into a large courtyard below the abode of the fourth ruling family of
+the drow. The street heads west.
+~
+51 ad 1
+D0
+Massive iron gates lead into the courtyard of the fourth house.
+~
+gates~
+1 0 5180 0
+D1
+A large door is set into the base of the stalagmite.
+~
+door~
+1 0 5116 0
+D3
+The street heads in that direction back towards the city center.
+~
+~
+0 0 5198 0
+S
+$~

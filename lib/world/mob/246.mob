@@ -1,0 +1,1361 @@
+#24600
+adventurer lost man~
+a lost adventurer~
+A lost adventurer wanders around aimlessly.
+~
+The adventurer appears to have been lost here for a very long time. He has
+a skinny demeanor, and appears to be sweating. He shakes slightly as you 
+motion towards his direction. His eyes appear to have seen something horrid
+for he can only stare at the ground.
+~
+bcdehnopr gk 130 X
+20 10 0 10d10+200
+0 25000
+8 8 1 3 0 4
+T 110 2d6+4 2
+A 9 8 The lost adventurer says 'Can you help me find my way home?'
+A 9 8 The lost adventurer says 'I am lost, I have been here searching a long time to no avail.' 
+E 16 100 16314 -1
+>greet_prog   100~
+if ispc ($n)
+ if isimmort ($n)
+   worship $n
+ else
+  if isfollow ($n)
+  else
+   bow
+   ask $n Can you help me find my way home?
+  endif
+ endif
+else
+endif
+~
+>speech_prog   p I can help~
+if ispc ($n)
+ if isimmort ($n)
+  say I am not worthy of such help!
+ else
+  if level ($n) > 15
+   fol $n
+   cheer
+  else
+   say You would surely die taking me down with you, which is a chance I could
+not take.
+   apologize $n
+  endif
+ endif
+else
+endif
+~
+>rand_prog   30~
+ if isimmort ($n)  
+ else
+   MPOLOAD 24638
+   MPOLOAD 24639
+   MPDELAY 15
+   say For your deeds in helping me, and allowing me to keep my faith in manki
+d, I reward you with the Light Of Faith,
+   MPDELAY 10
+   say May it protect you well in battle and beyond. And a Reward from our peo
+le for my safe return.
+   MPDELAY 10
+   say And now I must return to my people and my town, from hence I came.
+   MPDELAY 5
+   shout TAXI!
+   drop reward
+   drop light
+   wave
+   MPDELAY 25
+   MPECHOAROND A horse and carriage passes through, and with that the lost adv
+nturer is gone.
+   MPGOTO 24677
+   else
+  endif
+~
+>death_prog   100~
+shout $n Is worthless, and has ended my existence pre-maturely.
+~
+|
+#24601
+fire shimrockelemental elemental~
+the Elemental of Fire~
+An intense point of white hot light zips about.
+~
+The essence of the flame, the Fire inside is now visible. Ever moving, ever
+active it goes from point to point to point serving its current master. For
+although it does serve this master now, it knows that nothing is forever, and
+that soon, it will once again be free. So it does as it is bid, and attacks
+when and where it is told. The ferocity of those attacks matched only by the
+fire which burns deep down - the longing for freedom.
+~
+bdelnopqr gkpqs 0 X
+30 -2 -2 5d20+160
+0 30000
+8 8 1 8 0 4
+T 50 5d1+3 1
+Str: 90
+Dex: 90
+Agi: 90
+#24602
+stupid~
+the moonlight~
+
+~
+
+~
+bdgopr k 0 X
+0 20 10 1d1+5
+0 20
+8 8 0 0 0 1
+T 120 1d1+1 1
+E -1 100 24600 -1
+>time_prog   */*/*/*/*/0~
+MPGOTO 24614
+MPECHOAROUND $i The stones begin to shake as moonlight catches the Slaughter Sone.
+MPGOTO 24670
+MPECHO The stones begin to shake as moonlight catches the Eclipse Altar.
+MPGOTO 24671
+unlock stone
+open stone
+mpdelay 5
+MPECHO A swift wind blows through as moonlight crawls across the stones.
+MPGOTO 24677
+~
+>time_prog   */*/*/*/*/1~
+MPGOTO 24614
+MPECHOAROUND $i The stones settle calmly as the moonlight rolls away from the 
+laughter Stone. 
+MPGOTO 24670
+MPECHO The stones settle calmly as the moonlight rolls away from the Eclipse A
+tar.
+MPGOTO 24671
+close stone
+lock stone
+mpdelay 5
+MPECHO A swift wind blows through as the moonlight is shut off from the other 
+ide.
+MPGOTO 24677
+~
+|
+#24603
+knight stone grey~
+a Grey Stone Knight~
+A Grey Stone Knight appears to be perfectly still before you.
+~
+The Stone Knight is completely dressed in grey armor. He stands ten feet
+tall and wears his boots high upon his knees. His face looks very grim,
+as if he has seen it all. His armor is well weathered, and it is 
+apparent he knows his way well in battle.
+~
+bdeflmqr dhkm 800 X
+35 2 -8 18d18+550
+0 112000
+8 8 1 2 0 6
+T 80 6d5+25 3
+E 16 100 3022 -1
+E 11 100 3042 -1
+E 11 40 24614 10
+E 16 15 24613 1
+E 8 15 24612 3
+E 13 15 24611 5
+>greet_prog   100~
+if ispc ($n)
+ if isimmort ($n)
+  tell $n You belong, but you better have your nohassle flag on punk.
+ else
+  tell $n I am one of the guardian of the circle, you do not belong, and must  leave immediately.
+ endif
+endif
+~
+>fight_prog   10~
+emote closes his eyes.
+shout I call upon the deities of the Circle Of Altars to heal thy wounds.
+MPDELAY 5
+MPECHO The stones around you glow with a bright blue light.
+MPCAST 'regenerate'
+kick $n
+~
+>fight_prog   25~
+bash $n
+~
+>fight_prog   50~
+kick $n
+~
+|
+#24604
+maid woman~
+a disfigured maid~
+A disfigured woman is here cleaning the stones.
+~
+The maid is before you wandering around cleaning the stones. She is about
+five feet tall, and her nose stands out approximately six inches. She is very
+ugly, and quite a sight to look at.
+~
+cdghnp djkm 450 X
+20 10 0 10d10+200
+0 25000
+8 8 2 3 0 4
+T 40 3d3+10 9
+A 9 8 The maid starts to sweep the room heartily.
+A 6 8 The maid begins to cry.
+A 6 8 The maid starts mumbling something about dirty ass guests.
+A 6 8 The maid begins to dust the walls and furniture. 
+E -1 100 24632 5
+E 17 100 24634 -1
+E 16 100 24633 -1
+>greet_prog   100~
+if ispc ($n)
+ if isimmort ($n)
+  tell $n Now DON'T you go off and think you can just waltz in here and DIRTY 
+p the place, you GOT IT PAL?
+ else
+  if isfollow ($n)
+  else
+   say Please keep the place clean, you guys make my job so HARD!
+  endif
+ endif
+else
+endif
+~
+>fight_prog   15~
+say You people have NO RESPECT! 
+MPECHO The maid shakes her duster heartily and throws dust at you!
+MPECHO Dust scatters around you everywhere, $n has been Blinded!!!
+MPCAST 'blindness' $n
+~
+>fight_prog   20~
+say Damn you, trying to dirty the place with my blood!
+MPECHO The maid smacks you with her broom, WOW that really hurt!
+MPCAST 'lightning bolt'
+~
+|
+#24605
+necromancer shimrock mercenary~
+Shimrock the necromancer~
+Shimrock the mighty necromancer lies before you in all his glory.
+~
+You examine Shimrock the necromancer to find he is approximately 5 feet
+tall, and has wild red eyes. His flowing blonde hair shows his attributes
+nicely, and as you gesture he catches your movements with his eyes. He
+is an old necromancer, not of the stone race but a mercenary hired by the
+stone people here.
+~
+bcdelmr dhk -600 X
+45 -5 -10 23d23+450
+0 280000
+8 8 0 3 0 4
+T 80 10d5+5 22
+A 12 8 Shimrock says 'Ohh, so you be wishing to try yer' luck would ya?
+A 12 8 Shimrock says 'Trust me mate, you don't stand a chance!
+E 19 100 24637 10
+E 20 100 24637 10
+E 16 60 24635 5
+E 13 35 24636 2
+>rand_prog   5~
+cast 'sense life'
+cast 'true seeing'
+cast 'infravision'
+cast 'armor'
+cast 'armor' 1.fire
+cast 'armor' 2.fire
+cast 'armor' 3.fire
+cast 'armor' 4.fire
+cast 'armor' 5.fire
+cast 'armor' 6.fire
+cast 'sanct
+~
+>greet_prog   100~
+mpkill $n
+MPFORCE shimrockelemental rescue $i
+MPFORCE shimrockelemental kill $n
+MPFORCE 2.shimrockelemental kill $n
+MPFORCE 3.shimrockelemental kill $n
+MPFORCE 4.shimrockelemental kill $n
+MPFORCE 5.shimrockelemental kill $n
+~
+>fight_prog   15~
+cast 'silence' $r
+~
+>fight_prog   15~
+yawn
+~
+|
+#24606
+deity sun~
+the Deity of the Sun~
+The Sun shines brightly before this deity
+~
+You squint your eyes and examine this deity to find little detail other than
+the fact that it is VERY bright. It appears to stand approximately four feet
+tall, and approximately four feet wide. You can't get near her without heat
+penetrating deep into your skin.
+~
+bcdeglqr dhkmpq 900 X
+45 -5 -10 23d23+450
+0 280000
+8 8 2 2 0 7
+T 90 7d5+15 26
+A 7 8 Your eyes begin to squint tightly.
+E 10 50 24641 5
+E 7 50 24642 5
+E 3 50 24644 5
+E 12 60 24640 5
+E 8 60 24643 5
+>greet_prog   100~
+if ispc ($n)
+ if isimmort ($n)
+  kneel $n
+ else
+  if isfollow ($n)
+  else
+   MPECHO You feel the urge to bow to this Master.
+   MPFORCE all bow
+  endif
+ endif
+endif
+~
+>bribe_prog   500000~
+if ispc ($n)
+ if isimmort ($n)
+  tell $n Your money is no good here...
+  MPAT 24677 junk coins
+ else
+  MPDELAY 10
+mpecho The Diety of The Sun closes his eyes tightly and fire shoots out toward
+ $n.
+  mpcast 'regenerate' $n
+  mpcast 'regenerate' $n
+  mpcast 'regenerate' $n
+  mpcast 'regenerate' $n
+  mpcast 'regenerate' $n
+  mpcast 'regenerate' $n
+  MPDELAY 10
+  MPECHO A swift wind blows through the room and the Deity disappears.
+  MPGOTO 24688
+  give all jostoricath
+  MPDELAY 25
+  MPGOTO 24691
+  MPECHO A swift wind blows through the room and the Deity reappears before yo
+.
+ endif
+endif
+~
+>bribe_prog   50000~
+if ispc ($n)
+ if isimmort ($n)
+  tell $n Your money is no good here...
+  MPAT 24677 junk coins
+ else
+  bow $n
+  MPDELAY 10
+  say Such a mighty donation to the altars is worth a thousand words, but inst
+ad I will heal you.
+  cast 'regenerate' $n
+  MPDELAY 15
+  say And may you always be well protected.
+  MPCAST 'sanctuary' $n
+  MPCAST 'armor' $n
+  MPDELAY 15
+  say And may your blows hit your opponents.
+  MPCAST 'bless' $n
+  MPDELAY 15
+  say And may your soul be protected from the evil that surrounds us.
+  MPCAST 'protect evil' $n
+  MPECHO A swift wind blows through the room, the Deity disappears.
+  MPGOTO 24688
+  give all jostoricath
+  MPDELAY 25
+  MPGOTO 24691
+  MPECHO A swift wind blows through the room, and the Deity reappears before y
+u.
+ endif
+endif
+~
+>bribe_prog   10000~
+if ispc ($n)
+ if isimmort ($n)
+  tell $n Your money is no good here...
+  MPAT 24677 junk coins
+ else
+  MPDELAY 10
+  bow $n
+  say A nice donation to the altars is worth a good healing anytime.
+  smile $n
+  cast 'heal' $n
+  MPDELAY 10
+  MPECHO A swift wind blows through the room, the Deity disappears.
+  MPGOTO 24688
+  give all jostoricath
+  MPDELAY 25
+  MPGOTO 24691
+  MPECHO A swift wind blows through the room, and the Deity reappears before y
+u.
+ endif
+endif
+~
+>bribe_prog   5000~
+if ispc ($n)
+ if isimmort ($n)
+  tell $n Your money is no good here...
+  MPAT 24677 junk coins
+ else
+  MPDELAY 10
+  say Well, it's better than nothing...
+  cast 'armor' $n
+  chuckle
+  MPECHO A swift wind blows through the room, and the Deity disappears.
+  MPGOTO 24688
+  give all jostoricath
+  MPDELAY 25
+  MPGOTO 24691
+  MPECHO A swift wind blows through the room, and the Deity reappears before y
+u.
+ endif
+endif
+~
+>bribe_prog   10~
+if ispc ($n)
+ if isimmort ($n)
+  tell $n LAUGH!!! Your that broke!?!?!?!?!?!!!!
+ else
+  MPDELAY 10
+  shout Get $n outta here, before he steals something!
+  slap $n
+  junk coins
+ endif
+endif
+~
+>act_prog   p You are enveloped in flames~
+mpcast 'mend wounds'
+MPECHO Throwing a fireball at the Sun was a truly good move...
+peer $n
+~
+|
+#24607
+deity power~
+Deity of Power~
+A Ghastly figure, the Deity Of Power, hovers before you, leaving you in awe.
+~
+You examine this deity to find he is one to be thought about. His hands glow
+brightly, as he raises it to acknowledge you. His eyes are non-existent, yet
+as he acknowledged your presence, it is obvious he can see. His figure peers
+above you at approximately eight feet tall, and his arms alone are two feet
+in diameter. He is one to be reckoned with.
+~
+bcdegnopr dghkmp 900 X
+45 -5 -10 23d23+450
+0 280000
+8 8 2 2 0 7
+T 60 7d6+15 26
+A 6 8 The Deity of Power laughs scornfully at you.
+>greet_prog   100~
+if ispc ($n)
+ if isimmort ($n)
+ else
+   if isfollow ($n)
+   else
+   say Welcome, may your journey to the City Of Sacrifice be a safe one.
+   endif
+ endif
+else
+endif
+~
+>fight_prog   10~
+cast 'harm'
+~
+>fight_prog   7~
+cast 'heal'
+~
+>fight_prog   30~
+cast 'dispel evil'
+~
+|
+#24608
+priest man~
+a wandering priest~
+A priest wanders across your path.
+~
+You exam the wandering priest in more detail to find he stands five feet
+tall, and has seen his fair day in the battlefield. He looks worn and beat,
+and has a dazzled look on his face. Sweat pours from his eyebrow as he 
+glares back at you icily.
+~
+cdhlm dkm 300 X
+25 7 -3 13d13+250
+0 45500
+8 8 1 3 0 4
+T 100 5d5+5 5
+>rand_prog   10~
+cast 'sanctuary' $r
+~
+>rand_prog   20~
+cast 'bless' $r
+~
+>rand_prog   10~
+pinch $r
+kneel
+pray
+say Forgive me father for I have sinned.
+~
+>fight_prog   9~
+cast 'mend wounds'
+~
+>fight_prog   25~
+cast 'dispel evil' $r
+~
+|
+#24609
+loose stone rolling~
+a rolling stone~
+A loose stone has achieved life before your eyes.
+~
+The rolling stone is a small creature, not more than four feet tall. Its
+arms are mere craters in its surface, and its legs cover no more than an 
+eighth of its body. What catches your attention is the eyes. a stone cold
+grey stare glares back at you as you examine its demeanor.
+~
+bdhlmopr bdkpst 450 X
+25 7 -3 13d13+250
+0 55500
+8 8 0 2 0 3
+T 120 6d5+10 5
+E 22 50 24610 -1
+E -1 100 24604 -1
+Str: 100
+>fight_prog   20~
+shout 'I call upon the spirit of Jostoricath, Assist me!'
+MPDELAY 10
+MPECHO The stones around begin to shake uncontrollably!
+MPDELAY 10
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+>hitprcnt_prog   30~
+scream
+say DIE COMMIE LIZARD!!!!
+~
+>death_prog   100~
+shout In the name of Jostoricath, AVENGE MY DEATH!
+MPDELAY 10
+MPECHO The stones around you begin to thunder loudly!
+MPDELAY 10
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+|
+#24610
+loose stone rolling~
+a rolling stone~
+A loose stone has achieved life before your eyes.
+~
+The rolling stone is a small creature, not more than four feet tall. Its
+arms are mere craters in its surface, and its legs cover no more than an 
+eighth of its body. What catches your attention is the eyes. a stone cold
+grey stare glares back at you as you examine its demeanor.
+~
+bdhlmopr bdkpst 450 X
+25 7 -3 13d13+250
+0 55500
+8 8 0 2 0 3
+T 120 6d5+10 5
+E 22 50 24610 -1
+E -1 100 24605 -1
+Str: 100
+>fight_prog   20~
+shout 'I call upon the spirit of Jostoricath, Assist me!'
+MPDELAY 10
+MPECHO The stones around begin to shake uncontrollably!
+MPDELAY 10
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+>hitprcnt_prog   30~
+scream
+say DIE COMMIE LIZARD!!!!
+~
+>death_prog   100~
+say In the name of Jostoricath, AVENGE MY DEATH!
+MPECHO The stones around you begin to thunder loudly!
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+|
+#24611
+loose stone rolling~
+a rolling stone~
+A loose stone has achieved life before your eyes.
+~
+The rolling stone is a small creature, not more than four feet tall. Its
+arms are mere craters in its surface, and its legs cover no more than an 
+eighth of its body. What catches your attention is the eyes. a stone cold
+grey stare glares back at you as you examine its demeanor.
+~
+bdhlmopr bdkpst 450 X
+25 7 -3 13d13+250
+0 55500
+8 8 0 2 0 3
+T 120 6d5+10 5
+E 22 50 24610 -1
+E -1 100 24606 -1
+Str: 100
+>fight_prog   20~
+shout 'I call upon the spirit of Jostoricath, Assist me!'
+MPDELAY 10
+MPECHO The stones around begin to shake uncontrollably!
+MPDELAY 10
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+>hitprcnt_prog   30~
+scream
+say DIE COMMIE LIZARD!!!!
+~
+>death_prog   100~
+say In the name of Jostoricath, AVENGE MY DEATH!
+MPECHO The stones around you begin to thunder loudly!
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+|
+#24612
+loose stone rolling~
+a rolling stone~
+A loose stone has achieved life before your eyes.
+~
+The rolling stone is a small creature, not more than four feet tall. Its
+arms are mere craters in its surface, and its legs cover no more than an 
+eighth of its body. What catches your attention is the eyes. a stone cold
+grey stare glares back at you as you examine its demeanor.
+~
+bdhlmopr bdkpst 450 X
+25 7 -3 13d13+250
+0 55500
+8 8 0 2 0 3
+T 120 6d5+10 5
+E 22 50 24610 -1
+E -1 100 24607 -1
+Str: 100
+>fight_prog   20~
+shout 'I call upon the spirit of Jostoricath, Assist me!'
+MPDELAY 10
+MPECHO The stones around begin to shake uncontrollably!
+MPDELAY 10
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+>hitprcnt_prog   30~
+scream
+say DIE COMMIE LIZARD!!!!
+~
+>death_prog   100~
+say In the name of Jostoricath, AVENGE MY DEATH!
+MPECHO The stones around you begin to thunder loudly!
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+MPCAST 'earthquake'
+~
+|
+#24613
+asphalt~
+the asphalt~
+
+~
+
+~
+bdgopr k 0 X
+0 20 10 1d1+5
+0 20
+8 8 0 0 0 1
+T 120 1d1+1 1
+#24614
+white alchemist master~
+the White Master of Alchemy~
+A White Master of Alchemy hovers above you.
+~
+You examine the alchemist to find he hovers above you lightly. His height 
+is four feet tall, and he doesn't look like much of an adversary. Of course
+the lightning rotating around his fingers might prove otherwise. Around
+his neck is a medallion which has some strange words on it which you do
+not understand.
+~
+bcdegnopr dghkmp 900 X
+45 -5 -10 23d23+450
+0 280000
+8 8 2 2 0 7
+T 90 7d6+15 26
+A 8 8 The Master Alchemist utters some words and a stone glows blue and fizzle slightly.
+A 8 8 The Master Alchemist waves his hand over a stone and it shifts to adjust to the light.
+E 3 25 24645 -1
+>fight_prog   5~
+cast 'silence' $n
+~
+>fight_prog   25~
+MPECHO The Master Alchemist waves toward a stone which then turns green and sm
+cks $n across the forehead!
+MPCAST 'fireball' $n
+~
+>fight_prog   8~
+cast 'color spray' $n
+~
+|
+#24615
+black alchemist master~
+the Black Master of Alchemy~
+A Black Master of Alchemy hovers before you.
+~
+You examine the alchemist to find he hovers above you lightly. His height 
+is four feet tall, and he doesn't look like much of an adversary. Of course
+the lightning rotating around his fingers might prove otherwise. Around
+his neck is a medallion which has some strange words on it which you do
+not understand.
+~
+bcdegnopr dghkmp 900 X
+45 -5 -10 23d23+450
+0 280000
+8 8 2 2 0 7
+T 90 7d6+15 26
+E 3 100 24645 -1
+Dex: 90
+Agi: 90
+>greet_prog   100~
+if ispc ($n)
+ if isimmort ($n)
+  steal gold $n
+  tell $n For violating my presence, I take some of your gold!
+  stick $n
+ else
+  if isfollow ($n)
+  else
+   say Please take a seat, I will be finished shortly.
+  endif
+ endif
+endif
+~
+>rand_prog   10~
+MPECHO The Master Alchemist stares at a stone in front of him and waves his ha
+d over it.
+MPECHO The stone begins to glow and sizzle.
+MPDELAY 10
+snap
+MPDELAY 10
+MPECHO The stone explodes, causing slight damage to the Alchemist!
+MPDELAY 10
+doh
+say I really need to find another line of work!
+sigh
+~
+>fight_prog   8~
+cast 'color spray' $n
+~
+>fight_prog   25~
+MPECHO The Master Alchemist stares at a stone on the wall, which then turns gr
+en and hurls towards $n!
+mpcast 'fireball' $n
+~
+|
+#24616
+slave~
+a beaten slave~
+A slightly beaten slave writhes in agony before you
+~
+You scan over the slave to be horrified by his scares and markings, he stands
+about four feet tall, and at one time was probably a decent adversary. However
+it is apparent that the turns of time have proved otherwise here. He has been
+beaten, on his forehead are scars and burns from abuse he has had no choice
+but to take. His legs are deformed, from what appears to be bamboo joints 
+extending from them. Fresh blood pours from his the wounds.
+~
+bdh j 0 X
+10 15 5 5d5+100
+0 5000
+8 8 2 3 0 4
+T 140 3d3+3 28
+A 8 8 The beaten slave writhes in agony before you.
+>fight_prog   25~
+MPECHO The beaten slave grabs some bamboo out of his leg and STABS $n with it!
+mpcast 'magic missile'
+~
+|
+#24617
+priest high stone~
+the High Priest~
+The High Priest of The Stone screams as he jumps to attack!
+~
+You exam the high priest to find an astounding number of colors surrounding
+his robes. He is dressed in at least five colors of the spectrum, black, green
+red, blue, and yellow. His eyes seem to be shifting from one point to the othe
+,
+although it is unclear whether or not he is registering anything. He is wrappe
+
+well in his blanket, and looks like he could sleep a long time.
+~
+cdfglm dghkm 700 X
+50 0 -10 25d25+500
+0 500000
+4 8 1 3 0 5
+T 70 7d5+30 10
+E -1 100 24625 -1
+E 18 11 24660 5
+>greet_prog   100~
+wake
+stand
+~
+>fight_prog   10~
+cast 'heal' $i
+~
+>fight_prog   10~
+cast 'dispel evil' $n
+~
+>fight_prog   10~
+cast 'harm' $n
+~
+>fight_prog   10~
+cast 'flame strike' $n
+~
+>fight_prog   10~
+cast 'cause disease' $n
+~
+|
+#24618
+beast thicket~
+the thicket beast~
+The Thicket Beast is here chewing on some fresh bones.
+~
+You exam the thicket beast to find ugly detail! Around his ferocious fangs are
+drops of blood trickling down to the floor. He is truly a giant of a beast, an
+
+leaves no prisoners from the looks of the walls and floor of his messy cavern.
+It looks as though he does a lot of wandering and definitely knows how to feed
+himself.
+~
+cdfgp djk -500 X
+40 0 -10 20d20+400
+0 150000
+8 8 0 6 0 7
+T 100 7d7+10 22
+E 11 50 24646 5
+E 17 30 24647 5
+E -1 100 24601 2
+>fight_prog   30~
+cast 'earthquake'
+~
+>fight_prog   10~
+say Yeer wills not stands a chancesss against allls me evilies!
+~
+|
+#24619
+Hydroglix~
+Hydroglix, the Godess of Goodness~
+Hydroglix, the Godess of Goodness hovers before you.
+~
+You exam Hydroglix in more detail to find stunning beauty you are not accustom
+d
+at looking at. She stands around five foot, and has long flowing brunette
+colored hair. Her legs are a main attraction, at an astounding three feet in
+length, it appears there could be much use for those legs.
+~
+bdeg bdhkmq 700 X
+45 -5 -10 23d23+450
+0 280000
+8 8 2 3 0 4
+T 80 10d5+5 22
+A 8 8 Hydroglix shifts her skirt to expose more of her legs.
+E 13 50 24649 -1
+E 5 50 24651 -1
+E 7 50 24648 -1
+>rand_prog   25~
+if sex ($n) = 1
+ flirt $n
+else
+ block $n
+endif
+~
+>rand_prog   5~
+if sex ($n) = 1
+ pinch $n
+else
+ block $n
+endif
+~
+>fight_prog   30~
+if sex ($n) = 1
+ MPECHO Hydroglix extends her abnormally long legs to kick $n right in the gro
+n!
+ mpcast 'agony' $n
+else
+ MPECHO Hydroglix swings her abnormally long legs around to kick $n right in t
+e mouth!
+ mpcast 'fireball' $n
+endif
+~
+|
+#24620
+mage Zacchariath~
+Zacchariath the mage~
+Zacchariath the mage hovers above you.
+~
+You exam Zacchariath in more detail to find astounding weaknesses. He is a
+small elf, and couldn't be more than three or four feet tall. Although he
+does apparently have quite a thirst for fights, as his eyes alone seem to 
+beckon you to attack him. Yes, he's a bit cocky.
+~
+bcdgo bdhkq 300 X
+40 0 -10 20d20+400
+0 150000
+8 8 1 3 0 4
+T 60 6d6+4 13
+E 16 60 24652 -1
+E 0 60 24653 -1
+E 10 60 24654 -1
+Int: 90
+>greet_prog   50~
+if ispc ($n)
+ if isfollow ($n)
+ else
+ say Who in the hell do you think you are $n?
+ cast 'poison' $n
+ cast 'blindness' $n
+ cast 'agony' $n
+ endif
+endif
+~
+>fight_prog   30~
+cast 'agony' $n
+~
+>fight_prog   8~
+cast 'poison' $n
+~
+>fight_prog   15~
+cast 'blindness' $n
+~
+|
+#24621
+damned man~
+the damned man~
+A pitiful excuse for a being stands before you, damned for eternity to be poor
+
+~
+As you kick dust at the pitiful being, you can't help but feel sorry for him.
+He is wearing old clothes, apparently hand-me downs from the oversizing of 
+some, and under-sizing of others. Even his boots seem to be off colored.
+~
+cdgh jk 0 X
+15 12 2 8d8+150
+0 11000
+8 8 1 3 0 4
+T 100 3d3+5 0
+E 17 100 24655 -1
+>rand_prog   25~
+if ispc ($n)
+ ask $n Donate money to the poor folk fund?
+ beg $n
+else
+endif
+~
+>fight_prog   30~
+shout Guards, I am being attacked!!!
+~
+>fight_prog   10~
+say Damn rich people think they can just WALTZ in here and take over without A
+Y respect. THE NERVE!
+~
+>bribe_prog   5000~
+say WOW! You give quite a gift!
+shout Chief, I have collected some donations for you!
+MPDELAY 5
+say I'll be right back!
+emote kneels down in prayer, and utters something about needing to see the Chi
+f.
+MPDELAY 15
+MPECHO The damned man disappears suddenly!
+MPGOTO 24683
+give all.coins chief
+MPDELAY 15
+MPGOTO $n
+MPECHO The pitiful man appears from out of NOWHERE!
+~
+>bribe_prog   1~
+say Well, it's better than nothing...
+shrug
+shout Chief, I have collected some donations for you!
+MPDELAY 5
+say I'll be right back!
+emote kneels down in prayer, and utters something about needing to see the chi
+f.
+MPDELAY 15
+MPECHO The damned man disappears suddenly!
+MPGOTO 24683
+give all.coins chief
+MPDELAY 15
+MPGOTO $n
+MPECHO The pitiful man appears from out of NOWHERE!
+~
+>time_prog   */*/*/*/*/12~
+say Man am I getting hungry!
+say I'm going to eat, laters!
+wave
+MPGOTO 24681
+n
+~
+>time_prog   */*/*/*/*/22~
+say Oops, it is past my bedtime!
+MPDELAY 5
+say I must go now to bed, before I am punished.
+wave
+MPDELAY 5
+MPGOTO 24679
+say Ahh, time to go to sleep.
+sleep
+MPDELAY 10
+emote starts snoring loudly!
+~
+>time_prog   */*/*/*/*/9~
+wake
+stand
+MPDELAY 5
+yawn
+say Gosh, time to get up for sure!
+~
+|
+#24622
+wealthy man~
+a man of wealth~
+A man of desirable wealth is before you.
+~
+You examine a man of wealth to find he truly does have some wealth worth
+talking about. He is decorated with gold and other jewels, and fares apparentl
+
+well for not working, for he is so eager to share this information with you.
+~
+cdgh djk 0 X
+15 12 2 8d8+150
+0 11000
+8 8 1 3 0 4
+T 100 3d5+5 0
+E 3 100 24656 -1
+E 12 100 24658 -1
+>rand_prog   15~
+if position ($i) = 8
+ say 'Hey bumb, get outta my way!'
+else
+endif
+~
+>fight_prog   30~
+shout Guards, I am being attacked!!!
+~
+>time_prog   */*/*/*/*/22~
+say Oops, it is past my bedtime!
+MPDELAY 5
+say I must go now to bed, it's getting late for sure.
+wave
+MPDELAY 5
+MPGOTO 24680
+say Ahh, time to go to sleep.
+sleep
+MPDELAY 10
+emote starts snoring loudly!
+~
+>time_prog   */*/*/*/*/9~
+wake
+stand
+MPDELAY 5
+yawn
+say Gosh, I sure slept good last night!
+~
+|
+#24623
+abc~
+(null)~
+
+~
+
+~
+bdgopr kt 0 X
+0 20 10 1d1+5
+0 20
+8 8 0 0 0 1
+T 120 1d1+1 1
+>time_prog   */*/*/*/*/12~
+mpgoto 24684
+mpecho The city rejoices as the men of the town start to eat their hearty meal
+
+mpforce room sit
+MPGOTO 24677
+~
+>time_prog   */*/*/*/*/15~
+mpgoto 24684
+mpforce room stand
+mpgoto 24677
+~
+>rand_prog   8~
+mpgoto 24675
+mpecho From somewhere within the stones you hear the faint cries for help.
+mpecho You shiver uncomfortably.
+mpgoto 24677
+~
+>rand_prog   30~
+mpgoto 24675
+mpecho You hear wailing of fear coming from within the stones.
+mpgoto 24677
+~
+|
+#24624
+chief guard~
+the Chief Of The Stone Guards~
+The Chief Of The Stone Guards stands proud before you.
+~
+You examine the chief in more detail to find he has very little patience. He
+glares icily back at you, and sends a chill down your spine. He stands about
+eight feet tall, and is heavily armored in the finest armor available in his
+humble village.
+~
+bdgiopr hku 0 X
+35 2 -8 18d18+350
+0 112000
+5 8 1 4 0 5
+T 100 6d6+10 0
+E -1 100 24608 -1
+E 16 11 24659 1
+>entry_prog   100~
+say I've got my eye on you, don't get out of line, understand?
+~
+>time_prog   */*/*/*/*/10~
+stand
+open door e
+e
+unlock door s
+open door s
+MPECHOAROUND $i The Guards hall is now open. Enter and Leave as you wish.
+w
+close door e
+rest
+~
+>time_prog   */*/*/*/*/13~
+if isfight ($i)
+ say Damned fools, make me miss my speech!
+ scream
+ emote looks FURIOUS with rage as he  = DEVASTATES =  you with his deadly slas
+!
+ mpcast 'agony' $n
+else
+ stand
+ open door e
+ e
+ close stone w
+ mpdelay 10
+ emote clambers upon the podium.
+ say Now you my people must serve this city well, get the donations, and bring
+them to me.
+ MPDELAY 25
+ say Each of you get your rewards in different ways, remember the times before
+the great ruling.
+ MPDELAY 25
+ say Times when the evil beings attacked our altars, we cannot allow those bei
+gs to return and musk our humble city.
+ MPDELAY 25
+ emote begins to scream 'We must stand strong and overthrow the weak of this w
+rld!'
+ MPDELAY 10
+ cough
+ MPDELAY 10
+ say Be it known to all, we have hidden the city from outsiders, and will fare
+well against them shall they choose to enter.
+ MPDELAY 50
+ say Now we may boy our heads in prayer to Jostoricath!
+ mpforce room kneel
+ mpforce room pray
+ MPDELAY 25
+ emote steps down from the podium.
+ open stone w
+ w
+ close door e
+ rest
+endif
+~
+>time_prog   */*/*/*/*/20~
+stand
+open door e
+e
+close door s
+lock door s
+MPECHOAROUND $i The Guards hall is now closed. 
+w
+close door e
+rest
+~
+|
+#24625
+guard stone~
+a stone guard~
+A stone guards stands before you, ready to protect the innocent!
+~
+You examine the guard in more detail to find him rather plain. He carries no
+weapons, no armor, and makes no expression visible on his face. He stands
+at six feet, perfectly straight. You are curious if even a blow to his
+stomach could flinch his stiff back.
+~
+dhlmp gk 300 X
+25 7 -3 13d13+250
+0 45500
+8 8 1 3 0 4
+T 90 5d5+5 0
+>rand_prog   20~
+block $r
+~
+>shout_prog   p Guards, I am being attacked!!!~
+if isnpc ($n)
+ mpgoto $n
+ mpecho A Guard rushes to the aid of $n!
+ rescue $n
+ rescue $n
+ emote screams 'BONSAI, CHARGE, PROTECT THE STONES!!!  KILL THE INTRUDERS!!!!'
+ mpforce $n ass $i
+else
+endif
+~
+|
+#24626
+Jostoricath god~
+Jostoricath~
+Jostoricath, god of the stone people stands before you.
+~
+You glance towards this god of the stones to find an immovable creature, over
+twelve feet in height, with arms as big around as two feet in length. He
+towers above you, unmoved by your presence, and rather aggravated at being
+disturbed. He is dressed in rather quaint robes, and is quite a figure to
+behold. He appears as if one wave of his hand and you would be dead.
+~
+bdeflnopqr dhkmpqs -1000 X
+55 -10 -10 28d28+5550
+0 6000000
+5 5 1 3 0 7
+T 60 8d8+20 0
+T 60 8d8+20 0
+E 1 100 24665 1
+E 10 100 24663 1
+E 8 100 24664 1
+E 7 100 24667 1
+>greet_prog   100~
+mpkill $n
+mpcast 'agony' $n
+mpcast 'agony' $n
+~
+>fight_prog   25~
+cast 'harm' $r
+~
+>fight_prog   11~
+cast 'heal'
+~
+>fight_prog   10~
+cast 'poison' $r
+~
+>rand_prog   5~
+cast 'heal'
+~
+>fight_prog   10~
+mpecho Jostoricath turns upwards to the sky and screams, 'Let them pay for thi
+!!!'
+mpdelay 10
+mpecho The room SHIVERS as pain instills itself upon your body. Gold coins fal
+ from above, and everything starts shakin!!! EARTHQUAKE!!!
+mpcast 'earthquake'
+mpcast 'earthquake'
+mpcast 'earthquake'
+~
+|
+#24627
+Eldora deity~
+Eldora~
+One of the High Deities is before you, Eldora.
+~
+You examine Eldora to find stunning detail. She is covered in ancient robes
+of wisdom, and her eyes are emerald green. She is a stunning sight to behold,
+and from her looks has earned her title as High Deity. She appears to have
+been weeping some time before, as she has small bags under her eyes, and as
+you look closer, it appears one is forming before you.
+~
+bdelnopqr dhkmq 1000 X
+52 -10 -10 26d26+2520
+0 2600000
+8 8 2 3 0 4
+T 80 8d8+30 0
+E 10 50 24666 5
+E 6 50 24661 5
+E 22 50 24662 5
+>greet_prog   100~
+if ispc ($n)
+ if isimmort ($n)
+ else
+  if isfollow ($n)
+  else
+   say Welcome Travelers, I was afraid you would not be able to find our humbl
+ home.
+   mpdelay 15
+   say Nevertheless, you have. Lead us out of slavery, and the rewards will be
+great!
+  endif
+ endif
+else
+endif
+~
+>bribe_prog   1~
+say Please take your donations to the Deity of the Sun.
+mpdelay 5
+give coins $n
+~
+>act_prog   p pokes you in the ribs.~
+slap $n
+mpdelay 5
+say Go poke somebody your own size.
+~
+>act_prog   p laughs~
+mpdelay 5
+say Something funny $n?
+~
+|
+#24628
+Shrodiack deity~
+Shrodiack~
+One of the High Deities hovers before you, Shrodiack.
+~
+You examine Shrodiack to see a mere image of an elder man. He stands around
+four feet tall, and glows with a bright light. His face is worn from weeping,
+and he has a long grey beard. Upon his shoulders are images of times of past.
+His left shoulder represents the good times, where you see him laughing with
+some other faces you don't recognize, upon his right shoulder is the bad
+times, where you see the Entranceway to the Circle of Altars being locked
+shut.
+~
+bdelnopqr dhkmq 1000 X
+52 -10 -10 26d26+2520
+0 2600000
+8 8 2 3 0 4
+T 80 8d8+30 0
+E -1 100 24609 -1
+E 10 50 24666 5
+E 6 50 24661 5
+E 22 50 24662 5
+>rand_prog   15~
+say I have been locked up for 2 centuries now, when will it end.
+mpdelay 5
+cry
+~
+>act_prog   p comforts you.~
+say Thanks $n, that helps somewhat.
+mpdelay 5
+hug $n
+~
+>bribe_prog   1~
+say Please take your donations to the Deity of the Sun.
+mpdelay 5
+give coins $n
+~
+>act_prog   p pokes you in the ribs.~
+say Is it not enough that I'm trapped here in slavery $n? 
+mpdelay 5
+say That you have to POKE me too?
+~
+|

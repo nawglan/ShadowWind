@@ -1,0 +1,81 @@
+#14
+Elvandar /Harmless/~
+1499 100 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+D 0 1459 0 3	* The Private Stairway
+M 0 1405 1 1458 100	* he elf queen
+G 1 1407 1 -1	* a wooden key
+M 0 1406 1 1458 100	* The Elf War Chief
+E 1 1402 1 16	* the Royal Elven War sword
+E 1 1404 1 5	* the Royal Elven Plate Mail
+E 1 1405 1 8	* a pair of elven boots
+D 0 1458 2 3	* The Throne Room
+M 0 1403 5 1430 100	* An elven guard
+M 0 1403 5 1435 100	* An elven guard
+M 0 1403 5 1443 100	* An elven guard
+M 0 1403 5 1432 100	* An elven guard
+M 0 1403 5 1421 100	* An elven guard
+M 0 1411 1 1438 100	* Carfin the baker
+G 1 14320 99 -1	* a fine elven biscuit
+G 1 1409 999 -1	* a fried spider on a stick
+M 0 1408 1 1424 100	* Ochvlad the Sorcerer
+G 1 14311 99 -1	* an ocean-blue potion
+G 1 3050 99 -1	* a scroll of knowledge
+G 1 14309 99 -1	* a leaf-green potion
+E 1 1401 99 16	* an elven long bow
+E 1 1403 99 5	* an elven chain mail
+M 0 1409 1 1437 100	* Glavin the Venison shop keeper
+G 1 14319 99 -1	* a nicely roasted rabbit
+G 1 14325 999 -1	* a piece of venison
+G 1 14326 999 -1	* a piece of rabbit meat
+M 0 1404 2 1449 100	* the elf advisor
+M 0 1404 2 1451 100	* the elf advisor
+M 0 1407 2 1461 100	* the elvardien
+E 1 1406 2 3	* an elvardien robe
+M 0 1407 2 1461 100	* the elvardien
+E 1 1406 2 3	* an elvardien robe
+D 0 1468 2 2	* The Guard's Barracks
+D 0 1469 0 2	* The Elven Treasury
+M 0 1410 1 1425 100	* Mainen the Merchant
+G 1 14314 99 -1	* a large green sack
+G 1 14313 99 -1	* a small green bag
+M 0 1412 1 1426 100	* Graytor the weaponsmith
+G 1 1401 99 -1	* an elven long bow
+G 1 14301 99 -1	* a fine longsword
+G 1 3020 99 -1	* a dagger
+G 1 3021 99 -1	* a small sword
+M 0 1413 1 1439 100	* Rastenor the armorsmith
+G 1 1403 99 -1	* an elven chain mail
+G 1 14307 99 -1	* an elven chaincoif
+G 1 14308 99 -1	* a pair of elven chainmail leggings
+M 0 1414 1 1427 100	* Strayse the healer
+M 0 1415 1 1440 100	* Taburn the Inn Keeper
+O 0 1408 1 1444 100	* the large fountain
+S
+$

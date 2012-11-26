@@ -1,0 +1,1321 @@
+#8303
+Up A Small Hill~
+   All around are trees, and hills, a great forest to your south, and barren
+lands and hills are to your north, the land is covered in patchy grass and
+weed, rocks and dirt cover the ground all around.  
+~
+83 p 4
+D0
+~
+~
+0 0 8305 0
+D2
+~
+~
+0 0 14500 0
+S
+#8304
+At The Far End Of The Sundered Bridge~
+   You are at the northern edge of a deep chasm. Just looking at it makes
+your stomach turn, and a feeling of dread comes over you. There's no possible
+way to cross this chasm, since the bridge that once spanned it is shattered 
+half-way across. To the north, a dark, twisted landscape stretches by, called
+the Badlands. The soil here looks burned and charred, as if a great fire 
+once roamed these plains and cleaned it of all living things. Scattered on
+the ground you see the remains of a battle that once raged here. Broken swords
+and splintered shields lay among the moss covered boulders.
+~
+83 0 2
+D0
+You see some dark hills up ahead.
+~
+~
+0 -1 8305 0
+S
+#8305
+The Black Hills~
+   You are walking through dark and lonely hills. The sinister landscape,
+cold and barren gives you a feeling of impending danger. Scattered among the
+large boulders, some bleak plants still managed to spire. Deep cracks can be
+seen in the dark and dusty earth beneath your feet, and you notice some
+broken swords and splitered shields that have been left to rust. In the
+distant northern horizon, you see the faint outlines of a great mountain range,
+and to the east and west, more of this dying land stretches.
+~
+83 p 2
+D0
+You see more of these cursed hills.
+~
+~
+0 -1 8306 0
+D1
+You see more of these cursed hills.
+~
+~
+0 -1 9105 0
+D2
+~
+~
+0 0 8303 0
+D3
+You see more of these cursed hills.
+~
+~
+0 -1 9104 0
+S
+#8306
+The Black Hills~
+   You are walking through a dying landscape, which seems to have lost 
+all hope for life, stretching on in all directions. To the north you barely 
+make out what seems to be an old path, paved with broken rubble and beaten 
+ash, winding it's way among the rocky hills. To the south, only the black, 
+twisted landscape can be seen. A white, cold mist is rolling in, obscuring
+your vision and cloaking the distant mountain range.
+~
+83 p 4
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8307 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9119 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8305 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9120 0
+S
+#8307
+The Black Hills~
+   All around you are steep,rocky hills and the ever-present mountain range, 
+which looms far off in the northern horizon. A thick mist is slowly rolling in
+from the east, cloaking the gloomy landscape and obscuring your vision. 
+Beneath your feet the earth makes writhing sounds, as if it were hollow and 
+would give way at any moment. Black dust swirls up behind you from the dry 
+and charred ground. You notice what seems to be the remains of a small path 
+leading east and south of here.
+~
+83 p 4
+D0
+You see some steep hills blocking you way.
+~
+~
+0 -1 -1 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8308 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8306 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9121 0
+S
+#8308
+The Black Hills~
+   The mist covers almost everything, making it hard to see more than some 
+fifty paces ahead. Still, you can make out the vague shapes of hills and a 
+faint path leading north and west.
+~
+83 p 4
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8309 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9115 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9119 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8307 0
+S
+#8309
+The Black Hills~
+   The cold, white mist obscures most of your view. Only some rocky hills, 
+and dying bushes with bleak leaves rattling the wind, can be seen around 
+you. You can leave in any direction.
+~
+83 p 4
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8310 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9114 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8308 0
+D3
+A steep hill is blocking your way.
+~
+~
+0 -1 -1 0
+S
+#8310
+The Black Hills~
+   The mist covers almost everything in its cold, white cloak. All you 
+see is this mist, and the vague shape of hills. On the ground, faint tracks 
+of a path can be seen leading away to the east and south from here.
+~
+83 p 4
+D0
+You see some large hills blocking your way.
+~
+~
+0 -1 -1 0
+D1
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8311 0
+D2
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8309 0
+D3
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 -1 0
+S
+#8311
+The Black Hills~
+   The mist is getting thinner here, perhaps due to the chilling wind that 
+comes sweeping down from the icy northern lands. Not as far away as that,
+but still to the north, you see a strange-looking shape perched on top of 
+a hill. From here it looks like an old, bent tree, from which a man-like shape
+is hanging, swaying slightly in the cold wind. To the east, south and west, 
+all you see is the faint outlines of hills, still cloaked in the thick mist.
+~
+83 p 4
+D0
+You see a strange shape perched on top of a hill to the north.
+~
+~
+0 -1 8312 0
+D1
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9112 0
+D2
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9114 0
+D3
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8310 0
+S
+#8312
+The Hill Of The Hanged Man~
+   You are at the top of a steep hill. From here you get a good view of 
+the surrounding landscape. To the north, the ground is sloping steeply
+downward, until it finally reaches the edge of a dark and sinister-looking 
+forest. To the east, south and west, hills stretch on as far as your eyes can
+see. At the centre of this hill, the corpse of a man is hanging down from 
+a gallows pole.
+~
+83 cp 4
+D0
+You can see the edge of a very dark and forebidding forest.
+~
+~
+0 -1 8313 0
+D1
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9113 0
+D2
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 8311 0
+D3
+A thick mist cloaks the gloomy landscape, making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9114 0
+E
+man corpse~
+The corpse is that of a male human that has been dead for quite some time now. 
+You can see a sign has been nailed to the corpse's chest and there is a note 
+sticking up from his pocket.
+~
+E
+sign~
+Written in blood, you read:
+
+"Beware stranger. This is what happens to those who are not
+ welcome in the Spirit Wood."
+
+
+~
+E
+pole~
+The pole has several deep claw marks on it.
+~
+E
+note~
+The Badlands was created by Jack.
+~
+S
+#8313
+The Southern Edge Of Spirit Wood~
+   You stand at the edge of a great forest. Dark, ancient trees rise up in 
+front of you. Their trunks are huge and gnarled, with branches twisted as if 
+in pain. Their leaves are long and deep-green, covered with growing ivy that 
+trails all the way down to the ground. You can barely see more than some 
+twenty paces ahead into the old forest. When you stop and listen, you can hear 
+some distant growls. To the south, the lifeless ground slowly turns from brown
+grass into black and charred soil, as it ascends up towards the summit of a 
+large hill.
+~
+83 cp 3
+D0
+You can see a faint trail leading off north, into the forest.
+~
+~
+0 -1 8314 0
+D2
+You can see a strange shape on top of a hill.
+~
+~
+0 -1 8312 0
+E
+tree trees~
+When you look up at a great tree, you notice a large crow glaring back at you.
+The crow spreads its wings as soon as you lay your eyes on it, and disappears
+into the shadows.
+~
+S
+#8314
+In Spirit Wood~
+   Huge trees rise up all around you, obscuring all rays of light. On the
+ground you see a faint trail going north, and south further in among the
+trees. Long, twisted branches seem to reach towards you from all sides, as
+if to grab you and hold you forever in its timeless grasp. When you stop
+and listen, you hear a distant howl breaking the otherwise all too silent
+forest.
+~
+83 ap 3
+D0
+You see a faint trail.
+~
+~
+0 -1 8315 0
+D2
+You see a faint trail.
+~
+~
+0 -1 8313 0
+S
+#8315
+In Spirit Wood~
+   Huge and ancient trees stand close on both sides of the narrow trail, 
+which you are currently following, giving you no choice but to continue
+along it, north or south from here.
+~
+83 ap 3
+D0
+You can see a faint trail.
+~
+~
+0 -1 8316 0
+D2
+You can see a faint trail.
+~
+~
+0 -1 8314 0
+S
+#8316
+In Spirit Wood~
+   Huge and ancient trees surround you. The ground is covered by bleak,
+fallen leaves from last year. To the south there is a path heading off into
+the woods.
+~
+83 ap 3
+D0
+Huge trees block the line of sight.
+~
+~
+0 -1 8317 0
+D2
+You can see a faint trail.
+~
+~
+0 -1 8315 0
+S
+#8317
+In Spirit Wood~
+   A pair of huge, ancient trees lean close together, forming a gloomy tunnel 
+to the north. They are too old, and strangled with ivy and lichen to bear more
+than a few blackened leaves. There are plenty of dead and dry branches on the
+ground, and some of them look pretty sharp, so you better watch your step.
+~
+83 ap 3
+D0
+Huge trees block the line of sight.
+~
+~
+0 -1 8319 0
+D1
+Huge trees block the line of sight.
+~
+~
+0 -1 8320 0
+D2
+Huge trees block the line of sight.
+~
+~
+0 -1 8316 0
+D3
+Huge trees block the line of sight.
+~
+~
+0 -1 8318 0
+S
+#8318
+In Spirit Wood~
+   Huge lichen-covered trees stand close together on all sides, surrounding 
+you completely. You might be able to make your way through the trees 
+to the east.
+~
+83 ap 3
+D1
+Huge trees block the line of sight.
+~
+~
+0 -1 8317 0
+S
+#8319
+In Spirit Wood~
+   Huge trees stand close on all sides, watching in solemn silence, making 
+your progress impossible. On the ground you can see some sort of a mound, 
+covered by fallen leaves and dead branches.
+~
+83 ahp 3
+D2
+Huge trees block the line of sight.
+~
+~
+0 -1 8317 0
+E
+grating~
+The grating seem very sturdy and secure, and you will definitely need a key 
+to open this one. You can also see some carvings on the grate.
+~
+E
+carving carvings~
+The carving is written in the old tongue but you still understand what it 
+says. The carvings read,
+
+    'The barrow mound of Fenrir the Dreaded.' 
+
+Beneath these carvings someone has filled in,
+
+    'For the sake of your life and dear friends,
+     do not enter, for here there be tygers!'
+
+~
+S
+#8320
+In Spirit Wood~
+   You feel very small as you look around and see the enormous trees looming 
+far above you. To the north, an old trail can be seen, and to the east and 
+south, huge tree trunks are blocking your way. You might be able to make your 
+way through the trees to the west, though.
+~
+83 ap 3
+D0
+You see an old trail, leading to a clearing, further in among the trees 
+to the north.
+~
+~
+0 -1 8321 0
+D3
+Huge trees block the line of sight.
+~
+~
+0 -1 8317 0
+S
+#8321
+The Clearing~
+   You have entered a small clearing. The forest is not as dense here, and 
+some light even manages to slip through the great tree crowns. The old trail 
+continues to the north, but you might be able to make your way through the 
+trees east, south or west.
+~
+83 p 3
+D0
+You see an old trail.
+~
+~
+0 -1 8322 0
+D1
+You can't see very far, but you think there is a small pond further in among 
+the trees.
+~
+~
+0 -1 8323 0
+D2
+You can only see more of these ancient trees.
+~
+~
+0 -1 8320 0
+D3
+You see the remains of an old campfire further in among the trees.
+~
+~
+0 -1 8324 0
+S
+#8322
+Deeper In Spirit Wood~
+   The gnarled trees seem old enough to have stood here since dawn of 
+times. The murky ground is covered by rotting leaves and fallen branches.
+The trail heads off to the east and south.
+~
+83 ap 3
+D0
+Huge trees block the line of sight.
+~
+~
+0 -1 8325 0
+D1
+You can see an old trail through the forest.
+~
+~
+0 -1 8327 0
+D2
+You can see a clearing among the trees.
+~
+~
+0 -1 8321 0
+D3
+Huge trees block the line of sight.
+~
+~
+0 -1 8326 0
+S
+#8323
+A Small Pond~
+   You stand at the edge of a small pond. The water is very dark and has a 
+strange smell to it. It is probably not a good idea to drink from it. On the
+far side of the pond, the trees stand too close to allow further progress.
+~
+83 ap 3
+D3
+You can see a small clearing among the trees.
+~
+~
+0 -1 8321 0
+E
+pond~
+As you reach for the water, something stirs beneath the surface, and hastily 
+you withdraw you hand. Something is in the pond, something better left 
+alone.
+~
+S
+#8324
+The Camp~
+   Huddled among the trees, you see the remains of an old campfire. The ones 
+who made are long gone, and nothing of value is left here. You might be able 
+to make your way through the trees to the east.
+~
+83 ap 3
+D1
+You can see a small clearing beyond the large tree trunks.
+~
+~
+0 -1 8321 0
+E
+remain remains~
+As you take a closer look at the camp, you discover some bones and torn cloth.
+The bones are human, and some are broken as if they had been thin, wooden 
+sticks.
+~
+E
+camp fire campfire~
+It looks like it has been here quite a long time. Some grass has begun to grow
+among the ashes, and there are no tracks around the camp that you can see.
+~
+S
+#8325
+Deep In Spirit Wood~
+   Leaves are scattered all over the damp, moist ground, and some strange
+looking mushrooms are growing here. Huge trees block your progress, and you 
+have to turn back and leave the same way you came.
+~
+83 ap 3
+D2
+Huge trees block the line of sight.
+~
+~
+0 -1 8322 0
+E
+mushroom mushrooms~
+The mushrooms are dark and damp, and they smell like hell. Leave Them Alone!
+~
+S
+#8326
+At The Fallen Tree~
+   Dark, almost black, ancient trees surround you, and a feeling of impending 
+danger tells you to leave this place as quickly as possible. Maybe you should 
+take it's advice and leave before its too late. To the north, a very large 
+tree-trunk has fallen over, shattering into a thousand tiny parts. You figure 
+it must have been long dead and dry when it fell. You might be able to climb 
+over it and continue your progress to the north, but it seems extremely 
+dangerous, and one wrong step could be your death.
+~
+83 p 3
+D0
+You don't think it is a very good idea going that way.
+~
+~
+0 -1 8328 0
+D1
+Huge tress block the line of sight.
+~
+~
+0 -1 8322 0
+E
+sharp sticks broken branches~
+The some of the broken branches are needle-sharp, and could easily penetrate 
+a heavy leather armour, and cause a lot of damage if one would fall upon them.
+~
+S
+#8327
+Deep In Spirit Wood~
+   Here, the old trail split in three, one heading off to the north another 
+to the east and the last one to the west. On the north side of the trail, 
+the forest seems a little less dense, while to the east and west, it just
+gets thicker. On the south side, huge trees bar your way.
+~
+83 ap 3
+D0
+You can see the trail heading off into the woods.
+~
+~
+0 -1 8332 0
+D1
+You can see the trail disappearing in among the huge trees.
+~
+~
+0 -1 8329 0
+D3
+You can see an old trail through the forest.
+~
+~
+0 -1 8322 0
+S
+#8329
+Deeper Into Spirit Wood~
+   You are on an old trail going east and west. On both sides of the trail,
+huge, ancient trees stand, observing you in utter silence.
+~
+83 ap 3
+D1
+You can see the trail heading on into the woods.
+~
+~
+0 -1 8330 0
+D3
+You see the trail heading off into the woods.
+~
+~
+0 -1 8327 0
+S
+#8330
+Deeper Into Spirit Wood~
+   You are on an old trail going east and west. On both sides of the trail, 
+huge, ancient trees stand huddled close together. Their ivy covered roots 
+creep across the murky, leaf-covered forest floor.
+~
+83 ap 3
+D1
+You can see an old cabin lodge further into the woods.
+~
+~
+0 -1 8331 0
+D3
+You can see the trail heading off into the woods.
+~
+~
+0 -1 8329 0
+S
+#8331
+At The Forest Lodge~
+   Before you stands an old cabin lodge. It seems quite well mannered, and 
+some puffs of smoke rise up through it's chimney. You can hear the bark of a 
+dog coming from the other side of the lodge. Some huge, ancient trees, with 
+ivy covered roots creeping across the leaf-covered forest floor, stand close 
+together on both sides of the trail. 
+~
+83 p 3
+D1
+Through the door you can enter the lodge.
+~
+door~
+1 -1 8335 0
+D3
+You can see a trail heading off into the woods.
+~
+~
+0 -1 8330 0
+E
+lodge~
+The lodge is made out of timber and seems like real craftsmanship, sturdy and 
+well made, to stand the test of time.
+~
+S
+#8332
+In Spirit Wood~
+   Occasionally, a slender beam of light has the luck to slip in through 
+some opening in the leaves far above. The forest seems a bit lighter to the 
+north then to the south. The trail goes on to the east and south. Large tree 
+trunks bar your way in all other directions.
+~
+83 p 3
+D1
+The trails continues on this way.
+~
+~
+0 -1 8333 0
+D2
+The trail disappears in among the trees.
+~
+~
+0 -1 8327 0
+S
+#8333
+In Spirit Wood~
+   To the north you can see the edge of this ghostly forest. There is 
+a small stream floating by on the east side of the trail, running in 
+an north-south route. Plenty of fallen leaves and dead branches are 
+lying on the ground. The trail continues to the north and west.
+~
+83 p 3
+D0
+You see the edge of the forest.
+~
+~
+0 -1 8334 0
+D3
+You see the trail going in this direction.
+~
+~
+0 -1 8332 0
+E
+stream~
+The stream looks dark and cold, some eight paces wide, making it unavoidable 
+to cross it without going into the stream.
+~
+S
+#8334
+The Northern Edge Of Spirit Wood~
+   You stand at the edge of the woods. To the north you see rocky plains. 
+Beyond them, snow-clad mountains rise, with some pinnacles reaching high up in 
+the sky. To the south, the great forest of Spirit Wood looms. The trail goes 
+north over the plains and south, disappearing into the forest.
+~
+83 cp 2
+D0
+You see the trail going north across the plains.
+~
+~
+0 -1 8338 0
+D2
+You see the trail going south into the forest.
+~
+~
+0 -1 8333 0
+E
+forest~
+The forest stretch as far as you can see to the south. A feeling of dread 
+comes creeping up on you as you stand watching it. Something is very wrong 
+with this forest.
+~
+S
+#8335
+Inside The Forest Lodge~
+   You have entered a small cabin lodge. Many things have been scattered
+across the floor, and the shelves are filled with rags and junk, not looking
+half as neat on the inside as from the outside. You see a small trapdoor
+under the rags, and a pair of doors on either side of the lodge.
+~
+83 adp 0
+D1
+Behind the forest lodge.
+~
+door~
+1 8458 8336 0
+D3
+In front of the forest lodge.
+~
+door~
+1 8458 8331 0
+D5
+Under the lodge.
+~
+trapdoor~
+1 8458 8337 0
+E
+thing things rag rags junk~
+As you search through the things in the cabin, you notice a trapdoor.
+~
+E
+trapdoor~
+The trapdoor is covered with rags and other garments, as you scrape across it
+you notice very large claw marks and hear a rustling below you.
+~
+S
+#8336
+Behind The Forest Lodge~
+  Some large sacks and wooden barrels are stacked close to the house wall, 
+and across the yard to the east, there is a small pen. Further on to the east, 
+a steep landslide rises up some hundred paces or so, making further progress 
+impossible. To the north and south of here, large trees stand huddled close 
+together, guarding the dark forest and whatever lies within.
+~
+83 p 2
+D3
+Inside the forest lodge.
+~
+door~
+1 -1 8335 0
+E
+landslide~
+It seems impenetrable, and to climb it could pry the earth loose and bury 
+you deep underneath.
+~
+S
+#8337
+The Cellar~
+   Its very dark and damp here in the cellar of the lodge. Some large sacks 
+and wooden barrels are stacked here, and a set of working tools have been 
+left to rust.
+~
+83 adp 0
+D4
+A ladder leads back up to the lodge.
+~
+trapdoor~
+1 -1 8335 0
+E
+sack sacks barrel barrels tool tools~
+There is nothing of worth among the stuff left here.
+~
+S
+#8338
+The Plains~
+   Endless plains, barren of life and littered with ragged boulders and stone
+blocks, are all around you. Some flecks of snow can be spotted at random. Far
+to the north stands the fabled mountain range known as Malebranche, with
+pinnacles reaching above the dark storm clouds in the sky. There is a well worn
+trail leading northward, and a small path heading off to the west.
+~
+83 p 2
+D0
+The trail leads on to the north disappearing out of view.
+~
+~
+0 -1 9122 0
+D1
+The cold, barren plains seem to go on forever.
+~
+~
+0 -1 9126 0
+D2
+The trail leads on toward the forest to the south.
+~
+~
+0 -1 8334 0
+D3
+The cold, barren plains seem to go on forever.
+~
+~
+0 -1 9125 0
+S
+#8339
+The Plains~
+   The plains are barren and cold up here, with no shelter from the chilling 
+winds that come sweeping down from the snow-clad mountains. The rock trail 
+makes a sharp bend here, going north up into the mountains and east across 
+the open plains.
+~
+83 p 2
+D0
+The trail is heading up towards the mountains.
+~
+~
+0 -1 8343 0
+D1
+You see the trail leading on in this direction.
+~
+~
+0 -1 9124 0
+D2
+Cold and barren plains stretch to the south.
+~
+~
+0 -1 9133 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 8340 0
+S
+#8340
+The Plains~
+   To the north, a great mountain range stands, making it impossible
+to go on in that direction. To the east, south, and west, vast plains
+stretch as far as the eye can see.
+~
+83 p 3
+D1
+You see a trail going north and east.
+~
+~
+0 -1 8339 0
+D2
+You see plains stretch on, seemingly endless.
+~
+~
+0 -1 8341 0
+D3
+You see plains stretch on, seemingly endless.
+~
+~
+0 -1 8342 0
+S
+#8341
+The Plains~
+   Bleak and stony plains, which constantly slope upward to the north, 
+are all around you. Some scrubby bushes, with dry leaves rattling in 
+the cold wind, can be seen hiding in small crevices and between rough 
+boulders that litter the plains. The high winds, shallow soil, and tortuous 
+inclines have prevented more extensive growth. Far to the north, the great 
+mountain of Malebranche towers, and to the south, the old, twisted forest, 
+better known as Spirit Wood, can be seen.
+~
+83 p 3
+D0
+You see the mountain range far to the north.
+~
+~
+0 -1 8340 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9133 0
+D2
+Cold and barren plains stretch to the south.
+~
+~
+0 -1 9131 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9135 0
+S
+#8342
+The Plains~
+   To the north, a great mountain range lies, making it impossible to travel
+any further in that direction. To the east and south, vast plains stretch as
+far as the eye can see.
+~
+83 p 3
+D1
+You see plains stretching on, seemingly endless.
+~
+~
+0 -1 8340 0
+D2
+You see plains stretching on, seemingly endless.
+~
+~
+0 -1 9135 0
+S
+#8343
+The Mountain Trail~
+   You are on a rocky mountain trail going north and south from here.
+The trail slopes steeply upwards to the north, and to the west you see some 
+dangerous-looking cliffs. On the east side of the trail, a smooth mountain 
+wall blocks your way. Further up in the mountain, a heavy fog is cloaking the 
+rocky landscape.
+~
+83 p 4
+D0
+You see a rocky trail winding its way up the mountain side.
+~
+~
+0 -1 8344 0
+D2
+You see a rocky trail climbing down to the south.
+~
+~
+0 -1 8339 0
+D3
+You see some dangerous-looking cliffs.
+~
+~
+0 -1 2 0
+E
+cliff cliffs~
+The cliffs looks really dangerous, and you could easily slip and fall about 
+a hundred paces before you would reach to ground. Don't go there!
+~
+E
+dangerous~
+The cliffs seem very dangerous to you, and you don't think you will be able 
+to climb down from there.
+~
+S
+#8344
+The Mountain Trail~
+   You are on a misty mountain trail going east and south. High mountain 
+walls block your passage in all other directions. A bit further up, you can 
+see the fog is getting thicker.
+~
+83 p 4
+D1
+You see the mountain trail sloping upward in this direction.
+~
+~
+0 -1 8345 0
+D2
+You see the mountain trail sloping downward this way.
+~
+~
+0 -1 8343 0
+S
+#8345
+The Mountain Trail~
+   You have reached the end of the mountain trail. Even though the trail 
+ends here, you might be able to climb up the mountain wall to the east. 
+On the north side of the trail, you see a deep ravine. It appears to be no 
+way down to explore the ravine. The heavy fog makes it impossible to 
+see more than a few paces ahead.
+~
+83 acp 4
+D3
+You see a rocky mountain trail going west, disappearing down behind 
+some large cliff.
+~
+~
+0 -1 8344 0
+D4
+Climbing the mountain wall is not going to be easy, but you might just be 
+able to make it up to a small landing not so far above.
+~
+~
+0 -1 8346 0
+E
+ravine~
+As you look down into the ravine you feel very dizzy and quickly take one step 
+back. The bottom of the ravine can be seen far below.
+~
+E
+wall~
+You see some good foot holdings up there. This won't be a problem if you go 
+really slow.
+~
+S
+#8346
+Climbing The Mountain Wall~
+   You are climbing the sheer face of the mountain wall. Don't look down, just
+keep on climbing!
+~
+83 ap 5
+D4
+You see a small landing just above you.
+~
+~
+0 -1 8347 0
+D5
+You see the ground far below you.
+~
+~
+0 -1 8345 0
+E
+landing~
+You will soon be there if you continue to climb up.
+~
+S
+#8347
+On A Small Landing~
+   You have reached a small landing located high above the ground. The mist is
+all gone here, due to the wind that is blowing hard and cold. You can see a 
+small crevice in the mountain wall to the east, perhaps you should seek 
+shelter from the wind in that small crack. You can still continue to climb up 
+or down.
+~
+83 p 5
+D1
+You see a small crack in the mountain wall.
+~
+~
+0 -1 8356 0
+D4
+Another climb and you will have reached the top.
+~
+~
+0 -1 8348 0
+D5
+You see the mist covered ground far below you, but if you climb carefully, 
+this wont be a problem.
+~
+~
+0 -1 8346 0
+E
+crevice~
+The crevice seem wide enough for you to enter, but it is very dark in there, 
+so perhaps you should bring a light.
+~
+S
+#8348
+The Dark Pillars~
+   Before you, two huge pillars stand, extensively covered with runes and 
+mystical glyphs. Beyond the pillars you can see an old road beginning, heading 
+off to the east. To the north, another mountain is blocking your path and to 
+the south and west, there is only the thin air. You might though be able to 
+climb down from here.
+~
+83 p 2
+D1
+You see an old road leading east, beyond the pillars.
+~
+~
+0 -1 8349 0
+D3
+One step west, and you will be falling downward for quite some time. Probably 
+a really bad idea.
+~
+~
+0 -1 8351 0
+D5
+You see the ground far below. Climbing down there is not going to be too hard 
+for you.
+~
+~
+0 -1 8347 0
+E
+pillar pillars~
+The pillars seem ancient in appearance. Cut from some black stone, they stand 
+here, guarding the road that begins beyond them to the east.
+~
+E
+rune runes~
+The rune script looks totally unfamiliar to you at first, but after some time
+studying them, you begin to understand what they say. The runes read:
+
+'And it has come to pass that the Lord of the Woods being seven and nine...
+ has brought the gift of life to he who awaits in the House of Death, in the 
+ cave beyond the Crystalline Lake.'
+
+~
+S
+#8349
+On The Mountain Road~
+   You are on a mountain road leading north and west. To the east and south, 
+you some ragged cliffs and beyond, the thin air. Far off in the distant north, 
+you can see a strange castle with tall spires standing high upon a cliff. The 
+road seems to be going up to the mysterious castle.
+~
+83 p 2
+D0
+The road continues towards the mysterious castle in the far north.
+~
+~
+0 -1 8350 0
+D1
+One step east and you will be falling downward for quite some time. Probably 
+not a good idea.
+~
+~
+0 -1 8351 0
+D2
+One step to the south and you will be falling downward for quite some time. No 
+good if you are not a bird.
+~
+~
+0 -1 8351 0
+D3
+You can see the road ends at two pillars. Beyond them you can see the thin 
+air.
+~
+~
+0 -1 8348 0
+S
+#8350
+On The Mountain Road~
+   You are on a mountain road leading north and south. On both sides of the 
+road, high cliffs block your passage, giving you no choice but to go on, or 
+turn back the same way you came.
+~
+83 p 2
+D0
+You see a narrow bridge spanning the great ravine that lies ahead.
+~
+~
+0 -1 8353 0
+D2
+You see a mountain road leading south, going in between two large cliffs.
+~
+~
+0 -1 8349 0
+S
+#8353
+At The Bridge Of Death~
+   You stand before a narrow bridge that spans a deep ravine. On the left
+side of the bridge, you see a skeleton swaying down from a hangman's pole.
+On the far side of the ravine, you see a strange path leading beyond the
+mountains.
+~
+83 p 2
+D0
+You feel very sick as you look at the narrow bridge. There is nothing to hold 
+onto if you want to cross it. The only thing you can do is to watch your step 
+carefully and pray that no wind comes, sweeping you off the bridge.
+~
+~
+0 -1 8354 0
+D2
+You see the safety of a secure mountain road.
+~
+~
+0 -1 8350 0
+E
+bridge~
+The bridge is not more than a pace wide, and some hundred paces long. In the 
+middle of the bridge, you can see a black crow sitting.
+~
+E
+crow~
+As you lay your eyes on the crow it spreads its wings and takes to the air,
+flying towards the castle.
+~
+E
+skeleton~
+It doesn't appear to be the skeleton of a human being, rather something much
+larger, something the size of a troll.
+~
+E
+pole~
+The pole has some deep-set claw-marks on it.
+~
+E
+ravine~
+You can not even see the bottom of the ravine.
+~
+S
+#8354
+Crossing A Narrow Stone Bridge~
+   The wind screams as it picks up speed going through the deep ravine
+below, tearing lose small rocks and dead leaf-less branches, sending them
+flying through the air. Both to the north and south you see the narrow 
+stone-bridge spanning the ravine.
+~
+83 p 2
+D0
+You see the safety of the other side.
+~
+~
+0 -1 8355 0
+D2
+You can see the safety of the other side.
+~
+~
+0 -1 8353 0
+S
+#8355
+On The Far Side Of The Ravine~
+   You are at the foot of a long bridge crossing the ravine. To the south,
+you see the bridge spanning the ravine. It is very cold up here and you can
+see flakes of snow among the ragged boulders.
+~
+83 cpq 2
+D0
+An opening in the forest lies in that direction.
+~
+~
+0 0 3556 0
+D2
+You see a narrow bridge spanning the deep ravine.
+~
+~
+0 -1 8354 0
+S
+#8356
+The Small Crevice~
+   There is barely enough room for one person in here, and it is very damp and
+cold. At least you are out of the freezing wind that is blowing hard outside. 
+~
+83 adipq 0
+D3
+There is a small crevice through which you can squeeze yourself.
+~
+~
+0 -1 8347 0
+S
+$~

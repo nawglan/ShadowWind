@@ -1,0 +1,69 @@
+   2   6   7   5   5   3   6   3   4   3
+  10   8  14   3   2  12   9  10   6  11
+  12   3  10  10  14   5   3  12   9  10
+   2  10   8  10  12   3  10   2   6   9
+  14   9   6   9   6   9  10  10  12   3
+  12   5   9   6  11   4  13  13   1  10
+   6   3   6   9  12   5   5   3   6   9
+  10  12   9   2   6   7   1  10  10   2
+  10   6   3  12   9  12   3  10  10  10
+  12   9  12   5   5   5   9  12  13   9
+
+Can go W = 1
+Can go S = 2
+Can go S, W = 3
+Can go E = 4
+Can go E, W = 5
+Can go E, S = 6
+Can go E, S, W = 7
+Can go N = 8
+Can go N, W = 9
+Can go N, S = 10
+Can go N, S, W = 11
+Can go N, E = 12
+Can go N, E, W = 13
+Can go N, E, S = 14
+Can go N, E, S, W = 15
+
+0) Start
+1) South
+2) South
+3) East
+4) South
+5) South
+6) West
+7) South
+8) East
+9) East
+10) North
+11) East
+12) North
+13) North
+14) North
+15) West
+16) North
+17) East
+18) East
+19) East
+20) South
+21) East
+22) North
+23) East
+24) South
+25) South
+26) East
+27) North
+28) East
+29) South
+30) South
+31) West
+32) South
+33) East
+34) South
+35) South
+36) West
+37) South
+38) South
+39) South
+40) East
+41) Done

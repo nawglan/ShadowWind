@@ -1,0 +1,227 @@
+Quests for ShadowWind:
+Version 1.0
+Doc Version 1.0.2a
+
+A quest shall consist of the following:
+A file in the qst directory which is named MOBNUM.qst
+The MOBNUM is the vnum of the mob that will be running the quest
+
+Shopkeepers and other mobs that have spec_procs should not be used
+as quest mobs.
+
+The .qst file format is as follows:
+
+#<vnum of mob>
+-goal-
+-flags-
+-knowledge-
+~
+-completemsg-
+~
+-skillname-
+-classlist-
+-racelist-
+-maxlevel-
+-value-
+-needs-
+-need_more_msg-
+~
+-needs_complete_msg-
+~
+-vnum-
+-destroy-
+-amount-
+-keywords-
+-message-
+~
+#<vnum of mob>
+...
+...
+...
+S
+
+Definitions:
+-goal- should be one of the following:
+       experience
+       object
+       skill
+
+-flags- can be any of the following:
+        a   -   Single player
+        b   -   Multiple player
+
+        if both a and b are present, multiple players can complete the quest
+        if each of the players meet all of the needs requirements.
+
+        c   -   Quest completed IN ORDER
+        d   -   Quest can be completed only once per player
+        e   -   Quest can be completed only once per boot
+
+        eg. : abcde would be, multiple players can attempt to finish the quest,
+              each providing all of the requirements.  The steps to complete
+              the quest should be done in order.  Players can only complete
+              this quest once.  The first person to complete the quest will
+              block all others from completing the quest until after the next
+              reboot.
+
+-knowledge- should be a text block that the mob will say when the criteria
+            for the quest has been met.  This can be used in addition to
+            giving an object/skill/exp to the person completing the quest.
+
+-skillname- should be the name of a skill to give the player will only give
+            the player a 15% skill setting for that skill/spell.
+
+-classlist- can be any of the following (can choose more than one)
+            these are the classes that are allowed to participate in the quest
+            a   -   Warrior
+            b   -   Rogue
+            c   -   Thief
+            d   -   Sorcerer
+            e   -   Wizard
+            f   -   Enchanter
+            g   -   Conjurer
+            h   -   Necromancer (unused)
+            i   -   Cleric
+            j   -   Priest (unused)
+            k   -   Shaman
+            l   -   Monk
+            m   -   Druid
+            n   -   Assassin
+            o   -   Bard (unused)
+            p   -   Ranger (unused)
+            q   -   Mercenary
+            r   -   All classes
+
+-racelist- can be any of the following (can choose more than one)
+           these are the races that are allowed to participate in the quest
+            a   -   Undefined (do not use)
+            b   -   Human
+            c   -   Troll
+            d   -   Ogre
+            e   -   Dwarf
+            f   -   Elf
+            g   -   Half Elf
+            h   -   Gnome
+            i   -   Halfling
+            j   =   All races
+
+-maxlevel- The max level that can participate in the quest (ie. max level that
+           the mob will accept items/money from.) Default is 51.
+
+-value- The amount of exp to give the player if the goal is Experience
+        The vnum of the object to give to the player if the goal is Object
+
+THE TAGS BELOW MUST APPEAR IN THE CORRECT ORDER
+THE TAGS BELOW MUST APPEAR IN THE CORRECT ORDER
+
+-needs- should be one of the following:
+        money
+        object
+
+-need_more_msg- should be a text block that the mob will say when it needs
+                more of a particular item.
+
+-needs_complete_msg- should be a text block that the mob will say when a
+                     particular need is met in full.
+
+-vnum- the vnum of the object to the player gives. (omit if needs is other than
+       object)
+
+-destroy- should the item/cash be destroyed when given to the mob, default is
+          yes.
+
+-amount- the number of items (amount of cash) the player must give to the mob
+         in order to successfully complete that portion of the quest.  All
+         cash values should be in copper.  So, 1000 would be 1 plat, 10 gold,
+         or 100 silver.
+
+
+THE TAGS BELOW MUST APPEAR IN THE CORRECT ORDER
+THE TAGS BELOW MUST APPEAR IN THE CORRECT ORDER
+
+-keywords- the keywords for a portion of the quest.
+
+-message- the message associated with the above keywords.
+
+
+It is possible to have more than one -needs- section and more than one
+-keywords- section, be sure to maintain the proper order.
+
+
+Example .qst file
+
+#3143
+-goal- EXPERIENCE
+-flags- ad
+-knowledge-
+The Mayor says, 'Thou hath done well. Please accept some additional experience
+for your efforts to curtail the hobgoblin invasion.'
+~
+-classlist- r
+-racelist- j
+-value- 20000
+-needs- OBJECT
+-need_more_msg-
+The Mayor says, 'Thanks, but I still need %d of these.'
+~
+-needs_complete_msg-
+The Mayor says, 'Thanks, but I have all of these that I need.'
+~
+-vnum- 3000
+-amount- 1
+-needs- OBJECT
+-need_more_msg-
+The Mayor says, 'Thanks, but I still need %d of these.'
+~
+-needs_complete_msg-
+The Mayor says, 'Thanks, but I have all of these that I need.'
+~
+-vnum- 3001
+-amount- 1
+-needs- MONEY
+-need_more_msg-
+The Mayor says, 'Thanks, but I still need %s.'
+~
+-needs_complete_msg-
+The Mayor says, 'Thanks, but I have all the money that I need.'
+~
+-amount- 3140
+-needs- OBJECT
+-need_more_msg-
+The Mayor says, 'Thanks, but I still need %d of these.'
+~
+-needs_complete_msg-
+The Mayor says, 'Thanks, but I have all of these that I need.'
+~
+-vnum- 3002
+-amount- 1
+-keywords- hiding place
+-message-
+The Mayor says, 'You might consider looking under Mungo's bar.'
+~
+-keywords- hobgoblin
+-message-
+The Mayor says, 'They are invading this fair city! Please seek out their
+hiding place and return the head of their king to me. They MUST be stopped.'
+~
+-keywords- king
+-message-
+The Mayor says, 'I have heard that he is a fierce warrior. I might suggest
+that you find others of your calibur to assist you in defeating this menace.'
+~
+S
+
+
+What the above example shows us:
+The mob with the vnum of 3143 is assigned to this quest.  The goal of the
+quest is 20000 experience points.  Only players level 13 or less can
+participate in this quest.  Multiple players can work on the quest,
+though the one that provides the final piece to the puzzle will be the one
+rewarded.  In this case there is only one needs section, so this doesn't
+really matter much. The needs sections must be solved in order, because there
+is only 1 this has no significance. This quest can only be completed once per
+player.  All classes can participate. There are 3 keywords sections, each
+with a corresponding message.  The last one has 2 keywords which will allow
+the message to be triggered by the phrase "hiding place", or the word hiding
+or the word place.
+

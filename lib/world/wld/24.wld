@@ -1,0 +1,718 @@
+#2400
+A Cluttered Beach~
+   As you approach the Island, you see a cluttered beach. The waters look to
+be filled with ships mired in the water. You see a sign posted in the sand.
+~
+24 c 2
+D0
+You see the edges of a dense forest.
+~
+~
+0 -1 2401 0
+D1
+You see a scattering of run down huts. It seems nobody has lived here lately.
+~
+~
+0 -1 -1 0
+D4
+A mist seems to over shadow the entire island.
+~
+~
+0 -1 -1 0
+D5
+The sand looks as if it has been here forever.
+~
+~
+0 -1 -1 0
+E
+ship ships~
+You see ships from all times gone by. They appear to have been trapped here
+for a very long time.
+~
+E
+sign~
+     ============================================
+            Welcome to the Isle of Tar!!!
+              Prepare for your slowest       
+              Nightmares to come true!    
+                   Created By:
+                     MORTIS
+     ============================================
+~
+E
+hut huts~
+You see a ramshakle group of huts. You assume nobody lives there due to the 
+gaping holes throughout them all.
+~
+S
+#2401
+The Clearing Before The Forest~
+   You enter a dense clearing. It has the look of having launched many a
+group of explorers in the past. You see signs of forgotten campfires from
+ages gone by.
+~
+24 a 3
+D0
+You see a wall of trees, it dosen't look as if you could pass.
+~
+~
+0 -1 -1 0
+D1
+You see a trail leading off into the forest. It looks as if it has been used 
+many times in the past.
+~
+~
+0 -1 2414 0
+D2
+A trail leads to the sandy beach....
+~
+~
+0 -1 2400 0
+D3
+A highly used path leads west into the forest.
+~
+~
+0 -1 2402 0
+S
+#2402
+A Well Traveled Path~
+   You are on a path leading through the forest. You hear strange sounds
+echoing from the forest surrounding you.
+~
+24 a 3
+D0
+You see a dense wall of trees. Eyes seem to blink back at you as you try to
+peer through the trees.
+~
+~
+0 -1 -1 0
+D1
+You see a path leading through the forest.
+~
+~
+0 -1 2401 0
+D2
+A wall of trees block your way. You couldn't get through them if you tried.
+
+~
+~
+0 -1 -1 0
+D3
+A dark trail leads further into the forest. A erry moan chills your blood as
+it comes whispering thru the trees.
+~
+~
+0 -1 2403 0
+S
+#2403
+A Clearing In The Path~
+   You wander into a clearing in the forest. It appears that many have rested
+here in the past.
+~
+24 a 3
+D0
+A slight trail leads off to the north. It seems the only way passable!
+~
+~
+0 -1 2404 0
+D1
+A path leads off into the forest.
+~
+~
+0 -1 2402 0
+D2
+The forest blocks your sight. You wonder what is on the other side.
+~
+~
+0 -1 -1 0
+D3
+You see what used to be a inn. The windows are boarded up and and the roof
+has fallen into the parlor. Seeking shelter there would be bad for your 
+health.
+~
+~
+0 -1 -1 0
+S
+#2404
+The Endless Path Thru The Forest~
+   The endless path continues thru the forest. You are starting to wonder if
+it will ever end.
+~
+24 a 3
+D0
+A blank wall of trees fill your sight. Strange sounds echo thru the trees.
+~
+~
+0 -1 -1 0
+D1
+The dense forrest blocks all light from above. You faintly detect a path
+leading off to the east. A low growl reachs your ears.....
+~
+~
+0 -1 2405 0
+D2
+A well worn path leads off to the south. Many a traveler has fleed that way!
+~
+~
+0 -1 2403 0
+D3
+A sheer cliff blocks your way. Even here the forest tries to overcome the rock
+walls of the cliff. You feel the walls close in on you.
+~
+~
+0 -1 -1 0
+D4
+You attempt to get a glimpse of the sky above. But alas, you fail! The forset
+overshadows everything for miles.
+~
+~
+0 -1 -1 0
+S
+#2405
+A Small Crowded Clearing~
+   You enter a small clearing. The bones of past explorers litter the dirt at
+your feet. You attempt to se in to the trees surounding you but fail. 
+~
+24 a 3
+D0
+A small path leads off to the north. You wonder how many before you have 
+fled that way.
+~
+~
+0 -1 2408 0
+D1
+A well travelled path leads on to the east. You see signs of recent passage.
+~
+~
+0 -1 2406 0
+D2
+A huge pile of bones blocks your path. You see the bones of races you know,
+and some you wonder if ever they really existed!
+~
+~
+0 -1 -1 0
+D3
+A path leads off to the west. You begin to wonder if maybe you should have
+stayed home this trip.
+~
+~
+0 -1 2404 0
+S
+#2406
+A Bend In The Trail~
+   You come upon a bend of the trail. It feels as if you've been travelling
+forever.
+~
+24 a 3
+D0
+Dense forset closes in on all sides. A slight trail to the north beckons you
+in your mind to follow it.
+~
+~
+0 -1 2407 0
+D1
+You see the edges of a dense forest.
+~
+~
+0 -1 -1 0
+D2
+You see the edges of a dense forest.
+~
+~
+0 -1 -1 0
+D3
+You see the faint trace of your footprints leading back to the west.
+~
+~
+0 -1 2405 0
+S
+#2407
+The Dark Tunnel~
+   You see the entrance leading into a dark tunnel. No light enters the 
+mouth. A feeling of dread oozes from the entrance.
+~
+24 air 0
+D0
+The rough hewn walls of the tunnel show signs of passage. You try to see 
+ahead but it is too dark. Water drips off the roof onto your nose.
+~
+~
+0 -1 2411 0
+D1
+You see nothing but rock. As you peer closer you make out the faint letters
+scratched into the wall with a dagger....HELP!!!!
+~
+~
+0 -1 -1 0
+D2
+You see the entrance to a clearing.
+~
+~
+0 -1 2406 0
+D3
+The rock walls seem to look back at you. You wonder what those dark red stains
+are splashed all over the wall.
+~
+~
+0 -1 -1 0
+S
+#2408
+A Rocky Bend In The Trail~
+   You enter a rocky clearing. A slight bend in the trail leads on to who
+knows what.
+~
+24 0 4
+D0
+You see rock walls leading straight up..Even A goat couldn't go that way.
+~
+~
+0 -1 -1 0
+D1
+You look east and see a scattering of trees against the rock walls of the
+canyon.
+~
+~
+0 -1 -1 0
+D2
+You see a trail leading back into the forest.
+~
+~
+0 -1 2405 0
+D3
+You see the entrance to a dark cave..Flowers spring up around the entrance.
+~
+~
+0 -1 2409 0
+D4
+Looking up, you see the faint haze of what could be the sun or moon. With
+the mist over-shadowing the whole sky it is had to tell. All sense of time
+has left you.
+~
+~
+0 -1 -1 0
+S
+#2409
+A Deep, Dark Cave~
+   As you enter the cave, you see a small spring flowing thru the center. It
+is the first sign of life you have found since you entered the forest. A sign
+seems to have been etched into the wall.
+~
+24 adq 5
+D0
+You see the rough hewn walls of the cave. Fungus grows everywhere!
+~
+~
+0 -1 -1 0
+D1
+You see the entrance to the cave. It appears to be the only way out!
+~
+~
+0 -1 2408 0
+D2
+The cave seems to stretch on forever. You wonder if someone didn't live here
+once upon a time.
+~
+~
+0 -1 -1 0
+D3
+You see signs of someone resting here in the past. The ashes of many fire
+long cold rest here.
+~
+~
+0 -1 -1 0
+D4
+As you look up.....SPLAT water drips into your eye...
+~
+~
+0 -1 -1 0
+E
+sign~
+Don't give up hope. You just took a wrong turn. Many before you have done
+this also. The end will justify the work. Have faith in yourselves and you
+will survive and reap the rewards in the end.
+~
+S
+#2410
+A Sharp Curve In The Path~
+   As you exit the tunnels, you come upon a sharp curve in the path. The 
+further you go, the more your sense of dread increases. 
+~
+24 a 4
+D0
+You look to the north and see a rock strewn path leading further up into the
+hills. You wonder just how far you have to go.
+~
+~
+0 -1 2412 0
+D1
+You see the entrance back into the tunnels. You cringe on the though of 
+having to go back into there.
+~
+~
+0 -1 2411 0
+D2
+You gaze in wonder after having spent so much time in the tunnels at the
+foothills surounding you. You just imagine how things would look if the 
+dark haze didn't hang over everything.
+~
+~
+0 -1 -1 0
+D3
+The sheer walls of the hills surrounding you tell you that you can't go there.
+~
+~
+0 -1 -1 0
+D4
+As you look up you see nothing but a misty haze.
+~
+~
+0 -1 -1 0
+S
+#2411
+Entrance To The Hills~
+   You you finally come to the end of the tunnel, You see the beginnings of
+the hill. You don't care whats out there as long as you can get out of the 
+tunnel.
+~
+24 air 4
+D0
+You see the edges of the tunnel start to peter out...At last you've reached
+the end of the tunnel.
+~
+~
+0 -1 -1 0
+D1
+You see nothing but darkness.
+~
+~
+0 -1 -1 0
+D2
+You see darkness as the tunnel leads away from you. You shivver at the 
+though of having to go back there.
+~
+~
+0 -1 2407 0
+D3
+You see the beginnings of the foothills. You could care less whats there as
+long as you don't have to go back into the tunnels. A small path leads to the 
+west.
+~
+~
+0 -1 2410 0
+S
+#2412
+Another Bend In The Trail~
+   As you climb higher and higher, the air gets thinner. The trail takes a
+sharp bend and you wonder if you can keep your footing.
+~
+24 a 5
+D0
+You see nothing but sheer cliffs. You watch as a goat falls past you after
+trying to climb the walls. You think it would better not to try them.
+~
+~
+0 -1 -1 0
+D1
+The path leads to the east. You keep climbing higher and higher. You are 
+wondering if you will ever get to the top.
+~
+~
+0 -1 2413 0
+D2
+You see the trail leading down out of the mountains and into the hills.
+~
+~
+0 -1 2410 0
+D3
+Nothing but rock looks you in the face.
+~
+~
+0 -1 -1 0
+D4
+You see the faint outline of the peaks as you look up.
+~
+~
+0 -1 -1 0
+S
+#2413
+Before The Summit~
+   You stop to wipe off your brow, you've almost reached the summit of the
+Island. You are so tired you can hardly stand. You hope there is a easier
+way down once you've reached the top.
+~
+24 a 5
+D0
+The top of the summit looks to be in that direction. You feels a sense of
+dread engulfing you and you start to feel sleepy.
+~
+~
+0 -1 2422 0
+D1
+Nothing but rock walls. You feel they laugh at you for even trying this!
+~
+~
+0 -1 -1 0
+D2
+Nothing but rock!
+~
+~
+0 -1 -1 0
+D3
+You see a path leading down the mountain.
+~
+~
+0 -1 2412 0
+S
+#2414
+Entrance Into The Caves~
+   You see before you the entrance into a series of cave. No light penatrates
+into the gloom. You feel a damp chill crawl across your spin as the wind 
+comes whispering out of the entrance.
+~
+24 ai 0
+D0
+You see the walls of a dark cave.
+~
+~
+0 -1 -1 0
+D1
+You see a dark passage thru the caves. Water drips everywhere.
+~
+~
+0 -1 2415 0
+D2
+Nothing but rock!
+~
+~
+0 -1 -1 0
+D3
+You see a blank rock wall. And then you notice the words"Death to ALL who
+Enter Here" scratched into the rock. A shivver runs down your spine.
+~
+~
+0 -1 -1 0
+S
+#2415
+A Curve In The Caves~
+   You notice that the caves are curving to the north. Alreadyy the walls
+close in about you.
+~
+24 ai 0
+D0
+The tunnel leads north. It seems to grow narrower as you go!!!
+~
+~
+0 -1 2417 0
+D1
+Nothing but rock walls. You notice a dark red hand print. It look almost as
+if it was painted on.
+~
+~
+0 -1 -1 0
+D2
+You look to the south. You see more tunnels.
+~
+~
+0 -1 -1 0
+D3
+You can faintly make out the entrance to the caves. The tunnel looks shorter
+that way.
+~
+~
+0 -1 2414 0
+S
+#2416
+Another Curve~
+   Another curve leads aways to the north. Will it ever end?
+~
+24 ai 0
+D0
+The tunnel leads north. It seems that the further you go, the deeper it gets.
+~
+~
+0 -1 2418 0
+D1
+Looking east, you see a endless string of tunnels..
+~
+~
+0 -1 2417 0
+D2
+Nothing but rock!
+~
+~
+0 -1 -1 0
+D3
+A blank rock wall stares you in the face.
+~
+~
+0 -1 -1 0
+S
+#2417
+A Sharp Bend~
+   As you go north, a sharp bend leads away to the west. You wish that the
+tunnels would end, already you are soppin wet from the water.
+~
+24 ai 0
+D0
+You stare at a blank wall. A fungus seem to beexcited about living there.
+~
+~
+0 -1 -1 0
+D1
+The rock walls seem to strech on forever.
+~
+~
+0 -1 -1 0
+D2
+As you look back all you can see is more tunnels.
+~
+~
+0 -1 2415 0
+D3
+You see a path leading thru the tunnels to the west.
+~
+~
+0 -1 2416 0
+S
+#2418
+A Narrow Twist~
+   As you go north the tunnel seems to twist to the east. Sweet pours off
+your brow from the heat.
+~
+24 air 0
+D0
+You stare at a blank wall. The rock almost seems to melt from the heat.
+~
+~
+0 -1 -1 0
+D1
+A sharp twist in the tunnel leads to the east.
+~
+~
+0 -1 2419 0
+D2
+As you look back all you can see is more tunnels.
+~
+~
+0 -1 2416 0
+D3
+A blank wall slaps you in the face. It almodt looks alive.
+~
+~
+0 -1 -1 0
+S
+#2419
+The Final Bend~
+   You approach what appears to be the final bend in the tunnels. You pray
+to Helver that it is almost over.
+~
+24 ar 0
+D0
+You see the entrance to a final cave. It seems dark in there.
+~
+~
+0 -1 2420 0
+D1
+The rock walls seem to strech on forever.
+~
+~
+0 -1 -1 0
+D2
+As you look back all you can see is more rock walls.
+~
+~
+0 -1 -1 0
+D3
+You see a path leading thru the tunnels to the west.
+~
+~
+0 -1 2418 0
+S
+#2420
+The Cave Of Doom~
+   You crawl into a cave. There appears to be nothin here. Which way is out.
+Maybe it was left and not right back there....But where?
+~
+24 ar 0
+D0
+You stare at a blank wall. A fungus seem to beexcited about living there.
+~
+~
+0 -1 -1 0
+D1
+The rock walls seem to strech on foreve.
+~
+~
+0 -1 -1 0
+D2
+As you look back all you can see is more tunnels.
+~
+~
+0 -1 2419 0
+D3
+You see nothing but more rock....
+~
+~
+0 -1 -1 0
+D4
+You see a hole in the roof.
+~
+~
+0 -1 2400 0
+S
+#2421
+Falling To Your Death In A Dark Pit~
+You fall into a dark swarming pit! From the looks of all of the bones you
+would think nobody ever left here alive!
+~
+24 djk 0
+D0
+Nowhere to go.
+~
+~
+0 -1 -1 0
+D1
+Nowhere to turn.
+~
+~
+0 -1 2420 0
+D2
+Your about to die.
+~
+~
+0 -1 -1 0
+D3
+A blank wall.
+~
+~
+0 -1 -1 0
+S
+#2422
+The Final Plataue~
+   You finally reached the top. From here you can see the whole island. Just
+above your head the mist swirls in turmoil. You feel total evil about you.
+~
+24 ar 5
+D0
+You stare a the mist surrounding the island. 
+~
+~
+0 -1 -1 0
+D1
+The island seems to stretch on forever. The mist seems to be slowly devouring
+it.
+~
+~
+0 -1 -1 0
+D2
+The island stretchs as far as the eye can see.
+~
+~
+0 -1 2413 0
+D3
+The mountains trail off to the west. You catch a fleeting glimpse of water.
+~
+~
+0 -1 -1 0
+S
+$~

@@ -1,0 +1,58 @@
+#300
+{GDo NOT Purge In here.{x~
+{WZone 59 ship progs room. GO AWAY.{x
+~
+3 0 0
+S
+#301
+Aboard The Ship To Port Halyon~
+   You are on a large passenger ship, everywhere around there are people
+walking about enjoying the view. Small children run from bow to stern over
+and over, managing to knock a great many people over in the process. The 
+gentle sound of the lapping water is somewhat drowned out by the sound of 
+the engine, but nevertheless it is there. In the distance, large gulls and
+other sea birds can be seen cruising over the waves, looking for food.
+~
+3 hy 1
+S
+#302
+Aboard The Ship To Caryllion~
+   You are on a large passenger ship, everywhere around there are people
+walking about enjoying the view. Small children run from bow to stern over
+and over, managing to knock a great many people over in the process. The 
+gentle sound of the lapping water is somewhat drowned out by the sound of 
+the engine, but nevertheless it is there. In the distance, large gulls and
+other sea birds can be seen cruising over the waves, looking for food.
+~
+3 hy 1
+S
+#396
+{RProg ROOM, OFF {GLIMITS{x~
+Your in the waiting room for progs, get out!
+~
+3 de 0
+S
+#398
+At The Ferry Dock~
+   The gentle sound of water lapping at the thick beams supporting the dock
+sets you at ease. Looking into the glassy aquamarine beauty of the river you
+become lost in your thoughts, eyes captured by the magnificent colors of the
+fish darting about in the water below. Looking across the river you see your
+destination, Caryllion, age old in beauty and the centre of many a legend.
+~
+3 0 0
+D3
+~
+~
+0 0 3499 0
+S
+#399
+{yOn The Caryllion Ferry{x~
+   The ferry is quite large, handling the bulk of passengers quickly across
+the river before you. It spans before you with rows and benches for what
+little comfort might be provided for your voyage. The ferry is designed for
+quick travel rather than comfort.
+~
+3 deh 1
+S
+$~

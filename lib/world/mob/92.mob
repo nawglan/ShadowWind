@@ -1,0 +1,33 @@
+#9200
+goatherd~
+the goatherd~
+A goatherd is here, watching over the cheesemakers.
+~
+This goatherd is just a teenage boy who doesn't have to go to school, little
+reward that is, however. He gets plenty of fresh air and exercise and thus
+is in pretty good shape.  
+~
+cdg 0 0 X
+4 18 8 2d2+40
+0 1000
+8 8 1 0 0 0
+T 85 1d6+1 0
+A 1 8 The goatherd whistles loudly for his flock.
+E -1 10 -1 0
+Dex: 80
+Int: 40
+Wis: 25
+Con: 50
+#9201
+billy goat~
+The billy goat~
+A billy goat
+~
+The billy goat has sharp horns and a nasty disposition. He will eat almost
+anything you lay in front of him and will defend himself with ease.  
+~
+d 0 0 X
+3 18 8 2d2+30
+0 600
+8 8 1 0 0 0
+T 90 1d4+1 18

@@ -1,0 +1,112 @@
+#9100
+brigand~
+the Brigand~
+A brigand is here, looking for hapless victims.
+~
+A grim warrior with a ragged appearance and a black beard covering
+most of his face.
+~
+dghjm k -100 X
+10 15 5 5d5+100
+0 5000
+8 8 1 3 1 3
+T 100 2d6+3 27
+A 2 8 $n says, 'Have you come to swear alliance to the Witch King?'
+A 5 8 $n Sizes you up to see if you are worth the trouble.
+E 16 100 9100 15
+E 11 80 9101 15
+#9101
+giant bug eyed bug-eyed~
+the Giant~
+A bug-eyed giant is standing here, pulling dead trees up from the ground.
+~
+The giant is about 30 feet tall and wearing nothing but some brown skin 
+strapped around its waist. Huge bulging eyes protrude from deep-sunk 
+sockets. With a viscous snarl the giant charges towards you, ready to 
+tear you into pieces.
+~
+bdfg k -100 X
+18 13 1 9d9+180
+0 16800
+8 8 1 3 1 6
+T 110 4d8+11 27
+A 2 8 $n says, 'Dieeearghh!'
+A 8 8 $n snarls angrily.
+E 8 25 9110 15
+E 16 100 9106 2
+#9102
+bukken digger~
+a bukken digger~
+A fountain of charred earth sprays up around you, a digger comes charging up
+from underneath the black soil.
+~
+You see a small demon-like creature. A thin, ragged thing with slick waving
+arms, staring white eyes, matted whiskers and tattered clothes.
+~
+bdfgo k -100 X
+10 15 5 5d5+100
+0 5000
+8 8 0 4 14 3
+T 50 2d4+0 24
+#9103
+black orc scabby~
+the Black Orc~
+A scabby black orc is crouching here, with insane rage it charges at you.
+~
+An obscenely foul apparition, vaguely resembling a human man is readying 
+his sword. The grotesque face with slanting eyes and a flattened snout full 
+of sharpened tusks further deform the heavily built, muscled body with its 
+long thick arms and swarthy hide.
+~
+dfgo dfkp -200 X
+12 14 4 6d6+120
+0 7500
+8 8 1 3 13 3
+T 100 2d8+3 24
+E 16 40 9100 15
+#9104
+mountain troll~
+the Mountain troll~
+A mountain troll is wandering around here.
+~
+A huge ugly creature with a hulking body patched by bushes of harsh wiry
+hair and stony hide that has the rough texture of a cliff face. The gruesome
+face is accompanied by ill-proportioned hands and feet. With an
+unintelligent sound the mountain troll charges towards you.
+~
+dfg jk -200 X
+19 12 0 10d10+190
+0 20000
+8 8 1 3 2 4
+T 100 4d8+1 27
+E 18 40 9111 10
+#9105
+bugbear dreadful~
+the Bugbear~
+A dreadful bugbear stands here, picking chunks of meat from its teethes.
+~
+Large and heavy-set, a creature covered in brick red fur.  Though
+vaguely humanoid in appearance, he seems to contain the blood of 
+some large carnivore.
+~
+dfg k -400 X
+23 11 -2 12d12+230
+0 35000
+8 8 0 3 1 4
+T 50 4d4+4 24
+E 3 10 9109 10
+#9106
+plant putrid~
+the Putrid Plant~
+A putrid plant is growing here, oozing with noxious vapour.
+~
+A plant that should have been dead since long but somehow has managed 
+to survive in this unfriendly place. The plant has mutated into a monstrous
+shape, growing in size and developed some fiendish claw-like arms. 
+With a hissing sound it reaches out to grab you.
+~
+bdfg hk -400 X
+22 11 -1 11d11+220
+0 31000
+8 8 0 15 16 3
+T 100 4d7+6 24

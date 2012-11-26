@@ -1,0 +1,110 @@
+#8300
+bat monstrous~
+the Monstrous Bat~
+A monstrous bat shrieks as it flies towards you.
+~
+The bat is large, and quite intimidating.
+~
+dfgmr dkqt -350 X
+10 15 5 5d5+100
+0 6500
+5 5 0 14 14 4
+T 50 2d4+0 22
+#8301
+werejackal beast~
+the Werejackal~
+A hideous beast with yellow, remorseless eyes, is crouching in the shadows.
+~
+A hideous beast, with thick fur that reeks of blood and deadly sharp 
+teeth, approaches you without fear.
+~
+dfgl k -1000 X
+10 15 5 5d5+100
+0 6400
+8 8 1 0 14 4
+T 100 2d8+1 22
+E 12 100 8330 5
+#8302
+willow wisp ghostly ball~
+the Willow'o'Wisp~
+A ghostly ball of cold blue light is floating in the air.
+~
+A ghostly ball of light is floating around in the air. The glowing sphere 
+emits a sickly bluish light, and you feel weaker and wearer the longer 
+you look at it, as if it were draining your soul.
+~
+bcdefglq dhkq -350 X
+15 14 4 8d8+150
+0 13700
+8 8 0 7 0 3
+T 100 2d8+6 26
+E 16 20 8321 6
+#8303
+trapper~
+the Trapper~
+A trapper is chopping wood here.
+~
+A big and strong forest man, he hefts his axe and chops the wood he needs for 
+his fire. He barely even gives you a second glance.
+~
+bdg 0 350 X
+40 5 -10 20d20+400
+0 150000
+8 8 1 3 1 3
+T 50 4d9+7 2
+A 10 8 The trapper swings his axe, sending wood chips flying.
+A 2 8 The trapper sets his axe down, and takes a breather.
+E 9 100 3071 -1
+E 7 100 3081 -1
+E 5 100 3044 -1
+E 16 100 3022 -1
+E 12 20 8300 10
+#8304
+black ancient tree~
+the Black Tree~
+A black ancient tree is here, casting long dark shadows across the ground.
+~
+An old gnarled tree with long dark branches is towering above you.
+It seems as if it were alive, observing your every move with caution,
+watching and waiting.
+~
+bdgq kt -350 X
+37 6 -9 19d19+370
+0 140000
+8 8 0 16 16 5
+T 50 4d8+5 5
+E 3 100 8333 3
+#8305
+large grey wolf~
+the large, grey wolf~
+A large, grey wolf scuttles across the ground before you.
+~
+The large, grey wolf has dark eyes and thick fur. He snarls at you
+as you catch a peak of him.
+~
+df 0 0 X
+3 18 8 2d2+30
+0 600
+8 8 1 4 14 2
+T 100 1d5+1 0
+A 10 8 The large, grey wolf snarls viciously at you.
+#8306
+beast pit burnished eyes~
+the pit beast~
+A pair of burnished {ygold{r eyes gleam from a beast hidden in the dark.
+~
+A single pair of gleaming eyes of burnished gold stare at you hungrily. Around
+it a large mass that seems to swallow up light hovers bleakly.
+~
+cdflno djkt -300 X
+45 4 -10 23d23+450
+0 280000
+8 8 0 4 14 4
+T 50 6d7+6 2
+>fight_prog   20~
+cast 'fireball'
+~
+>fight_prog   20~
+cast 'lightning bolt'
+~
+|

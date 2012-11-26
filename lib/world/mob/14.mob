@@ -1,0 +1,190 @@
+#1401
+elf citizen~
+{gthe elf citizen~
+{gThe Elven citizen is going about his business.{x
+~
+He is tall, lithe, and very handsome.
+~
+dgh 0 750 X 0 
+8 16 6 4d4+80
+0 3500 -1
+8 8 1 3 5 3
+T 100 1d7+4 0
+#1402
+elf citizen~
+{gthe elf citizen~
+{gThe Elven citizen is going about her business.{x
+~
+She is tall, lithe, and very beautiful.
+~
+dgh 0 750 X 0 
+8 16 6 4d4+80
+0 3500 -1
+8 8 2 3 5 3
+T 100 1d7+4 0
+#1403
+elf guard~
+{gAn elven guard{x~
+{gAn elven guard stands here, patrolling the platform.{x
+~
+He is tall, lithe, and very handsome.  He looks very strong
+and is ready to defend his queen and her kingdom.
+~
+degimn m 800 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 5 3
+T 50 7d3+0 11
+E 18 5 1410 30
+#1404
+elf advisor~
+{gthe elf advisor~
+{gThe Elven {GAdvisor {gis studying here.
+~
+He is ancient, even by Elven standards; but don't underestimate him.
+~
+bdenpr 0 900 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 5 3
+T 50 4d8+2 23
+#1405
+elf queen~
+{gThe Elf Queen~
+{gThe {GElf {YQueen {gis sitting on her throne.
+~
+The Queen of the Elves is probably the most beautiful woman you have 
+ever seen.  It is apparent, as she holds her court, that she holds a 
+special affection for her War Chief.
+~
+bdeilmnopr hm 950 X 0 
+55 0 -10 28d28+5550
+0 6000000 -1
+8 8 2 3 5 3
+T 50 10d7+10 23
+#1406
+elf chief~
+{gThe Elf War Chief{x~
+{gThe Elf {RWar Chief{g is sitting on his throne.{x
+~
+The Elven War Chief is the biggest elf you have ever seen.  As he 
+watches over the court, its is obvious that he has special feelings 
+for his queen.
+~
+bdeilmnpr hm 950 X 0 
+50 2 -10 25d25+500
+0 500000 -1
+8 8 1 3 5 3
+T 50 10d4+10 23
+#1407
+elvardien elf mage~
+{wthe elvardien~
+The Elvardien is studying here.
+~
+The Elvardien is a powerful Elven mage.  He is the most ancient
+being you can remember seeing.
+~
+bdeilnpr 0 1000 X 0 
+22 11 -1 11d11+220
+0 31000 -1
+8 8 1 3 5 3
+T 100 8d4+8 23
+#1408
+ochvlad sorcerer~
+{wOchvlad the Sorcerer~
+{wOchvlad the sorcerer walks around behind the counter.~
+He looks old and wise, and is a very powerful sorcerer.  He is simply
+dressed and doesn't seem to be wearing any magical items.  Maybe he 
+doesn't need them.
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 2 0 4
+T 20 30d36+100 0
+#1409
+glavin~
+{wGlavin the Venison shop keeper~
+{wGlavin puts down his meat cleaver as you walk in.~
+His white apron is covered in blood, and he looks very handy with
+that meat cleaver.
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 2 0 4
+T 20 30d36+100 0
+#1410
+mainen merchant~
+{wMainen the Merchant~
+{wMainen the merchant looks up as you walk in.~
+This old adventerer just got tired of risking his life for treasure
+and glory, and decided to settle down to a more quiet life.
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 2 0 4
+T 20 30d36+100 0
+#1411
+carfin baker~
+{wCarfin the baker~
+{wCarfin stands here sampling his fresh bread.~
+He is the fattest elf you've ever seen, he looks like he eats as much as 
+he sells. 
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 2 0 4
+T 20 30d36+100 0
+#1412
+graytor weapon smith weaponsmith~
+{wGraytor the weaponsmith~
+{wGraytor the weaponsmith glances at you as you enter his shop.~
+His scars tell you everything you want to know about his years in 
+the Elven army.  He has forgotton more about weapons than most people
+will ever know.
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 2 0 4
+T 20 30d36+100 0
+#1413
+rastenor armoror armorer armor smith armorsmith~
+{wRastenor the armorsmith~
+{wRastenor the armorer walks in to the room from his forge.~
+This elf has huge arms, chest and shoulders from swinging his hammer 
+all day.  His voice rumbles deeper than any elf you've ever heard too.
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 2 0 4
+T 20 30d36+100 0
+#1414
+strayse healer cleric~
+{wStrayse the healer~
+{wStrayse stands here preparing some potions.~
+{rStrayse tells you, '{RAre you in need of my services?{r'{x
+
+He is an old cleric who set up shop to pay for his medical training.
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 0 0 4
+T 20 3d6+1 0
+#1415
+taburn innkeeper keeper~
+{wTaburn the Inn Keeper~
+{wTaburn the Inn Keeper says "Welcome, may I get you a room?"~
+He doesn't look old enough to own anything, let alone an Inn, he probably
+works for his father.
+~
+abdlw dh 900 X 0 
+55 30 -10 1d1+30000
+0 16000 -1
+8 8 1 2 0 4
+T 20 3d6+1 0

@@ -1,0 +1,91 @@
+#4800
+rock boulder~
+a large rock~
+A large rock sits right in the middle of the path here.~
+~
+13 0 a 0 
+0 0 0 0 6
+320 0 0
+E
+rock boulder~
+There is nothing in particular you notice about this rock.
+~
+#4801
+acorn nut~
+a little acorn~
+A little acorn with a cap is resting on the ground here.~
+~
+19 0 a 0 
+1 0 0 0 2
+1 3 0
+#4802
+flowers~
+{wsome {Gc{Ro{Bl{Go{Rr{Bf{Gu{Rl {xforest flowers~
+A bunch of rainbow-colored forest flowers display themselves here.~
+~
+13 0 ao 0 
+0 0 0 0 4
+1 12 0
+E
+tulip~
+In the bunch of flowers you find a tulip, which has written on it:
+For Breena!
+~
+E
+flowers~
+Various, colorful flowers. They smell lovely.
+~
+#4803
+logs fireplace fire remains~
+the ashey fireplace~
+The ashey remains of a couple of burnt out logs sit here on the bare earth.~
+~
+13 0 0 0 
+0 0 0 0 5
+1 0 0
+E
+logs fire fireplace remains~
+The logs are charred black and really nothing but ash from a past fire.
+~
+#4804
+branch~
+a large, dry branch~
+A dry, fallen branch lies here stripped of its leaves.~
+~
+13 0 ao 0 
+0 0 0 0 5
+2 3 0
+E
+branch~
+This is a dried out branch, stripped of its leaves, but still wrapped in
+scaley bark.
+~
+#4805
+arrow broken shaft~
+a broken arrow~
+A snapped arrow shaft lies on the ground, feather still attached.~
+~
+13 0 a 0 
+0 0 0 0 5
+1 5 0
+E
+arrow broken shaft~
+This arrow has been snapped in the middle, the two halves hanging rather loosely
+together by a strip of wood. The black and white feather remains attached
+to the end of the arrow, and the metal shaft at the front.
+~
+#4806
+trap teeth mouth~
+a steel trap~
+A circular mouth of metal teeth lie on the ground waiting to ensnare someone.~
+~
+13 0 a 0 
+0 0 0 0 8
+1 50 0
+E
+trap teeth mouth~
+This painful device looks to be triggered upon someone stepping within its
+mouth, upon which a snap of metal will likely result in some flesh being
+torn.
+~
+$~

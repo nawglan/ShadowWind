@@ -1,0 +1,244 @@
+#10200
+cloak~
+{Da shiny black cloak{x~
+A black cloak made from some poor animal has been forgotten here.~
+~
+11 0 ac 0 
+0 0 0 0 3
+6 500 0
+E
+cloak black~
+A shiny black fur that is smooth to the touch.
+~
+A
+17 -3
+#10201
+wand fire~
+{Ra fire wand{x~
+A magical wand with a flaming tip is here.~
+~
+3 0 ao 0 
+25 2 2 68 10
+5 6000 1000
+E
+wand fire~
+A strong mithril rod with a red-hot orb on the top.
+~
+P
+firestorm
+#10202
+key scaled~
+{wa {rred scaled {xkey~
+A red key has been dropped here.~
+~
+18 0 ao 0 
+2 0 0 0 1
+2 0 0
+E
+key scaled~
+A large key, made of red scales.
+~
+#10203
+key granite~
+a black granite key~
+A key made of black granite is on the ground.~
+~
+18 0 ao 0 
+9 0 0 0 7
+2 0 0
+E
+key granite~
+A plain key made of granite.
+~
+#10204
+key rainbow~
+{wa {Rr{ba{Gi{Mn{rb{Bo{gw{x-colored key~
+A key with blended colors of the rainbow is here.~
+~
+18 f ao 0 
+9 0 0 0 1
+2 0 0
+E
+key rainbow~
+A smooth key that has the colors of the rainbow swirling on the outside.
+You cannot tell what material it is made of.
+~
+#10205
+key ice~
+a solid key of ice~
+A shiny, smooth key made of ice has been forgotten here.~
+~
+18 g ao 0 
+5 0 0 0 17
+1 0 0
+E
+key ice~
+It must have magical properties, because no matter what you do the key
+doesn't melt.
+~
+#10206
+chest gold~
+{wan ornately {Ygold {xchest~
+An ornately designed gold chest sits on a mound of gold here.~
+~
+15 0 0 0 
+200 13 10204 0 15
+180 2000 0
+E
+chest gold~
+A chest made of gold. It has detailed designs on the outside.
+~
+#10207
+chest gold~
+{wa battered chest of {Ygold{x~
+A large battered chest made of gold is sitting in the corner.~
+~
+15 0 0 0 
+250 9 10203 0 15
+200 2300 0
+E
+chest gold~
+A plain gold chest, battered and worn.
+~
+#10208
+chest iron~
+a shiny iron chest~
+An iron chest polished to a shine sits alone here.~
+~
+15 0 0 0 
+180 5 -1 0 8
+100 500 0
+E
+chest iron~
+You see an iron chest. Polished, with a few dents, and nothing special.
+~
+#10209
+chest ice~
+{wa {Cs{Wp{Ca{Wr{Ck{Wl{Ci{Wn{Cg{x chest made of {Wice{x~
+A prismatic chest of solid ice gleams under the torch light here.~
+~
+15 g a 0 
+210 5 10205 0 17
+52 3200 320
+E
+chest ice~
+You can tell it is a magical chest. It is light, and doesn't even melt.
+~
+#10210
+sword souls sabre~
+sabre of souls~
+A ghostly sabre ripples as it passes through dimensions here.~
+~
+5 fgh an 0 
+3 7 3 3 1
+3 7400 3000
+B
+b 
+E
+sword souls spirit~
+The sword is pale white, it looks like a ghost of a sword in your hand.
+You notice a skull on the hilt, staring back at you.
+~
+A
+1 -5
+#10211
+banner rainbow cloth~
+{wa {Bs{bw{Bi{br{Bl{bi{Bn{bg{x {Rr{ba{Gi{Mn{rb{Bo{gw{x banner~
+A colorful length of cloth billows in the wind here.~
+~
+11 g ak m 
+0 0 0 0 3
+3 6200 620
+E
+banner rainbow cloth~
+A magical cloth with all the colors of the rainbow.
+~
+A
+13 3
+A
+12 3
+A
+17 -2
+#10212
+rococo iron bracelet~
+an iron rococo bracelet~
+An elaborate bracelet carefully handcrafted has been carelessly left here.~
+~
+9 gjk am 0 
+1 0 0 0 8
+6 4000 0
+E
+rococo iron bracelet~
+A well-made bracelet marked with elaborate ornamentation.
+~
+A
+17 -2
+#10213
+rococo suit armor~
+a suit of rococo plate-armor~
+A suit of strong body armor lies here, obviously made with care.~
+~
+9 jk ad f 
+5 0 0 0 8
+75 22000 1000
+E
+rococo suit armor~
+Very well made, marked with elaborate ornamentation. Small iron spikes have
+been added onto the armor, making it look formidable.
+~
+A
+1 1
+#10214
+ruby jewel eye~
+{Ra bright ruby eye{x~
+An eye made of ruby stares up at you from the ground.~
+~
+8 0 ao 0 
+0 0 0 0 1
+8 11000 1100
+E
+ruby jewel eye~
+This jewel is a wonder. Such a large ruby, cut so carefully into the shape
+of a perfect eye.
+~
+A
+12 6
+#10215
+coins money gold heap~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 0 a 0 
+0 15 0 0 15
+16 0 0
+E
+coins money gold heap~
+Quite a bit of coins.
+~
+#10216
+coins money gold treasure~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 0 a 0 
+0 25 0 0 15
+16 25000 0
+E
+coins money gold treasure~
+All this gold is enough to make you very rich.
+~
+#10217
+amulet granite~
+{Da {wg{Dr{we{Dy {wg{Dr{wa{Dn{wi{Dt{we {Damulet{x~
+A heavy looking amulet lies on the ground.~
+~
+11 gl ac 0 
+0 0 0 0 7
+6 2000 0
+A
+19 1
+A
+25 5
+A
+17 -1
+$~

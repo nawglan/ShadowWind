@@ -1,0 +1,105 @@
+* ACTD system
+* $n name $e he/she $s his/her (char)
+* $m him/her 			(the target is in capitals) 
+* $n obj name $s obj short $a a/an name
+* $p obj name
+* A
+*  vnum
+* What char sees without argument
+* What other sees without argument
+* What char sees when target found
+* What other sees when target found
+* What target sees when target found
+* When target not found
+* What char sees when he is the target
+* What other sees when char is target
+* What char sees when another object is the target.
+* What others see when another object is the target.
+*
+
+* pipe bong
+A
+ 203
+You grab your bong and fill it with herb.~
+$n grabs the bong and fills it with herb.~
+You blow a lungfull at $N.~
+$n blows a lungfull from the bong at $N.~
+$n blows a lungfull of smoke in your face.~
+You can't find that person, smoked too much eh!?~
+You grab the bong and take a toke.~
+$n grabs $s bong and has a toke.~
+#~
+#~
+
+* leg bone
+A
+ 2099
+You play absently with $p.~
+$n plays absently with $p.~
+You bop $N on the head with $p!~
+$n bops $N on the head with $p!~
+$n bops you on the head with $p!~
+You can't find that person.~
+You bop yourself on the head with $p.~
+$n bops $mself on the head with $p.~
+You bop $P with $p a few times.~
+$n bops $P with $p a few times.~
+
+* pouch
+A
+ 2285
+You check the contents of $p.~
+$n holds $p and snickers to $mself.~
+You sprinkle some dust from $p over $N, who jumps in surprise.~
+$n sprinkles some sparkling dust from $p at $N, who jumps nervously.~
+With a devilish grin on $s face, $n sprinkles some golden dust from $p at you!~
+You try to throw some dust at someone who is not here.~
+You sprinkle some dust from $p over yourself.~
+$n sprinkles some glittering dust over himself.~
+There doesn't seem to be enough dust left in $p.~
+#~
+
+* A bread (test object)
+A
+ 3010
+You eat a bread, it really is delicious.~
+$n eats a delicious looking bread.~
+#~
+#~
+#~
+#~
+#~
+#~
+#~
+#~
+
+* the fountain (test object)
+A
+ 3035
+You reach down towards the fountain, and drink from the clear water.~
+$n drinks some fine, clear water from the fountain.~
+#~
+#~
+#~
+#~
+#~
+#~
+#~
+#~
+
+* skull
+A
+ 24246
+You hold $p and say, 'Alas, poor Yorick. I knew him well.'~
+$n hold $p and says, 'Alas, poor Yorick. I knew him well.'~
+You hold $p in front of $N and scream!~
+$n sticks $p in $N's face and screams horribly!~
+$n sticks $p in your face and screams horribly!~
+Who? Where?~
+You put $p over your head and look around.~
+$n puts $p over $s head and grins.~
+You show $p to $P. No obvious reaction.~
+$n shows $p to $P. No obvious reaction.~
+
+$
+

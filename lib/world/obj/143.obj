@@ -1,0 +1,284 @@
+#14300
+key diamond edged~
+a diamond-edged key~
+A long diamond-edged key is stuck half into the ground.~
+~
+18 0 ao 0 
+1 0 0 0 16
+0 14 0
+E
+key diamond edged~
+It is a long, slender key, which is probably used to open a very exquisite
+door.
+~
+#14301
+sword long longsword weapon~
+a fine longsword~
+A shiny longsword is lying on the ground.~
+~
+5 k an 0 
+3 3 4 3 9
+8 600 0
+E
+sword long longsword weapon~
+This sword has the look of skilled craftsmanship.  The long, thin blade runs
+perfectly straight from shearing-guard to point without so much as a scratch.
+This deadly weapon is no doubt standard issue to the Elven Guard.
+~
+#14302
+armor elven chain chainmail~
+an elven chainmail~
+A nice looking chainmail is lying on the ground here.~
+~
+9 k ad f 
+5 0 0 0 9
+45 3000 100
+#14303
+mithril elven armor chain~
+a mithril chainmail~
+A white chainmail is lying on the ground.~
+~
+9 gk ad f 
+7 0 0 0 10
+60 5000 3000
+A
+20 -2
+A
+24 -2
+#14304
+mithril sword twohanded~
+a two-handed mithril sword~
+A large sword is stuck into the ground.~
+~
+5 gk an 0 
+6 6 4 14 10
+18 6768 500
+A
+18 1
+A
+19 1
+#14305
+scope telescope large~
+a telescope~
+A large telescope is fastened on a tree.~
+~
+12 0 0 0 
+0 0 0 0 29
+600 0 0
+#14306
+bow hunting elven~
+an elven hunting bow~
+A wooden bow has been left here lying on the ground.~
+~
+5 gk an 0 
+5 3 4 13 5
+1 1000 0
+A
+18 2
+#14307
+cap coif chain elven~
+an elven chaincoif~
+A chainmail coif has been left here on the ground.~
+~
+9 k ae g 
+5 0 0 0 8
+20 1750 0
+#14308
+leggings chain elven~
+a pair of elven chainmail leggings~
+Some chain leggings has been left here unguarded.~
+~
+9 k af h 
+5 0 0 0 0
+25 1750 0
+#14309
+green leafgreen potion~
+{wa {gleaf-{ggreen{x potion~
+A green potion is standing on the ground.~
+~
+10 gk ao 0 
+35 189 189 0 18
+1 29000 10000
+P
+heal
+P
+heal
+#14310
+golden potion small~
+{wa small {Ygolden {xpotion~
+A small golden potion is here on the ground.~
+~
+10 g a 0 
+10 141 0 0 1
+1 22000 12000
+P
+armor
+#14311
+potion ocean blue~
+{wan {bocean-{bblue{x potion~
+An ocean-blue potion is resting on the ground.~
+~
+10 gk ao 0 
+35 141 187 0 18
+2 19000 10000
+P
+armor
+P
+bless
+#14312
+scroll burnt~
+a burnt scroll~
+A burnt scroll is here crumbeling away in the wind.~
+~
+2 g a 0 
+40 70 70 70 19
+1 30000 10000
+P
+fireball
+P
+fireball
+P
+fireball
+#14313
+bag green small~
+{ga small green bag{x~
+A green bag has been left here.~
+~
+15 0 a 0 
+50 0 0 0 3
+6 1000 750
+#14314
+sack green large~
+{ga large green sack{x~
+A green sack has been left here.~
+~
+15 0 ao 0 
+90 0 -1 0 3
+0 4000 1000
+#14315
+papyrus note paper~
+a papyrus note~
+A papyrus roll is lying on the ground.~
+~
+16 k ao 0 
+0 0 0 0 19
+1 15 0
+#14316
+swan quill feather pen white~
+a swan-feather quill~
+A small white feather is flying around in mid-air.~
+~
+21 k ao 0 
+0 0 0 0 1
+1 10 0
+#14317
+small jar glass worm~
+a small glass jar with a glowing worm in it~
+A small glass jar has been left on the ground.~
+~
+1 ku ao 0 
+0 0 -1 0 18
+2 15000 6000
+E
+small jar glass~
+you see a small perfectly made glass jar. In the jar you can
+see a small worm glowing brightly.
+~
+E
+worm glowing~
+The worm looks friendly..
+~
+A
+18 2
+#14318
+milk skin~
+a homemade milk skin~
+A nice looking skin, with white traces of milk on it, has been left here.~
+~
+17 k ao 0 
+20 20 10 0 24
+25 333 0
+#14319
+rabbit meat roasted~
+a nicely roasted rabbit~
+A very good smelling roasted rabbit has been left on the ground.~
+~
+19 0 ao 0 
+24 0 0 0 2
+3 25 0
+#14320
+biscuit elven~
+a fine elven biscuit~
+A small biscuit lies on the ground.~
+~
+19 0 ao 0 
+12 0 0 0 2
+1 5 0
+#14321
+cape wool woolen~
+a warm woolen cape~
+Some one has left something wooly on the ground.~
+~
+11 g ack 0 
+0 0 0 0 3
+10 120000 5000
+A
+24 -2
+A
+26 10
+#14322
+ring fire opal~
+{wa small {rfire-{ropal {xring~
+A small glowing ring has been left on the ground.~
+~
+11 g ab 0 
+0 0 0 0 6
+10 9500 4000
+E
+ring fire opal~
+a small red opal is set into the platinum ring, the opal glows with a
+faint red light that pulses whith your heart beat.
+~
+A
+2 1
+A
+17 -5
+#14323
+green leafgreen potion~
+{wa {gleaf-{ggreen{x potion~
+A green potion is standing on the ground.~
+~
+10 gk ao 0 
+30 189 0 0 18
+1 29000 10000
+P
+heal
+#14324
+potion ocean blue~
+{wan {bocean-{bblue{x potion~
+An ocean-blue potion is resting on the ground.~
+~
+10 gk ao 0 
+30 141 187 0 18
+2 19000 5000
+P
+armor
+P
+bless
+#14325
+meat deer venison~
+a piece of venison~
+A large piece of venison.~
+~
+19 0 a 0 
+24 0 0 0 2
+10 80 0
+#14326
+meat rabbit~
+a piece of rabbit meat~
+A large piece of rabbit meat.~
+~
+19 0 a 0 
+12 0 0 0 2
+5 29 0
+$~

@@ -1,0 +1,57 @@
+#83
+The Badlands /Jack/~
+8399 10 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+O 0 8385 1 8312 100	* the corpse of a hanged man
+D 0 8337 4 1	* The Cellar
+M 0 8306 1 8337 100	* the pit beast
+M 0 8300 4 8323 100	* the Monstrous Bat
+M 0 8300 4 8323 100	* the Monstrous Bat
+M 0 8300 4 8325 100	* the Monstrous Bat
+M 0 8300 4 8325 100	* the Monstrous Bat
+M 0 8301 3 8326 100	* the Werejackal
+M 0 8301 3 8330 100	* the Werejackal
+M 0 8301 3 8334 100	* the Werejackal
+M 0 8305 6 8326 100	* the large, grey wolf
+M 0 8305 6 8326 100	* the large, grey wolf
+M 0 8305 6 8330 100	* the large, grey wolf
+M 0 8305 6 8330 100	* the large, grey wolf
+M 0 8305 6 8334 100	* the large, grey wolf
+M 0 8305 6 8334 100	* the large, grey wolf
+M 0 8302 2 8324 100	* the Willow'o'Wisp
+M 0 8302 2 8332 100	* the Willow'o'Wisp
+M 0 8304 1 8326 100	* the Black Tree
+M 0 8303 1 8336 100	* the Trapper
+D 0 8331 1 1	* At The Forest Lodge
+D 0 8335 3 1	* Inside The Forest Lodge
+D 0 8335 1 1	* Inside The Forest Lodge
+D 0 8336 3 1	* Behind The Forest Lodge
+D 0 8335 5 1	* Inside The Forest Lodge
+S
+$

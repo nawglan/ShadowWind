@@ -1,0 +1,35 @@
+#142
+Castle Of The Apocalypse ][ /Dorga/~
+14299 60 2
+1 0 25
+1 1 1 1
+0 0 0 0
+1 1 1 1
+1 1 1 1
+6 6 6 6 
+*
+M 0 14200 1 14256     ShopKeeper
+M 0 14201 1 14257     ShopKeeper
+M 0 14202 1 14258     ShopKeeper
+M 0 14203 1 14262     ShopKeeper
+M 0 14204 1 14263     ShopKeeper
+M 0 14205 1 14264     ShopKeeper
+M 0 14206 15 14206    DeathKnight
+M 0 14206 15 14210    DeathKnight
+M 0 14206 15 14203    DeathKnight
+M 0 14206 15 14217    DeathKnight
+M 0 14206 15 14221    DeathKnight
+M 0 14206 15 14224    DeathKnight
+M 0 14206 15 14227    DeathKnight
+M 0 14206 15 14231    DeathKnight
+M 0 14206 15 14234    DeathKnight
+M 0 14206 15 14236    DeathKnight
+M 0 14206 15 14242    DeathKnight
+M 0 14206 15 14246    DeathKnight
+M 0 14206 15 14249    DeathKnight
+M 0 14206 15 14251    DeathKnight
+M 0 14206 15 14253    DeathKnight
+M 0 14207 1 14248     Kirgan
+E 1 14103 1 17        Give Key To Castle
+O 0 14211 1 14248     Well
+S

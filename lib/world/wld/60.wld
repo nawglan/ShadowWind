@@ -1,0 +1,828 @@
+#6000
+The Heart Of It All~
+   The sweeping gothic architecture is adorned with carvings of battles from
+some dark age when mages rode about on dragons and clerics were shunned as
+tools of Evil. It depicts knights raping and pillaging as the thieves grew
+more and more powerful. Tall black pillars tower above you, supporting a
+ceiling covered in still more dark designs. Beneath your feet are spidery
+glowing runes whose dark intent one can only guess at.  
+~
+60 acdq 1
+D0
+~
+~
+0 0 6027 0
+D2
+~
+~
+0 0 6003 0
+D3
+~
+~
+0 0 6001 0
+S
+#6001
+The Shop of Pain~
+   This shop is filled with odd knick-knacks and gizmos that hint at dark
+purposes. A cold chill creeps up your back as you gaze about the room. The
+walls are covered with dark-wood shelves, upon which are stacked various
+instruments of killing, as well as tools for dealing with the corpses. The
+rear wall is made with dried skins of several different animals. Some of the
+skins look too humanoid to put off as imagination. The tables are cluttered
+with a variety of rainbow hued pills.  
+~
+60 adqs 0
+D1
+~
+~
+0 0 6000 0
+D5
+~
+~
+0 0 6002 0
+S
+#6002
+The Pit~
+   This place is filled with a foul stench which seeps into your clothing.
+Bones, pieces of armour, and various other unidentifiable objects litter the
+area in a chaotic way. The very air seems to ooze death from the bones, some
+of which have obviously been picked clean by some creature. The walls are
+made from the same dark stone as the shop. Several gouges mar the walls as
+if some huge creature's claws had torn chunks from the living rock. Upon
+closer examination, the darkness on the walls turns out to be blood stains.
+ 
+~
+60 adqs 0
+D4
+~
+~
+0 0 6001 0
+S
+#6003
+Mourning Square~
+   The dreariness here is even more oppressive than in that hideous temple.
+Chilling cries fill the air even as shapes begin to form the shadows. This
+is the middle of what used to be a thriving city. All that seems to be left
+are the dying screams still echoing in this underground cavern, and the
+shadows, which seem to be moving closer. Off to the east you see some sort
+of steam, and hear a bubbling sound. To the north is that macarbe, and to
+the west is a wall. The square edges and the darkness do nothing to relieve
+the boring dreary oppressiveness of this place.  
+~
+60 acqs 1
+D0
+~
+~
+0 0 6000 0
+D1
+~
+~
+0 0 6004 0
+D2
+~
+~
+0 0 6005 0
+E
+west~
+To the west the rotten filth which litters the area is piled so high it is
+impassable. Corpses in varying states of decay lay around in the muck. 
+Worms slither around in the ooze as maggots crawl out of several empty
+eyesockets.  
+~
+S
+#6004
+The Breeding Room~
+   This place must have been added after the calamity which drove all the
+people away. It is roughly carved out of the stone, instead of smooth
+sculpted lines the walls have jagged edges which seem more like gaping
+wounds than chipped stone. A hissing, bubbling pool of some glowing liquid
+sits in the middle of the ground. The stench here is almost unbearable, yet
+you feel the urge to stay and bask in the radiance of the glowing liquid. 
+In front of you the gound seems to be hissing in contact with a tiny amount
+of the water, yet it is undergoing no ill visible effects.  
+~
+60 adfrs 5
+D3
+~
+~
+0 0 6003 0
+S
+#6005
+Death Row~
+   You are standing on the road which used to link the residential and
+clerical halves of the city. By the stunningly intricate architecture it is
+clear that this city was once a wonderous place. Yet, now it has been
+corrupted into something much darker. Corpses and mangled creatures not
+quite yet corpes are strewn about and molded into hideous parodies of
+worship and daily work. To the north is what was the center of town, and to
+the south you can make out what seems to be a long trench.  
+~
+60 adqs 1
+D0
+~
+~
+0 0 6003 0
+D2
+~
+~
+0 0 6006 0
+S
+#6006
+Marigone Trench~
+   The trench below seems to have been created by the endless dragging of
+bodies along the same path. It is about five hundred feet deep into the
+solid granite. Mindless worker skeletons trudge along here. Some carry
+bodies, others carry unidentifiable pieces of bodies. Some stand still long
+enough to gnaw on a rotting limb to sustain their own rotting flesh. A thin
+stream of blood runs from the west to the east. To the west this grotesque
+parade continues as far as you can see. However, to the east you think you
+see a break in the tedium.  
+~
+60 aqs 5
+D0
+~
+~
+0 0 6005 0
+D1
+~
+~
+0 0 6012 0
+D2
+~
+~
+0 0 6011 0
+D3
+~
+~
+0 0 6007 0
+S
+#6007
+Western Marigone Trench~
+   Marigone Trench deepens and widens considerably, this is due to the
+slight increase in activity from its denizens. The stream of blood has grown
+to about two feet wide, and a foot deep. Skeletons and viler creatures wade
+through the blood, carrying their morbid burdens. A few skeletons are
+scrubbing themselves in the blood using a few removed and rotten hands. To
+the south stands a mansion of immense size. However, the years have not been
+kind to it, and it has fallen into a serious state of disrepair. To the west
+the trench ends, and you can make out a rather large lake of blood.  
+~
+60 aqs 5
+D1
+~
+~
+0 0 6006 0
+D2
+~
+~
+0 0 6010 0
+D3
+~
+~
+0 0 6008 0
+S
+#6008
+Blood Springs~
+   Here, monsters are making an odd mockery of bathing. Foul ghouls and
+gremlins wash themselves in wells of blood which bubble up from cracks in
+the ground. They scrub themselves with decaying remains, and half eaten
+entrails. Partially eaten corpses are scattered about the edges of the pool.
+As you watch, some of them rise to their feet and begin carrying others off
+to the east. Far above you is a faint glow of what could be moonlight. To
+the south is a meatlocker, and to the east the blood pools into a river and
+flows through the trench.  
+~
+60 aqs 6
+D1
+~
+~
+0 0 6007 0
+D2
+~
+~
+0 0 6009 0
+S
+#6009
+Feeding Grounds~
+   Row after row of corpses are tied and hooked from the ceiling. Striders,
+ghouls, skeletons, zombies, gremlins, and ghasts scurry about here. Some of
+the creatures run from corpse to corpse ripping chunks of flesh off and
+stuffing them down their gullets. Others pick corpses off the hooks and
+carry them off for some horrid purpose. In the far corner you see a large
+blubbery creature with a hook eyeing you in a disturbing fashion. To the
+north is the lake of blood.  
+~
+60 adqs 0
+D0
+~
+~
+0 0 6008 0
+S
+#6010
+A Ruined Home~
+   This was once an enourmous mansion, however it has fallen into disuse. 
+This, now ramshackle building looks completely unstable, the only thing of
+interest is the way the rubble seems to be moving towards you. That, and the
+red ooze dripping from the ceiling. Skulls, and complete skeletons of
+rodents, and other creatures litter the area. As you watch some of them get
+up and start running about again. The ground is rotten beneath your feet,
+and maggots squirm from rotting pieces of meat. To the north is Marigone
+Trench.  
+~
+60 adqs 0
+D0
+~
+~
+0 0 6007 0
+S
+#6011
+A Large Crypt~
+   This room is utterly silent. The air is still and stale, yet the putrid
+rotting stench does not permeate the air here. In front of you, a body lies,
+perfectly preserved, atop a copper coffin. Its face is twisted in a grimace
+of horror, it looks as though it died of fright. The walls are decorated
+with pictures of horrendous tyrants and criminals. Their cruellty depicted
+in the pictures. Some of men sitting atop piles of bodies, adorned with a
+human bone crown, and served trays of food by starving slaves. Others amidst
+a frenzy of death and torture with expressions of total pleasure on their
+faces. To the north is the center of Marigone Trench.  
+~
+60 acqs 0
+D0
+~
+~
+0 0 6006 0
+S
+#6012
+Eastern Marigone Trench~
+   Marigone Trench continues its bloody trek. What was a trickle of blood,
+can now be termed a river. The blood flows swiftly through a time worn
+groove. The blood is such a bright color red it seems to be glowing. As it
+swirls and eddies through the trench it seems to lap hungrily against the
+rock walls housing it, as if itching for escape. The swift current makes it
+nearly impossible to stand, while this makes for fewer creatures meandering
+about, there are quite a number of corpses streaming down the river, and
+getting stuck on the sides. To the south is another building, and to the
+east is total and utter darkness.  
+~
+60 acqs 6
+D1
+~
+~
+0 0 6014 0
+D2
+~
+~
+0 0 6013 0
+D3
+~
+~
+0 0 6006 0
+S
+#6013
+Den Of Snakes~
+   Noise makes it impossible to concentrate. Snakes of all sizes pour out of
+hundreds of holes, from the walls, from the floor, from the ceiling, even
+from the eyesockets of dead bodies. A long sighing sound comes from a
+direction you can barely remember the name for, and a mound begins to rise
+up in the center of the room. The snakes move towards you, mesmerizing you,
+compelling you towards them. The floor beneath you cracks open, and snakes
+slither out, surrounding your legs, moving slowly up towards your chest.  
+~
+60 adfhqs 0
+D0
+~
+~
+0 0 6012 0
+S
+#6014
+Utter Darkness~
+   You are standing on darkness... Forget not being able to see your hand in
+front of your face, you can't even see your nose. In the distance you hear
+voices, they seem to be chanting in a mildly religous way. From behind you
+there's a snarling sound, then the padding of feet. A strange tingling
+sensation spreads from your ankle. As the sounds sort themselves out, you
+realize there's a warm liquid running swiftly past you, coating you. The
+voices seem to be getting closer, and the snarling sound is gone.  
+~
+60 adfqs 6
+D1
+~
+~
+0 0 6016 0
+D2
+~
+~
+0 0 6015 0
+D3
+~
+~
+0 0 6012 0
+S
+#6015
+The Boneyard~
+   You have reached the destination for all the corpses. Skeletons, some
+animated, others still with flesh waiting to be removed, lay in piles here.
+The stack of death is apporximately ten feet high, all of the bones are
+stained in the peculiar way only blood can stain things. Cracks, and
+powdered bones attest to assorted violent deaths these creatures have
+suffered. Unlike the other rooms, this place is made of packed dirt, and has
+a low hanging ceiling. To the north is that eerie darkness.  
+~
+60 adfqs 0
+D0
+~
+~
+0 0 6014 0
+S
+#6016
+The Dripping Room~
+   This room is dripping with molds, from the ceiling, from the walls, even
+bubbling up from the ground. Molds and jellies slosh around chaotically. 
+The ground beneath you beats in a very rhythmic fashion. A small sighing
+whistle seeps from a crack in the ground. Small jellylike blobs begin to
+move towards you as tentacles wrap around your ankles, draining energy as
+they touch you. To the west is an impenetrable wall of darkness, and to the
+east is a faint blue glow.  
+~
+60 afqs 6
+D1
+~
+~
+0 0 6017 0
+D3
+~
+~
+0 0 6014 0
+S
+#6017
+Blue Ichor~
+   You stand up to your waist in bluish gunk. You can no longer see the
+stream of blood or the skeletons anymore. However, you did just feel
+something brush against your leg. A rippling on the surface moves towards
+you, then disappears. The liquid around you feels like it's softening your
+flesh, attempting to pull it from your body. This room is shaped like a
+tube, the sides of which are smoothly polished. From the west comes a smell
+of mildew, while the north looks faintly red.  
+~
+60 afqs 6
+D0
+~
+~
+0 0 6018 0
+D3
+~
+~
+0 0 6016 0
+S
+#6018
+Red Ooze~
+   You are almost totally submerged in a reddish ooze. The tunnel effect
+continues here, although you can barely see the sides, as you are nearly
+under the surface of the liquid. Your flesh begins to sag, and feels as
+though it is about to fall from your bones. Unidentifiable objects brush
+against you under the surface. To the west is a greyish tinged section,
+while south seems to glow faintly blue.  
+~
+60 afhqs 6
+D2
+~
+~
+0 0 6017 0
+D3
+~
+~
+0 0 6019 0
+S
+#6019
+Grey Sludge~
+   You are now totally submerged in the sludge, your mind becomes numb with
+the cold, as the sludge seems to drain the life from you. Disembodied eyes
+float past you in the current, staring at you accusingly. Skeletons crawl
+along the bottom, sifting through body parts. As you watch a fight breaks
+out over a corpse, and the matter is resolved when the flesh is torn
+asunder. To the east is a faint red tinge, to the north you think you see the
+surface again.  
+~
+60 afhqs 6
+D0
+~
+~
+0 0 6020 0
+D1
+~
+~
+0 0 6018 0
+S
+#6020
+End Of The Tunnel~
+   All the decomposing body matter has washed up to the end of the cavern
+and formed a surface to stand upon. The ground sloshes under your feet, and
+some distinct twitchings tell you that some of the flesh might still be
+alive. Skeletons crawl out of the sludge and being to trek eastward. To the
+south is the tunnel of sludge, and to the east you hear the sound of flowing
+water. Black scaled tentacles squirm from the pieces of flesh matter, some
+of them wrapping around your legs, trying to pull you down.  
+~
+60 afqs 6
+D1
+~
+~
+0 0 6021 0
+D2
+~
+~
+0 0 6019 0
+S
+#6021
+Green Ichor~
+   A waterfall of green ichor crashes down upon you. It sears your skin and
+makes you feel very faint. Skeletons edge your way, intending to make you
+their burden. The waterfall of slime crashes down from some unknowable
+height. The room is roughly circular in shape, seemingly designed
+specifically to shower this ooze down upon whatever living flesh was still
+left. To the west is the pile of flesh, below you seems to be where all the
+fleshy material is ending up.  
+~
+60 afqs 0
+D3
+~
+~
+0 0 6020 0
+D5
+~
+~
+0 0 6022 0
+S
+#6022
+Gory Cascade~
+   You are standing at the bottom of a waterfall of partially digested bits
+of flesh and glowing green ooze. Various pieces of anatomy flow over the
+edge and down into a hole in the groun. The skeletons which populate this
+area are nowhere in sight. Apparently they have gone wherever the ichor
+went. To the east you can see a hallway, the rock walls seem to glow
+faintly. A thin humming noise comes from above where the waterfall begins.
+ 
+~
+60 acdfqs 5
+D1
+~
+~
+0 0 6023 0
+D4
+~
+~
+0 0 6021 0
+S
+#6023
+The Twilight Passage~
+   The hallway continues from west to east, the walls are covered with lucid
+murals. Most are depictions of dragons swooping from the skies and devouring
+clerics, or rescuing thieves from their captors. On particularly graphic
+painting of a Dracolich biting the head off a helppless maiden stands out.
+The floor of this place radiates cold with an ferocious intensity. A faint
+pulsing glow seems to emmenate from the walls. To the west you can see the
+waterfall of ooze, and to the east the hall continues.  
+~
+60 acdfqs 0
+D1
+~
+~
+0 0 6024 0
+D3
+~
+~
+0 0 6022 0
+S
+#6024
+The Hall Of Shame~
+   The hallway here glows with a more intense white light. The paintings
+here are in sharp contrast to one another. On one side there is a picture of
+a radiant city, filled with glowing creatures of light. There beauty is
+astounding, as well as the glorious architecture. The other side is a
+representation of the vile place you have been wandering through. Though
+juxtaposed, the cities themselves look identical. To the west the hallway
+grows slightly dimmer to the south is a door with danger and warnings
+depicted in hundreds of languages.  
+~
+60 0 0
+D2
+A large cast iron door, emblazoned with archaic danger symbols.  
+~
+iron door~
+1 0 6025 0
+D3
+~
+~
+0 0 6023 0
+S
+#6025
+A Large Cavern~
+   This room opens up into a huge cavern, the ceiling of which you cannot
+even see. Torches line the sides of the walls, casting light and shadows
+everywhere. The dull black rock of this place is chipped, and seems to be
+dripping some thick liquid. Against one wall lay hundreds of bones, bits of
+armour, shredded pieces of cloth, all from unwary travellers who met an
+early demise here. Broken rocks lay about everywhere, as if bits of the
+ceiling had periodically broken and fallen as a result of some heavy
+shaking. From behind a large pile of rubble a large skeletal dragon uncurls.
+ 
+~
+60 adfhqs 0
+D0
+~
+~
+0 0 6024 0
+D5
+A large metal trapdoor.
+~
+trap door trapdoor metal~
+2 0 6026 0
+S
+#6026
+An unfinished room~
+An unfinished room
+~
+60 0 0
+D4
+A large metal trapdoor.
+~
+trap door trapdoor metal~
+2 0 6025 0
+S
+#6027
+The Eddying Mists~
+   Mist swirls about you, eddying in an almost playful manner. It swirls
+around your face, seeming to torment you. The featureless expanse stretches
+out in an intimidating manner. Voices come from some unknowable direction,
+and hideous cries ring out in the darkness. From somewhere vaguely up,
+laughter echoes. The mist begins twirling and changing colors. The air is
+very damp here, the condensation is forming water on the back of your neck.
+Several shouts ring out from behind you, then are gone, lost in the endless
+vortex.  
+~
+60 acfghis 9
+D0
+~
+~
+0 0 6027 0
+D1
+~
+~
+0 0 6028 0
+D2
+~
+~
+0 0 6000 0
+D3
+~
+~
+0 0 6027 0
+D4
+~
+~
+0 0 6027 0
+D5
+~
+~
+0 0 6027 0
+S
+#6028
+The Eddying Mists~
+   Mist swirls about you, eddying in an almost playful manner. It swirls
+around your face, seeming to torment you. The featureless expanse stretches
+out in an intimidating manner. Voices come from some unknowable direction,
+and hideous cries ring out in the darkness. From somewhere vaguely up,
+laughter echoes. The mist begins twirling and changing colors. The air is
+very damp here, the condensation is forming water on the back of your neck.
+Several shouts ring out from behind you, then are gone, lost in the endless
+vortex.  
+~
+60 acfghis 9
+D0
+~
+~
+0 0 6029 0
+D1
+~
+~
+0 0 6027 0
+D2
+~
+~
+0 0 6027 0
+D3
+~
+~
+0 0 6027 0
+D4
+~
+~
+0 0 6028 0
+D5
+~
+~
+0 0 6028 0
+S
+#6029
+The Eddying Mists~
+   Mist swirls about you, eddying in an almost playful manner. It swirls
+around your face, seeming to torment you. The featureless expanse stretches
+out in an intimidating manner. Voices come from some unknowable direction,
+and hideous cries ring out in the darkness. From somewhere vaguely up,
+laughter echoes. The mist begins twirling and changing colors. The air is
+very damp here, the condensation is forming water on the back of your neck.
+Several shouts ring out from behind you, then are gone, lost in the endless
+vortex.  
+~
+60 acfghis 9
+D0
+~
+~
+0 0 6028 0
+D1
+~
+~
+0 0 6029 0
+D2
+~
+~
+0 0 6028 0
+D3
+~
+~
+0 0 6029 0
+D4
+~
+~
+0 0 6030 0
+D5
+~
+~
+0 0 6027 0
+S
+#6030
+The Eddying Mists~
+   Mist swirls about you, eddying in an almost playful manner. It swirls
+around your face, seeming to torment you. The featureless expanse stretches
+out in an intimidating manner. Voices come from some unknowable direction,
+and hideous cries ring out in the darkness. From somewhere vaguely up,
+laughter echoes. The mist begins twirling and changing colors. The air is
+very damp here, the condensation is forming water on the back of your neck.
+Several shouts ring out from behind you, then are gone, lost in the endless
+vortex.  
+~
+60 acfghis 9
+D0
+~
+~
+0 0 6031 0
+D1
+~
+~
+0 0 6030 0
+D2
+~
+~
+0 0 6027 0
+D3
+~
+~
+0 0 6030 0
+D4
+~
+~
+0 0 6029 0
+D5
+~
+~
+0 0 6029 0
+S
+#6031
+The Eddying Mists~
+   Mist swirls about you, eddying in an almost playful manner. It swirls
+around your face, seeming to torment you. The featureless expanse stretches
+out in an intimidating manner. Voices come from some unknowable direction,
+and hideous cries ring out in the darkness. From somewhere vaguely up,
+laughter echoes. The mist begins twirling and changing colors. The air is
+very damp here, the condensation is forming water on the back of your neck.
+Several shouts ring out from behind you, then are gone, lost in the endless
+vortex.  
+~
+60 acfghs 9
+D0
+~
+~
+0 0 6030 0
+D1
+~
+~
+0 0 6031 0
+D2
+~
+~
+0 0 6030 0
+D3
+~
+~
+0 0 6031 0
+D4
+~
+~
+0 0 6029 0
+D5
+~
+~
+0 0 6032 0
+S
+#6032
+The Eddying Mists~
+   Mist swirls about you, eddying in an almost playful manner. It swirls
+around your face, seeming to torment you. The featureless expanse stretches
+out in an intimidating manner. Voices come from some unknowable direction,
+and hideous cries ring out in the darkness. From somewhere vaguely up,
+laughter echoes. The mist begins twirling and changing colors. The air is
+very damp here, the condensation is forming water on the back of your neck.
+Several shouts ring out from behind you, then are gone, lost in the endless
+vortex.  
+~
+60 acfghi 0
+D0
+~
+~
+0 0 6032 0
+D1
+~
+~
+0 0 6033 0
+D2
+~
+~
+0 0 6032 0
+D3
+~
+~
+0 0 6030 0
+D4
+~
+~
+0 0 6031 0
+D5
+~
+~
+0 0 6027 0
+S
+#6033
+The Eddying Mists~
+   Mist swirls about you, eddying in an almost playful manner. It swirls
+around your face, seeming to torment you. The featureless expanse stretches
+out in an intimidating manner. Voices come from some unknowable direction,
+and hideous cries ring out in the darkness. From somewhere vaguely up,
+laughter echoes. The mist begins twirling and changing colors. The air is
+very damp here, the condensation is forming water on the back of your neck.
+Several shouts ring out from behind you, then are gone, lost in the endless
+vortex.  
+~
+60 acfghs 9
+D0
+~
+~
+0 0 6033 0
+D1
+~
+~
+0 0 6034 0
+D2
+~
+~
+0 0 6033 0
+D3
+~
+~
+0 0 6032 0
+D4
+~
+~
+0 0 6033 0
+D5
+~
+~
+0 0 6033 0
+S
+#6034
+The Hall Of Hope~
+   You step out of the mists into brilliantly gleaming white light. The
+light dies down revealing a square white marble room. An unearthly light
+makes the entire room glow in an almost painful fashion. Warmth radiates
+from the walls and floor, while soft music plays from somewhere out of
+sight. A painting of a soft-featured smiling woman fills the eastern wall.
+She seems to bring warmth to the room with her beneficient smile. The floor
+beneath you trembles slightly, as if tormented by some strange demon.  
+~
+60 dgst 0
+D3
+~
+~
+0 0 6033 0
+S
+$~

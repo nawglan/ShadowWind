@@ -1,0 +1,664 @@
+#2200
+knight ethereal dark darketherealquest rare~
+the Dark Ethereal Knight~
+A dark ethereal Knight stands guard over the bloody clearing.
+~
+The Knight is clad in shimmering black armor. He is massive in size, towering
+over all but the trees here. Apparently he, and his brother Knights, were 
+involved in whatever carnage happened in this clearing. His visor is raised  
+and, although shadows obscure most of his pale face, you can see his eyes 
+look anguished. The Knight stands watch over this place of death, perhaps 
+praying for the release that will allow him to once again join his brothers 
+in arms.
+~
+bd dhk -1000 X 0 
+45 4 -10 23d23+450
+9000 280000
+8 8 1 3 1 3
+T 100 10d6+30 2
+E 5 100 2246 -1
+E 6 100 2247 -1
+E 16 100 2248 -1
+>greet_prog  100~
+  if isfollow($n)
+ break
+  else
+    bow
+    mpdelay 5
+   emote composes himself and stands tall.
+  endif
+endif
+~
+>ask_prog     hi hello hi? hello?~
+tell $n Hello $n, have you seen those damned Ogres?
+~
+>ask_prog     ogres damned ogre ogres? damned? ogre?~
+tell $n Yes, they have imprisoned me here in the midsts of my slumber, I failed as a Knight, my friends all lay dead to there hands, and I could do nothing for them.
+~
+>ask_prog     imprisoned slumber imprisoned? slumber?~
+tell $n I am indead imprisoned in this very spot, I can not leave with out the help of a very speicial piece of tree bark, and the Ogre's have taken it and hidden it far from this land by now I am sure.
+~
+>ask_prog     failed failed?~
+tell $n Yes, my failure has me imprisoned here.
+~
+>ask_prog     bark tree bark? tree?~
+tell $n if you find this tree bark, please return it to me, I would be indebted to you.
+~
+>give_prog                bark dead oak etherealquestbark~
+mpjunk bark
+tell $n Yes, this is the very bark I need to break the spell, I thank you $n!
+mpoload 2294
+mpdelay 15
+tell $n For your troubles I shall give you my most prised posession.
+mpdelay 10
+give bag $n
+mpdelay 10
+emot recites some magical words, and breaks his bonds.
+mpdelay 5
+emot strides south.
+mpgoto 396
+mplog Ethereal Knight Quest Compleated by $n
+mpforce ferryprog1 mppurge darketherealquest
+~
+|
+#2201
+treant tree~
+the Old Treant~
+A huge, gnarled tree stands tall over the clearing.
+~
+The old tree is twisted and gnarled into a strange form. It stands stark and 
+barren in the circle of rocks that surround it. Staring closely, the bark 
+takes on the shape of eyes peering back at you, and a small knothole directly
+below looks like a mouth frozen in a scream. The wind blows through the bare
+branches above, creating an eerie moaning noise. 
+~
+bd 0 250 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 0 15 16 4
+T 20 1d6+4 1
+#2202
+creature dweller cave hideous~
+the Cave Dweller~
+A hideous creature scurries along the cave's floor.
+~
+The cave dweller has a horrible stench rising off its greasy fur. It has a 
+birds hooked beak, with two huge, white eyes popping out over the top of it.
+The body stretching off the stalk-like neck is covered in a wiry fur, and the
+four legs each have a grasping hand with long claws. He looks quite mean, and
+he is a meat eater judging from the smell and strings of flesh that hang from
+his mouth.
+~
+bdfn z 0 X 0 
+15 14 2 8d8+150
+900 11000
+8 8 0 4 14 2
+T 100 2d6+3 22
+#2203
+toad rock~
+the Rock Toad~
+A huge rock toad sits here, bellowing a mating call.
+~
+Rock toads are the same color as rocks, thus the name. All over the grey, 
+rock coloured skin, sharp, horny protrusions grow to ward off enemies. But 
+since the average size of a rock toad is the same as a cow, enemies are not 
+usually a problem.
+~
+bd g 250 X 0 
+15 14 2 8d8+150
+0 11000
+6 6 0 4 14 1
+T 100 2d6+3 22
+#2204
+weeping willow tree~
+the Weeping Willow~
+A large willow tree stands here, weeping quietly to itself.
+~
+The weeping willow has long, thin branches that hang all the way to the 
+ground, giving it a sad, miserable look. Mist surrounds the tree, like a 
+shroud, and from within the curtain of branches, you can hear the sound of 
+someone crying.
+~
+bd dh 1000 X 0 
+30 9 -5 15d15+300
+0 80000
+8 8 0 15 16 5
+T 20 2d4+4 0
+#2205
+mistling~
+the Mistling~
+A mistling materializes in front of your eyes.
+~
+The mistling has formed itself out of the very mist that surrounds you. It is
+quite hard to look at since it has no real form. You get the vague impression
+of hollow eyes, surrounded in a shroud. A ragged mouth seems to open and mimic
+a scream.
+~
+bdf bdt 0 X 0 
+20 12 0 10d10+200
+0 25000
+8 8 0 7 14 2
+T 33 2d6+1 0
+#2206
+swamp wraith~
+the Swamp Wraith~
+A swamp wraith emerges from the mist to do battle.
+~
+The wraith pulls together the mist to create the image of a mighty warrior.
+You can see the outline of armor and a visor, and hands encased in mighty 
+gauntlets. His grip is ice cold as he surrounds you, preparing for battle.
+~
+bcdf bdhtu -1000 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 0 2 3 4
+T 50 4d6+1 0
+#2207
+ogre villager~
+the Ogre Villager~
+The ogre villager shuffles along.
+~
+The Ogre has the yellow, warty skin of the most common Ogre. His eyes are deep
+black, with white in the very center. He is quite large, with long arms and
+big, knobby hands. There is a stoop to his posture, as though his arms weighed
+more than his back could carry. His big, ugly head is full of crooked teeth
+that are quite black and rotten. A few bits of shabby rags serve as clothing 
+to this overworked commoner.
+~
+dg 0 200 X 0 
+30 9 -5 15d15+300
+800 80000
+8 8 0 3 3 4
+T 100 8d6+12 0
+E 13 30 2285 25
+#2208
+warrior ogre~
+the Ogre Warrior~
+The ogre warrior stands here, growling fiercely.
+~
+This Ogre warrior has darker yellow and green skin that is uncommon, but not 
+unheard of among Ogres. His skin is covered in black warts, and his eyes are 
+so black they look purple when the light catches them. His big feet seem 
+quite clumsy for one who needs to be quick and agile to protect the village. 
+His little pig eyes catch your gaze, and narrow into a scowl.
+~
+cdfg 0 -350 X 0 
+40 5 -10 20d20+400
+1050 150000
+8 8 1 3 3 4
+T 100 10d6+20 0
+E 16 100 2286 25
+#2209
+guard ogre~
+the Ogre Guard~
+The ogre guard stands watchful at his post.
+~
+The Ogre guard is a massive creature. He has lumpy brown skin, and huge hands
+to aid him in battle. His eyes are black pools that seem to miss little going 
+on around him. His greasy hair is pushed off his sloping brow, giving his head 
+the shape of a watermelon. Filthy rags cover his body, and radiate a powerful 
+odor.
+~
+bcdfg 0 -500 X 0 
+45 4 -10 23d23+450
+1350 280000
+8 8 1 3 3 4
+T 50 6d6+9 0
+E 16 100 2287 25
+#2210
+shaman ogre~
+the Ogre Shaman~
+The ogre Shaman is here chanting arcane words and waving his arms.
+~
+The Ogre Shaman has draped his purple, warty skin in various furs and skins.
+His piercing black eyes seem almost intelligent, perhaps explaining why he is
+the chosen Shaman for the Ogre clan. Bones, teeth, and bits of fur have been 
+strung on leather thongs to make up charms that hang all over the Shaman's
+ugly body. His ears resemble prunes left in the sun too long, and many holes
+are pierced in them for more jewelry. 
+~
+bcdfg dh -750 X 0 
+55 0 -10 28d28+5550
+6000 6000000
+8 8 1 3 3 4
+T 50 10d6+22 0
+E 20 100 2289 10
+E 12 100 2288 5
+E -1 100 2299 1
+#2211
+chief chieftain ogre~
+the Ogre Chieftain~
+The ogre chieftain is here, observing you with interest.
+~
+This is the largest Ogre in the village. He has the rare, deep purple skin 
+that has shiny black warts covering it. He wears whole animal hides on his 
+massive body, and crude jewelry has been made from bones to decorate the 
+skins. He has hands big enough to crush skulls, and feet large enough to stomp 
+you right out of existence. His deep, black eyes have the white pupils that 
+Ogres are known for, and he stares back at you, looking quite amused at 
+someone so small.
+~
+bcdfg dht -1000 X 0 
+60 0 -10 30d30+30000
+15000 10000000
+8 8 1 3 3 4
+T 33 8d6+12 0
+E 16 100 2291 25
+E 9 50 2290 10
+#2212
+barbarian~
+the Plains Barbarian~
+A barbarian hunches here against the cold.
+~
+The plains barbarian is clad in heavy furs that cover his body from head to
+foot. Even with his body covered, you can tell he is quite large, and mean.
+His narrow eyes peer at you above a fur muffler, and you can hear him grunting
+and sniffing through the fur.
+~
+bcdfgh d 0 X 0 
+45 4 -10 23d23+450
+2600 280000
+8 8 1 3 1 3
+T 100 12d6+18 0
+#2213
+yeti white~
+the White Yeti~
+The Yeti peers down at you, snarling.
+~
+The Yeti is the same colour as the snow swirling about him. He towers above 
+you, with his long shaggy pelt grazing the snow beneath his flat feet. His
+hands have long claws coming out of them, and his teeth are bared in a 
+terrifying snarl. He sniffs and snorts at you, as though smelling a meal.
+~
+bcdfgh dh -350 X 0 
+30 9 -5 15d15+300
+0 80000
+8 8 0 4 14 4
+T 50 6d4+6 0
+#2214
+worm ice white iceworm~
+the Ice Worm~
+A huge Worm burrowing through the snow lunges right at you!
+~
+The Ice Worm is well over 50 feet long and as white as the snow it burrows in.
+It seems to have no eyes, but it has a gaping maw for a mouth, with plenty of
+razor sharp teeth for crunching ice, and bones. No man can move as fast as 
+this worm does in deep snow, indeed the snow only helps him to move faster.
+~
+bcdfg 0 3500 X 0 
+45 4 -10 23d23+450
+0 280000
+8 8 1 4 14 5
+T 200 20d4+2 0
+#2215
+citizen minotaur~
+the Minotaur Citizen~
+A Minotaur citizen glares angrily at you.
+~
+This angry Minotaur has the head and torso of a bull, but the arms and lower 
+body are of a man. A rather small bull and man at that. Even with a fierce 
+looking head, this citizen looks rather weak, and quite cold despite the fur 
+that grows on his upper body.
+~
+bcdg 0 500 X 0 
+25 10 -3 13d13+250
+900 45500
+8 8 1 3 12 4
+T 100 7d6+8 0
+#2216
+guard minotaur~
+the Minotaur Guard~
+A Minotaur guard angrily tries to stop you.
+~
+The Minotaur guard appears very strong. His massive chest is quite muscular. 
+He has short horns that look razor sharp, and his bovine eyes gleam with 
+intelligence. His arms are human, but covered in the same fur that covers his 
+head and chest. The guard's whole body is well muscled and ready to fight.
+~
+bcdfg 0 -330 X 0 
+28 9 -4 14d14+280
+1200 61000
+8 8 1 3 12 4
+T 50 4d6+4 0
+#2217
+warrior minotaur~
+the Minotaur Warrior~
+A Minotaur warrior challenges your prescence here.
+~
+This warrior looks quite brave and strong. He has long horns, shapened to 
+fine points, and his doleful cow eyes are quite deceptive. His broad chest
+ripples with muscles no human can develop, and soft red hair covers him from
+head to waist. His shoulders taper down to human arms covered in fur, but the 
+size is much larger than any human could acheive. His great bull nostrils 
+flare at your scent.
+~
+bcdfgh 0 -330 X 0 
+30 9 -5 15d15+300
+1600 80000
+8 8 1 3 12 4
+T 33 4d4+4 0
+E 5 100 2266 -1
+E 6 100 2267 15
+E 16 100 2268 -1
+#2218
+minotaur gatekeeper~
+the Minotaur GateKeeper~
+A Minotaur is here guarding the gate to Shurmak's lair.
+~
+The Minotaur stands rigidly, taking his job seriously. While he has small 
+horns, he is not to be taken lightly. His forearms are well developed, as 
+well as his bull-like chest. His legs are strong and fast. The guard has a 
+great bull head that looks too large for his body, but he is a strong fighter 
+none the less. 
+~
+bcdg d -330 X 0 
+35 7 -8 18d18+350
+2500 112000
+8 8 1 3 12 4
+T 100 9d6+16 0
+#2219
+minotaur high guard~
+the High Minotaur Guard~
+The High Minotaur Guard blocks the way deeper into the cave.
+~
+A powerful and nasty looking creature, the guard stand rigid, immovable from 
+his duties. The short, black hair that covers him from head to waist does not
+hide all the muscles he has developed over the years. His big, brown eyes have
+a nasty gleam to them as he eyes you back.
+~
+cdfg d -330 X 0 
+35 7 -8 18d18+350
+5100 112000
+8 8 1 3 12 4
+T 50 6d4+11 0
+E 5 100 2266 -1
+E 16 100 2272 -1
+E 6 20 2269 1
+E 7 20 2270 1
+E 10 20 2271 1
+#2220
+minotaur royal guard~
+the Royal Minotaur Guard~
+The Royal Minotaur guard lunges for your throat!
+~
+This guard would lay down his life for his master. He has long, sharp horns
+that could kill a man in seconds. His chest show his brute strength, and many 
+scars mar the smooth hair that covers his body. He is fit and well-fed, but 
+always hungry for human flesh.
+~
+cdfg d -330 X 0 
+40 5 -10 20d20+400
+6000 150000
+8 8 1 3 12 4
+T 50 8d4+8 0
+E 5 100 2266 -1
+E 16 100 2276 -1
+E 10 15 2275 1
+E 7 15 2274 1
+E 6 15 2273 1
+#2221
+guard minotaur elite~
+the Elite Minotaur Guard~
+The Elite Minotaur Guard swiftly stops you from going any further.
+~
+The elite guard is a larger Minotuar than most. He looms above you, with huge
+nostrils flared at your smell. His horns are fully developed and starting to 
+curl, the sharp ends pointing straight at you. His well groomed fur is red and
+black, with the scars from a thousand battles criss-crossing it. His human 
+legs have been developed for speed, and his arms for accuracy.
+~
+bcdfgxA d -250 X 0 
+50 2 -10 25d25+500
+8000 500000
+8 8 1 3 12 4
+T 50 10d4+10 0
+E 16 5 2262 1
+#2222
+girl haremgirl harem slave~
+the Harem Girl~
+A harem begs you for mercy.
+~
+This lovely young girl has a pained and terrified look on her face. She is a 
+pale, redhaired girl, well built and suited for having children. Judging from 
+the stark terror on her face, and the scarred claw marks, she has been abused 
+by the Minotaurs many times. Death would be more welcome that to live like 
+this.
+~
+bcdgh 0 1000 X 0 
+10 15 5 5d5+100
+100 5000
+8 8 2 3 1 3
+T 100 2d4+2 0
+#2223
+butler minotaur~
+the Minotaur Butler~
+A Minotaur butler stands here stiffly, awaiting orders.
+~
+The butler is a very intelligent-looking Minotaur. He is not very large, and 
+has no horns upon his head. His chest is small and covered with pale brown 
+fur, but his arms are strong enough to carry out his duties. His golden brown
+eyes seem very aware of what is going on in his domain.
+~
+bcdgh 0 250 X 0 
+15 14 2 8d8+150
+500 11000
+8 8 1 3 12 4
+T 100 2d6+3 0
+#2225
+morag minotaur warrior master~
+Morag~
+Morag, the Minotaur master warrior, is here sharpening his horns.
+~
+Morag is an immense warrior, with muscles rippling beneath his sweat-soaked
+fur. His powerful forearms look ready to tear a man apart, and his strong legs
+look like they could easily stomp someone to death. He trains only the best, 
+and many men have died under his long, razor sharp horns. His nostrils flare 
+at the scent of human flesh, and the thought of shedding more blood.
+~
+bd dh -300 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 20 4d4+4 0
+>fight_prog                       10~
+   bash
+~
+|
+#2226
+zalkoth minotaur anti-paladin master~
+Zalkoth~
+Zalkoth, the Minotaur anti-paladin, gives you an evil glare.
+~
+Zalkoth practices only evil and black arts. His immense size and strength have
+sent more than one man to his death, and his black arts torment their souls 
+for all eternity. His sinister horns have twisted into terrible shapes, but 
+the sharp tips jut straight out at you. Archane symbols have been burned onto
+his fur, leaving scars in strange shapes and patterns all over his chest and
+back. Black eyes smoulder as they alight on your gaze.
+~
+bd dh -1000 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 50 10d4+10 0
+>fight_prog                       10~
+   cast 'harm' $n
+~
+>fight_prog                       10~
+   bash
+~
+|
+#2227
+bartoth minotaur paladin master~
+Bartoth~
+Bartoth, the Minotaur paladin, is here praying to his gods.
+~
+Bartoth lives only to do good. As a master paladin, he spends his time in 
+prayer and meditation, contemplating a higher level of being. He has pale 
+grey, almost white, fur covering his body and small, blunt horns. He towers 
+above you, muscular and agile, ready to do battle with any evil foe. His pale 
+eyes look wisely upon you, and you feel strength and goodness.
+~
+bd dh 1000 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 50 10d4+10 0
+>fight_prog                       10~
+   cast 'heal' self
+~
+>fight_prog                       10~
+   bash
+~
+|
+#2228
+kazmar minotaur mage master~
+Kazmar~
+Kazmar, the Minotaur archmage, stands preparing spell components.
+~
+Kazmar is a small, lithe Minotaur, but by no means an easy match. His beady
+eyes notice everything about you, and his quick mind conjures many spells that
+would reduce you to dust. He has dull brown fur, and his horns broke off a 
+long time ago. He seems quite old, grey streaking through the fur on his small
+chest and arms.
+~
+bd dh 300 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 100 10d6+40 0
+>fight_prog                       5~
+   cast 'flamestrike'
+~
+>fight_prog                       5~
+   cast 'fireball'
+~
+>fight_prog                       3~
+   cast 'agony'
+~
+|
+#2229
+paltor minotaur cleric master~
+Paltor~
+Paltor, master cleric of Shurmak, praying for his soul.
+~
+Paltor stands quite tall over you, his white fur seeming to radiate a holy 
+light. His gentle brown eyes stare at you quite sadly, for he knows of your 
+sins. His body is lean and fit from years of fasting and travelling on 
+religious pilgrimages.
+~
+bdfm dh 1000 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 100 10d6+40 0
+>fight_prog                       10~
+   cast 'cure critic' self
+~
+>fight_prog                       8~
+   cast 'heal' self
+~
+>fight_prog                       4~
+   cast 'harm'
+~
+|
+#2230
+lortuk minotaur druid master~
+Lortuk~
+Lortuk, the Minotaur druid, is potting a plant.
+~
+Lortuk stands tall and proud, fit from years of gardening and hiking in the
+mountain to gather plants. He is covered in a fawn colored fur that can't hide
+his strength. His gentle eyes watch over his beloved plants as if they were 
+children. He seems to be unlike the other Minotaurs, not at all the angry
+creature that some of the others are.
+~
+bd dh 500 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 100 10d6+40 0
+>fight_prog                       5~
+   cast 'frost bolt'
+~
+>fight_prog                       5~
+   cast 'fireball'
+~
+|
+#2231
+vorant minotaur ranger master~
+Vorant~
+Vorant, the Minotaur ranger, glares at your intrusion.
+~
+Vorant is quite thin for a Minotaur. His fur is as brown as bark, and his eye
+colour matches it. The tall Minotaur is agile, with wiry muscles running
+through his arms and legs. He would make a good fighter, but an even better 
+archer. He seems to move soundlessly and quickly, his careful eyes determining 
+immediately who is friend or foe.
+~
+bd dh 500 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 20 4d4+4 0
+#2232
+Maltu minotaur thief master~
+Maltu~
+Maltu, the Minotaur master thief, lurks in a shadowy corner.
+~
+Maltu is thin and wiry, built for fleeing quietly and quickly, not fighting.
+His wary black eyes track all movement around him, immediately acessing the 
+exits, and your valuables. His long fingers look adept at stealing, and his 
+black fur hides him quite well in the shadows.
+~
+bd dhtu -500 X 0 
+50 2 -10 25d25+500
+10000 500000
+8 8 1 3 12 4
+T 50 7d6+8 0
+>greet_prog                       20~
+   if ispc($n)
+      backstab $n
+   endif
+~
+>fight_prog                       2~
+   mpgoto 1
+   mpgoto $n
+   backstab $n
+~
+|
+#2233
+shurmak minotaur grand master~
+Shurmak~
+Shurmak, the Minotaur grand master, prepares to feast on your flesh.
+~
+Shurmak looms over you, casting a large shadow across the room. He is
+powerfully built, with a massive chest riddled with scars. His hands are big
+enough to crush boulders, and his arms are the size of some trees. Heavy, 
+reddish-black fur covers his entire upper body. Although from the waist down 
+he is built like a man, he is larger than any you have ever seen. Shurmak 
+is the king of all Minotaurs, and now, it is quite obvious why.
+~
+bcdlmnopqrxyzA bdht -500 X 0 
+55 0 -10 28d28+5550
+20000 6000000
+8 8 1 0 12 4
+T 20 4d6+9 0
+#2234
+guard minotaur elite~
+the Elite Minotaur Guard~
+The Elite Minotaur Guard swiftly stops you from going any further.
+~
+The elite guard is a larger Minotuar than most. He looms above you, with huge
+nostrils flared at your smell. His horns are fully developed and starting to 
+curl, the sharp ends pointing straight at you. His well groomed fur is red and
+black, with the scars from a thousand battles criss-crossing it. His human 
+legs have been developed for speed, and his arms for accuracy.
+~
+bcdfg d -250 X 0 
+45 4 -10 23d23+450
+8000 280000
+8 8 1 3 12 4
+T 50 8d4+13 0
+E 5 100 2266 -1
+E 16 100 2272 -1

@@ -1,0 +1,92 @@
+/* ************************************************************************
+*   File: socials.doc                                   Part of CircleMUD *
+*                                                                         *
+*  All rights reserved.  See license.doc for complete information.        *
+*                                                                         *
+*  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
+*  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
+************************************************************************ */
+
+                  CircleMUD Socials Modified for Shadowwind
+                  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+The file is formatted as follows:
+
+--------------------------------------------
+<command name> <hide-flag> <minimum position of victim>
+<messg to character if no argument>
+<messg to others if no argument>
+<messg to char if victim found>           <---If this field is empty,
+<messg to others if victim found>     <-------\ 
+<messg to victim>                     <-------|\  then these fields must be
+<messg to char if victim not found>   <-------| | skipped, and the action
+<messg to char if vict is char>       <-------|/  will ignore arguments.
+<messg to others if vict is char>     <-------/
+
+-Leave one space between each social-
+
+$~ <--- This must be at the very end of the file, last line.
+-------------------------------------------------
+
+Command Name
+=----------=
+
+    This field is nothing more than the name of the social.
+    ie: smile, bounce, grin, etc...
+
+Hide-Flag
+=-------=
+    
+    This field defines if the one making the action if hidden or not, in
+    most all cases this should be 0.
+
+    0 - This means the one preforming the action may be seen by all in
+        the current room.
+
+    1 - This means that only the one preforming the action and the victim
+        the action is preformed upon may see it.
+        NOTE: This should be used only in extream cases.
+
+    Each social must contain one or the other of these hide flags.
+
+Minimum Position of Victim
+=------------------------=
+
+   This defines the victim's position as used in socials.
+      A position is one of:
+
+         POSITION_DEAD       0  DO NOT USE
+         POSITION_MORTALLYW  1  DO NOT USE
+         POSITION_INCAP      2  DO NOT USE
+         POSITION_STUNNED    3  DO NOT USE
+         POSITION_SLEEPING   4  The victim is sleeping.
+         POSITION_RESTING    5  The victim is resting.
+         POSITION_SITTING    6  The victim is sitting.
+         POSITION_FIGHTING   7  DO NOT USE.
+         POSITION_STANDING   8  The victim is standing.
+
+  If the social you are making is ment to work _ONLY_ on a victim that is
+  standing, the minimum position should be 8, however, if the social should
+  work on a victim of all avaliable positions it should be 5.
+
+  Socials such as 'giggle' that are not requireing a victim may use
+  position 0, the reason behind this is simple, there is no victim
+  so the position doesnt matter. :)
+
+Various requirements of each Social
+=---------------------------------=
+
+  Each social must contain either:
+
+  1) only the first two messages (if the social ignores arguments)
+
+  -or-
+
+  2) all eight messages (if the social takes an argument).
+
+  Each message must be contained in one line.
+
+In case 1 above, you must add a # on the 3rd line in the social so the code
+will know the social is only 2 lines.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+EOF

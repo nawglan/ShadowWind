@@ -1,0 +1,107 @@
+#4800
+pheasant magnificent~
+a magnificent pheasant~
+A magnificently colored pheasant is here, standing proud.
+~
+This large bird has quite a remarkable plumage, you are tempted
+to pluck one of its beautiful feathers..
+~
+dg 0 0 X
+5 17 7 3d3+50
+0 1600
+8 8 0 0 0 0
+T 100 2d2+1 11
+A 10 8 A magnificent pheasant suddenly lunges at the ground, hunting for food.
+#4801
+rabbit wild~
+{ya wild rabbit{x~
+{yA wild rabbit crouches here, glaring up at you as you enter.{x
+~
+It peers back at you with annoyance as you scan your eyes over this small,
+but strong little creature. Its beady black eyes are constantly scanning the
+area for invaders.  
+~
+dfg 0 -350 X
+3 18 8 2d2+30
+0 600
+8 8 0 0 0 0
+T 138874008 0d0+0 0
+#4802
+squirrel~
+{ya small squirrel{x~
+{yA small squirrel is here, guarding a pile of nuts.{x
+~
+An inquisitive and busy creature, this squirrel's main thrill in life
+comes from startling travellers by darting over their feet.
+~
+dg 0 0 X
+4 18 8 2d2+40
+0 1000
+8 8 1 0 0 0
+T 100 2d3+1 0
+#4803
+peeper~
+the Peeper~
+A couple of eyes peep out at you from the middle of the room.
+~
+They are only a couple of eyes. Little do you know, their purpose is to
+run mob progs. Please report a bug if you see this.
+~
+bdnopq dkz 0 X
+50 18 0 25d25+500
+0 0
+8 8 0 0 0 0
+T 100 2d4+0 0
+>act_prog    p gets a steel trap.~
+  mpgoto 1
+  mppurge self
+endif
+~
+>all_greet_prog       100~
+if ispc ($n)
+  if isimmort ($n)
+    break
+else
+  mpechoat $n You cry out in pain as the trap's metal teeth clamp themselves around your leg. 
+  mpechoaround $n $n falls to the ground, crying out in pain as a metal trap clamps itself round $m leg.
+  mpcast 'cause critical' $n
+  mppurge trap
+  mpgoto 1
+  mppurge self
+ endif
+endif
+~
+|
+#4804
+peeper~
+the Peeper~
+A couple of eyes peep out at you from the middle of the room.
+~
+They are only a couple of eyes. Little do you know, their purpose is to
+run mob progs. Please report a bug if you see this.
+~
+bdnopq dkz 0 X
+1 1 9 1d1+1
+0 1
+8 8 0 0 0 0
+T 100 2d4+0 0
+>act_prog    p gets a steel trap.~
+  mpgoto 1
+  mppurge self
+endif
+~
+>all_greet_prog       100~
+if ispc ($n)
+  if isimmort ($n)
+    break
+else
+  mpechoat $n You cry out in pain as the trap's metal teeth clamp themselves around your leg. 
+  mpechoaround $n $n falls to the ground, crying out in pain as a metal trap clamps itself round $m leg.
+  mpcast 'cause critical' $n
+  mppurge trap
+  mpgoto 1
+  mppurge self
+ endif
+endif
+~
+|

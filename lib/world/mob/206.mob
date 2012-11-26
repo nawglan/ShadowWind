@@ -1,0 +1,1787 @@
+#20600
+miner~
+the Miner~
+A Miner is busy working at the rock face.
+~
+The miner is over six feet tall with huge broad shoulders and muscles that
+seem to be growing on top of other muscles. He is completely bare chested
+and sweating from his arduous work. In his large, calloused hands he holds a
+shiny pick to hack with at the rock face.
+~
+bcdglno k 200 X 0 
+45 4 -10 23d23+450
+50 280000 -1
+8 8 1 3 1 4
+T 55 3d5+36 27
+A 10 8 $n sends sparks flying as he crushes the stone.
+A 8 8 $n wipes his brow with the back of his hand.
+A 6 8 $n munches on a large iron ration.
+A 4 8 $n picks a large jewel out of the rock and examines it closely.
+A 2 8 $n says, 'What brings you to these parts?'
+E 6 100 20623 -1
+E 0 10 20624 -1
+E 5 100 20625 -1
+Str: 100
+>rand_prog   20~
+ mpasound The clanging of metal against stone echoes through the air.
+~
+>rand_prog   10~
+ mpecho The Miner whistles merrily to himself.
+ mpdelay 20
+ say Hi Ho, Hi Ho...
+~
+>fight_prog   40~
+  kick $n
+~
+|
+#20601
+rock horta~
+the Rock Horta~
+A Rock Horta emerges from the wall and blasts you!
+~
+The Horta is a solid block of dark rock, five feet cubed. The rock at it's
+base ripples along providing traction. The creature seems to be able to 
+extrude short stumps of silicone from the main body, which it uses to hammer 
+heavy blows at you. 
+~
+bcdefgmq hk -200 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 0 3 0 5
+T 100 2d10+6 6
+T 100 3d7+23 26
+A 10 8 $n slowly grinds the rock as it moves along.
+E -1 50 20626 -1
+>fight_prog   15~
+  cast 'earth'
+~
+|
+#20602
+miner watchman man~
+the Miner Watchman~
+A Watchman stands here guarding the entrance to the mines.
+~
+The watchman is a rather tall looking elf. He is heavier and more well built
+than most elves you have encountered, but still manages to retain the regal
+bearing that his race possesses. He stands here watching over the entrance
+to the mines, protecting the colony from the dangers of the tunnels.
+~
+bdglmor dhk 200 X 0 
+50 2 -10 25d25+500
+50 500000 -1
+8 8 1 3 5 5
+T 50 2d7+36 23
+A 2 8 $n says, 'The tunnels are a dangerous place for the likes of you.'
+A 2 8 $n smiles, 'Welcome to Brethrenmere, may you enjoy your stay with us.'
+A 2 8 $n chuckles, 'Feel free to wander around and visit our shops.'
+A 2 8 $n says, 'You may stay the night at the Miner's Rest.'
+A 2 8 $n says, 'For great food, try a dish at Spaymoore's.'
+E 5 100 20632 -1
+E 16 100 20631 -1
+E 5 25 20628 -1
+E 11 20 20629 -1
+E 16 20 20630 -1
+Str: 100
+>fight_prog   40~
+  kick $n
+~
+>fight_prog   10~
+  shout Intruders in Brethrenmere !!
+  mpdelay 30
+  shout All Guards to our aid !
+~
+>rand_prog   5~
+  say Why, you look hungry.
+  mpoload 13010
+  mpdelay 30
+  give waybread $r
+  mpdelay 15
+  smile $r
+  mpjunk waybread
+~
+>rand_prog   1~
+ shout End of shift, all workers report here please.
+~
+|
+#20603
+guard~
+the Miner Guard~
+A Guard patrols around the cavern keeping an eye out for any trouble.
+~
+The guard is a rather fat but muscular dwarf. He stands about five feet tall
+but has a very compact body. Despite his apparent clumsiness, he moves with
+great agility, the mark of a trained and powerful warrior. A thick greying
+beard hides most of his facial features, but a few lines on his face show
+him not to be a youngster.
+~
+dglmn k 250 X 0 
+35 7 -8 18d18+350
+50 112000 -1
+8 8 1 3 4 4
+T 100 3d5+8 6
+T 90 3d9+20 27
+A 2 8 $n makes a show of his impressive sword.
+A 2 8 $n polishes his belt buckle with his sleeve.
+A 2 8 $n eyes you up for possible trouble.
+A 2 8 $n says, 'G'day strangers.'
+A 2 8 $n looks towards Moria Deep and sighs loudly.
+E 16 100 20631 -1
+E 5 100 20632 -1
+Str: 100
+Dex: 100
+>greet_prog   10~
+ mpdelay 25
+ if isnpc($n)
+   mpat 0 smile
+ else
+   if isfollow($n)
+     mpat 0 smile
+   else
+     grimace $n
+     mpdelay 20
+     say We don't want to see any trouble here.. Okay ?
+   endif
+ endif
+~
+>entry_prog   10~
+ mpdelay 15
+ emote quickly scans the area for trouble.
+ mpdelay 30
+ smile
+~
+>speech_prog   kill~
+ mpdelay 10
+ gasp
+ mpdelay 10
+ say Murderers !!
+ mpdelay 10
+ mpkill $n
+~
+|
+#20604
+overseer~
+the Overseer~
+The Overseer stands here atop his pedestal.
+~
+The Overseer is a rather old minotaur. By human standards he is gigantic,
+standing nine feet tall. The fine clothes he wears fail to hide the massive
+bulk of his body or his arms made powerful from years of mining. A black
+horn sticks out from the centre of his head, its blunted tip still lethal in
+combat. Without taking much notice of you, he continues to read the day's
+news.
+~
+bdglo dhk 150 X 0 
+51 2 -10 26d26+1510
+500 1500000 -1
+8 8 1 3 12 6
+T 33 4d3+37 25
+A 10 8 $n says, 'Do you bring news from the Realm ?'
+A 8 8 $n asks, 'Can I be of any help to you ?'
+A 6 8 $n shuffles his papers, looking for the next news item.
+A 4 8 $n waves at somebody in the crowd below.
+A 2 8 $n smiles vibrantly at you.
+E 17 100 20602 -1
+E 12 25 20633 -1
+E 18 15 20634 -1
+E 3 18 20635 -1
+E 16 100 20636 1
+Str: 100
+Dex: 100
+>rand_prog   2~
+ shout Largest diamond yet found in K-Tunnel, more expected !
+~
+>rand_prog   2~
+ shout Formal dinner date set for next Tuesday at Spaymoore's !
+~
+>rand_prog   2~
+ shout Final of this month's story telling contest is at the Rest tonight !
+~
+>rand_prog   2~
+ shout Large band of Orcs killed this morning, two slightly hurt !
+~
+>rand_prog   2~
+ shout Treasury Master reports growing profits !
+~
+>greet_prog   100~
+ mpdelay 20
+ if isfollow($n)
+   mpat 0 smile
+ else
+   smile $n
+   mpdelay 30
+   say You really shouldn't come up here $n.
+   mpdelay 30
+   say But, since you are here...
+   mpdelay 30
+   emote welcomes you to his pedestal.
+ endif
+~
+>fight_prog   40~
+  kick $n
+~
+>fight_prog   10~
+ shout Guards, help is needed !!
+ mpdelay 20
+ mpmload 20603
+ mpecho The Miner Guard arrives to help his Overseer.
+~
+|
+#20605
+wife~
+the Overseer's Wife~
+The Overseer's wife is busy in the kitchen, awaiting her husband.
+~
+The Overseer's wife is a minotaur like her husband. She is very well built
+and beautiful, much younger than the Overseer. Her dark brown eyes question
+your appearance here, but she is not afraid. There is a tinge of sadness
+around her mouth.
+~
+bdgno k 250 X 0 
+25 10 -3 13d13+250
+0 50000 -1
+8 8 2 3 12 5
+T 50 2d8+10 24
+A 20 8 $n says, 'Get out of here now !'
+E 14 20 20637 -1
+E 2 15 20638 -1
+>greet_prog   100~
+ mpdelay 10
+ if isfollow($n)
+  mpat 0 smile
+ else
+  say How did you get in here ??
+  mpdelay 20
+  shout Guards, help me please !
+  mpdelay 20
+  mpecho A Miner Guard bursts into the kitchen to help the Overseer's wife.
+  mpmload 20603
+  mpdelay 10
+  mpforce guard kill $n
+  mpkill $n
+ endif
+~
+>fight_prog   10~
+  shout We need more help, guards please !
+  mpdelay 10
+  mpecho A Miner Guard bursts into the kitchen to help the Overseer's wife.
+  mpmload 20603
+~
+|
+#20606
+treasury guard giant~
+the Treasury Guard~
+A Giant stands here guarding over the treasury.
+~
+The giant must be at least fifteen feet tall. He has olive green skin and
+jet black hair. His hands are like shovels. He looks at you with some
+contempt. No amount of bribery or persuasion would sway him from his one and
+only duty of guarding this great treasury.
+~
+bdglmo hk 400 X 0 
+50 2 -10 25d25+500
+100 500000 -1
+8 8 1 6 1 7
+T 100 2d30+2 6
+T 100 2d9+40 25
+A 1 8 $n says, 'You have no business here, move on !'
+A 1 8 $n flexes his mighty muscles.
+A 1 8 $n whispers something to the Treasury Guard.
+A 1 8 $n says, 'You must make an appointment with the Treasury Master.'
+A 1 8 $n stares at you with contempt.
+E 17 100 20600 -1
+E 16 100 20631 -1
+E 5 100 20632 -1
+E 6 25 20639 -1
+E 7 28 20640 -1
+E 10 35 20641 -1
+Str: 100
+>fight_prog   5~
+ shout The treasury is under attack !!
+~
+|
+#20607
+treasury master~
+the Treasury Master~
+The Treasury Master sits behind his desk.
+~
+The Treasury Master is a seven foot lizardman. His green scales reflect the
+light, giving them a leathery snake-like appearance. A long forked tongue
+shoots out and back in as he works, making a slight rasping sound. His large
+eyes have vertical black slits which open and contract in the light.
+~
+bdglo hk 100 X 0 
+50 2 -10 25d25+700
+1000 500000 -1
+8 8 1 3 0 5
+T 100 2d10+10 6
+T 100 5d7+35 22
+A 10 8 $n ruffles through a few pieces of paper.
+A 8 8 $n rasps his tongue.
+A 6 8 $n hisses loudly at a thick ledger.
+A 4 8 $n mumbles, 'They never balance first time.'
+E 17 100 20610 -1
+E 16 100 20631 -1
+E 5 100 20632 -1
+E 8 25 20609 -1
+E 13 20 20642 -1
+#20608
+doctor goldmine~
+Doctor Goldmine~
+Doctor Goldmine frowns at your intrusion here.
+~
+The good doctor is an elderly elf. The gentle character of elves in general,
+coupled with their high intelligence and empathic abilities make them the
+best healers and doctors in the land. The doctor's skin is pale green and
+very wrinkled, but his handsome features still shine through. Warmth and 
+caring emanates from his very being.
+~
+bdgo hk 500 X 0 
+40 5 -10 20d20+400
+50 150000 -1
+8 8 1 3 5 4
+T 50 2d7+36 27
+A 10 8 $n says, 'If you make an appointment, I can see you later.'
+A 8 8 $n says, 'I am in the middle of an examination at the moment.'
+A 6 8 $n tells you, 'I could fix that nasty wart for you...'
+A 4 8 $n chuckles loudly.
+A 2 8 $n says, 'My secretary will serve you tea and biscuits.'
+E 17 100 20524 -1
+E 3 5 20643 -1
+E 12 100 20649 -1
+>fight_prog   10~
+ cast 'heal'
+~
+>act_prog    p is bleeding awfully from big wounds.~
+  mpdelay 10
+  say Oh, I see you are in urgent need of a heal.
+  mpdelay 10
+  if goldamt($n) >= 50
+    mpechoat $n You give 50 gold coins to the Doctor.
+    mpforce $n give 50 gold coins doctor
+    mpjunk 50 gold
+    mpdelay 10
+    cast 'heal' $n
+    mpdelay 10
+    say I hope you feel a little better now.
+  else
+    say I am afraid you can't afford my help.
+    mpdelay 10
+    comfort $n
+  endif
+~
+|
+#20609
+secretary~
+the Secretary~
+Sitting at the reception desk is a Secretary.
+~
+The doctor's secretary is a fragile looking gnome. Not any taller than four
+feet high, she looks very small behind the reception desk. Her bulbous
+round eyes are full of intelligence though and she is very competent at her
+job. A slight frown creases her brow as you examine her.
+~
+bdglo k 300 X 0 
+35 7 -8 18d18+350
+6000 112000 -1
+8 8 2 3 5 3
+T 80 4d5+23 22
+A 2 8 $n scans through the appointment book.
+A 2 8 $n dips her quill into the ink fountain and starts writing.
+A 2 8 $n crosses out an appointment in the book.
+A 2 8 $n looks over at the Doctor's office and shakes her head.
+A 2 8 $n smiles at a waiting patient.
+E 17 100 20644 -1
+>greet_prog   100~
+ mpdelay 10
+ if isfollow($n)
+  mpat 0 smile
+ else
+  say Do you have an appointment with the Doctor?
+  mpdelay 10
+  smile $n
+endif
+~
+>act_prog    p nods at you.~
+ mpdelay 10
+ emote looks carefully through her appointment book.
+ mpdelay 20
+ say Hmm, I can't find your name here $n.
+~
+|
+#20610
+mrs bandell woman~
+Mrs. Bandell~
+Lying on the couch is Mrs. Bandell.
+~
+Mrs. Bandell is a middle-aged human woman. Her golden hair has started to
+dull, turning grey in places. Her once lithe figure shows signs of
+stiffening, fine wrinkles can be seen all over her face and she is a good
+few pounds heavier than she should be. She looks back at you with some
+bewilderment on her face.
+~
+bdgh k 0 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 2 3 1 4
+T 100 3d10+20 28
+A 10 8 $n says, 'Doctor, what are they doing in here?'
+A 10 8 $n shuffles nervously on the couch.
+#20611
+child~
+the sick child~
+A sick child sits here crying.
+~
+The child is a small halfling and must be only about six years old. She is
+covered in a thin coat of fine brown hair and has small cloven hooves. She
+looks to be suffering from a bad cold, her nose swollen red.
+~
+bdg k 200 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 2 3 1 3
+T 100 2d3+4 22
+A 2 8 $n blows her nose into a large pink handkerchief.
+A 2 8 $n sniffs very loudly.
+A 2 8 $n looks at her mother for comforting.
+#20612
+mother woman~
+the child's mother~
+A woman rests here comforting her sick child.
+~
+The woman is a very tired looking human. She can be no more than thirty
+years old, but her face holds a lifetime of experience. Her bulky frame and
+rough hands shows she is not a stranger to hard work. She holds her small
+child close to her, the union that created such an offspring a total
+mystery to you.
+~
+bdgmno k 200 X 0 
+33 8 -7 17d17+330
+0 99000 -1
+8 8 2 3 1 4
+T 50 7d3+12 25
+A 2 8 $n comforts her sick child.
+A 2 8 $n looks towards the surgery and sighs.
+A 2 8 $n buries her child's head deep into her chest.
+A 2 8 $n wipes the child's running nose with a handkerchief.
+A 2 8 $n says, 'Not long now dear.'
+#20613
+miner injured~
+the injured Miner~
+A Miner rests in a chair nursing his injured leg.
+~
+A young, male dwarf sits here nursing an injured leg. You can see a large
+gash in the skin where something sharp has penetrated through his thick
+clothing and ripped through the skin into the bone and muscle beneath. A
+grimace crosses his face every time he moves.
+~
+bdgmno k 100 X 0 
+40 5 -10 20d20+400
+10 150000 -1
+8 8 1 3 4 4
+T 50 5d3+25 27
+A 2 8 $n groans slightly as he moves.
+A 2 8 $n takes a deep breath as he moves his injured leg.
+A 2 8 $n mumbles something to himself.
+A 2 8 $n runs a dirty hand through his thick beard.
+A 2 8 $n says, 'Those damn Horta's, they get more vicious.'
+E 7 100 20645 -1
+>fight_prog   20~
+ emote screams, 'Ahghhh, my leg!!'
+~
+|
+#20614
+worker warehouse~
+the warehouse Worker~
+A warehouse Worker is busy filling crates for export.
+~
+The warehouse worker is a six foot human male. He is covered from head to
+toe in black coal dust, his hands and face a mask of soot. Sweat trickles
+down his forehead as he labours at filling the hundreds of crates with
+minerals bound for Weirvane.
+~
+bcdglmno k 100 X 0 
+35 7 -8 18d18+350
+50 112000 -1
+8 8 1 3 1 4
+T 90 4d6+23 23
+A 1 8 $n opens a crate and starts filling it will coal.
+A 1 8 $n wipes the sweat from his forehead.
+A 1 8 $n says, 'When is the granite shipment due in?'
+A 1 8 $n checks a packing roster carefully.
+A 1 8 $n empties a cartful of rubies into a packing crate.
+E 5 100 20625 -1
+E 9 20 20650 -1
+Str: 80
+>rand_prog   2~
+ say This one is ready for transport, Jurvel
+ mpdelay 10
+ mpecho Jurvel says, 'I'll send it off then for delivery.'
+ mpdelay 10
+ mpecho Jurvel drags the crate over towards the rippling.
+ mpdelay 10
+ mpecho With a sharp push, the crate disappears in a bright flash.
+~
+|
+#20615
+guardian~
+the Guardian of Forever~
+The Guardian of Forever stands watching over space and time.
+~
+As you try to look at him, a flash of pure white light momentarily blinds
+you.
+~
+bdo hk 1000 X 0 
+50 2 -10 25d25+500
+0 10 -1
+8 8 0 3 1 6
+T 100 10d10+50 27
+>greet_prog   100~
+ mpdelay 20
+ mpechoat $n You feel slightly dizzy, but become aware of a change...
+ mpdelay 10
+ mpat 4114 trans $n
+ mpat $n mpforce $n look
+~
+|
+#20616
+stone mason stone-mason~
+the Stone-Mason~
+A Stone-Mason is busy repairing the stone carts.
+~
+The stone-mason is a burly looking old dwarf. His thick arms are incredibly
+strong from many years of working with rock and his enormous hands are
+covered in thick, leathery skin. He stands here working at his whet-stone,
+sharpening a few of his metal tools.
+~
+bdglo hk 250 X 0 
+50 2 -10 25d25+500
+50 500000 -1
+8 8 1 3 4 6
+T 50 3d5+36 26
+A 10 8 $n hammers away at a broken cartwheel.
+A 8 8 $n picks up a file and sharpens it on his whet-stone.
+A 6 8 $n stirs a pot of tassker with a wooden stick.
+A 4 8 $n applies tassker to two broken pieces of stone.
+A 2 8 $n winches a stone cart up into the air a few feet.
+E 16 22 20646 -1
+E 13 100 20651 -1
+Str: 100
+>rand_prog   10~
+ smile $r
+ mpdelay 15
+ say Stand clear of the cart, we don't want any accidents here.
+ mpdelay 20
+ frown
+ mpdelay 10
+ say Yes, you !
+ poke $r
+~
+|
+#20617
+prospective buyer~
+the prospective Buyer~
+A prospective Buyer is looking around this empty house.
+~
+The prospective buyer is a small ajaj. Like all of its race, it looks like a
+cute, fuzzy ball of fur with two small eyes and an opening for a mouth.
+However, looking a little more carefully you can see a double row of razor
+sharp teeth. It seems more interested in looking around this house than
+paying any attention to you.
+~
+bdghlno k 0 X 0 
+40 5 -10 20d20+400
+8000 150000 -1
+8 8 0 3 0 4
+T 80 4d10+40 22
+A 2 8 $n opens a closet and looks inside.
+A 2 8 $n examines the stonework carefully.
+A 2 8 $n mumbles, 'Hmm, it's a little pricey.'
+A 2 8 $n says, 'I think I'm going to have to think about it.'
+A 2 8 $n flicks the light switch off and back on.
+E 17 20 20652 -1
+#20618
+estate agent~
+the Estate Agent~
+An Estate Agent is showing off the empty house.
+~
+The estate agent is a great lumbering lizardman. His voice hisses as he
+shows the buyer the finer points of the house and his tail sways from side
+to side. Large black claws grow out of his hands, which he is able to
+contract at will like a cat.
+~
+bdgo hk 0 X 0 
+45 4 -10 23d23+450
+50 280000 -1
+8 8 1 3 0 4
+T 50 3d4+30 24
+A 2 8 $n says, 'The house is a very reasonable price, Sir.'
+A 2 8 $n shows you the small kitchen.
+A 2 8 $n says, 'The house is very well built, it just needs some care.'
+A 2 8 $n blows some dust from the fireplace.
+A 2 8 $n says, 'We have had much interest in this property.'
+E 8 100 20608 -1
+E 12 100 20653 -1
+>greet_prog   100~
+ mpdelay 20
+ if isfollow($n)
+  mpat 0 smile
+ else
+  smile $n
+  mpdelay 25
+  say Welcome, feel free to look around the place.
+ endif
+~
+|
+#20619
+gate master~
+the Gate Master~
+The Gate Master of Moria Deep is working at her desk.
+~
+The Gate Master is a young elven woman. She is dressed in full combat gear
+even though most of her duties require her to work at this desk. Her long
+dark hair falls almost to her waist, framing her pale green face. High
+cheekbones and the slightly pointed ears which are swept backwards make her
+incredibly beautiful.
+~
+bdglo hk 500 X 0 
+50 2 -10 25d25+500
+100 500000 -1
+8 8 2 3 5 4
+T 70 2d10+50 28
+A 10 8 $n ruffles through some paperwork.
+A 8 8 $n looks at you suspiciously.
+A 6 8 $n says, 'Please leave, you have no business here.'
+A 4 8 $n starts to write a letter on official-looking paper.
+A 2 8 $n says, 'The shopping district is far more interesting than here.'
+E 17 100 20601 -1
+E 16 100 20631 -1
+E 5 100 20632 -1
+E 9 20 20647 -1
+Str: 100
+Dex: 100
+>fight_prog   50~
+  kick $n
+~
+>fight_prog   10~
+ shout MORIA DEEP IS UNDER ATTACK !!
+~
+|
+#20620
+guard gate giant~
+the Gate Guard~
+A giant Guard stands here, watching the gates to Moria Deep.
+~
+The gate guard is a twelve foot giant, in peak physical fitness and very
+alert. His arms have a girth the same as your legs, and his legs are almost
+the size of a tree. His upper body ripples with muscles, his shoulders are
+as broad as an oxen. He watches you very carefully as you wander around the
+gates, suspicion ripe on his face.
+~
+bdeglmnoq k 400 X 0 
+50 2 -10 25d25+500
+0 500000 -1
+8 8 1 6 1 7
+T 100 2d10+20 6
+T 100 3d7+38 27
+A 1 8 $n stares at you suspiciously.
+A 1 8 $n says, 'Move on please, you have no business here.'
+A 1 8 $n straightens his uniform.
+A 1 8 $n whispers something to his colleague.
+A 1 8 $n draws his sword ready for battle.
+E 16 100 20631 -1
+E 5 100 20632 -1
+E 6 20 20648 -1
+Str: 100
+Dex: 100
+>fight_prog   40~
+ kick $n
+~
+>act_prog    p unlocks the huge.~
+  shout MORIA DEEP IS UNDER ATTACK !!!!
+  mpdelay 10
+  mpkill $n
+~
+|
+#20621
+construction worker~
+the Construction Worker~
+A Construction Worker is busy excavating the cavern wall.
+~
+The construction worker is a very well built human male. His thick set jaw
+and square chin give him an aura of power. Armed with only a sledgehammer,
+he pounds away at the cavern wall, widening the existing hole little by
+little. He occasionally stops to talk with his fellow workmates, pausing for
+breath.
+~
+bcdgmno k 100 X 0 
+30 9 -5 15d15+300
+50 80000 -1
+8 8 1 3 1 4
+T 15 5d3+15 27
+A 2 8 $n swings his sledge at the rock face.
+A 2 8 $n pauses for a chat with his workmates.
+A 2 8 $n OBLITERATES a slab of rock with his pound.
+A 2 8 $n bursts out laughing at a workmates joke.
+A 2 8 $n takes a deep breath and crushes a lump of rock.
+E 8 10 20654 -1
+E 6 100 20655 -1
+E 5 100 20656 -1
+#20622
+old adventurer~
+the Old Adventurer~
+An Old Adventurer sits here recounting his tails.
+~
+The old adventurer is a wrinkled dwarf. His skin is covered in old battle
+scars and he only has one eye, the other socket staring emptily at you. He
+sits here with a pint of beer in one hand telling tall stories to his
+friends, who listen with half feigned interest.
+~
+bdglo k 200 X 0 
+35 7 -8 18d18+400
+6100 112000 -1
+8 8 1 3 4 5
+T 100 3d15+25 25
+A 2 8 $n makes monstrous gestures with his hands as he recounts his tales.
+A 2 8 $n says, 'Back when I was younger...'
+A 2 8 $n stares into the fire, daydreaming of days past.
+E 17 100 20615 -1
+E 3 5 20657 -1
+>rand_prog   10~
+ peer $r
+ mpdelay 10
+ tell $r You don't look up to the standard of the rest of your mates.
+ mpdelay 5
+ tell $r Looks like they have all the best equipment.
+~
+>speech_prog   old~
+ mpdelay 10
+ growl $n
+ mpdelay 10
+ say I'm not THAT old !!
+~
+|
+#20623
+miner~
+the off-duty Miner~
+An off-duty Miner rests here swigging back his ale.
+~
+The miner has just finished a long shift working in the mines. He rests here
+in front of the open fire, relaxing before he must return home to his wife
+and children. He sups at his beer greedily, eager to drink as much in the 
+short space of time he has, quenching his thirst from a hard day's work.
+~
+bdgo k 100 X 0 
+45 4 -10 23d23+450
+50 280000 -1
+8 8 1 3 1 4
+T 100 2d10+17 6
+T 90 4d5+33 27
+A 2 8 $n stretches his arms and legs, yawning widely.
+A 2 8 $n winks at you, pointing at the Old Adventurer.
+A 2 8 $n orders another pint from the bar.
+E 17 100 20617 -1
+E 4 100 20658 -1
+>rand_prog   2~
+ emote finishes off the rest of his beer greedily.
+ mpdelay 5
+ burp
+ mpdelay 10
+ say I needed that.
+~
+>fight_prog   30~
+ kick $n
+~
+|
+#20624
+guard guardswoman woman retired~
+the retired Guardswoman~
+Resting in a chair is a retired Guardswoman.
+~
+The retired guardswoman rests in a comfy looking armchair by the fireplace. 
+She is an old war veteran from many campaigns against evil in the land, and
+has the battle scars to prove it. A tankard of ale sits on the table by her
+side which she occasionally swigs at.
+~
+bdgmno k 200 X 0 
+40 5 -10 20d20+400
+0 150000 -1
+8 8 2 3 1 4
+T 45 3d3+30 27
+A 2 8 $n swigs ale from her tankard.
+A 2 8 $n lights up her pipe and puffs away.
+A 2 8 $n looks up at you and smiles.
+E 17 100 20616 -1
+E 18 100 20659 -1
+E 16 1 20660 -1
+Str: 80
+Dex: 80
+#20625
+foreman~
+the Foreman~
+The Foreman stands here planning the construction of a house.
+~
+The foreman is a bear of a man. He looks to be a halfling, a cross between
+a human and a giant, leaning more towards the giant side. Standing twelve
+feet tall, he looks down on you as you try to size him up. He directs his
+workers in the task of building this house, shouting orders every few
+minutes and keeping a careful check on everything that happens here.
+~
+bcdglnoq k 100 X 0 
+50 2 -10 25d25+500
+100 500000 -1
+8 8 1 6 8 6
+T 100 2d10+10 6
+T 90 3d9+35 25
+A 2 8 $n orders, 'Smash that rock in half.'
+A 2 8 $n says, 'When you've finished that we can start on the next wall.'
+A 2 8 $n says, 'Bildrom has been a long time making those drinks.'
+A 2 8 $n spreads the plans out on the floor and studies them.
+A 2 8 $n examines the roof carefully, rubbing his chin.
+E 18 45 20661 -1
+E 17 1 20662 -1
+E 5 100 20656 -1
+Str: 100
+>rand_prog   10~
+ look $r
+ mpdelay 10
+ poke $r
+ mpdelay 10
+ say You should leave here, its dangerous.
+~
+>time_prog   */*/*/*/*/*~
+ north
+ mpdelay 30
+ emote checks everything is in order.
+ mpdelay 20
+ say Everything looks okay, carry on men.
+ mpdelay 30
+ south
+~
+|
+#20626
+drunk miner~
+the Drunk Miner~
+A Drunk Miner sways from side to side, barely standing.
+~
+The miner is a young elf, totally drunk and seemingly without a care in the
+world. It is a well known fact that elves have the least resistance to
+alcohol in the known world (except maybe gnomes), and this elf has had far
+beyond his tolerance level. He looks through you in that misty sort of gaze
+that only the drunk seem to be able to manage.
+~
+bdg k -100 X 0 
+22 11 -1 11d11+220
+50 31000 -1
+8 8 1 3 5 4
+T 100 3d3+3 6
+T 120 4d5+10 27
+A 2 8 $n staggers over towards you, losing his balance.
+A 2 8 $n drinks a tankard of beer in one sup, banging it down on the bar.
+A 2 8 $n splutters, 'Whersh ish the toillet.'
+E 17 100 20618 -1
+Dex: 40
+>rand_prog   10~
+ cuddle $r
+ mpdelay 10
+ say Buy me another pint $r ?
+~
+>rand_prog   10~
+ emote suddenly looks very pale.
+ mpdelay 10
+ puke $r
+~
+|
+#20627
+captain guard miner~
+the Captain of the Guard~
+The Captain of the Guard wanders around, looking for signs of trouble.
+~
+The Captain of the Guard is a mean looking ogre warrior. He has lumpy brown
+skin and huge hands to aid him in battle. His eyes are black pools that seem
+to miss little going on around him. His greasy hair is pushed off his
+sloping brow, give his head the shape of a watermelon. A powerful odour
+radiates from his body.
+~
+deglmoq hk 300 X 0 
+51 2 -10 26d26+1510
+1000 1500000 -1
+8 8 1 6 3 6
+T 85 4d15+65 25
+A 2 8 $n looks at you very carefully, suspecting some trouble.
+A 2 8 $n unsheathes his sword and examines its edge.
+A 2 8 $n says, 'I am watching you very carefully.'
+A 2 8 $n cracks his fingers loudly.
+A 2 8 $n rakes a huge hand through his greasy hair.
+E 5 100 20632 -1
+E 16 100 20631 -1
+E 16 15 20663 -1
+E 1 15 20664 -1
+E 7 15 20665 -1
+E 10 15 20666 -1
+E 5 15 20667 -1
+Str: 100
+Dex: 100
+Int: 100
+Wis: 100
+>speech_prog   hard tough difficult~
+ mpdelay 5
+ poke $n
+ mpdelay 5
+ say And don't you forget it !!
+~
+>speech_prog   guard captain~
+ mpdelay 15
+ say If you are talking about me, talk to my face !
+ mpdelay 20
+ poke $n
+ mpdelay 15
+ say Or else...
+~
+>fight_prog   10~
+ shout Guards, Brethrenmere is under attack !!
+~
+>fight_prog   40~
+ bash $n
+~
+|
+#20628
+boyfriend boy~
+the Boyfriend~
+A young boy is here on a date with his girlfriend.
+~
+The boy is a young human, about sixteen years old. He sits here with his
+girlfriend holding her in a passionate embrace, totally besotted. The
+surrounding hustle and bustle is a world away from them, their life could be
+coming to an end for all they would know or care...
+~
+bdgo k 360 X 0 
+25 10 -3 13d13+250
+100 45500 -1
+8 8 1 3 1 4
+T 100 4d7+20 27
+A 5 8 $n kisses his girlfriend passionately.
+A 5 8 $n smiles in ecstasy.
+A 5 8 $n holds his girlfriend even closer.
+E 3 18 20668 -1
+#20629
+girlfriend girl~
+the Girlfriend~
+A young girl stares dreamily up into her boyfriend's eyes.
+~
+The girl is a young elf, no more then fourteen years old. She sits here,
+held in a passionate embrace by her boyfriend. Her green eyes have a far
+away look in them as she gazes at her boyfriend, totally oblivious to her
+surroundings.
+~
+bdgo k 400 X 0 
+20 12 0 10d10+200
+50 25000 -1
+8 8 2 3 5 4
+T 100 3d7+15 22
+A 5 8 $n gazes dreamily at her boyfriend.
+A 5 8 $n moans with extreme pleasure.
+A 5 8 $n embraces her boyfriend tighter.
+E 1 18 20669 -1
+#20630
+old miner~
+the Old Miner~
+An Old Miner is staggering from tavern to tavern.
+~
+The miner is an old lizardman. His once green and shiny scales have a
+somewhat dulled and tarnished appearance. He is on a tavern crawl, visiting
+each one in turn and drinking a tankard of ale or two at every stop. His
+eyes already have a glazed appearance and he seems non too steady on his
+feet. A few of the other people laugh as he sways from side to side.
+~
+bdgno k 0 X 0 
+38 6 -9 19d19+380
+200 132000 -1
+8 8 1 3 0 4
+T 66 4d5+26 24
+A 5 8 $n sways wildly from side to side.
+A 5 8 $n says, 'Cheers, down the old hatch !!'
+A 5 8 $n mumbles, 'The wife doesn't...'
+E 17 100 20617 -1
+E 17 25 20670 -1
+>rand_prog   5~
+ emote peers around, looking very guilty.
+ mpdelay 10
+ say Don't tell my wife you have seen me...
+ mpdelay 5
+ grovel $r
+~
+>fight_prog   20~
+ say Uh, whhooosss shhhhittting mee ???
+~
+|
+#20631
+posh lady~
+the posh lady~
+A posh lady is strolling around the lobby.
+~
+The lady is a beautiful arachnoid. She strolls around the lobby on her eight
+long legs as if she owns the establishment. Her abdomen is covered in
+colourful patterns, and her two long fangs have been filed to a needle sharp
+point. The fine hairs covering her head and legs sway gently in the breeze.
+~
+bdg hk 100 X 0 
+42 5 -10 21d21+420
+200 190000 -1
+8 8 2 4 0 5
+T 60 3d4+40 22
+A 2 8 $n swans from one corner of the lobby to the other.
+A 2 8 $n clicks her teeth at you, not liking your presence.
+A 2 8 $n chats to the receptionist excitedly.
+A 2 8 $n makes a big show of counting all of her money.
+A 2 8 $n glances at herself in the full-length mirror.
+E 4 100 20671 -1
+>fight_prog   40~
+ mpechoaround $r The posh lady sinks her fangs deep inside $r.
+ mpechoat $r The posh lady sinks her fangs deep inside your flesh.
+ mpcast 'poison' $r
+~
+|
+#20632
+suave gentleman man~
+the suave gentleman~
+A suave gentleman is talking to the receptionist.
+~
+The suave gentleman is an official looking minotaur. Never before have you
+seen such a cultured and sophisticated member of his race. He wears stately
+clothes and carries himself in an upright manner, quite at odds to the
+stereotypical picture of a minotaur. He glances over at you with some
+amusement apparent on his face.
+~
+bdglm hk 300 X 0 
+48 3 -10 24d24+480
+100 390000 -1
+8 8 1 3 12 6
+T 66 5d4+40 28
+A 2 8 $n laughs at something the receptionist tells him.
+A 2 8 $n wipes a speck of dust from his collar.
+A 2 8 $n glances over towards you and nods at the receptionist.
+A 2 8 $n says, 'The negotiations have been very successful...'
+A 2 8 $n flips a golden coin into the air.
+E 5 70 20672 -1
+E 6 5 20673 -1
+>fight_prog   20~
+ mpechoat $n The suave gentleman sticks his horns deep inside YOU !!
+ mpechoaround $n The suave gentleman sticks his horns deep inside $n.
+ mpcast 'agony' $n
+~
+|
+#20633
+porter~
+the Porter~
+A Porter is carrying baggage around the hotel.
+~
+The porter is a young gnome. He stands no more than three feet high and has
+a mischievous grin on his face. He is dressed in a smart porter's uniform
+which has golden buttons down the front and has silver thread running
+through the fabric. The Hotel's emblem, a picture of a fist striking rock 
+with a hammer, has been emblazoned onto the back of his waistcoat. He is
+loaded up with parcels and baggage.
+~
+bcdgh k 0 X 0 
+15 14 2 8d8+150
+150 11000 -1
+8 8 1 3 7 3
+T 100 2d5+9 24
+A 2 8 $n huffs and puffs with the strain of all the baggage.
+A 2 8 $n says, 'Would you like anything taking to your room, Sir ?'
+A 2 8 $n pulls a large suitcase to the doorway and hands it to a guest.
+A 2 8 $n receives a big tip from a departing guest.
+A 2 8 $n smiles at you with his mischievous grin.
+E 17 15 20674 -1
+#20634
+cook head~
+the Head Cook~
+Spaymoore's head Cook is busy making a delicious soup.
+~
+One of the fattest dwarves you have ever seen, he must weigh about 350 
+pounds. He has a mass of golden curls on his head, quite rare for a dwarf,
+and he wears no beard. He rushes around the kitchen from one cooker to 
+another, adding the odd ingredient to a pan before stirring and tasting the
+result. His cheeks are a bright red colour and he puffs from the exertion of
+his task.
+~
+bdgo hk 100 X 0 
+50 2 -10 25d25+500
+150 500000 -1
+8 8 1 3 4 6
+T 66 3d7+44 23
+A 2 8 $n stirs a pot of simmering soup.
+A 2 8 $n says, 'Watch that steak doesn't burn !'
+A 2 8 $n screams, 'Out of my way, Out of my way !'
+A 2 8 $n smiles, 'It's busy out there tonight.'
+A 2 8 $n orders, 'Fetch me some clean silver cutlery and a silver goblet.'
+E -1 100 20675 -1
+E 6 22 20676 -1
+E 13 100 20677 -1
+E 9 1 20678 -1
+Str: 100
+>rand_prog   10~
+ emote tastes some soup out of a large pan.
+ mpdelay 5
+ say Hmm, more pepper I think.
+ mpdelay 10
+ emote sprinkles a little more pepper into the simmering pot.
+ mpdelay 5
+ smile $r
+~
+>time_prog   */*/*/*/*/*~
+ say I'll be back in a minute.
+ mpdelay 40
+ open sliding
+ south
+ close sliding
+ mpdelay 40
+ emote smiles broadly with a contented look.
+ mpdelay 30
+ say Looks like they are enjoying their meals.
+ mpdelay 20
+ open sliding
+ north
+ close sliding
+~
+|
+#20635
+chef~
+the Miner Chef~
+A Miner Chef is here busily preparing exotic dishes.
+~
+The chef, a small ajaj, is busy preparing the exotic and delicious meals
+that Spaymoore's is famous for. He runs about from stove to stove, keeping
+an eye on the many dishes he is currently preparing. It is a little known
+fact that ajaj's are probably the best cooks in the realm, their expertise
+sought after by many restaurants.
+~
+bdgmno k 200 X 0 
+40 5 -10 20d20+400
+350 150000 -1
+8 8 1 3 0 3
+T 70 5d7+24 22
+A 1 8 $n tosses an omelette high into the air.
+A 1 8 $n throws a lobster into a pan of boiling water.
+A 1 8 $n says, 'We got any more fresh beetles ?'
+A 1 8 $n gets a steaming chicken out of the oven.
+A 1 8 $n cuts a large slice of double chocolate cake.
+E 6 23 20676 -1
+E 13 22 20677 -1
+E 17 20 20679 -1
+#20636
+waitress~
+the Waitress~
+Spaymoore's Waitress is here taking down the orders.
+~
+The waitress is a beautiful young lizardwoman. Her green scales are flecked
+with gold and crimson making her seem almost on fire. Her facial features
+are very rounded and delicate, her small forked tongue the only angular part 
+of her curvaceous body. She has an ever present smile which seems to work
+wonders on any difficult customers.
+~
+bcdgno k 350 X 0 
+34 7 -7 17d17+340
+50 106000 -1
+8 8 2 3 0 4
+T 100 2d5+10 6
+T 100 2d13+20 22
+A 10 8 $n smiles at you.
+A 10 8 $n looks down at her notepad.
+E 13 100 20680 -1
+E 17 100 20681 -1
+E 8 5 20682 -1
+>time_prog   */*/*/*/*/2,4,6,8,10,12,14,16,18,20,22~
+ open sliding
+ south
+ close sliding
+ mpdelay 70
+ say Your tables will be ready soon.
+ mpdelay 70
+ west
+ mpdelay 100
+ say Have you decided on you order yet, Sir ?
+ mpdelay 60
+ mpecho A diner says, 'Two lamia steaks with everything on, please.'
+ mpdelay 30
+ mpecho The diner beams a smile at his companion.
+ mpdelay 30
+ emote nods at the diner.
+ mpdelay 100
+ say We will have that for you as soon as possible, Sir.
+ mpdelay 70
+ east
+ mpdelay 200
+ emote checks the booking list.
+ mpdelay 70
+ open sliding
+ north
+ close sliding
+ mpdelay 40
+ say That's two more lamia steaks please, everything on.
+~
+|
+#20637
+diner~
+the diner~
+A diner sits here at a table hungrily devouring his meal.
+~
+The diner sits at the table in deep conversation with his companion. A look 
+of extreme pleasure crosses over his face as he chews on every mouthful of 
+his food. His plate is still piled high, but he is surrounded by many dishes 
+that are already empty. Every so often, he picks up his wine glass and 
+drinks a large quantity of the dark red nectar.
+~
+bdgo k 0 X 0 
+23 11 -2 12d12+230
+100 35000 -1
+8 8 1 3 1 4
+T 60 3d7+8 27
+A 2 8 $n looks up at you from his eating and smiles.
+A 2 8 $n whispers something to his companion.
+A 2 8 $n calls, 'Waitress, more wine !!'
+A 2 8 $n picks up a large chicken leg and starts picking it clean.
+A 2 8 $n drinks takes a big slurp from his wineglass.
+#20638
+maitre d hotel~
+the Maitre d'Hotel~
+A Maitre d'Hotel stands here, taking care of the restaurant.
+~
+The Maitre d' is a stocky, well built human. He has a large girth and a big
+round face with a voluminous double chin. He is dressed in an all black
+uniform with a bright white shirt showing through underneath. A wide red
+sash is bound around his waist. He stands here taking bookings for the
+restaurant and generally helping the diners.
+~
+bdgoq hk 100 X 0 
+50 2 -10 25d25+500
+200 500000 -1
+8 8 1 3 1 4
+T 100 2d10+20 6
+T 90 2d5+44 27
+A 2 8 $n shows a group of diners to their table.
+A 2 8 $n flicks through the booking lists.
+A 2 8 $n calls, 'Waitress, over here please.'
+A 2 8 $n checks his appearance in the full length mirror.
+A 2 8 $n mumbles, 'Busy, busy, busy...'
+E 13 100 20683 -1
+E 5 22 20684 -1
+E 9 20 20685 -1
+Str: 100
+>greet_prog   100~
+ mpdelay 10
+ if isnpc($n)
+  mpat 0 smile
+ else
+  if isfollow($n)
+   mpat 0 smile
+  else
+   say Welcome to Spaymoore's !!
+   mpdelay 20
+   say How many in your group please ?
+  endif
+ endif
+~
+>speech_prog   one two 1 2~
+ mpdelay 15
+ say Certainly, I have the very table for you.
+ mpdelay 15
+ say Please sit here..
+ mpdelay 10
+ emote points to a table nearby.
+ mpdelay 15
+ mpforce $n sit
+~
+>speech_prog   three four five six seven eight nine ten 3 4 5 6 7 8 9 10~
+ mpdelay 15
+ say I'm sorry, but that is a large number.
+ mpdelay 10
+ say It will be a long wait until seating is available.
+ mpdelay 10
+ say You are welcome to wait over there.
+ mpdelay 10
+ emote points over at the waiting area.
+~
+|
+#20639
+rat~
+the rat~
+A massive rat is scuttling about in the shadows.
+~
+The rat is enormous. It has jet black fur which is long and greasy and may
+be infested with fleas. It's head is quite small, put two long incisors
+protrude from it's mouth which look deadly. It is very fat, living off the
+many scraps of food that this prosperous colony throw out.
+~
+bcdfg kst -600 X 0 
+24 11 -2 12d12+240
+0 40000 -1
+8 8 0 4 14 3
+T 60 2d7+16 22
+Dex: 100
+>fight_prog   20~
+ mpechoat $n The rat bites YOU extremely hard !!
+ mpechoaround $n The rat bites $n extremely hard !!
+ mpcast 'fire' $n
+~
+|
+#20640
+woman~
+the woman~
+A woman sits reading in a large armchair.
+~
+The woman is a middle-aged elf. She sits here in a comfortable armchair
+reading a thick novel, one eye fixed onto her children who play together at
+her feet. She looks very relaxed and contented, but then she notices your
+presence...
+~
+bdglm k 400 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 2 3 5 3
+T 60 2d5+14 22
+A 10 8 $n screams loudly at the top of her voice.
+A 10 8 $n screams, 'Get out of here !!'
+A 10 8 $n says, 'Just you dare harm my children...'
+E 1 25 20687 -1
+>greet_prog   100~
+ if isfollow($n)
+   mpat 0 smile
+ else
+   mpdelay 20
+   scream
+   mpdelay 30
+   emote screams, 'Get out of my house !!'
+   mpdelay 25
+   emote gathers her children behind her.
+ endif
+~
+>death_prog   100~
+ mpforce child say You killed our mummy !!!
+ mpforce child cry
+~
+|
+#20641
+child~
+the child~
+A small child sits here playing with her sister.
+~
+The child is a small elf, no more than four years old. She sits on the floor
+playing with her twin sister, drawing pictures and telling stories. At this
+age, nothing could possibly scare her, the world is too unreal. She 
+occasionally looks up at her mother, the close bond between them evident.
+~
+bdg k 400 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 2 3 5 3
+T 100 2d3+6 28
+#20642
+man~
+the man~
+A man is occupied preparing dinner, his back turned to you.
+~
+He is a middle-aged elf from what you can see, smartly dressed in
+fashionable clothes. He is busy at the stove preparing the families dinner,
+his back turned to you, rendering him totally unaware of your presence.
+~
+bdglno k 400 X 0 
+30 9 -5 15d15+300
+200 80000 -1
+8 8 1 3 5 4
+T 70 2d8+25 27
+A 2 8 $n removes the lid from a pot and stirs the contents.
+A 2 8 $n says, 'Hmmmmmmmm, delicious.'
+A 2 8 $n opens the oven and bastes a roasting duck.
+A 2 8 $n adds a touch of salt to some vegetables.
+A 2 8 $n calls, 'Won't be too long dear, just waiting for the duck !!'
+E 3 28 20688 -1
+>speech_prog   man ready easy here goes in attack kill hit~
+ mpdelay 10
+ gasp
+ say Get out of here, now, you have 5 seconds !
+ mpdelay 40
+ say Right...
+ mpdelay 10
+ mpkill $n
+~
+|
+#20643
+old woman~
+the old woman~
+An old woman is asleep in her bed, snoring loudly.
+~
+The woman is a very old elf, at least past her hundredth year. Her face is
+etched deeply with lines by the passage of time, but she looks very peaceful
+and innocent in her slumber. Her snoring is very loud, completely at odds to
+her frail looking frame. It will not be many years before she passes away
+after a long and probably fruitful life.
+~
+bdgo k 400 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 2 3 5 3
+T 110 2d3+11 28
+A 2 8 $n snores very loudly in her sleep.
+A 2 8 $n chatters her teeth in her slumber.
+A 2 8 $n mumbles, 'Jaquira, you're still waiting for me....'
+A 2 8 $n moans quietly to herself.
+A 2 8 $n rolls over onto her side.
+E 18 100 20690 -1
+#20644
+janitor~
+the Janitor~
+A Janitor is sweeping the floor, keeping the toilet in good condition.
+~
+The janitor is an elderly dwarf. He is quite thin and scrawny looking, his
+beard a tangle of wiry grey hairs. As he looks up at you, you notice a
+tattoo on his right cheek, the ancient mark from a cult of powerful mages.
+Legend has it that these wizards were able to tap a source of power which
+has never since been discovered, a most fearsome power.
+~
+bcdglmo hk 500 X 0 
+50 2 -10 25d25+500
+100 500000 -1
+8 8 1 6 4 7
+T 50 2d5+44 26
+A 2 8 $n sweeps the floor, back and forth, with a long brush.
+A 2 8 $n whistles a catchy little tune as he works.
+A 2 8 $n polishes the mirror with an old cloth.
+A 2 8 $n says, 'Sorry, the cubicles are broken, we had a broken pipe.'
+A 2 8 $n smiles, 'Cleanest toilets in Brethrenmere.'
+E 17 100 20691 -1
+E 6 8 20692 -1
+E 18 15 20693 -1
+E 12 10 20694 -1
+E -1 100 20695 -1
+Str: 100
+Dex: 100
+>greet_prog   100~
+ if isfollow($n)
+  mpat 0 smile
+ else
+  mpdelay 10
+  say Welcome travellers !!
+  mpdelay 20
+  say Are you sure you are all male ?
+  mpdelay 10
+  chuckle
+ endif
+~
+>fight_prog   10~
+ say I AM A MEMBER OF THE GHASTERACK !!
+ mpdelay 20
+ say YOU SHALL DIE FOR THIS !!
+~
+>fight_prog   30~
+ cast 'frost' $r
+~
+|
+#20645
+young elf~
+the young Elf~
+A young elf stands here at the urinal.
+~
+Best not stare at him too long, people may start to get ideas. Let's just
+say he is taking a call from Mother Nature....
+~
+bdgn k 0 X 0 
+20 12 0 10d10+200
+80 25000 -1
+8 8 1 3 5 4
+T 65 2d3+16 25
+A 5 8 $n hums to himself quietly.
+A 5 8 $n wonders why you are staring at him.
+#20646
+embarrassed lady~
+the embarrassed lady~
+You have burst in on a lady whose cheeks are burning red.
+~
+The dwarven lady sits here on the toilet, her face a picture of complete
+bewilderment, her cheeks burning a fierce red from embarrassment. She cant
+believe that anybody would disturb her in such a private surrounding, and
+you should be totally ashamed of yourself for having done so.
+~
+bdgno k 300 X 0 
+20 12 0 10d10+200
+150 25000 -1
+8 8 2 3 4 4
+T 55 2d5+14 23
+A 10 8 $n doesn't know where to put her hands.
+A 10 8 $n gasps, 'How dare you break in here !!'
+A 10 8 $n looks very embarrassed.
+E 18 20 20689 -1
+>greet_prog   100~
+  mpdelay 10
+  if isfollow($n)
+    slap $n
+  else
+    emote screams loudly, 'Get out of here !!!!'
+    mpdelay 20
+    slap $n
+  endif
+~
+>fight_prog   10~
+  shout GUARDS, HELP ME !!!
+  mpdelay 30
+  mpmload 20603
+  mpecho A Guard bursts into the cubicle, sword drawn.
+  mpforce guard kill $r
+~
+|
+#20647
+cleaner~
+the Cleaner~
+A Cleaner is here, looking after the washroom.
+~
+The cleaner is a fairly young minotaur woman. She has dark black hair with a
+few streaks of grey starting to show through. Her eyes are a dazzling red
+colour with tiny back pupils in the centre. Her tiny horns look very sharp.
+She works here keeping the toilets clean and generally maintaining the whole
+washroom.
+~
+bcdglo hk 200 X 0 
+35 7 -8 18d18+350
+10 112000 -1
+8 8 2 3 12 4
+T 60 3d4+31 28
+A 2 8 $n mops the floor with practised ease.
+A 2 8 $n picks up her duster and starts polishing the mirror.
+A 2 8 $n stares at you and frowns.
+A 2 8 $n mumbles, 'Clean, scrub, wash, clean, scrub, wash....'
+A 2 8 $n polishes the golden faucets to a glistening shine.
+E 17 100 20603 -1
+>greet_prog   100~
+  mpdelay 10
+  if sex($n) == 1
+   shout $n is in the Ladies Washroom !!!
+   mpdelay 10
+   poke $n
+   mpdelay 10
+  else
+    if sex($n) == 2
+       mpdelay 20
+       tell $n Welcome to the best washroom in the Realm.
+       mpdelay 10
+       smile $n
+       mpdelay 10
+    else
+      mpdelay 50
+      say Cant you make up your mind $n ??
+      mpdelay 10
+      grin $n
+      mpdelay 10
+    endif
+  endif
+~
+|
+#20648
+woman customer~
+the customer~
+A woman is sitting here, trying on some new shoes.
+~
+The elven lady is very smartly dressed in a green velvety gown with a large
+black bow around the waist. She sits here on a padded stool, trying on many
+different types of shoe. Discarded slippers and boots are strewn all about
+her. A badge on her shoulder identifies her as belonging to the witch's
+guild.
+~
+bdgno k 300 X 0 
+20 12 0 10d10+200
+100 25000 -1
+8 8 2 3 5 4
+T 60 1d9+15 28
+A 2 8 $n tries on a pair of shiny black shoes.
+A 2 8 $n grumbles, 'Can never find what I want.'
+A 2 8 $n stands up and looks at her feet in the foot mirror.
+A 2 8 $n says, 'Do you have anything a little more stylish ?'
+A 2 8 $n looks in two minds as whether to buy the shoes.
+>fight_prog   30~
+ mpechoat $r The customer stabs a stileto heel deep inside YOU !!
+ mpechoaround $r The customer digs a stileto heel deep inside $r !!
+ mpcast 'fire' $r
+~
+>fight_prog   20~
+ cast 'fire' $n
+~
+|
+#20649
+fat miner~
+the Fat Miner~
+A Fat Miner is wandering around the cavern, enjoying the sights.
+~
+The miner is a short and fat dwarf. He must be off duty considering his
+cleanliness and fine clothes he is wearing. He wanders around the cavern,
+greeting passers bye with a cheerful smile and wave, stopping off at the
+various stores and shops along the way.
+~
+dgn k 200 X 0 
+30 9 -5 15d15+300
+170 80000 -1
+8 8 1 3 4 6
+T 70 2d7+31 27
+A 2 8 $n stops to peer through the shop window.
+A 2 8 $n says, 'Hello there travellers.'
+A 2 8 $n smiles at you with a cheerful grin.
+A 2 8 $n strolls around with a big smile on his face.
+A 2 8 $n waves to you as you pass him by.
+#20650
+miner~
+the Miner~
+An off-duty Miner is walking around.
+~
+The miner is a strapping human male in his prime. He has just finished a
+long shift in the mines and is off to his house to get cleaned up. He is
+covered in a thin layer of coal dust and smells slightly of stale sweat. His
+blonde hair has thick streaks of black through it.
+~
+dgln hk 100 X 0 
+40 5 -10 20d20+500
+800 150000 -1
+8 8 1 3 1 5
+T 80 3d10+35 27
+A 2 8 $n rubs his back, saying, 'I need a good massage tonight.'
+A 2 8 $n lets out a loud sigh as he brushes past you.
+A 2 8 $n rubs is fingers through his dusty hair.
+A 2 8 $n wipes a dirty hand across his face.
+A 2 8 $n hurries past you on his way home.
+E 10 15 20696 -1
+#20651
+woman shopper~
+the shopper~
+A shopper walks past you, arms full of purchases.
+~
+The lizardwoman has her arms full of parcels, many of them brimming with
+food and clothes. She even uses her long tail to hold a few packages. She
+rushes from one shop to another, keen to finish before the shops close for
+the day. The determination on her face shows she is in no mood to stop for
+idle chatter.
+~
+dgno k 0 X 0 
+25 10 -3 13d13+250
+250 45000 -1
+8 8 2 3 0 6
+T 60 2d5+19 24
+A 2 8 $n stoops to pick up a parcel she has dropped.
+A 2 8 $n pushes her way past you, muttering to herself.
+A 2 8 $n pops into a shop and back out again quickly.
+A 2 8 $n quickly checks the change in her purse.
+A 2 8 $n mumbles, 'So late, so late..'
+#20652
+small child~
+the small child~
+A small child sits here playing skittles with his friends.
+~
+The child is a young dwarf, about ten years old. He sits here amid the
+hustle and bustle of everyday life playing a game of skittles with his other
+friends. He looks up at you as you pass, but quickly returns to his game. He
+is clothed in a simple leather jacket and leather trousers which have fine
+golden stitching running through them.
+~
+bdg k 500 X 0 
+10 15 5 5d5+100
+800 5000 -1
+8 8 1 3 4 4
+T 80 1d3+8 22
+A 2 8 $n cheers loudly as he knocks all the skittles over !
+A 2 8 $n pokes his friend in the ribs for something.
+A 2 8 $n says, 'Hey, you're cheating !'
+A 2 8 $n grins, 'I feel lucky, here goes...'
+A 2 8 $n waves to a passer-by, laughing with his friends.
+#20653
+Magluff~
+Magluff~
+Magluff is standing here behind his bar, serving the customers.
+~
+Magluff is a large and round dwarf. He has big rosy cheeks and an ever
+present smile. He stands here chatting to the customers at the bar,
+repeating stories that he has told others many times before. He occasionally
+stops to polish a glass or change a beer barrel over.
+~
+bcdglnorw defhk 0 X 0 
+60 0 -10 30d30+30000
+0 1000 -1
+8 8 1 3 0 4
+T 66 8d9+70 27
+A 2 8 $n chuckles at a customers story.
+A 2 8 $n bends down behind the bar to change a barrel.
+A 2 8 $n polishes a glass with his apron.
+A 2 8 $n pulls a pint of dark ale.
+A 2 8 $n smiles, 'What's your poison, friend ?'
+A 2 8 $n knocks back a shot of whiskey.
+E -1 100 20615 -1
+E -1 100 20616 -1
+E -1 100 20617 -1
+E -1 100 20618 -1
+#20654
+Drapor~
+Drapor~
+Drapor looks about to come over and ask you if you need help...
+~
+Drapor is an old looking lizardman. He has that look on his face which is so
+common to most experienced shopkeepers of his kind, he can sense an easy 
+sale. He knows you are undecided about what you want and will be able to sell
+you anything. His forked tongue occasionally flicks out, awaiting the best
+time to ask you, "Do you need any help ?".
+~
+bcdglnorw defhk 0 X 0 
+60 0 -10 30d30+30000
+0 1000 -1
+8 8 1 3 0 4
+T 66 8d6+70 27
+A 2 8 $n polishes the small foot mirror to a shine.
+A 2 8 $n rearranges a stack of fashion footwear.
+A 2 8 $n looks at you and smiles.
+A 2 8 $n rasps, 'May I be of help ?'
+A 2 8 $n helps a lady customer try a new pair of shoes on.
+E -1 100 20605 -1
+E -1 100 20606 -1
+E -1 100 20607 -1
+E -1 100 20608 -1
+#20655
+Brunswick~
+Brunswick~
+Brunswick is here, sorting through a pile of junk.
+~
+Brunswick is an old human man. He has wispy white hair which is thinning
+severely. He creaks around from one side of the room to the other, moving
+items of junk around or arranging the piles of delicious food to look even
+more appetising. He smiles at you with a friendly glint in his eyes.
+~
+bcdglnorw defhk 0 X 0 
+60 0 -10 30d30+30000
+0 1000 -1
+8 8 1 3 0 4
+T 100 8d6+70 27
+A 2 8 $n smiles at you with his eyes.
+A 2 8 $n says, 'Feel free to browse around.'
+A 2 8 $n says, 'This Turkish Delight is wonderful, hmmm.'
+A 2 8 $n sorts through a pile of junk, whistling merrily.
+A 2 8 $n coughs loudly.
+E -1 100 20619 -1
+E -1 100 20620 -1
+E -1 100 20621 -1
+E -1 100 20622 -1
+#20656
+Deirdre~
+Deirdre~
+Deirdre leans against the counter waiting to check people in.
+~
+Deirdre is a middle aged elven lady. She is the joint owner of this
+establishment with her husband, although she takes care of the guests whilst
+he looks after the upkeep of the hotel and the catering. She is quite
+beautiful and has an enchanting smile on her face. She often tells funny
+stories about the goings on in here over the years.
+~
+bcdglnorw defhk 0 X 0 
+60 0 -10 30d30+30000
+0 1000 -1
+8 8 2 3 0 4
+T 100 8d7+70 27
+A 2 8 $n shows a guest to the hallway, pointing along the corridor.
+A 2 8 $n beams a broad smile at you.
+A 2 8 $n stifles a wide yawn.
+A 2 8 $n shares an old tale with a guest, chuckling merrily.
+A 2 8 $n browses through the guest list.
+A 2 8 $n rings the bell for a porter.
+A 2 8 $n says, 'Yes, we are quite full tonight.'

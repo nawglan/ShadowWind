@@ -1,0 +1,489 @@
+#4200
+mob unfinished~
+the unfinished mob~
+An unfinished mob stands here.
+~
+It looks, err, unfinished.
+~
+d 0 0 X
+0 20 10 1d1+0
+0 0
+8 8 0 0 0 0
+T 100 2d4+0 0
+#4201
+man thief shadow~
+a man shaped shadow~
+A man dressed in dark leathers is hiding here.
+~
+   Looking like nothing more than a shadow, this guy gives you the creeps.
+He is watching you intently, no doubt thinking you can't see him.  
+~
+bdm dkst 0 X
+16 13 2 8d8+160
+0 12500
+8 8 1 3 1 3
+T 100 3d4+3 1
+T 100 2d5+0 7
+E 12 10 4202 -1
+E 6 10 4203 -1
+E 18 10 4204 -1
+E 10 60 4205 -1
+E 7 60 4206 -1
+E 8 2 4207 10
+E 16 10 4208 -1
+E 5 60 4209 -1
+#4202
+man thief shadow~
+a man shaped shadow~
+A man dressed in dark leathers is hiding here.
+~
+   Looking like nothing more than a shadow, this guy gives you the creeps.
+He is watching you intently, no doubt thinking you can't see him.  
+~
+cdfglm dks 0 X
+16 13 2 8d8+160
+0 12500
+8 8 0 3 1 3
+T 100 3d4+3 1
+T 100 2d5+0 7
+E 10 60 4205 -1
+E 7 60 4206 -1
+E 18 10 4204 -1
+E 12 10 4202 -1
+E 6 10 4203 -1
+E 16 10 4208 -1
+E 5 60 4209 -1
+#4206
+thief woman~
+the woman~
+A woman rests here, taking a breather.
+~
+   Looking like a typical adventurer or traveller, she wears light leather
+armor. Apparently, she doesn't notice your arrival, and continues on with
+her brief rest.  
+~
+bdl dks 0 X
+10 15 5 5d5+100
+0 5000
+8 8 2 3 1 3
+T 100 2d4+2 1
+E 16 100 3020 -1
+E 12 100 4202 -1
+E 5 60 4209 -1
+#4229
+thief man~
+a deadly looking thief~
+A deadly looking thief crouches here.
+~
+   The first impression you get of this man is 'shifty'. He is wearing brown
+and black leather, no doubt to match the dirt surroundings. His eyes are
+wide and alert, his muscles tense.  
+~
+d dks -1000 X
+15 8 2 8d8+150
+800 11000
+8 8 1 0 0 0
+T 100 4d4+2 0
+T 80 5d1+0 4
+E 16 100 4208 -1
+E -1 100 4229 1
+E 10 100 4201 -1
+>act_prog                                p door is opened from the other side.~
+south
+if ispc ($n)
+mpecho A short figure leaps from the shadows at you!
+mpdelay 10
+hit $n
+~
+|
+#4230
+thief collector thief gani~
+Gani~
+An offering collector is here counting coins.
+~
+   The offering collector is here counting, sorting, and packaging coins. 
+She is putting the ones she finishes into small bags, and loading them into
+a chest marked 'Autumn's Share'.  
+~
+bcdl ks 0 X
+15 10 2 8d8+150
+1150 11000
+8 8 2 0 0 0
+T 100 4d5+5 1
+E -1 100 4231 -1
+>greet_prog                      100~
+mpdelay 10
+mpechoat $n Gani turns away from you as you enter and whispers, 'Psst! We have more company.'
+mpdelay 10
+mpmload 4233
+~
+|
+#4231
+thief guard enforcer~
+the thieves' guard~
+A thief enforcer is prowling around here.
+~
+   Rather large, this thief is used as a strong arm. Also known as an
+enforcer among thieves, he protects those members that can't defend
+themselves.  
+~
+bcdlm dfkst 0 X
+15 8 2 8d8+150
+0 11000
+8 8 1 0 0 0
+T 100 4d5+5 0
+E 16 40 4208 -1
+#4233
+thief enforcer~
+an enforcer~
+A thief enforcer stands here looking menacing.
+~
+   Not your typical enforcer, this female thief looks as if she relies more
+on speed that brute strength. Being Gani's personal guard, they make sure no
+harm comes to their master.  
+~
+bcdlm dkst 0 X
+12 14 4 6d6+120
+950 7500
+8 8 2 0 0 0
+T 100 2d2+0 4
+T 100 2d2+0 4
+T 100 2d2+0 4
+T 100 2d2+0 4
+#4234
+shadow man~
+a shadow~
+A pool of blackness in the shape of a man glides about here.
+~
+   Not able to clearly make it out, it appears to be made up of shadows. It
+hurts your eyes just to look at it.  
+~
+bdnopqr dfkpz 0 X
+50 -10 -10 25d25+500
+0 1
+8 8 0 0 0 0
+T 120 100d1+0 0
+A 10 8 A shadow, vaguely man sized, flits about the room.
+E -1 100 4234 1
+E -1 100 4235 1
+>speech_prog                     golden~
+if ispc $n
+mpdelay 10
+unlock door west
+mpdelay 10
+open door west
+mpdelay 10
+mpforce $n west
+mpdelay 10
+close door w
+mpdelay 10
+lock door w
+endif
+~
+>speech_prog                     silver~
+if ispc $n
+mpdelay 10
+unlock door east
+mpdelay 10
+open door east
+mpdelay 10
+mpforce $n east
+mpdelay 10
+close door e
+mpdelay 10
+lock door e
+endif
+~
+|
+#4235
+thief assassin sentinel~
+a sentinel of memories~
+A sentinel is watching over the names and memories here.
+~
+   Standing watch over the names, the sentinel look very capable. In honor
+of his duty, he has trained in both the ways of thievery and assassination.
+He represents the casualties lost by both sides during their conflict. It is
+apparent that you see him only because he allows it.  
+~
+bdlnp dk 0 X
+20 10 0 10d10+200
+1500 25000
+8 8 1 0 0 0
+T 100 5d4+10 0
+A 10 8 A sentinel of names chants a mantra for those who have fallen.
+E -1 100 4236 1
+#4236
+thief assassin sentinel~
+a sentinel of history~
+A sentinel is watching over the history of the war here.
+~
+   Standing watch over the names, the sentinel look very capable. In honor
+of his duty, he has trained in both the ways of thievery and assassination.
+He represents the casualties lost by both sides during their conflict. It is
+apparent that you see him only because he allows it.  
+~
+bdlnp dk 0 X
+20 10 0 10d10+200
+1500 25000
+8 8 1 0 0 0
+T 100 5d4+10 0
+A 10 8 A sentinel of history recites the story under his breath.
+E -1 100 4237 1
+#4237
+shadow~
+a shadow~
+A pool of darkness in the shape of a man glides about here.
+~
+   Not able to clearly make it out, it appears to be made up of shadows. It
+hurts your eyes just to look at it.  
+~
+bd dfkpz 0 X
+50 30 -10 25d25+500
+0 500000
+8 8 0 0 0 0
+T 120 100d1+0 0
+A 10 8 Out of the corner of your eye you notice your shadow moving on it's own.
+>speech_prog                     himself he~
+mpdelay 10
+mpechoat $n You notice your shadow growing larger, enveloping you.
+mpdelay 10
+mpforce $n scream
+mpdelay 10
+mpechoat $n Your shadow comsumes you and drags you into the very stones.
+mpdelay 10
+mptransfer $n 4238
+mpecho The shadow of $n laughs as it comsumes its master.
+~
+|
+#4238
+shadow~
+a shadow~
+A pool of darkness in the shape of a man glides about here.
+~
+   Not able to clearly make it out, it appears to be made up of shadows. It
+hurts your eyes just to look at it.  
+~
+bd dfpz 0 X
+50 -10 -10 25d25+500
+0 500000
+8 8 0 0 0 0
+T 120 100d1+0 0
+>speech_prog                    prison jail~
+mpdelay 10
+mpechoat $n Your shadow whispers to you, 'In you, is the heart of a thief.'
+mpdelay 10
+mpechoat $n You start to sink as the shadows pool beneath your feet.
+mpdelay 10
+mptransfer $n 4239
+mpecho $n sinks into the pool of darkness that has gathered at the stones beneath them.
+~
+|
+#4243
+sentinel thief assassin~
+a sentinel of accounting~
+A sentinel is watching over the new blood here.
+~
+   Standing watch over the names, the sentinel look very capable. In honor
+of her duty, she has trained in both the ways of thievery and assassination.
+She represents the casualties lost by both sides during their conflict. It
+is apparent that you see her only because she allows it.  
+~
+bdmnp dk 0 X
+20 10 0 10d10+200
+1500 25000
+8 8 2 0 0 0
+T 100 5d4+10 0
+A 10 8 A sentinel of accounting recites a prayer for her new brothers and sisters.
+E -1 100 4243 1
+#4244
+sentinel thief assassin~
+a sentinel of the future~
+A sentinel stands here, awaiting what is to come.
+~
+   Standing watch over the blank stones, the sentinel look very capable. In
+accordance with his duty, he has trained in both the ways of thievery and
+assassination. He represents what is to come, and what role we shall play in
+it. It is apparent that you see him only because he allows it.  
+~
+bdlnp dk 0 X
+20 10 0 10d10+200
+1500 25000
+8 8 2 0 0 0
+T 100 5d4+10 0
+E -1 100 4244 1
+#4246
+sentinel thief assassin keeper~
+the keeper~
+A sentinel stands here, guarding other sentinels.
+~
+   Looking somewhat authoritative, this sentinel is known as the keeper. He
+maintains the others and supervises the upkeep of the hallway of
+rememberance.  
+~
+bcdln dfk 0 X
+25 7 -3 13d13+250
+2650 45500
+8 8 1 0 0 0
+T 100 5d6+10 0
+A 10 8 The keeper peers about intently, nodding knowingly to himself.
+E -1 100 4246 1
+#4249
+shadow~
+a shadow~
+A pool of blackness in the shape of a man glides about here.
+~
+   Not able to clearly make it out, it appears to be made up of shadows. It
+hurts your eyes just to look at it.  
+~
+bdo dfkz 0 X
+50 30 -10 25d25+500
+0 500000
+8 8 0 0 0 0
+T 1073767795 99d111+114 112
+>speech_prog         mage sorcerer conjurer magic-user~
+mpdelay 10
+mpechoat $n A voice whispers from the shadows, 'Sadly, magic weaver, you have chosen poorly.'
+mpdelay 10
+mpmload 4250
+~
+>speech_prog         warrior fighter~
+mpdelay 10
+mpechoat $n A voice whispers from the shadows, 'Tsk tsk. You are nothing but a brute afer all.'
+mpdelay 10
+mpmload 4250
+~
+>speech_prog         thief rogue~
+mpdelay 10
+mpechoat $n A voice whispers in your ear, 'We are all thieves at heart.'
+mpdelay 10
+mpechoat $n You feel disoriented as the words on the plaque re-write themselves.
+mptransfer $n 4250
+mpecho The mist springs to life and envelopes $n.
+~
+|
+#4250
+nemesis~
+the nemesis~
+The nemesis is standing here, feeding upon your fears.
+~
+   The nemesis is a vague man shape, semi-transparent, and the consistency
+of the shadows themselves. Traditionally he is an ally of all those involved
+with the black arts of treachery.  
+~
+bcdeflmnpqr dfhkmn 0 X
+15 12 2 8d8+150
+0 11000
+8 8 0 0 0 0
+T 100 10d2+5 13
+#4251
+autumn thief queen~
+Autumn~
+Autumn is standing here, cloaked in pools of darkness.
+~
+   Before you is the Queen of Thieves. With long red hair, a lithe figure,
+and pale complexion, she hardly seems all that dangerous. She is dressed
+like any common thief wearing leather armor, differening only in the fact
+that they bear her crest.  
+~
+bcdmnopq dfks 0 X
+20 10 0 10d10+200
+1 25000
+8 8 2 0 0 0
+T 100 6d5+5 0
+E 21 100 4251 10
+E -1 100 4252 1
+E 8 10 4207 10
+E 7 100 4206 -1
+E 10 100 4205 -1
+E 18 100 4204 -1
+E 6 100 4203 -1
+E 16 100 4208 -1
+E 4 100 4201 -1
+E 5 60 4209 -1
+#4252
+autumn queen thief~
+the Queen of Thieves~
+Autumn, Queen of Thieves, is here relaxing with her love.
+~
+   Autumn, the real one, is meeting here with her lover. She looks almost
+exactly like the Autumn you met previously, sharing the same complexion,
+hair, and other physical attributes. Dressed in traditional thief garb, she
+looks as though she has been ready for your arrival.  
+~
+bdelmnopq dfks 0 X
+30 5 -5 15d15+300
+5000 80000
+8 8 2 0 0 0
+T 80 10d4+10 0
+E 17 60 4264 -1
+E 8 40 4263 -1
+E 5 100 4262 10
+E 15 100 4261 10
+E 14 100 4261 10
+E 10 40 4260 -1
+E 2 40 4259 -1
+E 1 40 4259 -1
+E 22 20 4258 10
+E 23 20 4258 10
+#4253
+exeter assassin~
+the Head of Assassins~
+Exeter, Head of Assassins, is here spending time with his love.
+~
+   Exeter is tall and slender, with short dark hair. He is dressed in very
+deep, black cloth. His good looks and charm have obviously won over the
+Queen, just as she has won his.  
+~
+bcdemnopq dfk 0 X
+30 15 -5 15d15+300
+5000 80000
+8 8 1 0 0 0
+T 80 10d4+10 0
+E 10 10 4253 5
+E 20 10 4255 10
+E 19 10 4255 10
+E 8 10 4256 10
+E 16 10 4257 10
+#4254
+thief watchman~
+Autumn's Honor~
+A thief watchman is standing here.
+~
+   Having been dubbed Autumn's Honor by the Queen personally, the watchman
+stands ready to deliver swift retribution for any transgression against her
+integrity.  
+~
+bdlmnq dfhk 0 X
+40 20 -10 20d20+400
+0 150000
+8 8 1 0 0 0
+T 100 10d4+20 8
+E 1 20 4254 1
+>all_greet_prog            100~
+mpdelay 10
+mpechoat $n The watchman growls, 'You dare violate the Queen's treasury!'
+mpdelay 10
+mpat 4299 mpecho You hear a voice ring from the stones, 'Beware, Queen, more intruders!'
+mpechoat $n The watchman waves his hand, and a rift opens, sucking you into it.
+mptrans $n 4298
+~
+|
+#4298
+shadow~
+a shadow~
+A pool of darkness in the shape of a man glides about here.
+~
+   Not able to clearly make it out, it appears to be made up of shadows. It
+hurts your eyes just to look at it.  
+~
+bdnopqr dfkz 0 X
+50 30 -10 25d25+500
+0 500000
+8 8 0 0 0 0
+T 120 100d1+0 0
+>act_prog            unlocks~
+mpechoat $n The slim wire cuts your hand as you fidget with the lock, forcing you to lose your grip.
+mpdelay 10
+mpforce $n junk xxxx
+~
+|

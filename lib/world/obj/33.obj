@@ -1,0 +1,47 @@
+#3301
+stone dagger splinter~
+{ya splintered stone dagger{x~
+A razor sharp splinter of stone lies here.~
+~
+5 gi an 0 
+2 5 2 12 6
+4 2000 500
+A
+5 -3
+A
+18 1
+A
+19 1
+#3302
+amulet wood carved wooden~
+{wa delicately carved {Ysun-shaped{x amulet~
+An intricately carven piece of wood lies here.~
+~
+11 a ac 0 
+0 0 0 0 5
+3 10000 2500
+A
+17 -2
+A
+4 5
+#3303
+bracelet wooden~
+{wa perfectly smooth {ywooden bracelet{x ~
+A wooden bracelet has been carelessly dropped here.~
+~
+11 0 am 0 
+0 0 0 0 5
+2 9000 250
+A
+17 -3
+A
+18 1
+#3304
+vest wool woolen~
+{wa tattered {Wwoollen{w vest{x~
+A dirty vest lies in a crumpled heap.~
+~
+9 0 ak m 
+2 0 0 0 1
+5 4000 300
+$~

@@ -1,0 +1,218 @@
+#22
+The Hall of Penance /Dorga-Breena/~
+2299 60 2 a 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+3 3 3 3 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 2229 1 2290 100	* Paltor
+E 1 2220 15 12	* a heavy woolen robe
+E 1 2221 5 3	* a broach of life
+E 1 2222 20 17	* a manual of healing arts
+E 1 2223 3 16	* a deadly mithril battle mace
+E 1 2224 15 4	* a golden holy symbol
+D 0 2243 2 1	* Inside the Gates
+D 0 2241 0 1	* The Gate Before the Ogre Village
+M 0 2207 10 2243 100	* the Ogre Villager
+M 0 2207 10 2243 100	* the Ogre Villager
+M 0 2207 10 2243 100	* the Ogre Villager
+M 0 2207 10 2243 100	* the Ogre Villager
+M 0 2207 10 2243 100	* the Ogre Villager
+M 0 2207 10 2243 100	* the Ogre Villager
+M 0 2207 10 2246 100	* the Ogre Villager
+M 0 2207 10 2245 100	* the Ogre Villager
+M 0 2207 10 2248 100	* the Ogre Villager
+M 0 2207 10 2244 100	* the Ogre Villager
+M 0 2208 6 2247 100	* the Ogre Warrior
+M 0 2208 6 2247 100	* the Ogre Warrior
+M 0 2208 6 2247 100	* the Ogre Warrior
+M 0 2208 6 2242 100	* the Ogre Warrior
+M 0 2208 6 2248 100	* the Ogre Warrior
+M 0 2208 6 2246 100	* the Ogre Warrior
+M 0 2209 6 2241 100	* the Ogre Guard
+M 0 2209 6 2241 100	* the Ogre Guard
+M 0 2209 6 2241 100	* the Ogre Guard
+M 0 2209 6 2248 100	* the Ogre Guard
+M 0 2209 6 2248 100	* the Ogre Guard
+M 0 2209 6 2248 100	* the Ogre Guard
+M 0 2210 1 2249 100	* the Ogre Shaman
+M 0 2211 1 2250 100	* the Ogre Chieftain
+M 0 2226 1 2273 100	* Zalkoth
+E 1 2207 20 9	* a pair of spiked gauntlets
+E 1 2209 20 16	* a rune-carved shortsword named 'Nightbringer'
+M 0 2231 1 2299 100	* Vorant
+E 1 2230 10 2	* a carved wooden ring
+E 1 2231 20 3	* the horn of life
+E 1 2232 10 13	* the belt of life
+E 1 2233 20 17	* a blood-red stone
+E 1 2234 3 16	* a swift sword made of obsidian
+D 0 2264 0 1	* Inside The Gates Of Shurmak's Keep
+M 0 2200 1 2207 7	* the Dark Ethereal Knight
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2220 8 2281 100	* the Royal Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+M 0 2219 8 2279 100	* the High Minotaur Guard
+D 0 2279 3 2	* The Entryway To The Cave Of Shurmak
+M 0 2234 5 2287 100	* the Elite Minotaur Guard
+M 0 2234 5 2287 100	* the Elite Minotaur Guard
+M 0 2234 5 2287 100	* the Elite Minotaur Guard
+M 0 2234 5 2287 100	* the Elite Minotaur Guard
+M 0 2234 5 2287 100	* the Elite Minotaur Guard
+D 0 2283 1 3	* Standing Before The Throne
+M 0 2221 2 2285 100	* the Elite Minotaur Guard
+E 1 2277 5 6	* a crimson steel helm and visor
+E 1 2278 5 7	* a pair of crimson steel greaves
+E 1 2279 5 10	* a pair of crimson steel vambraces
+E 1 2266 15 5	* a steel breast plate
+E 1 2280 5 16	* a huge morningstar
+M 0 2221 2 2285 100	* the Elite Minotaur Guard
+E 1 2277 5 6	* a crimson steel helm and visor
+E 1 2278 5 7	* a pair of crimson steel greaves
+E 1 2279 5 10	* a pair of crimson steel vambraces
+E 1 2266 15 5	* a steel breast plate
+E 1 2280 5 16	* a huge morningstar
+D 0 2285 3 3	* The Secret Hallway
+M 0 2232 1 2298 100	* Maltu
+E 1 2235 15 12	* a large black leather pack
+E 1 2236 10 6	* a black leather hood
+E 1 2237 20 10	* a pair of black leather sleeves
+E 1 2238 10 7	* a pair of black leather pants
+E 1 2239 10 16	* a wickedly crafted shortsword
+M 0 2230 1 2294 100	* Lortuk
+E 1 2225 10 1	* a thick marble ring
+E 1 2226 10 15	* a thick marble bracelet
+E 1 2227 10 8	* the boots of striding
+E 1 2228 10 12	* an icy white cloak
+E 1 2229 3 16	* an ice staff
+M 0 2227 1 2274 100	* Bartoth
+E 1 2210 10 6	* a golden helm and visor
+E 1 2211 5 5	* a gilded gold breast plate
+E 1 2212 15 4	* a billowing white cape
+E 1 2213 20 11	* a white shield with a golden cross
+E 1 2214 3 16	* a huge labradorite mace named 'Dawnbringer'
+M 0 2225 1 2272 100	* Morag
+E 1 2200 10 9	* a pair of black minotaur combat gloves
+E 1 2201 5 5	* a suit of black spiked garde armor
+E 1 2202 5 7	* a pair of black minotaur greaves
+E 1 2203 5 10	* a pair of black minotaur vambraces
+E 1 2204 3 16	* the rod of weaponry
+E 1 2205 20 12	* a pitch black cloak
+E 1 2206 15 4	* a black minotaur plate neckguard
+E 1 2207 5 9	* a pair of spiked gauntlets
+E 1 2208 10 11	* the shield of shadows
+E 1 2209 3 16	* a rune-carved shortsword named 'Nightbringer'
+M 0 2201 1 2214 100	* the Old Treant
+M 0 2202 1 2216 100	* the Cave Dweller
+M 0 2203 4 2211 100	* the Rock Toad
+M 0 2203 4 2212 100	* the Rock Toad
+M 0 2203 4 2213 100	* the Rock Toad
+M 0 2203 4 2219 100	* the Rock Toad
+M 0 2204 1 2230 100	* the Weeping Willow
+G 1 2249 15 -1	* a willow branch
+M 0 2205 3 2232 100	* the Mistling
+M 0 2205 3 2237 100	* the Mistling
+M 0 2205 3 2233 100	* the Mistling
+M 0 2206 1 2236 100	* the Swamp Wraith
+G 1 2284 20 -1	* a misty potion
+E 1 2286 25 16	* a long dark spear
+M 0 2212 3 2251 100	* the Plains Barbarian
+E 1 2292 20 4	* a thick fur cape
+E 1 2293 20 5	* a fur lined tunic
+E 1 2260 20 8	* a pair of fur lined boots
+M 0 2212 3 2254 100	* the Plains Barbarian
+E 1 2292 20 4	* a thick fur cape
+E 1 2293 20 5	* a fur lined tunic
+E 1 2260 20 8	* a pair of fur lined boots
+M 0 2212 3 2259 100	* the Plains Barbarian
+E 1 2292 20 4	* a thick fur cape
+E 1 2293 20 5	* a fur lined tunic
+E 1 2260 20 8	* a pair of fur lined boots
+M 0 2213 3 2257 100	* the White Yeti
+E 1 2261 20 12	* the white pelt of a yeti
+M 0 2213 3 2259 100	* the White Yeti
+E 1 2261 20 12	* the white pelt of a yeti
+M 0 2213 3 2255 100	* the White Yeti
+E 1 2261 20 12	* the white pelt of a yeti
+M 0 2214 3 2252 100	* the Ice Worm
+M 0 2214 3 2254 100	* the Ice Worm
+M 0 2214 3 2256 100	* the Ice Worm
+M 0 2215 5 2264 100	* the Minotaur Citizen
+M 0 2215 5 2263 100	* the Minotaur Citizen
+M 0 2215 5 2267 100	* the Minotaur Citizen
+M 0 2215 5 2265 100	* the Minotaur Citizen
+M 0 2215 5 2270 100	* the Minotaur Citizen
+M 0 2216 3 2268 100	* the Minotaur Guard
+E 1 2263 15 10	* a pair of steel vambraces
+E 1 2264 15 7	* a pair of steel greaves
+E 1 2265 10 16	* a rust covered battle axe
+M 0 2216 3 2266 100	* the Minotaur Guard
+E 1 2263 15 10	* a pair of steel vambraces
+E 1 2264 15 7	* a pair of steel greaves
+E 1 2265 10 16	* a rust covered battle axe
+M 0 2216 3 2262 100	* the Minotaur Guard
+E 1 2263 15 10	* a pair of steel vambraces
+E 1 2264 15 7	* a pair of steel greaves
+E 1 2265 10 16	* a rust covered battle axe
+M 0 2217 3 2267 100	* the Minotaur Warrior
+M 0 2217 3 2276 100	* the Minotaur Warrior
+M 0 2217 3 2278 100	* the Minotaur Warrior
+M 0 2218 1 2277 100	* the Minotaur GateKeeper
+G 1 2250 1 -1	* the keep key
+M 0 2222 5 2293 100	* the Harem Girl
+M 0 2222 5 2293 100	* the Harem Girl
+M 0 2222 5 2293 100	* the Harem Girl
+M 0 2222 5 2293 100	* the Harem Girl
+M 0 2222 5 2293 100	* the Harem Girl
+M 0 2223 1 2295 100	* the Minotaur Butler
+M 0 2228 1 2291 100	* Kazmar
+E 1 2215 10 1	* a pair of goggles of true vision
+E 1 2216 5 2	* a ring of banded metal
+E 1 2217 5 12	* a minor globe of invulnerability
+E 1 2218 3 16	* a gnarled magius staff
+E 1 2219 10 13	* a girdle of many pouches
+M 0 2233 1 2296 100	* Shurmak
+E 1 2240 5 12	* a major globe of invulnerability
+E 1 2241 5 5	* a massive suit of black minotaur platemail
+E 1 2242 15 14	* a huge black spiked buckler
+E 1 2243 10 2	* a studded sapphire ring
+E 1 2244 10 6	* a emerald enlased horned minotaur helm
+E 1 2245 1 16	* the great axe of Shurmak
+D 0 2277 1 2	* Before The Cave Of Shurmak
+D 0 2262 2 1	* Before The Gates Of Shurmak's Keep
+S
+$

@@ -1,0 +1,813 @@
+#1500
+The Road To Eden~
+   You find yourself on a long, winding road that stretches southward to 
+Eden. The road is lined with trees and shrubs on either side. A thin 
+layer of mystic fog surrounds you, making it hard to make out anything 
+around you. As you go farther south, the land becomes more and more untamed.
+~
+15 c 3
+D1
+A thin layer of fog prevents you from seeing anything.
+~
+~
+0 -1 9549
+D2
+The Road to Eden continues to the south.
+~
+~
+0 -1 1501
+E
+trees tree shrubs shrub~
+You see gigantic trees along both sides of the road and some shrubs that 
+seem to move even when there is no wind blowing.
+~
+S
+#1501
+The Road To Eden~
+   The long, winding road continues to the north and south. There appears 
+to be more animals here. As you travel further south, you get the feeling 
+of tranquillity, as if nothing around here will cause harm to you.
+~
+15 0 3
+D0
+The road continues north, though a thin layer of fog shrouds your view.
+~
+~
+0 -1 1500
+D2
+The Road to Eden continues to the south.
+~
+~
+0 -1 1502
+E
+animals animal~
+You look around, seeing a few animals of different sizes hidden behind the 
+trees. 
+~
+S
+#1502
+The Road To Eden~
+   This small road becomes even smaller and less frequented as it extends 
+to the south. To the far south, you can just barely make out a seemingly 
+impenetrable wall of trees and a huge gate. To the north, the road shows signs
+of more frequent use.
+~
+15 0 3
+D0
+The road leads north, away from Eden.
+~
+~
+0 -1 1501
+D2
+The road continues to the south.
+~
+~
+0 -1 1503
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched.  But all you see are 
+trees. 
+~
+E
+road path trail~
+You look and see that the grass are green and the path is not much of a 
+path. It looks as if it is very seldom used.
+~
+S
+#1503
+Outside The Gate To Eden~
+   The massive wooden gates of Eden lie to the south. They really are 
+impressive. One hundred feet tall, made out of living trees, or so it seems.  
+In fact, you could have sworn that as you approached the gate, the trees' 
+roots lifted up out of the ground, allowing the gate to swing freely.
+There is a HUGE sign here, you can't help but READ IT!
+~
+15 0 2
+D0
+The road leads north. It appears to be more traveled in that direction.
+~
+~
+0 -1 1502
+D2
+The huge wooden gates of Eden are to the south.
+~
+gate wooden tree trees~
+1 -1 1504
+E
+forest tree trees plant plants gate gates~
+The trees are really pretty and impressive. But you do get the feeling that 
+you are being watched somehow. There's a sign on the gate. Maybe you 
+should read it!
+~
+E
+sign message words~
+The sign reads as follows:
+
++====================================================+
+|                                                    |
+|                 WELCOME TO EDEN!                   |
+|                                                    |
+|  Before you enter, there are certain things you    | 
+|  NEED to know:                                     |
+|                                                    |
+|  1. If you kill things in Eden, you will likely    | 
+|     die.                                           |
+|  2. If you play nicely in Eden, you will likely    |
+|     enjoy your stay.                               |
+|  3. If you kill certain things in Eden, they will  | 
+|     remember you and attack you when you come      |
+|     back here.                                     |
+|  4. This area has been created by the gods for     |
+|     your pleasure. Use it wisely.                  |
+|                                                    |
+|                       - Helver                     |
+|                                                    |
++====================================================+
+~
+S
+#1504
+Inside The Gate To Eden~ 
+   You now know why Adam and Eve were so disappointed when they had to leave.
+Everything is perfect. Fruit trees abound. Flowers are constantly on display.
+Birds sing, bees buzz and butterflies flop around. There are even cute little
+rabbits hopping around. This place is paradise.  
+~
+15 0 2
+D0
+North leads out of Eden, back to the chaos that surrounds this place.
+~
+gate wooden tree trees ~
+1 -1 1503
+D1
+Looking east, you see the vast Garden of Eden, ripe in its glory.
+~
+~
+0 -1 1505
+D2
+South takes you to a long line of fruit trees.
+~
+~
+0 -1 1506
+D3
+Looking west, you see the vast Garden of Eden, ripe in its glory.
+~
+~
+0 -1 1507
+E
+gate gates~
+The trees making up the gate are huge. They're all knotted together, and
+even looking very closely, you can't see any nail or screw.
+~
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees. 
+~
+S
+#1505
+In The Garden~
+   The garden is a paradise. The grass is soft and green.  The trees offer 
+shade and fruit. The birds seem to sing for you, and the breeze carries to you 
+the pleasant aroma of flowers. All is wonderful in the world. It would be a 
+shame if something evil were to come to this place.
+~
+15 0 1
+D1
+The garden seems to go on forever to the east.
+~
+~
+0 -1 1508
+D2
+The garden continues to the south.
+~
+~
+0 -1 1508
+D3
+To the west, you see the gate of the Garden.
+~
+~
+0 -1 1504
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched.  But all you see are 
+trees. 
+~
+S
+#1506
+The Line Of Fruit Trees~
+   You would have never guessed that so many different kinds of fruit trees 
+were possible. And they're all full of fruit. A person could live here for 
+years and never want for food.
+~
+15 0 1
+D0
+North takes you back toward the gate of Eden.
+~
+~
+0 -1 1504
+D1
+Looking east, you see the vast Garden of Eden, ripe in its glory.
+~
+~
+0 -1 1508
+D2
+Looking south, you see a hideous tree. It appears rotten, and out of place
+here.
+~
+~
+0 -1 1509
+D3
+Looking west, you see the vast Garden of Eden, ripe in its glory. You also
+happen to notice a small fountain over that way.
+~
+~
+0 -1 1510
+E
+tree trees fruit~
+The trees are perfect. The fruit is fresh and unblemished. They look good
+enough to eat.
+~
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees. 
+~
+S
+#1507  
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer 
+shade and fruit. The birds seem to sing for you, and the breeze carries to you
+the pleasant aroma of flowers. All is wonderful in the world. It would be a 
+shame if something evil were to come to this place.
+~
+15 0 1
+D1
+Looking east, you see the massive, tangled trees which make up the
+Gate of Eden.
+~
+~
+0 -1 1504
+D2
+To the south, the garden continues. You hear a gurgling of water.
+~
+~
+0 -1 1510
+D3
+The Garden of Eden seems to go on forever to the west.
+~
+~
+0 -1 1505
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest tree trees plants~
+Somehow, you get the feeling you're being watched. But all you see are trees. 
+~
+S
+#1508
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade 
+and fruit.  The birds seem to sing for you, and the breeze carries to you  
+the pleasant aroma of flowers. All is wonderful in the world. It would be a 
+shame if something evil were to come to this place.
+~
+15 0 1
+D0
+The garden continues to the north.
+~
+~
+0 -1 1505
+D1
+The garden seems to go on forever to the east.
+~
+~
+0 -1 1511
+D2
+The garden continues to the south.
+~
+~
+0 -1 1511
+D3
+To the west, you see a line of perfect fruit trees.
+~
+~
+0 -1 1506
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are trees.  
+~ 
+S
+#1509
+The Tree Of The Knowledge Of Good And Evil~
+   As you approach this solitary tree, an uneasy feeling comes upon you. It's
+different. Whereas most trees here are bright and whole, with flowers in bloom
+and birds nesting in them, this tree is an abberation. It stands alone, and a
+feeling of death and decay hovers around it. No flowers bloom here. No grass
+grows at the base of the tree. No birds sing in its branches. And yet, the
+tree itself seems content with the situation. There's no real way to describe
+it, except that the tree itself looks like it's gloating. And then you notice
+the snake. 
+~
+15 c 4
+D0
+Going north would return you to the line of healthy trees. You've seen enough
+here. It's time to move on and experience the joy in the rest of the garden.
+~
+~
+0 -1 1506
+D1
+East takes you back into the garden. It looks much nicer over there.
+~
+~
+0 -1 1511
+D2
+Going south would return you to the line of healthy trees. You've seen enough
+here. It's time to move on the experience the joy in the rest of the garden.
+~
+~
+0 -1 1520
+D3
+West takes you back into the garden. It looks much nicer over there. In fact,
+you notice bees. And where there's bees, there's honey.
+~
+~
+0 -1 1519
+E
+tree~
+The tree is old and craggy. It somehow seems older than the others...
+~
+E
+branch branches limb limbs~
+As you look up into the tree, one of the branches seems to move. Could it be
+coming towards you?
+~
+E
+bees animals bugs birds~
+As you look around, you notice that there are none. No animals or anything.
+Not even grass grows this close to the tree. Maybe you should follow their
+example and get out of here.
+~
+E
+forest trees plants~
+All gone.  Only the one tree. It's as if you walked into a whole new world.
+Barren and lifeless. Not a happy thought, but then, this isn't a happy place.
+~
+S
+#1510
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade 
+and fruit. The birds seem to sing for you, and the breeze carries to you the 
+pleasant aroma of flowers. All is wonderful in the world. It would be a shame 
+if something evil were to come to this place.
+~
+15 0 1
+D0
+The garden continues to the north.
+~
+~
+0 -1 1507
+D1
+To the east, you see an amazing line of fruit trees.
+~
+~
+0 -1 1506
+D2
+The garden continues to the south.
+~
+~
+0 -1 1519
+D3
+To the west, you see an incredible flower garden. It's just amazing.
+~
+~
+0 -1 1518
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+S
+#1511
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade
+and fruit. The birds seem to sing for you, and the breeze carries to you a
+pleasant aroma of flowers. All is wonderful in the world. It would be a shame
+if something evil were to come to this place.
+~
+15 0 1
+D0
+The garden continues to the north.
+~
+~
+0 -1 1508
+D1
+The garden seems to go on forever to the east.
+~
+~
+0 -1 1512
+D2
+The garden continues to the south.
+~
+~
+0 -1 1512
+D3
+To the west, you see a blight in the garden. It looks like all life has been
+sucked out of the area surrounding a lone tree.
+~
+~
+0 -1 1509
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are trees.
+~
+S
+#1512
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade
+and fruit. The birds seem to sing for you, and the breeze carries to you a 
+pleasant aroma of flowers. All is wonderful in the world. It would be a shame
+if something evil were to come to this place.
+~
+15 0 1
+D0
+The garden continues to the north.
+~
+~
+0 -1 1511
+D1
+The garden seems to go on forever to the east.
+~
+~
+0 -1 1513
+D2
+The garden continues to the south.
+~
+~
+0 -1 1513
+D3
+To the west, you see a wonderful line of perfect fruit trees.
+~
+~
+0 -1 1520
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~ 
+S
+#1513
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade
+and fruit. The birds seem to sing for you, and the breeze carries to you a
+pleasant aroma of flowers. All is wonderful in the world. It would be a shame
+if something evil were to come to this place.
+~
+15 0 1
+D0
+The garden continues to the north.
+~
+~
+0 -1 1512
+D1
+The garden seems to go on forever to the east.
+~
+~
+0 -1 1511
+D2
+The garden seems to go on forever to the south.
+~
+~
+0 -1 1508
+D3
+The garden continues to the west.
+~
+~
+0 -1 1516
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+S
+#1514  
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade
+and fruit. The birds seem to sing for you, and the breeze carries to you a
+pleasant aroma of flowers. All is wonderful in the world. It would be a shame
+if something evil were to come to this place.
+~
+15 0 1
+D0
+The garden continues to the north.
+~
+~
+0 -1 1515
+D1
+The garden continues the east.
+~
+~
+0 -1 1516
+D2
+The garden seems to go on forever to the south.
+~
+~
+0 -1 1507
+D3
+The garden seems to go on forever to the west.
+~
+~
+0 -1 1515
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are trees.  
+~
+S
+#1515  
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade
+and fruit. The birds seem to sing for you, and the breeze carries to you a
+pleasant aroma of flowers. All is wonderful in the world. It would be a shame
+if something evil were to come to this place.
+~
+15 0 1
+D0
+The garden continues to the north.
+~
+~
+0 -1 1519
+D1
+To the east, you see a you see a wonderful line of perfect fruits trees.
+~
+~
+0 -1 1520
+D2
+The garden continues to the south.
+~
+~
+0 -1 1514
+D3
+The garden seems to go on forever to the west.
+~
+~
+0 -1 1514
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+S
+#1516  
+In The Garden~
+   The garden is paradise. The grass is soft and green. The trees offer shade
+and fruit. The birds seem to sing for you, and the breeze carries to you a
+pleasant aroma of flowers. All is wonderful in the world. It would be a shame
+if something evil were to come to this place.
+~
+15 0 1
+D0
+To the north, you see a wonderful line of fruit trees.
+~
+~
+0 -1 1520
+D1
+The garden continues to the east.
+~
+~
+0 -1 1513
+D2
+To the south, the garden seems to go on forever.
+~
+~
+0 -1 1514
+D3
+The garden continues to the west.
+~
+~
+0 -1 1514
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+S
+#1517
+The Flower Garden~
+   The colors. So many colors that it's amazing. An absolute rainbow of colors.
+Roses, tulips, irises and more wildflowers than a person could count. And the 
+bees! There are so many! They almost seem to drown out all other sound. What a 
+wonderful place.
+~
+15 0 1
+D0
+The flower garden continues to the north.
+~
+~
+0 -1 1518
+D1
+Going east takes you back into the forested section of the garden. In fact, a
+lot of bees seem to be coming from there. Where there's bees, there's honey.
+~
+~
+0 -1 1519
+D3
+The flower garden seems to go on forever to the west.
+~
+~
+0 -1 1518
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+E
+flowers rose roses irises flower tulips~
+They are simply the most delicate and beautiful flowers you have ever seen.
+~
+S
+#1518
+The Flower Garden~
+   The colors. So many colors that it's amazing. An absolute rainbow of colors.
+Roses, tulips, irises and more wildflowers than a person could count. And the
+bees! There are so many! They almost seem to drown out all other sound. What a
+wonderful place.
+~
+15 0 1
+D1
+Going east takes you back into the forested section of the garden. You can
+see a small fountain that way.
+~
+~
+0 -1 1510
+D2
+The flower garden continues to the south.
+~
+~
+0 -1 1517
+D3
+The flower garden seems to go on forever to the west.
+~
+~
+0 -1 1517
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+flowers rose roses irises flower tulips~
+They are simply the most delicate and beautiful flowers you have ever seen.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+S
+#1519
+The Beehives~
+   As you get closer to the hives, the sound begins to deafen you. You have to
+cover your ears, but you watch anyway, totally enthralled. It's absolutely 
+incredible. Hundreds, thousands, millions of bees. All going about their 
+business without bothering you at all. This is the way it's supposed to be.
+~
+15 0 1
+D0
+To the north, the garden continues.
+~
+~
+0 -1 1510
+D1
+To the east, you see a blight in the garden. It looks like all life has been 
+sucked out of the area surrounding a lone tree.
+~
+~
+0 -1 1509
+D2
+The garden continues to the south.
+~
+~
+0 -1 1515
+D3
+To the west you see an incredible flower garden. Maybe that's where all these
+bees are going.
+~
+~
+0 -1 1517
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+S
+#1520
+The Line Of Fruit Trees~
+   You would have never guessed that so many different kinds of fruit trees
+had been made! And they're all full of fruit. A person could live here for 
+years and never want for food.
+~
+15 0 1
+D0
+Looking north, you see a hideous tree. It appears rotten, which is out of 
+place here.
+~
+~
+0 -1 1509
+D1
+Looking east, you see the vast Garden of Eden, ripe in its glory.
+~
+~
+0 -1 1512
+D2
+To the south, the garden continues.
+~
+~
+0 -1 1516
+D3
+Looking west, you see the vast Garden of Eden, ripe in its glory.
+~
+~
+0 -1 1515
+E
+tree trees fruit~
+The trees are perfect. The fruit is fresh and unblemished. They look good 
+enough to eat.
+~
+E
+bees animals bugs birds~
+All kinds of animals live in the Garden. Each goes about its life in harmony 
+with the others.
+~
+E
+forest trees plants~
+Somehow, you get the feeling you're being watched. But all you see are 
+trees.  
+~
+S

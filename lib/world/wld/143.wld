@@ -1,0 +1,1111 @@
+#14301
+Entrance To The Elven Forest~
+   In every direction there are Huge green trees and to the north an 
+enormous wooden gate. To the east there is a narrow trail.
+~
+143 fg 3
+D0
+A huge gate stands before you to the north.
+~
+gate gates portal~
+2 14300 14302 0
+D1
+~
+~
+0 0 4827 0
+D2
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+trees huge~
+These magnificent trees are so enormous they seem to reach to the sky.
+~
+E
+wooden gate~
+The gate is worn and tattered, but yet it seems magical.
+~
+S
+#14302
+Guarded Path Through The Forest~
+The path runs straight through the forest from south to north. You feel
+yourself observed by someone. To the east you see a wooden door in a large
+tree, and to the west you see a rope hanging down from a tree.
+~
+143 fg 3
+D0
+A guarded path through the forest lies to the north, the trail is well used.
+~
+~
+0 -1 14307 0
+D1
+To the east there is fine crafted wooden door.
+~
+~
+0 -1 14303 0
+D2
+Entrance to the elven forest.
+~
+gate gates portal~
+1 14300 14301 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+Up in the trees there is a platform.
+~
+~
+0 -1 14306 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+tree~
+The tree is tall and unique it seems to brussel with movement but you cannot
+seem to see just what is there.
+~
+E
+rope~
+The rope looks as if it has been here for a thousand years, it is dry and 
+brittle but seems safe enough.
+~
+E
+wooden door~
+The door creeks and sways in the breeze.
+~
+E
+someone~
+You cant see anyone, but you feel their presence nonetheless.
+~
+S
+#14303
+Guards Room~
+   In the north-east corner of this dimly lit room stands a large round 
+stone table. To the east and west you can see doors. On the ground is an
+old woolen carpet. To the south is a bench.
+~
+143 fg 3
+D0
+This wall is covered with well crafted tapestries.
+~
+~
+0 -1 -1 0
+D1
+The guard chiefs bed room.
+~
+door~
+1 14300 14304 0
+D2
+A bench made of pure steel.
+~
+~
+0 -1 -1 0
+D3
+A guarded path through the forest.
+~
+~
+0 -1 14302 0
+D4
+The ceiling is dark and dirty.
+~
+~
+0 -1 -1 0
+D5
+the carpet is made of a secret wool, and it looks somehow different than 
+other carpets.
+~
+carpet~
+1 14300 14305 0
+E
+bench~
+This bench made of steel was a gift to the elven guards for their heroic
+duties defending the land.
+~
+E
+round stone table~
+This table is covered with map's of the area and look's as if it is used to
+setup basic strategies for defence.
+~
+S
+#14304
+Guard Chief's Bed Room~
+   This room is apparently the chief of the elven guards bedroom. In a 
+corner stands a large bed and there is a door to the west.
+~
+143 d 3
+D0
+There is nothing at all on this wall.
+~
+~
+0 -1 -1 0
+D1
+There is nothing at all on this wall.
+~
+~
+0 -1 -1 0
+D2
+On this wall there is a fine painting of the god Helver, he is standing
+holding his head high looking far into the distance as if he can see the
+future coming towards him.
+~
+~
+0 -1 -1 0
+D3
+Guard room.
+~
+door~
+1 14300 14303 0
+D4
+The ceiling is dark and dirty.
+~
+~
+0 -1 -1 0
+D5
+A freshly seeped wooden floor.
+~
+~
+0 -1 -1 0
+E
+bed~
+This bed is very large and beautifully designed as if from some very far 
+away land, possibly unknown to anyone from this realm!
+~
+E
+corner~
+You see a large bed.
+~
+S
+#14305
+Cellar.~
+   In this damp cellar food and other things stored.
+~
+143 ad 3
+D0
+The wall is so damp droplets of water beds up and run down the wall.
+~
+~
+0 -1 -1 0
+D1
+The wall is so damp droplets of water beds up and run down the wall.
+~
+~
+0 -1 -1 0
+D2
+The wall is so damp droplets of water beds up and run down the wall.
+~
+~
+0 -1 -1 0
+D3
+The wall is so damp droplets of water beds up and run down the wall.
+~
+~
+0 -1 -1 0
+D4
+The ceiling is dark and dirty.
+~
+carpet~
+1 14300 14303 0
+D5
+A wet and musty clay floor.
+~
+~
+0 -1 -1 0
+E
+other things~
+Piles of rubble, junk, unwanted items are piled up here as if someone forgot 
+to clean up the cellar.
+~
+E
+food~
+There is some food rotting on the floor, there is a week stench starting to 
+grow from this area.
+~
+S
+#14306
+On The Platform~
+   You are standing on a wooden platform above the entrance of the elven 
+forest. From here it is possible to see far and distant lands.
+~
+143 c 5
+D0
+If it was not for the sturdy railings you might fall to your death here.
+~
+~
+0 -1 -1 0
+D1
+If it was not for the sturdy railings you might fall to your death here.
+~
+~
+0 -1 -1 0
+D2
+If it was not for the sturdy railings you might fall to your death here.
+~
+~
+0 -1 -1 0
+D3
+If it was not for the sturdy railings you might fall to your death here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+Far below you can see the guarded path through the forest.
+~
+~
+0 -1 14302 0
+E
+thewston~
+Thewston from this distance can barely be seen, as you try to make out the 
+objects you see in the far distance you wonder just how far it really is.
+~
+E
+entrance elven forest~
+As you look out above all the trees in this forest you see the birds flying
+and hear the ruckus of something in the distance, could it be someone 
+fighting to their death?
+~
+E
+wooden platform~
+The swaying of the tree can be felt as you stand here.
+~
+S
+#14307
+Guarded Path Through The Forest~
+   The path runs straight through the forest from south to north. 
+There are massive trees on both sides of the trail, the sky above looks 
+down upon you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+Before you is an large crossing.
+~
+~
+0 -1 14308 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14302 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14308
+Path Crossing~
+   The path splits up into four paths, one in every direction. In the 
+middle on  the crossing stands a gigantic stone obelisk with some runes 
+on it.
+~
+143 0 3
+D0
+A fine path through the elven forest.
+~
+~
+0 -1 14309 0
+D2
+Guarded path through the forest.
+~
+~
+0 -1 14307 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+stone~
+As you look upon the magnificent stone sitting here you see what could be
+runes inscribed upon it.
+~
+E
+runes obelisk~
+If you had been an old elven sage you might have known what the runes told, 
+but you are not, so this means nothing to you....
+~
+S
+#14309
+A Fine Path Through The Elven Forest~
+   On both sides of this path are doors. Over the eastern door is a sign 
+telling you this must be the weapon shop, and over the western door is a 
+similar sign telling you it's the armory.
+~
+143 0 3
+D0
+The fine path continues through the elven forest.
+~
+~
+0 -1 14328 0
+D1
+The Elven Armory.
+~
+~
+0 -1 14310 0
+D2
+To the south paths seem numerous.
+~
+~
+0 -1 14308 0
+D3
+The Elven Weaponry.
+~
+~
+0 -1 14311 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+S
+#14310
+The Elven Armory~
+   On the walls of this large room are fine elven armours hanging.
+~
+143 d 0
+D0
+Here fine lathers lay.
+~
+~
+0 -1 -1 0
+D1
+Here boots, leggings, and studded jackets are piled.
+~
+~
+0 -1 -1 0
+D2
+All gold exchanges hands here.
+~
+~
+0 -1 -1 0
+D3
+A fine path through the elven forest.
+~
+~
+0 -1 14309 0
+D4
+The ceiling is dark and dirty.
+~
+~
+0 -1 -1 0
+D5
+A freshly seeped wooden floor.
+~
+~
+0 -1 -1 0
+E
+armours~
+Massive, and maybe even magical armor is hanging on these walls.
+~
+S
+#14311
+The Elven Weaponry~
+   On the counter and upon the walls hang fine weapons of elven quality.
+~
+143 d 0
+D0
+Fine crafted swords hang upon this wall, some seem to glow with magic.
+~
+~
+0 -1 -1 0
+D1
+A fine path through the elven forest.
+~
+~
+0 -1 14309 0
+D2
+Hand made bows and arrows are stacked upon this wall, magic arrows are bagged
+and hanging 4 to a set.
+~
+~
+0 -1 -1 0
+D3
+Small daggers are upon the counter waiting for you to buy them.
+~
+~
+0 -1 -1 0
+D4
+The ceiling is dark and dirty.
+~
+~
+0 -1 -1 0
+D5
+A freshly seeped wooden floor.
+~
+~
+0 -1 -1 0
+E
+weapons~
+On these walls you see the finest of elven weapons, some glow very dimly.
+~
+S
+#14312
+A Fine Path Through The Elven Forest~
+   On both sides of this path are doors. Over the eastern door is a sign 
+telling you this must be the magic shop of the elven village, and over 
+the western door is a similar sign telling you it's Quintors fine shop. 
+To the north the path continues.
+~
+143 0 3
+D0
+The fine path ends here.
+~
+~
+0 -1 14330 0
+D1
+The Magic Shop.
+~
+~
+0 -1 14314 0
+D2
+The fine path continues through the elven forest.
+~
+~
+0 -1 14329 0
+D3
+Quintors fine shop.
+~
+~
+0 -1 14313 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+S
+#14313
+Quintors Fine Shop~
+   In this fine room you can see all kinds of equipment. Everything from 
+bags to torches can bee seen on the shelves.
+~
+143 d 0
+D0
+Crates full of green bags and sacks are stacked to the ceiling.
+~
+~
+0 -1 -1 0
+D1
+A fine path through the elven forest.
+~
+~
+0 -1 14312 0
+D2
+Huge bundles of torches and odd looking jars with some strange glowing worm
+are stacked ever so carefully here.
+~
+~
+0 -1 -1 0
+D3
+It is very odd, this wall has nothing at all on it.
+~
+~
+0 -1 -1 0
+D4
+The ceiling is dark and dirty.
+~
+~
+0 -1 -1 0
+D5
+A freshly seeped wooden floor.
+~
+~
+0 -1 -1 0
+E
+equipment~
+Yes, please pick out some equipment and be on your way grins Quintors.
+~
+E
+shelves~
+The shelves are so full they seem as if they will come crashing down at any
+moment!
+~
+S
+#14314
+The Magic Shop~
+   As you enter this store you feel a sensation in your stomach. There is 
+something wrong here or is it just the powers of all magic in here? All
+around this room you see objects of different shapes and sizes.
+~
+143 d 0
+D0
+Scrolls written in strange tongs are stacked inside a locked display.
+~
+~
+0 -1 -1 0
+D1
+Odd looking potions and vials are the only things along this side of the 
+room.
+~
+~
+0 -1 -1 0
+D2
+Sticks, staffs, wands, and numerous other magical items are stacked on 
+shelves here.
+~
+~
+0 -1 -1 0
+D3
+A fine path through the elven forest.
+~
+~
+0 -1 14312 0
+D4
+The ceiling is dark and dirty.
+~
+~
+0 -1 -1 0
+D5
+A freshly seeped wooden floor.
+~
+~
+0 -1 -1 0
+E
+shapes sizes~
+There are so many different sizes and shapes of magical items!
+~
+E
+objects~
+Everywhere around you objects are floating as if it is raining magical 
+potions.
+~
+S
+#14315
+The End Of The Fine Path~
+   On both sides of this path are doors. Over the eastern door is a sign 
+telling you this must be the tavern of the village, and to the north you 
+see a large house, about two stores high.
+~
+143 0 3
+D0
+Inside the house.
+~
+~
+0 -1 14333 0
+D1
+~
+~
+0 0 14316 0
+D2
+The fine path through the elven forest.
+~
+~
+0 -1 14332 0
+D3
+The thick dense forest, there seems to be a thousand eyes peering out at you.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+S
+#14316
+The Tavern Of Hope~
+   You are standing in the bar of the Tavern. The bar is set against the
+northern wall, old elven writings, carvings and symbols cover its top.
+A fireplace is built into the eastern wall, and through the door in the
+western wall you see the fine path. This place really makes you feel at 
+home.
+~
+143 d 0
+D0
+A reception desk.
+~
+~
+0 -1 -1 0
+D1
+Very cosey looking chairs.
+~
+~
+0 -1 -1 0
+D2
+A table to sort through your belongings to check your rent.
+~
+~
+0 -1 -1 0
+D3
+~
+~
+0 0 14315 0
+D4
+The Reception in the Tavern of the hope.
+~
+~
+0 -1 14390 0
+D5
+A freshly seeped wooden floor.
+~
+~
+0 -1 -1 0
+E
+fireplace~
+The fire ripples and glows softly, creating just enough warmth to keep the
+chill out of the tavern.
+~
+E
+carvings symbols~
+As you try to read the writing all the letters start dancing and become a 
+massive blur.  This can only be understood by the ancient Elven Mages of long
+ago.
+~
+S
+#14317
+At The Gate To The Elven Village~
+   All around you large trees tower upward into the sky, their enormous
+branches stretching out across the trail. The thick, dense scrub on either
+side of you prevents you seeing too far into the forest, and what may be
+ahead. There are two large wooden gates to the east, blocking any passage in
+that direction.  
+~
+143 0 0
+D1
+~
+gate~
+1 14300 14335 0
+D3
+~
+~
+0 0 4811 0
+S
+#14328
+Guarded Path Through The Forest~
+   The path runs straight through the forest from sough to north. 
+There are massive trees on both sides of the trail, the sky above looks 
+down upon you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+The guarded path continues through the forest.
+~
+~
+0 -1 14329 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14309 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14329
+Guarded Path Through The Forest~
+   The path runs straight through the forest from sough to north. There  
+are massive trees on both sides of the trail, the sky above looks down 
+upon you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+The guarded path continues through the forest.
+~
+~
+0 -1 14312 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14328 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14330
+Guarded Path Through The Forest~
+   The path runs straight through the forest from sough to north. There 
+are massive trees on both sides of the trail, the sky above looks down upon
+you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+The guarded path continues through the forest.
+~
+~
+0 -1 14331 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14312 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14331
+Guarded Path Through The Forest~
+The path runs straight through the forest from sough to north. There 
+are massive trees on both sides of the trail, the sky above looks down 
+upon you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+The guarded path continues through the forest.
+~
+~
+0 -1 14332 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14330 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14332
+Guarded Path Through The Forest~
+   The path runs straight through the forest from sough to north. There 
+are massive trees on both sides of the trail, the sky above looks down upon
+you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+The guarded path continues through the forest.
+~
+~
+0 -1 14315 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14331 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14333
+Guarded Path Through The Forest~
+   The path runs straight through the forest from sough to north. There 
+are massive trees on both sides of the trail, the sky above looks down upon
+you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+The guarded path continues through the forest.
+~
+~
+0 -1 14334 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14315 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14334
+Guarded Path Through The Forest~
+   The path runs straight through the forest from sough to north. There
+are massive trees on both sides of the trail, the sky above looks down upon
+you through the open treetops, this forest is very alive.
+~
+143 0 3
+D0
+The guarded path continues through the forest.
+~
+~
+0 -1 14335 0
+D1
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14333 0
+D3
+There are huge trees so thick you cannot enter the forest here.
+~
+~
+0 -1 -1 0
+D4
+A dense forest canopy is above.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14335
+Guarded Path Through The Forest~
+   The path runs straight through the forest from sough to north. There 
+are massive trees on both sides of the trail, the sky above looks down upon
+you through the open treetops, this forest is very alive.
+~
+143 0 3
+D2
+The guarded path continues through the forest.
+~
+~
+0 -1 14334 0
+D3
+Two large wooden gates block the path westward.
+~
+gate~
+1 14300 14317 0
+D4
+~
+~
+0 0 1408 0
+D5
+A well traveled path.
+~
+~
+0 -1 -1 0
+E
+forest~
+Here the forest is very dense and entrance into it is unimaginable.
+~
+S
+#14390
+The Reception In The Tavern Of Hope~
+   You are standing in the reception.  The staircase leads down to the 
+entrance hall.  There is a small sign on the counter.
+~
+143 cd 0
+D0
+This wall is covered with autographs of all the great legends that have
+stayed here at one time or another.
+~
+~
+0 -1 -1 0
+D1
+All kinds of trinkets cover this wall making the whole room seem cosey.
+~
+~
+0 -1 -1 0
+D2
+Trinkets, trinkets everywhere!
+~
+~
+0 -1 -1 0
+D3
+This window is overlooking the path below.
+~
+~
+0 -1 -1 0
+D4
+The ceiling is dark and dirty.
+~
+~
+0 -1 -1 0
+D5
+You see the Tavern of Hope.
+~
+~
+0 -1 14316 0
+E
+sign~
+Rooms are expensive but good!  You may:
+
+   Offer - get an offer on a room - Time is in real life days.
+   Rent  - Rent a room (saves your stuff, and quits the game), 
+           minimum charge is one day.
+
+
+                          MY WAY OR THE HIGHWAY
+                             PAY YOUR RENT!
+                WE WON'T THINK TWICE BEFORE KICKING YOU OUT.
+~
+S
+$~

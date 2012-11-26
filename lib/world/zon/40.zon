@@ -1,0 +1,193 @@
+#40
+Moria, levels 1-2 /Stock/~
+4099 120 2
+1 0 25
+1 1 1 1
+0 0 0 0
+1 1 1 1
+1 1 1 1
+6 6 6 6 
+*
+* Level 1
+*
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+M 0 4000 12 4030     The large snake
+*
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+M 0 4001 10 4025     a green snake
+*
+M 0 4002 6 4023     a centipede
+M 0 4002 6 4023     a centipede
+M 0 4002 6 4023     a centipede
+M 0 4002 6 4023     a centipede
+M 0 4002 6 4023     a centipede
+M 0 4002 6 4023     a centipede
+*
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+M 0 4003 20 4021     a Kobold
+*
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+M 0 4004 20 4015     an Orc
+*
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+M 0 4005 10 4022     a large Orc
+*
+M 0 4058 1 4044     a hill giant
+*
+* Moria level 2
+*
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+M 0 4050 10 4062     a warrior
+*
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+M 0 4051 15 4070     a warrior
+*
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+M 0 4052 10 4056     a hobgoblin
+*
+M 0 4053 6 4058     a snake
+M 0 4053 6 4058     a snake
+M 0 4053 6 4058     a snake
+M 0 4053 6 4058     a snake
+M 0 4053 6 4058     a snake
+M 0 4053 6 4058     a snake
+*
+M 0 4054 6 4060     a centipede
+M 0 4054 6 4060     a centipede
+M 0 4054 6 4060     a centipede
+M 0 4054 6 4060     a centipede
+M 0 4054 6 4060     a centipede
+M 0 4054 6 4060     a centipede
+*
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+M 0 4055 10 4064     a hobgoblin
+*
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+M 0 4056 20 4067     an Orc
+*
+M 0 4057 2 4041     a lion
+M 0 4057 2 4041     a lion
+*
+O 0 4052 8 4068     plant a mushroom
+O 0 4052 8 4069     plant a mushroom
+O 0 4052 8 4070     plant a mushroom
+O 0 4052 8 4071     plant a mushroom
+*
+S

@@ -1,0 +1,333 @@
+#3800
+gopher~
+the furry gopher~
+A smelly gopher is frantically burrowing into the ground.
+~
+At first glance, this gopher looks quite cute and cuddly, that is until you
+catch sight of its incredibly sharp teeth and huge claws.
+~
+bcdg k 0 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 2 4 0 1
+T 100 1d2+0 0
+#3801
+butterfly~
+a tiny butterfly~
+A tiny butterfly is here, hovering above a flower.
+~
+The wings on this tiny butterfly are quite remarkable. They
+have a fine black border, and are filled with a myriad of just
+about every imaginable color.
+~
+dg q 0 X 0 
+1 19 9 1d1+10
+0 150 -1
+8 8 0 8 0 1
+T 100 1d1+1 22
+#3802
+boy child lost~
+a lost child~
+A lost child is here, wailing for his mother.
+~
+Tears fall down the face of this rosy cheeked little lad. He
+clings to his blankie as he wails loudly, hoping his mother will
+find him.
+~
+dg 0 0 X 0 
+3 18 8 2d2+30
+0 600 -1
+8 8 1 3 0 2
+T 100 1d1+2 17
+A 5 8 The lost boy pulls at your sleeve and sniffs pitifully.
+#3803
+cleaner man~
+the Park Cleaner~
+The Park Cleaner stands here, scouring for rubbish to pick up.
+~
+This strong man takes pride in his job. He likes to keep
+his park looking the best it can at all times. He searches
+everywhere he goes, making sure there are no unnoticed pieces
+of litter to spoil the scenery.
+~
+cdghl k 200 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 1 3 0 3
+T 100 1d2+1 0
+A 10 6 $n says, 'I wish thy great Mayor wouldest do something about these drat hobgoblins!'
+>ask_prog             mayor mayor? hobgoblins hobgoblins?~
+mpdelay 5
+tell &n Ask the Mayor, this is his problem, I just report problems!
+~
+|
+#3804
+goldfish fish~
+a small goldfish~
+A small, bright orange goldfish glides along just below the surface.
+~
+This fish is bright orange, with white patches. Its scales
+are incredibly shiny, and sparkle in the light.
+~
+bd 0 0 X 0 
+1 19 9 1d1+10
+0 150 -1
+8 8 0 10 0 1
+T 100 1d1+1 22
+E -1 100 3812 -1
+#3805
+caretaker head man~
+the Head Caretaker~
+The Head Caretaker stands here, inspecting the ground.
+~
+The Head Caretaker looks as though he would run a tight ship. 
+He scans around, looking for insects that might eat his precious
+plants.
+~
+cdg 0 200 X 0 
+5 17 7 3d3+50
+20 1600 -1
+8 8 1 3 0 3
+T 100 1d3+2 6
+A 3 8 $n says, 'don't you be stepping on my flowers you hear!'
+A 3 8 $n bends down and pulls a weed out of the ground.
+E 14 75 3803 -1
+E 13 90 3804 -1
+E 24 100 3810 -1
+E 7 25 3813 -1
+#3806
+assistant man caretaker~
+an Assistant Caretaker~
+The Assistant Caretaker is here, tending to the flowers.
+~
+This man looks to have little enthusiasm for his job. He often just
+sits and stares at the flowers, a blank expression on his face. 
+~
+cdgl 0 0 X 0 
+3 18 8 2d2+30
+0 600 -1
+8 8 1 3 0 3
+T 100 1d2+1 6
+A 5 8 $n grumbles under his breath as you pass.
+#3807
+gecko~
+a tree gecko~
+A brilliant green gecko scuttles across your feet.
+~
+The gecko is a fast mover. Before you even have a chance to stop
+and have a closer look, it has run away, and camoflaged itself 
+somewhere in the tree.
+~
+bdh dks 0 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 2 8 0 1
+T 100 1d2+0 22
+E -1 100 3811 -1
+#3808
+dragonfly~
+a dragonfly~
+A gossamer winged dragonfly hovers only inches above the water.
+~
+The large wings on this dragonfly are moving so fast, they
+almost seem to be still. It is hard to beleive that they would
+need to move so quickly to support such a small and delicate 
+creature as this.
+~
+bd k 0 X 0 
+1 19 9 1d1+10
+0 150 -1
+8 8 0 8 0 1
+T 100 1d2+0 22
+A 5 8 $n buzzes across thesurface of the pond.
+#3809
+woman worried mother~
+a worried mother~
+A worried mother stands here, looking frantically for her son.
+~
+As you look at this woman, she turns her head, obviously embarresed
+about having misplaced her child.
+~
+cdgl 0 350 X 0 
+8 16 6 4d4+80
+0 3500 -1
+8 8 2 3 0 4
+T 100 2d3+2 0
+A 7 0 A worried mother says, 'Have you seen my son? I can't believe he wandered off.'
+#3810
+worm~
+a slimy worm~
+A slimy little worm is wriggling along in the grass.
+~
+This worm looks quite out of place above ground. Its skin is so
+pale and pink it is almost translucent. You can see its tiny veins
+under the thin layer of skin. 
+~
+bdh 0 0 X 0 
+1 19 9 1d1+10
+0 150 -1
+8 8 0 8 0 1
+T 100 1d1+1 6
+#3811
+citizen man~
+a citizen of Weirvane~
+A Citizen of Weirvane is standing here, enjoying the scenery.
+~
+The citizen looks as though he is glad of the break from the hustle
+and bustle of city life. 
+~
+cdg k 200 X 0 
+3 18 8 2d2+30
+11 600 -1
+8 8 1 3 0 3
+T 100 1d2+1 0
+A 5 8 $n takes a deep breath, enjoying the clean air.
+#3812
+spider~
+a hairy spider~
+A big, black, hairy spider sits on his web glaring hungrily at you.
+~
+A chill runs down your spine as you look at this horrible little insect.
+Each one of his eight legs are incedibly thick and hairy, and his body
+seems almost too big.
+~
+bd 0 0 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 1 8 0 1
+T 90 1d2+0 22
+A 6 0 A hairy spider swings from a branch on a silken thread.
+#3813
+thing~
+an invisible thing is here~
+You should not be able to see me.
+~
+
+~
+bd z 0 X 0 
+1 1 10 1d1+10
+0 150 -1
+8 8 0 0 0 0
+T 100 2d4+0 0
+>all_greet_prog                          100~
+mpdelay 10
+mpat 3842 close fallen
+~
+|
+#3814
+grub dirty~
+a dirty grub~
+A dirty grub wriggles around in the dirt.
+~
+This small grub lives for the dark, rotting areas under trees. It loves to
+burrow through the decomposing leaves and twigs that carpet the ground here.
+ 
+~
+dg 0 0 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 0 8 0 1
+T 100 1d2+0 11
+A 6 0 A dirty grub burrows under a pile of leaves.
+#3815
+rabbit~
+a rabbit~
+A cotton tailed rabbit is here, hopping in circles.
+~
+This cute little rabbit looks like a fluffy ball of love,
+but when she twitches her nose and looks up at you, you
+see her unusually large teeth.
+~
+dg 0 0 X 0 
+4 18 8 2d2+40
+0 1000 -1
+8 8 2 4 0 1
+T 90 2d1+1 22
+A 8 8 A cotton tailed rabbit looks up at you and cautiously twitches her nose.
+#3816
+puppy dog dalmation~
+{Wa {Dd{Wa{Dl{Wm{Da{Wt{Di{Wo{Dn{W puppy{x~
+A bouncing dalmation puppy is standing here panting.
+~
+This georgeous puppy is the picture of innocence. His big brown eyes
+stare up at you lovingly, while his big pink tongue drips slobber on your
+feet.  
+~
+d 0 0 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 1 4 14 2
+T 100 1d2+0 22
+A 5 8 $n sniffs your ankle.
+A 5 8 $n says, 'Woof!'
+A 5 8 $n crouches down on his haunches and barks at you.
+#3817
+sparrow bird small~
+a small sparrow~
+A small sparrow flutters around your head.
+~
+Dark in color, and very small, this little creature flies past singing its
+song of life.  
+~
+d q 0 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 0 13 14 2
+T 100 1d1+1 22
+A 5 8 $n twitters mindlessly.
+#3818
+pigeon bird~
+a pigeon~
+A small pigeon is watching for any food you may drop.
+~
+A greyish blue bird is huddled down here. It looks so harmless, you
+wonder how they have got such a bad reputation as flying germ factories.
+~
+cdo q 0 X 0 
+2 19 9 1d1+20
+0 400 -1
+8 8 1 13 14 2
+T 100 1d2+0 22
+A 5 8 $n stalks around, looking for crumbs.
+#3819
+kitten cat~
+the kitten~
+A small kitten is here looking for its mother.
+~
+A long haired tabby with young eyes of the wild looks back at you with
+curiosity and hunger.
+~
+cdo 0 0 X 0 
+1 20 10 1d1+5
+0 200 -1
+8 8 1 14 14 2
+T 100 1d1+0 24
+A 5 8 $n meows loudly.
+A 5 8 $n rubs lovingly against your leg.
+#3820
+girl child little~
+a little girl~
+A sweet little girl with pigtails is here, sniffing a flower.
+~
+Butter wouldn't melt in the mouth of this little one. Her rosy cheeks
+and cupid's bow mouth look like they would melt the heart of even
+the hardest of men.
+~
+cdo r 0 X 0 
+4 18 8 2d2+40
+0 1000 -1
+8 8 2 3 1 3
+T 100 1d3+1 27
+A 5 8 $n tugs at her pigtails.
+A 5 8 $n licks her lollypop.
+E 17 100 3814 -1
+E 25 100 3815 -1
+>ask_prog   hi hello~
+ mpdelay 5
+   tell $n Hi there!
+ mpdelay 10
+   tell $n I would give you a lolly pop, but this is my last one.
+ mpdelay 10
+   tell $n Well, bye!
+~
+|

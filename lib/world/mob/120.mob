@@ -1,0 +1,662 @@
+#12000
+Chief Executice Officer Boss~
+the Chief~
+The Chief is here working on some documents.
+~
+The Chief is an old man, well trained in running a successful business. He is 
+well dressed and presents a very wealthy image.
+~
+bdl 0 100 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 80 2d8+3 0
+E 16 70 12057 100
+E 11 60 12058 100
+#12001
+boss~
+the boss~
+The boss is working on the guild's next major task.
+~
+The boss is in his middle ages and is very used to getting his way. He
+is very well dressed and important looking.
+~
+bdl 0 100 X 0 
+11 14 4 6d6+110
+0 6900 -1
+8 8 1 3 1 3
+T 100 2d5+4 0
+E 16 65 12059 100
+E 11 40 12058 100
+#12003
+worker~
+a warehouse worker~
+A warehouse worker is here moving some boxes around.
+~
+He seems to be walking very slowly.
+~
+bd 0 -100 X 0 
+8 16 6 4d4+80
+0 3500 -1
+8 8 1 3 1 3
+T 100 2d4+0 0
+A 5 8 $n stops momentarily and wipes his soaking brow.
+A 5 8 $n lets out a huge groan as he struggles to lift another box.
+#12004
+merchant trader~
+the wealthy merchant~
+A wealthy merchant stands here looking aloof.
+~
+The merchant is dressed in fine clothes and jewelry and has a very snobbish
+attitude. He has made his fortune trading with other merchants across the sea.
+While he is getting old and his hair and beard are streaked with gray, he is 
+by no means an easy target.
+~
+bdhl d 500 X 0 
+18 13 1 9d9+180
+540 16800 -1
+8 8 1 3 1 3
+T 50 3d4+3 0
+E 13 30 12001 3
+E 16 60 12057 100
+E 1 15 12000 5
+#12005
+slave~
+the slave~
+A slave stands here, wishing that he was free.
+~
+A very pretty young woman who was captured instead of being killed when the
+Warrior legions subjugated her land.
+~
+bd 0 0 X 0 
+3 2 8 2d2+30
+0 650 -1
+8 8 1 3 1 3
+T 100 2d1+1 23
+#12006
+worker~
+the warehouse worker~
+The warehouse worker is moving some boxes around.
+~
+He seems to be moving very slowly.
+~
+bd 0 -250 X 0 
+14 13 3 7d7+140
+0 11500 -1
+8 8 1 3 1 3
+T 100 4d3+2 9
+E 16 30 12057 100
+#12007
+worker~
+the warehouse worker~
+The warehouse worker is moving some boxes around.
+~
+He seems to be moving very slowly.
+~
+bd 0 100 X 0 
+11 14 4 6d6+110
+0 6900 -1
+8 8 1 3 1 3
+T 100 2d5+1 0
+E 16 45 12059 100
+E 8 30 12008 100
+#12008
+boss super supervisor~
+the warehouse supervisor~
+The warehouse supervisor is standing here issuing orders to his workers.
+~
+He looks like a very officous boss.
+~
+bdl 0 0 X 0 
+17 13 1 9d9+170
+0 14300 -1
+8 8 1 3 1 3
+T 100 3d10+4 11
+A 5 8 $n glances around the room, checking on his workers.
+E 16 75 12059 100
+E 5 80 12061 100
+E -1 100 12003 10
+#12009
+doctor~
+the doctor~
+A union approved doctor is standing here.
+~
+You see a young man, still learning about magickal healing, wearing a white 
+coat and using a stethoscope.
+~
+abdl d 900 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 50 3d3+10 10
+E 16 90 12057 100
+E 5 70 12061 100
+E 11 70 12058 100
+E 3 85 12004 6
+E 17 85 12028 3
+#12010
+nurse young lady beautiful~
+the nurse~
+There is a beautiful young lady here, helping the doctor.
+~
+The nurse is a very beautiful young lady who is about 22 years old. She 
+has deep brown eyes and shoulder-length chestnut hair. Her body is perfectly 
+proportioned and she stands about 5' 5" tall.
+~
+bdhl d 1000 X 0 
+13 14 3 7d7+130
+0 8700 -1
+8 8 2 3 1 3
+T 100 2d7+2 10
+E 16 80 12059 100
+E 5 80 12061 100
+E 6 85 12005 3
+E 25 85 12027 3
+#12011
+shopkeeper~
+Able's shopkeeper~
+Able's shopkeeper is here, minding the store.
+~
+The shopkeeper is an older man in his middle to late fifties and looks like
+he enjoys the quiet life.  There is a long scar running from the edge of his
+mouth to his right ear, making it look like he is always smiling.
+~
+bdlw dh 750 X 0 
+55 0 -10 27d27+550
+0 20000 -1
+8 8 1 3 1 3
+T 20 10d8+10 0
+E -1 100 12051 1
+E -1 100 12062 100
+E -1 100 12059 100
+E -1 100 12057 100
+E -1 100 12060 100
+E -1 100 3024 100
+E -1 100 3025 100
+E -1 100 12008 100
+E 16 100 12057 100
+E 8 100 12008 100
+#12012
+peddler~
+the peddler~
+A poor peddler is standing here, trying to support his meager existence.
+~
+You see a small, dirty man who doesn't look very healthy.  
+~
+dg 0 250 X 0 
+9 15 5 5d5+90
+30 4200 -1
+8 8 1 3 1 3
+T 100 2d3+3 0
+E 8 60 12008 100
+E -1 20 12006 25
+E -1 30 12006 25
+E -1 70 12006 25
+E -1 35 12007 25
+E -1 40 12007 25
+#12013
+runner~
+the runner~
+A runner stands here, waiting to run an errand.
+~
+You see a young boy who looks very strong and very fast.  He has the look of
+a scholar about him.
+~
+d 0 0 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 1 3 1 3
+T 65 2d4+3 11
+A 5 8 $n shuffles about, anxious to get moving.
+E 16 70 12062 100
+E 8 60 12008 100
+#12014
+merchant~
+the merchant~
+The merchant stands here, asking about his shipment.
+~
+ ~
+bd 0 0 X 0 
+19 12 0 10d10+190
+200 20000 -1
+8 8 1 3 1 3
+T 55 2d5+10 25
+A 2 8 $n sighs loudly.
+A 2 8 $n says, 'All I want to know is when my shipment is going to be ready. Can no one tell me this?'
+E 16 70 12057 100
+E 15 20 12011 2
+#12015
+bond Bbondsman~
+the bondsman~
+A bondsman stands here, wondering if you should be in this warehouse.
+~
+A burly man, the bondsman takes his job very seriously. His workers 
+listen to him not because he commands their respect, but because he
+has the power to fire them at will.
+~
+bdl 0 100 X 0 
+23 11 -2 12d12+230
+0 35000 -1
+8 8 1 3 1 3
+T 75 2d9+10 8
+E 16 80 12057 100
+>greet_prog   80~
+if isnpc($n)
+  break
+   else
+  if isfollow($n)
+    break
+   else
+    mpdelay 5
+    mpechoaround $n The bondsman raises an eyebrow at $n, questioning $s
+presence.
+    mpechoat $n The bondsman raises an eyebrow at you, questioning your
+presense.
+    mpdelay 5
+    say Can I help you? I really do not think you should be in here.
+  endif
+ endif
+endif
+~
+|
+#12016
+supervisor boss super~
+the supervisor~
+A warehouse supervisor is walking here, checking on his subordinates.
+~
+The supervisor is a scruffy looking man who isn't afraid of a fight and looks
+like he knows his union bosses will protect him.
+~
+dg 0 -150 X 0 
+13 14 3 7d7+130
+0 8700 -1
+8 8 1 3 1 3
+T 80 2d5+2 0
+A 3 8 $n glares around the room, checking for anyone slacking.
+E -1 100 12010 25
+#12017
+sailor~
+the sailor~
+A sailor of one of the docked ships is standing here.
+~
+A worn and weary look on his face, this sailor is looking forward to some
+leave.
+~
+dg 0 90 X 0 
+9 15 5 5d5+90
+0 4200 -1
+8 8 1 3 1 3
+T 100 3d3+0 11
+A 3 8 $n stops for a moment, stretches his back, and moves on.
+#12018
+gateguard guard~
+the gateguard~
+A gateguard stands here, tending the gate.
+~
+You see a strong, loyal public defender.
+~
+abcdl 0 1000 X 0 
+25 10 -3 13d13+250
+0 35000 -1
+8 8 1 3 1 3
+T 50 4d4+6 9
+E 16 100 12057 100
+#12019
+marine soldier merchant~
+the merchant marine~
+A marine on leave is walking around looking for entertainment.
+~
+You see a mercenary hired to protect ships from pirates. He is a merchant 
+marine. He looks VERY strong. You have this vague feeling that his entertain-
+ment isn't going to be a very wholesome activity.
+~
+dgl 0 300 X 0 
+21 12 -1 11d11+210
+0 27500 -1
+8 8 1 3 1 3
+T 80 3d10+4 9
+A 3 8 $n says, 'Know where I can get any girls round here?'
+A 3 8 $n winks at you suggestively.
+E 16 80 12059 100
+E 5 100 12018 2
+E 8 65 12019 2
+#12020
+boss master~
+the dock master~
+The dock master, leader of the dock workers union, is sitting here.
+~
+You see a man who is dressed in the finest of clothes, has eaten the best of
+foods and lived in the most opulent palace that Port Halyon has ever known. 
+~
+abdl d 0 X 0 
+32 8 -6 16d16+320
+0 92000 -1
+8 8 1 3 1 3
+T 50 3d7+10 11
+A 3 8 $n sits straight back in his chair, looking you straight in the eye.
+A 3 8 $n shuffles some important looking papers.
+E 16 90 12057 100
+E 10 60 12017 1
+E -1 80 12024 7
+#12021
+guard bodyguard~
+the dock master's bodyguard~
+A Dock Master's bodyguard stands here, protecting his charge.
+~
+The bodyguard is dressed in the finest of armor and wields only the deadliest 
+of weapons. He is very strong and would put up one hell of a fight. He has
+been trained to be suspicious of all but the most innocent visitors, and 
+likely to take offense of anyone with less than good intentions.
+~
+abdlm d 990 X 0 
+18 13 1 9d9+180
+0 16800 -1
+8 8 1 3 1 3
+T 66 4d4+6 0
+A 3 8 $n adjusts his pose, standing to attention.
+E 16 100 12057 100
+E 11 80 12058 100
+E 5 70 12063 10
+#12022
+mayor~
+the mayor~
+The mayor is here, resting in his chair reading a document.
+~
+An officious looking elderly man, the mayor has held this office for a very
+long time. Things in Port Halyon are done his way, or not at all. He allows
+little room for movement.  
+~
+bdl 0 990 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 1 3
+T 50 4d6+10 9
+E 16 100 12057 100
+E 2 25 12012 2
+>greet_prog   100~
+if isnpc($n)
+  break
+   else
+  if isfollow($n)
+    break
+   else
+    mpdelay 5
+    mpecho The mayor gets to his feet, removing his eyeglasses has he moves.
+    mdelay 5
+    say Excuse me but what are you doing in here? You must see my clerk for an appointment. I'm afraid I must ask you to leave now.
+    mpdelay 15 
+    say If you don't leave now, I will call the guards. I'm warning you!
+  endif
+ endif
+endif
+~
+|
+#12023
+master scheduler~
+the master dock scheduler~
+The master dock scheduler is here, writing in an appointment book.
+~
+The master dock scheduler is in charge of keeping the port in order. When a 
+new ship comes in, he assigns a dock location to it.
+~
+bdl 0 900 X 0 
+18 13 1 9d9+180
+0 16800 -1
+8 8 1 3 1 3
+T 33 1d6+7 9
+A 3 8 $n frowns as he examines a schedule book.
+E 17 100 12052 1
+E 25 100 12053 1
+E 8 50 12008 100
+E 4 20 12013 1
+#12025
+altoor~
+Altoor~
+Altoor the wizard is standing here, working on a new spell.
+~
+You see a middle-aged man who's knowledge of magic, both offensive and 
+defensive, is legendary.  He literally glows with a pink aura.
+~
+abdl dh 300 X 0 
+23 11 -2 12d12+230
+0 30000 -1
+8 8 1 3 1 3
+T 50 8d2+7 9
+E 16 80 12057 100
+E 11 80 12058 100
+E 5 75 12014 10
+E -1 100 12025 10
+E -1 100 12026 10
+#12026
+Able~
+Able the Blacksmith~
+Able the Blacksmith is standing here, polishing a few swords.
+~
+Before you stands a VERY large man.
+~
+bdf dh 500 X 0 
+24 12 -2 12d12+240
+0 30000 -1
+8 8 1 3 1 3
+T 50 9d2+6 11
+E 16 50 12016 3
+E 11 60 12058 100
+E 5 65 12063 10
+E 8 80 12008 100
+#12027
+councilman man~
+the councilman~
+A councilman is here, waiting for the council session to begin.
+~
+He looks very tired, and ready to have the meeting over.
+~
+bdl 0 350 X 0 
+16 13 2 8d8+160
+350 12500 -1
+8 8 1 3 1 3
+T 50 2d6+3 23
+A 2 8 $n consults his notes nervously.
+E 16 90 12059 100
+E 5 30 12064 100
+#12028
+clerk~
+the mayor's clerk~
+The mayor's clerk stands here, deciding on another petition.
+~
+The mayor probably would not know how to survive without his clerk.
+~
+bdl d 900 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 100 6d6+5 9
+A 3 8 $n says, 'Would you like to make an appointment with the Mayor?'
+A 3 8 $n says, 'He's very busy this week, but I'm sure we can find you a time.'
+E 17 100 12056 1
+E 16 80 12057 100
+E 11 40 12058 100
+#12029
+owner merchant~
+the ship owner~
+The ship owner stands here, pleading his case.
+~
+He looks very busy and annoyed at having to argue his case.
+~
+bdl 0 200 X 0 
+13 14 3 7d7+130
+0 8700 -1
+8 8 1 3 1 3
+T 75 2d5+3 11
+E 16 30 12065 10
+E 5 60 12061 100
+#12030
+shopkeeper~
+Altoor's shopkeeper~
+Altoor's shopkeeper is here, minding the store.
+~
+The shopkeeper is an older man in his middle to late fifties and looks like
+he enjoys the quiet life.  There is a long scar running from the edge of his
+mouth to his right ear, making it look like he is always smiling.
+~
+abdlw dh 650 X 0 
+55 0 -10 27d27+550
+0 40000 -1
+8 8 1 3 1 3
+T 100 10d8+10 0
+E -1 100 12055 1
+E -1 100 3050 500
+E -1 100 3053 500
+E -1 100 3054 500
+E -1 100 12030 10
+E 16 85 12057 100
+E 8 60 12008 100
+#12035
+record keeper~
+the city records keeper~
+The city records keeper stands here, filing some paperwork.
+~
+You see a burly man who is  extremely overworked trying to keep up with all
+of the paperwork. He is very likely in a very bad mood.
+~
+bcdf d -1000 X 0 
+24 11 -2 12d12+240
+0 40000 -1
+8 8 1 3 1 3
+T 55 2d8+11 8
+A 3 8 $n reaches over his desk and pulls another folder off a pile.
+E 16 65 12031 5
+#12036
+baker~
+the Baker~
+The Baker looks at you calmly, wiping flour from his face with one hand.
+~
+A fat, nice looking baker. But you can see that he has many scars on his
+body.
+~
+bdlw d 900 X 0 
+55 0 -10 28d28+5550
+0 800000 -1
+8 8 1 3 1 3
+T 50 10d9+22 0
+E -1 100 3010 500
+E -1 100 3011 500
+E -1 100 3000 500
+E -1 100 3001 500
+E 16 100 12057 100
+#12037
+grocer~
+the Grocer~
+A grocer stands at the counter, with a slightly impatient look on his face.
+~
+A tall grocer, who moves two 200 pounds bag of flour around on his shoulders.
+~
+bdlw d 900 X 0 
+55 0 -10 28d28+5550
+0 800000 -1
+8 8 1 3 1 3
+T 100 10d9+22 0
+E -1 100 3030 500
+E -1 100 3031 500
+E -1 100 3032 500
+E 16 100 12057 100
+#12038
+vendor~
+a ticket vendor~
+A ticket vendor is here, hawking boat tickets.
+~
+A young man, this salesman is exactly that. Always looking for a sale.
+He will try and convince you that even though you've just arrived in
+Port Halyon, you need to instantly buy a ticket out.
+~
+dw dr 0 X 0 
+55 -10 0 28d28+5500
+0 150000 -1
+8 8 1 3 1 3
+T 100 1d3+3 6
+T 100 2d40+10 6
+A 5 8 $n stares at the sky, whistling innocently.
+A 5 8 $n winks at you and says, 'You just tell me where you want to go, I'll give you a good deal.'
+E -1 100 12099 -1
+>speech_prog     caryllion town~
+mpdelay 5
+say You want to go to Caryllion? See "list" for the list of tickets I sell.
+~
+|
+#12039
+tickettaker ticket taker~
+a ticket taker~
+A ticket taker stands here, watching the dock carefully.
+~
+A weathered old face stares up at you from beneath a red peaked cap.
+He appears to have been doing this job for quite some time, as he scans
+carefully the entire dock area, looking for people who may try to 
+stow away on one of the sips.
+~
+bdw dr 0 X 0 
+55 -10 0 28d28+5500
+0 150000 -1
+8 8 1 3 1 3
+T 100 2d40+10 6
+A 5 8 $n says, 'Lovely day for a boat ride, don't you think?'
+>give_prog    carticket1 ticket caryllion~
+ mpdelay 5
+  tell $n Thank you, if you would please step this way.
+ mpdelay 5
+  mpecho The Ticketer gestures toward the departure dock.
+  mpechoaround $n $n leaves south.
+  mptransfer $n 12070
+  mpforce $n look
+  mpat $n mpechoaround $n $n enters from the north.
+endif
+~
+>rand_prog     2~
+say You can buy tickets from the vendor, he's round here somewhere.
+~
+>rand_prog     2~
+say The boat for Caryllion leaves at 10am sharp. Boarding begins at 8am.
+~
+|
+#12040
+worker~
+the warehouse worker~
+The warehouse worker is moving some boxes around.
+~
+He seems to be moving very slowly.
+~
+bd 0 -250 X 0 
+14 13 3 7d7+140
+0 11500 -1
+8 8 1 3 1 3
+T 100 4d3+2 9
+E 16 30 12057 100
+E 6 30 12002 2
+#12041
+councilman man~
+the councilman~
+A councilman is here, waiting for the council session to begin.
+~
+He looks very tired, and ready to have the meeting over.
+~
+bdl 0 350 X 0 
+16 13 2 8d8+160
+350 12500 -1
+8 8 1 3 1 3
+T 50 2d6+3 23
+A 2 8 $n consults his notes nervously.
+E 17 100 12054 1
+E 16 65 12059 100
+#12042
+melsa receptionist~
+Melsa~
+Melsa the Receptionist is here, dusting the counter.
+~
+   Her long auburn hair has been tied back into a prim and proper bun, high
+on the back of her head. As you enter, she looks up at you and smiles, her
+dark brown eyes glinting just a little in the light. Just when you think she
+is about to speak, she returns to her dusting.  
+~
+bdgw dry 1000 X 0 
+60 0 -10 30d30+30000
+0 10000000 -1
+8 8 2 3 1 4
+T 50 8d30+10 0

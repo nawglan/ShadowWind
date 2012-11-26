@@ -1,0 +1,313 @@
+#1500
+tree immense guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+abdl bdfjs 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1501
+druid man ancient hermit~
+{wthe ancient {dDruid{x~
+{wThe wise, old {gDruid {wis here, caring for his beloved trees.{x
+~
+Looking at him, you can't help but wonder if he's real or not. His skin is
+drawn tight over his face, giving the appearance of tree bark. His robe is 
+old and worn, but appears to be in good repair, nonetheless. Most of all
+though, you note his love of the forest, and the forest's love of him. You 
+can't help thinking that the trees would jump to his aid if he ever needed it.
+~
+2268 136 1000 X
+15 14 2 8d8+150 3d8+0
+0 14000
+8 8 1 3 1 3
+T 100 3d8+1 0
+#1502
+bird~
+{Ythe cute little bird{x~
+{YA cute little bird is here. He greets you with his song.{x
+~
+It's a very small bird, with brightly colored feathers and a small yellow 
+beak. It couldn't hurt anyone, and his song is so beautiful.
+~
+200 65536 0 X
+1 19 9 1d1+10 1d1+0
+0 100
+8 8 0 14 14 1
+T 100 1d1+1 22
+#1503
+bee honeybee honey wasp hornet~
+{wthe {Yhoneybee{x~
+{wA {Ytin{Dy hon{yey bee {wis here collecting nectar. You wonder where his hiv
+ is.{x 
+~
+You put your hand out, and the honeybee lands on your finger.  You take a
+closer look, and notice that the poor little thing doesn't even have a stinger
+  You
+come to the conclusion that nothing bad could happen here, if even bees don't
+need stingers..
+~
+200 65536 0 X
+1 19 9 1d1+10 1d1+0
+0 100
+8 8 0 14 14 1
+T 100 1d1+1 21
+#1504
+butterfly bug fly butter~
+{wthe {Bbeautiful butterfly{x~
+{wAn amazing {Bbutterfly {wis here, flitting from flower to flower.{x
+~
+The colors on this butterfly are incredible. Blues and reds and yellows 
+that clash perfectly. The little creature just goes from flower to 
+flower to flower, knowing knowing he is perfectly safe here in Eden. 
+It just landed on your shoulder.
+~
+200 65536 0 X
+1 19 9 1d1+10 1d1+0
+0 100
+8 8 0 14 14 1
+T 100 1d1+1 22
+#1505
+snake serpent devil asp~
+{wthe huge, {Dnasty snake{x~
+{wA huge, {Dnasty snake {wis here, hanging down from the tree.{x
+~
+You can see the venom drip off its fangs. If you can, run!
+~
+47 168 -1000 X
+15 8 2 8d8+150 1d8+0
+0 16000
+8 8 0 12 14 2
+T 30 1d8+2 0
+#1506
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1507
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1508
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1509
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1510
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1511
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1512
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1513
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1514
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1515
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1516
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1517
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1518
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1519
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23
+#1520
+tree guardian~
+{ythe Immense Guardian Tree{x~
+{wYou see a huge, {yancient tree, {wswaying softly in the breeze.{x
+~
+It's roots are extremely large, and some of them are above ground. Something
+gives you the impression that this is not a normal tree. In fact, you could
+almost swear it was watching you.
+~
+2059 525482 1000 X
+50 2 -10 25d25+500 4d4+0
+0 500000
+8 8 0 15 16 6
+T 30 4d4+0 24
+T 50 5d5+5 23

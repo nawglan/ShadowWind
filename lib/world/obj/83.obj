@@ -1,0 +1,64 @@
+#8300
+pack infantry~
+{ya multi pocketed infantry pack{x~
+A large canvas pack lies in a heap on the ground.~
+~
+15 0 ak 0 
+200 1 -1 0 3
+0 8000 0
+#8321
+willow bow~
+a willow bow~
+A willow bow has been dropped here.~
+~
+5 k an 0 
+5 3 4 13 5
+15 2000 0
+#8330
+jackal skin furry~
+a skin of a jackal~
+A fine furry skin has been dropped here.~
+~
+9 0 ak m 
+3 0 0 0 24
+6 500 0
+#8333
+wood amulet~
+{wa {ywooden amulet{x~
+A wooden amulet has been left here.~
+~
+11 agj ac 0 
+0 0 0 0 5
+3 6850 1300
+A
+1 1
+A
+19 1
+#8385
+corpse hanged man~
+the corpse of a hanged man~
+The corpse of a man is hanging from a gallows pole, swaying in the wind.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+E
+hanged man corpse~
+The corpse is that of a male human that has been dead for quite some time
+now. You can see a sign has been nailed to the corpse chest and there is
+a note sticking up from his pocket.
+~
+#8386
+skeleton troll hanged~
+a skeleton of a  hanged troll~
+A large skeleton is hanging from a gallow pole, swaying in the wind.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+E
+skeleton~
+It doesn't appear to be the skeleton of a human being, rather something much
+larger, something the size of a troll.
+~
+$~

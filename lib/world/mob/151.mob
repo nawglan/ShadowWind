@@ -1,0 +1,1177 @@
+#15100
+squid~
+the giant squid~
+The giant squid is lurking here.
+~
+The giant squid lashes his tentacles around menacingly. With red, bloodshot 
+eyes searching for a victim, his circle of sharp incisors gnash violently,
+craving the taste of flesh.
+~
+abdefos dk -500 X
+15 8 2 8d8+150
+0 18000
+8 8 0 9 0 5
+T 33 1d6+2 13
+#15101
+merfolk guard~
+a merfolk guard~
+A merfolk guard is searching for foreigners.
+~
+The experienced guard scrutinizes the area for criminals and other 
+mischief. Though late in years, the old-timer is still taut and strong. Many 
+scars tell of the great battles he has survived.
+~
+adglmos t 1000 X
+20 10 0 10d10+200
+0 25000
+8 8 0 2 0 5
+T 100 4d5+8 13
+E 16 75 15112 30
+E 13 30 15138 18
+E 9 50 15142 22
+E 5 70 15104 26
+#15102
+seahorse~
+a giant seahorse~
+A giant seahorse is waiting for it's rider.
+~
+The seahorse waits patiently for it's next orders. The lush, silvery mane 
+sways with the current while light from the deep bounces off his skin 
+casting hues of green and blue upon his curled tail.
+~
+abcdfghos 0 0 X
+15 8 2 8d8+150
+0 20000
+8 8 0 3 0 5
+T 45 2d6+0 22
+A 15 6 The giant seahorse darts around in the water.
+#15103
+merman~
+a merman~
+A merman goes about his business.
+~
+The merman drags his weary tail ill-prepared for trouble. With brown hair 
+and dull eyes he is not someone whose face you will remember. His 
+brilliant tail and muscular body gleam, giving brilliance to the 
+otherwise homely merman's appearance. 
+ ~
+acdghos 0 400 X
+17 9 1 9d9+170
+0 16000
+8 8 0 10 0 5
+T 100 4d5+5 13
+E 16 60 15106 40
+E 16 20 15112 30
+E 5 30 15105 50
+#15104
+mermaid~
+a mermaid~
+A mermaid swims around effortlessly here. 
+~
+The unburdened mermaid treads the water effortlessly with elegance and 
+grace. Golden hair billowing around her face, she is an object of 
+divinity. Sparkling, crystal eyes peer at you under long, ivory lashes.
+~
+acdghos 0 400 X
+16 8 2 8d8+160
+0 17500
+8 8 0 10 0 5
+T 100 4d4+2 13
+T 150 2d2+1 22
+E 5 30 15105 50
+E 17 20 15108 20
+#15105
+merman chancellor~
+the merman chancellor~
+The merman chancellor rechecks his list of things to do.
+~
+The portly chancellor is surrounded by pleas from merfolk subjects and 
+requests from the King. His awry hair and rumpled clothes match his frantic 
+look of dispair. The officer of the court maintains his appearance of 
+authority though he looks a bit flustered. 
+~
+abcdos 0 500 X
+22 11 -1 11d11+220
+0 25000
+8 8 0 10 0 5
+T 110 6d6+5 13
+A 15 6 The merman chancellor babbles on and on.
+A 10 6 The merman chancellor sighs and looks at the next plea.
+E 5 70 15105 50
+E 16 75 15106 40
+#15106
+merman vizier~
+the merman vizier~
+The merman vizier looks around suspiciously.
+~
+The lanky vizer has a thin, pinched face full of greed. He keeps his 
+firm, tapered fingers tightly around his money bag and seems to look
+everywhere at once. His humped back and and sickly tail trembles in
+the current.
+~
+abcdos 0 500 X
+19 9 1 10d10+190
+0 18000
+8 8 0 10 0 5
+T 70 2d5+6 20
+A 16 75 15106 40
+A 15 6 The merman vizier carefully counts all of his coins.
+A 10 6 The merman vizier glares at you suspiciously.
+E 5 70 15105 50
+E 17 20 15108 20
+#15107
+king triton merman~
+King Triton~
+King Triton is here ruling his ocean kingdom.
+~
+Brow arched and eyes piercing, King Triton stares into the souls of those 
+who approach him. Grey hair rolls down over his shoulders and moves 
+angrily with the current. With his fists clenched and jaw squared he 
+rules his kingdom. 
+~
+abcdefilmnopqrs dhkq 1000 X
+55 30 -10 27d27+3400
+0 3230000
+8 8 0 10 0 5
+T 33 3d5+30 13
+A 15 8 King Triton bangs his trident against his throne.
+>fight_prog   15~
+cast 'lightning bolt' $n
+~
+>fight_prog   10~
+cast 'bolt of force' $n
+~
+|
+#15108
+mermaid waiting~
+a mermaid in waiting~
+A mermaid in waiting serves her mistress.
+~
+With head bowed and shoulders sagging, the petite mermaid listens for 
+commands. She timidly glances around from time to time and keeps her 
+distance from others. Her white veil hides all but her hesitant eyes.
+~
+abcdhmos 0 400 X
+16 8 2 8d8+160
+0 18000
+8 8 0 10 0 5
+T 50 2d6+8 24
+A 15 8 A mermaid in waiting peers around timidly.
+E 18 60 15111 20
+#15109
+octopus~
+a huge octopus~
+A huge octopus menacingly whips his tentacles toward you.
+~
+A huge octopus rolls a fat tentacle towards you across the sea floor. His 
+enormous head and one blinking eye bulges, threatening to explode. Huge 
+suckers slither out from all directions, searching for prey. 
+~
+abcdefos dk -700 X
+40 20 -10 20d20+400
+0 184000
+8 8 0 9 0 5
+T 12 2d3+1 13
+E 16 75 15130 30
+#15110
+lord valero merman~
+Lord Valero~
+Lord Valero is standing here with his nose upturned.
+~
+Lord Valero has a very pink, upturned nose which he enjoys looking down 
+at others with. His hands are kept nicely at his side, when not giving an 
+impolite yawn.
+~
+abcdos 0 400 X
+18 9 1 9d9+180
+0 20000
+8 8 0 10 0 5
+T 90 3d6+6 13
+A 15 8 Lord Valero looks at you with little interest.
+A 10 8 Lord Valero yawns with boredom.
+E 5 80 15105 50
+E 16 75 15106 40
+E 16 20 15112 30
+>act_prog   p nudges you with~
+   if isnpc ($n)
+      emote snaps back into consciousness.
+      say What's the name of his other leg?
+      break
+   endif
+~
+|
+#15111
+lady valiya mermaid~
+Lady Valiya~
+Lady Valiya is snorting loudly here.
+~
+Lady Valiya has a tremendous rump much like that of her husband the Lord. 
+Her round, rosy cheeks and huge bucked teeth are surrounded by a high 
+pile of white hair. As she laughs her teeth begin to whistle in an eerie way.
+~
+abcdhos 0 400 X
+16 8 2 8d8+160
+0 17000
+8 8 0 10 0 5
+T 100 3d5+7 13
+A 15 8 Lady Valiya lets out a nasty snort.
+E 5 80 15105 50
+>rand_prog   10~
+   say I once knew a man with a wooden leg named Smith.
+   nudge valero
+~
+|
+#15112
+prince rel merman~
+Prince Rel~
+Prince Rel the Valiant is swims here.
+~
+Prince Rel the Valiant swims here ignoring those around him. His wide 
+shoulders and powerful eyes are the signs of a true merfolk king in the 
+making. A great sense of peace and strength emotes from the prince.
+~
+abcdos 0 400 X
+20 10 0 10d10+200
+0 25000
+8 8 0 10 0 5
+T 90 4d6+4 13
+E 5 80 15105 50
+E 16 75 15106 40
+E 16 20 15112 30
+#15113
+princess leira ariel mermaid~
+Princess Leira~
+Princess Leira around in a worried circle.
+~
+The willowy Princess Leira swims around the room anxious to see her father.
+She bites her upper lip nervously, and squints her lavender eyes getting 
+more worried by the minute. She clasps her petite hands and continues her 
+vigile. She sings a soft song to try and calm herself down.
+~
+abcdos 0 500 X
+17 9 1 9d9+170
+0 18200
+8 8 0 10 0 5
+T 80 4d5+2 13
+A 15 8 Princess Leira darts around the room nervously.
+A 10 8 Princess Leira begins to sing.
+E 5 80 15105 50
+E 3 90 15114 30
+#15114
+sea nymph~
+a sea nymph~
+A sea nymph is floating here.
+~
+The glowing sea nymph spins and darts around the ocean. It sings a sweet 
+melody and chitters excitedly. It's graceful body is so thin that you can
+see partially through them. Long flowing hair wraps down to their feet and 
+around it's unclothed body.
+~
+adghos 0 0 X
+12 6 4 6d6+120
+0 8310
+8 8 0 9 0 5
+T 75 3d3+2 24
+A 15 8 A sea nymph chitters excitedly.
+A 10 8 A sea nymph sings a sweet song.
+#15115
+eel~
+an Eel~
+An Eel slithers and searches for his prey.
+~
+Sparks of electricity flicker over the large eel. It's slimy, smooth 
+skin allows it to move rapidly in any direction. Sharp rows of tiny, 
+jagged teeth fill it's mouth.
+~
+adefoqs d -500 X
+15 8 2 8d8+150
+0 16250
+8 8 0 9 0 3
+T 90 3d6+2 13
+#15116
+manowar~
+a large man-o-war~
+A large man-o-war sneaks about the ocean floor hunting.
+~
+The large man-o-war bobs up and down trying to stay hidden in the shadows. 
+It's translucent body pulsates with strength and the urge to kill. Poison 
+surges through it's veins and waits near the surface of the skin for the 
+next victim.
+~
+acdefos d -500 X
+16 8 2 8d8+160
+0 19000
+8 8 0 9 0 5
+T 90 3d7+2 21
+#15117
+shark~
+a large shark~
+A large shark whips his tail and darts toward you.
+~
+The shark, ruthless and cunning, considers no prey too big or strong to 
+not make a wonderful meal. The razor-sharp teeth cut through small fish 
+who get in it's way as it turns and searches for something more appetizing.
+~
+adefoqs d -700 X
+34 17 -7 17d17+340
+0 100000
+8 8 0 9 0 5
+T 33 2d8+4 22
+E 17 80 15115 50
+#15118
+soul sailor~
+the soul of a sailor~
+The soul of a sailor is suffering here.
+~
+The wretched soul of a sailor long deceased, wails and moans at the 
+horrible pain he constantly endures. His endless screams join those of 
+other lost souls who died at sea.
+~
+abcdeno d 0 X
+24 12 -2 12d12+240
+0 40000
+8 8 0 1 0 5
+T 75 4d6+4 24
+A 15 8 The soul of a sailor wails in misery.
+A 10 8 The soul of a sailor starts mumbling of his days as a sailor.
+E 18 75 15129 30
+#15119
+soul pirate davy jones~
+Davy Jones~
+Davy Jones bellows out a joyful cackle.
+~
+The devil of the deep chuckles deeply as he enjoys the demented harmonies of 
+souls shreaking in pain. With his black eyepatch and large hoop earring, in 
+life he was known as the fiercest sailor of them all.
+~
+abcdefno d 0 X
+27 14 -4 14d14+270
+0 60000
+8 8 0 1 0 5
+T 65 5d5+4 24
+A 15 8 Davy Jones lets out a bellowing cackle.
+A 10 8 Davy Jones begins dancing to the shrieking moans of his prisoners.
+#15120
+harpy guard~
+a harpy guard~
+A harpy guard looks for intruders.
+~
+The harpy guard is covered in filth and smells like something that has 
+been dead for weeks. The guard has dull brown feathers and bug-infested 
+claws. His human face is grotesquely disfigured and covered with filth.
+~
+abcdfjkm dk -750 X
+21 11 -1 11d11+210
+0 29000
+8 8 1 10 0 4
+T 90 3d8+5 24
+A 15 8 A harpy guard lets out a loud squack. 
+A 10 8 A harpy guard paces around looking for trespassers.
+#15121
+harpy~
+a harpy~
+A harpy struts around proudly.
+~
+The dirty harpy smells like rancid meat. His face is contorted so badly 
+all he can do is sneer. His feathers and claws have not been cleaned in 
+some time, but the gaudy jewelry that covers the harpy causes him 
+to strut with pride.
+~
+abcdfjk dk -700 X
+17 9 1 9d9+170
+0 18000
+8 8 1 10 0 4
+T 90 4d5+5 24
+A 15 8 A harpy struts around proudly.
+A 10 8 A harpy picks at some flesh stuck in his teeth.
+#15122
+harpy queen~
+the harpy queen~
+The harpy queen sleeps here.
+~
+Covered with dirty, gaudy jewelry from head to claw, the harpy queen 
+smells of filth that is overpowering and vile. Her plummage and claws
+are caked with meals of the past, making her the dirtest, and most
+desired of all harpies. 
+~
+abcdflno dk -1000 X
+33 17 -7 17d17+330
+0 93000
+4 4 2 10 0 5
+T 45 5d5+5 24
+A 15 8 The harpy queen snores loudly.
+E 3 70 15131 30
+E 17 70 15154 30
+#15123
+rodent rous rat~
+a large rodent~
+A large rodent digs through rubish.
+~
+A large rodent with a thick banded tail is rummaging around looking for 
+rotten meat. It's red eyes glow in the dark and the chittering sound it 
+makes does not sound friendly.
+~
+abdefg 0 -400 X
+13 7 3 7d7+130
+0 9000
+8 8 0 10 0 4
+T 100 3d6+2 22
+A 15 8 A large rodent digs through rotting corpses.
+A 10 8 A large rodent sniffs you. 
+#15124
+grub~
+a large grub~
+A large grub rolls around on the floor.
+~
+A juicy, fat grub covered in dirt is trying to escape. The slow roll of 
+the grub doesn't seem to be getting it anywhere at all.
+~
+abdefg 0 -400 X
+10 5 5 5d5+100
+0 6000
+8 8 0 7 0 2
+T 100 2d8+1 22
+A 15 8 A large grub wiggles frantically.
+#15125
+vermicious kanid~
+a vermicious kanid~
+A vermicious kanid radiates with red light.
+~
+A large kanid covered in a pitch, black secretion, guards the island from 
+all who consider entering. The eyeless creature towers high above 
+everything but the gate. Red light radiates from it's massive dark body 
+while it's claws retract and spring out making a screeching sound.
+ ~
+abcdeflmno bdhkpq -1000 X
+27 14 -4 14d14+270
+0 60000
+8 8 0 10 0 5
+T 33 2d3+5 15
+E 16 70 15116 30
+#15126
+unicorn~
+a small unicorn~
+A small unicorn grazes here.
+~
+The small unicorn carries her head high and proud. A long golden horn 
+rises in a majestical spire upon her head. Pure white covers her body from
+nose to hoof, emoting a white aura.
+~
+abdgh dk 400 X
+16 8 2 8d8+160
+0 15000
+8 8 2 3 0 4
+T 100 2d8+7 28
+A 15 8 A small unicorn tosses her mane.
+#15127
+centaur~
+a centaur~
+A centaur stands still here and listens for danger.
+~
+The centaur stands here stolid and alert, ears perked cautiously. His stolid
+flanks and four muscular legs, perfect for running and fighting, are 
+covered with fine silken hair. The muscular human arms and torso add to his 
+lower equine power, making him the epitome of strength.
+~
+abcdg 0 -350 X
+17 9 1 9d9+170
+0 18000
+5 5 1 3 0 5
+T 100 8d2+5 0
+#15128
+pixie sprite~
+a small pixie~
+A small pixie buzzes and zooms around the sky.
+~
+Little iredescent wings buzzing, the fair-skinned pixie zips around 
+quicker than the eye can keep up with.  Her little point ears and tiny stub 
+nose offer a false sense of innocence and safety to those that see her. As 
+she smiles, two rows of dagger sharp teeth appear between her rosy cheeks.
+~
+abcdeghlmno bdt 400 X
+14 7 3 7d7+140
+0 10000
+8 8 2 3 0 2
+T 50 2d3+3 0
+E 17 60 15117 30
+#15129
+cyclops youngster young~
+a young cyclops~
+A young cyclops romps and plays here.
+~
+A ugly cyclops child with thick muscles stomps around carefree and happy.
+The rotten-toothed grin and dirty face match his soiled jumper and 
+heavy boots. His large nose and single peering eye take up most of 
+his face and stare around with curiosity and suspicion. 
+~
+acdghm 0 -350 X
+15 8 2 8d8+150
+0 13000
+8 8 1 3 0 5
+T 200 10d5+0 0
+A 15 8 A young cyclops stomps around the room.
+A 10 8 A young cyclops sticks his tongue out at you.
+A 5 8 A young cyclops says, 'Mommy, it is staring at me!'
+#15130
+female cyclops momma~
+a female cyclops~
+A female cyclops stares around angrily.
+~
+With rumpled skirt and blouse the female cyclops reeks of sour sweat and 
+rancid meat. The dark red stains on her clothes vary from a dark crimson
+red, to a bright glistening red that still looks wet. Strands of hair 
+from her ratty bun cover all but her large nose and eye. 
+~
+abcdeglm dk -500 X
+22 11 -1 11d11+220
+0 32000
+8 8 2 3 0 5
+T 100 3d9+7 0
+A 15 8 A female cyclops lets out a weary sigh.
+A 10 8 A female cyclops wipes sweat from her one brow.
+E 16 60 15132 16
+#15131
+male cyclops daddy~
+a huge cyclops~
+A huge cyclops towers over all.
+~
+Large calloused hands hanging clumsily by his side, the cyclops appears 
+thick bodied and massive. Although his one dark eye cannot look in but 
+one direction, he seems to be aware of everything at once. 
+~
+abdfglm dk -500 X
+26 13 -3 13d13+260
+0 40000
+8 8 1 3 0 6
+T 100 6d6+5 0
+A 15 8 A huge cyclops yells for his kids.
+A 10 8 A huge cyclops eyes you up and down.
+E 16 30 15118 8
+#15132
+pegasus~
+a pegasus~
+A pegasus lingers here, resting it's wings.
+~
+Silver wings arced and prepared for flight, the pegasus shines with  
+internal light. Brilliant silver mane and tail swish and flicker as the 
+graceful beast rests here before continuing it's mysterious journey.
+~
+abdgh dk 500 X
+17 9 1 9d9+170
+0 22500
+8 8 1 3 0 5
+T 100 3d6+2 22
+A 15 8 A pegasus unfurls his wings before you.
+#15133
+terril dwarf champion dwarven~
+Terril the Dwarven Champion~
+Terril the Dwarven Champion quietly schemes.
+~
+This brave warrior cannot accept his captivity will be permanent. All the 
+years of training and his strong will keep his mind clear and intact. He 
+keeps his taut body fit and continues daily to plan his great escape. 
+~
+abdh 0 450 X
+17 9 1 9d9+170
+0 17000
+5 5 1 3 0 4
+T 100 4d4+7 0
+A 15 5 Terril the Dwarven Champion says, 'HELP US!'
+A 10 5 Terril the Dwarven Champion continues planning his escape.
+A 5 5 Terril the Dwarven Champion starts telling you about his questing days.
+E 16 90 15133 -1
+E 5 90 15137 -1
+E 11 50 15139 -1
+#15134
+jonas human cleric~
+Jonas the Human Cleric~
+Jonas the Human Cleric is raving and yelling.
+~
+This poor cleric has been captive so long that she no longer knows her own 
+mind. Her art almost completely forgot, she remembers enough to keep 
+herself healed in body if not in mind. Fond and terrible times of the 
+past have begun to haunt her in a place this place where there is no 
+escape. 
+~
+abdh bdhkq 600 X
+17 9 1 9d9+170
+0 23000
+5 5 2 2 0 4
+T 100 2d16+0 0
+A 15 5 Jonas the Human Cleric says, 'You have sealed your fate.' 
+A 10 5 Jonas the Human Cleric cackles hysterically.
+A 5 5 Jonas the Human Cleric clonks herself over the head.
+E 16 90 15135 -1
+E 5 90 15137 -1
+E 8 50 15141 -1
+>fight_prog   10~
+cast 'heal' self
+~
+|
+#15135
+jenken mercenary orc~
+Jenken the Orcish Mercenary~
+Jenken the Orcish Mercenary stares at you with mistrust.
+~
+The Orcish Mercenary is covered from head to foot in leather armor. He 
+trusts no one but himself and plans on escaping without anyone's help.
+With teeth glistening, he has no difficulty keeping his privacy.
+~
+abdh 0 200 X
+14 7 3 7d7+140
+0 12000
+5 5 1 3 0 4
+T 50 2d5+1 0
+A 15 5 Jenken the Orcish Mercenary looks at you with hatred.
+A 10 5 Jenken the Orcish Mercenary says, 'Give me your weapon!'
+A 5 5 Jenken the Orcish Mercenary lets out a vicious snort.
+E 16 90 15133 -1
+E 5 90 15137 -1
+E 11 50 15139 -1
+#15136
+sedna quickblade halfling~
+Sedna the Halfling Quickblade~
+Sedna the Halfling Quickblade lurks here.
+~
+The Halfling Quickblade glances around constantly looking for any
+way out of this prison. Her wits have almost regained freedom twice
+but before she could get out of the fortress she was apprehended. 
+~
+abcde dk -200 X
+17 9 1 9d9+170
+0 17500
+5 5 2 3 0 3
+T 33 1d5+3 0
+A 15 5 Sedna the Halfling Quickblade disappears into the shadows.
+A 10 5 Sedna the Halfling Quickblade has her hand in your pocket.
+A 5 5 Sedna the Halfling Quickblade sneers in your face.
+E 16 90 15136 -1
+E 5 90 15137 -1
+E 12 50 15121 -1
+#15137
+jixla magus elven elf~
+Jixla the Elven Magus~
+Jixla the Elven Magus sighs and sniffs here.
+~
+The Elven Magus has lost much of her art when she tried to battle the 
+Great Mage. What is left of her art is of no use to her now. Her hair has 
+grown down past her ankles and is filled with insects. She never expected to 
+come to such an unvaliant end. 
+~
+abdh bdkq 400 X
+17 9 1 9d9+170
+0 22000
+5 5 2 3 0 4
+T 100 2d4+0 0
+A 15 5 Jixla the Elven Magus sighs in despair.
+A 10 5 Jixla the Elven Magus looks at her hands.
+A 5 5 Jixla the Elven Magus utters the words, 'jxebales'
+E 16 90 15134 -1
+E 5 90 15137 -1
+E 12 50 15121 -1
+>fight_prog   10~
+cast 'fireball' $n
+~
+>fight_prog   5~
+cast 'burning hands' $n
+~
+|
+#15138
+kerrin cleric half-elven elf~
+Kerrin the Half-Elven Healer~
+Kerrin the Half-Elven Healer tries to reserve her strength.
+~
+The Half-Elven Healer has tucked away her last vials of strength hoping for
+the day she can use them to gain her freedom. She spends her time 
+dreaming of the life she can return to once this imprisonment has ended.
+~
+abd bdkq 400 X
+15 8 2 8d8+150
+0 16000
+5 5 2 3 0 3
+T 33 5d1+0 0
+A 15 5 Kerrin the Half-Elven Healer says, 'HELP US'
+A 10 5 Kerrin the Half-Elven Healer shakes her head and sighs.
+A 5 5 Kerrin the Half-Elven Healer looks sadly at the few vials remaining.
+E 16 90 15135 -1
+E 5 90 15137 -1
+E 8 50 15141 -1
+>fight_prog   28~
+cast 'cure critic'
+~
+|
+#15139
+shackled man~
+a shackled man~
+A shackled man moans here.
+~
+The shackled man shivers and shakes from the tired muscles he is hanging by.
+The claw marks on his arms and legs are beginning to heal from where the 
+harpies carried him to this room. His face is full of terror and pain.  
+~
+abcdh 0 0 X
+6 4 6 3d3+60
+0 2000
+5 5 1 2 0 4
+T 100 4d2+0 0
+A 15 5 A shackled man cries out in pain. 
+A 10 5 A shackled man says, 'Please kill me.'
+#15140
+kilgrint gnasher goblin~
+Kilgrint the Gnasher~
+Kilgrint the Gnasher is whittling here.
+~
+Kilgrint the Gnasher is covered from head to foot in grime and sweat. His
+hairy, black face is crawling with small fleas. His feet, which are bare, 
+have long sharpened toenails.
+~
+abcdfjl 0 -400 X
+19 10 0 10d10+190
+0 20000
+8 8 1 3 0 4
+T 100 4d6+5 0
+A 15 8 Kilgrint the Gnasher shakes his fist at you.
+E 16 70 15120 -1
+E 5 70 15137 -1
+#15141
+eflykt brute goblin~
+Eflykt the Brute~
+Eflykt the Brute is secretly cleaning.
+~
+Eflykt the Brute is one of the fiercest of warriors and is very 
+respected by the other goblins. Lucky for him he is a favorite, for none 
+of the goblins understand his obsession for cleanliness. His nails and 
+hair have been well groom and his teeth cleaned to perfection. 
+~
+abcdfjl 0 -400 X
+20 10 0 10d10+200
+0 15000
+8 8 1 3 0 4
+T 25 1d3+3 0
+A 15 8 Eflykt the Brute lets out a vicious warcry.
+E 16 70 15120 -1
+E 5 70 15137 -1
+#15142
+grafftl crusher goblin~
+Grafftl the Crusher~
+Grafftl the Crusher is here scowling.
+~
+Grafftl the Crusher is known as the strongest goblin alive. Since his 
+mind works very slow he usually fights first and then thinks later. Few 
+goblins even walk near him for fear he will attack them. Grafftl has a 
+constant, confused look on his face and a thick layer of dirt everywhere 
+else. 
+~
+abcdfjl 0 -400 X
+20 10 0 10d10+200
+0 25000
+8 8 1 3 0 5
+T 200 20d3+0 0
+A 15 8 Grafftl the Crusher points his spear at you, then points to the door.
+E 16 70 15120 -1
+E 5 70 15137 -1
+#15143
+gralkt goblin leader~
+Gralkt the Goblin Leader~
+Gralkt the Goblin Leader looks at you suspiciously.
+~
+The Chief of the Goblins is coldhearted and deranged. He will attack 
+anyone with his troops if he feels he has the slightest chance to 
+massacre them. Large globs of flesh and grime hang from his large, 
+pointed teeth.
+~
+abcdefjkl d -600 X
+28 14 -4 14d14+280
+0 68000
+8 8 1 3 0 4
+T 50 4d3+6 0
+E 16 70 15119 10
+E 5 70 15137 -1
+E 6 40 15140 5
+#15144
+guard goblin~
+a goblin guard~
+A goblin guard looks for trouble to start.
+~
+The goblin guard loves to pick a fight and will use any reason you give 
+him to do so. He searches the town looking for someone who needs to learn 
+respect. His teeth and face are caked with grit, and the stench that 
+surrounds him is nauseating. 
+~
+abcdeglm 0 -500 X
+18 11 1 9d9+180
+0 19500
+8 8 1 3 0 4
+T 66 5d3+2 0
+A 15 8 A goblin guard sneers at you.
+A 10 8 A goblin guard sharpens his spear.
+E 16 60 15120 -1
+E 5 60 15137 -1
+#15145
+goblin peon~
+a goblin peon~
+A goblin peon begs you for bread or coins.
+~
+A small deformed goblin without any skills is forced to live in the 
+outside and do any chores the others have for him to do. He dreams of a 
+day when he can fight in a battle and win back the respect of his peers.
+~
+abcdgm 0 -200 X
+17 11 1 9d9+170
+0 18250
+8 8 0 3 0 4
+T 100 6d3+5 0
+A 15 8 A goblin peon begs at your feet for gold.
+#15146
+goblin brat~
+a goblin brat~
+A goblin brat is crying and wailing.
+~
+The goblin brat sits in it's own filth and screams day and night. He
+has only his front teeth which he uses to taste everything around him.
+~
+acdhm 0 0 X
+7 4 6 4d4+70
+0 2900
+8 8 0 3 0 4
+T 100 4d2+1 0
+A 15 8 A goblin brat stomps around the room.
+A 10 8 A goblin brat bites your ankle.
+#15147
+goblin wench~
+a goblin wench~
+A goblin wench shivers and cowers from you.
+~
+The goblin wench is covered with multi-colored rags that are so covered with 
+slime and filth you can't tell what colors they are. Her hair is teased 
+out wildly around her head, just the way the males like it. She paints her 
+face in bright, horrid colors that shows her rank among the many wenches.
+~
+abcdghm 0 -100 X
+15 8 2 8d8+150
+0 16550
+8 8 2 3 0 4
+T 66 4d4+0 0
+A 15 8 A goblin wench points at you and yells, 'EWAHUL!'
+A 10 8 A goblin wench cowers in the corner.
+#15148
+tatoo goblin~
+Tatoo the goblin~
+Tatoo the goblin stands here ringing his bell.
+~
+The small, squat goblin watches the ocean for approaching ships. As soon 
+as one arrives he does his duty and alerts the other goblins. He has great 
+pride for his job, for he considers himself protector of the goblin clan.
+His silly, wide grin stretches from one dirty ear to the other.  
+~
+abdeno dk 125 X
+22 11 -1 11d11+220
+0 33000
+8 8 1 3 0 3
+T 100 5d5+7 27
+A 15 8 Tatoo the goblin eyes you up and down.
+A 10 8 Tatoo the goblin is looking for his boss.
+A 5 8 Tatoo the goblin yells, 'Da Boat, Bawth, Da Boat!'
+A 3 8 Tatoo the goblin rings a great, big bell.
+E 3 70 15122 10
+#15149
+vernkl barkeeper goblin~
+Vernkl the Goblin Barkeeper~
+Vernkl the Goblin Barkeeper is passed out here.
+~
+The barkeeper, stinking of ale, is covered with dust and cobwebs from his 
+room. His apron is covered in ale and the blood of brawlers he has kicked 
+out in the past. He is getting grey hair and loosing his teeth, but in 
+his fighting years he was known as a great killer.
+~
+abcdehm 0 -100 X
+21 11 -1 11d11+210
+0 29500
+6 6 1 3 0 4
+T 100 2d4+0 0
+#15150
+vrtlin goblin brawler~
+Vrtlin the goblin~
+Vrtlin the goblin growls and leaps towards your throat.
+~
+Vrtlin the goblin spends most of his time in the bar, when not out on the 
+battlefield. He and his friends decide who pays by who is left standing 
+after a long bar room brawl. He is covered in blood, both his own and 
+others. 
+~
+abdq 0 -200 X
+19 9 1 10d10+190
+0 20000
+8 8 1 3 0 4
+T 100 10d3+0 0
+A 15 8 Vrtlin the goblin breaks a bottle against the wall.
+A 10 8 Vrtlin the goblin crashes to the ground with a thud.
+A 5 8 Vrtlin the goblin throws a bar stool at you.
+E 16 70 15123 -1
+#15151
+sevferto goblin brawler~
+Sevferto the goblin~
+Sevferto the goblin sneers and foams at the mouth.
+~
+Sevferto the goblin has been an alcoholic for most of his life. He begs 
+with peons by day to get enough money to buy his drinks for the night.
+A large, deep gash covers his forehead, but as of yet he hasn't noticed.
+~
+abdq 0 -200 X
+18 11 -1 9d9+180
+0 18880
+8 8 1 3 0 4
+T 66 4d5+0 0
+A 15 8 Sevferto the goblin stomps around the room angrily.
+A 10 8 Sevferto the goblin lets out an ancient warcry.
+A 5 8 Sevferto the goblin heaves a large table at you.
+E 16 70 15123 -1
+#15152
+alitsigu goblin brawler~
+Alitsigu the goblin~
+Alitsigu the goblin struggles here.
+~
+Alitsigu the goblin is quick and young and hasn't got a wound on him yet.
+He is one of the new, promising warriors and always looking for ways to 
+improve his fighting skills. He is very muscular and hairy and covered 
+with a respectable layer of grime for a goblin.
+~
+abdq 0 -200 X
+20 10 0 10d10+200
+0 25000
+8 8 1 3 0 4
+T 50 4d4+0 0
+A 15 8 Alitsigu the goblin struggles up from the floor.
+A 10 8 Alitsigu the goblin throws a broken bottle at you.
+A 5 8 Alitsigu the goblin runs at you from across the room.
+E 16 70 15123 -1
+#15153
+bletsund goblin brawler~
+Bletsund the goblin~
+Bletsund the goblin is breathing hard and sweating here.
+~
+Bletsund the goblin enjoys drinking and remembering the old battles full 
+of gore and victory of his youth. Before all the fighting starts he usually
+gets in a story or two. He is still very quick, but his age is making him 
+tire quickly. The old goblin has lost all his hair and most of his teeth.
+~
+abdq 0 -200 X
+19 10 0 10d10+190
+0 21000
+8 8 1 3 0 4
+T 50 1d18+0 0
+A 15 8 Bletsund the goblin hollers in pain.
+A 10 8 Bletsund the goblin tries to hide under a table.
+A 5 8 Bletsund the goblin tries to sneak up behind you.
+E 16 70 15123 -1
+#15154
+skeleton guard guardian~
+a skeleton guardian~
+A skeleton guardian creaks and clanks his weary bones.
+~
+The skeleton frame held up by magic has but one task to complete, which 
+is to allow none who enter to leave the fortress alive. It's old bones rub 
+and creak against each other as it roams around the castle once again.
+~
+abdefmnop bdk -600 X
+20 10 0 10d10+200
+0 32000
+8 8 0 1 0 4
+T 20 1d5+1 0
+A 15 8 A skeleton guardian rattles and clatters.
+A 10 8 A skeleton guardian looks around through his hollow eyes.
+E 16 90 15124 -1
+#15155
+apprentice mage~
+an apprentice~
+An apprentice toils endlessly at his studies.
+~
+The young apprentice has tired eyes and shaky hands as he tries to keep 
+up with all demanded of him. His long robes are becoming shabby, and his 
+shoes are wearing thin. Shoulders stooped, he works harder and harder.
+~
+abdh bdk -300 X
+19 10 0 10d10+190
+0 21050
+8 8 1 2 0 4
+T 100 3d5+10 0
+A 15 8 A apprentice curses and swears.
+A 10 8 A apprentice glances around nervously.
+A 5 8 A apprentice daydreams of home.
+E 12 60 15125 40
+>fight_prog   10~
+cast 'lightning bolt' $n
+~
+>fight_prog   5~
+cast 'shocking grasp' $n
+~
+|
+#15156
+morvoct mage~
+Morvoct the Mage~
+Morvoct the Mage stares into your soul.
+~
+The Great Mage uses the knowledge of the old powers to work his spells 
+and curses. His great arching eyebrows and long grey beard cover most of 
+his face. Strong and virile, he does not carry the weight of his age with 
+him into his long life. Flickers of blue light crackle upon his robes and 
+send small shoots of lightning across the room.
+~
+abcdeflnopr bdhkq -1000 X
+55 30 -10 27d27+5200
+0 5413000
+8 8 1 3 0 5
+T 33 6d8+31 27
+E 12 40 15126 20
+E 1 20 15127 20
+>fight_prog   25~
+cast 'lightning bolt' $n
+~
+>fight_prog   20~
+cast 'colorspray' $n
+~
+>fight_prog   15~
+cast 'fireball' $n
+~
+>fight_prog   10~
+cast 'firestorm' $n
+~
+>fight_prog   5~
+cast 'heal'
+~
+|
+#15157
+dark shadow darkshadow~
+a dark shadow~
+A dark shadow is barely visible.
+~
+The dark shadow in the room seems to have a mind of it's own as it 
+detaches from it's physical counterpart and races across the room toward you.
+Dark fingers stretch to suck the soul out of all life so that the shadow 
+gets one step closer to reality.
+~
+abdeflnopq bdkt -600 X
+25 13 -3 13d13+250
+0 50000
+8 8 0 1 0 2
+T 100 2d4+0 0
+>fight_prog   10~
+cast 'shocking grasp' $n
+~
+|
+#15158
+dragonwhelp whelp~
+a dragon whelp~
+A dragon whelp scampers across the floor.
+~
+The tiny whelp covered in small scales glares around with beady eyes. 
+It's little tail and jagged teeth don't instill fear in many. The whelp 
+peers around for something to destroy and isn't afraid of trying you out 
+for size.
+~
+abdgh dkq 0 X
+15 8 2 8d8+150
+0 9000
+8 8 0 4 0 5
+T 100 2d5+1 22
+T 100 2d5+2 24
+A 20 8 A dragon whelp grits his teeth and lets out a weenie roar.
+A 15 8 A dragon whelp takes a deep breath and shoots out a tiny flame.
+A 5 8 A dragon whelp whines and coos.
+>fight_prog   3~
+cast 'fireball' $n
+~
+|
+#15159
+evil spirit~
+an evil spirit~
+An evil spirit hovers in the darkness.
+~
+A dark form of cloudy mist darts across the room looking for some evil to 
+begin. Red glowing eyes glitter from the misty mass as it sees you enter 
+the room. Darker the mist grows and closer it comes.
+~
+abdeflnopq bdkt -500 X
+28 14 -4 14d14+280
+0 80000
+8 8 0 1 0 2
+T 50 4d6+0 0
+>fight_prog   20~
+cast 'shocking grasp' $n
+~
+|
+#15160
+dragon silver~
+the Silver Dragon~
+The Silver Dragon lies upon the cave floor.
+~
+Shimmering light glares from his scales as he shifts his weight. The 
+mesmerizing eyes stay on you at all times, considering which parts of you 
+to devour first. The crimson blood drips from his fangs and the drying flesh 
+that clings to his claws are all that remain of his last meal. The 
+rushing sound barreling from the dragon's mouth is followed by an explosion
+of flames.
+~
+abcdeflnopqr bdkpq -1000 X
+60 0 -10 30d30+30000
+0 10000000
+8 8 0 5 11 6
+T 100 20d6+57 22
+T 50 18d6+69 0
+T 100 20d6+57 0
+E 17 30 15128 20
+>fight_prog   15~
+cast 'fireball' $n
+~
+>fight_prog   5~
+cast 'firestorm' $n
+~
+|
+#15161
+krlyt goblin baker~
+Krlyt the Goblin Baker~
+Krlyt the Goblin Baker is preparing breads here.
+~
+Krylt the Goblin Baker is covered with flour and grime and warbles a
+tune from his youth. Large chunks of dough are stuck between his bare
+toes and are becoming crusty. 
+~
+abdh 0 0 X
+55 30 -10 27d27+30000
+0 80000
+8 8 1 3 0 4
+T 20 3d6+1 0
+A 15 8 Krylt the Goblin Baker rubs his nose quickly and continues baking.
+A 1 8 Krylt the Goblin Baker scratches his crotch, then resumes work.
+#15162
+jaka goblin armorer~
+Jaka the Goblin Armorer~
+Jaka the Goblin Armorer is pounding away at molten steel here.
+~
+Jaka the Goblin Armorer seems darkened by the intense heat of the molten 
+metals. Sweat and puss from heat blisters ooze down his forehead and neck.
+~
+abdh 0 0 X
+55 30 -10 27d27+30000
+0 80000
+8 8 1 3 0 4
+T 20 3d6+1 0
+A 15 8 Jaka the Goblin Armorer wipes his swollen face with a dirty rag.
+A 10 8 Jaka the Goblin Armorer pounds at a piece of steel.
+#15163
+scrayk goblin weaponsmith~
+Scrayk the Goblin Weaponsmith~
+Scrayk the Goblin Weaponsmith is sharpening spears here.
+~
+Scrayk the Goblin Weaponsmith is busy sharpening spears and setting them 
+out on display. His scarred hands reveal the many mistakes he has made with
+the metal over the years. One long scar across his cheek remains from his
+glorious days of warring.
+~
+abdh 0 0 X
+55 30 -10 27d27+30000
+0 80000
+8 8 1 3 0 4
+T 20 3d6+1 0
+A 15 8 Scrayk the Goblin Weaponsmith sharpens a spear repeatedly.
+A 10 8 Scrayk the Goblin Weaponsmith daydreams of his return to war.

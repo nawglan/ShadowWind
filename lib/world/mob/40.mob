@@ -1,0 +1,193 @@
+#4000
+snake~
+the snake~
+A large dreadful snake is at your feet, hissing at you.
+~
+It looks hungry.
+~
+adg d -200 X
+6 17 7 3d3+60
+0 2400
+8 8 0 12 14 1
+T 100 1d4+2 22
+E -1 100 4001 1
+#4001
+snake~
+the green snake~
+{GA small bright green snake is here, slithering around.{x
+~
+It looks harmless.
+~
+adg 0 -100 X
+8 16 6 4d4+80
+0 3500
+8 8 0 12 14 1
+T 100 2d4+0 22
+#4002
+centipede~
+the centipede~
+{gA small centipede is here, making its way across the floor.{x
+~
+It looks completely harmless.
+~
+dg 0 100 X
+6 17 7 3d3+60
+0 2400
+8 8 0 12 14 1
+T 100 1d4+2 22
+#4003
+kobold~
+the kobold~
+{yAn ugly kobold is here, roaming around.{x
+~
+It looks ugly.
+~
+cdg 0 -100 X
+8 16 6 4d4+80
+0 3500
+8 8 0 3 13 3
+T 100 1d6+2 0
+#4004
+orc~
+the orc~
+{DAn ugly orc is here groping around in the dim light.{x
+~
+You notice an evil look in his eyes...
+~
+cdg 0 -400 X
+10 15 5 5d5+100
+0 5000
+8 8 1 3 13 3
+T 100 2d4+2 0
+#4005
+orc~
+the orc~
+{DA large orc is here, snarling visciously at you.{x
+~
+He looks dreadful.
+~
+cdg z -500 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 13 4
+T 100 2d6+3 0
+E 2 50 4000 -1
+#4050
+warrior~
+the warrior~
+{yA tall warrior is here, scanning the area.{x
+~
+He seems to be a strong, brainless fighter.
+~
+cdg 0 -300 X
+20 12 0 10d10+200
+0 25000
+8 8 1 3 1 3
+T 50 3d6+2 0
+E 6 50 4051 -1
+#4051
+warrior~
+the warrior~
+{yA battle scarred warrior stands astride.{x
+~
+He seems to know his way with weapons.
+~
+cdg 0 -400 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d6+3 0
+#4052
+hobgoblin goblin small~
+the hobgoblin~
+{yA small hobgoblin is here, ferreting about in the darkness.{x
+~
+The hobgoblin looks quite lost.
+~
+cdg 0 -300 X
+12 14 4 6d6+120
+0 7500
+8 8 1 3 1 3
+T 100 2d4+4 0
+#4053
+snake~
+the snake~
+{yA small brown snake watches you.{x
+~
+The snake looks quite mean.
+~
+adg 0 -600 X
+10 15 5 5d5+100
+0 5000
+8 8 0 12 14 2
+T 100 2d4+2 22
+#4054
+centipede~
+the centipede~
+A white centipede scuttles through the dirt.
+~
+The centipede doesn't really seem to notice you.
+~
+dg 0 -100 X
+6 17 7 3d3+60
+0 2400
+8 8 0 12 14 2
+T 100 1d4+2 22
+#4055
+hobgoblin goblin large~
+the hobgoblin~
+{yA large looking hobgoblin stands here, annoyed at your presence.{x
+~
+The hobgoblin looks quite dangerous.
+~
+cdg 0 -500 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 4
+T 100 3d4+3 0
+E 17 20 4050 5
+#4056
+orc~
+the orc~
+{DA nasty looking orc is here, scavenging for something to eat.{x
+~
+Well, he doesn't seem to be friendly.
+~
+cdg 0 -800 X
+16 13 2 8d8+160
+0 12500
+8 8 1 3 13 3
+T 100 2d6+3 0
+#4057
+lion mountain~
+the mountain lion~
+{yA mountain lion is here, growling at you viciously.{x
+~
+The lion looks very nasty with huge claws and big teeth.
+~
+dfg k -100 X
+20 12 0 10d10+200
+0 25000
+8 8 1 4 14 4
+T 100 3d6+2 22
+#4058
+giant hill~
+the hill giant~
+{yA hill giant is here, tossing some rocks around.{x
+~
+The hill giant looks like he's about 9 feet tall.  By his actions you 
+come to the conclusion that he's not very intelligent.
+~
+bdfgl k 0 X
+40 5 -10 20d20+400
+0 150000
+8 8 1 6 3 4
+T 100 10d6+20 0
+>rand_prog 2~
+mphuntrm 4044
+~
+>all_greet_prog       100~
+mpdelay 5
+say FOOD!
+~
+|

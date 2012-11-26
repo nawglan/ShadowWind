@@ -1,0 +1,1716 @@
+#5000
+Outskirts of a Thick Forest~
+   Leading into the Darken Wood, this cobblestone path was obviously built 
+centuries ago for merchant travel. The colorful rock that had been shaped to fit
+into a larger jigsaw puzzle has been shattered and broken, dug up and scratched 
+by the elements and vagabonds.  To the west the sheer wall of a cliff rises 
+straight up. This path also leads to the north, where the cobblestones fade into
+lighter forest.
+~
+50 c 3
+D0
+The path leads north into the mountains.
+~
+~
+0 0 5000 0
+D2
+The trail continues to the south.
+~
+~
+0 0 5001 0
+E
+cliff~
+The cliff is too steep to climb.~
+S
+#5001
+Entrance of the Forsaken Forest~
+   A grand steel gate arches over you, through the branches and leaves.  Though 
+rusted, the iron bars that make up the gate still stand in firm defiance of 
+sieges or invasions. Overhead, figures have been sculpted into the metal, their 
+leering shapes serving as a warning to all.
+~
+50 0 3
+D0
+The trail continues to the north.
+~
+~
+0 0 5000 0
+D2
+The trail continues to the south.
+~
+~
+0 0 5004 0
+E
+figures~
+A tale is told by the simple graven figures and depictions.  The
+Empires Paladins hold the fell beasts at bay allowing the mages and
+druids to sacrifice one of their own . The last of the shadowspawn are
+entrapped by the wood as the gate is erected as the capstone of the magic
+of Darken Wood.
+~
+E
+runes~
+As you study the runes you remember a tale.  A tale told by old men
+around the fire on long winters nights of a time when the choice between
+good and evil was clear.  A tale of the triumph of the Paladins of Taranth.
+
+Dark was the day     in the dawn before battle.
+wild the wind as it     howled through the wood.
+grim were the warriors     grinding their spear points,
+gray was the horse whose     hooves rode the wind.
+Ravens were gathered     to watch the grim reaving,
+wolves waited in wood for     the feast that fell.
+Up, on Taranth's warriors!     weapons shall give you
+meat for your merriment     mead running red.
+
+Hosts of these fell beasts    harried our homeland
+Evil's growing might     ruthless foe to the free.
+Fire and horn call     our folk to the wood
+the day was dawn for our folk,     or else it was doom!
+~
+E
+steel~
+Ringed by runes, three panels of sculpted figures portray an epic tale.
+~
+E
+gate~
+Ringed by runes, three panels of sculpted figures portray an epic tale.
+~
+S
+#5002
+The Vast Forest~
+   Many breezes, cool and sweet, rush through the trees and leaves, into the
+forest deep. Silence. The sound of life is heard, the minute sounds of movement,
+the low growls of hungry beasts. Turning about, you sense that something is
+following you, watching with eyes half-closed and yellow like the sun.
+~
+50 0 3
+D1
+Forest, deep and dark
+~
+~
+0 0 5003 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5008 0
+S
+#5003
+The Vast Forest~
+   You are really deep into the forest now. If this forest were any deeper it
+would be an ocean, an elven philsopher. You try really hard and stare into the
+trees, through the trees, about the trees. You see alot of neat stuff -- like
+trees. As a matter of fact, you feel like this whole scene is a mere mockery off
+itself and your existence.
+~
+50 0 3
+D1
+Forest, deep and dark
+~
+~
+0 0 5004 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5009 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5002 0
+S
+#5004
+Darken Paths Which Are Followed~
+   The crooked trees, their twisted branches reaching into the stale breeze,
+crowd together. Here the vast forest of the Darken Wood begins. The
+undergrowth, the scab-covered saplings all touch each other, clinging, until
+they have formed a crude rounded portal through which one may enter into the
+forest. Patrially buried, lost over the centuries, a loosely-packed trail
+leads into the blackness and the shadows.  
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5001 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5005 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5010 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5003 0
+S
+#5005
+The Vast Forest~
+The great rush of a storm wind howls through the trees like a wolf,
+sending raven-black clouds scudding along as swiftly as the galloping of
+an eight-legged shadow steed.  With the wind comes the rain, a gray
+waterfall from the sky that tastes of wine or mead, mysterious, magical,
+and the flickering, fiery laughter of the lightning.
+~
+50 0 3
+D1
+Forest, deep and dark
+~
+~
+0 0 5006 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5011 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5004 0
+S
+#5006
+The Vast Forest~
+Barely audible to human ears, comes the shrill death cry of a mouse - a
+true mouse, no witch's fetch - and, a few moments later, the triumphant
+hoot of an owl; a case of victim and victor here in Darken Wood.
+~
+50 0 3
+D1
+Forest, deep and dark
+~
+~
+0 0 5007 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5012 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5005 0
+S
+#5007
+The Vast Forest~
+   You are really deep into the forest now. If this forest were any deeper it 
+would be an ocean, an elven philsopher. You try really hard and stare into 
+the trees, through the trees, about the trees. You see alot of neat stuff -- 
+like trees. As a matter of fact, you feel like this whole scene is a mere 
+mockery of itself and your existence.
+~
+50 0 3
+D2
+Forest, deep and dark
+~
+~
+0 0 5013 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5006 0
+S
+#5008
+Deep in the Forest~
+   Surprisingly this section of the Darken Wood looks to be just another area 
+filled with trees and scents. As a matter of fact, based on elvish lore and the 
+creation of the world, you feel that the gods just grew bored with making 
+something completely original and decided to be lazy.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5002 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5009 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5014 0
+S
+#5009
+Deep in the Forest~
+   The trees they whisper with their own sweet breath, words floated across 
+their fragrant fruits. The upturned mud is at their feet; held down and still 
+by magicked roots. Deep in the Darken Wood you wander yet, each step headed 
+into the night. Once you reach your point of quest, only then you shall see 
+daylight.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5003 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5010 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5015 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5008 0
+S
+#5010
+A Forsaken Trail~
+   Winds scatter the leaves that have fallen to the ground, whispering in their 
+riddled runes to the earth. Smoothed pebbles of light, droplets netted from the 
+sky, tumble into the scene and chase away the shadows meandering through the 
+forest with malicious intent. In the black night, even the day, this trail is 
+never quite peaceful enough to travel on.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5004 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5011 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5016 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5009 0
+S
+#5011
+Deep in the Forest~
+   A blanket of sadness, thick and supporting the misery of hundreds of years 
+of pain and drought, envelops the trees in its stifling warmth.  Even though the
+undergrowth is of a healthy green, and the air is cool with the taintings of the
+upcoming seasons, what little peace one might have found here has been 
+vanquished by its possessors. To the south the cobblestone ruins of a street 
+lead into the shadows, its destination entirely forgotten to mortal minds. Here 
+the bards waxed poetic of the gods' playing grounds, deep in the Darken Wood 
+away from the rigid rules of society. Yet, those days have long passed.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5005 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5012 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5017 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5010 0
+S
+#5012
+Deep in the Forest~
+Pausing a while under the outstretched branches, you fade into a troubled
+sleep.  You dream of dark green lines of earth-strength thrumming up from
+the roots of the gnarled trees and bushes, the cruel, white face of the
+Birch-Maiden whose touch drives men mad, the cold dark glitter of the
+dreaming adder under a boulder, and the faint fiery flashes of
+will-o'-the wisps drawing nearer, gathering to a hidden figure.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5006 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5013 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5018 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5011 0
+S
+#5013
+The Vast Forest~
+You are really deep into the forest now.  If this forest were any deeper
+it would be an ocean, an elven philsopher.  You try really hard and stare
+into the trees, through the trees, about the trees.  You see alot of neat
+stuff -- like trees.  As a matter of fact, you feel like this whole scene
+is a mere mockery of itself and your existence.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5007 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5019 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5012 0
+S
+#5014
+Dark Passage~
+   Bits of shell, colored pink and yellow, lie scattered across the dark and 
+fertile soil of the Darken Wood. Overhead the trees rise far into the clouded 
+sky, their shadowed branches shivering as if they were ill. Far to the east, 
+against the clouds, a column of spiralling light and smoke lazily drifts 
+upwards. A golden roadway of some mystical force, the light lances the very 
+bottom of the moon, which can be made out through the dense stormclouds.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5008 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5015 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5020 0
+D3
+Forest, wet, deep and dark
+~
+~
+0 0 5040 0
+S
+#5015
+Darken Trail~
+   For a second, as you move along this trail, the leaves of the trees glisten 
+like diamonds, drops of dew seemingly crystalizing. A puff of air rushes by 
+you, cool and sweet, as the diamonds shiver against each other.  The tinkling 
+of bells fills the thick forest, as the magical tapestry is woven through the 
+bark and soil. Overhead the skies finally die away into a dismal grey, the 
+summer blue, that taints even the night's sky, no longer present. The shadows 
+of the Darken Wood obscure the overgrown trail, which leads to the west and 
+east.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5009 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5016 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5021 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5014 0
+S
+#5016
+Stone Fork~
+   The trail splits in two directions, each branch twisting through the 
+undergrowth and about the sickly trunks. In the middle of the path, embedded 
+in a lichen-discolored boulder, a rusted sword catches what little light enters
+the forest.  Almost overgrown by the plant life, the trails are still clearly 
+marked. To the west the sound of water dances, its music almost stilled by the 
+forest's rasping breath.  From the north and east, both branches rising then 
+dipping suddenly, no sounds can be heard.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5010 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5017 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5022 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5015 0
+E
+sword~
+Battered, rusted, and useless the sword stands silent.  But while the
+sword is mute, tales have travelled down the slope of time.  A childrens
+rhyme tells of the passing of Gblon the Stone Giant, impaled through the
+breast with a mighty sword.  Perhaps this may be the spot, but reality
+pulls you back to contemplate a rusted sword in an old stone.
+~
+S
+#5017
+Darken Path~
+   The green grass crowds against the tree trunks, as if an army the size of 
+the land itself laying seige. The callous fingers of darkness, sometimes thick
+and crude, have now given way to that of satin and velvet. In the shadows, 
+within the deep background of the forest, shapes move through the undergrowth, 
+following their own primitive paths. Kneeling to the soft earth you note a 
+series of large footprints running from the west to the east. As you stand, the 
+lonely howl of a wolf clambers up your spine and lies there, waiting to offer 
+you fear.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5011 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5018 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5023 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5016 0
+S
+#5018
+Darken Path~
+   A blob of fog, thick and swarming, soft and cool, sweeps through this area.
+As the tree branches dip slightly, their leaves glistening from beads of dew, 
+you hear the ghostly harps of bards that have travelled these forlorn paths. 
+Strips of the clouds break away, long strands the texture of dreams drifting 
+about you.  As if dancing to the music about, the very voices that thread their
+way through the jutting roots, the bits of fog twirl into magical tornados that
+leap and hop to the spectral fingers that pluck an enchanting beat.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5012 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5019 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5024 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5017 0
+S
+#5019
+Deep Paths~
+   Perhaps in the darkness of night, when the stars have finally pounced into 
+the sky, the forest would cease to change.  The trees, the canopy far overhead, 
+prevent any light from seeping through to the wet earth.  The trees shiver in 
+the warm breezes as if they so desire to feel the sun's warmth on their moldy 
+bark; but the Darken Wood has maintained its infamous reputation of lifelessness
+through some means - Most likely magical.  Carefully, if you peer so to the 
+east, you note the faint outline of what appears to be the skeleton of a wooden 
+cart.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5013 0
+D1
+Forest, light and safe?
+~
+~
+0 0 5041 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5025 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5018 0
+S
+#5020
+Deep in the Forest~
+   The trees they whisper with their own sweet breath, words floated across 
+their fragrant fruits. The upturned mud is at their feet; held down and still 
+by magicked roots. Deep in the Darken Wood you wander yet, each step headed 
+into the night. Once you reach your point of quest, only then you shall see 
+daylight.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5014 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5021 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5026 0
+S
+#5021
+The Vast Forest~
+   Many breezes, cool and sweet, rush through the trees and leaves, into the 
+forest deep. Silence. The sound of life is heard, the minute sounds of movement,
+the low growls of hungry beasts. Turning about, you sense that something is 
+following you, watching with eyes half-closed and yellow like the sun.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5015 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5022 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5027 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5020 0
+S
+#5022
+The Vast Forest~
+   You are really deep into the forest now. If this forest were any deeper it 
+would be an ocean, an elven philsopher. You try really hard and stare into the 
+trees, through the trees, about the trees. You see alot of neat stuff -- like 
+trees. As a matter of fact, you feel like this whole scene is a mere mockery of
+itself and your existence.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5016 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5023 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5028 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5021 0
+S
+#5023
+Deep in the Forest~
+  Sunlight gives way to shadow as the ground dips and wide-spaced birches
+are replaced with denser, older trees.  Ash and beech and oak fill this broad 
+bowl, the timber spreading up to the sides, heavy boughs thrusting out
+attempting hide the sky.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5017 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5024 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5029 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5022 0
+S
+#5024
+Darken Path~
+   Evening skies, gray and sultry, are the colors of the Darken Wood, merging 
+into night. Through your mind flashes the decrepit images of ancient trees 
+standing tall, blotting out the dying vegetation, the life that seeks to prosper
+here. Into the darkness, the trail threads eastward through trampled weeds. 
+Looking north, you note the muddy path tends to disappear, losing itself in the
+shadows. There, you realize, hides what dangers have made this forest so feared.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5018 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5025 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5030 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5023 0
+S
+#5025
+Deep in the Forest~
+  There is a solemnity to the forest, the air still, cut through with occasional
+shafts of brightness, prompting you to think of uncomfortably of a temple,
+its dark interior lit only by the high, narrow windows,  Bird song is a distant
+chorus, dimmed, it seems, by the bulk of the great trees.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5019 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5031 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5024 0
+S
+#5026
+Deep in the Forest~
+   Surprisingly this section of the Darken Wood looks to be just another area 
+filled with trees and scents. As a matter of fact, based on elvish lore and the 
+creation of the world, you feel that the gods just grew bored with making 
+something completely original and decided to be lazy.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5020 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5027 0
+S
+#5027
+Deep in the Forest~
+   The trees they whisper with their own sweet breath, words floated across 
+their fragrant fruits. The upturned mud is at their feet; held down and still by
+magicked roots. Deep in the Darken Wood you wander yet, each step headed into 
+the night. Once you reach your point of quest, only then you shall see daylight.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5021 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5028 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5035 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5026 0
+S
+#5028
+The Vast Forest~
+   You are really deep into the forest now. If this forest were any deeper it 
+would be an ocean, an elven philsopher. You try really hard and stare into the 
+trees, through the trees, about the trees. You see alot of neat stuff -- like 
+trees. As a matter of fact, you feel like this whole scene is a mere mockery of
+itself and your existence.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5022 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5029 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5036 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5027 0
+S
+#5029
+Deep in the Forest~
+   A blanket of sadness, thick and supporting the misery of hundreds of years of
+pain and drought, envelops the trees in its stifling warmth.  Even though the 
+undergrowth is of a healthy green, and the air is cool with the taintings of the
+upcoming seasons, what little peace one might have found here has been 
+vanquished by its possessors. To the south the cobblestone ruins of a street 
+lead into the shadows, its destination entirely forgotten to mortal minds. Here 
+the bards waxed poetic of the gods' playing grounds, deep in the Darken Wood 
+away from the rigid rules of society. Yet, those days have long passed.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5023 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5030 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5037 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5028 0
+S
+#5030
+Darken Path~
+   Evening skies, gray and sultry, are the colors of the Darken Wood, merging 
+into night. Through your mind flashes the decrepid images of ancient trees 
+standing tall, blotting out the dying vegetation, the life that seeks to prosper
+here. Into the darkness, the trail threads eastward through trampled weeds. 
+Looking east, you note the muddy path tends to disappear, losing itself in the 
+shadows. There, you realize, hides what dangers have made this forest so feared.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5024 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5031 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5029 0
+S
+#5031
+A Crumbling Path~
+   Dying trees with their grey bark peeling away in long strips line this path. 
+Rising some two hundred feet off the forest floor, the dead branches shiver in 
+the breezes, as a bird settles on its limbs.  There is no canopy here to protect
+the forest floor from the sun and moonlight and the path continues to the west 
+where if fades into obscure gloom cast by the trees. Eastwards the path leads 
+into a naturally formed cave.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5025 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5032 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5030 0
+S
+#5032
+The Caves of the Wind~
+   The cold clammy air engulfs your body as you enter this cave.  You hear faint
+drops of water all around you. The walls are close and tight, the ceiling low. 
+The ground shakes slightly, sending small rock fragmenst rolling.  Small spiders
+skitter around, avoiding your existence. Your blood chills as the wind howls 
+painfully, nearly tossing you to the ground. The only bit of light is a small 
+beam, seeping in from outside. The sounds of movement fill the cave, making your
+heart pound faster.
+~
+50 0 3
+D1
+Caves, dark and dry
+~
+~
+0 0 5033 0
+D2
+Caves, dark and dry
+~
+~
+0 0 5042 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5031 0
+S
+#5033
+The Caves of the Wind~
+   As you continue deeper into the cave, strange sounds fill the air. You hear 
+the unnatural sounds of an unfamiliar beast. The ground shakes, and rumbles, 
+making it difficult to stay upright. Off to the north, you see  a dim, blue 
+glow. A putrid smell fills the air, twisting your stomach.
+~
+50 0 3
+D0
+A hollow echoing empty space
+~
+~
+0 0 5034 0
+D3
+Caves, dark and dry
+~
+~
+0 0 5032 0
+S
+#5034
+Cavern of the Wind~
+   As you walk into this vast cavern the glitters is so great that you have to 
+shield your eyes for several seconds before they finally become accustomed to 
+the brilliance. Gemlike stalactites and stalgmites, looking much like the jagged
+teeth of some great beast, dot the cavern. The faceted walls reflect themselves 
+again and again, an infinity of cold, gleaming beauty.  Some subterranean source
+of heat buried deep beneath turns the chamber into an oven. The floor is made of
+crystal of a reddish tinge which contrasts eerily with the haunting sounds of 
+the captured breezes.
+~
+50 0 3
+D2
+Caves, dark and dry
+~
+~
+0 0 5033 0
+S
+#5035
+The Vast Forest~
+The great rush of a storm wind howls through the trees like a wolf,
+sending raven-black clouds scudding along as swiftly as the galloping of
+an eight-legged shadow steed.  With the wind comes the rain, a gray
+waterfall from the sky that tastes of wine or mead, mysterious, magical,
+and the flickering, fiery laughter of the lightening.
+
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5027 0
+D1
+Forest, deep and dark
+~
+~
+0 0 5036 0
+S
+#5036
+Deep Forest~
+   Colors, once beautiful shades of nature have now become dull.  Once radiant 
+leaves and flowers have ceased to bloom; they have ignored the year's seasons. 
+High above you a bird twitters away, what should be a song full of melodius 
+passion being a crude and primitive series of croaks.  After the horrifying 
+concert ends all is still, as if the forest lapsed neatly into a sleep full of 
+nightmares.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5028 0
+D1
+A field
+~
+~
+0 0 5037 0
+D2
+Forest, deep and dark
+~
+~
+0 0 5038 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5035 0
+S
+#5037
+Ruins~
+   Lost in the weeds and wild blooms that peer upwards from the unruly 
+undergrowth, the cracked and weathered stones of an ancient street still lie 
+half-immersed in the soil. Carved runes, thick lines chiseled into granite, are
+still visible, their meanings lost, but spirit retained.  As slender tendrils of
+fog coil about the saplings' waists, you fear that in the haze the ghosts of 
+those long dead shall appear. The howl of a wolf answers your fears, and the 
+winds pick up slightly.  In a dream, stumbling across the cobblestone, each 
+thought slips from your mind as you make your way through the Darken Wood.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5029 0
+D2
+Forest, deeper and darker
+~
+~
+0 0 5039 0
+D3
+Forest, deep and dark
+~
+~
+0 0 5036 0
+S
+#5038
+Darken Woods~
+   The green grass crowds against the tree trunks, as an army the size of the 
+land itself laying seige. The callous fingers of darkness, sometimes thick and 
+crude, have now given way to that of satin and velvet. In the shadows, within 
+the deep background of the forest, shapes move through the undergrowth, 
+following their own primitive paths.  Kneeling to the soft earth you note a 
+series of large footprints running from the west to the east. As you stand, the
+lonely howl of a wolf clambers up your spine and lies there, waiting to offer 
+you fear.
+~
+50 0 3
+D0
+Forest, deep and dark
+~
+~
+0 0 5036 0
+S
+#5039
+Grotto~
+   This small alcove is walled by a lush barrier of foliage that has clung to 
+the surrounding trees as it rose upwards. Overhead you can hear the twittering 
+of a songbird, its voice weak and raspy as if dying from some cancer. Resting 
+for a moment, you feel your boots sink into the soft mud. To the north, the only
+exit, an open field is blanketed by a thick carpet of flowers and weeds through
+which broken marble sticks up like old bones.
+~
+50 0 3
+D0
+A field
+~
+~
+0 0 5037 0
+S
+#5040
+A Small Pond~
+   Quiet ripples run ashore, across the waves of red mud that your feet sink 
+into. Thin and wispy reeds line the shore of this small pond,the cool breeze 
+slipping through their hollows and making them sing with whispering cries. A 
+turtle moves across the pond, its green shell glistening, as the white lake 
+dwellers lift off into flight at the slightest rustle of the undergrowth.
+~
+50 0 3
+D1
+Forest, deep and dark
+~
+~
+0 0 5014 0
+S
+#5041
+Dark Forest~
+   Pushed to the side of the trail, partially buried in the thick mud, the 
+skeleton of a wooden cart has been forced to suffer the elements.  Thick pieces
+of leather lie rotting in a bed of weeds and fungal blooms. Further off the 
+trail a few crates have been shattered, planks of wood sticking upward like make
+shift tombstones. The saplings that surround you, their slender figures arching 
+gracefully against each other, are crowned with green leaves. 
+~
+50 0 3
+D3
+Forest, deep and dark
+~
+~
+0 0 5019 0
+S
+#5042
+Dark Cave~
+ Rock walls stretch over your head, your sky, your horizon, your tomb.
+The ground shakes slightly, sending small rock fragments rolling.
+Small spiders skitter around, avoiding your existence.
+~
+50 a 3
+D0
+Lighter caves
+~
+~
+0 0 5032 0
+D2
+Dark caves
+~
+~
+0 0 5043 0
+S
+#5043
+Picture room~
+Drab hues of brown and gray adorn the granite walls, with an occasional
+patch of white made visible by the flickering light you provide. Simple etchings 
+show pictographic representations of various beasts.  Dark brown marks, quite 
+possibly blood, stain the areas within and immediately surrounding the etchings,
+perhaps there as talismen to ward off or warn of these creatures.
+~
+50 a 3
+D0
+Dark caves
+~
+~
+0 0 5042 0
+D2
+Dark caves
+~
+~
+0 0 5044 0
+S
+#5044
+Dark cave~
+You stand on a ledge in a seris of nearly vertical caves and passages,
+far below the dark forest.  No roots penetrate the unworkedstone walls 
+which surround you.  You think you hear the faint sounds ofrunning water,
+but are unable to tell with surety.
+~
+50 a 3
+D0
+dark caves 
+~
+~
+0 0 5043 0
+D4
+A dark shaft
+~
+~
+0 0 5045 0
+D5
+A dark shaft
+~
+~
+0 0 5046 0
+S
+#5045
+Below the Rocks and Roots~
+You stand on a ledge in a seris of nearly vertical caves and passages,
+far below the rocky, windblown hilltop.  No roots penetrate the unworked
+stone walls which surround you.  You think you hear the faint sounds of
+running water, but are unable to tell with surety
+~
+50 a 3
+D4
+Out of the cave
+~
+~
+0 0 5047 0
+D5
+A dark shaft
+~
+~
+0 0 5044 0
+S
+#5046
+Dark Cavern~
+You have reached the floor of a large natural cavern.  All around you,
+rock walls lead to and fro, the silent record of the earth's earliest
+days.  Immense slabs of rock jut out from the northwest and southeast,
+coming within a few feet of meeting one another.
+~
+50 a 3
+D0
+A dark cavern
+~
+~
+0 0 5048 0
+D1
+A dark cavern
+~
+~
+0 0 5050 0
+D2
+A dark cavern
+~
+~
+0 0 5051 0
+D3
+A dark cavern
+~
+~
+0 0 5053 0
+D4
+A dark hole
+~
+~
+0 0 5044 0
+S
+#5047
+Root Cave~
+You stand in a dark, rocky cave.  Immense slabs of rocky jut out from the
+walls in all directions, and huge masses of roots crisscross the cave,
+their gnarled mass anchoring the trees above the surface.  A gap between
+two roots leads yet further downward into darkness.  A steep incline
+leads up out of the cave.
+~
+50 a 3
+D4
+A steep incline leads up
+~
+~
+0 0 5054 0
+D5
+A dark hole
+~
+~
+0 0 5045 0
+S
+#5048
+Dark Cavern~
+You stand in a dark subterranean cavern, its rough surfaces seemingly
+untouched by any force other than nature.  The air is stale and cool.
+~
+50 a 3
+D1
+A dark cavern
+~
+~
+0 0 5049 0
+D2
+A dark cavern
+~
+~
+0 0 5046 0
+S
+#5049
+Dark Cavern~
+You stand in a dark subterranean cavern, its rough surfaces seemingly
+untouched by any force other than nature.  The air is stale and cool.  A
+shallow pool of water has collected in a low part of the floor here.
+~
+50 a 3
+D2
+A dark cavern
+~
+~
+0 0 5050 0
+D3
+A dark cavern
+~
+~
+0 0 5048 0
+S
+#5050
+Dark Cavern~
+You stand in a dark subterranean cavern, its rough surfaces seemingly
+untouched by any force other than nature.  The air is stale and cool.  A
+few dark branches and stones have been collected against the east wall.
+~
+50 a 3
+D0
+A dark cavern
+~
+~
+0 0 5049 0
+D3
+A dark cavern
+~
+~
+0 0 5046 0
+S
+#5051
+Dark Cavern~
+You stand in a dark subterranean cavern, its rough surfaces seemingly
+untouched by any force other than nature.  The air is stale and cool.
+~
+50 a 3
+D0
+A dark cavern
+~
+~
+0 0 5046 0
+D3
+A dark cavern
+~
+~
+0 0 5052 0
+S
+#5052
+Dark Cavern~
+You stand in a dark subterranean cavern, its rough surfaces seemingly
+untouched by any force other than nature.  Rocks lie in tumbled heaps and
+the walls are deeply grooved.  The air is stale and cool.
+~
+50 a 3
+D0
+A dark cavern
+~
+~
+0 0 5053 0
+D1
+A dark cavern
+~
+~
+0 0 5046 0
+S
+#5053
+Dark Cavern~
+You stand in a dark subterranean cavern, its rough surfaces seemingly
+untouched by any force other than nature.  The air is stale and cool.
+~
+50 a 3
+D1
+A dark cavern
+~
+~
+0 0 5046 0
+D2
+A dark cavern
+~
+~
+0 0 5052 0
+S
+#5054
+Summit~
+You stand at the summit of a hill, among thickly twisted trees and jagged
+greyish slabs of rock.  All about you, the wooded hills drop below your
+line of sight.  You spy the majestic bulwark of the Marek mountains rising
+to the north and a series of low hills falling away to the south and west.  A dark
+crevice leads down among the rock slabs.
+~
+50 c 4
+D1
+Winding trail
+~
+~
+0 0 5055 0
+D5
+Sloping crevice
+~
+~
+0 0 5047 0
+S
+#5055
+Faint Track through Lightly Wooded Hills~
+The track crosses leading west and south.  Tall elm trees border the clearing,
+their stout limbs rising high above the ground.  To the north, a steep slope
+gives you pause.
+~
+50 0 3
+D2
+Winding trail
+~
+~
+0 0 5056 0
+D3
+Winding trail
+~
+~
+0 0 5054 0
+S
+#5056
+Faint Meadow Track Bend~
+A steep rise to the east and a vertical drop to the south turn the trail
+to the north and west.  A few patches of clover and tufts of a shorter,
+brown grass grow in the rocky clefts near the edge of the cliff.
+~
+50 0 3
+D0
+Winding trail
+~
+~
+0 0 5055 0
+D3
+Winding trail
+~
+~
+0 0 5057 0
+S
+#5057
+Small Grove~
+You stand inside a small grove of birch trees.  A faint path winds
+between their thin trunks, leading roughly east and west.  A rocky ridge
+rises up to the north to prevent your passage, while to the south the
+ground leads downward, toward a hedge of thorny bushes.
+~
+50 0 3
+D1
+Winding trail
+~
+~
+0 0 5056 0
+D3
+Winding trail
+~
+~
+0 0 5058 0
+S
+#5058
+Faint Meadow Track~
+A narrow path runs from a birch grove to the east through the meadow and
+off to the west, following the rim of the southern edge of the hill. Looking 
+south, the hills tumble down toward the valley floor in a mass of rocks and 
+choked vegitation.  A single dead tree grows among the tall grass of the 
+meadow.
+~
+50 0 3
+D0
+Forest meadow
+~
+~
+0 0 5065 0
+D1
+Winding trail
+~
+~
+0 0 5057 0
+D3
+Forest meadow
+~
+~
+0 0 5059 0
+S
+#5059
+Meadow Fork~
+The tall grasses thin out to the south here, near the rim of a periously
+steep drop to the south.  Below you, the slope descends in a headlong
+rush toward the valley floor.  Small dirt paths lead north, east and west
+through the grass.
+~
+50 0 3
+D0
+Forest meadow
+~
+~
+0 0 5064 0
+D1
+Winding trail
+~
+~
+0 0 5058 0
+D3
+Forest meadow
+~
+~
+0 0 5060 0
+S
+#5060
+Faint Meadow Track ~
+The trail follows the soft earth into a grassy meadow.  A steep, rocky
+rise prevents movement to the south, while the tall grasses continue to
+the north and east.
+~
+50 0 3
+D0
+Forest meadow
+~
+~
+0 0 5063 0
+D1
+Winding trail
+~
+~
+0 0 5059 0
+D3
+Forest meadow
+~
+~
+0 0 5061 0
+S
+#5061
+Rocky Trail ~
+The trail leads east and south here, making its way slowly through the
+rough, rocky terrain.  A sheer drop to the west reveals a small spring at
+the base of the cliff.  To your north, another rock wall rises high above
+your head; at its top you see a canopy of green.  A small path winds its
+way up between the rocks to the north.
+~
+50 0 3
+D0
+Path
+~
+~
+0 0 5062 0
+D1
+Meadow path
+~
+~
+0 0 5060 0
+D2
+Rocky trail
+~
+~
+0 0 5066 0
+S
+#5062
+Edge of a Gorge ~
+A stand of regal oaks cling to the edge of a steep gorge.  Their gnarled
+roots dig into the rocky soil along the lip of the chasm, the ground
+suddenly plunging downward toward the rocky floor far below.  A single
+tree has fallen, the victim of a recent valley storm, and now lies nearly
+horizontal,  almost spanning the gorge. A deep, gaping hole signals where
+ the tree once stood.
+~
+50 0 3
+D1
+Meadow
+~
+~
+0 0 5063 0
+D2
+Rocky trail
+~
+~
+0 0 5061 0
+S
+#5063
+Meadow~
+The grass continues here, growing right up to the foot of a rocky rise
+to the north.  A few ferns and low-growing bushes cover a slope which
+rises up to the west.
+~
+50 0 3
+D0
+Wooded hills
+~
+~
+0 0 5069 0
+D1
+A meadow
+~
+~
+0 0 5064 0
+D2
+A meadow
+~
+~
+0 0 5060 0
+D3
+A meadow
+~
+~
+0 0 5062 0
+S
+#5064
+Faint track~
+A quivering green sea of tall, lush grass surrounds you.  A faint dirt
+track winds through the meadow, heading north and south.
+~
+50 0 3
+D0
+Wooded hills
+~
+~
+0 0 5070 0
+D1
+A meadow
+~
+~
+0 0 5065 0
+D2
+A meadow
+~
+~
+0 0 5059 0
+D3
+A meadow
+~
+~
+0 0 5063 0
+S
+#5065
+Meadow~
+The sea of meadow grass continues in all directions save east.  In that
+direction, a jagged cliff rises up above the meadow, its steep slopes
+covered with a thick tangle of dark brush and weatherworn trees.
+~
+50 0 3
+D0
+Wooded hills
+~
+~
+0 0 5071 0
+D2
+A meadow
+~
+~
+0 0 5058 0
+D3
+A meadow
+~
+~
+0 0 5064 0
+S
+#5066
+Rocky Path~
+Turning away from a sheer cliff to the south, the trail runs north to
+west here.  The view of the valley to the south is stunning as it is set in a
+wide expanse of emerald wilderness.
+~
+50 0 3
+D0
+Winding path
+~
+~
+0 0 5061 0
+D3
+A rocky path
+~
+~
+0 0 5067 0
+S
+#5067
+Rocky Path~
+A narrow, rocky trail leads down a steep slope to the east, and climbs up
+it toward a high outcropping to the west.  The passage of many feet has
+worn a deep groove into the rock underfoot.  At the bottom of a steep
+drop to the south, the narrow stone ribbon of the path moves east and west
+along the valley floor.
+~
+50 0 3
+D1
+Rocky path
+~
+~
+0 0 5066 0
+D3
+A rocky path
+~
+~
+0 0 5068 0
+S
+#5068
+Overlooking the valley~
+A narrow, rocky trail leads down a steep slope to the east, and climbs up
+it toward a high outcropping to the west.  The passage of many feet has
+worn a deep groove into the rock underfoot.  At the bottom of a steep
+drop to the south, the narrow stone ribbon of the path is blocked by a massive
+rockslide.
+~
+50 0 3
+D1
+Rocky path
+~
+~
+0 0 5067 0
+S
+#5069
+Wooded Hills~
+You stand in a rocky section of the hills.  To the east, a small gap
+between a rough outcropping leads downward toward a grassy meadow.  You
+see more open space to the south, while to the north and west thick woods
+cover the hillside.
+~
+50 0 3
+D0
+Cliffs
+~
+~
+0 0 5083 0
+S
+$~

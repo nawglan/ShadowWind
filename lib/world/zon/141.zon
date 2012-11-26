@@ -1,0 +1,83 @@
+#141
+Castle Of The Apocalypse /Dorga/~
+14199 60 2 b
+1 0 25
+1 1 1 1
+0 0 0 0
+1 1 1 1
+1 1 1 1
+6 6 6 6 
+*
+M 0 14109 1 14100     Progrunner
+M 0 14100 1 14101     Gatekeeper
+M 0 14101 10 14152    Rat
+M 0 14101 10 14109    Rat
+M 0 14101 10 14119    Rat
+M 0 14101 10 14127    Rat
+M 0 14101 10 14134    Rat
+M 0 14101 10 14138    Rat
+M 0 14101 10 14141    Rat
+M 0 14101 10 14146    Rat
+M 0 14101 10 14155    Rat
+M 0 14101 10 14160    Rat
+M 0 14102 20 14102    Undead Death Knight
+M 0 14102 20 14107    Undead Death Knight
+M 0 14102 20 14111    Undead Death Knight
+M 0 14102 20 14115    Undead Death Knight
+M 0 14102 20 14120    Undead Death Knight
+M 0 14102 20 14125    Undead Death Knight
+M 0 14102 20 14129    Undead Death Knight
+M 0 14102 20 14133    Undead Death Knight
+M 0 14102 20 14139    Undead Death Knight
+M 0 14102 20 14139    Undead Death Knight
+E 1 14105 1 3         Give Necklace
+M 0 14102 20 14139    Undead Death Knight
+M 0 14102 20 14139    Undead Death Knight
+M 0 14102 20 14143    Undead Death Knight
+M 0 14102 20 14144    Undead Death Knight
+E 1 14106 1 0         Give Eye
+M 0 14102 20 14148    Undead Death Knight
+M 0 14102 20 14149    Undead Death Knight
+M 0 14102 20 14164    Undead Death Knight
+M 0 14102 20 14174    Undead Death Knight
+M 0 14102 20 14182    Undead Death Knight
+E 1 14107 1 5         Give Coat
+M 0 14102 20 14192    Undead Death Knight
+M 0 14103 20 14103    Undead Zombie Footman
+M 0 14103 20 14109    Undead Zombie Footman
+E 1 14108 1 8         Give boots
+M 0 14103 20 14119    Undead Zombie Footman
+M 0 14103 20 14131    Undead Zombie Footman
+M 0 14103 20 14136    Undead Zombie Footman
+M 0 14103 20 14140    Undead Zombie Footman
+M 0 14103 20 14145    Undead Zombie Footman
+M 0 14103 20 14169    Undead Zombie Footman
+M 0 14103 20 14178    Undead Zombie Footman
+M 0 14103 20 14187    Undead Zombie Footman
+M 0 14103 20 14196    Undead Zombie Footman
+M 0 14103 20 14171    Undead Zombie Footman
+M 0 14103 20 14188    Undead Zombie Footman
+M 0 14103 20 14177    Undead Zombie Footman
+E 1 14110 1 14        Give Bracelet Cloud
+M 0 14103 20 14185    Undead Zombie Footman
+M 0 14103 20 14197    Undead Zombie Footman
+M 0 14103 20 14193    Undead Zombie Footman
+M 0 14103 20 14181    Undead Zombie Footman
+E 1 14109 1 2         Give Ring of Mika
+M 0 14103 20 14171    Undead Zombie Footman
+M 0 14103 20 14138    Undead Zombie Footman
+M 0 14104 1 14151     Pestilence
+M 0 14105 1 14163     Famine
+E 1 14129 1 17        Give Key
+M 0 14106 1 14158     War
+E 1 14104 1 17        Give Key
+M 0 14108 1 14153     Death
+D 0 14101 2 2
+D 0 14102 0 2
+D 0 14150 2 2
+D 0 14151 0 2
+D 0 14151 2 2
+D 0 14152 0 2
+D 0 14152 2 2
+D 0 14153 0 2
+S

@@ -1,0 +1,4830 @@
+#20500
+Bottom Of The Mine Shaft~
+   You find yourself in the very heart of Moria. The tunnels are very
+narrow, but carved from the strongest of bedrock. You hear the constant
+drip.. drip.. of water all around you. A loud scream suddenly pierces
+the air, sending an involuntary shiver through you.
+There is a stone sign here.
+~
+205 acd 3
+D0
+The tunnel comes to an abrupt end in a towering rock wall.
+~
+~
+0 0 -1 0
+D1
+The black rock walls glisten with trickling water.
+~
+~
+0 0 -1 0
+D2
+The tunnel continues to the south.
+~
+~
+0 0 20501 0
+D3
+The black rock walls glisten with trickling water.
+~
+~
+0 0 -1 0
+D4
+An old wooden ladder can be seen, climbing up into the darkness.
+~
+~
+0 0 20533 0
+D5
+The solid rock beneath your feet is totally unyielding.
+~
+~
+0 0 -1 0
+E
+credits~
+                            / Created by Maniac /
+                                     1996
+~
+E
+sign stone~
+    ******************************************************
+    *                                                    *
+    *                                                    *
+    *                       WARNING                      *
+    *                                                    *
+    *                      KEEP OUT!                     *
+    *                                                    *
+    *                                                    *
+    *            ALL TRESPASSERS WILL BE SEVERELY        *
+    *                      DEALT WITH                    *
+    *                                                    *
+    *                                                    *
+    *                      BY ORDER OF                   *
+    *                                                    *
+    *                      KING WELMAR                   *
+    *                                                    *
+    *                                                    *
+    ******************************************************
+
+~
+S
+#20501
+A Narrow Tunnel~
+   The tunnel here is very narrow indeed. The edges of the rock are
+razor sharp as they cut through your clothing. To the south, the tunnel
+appears to broaden out a little, whilst to the north you can see the
+mine entrance.
+~
+205 ad 3
+D0
+You can just make out the bottom of the mining shaft.
+~
+~
+0 0 20500 0
+D1
+The rock walls seem to be closing in on you, jagged edges cutting through
+your clothing.
+~
+~
+0 0 -1 0
+D2
+The tunnel broadens out into a much larger tunnel.
+~
+~
+0 0 20502 0
+D3
+The rock walls have large, sharp protrusions, which cut through your
+clothing.
+~
+~
+0 0 -1 0
+D4
+The rock ceiling is about three feet above your head, dripping with mineral
+rich water.
+~
+~
+0 0 -1 0
+D5
+The wet rock floor is totally unyielding to any force you could bring upon
+it.
+~
+~
+0 0 -1 0
+S
+#20502
+The Smooth Tunnel~
+   The tunnel walls here are very smooth. Unlike the surrounding tunnels,
+this looks like it was formed naturally, some time in the dark and distant
+past. A river may have flowed through here in eons gone by, wearing out the
+jagged walls. The tunnel continues to the east and west, whilst another
+tunnel branches off to the north.
+~
+205 ad 0
+D0
+A dark, narrow tunnel extends away in this direction.
+~
+~
+0 0 20501 0
+D1
+The tunnel continues into the distance.
+~
+~
+0 0 20504 0
+D2
+The tunnel wall curves smoothly up towards the ceiling.
+~
+~
+0 0 -1 0
+D3
+The tunnel continues into the distance.
+~
+~
+0 0 20503 0
+D4
+The ceiling curves round to reach its apex about six feet above your head.
+~
+~
+0 0 -1 0
+D5
+The floor has been worn smooth by continual exposure to some fast flowing
+water, sometime in the distant past.
+~
+~
+0 0 -1 0
+S
+#20503
+The Smooth Tunnel~
+   The main tunnel continues to the east and to the west. To the south, a
+small crawlway can be seen, only four feet high. The sound of rushing water
+can be heard echoing from further down the tunnel.
+~
+205 ad 0
+D0
+The smooth tunnel wall arches towards the high ceiling.
+~
+~
+0 0 -1 0
+D1
+The tunnel carries on into the darkness.
+~
+~
+0 0 20502 0
+D2
+A very small crawlway can be seen. To pass that way, you will need to
+stoop over very low.
+~
+~
+0 0 20508 0
+D3
+The tunnel continues this way, and the sound of rushing water seems
+louder.
+~
+~
+0 0 20506 0
+D4
+The apex of the arched ceiling is about six feet above your head.
+~
+~
+0 0 -1 0
+D5
+The floor has been eroded to smoothness by fast flowing water.
+~
+~
+0 0 -1 0
+S
+#20504
+The Smooth Tunnel~
+   The tunnel floor is so smooth here that it's almost like walking on ice.
+Trying to move quickly across this terrain could be quite difficult. The 
+tunnel continues to the east and to the west.
+~
+205 ad 0
+D0
+The wall curves up towards the smooth ceiling above your head.
+~
+~
+0 0 -1 0
+D1
+You can see a junction in the tunnel.
+~
+~
+0 0 20505 0
+D2
+The wall curves up towards the smooth ceiling above your head.
+~
+~
+0 0 -1 0
+D3
+The tunnel extends away into blackness. It is very dark.
+~
+~
+0 0 20502 0
+D4
+Six feet above your head, you see the curved apex of the tunnel.
+~
+~
+0 0 -1 0
+D5
+The floor has been worn so smooth it's like walking on ice.
+~
+~
+0 0 -1 0
+S
+#20505
+The Smooth Tunnel~
+   A large tunnel leads to the south, whilst this tunnel continues to the
+east and to the west. With all these tunnels looking very similar, it starts
+to seem like you are walking around in circles. The sound of rushing water 
+can be heard from the east.
+~
+205 ad 0
+D0
+Some markings, like animal claw marks have been made in the otherwise
+totally smooth rock wall.
+~
+~
+0 0 -1 0
+D1
+The main tunnel continues in this direction, with the sound of rushing
+water getting louder and louder.
+~
+~
+0 0 20506 0
+D2
+If possible, the darkness seems even blacker. A primeval fear sends a
+chill throughout your body.
+~
+~
+0 0 20523 0
+D3
+The tunnel stretches out into blackness.
+~
+~
+0 0 20504 0
+D4
+Peering through the gloom, you see a dark rock ceiling some six feet above
+your head.
+~
+~
+0 0 -1 0
+D5
+The floor is cold, wet and totally solid.
+~
+~
+0 0 -1 0
+S
+#20506
+The Smooth Tunnel~
+   The sound of rushing water is very much louder here. As you look down,
+you notice a very large crack in the rock floor. About twenty feet below
+your boots you can make out a VERY fast flowing river. To attempt to climb
+down the crack to explore would be instant suicide. DO NOT go down !
+~
+205 ad 0
+D0
+The rock wall curves up towards the ceiling.
+~
+~
+0 0 -1 0
+D1
+The tunnel seems to go on forever.
+~
+~
+0 0 20503 0
+D2
+The rock wall curves up towards the ceiling.
+~
+~
+0 0 -1 0
+D3
+A junction in the tunnel can just be made out in the shadows.
+~
+~
+0 0 20505 0
+D4
+High above your head, the walls from both sides curve around to produce a
+curved ceiling.
+~
+~
+0 0 -1 0
+D5
+The river is very fast moving and looks ice cold. The tunnel floor is
+so smooth that you would not be able to retain a grip to safely climb
+down and explore. It would be very foolish to go down.
+~
+~
+0 0 20507 0
+E
+crack floor river~
+The river is very fast moving and looks ice cold. The tunnel floor is
+so smooth that you would not be able to retain a grip to safely climb
+down and explore. It would be very foolish to go down.
+~
+S
+#20508
+The Low Crawlway~
+   Bending over double, you just manage to squeeze your way into this
+crawlway. You continuously clench your fists in pain as you bang your head 
+against the jagged rock ceiling. The crawlway opens out into a large tunnel
+to the north, but continues on to the west.
+~
+205 adi 5
+D0
+The crawlway opens out into a much larger tunnel. You would be glad
+to get out of this cramped space.
+~
+~
+0 0 20503 0
+D1
+Jagged rock thrusts out at you.
+~
+~
+0 0 -1 0
+D2
+Jagged rock thrusts out at you.
+~
+~
+0 0 -1 0
+D3
+The crawlway continues, but looks as though it is getting even lower.
+~
+~
+0 0 20509 0
+D4
+Straining to turn your neck upwards in the cramped space, jagged outcrops of
+rock look perilously close to you.
+~
+~
+0 0 -1 0
+D5
+The floor is very rough and damp. Cold air rises from the ground to chill
+your face to the bone.
+~
+~
+0 0 -1 0
+S
+#20509
+The Even Lower Crawlway~
+   This is ridiculous! The crawlway is only three feet high and you have
+been reduced to moving along on your hands and knees. With all the equipment
+you carry, this is very hard work. Luckily, the crawlway appears to get a
+little higher to the east, or open out into a tunnel to the south. 
+~
+205 adi 5
+D0
+Jagged rocks thrust out of the tunnel walls at you.
+~
+~
+0 0 -1 0
+D1
+The crawlway looks less cramped and a little higher in this direction.
+~
+~
+0 0 20508 0
+D2
+At last, the crawlway opens out into a tunnel again.
+~
+~
+0 0 20510 0
+D3
+Jagged rocks thrust out of the tunnel walls at you.
+~
+~
+0 0 -1 0
+D4
+You are in such a cramped space that its impossible to turn and look
+upwards.
+~
+~
+0 0 -1 0
+D5
+Since you are already on your hands and knees you are in a prime position
+to look in this direction. There is cold, dark, wet rock.
+~
+~
+0 0 -1 0
+S
+#20510
+The Smelly Tunnel~
+   The smell in this tunnel is so bad you feel like retching. It appears to
+be a mixture of decaying flesh and sulphurous gases. Strewn around the floor
+are bones of all kinds, some with a little flesh still on, half-chewed by a
+beast of some kind. The tunnel continues to the east. There is a small hole
+in the far corner with a ladder leading downwards.
+You see a large bone on the ground here.
+~
+205 ad 3
+D0
+Best get down on your hand and knees if you really want to go that way.
+~
+~
+0 0 20509 0
+D1
+A junction in the tunnel can be seen.
+~
+~
+0 0 20511 0
+D2
+The rock wall glistens in the light of your lamp.
+~
+~
+0 0 -1 0
+D3
+The tunnel ends is a black rock wall, rivulets of water trickling down from
+above.
+~
+~
+0 0 -1 0
+D4
+Water slowly seeps through the bedrock above you, splashing down in large
+drops onto the ground.
+~
+~
+0 0 -1 0
+D5
+The floor is covered with bones from some unknown animal, many of which
+still have rotting flesh clinging in places. In the far corner, you can see
+a small hole with a shaky ladder leading down into the darkness.
+~
+~
+0 0 20534 0
+E
+hole ladder~
+The hole has a small, wooden and shaky looking ladder leading down into the
+darkness. Carefully testing your weight on it, it seems to be able to hold
+you safely.
+~
+E
+bone bones flesh~
+Holding your nose to stop you from vomiting, you pick up one of the bones to
+examine it in more detail. Although no biologist, you cant fail to recognise
+it as the femur of a fully grown human. The bite marks running its length
+suggest a wild animal of some kind, perhaps a dog, is responsible for this
+carnage.
+~
+S
+#20511
+The Smelly Junction~
+   The tunnel continues to the east, west and south. The smell seems to be
+getting worst to the south, although if this is possible, you cannot be
+sure.
+~
+205 ad 3
+D0
+The black rock wall glistens with mineral rich water in your lamp-light.
+~
+~
+0 0 -1 0
+D1
+It looks as though the tunnel may come to a dead-end this way.
+~
+~
+0 0 20517 0
+D2
+The tunnel continues in this direction for as far as you can see.
+~
+~
+0 0 20512 0
+D3
+The tunnel continues, the smell maybe lessening.
+~
+~
+0 0 20510 0
+D4
+Looking up into the darkness, you see nothing but empty space above you.
+~
+~
+0 0 -1 0
+D5
+A few old bones litter the floor, the skull bones of which you recognise as
+human, elven and dwarven.
+~
+~
+0 0 -1 0
+S
+#20512
+The Smelly Tunnel~
+   As you take a second to rest up, you hear a strange howling noise in the
+distance. The tunnel continues to the north and south.
+~
+205 ad 3
+D0
+You see a junction in the tunnel.
+~
+~
+0 0 20511 0
+D1
+The black rock walls climb vertically into the darkness above.
+~
+~
+0 0 -1 0
+D2
+The tunnel stretches out this way.
+~
+~
+0 0 20513 0
+D3
+The black rock walls climb vertically into the darkness above.
+~
+~
+0 0 -1 0
+D4
+Looking up into the darkness, nothing can be seen but blackness.
+~
+~
+0 0 -1 0
+D5
+A few pieces of old clothes, torn to rags by some beast, lie scattered
+around.
+~
+~
+0 0 -1 0
+S
+#20513
+A Bend In The Smelly Tunnel~
+   The tunnel suddenly narrows here, but continues to the north and east.
+As you are about to leave, you suddenly see why the tunnel had to change
+direction. The whole south and west walls appear to be made from pure metal.
+As you examine it closer, you see that it is a natural tungsten deposit, one
+of the hardest materials known.
+~
+205 ad 3
+D0
+Guess what? The tunnel continues in this direction.
+~
+~
+0 0 20512 0
+D1
+The tunnel broadens out again. You feel a very faint breeze on your cheek.
+~
+~
+0 0 20514 0
+D2
+This wall is made from a pure deposit of tungsten metal. Harder then rock,
+the miners who hewed this tunnel had to change direction to go around it.
+~
+~
+0 0 -1 0
+D3
+The mirror-like surface of the tungsten deposit shows your reflection as you
+get close to it. You must remember to do something about your hair...
+~
+~
+0 0 -1 0
+D4
+Peering up through the darkness, you can see nothing at all.
+~
+~
+0 0 -1 0
+D5
+The rock contains tiny inclusions of the tungsten metal which look like many
+tiny crystals in the light of your lamp.
+~
+~
+0 0 -1 0
+S
+#20514
+The Smelly Chimney~
+   As you enter, you see a faint chink of light in the ceiling. This must
+be some sort of natural ventilation leading to the upper levels of Moria.
+You only wish it was more effective in eradicating the smell. The tunnel
+continues to the west and south.
+~
+205 d 3
+D0
+The walls here are much drier than those in some of the surrounding tunnels.
+The air that whistles up the chimney must be very effective at drying the
+place out.
+~
+~
+0 0 -1 0
+D1
+The solid rock wall blocks any further progress in this direction.
+~
+~
+0 0 -1 0
+D2
+Bones are piled up in the tunnel to the south.
+~
+~
+0 0 20515 0
+D3
+Squinting into the shadows, you can just see a bend in the tunnel.
+~
+~
+0 0 20513 0
+D4
+At the top of the chimney, you can see a bright light. It looks safe to 
+climb up the chimney using the hand and foot holes gouged in the rock walls
+by the fast moving air stream.
+~
+~
+0 0 4061 0
+D5
+The ground here has been marked with long gashes by the continual passage of
+fast moving air as it starts its climb up the chimney.
+~
+~
+0 0 -1 0
+E
+chimney ceiling ventilation~
+This looks to be some sort of natural hole in the ceiling, stretching far up
+into Moria. The continual passage of fast moving air upwards has gouged
+large cracks in the rock walls, perfect for hand and foot holds. It looks
+safe to carefully climb upwards.
+~
+S
+#20515
+The Smelly Tunnel~
+   The smell here now is unbelievable. You wonder whether you will ever be
+able to wash it off yourself when you leave. Whatever the source of the
+unpleasant odour, its cause must be very close by. The tunnel continues back
+to the north, but to the south you see a large den of some kind.
+~
+205 ad 3
+D0
+A very large tower, stretching high up through the ceiling can be seen.
+~
+~
+0 0 20514 0
+D1
+The wall has loose pieces of rotting flesh stuck to it and broken bones at
+its base, like it has been used to smash the bodies of some poor creatures
+against.
+~
+~
+0 0 -1 0
+D2
+A large den can be seen this way, and by all the bones surrounding it, some
+really foul and hideous beast must live therein. It may be careful to watch
+your step here... 
+~
+~
+0 0 20516 0
+D3
+The wall has loose pieces of rotting flesh stuck to it and broken bones at
+its base, like it has been used to smash the bodies of some poor creatures
+against.
+~
+~
+0 0 -1 0
+D4
+The ceiling has sloped down considerably from the chimney to the north, and
+is now only about two feet above your head. Some large spikes hang down, but
+these still remain a few inches above your head.
+~
+~
+0 0 -1 0
+D5
+Bones, bones everywhere. The floor is really horrible. You feel like you are
+walking on egg-shells.
+~
+~
+0 0 -1 0
+S
+#20516
+The Wolverines Den~
+   This place is disgusting. Stacked high in every corner are mounds of
+bones from various creatures. The rotting flesh still hangs from most of
+them, attracting flies and insects of all kinds. You can see a pile of furs
+in the centre of the room, obviously used as bedding, but the fleas and lice
+can be seen from where you stand. Your flesh begins to crawl. A tunnel
+begins to the north and there is a curtain to the east.
+~
+205 adh 0
+D0
+The start of a very smelly tunnel.
+~
+~
+0 0 20515 0
+D1
+A disgusting sheet of leather is being used as a curtain.
+~
+curtain~
+1 0 20522 0
+D2
+Along the bottom of this wall is a huge mountain of old bones, picked clean
+of any meat long ago.
+~
+~
+0 0 -1 0
+D3
+A trough, some two feet deep and six feet long has been carved out of the
+floor along this wall. A closer inspection shows you that it is some sort of
+crude drain, intended to take away bodily excrement. It looks like it hasn't
+been emptied for years, and the sight alone makes you feel ill.
+~
+~
+0 0 -1 0
+D4
+The ceiling slopes down from the northern direction, until it joins with the
+back wall, making a natural rock roof to this disgusting den.
+~
+~
+0 0 -1 0
+D5
+The floor has a pile of furs in its centre, surrounded by a litter of bones
+and hunks of decaying flesh. Thick, coarse hair can be seen in clumps around
+the floor, still crawling with lice.
+~
+~
+0 0 -1 0
+E
+fur furs bedding pile~
+This pile of firs sits in the centre of the den, and must be used as bedding
+by an animal. Without little help, it could probably pick itself up and walk
+away, its that infested with lice and fleas. Never could you have imagined
+that anything could live in such conditions.
+~
+E
+bone bones mound mounds~
+All of the bones in here appear to be very old, with no actual flesh still
+on them. Nearly all have been crushed to beyond recognition and you don't
+see any skulls at all.
+~
+S
+#20517
+The Smelly Tunnel~
+   This appears to be the end of the tunnel, and the smell is very much 
+better here. The only visible exit is to the west, although the wall to the
+east looks a little different in your lamp-light to that of the other walls.
+~
+205 ad 3
+D0
+The rock wall climbs up towards the high ceiling far above your head.
+~
+~
+0 0 -1 0
+D1
+The wall appears to be movable, and not at all solid.
+~
+wall~
+1 0 20518 0
+D2
+The rock wall continues to both the east and west, proving totally
+impassable.
+~
+~
+0 0 -1 0
+D3
+To the west is a junction in the tunnel. The smell gets worst this way.
+~
+~
+0 0 20511 0
+D4
+Nothing can be seen except pure blackness.
+~
+~
+0 0 -1 0
+D5
+The ground is covered with a light coating of some sort of coal dust.
+Strangely, small footprints can be seen coming from the east and west,
+heading towards the wall to the east.
+~
+~
+0 0 -1 0
+S
+#20518
+Sorrels Lair~
+   You find yourself in a large cave, which doesn't look like it has been
+inhabited in a very long time. Pots and pans are lying everywhere, and there
+must be an inch of black dust covering everything. The northern wall is
+covered in writing.
+~
+205 adh 0
+D0
+Some writing has been etched into the stone wall. You can just make out :
+
+                            SORRELS DENIAL
+
+    Cast out from Garathorm as a young man for a crime I didn't commit,
+    King Lomus banished me to the deep mines for the rest of my natural
+    life. Here I have stayed, living in total misery. I swear, I don't
+    think I will be released even in death. My spirit will wander these
+    tunnels for all eternity. God save the souls of any who read this
+    writing, you don't know what you have done coming to this place.
+
+~
+~
+0 0 -1 0
+D1
+A few shelves, made from some sort of slate material have been hammered
+into this wall. All that they contain are a few old pots and pans. Any food
+that was here has long since perished.
+~
+~
+0 0 -1 0
+D2
+The end of the cave is blocked with a huge boulder. The person who lived
+here took no chances with his safety.
+~
+boulder~
+1 0 20519 0
+D3
+You see a stone wall.
+~
+wall~
+1 0 20517 0
+D4
+Amid the dark and gloom that you have seen so far down in these tunnels, it
+surprises you when you see that the ceiling has been painted with the
+picture of a bright sun in an azure sky. Green rolling hills can also be
+made out, with tall oak trees and wild horses.
+~
+~
+0 0 -1 0
+D5
+After so many years of neglect, the floor has accumulated a deep carpet of
+coal dust. Amid the dust lie old pots and pans and a few books, the writing
+faded by the passage of time.
+~
+~
+0 0 -1 0
+E
+pots pans pot pan~
+These pans are very battered with age and have been very well used. The
+general size of them indicates that they were used for one person only.
+~
+E
+dust black~
+The dust is as black as the night and very fine - coal dust.
+~
+E
+wall writing~
+                            SORRELS DENIAL
+
+    Cast out from Garathorm as a young man for a crime I didn't commit,
+    King Lomus banished me to the deep mines for the rest of my natural
+    life. Here I have stayed, living in total misery. I swear, I don't
+    think I will be released even in death. My spirit will wander these
+    tunnels for all eternity. God save the souls of any who read this
+    writing, you don't know what you have done coming to this place.
+
+~
+S
+#20519
+The Wet Tunnel~
+   You have reached the end of the wet tunnel. Your clothes are really
+saturated, and you are starting to feel cold and miserable. The tunnel
+continues to the south, but looks no drier than here.
+~
+205 ad 3
+D0
+There is a large boulder to the north, blocking the tunnel.
+~
+boulder~
+1 0 20518 0
+D1
+The walls here are very wet and cold. Small pieces of rock lie at the base
+of the wall, where the water has got into the wall and lifted chunks off
+through the continual freezing and thawing.
+~
+~
+0 0 -1 0
+D2
+The tunnel gets even wetter this way.
+~
+~
+0 0 20520 0
+D3
+Water streams down the side of the wall, forming large puddles at the
+bottom. Strange gurgling noises can be heard as the water percolates down
+through tiny cracks in the floor.
+~
+~
+0 0 -1 0
+D4
+Looking up is very hard to do, due to the sheer volume of water that is
+cascading down onto you.
+~
+~
+0 0 -1 0
+D5
+The water is collecting in large puddles, which slowly empty with a strange
+gurgling noise through cracks in the floor down into caverns far below.
+~
+~
+0 0 -1 0
+S
+#20520
+The Wet Tunnel~
+   The walls are really dripping here. As you look up, a huge splash of
+water hits you square in the face, blinding you for a second. You are
+beginning to really hate this place. You long for the bright sunshine and
+warm winds of Garathorm. The tunnel continues to the north and south.
+~
+205 ad 3
+D0
+You can reach the end of the tunnel by heading in this direction.
+~
+~
+0 0 20519 0
+D1
+The walls look more like waterfalls with the amount of water sluicing down
+them.
+~
+~
+0 0 -1 0
+D2
+Through the dripping water, you can just see an intersection in the tunnel.
+~
+~
+0 0 20521 0
+D3
+The walls look more like waterfalls with the amount of water sluicing down
+them.
+~
+~
+0 0 -1 0
+D4
+The amount of water cascading down from up above makes it impossible to look
+upwards without being blinded.
+~
+~
+0 0 -1 0
+D5
+The water is collecting in large puddles, which slowly empty with a strange
+gurgling noise through cracks in the floor down into caverns far below.
+~
+~
+0 0 -1 0
+S
+#20521
+An Intersection In The Wet Tunnel~
+   The tunnel continues to both the north and south, but another tunnel
+branches off to the east. Your boots are so full of water that they squelch
+as you move along. Maybe it would be a good idea to get out of this wet.
+~
+205 ad 3
+D0
+More wet tunnel extends to this way.
+~
+~
+0 0 20520 0
+D1
+A strange, eerie glow lights up the tunnel.
+~
+~
+0 0 20530 0
+D2
+It looks a little drier this way.
+~
+~
+0 0 20522 0
+D3
+The wall here is covered with a deep blue colour. Some mineral or another
+must have been continually washed down from up above, staining the rock this
+wonderful hue.
+~
+~
+0 0 -1 0
+D4
+The amount of water cascading down from up above makes it impossible to look
+upwards without being blinded.
+~
+~
+0 0 -1 0
+D5
+The water is collecting in large puddles, which slowly empty with a strange
+gurgling noise through cracks in the floor down into caverns far below.
+~
+~
+0 0 -1 0
+S
+#20522
+Bottoms Up~
+   You finally seem to have reached the end of the tunnel and drier ground
+cannot be far away. The wet tunnel leads back northwards, but to the east, 
+the tunnel workings look like they are far more recent. In the distance, you
+can hear the repeated sound of metal being struck onto stone.
+~
+205 ad 3
+D0
+Water, water everywhere. Looks like you are in for another soaking.
+~
+~
+0 0 20521 0
+D1
+At last, the tunnel seems to dry out. You feel dry, warm air on your face.
+~
+~
+0 0 20531 0
+D2
+The tunnel comes to an abrupt end at a dry rock wall.
+~
+~
+0 0 -1 0
+D3
+You can see a thick, dirty curtain to the west.
+~
+curtain~
+1 0 20516 0
+D4
+The ceiling has lowered down to only a few feet above your head.
+~
+~
+0 0 -1 0
+D5
+The ground is formed from a grey rock, very rough to the touch.
+~
+~
+0 0 -1 0
+S
+#20523
+The Dark Tunnel~
+   The walls here are of the deepest ebony colour. The light from your lamp
+is swallowed up almost instantly by the hungry walls, leaving most of the
+tunnel in shadows. The strange play of the light makes you very nervous as
+you imagine all sorts of vile creatures lying in wait for you around the
+next corner. The tunnel continues to the south, but opens out into a
+somewhat larger one to the north.
+~
+205 ad 3
+D0
+Through the blackness, you can see nothing.
+~
+~
+0 0 20505 0
+D1
+The light from your lamp is hungrily devoured by the black walls making
+examination of them impossible.
+~
+~
+0 0 -1 0
+D2
+Through the blackness, you can see nothing.
+~
+~
+0 0 20524 0
+D3
+The light from your lamp is hungrily devoured by the black walls making
+examination of them impossible.
+~
+~
+0 0 -1 0
+D4
+The blackness of the rock is so extreme that you wouldn't be able to tell if
+the ceiling were only a matter of mere inches above you head or hundreds of
+feet.
+~
+~
+0 0 -1 0
+D5
+You feel a really odd sensation in your stomach as you look down. Your lamp
+lights your feet well, but the light is completely absorbed by the rock you
+are standing on, making it feel like you are floating in mid-air above a
+bottomless chasm.
+~
+~
+0 0 -1 0
+S
+#20524
+A Bend In The Dark Tunnel~
+   You stand in the middle of the tunnel in almost complete blackness. Who
+said there is nothing to be afraid of in the dark? Through the dimness you
+can just make out an exit to the north and east.
+~
+205 ad 3
+D0
+You can see nothing through the darkness but pitch blackness.
+~
+~
+0 0 20523 0
+D1
+You can see nothing in the complete darkness.
+~
+~
+0 0 20525 0
+D2
+The light from your lamp is hungrily devoured by the black walls making
+examination of them impossible.
+~
+~
+0 0 -1 0
+D3
+The light from your lamp is hungrily devoured by the black walls making
+examination of them impossible.
+~
+~
+0 0 -1 0
+D4
+The blackness of the rock is so extreme that you wouldn't be able to tell if
+the ceiling were only a matter of mere inches above you head or hundreds of
+feet.
+~
+~
+0 0 -1 0
+D5
+You feel a really odd sensation in your stomach as you look down. Your lamp
+lights your feet well, but the light is completely absorbed by the rock you
+are standing on, making it feel like you are floating in mid-air above a
+bottomless chasm.
+~
+~
+0 0 -1 0
+S
+#20525
+The Dark Tunnel~
+   The darkness goes on forever in all directions. If ever you needed to see
+the light at the end of the tunnel, now would be it. Suddenly, you hear a
+slide of some loose stones behind you, and spin around, crouched into a
+defensive stance. Something skitters off into the shadows quickly, lost from
+view forever. You shiver.
+~
+205 ad 3
+D0
+Total blackness extends this way.
+~
+~
+0 0 20525 0
+D1
+Total blackness extends this way.
+~
+~
+0 0 20524 0
+D2
+Total blackness extends this way.
+~
+~
+0 0 20526 0
+D3
+Total blackness extends this way.
+~
+~
+0 0 20524 0
+D4
+The blackness of the rock is so extreme that you wouldn't be able to tell if
+the ceiling were only a matter of mere inches above you head or hundreds of
+feet.
+~
+~
+0 0 -1 0
+D5
+You feel a really odd sensation in your stomach as you look down. Your lamp
+lights your feet well, but the light is completely absorbed by the rock you
+are standing on, making it feel like you are floating in mid-air above a
+bottomless chasm.
+~
+~
+0 0 -1 0
+S
+#20526
+End Of The Dark Tunnel~
+   There is definitely light ahead to the south. To the north, the blackness
+seems to go on forever, sending a sudden wave of fear through your entire
+body. On both sides, the tunnel walls close in around you.
+~
+205 ad 3
+D0
+There is just blackness this way. Anything could lie in the shadows for
+you. Only a brave soul would tread this path.
+~
+~
+0 0 20525 0
+D1
+Like a blind man, you reach out to search for the tunnel walls. After some
+groping you find their smooth, glass-like surface, but cannot see any detail
+on them at all.
+~
+~
+0 0 -1 0
+D2
+A strange, eerie glow makes the hairs on the back of your neck stand on
+end.
+~
+~
+0 0 20527 0
+D3
+Like a blind man, you reach out to search for the tunnel walls. After some
+groping you find their smooth, glass-like surface, but cannot see any detail
+on them at all.
+~
+~
+0 0 -1 0
+D4
+The darkness is more extreme than you could have ever possibly imagined
+before entering this tunnel. Not even a stray flicker of light is reflected
+from that intense black rock.
+~
+~
+0 0 -1 0
+D5
+The rock below your feet feels incredibly solid and would not yield to any
+amount of force you could possibly apply to it.
+~
+~
+0 0 -1 0
+S
+#20527
+Light At The End Of The Tunnel~
+   To the north, nothing can be seen but complete blackness, whilst to the
+west the tunnel seems to glow with some unnatural radiance. Just before you
+leave, you notice a small wooden door to the east.
+~
+205 d 3
+D0
+The tunnel gets dark very quickly this way.
+~
+~
+0 0 20526 0
+D1
+A small wooden door is set into the east wall, trying very hard not to be
+noticed.
+~
+wooden~
+1 0 20528 0
+D2
+A solid tunnel wall looms out of the ground and stretches up into the
+darkness.
+~
+~
+0 0 -1 0
+D3
+The brightness coming from the west really dazzles your eyes.
+~
+~
+0 0 20529 0
+D4
+A faintly glowing ceiling to the tunnel can just be seen, about twenty feet
+above your head.
+~
+~
+0 0 -1 0
+D5
+The ground is a dullish grey colour with many tiny, green crystal
+inclusions.
+~
+~
+0 0 -1 0
+S
+#20528
+The Small Cave~
+   This appears to be the home of a cave-dweller. One half of the cave is
+curtained off to form a bedroom, whilst the other half comprises a large
+fire surrounded by all sorts of junk. The place looks very comfortable, with
+thick animal furs scattered about to rest on.
+~
+205 adh 0
+D0
+Over towards this side of the cave there is a large fireplace with a roaring
+coal fire lit. A stone chimney takes the fumes up a small flume and out of
+the room.
+~
+~
+0 0 -1 0
+D1
+Carefully opening the curtain, you can see a small bedroom, lavishly decked
+out with many animal furs and looking very homely and out of place down in
+these dark tunnels.
+~
+~
+0 0 -1 0
+D2
+Wooden shelves have been hung on this wall and contain a few pots and dishes
+with some scraps of food.
+~
+~
+0 0 -1 0
+D3
+A small wooden door leads out into a light tunnel.
+~
+wooden~
+1 0 20527 0
+D4
+The low cave roof has been painted an off-white colour, which in one stroke
+lightens the whole atmosphere of the place. Your spirits feel cheered in
+this homely little dwelling.
+~
+~
+0 0 -1 0
+D5
+Scattered about on the ground are numerous animal furs which both serve to
+warm the coldness radiated from the rock and provide a surface to relax on.
+~
+~
+0 0 -1 0
+E
+junk~
+All sorts of odds and ends lie around the cave, giving it that homely, well
+lived in feeling. By the look of some of them, they must have been collected
+over many years by a person who has travelled the lands.
+~
+E
+fur furs animal~
+The floor is covered with mounds of thick animal furs, all clean looking and
+very comfortable to relax upon. How such furs would get down here is a total
+mystery.
+~
+E
+fire~
+The fireplace is about five feet across and three feet high. The coal burns
+with a warm red glow which warms your spirit. A large coal scuttle stands to
+one side, brimming with enough coal to last for days. A brick chimney has
+been built above the fire and through the cave roof to carry off the fumes.
+~
+S
+#20529
+The Light Tunnel~
+   As you enter this room, you quickly shield your eyes. The walls are
+glowing so brightly! On closer inspection, you notice tiny flecks of crystal
+embedded into the wall, which reflect all light back from your lamp. You
+feel quite safe in this room.
+~
+205 d 3
+D0
+Tiny flecks of yellow and white crystal are embedded in the rock wall. These
+seem to capture all the light from you lamp and amplify it by a great
+amount, sending it back to your eyes as intense beams.
+~
+~
+0 0 -1 0
+D1
+Through the bright glow, the start of a tunnel can be seen.
+~
+~
+0 0 20527 0
+D2
+The brightness continues this way.
+~
+~
+0 0 20530 0
+D3
+Tiny flecks of yellow and white crystal are embedded in the rock wall. These
+seem to capture all the light from you lamp and amplify it by a great
+amount, sending it back to your eyes as intense beams.
+~
+~
+0 0 -1 0
+D4
+Like the walls, the ceiling has these tiny crystal inclusions, providing no
+escape for the light emitted from you lantern. The reflections are truly
+dazzling.
+~
+~
+0 0 -1 0
+D5
+Your feet are surrounded by an explosion of light, making any further
+examination impossible.
+~
+~
+0 0 -1 0
+E
+crystal flecks~
+The flecks of crystal are about a millimetre across with many facets to
+them. Once the light has been absorbed from your lantern it is amplified
+several hundred times to produce a very bright beam which is reflected back
+towards you.
+~
+S
+#20530
+The Light Tunnel~
+   The tunnel is so bright you have trouble seeing everything clearly as you
+move along. The tunnel continues to the north, but gets very much darker to 
+the west. A roughly hewn stone staircase leads down into the darkness.
+~
+205 d 3
+D0
+Going this way, you walk into the bright light...
+~
+~
+0 0 20529 0
+D1
+Tiny flecks of yellow and white crystal are embedded in the rock wall. These
+seem to capture all the light from you lamp and amplify it by a great
+amount, sending it back to your eyes as intense beams.
+~
+~
+0 0 -1 0
+D2
+Tiny flecks of yellow and white crystal are embedded in the rock wall. These
+seem to capture all the light from you lamp and amplify it by a great
+amount, sending it back to your eyes as intense beams.
+~
+~
+0 0 -1 0
+D3
+The dripping of water is very loud. You can feel the moisture in the air
+already.
+~
+~
+0 0 20521 0
+D4
+Like the walls, the ceiling has these tiny crystal inclusions, providing no
+escape for the light emitted from you lantern. The reflections are truly
+dazzling.
+~
+~
+0 0 -1 0
+D5
+A hole has been smashed in the floor and a stone staircase roughly hewn. The
+rough nature with which it was carved has made the footing under your feet
+very sure, giving you excellent balance. 
+~
+~
+0 0 20576 0
+E
+crystal flecks~
+The flecks of crystal are about a millimetre across with many facets to
+them. Once the light has been absorbed from your lantern it is amplified
+several hundred times to produce a very bright beam which is reflected back
+towards you.
+~
+S
+#20531
+The Drying Room~
+   Ahhh, this is heaven after the hell you have just been through. The floor
+is riddled with tiny cracks, through which very hot air is rising. It may be
+a good idea to rest up here a few minutes before you carry on, if only to
+dry off. The tunnel looks much wetter to the west, whilst it seems to come
+to a dead-end to the south.
+~
+205 ad 3
+D0
+The bare rock wall is very dry and warm to the touch.
+~
+~
+0 0 -1 0
+D1
+The bare rock wall is very dry and warm to the touch.
+~
+~
+0 0 -1 0
+D2
+It looks like a dead-end. A large pile of rubble has collapsed the ceiling
+to block the way much further this way.
+~
+~
+0 0 20532 0
+D3
+After drying out here, you really don't want to go back into all that wet.
+~
+~
+0 0 20522 0
+D4
+The cave roof is a totally featureless grey colour about ten feet above your
+head.
+~
+~
+0 0 -1 0
+D5
+The floor has very narrow, tiny cracks in it, through which hot air rises to
+heat this room. 
+~
+~
+0 0 -1 0
+E
+crack cracks floor~
+Peering down through one of the larger cracks in the floor, you see an
+intense red colour many hundred of feet below. A lava river flows through
+the deep mountain, the hot currents of air rising to heat this room.
+~
+S
+#20532
+The Collapse~
+   After coming through all these tunnels it seems your journey was a waste
+of time. A recent roof collapse has blocked the only exit to the south,
+scattering rocks around your feet. Perhaps you could try moving some of the
+debris.
+~
+205 acd 5
+D0
+A sudden gush of warm air, which makes you feel great all over, entices
+you back northwards to rest up longer.
+~
+~
+0 0 20531 0
+D1
+The featureless rock walls offer no exit in this direction.
+~
+~
+0 0 -1 0
+D2
+A large pile of rubble blocks the way south. Maybe some of it is loose.
+~
+~
+0 0 -1 0
+D3
+The featureless rock walls offer no exit in this direction.
+~
+~
+0 0 -1 0
+D4
+You can see where the roof collapsed in towards the south and notice that it
+doesn't look too much safer here.
+~
+~
+0 0 -1 0
+D5
+Small rocks and boulders lie around the floor, scattered here from the
+recent cave-in to the south. Most of the rocks are just ordinary looking,
+although a few nice pieces of quartz and other minerals can be seen.
+~
+~
+0 0 -1 0
+E
+rocks quartz minerals~
+After a quick glance at these, you decide that the gold in your pocket is
+worth far more than they are likely to ever sell for, and leave them alone.
+~
+S
+#20533
+On The Ladder~
+   After climbing for what seems like ages, you can see nothing above or
+below you but complete darkness. The mine shaft must be incredibly deep, and
+the air is becoming ever more chilly in the damp atmosphere.
+~
+205 acd 5
+D0
+The black rock appears to be closing in on you.
+~
+~
+0 0 -1 0
+D1
+The black rock appears to be closing in on you.
+~
+~
+0 0 -1 0
+D2
+The black rock appears to be closing in on you.
+~
+~
+0 0 -1 0
+D3
+The black rock appears to be closing in on you.
+~
+~
+0 0 -1 0
+D4
+The darkness seems to extend upwards for ever.
+~
+trapdoor~
+1 0 20607 0
+D5
+The mine shaft extends downwards deeper and deeper into complete and
+utter darkness.
+~
+~
+0 0 20500 0
+S
+#20534
+Crossroads~
+   You stand at the bottom of a shaky wooden ladder in the centre of a
+four-way junction in the tunnels. The main tunnel goes from east to west,
+whilst side tunnels lead off to the north and south.
+~
+205 ad 3
+D0
+A side tunnel leads off through the blackness.
+~
+~
+0 0 20535 0
+D1
+The main tunnel continues this way, but through the darkness you can see
+little.
+~
+~
+0 0 20537 0
+D2
+A side tunnel leads off through the blackness.
+~
+~
+0 0 20546 0
+D3
+The main tunnel continues this way, but through the darkness you can see
+little.
+~
+~
+0 0 20547 0
+D4
+Climbing up the shaky ladder, you can reach the upper levels of the tunnels.
+~
+~
+0 0 20510 0
+D5
+The floor is solid rock, a dull grey colour in your lamp-light and totally
+uninteresting.
+~
+~
+0 0 -1 0
+E
+ladder wooden~
+The ladder is made from old wood which must have been here years. With care,
+it should still be able to support your weight.
+~
+S
+#20535
+The Bone Tunnel~
+   The tunnel is just high enough for you to walk through comfortably. The
+walls are covered in tubular formations which all grow horizontally, giving
+the place the look like it was built from many large bones. You can continue
+to the north and south or enter a small cave to the east.
+~
+205 ad 3
+D0
+The bone tunnel carries on this way.
+~
+~
+0 0 20561 0
+D1
+A small hole in the wall leads to a tiny and cramped cavern.
+~
+~
+0 0 20536 0
+D2
+A four-way junction in the tunnel system with a wooden ladder climbing up
+into the darkness can be seen.
+~
+~
+0 0 20534 0
+D3
+The walls of this tunnel are truly remarkable. The rock was formed
+naturally in long tubular shapes, each looking like a large bone. Many of
+these tubes are layered on top of each other, giving the impression the
+walls were built with many bones and then coated in a rock covering. Perhaps
+they were.
+~
+~
+0 0 -1 0
+D4
+The roof is covered in the strange bone-like structures. They grow in a 
+north-south direction. Each is about ten feet long and one foot thick.
+~
+~
+0 0 -1 0
+D5
+The ground is the only part of the tunnel not covered in these bone
+structures. It is dusted in a thick coating of white powder.
+~
+~
+0 0 -1 0
+E
+wall walls bone bones tubular formations~
+The walls of this tunnel are truly remarkable. The rock was formed
+naturally in long tubular shapes, each looking like a large bone. Many of
+these tubes are layered on top of each other, giving the impression the
+walls were built with many bones and then coated in a rock covering. Perhaps
+they were.
+~
+E
+powder dust white~
+The dust is a very fine, white powder. It feels very much like chalk, and
+must have come from the bone-like structures that clad the walls.
+~
+S
+#20536
+A Hidden Cave~
+   As you enter, a solid rock door slides into place, blocking any idea of
+retreat you may have had. This cave is about twenty feet square and much
+bigger than you first thought. An old mattress lies in one corner and a
+large stone table stands in another. A few crude drawings have been painted
+on the northern wall. The only exit is to the south.
+~
+205 ad 3
+D0
+Strange pictures of a band of trolls fighting a group of ragged looking
+humans catches your attention. There are dead human bodies everywhere and an
+exceptionally large troll stands proud with a severed human head held up in
+his claw.
+~
+~
+0 0 -1 0
+D1
+Laid out in one corner is a large mattress and in the other corner stands a
+large stone table.
+~
+~
+0 0 -1 0
+D2
+The small exit opens out into a wide tunnel, high above the floor. It looks
+safe to climb down to the ground, but it will be impossible to climb back up
+again without any special climbing equipment.
+~
+~
+0 0 20537 0
+D3
+A solid rock door seems to have shut as you entered, blocking any exit in
+this direction.
+~
+~
+0 0 -1 0
+D4
+The rock ceiling is about five feet above your head, and is completely
+without detail.
+~
+~
+0 0 -1 0
+D5
+The ground is totally bare, indicating that the occupier of this abode has
+not much time for comforts.
+~
+~
+0 0 -1 0
+E
+drawings paintings~
+Strange pictures of a band of trolls fighting a group of ragged looking
+humans catches your attention. There are dead human bodies everywhere and an
+exceptionally large troll stands proud with a severed human head held up in
+his claw.
+~
+E
+table stone~
+The table is four feet high with a thick, circular stone top, five feet in
+diameter. There are no carvings on it or any detail at all that you can see.
+A few pieces of fresh meat, uncooked, have been chopped into a small pile.
+~
+E
+mattress~
+The mattress is about five feet by eight feet and a dark brown in colour.
+Through rips in the covering material you can see that it has been stuffed
+with some sort of animal hair, although the only animal you know with blonde
+hair is human.
+~
+E
+solid door~
+The entrance through which you came has been sealed by a thick, solid rock
+door. There are no keyholes and you cannot see any mechanism by which to
+release it.
+~
+S
+#20537
+The Rocky Tunnel~
+   This is a very broad and high tunnel with a very uneven floor. The walls
+are covered in fist sized rocks giving them a very bumpy texture. A small
+hole can be seen high up in the northern wall, far out of your reach. The
+tunnel continues to the east and west.
+~
+205 ad 3
+D0
+High up in the wall you can see a small hole. The rough texture of the wall
+provides plenty of hand and foot holds, but many of the rocks are very
+loose, making it very unsafe to try and climb up.
+~
+~
+0 0 -1 0
+D1
+The tunnel continues this way for as far as you can see.
+~
+~
+0 0 20538 0
+D2
+The wall is covered in many small rocks and pebbles, many of which are not
+securely embedded into the rock wall. However, you cannot move any further
+in this direction.
+~
+~
+0 0 -1 0
+D3
+You can see a four-way junction in the tunnels with a wooden ladder climbing
+up into the darkness above.
+~
+~
+0 0 20534 0
+D4
+The tunnel roof is too high for you to see it. All that is above your head
+is blackness.
+~
+~
+0 0 -1 0
+D5
+Large rocks protrude out of the floor trying to trip you up as you move
+along. There is little flat surface to stand on, the situation made worst by
+the scattering of small rocks that have been loosened from the walls.
+~
+~
+0 0 -1 0
+S
+#20538
+The Rocky Tunnel~
+   This uneven tunnel continues to the east and west. A small tunnel has
+been carved through the rock to the south.
+~
+205 ad 3
+D0
+The wall is encrusted with many small rocks and pebbles, many of which come
+loose when pulled. They give the tunnel a very ugly appearance.
+~
+~
+0 0 -1 0
+D1
+The tunnel continues this way for as far as you can see.
+~
+~
+0 0 20553 0
+D2
+A small tunnel has been carved through the rock wall and leads off into the
+blackness.
+~
+~
+0 0 20539 0
+D3
+The tunnel continues this way for as far as you can see.
+~
+~
+0 0 20537 0
+D4
+The tunnel roof is too high for you to see it. All that is above your head
+is blackness.
+~
+~
+0 0 -1 0
+D5
+Large rocks protrude out of the floor trying to trip you up as you move
+along. There is little flat surface to stand on, the situation made worst by
+the scattering of small rocks that have been loosened from the walls.
+~
+~
+0 0 -1 0
+S
+#20539
+A Long Tunnel~
+   This tunnel was carved by some kind of metal or stone tools. The walls
+still bear the scarring from their creation. You can follow the tunnel
+further to the west.
+~
+205 ad 3
+D0
+A pile of rocks has fallen from up above your entryway, blocking any
+passage back this way.
+~
+~
+0 0 -1 0
+D1
+The walls glisten with the moisture from a little water trickling from up
+above.
+~
+~
+0 0 -1 0
+D2
+The walls glisten with the moisture from a little water trickling from up
+above.
+~
+~
+0 0 -1 0
+D3
+The tunnel continues this way into the dark and gloom.
+~
+~
+0 0 20540 0
+D4
+The tunnel roof is still quite high here, about two feet above your head. It
+gets lower, however, to the west.
+~
+~
+0 0 -1 0
+D5
+The ground is quite even and easy to walk on.
+~
+~
+0 0 -1 0
+S
+#20540
+A Long Tunnel~
+   The tunnel has narrowed considerably here and the ceiling lowered to only
+a few inches above your head. Around the bends in the tunnel shadows can be
+seen darting in and out of the gloom. The tunnel continues to the east and
+south.
+~
+205 ad 3
+D0
+The walls glisten with the moisture from a little water trickling from up
+above.
+~
+~
+0 0 -1 0
+D1
+The long tunnel extends away further in this direction.
+~
+~
+0 0 20539 0
+D2
+The tunnel leads further into the blackness. Some sort of intersection with
+another tunnel can be seen.
+~
+~
+0 0 20541 0
+D3
+The walls glisten with the moisture from a little water trickling from up
+above.
+~
+~
+0 0 -1 0
+D4
+The tunnel ceiling has lowered to barely a few inches above your head,
+giving you little room to swing your weapon around.
+~
+~
+0 0 -1 0
+D5
+The ground is quite even and easy to walk along.
+~
+~
+0 0 -1 0
+S
+#20541
+An Intersection In The Long Tunnel~
+   The main tunnel continues to the north and south whilst another tunnel
+joins from the west. A cool draft, carrying a rancid odour sweeps across
+your face from the south.
+~
+205 ad 3
+D0
+The long tunnel carries on this way into the blackness.
+~
+~
+0 0 20540 0
+D1
+The damp wall glistens in the light cast by your lamp.
+~
+~
+0 0 -1 0
+D2
+Stretching further than you can see, the tunnel continues this way.
+~
+~
+0 0 20542 0
+D3
+Another tunnel joins the one you are standing in. Its walls look as black as
+a moonless night. 
+~
+~
+0 0 20545 0
+D4
+The roof barely clears your head as you stand upright. It is uneven in
+places with a few low overhangs.
+~
+~
+0 0 -1 0
+D5
+The floor is fairly even, providing a good surface to walk on.
+~
+~
+0 0 -1 0
+S
+#20542
+The Long Tunnel~
+   This tunnel appears to never end. The ceiling has started to become far
+more uneven and many low outcrops of rock bulge down from above, making you 
+choose your path more carefully. The tunnel continues both to the east and 
+north. 
+~
+205 ad 3
+D0
+The tunnel continues back this way. You can just see another tunnel joining
+from the west with this one.
+~
+~
+0 0 20541 0
+D1
+Through the blackness you can see little, but the tunnel continues this way.
+~
+~
+0 0 20543 0
+D2
+The damp walls glisten in the light from your lamp.
+~
+~
+0 0 -1 0
+D3
+The damp walls glisten in the light from your lamp.
+~
+~
+0 0 -1 0
+D4
+Carefully turning your neck to look upwards, you can see that the ceiling is
+only a few inches above your head. Many large outcrops of rock bulge
+downwards from the uneven ceiling, making progress through this section of
+the tunnel more difficult.
+~
+~
+0 0 -1 0
+D5
+The floor remains quite even and is easy to gain good footing.
+~
+~
+0 0 -1 0
+S
+#20543
+The Long Tunnel~
+   The walls of the tunnel are starting to converge together to the east, 
+where the ceiling slopes down at a sharp angle. It appears that this 
+passageway comes to an abrupt end. To the west, there is some broadening, 
+although the ceiling is still perilously close to your head. 
+~
+205 ad 3
+D0
+The damp walls glisten in the light from your lamp.
+~
+~
+0 0 -1 0
+D1
+The ceiling of the tunnel is sloping down at about sixty degrees and the 
+walls are drawing closer together. The tunnel is coming to an ending.
+~
+~
+0 0 20544 0
+D2
+The damp walls glisten in the light from your lamp.
+~
+~
+0 0 -1 0
+D3
+The tunnel is much more broader in this direction, although the ceiling is 
+very low and riddled with many protrusions of sharp rock.
+~
+~
+0 0 20542 0
+D4
+The tunnel ceiling, which is already very low, slopes down at a very sharp
+angle to the east where the tunnel ends.
+~
+~
+0 0 -1 0
+D5
+The floor remains very even, providing a very sure grip for your boots.
+~
+~
+0 0 -1 0
+S
+#20544
+A Dead-End~
+   The tunnel roof has sloped down to the ground to the east and the walls
+have converged to only three feet apart, giving very little room for 
+manoeuvring. Your footsteps make a slightly hollow noise.
+~
+205 ad 3
+D0
+Only a few feet in front of you is the damp, black rock wall of the tunnel.
+~
+~
+0 0 -1 0
+D1
+The ceiling has sloped down at about sixty degrees until it has reached the 
+floor, blocking any further progress in this direction.
+~
+~
+0 0 -1 0
+D2
+Only a few feet in front of your nose is the damp, black rock wall of the
+tunnel.
+~
+~
+0 0 -1 0
+D3
+The tunnel opens out a little this way, offering you more room to move about
+in. The ceiling, though, is still very low.
+~
+~
+0 0 20543 0
+D4
+The ceiling slopes down at a very sharp angle to meet the ground to your
+east. A few protrusions of rock jut out at you.
+~
+~
+0 0 -1 0
+D5
+On examining the ground, you notice there is a huge slab covering a large
+hole. It may be possible to move it.
+~
+slab~
+1 0 20564 0
+S
+#20545
+A Short Tunnel~
+   Dark, wet, cold and impossibly solid walls loom around you in all
+directions. The only way you can move is to the north.
+~
+205 ad 3
+D0
+A tunnel continues in this direction, allowing you to escape this awful
+place.
+~
+~
+0 0 20546 0
+D1
+You are certain you should have been able to move this way, but there is
+nothing there but solid rock. The darkness and all these endless tunnels
+are very confusing after a while.
+~
+~
+0 0 -1 0
+D2
+The black walls stretch upwards to meet the high ceiling, seemingly mocking
+you with their fortitude.
+~
+~
+0 0 -1 0
+D3
+This tunnel could never have been fully finished. The wall is ragged with
+rock where pieces have been chiselled out sometime in the past. Unless you
+have a few years to waste digging, there is no further way to move this way.
+~
+~
+0 0 -1 0
+D4
+About twenty feet above your head, supported by the strength of these rock
+walls, the roof arches into the darkness. A few bats can be seen hanging
+in their nighttime slumber.
+~
+~
+0 0 -1 0
+D5
+A thin film of water covers the rock floor. A slight downward graduation to
+the north makes the water drain very slowly that way.
+~
+~
+0 0 -1 0
+S
+#20546
+A Short Tunnel~
+   This tunnel looks like many other tunnels you have stood in at one time 
+or another. The rock walls are black and have water slowly trickling down
+them. The ceiling is very high, many feet above your head. To the north, a
+four-way junction in the tunnel system can be seen, whilst this tunnel
+continues to the south.
+~
+205 ad 3
+D0
+Through the darkness, a four-way junction in a large tunnel can be seen.
+There is a shaky wooden ladder leading up into the ceiling.
+~
+~
+0 0 20534 0
+D1
+The black walls stretch upwards to meet the high ceiling, seemingly mocking
+you with their fortitude.
+~
+~
+0 0 -1 0
+D2
+The tunnel continues this way to what looks like its conclusion. The 
+darkness confuses your sense of direction.
+~
+~
+0 0 20545 0
+D3
+The black walls stretch upwards to meet the high ceiling, seemingly mocking
+you with their fortitude.
+~
+~
+0 0 -1 0
+D4
+About twenty feet above your head, supported by the strength of these rock
+walls, the roof arches into the darkness. A few bats can be seen hanging
+in their nighttime slumber.
+~
+~
+0 0 -1 0
+D5
+A thin film of water covers the rock floor. A slight downward graduation to
+the north makes the water drain very slowly that way.
+~
+~
+0 0 -1 0
+S
+#20547
+The Rocky Tunnel~
+   This is a very broad and high tunnel with a very uneven floor. The walls
+are covered in fist sized rocks giving them a very bumpy texture. The tunnel
+continues to the east, where it meets a large four-way junction, and to the
+west. A side tunnel, shored up by huge beams of ancient wood lies to the 
+south.
+~
+205 ad 3
+D0
+The wall is covered in many small rocks and pebbles, many of which are not
+securely embedded into the rock wall. However, you cannot move any further
+in this direction.
+~
+~
+0 0 -1 0
+D1
+A large four-way junction in the main tunnel can be seen. A shaky, wooden
+ladder stands in the middle, climbing up high into the roof.
+~
+~
+0 0 20534 0
+D2
+A small side tunnel leads off from this main tunnel. It is supported by huge 
+beams of some kind of ancient wood, but looks safe to enter.
+~
+~
+0 0 20548 0
+D3
+The main tunnel continues into the gloom this way.
+~
+~
+0 0 20553 0
+D4
+e
+The tunnel roof is too high for you to see it. All that is above your head
+is blackness.
+~
+~
+0 0 -1 0
+D5
+Large rocks protrude out of the floor trying to trip you up as you move
+along. There is little flat surface to stand on, the situation made worst by
+the scattering of small rocks that have been loosened from the walls.
+~
+~
+0 0 -1 0
+S
+#20548
+A Shored-Up Tunnel~
+   The tunnel stands six feet wide and ten feet high. The walls have been 
+covered with wooden panels, about four feet square. Every ten feet along, 
+thick wooden beams made from ancient oak support the tunnel roof. You can
+continue along this tunnel to the south or enter the main tunnel to the 
+north.
+~
+205 ad 3
+D0
+Thee tunnel rejoins the main tunnel this way.
+~
+~
+0 0 20547 0
+D1
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D2
+The strange, wooden panelled tunnel continues this way.
+~
+~
+0 0 20551 0
+D3
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D4
+The ceiling, which has been covered by the same wooden panels as the walls
+is about ten feet above your head.
+~
+~
+0 0 -1 0
+D5
+The floor has been cobbled by small wooden blocks, about six inches square.
+It makes a change from the rock that you have been walking on for some time
+now.
+~
+~
+0 0 -1 0
+E
+thick beam beams~
+The beams are made from solid lengths of oak and are about three feet
+square, arching from one side of the tunnel, above your head, and back to
+the other side of the tunnel. These must have been made from some once
+great trees, the likes of which you have only ever seen in Eden before.
+~
+E
+wood wooden panels panel~
+The wooden panels are about four feet square and made from a dark reddish-
+brown wood, probably mahogany. The joins between them are almost seamless,
+frustrating your attempts to force one off to look behind.
+~
+S
+#20549
+A Shored-Up Tunnel~
+   There seems to be no end to this madness. As quick as you move, the
+wooden panels grow behind you, as if they are herding you in a certain
+direction. Powerful magic must be behind this. You notice a very slight
+imperfection in the panelling of the western wall. The tunnel continues
+to the east.
+~
+205 ad 3
+D0
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D1
+The strange, wooden panelled tunnel continues this way.
+~
+~
+0 0 20548 0
+D2
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D3
+Examining the panels of this wall very carefully, you notice that one
+is a little loose. With a little bit of work, you should be able to remove
+it.
+~
+panel~
+1 0 20552 0
+D4
+The ceiling, which has been covered by the same wooden panels as the walls
+is about ten feet above your head.
+~
+~
+0 0 -1 0
+D5
+The floor has been cobbled by small wooden blocks, about six inches square.
+It makes a change from the rock that you have been walking on for some time
+now.
+~
+~
+0 0 -1 0
+S
+#20550
+A Shored-Up Tunnel~
+   This is getting very strange. As you move along this tunnel, panels
+seem to be growing behind you, blocking off any retreat you may be 
+thinking about. The only exit is to follow the tunnel to the north.
+~
+205 ad 3
+D0
+The strange, wooden panelled tunnel continues this way.
+~
+~
+0 0 20549 0
+D1
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D2
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D3
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D4
+The ceiling, which has been covered by the same wooden panels as the walls
+is about ten feet above your head.
+~
+~
+0 0 -1 0
+D5
+The floor has been cobbled by small wooden blocks, about six inches square.
+It makes a change from the rock that you have been walking on for some time
+now.
+~
+~
+0 0 -1 0
+S
+#20551
+A Shored-Up Tunnel~
+   Looking back to the north, from whence you just came, a thick wooden
+panel is now blocking the way back. The only way to continue is to follow
+this strange tunnel to the west.
+~
+205 ad 3
+D0
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D1
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D2
+The rock walls have been covered by wooden panels. The joins are almost 
+seamless, and offer no purchase for your fingertips to prise one off.
+~
+~
+0 0 -1 0
+D3
+The strange, wooden panelled tunnel continues this way.
+~
+~
+0 0 20550 0
+D4
+The ceiling, which has been covered by the same wooden panels as the walls
+is about ten feet above your head.
+~
+~
+0 0 -1 0
+D5
+The floor has been cobbled by small wooden blocks, about six inches square.
+It makes a change from the rock that you have been walking on for some time
+now.
+~
+~
+0 0 -1 0
+S
+#20552
+Elland's Chamber~
+   This is the cluttered laboratory of the arch-mage Elland, a hobgoblin
+revered by the rest of his race. Racks of test-tubes filled with strange
+coloured liquids litter the wooden benches, and several small cauldrons
+containing fuming potions bubble away on a large fire in the northern wall.
+A small door can be seen in the western wall.
+~
+205 ad 3
+D0
+Set into the wall is a very large fireplace, burning great logs of wood.
+Five small cauldrons have been balanced on a metal grating, their contents
+bubbling away.
+~
+~
+0 0 -1 0
+D1
+The strange wood-panelled tunnel can be seen through the loose panel.
+~
+~
+0 0 20549 0
+D2
+Many wooden benches covered with test-tubes and other 'magic-making' tools
+are standing against the far wall. You recognise a few of the more common
+ingredients that go into potions, such as bat-wings and hair of a spider.
+~
+~
+0 0 -1 0
+D3
+A small wooden door stands in the centre of the wall, looking very 
+innocent.
+~
+door~
+1 0 20562 0
+D4
+The ceiling glows with a strange magical radiance, providing plenty of light
+to see by. It is rumoured that this can only be achieved by extracting
+special fluids from fire-flies. Considering the area that is covered, it 
+must have taken an awful lot of such flies.
+~
+~
+0 0 -1 0
+D5
+The floor is very clean and tidy considering the reputation of most
+hobgoblins. It would, however, be near fatal to trip and spill some of the
+'raw' potions over yourself, which explains the cleanliness.
+~
+~
+0 0 -1 0
+E
+bench benches wooden~
+Three wooden benches line the southern wall. They are made from what looks
+like mahogany, the same wood that the panels in the tunnel are made from, 
+and are quite robust. They stand three feet high, and each has a surface 
+area of eight feet by four feet. They are covered with many test-tubes,
+racks and a few ingredients used for spell making.
+~
+E
+large fire~
+The fireplace is set in the northern wall, and burns great faggots of wood,
+producing a great deal of smoke that partially fills the room. The glow
+coming from the red-hot centre almost hypnotises you.
+~
+E
+potion potions fuming~
+The smell coming from some of the potions in the cauldrons is quite 
+disgusting. Combine this with the white fumes also coming from deep inside
+the cauldrons and the smoke from the fire, and you feel like you are
+choking. It may be good for your health to leave this place fairly quickly.
+~
+E
+cauldron cauldrons~
+The cauldrons are not that large, only two feet wide and two feet high.
+They are made from a metal of the purest black and contain a variety of
+potions which bubble away.
+~
+E
+liquid liquids~
+The liquids that fill the test-tubes are of a huge variety of colours. It
+is impossible to tell what affect one would have on you and its probably
+very wise to leave them all alone.
+~
+E
+test-tubes test tubes racks rack~
+The racks contain enough space to hold five test-tubes, each of which
+are one inch in diameter and eight inches high, made from glass. They
+contain liquids which seem to be of colours that range across the whole
+spectrum, two of which are not alike.
+~
+S
+#20553
+The Rocky Tunnel~
+   This uneven tunnel continues to the east and west. A small tunnel has
+been carved through the rock to the north.
+~
+205 ad 3
+D0
+A small tunnel has been carved through the rock wall and leads off into the
+blackness. A strange sound can be just heard, almost like quiet breathing.
+~
+~
+0 0 20554 0
+D1
+The tunnel continues this way for as far as you can see.
+~
+~
+0 0 20547 0
+D2
+The wall is encrusted with many small rocks and pebbles, many of which come
+loose when pulled. They give the tunnel a very ugly appearance.
+~
+~
+0 0 -1 0
+D3
+The tunnel continues this way for as far as you can see.
+~
+~
+0 0 20538 0
+D4
+The tunnel roof is too high for you to see it. All that is above your head
+is blackness.
+~
+~
+0 0 -1 0
+D5
+Large rocks protrude out of the floor trying to trip you up as you move
+along. There is little flat surface to stand on, the situation made worst by
+the scattering of small rocks that have been loosened from the walls.
+~
+~
+0 0 -1 0
+S
+#20554
+The Tunnel Of Sighs~
+   This tunnel is high and wide enough for you to walk through with ease.
+A strong wind blows from along the tunnel up ahead, the many tiny holes in 
+the walls amplifying the noise it makes until the whole place sounds like 
+it is sighing. It is an eerie sound. The tunnel continues to the west and
+the main tunnel can be seen to the south.
+~
+205 ad 3
+D0
+The walls look very badly eroded by the continual passing of the strong 
+wind. Tiny holes or perforations have been formed in the once solid rock,
+which now act as a crude amplifier, producing a sighing sound along the 
+length of the tunnel. It is a very eerie and almost sad sound.
+~
+~
+0 0 -1 0
+D1
+The walls look very badly eroded by the continual passing of the strong 
+wind. Tiny holes or perforations have been formed in the once solid rock,
+which now act as a crude amplifier, producing a sighing sound along the 
+length of the tunnel. It is a very eerie and almost sad sound.
+~
+~
+0 0 -1 0
+D2
+The main tunnel lies through the gloom this way. You can see many rocks on 
+the ground.
+~
+~
+0 0 20553 0
+D3
+A roar of wind comes along the tunnel from this way. The sighing sound
+seems even louder if anything.
+~
+~
+0 0 20555 0
+D4
+The eroded ceiling is about six feet above your head. The air above you
+vibrates with a loud sighing sound.
+~
+~
+0 0 -1 0
+D5
+The floor has many long ruts carved into it by the passing wind, making it
+fairly difficult to keep a good balance. Some of the ruts are filled with
+streams of water, which flow slowly back towards the main tunnel.
+~
+~
+0 0 -1 0
+E
+hole holes wall~
+The many tiny holes in the wall have been formed by the erosion of the
+continual passage of the wind onto the solid rock. As the wind passes 
+through these, the resulting vibrations are amplified up, to give a strange
+sighing sound.
+~
+S
+#20555
+The Tunnel Of Sighs~
+   The sighing sound echoes around your head. The tunnel continues to the
+north and east.
+~
+205 ad 3
+D0
+A roar of wind comes along the tunnel from this way. The sighing sound
+seems even louder if anything.
+~
+~
+0 0 20556 0
+D1
+The tunnel carries on this way. The sighing sound appears to lessen a 
+little.
+~
+~
+0 0 20554 0
+D2
+The walls look very badly eroded by the continual passing of the strong 
+wind. Tiny holes or perforations have been formed in the once solid rock,
+which now act as a crude amplifier, producing a sighing sound along the 
+length of the tunnel. It is a very eerie and almost sad sound.
+~
+~
+0 0 -1 0
+D3
+The walls look very badly eroded by the continual passing of the strong 
+wind. Tiny holes or perforations have been formed in the once solid rock,
+which now act as a crude amplifier, producing a sighing sound along the 
+length of the tunnel. It is a very eerie and almost sad sound.
+~
+~
+0 0 -1 0
+D4
+The eroded ceiling is about six feet above your head. The air above you
+vibrates with a loud sighing sound.
+~
+~
+0 0 -1 0
+D5
+The floor has many long ruts carved into it by the passing wind, making it
+fairly difficult to keep a good balance. Some of the ruts are filled with
+streams of water, which flow slowly back towards the main tunnel.
+~
+~
+0 0 -1 0
+S
+#20556
+The Tunnel Of Sighs~
+   The wind blows in very strongly from the east, making it very hard to
+stay standing in one position. As the wind rushes through holes in the
+eroded walls, the noise is amplified hundreds of times. The sound of sighing 
+is at an almost deafening volume.
+~
+205 ad 3
+D0
+The walls look very badly eroded by the continual passing of the strong 
+wind. Tiny holes or perforations have been formed in the once solid rock,
+which now act as a crude amplifier, producing a sighing sound along the 
+length of the tunnel. It is a very eerie and almost sad sound.
+~
+~
+0 0 -1 0
+D1
+It is very hard to turn and look at anything this way. The wind rushes at
+you with an enormous force, almost bowling you off your feet. An incredibly
+loud sound, truly deafening, comes from this way.
+~
+~
+0 0 20557 0
+D2
+The tunnel continues back this way. The wind whistles past you, in a vain
+attempt to escape the confines of the tunnel. The sound seems a little
+quieter this way.
+~
+~
+0 0 20555 0
+D3
+The walls look very badly eroded by the continual passing of the strong 
+wind. Tiny holes or perforations have been formed in the once solid rock,
+which now act as a crude amplifier, producing a sighing sound along the 
+length of the tunnel. It is a very eerie and almost sad sound.
+~
+~
+0 0 -1 0
+D4
+The eroded ceiling is about six feet above your head. The air above you
+vibrates with a loud sighing sound.
+~
+~
+0 0 -1 0
+D5
+The floor has many long ruts carved into it by the passing wind, making it
+fairly difficult to keep a good balance. Some of the ruts are filled with
+streams of water, which flow slowly back towards the main tunnel.
+~
+~
+0 0 -1 0
+E
+hole holes wall~
+The many tiny holes in the wall have been formed by the erosion of the
+continual passage of the wind onto the solid rock. As the wind passes 
+through these, the resulting vibrations are amplified up, to give a strange
+sighing sound.
+~
+S
+#20557
+The Turbulent Cavern~
+   Braving to enter this place, you find it almost impossible to stand in
+one position for more than a few seconds. The wind roars down from a hole
+in the roof far above you, and screams off along a tunnel to the west, 
+trying to find an escape route. Although you can see tunnels to the north
+and east, its impossible to fight against the wind. The only exit is to
+fly with the wind to the west.
+~
+205 ad 4
+D0
+Though the wind makes your eyes stream with water, you can see the entrance
+to a large cavern. The force of the wind makes it impossible to move this
+way.
+~
+~
+0 0 -1 0
+D1
+The wind makes your eyes stream with tears. Through the blur, you can see
+an odd looking tunnel, seemingly covered in bones. The force of the wind
+makes it impossible to go this way.
+~
+~
+0 0 -1 0
+D2
+The walls look very badly eroded by the continual passing of the strong 
+wind. Tiny holes or perforations have been formed in the once solid rock,
+which now act as a crude amplifier, producing a sighing sound along the 
+length of the tunnel. It is a very eerie and almost sad sound.
+~
+~
+0 0 -1 0
+D3
+The wind tries to push you this way, the only exit out of the cavern.
+~
+~
+0 0 20556 0
+D4
+Looking up was not too good an idea. A huge blast of wind almost blinds
+you. In the fraction of a section that you could see, there was a large
+fracture in the roof, from where the wind is rushing in. It would be
+impossible to fight against the wind and climb up.
+~
+~
+0 0 -1 0
+D5
+The floor has many long ruts carved into it by the passing wind, making it
+fairly difficult to keep a good balance. Some of the ruts are filled with
+streams of water, which flow slowly back towards the main tunnel.
+~
+~
+0 0 -1 0
+S
+#20558
+A Barren Cavern~
+   After walking a hundred feet to this end of the cave, you realise it may 
+have been a dangerous mistake. A very strong force is pulling you from the 
+south making it impossible to walk back to the western end of the cavern. A
+huge roaring sound can be heard coming from somewhere.
+There is a large boulder against the northern wall.
+~
+205 ad 3
+D0
+A large and almost totally round boulder has been rolled against a hole in
+the wall. It may be possible to move it.
+~
+boulder~
+1 0 20563 0
+D1
+You see the eastern end of the cavern. However, a strong force from the
+south is pulling you in that direction, making it impossible to get back 
+there.
+~
+~
+0 0 -1 0
+D2
+A loud roaring sound can be heard, like the noise huge waves make as they 
+crash onto a beach in the winter. Although the noise is a little
+intimidating there doesn't seem to be any immediate danger in going this 
+way.
+~
+~
+0 0 20557 0
+D3
+The grey cavern wall climbs upwards to meet the ceiling, far above.
+~
+~
+0 0 -1 0
+D4
+High above your head, the grey rock ceiling spans for many hundreds of feet
+in all directions.
+~
+~
+0 0 -1 0
+D5
+The floor is almost completely barren of any features at all. A few rocks
+and pebbles are scattered about and there are a few large boulders here and
+there. There is nothing to interest you.
+~
+~
+0 0 -1 0
+E
+boulder large~
+The boulder has been rolled up against a hole in the northern wall. It is
+about four feet in diameter and almost totally spherical. It should be quite
+easy to roll it out of the way.
+~
+S
+#20559
+A Barren Cavern~
+   You stand at the eastern end of an extremely big cavern. The ceiling 
+climbs to about thirty feet or more above your head, and the cave itself
+continues for about two-hundred feet to the west. It is almost a hundred
+feet wide. Apart from a few boulders around the place, there is nothing.
+A tunnel leads off to the south.
+~
+205 ad 3
+D0
+The grey cavern wall climbs upwards to meet the ceiling, far above.
+~
+~
+0 0 -1 0
+D1
+The grey cavern wall climbs upwards to meet the ceiling, far above.
+~
+~
+0 0 -1 0
+D2
+Back this way, you can enter the strange bone-like tunnel again.
+~
+~
+0 0 20560 0
+D3
+The cavern stretches for a few hundred feet this way. The air almost seems
+to pull you along.
+~
+~
+0 0 20558 0
+D4
+High above your head, the grey rock ceiling spans for many hundreds of feet
+in all directions.
+~
+~
+0 0 -1 0
+D5
+The floor is almost completely barren of any features at all. A few rocks
+and pebbles are scattered about and there are a few large boulders here and
+there. There is nothing to interest you.
+~
+~
+0 0 -1 0
+S
+#20560
+The Bone Tunnel~
+   As you enter this part of the tunnel, you feel a strong force trying to
+pull you to the west. A loud roaring sound can be heard from that direction.
+The dust that covers the floor is stirred up, stinging your eyes as it
+whirls around. A large cavern can be seen to the north and the tunnel
+continues back to the east.
+~
+205 ad 3
+D0
+The bone tunnel ends, spilling you out into a rather large cavern.
+~
+~
+0 0 20559 0
+D1
+The bone tunnel continues back this way.
+~
+~
+0 0 20561 0
+D2
+The walls of this tunnel are truly remarkable. The rock was formed
+naturally in long tubular shapes, each looking like a large bone. Many of
+these tubes are layered on top of each other, giving the impression the
+walls were built with many bones and then coated in a rock covering. Perhaps
+they were.
+~
+~
+0 0 -1 0
+D3
+You are dragged by a strong force in this direction. Through the darkness, 
+you can hear a huge roaring sound, like waves crashing onto a beach in the
+mightiest winter storm. There appears to be no immediate danger in exploring
+further this way.
+~
+~
+0 0 20557 0
+D4
+The roof is covered in the strange bone-like structures. They grow in a 
+east-west direction. Each is about ten feet long and one foot thick.
+~
+~
+0 0 -1 0
+D5
+The ground is the only part of the tunnel not covered in these bone
+structures. It is dusted in a thick coating of white powder, which is
+continually whipped up and carried off to the west.
+~
+~
+0 0 -1 0
+E
+wall walls bone bones tubular formations~
+The walls of this tunnel are truly remarkable. The rock was formed
+naturally in long tubular shapes, each looking like a large bone. Many of
+these tubes are layered on top of each other, giving the impression the
+walls were built with many bones and then coated in a rock covering. Perhaps
+they were.
+~
+E
+powder dust white~
+The dust is a very fine, white powder. It feels very much like chalk, and
+must have come from the bone-like structures that clad the walls.
+~
+S
+#20561
+A Bend In The Bone Tunnel~
+   The tunnel makes a sharp bend to the west here or continues on further
+back to the south.
+~
+205 ad 3
+D0
+The walls of this tunnel are truly remarkable. The rock was formed
+naturally in long tubular shapes, each looking like a large bone. Many of
+these tubes are layered on top of each other, giving the impression the
+walls were built with many bones and then coated in a rock covering. Perhaps
+they were.
+~
+~
+0 0 -1 0
+D1
+The walls of this tunnel are truly remarkable. The rock was formed
+naturally in long tubular shapes, each looking like a large bone. Many of
+these tubes are layered on top of each other, giving the impression the
+walls were built with many bones and then coated in a rock covering. Perhaps
+they were.
+~
+~
+0 0 -1 0
+D2
+The bone tunnel carries on this way.
+~
+~
+0 0 20535 0
+D3
+The bone tunnel carries on this way.
+~
+~
+0 0 20560 0
+D4
+The roof is covered in the strange bone-like structures. They grow in a 
+north-south direction. Each is about ten feet long and one foot thick.
+~
+~
+0 0 -1 0
+D5
+The ground is the only part of the tunnel not covered in these bone
+structures. It is dusted in a thick coating of white powder.
+~
+~
+0 0 -1 0
+E
+wall walls bone bones tubular formations~
+The walls of this tunnel are truly remarkable. The rock was formed
+naturally in long tubular shapes, each looking like a large bone. Many of
+these tubes are layered on top of each other, giving the impression the
+walls were built with many bones and then coated in a rock covering. Perhaps
+they were.
+~
+E
+powder dust white~
+The dust is a very fine, white powder. It feels very much like chalk, and
+must have come from the bone-like structures that clad the walls.
+~
+S
+#20562
+A Store Room~
+   This small cupboard is used to store magical potions and devices created
+by Elland. Most of the shelves are empty although a good look around may be
+worth your while.
+~
+205 ad 3
+D0
+Shelves line the wall of the cupboard, most of which are empty.
+~
+~
+0 0 -1 0
+D1
+The main laboratory of Elland lies through the door.
+~
+door~
+1 0 20552 0
+D2
+Shelves line the wall of the cupboard, most of which are empty.
+~
+~
+0 0 -1 0
+D3
+Shelves line the wall of the cupboard, most of which are empty.
+~
+~
+0 0 -1 0
+D4
+The ceiling is covered with the strange glowing aura that lights the main
+laboratory.
+~
+~
+0 0 -1 0
+D5
+A few boxes are stacked in the corner, but the date printed on their side
+show that the spells are well passed their use-by date.
+~
+~
+0 0 -1 0
+E
+boxes box~
+The boxes contain various wands, potions and scrolls. Unfortunately, the
+date printed on the boxes shows that they should have been used many years
+ago. One of the first lessons your mother taught you was not to try spells 
+past their use-by date!
+~
+S
+#20563
+A Bear Cave~
+   This is the winter hibernation cave of a very large bear. A few old
+bones lie on the floor, the last meal before the long sleep. It is very 
+warm in here and would make an ideal resting place, providing you don't
+awaken its occupant.
+~
+205 ad 3
+D0
+A featureless stone wall encloses you in this tiny slumber chamber.
+~
+~
+0 0 -1 0
+D1
+A featureless stone wall encloses you in this tiny slumber chamber.
+~
+~
+0 0 -1 0
+D2
+An extremely large and barren cavern lies this way.
+~
+boulder~
+1 0 20558 0
+D3
+A featureless stone wall encloses you in this tiny slumber chamber.
+~
+~
+0 0 -1 0
+D4
+The ceiling is only a few inches above your head. This place is not 
+intended for standing, but for long periods of sleep. 
+~
+~
+0 0 -1 0
+D5
+A few old bones, picked clean, lie strewn about the ground. Apart from 
+that, the floor is bear.
+~
+~
+0 0 -1 0
+S
+#20564
+Into The Labyrinth~
+   You stand against a very damp and cold rock wall. Mist floats in through
+the air from the east and vents up through a hole in the ceiling. You are
+now very deep under Moria.
+~
+205 ad 3
+D0
+The rock walls are trickling with very cold and dark water, freezing to the
+touch.
+~
+~
+0 0 -1 0
+D1
+You can enter the freezing mist this way and explore further.
+~
+~
+0 0 20565 0
+D2
+The rock walls are trickling with very cold and dark water, freezing to the
+touch.
+~
+~
+0 0 -1 0
+D3
+The rock walls are trickling with very cold and dark water, freezing to the
+touch.
+~
+~
+0 0 -1 0
+D4
+The ceiling has been repaired by a thick stone slab covering a large hole.
+Climbing up leads to the upper levels of Moria.
+~
+slab~
+1 0 20544 0
+D5
+The stone floor is covered in a few puddles of water. Some small ice
+crystals can be seen on the surface. Going any deeper into Moria and the
+temperature will be below freezing.
+~
+~
+0 0 -1 0
+S
+#20565
+Into The Labyrinth~
+   Freezing mist enshrouds you in its cold embrace. Water has frozen in long
+icicles from the roof and walls, their razor sharp tips pointing at you.
+There are tunnels leading into the cave system to the east, west and south.
+~
+205 ad 3
+D0
+Water has been suddenly frozen solid into long splinters of ice, which cling
+to the rock walls. It is almost as solid as the rock beneath it, and
+impossible to chip any off.
+~
+~
+0 0 -1 0
+D1
+Through the freezing mist, the cave system continues. It feels colder this
+way.
+~
+~
+0 0 20568 0
+D2
+Through the freezing mist, the cave system continues. It feels colder this
+way.
+~
+~
+0 0 20566 0
+D3
+It looks like the tunnel system may come to a dead-end this way. It
+definitely feels a touch warmer facing in this direction.
+~
+~
+0 0 20564 0
+D4
+Long spikes of ice hang down from the roof, no more than a few feet above
+your head.
+~
+~
+0 0 -1 0
+D5
+The ground here is very slippy, where the water has frozen to give a thin
+sheet of ice over everything.
+~
+~
+0 0 -1 0
+E
+ice icicle icicles~
+These icicles are of various shapes and sizes, some that are hanging from
+the roof up to six feet long. One thing they all have in common in their
+razor sharp tips, which could skewer you in a second.
+~
+S
+#20566
+Into The Labyrinth~
+   It is freezing here. There is a thick sheet of ice everywhere covered
+with a bright white layer of frost. Your breath crystallises into a fine
+white spray as soon as you speak. You can leave to the north and east.
+~
+205 ad 3
+D0
+The tunnel continues this way through the thick fog.
+~
+~
+0 0 20565 0
+D1
+Through the freezing mist, you see the tunnel stretching off further into
+the cold and blackness.
+~
+~
+0 0 20567 0
+D2
+Water has been suddenly frozen solid into long splinters of ice, which cling
+to the rock walls. It is almost as solid as the rock beneath it, and
+impossible to chip any off.
+~
+~
+0 0 -1 0
+D3
+Water has been suddenly frozen solid into long splinters of ice, which cling
+to the rock walls. It is almost as solid as the rock beneath it, and
+impossible to chip any off.
+~
+~
+0 0 -1 0
+D4
+Long spikes of ice hang down from the roof, no more than a few feet above
+your head.
+~
+~
+0 0 -1 0
+D5
+The ground here is very slippy, where the water has frozen to give a thin
+sheet of ice over everything.
+~
+~
+0 0 -1 0
+E
+ice icicle icicles frost~
+These icicles are of various shapes and sizes, some that are hanging from
+the roof up to six feet long. One thing they all have in common in their
+razor sharp tips, which could skewer you in a second.
+~
+S
+#20567
+Into The Labyrinth~
+   The rock walls are covered in thick ice and the ground is treacherous to
+walk on. The thick mist closes in on you, suffocating you in its lethal
+embrace. To the north, you can see the start of a large chasm and to the
+west, the cave system continues.
+~
+205 ad 3
+D0
+You can see the start of a large chasm, spanned by a wide ice bridge. It
+feels very cold this way.
+~
+~
+0 0 20568 0
+D1
+Water has been suddenly frozen solid into long splinters of ice, which cling
+to the rock walls. It is almost as solid as the rock beneath it, and
+impossible to chip any off.
+~
+~
+0 0 -1 0
+D2
+Water has been suddenly frozen solid into long splinters of ice, which cling
+to the rock walls. It is almost as solid as the rock beneath it, and
+impossible to chip any off.
+~
+~
+0 0 -1 0
+D3
+The mist seems to be slowly drifting this way, back along the tunnel system.
+~
+~
+0 0 20566 0
+D4
+Long spikes of ice hang down from the roof, no more than a few feet above
+your head.
+~
+~
+0 0 -1 0
+D5
+The ground here is very slippy, where the water has frozen to give a thin
+sheet of ice over everything.
+~
+~
+0 0 -1 0
+S
+#20568
+Before The Ice Bridge~
+   You stand at the southern end of a beautiful and impressive looking ice
+bridge. It arches gracefully over a wide chasm that appears to have no
+bottom. On the far side, the tunnels continue, delving further into the
+heart of Moria. The bridge is as solid as rock, and safe to cross.
+~
+205 ad 3
+D0
+The ice bridge spans the wide chasm. It is of simple design, but looks very
+steady and unyielding. Providing care is taken, it should be possible to
+cross with ease.
+~
+~
+0 0 20569 0
+D1
+The sides of the tunnel fall off, merging into the blackness of the chasm.
+Moving this way would surely be death.
+~
+~
+0 0 -1 0
+D2
+The cavern system opens up this way, filled with freezing mist.
+~
+~
+0 0 20567 0
+D3
+The sides of the tunnel fall off, merging into the blackness of the chasm.
+Moving this way would surely be death.
+~
+~
+0 0 -1 0
+D4
+The roof has opened out to about a hundred feet above your head. This is
+really quite a remarkable place, enormous in size. Icicles, which must be
+twenty to thirty feet long hang down, their girth wider that a large beer
+barrel.
+~
+~
+0 0 -1 0
+D5
+You see the start of the bridge, carved entirely out of ice, its extreme
+edges blended perfectly with the tunnel floor. Its as solid as rock, and can
+easily stand your weight.
+~
+~
+0 0 -1 0
+S
+#20569
+On The Ice Bridge~
+   You are standing in the centre of the magnificent ice bridge, spanning
+the wide and bottomless chasm. The ice is crystal clear, allowing you to see
+through the floor. Thick, freezing fog rises from the unknown depths to
+chill your very soul. The bridge extends to the north and south.
+~
+205 acd 3
+D0
+The bridge slopes down to the northern end of the chasm, and firmer ground
+underfoot.
+~
+~
+0 0 20570 0
+D1
+Peering over the edge of the bridge, you see nothing but the bottomless
+chasm. It would be suicidal to move this way.
+~
+~
+0 0 -1 0
+D2
+The bridge gradually slopes down to the southern end of this ice bridge. The
+mist that rises from the depths seems to drift this way.
+~
+~
+0 0 20568 0
+D3
+Peering over the edge of the bridge, you see nothing but the bottomless
+chasm. It would be suicidal to move this way.
+~
+~
+0 0 -1 0
+D4
+The roof has opened out to about a hundred feet above your head. This is
+really quite a remarkable place, enormous in size. Icicles, which must be
+twenty to thirty feet long hang down, their girth wider that a large beer
+barrel.
+~
+~
+0 0 -1 0
+D5
+Looking down at your feet, you get a sudden feeling of dizziness. The ice is
+so clear that it seems for a moment that you are standing in thin air. Below
+the ice, there is nothing but blackness.
+~
+~
+0 0 -1 0
+S
+#20570
+Across The Ice Bridge~
+   On this side of the bridge, there doesn't seem to be as much of the awful
+freezing fog about. Most of it is carried to the south. Exits lead in all
+directions further into Moria.
+~
+205 ad 3
+D0
+The tunnel extends this way into the labyrinth of caves.
+~
+~
+0 0 20573 0
+D1
+The tunnel extends this was into the labyrinth of caves.
+~
+~
+0 0 20571 0
+D2
+You can cross back over the ice bridge to the far side.
+~
+~
+0 0 20569 0
+D3
+The tunnel extends this was into the labyrinth of caves.
+~
+~
+0 0 20574 0
+D4
+The roof has opened out to about a hundred feet above your head. This is
+really quite a remarkable place, enormous in size. Icicles, which must be
+twenty to thirty feet long hang down, their girth wider that a large beer
+barrel.
+~
+~
+0 0 -1 0
+D5
+You see the start of the bridge, carved entirely out of ice, its extreme
+edges blended perfectly with the tunnel floor. Its as solid as rock, and can
+easily stand your weight.
+~
+~
+0 0 -1 0
+S
+#20571
+The Crystal Cavern~
+   You have entered a cavern that is seemingly carved out of the interior of
+a glacier. Ice sculptures have been carved into the walls and grow from the
+ceiling and floor, some looking incredibly delicate. A slight breeze makes a
+tinkling noise in the air as it vibrates through the fine crystals. The only
+exits are to the north and west.
+~
+205 ad 3
+D0
+Through an archway carved out of the ice, you can enter a dark stone tunnel.
+~
+~
+0 0 20572 0
+D1
+The walls are solid ice and have had many carvings made in them. Some of the
+carvings even look like they may have been done by an intelligence. The ice
+must be incredibly thick because you cannot see the rock behind them.
+~
+~
+0 0 -1 0
+D2
+The walls are solid ice and have had many carvings made in them. Some of the
+carvings even look like they may have been done by an intelligence. The ice
+must be incredibly thick because you cannot see the rock behind them.
+~
+~
+0 0 -1 0
+D3
+The start of an ice bridge, which spans a wide cavern can be seen.
+~
+~
+0 0 20570 0
+D4
+The ice ceiling is about ten feet above you, and made from solid rock.
+Crystal structures hang down, which tinkle in the slight breeze. You cannot
+see the stone ceiling through the ice.
+~
+~
+0 0 -1 0
+D5
+Thick ice lies beneath your feet to an unknown depth. The cold seems to
+penetrate your boots, but that may be your imagination. Some wonderful ice
+sculptures grow up from the floor.
+~
+~
+0 0 -1 0
+E
+sculptures structures crystals floor ceiling wall carvings~
+The ice formations have been formed naturally from the water as it melts and
+then crystallises again. Some of the geometric patterns and shapes that you
+see look like they must have been formed by an intelligence, but it can only
+be your imagination.
+~
+S
+#20572
+Into The Labyrinth~
+   The dark tunnel twists deep into Moria, penetrating its very soul. All
+around you the tunnels plunge off into darkness in every direction. The
+magnitude of the place terrifies you, its beyond mortal comprehension. Maybe
+some things are best left undiscovered.
+~
+205 ad 3
+D0
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D1
+A very large block of ice hides an opening into a cold cave.
+~
+ice~
+1 0 20575 0
+D2
+An enormous cavern can be seen, formed entirely from a huge amount of ice,
+probably an ancient glacier.
+~
+~
+0 0 20571 0
+D3
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D4
+The ceiling is only a few inches above your head. It is perfectly smooth,
+weathered by ice and water over the millennia. You baulk at the thought of
+how much rock is above your head.
+~
+~
+0 0 -1 0
+D5
+The ground has been worn smooth from continual erosion of ice as it passes
+through the tunnels.
+~
+~
+0 0 -1 0
+S
+#20573
+Into The Labyrinth~
+   The dark tunnel twists deep into Moria, penetrating its very soul. All
+around you the tunnels plunge off into darkness in every direction. The
+magnitude of the place terrifies you, its beyond mortal comprehension. Maybe
+some things are left undiscovered.
+~
+205 ad 3
+D0
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D1
+The start of an ice bridge which spans a great chasm can be seen.
+~
+~
+0 0 20570 0
+D2
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D3
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D4
+The ceiling is only a few inches above your head. It is perfectly smooth,
+weathered by ice and water over the millennia. You baulk at the thought of
+how much rock is above your head.
+~
+~
+0 0 -1 0
+D5
+The ground has been worn smooth from continual erosion of ice as it passes
+through the tunnels.
+~
+~
+0 0 -1 0
+S
+#20574
+Into The Labyrinth~
+   The dark tunnel twists deep into Moria, penetrating its very soul. All
+around you the tunnels plunge off into darkness in every direction. The
+magnitude of the place terrifies you, its beyond mortal comprehension. Maybe
+some things are left undiscovered.
+~
+205 ad 3
+D0
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D1
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D2
+The start of an ice bridge which spans a great chasm can be seen.
+~
+~
+0 0 20570 0
+D3
+The tunnels go on into infinity. Its impossible to decide which way to go
+without getting lost almost instantly.
+~
+~
+0 0 -1 0
+D4
+The ceiling is only a few inches above your head. It is perfectly smooth,
+weathered by ice and water over the millennia. You baulk at the thought of
+how much rock is above your head.
+~
+~
+0 0 -1 0
+D5
+The ground has been worn smooth from continual erosion of ice as it passes
+through the tunnels.
+~
+~
+0 0 -1 0
+S
+#20575
+The Freezer~
+   This place must be the coldest hell-hole on the face of this Earth. It
+hasn't seen the warmth of sun for thousands of years and it drinks at your
+energy like a sponge in water. Leave now before your life force is
+completely drained away.
+~
+205 ad 3
+D0
+The rock walls appear to glow with a blueness from the sheer coldness of
+this place.
+~
+~
+0 0 -1 0
+D1
+The rock walls appear to glow with a blueness from the sheer coldness of
+this place.
+~
+~
+0 0 -1 0
+D2
+The rock walls appear to glow with a blueness from the sheer coldness of
+this place.
+~
+~
+0 0 -1 0
+D3
+A big slab of ice has been used to hide this cave from the main tunnel.
+~
+ice~
+1 0 20572 0
+D4
+The ceiling is just high enough for you to stand in. A few small icicles
+hang down at irregular intervals around the cave.
+~
+~
+0 0 -1 0
+D5
+There is nothing around on the ground that catches your eye, just a few
+blocks of ice.
+~
+~
+0 0 -1 0
+S
+#20576
+At The Bottom Of The Stairs~
+   Some stone steps, roughly chiselled out of the solid rock, climb up
+through a hole in the ceiling. A dark and shadowy tunnel has been carved
+through the mountain to the south.
+~
+205 ad 3
+D0
+The rough stone steps have been carved out of the solid rock by brute force.
+They are set in the northern wall, and climb clumsily into the ceiling
+above. Their rough texture provides a sure grip on your boots.
+~
+~
+0 0 -1 0
+D1
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D2
+A shadowy tunnel twists away into the semi-darkness.
+~
+~
+0 0 20577 0
+D3
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D4
+The rough stone steps have been carved out of the solid rock by brute force.
+They are set in the northern wall, and climb clumsily into the ceiling
+above. Their rough texture provides a sure grip on your boots.
+~
+~
+0 0 20530 0
+D5
+A few loose stones are scattered about the ground at the bottom of the
+stairs. The floor is scarred from the brutal force which carved it.
+~
+~
+0 0 -1 0
+S
+#20577
+A Shadowy Tunnel~
+   A few of the tiny crystals from the tunnel above you have found there way
+down here and are scattered on the ground. The small amount of light they
+give off create shadows all around you. You can see the stairway to the
+north and a tunnel to the east. There is a wooden door in the southern wall.
+~
+205 ad 3
+D0
+The tunnel ends at the foot of a great staircase which climbs up into the
+ceiling.
+~
+~
+0 0 20576 0
+D1
+The shadowy tunnel continues this way.
+~
+~
+0 0 20579 0
+D2
+A large wooden door with wrought iron metalwork is set into the wall.
+~
+door~
+1 0 20578 0
+D3
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D4
+The tunnel roof is high enough for you to walk through with ease. Its grey,
+barren surface is very boring to look at.
+~
+~
+0 0 -1 0
+D5
+A few of the light-amplifying crystals from the tunnels above you have been
+scattered around the floor here, casting a dim glow over the whole tunnel.
+~
+~
+0 0 -1 0
+E
+crystal crystals~
+They absorb the light from your light, amplify it many times, and scatter
+the light back at you. Where there are quite a few of them, the light can be
+very intense.
+~
+S
+#20578
+The Air Guardian's Chamber~
+   The chamber is very brightly lit by many small lamps which burn with an
+intense white light. The effect is to give the room a very open and spacious
+feeling, most unlike the tunnel system outside. Your spirit feels lightened.
+~
+205 d 3
+D0
+A large wooden door, complete with iron wrought metalwork is set into the
+wall.
+~
+door~
+1 0 20577 0
+D1
+A few wooden shelves covered in various clutter are fixed onto the walls.
+~
+~
+0 0 -1 0
+D2
+A small hole, only 18 inches across, has been made in the wall. As you put
+your hand against it, you can feel a strong draft. It baffles you
+completely.
+~
+~
+0 0 -1 0
+D3
+A stone bed, ten feet long, has been pushed up against the wall. It has no
+coverings or mattress on it, its shape being the only clue to its use.
+~
+~
+0 0 -1 0
+D4
+A beautiful and powerful scene of a tornado wreaking havoc as it crashes
+through a country landscape can be seen. It is painted in lustrous colours,
+the blues, greens and silvers shining brightly.
+~
+~
+0 0 -1 0
+D5
+The floor is varnished in a pale blue, like the colour of the sky on a warm
+and sunny summers day. It adds to the lightness of the room, giving you a
+good feeling.
+~
+~
+0 0 -1 0
+E
+lamp lamps~
+The small lights contain a metal filament the like you have never seen
+before. It radiates an intense white colour, which almost blinds you as you
+examine it up close.
+~
+S
+#20579
+A Shadowy Tunnel~
+   The tunnel continues to both the east and west. Strange shadows can be
+seen in the light cast by your lamp.
+~
+205 ad 3
+D0
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D1
+The shadowy tunnel continues this way.
+~
+~
+0 0 20580 0
+D2
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D3
+The shadowy tunnel continues this way.
+~
+~
+0 0 20577 0
+D4
+The tunnel roof is high enough for you to walk through with ease. Its grey,
+barren surface is very boring to look at.
+~
+~
+0 0 -1 0
+D5
+A few of the light-amplifying crystals from the tunnels above you have been
+scattered around the floor here, casting a dim glow over the whole tunnel.
+~
+~
+0 0 -1 0
+S
+#20580
+A Shadowy Tunnel~
+   The tunnel continues to both the south and west. Strange shadows can be
+seen in the light cast by your lamp. A wooden door is set into the northern
+wall.
+~
+205 ad 3
+D0
+The wooden door has black metal hinges and an ornate ivory doorknob. It
+looks like it could stand any amount of ramming.
+~
+door~
+1 0 20581 0
+D1
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D2
+The shadowy tunnel continues this way.
+~
+~
+0 0 20582 0
+D3
+The shadowy tunnel continues this way.
+~
+~
+0 0 20579 0
+D4
+The tunnel roof is high enough for you to walk through with ease. Its grey,
+barren surface is very boring to look at.
+~
+~
+0 0 -1 0
+D5
+A few of the light-amplifying crystals from the tunnels above you have been
+scattered around the floor here, casting a dim glow over the whole tunnel.
+~
+~
+0 0 -1 0
+S
+#20581
+The Water Guardian's Chamber~
+   The chamber is filled with ice-cold water up to your knees. As you stand
+there, something brushes against your leg, but darts off again through the
+dark water. Water seems to be oozing out of the very walls and ceiling, as
+if the rock itself is bleeding. A solid looking door leads out of here to
+the south.
+~
+205 d 3
+D0
+Looking at the wall very closely, you see that it is riddled with many tiny
+fractures and holes. Water seeps through these and drains down to the floor,
+filling the chamber slowly.
+~
+~
+0 0 -1 0
+D1
+Looking at the wall very closely, you see that it is riddled with many tiny
+fractures and holes. Water seeps through these and drains down to the floor,
+filling the chamber slowly.
+~
+~
+0 0 -1 0
+D2
+A large wooden door is set into the wall, and provides the only exit out.
+~
+door~
+1 0 20580 0
+D3
+Looking at the wall very closely, you see that it is riddled with many tiny
+fractures and holes. Water seeps through these and drains down to the floor,
+filling the chamber slowly.
+~
+~
+0 0 -1 0
+D4
+Water drips down onto your face from the cracks in the ceiling. The wetter
+you get, the more miserable you feel.
+~
+~
+0 0 -1 0
+D5
+You are standing in ice-cold water up to your knees, which isn't very
+pleasant. There is something alive in here with you, but it is too quick for
+you to catch.
+~
+~
+0 0 -1 0
+S
+#20582
+A Shadowy Tunnel~
+   The tunnel continues to both the east and north. Strange shadows can be
+seen in the light cast by your lamp.
+~
+205 ad 3
+D0
+The shadowy tunnel continues this way.
+~
+~
+0 0 20580 0
+D1
+The shadowy tunnel continues this way.
+~
+~
+0 0 20583 0
+D2
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D3
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D4
+The tunnel roof is high enough for you to walk through with ease. Its grey,
+barren surface is very boring to look at.
+~
+~
+0 0 -1 0
+D5
+A few of the light-amplifying crystals from the tunnels above you have been
+scattered around the floor here, casting a dim glow over the whole tunnel.
+~
+~
+0 0 -1 0
+S
+#20583
+A Shadowy Tunnel~
+   The tunnel continues to both the south and west. Strange shadows can be
+seen in the light cast by your lamp. There is a large door set into the
+eastern wall.
+~
+205 ad 3
+D0
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D1
+A very large door dominates the eastern wall, dwarfing you by its size. It
+must have been intended for a very large being.
+~
+door~
+1 0 20584 0
+D2
+The shadowy tunnel continues this way.
+~
+~
+0 0 20585 0
+D3
+The shadowy tunnel continues this way.
+~
+~
+0 0 20582 0
+D4
+The tunnel roof is high enough for you to walk through with ease. Its grey,
+barren surface is very boring to look at.
+~
+~
+0 0 -1 0
+D5
+A few of the light-amplifying crystals from the tunnels above you have been
+scattered around the floor here, casting a dim glow over the whole tunnel.
+~
+~
+0 0 -1 0
+S
+#20584
+The Earth Guardian's Chamber~
+   This large cave has at least a foot of earth on the floor. The walls and
+ceiling are covered in dirt, and there is the smell of decay in the air. A
+hard packed heap of soil has been made in the corner, looking like some
+sort of burial mound. The only exit is back to the west.
+~
+205 d 3
+D0
+Along the northern wall you can see a large pile of earth, hard-packed,
+which resembles a burial mound. You cannot decide whether it is some sort of
+bed or whether it is used as a table of some kind. It is about seven feet
+long by five feet wide and three above the ground.
+~
+~
+0 0 -1 0
+D1
+The wall is smeared in dirt and earth, which somehow clings to the rock
+beneath. A few worms and beetles can be seen grubbing around in the decay.
+~
+~
+0 0 -1 0
+D2
+The wall is smeared in dirt and earth, which somehow clings to the rock
+beneath. A few worms and beetles can be seen grubbing around in the decay.
+~
+~
+0 0 -1 0
+D3
+A large wooden door is set into the wall. This side of it looks a little
+rotten from the continual damp and decaying atmosphere of this room.
+~
+door~
+1 0 20583 0
+D4
+Looking up at the ceiling, five feet above you, you see that it is caked in
+black soil. Even from here you get a feeling that its alive with worms and
+the like, crawling through the decay.
+~
+~
+0 0 -1 0
+D5
+The floor has about a foot of pure black soil. As you trudge through it, you
+disturb many worms and beetles, feasting on the decay. A few of the worms
+are quite large, five inches or so long.
+~
+~
+0 0 -1 0
+E
+heap burial mound~
+Along the northern wall you can see a large pile of earth, hard-packed,
+which resembles a burial mound. You cannot decide whether it is some sort of
+bed or whether it is used as a table of some kind. It is about seven feet
+long by five feet wide and three above the ground.
+~
+S
+#20585
+A Shadowy Tunnel~
+   The tunnel continues to both the north and south. Strange shadows can be
+seen in the light cast by your lamp. There is a large door set into the
+eastern wall.
+~
+205 ad 3
+D0
+The shadowy tunnel continues this way.
+~
+~
+0 0 20583 0
+D1
+A very large door dominates the eastern wall, dwarfing you by its size. It
+must have been intended for a very large being. 
+~
+door~
+1 0 20586 0
+D2
+The shadowy tunnel continues this way.
+~
+~
+0 0 20587 0
+D3
+The blank grey wall stares back at you with its featureless face.
+~
+~
+0 0 -1 0
+D4
+The tunnel roof is high enough for you to walk through with ease. Its grey,
+barren surface is very boring to look at.
+~
+~
+0 0 -1 0
+D5
+A few of the light-amplifying crystals from the tunnels above you have been
+scattered around the floor here, casting a dim glow over the whole tunnel.
+~
+~
+0 0 -1 0
+S
+#20586
+The Stone Guardian's Chamber~
+   The floor, walls and ceiling in here have all been polished to a smooth,
+shiny black finish, the colour of ebony. A few red streaks are present in
+the rock, giving it a vein-like appearance. A large mirror hangs on the
+southern wall reflecting your handsome figure. The only exit is back to the
+west.
+~
+205 d 3
+D0
+The black walls have been polished to a smooth finish. A few red veins run
+through the rock, giving it an almost life-like look. The stone is very cold
+to the touch.
+~
+~
+0 0 -1 0
+D1
+The black walls have been polished to a smooth finish. A few red veins run
+through the rock, giving it an almost life-like look. The stone is very cold
+to the touch.
+~
+~
+0 0 -1 0
+D2
+Hanging on the wall is a full length rectangular mirror, eight feet by three
+feet. It is made from some kind of polished metal, probably chrome. The
+diffuse light in this room seems to enhance your refection, making you
+appear rather handsome for a change. You feel like you may almost be able to
+walk through it...
+~
+mirror~
+1 0 20588 0
+D3
+The solid wooden door stands in the centre of the black rock wall.
+~
+door~
+1 0 20585 0
+D4
+The chamber ceiling is not more than a few feet above you. Like the rest of
+the chamber, it is formed from highly polished black rock. A few engravings
+of enormous mountain ranges have been carved into it, using the natural red
+veins of the rock to enhance the image.
+~
+~
+0 0 -1 0
+D5
+As you have entered the chamber, your boots have made scuff-marks on the
+polished floor, spoiling the almost perfect beauty of this place.
+~
+~
+0 0 -1 0
+E
+mirror~
+Hanging on the wall is a full length rectangular mirror, eight feet by three
+feet. It is made from some kind of polished metal, probably chrome. The
+diffuse light in this room seems to enhance your refection, making you
+appear rather handsome for a change. You feel like you may almost be able to
+walk through it...
+~
+S
+#20587
+End Of The Shadowy Tunnel~
+   You have reached the end of the tunnel, where a blank rock wall meets you
+from all directions. There is an iron door in the eastern wall. The shadowy
+tunnel leads back to the north.
+~
+205 ad 3
+D0
+The shadowy tunnel continues this way.
+~
+~
+0 0 20585 0
+D1
+Set into the wall is a gigantic iron door, at least fifteen feet high and
+seven feet across. A carefully etched picture of a blazing sun has been
+drawn on the door, along with some ancient runes, which mean nothing to you.
+The metal door feels hot to the touch. 
+~
+door~
+1 0 20588 0
+D2
+The blank grey wall stares back at you with its featureless face. Looks like
+you have reached the end of the tunnel.
+~
+~
+0 0 -1 0
+D3
+The blank grey wall stares back at you with its featureless face. 
+~
+~
+0 0 -1 0
+D4
+The tunnel roof is high enough for you to walk through with ease. Its grey,
+barren surface is very boring to look at.
+~
+~
+0 0 -1 0
+D5
+A few of the light-amplifying crystals from the tunnels above you have been
+scattered around the floor here, casting a dim glow over the whole tunnel.
+~
+~
+0 0 -1 0
+S
+#20588
+The Fire Guardian's Chamber~
+   The chamber is full of very hot steam rising slowly from the ground. It
+makes it very hard to see anything clearly. The walls glow with a dull red
+colour and the ground feels hot to walk on. A blast of hot air occasionally
+sends you reeling as it scalds your face. There is an enormous metal door
+in the western wall. Your boots clink on a grating beneath your feet.
+~
+205 d 3
+D0
+The rock wall glows with a dull red colour, indicating they may be very hot
+to the touch. Splashing a little of your drinking water onto it, it hisses
+and vaporises immediately.
+~
+~
+0 0 -1 0
+D1
+The rock wall glows with a dull red colour, indicating they may be very hot
+to the touch. Splashing a little of your drinking water onto it, it hisses
+and vaporises immediately.
+~
+~
+0 0 -1 0
+D2
+The rock wall glows with a dull red colour, indicating they may be very hot
+to the touch. Splashing a little of your drinking water onto it, it hisses
+and vaporises immediately.
+~
+~
+0 0 -1 0
+D3
+The enormous iron door leads back out into the tunnel.
+~
+door~
+1 0 20587 0
+D4
+The rock ceiling glows with an unearthly red light. You can feel the heat
+that its giving off from here. There is a carving of a great sun filling
+most of the space, its brilliance dazzling to your eyes.
+~
+~
+0 0 -1 0
+D5
+A skull and crossbones has been chiselled into the rock floor, and an
+ancient sign, the black cross, which you recognise as a symbol of death,
+has been painted in the centre. A large metal grating can be seen in the
+centre of the floor.
+~
+Hell~
+2 20546 20589 0
+E
+grating~
+The grating is made from iron bars, and is about five feet square. Should
+you be able to work it loose, it is plenty big enough for you to crawl down.
+~
+S
+#20589
+The Tunnel To Hell~
+   You have entered a narrow and twisty tunnel. The black rock walls glow
+with an evil red emanation. The taste of death and destruction is rife in
+the air. The smell of slaughter and carnage is palpable on your lips. Wild
+shrieks of pain or insane laughter fill the air. The tunnel continues to the
+south.
+~
+205 acd 3
+D0
+The black rock walls glow red with an evil emanation. Green slime oozes out
+of small fractures and dribbles slowly to the ground at your feet. They are
+incredibly hot to the touch. They contain the souls of the dead.
+~
+~
+0 0 -1 0
+D1
+The black rock walls glow red with an evil emanation. Green slime oozes out
+of small fractures and dribbles slowly to the ground at your feet. They are
+incredibly hot to the touch. They contain the souls of the dead.
+~
+~
+0 0 -1 0
+D2
+The tunnel continues its journey to hell this way.
+~
+~
+0 0 20590 0
+D3
+The black rock walls glow red with an evil emanation. Green slime oozes out
+of small fractures and dribbles slowly to the ground at your feet. They are
+incredibly hot to the touch. They contain the souls of the dead.
+~
+~
+0 0 -1 0
+D4
+In the centre of the stone ceiling above you is an iron grating. The roof is
+quite low here, and it wont take much effort to climb up through the grating
+if you could only open it.
+~
+grating~
+2 20546 20588 0
+D5
+The floor is made from a solid black rock. Very tiny cracks allow steam to
+well up from far down below.
+~
+~
+0 0 -1 0
+S
+#20590
+The Tunnel To Hell~
+   Thousands of tortured faces are embedded in the rock walls, all crying
+out to you, their features twisted into perpetual torment. The roof drips 
+with a black viscous liquid which hisses as it hits the ground. Terrifying  
+screams can be heard in the distance. The tunnel continues to the north and
+south.
+~
+205 ad 3
+D0
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20589 0
+D1
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D2
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20591 0
+D3
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D4
+Big drops of a black and viscous liquid slowly ooze out of the roof and drip
+to the ground. As they hit the floor, a loud hiss can be heard as some of 
+rock is burnt away by the acid, producing tiny pock marks. Nothing natural
+could live here.
+~
+~
+0 0 -1 0
+D5
+The solid rock floor is scarred by the continual drops of acid that drip 
+from the roof above. It feels very hot through your boots and seems to
+almost radiate death up at you. Your shadow seems to be missing.
+~
+~
+0 0 -1 0
+E
+black viscous liquid~
+The liquid is of the purest black colour, and incredibly thick. It oozes 
+very slowly through holes in the roof and drips to the ground, burning small
+scars into the rock. It must be a very powerful acid.
+~
+E
+faces face~
+The faces are all crowded together, no room between them. Their mouths
+have been stitched together, preventing them from talking, but they stare at 
+you with a terrified look, almost as if they are warning you not to go any 
+further.
+~
+S
+#20591
+The Tunnel To Hell~
+   Thousands of tortured faces are embedded in the rock walls, all crying
+out to you, their features twisted into perpetual torment. The roof drips 
+with a black viscous liquid which hisses as it hits the ground. Terrifying  
+screams can be heard in the distance. The tunnel continues to the north and
+east.
+~
+205 ad 3
+D0
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20590 0
+D1
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20592 0
+D2
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D3
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D4
+Big drops of a black and viscous liquid slowly ooze out of the roof and drip
+to the ground. As they hit the floor, a loud hiss can be heard as some of 
+rock is burnt away by the acid, producing tiny pock marks. Nothing natural
+could live here.
+~
+~
+0 0 -1 0
+D5
+The solid rock floor is scarred by the continual drops of acid that drip 
+from the roof above. It feels very hot through your boots and seems to
+almost radiate death up at you. Your shadow seems to be missing.
+~
+~
+0 0 -1 0
+E
+black viscous liquid~
+The liquid is of the purest black colour, and incredibly thick. It oozes 
+very slowly through holes in the roof and drips to the ground, burning small
+scars into the rock. It must be a very powerful acid.
+~
+E
+faces face~
+The faces are all crowded together, no room between them. Their mouths
+have been stitched together, preventing them from talking, but they stare at 
+you with a terrified look, almost as if they are warning you not to go any 
+further.
+~
+S
+#20592
+The Tunnel To Hell~
+   Thousands of tortured faces are embedded in the rock walls, all crying
+out to you, their features twisted into perpetual torment. The roof drips 
+with a black viscous liquid which hisses as it hits the ground. Terrifying  
+screams can be heard in the distance. The tunnel continues to the east and
+west.
+~
+205 ad 3
+D0
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D1
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20593 0
+D2
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D3
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20591 0
+D4
+Big drops of a black and viscous liquid slowly ooze out of the roof and drip
+to the ground. As they hit the floor, a loud hiss can be heard as some of 
+rock is burnt away by the acid, producing tiny pock marks. Nothing natural
+could live here.
+~
+~
+0 0 -1 0
+D5
+The solid rock floor is scarred by the continual drops of acid that drip 
+from the roof above. It feels very hot through your boots and seems to
+almost radiate death up at you. Your shadow seems to be missing.
+~
+~
+0 0 -1 0
+E
+black viscous liquid~
+The liquid is of the purest black colour, and incredibly thick. It oozes 
+very slowly through holes in the roof and drips to the ground, burning small
+scars into the rock. It must be a very powerful acid.
+~
+E
+faces face~
+The faces are all crowded together, no room between them. Their mouths
+have been stitched together, preventing them from talking, but they stare at 
+you with a terrified look, almost as if they are warning you not to go any 
+further.
+~
+S
+#20593
+The Tunnel To Hell~
+   Thousands of tortured faces are embedded in the rock walls, all crying
+out to you, their features twisted into perpetual torment. The roof drips 
+with a black viscous liquid which hisses as it hits the ground. Terrifying  
+screams can be heard in the distance. The tunnel continues to the west and
+south.
+~
+205 ad 3
+D0
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D1
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D2
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20594 0
+D3
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20592 0
+D4
+Big drops of a black and viscous liquid slowly ooze out of the roof and drip
+to the ground. As they hit the floor, a loud hiss can be heard as some of 
+rock is burnt away by the acid, producing tiny pock marks. Nothing natural
+could live here.
+~
+~
+0 0 -1 0
+D5
+The solid rock floor is scarred by the continual drops of acid that drip 
+from the roof above. It feels very hot through your boots and seems to
+almost radiate death up at you. Your shadow seems to be missing.
+~
+~
+0 0 -1 0
+E
+black viscous liquid~
+The liquid is of the purest black colour, and incredibly thick. It oozes 
+very slowly through holes in the roof and drips to the ground, burning small
+scars into the rock. It must be a very powerful acid.
+~
+E
+faces face~
+The faces are all crowded together, no room between them. Their mouths
+have been stitched together, preventing them from talking, but they stare at 
+you with a terrified look, almost as if they are warning you not to go any 
+further.
+~
+S
+#20594
+The Tunnel To Hell~
+   Thousands of tortured faces are embedded in the rock walls, all crying
+out to you, their features twisted into perpetual torment. The roof drips 
+with a black viscous liquid which hisses as it hits the ground. Terrifying  
+screams can be heard in the distance. The tunnel continues to the north and
+south.
+~
+205 ad 3
+D0
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20593 0
+D1
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D2
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20595 0
+D3
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D4
+Big drops of a black and viscous liquid slowly ooze out of the roof and drip
+to the ground. As they hit the floor, a loud hiss can be heard as some of 
+rock is burnt away by the acid, producing tiny pock marks. Nothing natural
+could live here.
+~
+~
+0 0 -1 0
+D5
+The solid rock floor is scarred by the continual drops of acid that drip 
+from the roof above. It feels very hot through your boots and seems to
+almost radiate death up at you. Your shadow seems to be missing.
+~
+~
+0 0 -1 0
+E
+black viscous liquid~
+The liquid is of the purest black colour, and incredibly thick. It oozes 
+very slowly through holes in the roof and drips to the ground, burning small
+scars into the rock. It must be a very powerful acid.
+~
+E
+faces face~
+The faces are all crowded together, no room between them. Their mouths
+have been stitched together, preventing them from talking, but they stare at 
+you with a terrified look, almost as if they are warning you not to go any 
+further.
+~
+S
+#20595
+The Tunnel To Hell~
+   Thousands of tortured faces are embedded in the rock walls, all crying
+out to you, their features twisted into perpetual torment. The roof drips 
+with a black viscous liquid which hisses as it hits the ground. Terrifying  
+screams can be heard in the distance. The tunnel continues to the north and
+east.
+~
+205 ad 3
+D0
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20594 0
+D1
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20596 0
+D2
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D3
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D4
+Big drops of a black and viscous liquid slowly ooze out of the roof and drip
+to the ground. As they hit the floor, a loud hiss can be heard as some of 
+rock is burnt away by the acid, producing tiny pock marks. Nothing natural
+could live here.
+~
+~
+0 0 -1 0
+D5
+The solid rock floor is scarred by the continual drops of acid that drip 
+from the roof above. It feels very hot through your boots and seems to
+almost radiate death up at you. Your shadow seems to be missing.
+~
+~
+0 0 -1 0
+E
+black viscous liquid~
+The liquid is of the purest black colour, and incredibly thick. It oozes 
+very slowly through holes in the roof and drips to the ground, burning small
+scars into the rock. It must be a very powerful acid.
+~
+E
+faces face~
+The faces are all crowded together, no room between them. Their mouths
+have been stitched together, preventing them from talking, but they stare at 
+you with a terrified look, almost as if they are warning you not to go any 
+further.
+~
+S
+#20596
+The End Of The Tunnel To Hell~
+   Thousands of tortured faces are embedded in the rock walls, all crying
+out to you, their features twisted into perpetual torment. The roof drips 
+with a black viscous liquid which hisses as it hits the ground. Terrifying  
+screams can be heard from a chamber to the east. The tunnel continues back
+to the west.
+~
+205 ad 3
+D0
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D1
+The tunnel ends at the entrance to a very large chamber. The odd gust of 
+fire comes belching out at you accompanied by a terrified scream. The mad
+sound of an evil laughter can be heard.
+~
+~
+0 0 20597 0
+D2
+The wall is alive with a writhing mass of faces, the last remnants of poor
+tortured souls. They seem to plead you for help in ending their eternal 
+damnation. The vision is awful and grotesque.
+~
+~
+0 0 -1 0
+D3
+The dreadful tunnel continues this way, cutting through the death and 
+carnage without any care.
+~
+~
+0 0 20595 0
+D4
+Big drops of a black and viscous liquid slowly ooze out of the roof and drip
+to the ground. As they hit the floor, a loud hiss can be heard as some of 
+rock is burnt away by the acid, producing tiny pock marks. Nothing natural
+could live here.
+~
+~
+0 0 -1 0
+D5
+The solid rock floor is scarred by the continual drops of acid that drip 
+from the roof above. It feels very hot through your boots and seems to
+almost radiate death up at you. Your shadow seems to be missing.
+~
+~
+0 0 -1 0
+E
+black viscous liquid~
+The liquid is of the purest black colour, and incredibly thick. It oozes 
+very slowly through holes in the roof and drips to the ground, burning small
+scars into the rock. It must be a very powerful acid.
+~
+E
+faces face~
+The faces are all crowded together, no room between them. Their mouths
+have been stitched together, preventing them from talking, but they stare at 
+you with a terrified look, almost as if they are warning you not to go any 
+further.
+~
+S
+#20597
+The Satanic Chamber~
+   You have entered the throne room of one of the most feared creatures in
+mortal legends. There is no colour here, just the darkness of death. Upon a
+large pedestal in the centre of the chamber, a huge throne dominates, its
+looming presence mocking your very being. The sound of screams is almost
+deafening. How can a place be so hot but send such a shiver through you?
+~
+205 cd 3
+D0
+The walls are completely black, totally devoid of colour or any details
+whatsoever. The light from your lantern is so completely absorbed by them
+that you get a feeling of being lost inside a vast expanse with no ending.
+This is a place of utter dread where all hopes are terminated and life has
+no meaning.
+~
+~
+0 0 -1 0
+D1
+The walls are completely black, totally devoid of colour or any details
+whatsoever. The light from your lantern is so completely absorbed by them
+that you get a feeling of being lost inside a vast expanse with no ending.
+This is a place of utter dread where all hopes are terminated and life has
+no meaning.
+~
+~
+0 0 -1 0
+D2
+The walls are completely black, totally devoid of colour or any details
+whatsoever. The light from your lantern is so completely absorbed by them
+that you get a feeling of being lost inside a vast expanse with no ending.
+This is a place of utter dread where all hopes are terminated and life has
+no meaning.
+~
+~
+0 0 -1 0
+D3
+A large archway has been carved in the wall, a strange point of lightness in
+the otherwise black wall. You can leave this godforsaken place back into the
+tunnel.
+~
+~
+0 0 20596 0
+D4
+The black ceiling absorbs your light so completely that it is impossible to
+tell how high the roof climbs above you. The blackness makes you feel weary
+as if there is no point in carrying on, that all this is futile.
+~
+~
+0 0 -1 0
+D5
+The ground is meticulously clean and the rock polished to a high finish.
+Staring down at your refection in the mirror-like surface you see a haggard
+and old image, a down and out, a loser. You feel depressed. A sudden gust of
+fire snaps you out of this nightmare, making you feel just a little
+uncomfortable.
+~
+~
+0 0 -1 0
+E
+pedestal~
+The pedestal is circular and stands in the centre of the chamber. Having a
+diameter of twenty feet, it stands at least five feet above the ground.
+Steps have been carved into the front which lead up to the throne upon it.
+Screaming faces of the soulless are trapped for eternity in it, encrusted
+like gems in a piece of jewellery.
+~
+E
+throne~
+The throne stands proud upon the pedestal, overlooking the vast chamber from
+a commanding position. It is gigantic, the seat being at least four feet
+square. Made from solid gold and encrusted with diamonds and rubies the size
+of a fist, it is in sharp contrast to the sparsity of the rest of the
+chamber. It must weigh a few tonnes at least.
+~
+S
+$~

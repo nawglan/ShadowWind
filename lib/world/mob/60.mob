@@ -1,0 +1,133 @@
+#6000
+dracolich dragon bone bones skeleton~
+the Bloody Dracolich~
+A bloody pile of bones forms itself into a skeletal dragon.
+~
+The bones seem to be those of an assortment of this things previous victims.
+All of the bones are stained with blood, and its eyes pulse with an unholy
+green light. It spreads what would be its wings, giving you a full view of
+the crude assortment of bones.  
+~
+dejnop hknt -1000 X
+36 7 -8 18d18+360
+0 118000
+5 8 0 2 0 6
+T 50 5d3+2 24
+T 50 5d3+2 24
+T 200 10d10+2 22
+Str: 100
+Dex: 100
+Int: 90
+Wis: 60
+Con: 100
+ResDark: 10
+ResPierce: 10
+#6001
+skeleton bones worker ~
+the skeletal worker~
+A skeleton stands, picking through the rotten limbs.
+~
+Glowing green eyes stare out of a leering fleshless face. The skeleton is
+made of blackened and shattered bones. It seems to be partially held
+together by its piecemail armour.  
+~
+dgh gkr -500 X
+20 12 0 10d10+200
+0 25000
+8 8 0 0 0 3
+T 100 5d6+5 0
+T 100 1d20+0 27
+T 100 1d20+0 27
+A 30 0 {0The skeletal worker leers at you, bits of {rflesh{0 dropping from its teeth.
+Str: 100
+Dex: 100
+Int: 3
+Wis: 3
+Con: 40
+#6002
+zombie corpse~
+the zombie~
+A walking corpse wanders mindlessly.
+~
+Vacant eyes stare at you from sagging flesh. This rotting bag of bones
+wheezes in agony even as it munches on some rotting flesh. Pieces of it
+flake off as it moves mindlessly about.  
+~
+cdghp gkrw 0 X
+25 10 -3 13d13+250
+0 45500
+8 8 0 2 0 3
+T 100 4d20+20 24
+A 60 0 The mindless zombie groans in pain as it shambles about.
+A 10 0 The mindless zombie transfixes you with its vacant gaze.
+Str: 70
+ResCharm: 20
+#6003
+zombie corpse~
+the hideous zombie~
+A grotesque walking corpse wallows about in carnage.
+~
+Vacant eye stare out from sagging skin, bits of flesh peel and fall from
+thies heinous creation. A low moan escapes its lips, it sounds hungry.  
+~
+cdfhp fgkr -400 X
+23 11 -2 12d12+230
+0 35000
+8 8 0 2 0 3
+T 50 2d2+1 9
+T 150 5d10+15 22
+Str: 90
+#6004
+skeleton warrior~
+the skeletal warrior~
+A skeletal warrior roams around, looking for fresh meat.
+~
+Glowing red emenates from its vacant eyeholes as it moves with an awkward
+grace looking for a new harvest. It moves as if some invisible hand
+controlled it like a marionette, pulling it with some malcious purpose. 
+With a silent glare it moves towards your warmth.  
+~
+dfgm dgkrs -500 X
+30 9 -5 15d15+300
+0 80000
+8 8 0 2 0 4
+T 100 5d6+15 25
+T 50 5d6+0 7
+Str: 90
+Dex: 40
+#6005
+crimson slime ooze jelly blob red~
+the glowing red ooze~
+A glowing crimson slime squirms over the rocks.
+~
+Bubbling and hissing like the liquid it was spawned from, this jellylike
+substance has a horrid odor. It leaves a trail of sludge behind as it moves,
+the sludge eats through solid rock behind it.  
+~
+cdmpqr gw 0 X
+20 12 0 10d10+200
+0 25000
+8 8 1 14 16 2
+T 33 1d10+0 21
+T 20 1d10+0 21
+Str: 20
+Dex: 100
+Int: 20
+Wis: 20
+#6006
+ochre blue jelly~
+the ghastly blue ochre~
+A small drop of blue jelly rests upon the walls.
+~
+Glowing with an intense inner blue light, this tiny creature quivers with a
+vibrant energy. It rests against the rock in seeming anticipation of the
+meal to come. The heat it generate just resting there is enough to warm the
+air around it.  
+~
+defhmpqr t 0 X
+22 11 -1 11d11+220
+0 31000
+8 8 2 14 16 1
+T 50 2d20+2 21
+Str: 40
+Dex: 100

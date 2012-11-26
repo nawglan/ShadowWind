@@ -1,0 +1,487 @@
+#3100
+tea cup~
+a cup~
+A cup has been set here.~
+~
+17 0 a 0 
+8 8 11 0 18
+9 25
+E
+cup~
+It is a small simple cup.
+~
+#3101
+coffee cup~
+a cup~
+A cup has been set here.~
+~
+17 0 a 0 
+8 8 12 0 18
+9 27
+E
+cup~
+It is a small simple cup.
+~
+#3102
+water cup~
+a cup~
+A cup has been set here.~
+~
+17 0 a 0 
+12 12 15 0 18
+13 20
+E
+cup~
+It is a large simple cup.
+~
+#3103
+water bottle~
+a bottle~
+A bottle of Evian natural spring water is here.~
+~
+17 0 a 0 
+24 24 15 0 18
+26 250
+E
+label~
+You've been ripped off!  It says here at the bottom of the label, in really
+really small letters, "Bottled in the Garathorm branch of Evian Inc.  This
+water is from the natural, mostly clean River of Weirvane."
+~
+E
+bottle~
+It is a large, clean bottle.
+~
+#3104
+simple skin~
+a simple water skin~
+A water skin has been set on the ground here.~
+~
+17 0 a 0 
+60 60 15 0 20
+65 500
+E
+canteen~
+It's a fairly big canteen.  Looks like it can hold a lot of liquid.
+~
+#3105
+bottle broken~
+a broken bottle~
+A broken bottle has been carelessly dropped here.~
+~
+5 0 a 0 
+2 1 3 12 18
+7 0
+#3106
+bottle pint ale~
+{ya pint of ale{x~
+{yA delicious looking pint of ale, with a thick head sits here.{x~
+~
+17 0 ao 0 
+10 10 3 0 0
+10 100
+#3107
+apron dirty~
+a dirty apron~
+A dirty piece of linen lies crumpled on the ground.~
+~
+11 0 al 0 
+0 0 0 0 3
+8 0
+#3108
+pint ale~
+{ya pint of ale{x~
+{yA delicious looking pint of ale with a thick head sits here.{x~
+~
+17 q ao 0 
+10 10 3 0 2
+15 10
+#3109
+ring garnet sparkly~
+{Ma {Wsparkly{M garnet ring{x~
+A small ring with a dark red stone has been dropped here.~
+~
+11 g ab 0 
+0 0 0 0 18
+2 450
+A
+2 1
+#3110
+beret red~
+{ra red beret{x~
+A small red beret is lying on the ground.~
+~
+11 0 ae 0 
+0 0 0 0 3
+3 670
+A
+25 5
+#3111
+gloves work~
+a pair of work gloves~
+A pair of dirty work gloves lie on the ground.~
+~
+9 g ah 0 
+4 0 0 0 20
+5 830
+#3112
+ring opal~
+{Wa large {Yopal{W ring{x~
+A shiny ring lies on the ground.~
+~
+11 g ab 0 
+0 0 0 0 18
+1 945
+A
+14 5
+#3113
+scarf red~
+{ra red {wchecked{r scarf{x~
+A light red scarf lies on the ground.~
+~
+11 0 ae 0 
+0 0 0 0 3
+2 685
+A
+3 1
+A
+17 -2
+#3114
+britches linen~
+{ya pair of fine linen britches{x~
+A well crafted pair of britches have been left on the ground.~
+~
+11 0 af 0 
+0 0 0 0 3
+4 975
+A
+17 -4
+#3115
+briefcase leather~
+a dark leather briefcase~
+A finely crafted leather briefcase sits on the ground.~
+~
+15 0 ao 0 
+75 1 -1 0 20
+5 2345
+#3116
+hat sun sunhat~
+{ca bright blue sunhat{x~
+A beautiful blue sunhat is resting on the ground.~
+~
+11 0 aeo 0 
+0 0 0 0 3
+2 780
+A
+17 -3
+A
+25 3
+#3117
+leggings silvermesh~
+{Ca pair of silvermesh leggings{x~
+A pair of silvermesh leggings lie discarded here.~
+~
+9 g af 0 
+5 0 0 0 14
+7 3020
+#3118
+hood sheepskin sheep skin~
+{Wa sheepskin hood{x~
+A fluffy sheepskin hood lies on the ground.~
+~
+11 0 ae 0 
+0 0 0 0 1
+4 4490
+A
+26 5
+#3119
+knotted wood staff~
+a knotted staff~
+A curly, knotted piece of wood lies on the ground.~
+~
+5 op an 0 
+0 8 2 6 5
+8 5540
+A
+19 1
+#3120
+key iron~
+a key~
+An iron key has been left here.~
+~
+18 c a 0 
+0 0 0 0 8
+1 0
+E
+key iron~
+The iron key is not special.  In fact, it's quite boring.
+~
+#3121
+key rusty~
+a key~
+A rusty key has been left here.~
+~
+18 c a 0 
+0 0 0 0 8
+1 0
+E
+key rusty~
+The key is a fairly large rusty key.  You notice a lot of dirt it.
+~
+#3122
+key wooden~
+a key~
+A wooden key has been left here.~
+~
+18 c a 0 
+0 0 0 0 5
+1 0
+E
+key wooden~
+The wooden key is not special.  In fact it's just about the most boring key
+you've ever seen in your life.
+~
+#3123
+key brass~
+a key~
+A brass key has been left here.~
+~
+18 c a 0 
+0 0 0 0 13
+1 0
+E
+key brass~
+The brass key is small and looks like it fits a very complicated lock.
+~
+#3124
+boots walking parchmentquest~
+{ga pair of walking boots{x~
+A pair of comfortable looking leather boots have been left here.~
+~
+9 gq ag 0 
+0 0 0 0 20
+8 100
+A
+27 15
+#3125
+parchment letter parchmentquest~
+a sealed letter~
+A small letter, closed with the Mayor's seal rests on the ground.~
+~
+16 0 a 0 
+0 0 0 0 19
+1 0
+E
+letter envelope parchment~
+The letter is written on a piece of the finest parchment and is sealed with
+they Mayor's official seal. On closer inspection, you see that it would be
+difficult to try and read without breaking the seal. On the front the words
+'Private and Confidential' are written in a perfect cursive script.  
+~
+E
+seal~
+The seal is a large red round mark of wax, with a large "W"
+imprinted in it.
+~
+#3126
+parchment roll map weirvane~
+a high quality map of Weirvane~
+A roll of expensive parchment lies here.~
+~
+16 0 a 0 
+0 0 0 0 19
+2 570
+E
+map roll parchment weirvane~
+                            North
+                               Gate
+
+ {WWeirvane City Map{x           |###|
+                             |   |{W                              North{x
+                             |   |{w                               /\{x
+                             |   |{w                               ||{x
+             +---------------+   +-----------+{W            W{w      ||{W      E{x
+             |                               |{W            e{w <====++====>{W a{x
+             |                               |{W            s{w      ||{W      s{x
+             |                               |{W            t{w      ||{W      t{x
+             |   +-----------+   +---+---+   |{w                   \/{x
+             |   #           |   |   #   |   |{W                  South{x
+             |   #           |   |   #   |   |
+             |   #           |   |   #   |   +---+
+             |   +       +###+   |   +---+       |
+             |   |       |   | {BC{x |       |       |
+             |   |       |   | {Ba{x |       |       |
+             |   |       |   | {Br{x |       |       |
+         +---+   +-------+---+ {Ba{x +   +---+   +   |
+         |                     {Bv{x         | G |   |
+         |     {BStonewalk Way{x   {Ba{x         | B |   |
+         |                     {Bn{x         |   |   |
+         |   +---+###+###+---+   +---+---+---+   |
+         |   |   |   |   |   |   |   |   |   |   |
+         |   |   |   |   |   | {BR{x |   |   |   |   |
+         |   |   |   |   |   | {Bo{x |   |   |   |   |
+         |   |   +---+---+---+ {Ba{x +---+   +---+   +---+
+         |   |   |   |   |   | {Bd{x |   City    |       |
+         |   |   |   |   | G |   |  Offices  |       |
+         |   |   |   |   | R |   |           |       |
+     +---+   + T +###+###+   +   +---+   +---+---+   +---+
+West #                                                   # East
+     #                   {BDanozi Avenue{x                   #
+Gate #                                                   # Gate
+     +---+   +   + M +---+---+   +---+---+   +---+   +---+
+         |   |   |       |   |       |   #   #   |   |
+         |   |   |       |   |    YS |   #   #   |   | +--------------------+
+         |   |   |       |   |       |   #   #   |   | |       Legend       |
+         |   |   +-------+---+   +---+---+   +---+   | |       ======       |
+         |   |               {BMiddle{x          |       | |                    | 
+         |   | P             {BMarket{x          |       | | Guild Entrances    |
+         |   |             {B(Fountain){x        |       | | ---------------    |
+         |   +---+   +   +###+   + C +---+   +   +---+ |                    |
+         |   |   |   | A |   |   |       | D |   |     |T  - Thieves' Guild |
+         |   |   | I | E |   |   |       | G |   |     |M  - Mages' Guild   |
+         |   |   |   |   |   |   |       |   |   |     |W  - Warriors' Guild|
+         |   |   +---+---+---+   +-------+---+   +---+ |C  - Clerics' Guild |
+         |   |   |   |   |   |   |   |   |   |       | |                    |
+         |   |   | G | A |   |   | B | P | W |       | | Shops              |
+         |   |   | S | S |   |   |   | O | S |       | | -----              |
+         |   +---+   +   +###+   +   +   +   +---+   | |                    |
+         |   |                               #   |   | |GS - General Shop   |
+         |   | P         {BWayside Avenue{x      #   |   | |AS - Armor Shop     |
+         |   |                               #   |   | |WS - Weapon Shop    |
+         |   +---------------+   +-----------+   |   | |AE - Emporium       |
+         |                   |   |               |   | |GB - Gwydno's Bakery|
+         |      Graveyard    |   |  Dark Alley   |   | |YS - Ylirnah's Shop |
+         |                   |   |               |   | |MS - Map Shop       |
+         |   +---------------+   +---------------+   | |                    |
+         |                                           | | Other Places       |
+         |               {BSavannah Way{x                | | ------------       |
+         |                                           | |                    |
+         |   +---+ W +---+###+   +---+   +-------+   | |I  - Inn            |
+         |       |       |   |   |   | M |           | |DG - Dead Goblin    |
+         |       |       |   |   |   | S |           | |       Tavern       |
+         |       |       |   |   |   |   |           | |PO - Post Office    |
+         +---+   +---+   |   |   +   +---+   +-------+ |GR - Garden of      |
+             |       |   |   |   #   |       |         |       Restoration  |
+             |       |   |   |   #   |       |         |B  - Bank           |
+             |       |   |   |   #   |       |         |P  - Park Entrance  |
+             +---+   +---+---+   +---+   +---+         |                    |
+                 |                       |             | Symbols            |
+                 |                       |             | -------            |
+                 |                       |             |                    |
+                 +-----------+   +-------+             |#  - Closable       |
+                             |   |                     |       Pathway      |
+                             |   |                     |                    |
+                             |   |                     +--------------------+
+                             +###+
+
+                            South
+                               Gate
+~
+#3130
+desk drawer~
+the desk~
+A desk is set against the western wall.~
+~
+15 0 0 0 
+34 15 3122 0 5
+100 0
+E
+desk~
+The desk looks very sparse, there is a drawer in the left side.
+~
+E
+drawer~
+You notice a keyhole in the drawer.
+~
+#3131
+safe~
+the safe~
+A safe is placed in a dark corner of the room.~
+~
+15 0 0 0 
+34 15 3123 0 8
+999 0
+E
+safe~
+The safe is very heavy.
+~
+#3132
+gold coins~
+{Ya small pile of gold coins{x~
+{YA pile of gold coins is here.{x~
+~
+20 0 a 0 
+0 25 0 0 15
+100 12385
+#3133
+key city~
+the City Key~
+The very big City Key is lying here.~
+~
+18 c a 0 
+0 0 0 0 8
+30 0
+E
+key city~
+It is probably the biggest key you have seen in your life.  It is made from
+polished gold and has various patterns on it along with the Garathorm Coat of
+Arms.
+~
+#3134
+bench~
+a wooden bench~
+A white-painted wooden bench is standing here.~
+~
+12 0 0 0 
+0 0 0 0 5
+100 600
+E
+bench~
+It is a quite heavy but very comfortable bench.  It is placed with its front
+towards the river so you can sit and watch the river and the houses on the
+other side.
+~
+#3135
+fountain~
+a fountain~
+A small white fountain is standing here, gurgling happily.~
+~
+23 0 0 0 
+99999 99999 15 0 6
+100004 0
+E
+fountain~
+It is very nice.  Made from fine white marble.
+~
+#3136
+coins gold~
+{wa small pile of silver coins{x~
+{wa small pile of silver coins.{x~
+~
+20 0 a 0 
+0 0 37 0 15
+0 0
+#3137
+coral bracelet~
+{Ra {Ycoral {Rbr{Yacel{Ret{x~
+A piece of weaved coral lies before you.~
+~
+11 gu am 0 
+0 0 0 0 1
+4 7200
+A
+17 -2
+#3198
+wooden key~
+a wooden key~
+A small wooden key made of a fine red oak is lying here.~
+~
+18 0 ao 0 
+0 0 0 0 5
+1 250
+E
+wooden key~
+After scanning across the key, you can notice it is nothing more but a
+key made of red oaken wood.
+~
+$~

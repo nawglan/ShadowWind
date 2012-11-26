@@ -1,0 +1,148 @@
+#2500
+sage grouse~
+a grouse~
+A sage grouse stands here strutting.
+~
+The chest and underbelly of this grouse is white while the back, winds and
+tail feathers are speckled black and white.  
+~
+dg 0 0 X
+5 17 7 3d3+50
+0 1600
+8 8 0 4 14 2
+T 100 1d4+1 24
+#2501
+moose~
+{ya moose{x~
+{yA moose walks about eating grass and foliage.{x
+~
+   {yThe moose has broad hooves and long legs, enabling it to travel through
+deep snow, bogs, or lakes. Its overhanging top lip helps it to tear off
+leaves and tender twigs. {x
+~
+dg 0 0 X
+20 12 0 10d10+200
+0 25000
+8 8 0 4 14 3
+T 100 3d6+2 25
+#2502
+chipmunk~
+a chipmunk~
+A chipmunk chatters aloud as it searches for nuts.
+~
+Having a small squirl shaped body, this little rodent has a white stripe the
+leingth of its body with a black stripe on either said of it.
+~
+dg 0 0 X
+5 17 7 3d3+50
+0 1600
+8 8 0 4 14 2
+T 100 1d4+1 22
+#2503
+racoon coon~
+a racoon~
+A sneaky racoon scatters around the area.
+~
+The coat on this small creature is a deep grey, its tail is striped grey
+with black rings, and his face has black eyepatches resembeling a mask.  
+~
+dg 0 0 X
+6 17 7 3d3+60
+0 2400
+8 8 0 4 14 2
+T 100 1d4+2 22
+#2504
+bluejay blue jay~
+{Ba bl{bu{Bej{ba{By{x~
+{BA bl{bu{Bej{ba{By{x is here on the ground searching for a worm.{x
+~
+The bird is covered with blue feathers, many are streaked with black stripes
+while some are just solid blue. Its face is a solid white and outlined with
+a black ring.
+~
+dg 0 0 X
+2 19 9 1d1+20
+0 300
+8 8 0 4 14 2
+T 100 1d2+0 22
+#2505
+wolverine~
+{ya wolverine{x~
+{wA {ywolverine {wis here growling at you.{x
+~
+The fierce wolverine is strong for its size and has a powerfull, crushing
+bite. It is a dark greyish brown with a dull white stripe down its side. {x
+~
+dfg 0 0 X
+10 15 5 5d5+100
+0 5000
+8 8 0 4 14 2
+T 100 2d4+2 22
+#2506
+fox red~
+{ra red fox{x~
+{rA red fox lurks about.{x
+~
+{rThis beast has a large bushy tail tipped with a white flag, the rest of
+its backside is a red shade, and its underbelly is white. {x
+~
+dg 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 0 4 14 2
+T 100 2d6+3 22
+#2507
+owl tawny~
+{wa tawny owl{x~
+{wA tawny owl is pirched here.{x
+~
+{wThis owl has soft, fringed wing feathers which are specially suited for
+silent flight, it is dark brown in color and has large eyes. {x
+~
+dg 0 0 X
+4 18 8 2d2+40
+0 1000
+8 8 0 4 14 2
+T 100 1d4+0 22
+#2508
+deer fallow~
+{wa fallow deer{x~
+{wA fallow deer darts towards some nearby shrubs.{x
+~
+{wThis white spotted light brownish orange deer has a large rack of antlers,
+long thin leggs and a slim black tail. {x
+~
+dg 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 0 4 14 2
+T 100 2d6+3 22
+#2509
+giant hill hillgiant~
+{ya hill giant{x~
+{yA hill giant stands here ready to charge.{x
+~
+{yStanding tall, this beast is built like a tree, arms the size of trunks
+and legs even larger. His arms hang nearly to the ground and his skin is a
+pale yellow. {x
+~
+dfgl 0 0 X
+35 7 -8 18d18+350
+0 112000
+8 8 0 6 14 4
+T 50 3d8+11 10
+#2510
+giant hill hillgiant two headed~
+{ya two-headed hill giant{x~
+{yA two headed hill giant stands here guarding the pass.{x
+~
+{yStanding tall, this beast is built like a tree, arms the size of trunks
+and legs even larger. His arms hang nearly to the ground and his skin is a
+pale yellow, his shoulders are quite wide making room for both necks and
+heads. {x
+~
+dfgl 0 0 X
+40 5 -10 20d20+400
+0 150000
+8 8 0 6 14 4
+T 33 2d4+5 10

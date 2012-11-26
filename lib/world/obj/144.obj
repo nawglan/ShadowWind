@@ -1,0 +1,66 @@
+#14400
+hole portable~
+{Da large portable hole{x~
+{yA large hole yawns open in the ground.{x~
+~
+15 ag ao 0 
+1000 1 -1 0 1
+-1000 100 1000
+E
+hole portable~
+This magical container seems almost as if it's bottom is non-existant.
+~
+#14401
+eyepatch snakeskin~
+{xa small {gsnakeskin eyepatch{x~
+{xA small, {gsnakeskin eyepatch {xlies here.~
+~
+11 0 ar v 
+0 0 0 0 24
+1 10000 1000
+E
+eyepatch~
+this small snakeskin eyepatch is green and yellow in color and is quite
+bright and finely desgined.
+~
+A
+19 1
+A
+17 -5
+#14402
+necklace crystal~
+{xa necklace with a {Wcrystal {xset in it~
+{xA {Wsilver {xnecklace with a {Wcrystal {xset in it lies here.~
+~
+11 0 ac 0 
+0 0 0 0 27
+3 10000 1000
+E
+necklace~
+this small necklace is a woven chain of silver, with a medium sized crystal
+set within it.
+~
+A
+3 5
+A
+4 5
+#14403
+ring woven mosquito wings~
+{xa ring of woven {Dmosquito {xwings~
+{xA ring of woven {Dmosquito {xwings gathers dust on the ground.~
+~
+11 0 ab 0 
+0 0 0 0 25
+5 10000 1000
+E
+ring~
+this ring is made of woven mosquito wings and has spiked needles coming out
+of it's face.
+~
+A
+19 1
+A
+18 1
+A
+17 -3
+$~

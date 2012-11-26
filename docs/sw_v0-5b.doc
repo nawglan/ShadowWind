@@ -1,0 +1,3438 @@
+                Shadowwind  v0.5b  Areacreation documentation
+                =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+  The standard DikuMUD gamma0.0 license applies to some of these documents.
+     The standard CircleMUD license applies to some of these documents.
+
+    *** Note! ***    (R) Means that a function/flag is   *** Note! ***
+    *** Note! ***     reserved for internal use only     *** Note! ***
+    *** Note! ***  -Do NOT use (R) Functions and Flags-  *** Note! ***
+
+Abbrevations:
+=-=-=-=-=-=-=
+
+<contents> indicates that the contents MUST be entered.
+
+[contents] indicates that the contents can OPTIONALLY be entered.
+
+<NL> is Newline (return)
+
+! This indicates "NOT" - for example <!NL> means NO newline (i.e. it is
+  forbidden to use newline here).
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Section:
+
+1. Room file creation and information.....Search for **ROOM**
+
+2. Mob file creation and information......Search for **MOB**
+
+3. Object file creation and information...Search for **OBJECT**
+
+4. Zone file creation and information.....Search for **ZONE**
+
+5. Shop file creation and information.....Search for **SHOP**
+
+
+                          Introduction to Shadowwind
+                          =------------------------=
+
+The formats of the world files are sufficiently complex that you will
+probably not gain a complete understanding of them merely by reading the
+documentation.  This document is designed to be a reference manual and
+therefore may not serve as a particularly good tutorial.  While there are
+examples provided at the end of each section, they are only meant to be
+representative, not comprehensive examples of all possible ways to use the
+features that will be described.  The most effective way is to learn by
+example: examine some of the areas that come with CircleMUD and try to
+figure out the meanings of the numbers in different rooms, objects, mobiles,
+and zone files, using this manual as a guide.  Once you're proficient at
+reading world files, you'll find that creating them is a much easier task.
+
+'Game Balance' is a term that brings a different thing to mind for
+every person that hears it.  What is most important about game balance is to
+keep in mind who each area is designed for and to try to balance the objects
+available in that zone for characters of those levels.  Most players do not
+like to be given piles upon piles of treasure with no difficulty in getting
+them, but on the other hand, nobody likes to fight the most difficult mobile
+on the MUD and get nothing for doing it.  Your job as either the chief coder
+or chief builder of your MUD is to find a happy medium between these two
+extremities.  Once again, because everyone finds a different medium, this
+makes your MUD original.
+
+The main thing that affects 'game balance' is the world and the areas
+that make it up.  Because of this, each area should be checked against the
+others to ensure that one area is not impossibly hard or far too easy and
+rewarding relative to the rest of the world.  Each implementor or group
+thereof should check over the world they start with and attempt to balance
+it to their satisfaction.  Each new area that becomes part of the world
+should also be balanced in a like fashion.  Many builders have a tendency to
+want people to visit their zones and as such tend to make the rewards a
+little better than other ones available on the MUD, and too much of this
+eventually leads to what is essentially the MUD equivalent of an arms race.
+
+An area's balance should be an integral part of the design process, not
+something to be tacked on as an afterthought.  Too often, an area will be
+designed with outrageously good weapons and armor which throws off the
+balance of the game, causing implementors to have to go back later and tone
+back the stats on objects that already exist within the MUD.  By that point,
+however, the damage has already been done: since the rent system saves
+hitrolls, damrolls, and ac-apply's, veteran players will be able to hold on
+to their old, spectacular equipment unless it is explicitly taken from them.
+This does nothing but generate bad feelings on all sides.  The moral of the
+story is to make sure that your area is correctly balanced before it is
+implemented in the production MUD.  You'll find it's not acceptable to "let
+the players balance the area" by unleashing an unbalanced area on them and
+watching to see what people flock to.
+
+Shadowwind's time system follows the DikuMUD standards for the most part. We
+have 7 days per week, 35 days per month and 17 months per year.  Our time is
+48 times faster than real time, and one hour of game time passes every 75
+seconds of real time.
+
+
+              STANDARDS TO USE WHEN WRITING AREAS FOR SHADOWWIND
+              =-------------------------------------------------=
+
+
+General notes:
+=------------=
+
+* Whenever possible, use British English when writing your descriptions.
+  The American standard of putting two spaces after full stops, exclamation
+  marks and so on should not be used either.
+
+* Try to avoid using names from RL. It's ok if you pick the name of some
+  unknown village off the coast of Ireland, but don't choose names you
+  think people might have heard of or even come from. Also, don't pick
+  names from books or other games if you can come up with a name that is
+  unique to SW.
+
+* Avoid things like jokes, ASCII pictures, cheap effects and addressing the
+  player directly. The descriptions should tell the player what places and
+  mobs look like, not what they or anyone else might feel about it. This
+  might sound boring, but objective descriptions have a far greater lasting
+  appeal. Having a DT tell you "BANNGG!!?! YOU ARE A THIN RED PASTE ON THE
+  GROUND YEEEEAH!!!!!!!" won't make anyone happy.
+
+* Don't misuse capitals, for reasons mentioned above. Nor should you ever
+  have to use more than one exclamation or question mark at a time.
+
+* Don't refer to things such as time or weather. It's not good if the desc
+  says it's sunny at 1 am. Of course this does not apply if your area is in
+  some special dimension or in perpetual darkness.
+
+* Never include superfluous newlines or spaces.
+
+* The only time indentation should be used is at the beginning of room descs.
+
+* Lines should be as long as possible, but never more than 78 chars long.
+
+
+Room descriptions:
+=----------------=
+
+All words in the room name should be capitalized. You have a great freedom
+when choosing room names, but try to follow some kind of logic. It doesn't
+look good if "The Forest" is lying next to "In The Forest".
+
+The main block of text should start with a three-space indentation. Avoid
+phrases like "you are standing" which look quite strange when the player is
+sitting down.
+
+Exit descriptions should be written for every direction in which you can go.
+You might also want to add a description to other directions, to explain why
+a way is blocked or what is outside the window. Always end exit descs with a
+newline.
+
+Try to include extra descriptions for things that are mentioned in the main
+desc. The message "You do not see that here." can be very annoying.
+
+
+Mob descriptions:
+=---------------=
+
+Try to avoid referring to places since mobs can move around (e.g. when
+charmed or switched). In mob short descs, most words should be capitalized.
+Examples: "the Dwarven Guard", "a Citizen of Ghenna", "Fomp the Champion".
+The desc you see when looking at a mob must end with a newline.
+
+
+Object descriptions:
+=------------------=
+
+Short item descs should never be capitalized, except when names are part of
+the desc. Example: "Jupiter's thunderbolt"; Jupiter is a name, thunderbolt is
+not. Long item descs should never refer to the surroundings since the item
+can be dropped anywhere. "An x stands against the wall." looks silly on the
+ocean. Extra descriptions are desired but are not required.
+
+
+A Note On These Rules:
+
+These standards have been developed over a long period of time, and though
+you may not like them all, there is a thought behind every rule. For
+instance, no superflous newlines and writing long lines mean less scroll.
+If areas are designed by the same guidelines, that helps reinforcing the
+atmosphere of the mud, and the feeling that all areas belong to the mud
+and are connected.
+
+New areas should be written with all these rules and guidelines in mind and
+old areas should be updated as time permits.
+
+
+A Note On Making Your Area Interesting:
+
+An interesting area will always attract more players than a bland one.
+There are many ways to make an area interesting.  Try to be as descriptive
+as possible; don't hold back on writing extra descriptions.  Players are so
+used to not having richly described areas that finding an extra description
+can often be a real treat.  Also, one oft forgotten thing to describe are
+the door exits.  Describing all of these can give a feel of standing out in
+a field and looking off to the north and seeing something like:
+
+The fields stretch off towards the large hills on the horizon.  Far to the
+north you see what appears to be a plume of smoke.
+
+With door descriptions like these, an area will feel more fleshed out
+to the player, and many players (both experienced and first timers) read the
+descriptions carefully the first time they walk through somewhere, and
+having many extra little descriptions helps them fill out their idea of what
+things actually look like.
+
+One thing that should never be done is to have room descriptions that
+look like "You stand in a big room.  It is very dark."  Descriptions like
+these detract in general from the rest of the world, and if they are found
+room after room can bore a player to tears.  That description could be
+better written as:
+
+You stand in a room of very large size.  Shadows cower along the walls
+and almost seem to be moving as you look around yourself.  The floor is made
+of heavy stones which are very dark in color.  The ceiling is quite some
+distance above you, but you can still make out objects hanging from it,
+ruining the smoothness that is characteristic of the rest of the room.
+
+Another thing that can be done to make an area interesting is to create
+some sort of plot line for it, or a coherent theme, rather than a bunch of
+haphazardly related rooms.  This plot can be complex like infiltrating a
+castle to garner the war plans of the evil Lord Zygol, simple like ridding
+the caves of goblins, or anything in between.  Often the plot in an area can
+be advanced by some fairly simple puzzles or descriptions.  With the help of
+special procedures written in C, involved puzzles of Zork-like complexity
+can be readily created.
+
+Not all mobs have to be designed to be killed, nor does every shop
+keeper have to buy or sell something, they could just be created so that
+they refuse to trade with any player characters.  The players will then
+wonder why the shopkeeper exists.  Perhaps giving him a jewel will make him
+more friendly.  In this way, an area can be made infinitely more exciting by
+coding some special procedures for it.  Perhaps random teleporters
+throughout the area, perhaps some procedures that have mobiles respond to
+questions from players.
+
+All in all, the best way to make an area interesting is to use variety,
+intelligence, and imagination in building.  Try to imagine what it would be
+like for you to walk through and what you might try looking at or doing, and
+then try to incorporate that into your area.  Show your area to others and
+take their advice.  By taking all of this extra effort in creating your
+area, you will be rewarded with a lasting memory in the minds of many
+players.
+
+
+How World Files And Index Files Work:
+
+CircleMUD's world is defined by five types of files: world (rooms),
+mobiles (monsters), objects, shops, and zones.  World files (*.wld) define
+the actual rooms which contain all other mobiles, objects, and players.
+Mobiles (*.mob) are the monsters which inhabit the MUD.  Objects (*.obj) are
+the weapons, armor, treasure, and other objects manipulated by players and
+monsters.  Shop files (*.shp) define the MUD's shopkeepers, controlling what
+they buy, sell, and say.  Finally, Zone files (*.zon) bring all the previous
+elements together, telling the MUD how monsters should be equipped, where
+monsters should be placed, where objects on the ground should be, which
+doors should be locked, etc.  These five types of files are collectively
+referred to as "the world", or sometimes the "tinyworld files."
+
+CircleMUD uses "split world files" to make the world easier to
+manipulate.  Instead of all the rooms being lumped together in a single,
+cumbersome file, the rooms are split into many different files, one file for
+each area of the world.  All five types of files are split in a similar
+manner.  Circle has one directory for the room files (lib/world/wld), one
+directory for the object files (lib/world/obj), and so forth.  Also in each
+of these directories is a file called 'index' that tells the server which
+files from that directory should be loaded when the server boots.
+
+The index files make adding new areas easy.  Instead of cutting and
+pasting huge chunks of area files, simply add the new areas to the
+appropriate directories and add their names to the index files.  Make sure
+that the files listed in the index appear in numeric order.
+
+Every world file used by Circle (including the index files) must be
+terminated by the dollar sign ($) to tell the server that the file has
+ended.  Without the dollar sign, the server will not boot properly.
+
+NOTE:  Mob and Equipment resistances are not being included in this version
+       of the documentation. They will be updated and added at a later time.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+**ROOM**
+World File field description:
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+Main structure notes:
+=-------------------=
+
+#<virtual number>
+  A number for the given room. No two rooms may have the same number.
+  The <virtual number> must always increase when browsing down the
+  world file (but increments can be larger than one).
+
+<name>~<NL>:
+  This name is the "title" of the room. This title is also used in special
+  procedures like:
+    "exits"
+    "brief mode"
+
+<description>~<NL>:
+  This is the general description of the room.
+
+<zone nr> is:
+  The number of the zone in which this room is located. This number is used
+  for resetting zones and monster zone movement. See the zone file.
+
+<room_flags> are:
+  A bitvector consisting of the room conditions as:
+  Note! Bitvectors can now also be written using ASCII flags -
+  for example, if you want a room that is DARK, NO_MOB and NO_TRACK
+  type acg instead of 69.
+
+  DARK           1  a  Light must be used to see anything.
+  DEATH          2  b  Do _NOT_ use this - It will be changed.
+  !MOB           4  c  No monsters may walk around in here
+  INDOORS        8  d  This is inside (a house,cave or dungeon for example)
+  PEACEFUL      16  e  No harm can be done in this room
+  SOUNDPROOF    32  f  Gossip/tell/shout etc blocked out
+  NOTRACK       64  g  Players in this room cant be tracked
+  !MAGIC       128  h  Magic not allowed
+  TUNNEL       256  i  Room for only 1 person
+  PRIVATE      512  j  It is impossible to teleport to this room if it
+                       already contains two characters.  The 'teleport'
+                       spell will never teleport a player into this room.
+  GODROOM     1024  k  Super-private room: Immortals can not 'goto' this room.
+  HOUSE       2048  l  (R) room is a house
+  HOUSECRASH  4096  m  (R) room needs saving
+  ATRIUM      8192  n  (R) door to a house
+  OLC        16384  o  (R) online creation flag
+  BFS_MARK(*)32768  p  (R) RESERVED FOR INTERNAL USE -- do not use.
+  COLD       65536  q  Room is cold (affects weather, snowing)
+  HOT       131072  r  Room is hot
+  !TELEPORT 262144  s  Room can not be teleported to
+  FASTHEAL  524288  t  Room is double heal speed use RARELY
+  CRIMEOK  1048576  u  Room is ok for PK/PT
+  UNAFFECT 2097152  v  All affections on players removed (Mentals nuked,
+                       all spells removed - use RARELY)
+
+<sector_type> is:
+  This determines how many movement points are used when moving through
+  a location of the type - use one of the numbers 0..7 (they are NOT the
+  movement-points used - merely indexes to a lookup-table):
+
+  SECT_INSIDE          0  Uses as if walking indoors
+  SECT_CITY            1  Uses as if walking in a city
+  SECT_FIELD           2  Uses as if walking in a field
+  SECT_FOREST          3  Uses as if walking in a forest
+  SECT_HILLS           4  Uses as if walking in hills
+  SECT_MOUNTAIN        5  Uses as if climbing in mountains
+  SECT_WATER_SWIM      6  Uses as if swimming
+  SECT_WATER_NOSWIM    7  Impossible to swim water - requires a boat
+  SECT_UNDERWATER      8  Underwater, need water breathing spell
+  SECT_FLYING          9  Flying, need fly spell to travel through room
+
+Direction fields:
+=---------------=
+
+<Exit number> is one of:
+  0 = North
+  1 = East
+  2 = South
+  3 = West
+  4 = Up
+  5 = Down
+
+<general description><NL>~<NL>:
+  What a player will see if he types 'look <direction>' - If there is
+  already an exit the direction they look, they will see the room with
+  farsee and they will also see the description you type here.
+
+<keyword list>~<NL>:
+  used for commands like 'open', 'close', etc. should be 'door' for ordinary
+  doors. Example: An exit from a given room leads through a cupboard. The
+  keyword list for this exit might look like this:
+
+  "cupboard door~"
+
+
+<Door flag> :
+
+  If <Door Flag> is 1, the exit can be locked/unlocked/opened/closed/picked.
+  If it is 2, the exit can only be locked/unlocked/opened/closed.
+  If it is 0, these commands won't work. (The exit can still be closed at
+  reset, however; maybe to be opened by some special routine, like a concealed
+  handle).
+
+  The state of the doors after reset may be controlled by a command in the
+  reset-command table (see the zone file). The initial state of a door is
+  open.
+
+<Key Number> :
+  The number of the object which can unlock/lock the door (in the direction
+  given). If a player carries/holds this object, he can lock/unlock.
+  <Key Number> == -1 means no keyhole. If <Door flag> is 0, the value of this
+  field is ignored.
+
+<to_room> :
+  The virtual number of the room to which the exit leads. If this number is
+  -1 (NOWHERE), the exit doesn't lead anywhere. This might be useful for
+  adding an exit-description in a direction which doesn't actually lead
+  anywhere.
+
+<add_moves> :
+  Add a number here to increase the moves it takes to move this direction.
+  By adding 5, the move to the next room calculates the normal moves plus
+  it adds the number 5 to it.
+
+** Note about doors. You must make a door in both rooms that the door
+                     is set between.
+
+** Note about hidden doors. You must set the door hidden in the zone
+                            file, see Zone Creation for more info.
+
+Extra descriptions:
+=-----------------=
+
+<blank separated keyword list>~<NL> is:
+  A list of the keywords that will allow the extra description to be
+  displayed. The keywords must must be seperated by blanks.
+
+
+<description><NL>~<NL>:
+  The description that is show when a player types 'look at <keyword>'
+  and keyword matches one of the above.
+
+The end of the room must have an 'S' before you can make the next room.
+
+Example of a room entry is the database:
+=--------------------------------------=
+
+#100
+The Lego temple~
+   You stand in a tiny, red temple built entirely from Lego bricks. It is,
+sadly, not a very interesting place, and perhaps you should leave through
+the portal which leads south to a sunny garden.
+~
+1 12 0
+D2
+You see the grand portal of the Lego church. Beyond is an inviting garden.
+~
+portal grand~
+1 2 107
+E
+portal~
+The portal is high and arched, built out of lego bricks of the finest quality.
+~
+E
+brick~
+The bricks are all in bright different colours.
+~
+S
+#101
+.
+.
+.
+
+Facts about this room is:
+  Room number 100
+  Zone number 1
+        Room Flags  (8+4=12) INDOORS and NO_MOB
+  Sector Type Inside (movement loss calc only)
+  One exit (D2) to the south with 'look south' description
+  Door Flag 1
+  Key no.   2
+  Leads to room 107
+        Extra description for the portal and bricks.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+**MOB**
+Mobile (MOB) fields description
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+#<virtual number><NL> is:
+  The monsters virtual number. Rules are same as for room virtual numbers.
+
+<namelist><!NL>~<NL>
+  The space-separated name alias list.
+
+<short description><!NL>~<NL>
+  This string will be displayed when the monster take action, for example
+  if it is "The Beastly Fido", and fido leaves south the message will be
+  "The Beastly Fido leaves south."
+
+<long description><NL>~<NL>
+  This description is displayed when the monster is in it's "default"
+  position. When not in the default position, a message like:
+  "<short description> is sleeping here." could be displayed.
+
+<description><NL>~<NL>
+  This will be displayed when a player looks at the monster.
+
+<NPC flags>
+
+  This bitvector define how the monster behave.  The bits mean:
+
+  ACT_SPEC         1  a  (r) This means that there is a special programmed
+                         procedure connected to the monster. When this bit
+                         is set the monster "function pointer" must be
+                         assigned in the "spec_assign.c" file.
+
+  ACT_SENTINEL     2  b  When this bit is set the monster will NOT
+                         move around in the world.
+
+  ACT_SCAVENGER    4  c  When this bit is set, monsters will pick up stuff
+                         lying on the ground. It will pick up the most
+                         expensive items first.
+
+  ACT_ISNPC        8  d  (R) RESERVED FOR INTERNAL USE
+
+  ACT_AWARE       16  e  When this bit is set, the monster cannot be
+                         backstabbed.
+
+  ACT_AGGRESSIVE  32  f  When this bit is set, the monster will attack and
+                         attempt to kill any player it can get it's claws on.
+                         It will not attack players it can't see (for example
+                         dark rooms or when player is invisible, unless the
+                         monster can detect invisibility)
+
+  ACT_STAY_ZONE   64  g  When this bit is set, the monster will never move
+                         into another zone of the world (this is good for
+                         keeping your monsters in your own adventure).
+
+  ACT_WIMPY      128  h  When this bit is set, the monster will flee when
+                         it's getting percentwise low on hitpoints. If
+                         the monster is both aggressive and wimpy, then it
+                         will only attack players that are NOT awake! (ie.
+                         also suffering players).
+
+  ACT_AGGRESSIVE_EVIL
+                 256  i  When this bit is set, the monster will attack
+                         players with evil alignment.
+
+  ACT_AGGRESSIVE_GOOD
+                 512  j  When this bit is set, the monster will attack players
+                         with good alignment.
+
+  ACT_AGGRESSIVE_NEUTRAL
+                1024  k  When this bit is set, the monster will attack players
+                         who are neutrally aligned.
+
+  ACT_MEMORY    2048  l  When this bit is set, the monster will remember
+                         players who attack it, and attack the player back
+                         if it sees him or her again.
+
+  ACT_HELPER    4096  m  When this bit is set, the monster helps other
+                         monsters (ie. banzai)
+
+  ACT_NOCHARM   8192  n  The monster cannot be charmed
+
+  ACT_NOSUMMON 16384  o  The monster cannot be summoned
+
+  ACT_NOSLEEP  32768  p  The monster cannot be put to sleep with spells
+
+  ACT_NOBASH   65536  q  The monster cannot be bashed
+
+  ACT_NOBLIND 131072  r  The monster cannot be blinded
+
+  ACT_WATERONLY
+              262144  s  The monster cannot live on land (it can only live
+                         in water type sectors, will choke to death on land)
+  ACT_MOUNTABLE
+              524288  t  The monster is mountable (ie horses).
+                         The reliability is set with the THAC0 field,
+                         ie. 20 totally unreliable, 1 almost totally reliable
+                         (a mountable monster can never be more reliable than
+                         95% or less than 5% reliable). If the monster is
+                         mounted by a mobile, the reliability is always 100%.
+
+  ACT_PROGALWAYS
+             1048576  u  The monster's mob progs always run, even if there
+                         isnt anyone in the zone the mob is in.
+
+ ACT_WRAITHLIKE          Cannot kick, bash, and mob is ghost form, you fall
+                         through when you bash.
+             2097152  v  
+
+
+<affection flags>
+
+  This is a bitvector that indicates what the monster is affected by.
+  Puff could for example be able to "detect invisible" or maybe
+  "fly". A lot of these bits are meant for players only (in a context
+  with a spell), and should NOT be used when indicated. The bits are:
+
+  AFF_BLIND             1       a  RESERVED PLAYERS
+  AFF_INVISIBLE         2       b  The monster is invisible
+  AFF_DETECT_ALIGN      4       c  RESERVED PLAYERS
+  AFF_DETECT_INVISIBLE  8       d  The monster can see invisible players
+  AFF_DETECT_MAGIC      16      e  RESERVED PLAYERS
+  AFF_SENSE_LIFE        32      f  RESERVED PLAYERS
+  AFF_WATERWALK         64      g  The monster can walk on water
+  AFF_STONESKIN         128     h  The mob has stoneskin (Takes Mega damage)
+  AFF_GROUP             256     i  RESERVED PLAYERS
+  AFF_CURSE             1024    j  The monster is cursed
+  AFF_INFRAVISION       2048    k  The monster can see in the dark
+  AFF_POISON            4096    l  RESERVED PLAYERS
+  AFF_PROTECT_EVIL      8192    m  Char protected from evil
+  AFF_PROTECT_GOOD      16384   n  Char protected from good
+  AFF_SLEEP             32768   o  (R) Char is magically asleep
+  AFF_NOTRACK           65536   p  Cannot be tracked
+  AFF_FLY               131072  q  Is flying
+  AFF_NIGHTVISION       262144  r  Can see in dark as if it is day.
+  AFF_SNEAK             524288  s  The message "The xxx leaves direction" will
+                                   not be displayed when the monster moves
+                                   out/in to a room.
+  AFF_HIDE              1048576 t  The monster will be hidden, and can only
+                                   be detected by a "true seeing" spell
+  AFF_SILENCE           2097152 u  Removes the ability to speak spells.
+  AFF_CHARM             4194304 v  The monster will act as charmed when a
+                                  "follow <player>" is entered. Note that
+                                   players can't force monsters to follow
+                                   them.
+  AFF_DISEASE           8388608 w  Disease (Plagues)
+  AFF_MAJOR_PARA       16777216 x  Causes Paralasis
+  AFF_SEEING           33554432 y  Gives True Seeing DI + Detect hidden
+                                   but NOT detect hidden objects on ground
+                                   or in corpses. still must search. =)
+  AFF_SUPERINVIS       67108864 z  Super invis mobs, hidden even from
+                                   Immortals, special mobs for special
+                                   progs.
+  AFF_DET-POISON      134217728 A  Detect poison.. Duh ;-)
+
+
+<Alignment Flag>
+
+  This is the monsters alignment, read as:
+  +1000 .. +350  Good Alignment
+   +349 .. -349  Neutral Alignment
+   -350 ..-1000 Evil Alignment
+
+<Format flag><NL>
+
+  X       eXtended format - This is supposed to be the final mob format.
+                            and is the ONLY format supported on Shadowwind.
+
+<Level>
+   This is the level of the monster. After making your mobs, load each
+   in the online editor and set the level and the code will set all of
+   the basics for you. ie: Hitpoints, EXP, Gold, Thac0 AC.  However
+   those being set automaticaly still mob damage must be set by you because
+   each mob might need to fight differently so we can not set 'defaults'
+   on mob damage.  Below in the MISC section all defaults are listed.
+
+<THAC0>
+
+     "To Hit Armor Class 0" -- a measure of the ability of the monster to
+     penetrate armor and cause damage, ranging from 1 to 20.  Lower numbers
+     mean the monster is more likely to penetrate armor.  The formal
+     definition of THAC0 is the minimum roll required on a 20-sided die
+     required to hit an opponent of equivalent Armor Class 0. Mobs of
+     level 55+ may be given a thac0 of 0. 0 is not within the normal
+     standards of thac0, it is an addition for special high level mobs
+     so they never _EVER_ miss a hit. Online the editor will set the
+     mob's thac0 according to its level automatically.
+
+<AC>
+   The monsters armour class.
+
+
+<Hit Points (format is xdy+z)><NL>
+   This defines the number of hitpoints a given monster has. If this is
+   entered into the file:
+
+   ... ... 3d8+10 ...
+
+   the monster will have 10 hitpoints plus the result of rolling 3 dice
+   with 8 side, and adding their sum. All the numbers (even zero), the
+   plus sign, and the letter 'd' MUST be entered!!! Example:
+
+   ..... 1d6+0 ....
+
+<Coins>
+   The amout of coins carried by the monster. The editor currently sets
+   all mobs gold to 0, this is how we are controling a cash overflow
+   problem that has so many other muds jamed up.  Mobs that deserve coins
+   will be given them when the zone is up for review pryor to isntall
+   in the MUD.
+
+   Coins is default Copper, we have Copper, Silver, Gold, and Platinum.
+   1000 Copper = 100 Silver = 10 Gold = 1 Platinum.
+
+<Exp><NL>
+   The experience this monster has.
+
+<position>
+   This defines the monster's position when loaded into the game.
+   A position is one of:
+
+   POSITION_DEAD       0  DO NOT USE
+   POSITION_MORTALLYW  1  DO NOT USE
+   POSITION_INCAP      2  DO NOT USE
+   POSITION_STUNNED    3  DO NOT USE
+   POSITION_SLEEPING   4  The monster is sleeping.
+   POSITION_RESTING    5  The monster is resting.
+   POSITION_SITTING    6  The monster is sitting.
+   POSITION_FIGHTING   7  DO NOT USE.
+   POSITION_STANDING   8  The monster is standing.
+
+<default position>
+   This is the position into which the monster will return after
+   a fight. This position also defines when the <long description>
+   is displayed - see above.
+
+<sex>
+   This is the monsters sex, on of:
+
+   SEX_NEUTRAL   0
+   SEX_MALE      1
+   SEX_FEMALE    2
+
+   No further explanation is needed (hopefully).
+
+<monster_class>
+   Defines the monster class:
+
+UNDEFINED               0       Class is undefined.
+OTHER                   1       Class is other than defined below.
+UNDEAD                  2       Class is Undead. (zombies)
+HUMANOID                3       Class is Human form (Human like mobs)
+ANIMAL                  4       Class is animal (rabbit/fox)
+DRAGON                  5       Class is DRAGON (DRAGON ONLY!)
+GIANT                   6       Class is giant (Very LARGE)
+SPIRIT                  7       Class is spirit (ghost)
+INSECT                  8       Class is insect (fly/mosquito)
+ELEMENTAL               9       Class is elemental (fire, air etc)
+FISH                   10       Class is fish (water bound creatures)
+AMPHIBIAN              12       Class is amphibian (frogs/snakes)
+EXTRA-PLANAR           13       Class is extra-planar (from other planes)
+BIRD                   14       Class is bird (flying creatures)
+SLIME                  15       Class is slime (blob/slime)
+PLANT                  16       Class is plant (tree/bush)
+
+<monster_race>
+Defines the monster race:
+
+UNDEFINED              0        Race is Undefined
+HUMAN                  1        Race is Human
+TROLL                  2        Race is Troll
+OGRE                   3        Race is Ogre
+DWARF                  4        Race is Dwarf
+ELF                    5        Race is Elf
+HALF-ELF               6        Race is Half-Elf
+GNOME                  7        Race is Gnome
+HALFLING               8        Race is Halfling
+DROW                   9        Race is Drow
+DRACONIAN             10        Race is Draconian
+DRAGON                11        Race is Dragon
+MINOTAUR              12        Race is Minotaur
+ORC                   13        Race is Orc
+ANIMAL                14        Race is Animal
+INSECT                15        Race is Insect
+PLANT                 16        Race is Plant
+GOLUM                 17        Race is a BAD ASS MOFO! ;-)
+
+<monster_size><NL>
+   Size of monster. Will be used for damage calculation, hit accuracy,
+   spell success etc.
+
+   UNDEFINED            0       Size undefined, standard calc system is used
+   VERYSMALL            1       Very small, rabbits, mice, etc.
+   SMALL                2       Small, fox, deer, etc..
+   MEDIUM               3       Most humanoids, orcs, etc
+   LARGE                4       Larger humanoids, trolls, big guardians
+   VERY_LARGE           5       Something in between LARGE and GIANT :)
+   GIANT                6       Very LARGE!
+
+Attack fields:
+=------------=
+
+Attack fields start with a T. Extended mobiles REQUIRES an attackfield
+to work. If it's a balanced mobile, the first attack field will OVERRIDE
+the balanced attack that B mobs defaults to. It is possible to have many
+attack fields, for example, a dragon might claw, bite and whip.
+Hint: Speed - 80% is faster, 120% is slower
+
+T <speed> <dam xdy+z format> <attack_type>
+
+<speed> is defined in percent. A speed of 100% is approx 2 seconds between
+each attack (which is the standard fight tick in circle and diku)
+
+<dam> is defined as xdy+z.
+
+<attack_type> is a value indicating what kind of attack the mob should use.
+
+
+        0  hit        1  pierce       2  slash      3  slash
+        4  chop       5  cleave       6  pound      7  cleave
+        8  crush      9  smash       10 crush      11 pound
+        12 pierce     13 whip        14 slash      15 pierce
+        16 pierce     17 hit (r)     18 hit (r)    19 hit (r)
+        20 hit (r)    21 sting       22 bite       23 bludgeon
+        24 claw       25 maul        26 blast      27 punch
+        28 stab
+
+Example of attack field:
+T 120 3d6+4 5
+
+
+Equipment fields:
+=---------------=
+
+Equipment fields start with an E. Equipment fields are used for equipping
+mobiles without having to load the equipment in the zone file. This
+method also introduces some interesting features, like randomized
+equipment. Equipment fields are great if you want to fill a city
+with for example cityguards without having to equip each and every
+one of them in the zone file. You can also make some cityguards
+have rusty longswords, maybe one of them will carry a beer bottle, etc.
+
+E <equip pos> <chance of load> <vnum of obj> <max existing>
+
+<equip pos> is a value indicating where the object should be loaded on
+the mobile. Pick values from the following list:
+
+      INVENTORY      -1
+      WEAR_BADGE      0
+      WEAR_FINGER_R   1
+      WEAR_FINGER_L   2
+      WEAR_NECK_1     3
+      WEAR_NECK_2     4
+      WEAR_BODY       5
+      WEAR_HEAD       6
+      WEAR_LEGS       7
+      WEAR_FEET       8
+      WEAR_HANDS      9
+      WEAR_ARMS      10
+      WEAR_SHIELD    11
+      WEAR_ABOUT     12
+      WEAR_WAISTE    13
+      WEAR_WRIST_R   14
+      WEAR_WRIST_L   15
+      WIELD          16
+      HOLD           17
+      FACE           18
+      EAR_R          19
+      EAR_L          20
+      EYES           21
+      ANKLE_R        22
+      ANKLE_L        23
+      WIELD2         24 (R) Do not use
+      HOLD2          25 (R) Do not use
+      2HANDED        26
+
+<chance of load> is percentage chance that the item will load. If you try
+to load an object into position WEAR_BODY (5), and you have a chance of
+25% there will be a 25% chance that the particular item loads. You should
+always have the smallest chances in the end of the equipment list, since
+the loading routines reverses the order of the fields. If a position already
+is filled, all the following fields will be ignored (remember that the
+order is reversed, so the following fields in this case is previous..?)
+This does of course not apply to the inventory. You can load as many
+items as you wish into the inventory. If you set the chance to 100, the
+item will always load.
+
+<vnum of obj> determines the vnum of the object you want to place in that
+particular equipment position.
+
+<max existing> sets the maximum number of the particular item that should be
+allowed in the game at once.  With this field, you can for example limit
+the number of long swords in the game to 100. Remember that the counter is
+worldwide, so if someone else has an area with 20 longswords and you set
+your longsword to 10 max existing, no longswords will load. If you do not
+care about a max existing fields (which is useful for longswords :), just
+set this value to -1, and the object will be loaded regardless of how many
+of them there is in the game.
+
+Example of equipment list:
+
+E -1 25 3001 -1
+E 6 100 3076 10
+E 5 100 3043 -1
+E 5 75 3041 -1
+E 5 25 3040 -1
+
+Explanation: (as said earlier, the order of the list is reversed when loaded
+into memory) First there is a 25% chance that a breast plate will be
+loaded on the mobiles body. If no breastplate is loaded, there is a
+75% chance that a chainmail shirt will load. If no chainmail shirt
+is loaded, the mobile will get a soft leather jacket (chance is 100%,
+so if nothing else was loaded on the body, the jacket WILL be loaded).
+Also, a leather cap will be loaded on the mobile, unless there already
+is 10 leather caps in the game. Last, but not least, a beer bottle has
+25% chance of getting loaded in the mobiles inventory.
+
+
+E-Spec fields:
+=------------=
+
+You can use a number of E-spec alike fields with the Shadowwind
+mobiles. The parser does automatically discriminate the E-Spec fields
+from the attack/equipment/action fields.
+
+The following E-spec fields are currently supported:
+
+Str             Strength
+Dex             Dexterity
+Agi             Agility
+Int             Intelligence
+Wis             Wisdom
+Con             Constitution
+
+
+Example:
+Str: 70
+Wis: 95
+Agi: 100
+
+Action fields:
+=------------=
+
+Action fields starts with an A. An action field can be used instead of
+mobprograms if you want the mobile to do simple things, like saying
+phrases, or emoting certain feelings.
+
+A <percent> <min position> <string>
+
+<percent> determines what chance there is that the field will be used.
+          Only ONE Action field will be used, so if one field gets
+          shown, the rest of the fields will be ignored. Therefore,
+          you should always have the fields with the least chance of
+          being shown last in the file.
+
+<min position> This defines the monster's position when loaded into the
+               game.  See the position section above.
+
+<string> is a string that is sent to the act() procedure. It's shown to
+         the room, not to a person in particular. It uses the same
+         variables as the socials, with lowercase letters referring to
+         the mobile ($n = name, etc)
+
+Examples:
+
+A 75 8 $n smiles happily.
+A 50 8 $n pukes on your shoes.
+A 20 8 $n says, 'What are you doing here anyway!?'
+A 5 8 $n sighs loudly when looking at $s shoes.
+
+Of course, you dont have to use the $ variables, since the fields are
+specific to the mobile. You might as well replace the first line with:
+
+A 75 8 The Cityguard smiles happily.
+
+
+A EXAMPLE OF AN EXTENDED MOBILE WITH EXTENSION FIELDS
+=---------------------------------------------------=
+#3060
+cityguard guard~
+the Cityguard~
+A cityguard is standing here, looking for trouble.
+~
+A big trustworthy cityguard.
+~
+ahgml 0 200 X
+10 10 1 1d12+130
+500 9000
+8 8 1 3 0 4
+T 100 1d8+5 0
+T 100 1d3+1 0
+E -1 25 3001 -1
+E 6 100 3076 10
+E 5 100 3043 -1
+E 5 75 3041 -1
+E 5 25 3040 -1
+Str: 16
+Dex: 15
+A 5 8 $n smiles happily.
+A 5 8 $n pukes on your shoes.
+A 5 8 $n says, 'What are you doing here anyway!?'
+Cha: 8
+
+Mob Balance
+=---------=
+
+Several things to remember when making MOB's:
+
+1) If the mob logically has no gold, additional xp can be awarded in 
+   place of gold.
+
+2) Mobs over L51 are "anything goes" mobs.  However, please keep it within
+   reason.  Just because you can have a L51 mob do 1500 point of damage
+   per round is no reason to do it.
+
+3) Damage is defined as the average damage per round.  For each T-type 
+   attack, the average damage is calculated like this:
+
+         T P XdY+Z Q  -->  T 100 2d5+1 10
+
+   P = Attack speed in percentage of one round.
+   Q = Attack type, not used in this calculation.
+
+   Damage = ((X * (Y+1)) + Z) * P
+
+   Note that this is for ONE attack.  If you have mutliple attacks (more
+   than one T field) -or- (the P field is lower than 100% ie: 33% would 
+   be 3 attacks in one T field) Damage is the -SUM- of -ALL- attacks.
+
+4) If you're making mobs and think that you could make them better by 
+   ignoring this little list, consider this:
+
+   If everyone feels that way, and makes his or her mobs harder than
+   everyone else's, pretty soon, there will be no balance.  The idea 
+   behind this is to give characters an accurate read on how difficult a 
+   mob is, on the level of reward for killing the mob, and making sure 
+   that a high level mob in one zone is comparable with a high level mob 
+   in another zone.
+
+5) Note that spell casting and special attacks are not taken into 
+   account. If you desperately need to make your L10 mob harder than
+   another L10 mob, use spells or special attacks.  These figures should 
+   NOT be compensated for in any of the other value fields. This does not 
+   mean you should use spells to nuke a player with out good reason ;-)
+
+Now on to the mob's default settings....
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Level      HP             XP       Gold      Thac0      AC   Damage (LVL)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+0         1d1+5           20        10         20       10       1
+1         1d1+10         150        50         19        9       1
+2         1d1+20         300       150         19        9       2
+3         2d2+30         600       190         18        8       3
+4         2d2+40        1000       270         18        8       4
+5         3d3+50        1600       350         17        7       5
+6         3d3+60        2400       450         17        7       6
+7         4d4+70        2900       540         16        6       7
+8         4d4+80        3500       600         16        6       8
+9         5d5+90        4200       690         15        5       9
+10        5d5+100       5000       800         15        5      10
+11        6d6+110       6900       880         14        4      11
+12        6d6+120       7500       950         14        4      12
+13        7d7+130       8700      1000         14        3      13
+14        7d7+140       9900      1080         14        3      14
+15        8d8+150      11000      1150         14        2      15
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Level      HP             XP       Gold      Thac0      AC    Damage (LVL*2)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+16        8d8+160      12500      1200         13        2      32
+17        9d9+170      14300      1280         13        1      34
+18        9d9+180      16800      1340         13        1      36
+19      10d10+190      20000      1430         12        0      38
+20      10d10+200      25000      1500         12        0      40
+21      11d11+210      27500      1600         12       -1      42
+22      11d11+220      31000      1750         11       -1      44
+23      12d12+230      35000      2000         11       -2      46
+24      12d12+240      40000      2200         11       -2      48
+25      13d13+250      45500      2650         10       -3      50
+26      13d13+260      51000      3000         10       -3      52
+27      14d14+270      55500      3400         10       -4      54
+28      14d14+280      61000      3900          9       -4      56
+29      15d15+290      70000      4400          9       -5      58
+30      15d15+300      80000      5000          9       -5      60
+31      16d16+310      85000      5100          8       -6      62
+32      16d16+320      92000      5250          8       -6      64
+33      17d17+330      99000      5500          8       -7      66
+34      17d17+340     106000      5800          7       -7      68
+35      18d18+350     112000      6100          7       -8      70
+36      18d18+360     118000      6500          7       -8      72
+37      19d19+370     124000      6900          6       -9      74
+38      19d19+380     132000      7200          6       -9      76
+39      20d20+390     140000      7600          6      -10      78
+40      20d20+400     150000      8000          5      -10      80
+41      21d21+410     165000      8100          5      -10      82
+42      21d21+420     190000      8200          5      -10      84
+43      22d22+430     220000      8300          4      -10      86
+44      22d22+440     250000      8500          4      -10      88
+45      23d23+450     280000      8700          4      -10      90
+46      23d23+460     310000      8900          3      -10      92
+47      24d24+470     350000      9100          3      -10      94
+48      24d24+480     390000      9400          3      -10      96
+49      25d25+490     440000      9700          2      -10      98
+50      25d25+500     500000     10000          2      -10     100 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Level      HP             XP       Gold      Thac0      AC    Damage (LVL*3)
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+51     26d26+1510     550000    10000           2      -10     153
+52     26d26+2520     600000    20000           1      -10     156 
+53     27d27+3530     650000    30000           1      -10     159 
+54     27d27+4540     700000    40000           1      -10     162 
+55     28d28+5550     750000    50000           0      -10     165 
+56     28d28+7650     800000    60000           0      -10     168
+57     29d29+9650     850000    70000           0      -10     171
+58    29d29+13580     900000    80000           0      -10     174
+59    30d30+19000     950000    90000           0      -10     177
+60    30d30+30000    1000000   100000           0      -10     180
+
+
+
+MOB PROGRAMS
+=----------=
+
+        MOBprograms are a way to make your mobiles more interesting.  This
+basic version has enough to get things going, and should be quite readable
+and understandable and more to the point, extendable. 
+
+Table of Contents:
+        The Basic Idea
+        MOBprogram Syntax
+        Associating MOBprograms With A Mobile
+        MOBprogram Files
+        Trigger Types
+        Variables
+        Control Flow Syntax
+        Operators
+        If_Checks In Control Flow
+        MOBcommands Of Interest
+        Regarding CPU Slowdown
+        Miscellaneous Information
+        Adding New Triggers.
+        Credits
+        Quick Reference Guide
+        MOBprogram Example
+
+
+-----------------------------The Basic Idea---------------------------------
+
+        Ever wonder why most muds either seem dead or overcrowded? The answer
+is probably partially due to the fact that the mobiles never do anything
+but wait to be slaughtered.  Unless someone has gone to great lengths
+and added many special procedures, most mobiles have no idea you are in
+the room with them and rarely listen to what you say. The typical Midgaard
+mayor wanders happily along even when the populace pokes him, waves his
+City Key about, unlocks his gates, or frenchs his secretary, etc. So a way to
+give the mobiles a bit more spirit would be neat. Enter the MOBprograms.
+
+        The backbone of the MOBprograms shall be called triggers from this
+point on.  Essentially, they are procedure calls placed in sneaky places in
+the mud code which provide the context for what is going on around the
+mobile.  So, if something happens in the mobile's room and a trigger is
+activated, then a list of commands is sent to the interpreter in the
+mobile's name, thus making her/it/him do an appropriate something.
+
+        Since knowing the appropriate response for every mobile to every
+possible trigger is not easy, this command list shouldnt be a rigid script, but
+needs to be somehow unique for the mobile and the situation.  However, in
+order to know the situation, a mobile needs to know more about the trigger
+than that it just happened. So, we have to include some sort of variables
+as well to set the context appropriately.
+
+        As most implementors know, most area creators are not versed in
+coding, but usually have great ideas. Therefore, whatever system is used needs
+to be quite simple. This is not to demean creators in anyway. Simply, it is
+useless to have a powerful system, if the only person able to write anything
+is someone who finds C coding in general to be exciting and non frustrating.
+If that is going to be the case, then stick to the special procedures, since
+there is no bound to what a complex special procedure can accomplish. Yet,
+from experience working on several muds, most admins and implementors prefer
+not to be writing one shot spec_procs to satisfy the needs of their creators.
+
+        Thus, the basic idea: let mobiles react to a myriad of mud
+events/situations by having them perform a list of commands which can be
+tailored to the moment through a simple and unintimidating scheme usable by
+any creator.
+
+
+----------------------------MOBprogram Syntax--------------------------------
+
+        The simplest way to describe any syntax is by example, so here goes.
+First, define the notation: anything contained in braces {} is required,
+anything in brackets [] is optional, anything in quotes "" is a case
+insensitive literal, NL refers to a required new-line. The meanings of
+the labels used will be described following the syntax diagram.
+
+">" {trigger_type} " " {argument_list} "~" NL
+{program_command_1} NL
+{program_command_2} NL
+{program_command_3} NL
+     .   .   .
+{program_command_N} NL
+"~" NL
+
+-- Explanations
+
+A TRIGGER_TYPE is one of the available triggers.
+A PROGRAM_COMMAND can be any legal mud command, or a control flow command.
+The ARGUMENT_LIST depends upon the trigger, but it is always parsed into the
+system as a character string.
+
+This is an example of ONE MOBProgram block for a mob.
+
+
+-------------------Associating MOBprograms With A Mobile--------------------
+
+        There is only one way for the mud to associate the program with the
+mobile.  In either case, the result is a link list of mob_programs which are
+attached to the mobile_prototype.  This is done at boot time, and so only one
+copy is kept, regardless of how many instances of the mobile are running
+about. This also means that there is no dynamic way to edit or modify the
+MOBprograms.
+
+Back to how to associate...
+        The method involves a simple in-file approach.  In your mobile file
+in your world directory, at the end of the mobile's block (i.e. on the line
+following the typical position/default position/sex line), append any number
+of MOBprogram blocks (using the syntax above) followed by a line starting
+with one '|' (pipe).
+
+Start of Example:
+#3062
+fido dog~
+the beastly fido~
+A beastly fido is mucking through the garbage looking for food here.
+~
+The fido is a small dog that has a foul smell and pieces of rotted meat hanging
+around his teeth.
+~
+161 0 -200 S
+0 20 10 1d6+4 1d4+0
+0 25
+8 8 1
+>greet_prog 60~
+if isgood($n)
+  if rand(30)
+    mpechoat $n $I wags $l tail at you.
+    mpechoaround $n $I wags $l tail at $n.
+  endif
+else
+  growl $n
+endif
+~
+|
+End of Example.
+
+--Explanations
+
+----------------------------MOBprogram Files----------------------------------
+
+        Since it is often useful to have the same MOBprograms affecting several
+different mobiles, referencing MOBprograms stored in an external file
+is needed. Using the method above, in place of a true MOBprogram block, one can
+place the dummy line in the mob file in place of the MOBProgram block(s).
+Shadowwind expects these programs to be stored under the lib/world/prg
+directory.
+
+                ">" "in_file_prog" {MOBprogram_filename} "~" NL
+
+Start of Example
+#3062
+fido dog~
+the beastly fido~
+A beastly fido is mucking through the garbage looking for food here.
+~
+The fido is a small dog that has a foul smell and pieces of rotted meat hanging
+around his teeth.
+~
+161 0 -200 S
+0 20 10 1d6+4 1d4+0
+0 25
+8 8 1
+>in_file_prog greet.prg~
+|
+End of Example
+
+Note there is no list of program_commands as well as no second tilde ~.
+You can in fact have multiple >in_file_prog blocks, as well as mixing
+them with in line MOBProg blocks.
+
+        In a file, the syntax is exactly the same as it is for a in_file
+approach:
+
+        A list of MOBprogram (NOT including any dummy in_file_prog
+        lines, sorry but recursion was outlawed for simplicity)
+        blocks followed by a line starting with one '|' (pipe).
+
+        More than one mobile can use the same file and one mobile can call more
+than one file.  Files referenced using the dummy in_file_prog line are
+placed in the MOBprogram list at the point where the dummy line exists.
+
+
+-----------------------------Trigger Types----------------------------------
+
+        Triggers are fairly easy to add, but this basic list should hold for
+most needs. Their names, argument list syntaxes, and translation into
+more articulate english are given below:
+
+Syntax:  in_file_prog <ARGUMENT>
+
+        The argument is a single word which is the location of the stored
+file as referenced from the running directory (MOBProgs).
+
+NOTE:  Dummy trigger. Not valid in any file, only for use in loading files
+        from the method described above.
+
+Syntax:  act_prog [p] <ARGUMENT>
+
+        The argument is a list of keywords separated by spaces. If the
+first word is the character 'p' by itself then the rest of the word list is
+considered to be a phrase.  The trigger is activated whenver a keyword (or
+the phrase) is contained in the act() message. Both the phrase and keywords
+are case insensitive.
+
+NOTE:  Most general trigger. Applies to almost every event which happens
+        in the mud. Anytime the function act() is called with a message
+        to be delivered TO_CHAR,TO_VICT,TO_ROOM,etc. the act can be
+        triggered.  Basically this will trigger on almost everything
+        you'll ever want (and some things you wont as well) For example:
+        MOBprogram: >act_prog p pokes you in the ribs.~
+        This trigger will only be activated if a mobile receives a message
+        in which the above five words are found in the exact order and
+        spacing given. Note that the period is needed because the words
+        must be found on their own. This eliminates confusion when the
+        keyword is 'hi' and a message with the word 'this' is being checked.
+        In AnotherWorld, neither emote nor say can trigger and act_prog,
+        so it can ONLY be triggered by socials (and possibly by an IMPs
+        echo ;)
+
+Syntax:  speech_prog [p] <ARGUMENT>
+
+        The argument is the same as for an act_prog.
+
+NOTE:  This is only triggered when the keyword or phrase is contained in a
+        message which has been said by a PC in the same room as the mob.
+        The PC restriction is not necessary, but makes infinite loops
+        between two talking mobiles impossible. It also makes it impossible
+        for two NPC's to stand and discuss the weather however.
+
+Syntax:  shout_prog [p] <ARGUMENT>
+
+        The argument is the same as for speech_prog.
+
+Syntax:  time_prog */*/*/*/*/*
+
+         This prog needs a bit of a defination, each * represents a moment
+         of time like so.  year/month/week/day/hour/minute
+
+         If you make a prog and want it to activate on the 30'th min of
+         the mud hour it would look like this: */*/*/*/*/30
+
+         Its kinda simple really, just ask if you need a hand. :)
+
+Syntax:  tell_prog [p] <ARGUMENT>
+
+        The argument is the same as for speech_prog.
+
+Syntax:  ask_prog [p] <ARGUMENT>
+
+        The argument<s> listed in this prog will trigger when the mob
+        is asked or whispered to.
+
+Syntax:  rand_prog <NUMBER>
+
+        The argument is a number betweeen 1 and 100 inclusive.
+
+NOTE:  This trigger is checked at each PULSE_MOBILE and if the argument is
+        greater than a percentage roll the trigger is activated. This
+        will happen even if there is no PC in the room with the mob,
+        but there must be players in the same area.
+        It is useful to give mobiles a bit of a personality. For instance
+        a janitor who stops to spit tobacco, or complain about the hours,
+        or wonder why there are no woman janitors on muds, or a fido which
+        barks or growls or pees on the curb is much more alive than one
+        which just sits there scavenging.
+        This trigger will even be checked when the mobile is fighting,
+        so can provide some confusion if you don't expect it (for instance
+        an mpecho about a fido peeing on the curb can happy during a fight
+        or even while the mobile is lying mortally wounded!)
+
+Syntax:  fight_prog <NUMBER>
+
+        The argument is a percentage like in rand_prog.
+
+NOTE:  Useful for giving mobiles combat attitude.  It is checked every
+        PULSE_VIOLENCE when the mobile is fighting.  Can be used to cast
+        spells, curse at the opponent, or whatever. Only the first successful
+        one will be processed to save time.  Also, this means that the
+        mobile wont get lucky and 1. curse, cast a fireball and 2. spit on the
+        player, cast another fireball in the same pulse.
+
+Syntax:  hitprcnt_prog <NUMBER>
+
+        The argument is a percentage.
+
+NOTE:  Is activated at each PULSE_VIOLENCE when the mobile is fighting. It
+        checks to see if the hitpoints of the mobile are below the given
+        percentage.  Multiple hitprcnt_progs should be listed in increasing
+        order of percent since a 40% will always be activated before a 20%
+        and, only the first successful hitprcnt trigger is performed.
+
+Syntax:  greet_prog <NUMBER>
+
+        Again a percentage argument.
+
+NOTE:  Whenever someone enters the room with the mobile, and the mobile saw
+        the person enter, this is checked. Good for shopkeepers who want
+        to welcome customers, or for pseudo-aggressive mobiles which need to
+        discriminate on who they attack.
+
+Syntax:  all_greet_prog <NUMBER>
+
+        Again a percentage argument.
+
+NOTE:  Like greet_prog, but it can be triggered even if the mobile didnt
+        see the arrival (i.e. sneak, invis, etc). Most useful for faking
+        teleport rooms (if your mobiles can transfer) or for impassable
+        guardians.
+
+    **NOTE: neither greet_prog is activated if the mobile is fighting.**
+
+Syntax:  entry_prog <NUMBER>
+
+        Again a percentage argument.
+
+NOTE:  The opposite of a greet_prog. Whenver the mobile itself enters a new
+        room, this can be triggered.  Useful for looking around, or waving
+        or other things that real PCs do when they arrive at a crowded room.
+        Only the first successful one of these is done so the mobile doesnt
+        look stupid by repeating commands resulting from multiple MOBprograms.
+
+Syntax:  give_prog <ARGUMENT>
+
+        The argument is either the complete name of an object, or the word
+        'all'. A complete name is like: "sword shiny magic" vs "sword". It
+        is whatever is on the line of the object section following the VNUM.
+
+NOTE:  This is triggered whenever something is given to the mobile.  Best used
+        for quests.  Since the first successful trigger is the only one of
+        this type which is processed, having an "all" argument give_prog
+        at the end of the MOBprogram list is essentially a default response.
+
+Syntax:  bribe_prog <NUMBER>
+
+        The argument is any positive integer number, this value is calculated
+        from copper coins, 1000 copper is 100 silver is 10 gold is 1 plat.
+
+NOTE:  This trigger is activated whenever money is given to the mobile. If the
+        amount given exceeds the number, then process the commands. Note
+        again, that an argument of '1' would act as a default response.
+        If money is given to a mobile with this trigger type, instead of the
+        cash being added to mob->gold, the mobile is instead given a pile of
+        coins in the proper amount. In this way, the mobile can drop the coins
+        or refer to the object by "amount" (short description:"%d gold coins")
+        This surely has some drawbacks, but it lets the mobile do something
+        with the bribe (NOTE: dropping it and getting it turns it into cash)
+        This can be done sneakily if a NPC-only "at" command exists.
+
+Syntax:  death_prog <NUMBER>
+
+        The argument is a percent once again.
+
+NOTE:  When the mobile dies, if the random percentage is less than the argument
+        the mobile performs the MOBprogram commands rather than the usual
+        death_cry sequence.  This is done before the corpse is made, so the
+        commands can be considered the mobiles last gasp.  It could perhaps
+        destroy the items it was holding, or create some, or cast a spell
+        on the killer and the room, or even goto a new location and die
+        there (with a text message, the corpse would seem to vanish)  The
+        position of the mobile is set to STANDING, and so it can do all the
+        normal commands, without worrying about being DEAD.  However, even
+        if the mobile restores itself to full hitpoints, it will still die.
+        This is not a way to immortal mobiles. However, the last thing this
+        mobile does could be to goto some vacant room, load a fresh version
+        of itself, drop all its items, force the new mobile to get all the
+        items and wear them, send the new mobile back to the character who
+        killed it and force the new mobile to attack that character. Along
+        with a text message which said the mobile restored itself, this
+        might be a convincing effect. (Note that your kitten could turn into
+        a dragon this way too).  Of course this assumes that some NPC
+        commands have been implemented.
+       In the original code, it was impossible to do the 'restoration' trick
+        above, however, in this code, it is in fact possible.  Try it ;)
+
+        Note that the first successful bribe_prog, give_prog, hitprcnt_prog,
+death_prog, fight_prog, rand_prog and entry_prog is the only one which
+is executed.  All the successful greet(_all)_progs, speech_progs, and
+act_progs will be done. This is the best arrangement we found for handling
+situations where you imported several MOBprogram files for a mobile.  If you
+are going to write lots of little files and piece them together to create
+the effect you want, it is advisible to not mix things together all that
+much, otherwise you have to pay close attention to the order in which the
+programs are added to the link list.
+
+        Also, no MOBprograms will be successful when the mobile is charmed
+(since it has no self violition, it should act like it has none) to protect
+mobiles which are given special powers from being implemented by a player.
+One bug we had in early testing was a player who charmed a mobile and then
+used its aggressive greet_prog to attack other players.
+
+
+------------------------------Variables------------------------------------
+
+        To make things come alive, variables are needed.  These are represented
+in the MOBprograms by using a dollar sign convention as in the socials.
+When the mud command is processed, these variables are expanded into the
+values shown below.  Usually, it is best to use the short descriptions
+of mobiles and the names of players when speaking them, but if you are
+performing an action to someone almost always you want the name. The
+title field for players is an extra that probably wont often be used.
+Without further hesitation... the variables:
+
+$i      the first of the names of the mobile itself.
+$I      the short description of the mobile itself.
+$n      the name of whomever caused the trigger to happen.
+$N      the name and title of whomever caused the trigger to happen.
+$t      the name of a secondary character target (i.e A smiles at B)
+$T      the short description, or name and title of target (NPC vs PC)
+$r      the name of a random char in the room with the mobile (never == $i)
+$R      the short description, or name and title of the random char
+
+$j      he,she,it based on sex of $i.
+$e      he,she,it based on sex of $n.
+$E      he,she,it based on sex of $t.
+$J      he,she,it based on sex of $r.
+
+$k      him,her,it based on sex of $i.
+$m      him,her,it based on sex of $n.
+$M      him,her,it based on sex of $t.
+$K      him,her,it based on sex of $r.
+
+$l      his,hers,its based on sex of $i.
+$s      his,hers,its based on sex of $n.
+$S      his,hers,its based on sex of $t.
+$L      his,hers,its based on sex of $r.
+
+$o      the first of the names of the primary object (i.e A drops B)
+$O      the short description of the primary object
+$p      the first of the names of the secondary object (i.e A puts B in C)
+$P      the short description of the secondary object
+
+$a      a,an based on first character of $o
+$A      a,an based on first character of $p
+
+        Also, in if_checks, the accepted variables are the basic ones
+(i,n,t,r,o,p).  If a variable is referenced that doesnt exist, then the value
+is simply left blank. (i.e referring to $o when the trigger is: A kisses B)
+
+        The only problem with the variables is that the secondary object and
+the secondary target are passed by act() in the same location.  This means that
+if you reference $t in an  A puts B in C  situation, the result will probably
+be a happy mud crash or some weird side effect, espescially if $t is used in
+an if_check (i.e. if isnpc($t) in the above situation) The basic fix for this
+is to change everyone who calls the act() procedure to specify a secondary
+object and a secondary character. But that is a fairly comprehensive trivial
+twiddle, so we left it the way it is so that, you arent forced to make all
+those twiddles to use the MOBprograms.
+
+
+---------------------------Control Flow Syntax------------------------------
+
+        In place of any legal mud command in a MOBprogram, one can substitute a
+flow of control command. Here is the syntax for a flow of control command.
+
+"if" " " {if_check_1} "(" {argument} ")" [ {operator} {value} ] NL
+[ "or" " " {if_check_2} "(" {argument} ")" [ {operator} {value} ] NL ]
+                        .           .           .
+[ "or" " " {if_check_N} "(" {argument} ")" [ {operator} {value} ] NL ]
+
+        [ {program_command_1} NL ]
+        [ {program_command_2} NL ]
+              .   .   .
+        [ "break" NL ]
+              .   .   .
+        [ {program_command_N} NL ]
+
+[ "else" NL ]
+
+        [ {program_command_1} NL ]
+        [ {program_command_2} NL ]
+              .   .   .
+        [ "break" NL ]
+              .   .   .
+        [ {program_command_N} NL ]
+
+"endif" NL
+
+        Basically, it is: an 'if' line, followed by zero or more 'or' lines,
+followed by zero or more legal mud commands, which may contain a 'break' line,
+possibly followed by an 'else' line , followed by zero or more legal mud
+commands, which may contain a 'break' line, followed by an 'endif' line.
+
+The only new syntax labels are all in the IF line:
+
+--Explanations
+
+An IF_CHECK is a string which describes under what context to compare things.
+The ARGUMENT is the reference point from which the LHS of an expression comes.
+The OPERATOR indicates how the LHS and RHS are going to be compared.
+The VALUE is the RHS of the expression to be compared by the operator.
+
+The BREAK command bails out of the entire MOBprogram regardless of the
+level if nesting.
+
+If that looks confusing, skip to the end of the document and review the
+Example. Hopefully that should clear things, otherwise you'll probably have
+to give us a mail since examples are the best way we know to explain syntax.
+
+
+--------------------------------Operators-----------------------------------
+
+        Most of the basic numeric operators are legal and perform the same
+function as in C. The string operators are a bit more confusing. There are
+negative versions of some of the operators. These are not strictly needed,
+since the if/else construct of Control Flow commands can handle either case.
+
+Numeric Operators: == != > < >= <= & |     String Operators: == != / !/
+
+        For strings, == and != check for exact match between the two strings
+and the other two, / and !/ check to see if the second string is contained in
+the first one.  This is so things like:  if name($n) / guard  will respond
+true to "cityguard" "guard" "guardian"  etc. Using == on a name implies
+that you are matching the complete name "cityguard guard" or whatever.
+The string operators are case SENSITIVE.
+
+
+------------------------If_Checks In Control Flow---------------------------
+
+        The provided list of if_checks and their arguments are below.  They
+should all be fairly obvious in what they do, but some of the more obtuse
+deserve a slight explanation. Any '==' operator can be replaced with any of the
+available ones described above.  The argument ($*) refers to any of the
+variables which make sense for that if_check (i.e. for an if_check which is
+referencing a person the only valid variables would be $i, $n, $t or $r)
+A value type of string is a sequence of characters. It does not need to be
+included in quotes or anything like that (i.e. name($n)== orc large brown)
+
+rand     (num)                  Is random percentage less than or equal to num
+isnpc     ($*)                  Is $* an NPC
+ispc      ($*)                  Is $* a PC
+isgood    ($*)                  Does $* have a good alignment
+isfight   ($*)                  Is $* fighting
+isimmort  ($*)                  Is the level of $* greater than max_mortal
+ischarmed ($*)                  Is $* affected by charm
+isfollow  ($*)                  Is $* a follower with their master in the room
+isaffected($*)  & integer       Is ($*->affected_by & integer) true
+                                (person only)
+hitprcnt  ($*)  == percent      Is the hit/max_hit of $* equal to percent
+inroom    ($*)  == integer      Is the room of $* equal to integer
+                                (person only)
+sex       ($*)  == integer      Is the sex of $* equal to integer
+position  ($*)  == integer      Is the position of $* equal to integer
+level     ($*)  == integer      Is the level of $* equal to integer
+class     ($*)  == integer      Is the class of $* equal to integer
+goldamt   ($*)  == integer      Does $* have a gold total equal to integer
+objtype   ($*)  == integer      Is the type of $* equal to integer
+                                (armor,boat,etc)
+objval#   ($*)  == integer      Is $*->value[#] equal to integer (# from 0-3)
+number    ($*)  == integer      Is the vnum of $* equal to integer
+name      ($*)  == string       Is the name of $* equal to string
+
+NOTE: There are some fairly interesting and possibly useful ones not on this
+list, and the might or might not get added in later days.  Please send any
+that YOU add to me, or to the circle@marble.bu.edu mailing list.
+
+------------------------MOBCommands Of Interest-----------------------------
+
+        These are fairly basic things, most of them are wiz commands which have
+been changed to allow for mobiles to perform the commands.  If you have the
+problem of immortals abusing these powers on your mud either ditch the
+immortals, or add a check in all of them to only let NPC's with null
+descriptors do the commands.  (However, you lose a little debugging help that
+way).  MERC 2.2 has provided a little security feature against this but
+it is by no means comprehensive.  Please check yourself if you are concerned.
+
+Here are the basic MOBcommands that we found to be enticing:
+
+Syntax:  MPASOUND <text_string>
+
+        Prints the text string to the rooms around the mobile in the same
+        manner as a death cry. This is really useful for powerful aggressives
+        and is also nice for wandering minstrels or mobiles like that in
+        concept.
+
+Syntax:  MPDELAY <TIME>
+
+        Adds in a delay on the following action, time is in miliseconds.
+
+Syntax:  MPHUNT <Playername or roomnumber>
+
+        Forces the mob to hunt what you tell it to.  Good for hunting for
+        running players or groups of players.
+
+
+Syntax:  MPHUNTRM <ROOMNUMBER>
+
+        Forces the mob to hunt the room in question, the mob will take
+        the fastest route to this room, but will not (at this time) go
+        through closed or locked doors.  This prog works good hand in
+        hand with the MPHUNT prog, after MPHUNTing, MPHUNTROOM can
+        return the mob to its original room.
+
+Syntax:  MPJUNK <object>
+
+        Destroys the object refered to in the mobiles inven. It prints no
+        message to the world and you can do things like junk all.bread or
+        junk all. This is nice for having janitor mobiles clean out their
+        inventory if they are carrying too much (have a MOBprogram trigger on
+        the 'full inventory')
+
+Syntax:  MPECHO                 <text_string>
+         MPECHOAT      <victim> <text_string>
+         MPECHOAROUND  <victim> <text_string>
+
+        Prints the text message to the room of the mobile. The three options
+        let you tailor the message to goto victims or to do things sneaky
+        like having a merchant do: mpat guard mpechoat guard rescue_please
+        This coupled with a guard act_prog trigger on rescue_please to
+        mpgoto $n and mpecho $I has arrived.  It is an affective way of quickly
+        bringing guards to the scene of an attack.
+
+Syntax:  MPMLOAD <vnum>
+         MPOLOAD <vnum>
+
+        Loads the obj/mobile into the inven/room of the mobile. Even if the
+        item is non-takable, the mobile will receive it in the inventory.
+        This lets a mobile distribute a quest item or load a key or something.
+
+Syntax:  MPLOG <string>
+
+        The mob would write a string to the system logfile. (Also viewable
+        in syslog if you are wanting to keep track of specific functions)
+
+Syntax:  MPTRAIN ????????????????
+
+Syntax:  MPRAWKILL <victim>
+
+        Lets the mobil RAWKILL a player. (Yes this is the same as the
+        Imp rawkill command.)  Usefull to get the point acrost that
+        specific Mobs are not ment to die. ;-)
+        
+Syntax:  MPKILL <victim>
+
+        Lets a mobile kill a player without having to murder and be fifth
+        level.  Lots of MOBprograms end up with mpkill $n commands floating
+        around. It works on both mobiles and players.
+
+Syntax:  MPPURGE [argument]
+
+        Destroys the argument from the room of the mobile. Without an argument
+        the result is the cleansing of all NPC's and items from the room with
+        the exception of the mobile itself.  However, mppurge $i will indeed
+        purge the mobile, but it MUST be the last command the mobile tries to
+        do, otherwise the mud cant reference the acting mobile trying to do the
+        commands and bad things happen.
+
+Syntax:  MPGOTO <dest>
+
+        Moves the mobile to the room or mobile or object requested.  It makes
+        no message of its departure or of its entrance, so these must be
+        supplied with mpecho commands if they are desired.
+
+Syntax:  MPAT <dest> <command>
+
+        Perfoms the command at the designated location. Very useful for doing
+        magic slight of hand tricks that leave players dumbfounded.. such as
+        metamorphing mobiles, or guard summoning, or corpse vanishing.
+
+Syntax:  MPTRANSFER <victim> [dest]
+
+        Sends the victim to the destination or to the room of the mobile as a
+        default.  if the victim is "all" then all the characters in the room
+        of the mobile are transfered to the destination.  Good for starting
+        quests or things like that.  There is no message given to the player
+        that it has been transfered and the player doesnt do a look at the
+        new room unless the mob forces them to. Immortals cannot be tranfered.
+
+Syntax:  MPFORCE <victim> <command>
+
+        Forces the victim to do the designated command.  The victim is not told
+        that they are forced, they just do the command so usually some mpecho
+        message is nice.  You can force players to remove belongings and give
+        them to you, etc.  The player sees the normal command messages (such as
+        removing the item and giving it away in the above example)  Again, if
+        the victim is "all" then everyone in the mobiles room does the command.
+        This cannot be used on immortals.
+
+Syntax:  MPCAST '<spell>' <victim>
+
+        Just like spell, but doesnt show a message. Useful when you want to
+        use your own messages.
+
+--------------------------Regarding CPU Slowdown-------------------------------
+
+        We have no real idea how slow this makes a mud. However, you will
+find that if you are judicious with your use of MOBprograms, you can either
+do little damage, or even reduce the effort on your server!  This means that
+mobile polling (including the rand_progs) need only be checked when players
+are around. This reduces computation of random_stuff a little, but it is
+still a polling method, and subject to a basic inefficiency there. However,
+aside from the rand_progs, the only additional slowdowns will be when the
+mobile is responding to the situation, and you would get that from a special
+procedure as well (although MOBprograms are surely not as efficient as
+compiled C code)
+
+For those who are afraid that MOBprograms will drown their CPU, here is a
+brazen suggestion which could put you a bit more at ease.  Instead of having
+aggressive mobiles, try the following MOBprogram block on all would be
+aggressives.
+
+                        >greet_prog 100~
+                        if ispc($n)
+                          if isimmort($n)
+                            snort $n
+                          else
+                            mpkill $n
+                          endif
+                        endif
+                        ~
+                        |
+
+        This has the effect of making the mobile attack the FIRST visable
+mortal player who walks into the room.
+
+        What this should allow, is to comment out the aggressive mobile check
+section of the code and thus reduce computation by a bunch. There is no
+continuous polling through all the mobiles in occupied zones and checking to
+see if there is an NPC aggressor and a PC victim. There is also no need to
+worry about players skipping through aggressives, since the trigger catches
+folk as soon as they enter the room.
+
+        Note that the price paid for this, was that if a second player
+walked in during the combat, and the first character fled, the mobile won't
+realize that there is a new target. So, a compromise would be adding a
+rand_prog which had the mobile appear to peer around the room and then do an
+mkill $r.
+  AHA! you say, we are back to polling. Well true, but since mobile_update
+is called anyway (at 1/16 the frequency of aggr_update in default Merc 2.0)
+and we only add an if check, a walk of a short link_list and the MOBprogram
+execution itself, we have still reduced the aggr_update stuff by major
+amounts.
+
+
+-------------------------Miscellaneous Information-----------------------------
+
+        There is really no limit to the number of MOBprograms a given mobile
+can have. However, the length of a single command block is limited by the
+value of MAX_STRING_LENGTH.  In my version it was around 4k, so that is
+probably about 100 lines.  The indentation spaces shown in the example
+above are NOT required, but do make it easier to read (and debug)
+
+        The MOBprogram stuff runs totally without anything in the
+mob_commands.c file, but letting mobiles be a bit more godlike has allowed
+us to do what we consider to be wonderful things. The replicant and
+polymorphing mobiles described above as well as some nifty mob helping mob
+interactions are an example.
+
+        It IS possible to accidentally make mobiles which can trigger in
+loops. As mentioned in the example at the end of this document, the result is
+usually a mud crash or major CPU dent.  We dont know any way to prevent this
+from happening, other than careful coding and a restriction of mobile travel
+from zones of one creator to another (another good reason to not have charmed
+mobiles do anything).  Tracking down the culprit mobile is not always easy.
+The only thing we have found which always works, is to add a log statement
+into the MOBprogram driver and fill some disk space until it becomes apparent
+what commands are repetitively issued. Also, most infinite loops are flukes
+where the situation just happens to be right and usually it never happens
+again.
+
+        The list of variables and triggers and if_checks will grow
+continuously as our creators demand the ability to do certain things.  If you
+have a request or if you have a new one, we don't mind hearing about them,
+and if you find bugs, we shall gladly attempt to squash them for you. As
+additions or fixes are made, the code will occasionally be redistributed.
+However, if you want a current version, please feel free to ask. When the
+code is redistributed, a file containing the change history from the original
+release will be provided (when possible) to allow you to patch in the changes
+with low grief.
+
+    MOBprogram quick reference to triggers/variables/ifchecks/mobcommands
+
+trigger         argument and what must happen to activate trigger
+-----------------------------------------------------------------------------
+act_prog        WORDLIST or P WORD_PHRASE to match from act() to mobile
+all_greet_prog  PERCENT chance to check when any char enters mobile's room
+bribe_prog      INTEGER amount of miminum gold amount given to mobile
+death_prog      PERCENT chance to check after mobile has been slain
+entry_prog      PERCENT chance to check when mobile moves to a new room
+fight_prog      PERCENT chance to check at fight_pulse if mobile is fighting
+give_prog       FULL OBJECT NAME or ALL to match when obj given to mobile
+greet_prog      PERCENT chance to check if visable char enters mobile's room
+hitprcnt_prog   PERCENT lower than mobiles hit/max_hit if mobile is fighting
+in_file_prog    Special file in world/prog dir to execute on multiple mobs
+rand_prog       PERCENT chance to check whenever a PC is in the mobiles zone
+ask_prog        WORDLIST or P WORD_PHRASE to match asking/whispering to mob
+shout_prog      WORDLIST or P WORD_PHRASE to match in dialogue to mobile
+speech_prog     WORDLIST or P WORD_PHRASE to match in dialogue to mobile
+tell_prog       WORDLIST or P WORD_PHRASE to match in dialogue to mobile
+time_prog       TIME-VARIABLE activated
+
+variable         mobile actor victim random     object 2nd_object
+-----------------------------------------------------------------------------
+  name             $i    $n     $t     $r         $o       $p
+shrt_desc/title    $I    $N     $T     $R         $O       $P
+he/she/it          $j    $e     $E     $J         --       --    '$'symbol=$$
+him/her/it         $l    $m     $M     $L         --       --
+his/hers/its       $k    $s     $S     $K         --       --
+a/an               --    --     --     --         $a       $A
+
+ifcheck       argument?        meaning
+-----------------------------------------------------------------------------
+rand(num)                   Is a random percentage less than or equal to num
+isnpc($*)                   Is $* an NPC
+ispc($*)                    Is $* a PC
+isgood($*)                  Does $* have a good alignment
+isfight($*)                 Is $* fighting
+isimmort($*)                Is the level of $* greater than max_mortal
+ischarmed($*)               Is $* affected by charm
+isfollow($*)                Is $* a follower with their master in the room
+isaffected($*) & integer    Is ($*->affected_by & integer) true (person only)
+hitprcnt($*)  == percent    Is the hit/max_hit of $* equal to percent
+inroom($*)    == integer    Is the room of $* equal to integer (person only)
+sex($*)       == integer    Is the sex of $* equal to integer
+position($*)  == integer    Is the position of $* equal to integer
+level($*)     == integer    Is the level of $* equal to integer
+class($*)     == integer    Is the class of $* equal to integer
+goldamt($*)   == integer    Does $* have a gold total equal to integer
+objtype($*)   == integer    Is the type of $* equal to integer (armor,boat,etc)
+objval#($*)   == integer    Is $*->value[#] equal to integer (# from 0-3)
+number($*)    == integer    Is the vnum of $* equal to integer
+name($*)      == string     Is the name of $* equal to string
+
+MOBcommand      argument_list           MOBcommand      argument_list
+-----------------------------------------------------------------------------
+MPDELAY         <string>                MPASOUND        <text_string>
+MPJUNK          <object>                MPECHO          <text_string>
+MPMLOAD         <mobile>                MPECHOAT        <victim> <text_string>
+MPOLOAD         <object> <level>        MPECHOAROUND    <victim> <text_string>
+MPKILL          <victim>                MPPURGE         [argument]
+MPGOTO          <dest>                  MPAT            <dest> <command>
+MPTRANSFER      <dest> [location]       MPFORCE         <victim> <command>
+MPCAST          'spell name'
+MPHUNT          <Player/Roomnum>        MPHUTROOM       <roomnum>
+MPRAWKILL       <player>                MPTRAIN         <???????>
+MPLOG           <String>
+
+======================END OF QUICK REFERENCE SHEET===========================
+
+++++++++++++++++++++++++++++++++EXAMPLE++++++++++++++++++++++++++++++++++++++
+
+Referenced from above in the Control Flow section
+
+>act_prog p pokes you in the~
+if isnpc($n)
+   chuckle
+   poke $n
+else
+   if level($n) <= 5
+   or isgood($n)
+      tell $n I would rather you didnt poke me.
+   else
+      if level($n)>15
+         scream
+         say Ya know $n. I hate being poked!!!
+         mpkill $n
+         break
+      endif
+      slap $n
+      shout MOMMY!!! $N is poking me.
+   endif
+endif
+~
+|
+
+Ok.. time to translate.. the trigger will only happen when the mobile
+gets the message "... pokes you in the ..." If the offender (recall
+the $n and $N refer to the char who did the poking...) is an NPC, then
+the mobile merely chuckles and pokes back. If the offender was a PC
+then good and low level characters get a warning, high level chars
+get attacked, and midlevel chars get slapped and whined at.
+
+Note that two of these mobiles could easily get into an infinite poke
+war which slows down (or frequently crashes) the mud just a bit :(
+Be very careful about things like that if you can. (i.e dont respond
+to a poke with a poke, and try not to let heavily programmed robot mobiles
+wander around together. More on that is given above.)
+
+Also, it is clear that the 'order' command could get confused with the 'or'
+control flow. However, this is only the case when 'order' is abbreviated to
+its two letter form, and placed immediately following an 'if' line. Thus,
+if you want to be that malicious in trying to break the MOBprogram code,
+noone is going to stand in your way (However, the result of this would be
+a bug message and a bail out from the ifcheck so things dont really break)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+**OBJECT**
+Object fields description
+=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+#<virtual number><NL>
+   See rules for rooms above.
+
+<namelist>~<NL>:
+   Same as for monsters above.
+
+<short description>~<NL>
+   This string will be displayed when the object is used. For example
+   if it is "a rubber raft", and a player drops it, then a message like:
+   "Monthy drops a rubber raft." would be displayed.
+
+<long description>~<NL>
+   This description is displayed when the object is lying on the ground.
+   For example, if it is "A furled umbrella lies here.~" then this message
+   is displayed when the umbrella is lying on the ground.
+
+<action description>~<NL>
+   Do not use.
+
+<type flag>[NL]
+   This defines what kind of item you are defining, it can be one of:
+
+  ITEM_LIGHT       1  Item is a Light
+  ITEM_SCROLL      2  Item is a scroll
+  ITEM_WAND        3  Item is a wand
+  ITEM_STAFF       4  Item is a staff
+  ITEM_WEAPON      5  Item is a weapon
+  ITEM_FIREWEAPON  6  Not yet implemented
+  ITEM_MISSILE     7  Not yet implemented
+  ITEM_TREASURE    8  Item is a treasure (not money)
+  ITEM_ARMOR       9  Item is armour
+  ITEM_POTION     10  Item is a potion
+  ITEM_WORN       11  Item is worn (Not enchantable)
+  ITEM_OTHER      12  Item is other
+  ITEM_TRASH      13  Item is trash
+  ITEM_TRAP       14  Not yet implemented
+  ITEM_CONTAINER  15  Item is a container
+  ITEM_NOTE       16  Item is a note that can be written upon (with a pen)
+  ITEM_DRINKCON   17  Item is a drink container, for example a bottle or
+                      a barrel or a wine-skin.
+                      A drinkcontainer with contents must *always* have
+                      two names: 1. The name of the drink, 2. the name
+                      of the container, example:
+                       tea cup~
+
+  ITEM_KEY        18  Item is a key
+  ITEM_FOOD       19  Item is food.
+  ITEM_MONEY      20  Item is money.
+  ITEM_PEN        21  Item is a pen.
+  ITEM_BOAT       22  Item is a boat, which must be carried by a player if
+                      the player wishes to enter NOSWIM room sector types.
+  ITEM_FOUNTAIN   23  Item is a fountain (characters can drink from it
+                      without having it in inventory).
+
+  ITEM_INSTRUMENT 24  Item is an instrument, harp, horn (Bard Stuff)
+  ITEM_BADGE      25  Item is a badge, to denote Clans or importance
+  ITEM_PCORPSE    26  (R)Item is a Player Corpse (Use this and DIE)
+  ITEM_SPELLBOOK  27  Item is a spell book
+  ITEM_PORTAL     28  Item is a portal, Moonwell, Dimension Door.
+
+<extra flag>[NL]
+   This bitvector defines mostly special effects:
+
+   ITEM_GLOW            1  a  The item is glowing.
+   ITEM_HUM             2  b  The item is "humming"/"buzzing".
+   ITEM_NORENT          4  c  The item cannot be rented
+   ITEM_NODONATE        8  d  The item cannot be donated
+   ITEM_NOINVIS        16  e  The item cannot be made invisible
+   ITEM_INVISIBLE      32  f  Item is invisible.
+   ITEM_MAGIC          64  g  Item will show a magical aura when 'detect magic'
+                              is used.
+   ITEM_NODROP        128  h  Item can not be dropped (cursed for example)
+   ITEM_BLESS         256  i  Item is blessed.
+   ITEM_ANTI_GOOD     512  j  Item not usable by good people
+   ITEM_ANTI_EVIL    1024  k  Item not usable by evil people
+   ITEM_ANTI_NEUTRAL 2048  l  Item not usable by neutral people
+   ITEM_ANTI_MU      4096  m  Item not usable by magic users
+   ITEM_ANTI_CLERIC  8192  n  Item not usable by clerics
+   ITEM_ANTI_THIEF  16384  o  Item not usable by thieves
+   ITEM_ANTI_WARRIO 32768  p  Item not usable by warriors
+   ITEM_NOSELL      65536  q  Item cannot be sold
+   ITEM_DONATED    131072  r  Item has been donated, shopkeepers wont accept it
+   ITEM_NOAUC      262144  s  ****Unused at this time****
+   ITEM_CARRIED    524288  t  (r) Item is in circulation
+   ITEM_ISLIGHT               Item is a perminate light
+   ITEM_ISLIGHTDIM            Item is a light that has a set lifetime
+   ITEM_POISONED              Item is poisoned
+   ITEM_FLOAT                 Item will float on water
+   ITEM_NOT_OBVIOUS           Item is hidden (Must search to find)
+   ITEM_NO_ID                 Item is not identifyable by scroll or spell
+
+<wear flag>
+   This bitvector defines if items can be taken, and if they can be worn:
+
+   ITEM_TAKE              1  a  Item is takeable.
+   ITEM_WEAR_FINGER       2  b  Can be worn on a finger (rings usually)
+   ITEM_WEAR_NECK         4  c  Can be worn around neck.
+   ITEM_WEAR_BODY         8  d  Can be worn on body.
+   ITEM_WEAR_HEAD        16  e  Can be worn on head.
+   ITEM_WEAR_LEGS        32  f  Can be worn on legs.
+   ITEM_WEAR_FEET        64  g  Can be worn on feet
+   ITEM_WEAR_HANDS      128  h  Can be worn on hands (gauntlets, etc)
+   ITEM_WEAR_ARMS       256  i  Can be worn on arms.
+   ITEM_WEAR_SHIELD     512  j  Can be used as a shield.
+   ITEM_WEAR_ABOUT     1024  k  Can be worn about body
+   ITEM_WEAR_WAISTE    2048  l  Can be worn around the waiste (belt)
+   ITEM_WEAR_WRIST     4096  m  Can be worn on wrist (bracelets)
+   ITEM_WIELD          8192  n  Can be wielded and used as a weapon
+   ITEM_HOLD          16384  o  Item can be held in a hand.
+   ITEM_FACE          32768  p  Can be worn on face
+   ITEM_EAR           65536  q  Can be worn as earring
+   ITEM_EYES         131072  r  Can be worn on eyes
+   ITEM_ANKLES       262144  s  Can be worn on ankles
+   ITEM_BADGE        524288  t  Can be worn as a badge
+   ITEM_2HANDED     1048576  u  Can be wielded as two handed (No shield)
+
+<worn flag><NL>
+   This bitvector defines where the object can be worn, not what part of the
+   body it covers when worn.
+
+   WORN_BADGE      (1 << 0)        a         1  Worn as a badge
+   WORN_FINGER_R   (1 << 1)        b         2  Worn on right hand
+   WORN_FINGER_L   (1 << 2)        c         4  Worn on left hand
+   WORN_NECK_1     (1 << 3)        d         8  Worn on position 1 on neck
+   WORN_NECK_2     (1 << 4)        e        16  Worn on position 2 on neck
+   WORN_BODY       (1 << 5)        f        32  Worn on body
+   WORN_HEAD       (1 << 6)        g        64  Worn on head
+   WORN_LEGS       (1 << 7)        h       128  Worn on both legs
+   WORN_FEET       (1 << 8)        i       256  Worn on both feet
+   WORN_HANDS      (1 << 9)        j       512  Worn on both hands
+   WORN_ARMS       (1 << 10)       k      1024  Worn on both arms
+   WORN_SHIELD     (1 << 11)       l      2048  Worn as a shield
+   WORN_ABOUT      (1 << 12)       m      4096  Worn about your body
+   WORN_WAIST      (1 << 13)       n      8192  Worn on waist
+   WORN_WRIST_R    (1 << 14)       o     16384  Worn on right wrist
+   WORN_WRIST_L    (1 << 15)       p     32768  Worn on left wrist
+   WORN_WIELD      (1 << 16)       q     65536  Item is wielded as a weapon
+   WORN_HOLD       (1 << 17)       r    131072  Item is held
+   WORN_FACE       (1 << 18)       s    262144  Worn on face
+   WORN_EAR_R      (1 << 19)       t    524288  Worn on the right ear
+   WORN_EAR_L      (1 << 20)       u   1048576  Worn on the left ear
+   WORN_EYES       (1 << 21)       v   2097152  Worn on your eyes
+   WORN_ANKLE_R    (1 << 22)       w   4194304  Worn on right ankle
+   WORN_ANKLE_L    (1 << 23)       x   8388608  Worn on left ankle
+   WORN_WIELD_2    (1 << 24)       y  16777216  Item is second weapon
+   WORN_HOLD_2     (1 << 25)       z  33554432  Worn as second held
+   WORN_2HANDED    (1 << 26)       A  67108864  Item is 2 handed weapon
+
+About the wear and worn flags, we will explain with an example. Say we want
+a helm that covers the head, and the face both, we would set the "wear"
+flags to ITEM_WEAR_TAKE and ITEM_WEAR_HEAD bits. Then we would set the
+"worn" flags to WORN_HEAD and WORN_FACE bits. Then the helm would be
+wearable and would cover both the head and the face, note that if a player
+is already wearing something on one of those positions then they could not
+wear the item you made until they remove both the items on there face and
+head.  Also, if you were to make a cloak to take up both neck positions
+you would set the wear flags to ITEM_WEAR_TAKE, ITEM_WEAR_NECK and the worn
+flags to WEAR_NECK_1 and WEAR_NECK_2
+
+
+<value 0> <value 1> <value 2> <value 3> [value 4] <NL>
+   These values are very central. They define the ability of items based on
+   the items <Item Type>. These values are defined below. Note that
+   if you define an item as being anything but a weapon, you shouldn't set
+   the 'wield' flag. Many similar obvious rules apply. Example of 4 values:
+
+   If the <Item Type> == ITEM_CONTAINER then the values are interpeted as:
+
+      Value[0]: Maximum weight the container can contain.
+      Value[1]: Container flags:
+
+        CLOSEABLE     - 1
+        PICKPROOF     - 2
+        CLOSED        - 4
+        LOCKED        - 8
+
+      Value[2]: The item-number of the object which can open the object.
+                -1 means no lockability.
+      Value[3]: Internal use for Corpses that must "rot".
+
+      Value[4]: THIS VALUE IS OPTIONAL! IF YOU DONT WANT IT, DO NOT ADD IT
+                This field is specific to Shadowwind. It indicates what
+                material type an item is. The material types are listed
+                in another part of this document.
+
+
+                     ITEM VALUE DOCUMENTATION
+
+These values are used, as illustrated below, with the different
+item types. The various item types are shown in dbsup.doc.
+
+ITEM_LIGHT (1)
+Value[0]: Not Used
+Value[1]: Not Used
+Value[2]: Number of hours the light can be used for. Zero hours means that
+          the light has gone out. A negative number will create an eternal
+          light source.
+Value[3]: Not Used
+
+
+ITEM_SCROLL (2)
+Value[0]: Level of the spell on the scroll.
+Value[1]: Which spell (see list somewhere around the end of file)
+Value[2]: Which spell
+Value[3]: Which spell
+  The values(1-3) are three (or less) different spells, mixed 'on' the scroll.
+  Unused spells should be set to -1.
+
+
+ITEM_WAND (3)
+Value[0]: Level of spell in wand.
+Value[1]: Max Charges (1..X)
+Value[2]: Charges Left
+Value[3]: Which spell in wand (see list somewhere around the end of file)
+
+
+ITEM_STAFF (4)
+Value[0]: Level of spell in staff.
+Value[1]: Max Charges (1..X)
+Value[2]: Charges Left
+Value[3]: Which spell in staff (see list somewhere around the end of file)
+
+
+ITEM_WEAPON (5)
+Value[0]: Weapon Handedness
+Value[1]: Number of dice to roll for damage
+Value[2]: Size of dice to roll for damage
+Value[3]: The weapon type. The weapon types
+          are listed in another part of this document.
+
+          Weapon handedness has the following values:
+          0) 1h Bludgeon   1) 1h Misc
+          2) 1h Piercing   3) 1h Slashing
+          4) 2h Bludgeon   5) 2h Misc
+          6) 2h Slashing
+
+ITEM_FIREWEAPON (6)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_MISSILE    (7)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_TREASURE   (8)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_ARMOR      (9)
+Value[0]: The effective AC. >0 enhances the armour class. <0 reduces the
+          the armour class (cursed armour for example).
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_POTION    (10)
+Value[0]: Level of the spell in the potion.
+Value[1]: Which spell (Listed elsewhere in this file)
+Value[2]: Which spell
+Value[3]: Which spell
+  The values(1-3) are three (or less) different spells, mixed in the potion.
+  Unused spells should be set to -1.
+   Eg.
+   Value 0 : 30  (Level)
+   Value 1 : 27  (Harm)
+   Value 2 : 17  (Curse)
+   Value 3 :  4  (Blindness)
+     (* Don't drink this - It's bad for your health! *)
+
+
+ITEM_WORN      (11)
+Value[0]: The effective AC. >0 enhances the armour class. <0 reduces the
+          the armour class (cursed armour for example).
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_OTHER     (12)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_TRASH     (13)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_TRAP      (14)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_CONTAINER (15)
+Value[0]: Maximum weight the container can contain.
+Value[1]: Container flags:
+
+   CLOSEABLE     1
+   PICKPROOF     2
+   CLOSED        4
+   LOCKED        8
+
+Value[2]: The item-number of the object which can open the object. -1 means
+          no lockability.
+Value[3]: Internal use for Corpses that must "rot".
+
+ITEM_NOTE      (16)
+Value[0]: Tounge (language of writing). Not yet used.
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_DRINKCON  (17)
+Value[0]: Maximum drink-units the drink-container can contain.
+Value[1]: Number of drink-units that are left in the container.
+Value[2]: The type of liquid in the drink-container, one of:
+
+              Type           nr.    Effect
+                                    Drunkness   Fullness   Thirst
+
+              LIQ_WATER      0      0           1           10
+              LIQ_BEER       1      3           2           5
+              LIQ_WINE       2      5           2           5
+              LIQ_ALE        3      2           2           5
+              LIQ_DARKALE    4      1           2           5
+              LIQ_WHISKY     5      6           1           4
+              LIQ_LEMONADE   6      0           1           8
+              LIQ_FIREBRT    7      10          0           0
+              LIQ_LOCALSPC   8      3           3           3
+              LIQ_SLIME      9      0           4           -8
+              LIQ_MILK       10     0           3           6
+              LIQ_TEA        11     0           1           6
+              LIQ_COFFE      12     0           1           6
+              LIQ_BLOOD      13     0           2           -1
+              LIQ_SALTWATER  14     0           1           -2
+              LIQ_CLEARWATER 15     0           0           13
+
+The above values for drunkness/fullness/thirst are in the units of one
+hour of effect per four units of liquid drunk.  For example, imagine that
+Dragon drinks an entire bottle (say 7 units) of saltwater.  According to the
+table above, saltwater has a drunkness value of 0, fullness value of 1 and
+thirst value of -2.  Therefore:
+
+     His Drunkness is not changed ((7/4)*0)
+     His Fullness increases by ((7/4)*1) hours
+     His Thirst increases by ((7/4)*-2) hours, thus making him more thirsty.
+
+A player's drunkness, fullness, and thirst can range from 0 to 24.  24
+is the maximum; 0 means the person is completely sober, hungry, or thirsty
+respectively.  For immortals, these values are typically -1.
+
+
+Value[3]: if this value is non-zero, then the drink is poisoned.
+
+ITEM_KEY       (18)
+Value[0]: The key-type. This value must match the lock-type the door
+          that the key can open.
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_FOOD      (19)
+Value[0]: The number of hours, that this food will fill the stomach
+Value[1]: -
+Value[2]: -
+Value[3]: If this value is non-zero, the food is poisoned.
+
+ITEM_MONEY     (20)
+Value[0]: Copper Coins
+Value[1]: Silver Coins
+Value[2]: Gold Coins
+Value[3]: Platinum Coins
+Value[4]: Material type
+
+ITEM_PEN       (21)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_BOAT      (22)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_FOUNTAIN  (23)
+
+Value[0]: Maximum drink-units the drink-container can contain.
+Value[1]: Number of drink-units that are left in the container.
+Value[2]: The type of liquid in the drink-container; definitions
+          are the same as for ITEM_DRINKCON.
+Value[3]: Drink is posioned if non-zero.
+
+ITEM_INSTRUMENT (24)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_BADGE      (25)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_PCORPSE    (26)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_SPELLBOOK  (27)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+ITEM_PORTAL     (28)
+Value[0]: -
+Value[1]: -
+Value[2]: -
+Value[3]: -
+
+
+
+Spells, Wands and Staffs
+=----------------------=
+************ NOTE - This section on SPELLS is Unfinished ********************
+************ NOTE - This section on SPELLS is Unfinished ********************
+************ NOTE - This section on SPELLS is Unfinished ********************
+************ NOTE - This section on SPELLS is Unfinished ********************
+-----------------------------------------------------------------------------
+The Y/N rows below indicate which potions/scrolls/wands/staffs that are
+possible to make. The MIN_LEV is the Minimum Level DEMANDED by the item
+you are making. The game will crash if making level less than demanded.
+-----------------------------------------------------------------------------
+                               SPELLNUM POTION  SCROLL  WAND  STAFF   MIN_LEV
+no spell..........................-1       Y       Y      Y     Y        0
+acid arrow........................
+agony.............................
+aid...............................
+animate dead......................
+armor.............................
+barkskin..........................
+bigby's clentched fist............
+bless.............................
+blindness.........................
+burning hands.....................
+call fog..........................
+call lightning....................
+call rain.........................
+call storm........................
+call wind.........................
+cause critical....................
+cause serious.....................
+chain lightning...................
+chill touch.......................
+clear skies.......................
+color spray.......................
+cone of cold......................
+conjure elemental.................
+continual light...................
+control weather...................
+create food.......................
+create spring.....................
+create water......................
+creeping doom.....................
+cure blindness....................
+cure critical.....................
+cure disease......................
+cure light........................
+cure poison.......................
+cure serious......................
+curse.............................
+darkness..........................
+death fog.........................
+delayed fireball..................
+detect alignment..................
+detect invisibility...............
+detect magic......................
+detect poison.....................
+dimension door....................
+disease...........................
+disintegrate......................
+dispel evil.......................
+dispel good.......................
+dispel magic......................
+earthquake........................
+enchant shield....................
+enchant weapon....................
+energy drain......................
+faerie fire.......................
+farsee............................
+fear..............................
+feeble mind.......................
+fire bolt.........................
+fire shield.......................
+fireball..........................
+firestorm.........................
+flame blade.......................
+flamestrike.......................
+float.............................
+fly...............................
+freeze foe........................
+full harm.........................
+full heal.........................
+gate..............................
+group heal........................
+hard wind.........................
+harm..............................
+haste.............................
+heal..............................
+hide self.........................
+holy word.........................
+ice bolt..........................
+ice storm.........................
+iceball...........................
+identify..........................
+incendiary cloud..................
+infravision.......................
+invisibility......................
+levitate..........................
+lightning bolt....................
+locate object.....................
+maelstrom.........................
+magic missile.....................
+magic shield of gandor............
+magical lock......................
+magical unlock....................
+major globe of invulnerability....
+major paralysis...................
+mass invisibility.................
+meteor swarm......................
+minor creation....................
+minor paralysis...................
+moonwell..........................
+nightvision.......................
+ogrestrength......................
+phantom steed.....................
+plane shift.......................
+poison............................
+power word kill...................
+preservation......................
+prismatic spray...................
+prismatic wall....................
+protection from acid..............
+protection from evil..............
+protection from fire..............
+protection from gas...............
+protection from good..............
+protection from ice...............
+protection from lightning.........
+ray of enfeeblement...............
+remove curse......................
+repel undead......................
+ressurection......................
+ritual of black eternity..........
+sanctuary.........................
+sea storm.........................
+sense life........................
+shocking grasp....................
+silence...........................
+sleep.............................
+slowness..........................
+soul snare........................
+spiritual hammer..................
+stoneskin.........................
+strength..........................
+summon mount......................
+summon nourishment................
+sunray............................
+telekinesis.......................
+teleport..........................
+tidal wave........................
+triad of flame....................
+triad of ice......................
+true seeing.......................
+vampiric touch....................
+vigorize..........................
+vitality..........................
+wall of fire......................
+wall of fog.......................
+wall of force.....................
+wall of ice.......................
+wall of iron......................
+wall of stone.....................
+wall of thorns....................
+water breathing...................
+water walk........................
+whirlwind.........................
+wither............................
+wizard war........................
+word of recall....................
+wraith form.......................
+wyvern watch......................
+************ NOTE - This section on SPELLS is Unfinished ********************
+************ NOTE - This section on SPELLS is Unfinished ********************
+************ NOTE - This section on SPELLS is Unfinished ********************
+************ NOTE - This section on SPELLS is Unfinished ********************
+
+
+<weight>[NL]
+   The weight of the item in pounds.
+
+<value>[NL]
+   The value of the item if sold. Refer to the MISC section for basic
+   values and guidelines.
+
+<cost/day><NL>
+   The cost to store the item in the reception overnight.
+
+
+Several extra descriptions or none at all may appear. They follow the room
+format exactly.
+
+'E'<NL>
+<keyword-list>~<NL>
+   Exactly as in rooms.
+
+<extra description><NL>~<NL>
+   Exactly as in rooms.
+
+
+Item affections can be set, ie, you can make an item permanently affecting
+detect_invisible, sanctuary or something similar. Only one of these fields
+can be added, but since it is a bitvector it can set multiple affects.
+Check the Mobile Section to find out which AFFECTS are available. Do not
+confuse this option with the 'A' fields, that more should be described
+as "apply fields", not "affects".
+
+'B'<NL>
+<bitvector><NL>
+
+Between zero and two "affect's" may be set on an item. The affects could
+for example modify a characters strength, height etc. The affect only goes
+into affect when the character wear, wield or hold the item. The affect
+is removed when the character removes the items.
+
+'A'<NL>
+   When items are worn using wear/wield/grab/hold commands, the 'A' will
+   allow the items to affect a characters various abilities. Currently
+   a maximum of 2 'A' are allowed.
+
+<location>[NL]
+   <location> is one of the below numbers, indicating which ability
+   will be changed.
+
+   APPLY_NONE              0  DO NOT USE.
+   APPLY_STR               1
+   APPLY_DEX               2
+   APPLY_INT               3
+   APPLY_WIS               4
+   APPLY_CON               5
+   APPLY_SEX               6  DO NOT USE.
+   APPLY_CLASS             7  DO NOT USE.
+   APPLY_LEVEL             8  DO NOT USE.
+   APPLY_AGE               9
+   APPLY_CHAR_WEIGHT      10
+   APPLY_CHAR_HEIGHT      11
+   APPLY_MANA             12  DO NOT USE.
+   APPLY_HIT              13  The MAXIMUM number of hitpoints.
+   APPLY_MOVE             14  DO NOT USE.
+   APPLY_GOLD             15  DO NOT USE.
+   APPLY_EXP              16  DO NOT USE.
+   APPLY_AC               17
+   APPLY_ARMOR            17  Same as APPLY_AC
+   APPLY_HITROLL          18  The bonus/penalty to hit the opponent.
+   APPLY_DAMROLL          19  The bouns/penalty to damage the opponent.
+   APPLY_SAVING_PARA      20  These five are saving throws.
+   APPLY_SAVING_ROD       21
+   APPLY_SAVING_PETRI     22
+   APPLY_SAVING_BREATH    23
+   APPLY_SAVING_SPELL     24  This is the most used saving throw.
+
+
+<modifier><NL>
+
+   The modifier is added to the APPLY_XXX ability of the character
+   when he uses an item, and is subtracted when he stops using it.
+   Take great care when using this. This is an example of an item of
+   improve strength and armour class. Example:
+
+7     A
+     1 2
+     A
+     17 -2
+
+   This adds +2 to the strength, and adds -2 to the AC (thus improving it).
+   No more 'A'ffects is allowed at this time.
+
+MAGICAL ITEMS:
+--------------
+
+In DikuMud it is possible to create all kinds of Magic items - but to avoid
+chaos (having 1st levels kill 20 level dragons) these rules for Magic must
+be obeyed.
+
+It is possible to create almost any item. Items can (example) change the
+<STR>, <DEX>, <WIS>, <INT>, <CON>, <HP>, Age, Weight, Height, XP,
+etc. None of these changes are directly permanent in effetct, but may be
+so indirectly - example:
+
+  Iggy found a helmet of Increase Wisdom/Intelligence (some + modifier).
+  When Iggy wears this helmet - these abilities improve, when he removes
+  the helmet they return to their original state. Thus no direct change
+  has happened.  BUT if Iggy practices spells (upon which INT and WIS
+  determines the rate & success) he will learn them much faster than
+  normal.  This was an example of an indirect change.
+
+
+Good ideas when making Magic Items:
+
+NEVER use large modifiers, exceptional items should modify at most by +3.
+  This includes, swords, armours, ability changes.
+
+Impose a penalty on the Item - for example make a helmet of wisdom may
+  at the same time reduce the constitution. Or maybe a ring of masochism -
+  when you wear it your MAX-HITPOINT increase by +200, when you remove it
+  they disappear again.  The ring likes to remove itself from the finger.
+
+
+
+CHARACTER & MONSTER ARMOR:
+=------------------------=
+
+<AC> range from [10..-10] this is what it means :
+
+AC  10 = Naked person
+AC   0 = Very heavily armoured person (Full plate mail at *all* body parts)
+AC -10 = Armored Tank (Hopefully impossible for players)
+
+     Percentwise Coverage of Armour
+        and allowed AC range
+
+Location  Protects   Range
+--------  --------   -----
+
+Body        30%      [1..10]
+Head        20%      [1..10]
+Legs        20%      [1..10]
+Feet        10%      [1..10]
+Arms        10%      [1..10]
+Hands       10%      [1..10]
+Face        10%
+Ears        10%
+
+Shield      10%      [1..10]
+Magic       10%      [1..10]
+
+
+
+PRICE GUIDELINES
+=--------------=
+
+ AC     BODY    LEGS    HEAD    ARMS    FEET       ARMOUR
+----    ----    ----    ----    ----    ----       ------
+ +1      100      50      50      25      25       Cloth (Heavy)
+ +2      200     100     100      50      50       Soft Leather
+ +3      500     150     150      75      75       Studded Leather
+ +4    1,000     500     500     250     250       Scale Mail
+ +5    2,500   1,250   1,250     625     625       Chain Mail
+ +6    7,000   3,500   3,500   1,750   1,750       Bronze Plate Mail
+ +7   18,000   9,000   9,000   4,500   4,500       Plate Mail
+ +8   35,000  17,500  17,500   8,750   8,750       Field Plate Mail
+ +9   50,000  25,000  25,000  12,500  12,500       Full Plate
++10   75,000  37,500  37,500  18,750  18,750       Anti Bomb ShieldPlate
+
+*Hands and shields should be regarded as arms.
+
+
+*IMPORTANT NOTICE*
+Rare items may only exist in minimal quantities! Especially you should
+limit the occurence of magical protection, since it is easy to carry.
+
+
+Weapons & Carrying capacity
+=-------------------------=
+
+The weight of a weapon determines the strength needed to wield the weapon,
+these values should be used:
+
+STR     Max. Weapon Weight    Carrying capacity
+---     ------------------    -----------------
+  0           0                      0
+  1           1                      3
+  2           2                      3
+  3           3                     10
+  4           4                     25
+  5           5                     55
+  6           6                     80
+  7           7                     90
+  8           8                    100
+  9           9                    100
+ 10          10                    115
+ 11          11                    115
+ 12          12                    140
+ 13          13                    140
+ 14          14                    170
+ 15          15                    170
+ 16          16                    195
+ 17          18                    220
+ 18          20                    255
+ 18/01..50   22                    280
+ 18/51..75   24                    305
+ 18/76..90   26                    330
+ 18/91..99   28                    380
+ 18/100      30                    480
+
+Strength above 18/100 is only used by NPC's - not used by players.
+No weapon may ever exceed 40 pounds in weight. (40 is the limit for
+STR 25 NPC's)
+
+Shop produced items should not be very good.
+
+PRIMARY BUYABLE WEAPONS <PBW>:
+
+Name               Damage    Cost    Weight   Cost_pr_day
+---------------    -----     ----    ------   -----------
+Dagger              1d4       10      1       Cost/3
+Small sword         1d6       60      3       Cost/3
+Long sword          1d8       600       8       Cost/3
+Wooden Club         1d3       12       3       Cost/3
+War hammer          1d5       50       6       Cost/3
+
+
+
+WEAPON TYPES
+=----------=
+
+Shadowwind is using a combined system for both weapontypes and attack
+types. The ones markeds as MOB are only usable as attack_types for mobs.
+The rest can be used as weapon types when defining weapons.
+
+1  SHORTSWORD (pierce)
+2  BROADSWORD (slash)
+3  LONGSWORD (slash)
+4  HANDAXE (trash)
+5  BATTLEAXE (crush)
+6  QUARTERSTAFF (hit)
+7  POLEARM (pound)
+8  MACE (crush)
+9  WARHAMMER (pound)
+10 MORNING STAR (crush)
+11 CLUB (pound)
+12 DAGGER (pierce)
+13 WHIP (whip)
+14 TWO-HANDED (slash)
+15 BOW (pound)
+16 SPEAR (pierce)
+17 SPARE 1 (hit)
+18 SPARE 2 (hit)
+19 SPARE 3 (hit)
+20 SPARE 4 (hit)
+21 MOB - sting
+22 MOB - bite
+23 MOB - bludgeon
+24 MOB - claw
+25 MOB - maul
+26 MOB - blast
+27 MOB - punch
+28 MOB - stab
+
+
+
+MATERIAL TYPES
+=------------=
+
+Material types is the optional VALUE[4] field. Used mainly for restricting
+materials to different classes.
+
+0       UNDEFINED
+1       OTHER
+2       FOOD
+3       CLOTH
+4       PLANT
+5       WOOD
+6       STONE
+7       GRANITE
+8       IRON
+9       STEEL
+10      MITHRIL
+11      TITANIUM
+12      COPPER
+13      BRONZE
+14      SILVER
+15      GOLD
+16      DIAMOND
+17      ICE
+18      GLASS
+19      PAPER
+20      LEATHER
+21      IVORY
+22      EBONY
+23      FLESH
+24      SKIN
+25      BONE
+26      WATER
+27      CRYSTAL
+28      EARTH
+29      LIGHT
+
+
+How to balance objects:
+======================
+
+POWER   No item should affect more than 2 in any stat or 3 in both stats.
+        (This goes for str/dex etc and hitroll/damroll)
+
+RENT    Only items that are above average should have rent. Average means
+        something like AC 5 for armor and avg-dam 10 for weapons. Use common
+        sense for weapons. 
+
+VALUE   Should make sense compared to rent.
+
+MAGIC   Magic bit should be set on all objects that affects anything.
+        This bit can be used to block the item from being enchanted.
+
+ENCHANT All equipment that can be enchanted shall be considered as being
+        enchanted when balancing. Only exception to this is value and rent.
+        Please note that anything that is itemtype ARMOR and is not MAGIC
+        can be enchanted. (i.e. levitation rings on Alex)
+        Enchant armor should be changed so it only affects AC with -2.
+
+ARMOR (AC values)
+
+The following table is a proposal for max values:
+
+
+Real armor:       FREE  STANDARD  MAX   
+Body                5       6      10   (*3)
+Head                5       6      10   (*2)
+Legs                5       6      10   (*2)
+Feet                5       6      10   
+Hands               5       6      10   
+Arms                5       6      10   
+Shield              4       5       8   
+
+Semi armor(Rarely enchantable):
+Waist               3       4       6   
+About               3       4       6   
+
+Magic armor(Never enchantable):
+Finger              2       3       6   
+Neck                2       3       6   
+Wrist               2       3       6   
+
+Total:            66(88)  82(104)  138  
+
+FREE is equipment that can be rented for without any cost. This armor should
+be enchantable unless it affects stats. Value in ()'s is when armor is
+enchanted.
+
+STANDARD is armor that is pretty good but still easy to get for midlevels.
+Examples used are bronze armor, large round shield etc.
+
+MAX is the absolute maximum values for armor (enchanted or not).
+
+WEAPONS (speed and damage)
+
+Weapont type:   Classes:  Speed:  Free:  Std:  Max:
+
+SHORTSWORD*                110%
+BROADSWORD                  90%
+LONGSWORD                  100%
+HANDAXE                    100%
+BATTLEAXE                   90%
+QUATERSTAFF
+POLEARM
+MACE                        95%
+WARHAMMER                  110%
+MORNING STAR                95%
+CLUB                        95%
+DAGGER*                    120%
+WHIP                        90%
+TWO-HANDED                  80%
+BOW                         90%
+SPEAR                       90%
+
+
+  Addition to "how to balance objects"
+  ------------------------------------
+
+An important rule:
+
+(1)     When creating an item, always suppose that it will be used by the one
+        who has the most to gain from it.
+
+This rule is simple but has some far-reaching consequences. For instance:
+
+Say you have a cloak which is DEX +1 AC -10. On a person with DEX between 14
+and 17. As if this wasn't enough, it would also increase a thief's chances
+of backstabbing. DEX +2 should be out of the question.
+
+Say you have a bracelet which is mana +50. This would be a good item for a lvl
+30 mage, but not overwhelmingly good. For a lvl 1 mage, however, it would mean
+a drastic 50% increase of mana, ruining the spell balance in the game.
+
+
+Table of armour values: (NB: SUGGESTION)
+
+Real armor:       FREE  STANDARD  MAX   
+
+Body                5       6      8    (*3)
+Head                5       6      8    (*2)
+Legs                5       6      8    (*2)
+Feet                5       6      8    
+Hands               5       6      8    
+Arms                5       6      8    
+Shield              4       5      8    
+
+Magic armor(Never enchantable):
+
+Waist               2       4       6   
+About               2       4       6   
+Finger              2       3       5   
+Neck                2       3       5   
+Wrist               2       3       5   
+
+
+Suggestions about weapons:
+
+The suggested dam tables are worthless as they look now. I tried to make one
+myself but failed, I guess I could do one if it was necessary. Just some
+observations:
+
+* The mud is circle which is based on diku and still uses the same system.
+This means a normal unenchanted longsword should be 1d9, average damage 5 and
+not 9 which is what your table suggests in the FREE column. That an
+unenchanted sword could have an average damage of 18 is ridiculous.
+
+* I know we have 50% more levels than diku, but does that mean weapons have to
+do 300% the damage? I don't think they should. If a weapon is good, it should
+be because of magic, not because the laws of nature have changed. I suggest
+this table for all weapons:
+
+FREE: 1-8   GOOD: 9-12   Really good: 13-20
+
+* About the numbers in the table:
+
+  * Polearm should have the lowest speed in the table and do the most damage
+  along with two-handed weapons.
+  * Quarterstaffs should be usable by ALL classes, be quick (110%-120%) and do
+  a lot less damage.
+  * The two-handed axe does not exist in RL because there is no way a human
+  could handle it, and if anyone could it would be worthless. Those minotaurs
+  must be pretty stupid. The STR necessary to wield it should be 18/00 or more.
+  * A broadsword is smaller than a longsword.
+  * Warhammer should not have 115% speed, maybe 100%.
+  * According to AD&D, clerics for some reason have to use blunt weapons. If
+  that is the case in mud, why can they use axes? And if not, why can't they
+  use swords and morningstars? Class restrictions on weapons are extremly
+  silly. Either you can go to the training yard and learn how to fight, or you
+  can't.
+  * There is NO way you can backstab someone with a short sword... that should
+  be the privilege of daggers and spears.
+
+Conclusion: this table has little or nothing to do with RL, and should have
+little or nothing to do with the game. It's impossible to represent the
+characteristics of a weapon in a game properly. For instance, you're in deep
+shit if you try to attack an armoured target with a scimitar. But there is no
+way to reflect this in the game. I hope there will be some kind of discussion
+about this.
+
+
+Materials:
+
+Steel should not be heavier than iron. Steel should in fact not exist at all.
+Or bronze for that matter, once iron working has been developed there is no
+need to stick around with bronze stuff.
+
+Gold and silver should not be used for anything but jewellery.
+
+Affect          Free    Good    Really good
+
+STR             -       1       1       
+DEX             -       1       1       
+INT             -       1       1       
+WIS             -       1       1       
+CON             -       1       1       
+AGI             ?       ?       ?       
+
+AGE             1       2       3       
+
+MANA            5       10      15      
+HIT             5       10      20      
+MOVE            5       10      20      
+
+HITROLL         -       1       2       
+DAMROLL         -       -       1       
+
+SAVE_PARA       ?       ?       ?       
+SAVE_ROD        ?       ?       ?       
+SAVE_PETRI      ?       ?       ?       
+SAVE_BREATH     1       2       2       
+SAVE_SPELL      1       2       2       
+
+This applies only
+to items with this as the only property. Negative modifiers might serve to
+justify powerful affects, but remember they have to have some kind of
+negative effect. For instance, -STR hardly cancels out +INT which is used
+only when training. A decent ac-apply also goes a long way towards making
+an item powerful.
+
+Type:                   Classes         Speed           Damage
+
+Dagger                  MT W            120%            low (1d4-2d3)
+
+Shortsword              MT W            110%            low (1d6-2d4)
+Broadsword               T W            100%            medium (1d8-2d5)
+Longsword                T W            95%             medium (1d9-2d6)
+
+Handaxe                  T W            105%            low (1d6-2d5)
+Battleaxe                  W            95%             medium (1d8-2d6)
+
+Club                     TCW            105%            low (1d4-1d9)
+Club (2H)                TCW            90%             medium (2d5-3d4)
+Warhammer                TCW            100%            medium (2d4-2d6)
+Mace                     TCW            100%            medium (2d4-2d6)
+Morningstar (2H)           W            90%             high (2d5-3d6)
+
+Quarterstaff (2H)       MTCW            115%            low (1d6-1d9)
+Polearm (2H)               W            75%             high (3d4-5d4)
+Twohanded (2H)             W            80%             high (2d10-2d12)
+
+Whip                     T W            100%            low (1d5-1d10)
+
+2H should mean you can't HOLD anything nor use a SHIELD. You should be able to
+use a LIGHT though, but just because it's quite necessary in the game.
+
+Damage is damage on an UNENCHANTED weapon. Within brackets you find suggested
+damage dice for standard weapons. Items of better quality will of course have
+a greater damage, and enchants might make the item even better.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+**ZONE**
+ZONE FILE FORMAT:
+=-=-=-=-=-=-=-=-=
+
+The zone-file contains the following information for each zone:
+
+a) The zone number <nl>
+
+b) The name of the zone ~
+
+c) The top room-number of the zone.
+
+   If you are useing zone 12, and you have 93 rooms, the top room number
+   would be 1293 - although its better to make it 1299 so you can
+   expand the zone with out needing to restart the MUD.
+
+
+d) The LIFESPAN of the zone. When the age of the zone (measured in minutes
+after last reset) reaches this number, the zone is queued for reset. The
+zone is then reset as soon as possible (more or less), depending on the
+value of the RESET_MODE-variable.
+
+e) The RESET_MODE. This may take on of three values:
+
+  0: Don't reset the zone at all. In this case, the age of the zone is never
+     updated, and it will never be queued for reset. Thus, the value of the
+     lifespan-field is effectively ignored.
+
+  1: Reset the zone as soon as it is deserted, ie as soon as there are no
+     players located within the zone.
+
+  2: Reset the zone no matter who or what is in it.
+
+f> The access field
+
+  a: a is access denied with out ZONE_OK (Immortal goto command restriction)
+
+  b: b is access denied via teleportation (you cant teleport in)
+
+g) The COMMAND TABLE. This is a series of commands to execute at reset. The
+   table is terminated by the pseudo-command 'S', and thus follows the
+   following format:
+
+   <command>
+   <command>
+
+   .
+   .
+   .
+
+   <command>
+   'S'
+
+   Each command consists of a letter, identifying the command-type, followed
+   by three or four arguments. The first argument, common to all the commands,
+   is called the 'if-flag'. If it is true (nonzero), the command is executed
+   ONLY if the preceding command was executed. If it is false (zero), the
+   command is executed anyway.
+
+   The commands:
+
+        M (load a mobile):
+           Format: 'M' <if-flag> <mobile nr> <max existing> <room nr> <%>
+
+           mobile nr and room nr should be self-explanatory. The 'max
+           existing' parameter specifies the maximum permissible number of
+           existing units. In other words: If you only want one manifestation
+           of a given monster, you just specify the number '1'. If the max
+           number is about to be exceeded, the command won't be executed.
+           The <%> bit is for percentage to load on each reset/boot.
+
+        O (load an object):
+           Format: 'O' <if-flag> <object nr> <max existing> <room nr> <%>
+
+           Load an object and place it in a room.    (NOT -1)
+           The <%> bit is for percentage to load on each reset/boot.
+
+        G (give object to mobile):
+           Format: 'G' <if-flag> <object nr> <max existing>
+
+      Loads an object, and gives it to the last monster referenced (ie. by the
+      M-command).
+
+           Of course, this command doesn't make sense if a new mobile+object
+           pair has not just been created, which is where the if-flag comes
+           in handy.   :)
+
+        E (object to equipment list of mobile)
+                Format: 'E' <if-flag> <object nr> <max existing> <equipment position>
+
+         Loads object and places it in the Equipment list of the last monster
+    referenced.
+
+    Note that it is NOT necessary to precede this command with a 'G' command.
+    Equipment position is one of:
+      WEAR_LIGHT      0
+      WEAR_FINGER_R   1
+      WEAR_FINGER_L   2
+      WEAR_NECK_1     3
+      WEAR_NECK_2     4
+      WEAR_BODY       5
+      WEAR_HEAD       6
+      WEAR_LEGS       7
+      WEAR_FEET       8
+      WEAR_HANDS      9
+      WEAR_ARMS      10
+      WEAR_SHIELD    11
+      WEAR_ABOUT     12
+      WEAR_WAISTE    13
+      WEAR_WRIST_R   14
+      WEAR_WRIST_L   15
+      WIELD          16
+      HOLD           17
+      FACE           18
+      EAR_R          19
+      EAR_L          20
+
+        P (put object in object):
+           Format: 'P' <if-flag> <object_nr1> <max existing> <object nr2>
+
+                Loads object1 and places it in object2.
+
+        D (set state of door)
+                Format: 'D' <if-flag> <room nr> <exit nr> <state>
+
+                State being one of:
+                0: Open.
+                1: Closed.
+                2: Closed and locked.
+                3: Hidden
+                4: Hidden and locked.
+
+        R (remove object from room)
+     Format: 'R' <if-flag> <room_nr> <object_nr>
+
+        U (mount mobile on mobile)
+              Format: 'U' <if-flag> <mobile_nr>
+              This command loads a mobile and mounts it on the
+              the mobile last referenced to. If you want to load
+              a horse and then want to place a cityguard on it,
+              first load the horse with the 'M' command and then
+              place the cityguard on it, with this command.
+
+Format of the zone-file:
+=----------------------=
+
+#<zone number>
+<name>~
+<top of zone> <lifespan> <reset mode> <restriction(s)>
+<command>
+<command>
+
+.
+.
+.
+
+<command>
+'S'
+#<arbitrary number>
+
+.
+.
+.
+
+#<arbitrary number>
+$~
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+**SHOP**
+SHOP FILE FORMAT:
+=-=-=-=-=-=-=-=-=
+
+The shop file starts with the following line as the first line in the file.
+
+CircleMUD v3.0 Shop File~
+
+The rest of the file is formatted as follows:
+
+#<num>~
+  Shop Number (Used only for display purposes)
+
+
+<num 1>
+<num 2>
+<num 3>
+  .
+  .
+  .
+<num n>
+-1
+  These numbers refer to the objects the shop produces.  The numbers are
+  virtual numbers.  The list MUST end with a -1.
+
+<Profit when selling>
+  The object value is multiplied by this value when sold. This is a
+  floating point value. Must be >= 1.0
+
+<Profit when buying>
+  The object value is multiplied by this value when bought. This is a
+  floating point value. Must be <= 1.0
+
+<type 1>  [namelist 1]
+<type 2>  [namelist 2]
+<type 3>  [namelist 3]
+  .
+  .
+  .
+<type n>  [namelist n]
+-1
+  These lines contain the types of items that the shop will buy.  The first
+  argument, called "type" and is the type of item.  Numerical,
+  or english forms are valid (5 or WEAPON, 9 or ARMOR, etc)  In addition,
+  you can provide optional keywords to give specific keywords that must
+  be present on the item.  For further details on these expressions, see the
+  notes following the new file format.  This list must be terminated by a -1.
+
+%s <Message When Item to buy is non existing>~
+%s <Message When item trying to sell is non existing>~
+%s <Message When shop does not buy offered item>~
+%s <Message when shop can't afford item>~
+%s <Message when player can't afford item>~
+%s <Message when buying an item>~
+  Price is %d
+%s <Message when selling an item>~
+  Price is %d
+
+<Temper>
+  When player can't afford an item, the shopkeeper tells them they
+  can't afford the item and then:
+        0 - The shopkeeper pukes on the player.
+        1 - The shopkeeper smokes his joint.
+        2 - The shopkeeper has no reaction.
+        other - No action besides message above.
+
+<Bitvector>
+  Allows you to set certain values for the shop.
+        WILL_START_FIGHT        1       /* Players can attack shopkeeper     */
+        WILL_BANK_MONEY         2       /* Shopkeeper puts money > 15000
+                                           into the bank                     */
+
+  A brief note:  Shopkeepers should be hard (if even possible) to kill.
+  The benefits players can receive from killing them is enough to unbalance
+  most non monty-haul campaigns.
+
+<Shop Keeper Mobile Number>
+  Virtual number of the shopkeeper.
+
+<With Who>
+  Designate certain alignments or classes that the shop will not
+  trade with.  To determine this value, choose all elements on
+  the list below that you do not want sold to, and add their values.
+
+        TRADE_NOGOOD            1
+        TRADE_NOEVIL            2
+        TRADE_NONEUTRAL         4
+        TRADE_NOMAGIC_USER      8
+        TRADE_NOCLERIC          16
+        TRADE_NOTHIEF           32
+        TRADE_NOWARRIOR         64
+
+<Room 1>
+<Room 2>
+<Room 3>
+   .
+   .
+   .
+<Room n>
+-1
+  The virtual numbers the mobile must be in for the shop to be effective.
+  (So trans'ed shopkeepers can't sell in the desert).  The list must be
+  terminated by a -1.
+
+<Time when open start 1>
+<Time when open end 1>
+   The hours between which the shop is open.
+
+<Time when open start 2>
+<Time when open end 2>
+   The hours between which the shop is open.
+
+
+ITEM NAME LISTS:
+
+Name lists are formed by boolean expressions.  The following operators
+are available:
+
+                ',^ = Not               *, & = And      +, | = Or
+
+The precedence is Parenthesis, Not, And, Or.  For example, the following line:
+
+WEAPON [sword & long|short | warhammer | ^golden & bow] & magic
+
+This shop will buy the following items of type WEAPON:
+        1)      sword long magic
+        2)      short magic         (the first & is done before the first | )
+        3)      warhammer magic
+        4)      ^golden bow magic
+
+Note that the ^ in front of golden affects ONLY golden, and nothing else
+in the listing.  Basically, the above expression could be written in
+english as:
+
+[(sword and long) or short or warhammer or (not golden and bow)] and magic
+
+If I wanted the shop to only buy "short magic" only if they were also swords,
+I would have to change the expression to:
+
+WEAPON [sword & (long|short) | warhammer | ^golden & bow] & magic
+                ^-Changes--^
+
+You can also include object extra flags.  The previous example used "magic"
+as a keyword that had to be on the object.  If we wanted to make it so that
+the MAGIC flag had to be set on the item, we would change "magic" to "MAGIC."
+Similar changes could be made to add other flags such as "HUM" or "GLOW."  It
+should be noted that these expressions are case sensitive and that all
+keywords should appear in lower-case, while the flag names should be in all
+caps.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Shadowwind MUD - mud.shadowwind.org 9999   
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+EOF
+

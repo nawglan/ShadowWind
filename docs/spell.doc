@@ -1,0 +1,369 @@
+These are the tags to use when defining spells in the lib/misc/spells
+file. A spell must begin with a -spell_begin- tag, then the tags after
+that can come in any order. All tags must be surrounded with a - (as in
+-spell_begin-.
+
+aggressive	:	set to 1 if spell is aggressive.
+
+accum_affect	:	set to 1 if spell affect is to be added
+			to the affects of same type spell.
+
+avg_affect	:	set to 1 if spell affect is averaged with
+			the affects of same spell type.
+
+accum_duration	:	set to 1 if spell duration is to be added
+			to the remaining duration of same type spell.
+
+avg_duration	:	set to 1 if spell duration is averaged with
+			the remaining duration of same spell type.
+
+class_lvl_list	:	a space delimited list of levels for each class
+			whereby at that lvl the spell becomes available
+			for that class.
+
+difficulty	:	must be one of the following:
+			0 (default) = easy to learn.
+			1 = average to learn.
+			2 = hard to learn.
+			3 = very hard to learn.
+
+invisible	:	not yet implemented. Set this to 1 to make
+			the spell (not necessarily the affects of
+			the spell) invisible to the victim.
+
+min_position	:	the minimum position that the caster
+			must be in inorder to cast the spell. Must be
+			one of the following:
+			0 (default) = dead
+			1 = mortally wounded
+			2 = incapacitated
+			3 = stunned
+			4 = sleeping
+			5 = resting
+			6 = sitting
+			7 = fighting
+			8 = standing
+
+max_mana	:	set to the amount of mana it costs to cast
+			the spell for the first time.
+
+min_mana	:	set to the lowest possible amount of mana
+			the spell will cost.
+
+
+mana_chg	:	the amount the max_mana value will be
+			decremented every time the caster gains a new
+			level.
+
+num_dice	:	for spells with dice rolls this is the number
+			of dice to roll.
+
+obj_affs_loc	:	a space delimited list indicating which location
+			the object should modify when being worn.
+			1 = extra bit (spell_obj_bit)
+			2 = value 0
+			3 = value 1
+			4 = value 2
+			5 = value 3
+			6 = value 4
+			7 = damroll
+			8 = hitroll
+			9 = saving_para
+			10 = saving_rod
+			11 = saving_petri
+			12 = saving_breath
+			13 = saving_spell
+			14 = max_hit
+			15 = max_mana
+			16 = max_move
+			17 = res_light
+			18 = res_dark
+			19 = res_fire
+			20 = res_cold
+			21 = res_acid
+			22 = res_poison
+			23 = res_disease
+			24 = res_charm
+			25 = res_sleep
+			26 = res_slash
+			27 = res_pierce
+			28 = res_bludgeon
+			29 = res_nweap
+			30 = res_mweap
+			31 = res_magic
+			32 = res_electricty
+			33 = str
+			34 = dex
+			35 = int
+			36 = wis
+			37 = con
+			38 = agi
+			39 = armor
+
+obj_affs_mod	:	the amount to modify the aff location, must be present
+			if there is a location to be modified. this is also
+			a space delimited list.
+
+plr_affs_loc	:	same as obj_affs_loc, but for players. affected
+			location is not permanent, it will wear off when
+			spell wears off.
+
+plr_affs_mod	:	the amount to modify the aff location, must be present
+			if there is a location to be modified. this is also
+			a space delimited list.
+
+point_loc	:	for spells that directly affect the victim's
+			points. NOTE these spells will PERMANENTLY
+			affect the victim. Must be one of the following:
+			1 = strength
+			2 = dexterity
+			3 = intelegence
+			4 = wisdom
+			5 = constitution
+			6 = agility
+			7 = reserved
+			8 = reserved
+			9 = age
+			10 = reserved
+			11 = reserved
+			12 = mana
+			13 = hit points
+			14 = movement
+			15 = reserved
+			16 = reserved
+			17 = reserved
+			18 = hitroll
+			19 = damroll
+			20 = saving para
+			21 = saving rod
+			22 = saving petri
+			23 = saving breath
+			24 = saving spell
+			25 = max hit
+			26 = max mana
+			27 = max movement
+			28 = resist light
+			29 = resist dark
+			30 = resist fire
+			31 = resist cold
+			32 = resist acid
+			33 = resist poison
+			34 = resist disease
+			35 = resist charm
+			36 = resist sleep
+			37 = resist slash
+			38 = resist pierce
+			39 = resist bludgeon
+			40 = resist non magical weap
+			41 = resist magical weap
+			42 = resist magic
+			43 = resist electricity
+
+resist_type	:	The type of resist that will counter this spell.
+			for example if it is a fire spell then resist fire
+			would be what this tag is set to. Must be one of
+			the following:
+			1 = light
+			2 = dark
+			3 = fire
+			4 = cold
+			5 = acid
+			6 = poison
+			7 = disease
+			8 = charm
+			9 = sleep
+			10 = slashing weapons
+			11 = piercing weapons
+			12 = bludgeon weapons
+			13 = non-magical weaons
+			14 = magical weapons
+			15 = magic
+			16 = electricity
+
+spell_begin	:	MUST BE THE FIRST LINE IN SPELL ENTRY.
+
+spell_name	:	what the player types to use the spell/skill.
+
+spell_type      :       the frontend of the spell... checks arguments, etc.
+                        Must be one of the following:
+                        general = no checking of arguments or arguments are
+                                  ignored.
+                        char = affects a mob/player
+                        dam = causes damage, mob/player
+                        obj = affects a object
+                        obj_char = affects either an obj or a mob/player
+                        obj_room = affects either an obj or the room
+                        identify = the identify spell.
+
+spell_event	:	the event called by the spell. Must be one
+			of the following:
+			animate = animate dead event
+			area_dam = damages all in room
+			area = affects all in room
+			area_points = permanently affects point_loc in room
+			charm = charms a mobile
+			char = affects a player
+			confusion = confusion spell
+			control_weather = affects the weather
+			create_obj = loads an obj from vnum_list
+			create_mob = loads a mobile from vnum_list
+			dam = damages target
+			dimdoor = portal spell
+			group = affects group
+			locate_obj = locate object spell
+			magic_missile = magic missile spell
+			obj_char = affects either object or char
+			obj = affects objects only
+			obj_room = affects object or room
+			points = permanently affects victim's points
+			room = affects room only
+			summon = summon elemental spell
+			teleport = teleport spell
+			turn_undead = turn undead spell
+			word_recall = word of recall spell
+			identify = identify spell
+
+spell_realm	:	The realm the spell falls under. The caster's
+			ability to cast spells from this realm dictates
+			the success or failure of the caster to cast the
+			spell. Must be one of the following:
+			0 (default) = general realm
+			1 = elemental realm
+			2 = summoning realm
+			3 = healing realm
+			4 = divination realm
+			5 = protection realm
+			6 = creation realm
+			7 = enchantment realm
+
+size_dice	:	for spells that use dice to determine how big
+			the affect/damage is, this is the max number
+			of "dots" on each dice to be thrown.
+
+spell_duration	:	this is the duration of the spell in 5 second
+			intervals, thus for a spell to last 1 real life
+			minute set this tag to be 12.
+
+saving_throw	:	this determines if the spell fails but not due
+			to caster error, or in the case of damaging
+			spells this will set the damage to 1/2 of the
+			original damage. Must be set to one of the
+			following:
+			0 (default) = saving paralize
+			1 = saving rod (fighting magic)
+			2 = saving petrification  (fear type spells)
+			3 = saving breath (dragon breath, etc)
+			4 = saving spell (general magic)
+
+spell_obj_bit	:	sets the extra bits on a object.
+			a = glow
+			b = hum
+			c = !rent
+			d = !donate
+			e = !invis
+			f = invis
+			g = magic
+			h = !drop
+			i = bless
+			j = !good
+			k = !evil
+			l = !neutral
+			m = !mage
+			n = !cleric
+			o = !thief
+			p = !warrior
+			q = !sell
+			r = donated
+			s = !auction
+			t = carried
+			u = islight
+			v = islightdim
+			w = poisoned
+
+spell_plr_bit	:	sets the AFF_x flags for a char.
+			a = blind
+			b = invisible
+			c = detect align
+			d = detect invis
+			e = detect magic
+			f = sense life
+			g = waterwalk
+			h = sanctuary
+			i = group
+			j = curse
+			k = infravision
+			l = poison
+			m = protect evil
+			n = protect good
+			o = sleep
+			p = notrack
+			q = fly
+			r = confusion
+			s = sneak
+			t = hide
+			u = silence
+			v = charm
+			w = disease
+			x = tongues
+			y = seeing
+			z = super invis
+			A = detect poison
+
+spell_room_bit	:	Sets the bitvector for rooms.
+			a = dark
+			b = death
+			c = nomob
+			d = indoors
+			e = peaceful
+			f = soundproof
+			g = notrack
+			h = nomagic
+			i = tunnel
+			j = private
+			k = godroom
+			l = house
+			m = house_crash
+			n = atrium
+			o = olc
+			p = bfs mark
+			q = cold
+			r = hot
+			s = noteleport
+			t = fastheal
+			u = crimeok
+			v = unaffect
+
+send_to_char	:	the act() message to send to the caster upon
+			completion of the spell.
+
+send_to_vict	:	the act() message to send to the victim upon
+			completion of the spell.
+
+send_to_room	:	the act() message to send to the room upon
+			completion of the spell.
+
+unaffect	:	the name of the spell to remove from the player.
+			not implemented for objects yet.
+
+vnum_list	:	list of vnum's to be used with create_obj
+			or create_mob spells.
+
+wear_off_msg	:	message to be sent to the victim when the
+			spell's affects wear off.
+
+
+
+An example of the most common types of spells/skills.
+
+
+Skills all look the same and only need the a few of the tags.
+
+* 1h bludgeon (skill)
+-spell_begin-
+-spell_name- 1h bludgeon
+-difficulty- 1
+-class_lvl_list- 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+
+

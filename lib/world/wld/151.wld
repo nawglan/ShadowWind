@@ -1,0 +1,1638 @@
+#15100
+Dock On The Island Of Morvoct~
+   The shaky dock creaks as you move, and the stone gateway to the south
+has a silvery sheen that looks powerful surrounding it. A great stone wall
+surrounds the island as far as can be seen. The waves crashing against the
+dock are getting choppier by the minute. A large stone sign is partially
+embedded in the sea, and glows with a bright light.
+~
+151 0 2
+D0
+To the north, you enter the perils of the open sea.
+~
+~
+0 0 15188
+D2
+There is an entrance nearby to the south.
+~
+~
+0 0 15101
+E
+sign~
+  The sign reads:
+
+   "May great peril befall those who have stumbled upon
+    my domain. I, the Great Mage Morvoct, created this island to avoid
+    the barbarians of the world. Turn back now or accept your fate from 
+    the powerful island creator."
+~
+S
+#15101
+Gate To Kyor'Glt~
+   An eerie feeling enters you as you step through the magic shielding that
+previously kept all strangers out of this land. A black onyx gate is 
+before you, gleaming. Beware of the glistening thorns which seem to grow
+out of the onyx.
+~
+151 0 1
+D0
+~
+~
+0 0 15100
+D2
+You see a gate here.
+~
+gate~
+2 15100 15104
+E
+door gate entry~
+The black onyx gate is hingeless and vibrates slightly.
+~
+S
+#15102
+Hut Of Kigrint~
+   Cracks fill the ramshacked hut. A small straw cot in the corner is 
+covered by small hopping insects. The only way out of the hut is to the 
+south.
+~
+151 8 1
+D2
+You see a small door of a hut.
+~
+door hut~
+1 0 15109
+E
+cot straw ~
+Small fleas and ticks bounce up and down and crawl across the dirty straw.
+~
+S
+#15103
+Kyor'Glt Bakery~
+   Racks of bread sit cooling on the counter. A thick layer of flour and 
+dirt covers the walls and floor. A fire roars under the ovens. You can 
+get back on the path to the south.
+~
+151 8 1
+D2
+~
+~
+0 0 15111
+S
+#15104
+The Untravelled Path~
+   Tree limbs hang over the path, making it difficult to proceed. Black 
+leaves from small vines on the ground drip a black liquid. With each drop
+a sizzle comes from the earth as it burns the dirt itself. The gate is to
+the north, while the south seems clearer.
+~
+151 0 1
+D0
+You see a gate here.
+~
+gate~
+2 15100 15101
+D2
+~
+~
+0 0 15112
+E
+black liquid~
+Acid burns a hole so deep into the ground here that you cannot see the bottom of the hole.
+~
+S
+#15105
+The Storage Room~
+   Dusty kegs of beer and other atrocious goblin brews line the dusty walls
+of this storage room. A lamp lies in the corner of the room next to a cot
+that is covered with a liquid that is very bright yellow.
+~
+151 8 1
+D2
+You see a door here.
+~
+door~
+1 0 15114
+S
+#15106
+Deeper In The Seaweed Forest~
+   Swaying in the current, the seaweed dances back and forth on the ocean
+floor. Hues of gold, blue, and gold shine from the seaweed and nourish the
+ocean flora. Danger lurks to the south, while a seaweed forest surrounds
+you to the north, west, and east.
+~
+151 0 7
+D0
+~
+~
+0 0 15106
+D1
+~
+~
+0 0 15107
+D2
+~
+~
+0 0 15116
+D3
+~
+~
+0 0 15106
+S
+#15107
+The Seaweed Forest~
+   Most of the seaweed here has been eaten by grazing seahorses. The 
+seaweed lightly grazes your leg, giving you the creeps. You see more 
+forest to the east, deeper ocean to the west, and some kind of pillars  
+to the south. 
+~
+151 0 7
+D1
+~
+~
+0 0 15108
+D2
+~
+~
+0 0 15117
+D3
+~
+~
+0 0 15106
+S
+#15108
+The Shore~
+   The light catches glimmers off the ocean and you feel as though you 
+are being watched. The sand dune here leads weat and south into the 
+ocean, and a path to the east. 
+~
+151 0 1
+D1
+~
+~
+0 0 15109
+D2
+~
+~
+0 0 15118
+D3
+~
+~
+0 0 15107
+S
+#15109
+The Sandy Path~
+   Here rocks and sand mix with soil. The sound of waves crashing onto a 
+beach increase to the west, and to the north is the home of Kilgrint the 
+Gnasher.
+~
+151 0 1
+D0
+You see the door of a hut.
+~
+door hut~
+1 0 15102
+D1
+~
+~
+0 0 15110
+D3
+~
+~
+0 0 15108
+S
+#15110
+Dirt Path~
+   A few white pebbles are scattered on the path among the straw that 
+remains from a blown down hut. The path gets sandier to the west, and
+filthier to the east.
+~
+151 0 1
+D1
+~
+~
+0 0 15111
+D3
+~
+~
+0 0 15109
+S
+#15111
+The Worn Path~
+   Dark lumps of offal line the worn path. To the south, cut into a large 
+rock, is a small entrance. Sounds of metal pounding metal can be heard 
+from inside. To the north, a small straw hut emits the smell of freshly 
+baked bread.
+~
+151 0 1
+D0
+~
+~
+0 0 15103
+D1
+~
+~
+0 0 15112
+D2
+~
+~
+0 0 15119
+D3
+~
+~
+0 0 15110
+S
+#15112
+The Worn Path~
+   The frequently travelled path approaches a crudely-made building to 
+the east that reeks of goblins and ale. The path continues to the west 
+and south, to the north is a rarely used pathway.
+~
+151 0 1
+D0
+~
+~
+0 0 15104
+D1
+ You see a door here.
+~
+door bar~
+1 0 15113
+D2
+~
+~
+0 0 15120
+D3
+~
+~
+0 0 15111
+S
+#15113
+The Goblin Tavern~
+   Smoke and broken glass cover the bar. The smart bartender is nowhere 
+to be seen. Loud crashes and yells come from the east.
+~
+151 8 1
+D1
+~
+~
+0 0 15114
+D3
+You see a door here.
+~
+door bar~
+1 0 15112
+S
+#15114
+The Brawler's Room~
+   Overturned stools and broken glass cover the floor, while splotches
+of goblin ale run down the wall. Large, mounted heads of goblin conquests
+hang from the walls and look down upon you menacingly. There is a storage
+room to the north and more bar to the west.
+~
+151 8 1
+D0
+You see a door here.
+~
+door~
+1 0 15105
+D3
+~
+~
+0 0 15113
+S
+#15115
+The Eflykt Hut~
+   The floor here is covered with a clean layer of straw and there is not
+a piece of garbage to be seen in any of the corners. Small bugs from outside
+the hut peer inside, but there is no filth for them to live in. A draft of
+rotten air from the path barely penetrates the well-built walls.
+~
+151 8 1
+D2
+You see the door to a hut here.
+~
+door hut~
+1 0 15124
+S
+#15116
+The Cloudy Deep~
+   The seaweed begins to clear, but danger grows. The water darkens and
+becomes so cloudy you can scarcely see the ocean floor. To the north you
+see the forest and tall pillars rise in the east. The cloudy deep seems
+to continue forever to the west. Tortured souls call to you from the south,
+or is it just the sound of your own screaming?
+~
+151 0 7
+D0
+~
+~
+0 0 15106
+D1
+~
+~
+0 0 15117
+D2
+~
+~
+0 0 15126
+D3
+~
+~
+0 0 15116
+S
+#15117
+Ancient Ruins~
+   The ruins of an ancient city lie preserved here. Take heed, touching a 
+pillar or statue could turn it to mush or cause it to fall. The water is 
+cloudier to the west, to the east and north is the forest, and to the south 
+is an old sunken ship with a gaping hole in it's hull.
+~
+151 0 7
+D0
+~
+~
+0 0 15107
+D1
+~
+~
+0 0 15118
+D2
+~
+~
+0 0 15127
+D3
+~
+~
+0 0 15116
+S
+#15118
+The Seaweed Forest~
+   The seaweed here begins to turn a royal purple. A cliff cuts off the 
+ocean to the east. To the west are pillars of some kind and to the north 
+the shore. A coral reef that looks like a gate is to the south. Nothing 
+can be seen through the gate but a quiet whinny can be heard.
+~
+151 0 7
+D0
+~
+~
+0 0 15108
+D2
+~
+gate~
+1 0 15128
+D3
+~
+~
+0 0 15117
+S
+#15119
+The Goblin Weaponry~
+   Sparks fly from the anvil as a sword is being shaped. Hot steam fills 
+the air, clinging to the finished weapons displayed on the wall. A sign 
+hangs on the wall which reads, "Buy what you want or get out!"
+~
+151 0 1
+D0
+~
+~
+0 0 15111
+S
+#15120
+The Well Worn Path~
+   Goblin tracks cover the road going in all directions. You try and ignore
+the small puddles of liquids that you would rather not identify. To the south
+is a small hut and the path continues to the north and the east.
+~
+151 0 1
+D0
+~
+~
+0 0 15112
+D1
+~
+~
+0 0 15121
+D2
+~
+~
+0 0 15129
+E
+puddle liquid~
+Goblin urine and feces lay in puddles around you.
+~
+S
+#15121
+The Littered Path~
+   Flies swarm across the path and head east. A few, rebellious flies
+buzz over oozing slime molds that move slowly across the path. You can
+You can go south or west onto more of this disgusting pathway.
+~
+151 0 1
+D2
+~
+~
+0 0 15130
+D3
+~
+~
+0 0 15120
+S
+#15122
+The Littered Path~
+   Excrement and bones cover the path here. Flies swarm in lazy circles
+over large humps of something that is covered with maggots. There is a
+trickle of water to the south and to the east is more path.
+~
+151 0 1
+D1
+~
+~
+0 0 15123
+D2
+~
+~
+0 0 15131
+S
+#15123
+The Muddy Path~
+   Thick mud sucks at the bottom of your feet, barely letting go of you.
+Little bugs and mites swim through the dense muck and try to climb up your
+legs. The path continues to the west and to the east.
+~
+151 0 1
+D1
+~
+~
+0 0 15124
+D3
+~
+~
+0 0 15122
+S
+#15124
+A Turn In The Path~
+   The filthy path is covered with pieces of left over victims. The path is 
+a little damp here but seems to be drying. The north and east lead you to
+goblin huts and the path can be followed to the west and south.
+~
+151 0 1
+D0
+You see the door of a hut here.
+~
+door hut~
+1 0 15115
+D1
+You see the door of a hut here.
+~
+door hut~
+1 0 15125
+D2
+~
+~
+0 0 15132
+D3
+~
+~
+0 0 15123
+S
+#15125
+The Gafftl Hut~
+   The smell of rancid food fills the small room. A pile of bones in the 
+corner remains the only thing in the room worth noticing. You can get 
+away from the reeking smell quickly to the west.
+~
+151 8 1
+D3
+You see the door of a hut here.
+~
+door hut~
+1 0 15124
+S
+#15126
+Davy Jones' Locker~
+   The tormented souls of sailors and others who are doomed to eternal hell 
+at sea, thrash around the cold steel of the locker. Amidst the wailing, a 
+deep chuckle slowly transforms into a bellowing cackle causing silence 
+from the tortured. A new soul has just entered the hell of the deep. If 
+still alive, you may leave north.
+~
+151 0 7
+D0
+~
+~
+0 0 15116
+S
+#15127
+The Sunken Ship~
+   The remnants of a pirate battle lie here. Skeletons litter the rotting, 
+wooden floor. The reclining set of bones with the eye patch gives a 
+everlasting grin toward something nearly hidden on the floor. The only 
+way out is north to the ruins.
+~
+151 0 7
+D0
+~
+~
+0 0 15117
+S
+#15128
+Entrance To Triton's Fortress~
+   A pearl-lined street is filled with carts piled to the top with sea
+flowers and fish. The most brilliant pearls line the lane that starts 
+from the gate to the north and enters the palace to the south.
+~
+151 0 7
+D0
+You see a gate here.
+~
+gate~
+1 0 15118
+D2
+~
+~
+0 0 15134
+S
+#15129
+The Armory~
+   Heaps of unfinished garments are strewn across tables and hide the 
+floor. In the back of the shop you hear tribal humming and a rustle of 
+fabric.
+~
+151 0 1
+D0
+~
+~
+0 0 15120
+S
+#15130
+The Ruined Path~
+   A broken sign lies on the road and is covered with strange goblin
+vandalism. Large charred and cracked potholes cover the path making it
+difficult to travel on. The path continues to the north and to the east is 
+a small stream.
+~
+151 0 1
+D0
+~
+~
+0 0 15121
+D1
+~
+~
+0 0 15131
+D2
+~
+~
+0 0 15138
+E
+sign~
+The sign reads, 'Grt vfelltzyebe, aglittt grklta!' to all the goblins
+but can be translated, 'With death comes valor and honor, brave goblins!'
+~
+S
+#15131
+A Trickle Of Water~
+   A trickle of water runs quickly down the cliff face to the south,
+landing in a small, clear pool of water that covers the path. Small
+birds bathe in the water and tweet merrily. The path continues to the
+west and to the north.
+~
+151 0 1
+D0
+~
+~
+0 0 15122
+D3
+~
+~
+0 0 15130
+S
+#15132
+The Path Narrows~
+   The path narrows and small trees line the pathway. Clean, crisp air 
+surrounds you. You can go on the foul path to the north, or enter the 
+forest to the south.
+~
+151 0 1
+D0
+~
+~
+0 0 15124
+D2
+~
+~
+0 0 15139
+S
+#15133
+The Noble's Court~
+   Plush seaweed cushions and woven tapestries fill the small room. 
+Delicate cups and saucers sit on a tea service reserved for only the 
+nobles. To the east is the waiting room for those of lower birth.
+~
+151 0 7
+D1
+~
+~
+0 0 15134
+S
+#15134
+The Waiting Room~
+   Hard driftwood benches line the walls for those who desire an audience 
+with the King. The royal summoning desk looms in the center of the room 
+overflowing with the daily pleas for audience. To the west is the noble 
+court and the throne room is to the south. 
+~
+151 0 7
+D0
+~
+~
+0 0 15128
+D2
+~
+~
+0 0 15140
+D3
+~
+~
+0 0 15133
+S
+#15135
+Chief Gralkt's Hut~
+   A throne made out of many small and large bones is surrounded by 
+offerings of food and caged animals. Heads of big game and defeated 
+enemies stare down from the walls. A heaping pile of refuse has been shoved 
+back behind the throne so that there is room to approach the throne.
+~
+151 1 1
+D1
+You see the door to a hut here.
+~
+door hut~
+1 0 15136
+S
+#15136
+The Palm Covered Path~
+   Green palm leaves have been layered on the path here and sprinkled 
+with purple flowers. Colorful spears decorated with feathers and small 
+bones line the pathway towards the chief goblin's domain to the west. The 
+path continues to the east.
+~
+151 0 1
+D1
+~
+~
+0 0 15137
+D3
+You see the door to a hut here.
+~
+door hut~
+1 0 15135
+S
+#15137
+The Palm Covered Path~
+   Palm fronds fan out across the pathway which have fallen from the palm 
+trees lining the sides of the path. The path is cleaner here and shows 
+some signs of maintenance. The path continues to the west and to the east. 
+~
+151 0 1
+D1
+~
+~
+0 0 15138
+D3
+~
+~
+0 0 15136
+S
+#15138
+A Turn In The Path~
+   The path here narrows and continues to the north and to the west. A 
+small burial mound is marked with spears and a wreath of white vines lay 
+upon the mound.
+~
+151 0 1
+D0
+~
+~
+0 0 15130
+D3
+~
+~
+0 0 15137
+S
+#15139
+The Forest~
+   The clear, well traversed path is surrounded on both sides by mighty 
+trees. You can take the narrow path that leads north or enter the 
+darkening forest to the south.
+~
+151 0 1
+D0
+~
+~
+0 0 15132
+D2
+~
+~
+0 0 15141
+S
+#15140
+The Throne Room Of The Sea King~
+   The majestic, shell throne of King Triton is held above the sea floor 
+by tiny plankton. Huge, seaweed tapestries telling the history of the 
+kingdom line the throne room walls. Kneeling space is plentiful before 
+the throne of the almighty ruler.
+~
+151 0 7
+D0
+~
+~
+0 0 15134
+S
+#15141
+The Dim Forest~
+   The path here is crowded with wide-trunked ancient oaks. Branches 
+begin to tower over the path up above and a rustle of wildlife surges 
+deep within the woods.
+~
+151 0 1
+D0
+~
+~
+0 0 15139
+D2
+~
+~
+0 0 15149
+S
+#15142
+The Apprentice Chambers~
+   Towering bunk beds with rickety, wood-carved ladders cover the entire 
+room. A large fireplace warms the hard, stone floor. On the south wall, 
+many hooks are covered by cloaks and robes worn by the mage's disciples.
+The hallway is directly south while a locked door is to the east.
+~
+151 9 0
+D1
+You see a door here.
+~
+door~
+2 15101 15143
+D2
+~
+door~
+1 -1 15152
+E
+door east~
+There is a old, oak door here that is buckled with age, but the lock on it
+looks sturdy enough.
+~
+S
+#15143
+A Storage Room~
+   Dust covers many labeled and unlabeled concotions that line the 
+shelves. Piles of undisturbed dust prove that few even have entered this 
+closet in decades. A few vials and jars have familiar names and might be 
+useful potions.
+~
+151 9 0
+D3
+You see a door here.
+~
+door~
+2 15101 15142
+S
+#15144
+A Secret Passageway~
+   Dust and cobwebs line this passageway which has remained secret for such 
+a long time. The sound of water dripping down the walls echos through the 
+passageway. You can see an end to the passageway to the east and more 
+passageway to the south.
+~
+151 9 0
+D1
+~
+door~
+1 -1 15145
+D2
+~
+~
+0 0 15155
+E
+door end~
+A black, onyx door vibrates with energy.
+~
+S
+#15145
+Morvoct's Inner Sanctum~
+   Shadows dance around the room as a black candle glimmers and 
+sputters, though the air remains still. Tendrils of fog roll across the 
+floor and spill out the window to the east. The complete silence and the 
+presence of old powers being stirred reminds you of the warning you 
+received when you trespassed onto this island.    
+~
+151 9 0
+D3
+~
+door~
+1 -1 15144
+E
+window~
+The fog is coming from the ground near the first floor of the fortress.
+~
+S
+#15146
+A Rock Plateau~
+   A flat, stone covers the ground here and rises sharply to the north 
+and the the west making travel impossible. A large wooden porch with tall 
+steps can be seen to the south and ther is a clearing in the woods to the 
+east.
+~
+151 0 5
+D1
+~
+~
+0 0 15147
+D2
+~
+~
+0 0 15159
+S
+#15147
+A Clearing~
+   Freshly cut logs are piled here, creating a small clearing here. 
+Stumps and tall grass are all that remain of the thick forest that 
+covered this area before.
+~
+151 0 1
+D1
+~
+~
+0 0 15148
+D3
+~
+~
+0 0 15146
+S
+#15148
+A Hollow~
+   A small clearing of knee-high grass makes some fallen timber visible 
+to the west and a large, climbable heap of rocks barely visible to the 
+south. Cliffs above to the north and east make travel that direction 
+hopeless.
+~
+151 0 1
+D2
+~
+~
+0 0 15160
+D3
+~
+~
+0 0 15147
+S
+#15149
+The Murky Woods~
+   Dense trees completely cover the sky above the pathway. Long, leafless 
+branches hang down causing the pathway to shrink even more. The trees 
+thin to the north and thicken to the south. A dark fortess rises to the 
+east.
+~
+151 0 1
+D0
+~
+~
+0 0 15141
+D1
+~
+~
+0 0 15150
+D2
+~
+~
+0 0 15162
+S
+#15150
+A Few Leafless Trees~
+   Slender, bare trees stretch as far as the eye can see. No sounds can 
+be heard and nothing grows. The trees have grown so close together that 
+there is no way to move north or south. The murky woods are to the west 
+and a huge fortress looms before you to the east. 
+~
+151 0 1
+D1
+You see a door here.
+~
+door~
+1 0 15151
+D3
+~
+~
+0 0 15149
+S
+#15151
+The Guarded Hall~
+   Torches line the wet, stone walls of the enormous hall. Sqeaking 
+sounds and small roars blare down upon you from the dark, endless ceiling 
+above you. There is a hallway to the east while a room full of guards 
+can be seen to the south. You can go west to leave the fortress. 
+~
+151 9 1
+D1
+~
+~
+0 0 15152
+D2
+~
+~
+0 0 15163
+D3
+You see a door here.
+~
+door~
+1 0 15150
+S
+#15152
+The Dark Hallway~
+Rows of torches illuminate the hallway here. A wooden door is closed to 
+the north and the hallway continues to the south.
+~
+151 9 1
+D0
+~
+door~
+1 -1 15142
+D2
+~
+~
+0 0 15164
+D3
+~
+~
+0 0 15151
+S
+#15153
+The Room Of Mists~
+   Mist surrounds you from all sides in this silent room. When you feel 
+the walls, you walk in circles never finding a door. The silence of the 
+room grows louder and begins to pound in your ears. Once you have entered 
+the mists you must find your own way out.
+~
+151 201 1
+E
+mist mists~
+Hazy figures appear and disappear quickly, but they resemble those long-
+dead from your past.
+~
+S
+#15154
+A Secret Passageway~
+   Sounds of water, running down the stone walls is all you can hear in 
+the darkness. The walls are rubbing slightly against your shoulders and 
+you can touch the ceiling. The secret passageway goes west or 
+you can enter the room of the shadows to the south.
+~
+151 9 0
+D1
+~
+~
+0 0 15155
+D2
+You see an old bookcase here.
+~
+bookcase~
+1 0 15166
+E
+wall passage secret~
+This passageway has a diversion spell that keeps all but the most determined
+from entering.
+~
+S
+#15155
+A Secret Passageway~
+   The walls here are dry and covered with cobwebs and dust. The stale 
+air in the passageway does not stir and there is no sounds to be heard 
+except for the trickle of water running down the passageway to the north 
+and the west.
+~
+151 9 0
+D0
+~
+~
+0 0 15144
+D3
+~
+~
+0 0 15154
+E
+walls secret~
+The dry walls here are vibrating slightly.
+~
+S
+#15156
+The Great Hall~
+   High-backed chairs and a long, oak table stretch out across the room. 
+A huge fire, burning without wood, roars in the great fireplace. You can 
+go down or south from here.
+~
+151 9 0
+D2
+You see a door here.
+~
+door~
+1 0 15168
+D5
+~
+~
+0 0 15153
+S
+#15157
+Animal Pens~
+   Dirty straw is strewn around and the pen has not been cleaned 
+recently. A small wooden bowl of cloudy water sits in one corner of the pen.
+You can go south and east in the cyclop's domain.
+~
+151 0 1
+D1
+~
+~
+0 0 15158
+D2
+~
+~
+0 0 15169
+S
+#15158
+The Cyclop's Den~
+   Tanned hides line the north wall and a sharp knife and hatchet hang 
+above the large desk under the hides. Large animal pelts line the floor 
+to soak up some of the warmth from the fire. You can stand next to the 
+warm fire to the south or go west into the animal pens.
+~
+151 0 1
+D1
+You see a door here.
+~
+door~
+1 0 15159
+D2
+~
+~
+0 0 15170
+D3
+~
+~
+0 0 15157
+S
+#15159
+The Porch~
+   The porch created from freshly-cut timbers has two matching rocking 
+chairs set on each side of the door. A rocking horse slightly rocks back 
+and forth in the corner of the porch.
+~
+151 0 1
+D0
+~
+~
+0 0 15146
+D3
+You see a door here
+~
+door~
+1 0 15158
+S
+#15160
+A Rock Pile~
+   Piles of roughly hewn rocks make traveling difficult to all but the 
+best rock climbers. A cool mist and the sound of rushing water wash over 
+you from the east and to the north there is a small hollow. A large cliff 
+face rises steeply to the south so that none can venture there.
+~
+151 0 1
+D0
+~
+~
+0 0 15148
+D1
+~
+~
+0 0 15161
+D2
+~
+~
+0 0 15171
+S
+#15161
+A Waterfall~
+   Mists shoot high in the air from the force the waterfall makes as it 
+pounds into the rocks below. vines wind through the trees and cover the 
+large cliff to the south. Birds and other wildlife can be heard gathering  
+around the large pool that has formed at the bottom of the powerful fall.
+~
+151 0 1
+D1
+~
+~
+0 0 15162
+D3
+~
+~
+0 0 15160
+S
+#15162
+The Dank Woods~
+   The thick woods grow silent here. Sounds of falling water echo 
+through the trees from the west. A light mist covers your body and 
+glistens on the bright grass that covers the forest floor. The murky 
+woods are to the north or you can follow the sounds of water to the west.
+~
+151 0 1
+D0
+~
+~
+0 0 15149
+D3
+~
+~
+0 0 15161
+S
+#15163
+Guard Room~
+   There are no tables of chairs anywhere to be seen. Unneeded guards 
+lien in piles on the floor. You hear pleas for help from the south and 
+the guarded hall is to the north.
+~
+151 9 1
+D0
+~
+~
+0 0 15151
+D2
+You see a prison door here.
+~
+door~
+2 15103 15172
+S
+#15164
+Darker Hallway~
+   All torches are sputtering and close to dying out. An evil pentagon 
+shaped mirror beckons to you throught the darkness. You hear curses and 
+groans to the south and whines to the north and the east.
+~
+151 9 1
+D0
+~
+~
+0 0 15152
+D1
+~
+~
+0 0 15165
+D2
+~
+~
+0 0 15173
+S
+#15165
+Dark Hallway~
+   Chewed up chairs and tapestries litter the floor. Flags, hanging 
+limply from the ceiling, have been slashed thoroughly and little holes
+have been burnt through most of them. The hallway continues to the
+south and west.
+~
+151 9 0
+D2
+~
+~
+0 0 15174
+D3
+~
+~
+0 0 15164
+S
+#15166
+Room Of Dark Shadows~
+   Large looming shadows dance over the walls here, sometimes solid enough
+to touch, and sometimes just a dark spot on the wet, stone walls. A huge
+stand is in the west corner used for setting spellbooks on by the mage.
+Evil from all the spells past have left their mark on this room.
+~
+151 9 0
+D0
+You see an old bookcase here.
+~
+bookcase~
+1 0 15154
+D1
+~
+~
+0 0 15167
+E
+stand~
+This stand is covered by runes that leak a pitch, black substance.
+~
+S
+#15167
+Herb Garden~
+   There are so many various plants here, from towering green saplings
+to small, black herbs. There is no real path through the garden so you 
+must either push your way west or east.
+~
+151 9 0
+D1
+You see a door here.
+~
+door~
+1 -1 15168
+D3
+~
+~
+0 0 15166
+E
+plants plant herb garden~
+Large, gaping plants lean their open leaves toward your face here.
+~
+S
+#15168
+Hall Of The Conquered~
+   Animal heads line the room, the largest on the highest part of the walls 
+and the smallest near the floor. Everytime you look at a new mounted head
+the eyes always seem to be looking at you. There is a head high at the top
+of the room which looks very familar. You can continue north into another
+hall or south to more of the Hall of the Conquered.
+~
+151 9 0
+D0
+You see a door here.
+~
+door~
+1 0 15156
+D2
+~
+~
+0 0 15177
+D3
+You see a door here.
+~
+door~
+1 0 15167
+E
+head animal~
+A unicorn head, flourished with a great golden horn hangs here still 
+glowing brightly.
+~
+S
+#15169
+The Far Corner~
+   The young cyclops minature tools and weapons are strewn about the
+floor. A ragdoll with one eye leans agains the smaller of the bunkbeds.
+To the north is a shabby pen and to the east is a fireside.
+~
+151 0 1
+D0
+~
+~
+0 0 15157
+D1
+~
+~
+0 0 15170
+S
+#15170
+Fireside~
+   The bare hearth is covered by only one woven rug. A warm fire roars 
+from teh south and the west looks much like child's room. To the north is 
+more den and the door to the forest.
+~
+151 0 1
+D0
+~
+~
+0 0 15158
+D3
+~
+~
+0 0 15169
+S
+#15171
+A Steep Cliff~
+  High above you is an end to this cliff, but it seems so far away.
+There are so few handholds, this cliff has never been conquered. You 
+can reach flat ground by going up a hill into the rock pile to the 
+north or south to the harpy's nest.
+~
+151 0 1
+D0
+~
+~
+0 0 15160
+D2
+~
+~
+0 0 15181
+S
+#15172
+Prison~
+   Dirty heaps of straw are piled in all the corners of the prison cell.
+The hard, stone floor is covered with ice and the bones of prisoners past
+continue their eternal imprisonment. Icicles hang above you, randomly
+dripping onto the floor. There is a guard room to the north.
+~
+151 9 1
+D0
+You see a prison door here.
+~
+door~
+2 15103 15163
+S
+#15173
+Apprentice Workshop~
+   Tables covered with vials and concotions bubble wildly. Spell books 
+and spell scrolls cover the tables and stools.
+~
+151 9 1
+D0
+~
+~
+0 0 15164
+D1
+~
+~
+0 0 15174
+S
+#15174
+Dark Hallway~
+   An old skeleton wearing a crown hangs in his shackles peering at you.
+Large scorched areas of ceiling and floor come from the south. A burnt
+smell wafts through the air here. To the north is more hallway and you 
+can smell a stronger burning smell to the south. To the west you can see
+many long tables covered with vials.
+~
+151 9 1
+D0
+~
+~
+0 0 15165
+D2
+~
+~
+0 0 15182
+D3
+~
+~
+0 0 15173
+S
+#15175
+Torture Room~
+   Fire licks out toward you from the giant furnaces that line the greasy
+walls. Pokers, knives, and hooks hang from the walls near the furnaces and
+glisten in the firelight. Uncomfortable, metal contraptions fill the room
+with the smell of charred flesh.
+~
+151 9 0
+D1
+~
+~
+0 0 15176
+S
+#15176
+Caged Animal Room~
+   A dirty, smelly room is bare except for the little pile of moldy hay
+in the corner. Water trickles off the wall and makes a muddy puddle on
+the floor. The mage's torture room is to the west and to the east is the
+hallway.
+~
+151 9 0
+D1
+You see a door here.
+~
+door~
+1 0 15177
+D3
+~
+~
+0 0 15175
+S
+#15177
+Hall Of The Conquered~
+   On the walls hang many shields from many families who come from 
+numerous lands. The swords of those dying men are crossed upon the 
+shields they used in attempt to challenge the great mage. To the south
+and north are more hallway and to the west is a door.
+~
+151 9 0
+D0
+~
+~
+0 0 15168
+D2
+~
+~
+0 0 15183
+D3
+You see a door here.
+~
+door~
+1 0 15176
+E
+swords shield crest~
+The dried blood on the sword and shield here entirely cover the almost 
+familiar crest.
+~
+S
+#15178
+The Man Cage~
+   This room is for captured men that the mage gives to the harpies to 
+improve their breeding stock. Ofcourse the men wear out quickly but new 
+men arrive often, and now you are here! 
+~
+151 0 1
+D1
+~
+~
+0 0 15179
+S
+#15179
+Hallway~
+   Dim torches line the wet walls. the trickle of water echos throught 
+the hall. To the west is a locked cage, to the east a landing strip, and 
+if you go south there are more horrible smells than the ones previously 
+enhaled.
+~
+151 0 1
+D1
+~
+~
+0 0 15180
+D2
+~
+~
+0 0 15184
+D3
+~
+~
+0 0 15178
+S
+#15180
+The Landing Perch~
+   Duck low, for harpies land without warning. In the center of the room 
+stands a large bird perch. Deep grooves caused by giant claws have almost 
+worn throught and harpy filth lies around the dirt runway in piles. 
+East is your nose's choice, west is a stone hallway, and south is the 
+dining hall. 
+~
+151 0 1
+D1
+~
+~
+0 0 15181
+D3
+~
+~
+0 0 15179
+S
+#15181
+Entering The Harpy's Nest~
+   Piles of soiled cloths and harpy excrement lay stuck to the straw.
+To the north is fresh air, and to the west the stench grows stronger.
+~
+151 0 1
+D0
+~
+~
+0 0 15171
+D3
+~
+~
+0 0 15180
+S
+#15182
+Dragon's Domain~
+   Bubbling pits of molten gold sputter and spew liquid fire in all
+directions. The intense heat fills the air with mist which clings to
+the slippery onyx walls and impairs your vision. A flash of silver 
+above you resembles a trapdoor, though it seems too high to reach.
+As the mists seep inside your lungs and cloud your vision, you 
+become confused and disoriented and forget the direction of the other
+way out.
+~
+151 9 0
+D0
+~
+~
+0 0 15174
+D4
+You see a trapdoor here.
+~
+trapdoor~
+2 15101 15183
+S
+#15183
+Hall Of The Conquered~
+   Rows upon rows of booty are lined upon the walls here. Hanging from the
+shackles upon the walls are all those conquered by the mage. Dust covers
+even the flags that ripple magically in the still room. You can venture
+down or north farther into the hall.
+~
+151 9 0
+D0
+~
+~
+0 0 15177
+D5
+You see a trapdoor here.
+~
+trapdoor~
+2 15101 15182
+E
+booty wall ~
+Gleaming stacks of golden armor glitter under all the dust here.
+~
+S
+#15184
+Grub Kitchen~
+   The smell of rats frying enters your nose. This room is filled with
+plump, juicy maggots and grubs which are prepared in many delectible 
+dishes for the queen and her subjects. East is the dining hall and north
+is the hallway.
+~
+151 0 1
+D0
+~
+~
+0 0 15179
+D1
+~
+~
+0 0 15185
+S
+#15185
+Dining Hall~
+   Rat bones crunch underfoot and you barely see through all the
+flies. There are no tables or chairs here, but remnants of many meals
+litter the floor. The kitchen is always open if your hungry to the
+west, north is the perch, and east is the harpy loft.
+~
+151 0 1
+D1
+~
+~
+0 0 15186
+D3
+~
+~
+0 0 15184
+S
+#15186
+Piles Of Straw~
+   A few harpy feathers float down around you. Piles of straw are 
+everywhere and a faint wheezing is coming from all directions. The smell
+of rotting corpse is stronger here than in the rest of the nest and a 
+slight glow warms the room.
+~
+151 0 1
+D3
+~
+~
+0 0 15185
+D4
+~
+~
+0 0 15187
+S
+#15187
+The Harpy Queen's Nest~
+   Emeralds and diamonds not hidden by droppings, glitter in the straw
+here. Harpies are so fond of sparkly things and not worried about 
+cleanliness. Here the queen's roost is adorned with silvery feathers 
+from the queen's plummage. You can get out of this dump by going down.
+~
+151 0 1
+D5
+~
+~
+0 0 15186
+S
+#15188
+The Southern Sea Of Storms~
+  Through the huge waves an old, creaky dock sways with the tide.
+Behind the dock is a silver sheen that reaches high into the sky above
+you, blocking even the ocean from your vision towards the south. A
+strong urge to go north away from this eerie dock in the middle of
+the sea overcomes you. Fear you have never known begins to creep down
+your back causing you to shiver.
+~
+151 0 0
+D0
+The wide sea stretches on for as far as they eye can see.
+~
+~
+0 0 8869
+D2
+To the south, you see a small island dock.
+~
+~
+0 0 15100
+S
+$~

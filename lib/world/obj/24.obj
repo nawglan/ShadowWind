@@ -1,0 +1,64 @@
+#2400
+staff tar warped~
+a warped staff of tar~
+A warped and gnarled staff lies on the ground.~
+~
+5 0 nou 0 
+4 6 4 6 27
+15 25000 2500
+B
+m 
+E
+staff~
+You see a staff of warped crystal.~
+A
+12 30
+#2401
+shirt ooze~
+a shirt of dripping ooze~
+A shirt of dripping ooze lies here oozing.~
+~
+9 g ad f 
+0 2 0 0 23
+11 25000 10000
+A
+17 -15
+A
+1 2
+A
+2 2
+#2402
+sword broadsword~
+a broadsword of tar~
+A large broadsword lies here, gathering dust.~
+~
+5 0 an 0 
+3 4 4 3 11
+15 10000 0
+#2403
+hammer warhammer~
+a warhammer of tar~
+A warhammer of tar has been embedded in the ground.~
+~
+5 0 an 0 
+0 2 5 9 7
+17 1500 500
+#2404
+rattle~
+a tar covered rattle.~
+A tar covered rattle lies here.~
+~
+5 0 an 0 
+0 1 1 11 1
+1 1 0
+#2405
+armor girth~
+a girth of mist~
+A girth of mist is resting here.~
+~
+11 g al 0 
+0 2 0 0 1
+6 2000 300
+A
+17 -5
+$~

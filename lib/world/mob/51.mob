@@ -1,0 +1,1156 @@
+#5100
+goblin slave~
+the goblin slave~
+A wretched goblin, ragged and beaten, is chained to the wall.
+~
+Wearing nothing but a small worn cloth tunic over its loose, shaggy skin, 
+this poor creature is in very bad shape. It does not look like it will 
+survive much longer if it continues to be treated the way it is.
+~
+bdh 0 0 X 0 
+1 19 9 1d1+10
+0 20 -1
+8 8 1 3 9 3
+T 100 1d1+0 27
+A 6 8 $n whimpers softly.
+A 5 8 $n cringes as a distant shout rings out.
+A 4 8 $n pulls itself into a little ball.
+A 3 8 $n shivers slightly.
+A 2 8 $n pulls tiredly on its chain.
+A 1 8 $n looks past you with unseeing eyes.
+>rand_prog          1~
+mpasound You hear a soft moaning sound coming from inside a building nearby.
+~
+|
+#5101
+drow elf~
+the drow elf~
+You stumble upon a lone drow elf, dressed in the garb of a warrior.
+~
+A snarl instantly spreads about this ebony-skinned elf's face as he 
+sights you. Ever alert, his lithe arms whip his sword from its sheath 
+and he advances towards you with every intent of gaining glory from 
+your death at his hands.
+~
+cdfg k -1000 X 0 
+10 15 5 5d5+100
+0 6000 -1
+8 8 1 3 9 3
+T 100 1d1+9 27
+E 11 10 5116 -1
+E 16 10 5100 -1
+>greet_prog          100~
+mpdelay 5
+if isfollow($n)
+   mpat 0 say Hi.
+else
+   emote instantly drops down to a crouch as he sees you.
+   snarl
+endif
+~
+>rand_prog          5~
+mpasound Footfalls can be heard grating upon the stone floor of the cavern nearby. 
+~
+>fight_prog          10~
+bash
+~
+>fight_prog          10~
+kick
+~
+>fight_prog          5~
+if ispc($n)
+   shout Surface dwellers in the sacred city! To me, brethren!
+endif
+~
+>entry_prog          100~
+mpdelay 5
+if ispc($r)
+emote instantly drops down to a crouch as he sees you.
+snarl
+endif
+~
+|
+#5102
+drow noble warrior~
+the drow warrior noble~
+A regally dressed drow warrior stands here grinning, waiting for you.
+~
+Standing in the center of the chamber, this drow obviously perceives you to be
+of no threat whatsoever. He holds his deadly longword with the practiced ease of 
+a veteran, and beckons you closer, grinning all the while.
+~
+bdf k -1000 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 9 3
+T 100 17d4+2 27
+E 5 10 5115 -1
+E 11 10 5116 -1
+E 16 100 5101 -1
+>greet_prog          100~
+mpdelay 5
+if isfollow($n)
+   mpat 0 say Hello.
+else
+   emote slides a deadly-looking sword from its ornate sheath.
+   grin $n
+endif
+~
+>fight_prog          30~
+rescue priestess
+~
+>fight_prog          20~
+bash
+~
+>fight_prog          20~
+kick
+~
+|
+#5103
+drow noble mage~
+the drow mage noble~
+An old drow dressed in flowing black robes stands to one side, chanting.
+~
+An ancient face stares back at you in cold fury, twisted and shaped by
+years of hatred and malevolence. This drow mage is has evidently been 
+informed of your presence and has prepared an appropriate greeting. 
+~
+bdmo k -1000 X 0 
+15 14 2 8d8+150
+0 12000 -1
+8 8 1 3 9 3
+T 100 1d5+12 27
+E 17 100 5110 -1
+E 5 20 5122 -1
+E 16 10 5124 -1
+>greet_prog          100~
+mpdelay 30
+if isfollow($n)
+   mpat 0 say Greetings.
+else
+   if ispc($r)
+       cast 'fireball' $r
+   endif
+endif
+~
+>fight_prog          5~
+if ispc($r)
+  cast 'fireball' $r
+endif
+~
+>fight_prog          10~
+cast 'energy drain'
+~
+|
+#5104
+drow priestess~
+the drow priestess~
+A stunningly beautiful drow priestess waits on the far side of the room.
+~
+Dressed head to toe in drow religious regalia, this drow female waits here to 
+supervise your destruction. She has risen to this position though her
+brutality and sheer power, so you know not to expect any mercy from her.
+~
+bdgmopr dk -1000 X 0 
+17 13 1 9d8+170
+0 15000 -1
+8 8 2 3 9 3
+T 100 3d8+8 27
+E 16 30 5103 -1
+E 6 10 5121 -1
+E 5 100 5123 -1
+>greet_prog          100~
+mpdelay 40
+if isfollow($n)
+   mpat 0 say Well met, Void.
+else
+   if ispc($n)
+      shout Intruders are despoiling the sanctity of this house! Guards, To me my brethren!
+      cast 'armor' warrior
+   endif
+endif
+~
+>fight_prog          10~
+if ispc($r)
+  cast 'harm' $r
+endif
+~
+|
+#5105
+drow master warrior~
+the drow master warrior~
+The city's master of arms is here, training young drow with an iron hand.
+~
+Brutally scarred, wearing an expression of utter hatred, this drow is one 
+surface elven parents would scare their children with stories about. 
+~
+bcdfgA k -1000 X 0 
+25 10 -3 13d13+250
+0 38000 -1
+8 8 1 3 9 3
+T 100 2d5+15 27
+T 100 3d6+7 9
+E 9 10 5109 1
+E 11 0 5116 -1
+E 16 10 5105 -1
+>greet_prog          100~
+mpdelay 10
+if isfollow($n)
+   mpat 0 smile
+else
+   emote turns to face you.
+   emote grins slightly. Finally his students will get a real workout.
+endif
+~
+>fight_prog          10~
+bash
+~
+>fight_prog          15~
+kick
+~
+|
+#5106
+drow elite guard~
+the drow elite guard~
+A tall drow dressed in black and silver ceremonial armor stands here, guarding.
+~
+Personifying the drow ideal of combining prowess in arms with deadly grace, 
+this elite warrior has been chosen for a post bestowing great honor. And
+defeating an outlander where his brethren have failed will certainly add to 
+this honor.
+~
+bdefg dk -1000 X 0 
+23 11 -2 12d11+230
+0 36000 -1
+8 8 1 3 9 3
+T 60 2d4+16 27
+E 8 10 5118 -1
+E 10 10 5117 -1
+E 5 100 5115 -1
+E 11 10 5116 -1
+E 16 5 5105 -1
+>fight_prog          5~
+bash
+~
+>fight_prog          5~
+kick
+~
+>fight_prog          15~
+if ispc($r)
+   target $r
+endif
+~
+|
+#5107
+drow matron mother~
+the Matron Mother~
+The Matron Mother of the fourth house lounges upon her throne.
+~
+This cruel drow stares at you in righteous anger, for you have invaded her
+house, and have gone so far as to dare to attack her in her own throne room.
+~
+bdfopy dhkp -1000 X 0 
+30 9 -5 15d15+300
+0 50000 -1
+8 8 2 3 9 3
+T 50 3d5+15 27
+E 16 100 5106 -1
+E 6 10 5114 1
+E 5 100 5123 -1
+>greet_prog          100~
+mpdelay 5
+if isfollow($n)
+   mpat 0 say Welcome, guests.
+else
+   emote rises instantly to her feet in furious anger!
+   mpdelay 10
+   emote screams, 'Kill these intruders now!'
+   cast 'blindness' $n
+endif
+~
+>fight_prog          20~
+cast 'harm' $n
+~
+>fight_prog          30~
+mpforce elite rescue matron
+~
+>death_prog          100~
+mpoload 5132
+~
+|
+#5108
+drow matron mother~
+the Matron Mother~
+The Matron Mother of the first house awaits you.
+~
+Standing before her throne, arms upraised in supplication, she radiates an 
+aura of power which almost makes you flee despite all your other intentions.
+This will certainly be one of the most challening opponents you will fight in
+this city.
+~
+bdefnopqry dhkp -1000 X 0 
+35 7 -6 18d17+350
+0 90000 -1
+8 8 2 3 9 3
+T 50 2d7+14 27
+E 1 5 5112 1
+E 16 100 5107 1
+E 6 100 5121 -1
+E 5 100 5123 -1
+>greet_prog          100~
+mpdelay 10
+if isfollow($n)
+   mpat 0 say howdy do
+else
+   if ispc($r)
+      emote calls down the furious wrath of the yochlol upon you!
+      cast 'harm' $r
+      mpcast 'blindness' $n
+   endif
+endif
+~
+>fight_prog          10~
+cast 'harm' $n
+~
+>fight_prog          10~
+if ispc($r)
+  target $r
+endif
+~
+>fight_prog          30~
+mpforce elite rescue matron
+~
+>death_prog          100~
+mpoload 5129
+~
+|
+#5109
+yochlol~
+the Yochlol~
+The Goddess of the Drow sends upon you her fury in the form of a Yochlol!
+~
+A horrid, hellish creation, this evil avatar has been sent her to punish
+you! A whirling multitude of ethereal tentacles and mandibles descends
+upon you, to feast upon your very soul!
+~
+bdefgnopqrxzC bdfhkpt -1000 X 0 
+52 1 -10 26d26+2520
+0 2600000 -1
+8 8 2 1 9 5
+T 25 1d7+8 26
+T 80 2d4+9 26
+E 16 50 5113 2
+>rand_prog          30~
+mpasound Swirling mists blow about, and lightning flashes all around you!
+~
+>rand_prog          30~
+mpasound Something dark and terrible can be sensed upon the dais!
+~
+>all_greet_prog          100~
+if isfollow($n)
+   mpat 0 say hello
+else
+   mpecho The whirling mists swirl together, lightning flashes, and suddenly
+   mpecho a horrid apparition is upon you!
+endif
+~
+>fight_prog          30~
+cast 'call lightning' 
+~
+>fight_prog          50~
+if ispc($r)
+  target $r
+endif
+~
+|
+#5110
+drow elf~
+the drow elf~
+You stumble upon a lone drow elf, crouching in the shadows.
+~
+A snarl instantly spreads about this ebony-skinned elf's face as he sights 
+you. Ever alert, his lithe arms whip his dagger from its sheath and he 
+advances towards you with every intent of gaining glory from your death at
+his hands.
+~
+cdgo ks -1000 X 0 
+10 15 5 5d5+100
+0 6000 -1
+8 8 1 3 9 3
+T 100 1d1+9 27
+E 16 20 5124 -1
+>greet_prog          100~
+mpdelay 15
+if isfollow($n)
+   mpat 0 cough
+else
+   if ispc($r)
+      backstab ($r)
+   endif
+endif
+~
+>fight_prog          10~
+if ispc($n)
+   shout Surface dwellers in the sacred city! To me, brethren!
+endif
+~
+>entry_prog          100~
+mpdelay 25
+if ispc($r)
+  backstab $r
+endif
+~
+|
+#5111
+drow elf~
+the drow elf~
+You stumble upon a lone drow elf, clothed in black and silver robes.
+~
+A snarl instantly spreads about this ebony-skinned elf's face as she sights 
+you. Ever alert, her lithe arms whip a dagger from her robes and she  
+advances towards you with every intent of gaining glory from your death at
+her hands.
+~
+cdfg dk -1000 X 0 
+10 15 5 5d5+100
+0 6000 -1
+8 8 2 3 9 3
+T 100 1d1+9 27
+E 5 10 5122 -1
+E 16 10 5102 -1
+>rand_prog          5~
+mpasound Footfalls can be heard grating upon the stone floor of the cavern 
+mpasound nearby.
+~
+>fight_prog          10~
+shout Intruders in the sacred city! To me, brethren!
+      cast 'color spray' $n
+~
+>fight_prog          10~
+cast 'chill touch'
+~
+|
+#5113
+drow matron mother~
+the Matron Mother~
+The Matron Mother of the third house lounges upon her throne.
+~
+This cruel drow stares at you in righteous anger, for you have invaded her
+house, and have gone so far as to dare to attack her in her own throne room.
+~
+bdfopy dhkp -1000 X 0 
+32 8 -6 16d16+320
+0 55000 -1
+8 8 2 3 9 3
+T 66 3d5+16 27
+E 14 10 5108 1
+E 6 100 5121 -1
+E 5 100 5122 -1
+E 16 100 5106 -1
+>greet_prog          100~
+mpdelay 5
+if isfollow($n)
+   mpat 0 cackle
+else
+   emote rises instantly to her feet in furious anger!
+   mpdelay 10
+   emote screams, 'Kill these intruders now!'
+   cast 'blindness' $n
+endif
+~
+>fight_prog          20~
+cast 'harm' $n
+~
+>fight_prog          40~
+mpforce elite rescue matron
+~
+>death_prog          100~
+mpoload 5131
+~
+|
+#5114
+drow matron mother~
+the Matron Mother~
+The Matron Mother of the second house lounges upon her throne.
+~
+This cruel drow stares at you in righteous anger, for you have invaded her
+house, and have gone so far as to dare to attack her in her own throne room.
+~
+bdfopy dhkp -1000 X 0 
+34 7 -7 17d17+340
+0 60000 -1
+8 8 2 3 9 3
+T 66 3d5+17 27
+E 5 100 5123 -1
+E 16 100 5106 -1
+E 6 20 5111 1
+>greet_prog          100~
+mpdelay 5
+if isfollow($n)
+   mpat 0 snicker
+else
+   if ispc($n)
+      emote rises instantly to her feet in furious anger!
+      mpdelay 10
+      emote screams, 'Kill these intruders now!'
+      cast 'blindness' $n
+   endif
+endif
+~
+>fight_prog          20~
+cast 'harm' $n
+~
+>fight_prog          40~
+mpforce elite rescue matron
+~
+>death_prog          100~
+mpoload 5130
+~
+|
+#5115
+drow master mage~
+the drow master mage~
+The city's master of sorcery is here, training young drow with an iron hand.
+~
+Brutally scarred, wearing an expression of utter hatred, this drow is one 
+surface elven parents would scare their children with stories about. 
+~
+bcdfgx k -1000 X 0 
+25 10 -3 13d13+250
+0 38000 -1
+8 8 1 3 9 3
+T 50 2d5+15 27
+E 17 100 5110 -1
+E 16 10 5104 -1
+E 5 100 5122 -1
+>greet_prog          100~
+mpdelay 10
+if isfollow($n)
+   mpat 0 grin
+else
+   if ispc($n)
+      emote turns from her students to face you.
+      emote grins slightly. Finally her students will get a real workout.
+   else
+      say Get in line and train, maggot!
+      growl $n
+  endif
+endif
+~
+>fight_prog          5~
+cast 'frost bolt'
+~
+>fight_prog          10~
+cast 'fireball'
+~
+|
+#5116
+drow master assassin~
+the drow master assassin~
+The city's master assassin is here, training young drow with an iron hand.
+~
+Brutally scarred, wearing an expression of utter hatred, this drow is one 
+surface elven parents would scare their children with stories about. 
+~
+bcdfgz k -1000 X 0 
+25 10 -3 13d13+250
+0 38000 -1
+8 8 1 3 9 3
+T 50 2d5+15 27
+E 17 100 5110 -1
+E 16 100 5124 -1
+>greet_prog          100~
+mpdelay 10
+if isfollow($n)
+   mpat 0 sneer
+else
+   if ispc($n)
+      emote turns from his students to face you.
+      emote grins slightly. Finally his students will get a real workout.
+      mpdelay 10
+      backstab $n
+   else 
+      say Get in line and train, maggot!
+      smack $n
+   endif
+endif
+~
+|
+#5117
+drow trainee warrior~
+the drow warrior trainee~
+A drow, young in age but certainly not in experience, is here training.
+~
+Young in years he may be, this drow is no stranger to the cruel brutality
+of life amongst his race. Looking at you with a hatred born and bred into
+him for a century.
+~
+bdmo k -1000 X 0 
+6 17 7 3d3+60
+0 3000 -1
+8 8 1 3 9 3
+T 100 2d3+3 27
+>fight_prog          10~
+kick
+~
+|
+#5118
+drow trainee mage~
+the drow mage trainee~
+A drow, young in age but certainly not in experience, is here training.
+~
+Young in years she may be, this drow is no stranger to the cruel brutality
+of life amongst her race. Looking at you with a hatred born and bred into
+her for a century.
+~
+bdmo k -1000 X 0 
+6 17 7 3d3+60
+0 3000 -1
+8 8 2 3 9 3
+T 100 2d3+3 0
+>fight_prog          10~
+cast 'magic missile'
+~
+|
+#5119
+drow trainee assassin~
+the drow assassin trainee~
+A drow, young in age but certainly not in experience, is here training.
+~
+Young in years he may be, this drow is no stranger to the cruel brutality
+of life amongst his race. Looking at you with a hatred born and bred into
+him for a century.
+~
+bdmo k -1000 X 0 
+6 17 7 3d3+60
+0 3000 -1
+8 8 1 3 9 3
+T 100 2d3+3 27
+>fight_prog          10~
+if ispc($r)
+  target $r
+endif
+~
+|
+#5120
+drow master armorer~
+the drow master armorer~
+A thick armed drow is here, pounding away at the forge.
+~
+Brawnier than you ever imagined a drow could be, the armorer handles his tools
+with skills matching those of a dwarf. He seems undaunted by the weight of the
+pure metal ore that he shapes into works of art.
+~
+bdegoA k -1000 X 0 
+27 10 -4 14d14+270
+0 42000 -1
+8 8 1 3 9 3
+T 75 1d10+22 23
+A 3 8 $n places a new breastplate on the rack to cool.
+A 3 8 $n wipes the sweat from his brow with the back of his thick glove.
+A 3 8 $n sends steam billowing out as he dips red-hot tongs into the water.
+A 3 8 $n hammers out a sheet of titanium.
+E 16 10 5104 -1
+E 11 10 5116 -1
+E -1 10 5115 -1
+>fight_prog          20~
+bash
+~
+|
+#5121
+drow master weaponsmith~
+the drow master weaponsmith~
+A thick armed drow is here, pounding away at the forge.
+~
+Brawnier than you ever imagined a drow could be, the armorer handles his tools
+with skills matching those of a dwarf. He seems undaunted by the weight of the
+pure metal ore that he shapes into works of art.
+~
+bdegoA k -1000 X 0 
+27 10 -4 14d14+270
+0 42000 -1
+8 8 1 3 9 3
+T 120 3d10+22 23
+A 3 8 $n places a new sword on the rack to cool.
+A 3 8 $n wipes the sweat from his brow with the back of his thick glove.
+A 3 8 $n sends steam billowing out as he dips red-hot tongs into the water.
+A 3 8 $n hammers out a block of titanium.
+E 16 10 5104 -1
+E 11 10 5116 -1
+E -1 10 5105 -1
+>fight_prog          20~
+bash
+~
+|
+#5122
+drow elf dark scout~
+the dark elven tunnel scout~
+A dark humanoid shapes takes shape in the shadows before you.
+~
+Standing before you, as surprised to see you as you are to see him, is an
+elf with strange pitch-black skin and white hair. He is dressed head to toe 
+in studded black leather, and wears a long dagger at his side.
+~
+cdfghn kps -1000 X 0 
+10 15 5 5d5+100
+0 6000 -1
+8 8 1 3 9 3
+T 100 1d1+9 0
+E 11 10 5116 -1
+E 16 10 5124 -1
+>greet_prog          100~
+mpdelay 10
+if isfollow($n)
+   mpat 0 gig
+else
+   if ispc($n)
+      emote instantly drops down to a crouch as he sees you.
+      backstab $n
+   else
+      nod $n
+   endif
+endif
+~
+>shout_prog          p Surface dwellers are approaching! Sound the alarm!~
+mpdelay 20
+if isnpc($n)
+   if rand(40)
+      mpat $n mpmload 5134
+      mpat $n mpecho A dark elven tunnel scout comes at you from the darkness!
+   endif
+endif
+~
+>fight_prog          10~
+shout Surface dwellers are approaching! Sound the alarm!
+~
+>entry_prog          100~
+mpdelay 5
+if ispc($r)
+emote instantly drops down to a crouch as he sees you.
+   backstab $r
+endif
+~
+|
+#5123
+drow dark elf guard~
+the dark elven guard~
+A hatchet-faced dark elf stands here on guard.
+~
+He stands with his weapon ready, somehow aware of your presence, face grim
+with determination to defeat you.
+~
+df k -1000 X 0 
+12 14 4 6d6+120
+0 8000 -1
+8 8 1 3 9 3
+T 75 1d5+10 27
+E 5 15 5115 -1
+E 11 10 5116 -1
+E 16 20 5100 -1
+>greet_prog          100~
+mpdelay 20
+if isfollow($n)
+   mpat 0 smile
+else
+   if ispc($n)
+      bash $n
+   else
+      nod $n
+   endif
+endif
+~
+>fight_prog          20~
+bash
+~
+>fight_prog          50~
+kick
+~
+|
+#5124
+spider giant~
+the giant spider~
+A horrible furry-legged spider, as big as a horse, is crawling along the 
+ceiling!
+~
+Huge crushing mandibles, eight glinting red eyes, and a bloated furry body. It
+advances towards you faster than your eyes can follow, and is instantly upon 
+you!
+~
+defghqr dkp -400 X 0 
+15 7 5 7d8+150
+0 10000 -1
+8 8 0 8 15 4
+T 50 1d3+1 28
+T 100 5d3+1 22
+#5125
+flower mushroom spore~
+a spore flower~
+A strange phosphorescent fungus with many flowers grows from the cave wall.
+~
+A luminescent mushroom that seems to grow abundantly in the damp underground
+caves of the drow city.
+~
+bdgnoq p 0 X 0 
+0 20 10 1d2+3
+0 1 -1
+8 8 0 15 16 2
+T 900 1d1+0 21
+>all_greet_prog          35~
+mpdelay 50
+mpecho The flowers shoot some spores into the air.
+mpoload 5125
+drop fungus
+~
+|
+#5126
+bat giant~
+the giant bat~
+A huge black bat soars about, in and out of the darkness.
+~
+It's hard to get a full view of the creature, because it keeps flying right
+on by and disappearing into the blackness beyond the reach of your light. All
+you can tell is that it's as big as wolf, and that's not including its 
+wingspan..
+~
+degq dkpq 0 X 0 
+12 14 4 6d6+120
+0 7000 -1
+8 8 0 14 14 2
+T 100 3d5+5 22
+A 4 8 $n flies about, seemingly in random patterns.
+A 4 8 $n snaps at a small, luminescent insect and devours it.
+A 4 8 $n flies right towards you, and turns away at the last moment.
+A 4 8 $n screeches loudly.
+E 20 10 5128 1
+>rand_prog          20~
+emote disappears into the shadows.
+hide
+~
+>rand_prog          20~
+emote appears from the shadows.
+~
+|
+#5127
+drow soldier~
+the drow soldier~
+A strong dark elven soldier stands at attention.
+~
+A snarl instantly spreads about this dark elf's face as he sights you.
+Ever alert, his lithe arms whip his sword from its sheath and he advances 
+towards you with every intent of gaining glory from your death at his hands.
+~
+cdfg k -1000 X 0 
+11 14 4 6d5+110
+0 7000 -1
+8 8 1 3 9 3
+T 100 2d3+6 27
+E 5 10 5115 -1
+E 11 10 5116 -1
+E 16 10 5100 -1
+>fight_prog          20~
+kick
+~
+>greet_prog          100~
+mpdelay 5
+if isfollow($n)
+   mpat o snicker
+else
+   emote instantly drops down to a crouch as he sees you.
+   snarl
+endif
+~
+>shout_prog          p Surface dwellers in the sacred city! To me, brethren!~
+mpdelay 20
+if isnpc($n)
+   if rand(10)
+      mpgoto $n
+      mpecho A drow soldier rushes in, sword already drawn!
+   endif
+endif
+~
+|
+#5128
+drow soldier~
+the drow soldier~
+A strong dark elven soldier stands at attention.
+~
+A snarl instantly spreads about this dark elf's face as he sights you.
+Ever alert, his lithe arms whip his sword from its sheath and he advances 
+towards you with every intent of gaining glory from your death at his hands.
+~
+bcdfg k -1000 X 0 
+11 14 4 6d5+110
+0 7000 -1
+8 8 1 3 9 3
+T 100 2d3+6 27
+E 5 10 5115 -1
+E 11 10 5116 -1
+E 16 10 5100 -1
+>fight_prog          20~
+kick
+~
+>shout_prog          p the sanctity of this house! Guards, To me!~
+mpdelay 20
+if isnpc($n)
+   if rand(20)
+      mpgoto $n
+      mpecho A drow soldier rushes in, sword already drawn!
+   endif
+endif
+~
+|
+#5129
+drow mage~
+a drow mage~
+A black and silver robed drow practices spellcraft here, scowling.
+~
+A drow male, neither young nor old to your surface-deweller's eyes. He is 
+dressed in the black and silver robes common to drow mages, and his general
+appearance is that of an elf of learning, not one of combat.
+~
+bcdfg k -1000 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 9 3
+T 100 17d4+2 27
+E 16 10 5102 -1
+E 5 10 5122 -1
+>fight_prog          20~
+cast 'burning hands'
+~
+>fight_prog          20~
+cast 'lightning bolt'
+~
+|
+#5130
+drow cleric~
+a drow cleric~
+A haughty drow cleric whirls to face you, face contorted with anger.
+~
+She is one of the temple's junior clerics, not having earned the full
+rank of priestess yet. She is therefore all the more fanatic and zealous
+about serving her evil goddess.
+~
+bcdfg k -1000 X 0 
+35 8 -8 18d18+350
+0 112000 -1
+8 8 2 3 9 3
+T 100 17d4+2 27
+E 16 10 5102 -1
+E 5 10 5123 -1
+>fight_prog          20~
+cast 'cure critical'
+~
+>fight_prog          20~
+cast 'dispel good'
+~
+|
+#5131
+drow priestess~
+the drow priestess~
+A stunningly beautiful drow priestess wanders the temple.
+~
+Dressed head to toe in drow religious regalia, this drow female waits here
+to supervise your destruction. She has risen to this position though her 
+brutality and sheer power, so you know not to expect any mercy from her.
+~
+dgopr dk -1000 X 0 
+17 13 1 9d8+170
+0 15000 -1
+8 8 2 3 9 3
+T 100 3d7+9 27
+E 22 20 5120 -1
+E 16 10 5104 -1
+E 6 10 5121 -1
+E 5 100 5123 -1
+>greet_prog          100~
+mpdelay 40
+if isfollow($n)
+   mpat 0 laugh
+else
+   if ispc($n)
+     emote draws away from you, a low hiss escaping her lips.
+   else
+      mpforce $n bow priestess
+   endif
+endif
+~
+>fight_prog          10~
+if ispc($r)
+   cast 'harm' $r
+endif
+~
+>fight_prog          30~
+shout Intruders are despoiling the sanctity of the Temple! Guards, To me!
+~
+>give_prog   note noteforpriestesintemple~
+mpdelay 10
+emot reads the note.
+mpdelay 10 
+thank &n
+mpdelay 5
+say The evil one has come to form in the room of the Dais.        
+mpat 5145 mpmload 5109
+mpecho The priestess vanishes into the distance.
+mppurge self
+~
+|
+#5132
+drow guard guardian temple~
+the drow temple guardian~
+A tall drow dressed in black and silver ceremonial armor stands here, guarding.
+~
+Personifying the drow ideal of combining prowess in arms with deadly grace, 
+this elite warrior has been chosen for a post bestowing great honor. And  
+defeating an outlander where his brethren have failed will certainly add to
+this honor.
+~
+bdefg dk -1000 X 0 
+23 11 -2 12d11+230
+0 36000 -1
+8 8 1 3 9 3
+T 60 2d4+16 0
+E 8 10 5119 -1
+E 10 10 5117 -1
+E 7 10 5118 -1
+E 5 10 5115 -1
+E 11 10 5116 -1
+E 16 10 5105 -1
+>shout_prog          p the sanctity of the Temple!~
+mpdelay 20
+if isnpc($n)
+   if rand(50)
+      mpmload 5135
+      mpgoto $n
+      mpecho A drow temple guardian rushes in from a nearby doorway!
+      rescue priestess
+   endif
+else
+   tell $n Nice try, bud.
+endif
+~
+>fight_prog          20~
+bash
+~
+>fight_prog          20~
+kick
+~
+>fight_prog          50~
+if ispc($r)
+   target $r
+endif
+~
+|
+#5133
+worm rock mouth~
+the rock worm~
+A huge circular mouth filled with thousands of tiny teeth comes at you!
+~
+All you can see of this beast is the huge, gaping maw that almost
+fills the entire cave with its girth. This maggot-like worm is easily
+large enough to swallow a horse whole, and you would certainly just be 
+a tasty snack...
+~
+bcdefgnoq dkp 0 X 0 
+30 15 -5 15d15+300
+0 90000 -1
+8 8 0 4 14 4
+T 200 30d3+0 22
+#5134
+drow elf dark scout~
+the dark elven tunnel scout~
+A dark humanoid shapes takes shape in the shadows before you.
+~
+Standing before you, as surprised to see you as you are to see him, is an
+elf with strange pitch-black skin and white hair. He is dressed head to toe
+in studded black leather, and wears a long dagger at his side.
+~
+cdfghn kps -1000 X 0 
+10 15 5 5d5+100
+0 6000 -1
+8 8 1 3 9 3
+T 100 1d2+9 0
+E 11 10 5116 -1
+E 16 10 5124 -1
+>greet_prog          100~
+mpdelay 10
+if isfollow($n)
+   mpat 0 gig
+else
+   if ispc($n)
+      emote instantly drops down to a crouch as he sees you.
+      mpdelay 10
+      backstab $n
+   else
+      nod $n
+   endif
+endif
+~
+>fight_prog          10~
+shout Surface dwellers are approaching! Sound the alarm!
+~
+>entry_prog          100~
+mpdelay 5
+if ispc($r)
+emote instantly drops down to a crouch as he sees you.
+   mpdelay 30
+   backstab $r
+endif
+~
+|
+#5135
+drow guard guardian temple~
+the drow temple guardian~
+A tall drow dressed in black and silver ceremonial armor stands here, guarding.
+~
+Personifying the drow ideal of combining prowess in arms with deadly grace,
+this elite warrior has been chosen for a post bestowing great honor. And
+defeating an outlander where his brethren have failed will certainly add to
+this honor.
+~
+bdefg dk -1000 X 0 
+23 11 -2 12d11+230
+0 36000 -1
+8 8 1 3 9 3
+T 66 2d4+16 0
+E 8 10 5119 -1
+E 10 10 5117 -1
+E 7 10 5118 -1
+E 5 10 5115 -1
+E 11 10 5116 -1
+E 16 10 5105 -1
+>fight_prog          20~
+bash
+~
+>fight_prog          20~
+kick
+~
+>fight_prog          50~
+if ispc($r)
+   target $r
+endif
+~
+|
+#5140
+elf mage weary vincer~
+The weery mage~
+An ancient looking little elf.
+~
+He stands slouched over, weery, and tired, his face grim and his body
+shaking as if he is so frail the wind could harm him.
+
+~
+bd k 1000 X 0 
+12 14 4 6d6+120
+0 8000 2
+8 8 1 3 9 3
+T 75 1d5+10 27
+>fight_prog          60~
+say Nay, I wish not to fight with thee! Spare me, I am but an old fool.
+flee
+~
+>fight_prog          50~
+say Nay Nay, I shalt not fight thee, my battle is with the Yochlol!
+flee
+~
+|

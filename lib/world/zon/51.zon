@@ -1,0 +1,217 @@
+#51
+Drow Kingdom /Wren-Krilgar/~
+5199 150 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+O 0 5126 1 5149 100	* a pile of gold coins
+D 0 5180 2 1	* The Entrance To The Fourth House
+M 0 5139 8 5180 100	* the dark elven guard
+M 0 5139 8 5180 100	* the dark elven guard
+D 0 5181 2 1	* The Entrance To The Third House
+M 0 5139 8 5181 100	* the dark elven guard
+M 0 5139 8 5181 100	* the dark elven guard
+D 0 5182 2 1	* The Entrance To The Second House
+M 0 5139 8 5182 100	* the dark elven guard
+M 0 5139 8 5182 100	* the dark elven guard
+D 0 5179 1 1	* The Entrance To The First House
+M 0 5139 8 5179 100	* the dark elven guard
+M 0 5139 8 5179 100	* the dark elven guard
+D 0 5100 0 1	* At The Adamantium Gates
+D 0 5100 2 1	* At The Adamantium Gates
+M 0 5123 17 5100 100	* the dark elven guard
+M 0 5123 17 5100 100	* the dark elven guard
+D 0 5151 0 1	* A Damp Alcove
+D 0 5155 1 1	* A Dark Tunnel
+D 0 5157 3 1	* A Sharply Sloping Tunnel
+D 0 5165 2 1	* A Bend In The Tunnel
+D 0 5167 0 1	* The Secret Tunnel
+D 0 5168 1 1	* A Secret Tunnel
+D 0 5169 0 1	* A Small Glowing Chamber
+D 0 5169 3 1	* A Small Glowing Chamber
+D 0 5170 2 1	* A Thin Underground Bridge
+D 0 5176 3 1	* A Thin Underground Bridge
+D 0 5177 1 1	* The Tunnel Of Ornate Arches
+D 0 5101 2 1	* The City Street Outside The Adamantium gates
+D 0 5106 2 1	* City Street
+D 0 5122 0 1	* A Slave Chamber
+D 0 5123 3 1	* The City Street
+D 0 5187 1 1	* A Small Dwelling In The Stalactite
+D 0 5107 1 1	* The City Street
+D 0 5118 3 1	* The Warriors' Academy
+D 0 5102 3 1	* The City Street
+D 0 5185 1 1	* A Small Dwelling In The Stalagmite
+D 0 5103 1 1	* The City Street
+D 0 5186 3 1	* A Small Dwelling In The Stalagmite
+D 0 5114 3 1	* A Bend In The City Street
+D 0 5189 1 1	* A Small Dwelling In The Stalagmite
+D 0 5117 0 1	* The City Street
+D 0 5120 2 1	* The Assassins' Academy
+D 0 5121 2 1	* The City Street
+D 0 5188 0 1	* A Small Dwelling In The Stalagmite
+D 0 5199 0 1	* The City Street Outside The Fourth House
+D 0 5199 1 1	* The City Street Outside The Fourth House
+D 0 5116 3 1	* The Mages' Academy
+D 0 5194 1 1	* The City Street
+D 0 5194 3 1	* The City Street
+D 0 5115 0 1	* The City Street Outside The Third House
+D 0 5141 2 1	* The Grand Temple Of Lloth
+D 0 5132 2 1	* A Long Hallway
+D 0 5133 0 1	* The Warrior's Barracks
+D 0 5196 0 1	* The City Street Outside The Second House
+D 0 5197 3 1	* The City Street Outside The First House
+D 0 5112 0 1	* Before The Chamber Of The First Matron Mother
+D 0 5113 2 1	* The First Throne
+D 0 5113 1 1	* The First Throne
+D 0 5192 3 1	* An Ornate Walkway High Above The City
+D 0 5193 1 1	* An Ornate Walkway High Above The City
+D 0 5119 3 1	* Entrance To The Temple Of Lloth
+D 0 5136 1 1	* The Grand Hallway
+D 0 5137 3 1	* The Mages' Barracks
+D 0 5139 1 1	* The Clerics' Barracks
+D 0 5138 3 1	* The Grand Hallway
+D 0 5141 1 1	* The Grand Temple Of Lloth
+D 0 5146 3 1	* Slave Cells
+D 0 5140 0 1	* The Grand Stairway
+D 0 5141 2 1	* The Grand Temple Of Lloth
+D 0 5150 3 1	* A Bend In The City Street
+D 0 5190 1 1	* The Forge
+D 0 5191 3 1	* The Forge
+M 0 5100 6 5122 100	* the goblin slave
+M 0 5100 6 5122 100	* the goblin slave
+M 0 5100 6 5122 100	* the goblin slave
+M 0 5100 6 5122 100	* the goblin slave
+M 0 5100 6 5122 100	* the goblin slave
+M 0 5100 6 5122 100	* the goblin slave
+M 0 5101 4 5101 100	* the drow elf
+M 0 5101 4 5187 100	* the drow elf
+M 0 5101 4 5189 100	* the drow elf
+M 0 5101 4 5107 100	* the drow elf
+M 0 5104 4 5124 100	* the drow priestess
+M 0 5104 4 5104 100	* the drow priestess
+M 0 5104 4 5111 100	* the drow priestess
+M 0 5104 4 5108 100	* the drow priestess
+M 0 5103 4 5124 100	* the drow mage noble
+M 0 5103 4 5104 100	* the drow mage noble
+M 0 5103 4 5111 100	* the drow mage noble
+M 0 5103 4 5108 100	* the drow mage noble
+M 0 5102 4 5124 100	* the drow warrior noble
+M 0 5102 4 5104 100	* the drow warrior noble
+M 0 5102 4 5111 100	* the drow warrior noble
+M 0 5102 4 5108 100	* the drow warrior noble
+M 0 5105 1 5118 100	* the drow master warrior
+M 0 5106 7 5195 100	* the drow elite guard
+M 0 5106 7 5112 100	* the drow elite guard
+M 0 5106 7 5112 100	* the drow elite guard
+M 0 5106 7 5193 100	* the drow elite guard
+M 0 5106 7 5193 100	* the drow elite guard
+M 0 5106 7 5113 100	* the drow elite guard
+M 0 5106 7 5113 100	* the drow elite guard
+M 0 5107 1 5125 100	* the Matron Mother
+M 0 5108 1 5113 100	* the Matron Mother
+M 0 5110 4 5198 100	* the drow elf
+M 0 5110 4 5188 100	* the drow elf
+M 0 5110 4 5185 100	* the drow elf
+M 0 5110 4 5103 100	* the drow elf
+M 0 5111 4 5186 100	* the drow elf
+M 0 5111 4 5197 100	* the drow elf
+M 0 5111 4 5115 100	* the drow elf
+M 0 5111 4 5117 100	* the drow elf
+M 0 5113 1 5105 100	* the Matron Mother
+M 0 5114 1 5109 100	* the Matron Mother
+M 0 5115 1 5116 100	* the drow master mage
+M 0 5116 1 5120 100	* the drow master assassin
+M 0 5117 5 5118 100	* the drow warrior trainee
+M 0 5117 5 5118 100	* the drow warrior trainee
+M 0 5117 5 5118 100	* the drow warrior trainee
+M 0 5117 5 5118 100	* the drow warrior trainee
+M 0 5117 5 5118 100	* the drow warrior trainee
+M 0 5118 5 5116 100	* the drow mage trainee
+M 0 5118 5 5116 100	* the drow mage trainee
+M 0 5118 5 5116 100	* the drow mage trainee
+M 0 5118 5 5116 100	* the drow mage trainee
+M 0 5118 5 5116 100	* the drow mage trainee
+M 0 5119 5 5120 100	* the drow assassin trainee
+M 0 5119 5 5120 100	* the drow assassin trainee
+M 0 5119 5 5120 100	* the drow assassin trainee
+M 0 5119 5 5120 100	* the drow assassin trainee
+M 0 5119 5 5120 100	* the drow assassin trainee
+M 0 5120 1 5191 100	* the drow master armorer
+M 0 5121 1 5190 100	* the drow master weaponsmith
+M 0 5122 4 5168 100	* the dark elven tunnel scout
+M 0 5122 4 5165 100	* the dark elven tunnel scout
+M 0 5122 4 5162 100	* the dark elven tunnel scout
+M 0 5122 4 5159 100	* the dark elven tunnel scout
+M 0 5123 17 5183 100	* the dark elven guard
+M 0 5123 17 5183 100	* the dark elven guard
+M 0 5123 17 5128 100	* the dark elven guard
+M 0 5123 17 5131 100	* the dark elven guard
+M 0 5124 4 5163 100	* the giant spider
+M 0 5124 4 5156 100	* the giant spider
+M 0 5124 4 5160 100	* the giant spider
+M 0 5124 4 5156 100	* the giant spider
+M 0 5125 3 5184 100	* a spore flower
+M 0 5125 3 5184 100	* a spore flower
+M 0 5125 3 5184 100	* a spore flower
+M 0 5126 2 5172 100	* the giant bat
+M 0 5126 2 5175 100	* the giant bat
+M 0 5127 11 5183 100	* the drow soldier
+M 0 5127 11 5183 100	* the drow soldier
+M 0 5127 11 5183 100	* the drow soldier
+M 0 5127 11 5114 100	* the drow soldier
+M 0 5127 11 5114 100	* the drow soldier
+M 0 5127 11 5150 100	* the drow soldier
+M 0 5127 11 5150 100	* the drow soldier
+M 0 5127 11 5110 100	* the drow soldier
+M 0 5127 11 5110 100	* the drow soldier
+M 0 5127 11 5169 100	* the drow soldier
+M 0 5127 11 5169 100	* the drow soldier
+M 0 5128 5 5133 100	* the drow soldier
+M 0 5128 5 5133 100	* the drow soldier
+M 0 5128 5 5133 100	* the drow soldier
+M 0 5128 5 5133 100	* the drow soldier
+M 0 5128 5 5133 100	* the drow soldier
+M 0 5129 4 5137 100	* a drow mage
+M 0 5129 4 5137 100	* a drow mage
+M 0 5129 4 5137 100	* a drow mage
+M 0 5129 4 5137 100	* a drow mage
+M 0 5130 4 5139 100	* a drow cleric
+M 0 5130 4 5139 100	* a drow cleric
+M 0 5130 4 5139 100	* a drow cleric
+M 0 5130 4 5139 100	* a drow cleric
+M 0 5131 1 5141 100	* the drow priestess
+M 0 5132 6 5140 100	* the drow temple guardian
+M 0 5132 6 5140 100	* the drow temple guardian
+M 0 5132 6 5126 100	* the drow temple guardian
+M 0 5132 6 5126 100	* the drow temple guardian
+M 0 5132 6 5145 100	* the drow temple guardian
+M 0 5132 6 5145 100	* the drow temple guardian
+O 0 5127 1 5183 100	* a pool of gleaming black water
+M 0 5133 1 5166 100	* the rock worm
+M 0 5140 1 5170 30     * Magi for quest
+S
+$

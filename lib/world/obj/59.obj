@@ -1,0 +1,307 @@
+#5900
+crate crate0 huge~
+a huge crate~
+{yA huge crate sits here.{x~
+~
+15 0 0 0 
+1000 5 -1 0 5
+0 0 0
+E
+tag~
+{WFrom:{x
+{WDestination:{
+{WWeight:{x
+{WContents:{x
+~
+#5901
+crate crate1 huge~
+a huge crate~
+{yA huge crate sits here.{x~
+~
+15 0 0 0 
+1000 5 -1 0 5
+0 0 0
+E
+tag~
+{WFrom:{x
+{WDestination:{
+{WWeight:{x
+{WContents:{x
+~
+#5902
+crate crate2 huge~
+a huge crate~
+{yA huge crate sits here.{x~
+~
+15 0 0 0 
+1000 5 -1 0 5
+0 0 0
+E
+tag~
+{WFrom:{x
+{WDestination:{
+{WWeight:{x
+{WContents:{x
+~
+#5903
+crate crate3 huge~
+a huge crate~
+{yA huge crate sits here.{x~
+~
+15 0 0 0 
+1000 5 -1 0 5
+0 0 0
+E
+tag~
+{WFrom:{x
+{WDestination:{
+{WWeight:{x
+{WContents:{x
+~
+#5904
+crate crate4 huge~
+a huge crate~
+{yA huge crate sits here.{x~
+~
+15 0 0 0 
+1000 5 -1 0 5
+0 0 0
+E
+tag~
+{WFrom:{x
+{WDestination:{
+{WWeight:{x
+{WContents:{x
+~
+#5905
+rations ration iron~
+{wsome {yiron rations{x~
+{wSome {yiron rations{x are here.~
+~
+19 0 a 0 
+18 0 0 0 2
+2 15 1
+E
+iron rations ration~
+You examin the {yiron rations{x in more detail and find them rather bland.
+Without taste or smell they merely serve their purpose, to keep the hungry
+from starving.
+~
+#5906
+water leather skin~
+{ya leather {bwater {yskin{x~
+{yA dark leather {bwater skin {ylies here, collecting dust.{x~
+~
+17 0 a 0 
+30 30 15 0 0
+42 300 0
+#5907
+torch~
+{ya torch{x~
+{yA large torch{x.~
+~
+1 0 ao 0 
+0 0 24 0 5
+1 10 0
+#5908
+fish salted dried~
+{wsome {csalt dried fish{x~
+{wSome {csalt dried fish {wis here.{x~
+~
+19 0 a 0 
+18 0 0 0 2
+2 15 1
+#5909
+bottle whiskey~
+{ya bottle of whiskey{x~
+{yA bottle of whiskey has been left here.{x~
+~
+17 0 a 0 
+8 8 5 0 18
+10 50 0
+#5910
+rope coil length~
+{ya coil of rope{x~
+{yA long length of fishing rope lies here, carefully coiled.{x~
+~
+12 0 ao 0 
+0 0 0 0 1
+10 150 0
+A
+1 2
+#5911
+net nets fishing fishingnet~
+{ca large fishing net{x~
+A large tangled pile of netting lies in a heap on the ground.~
+~
+13 0 a 0 
+0 0 0 0 3
+4 60 0
+#5912
+hook fihsinghook~
+{Wa shiny fishhook{x~
+A small fishing hook has been dropped here.~
+~
+13 0 ao 0 
+0 0 0 0 9
+1 500 0
+A
+17 -1
+#5913
+coil line fishingline~
+a coil of fishing line~
+A coil of fishing line has been carelessly dropped here.~
+~
+13 0 am 0 
+0 0 0 0 1
+3 30 0
+#5914
+mullet fish fresh fillet~
+a freshly filleted mullet~
+A small fish fillet lies here.~
+~
+19 0 a 0 
+18 0 0 0 2
+3 50 0
+#5915
+rod fishing long~
+{ya long fishing rod{x~
+A long, thin fishing rod has been left here.~
+~
+5 0 an 0 
+0 2 3 6 5
+4 110 0
+#5916
+bucket steel~
+a steel bucket~
+A large steel bucket has been placed here.~
+~
+15 0 ao 0 
+55 0 -1 0 9
+5 250 0
+#5917
+worms container~
+a container of worms~
+A small container, oozing wriggling worms has been dropped here.~
+~
+19 0 a 0 
+12 0 0 0 2
+2 60 0
+#5918
+fly hair~
+{ya {wdog-hair{y fly{x~
+A small mess of animal hair and wire lies here.~
+~
+12 0 aq 0 
+0 0 0 0 1
+1 1250 0
+A
+6 2
+#5920
+claymore~
+a two-handed claymore~
+A gleaming claymore has been left here.~
+~
+5 0 anu 0 
+6 2 8 3 9
+12 300 0
+#5921
+shortsword short sword~
+a steel shortsword~
+A steel shortsword is lying on the ground.~
+~
+5 0 an 0 
+2 2 3 1 9
+5 100 10
+#5922
+tunic red~
+{ran elegant red tunic{x~
+A large heap of red cloth has been left here.~
+~
+11 g ak m 
+0 0 0 0 3
+5 15000 0
+A
+17 -4
+A
+3 6
+#5923
+moonstone necklace pendant~
+{Da necklace with a {Wmoonstone{D pendant{x~
+A strange looking necklace lies here.~
+~
+11 gmn ac 0 
+0 0 0 0 27
+5 1000 100
+A
+18 1
+A
+6 1
+#5924
+sleeves studded~
+{Da pair of black studded leather sleeves{x~
+A pair of black sleeves lie on the ground.~
+~
+11 gmn ai k 
+0 0 0 0 20
+1 1000 100
+A
+1 1
+A
+2 1
+#5925
+robe gold silver~
+{wa lavish {Ygold an{Wd silver {wrobe{x~
+A long robe has been left on the ground.~
+~
+9 gop ak m 
+4 0 0 0 3
+10 5000 500
+A
+4 2
+#5926
+bass fish whole~
+a whole bass~
+A whole bass has been left here, growing slimy in the air.~
+~
+19 0 a 0 
+8 0 0 0 2
+2 0 1
+#5927
+halyonticket1 ticket halyon~
+a ticket to Port Halyon~
+A small blue piece of paper is lying on the ground.~
+~
+12 c a 0 
+0 0 0 0 0
+1 1000 0
+#5928
+sign wooden~
+a wooden sign~
+{yA short wooden sign stands here, pointing east.{x~
+~
+13 0 0 0 
+0 0 0 0 0
+9999999 0 0
+E
+sign wooden short~
+        {y+============================================+
+        |                                             \
+        |         {WPort Halyon Departures{y               \  
+        |                                               \
+        |         {WEast End of Hobson Wharf {y              \
+        |                                                 \
+        |           {w- Boarding Begins: 08:00 {y              \
+        |                                                  /
+        |           {w- Departs: 10:00{y                      /
+        |                                                /
+        |           {w- Arrives Port Halyon: 18:00{y        /
+        |                                              /
+        |                                             /
+        +============================================+
+                           |     |
+                           |     |
+                           |     |
+                           |     |{x
+~
+$~

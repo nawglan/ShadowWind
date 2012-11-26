@@ -1,0 +1,476 @@
+#14100
+key~
+{ya chipped gate key{x~
+{yThe key to the Castle of Death lays here.{x~
+~
+18 cf ao 0 
+14100 0 0 0 8
+1 1 1
+E
+key~
+This key is for the entrance gates to the Castle of Death.
+~
+#14101
+axe~
+a chipped, {Wdragon-tooth{x axe~
+The chipped, {Wdragon-tooth{x axe lies here.~
+~
+5 gj an 0 
+1 7 3 5 21
+5 1000 100
+E
+axe~
+This great axe is a gift to the dead to be used by dwarven undead for 
+protecting there last resting place. The axe is made of the ivory of a
+dragon tooth, and the hilt is wraped in a fine silken blue sheeth.
+~
+#14102
+shield~
+a shield of the {Ddead{x~
+A shield of the {Ddead{x lies rotting here.~
+~
+9 gj aj l 
+8 0 0 0 24
+5 1000 100
+E
+shield~
+This shield is made from the skins of dead wyverns, it is quite grey in
+color. 
+~
+#14103
+key~
+{ya guardian's door key{x~
+{yThe key to the guardian's chambers has been dropped here.{x~
+~
+18 c ao 0 
+14103 0 0 0 8
+1 1 1
+E
+key~
+This key is for the door to the guardian chambers.
+~
+#14104
+key~
+{yan entry-way door key{x~
+{yThe key to Death lies here.{x~
+~
+18 c ao 0 
+14104 0 0 0 8
+1 1 1
+E
+key~
+This key is for the entry-way to the gates of Death.
+~
+#14105
+necklace teeth~
+{Ya necklace of {Rdragon's {Wteeth{x~
+{YThe necklace of {Rdragon's {Wteeth lies here.{x~
+~
+11 g ac 0 
+0 0 0 0 21
+1 50000 1000
+A
+19 1
+A
+17 -5
+#14106
+eye vecna~
+a small, {Ygolden Eye of {MVecna{x~
+The small, {Ygolden Eye of {MVecna{x lies here.~
+~
+25 g at a 
+0 0 0 -1 23
+1 100000 1000
+#14107
+coat arnd~
+the {Winvu{wlnera{Dble co{wat of A{Wrnd{x~
+The {Winvu{wlnera{Dble co{wat of A{Wrnd{x has been tossed here.~
+~
+9 g ad f 
+10 0 0 0 21
+1 120000 1000
+A
+19 1
+A
+18 1
+#14108
+white scale boots~
+{Wa pair of white dragon-scale boots{x~
+{WSome white dragon-scale boots lie here.{x~
+~
+9 g ag i 
+10 0 0 0 24
+1 70000 1000
+A
+24 -5
+#14109
+ring mika~
+{Dthe stone ring of {rMika{x~
+{DThe stone ring of {rMika {Dhas been lost here.{x~
+~
+11 g ab 0 
+0 0 0 0 6
+1 70000 1000
+A
+18 1
+A
+19 1
+A
+17 -7
+#14110
+bracelet orb cloud~
+{Ba bracelet made from a {Wcloud dragon's orb{x~
+{BA bracelet made from a {Wcloud dragon's orb lies here.{x~
+~
+11 g am 0 
+0 0 0 0 6
+1 10000 1000
+A
+18 1
+A
+19 1
+A
+17 -5
+#14111
+earring cuthbert~
+{bthe earring of {wCuthbert{x~
+{bThe earring of {wCuthbert {bwas dropped here.{x~
+~
+11 g aq 0 
+-5 0 0 0 15
+1 70000 1000
+A
+4 5
+A
+3 5
+#14112
+crown johydee~
+{Wthe {Wop{waq{Wue crown of {DJo{rhyd{Dee{x~
+The opaque crown of Johydee is tossed on the ground.~
+~
+9 g ae g 
+10 0 0 0 25
+1 75000 1000
+A
+12 10
+A
+1 5
+#14113
+sparkeling gloves~
+{Mthe {Cs{cp{Ca{cr{Ck{cl{Ci{cn{Cg {Mgloves of {GLum {gthe {DMad{x~
+The sparkling gloves of Lum the Mad are tossed here.~
+~
+9 g ah j 
+7 0 0 0 16
+1 70000 1000
+A
+1 10
+#14114
+cloak fire~
+{Ra c{rl{Ro{ra{Rk of f{rir{Re{x~
+The cloak of fire shimmers on the ground.~
+~
+9 g ack 0 
+7 0 0 0 29
+1 70000 1000
+A
+5 5
+A
+18 1
+#14115
+sparkling gauntlets~
+{mthe {Cs{cp{Ca{cr{Ck{cl{Ci{cn{Cg {Mgauntlets of {GLum {gthe {DMad{x~
+The sparkling gauntlets of Lum the Mad have been discarded here.~
+~
+9 g ah j 
+7 0 0 0 16
+1 70000 1000
+A
+2 10
+#14116
+rose necklace~
+{Wa {Rrose {Wpetal necklace{x~
+A rose petal necklace collects dust on the ground.~
+~
+11 g ac 0 
+0 0 0 0 4
+1 70000 1000
+A
+17 -5
+A
+3 10
+#14117
+shortsword sword~
+{gthe {Debony {gshortsword of {DG{Ge{Ds{Ge{Dn{x~
+The ebony shortsword of Gesen lies here, waiting for it's master.~
+~
+5 0 an 0 
+2 5 4 1 22
+1 120000 1000
+#14118
+sparkling bracers~
+{Mthe {Cs{cp{Ca{cr{Ck{cl{Ci{cn{Cg {Mbracers of {GLum {gthe {DMad{x~
+The sparkling bracers of Lum the Mad lie here.~
+~
+9 g ai k 
+7 0 0 0 16
+1 70000 1000
+A
+19 2
+#14119
+belt~
+{Da {ybelt {Dof the {yancients{x~
+The belt of the ancients lays here.~
+~
+9 g al 0 
+7 0 0 0 0
+1 80000 1000
+A
+18 1
+#14120
+ring gaxx~
+{rthe {Wplatinum ring {rof {RG{rax{Rx{x~
+The platinum ring of Gaxx has fallen to the ground.~
+~
+11 g ab 0 
+0 0 0 0 11
+1 100000 1000
+A
+18 2
+A
+19 2
+A
+17 -7
+#14121
+leggings dahlvar-nar~
+{Dthe {mm{cy{ms{ct{mi{cc{ma{cl {Dleggings of {yDa{rhlv{yar{w-{yN{ra{yr{x~
+The mystical leggings of Dahlvar-Nar are tossed on the ground.~
+~
+9 g af h 
+10 0 0 0 25
+1 100000 1000
+A
+19 1
+A
+2 5
+#14122
+sleeves sorceror ancient~
+{Dthe sl{meev{Des of the {yancient {Dsor{ycer{Dors{x~
+The sleeves of the ancient sorcerers lie here.~
+~
+9 g ai k 
+7 0 0 0 3
+1 100000 1000
+A
+2 5
+A
+12 15
+#14123
+shield thor~
+{Bthe {Wshield of {BT{bho{Br{x~
+The shield of Thor is lying on the ground.~
+~
+9 g aj l 
+10 0 0 0 11
+1 100000 1000
+A
+18 2
+A
+19 2
+#14124
+bracelet~
+{ca bracelet {Bmade from a blue dragon's {Dorb{x~
+A bracelet made from a blue dragon's orb lies here collecting dust.~
+~
+11 g am 0 
+0 0 0 0 6
+1 100000 1000
+A
+5 5
+A
+19 1
+A
+17 -7
+#14125
+eye yasmin~
+{gthe all{G-{Wkn{rowi{Wng e{Ry{We {Gof Ya{gsm{Gin {gSira{x~
+The all-knowing eye of Yasmin Sira stares unblinkingly at you.~
+~
+11 g ar v 
+0 0 0 0 23
+1 100000 1000
+A
+2 5
+A
+19 1
+A
+17 -7
+#14126
+earring change~
+{Ban {Ce{ca{br{Br{bi{cn{Cg of {Bc{ch{Can{cg{Be{x~
+An earring of change lies here on the ground.~
+~
+11 g aq 0 
+5 0 0 0 13
+1 100000 1000
+A
+2 5
+A
+17 -5
+#14127
+scythe~
+{Dthe {WSc{wyt{Whe of {DTha{rna{Dtos{x~
+The Scythe of Thanatos gleams in the light.~
+~
+5 j an 0 
+1 6 6 7 9
+19 150000 1000
+A
+19 3
+A
+1 -15
+#14128
+robe shroud~
+{Dthe {CSh{cro{Cud {Dof Death{x~
+The shroud of Death waits for a new wearer.~
+~
+9 j ak m 
+10 0 0 0 24
+5 150000 1000
+A
+1 5
+#14129
+key~
+{Da {Wske{wle{Wton {Dkey{x~
+The key to the inner chambers is tossed on the ground here.~
+~
+18 ac ao 0 
+14129 0 0 0 8
+1 1 1
+E
+key~
+This key is for the entrance to the inner chambers of Death.
+~
+#14130
+potion blue green~
+{Da {Bblue{D-{Ggreen {Dpotion{x~
+A blue-green potion sits here.~
+~
+10 a a 0 
+50 146 146 146 1
+1 1 0
+E
+potion~
+a blue-green potion.
+~
+P
+harm
+P
+harm
+P
+harm
+#14131
+potion amber~
+{yan amber potion{x~
+A amber potion sits here.~
+~
+10 a a 0 
+51 52 52 52 1
+1 1 0
+P
+wizard war
+P
+wizard war
+P
+wizard war
+#14132
+potion light-brown~
+{Wa light{D-{Yb{Dr{Yo{Dw{Yn potion{x~
+A light{x-brown potion sits here.~
+~
+10 a a 0 
+50 129 131 125 1
+1 1 0
+P
+blindness
+P
+sleep
+P
+invisibility
+#14133
+potion mauve~
+{ma mauve potion{x~
+A mauve potion sits here.~
+~
+10 a a 0 
+50 57 131 94 1
+1 1 0
+P
+poison
+P
+sleep
+P
+teleport
+#14134
+potion burnt-umber~
+{ya {Yb{yu{Dr{yn{Yt{D-{Yu{ym{Yb{ye{Yr potion{x~
+A burnt-umber potion sits here.~
+~
+10 a a 0 
+50 146 131 94 1
+1 1 0
+P
+harm
+P
+sleep
+P
+teleport
+#14135
+potion burnt-orange~
+{ya {Yb{yu{Dr{yn{Yt{D-{Yo{Rr{Ya{Rn{Yg{Re potion{x~
+A burnt-orange potion sits here.~
+~
+10 a a 0 
+10 0 0 0 1
+1 1 0
+#14136
+potion bright-amber~
+{Ya bright-amber potion{x~
+A bright-amber potion sits here.~
+~
+10 a a 0 
+13 0 0 0 1
+1 1 0
+#14137
+potion grey-green~
+{Da grey-{Ggreen potion{x~
+A grey-green potion sits here.~
+~
+10 a a 0 
+50 131 94 57 1
+1 1 0
+P
+sleep
+P
+teleport
+P
+poison
+#14138
+potion flourescent-pink~
+{Ma {Mf{Cl{Mo{Cu{Mr{Ce{Ms{Cc{Me{Cn{Mt{C-{Mpink potion{x~
+A flourescent-pink potion sits here.~
+~
+10 a a 0 
+0 0 0 0 1
+1 20000 0
+#14139
+potion lavender~
+{ca {mlavender {cpotion{x~
+A lavender potion sits here.~
+~
+10 a a 0 
+50 165 0 0 1
+1 2400 0
+P
+cure critical
+$~

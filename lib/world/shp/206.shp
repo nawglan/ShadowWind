@@ -1,0 +1,80 @@
+CircleMUD v3.0 Shop File~
+#20600~
+20615
+20616
+20617
+20618
+-1
+1.1
+1.0
+-1
+%s Are you sure you haven't drunk enough already ??~
+%s I'm sorry, I dont buy, I sell !!~
+%s I'm sorry, I dont buy, I sell !!~
+%s I'm sorry, I dont buy, I sell !!~
+%s Sorry, money now or no drink !~
+%s That will be %s{r coins, please.~
+%s Oops - %s{r a minor bug - please report !~
+0
+0
+20653
+0
+20651
+-1
+6
+24
+0
+0
+#20601~
+20605
+20606
+20607
+20608
+-1
+1.1
+1.0
+-1
+%s I'm sorry, is that a new fasion in shoes ??~
+%s I am in the trade for selling, not buying !~
+%s I am in the trade for selling, not buying !~
+%s I am in the trade for selling, not buying !~
+%s We have a policy of no credit here.~
+%s That will be %s{r coins, please.~
+%s Oops - %s{r a minor bug - please report !~
+0
+0
+20654
+0
+20656
+-1
+6
+24
+0
+0
+#20602~
+20619
+20620
+20621
+20622
+-1
+1.1
+1.0
+-1
+%s We have lots of things, but not that !!~
+%s I'm sorry, I need to sell at the moment, not buy.~
+%s I'm sorry, I need to sell at the moment, not buy.~
+%s I'm sorry, I need to sell at the moment, not buy.~
+%s I wish I could afford to let you have some credit *sigh*~
+%s That will be %s{r coins, please.~
+%s Oops - %s{r a minor bug - please report !~
+0
+0
+20655
+0
+20635
+-1
+6
+24
+0
+0
+$~

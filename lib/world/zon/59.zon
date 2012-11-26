@@ -1,0 +1,517 @@
+#59
+Caryllion Docks /Dorga-Breena/~
+5999 60 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 5912 15 5961 100	* a fisherman
+M 0 5909 8 5961 100	* a cargo mover
+M 0 5999 1 5962 100	* a Ticketer
+M 0 5902 6 5953 100	* an off-duty sailor
+M 0 5903 4 5953 100	* a ships' mate
+O 0 5901 7 5953 100	* a huge crate
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+O 0 5903 7 5953 100	* a huge crate
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+O 0 5928 1 5953 100	* a wooden sign
+M 0 5909 8 5959 100	* a cargo mover
+D 0 5976 1 2	* Madden Wharf
+M 0 5908 5 5906 100	* a wharf guard
+M 0 5908 5 5906 100	* a wharf guard
+M 0 5911 1 5906 100	* the Dock Master
+M 0 5910 1 5906 100	* the Cargo Supervisor
+M 0 5901 1 5916 100	* Gormon
+G 1 5918 10 -1	* a dog-hair fly
+G 1 5917 9999 -1	* a container of worms
+G 1 5916 100 -1	* a steel bucket
+G 1 5915 9999 -1	* a long fishing rod
+G 1 5914 9999 -1	* a freshly filleted mullet
+G 1 5913 9999 -1	* a coil of fishing line
+G 1 5912 9999 -1	* a shiny fishhook
+G 1 5911 9999 -1	* a large fishing net
+G 1 5910 9999 -1	* a coil of rope
+D 0 5916 3 1	* The Port Shop Of Caryllion
+M 0 5900 1 5904 100	* Bwello
+M 0 5902 6 5980 100	* an off-duty sailor
+M 0 5902 6 5967 100	* an off-duty sailor
+M 0 5902 6 5920 100	* an off-duty sailor
+M 0 5902 6 5934 100	* an off-duty sailor
+M 0 5902 6 5947 100	* an off-duty sailor
+M 0 5903 4 5920 100	* a ships' mate
+M 0 5903 4 5934 100	* a ships' mate
+M 0 5903 4 5967 100	* a ships' mate
+M 0 5904 8 5923 100	* a dockhand
+M 0 5904 8 5927 100	* a dockhand
+M 0 5904 8 5937 100	* a dockhand
+M 0 5904 8 5941 100	* a dockhand
+M 0 5904 8 5956 100	* a dockhand
+M 0 5904 8 5960 100	* a dockhand
+M 0 5904 8 5970 100	* a dockhand
+M 0 5904 8 5974 100	* a dockhand
+M 0 5905 4 5915 100	* a dirty bum
+M 0 5905 4 5949 100	* a dirty bum
+M 0 5905 4 5982 100	* a dirty bum
+M 0 5906 4 5922 100	* a hairy dog
+M 0 5906 4 5942 100	* a hairy dog
+M 0 5906 4 5956 100	* a hairy dog
+M 0 5906 4 5975 100	* a hairy dog
+M 0 5907 6 5997 100	* a large rat
+M 0 5907 6 5905 100	* a large rat
+M 0 5908 5 5910 100	* a wharf guard
+M 0 5909 8 5930 100	* a cargo mover
+M 0 5909 8 5930 100	* a cargo mover
+M 0 5909 8 5944 100	* a cargo mover
+M 0 5909 8 5944 100	* a cargo mover
+M 0 5909 8 5977 100	* a cargo mover
+M 0 5909 8 5977 100	* a cargo mover
+M 0 5912 15 5908 100	* a fisherman
+M 0 5912 15 5910 100	* a fisherman
+M 0 5912 15 5912 100	* a fisherman
+M 0 5912 15 5914 100	* a fisherman
+M 0 5912 15 5915 100	* a fisherman
+M 0 5912 15 5922 100	* a fisherman
+M 0 5912 15 5928 100	* a fisherman
+M 0 5912 15 5937 100	* a fisherman
+M 0 5912 15 5941 100	* a fisherman
+M 0 5912 15 5955 100	* a fisherman
+M 0 5912 15 5970 100	* a fisherman
+M 0 5912 15 5974 100	* a fisherman
+M 0 5912 15 5918 100	* a fisherman
+M 0 5912 15 5951 100	* a fisherman
+M 0 5913 6 5989 100	* the worker
+M 0 5913 6 5989 100	* the worker
+M 0 5913 6 5989 100	* the worker
+M 0 5913 6 5989 100	* the worker
+M 0 5913 6 5989 100	* the worker
+M 0 5913 6 5989 100	* the worker
+M 0 5914 1 5983 100	* the supervisor
+M 0 5915 1 5983 100	* the controller
+M 0 5916 6 5990 100	* the worker
+M 0 5916 6 5990 100	* the worker
+M 0 5916 6 5990 100	* the worker
+M 0 5916 6 5990 100	* the worker
+M 0 5916 6 5990 100	* the worker
+M 0 5916 6 5990 100	* the worker
+M 0 5917 1 5984 100	* the supervisor
+M 0 5918 1 5984 100	* the controller
+M 0 5919 6 5991 100	* the worker
+M 0 5919 6 5991 100	* the worker
+M 0 5919 6 5991 100	* the worker
+M 0 5919 6 5991 100	* the worker
+M 0 5919 6 5991 100	* the worker
+M 0 5919 6 5991 100	* the worker
+M 0 5920 1 5985 100	* the supervisor
+M 0 5921 1 5985 100	* the controller
+M 0 5922 6 5992 100	* the worker
+M 0 5922 6 5992 100	* the worker
+M 0 5922 6 5992 100	* the worker
+M 0 5922 6 5992 100	* the worker
+M 0 5922 6 5992 100	* the worker
+M 0 5922 6 5992 100	* the worker
+M 0 5923 1 5986 100	* the supervisor
+M 0 5924 1 5986 100	* the controller
+M 0 5925 6 5993 100	* the worker
+M 0 5925 6 5993 100	* the worker
+M 0 5925 6 5993 100	* the worker
+M 0 5925 6 5993 100	* the worker
+M 0 5925 6 5993 100	* the worker
+M 0 5925 6 5993 100	* the worker
+M 0 5926 1 5987 100	* the supervisor
+M 0 5927 1 5987 100	* the controller
+M 0 5928 6 5994 100	* the worker
+M 0 5928 6 5994 100	* the worker
+M 0 5928 6 5994 100	* the worker
+M 0 5928 6 5994 100	* the worker
+M 0 5928 6 5994 100	* the worker
+M 0 5928 6 5994 100	* the worker
+M 0 5929 1 5988 100	* the supervisor
+M 0 5930 1 5988 100	* a storage controller
+O 0 5900 8 5920 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5900 8 5934 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5900 8 5944 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5900 8 5967 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5900 8 5983 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5900 8 5983 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5900 8 5986 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5900 8 5986 100	* a huge crate
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+P 1 5905 1000 5900	* some iron rations
+O 0 5901 7 5930 100	* a huge crate
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+O 0 5901 7 5944 100	* a huge crate
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+O 0 5901 7 5983 100	* a huge crate
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+O 0 5901 7 5984 100	* a huge crate
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+O 0 5901 7 5987 100	* a huge crate
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+O 0 5901 7 5987 100	* a huge crate
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+P 1 5906 1000 5901	* a leather water skin
+O 0 5902 7 5920 100	* a huge crate
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+O 0 5902 7 5930 100	* a huge crate
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+O 0 5902 7 5984 100	* a huge crate
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+O 0 5902 7 5984 100	* a huge crate
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+O 0 5902 7 5987 100	* a huge crate
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+O 0 5902 7 5988 100	* a huge crate
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+P 1 5907 1000 5902	* a torch
+O 0 5903 7 5977 100	* a huge crate
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+O 0 5903 7 5985 100	* a huge crate
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+O 0 5903 7 5985 100	* a huge crate
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+O 0 5903 7 5988 100	* a huge crate
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+O 0 5903 7 5988 100	* a huge crate
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+P 1 5908 1000 5903	* some salt dried fish
+O 0 5904 5 5934 100	* a huge crate
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+O 0 5904 5 5967 100	* a huge crate
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+O 0 5904 5 5977 100	* a huge crate
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+O 0 5904 5 5985 100	* a huge crate
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+O 0 5904 5 5986 100	* a huge crate
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+P 1 5909 1000 5904	* a bottle of whiskey
+D 0 5918 3 1	* On The Great Docks
+D 0 5986 1 1	* A Storage Shed
+D 0 5932 3 1	* On The Great Docks
+D 0 5987 1 1	* A Storage Shed
+D 0 5988 1 1	* A Large Storage Shed
+D 0 5946 3 1	* On The Great Docks
+D 0 5983 1 1	* A Storage Shed
+D 0 5979 3 1	* On The Great Docks
+D 0 5984 1 1	* A Large Storage Shed
+D 0 5965 3 1	* On The Great Docks
+D 0 5985 1 1	* A Storage Shed
+D 0 5951 3 1	* On The Great Docks
+D 0 5915 1 1	* Larnock Quay
+D 0 5902 0 1	* The Eastern Viaduct
+D 0 5904 2 1	* The Ticket Office
+S
+$

@@ -1,0 +1,169 @@
+CircleMUD v3.0 Shop File~
+#1400~
+3050
+3051
+3056
+-1
+1.5
+0.4
+2
+3
+4
+10
+-1
+%s Very good sir, but I will have to order it.  It'll take 6 to 8 weeks.~
+%s Perhaps you have been a victim of thieves, you don't have that.~
+%s Unfortunately I'm not in the market for that right now.~
+%s What a wonderful offer, but alas I cannot buy it and still eat.~
+%s Hmmmm, your purse seems a little light, perhaps some coins fell out.~
+%s That'll be %s{r, thank you and have a nice day.~
+%s I can offer you %s{r for that.~
+2
+0
+1408
+0
+1424
+-1
+0
+28
+0
+0
+#1401~
+14325
+14326
+14319
+-1
+1.10
+0.60
+19
+-1
+%s I'm afraid I don't have that.  Can I offer you something else?~
+%s It doesn't seem like you have that.~
+%s I'm afraid I don't buy those.~
+%s I don't seem to have that much cash right now.~
+%s Your cash is a little short, maybe you can borrow some?~
+%s Deal, that'll be %s{r.  Pleasure doing business with you.~
+%s I can afford to give you %s{r for it.~
+2
+0
+1409
+0
+1437
+-1
+0
+28
+0
+0
+#1402~
+14314
+14313
+-1
+1.2
+0.6
+1
+12
+15
+16
+17
+21
+22
+-1
+%s Sorry, but I don't have that on hand.~
+%s Did you lose it?~
+%s Sorry, but I don't deal in those.~
+%s I'm afraid I can't afford that right now.~
+%s You don't seem to have that much.~
+%s Here you go, it's %s{r.  Have a nice day.~
+%s I suppose I could part with %s{r for it.~
+2
+0
+1410
+0
+1425
+-1
+0
+28
+0
+0
+#1438~
+14320
+1409
+-1
+1.1
+0.65
+19
+-1
+%s Yes, that sounds very delicious, but I don't have that.~
+%s That's a good joke, but if you really want to sell something, you should have one first.~
+%s Sorry but I don't buy those.~
+%s I don't seem to have that much on me right now.~
+%s Sorry, but I can't offer you any credit.~
+%s Sure, gimme %s{r and it's a deal.~
+%s I can buy that for %s{r.~
+2
+0
+1411
+0
+1438
+-1
+0
+28
+0
+0
+#1426~
+1301
+1401
+14301
+3020
+3021
+-1
+1.25
+0.45
+5
+6
+7
+-1
+%s I'd like of those too.  Can I offer you something I do have?~
+%s It would be nice if you had one.~
+%s Sorry, I only deal in weapons.~
+%s Hmmmm, I wish I could afford that right now.~
+%s You don't seem to be able to afford that.~
+%s Deal, I just need %s{r and it's yours.~
+%s For you, I'll make it %s{r coins.~
+2
+0
+1412
+0
+1426
+-1
+0
+28
+0
+0
+#1439~
+1403
+14307
+14308
+-1
+1.25
+0.6
+9
+-1
+%s I'd like of those too.  Can I offer you something I do have?~
+%s It would be nice if you had one.~
+%s Sorry, I only deal in armor.~
+%s Hmmmm, I wish I could afford that right now.~
+%s You don't seem to be able to afford that.~
+%s Deal, I just need %s{r and it's yours.~
+%s For you, I'll make it %s{r.~
+2
+0
+1413
+0
+1439
+-1
+0
+28
+0
+0
+$~

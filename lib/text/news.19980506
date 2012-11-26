@@ -1,0 +1,815 @@
+{b---{B===================================================================={b---
+                          {wShadowwind  N E W S
+                         {b~~~~~~~~~~~~~~~~~~~~~
+{CLegend{B:  {W/ {b= {cchanged/bugfix{B, {W+ {b= {cadded{B, {W- {b= {cremoved{B, {W! {b= {cimportant notice{B.
+{b---{B===================================================================={b---
+
+{cVersion {c0{B.{c5c
+{c~~~~~~~~~~~~~
+
+{W**** {Y05{W-{Y06{W-{Y98 {W*
+{W+ {c New spell - Creeping Death.
+{W+ {c Added a few more spells to the help file.
+{W/ {c Firestorm, Ice Storm and Meteor Swarm now work as area affect spells.
+{W/ {c Upgraded Fireball.
+{W/ {c Upgraded Bigby's Clenched Fist.
+{W/ {c Upgraded Bigby's Crushing Hand.
+{W/ {c Changed several spell messages.
+{W/ {c Fire/Ice shield now takes affect before the enemy's hit.
+{W/ {c Stoneskin has been improved.
+{W/ {c Magic missile undergoes yet one more downgrade.
+{W/ {c Fire shield now lights up the area.
+{W/ {c Weight restrictions at shops have been removed.
+{W/ {c Moved kill before kick in command list.
+{W/ {c Death comes more quickly now.
+
+{W**** {Y05{W-{Y05{W-{Y98 {W*
+{W/ {c Tweaked fire shield, ice shield, stoneskin.
+{W/ {c No 2 letter names when creating players.
+{W/ {c Upgraded/modified various spells, do enjoy.
+{W/ {c Bigby's clenched fist, and Bigby's crushing hand are in.
+{W+ {c Added Tunis to the team to help with spells/skills.
+
+{W**** {Y05{W-{Y04{W-{Y98 {W*
+{W/ {c Monk can now use Warrior guild in Carrylion
+{W/ {c Updates on name policy
+
+{W**** {Y05{W-{Y03{W-{Y98 {W*
+{W+ {c Added bandage skill for all classes at level 1. 
+
+{W**** {Y05{W-{Y02{W-{Y98 {W*
+{W/ {c Changed some commands avaliable while sleeping (Added several).
+{W/ {c Changed where who fits in the command list.
+
+{W**** {Y05{W-{Y01{W-{Y98 {W*
+{W/ {c Fixed bug with rent and re-entering the mud.
+{W/ {c Sl now works for sleep, and wa now works for wake.
+{W/ {c Every mob mad at you should now forget you when you die.
+{W/ {c Changed the Drow Kingdowm a little - should be a different type of 
+   challenging now. 
+
+{W**** {Y04{W-{Y30{W-{Y98 {W*
+{W+ {c Added a new zone - The Fire Grotto. :)
+
+{W**** {Y04{W-{Y27{W-{Y98 {W*
+{W/ {c Tweaked a few zones.. and.. Beware the blob!
+
+{W**** {Y04{W-{Y26{W-{Y98 {W*
+{W/ {c Removed incorrect exit from Elven to Drow.
+{W/ {c Removed incorrect exit from Drow to Halls of Penance.
+
+{W**** {Y04{W-{Y23{W-{Y98 {W*
+{W+ {c More changes to Port Halyon - tweaked EQ loads and added an Inn.
+
+{W**** {Y04{W-{Y22{W-{Y98 {W*
+{W+ {c Added Innate abilities see help <race>.
+
+{W**** {Y04{W-{Y21{W-{Y98 {W*
+{W/ {c Added Port Halyon back in with some modifications to eq and mobs.
+   Be sure to consider mobs before you attack!
+{W/ {c Let darkness bug be forever cast into the utter darkness.
+{W/ {c Keys dissipate faster than normal eq now.
+{W/ {c Changed hunting mobs a bit too.
+
+{W**** {Y04{W-{Y20{W-{Y98 {W*
+{W/ {c Enabled fire and ice shield spells.
+{W+ {c Enabled show command for mortals, type show for options.
+{W+ {c Added set knockedout for mortals to fix knockout problems in the future.
+
+{W**** {Y04{W-{Y19{W-{Y98 {W*
+{W- {c Removed junk command, use 'da stores folks! =)
+{W/ {c Disabled guard spec_proc until such time as it stops crashing.
+
+{W**** {Y04{W-{Y18{W-{Y98 {W*
+{W/ {c Changed player descriptions to be 10 lines long.
+
+{W**** {Y04{W-{Y17{W-{Y98 {W*
+{W/ {c Fixed knocked out proc.
+{W/ {c Fixed who <race>.
+{W+ {c Added Port Halyon properly. Levels 10-25 enjoy! Tip: you may need
+   to cross some water to get there.   
+
+{W**** {Y04{W-{Y07{W-{Y98 {W*
+{W/ {c Fixed redit on beta.
+{W/ {c Moved color command to be in toggle.
+
+{W**** {Y04{W-{Y06{W-{Y98 {W*
+{W+ {c Added several zones:
+{c         The Hall of Penance{x
+{c         Rolling Foothill's{x
+{c         The Mountain Pass{x
+{c         Outer Wall of the City Of Hope{x
+{c         Port Halyon{x
+{c         Murvoct{x
+{c         More to come soon...      Enjoy... =){x
+{W/ {c Fixed ferry code. Sorry no passage unless you at the boarding area.
+
+{W**** {Y04{W-{Y02{W-{Y98 {W*
+{W/ {c Fixed nightvision.
+{W/ {c Fixed infravision.
+
+{W**** {Y04{W-{Y01{W-{Y98 {W*
+{W+ {c Gave everybody 5 free levels.
+
+{W**** {Y03{W-{Y29{W-{Y98 {W*
+{W+ {c Added spec proc for statue...
+
+{W**** {Y03{W-{Y27{W-{Y98 {W*
+{W/ {c Cityguards will knock you out now.
+{W/ {c Doubled the timeout value when creating a new char.
+{W/ {c Fixed farsee, infravision, disease and invis when fighting.
+{W/ {c Added option to deny for immortals.
+
+{W**** {Y03{W-{Y24{W-{Y98 {W*
+{W/ {c Corrected several loops and broken exits in Upper Moria.
+
+{W**** {Y03{W-{Y23{W-{Y98 {W*
+{W/ {c Fixed some typos and added rename command for admins.
+
+{W**** {Y03{W-{Y20{W-{Y98 {W*
+{W/ {c The name policy now pages...
+
+{W**** {Y03{W-{Y15{W-{Y98 {W*
+{W/ {c No more stat corruption, etc with rent/camp.
+{W/ {c Re-fixed loadroom after being force-rented.
+
+{W**** {Y03{W-{Y14{W-{Y98 {W*
+{W/ {c Fixed loadroom after being force-rented.
+{W/ {c Fixed guildguard bug when attacking them.
+
+{W**** {Y03{W-{Y06{W-{Y98 {W*
+{W/ {c Updated weather command.
+{W/ {c Updated last command for immorts.
+{W/ {c Fixed email addy shown for banned sites/players.
+
+{W**** {Y03{W-{Y02{W-{Y98 {W*
+{W/ {c Fixed an error in stat rolling (getting tired of fixing my fixes :))
+
+{W**** {Y03{W-{Y01{W-{Y98 {W*
+{W/ {c Fixed looking while switched.
+{W/ {c Fixed force for com_quest.
+
+{W**** {Y02{W-{Y25{W-{Y98 {W*
+{W/ {c Tweaked the stat roller a little.
+{W+ {c Added the dodge skill for some classes.... enjoy.
+{W/ {c Fixed a stat bug with +stat items/spells.
+
+{W**** {Y02{W-{Y22{W-{Y98 {W*
+{W/ {c Fixed crashes due to dodge not showing up in spell/skill file.
+
+{W**** {Y02{W-{Y21{W-{Y98 {W*
+{W/ {c Fixed player descriptions. (must enter game for them to save)
+{W/ {c Fixed missing prompt when exiting descriptions.
+{W/ {c Fixed moonwell.
+{W/ {c Fixed chat.
+
+{W**** {Y02{W-{Y12{W-{Y98 {W*
+{W! {c Players will be deleted due to inactivity as of now.
+{W/ {c Fixed teleport and dimension door.
+{W+ {c Added tog lines, to change number of lines displayed during
+   paged output.
+
+{W**** {Y01{W-{Y21{W-{Y98 {W*
+{W/ {c Fixed shops... no more negative money.
+{W/ {c The picklock bug has been found and terminated.
+{W/ {c Whois in toggle has been aligned properly.
+
+{W**** {Y01{W-{Y18{W-{Y98 {W*
+{W! {c Commands avaliable while sleeping/incap have changed.
+{W! {c Sorted all commands alphabetically.
+{W+ {c Added echos for toggle.
+{W+ {c Added immort toggles.
+{W- {c Removed commands now handled by toggle.
+{W- {c Removed mobedit, objedit, roomedit. (whould use medit,oedit, redit)
+
+{W**** {Y01{W-{Y17{W-{Y98 {W*
+{W/ {c Fixed teleport.
+{W/ {c Re-enabled the where command for immorts.
+{W/ {c Made toggle a true toggle command.
+{W/ {c Fixed reading in of long strings from files.
+{W+ {c Added logging of missing wizh entries.
+{W+ {c Added fight messages for a few spells.
+{W+ {c Added toggle options.
+{W- {c Removed mana display in prompt for non-casters.
+{W- {c Removed color from logs to disk.
+{W- {c Removed double_dollar saves in medit.
+{W- {c Removed a few commands that are now handled by toggle.
+
+{W**** {Y01{W-{Y15{W-{Y98 {W*
+{W/ {c Fixed wield, mages you should be able to wield 1h pierce now.
+{W/ {c Fixed dig and copyto, should save world files again.
+{W/ {c Fixed potential mem corruption in do_who.
+{W- {c Removoed damage messages for immortals.
+
+{W**** {Y01{W-{Y14{W-{Y98 {W*
+{W/ {c Updated redit, sedit, zedit.c please report any problems.
+
+{W**** {Y01{W-{Y13{W-{Y98 {W*
+{W/ {c Fixed the cityguard spec_proc.
+
+{W**** {Y01{W-{Y12{W-{Y98 {W*
+{W/ {c Allowed for color codes in page_string.
+
+{W**** {Y01{W-{Y08{W-{Y98 {W*
+{W/ {c Replaced oedit.c, please report any problems.
+{W/ {c Forced sanity check in affect_char for affect locations.
+
+{W**** {Y01{W-{Y07{W-{Y98 {W*
+{W+ {c New skill for warriors (monks). Unarmed Combat.
+{W/ {c People can now generally carry/wield more weight.
+{W/ {c Bash will now lag you 2 fight rounds if you fail or are bashed.
+{W/ {c Bash will now make you sit if you fail or are bashed.
+{W/ {c Replaced medit.c, please report any problems.
+
+{W**** {Y01{W-{Y03{W-{Y98 {W*
+{W+ {c New skill for casters. Quick Chant.
+{W+ {c New command disengage (pulls you out of a fight).
+{W+ {c Oedit now saves bitvector2.
+{W+ {c Better messages are shown when spell fails due to saving throw.
+{W+ {c Haste code is now completed.
+{W+ {c Added ability to assign bank to mobs.
+{W+ {c Added ROOM_LIGHT, ROOM_HARM, ROOM_NOHEAL flags.
+{W/ {c Fixed div by zero in multi hit code.
+{W/ {c Nolonger fail due to save vs throw on yerself or if spell is not aggro.
+{W/ {c Fixed wraith form spec_proc.
+{W/ {c Fixed create water spell.
+{W/ {c Oedit now displays prompt for sval2 and 3.
+{W/ {c Aggro mobs flagged as stay_zone now stay in their zone.
+{W/ {c Camping/renting now spans crashes.
+{W/ {c Fixed money items to not default to platinum. 8P
+{W/ {c You should nolonger be left fighting when your vict flees.
+{W/ {c You don't have to specify the target for spells when fighting.
+{W- {c Removed extra linefeed after spells that create objects.
+{W- {c Removed unnecessary #defines in structs.h.
+
+{W**** {Y01{W-{Y02{W-{Y98 {W*
+{W- {c Removed stupid shopkeeper messages when ya ain't got the cash.
+{W/ {c Aggro mobs now aggro to your followers.
+{W/ {c Fixed <NULL> message for order followers.
+
+{W**** {Y01{W-{Y01{W-{Y98 {W*
+{W! {c Happy New Year!
+{W/ {c The Forest Of MiNar has been reborn! Enjoy!
+
+{W**** {Y12{W-{Y31{W-{Y97 {W*
+{W- {c Removed the old QM immortal command
+{W- {c Removed the gold command
+{W/ {c Updated help on BANK, SPLIT, MONEY, and EXCHANGE 
+{W+ {c We now have 4 currency types, you will need to
+   go to the bank and exchange your copper to something
+   else.
+{W/ {c Aggro hunting mobs will not hit in peaceful rooms.
+
+{W**** {Y12{W-{Y30{W-{Y97 {W*
+{W/ {c Cityguards now listen for fights around them.
+{W/ {c Cityguards nolonger assist players.
+
+{W**** {Y12{W-{Y27{W-{Y97 {W*
+{W/ {c Fixed several broken guards.
+{W+ {c Enabled the city gate system.
+
+{W**** {Y12{W-{Y26{W-{Y97 {W*
+{W/ {c Enabled Ask mobprogs.
+
+{W**** {Y12{W-{Y25{W-{Y97 {W*
+{W! {c Merry Christmas.
+{W/ {c Increased delay before timeout during character creation.
+{W+ {c Sorting of spells by Circle.
+{W+ {c Added (unlearned) to new spells.
+
+{W**** {Y12{W-{Y24{W-{Y97 {W*
+{W+ {c Added percent loading of mobs and objs during zone resets.
+{W+ {c Added beginnings of quest code.
+
+{W**** {Y12{W-{Y21{W-{Y97 {W*
+{W+ {c Activated several spec_procs.
+{W+ {c Added many fflush statements to help process spontanious reboots.
+{W- {c Disabled several old spec_procs.
+{W/ {c Fixed race saving in medit.c.
+{W/ {c Fixed wear all for some wear positions.
+
+{W**** {Y12{W-{Y20{W-{Y97 {W*
+{W/ {c Changed the rescue messages.
+{W/ {c Changed petition/pray channel messages.
+{W/ {c Fixed a null reference bug in comm.c.
+{W/ {c Zeroed out worn slots on chars entering from menu.
+{W/ {c Fixed thac0 for mobs.
+{W+ {c Added additional information on message for nohelp found. 
+{W+ {c Added mob sizes/races to medit.
+{W- {c Removed warning message on chat channel.
+
+{W**** {Y12{W-{Y19{W-{Y97 {W*
+{W/ {c Corrected the spell faerie fire's objective.
+{W- {c Removed the mount command until such a time it properly works.
+{W+ {c Added the missing linefeed on "You feel your skill improving"
+{W+ {c Added "casting" to the begenning of the cast lines.
+{W/ {c Changed the glowing and humming bits on objects.
+{W- {c Removed the offer command from inns.
+{W/ {c Changed rent messages.
+{W/ {c Changed split coins message, added color.
+{W/ {c Changed last information, added color.
+
+{W**** {Y12{W-{Y18{W-{Y97 {W*
+{W/ {c Changed color of mobs switching.
+{W/ {c Added ability to change amount of spells delay in spells file.
+{W/ {c Fixed "remove all" so that it removes second wielded weapon.
+{W/ {c Fixed "tell" so that sleeping chars can't hear it or do it.
+{W/ {c Fixed obj slots display in stat/vstat/oedit.
+{W/ {c Fixed the "You receive your share of experience" msg when your asleep.
+{W/ {c Fixed the oedit->weapon_skill menu to have validation of weapon_skill.
+
+{W**** {Y12{W-{Y17{W-{Y97 {W*
+{W/ {c Corrected 1h Slashing, 1h Misc, 2h Slashing, 2h Misc weapon's in fight
+  {c practices.
+{W/ {c Made lvls 1-15 easier... (not take as much exp.)
+
+{W**** {Y12{W-{Y14{W-{Y97 {W*
+{W+ {c Added multiple wear positions to objects (object can take up 1+ positions).
+{W/ {c Fixed dual wield and create food.
+
+{W**** {Y12{W-{Y02{W-{Y97 {W*
+{W/ {c 1h pierce and Co. now improve in skill when you fight.
+{W/ {c Apply poison now works for assassins.
+{W/ {c Spell duration is now LONGER... hope yer happy. 8)
+{W/ {c Cleaned up some of the skills to allow mobs to use them better.
+{W/ {c Mobs now have a (LEVEL*100)/61% chance to succeed on spells/skills.
+
+{W**** {Y11{W-{Y29{W-{Y97 {W*
+{W/ {c Fixed the bottle of wiskey of wiskey bug.
+{W/ {c You are now limited to only 1 elemental.
+{W/ {c Fixed guildmaster's spec_proc to allow train as command.
+{W/ {c Resists nolonger give bonuses to hp.
+{W/ {c Can nolonger move (or follow) while casting.
+{W+ {c Added in more null checks to get_obj_in_list_vis.
+{W+ {c Added conjurers to the who listing.
+{W+ {c Added genders to new player logs.
+{W+ {c Added (unlearned) to new spells in prac.
+
+{W**** {Y11{W-{Y28{W-{Y97 {W*
+{W/ {c Fixed the repeating display in where.
+
+{W**** {Y11{W-{Y27{W-{Y97 {W*
+{W! {c Happy Thanksgiving!
+{W/ {c Fixed the death == lost level bug.
+{W/ {c Fixed perecent load and removed an erroneous syslog message.
+{W/ {c Fixed a bug in newbie policy acceptance.
+{W/ {c Worship Novo for he has fixed THE BIG PCORPSE BUG!
+
+{W**** {Y11{W-{Y25{W-{Y97 {W*
+{W/ {c Fixed the medit bug. (null l_desc).
+
+{W**** {Y11{W-{Y21{W-{Y97 {W*
+{W/ {c Who format has changed... use who ? for help.
+
+{W**** {Y11{W-{Y20{W-{Y97 {W*
+{W/ {c Mobs will nolonger forget you when you rent/camp.
+
+{W**** {Y11{W-{Y16{W-{Y97 {W*
+{W/ {c Chars nolonger save during the creation process until approved.
+
+{W**** {Y11{W-{Y14{W-{Y97 {W*
+{W/ {c Increased amount of exp given by mobs.
+{W/ {c Fixed crash bug in get_obj_in_list_vis.
+
+{W**** {Y11{W-{Y10{W-{Y97 {W*
+{W/ {c Fixed thac0 saving/loading/displaying for mobs.
+{W/ {c Fixed misleading constants in medit.
+{W/ {c AFF_SILENCE now prevents casting for mobs and players.
+{W/ {c Fixed bow types for weapons.
+{W/ {c Changed (invis) to * for players/mobs.
+
+{W**** {Y11{W-{Y08{W-{Y97 {W*
+{W+ {c Added petition as alternate pray command.
+{W/ {c Upgraded Ident stuff to 1.2
+{W/ {c Changed error log during parse object.
+
+{W**** {Y11{W-{Y07{W-{Y97 {W*
+{W/ {c Fixed spells... *yeah*
+
+{W**** {Y11{W-{Y06{W-{Y97 {W*
+{W/ {c You can no longer "look" into a room behind a hidden exit without
+     finding the exit first.
+{W/ {c Immos don't fail due to saving throw now.
+{W/ {c Changed the OLC logging a bit.
+{W/ {c Who now works correctly for non-color players.
+{W/ {c Fixed crash bug when sending tells while admin invis.
+{W+ {c Added code to allow triggers based upon opening/closing of doors.
+
+{W**** {Y11{W-{Y03{W-{Y97 {W*
+{W/ {c Cast <spell> <target> has been fixed.
+{W/ {c Fixed THE crash bug in fleeing.
+{W/ {c Toned down mana gain per level.
+
+{W**** {Y11{W-{Y01{W-{Y97 {W*
+{W/ {c Fixed elementals.
+{W/ {c Immos never fail spells.
+
+{W**** {Y10{W-{Y28{W-{Y97 {W*
+{W/ {c Fixed a crash bug during approve/decline.
+{W/ {c Changed way spell failure/lost concentration works.
+
+{W**** {Y10{W-{Y25{W-{Y97 {W*
+{W/ {c Fixed a crash bug during obj saving.
+{W/ {c Fixed another dumb display bug in stat object.
+{W+ {c The command "scan" has been added as an alias to "exits".
+
+{W**** {Y10{W-{Y22{W-{Y97 {W*
+{W/ {c Immos can now be damaged.
+{W/ {c Where <object> now pages.
+{W/ {c Fixed crash bug with PERS.
+{W/ {c Assassins now show up as Asn in who.
+
+{W**** {Y10{W-{Y21{W-{Y97 {W*
+{W/ {c Can rent nekkid now.
+{W/ {c Nolonger limited to 100 items at rent.
+{W/ {c Namecolor while switched is fixed. (i think)
+
+{W**** {Y10{W-{Y20{W-{Y97 {W*
+{W/ {c Slowed down the amount of alignment change.
+{W/ {c Fixed output of vstat with no args.
+{W/ {c Attempted to fix exp command after lost level.
+{W- {c Removed donate command. (no donation room, so cmd is not needed).
+
+{W**** {Y10{W-{Y11{W-{Y97 {W*
+{W+ {c Added basic spell help files, more detailed entries to come.
+
+{W**** {Y10{W-{Y9{W-{Y97 {W*
+{W/ {c Did some minor cleanup to do_stat_object, fixing a strcat bug.
+
+{W**** {Y10{W-{Y7{W-{Y97 {W*
+{W/ {c Fixed the pcorpse bugs, please report anything I missed.
+{W/ {c Fixed array bounds read/write when loading shops.
+
+{W**** {Y10{W-{Y6{W-{Y97 {W*
+{W/ {c Fixed the bug with skill loading and removed the temp. fix.
+{W+ {c Now "stat <player>" searches rentfiles without specifying file.
+{W+ {c You can now skillset characters who aren't playing.
+{W+ {c You can now set on players who aren't playing without specifying file.
+{W+ {c Set with no arguments now shows you the fields available to you.
+{W/ {c Shopkeepers now have infinite money for sales purposes.
+{W/ {c Set race will now take a string race name instead of a number.
+{W+ {c You can now "set <player> age <newage>" (finally).
+{W+ {c Immo stat now shows exp needed to level for players.
+{W/ {c Reduced exp loss due to death by alot. Players should lose level less
+     often now.
+{W/ {c Changed starting hps and hp gain per level/mana gain per level around.
+
+{W**** {Y10{W-{Y1{W-{Y97 {W*
+{W/ {c Fixed a bug in displaying spells with stat.
+{W/ {c Fixed a bug in damage message calculation.
+{W/ {c Fixed spell lookup so that spells are cast correctly.
+{W/ {c Fixed minor goofup with scroll patch from yesterday.
+{W/ {c Level 1 players who die now get another kit.
+{W/ {c Look <direction> when exit not there is now fixed.
+{W/ {c Fixed barkskin spell.
+{W/ {c Lowered percent of lost concentration.
+
+{W**** {Y09{W-{Y30{W-{Y97 {W*
+{W/ {c Fixed open door <direction> when the dir is invalid.
+{W+ {c Added ability to use skillset to see players current skills. 
+{W/ {c Fixed some problems with scrolls.
+{W/ {c Re-Fixed bug where all names are invalid after denying a name.
+{W+ {c Added method to log memmory usage.
+{W/ {c Fixed bug when using create mob type spells that arn't finished yet.
+{W/ {c Changed the way spell failure is calculated, please log any problems.
+{W/ {c Fixed some problems with look <direction>.
+{W/ {c Fixed some problems with spell targets.
+{W/ {c Fixed the strtok bugs in isname.
+{W/ {c Gold is now worth something.
+
+{W**** {Y09{W-{Y29{W-{Y97 {W*
+{W+ {c Look <direction> now displays the content of the room in that dir.
+{W/ {c Wiznet help now only displays to the proper people.
+{W/ {c Changed isname function to use strtok and strcasecmp.
+{W/ {c Fixed the crash bug in give.
+
+{W**** {Y09{W-{Y27{W-{Y97{R {W*
+{W+ {c Two new functions in comm.c for counting color and non-color bytes
+     in strings... strlen_c and strlen_nc.
+{W/ {c Colored items now list properly in shops.
+{W/ {c Immortals can now shop regardless of time of day.
+{W/ {c Fixed an OLD bug with char_regen not calling update_pos, so we
+     shouldn't have people stunned with 6 hps anymore.
+{W/ {c FIGHT_STATed people/mobs can no longer flee, even if they're not
+     fighting yet.
+{W/ {c Fixed the LAST of the condition prompt problems.
+{W+ {c Added FIGHT_STATE for mobs, fixing superbash etc.
+{W/ {c Ticket Vendor spec_proc no longer makes him unkillable.
+{W/ {c Cityguard proc now allows mphunts of mobs.. tell me if there was a
+     reason why this was disabled.
+{W/ {c Fixed a crash bug in mphunt.
+{W+ {c Any leftover FIGHT_STATE after combat is converted to WAIT_STATE
+     for players.
+{W/ {c You can now tell what direction you flee, and so can others.
+
+{W**** {Y09{W-{Y25{W-{Y97 {W*
+{W+ {c Monk combat code and item code is now in... numbers need tweaking.
+{W/ {c Fixed yet more funkiness in the condition prompt.
+
+{W**** {Y09{W-{Y23{W-{Y97 {W*
+{W/ {c "Drink" now drinks until you are not thirsty or the container is empty.
+{W+ {c Added a signoff message file.. (lib/text/signoff).
+{W+ {c Added a name policy file.. (lib/text/namepol).
+
+{W**** {Y09{W-{Y22{W-{Y97 {W*
+{W/ {c Fixed the bug that crashed on "who" while switched.
+{W/ {c Give all.<object> <person> now works properly.
+{W/ {c Drop and Junk now echo to the room properly.
+{W+ {c Spec_proc for the ticket vendor in zone 47 added.
+{W/ {c Changed the levels at which certain things appear in "stats".
+
+{W**** {Y08{W-{Y31{W-{Y97 {W*
+{W/ {c Xname shouldn't make it impossible for new connections.
+{W/ {c Changed the needed exp for levels 2-4.
+{W- {c Removed bard from creation list, (overlooked this one earlier.)
+{W+ {c Added deny as an alternative to decline.
+
+{W**** {Y08{W-{Y30{W-{Y97 {W*
+{W/ {c Harmful potions now work as was intended.
+{W/ {c Anon is ignored when who is issued by an immortal.
+{W/ {c Anon for immos will only show anon if whospec is absent.
+
+{W**** {Y08{W-{Y28{W-{Y97 {W*
+{W/ {c Can now "heal" fire mental with fire type spells.
+
+{W**** {Y08{W-{Y26{W-{Y97 {W*
+{W/ {c Spells with negative damage don't set fighting.
+{W/ {c Gave conjurers detect invis and burning hands at 1st circle.
+{W+ {c Added toggle followers. (it just stops followers now.)
+{W- {c Removed some logging statements.
+
+{W**** {Y08{W-{Y25{W-{Y97 {W*
+{W/ {c Tinkered around with the exp functions.
+{W- {c Removed some fight lag with bash/kick.
+{W+ {c Re-added idle ticker for immos. Quest and up won't drop link.
+
+{W+ {c Added hidden exits (immos use zedit to set them).
+{W**** {Y08{W-{Y15{W-{Y97 {W*
+{W+ {c Added search command.
+{W+ {c Added hidden exits (immos use zedit to set them).
+
+{W**** {Y08{W-{Y13{W-{Y97 {W*
+{W/ {c Soundproof rooms are fixed.
+{W/ {c Look in obj now uses cname if it's present.
+{W/ {c You must be able to see leader to follow now.
+{W/ {c Fixed hold/wield/shield problems.
+{W/ {c Wraithlike mobs are now !kick !bash.
+{W+ {c Added kick/bash lag to vict on success.
+{W- {c Removed immort function used to make lvl 51 immo.
+{W/ {c Fixed bug in advance that caused a person's stats
+   to increase when advanced to a lower level, also
+   made it re-adjust the player's mana and moves.
+{W+ {c Added wraithlike flag for mobs.
+{W- {c Removed a few unnecessary defines in structs.h.
+{W+ {c Re-added spell target checker (can see).
+{W/ {c Fixed spell target corruption problems.
+{W/ {c Moved identify and create water spells to events.
+{W/ {c Generic find now checks if you can see your worn equipment.
+{W/ {c Fixed spell stacking problems.
+{W/ {c AFF2_CASTING flag is now removed when player enters game.
+{W/ {c Fixed missing death when wraith form spell wears off.
+{W/ {c Spells can nolonger over boost mana or moves.
+
+{W**** {Y08{W-{Y11{W-{Y97 {W*
+{W! {c Disabled the vict inroom check for spells.
+{W/ {c Player charmies can't attack PC's now.
+{W/ {c Can nolonger overheal players/mobs.
+{W/ {c Fixed loadrooms (i think.)
+{W/ {c Should be able to assist non-tanking players now.
+{W/ {c You shouldn't get weather messages while sleeping.
+{W/ {c Death now comes more quickly when mortally wounded, etc.
+{W/ {c HP/MANA/MOVE now regen when thirsty/hungry/poisoned (but slowly).
+{W/ {c Exp command shouldn't give blank or empty lines now.
+{W/ {c Type water should quench thirst now.
+{W/ {c Fixed the ducks bite hits you bug.
+{W/ {c Added cap to lost level and flee exp loss.
+{W/ {c Immo commands where and stat should now use cname and cshort_desc if there.
+{W/ {c Newbie eq is now flagged NO_SELL and should melt faster if droped.
+{W/ {c Fixed the rest of the thirst bugs.
+
+{W**** {Y08{W-{Y10{W-{Y97 {W*
+{W/ {c You nolonger hit while casting.
+{W/ {c Death cry now only echos once.
+{W/ {c Mobs nolonger can chat.
+{W/ {c Fixed typo when stunned (in score).
+{W/ {c Aggro mobs should now attack on sight (i hope).
+{W/ {c You nolonger can wake up stunned or dying players/mobs.
+{W/ {c Added check for inroomness for spell ticker.
+{W/ {c Finally really fixed mentals.
+{W/ {c Fixed bus error caused by the immort last command.
+{W/ {c Made a few classes impossible to choose at char creation.
+{W/ {c Put in a temporary fix to prevent players from having skills
+   they shouldn't have.
+
+{W**** {Y08{W-{Y09{W-{Y97 {W*
+{W+ {c Help needed now logged to new file (helpneeded).
+   Immos use show help to look at this file.
+{W/ {c Updated extract_char, extract_obj to prevent crashes.
+{W/ {c Fixed code that was causing corpses to crash us.
+{W/ {c Rent files are now saved in ascii text format.
+{W/ {c Rewrote most of the Crash_xxxxxx functions.
+{W/ {c Quit should now prompt correctly.
+{W/ {c Policy must now be accepted by new players.
+{W/ {c Camp now checks more often for ch->in_room.
+{W/ {c Fixed display of exp needed. (exp command)
+
+{W**** {Y08{W-{Y06{W-{Y97 {W*
+{W/ {c The wandering "large trolls" will now stay in their own place.
+
+{W**** {Y08{W-{Y05{W-{Y97 {W*
+{W/ {c Fixed the advanced level bug.
+{W/ {c Redid stats and score, need feedback on these.
+
+{W**** {Y08{W-{Y04{W-{Y97 {W*
+{W+ {c Added wear position for 2handed stuffs.
+{W/ {c Fixed eat bug, and load room after rent bug.
+{W/ {c Fixed all of the bugs when wearing eq. (wield, hold, etc)
+{W/ {c Changed the amount of exp lost when fleeing.
+{W/ {c Rent-free is now OFF... but still costs nothing to rent.
+   This was done to make it possible to drop all eq on ground when quit
+   is used. (should also prompt.)
+{W/ {c Added spec_procs for mobs in Caryllion and updated class.c
+
+{W**** {Y08{W-{Y03{W-{Y97 {W*
+{W/ {c Fixed the corpse stacking.
+{W/ {c Fixed elemental hp sizes.
+{W/ {c Fixed zombie crash bug.
+{W/ {c Finished laying out the spell file.
+   Still need to assign fighter skills to their right levels...
+   Some spells may still not work, C code isn't finished yet.
+
+{W**** {Y08{W-{Y02{W-{Y97 {W*
+{W/ {c Newbies nolinger find themselves in the void.
+{W/ {c Auto-approve is now set at 2 minutes.
+{W/ {c Changed Name approval message at character generation.
+{W/ {c Changed color in default report.
+{W/ {c Changed priority of Report and Reply.
+
+
+{W**** {Y08{W-{Y01{W-{Y97 {W*
+{W/ {c Fixed animate dead, loading and saving of pcorpses
+
+{W**** {Y07{W-{Y31{W-{Y97 {W*
+{W+ {c Finished wraith form.
+{W+ {c Added a prototype for corpses object 1203, (DON'T DELETE IT)
+
+{W**** {Y07{W-{Y30{W-{Y97 {W*
+{W+ {c Added code to support AFF2_xxx flags.
+{W+ {c Added code to deny commands for certain Affx flags.
+{W+ {c Added spell wraith form as example (not totally done yet
+   but can still cast okie.)
+{W/ {c Fixed a bug in the shop code. (typecast truncation not good)
+{W/ {c Fixed the timestamp in last.
+{W/ {c I think i fixed the code that was printing wrong send_to_room
+   for spells.
+
+{W**** {Y07{W-{Y15{W-{Y97 {W*
+{W/ {c Accidentally overwrote my good copy of the spell file.
+   So we are back to the spell file from 970714.
+{W/ {c Fixed the display of stats during char roll.
+
+{W**** {Y07{W-{Y14{W-{Y97 {W*
+{W/ {c Fixed a few minor bugs discovered during spell creation.
+{W+ {c Added show sinfo. use to show stuff about spells.
+
+{W**** {Y07{W-{Y11{W-{Y97 {W*
+{W/ {c Fixed a small goof in combat prompt (comm.c).
+{W/ {c Fixed a messed up combat message (fight.c).
+{W/ {c Fixed a skill lookup in do_wield (act.obj.c).
+
+{W**** {Y07{W-{Y07{W-{Y97 {W*
+{W/ {c Fixed the condition messages in the combat prompt.
+{W/ {c Fixed some gender problems in code :).
+{W/ {c Dual wield now only grants one hit on second weapon.
+{W/ {c Tinkered with multi hits.. Test and let Novo know.
+{W/ {c You can now pray in SOUNDPROOF rooms.
+{W/ {c You nolonger get "You are too engaged in combat to <X>"
+         when not fighting.
+
+{W**** {Y07{W-{Y06{W-{Y97 {W*
+{W/ {c Added some initialization for arrays in do_users.
+{W/ {c Made some changes do spell_dam_event.
+{W+ {c Added aff flags for spells.
+{W/ {c Fixed bug showing deleted players in Last.
+
+{W**** {Y07{W-{Y05{W-{Y97 {W*
+{W/ {c Fixed show connections. Usage show connections <zone number>
+{W/ {c Made afk a bit more reasonable.
+{W/ {c Took out char_file_u. Please be on the lookout for missed bugs.
+{W+ {c Added show islands (for showing rooms with NO exits.)
+
+{W**** {Y06{W-{Y30{W-{Y97 {W*
+{W/ {c Fixed animate dead and attack messages.
+
+{W**** {Y06{W-{Y26{W-{Y97 {W*
+{W+ {c Added in some spells... all spells that you see are what we will
+   open with. (with some of them being unavailable to morts.)
+{W/ {c Changed the load rooms around a bit to support multiple hometowns.
+
+{W**** {Y06{W-{Y25{W-{Y97 {W*
+{W/ {c Guildguard spec proc now works.
+{W/ {c Changed the messages file some.
+{W/ {c Can now tog stuffs using tog.
+{W/ {c Newbie kits now work properly.
+{W/ {c Fixed (i hope) a bug with wield.
+{W+ {c Added code to accomodate AFF2 spells.
+{W! {c Had to delete the qicdb.
+
+{W**** {Y06{W-{Y23{W-{Y97 {W*
+{W/ {c Decline now works.
+{W/ {c Decline conjure elemental now works.
+{W/ {c Decline animate dead now works.
+{W+ {c Portal code/obj type is now in.
+{W+ {c Added to the guild-guard spec-proc... still needs work though.
+{W/ {c Fixed bug with approve (can't approve anybody that's playin.8P)
+{W/ {c Allowed master to order followers to move/kick/etc.
+
+{W**** {Y06{W-{Y12{W-{Y97 {W*
+{W+ {c Added 2 commands for immortals: decline and approve.
+   Both commands are used when a new character is created.
+   Decline is to be used when the player's name is inappropriate.
+      (don't decline anybody yet... still working on this one.)
+   Approve is to be used when the player's name is acceptable.
+{W/ {c Nuke will now disconnect the player if they are playing.
+{W/ {c Self delete now works.
+{W/ {c Animate shouldn't crash anymore.
+{W/ {c Last no longer shows reconnects. It is only updated when you chose 1
+   from the menu.
+
+{W**** {Y06{W-{Y11{W-{Y97 {W*
+{W+ {c Added timeout feature for connections. 3 minutes idle and disconnect.
+
+{W**** {Y06{W-{Y10{W-{Y97 {W*
+{W/ {c Fixed medit so new mobs could be created.
+{W/ {c Where now pages it's output.
+{W/ {c Fixed the duplication of entries in configure.
+{W/ {c Fixed the overflows in logcheck.
+{W/ {c Fixed the display of available mobprogs in medit.
+{W/ {c Fixed the display of available resists in medit.
+{W/ {c Fixed a 16 byte memory leak in medit.
+{W/ {c Fixed a bug in zedit when accidentally hitting return from menu.
+{W+ {c Added logging for potions/spells when loaded on boot to detect
+   bad spell assigns.
+{W+ {c Added back mount and dismount commands.
+{W- {c These commands: delay, where (for mortals), spells (for mortals)
+
+{W**** {Y05{W-{Y31{W-{Y97 {W*
+{W/ {c Updated all immortal log's to reflect there users.
+
+{W**** {Y05{W-{Y20{W-{Y97 {W*
+{W/ {c Replaced thaco and saving throws with more realistic ones.
+{W/ {c Changed the stats (att) display some.
+{W/ {c Fixed a possible bug with zedit new. (still good idea to reboot)
+{W+ {c Added placeholder spells.
+
+{W**** {Y04{W-{Y16{W-{Y97 {W*
+{W/ {c Fixed reply bug.
+
+{W**** {Y04{W-{Y14{W-{Y97 {W*
+{W/ {c You have been playing... has been fixed.
+{W/ {c Cannot murder in peaceful rooms.
+{W/ {c Only thieves/rogues/assassins can backstab.
+{W/ {c Autosplit checks amount taken from corpse.
+{W/ {c Charmed mobs no-longer assist mobs.
+{W/ {c Can only group those in same room.
+{W+ {c You can now hold 2 items.
+{W/ {c Typing quit while camping no-longer causes crash.
+{W/ {c You can no-longer camp multiple times.
+{W+ {c Piles of coins are now merdged into 1 pile.
+{W/ {c Gods can no-longer cast the 'teleport' spell (use goto).
+{W/ {c Gods can transfer their own level.
+{W/ {c xnames no-longer puts an extra linefeed in the file.
+{W/ {c Extensive overhaul of the group exp gain functions.
+{W/ {c Drinking from fountain now has a limit. (cept for gods)
+{W+ {c You can no-longer camp in rooms with sector of "indoors".
+{W+ {c Me added to self. (can cast 'aid' me now.)
+{W+ {c Sector type has been added to roomflags.
+{W/ {c Room flags are now on their own line (hated having it wrap).
+{W/ {c Entering and Exiting mail now logs a message.
+{W/ {c Admin can now carry as many items as they want. (i think).
+{W/ {c Guards nolonger shout world-wide
+{W- {c o'clock has been removed from the time command.
+{W+ {c Mobs now gain exp for kills.
+{W/ {c Fountains are permanently full (give them min 30 units of water).
+{W+ {c Followers can now report.
+{W+ {c Can do report group (reports to group only).
+{W+ {c Can do report <name> (reports to person only).
+{W+ {c Can do report (reports to room).
+{W/ {c Tell now shows Someone when you recall a tell from anyone you
+   cannot see.
+{W/ {c Mobs no-longer burst into tears.
+
+{W**** {Y03{W-{Y25{W-{Y97 {W*
+{W+ {c Added zone specific weather.
+{W+ {c Added zone stuff to zedit.
+{W+ {c Added affect stuff to oedit.
+{W/ {c Fixed object based spells. (see post on board #1204).
+{W/ {c Fixed the whospec bug.
+{W/ {c Fixed a bug in the string command.
+{W+ {c Added code for area spells.
+{W+ {c Added spell minor creation.. just an example no message is displayed upon completion.
+{W/ {c Cleaned up the get alignment stuff at birth...
+{W/ {c Fixed bug with displaying junk for practice command.
+
+{b---{B===================================================================={b---
+{DEOF{x

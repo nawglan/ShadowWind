@@ -1,0 +1,16 @@
+         ********      MAKE THIS LIST SHORTER!!!      ********
+Novo     (Feb  7) [ 1258] finish resists
+Palance  (Mar 15) [ 1242] redo all hardcoded tables to be _accurate_ for 50 lvls.
+Nudd     (Oct 11) [ 1242] add in checks for array bounds for obj->in_room, etc.
+Nudd     (Nov 11) [ 1242] remove ITEM_NOAUC and use flag for something useful.
+Nudd     (Nov 11) [ 1242] major/minor paralized code.
+Nudd     (Nov 11) [ 1242] double check det-poison code...
+Nudd     (Dec 18) [ 1242] finish show sinfo
+Nudd     (Dec 18) [ 1242] put load carried in either att or sc...
+Nudd     (Dec 18) [ 1242] figgure out how much each race/class can carry.
+Dorga    (Dec 20) [ 1297] quest code.
+Dorga    (Dec 27) [ 1297] sunray specproc for obj 2214
+Dorga    (Dec 27) [ 1297] blindness specproc for obj 2209
+Dorga    (Jan  2) [ 1297] Ship code.
+Breena   (Apr 22) [ 5963] tickettaker
+Novo     (Sep 20) [ 1258] Fix hitrolls... I just watched a lvl 40 mob hit a -78ac lvl 47 player 100%

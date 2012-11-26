@@ -1,0 +1,2363 @@
+#6200
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6201 0
+D2
+~
+~
+0 0 3497 0
+S
+#6201
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6202 0
+D2
+~
+~
+0 0 6200 0
+S
+#6202
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D1
+~
+~
+0 0 6203 0
+D2
+~
+~
+0 0 6201 0
+S
+#6203
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6204 0
+D3
+~
+~
+0 0 6202 0
+S
+#6204
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6205 0
+D2
+~
+~
+0 0 6203 0
+S
+#6205
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6206 0
+D2
+~
+~
+0 0 6204 0
+S
+#6206
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6207 0
+D2
+~
+~
+0 0 6205 0
+S
+#6207
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D1
+~
+~
+0 0 6208 0
+D2
+~
+~
+0 0 6206 0
+S
+#6208
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D1
+~
+~
+0 0 6209 0
+D3
+~
+~
+0 0 6207 0
+S
+#6209
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6210 0
+D3
+~
+~
+0 0 6208 0
+S
+#6210
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6211 0
+D2
+~
+~
+0 0 6209 0
+S
+#6211
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6212 0
+D2
+~
+~
+0 0 6210 0
+S
+#6212
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D1
+~
+~
+0 0 6213 0
+D2
+~
+~
+0 0 6211 0
+S
+#6213
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6214 0
+D3
+~
+~
+0 0 6212 0
+S
+#6214
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+~
+0 0 6215 0
+D2
+~
+~
+0 0 6213 0
+S
+#6215
+An unfinished room~
+An unfinished room
+~
+62 ag 2
+D0
+~
+gate gates~
+1 0 6216 0
+D2
+~
+~
+0 0 6214 0
+S
+#6216
+{yBefore The Main Gate{x~
+   {yTwo enormous wooden gates have been set into the wall here. They, like
+the rest of thw wall, have been constructed from felled trees, stripped and
+bound together. Thick wooden planks have been nailed horizontally across
+them in many places, to provide the neccesary reinforcment. Six thick iron
+supports are attached to the gates, three on each side, made for housing the
+huge beam that keeps the gates shut and locked at night. Although some other
+parts of the camp appear to have been erected quickly, and without proper
+thought, the gate is one part that has obviously had a lot of thought and
+time put into it. Being the primary defense against the Mayor's guards, this
+entire area is always heavily guarded. The gate opens up to a large
+clearing, with tracks branching off in all directions. If anyone managed to
+sneak their way past the guards at the gate, they would find little place to
+hide, and would be quickly aprehended. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6237 0
+D1
+~
+~
+0 0 6220 0
+D2
+~
+gate gates~
+1 0 6215 0
+D3
+~
+~
+0 0 6217 0
+S
+#6217
+{yThe Foot Of The Western Gate Tower{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. A large ladder has been bound to one of the
+larger tree trunks here, leads upward to the western gate tower. To the west
+lies the main gate to the camp, heavily guarded as ever. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6236 0
+D1
+~
+~
+0 0 6216 0
+D4
+~
+~
+0 0 6218 0
+S
+#6218
+{yUp A Rickety Ladder{x~
+   {yThe ladder on which you are standing creaks and groans every time you
+shift your weight. The rungs have been carved out of wood and bound to the
+long poles that stretch from the ground up to the platform above. Leaf
+covered branches from neighboring trees sway infront and behind the ladder,
+making it quite difficult to move and see at times. The shoddy finishing of
+this ladder shows clearly it was made in a hurry. Like most of the
+structures in the camp, it was erected very quickly after the first
+settlement in order to provide access to the guard towers. {x
+~
+62 ag 2
+D4
+~
+~
+0 0 6219 0
+D5
+~
+~
+0 0 6217 0
+S
+#6219
+{yThe Western Gate Tower{x~
+   {yA narrow roadway, surrounded by thick bush and scrub dominates the
+south facing view from this tower. The entire purpose of this small fortress
+and the one directly on the other side of the road, is to protect the gates
+to the encampment. From this height, anyone travelling along the road, can
+be clearly seen even from a great distance. This provides the gate patrol
+with a much needed warning to prepare themselves for a possible attack. 
+Never is it assumed visitors are peaceful, and the patrol is always on its
+highest alert. {x
+~
+62 ag 2
+D5
+~
+~
+0 0 6218 0
+S
+#6220
+{yThe Foot Of The Eastern Gate Tower{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. A large ladder has been bound to one of the
+larger tree trunks here, leads upward to the eastern gate tower. To the east
+lies the main gate to the camp, heavily guarded as ever. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6238 0
+D3
+~
+~
+0 0 6216 0
+D4
+~
+~
+0 0 6221 0
+S
+#6221
+{yUp A Rickety Ladder{x~
+   {yThe ladder on which you are standing creaks and groans every time you
+shift your weight. The rungs have been carved out of wood and bound to the
+long poles that stretch from the ground up to the platform above. Leaf
+covered branches from neighboring trees sway infront and behind the ladder,
+making it quite difficult to move and see at times. The shoddy finishing of
+this ladder shows clearly it was made in a hurry. Like most of the
+structures in the camp, it was erected very quickly after the first
+settlement in order to provide access to the guard towers. {x
+~
+62 ag 2
+D4
+~
+~
+0 0 6222 0
+D5
+~
+~
+0 0 6220 0
+S
+#6222
+{yThe Eastern Gate Tower{x~
+   {yA narrow roadway, surrounded by thick bush and scrub dominates the
+south facing view from this tower. The entire purpose of this small fortress
+and the one directly on the other side of the road, is to protect the gates
+to the encampment. From this height, anyone travelling along the road, can
+be clearly seen even from a great distance. This provides the gate patrol
+with a much needed warning to prepare themselves for a possible attack. 
+Never is it assumed visitors are peaceful, and the patrol is always on its
+highest alert. {x
+~
+62 ag 2
+D5
+~
+~
+0 0 6221 0
+S
+#6223
+{yAt The Foot Of The Guard Tower{x~
+   {yInfront of you stands a large tower, made from long branches and poles
+strung together with rope, then bound to a tree trunk. A makeshift ladder
+made too from whittled brances, rests against the side of the tower, leading
+up to the lookout platform. On either side of the tower lie large piles of
+rocks and stones, waiting for the day when when the might Mayor's guards
+invade. Any branches and twigs that fall here are reguarly cleared off to
+the side to remove any chance of the inhabitants tripping or falling while
+running along the dark, shadowy track. This path continues along the edge of
+the wall to the south and west. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6249 0
+D3
+~
+~
+0 0 6248 0
+D4
+~
+~
+0 0 6224 0
+S
+#6224
+{yOn The Ladder{x~
+   {yThe ladder on which you are standing creaks and groans every time you
+shift your weight. The rungs have been carved out of wood and bound to the
+long poles that stretch from the ground up to the platform above. Leaf
+covered branches from neighboring trees sway infront and behind the ladder,
+making it quite difficult to move and see at times. {y
+~
+62 agi 2
+D4
+~
+~
+0 0 6225 0
+D5
+~
+~
+0 0 6223 0
+S
+#6225
+{yThe South-East Guard Platform{x~
+   {yThe view from this platform is quite remarkable in that you cannot see
+a great deal at all. The forest around the camp is so thick and dense that
+as high up as this platform is, the only landmark that is easily seen is the
+road leading in from the south. However the forest that prevents the guards
+from seeing far into the distance also provides protection, as any potential
+intruders would find it very difficult to see this hidden lookout. A wobbly
+looking ladder leads down from the platform to the ground far below. {x
+~
+62 ag 2
+D5
+~
+~
+0 0 6224 0
+S
+#6226
+{yAt The Foot Of The Guard Tower{x~
+   {yInfront of you stands a large tower, made from long branches and poles
+strung together with rope, then bound to a tree trunk. A makeshift ladder
+made too from whittled brances, rests against the side of the tower, leading
+up to the lookout platform. On either side of the tower lie large piles of
+rocks and stones, waiting for the day when when the might Mayor's guards
+invade. Any branches and twigs that fall here are reguarly cleared off to
+the side to remove any chance of the inhabitants tripping or falling while
+running along the dark, shadowy track. This path continues along the edge of
+the wall to the south and west. {x
+~
+62 ag 2
+D2
+~
+~
+0 0 6254 0
+D3
+~
+~
+0 0 6255 0
+D4
+~
+~
+0 0 6227 0
+S
+#6227
+{yOn The Ladder{x~
+   {yThe ladder on which you are standing creaks and groans every time you
+shift your weight. The rungs have been carved out of wood and bound to the
+long poles that stretch from the ground up to the platform above. Leaf
+covered branches from neighboring trees sway infront and behind the ladder,
+making it quite difficult to move and see at times. {y
+~
+62 agi 2
+D4
+~
+~
+0 0 6228 0
+D5
+~
+~
+0 0 6226 0
+S
+#6228
+{yThe North-East Guard Platform{x~
+   {yThe view from this platform is quite remarkable in that you cannot see
+a great deal at all. The forest is so thick at this height, that little else
+than the campsite itself is clearly visable. Four small plumes of smoke can
+be seen effortlessly gliding up into the sky from the large campfires that
+are constantly burning. The forest that prevents the guards from seeing far
+into the distance also provides protection, as any potential intruders would
+find it very difficult to see this hidden lookout. A wobbly looking ladder
+leads down from the platform to the ground far below. {x
+~
+62 ag 2
+D5
+~
+~
+0 0 6227 0
+S
+#6229
+{yAt The Foot Of The Guard Tower{x~
+   {yInfront of you stands a large tower, made from long branches and poles
+strung together with rope, then bound to a tree trunk. A makeshift ladder
+made too from whittled brances, rests against the side of the tower, leading
+up to the lookout platform. On either side of the tower lie large piles of
+rocks and stones, waiting for the day when when the might Mayor's guards
+invade. Any branches and twigs that fall here are reguarly cleared off to
+the side to remove any chance of the inhabitants tripping or falling while
+running along the dark, shadowy track. This path continues along the edge of
+the wall to the south and east. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6263 0
+D2
+~
+~
+0 0 6264 0
+D4
+~
+~
+0 0 6230 0
+S
+#6230
+{yOn The Ladder{x~
+   {yThe ladder on which you are standing creaks and groans every time you
+shift your weight. The rungs have been carved out of wood and bound to the
+long poles that stretch from the ground up to the platform above. Leaf
+covered branches from neighboring trees sway infront and behind the ladder,
+making it quite difficult to move and see at times. {y
+~
+62 agi 2
+D4
+~
+~
+0 0 6231 0
+D5
+~
+~
+0 0 6229 0
+S
+#6231
+{yThe North-West Guard Platform{x~
+   {yThe view from this platform is quite remarkable in that you cannot see
+a great deal at all. The forest is so thick at this height, that little else
+than the campsite itself is clearly visable. Four small plumes of smoke can
+be seen effortlessly gliding up into the sky from the large campfires that
+are constantly burning. The forest that prevents the guards from seeing far
+into the distance also provides protection, as any potential intruders would
+find it very difficult to see this hidden lookout. A wobbly looking ladder
+leads down from the platform to the ground far below. {x
+~
+62 ag 2
+D5
+~
+~
+0 0 6230 0
+S
+#6232
+{yAt The Foot Of The Guard Tower{x~
+   {yInfront of you stands a large tower, made from long branches and poles
+strung together with rope, then bound to a tree trunk. A makeshift ladder
+made too from whittled brances, rests against the side of the tower, leading
+up to the lookout platform. On either side of the tower lie large piles of
+rocks and stones, waiting for the day when when the might Mayor's guards
+invade. Any branches and twigs that fall here are reguarly cleared off to
+the side to remove any chance of the inhabitants tripping or falling while
+running along the dark, shadowy track. This path continues along the edge of
+the wall to the north and east. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6269 0
+D1
+~
+~
+0 0 6240 0
+D4
+~
+~
+0 0 6233 0
+S
+#6233
+{yOn The Ladder{x~
+   {yThe ladder on which you are standing creaks and groans every time you
+shift your weight. The rungs have been carved out of wood and bound to the
+long poles that stretch from the ground up to the platform above. Leaf
+covered branches from neighboring trees sway infront and behind the ladder,
+making it quite difficult to move and see at times. {y
+~
+62 agi 2
+D4
+~
+~
+0 0 6234 0
+D5
+~
+~
+0 0 6232 0
+S
+#6234
+{yThe South-Western Guard Platform{x~
+   {yThe view from this platform is quite remarkable in that you cannot see
+a great deal at all. The forest around the camp is so thick and dense that
+as high up as this platform is, the only landmark that is easily seen is the
+road leading in from the south. However the forest that prevents the guards
+from seeing far into the distance also provides protection, as any potential
+intruders would find it very difficult to see this hidden lookout. A wobbly
+looking ladder leads down from the platform to the ground far below. {x
+~
+62 ag 2
+D5
+~
+~
+0 0 6233 0
+S
+#6235
+{yAlong The Southern Barricade Wall{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. The dirt ground here has been firmly packed
+down to a stable, level surface by the many feet that patrol round this
+wall, protecting the camp from the outside. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6242 0
+D1
+~
+~
+0 0 6236 0
+S
+#6236
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. Unlike the rest of the camp, the treeline high
+above this clearing has receded somewhat, allowing light and air to the
+area. However, imposing shadows from the mighty trees around the edge, still
+blanket the ground in both night and day. The surrounding trees and scrub
+has been well cleared to form a wide circle with paths leading off in all
+directions. A thick line of trees stands to the north, preventing you from
+even looking very far into the undergrowth. This open area continues all
+around you. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6243 0
+D1
+~
+~
+0 0 6237 0
+D2
+~
+~
+0 0 6217 0
+D3
+~
+~
+0 0 6235 0
+S
+#6237
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. Unlike the rest of the camp, the treeline high
+above this clearing has receded somewhat, allowing light and air to the
+area. However, imposing shadows from the mighty trees around the edge, still
+blanket the ground in both night and day. The surrounding trees and scrub
+has been well cleared to form a wide circle with paths leading off in all
+directions. This open area continues all around you, with the daunting sight
+of the heavily guarded encampment gate, just a short way to the south. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6244 0
+D1
+~
+~
+0 0 6238 0
+D2
+~
+~
+0 0 6216 0
+D3
+~
+~
+0 0 6236 0
+S
+#6238
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. Unlike the rest of the camp, the treeline high
+above this clearing has receded somewhat, allowing light and air to the
+area. However, imposing shadows from the mighty trees around the edge, still
+blanket the ground in both night and day. The surrounding trees and scrub
+has been well cleared to form a wide circle with paths leading off in all
+directions. A thick line of trees stands to the north, preventing you from
+even looking very far into the undergrowth. This open area continues all
+around you. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6245 0
+D1
+~
+~
+0 0 6239 0
+D2
+~
+~
+0 0 6220 0
+D3
+~
+~
+0 0 6237 0
+S
+#6239
+{yAlong The Southern Barricade Wall{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. The dirt ground here has been firmly packed
+down to a stable, level surface by the many feet that patrol round this
+wall, protecting the camp from the outside. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6246 0
+D3
+~
+~
+0 0 6238 0
+S
+#6240
+{yAlong The Southern Barricade Wall{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. The dirt ground here has been firmly packed
+down to a stable, level surface by the many feet that patrol round this
+wall, protecting the camp from the outside. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6241 0
+D3
+~
+~
+0 0 6232 0
+S
+#6241
+{yAlong The Southern Barricade Wall{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. The dirt ground here has been firmly packed
+down to a stable, level surface by the many feet that patrol round this
+wall, protecting the camp from the outside. A wide trail leads to the north,
+while the wall road continues to the east and west. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6283 0
+D1
+~
+~
+0 0 6242 0
+D3
+~
+~
+0 0 6240 0
+S
+#6242
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. Unlike the rest of the camp, the treeline high
+above this clearing has receded somewhat, allowing light and air to the
+area. However, imposing shadows from the mighty trees around the edge, still
+blanket the ground in both night and day. The surrounding trees and scrub
+has been well cleared to form a wide circle with paths leading off in all
+directions. A thick line of trees stands to the north, preventing you from
+even looking very far into the undergrowth. This open area continues all
+around you. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6243 0
+D2
+~
+~
+0 0 6235 0
+D3
+~
+~
+0 0 6241 0
+S
+#6243
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. Unlike the rest of the camp, the treeline high
+above this clearing has receded somewhat, allowing light and air to the
+area. However, imposing shadows from the mighty trees around the edge, still
+blanket the ground in both night and day. The surrounding trees and scrub
+has been well cleared to form a wide circle with paths leading off in all
+directions. A thick line of trees stands to the north, preventing you from
+even looking very far into the undergrowth. This open area continues all
+around you. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6244 0
+D2
+~
+~
+0 0 6236 0
+D3
+~
+~
+0 0 6242 0
+S
+#6244
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. The surrounding trees and scrub has been well
+cleared to form a wide circle with paths leading off in all directions. To
+the north the central path through the encampment leads through the
+undergrowth toward the central shelter, and to the east and west, a wide
+packed trail edges along the inside of the barricade. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6270 0
+D1
+~
+~
+0 0 6245 0
+D2
+~
+~
+0 0 6237 0
+D3
+~
+~
+0 0 6243 0
+S
+#6245
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. Unlike the rest of the camp, the treeline high
+above this clearing has receded somewhat, allowing light and air to the
+area. However, imposing shadows from the mighty trees around the edge, still
+blanket the ground in both night and day. The surrounding trees and scrub
+has been well cleared to form a wide circle with paths leading off in all
+directions. A thick line of trees stands to the north, preventing you from
+even looking very far into the undergrowth. This open area continues all
+around you. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6246 0
+D2
+~
+~
+0 0 6238 0
+D3
+~
+~
+0 0 6244 0
+S
+#6246
+{yA Large Clearing{x~
+   {yA rough scattering of dried leaves covers the hard packed ground here,
+but any intruding branches or fallen logs have been cleared to the side to
+provide a clear view of the main gate. Two towers stand a short distance to
+the southwest and southeast, housing the gateguards who watch over anyone
+trying to enter the camp. Unlike the rest of the camp, the treeline high
+above this clearing has receded somewhat, allowing light and air to the
+area. However, imposing shadows from the mighty trees around the edge, still
+blanket the ground in both night and day. The surrounding trees and scrub
+has been well cleared to form a wide circle with paths leading off in all
+directions. A thick line of trees stands to the north, preventing you from
+even looking very far into the undergrowth. This open area continues all
+around you. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6247 0
+D2
+~
+~
+0 0 6239 0
+D3
+~
+~
+0 0 6245 0
+S
+#6247
+{yAlong The Southern Barricade Wall{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. The dirt ground here has been firmly packed
+down to a stable, level surface by the many feet that patrol round this
+wall, protecting the camp from the outside. A wide trail leads to the north,
+while the wall road continues to the east and west. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6272 0
+D1
+~
+~
+0 0 6248 0
+D3
+~
+~
+0 0 6246 0
+S
+#6248
+{yAlong The Southern Barricade Wall{x~
+   {yOn the south side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the norther side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Huge trees on the
+other side of the barricade poke their thick brances over the spiked top,
+almost covering it in places. The dirt ground here has been firmly packed
+down to a stable, level surface by the many feet that patrol round this
+wall, protecting the camp from the outside. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6223 0
+D3
+~
+~
+0 0 6247 0
+S
+#6249
+{yAlong The Eastern Barricade Wall{x~
+   {yOn the eastern side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Thick poles have
+been tied horizontally along the wall, for a place to tether horses and
+other animals. The tell tale signs of small campsites lie along the edge of
+this well sheltered track. Cleared brush, small piles of burnt out embers
+and food remains show that this is one of the prefered roads for the
+inhabitants to camp down for the night. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6250 0
+D2
+~
+~
+0 0 6223 0
+S
+#6250
+{yAlong The Eastern Barricade Wall{x~
+   {yOn the eastern side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Thick poles have
+been tied horizontally along the wall, for a place to tether horses and
+other animals. The tell tale signs of small campsites lie along the edge of
+this well sheltered track. Cleared brush, small piles of burnt out embers
+and food remains show that this is one of the prefered roads for the
+inhabitants to camp down for the night. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6251 0
+D2
+~
+~
+0 0 6249 0
+D3
+~
+~
+0 0 6274 0
+S
+#6251
+{yAlong The Eastern Barricade Wall{x~
+   {yOn the eastern side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Thick poles have
+been tied horizontally along the wall, for a place to tether horses and
+other animals. The tell tale signs of small campsites lie along the edge of
+this well sheltered track. Cleared brush, small piles of burnt out embers
+and food remains show that this is one of the prefered roads for the
+inhabitants to camp down for the night. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6252 0
+D2
+~
+~
+0 0 6250 0
+S
+#6252
+{yAlong The Eastern Barricade Wall{x~
+   {yOn the eastern side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Thick poles have
+been tied horizontally along the wall, for a place to tether horses and
+other animals. The tell tale signs of small campsites lie along the edge of
+this well sheltered track. Cleared brush, small piles of burnt out embers
+and food remains show that this is one of the prefered roads for the
+inhabitants to camp down for the night. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6253 0
+D2
+~
+~
+0 0 6251 0
+S
+#6253
+{yAlong The Eastern Barricade Wall{x~
+   {yOn the eastern side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Thick poles have
+been tied horizontally along the wall, for a place to tether horses and
+other animals. The tell tale signs of small campsites lie along the edge of
+this well sheltered track. Cleared brush, small piles of burnt out embers
+and food remains show that this is one of the prefered roads for the
+inhabitants to camp down for the night. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6254 0
+D2
+~
+~
+0 0 6252 0
+D3
+~
+~
+0 0 6275 0
+S
+#6254
+{yAlong The Eastern Barricade Wall{x~
+   {yOn the eastern side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. Thick poles have
+been tied horizontally along the wall, for a place to tether horses and
+other animals. The tell tale signs of small campsites lie along the edge of
+this well sheltered track. Cleared brush, small piles of burnt out embers
+and food remains show that this is one of the prefered roads for the
+inhabitants to camp down for the night. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6226 0
+D2
+~
+~
+0 0 6253 0
+S
+#6255
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6226 0
+D3
+~
+~
+0 0 6256 0
+S
+#6256
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6255 0
+D2
+~
+~
+0 0 6277 0
+D3
+~
+~
+0 0 6257 0
+S
+#6257
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6256 0
+D3
+~
+~
+0 0 6258 0
+S
+#6258
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6257 0
+D3
+~
+~
+0 0 6259 0
+S
+#6259
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6258 0
+D2
+~
+~
+0 0 6284 0
+D3
+~
+~
+0 0 6260 0
+S
+#6260
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6259 0
+D3
+~
+~
+0 0 6261 0
+S
+#6261
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6260 0
+D3
+~
+~
+0 0 6262 0
+S
+#6262
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6261 0
+D2
+~
+~
+0 0 6278 0
+D3
+~
+~
+0 0 6263 0
+S
+#6263
+{yAlong The Northern Barricade Wall{x~
+   {yOn the north side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the southern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The smell of
+smoke from the contstantly lit fires hangs thickly in the air, so strong it
+can almost be seen. There is little wind movement here as the surrounding
+wall and trees block out all but the harshest of weather. Large footprints,
+both human and animal are imprinted in the dirt track here, reminding you to
+be aware of the many and varied inhabitants of the camp. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6262 0
+D3
+~
+~
+0 0 6229 0
+S
+#6264
+{yAlong The Western Barricade Wall{x~
+   {yOn the west side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the eastern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The angle of both
+the wall and the trees on the other side, means that even in daylight
+everything is covered by thick inky shadows, providing protection from the
+many spies and scouts that lurk in the forest outside, waiting for the first
+opportunity to infiltrate the camp. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6229 0
+D2
+~
+~
+0 0 6265 0
+S
+#6265
+{yAlong The Western Barricade Wall{x~
+   {yOn the west side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the eastern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The angle of both
+the wall and the trees on the other side, means that even in daylight
+everything is covered by thick inky shadows, providing protection from the
+many spies and scouts that lurk in the forest outside, waiting for the first
+opportunity to infiltrate the camp. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6264 0
+D1
+~
+~
+0 0 6280 0
+D2
+~
+~
+0 0 6266 0
+S
+#6266
+{yAlong The Western Barricade Wall{x~
+   {yOn the west side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the eastern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The angle of both
+the wall and the trees on the other side, means that even in daylight
+everything is covered by thick inky shadows, providing protection from the
+many spies and scouts that lurk in the forest outside, waiting for the first
+opportunity to infiltrate the camp. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6265 0
+D2
+~
+~
+0 0 6267 0
+S
+#6267
+{yAlong The Western Barricade Wall{x~
+   {yOn the west side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the eastern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The angle of both
+the wall and the trees on the other side, means that even in daylight
+everything is covered by thick inky shadows, providing protection from the
+many spies and scouts that lurk in the forest outside, waiting for the first
+opportunity to infiltrate the camp. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6266 0
+D2
+~
+~
+0 0 6268 0
+S
+#6268
+{yAlong The Western Barricade Wall{x~
+   {yOn the west side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the eastern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The angle of both
+the wall and the trees on the other side, means that even in daylight
+everything is covered by thick inky shadows, providing protection from the
+many spies and scouts that lurk in the forest outside, waiting for the first
+opportunity to infiltrate the camp. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6267 0
+D1
+~
+~
+0 0 6281 0
+D2
+~
+~
+0 0 6269 0
+S
+#6269
+{yAlong The Western Barricade Wall{x~
+   {yOn the west side of this well defined track, a tall barricade wall
+towers above you. The wall is made from thick logs and branches lashed
+together so tightly that it is impossible to see what lies on the other
+side. The tops of the poles have been chiseled to sharp points, in an
+attempt to prevent the Mayor's guards scaling the wall from the other side.
+Thick brush lines the eastern side of the track, so dense that it is
+possible to only see a few feet into it. Above the trees, only the faintest
+glimpse of sky can be seen, so thick is the forest canopy. The angle of both
+the wall and the trees on the other side, means that even in daylight
+everything is covered by thick inky shadows, providing protection from the
+many spies and scouts that lurk in the forest outside, waiting for the first
+opportunity to infiltrate the camp. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6268 0
+D2
+~
+~
+0 0 6232 0
+S
+#6270
+{yA Well Cleared Path{x~
+   {yYou are on a narrow, but well cleared and maintained trail through the
+forest. This is the main thoroughfare through the camp, and inhabitants are
+constantly wandering past, querying your presence, but not wanting to a
+confrontation lest they may come off second best. A layer of dried food
+scraps litter the ground, as people have wandered along from the shelter and
+discarded the leftovers of their food as they walk. Some of the lower
+branches of the trees have been quickly and messily hacked off, as if they
+were needed in a great hurry, leaving a sharp splintered stump poking out
+into the road. Every so often, a rustling sound can be heard from deep in
+the bushes, and a small animal, or even a person will make their way out of
+the dense undergrowth. The path here leads northward toward the shelter, or
+south toward the main gate. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6271 0
+D2
+~
+~
+0 0 6244 0
+S
+#6271
+{yA Well Cleared Path{x~
+   {yYou are on a narrow, but well cleared and maintained trail through the
+forest. This is the main thoroughfare through the camp, and inhabitants are
+constantly wandering past, querying your presence, but not wanting to a
+confrontation lest they may come off second best. A layer of dried food
+scraps litter the ground, as people have wandered along from the shelter and
+discarded the leftovers of their food as they walk. Some of the lower
+branches of the trees have been quickly and messily hacked off, as if they
+were needed in a great hurry, leaving a sharp splintered stump poking out
+into the road. Every so often, a rustling sound can be heard from deep in
+the bushes, and a small animal, or even a person will make their way out of
+the dense undergrowth. The path here leads northward toward the shelter, or
+south toward the main gate. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6287 0
+D2
+~
+~
+0 0 6270 0
+S
+#6272
+{yA Tree Covered Path{x~
+   {yThis wide path is one of the main roadways through the camp from the
+northern barricade wall through to the southern. Clouds of thick black smoke
+linger in the air, from one of the many communal fireplaces that offer
+warmth and shelter to the many people here. Large torches made from rushes
+have been tied to the lower part of some of the tree trunks here, to provide
+some light to the otherwise dark and shadowy trail. Loud clanging noises can
+be heard coming from somewhere to the west, intermitently a sharp hissing
+noise drowns out any of the natural sounds of the forest. Small brown birds
+dart furiously from branch to branch above your head, occaisionally diving
+to the ground to pick up a food scrap someone has left from a previous
+campsite. The trees here have had their lower branches removed and stripped
+down to help make many of the fences and other structures inside the
+encampment. To the south this path joins the wide trail around the inner
+barricade wall. {x
+~
+62 gy 2
+D0
+~
+~
+0 0 6273 0
+D2
+~
+~
+0 0 6247 0
+S
+#6273
+{yA Tree Covered Path{x~
+   {yThis wide path is one of the main roadways through the camp from the
+northern barricade wall through to the southern. Clouds of thick black smoke
+linger in the air, from one of the many communal fireplaces that offer
+warmth and shelter to the many people here. Large torches made from rushes
+have been tied to the lower part of some of the tree trunks here, to provide
+some light to the otherwise dark and shadowy trail. Loud clanging noises can
+be heard coming from somewhere to the west, intermitently a sharp hissing
+noise drowns out any of the natural sounds of the forest. Small brown birds
+dart furiously from branch to branch above your head, occaisionally diving
+to the ground to pick up a food scrap someone has left from a previous
+campsite. The trees here have had their lower branches removed and stripped
+down to help make many of the fences and other structures inside the
+encampment. A well covered path leads through the trees to the east. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6295 0
+D1
+~
+~
+0 0 6274 0
+D2
+~
+~
+0 0 6272 0
+S
+#6274
+{yA Covered Path~
+   {yThere is a break in the trees here, where someone has hacked a low
+pathway through. It appears almost like a forest tunnel, with thick branches
+covered in leaves hang not far above your head. The ground is quite damp and
+uneven, with small pools of water being formed in deep footprints. Small
+insects swarm about your head, creating an unceasing buzzing sound in your
+ears. To the east, you catch a glimpse of the towering barricade wall, and
+the clear track that runs around it, while to the west this path leads to
+another clear track in the forest. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6250 0
+D3
+~
+~
+0 0 6273 0
+S
+#6275
+{yA Narrow Trail{x~
+   {yThis narrow trail has been pushed through the undergrowth more by
+people barging their way through, than by clearing the path properly. The
+ground has been trampled into a narrow muddy track, leading from the wide
+track inside the barricade wall to the east, through to one of the inner
+trails of the camp to the west. Above in the trees, small makeshift
+platforms have been built out of broken branches lashed together. Large
+ropes dangle from them, part of the way to the ground, however not low
+enough to grab onto and climb up. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6253 0
+D3
+~
+~
+0 0 6276 0
+S
+#6276
+{yA Tree Covered Path{x~
+   {yThis wide path is one of the main roadways through the camp from the
+northern barricade wall through to the southern. Clouds of thick black smoke
+linger in the air, from one of the many communal fireplaces that offer
+warmth and shelter to the many people here. Large torches made from rushes
+have been tied to the lower part of some of the tree trunks here, to provide
+some light to the otherwise dark and shadowy trail. A large fire burns in
+the middle of this junction, giving much needed warmth and light to the
+area. Piles of half rotten logs and kindling lie off to the side, ready to
+be thrown on the fire so it will keep burning most hours of the day. A thick
+leafy trail has been pushed through to the east, toward the barricade wall.
+~
+62 ag 2
+D0
+~
+~
+0 0 6277 0
+D1
+~
+~
+0 0 6275 0
+D2
+~
+~
+0 0 6294 0
+S
+#6277
+{yA Tree Covered Path{x~
+   {yThis wide path is one of the main roadways through the camp from the
+northern barricade wall through to the southern. Clouds of thick black smoke
+linger in the air, from one of the many communal fireplaces that offer
+warmth and shelter to the many people here. Large torches made from rushes
+have been tied to the lower part of some of the tree trunks here, to provide
+some light to the otherwise dark and shadowy trail. Loud clanging noises can
+be heard coming from somewhere to the west, intermitently a sharp hissing
+noise drowns out any of the natural sounds of the forest. Small brown birds
+dart furiously from branch to branch above your head, occaisionally diving
+to the ground to pick up a food scrap someone has left from a previous
+campsite. The trees here have had their lower branches removed and stripped
+down to help make many of the fences and other structures inside the
+encampment. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6256 0
+D2
+~
+~
+0 0 6276 0
+S
+#6278
+{yA Wide Trail Through The Camp{x~
+   {yThis trail runs north to south through the camp, from the northern
+barricade wall through to the southern. Huge shadows are cast over the
+entire width of this trail, buy the enormous trees that stand on either
+side. Huge branches, thickly covered in sharp green needles stretch over the
+trail from both sides providing remarkably efficient protection from the
+elements. Very little natural light is able to make its way through the
+dense green canopy above, so large torches have been mounted on poles driven
+into the ground. The torches burn all day and all night, giving the area
+quite an unusual golden glow. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6262 0
+D2
+~
+~
+0 0 6279 0
+S
+#6279
+{yA Clearing Round A Fireplace{x~
+   {yThis trail runs north to south through the camp, from the northern
+barricade wall through to the southern. Huge shadows are cast over the
+entire width of this trail, buy the enormous trees that stand on either
+side. Huge branches, thickly covered in sharp green needles stretch over the
+trail from both sides providing remarkably efficient protection from the
+elements. Very little natural light is able to make its way through the
+dense green canopy above, so large torches have been mounted on poles driven
+into the ground. The torches burn all day and all night, giving the area
+quite an unusual golden glow. Large dark grey rocks mark out a communal
+fireplace here, with a large roasting spit stradling it. Piles of belongings
+rest on the ground next to what appears to be bedding of some sort. It seems
+as though this is one of the areas the outcast inhabitants of this camp use
+to rest safely at night. The continual glow from the fire giving them
+protection from the thieving instincts of some. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6278 0
+D2
+~
+~
+0 0 6292 0
+D3
+~
+~
+0 0 6280 0
+S
+#6280
+{yA Thickly Forested Trail{x~
+   {yThis narrow trail has been pushed through the undergrowth more by
+people barging their way through, than by clearing the path properly. The
+ground has been trampled into a narrow muddy track, leading from the wide
+track inside the barricade wall to the east, through to one of the inner
+trails of the camp to the west. Above in the trees, small makeshift
+platforms have been built out of broken branches lashed together. Large
+ropes dangle from them, part of the way to the ground, however not low
+enough to grab onto and climb up. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6279 0
+D3
+~
+~
+0 0 6265 0
+S
+#6281
+{yA Gap In The Trees{x~
+   {yThere is a break in the trees here, where someone has hacked a low
+pathway through. It appears almost like a forest tunnel, with thick branches
+covered in leaves hang not far above your head. The ground is quite damp and
+uneven, with small pools of water being formed in deep footprints. Small
+insects swarm about your head, creating an unceasing buzzing sound in your
+ears. To the west, you catch a glimpse of the towering barricade wall, and
+the clear track that runs around it, while to the east this path leads to
+another clear track in the forest. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6282 0
+D3
+~
+~
+0 0 6268 0
+S
+#6282
+{yA Junction In The Path{x~
+   {yThis trail runs north to south through the camp, from the northern
+barricade wall through to the southern. Huge shadows are cast over the
+entire width of this trail, buy the enormous trees that stand on either
+side. Huge branches, thickly covered in sharp green needles stretch over the
+trail from both sides providing remarkably efficient protection from the
+elements. Very little natural light is able to make its way through the
+dense green canopy above, so large torches have been mounted on poles driven
+into the ground. The torches burn all day and all night, giving the area
+quite an unusual golden glow. A large fireplace has been made in the middle
+of this junction, large grey rocks placed round the edge to contain the
+embers. The remains of food preparation can been seen here, with piles of
+dry animal bones lying next to fruit and vegetable husks and skins. To the
+west, there is a break in the trees that seems to form a narrow trail, while
+this path continues to the north and south. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6293 0
+D2
+~
+~
+0 0 6283 0
+D3
+~
+~
+0 0 6281 0
+S
+#6283
+{yA Wide Trail Through The Camp{x~
+   {yThis trail runs north to south through the camp, from the northern
+barricade wall through to the southern. Huge shadows are cast over the
+entire width of this trail, buy the enormous trees that stand on either
+side. Huge branches, thickly covered in sharp green needles stretch over the
+trail from both sides providing remarkably efficient protection from the
+elements. Very little natural light is able to make its way through the
+dense green canopy above, so large torches have been mounted on poles driven
+into the ground. The torches burn all day and all night, giving the area
+quite an unusual golden glow. To the south lies the well cleared trail along
+the inside of the barricade wall, while to the north this track continues.
+~
+62 ag 2
+D0
+~
+~
+0 0 6282 0
+D2
+~
+~
+0 0 6241 0
+S
+#6284
+{yA Well Cleared Path{x~
+   {yYou are on a narrow, but well cleared and maintained trail through the
+forest. This is the main thoroughfare through the camp, and inhabitants are
+constantly wandering past, querying your presence, but not wanting to a
+confrontation lest they may come off second best. A layer of dried food
+scraps litter the ground, as people have wandered along from the shelter and
+discarded the leftovers of their food as they walk. Some of the lower
+branches of the trees have been quickly and messily hacked off, as if they
+were needed in a great hurry, leaving a sharp splintered stump poking out
+into the road. Every so often, a rustling sound can be heard from deep in
+the bushes, and a small animal, or even a person will make their way out of
+the dense undergrowth. The path here leads south toward the shelter, or
+north toward the road along the barricade. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6259 0
+D2
+~
+~
+0 0 6285 0
+S
+#6285
+{yA Well Cleared Path{x~
+   {yYou are on a narrow, but well cleared and maintained trail through the
+forest. This is the main thoroughfare through the camp, and inhabitants are
+constantly wandering past, querying your presence, but not wanting to a
+confrontation lest they may come off second best. A layer of dried food
+scraps litter the ground, as people have wandered along from the shelter and
+discarded the leftovers of their food as they walk. Some of the lower
+branches of the trees have been quickly and messily hacked off, as if they
+were needed in a great hurry, leaving a sharp splintered stump poking out
+into the road. Every so often, a rustling sound can be heard from deep in
+the bushes, and a small animal, or even a person will make their way out of
+the dense undergrowth. The path here leads south toward the shelter, or
+north toward the road along the barricade. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6284 0
+D2
+~
+~
+0 0 6286 0
+S
+#6286
+{yUnder A Thatched Shelter{x~
+   {yThis is part of the only structured shelter in the entire encampment.
+Every few feet thick logs have been sunk deep into the ground, and reach up
+to support the thatched roof. On closer inspection, you see the roof has
+been made from many layers of dried leaves and branches bound together, then
+covered in a second layer of handmade wooden shingles. A small amount of
+furniture is here, all of it hand crafted and hardly used. This shelter
+seems to be only used in severe weather, when the natural forest canopy
+can't keep the wind and rain from whipping round the campsites. The well
+cleared main pathway leads northward from here, and to the east you can see
+and hear the blacksmith hammering away. {x
+~
+62 adg 2
+D0
+~
+~
+0 0 6285 0
+D1
+~
+~
+0 0 6288 0
+D2
+~
+~
+0 0 6287 0
+D3
+~
+~
+0 0 6291 0
+S
+#6287
+{yUnder A Thatched Shelter{x~
+   {yThis is part of the only structured shelter in the entire encampment.
+Every few feet thick logs have been sunk deep into the ground, and reach up
+to support the thatched roof. On closer inspection, you see the roof has
+been made from many layers of dried leaves and branches bound together, then
+covered in a second layer of handmade wooden shingles. A small amount of
+furniture is here, all of it hand crafted and hardly used. This shelter
+seems to be only used in severe weather, when the natural forest canopy
+can't keep the wind and rain from whipping round the campsites. A narrow
+path leads south to the main gate. {x
+~
+62 adg 2
+D0
+~
+~
+0 0 6286 0
+D1
+~
+~
+0 0 6289 0
+D2
+~
+~
+0 0 6271 0
+D3
+~
+~
+0 0 6290 0
+S
+#6288
+{yUnder A Thatched Shelter{x~
+   {yThis is part of the only structured shelter in the entire encampment.
+Every few feet thick logs have been sunk deep into the ground, and reach up
+to support the thatched roof. On closer inspection, you see the roof has
+been made from many layers of dried leaves and branches bound together, then
+covered in a second layer of handmade wooden shingles. A small amount of
+furniture is here, all of it hand crafted and hardly used. This shelter
+seems to be only used in severe weather, when the natural forest canopy
+can't keep the wind and rain from whipping round the campsites. The
+blacksmith has workshop in this corner, and has strung up racks and shelves
+to house the implements of his trade. Many buckets full of water stand
+around, ready to have white hot metal plunged into them for cooling. A large
+stone hearth stands in the blazing in the corner. The constant sounds of
+roaring fire and the blacksmith furiously hammering his creations, rings
+loudly in your ears.  
+~
+62 adg 0
+D1
+~
+~
+0 0 6297 0
+D2
+~
+~
+0 0 6289 0
+D3
+~
+~
+0 0 6286 0
+S
+#6289
+{yUnder A Thatched Shelter{x~
+   {yThis is part of the only structured shelter in the entire encampment.
+Every few feet thick logs have been sunk deep into the ground, and reach up
+to support the thatched roof. On closer inspection, you see the roof has
+been made from many layers of dried leaves and branches bound together, then
+covered in a second layer of handmade wooden shingles. A small amount of
+furniture is here, all of it hand crafted and hardly used. This shelter
+seems to be only used in severe weather, when the natural forest canopy
+can't keep the wind and rain from whipping round the campsites. A large
+wooden trapdoor can clearly be seen under the dust here, with a large brass
+handle set into it. {x
+~
+62 adg 2
+D0
+~
+~
+0 0 6288 0
+D3
+~
+~
+0 0 6287 0
+D5
+~
+trapdoor~
+1 0 6298 0
+S
+#6290
+{yUnder A Thatched Shelter{x~
+   {yThis is part of the only structured shelter in the entire encampment.
+Every few feet thick logs have been sunk deep into the ground, and reach up
+to support the thatched roof. On closer inspection, you see the roof has
+been made from many layers of dried leaves and branches bound together, then
+covered in a second layer of handmade wooden shingles. A small amount of
+furniture is here, all of it hand crafted and hardly used. This shelter
+seems to be only used in severe weather, when the natural forest canopy
+can't keep the wind and rain from whipping round the campsites. A large
+stock of firewood and kindling has been piled to one side, for communal use
+for the many fires that stay lit in various parts. {x
+~
+62 adg 2
+D0
+~
+~
+0 0 6291 0
+D1
+~
+~
+0 0 6287 0
+D3
+~
+~
+0 0 6296 0
+S
+#6291
+{yUnder A Thatched Shelter{x~
+   {yThis is part of the only structured shelter in the entire encampment.
+Every few feet thick logs have been sunk deep into the ground, and reach up
+to support the thatched roof. On closer inspection, you see the roof has
+been made from many layers of dried leaves and branches bound together, then
+covered in a second layer of handmade wooden shingles. A small amount of
+furniture is here, all of it hand crafted and hardly used. This shelter
+seems to be only used in severe weather, when the natural forest canopy
+can't keep the wind and rain from whipping round the campsites. A table with
+an assortment of breads and root vegetables has been placed at an odd angle
+here, as if trying to cover over something. {x
+~
+62 adg 2
+D1
+~
+~
+0 0 6286 0
+D2
+~
+~
+0 0 6290 0
+D5
+~
+trapdoor~
+1 0 6299 0
+S
+#6292
+{yA Wide Trail Through The Camp{x~
+   {yThis trail runs north to south through the camp, from the northern
+barricade wall through to the southern. Huge shadows are cast over the
+entire width of this trail, buy the enormous trees that stand on either
+side. Huge branches, thickly covered in sharp green needles stretch over the
+trail from both sides providing remarkably efficient protection from the
+elements. Very little natural light is able to make its way through the
+dense green canopy above, so large torches have been mounted on poles driven
+into the ground. The torches burn all day and all night, giving the area
+quite an unusual golden glow. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6279 0
+D2
+~
+~
+0 0 6293 0
+S
+#6293
+{yA Wide Trail Through The Camp{x~
+   {yThis trail runs north to south through the camp, from the northern
+barricade wall through to the southern. Huge shadows are cast over the
+entire width of this trail, buy the enormous trees that stand on either
+side. Huge branches, thickly covered in sharp green needles stretch over the
+trail from both sides providing remarkably efficient protection from the
+elements. Very little natural light is able to make its way through the
+dense green canopy above, so large torches have been mounted on poles driven
+into the ground. The torches burn all day and all night, giving the area
+quite an unusual golden glow. To the east, another trail leads toward the
+central shelter. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6292 0
+D1
+~
+~
+0 0 6296 0
+D2
+~
+~
+0 0 6282 0
+S
+#6294
+{yA Tree Covered Path{x~
+   {yThis wide path is one of the main roadways through the camp from the
+northern barricade wall through to the southern. Clouds of thick black smoke
+linger in the air, from one of the many communal fireplaces that offer
+warmth and shelter to the many people here. Large torches made from rushes
+have been tied to the lower part of some of the tree trunks here, to provide
+some light to the otherwise dark and shadowy trail. Loud clanging noises can
+be heard coming from somewhere to the west, intermitently a sharp hissing
+noise drowns out any of the natural sounds of the forest. Small brown birds
+dart furiously from branch to branch above your head, occaisionally diving
+to the ground to pick up a food scrap someone has left from a previous
+campsite. The trees here have had their lower branches removed and stripped
+down to help make many of the fences and other structures inside the
+encampment. A narrow trail leads to west, toward the central shelter. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6276 0
+D2
+~
+~
+0 0 6295 0
+D3
+~
+~
+0 0 6297 0
+S
+#6295
+{yA Tree Covered Path{x~
+   {yThis wide path is one of the main roadways through the camp from the
+northern barricade wall through to the southern. Clouds of thick black smoke
+linger in the air, from one of the many communal fireplaces that offer
+warmth and shelter to the many people here. Large torches made from rushes
+have been tied to the lower part of some of the tree trunks here, to provide
+some light to the otherwise dark and shadowy trail. Loud clanging noises can
+be heard coming from somewhere to the west, intermitently a sharp hissing
+noise drowns out any of the natural sounds of the forest. Small brown birds
+dart furiously from branch to branch above your head, occaisionally diving
+to the ground to pick up a food scrap someone has left from a previous
+campsite. The trees here have had their lower branches removed and stripped
+down to help make many of the fences and other structures inside the
+encampment. {x
+~
+62 ag 2
+D0
+~
+~
+0 0 6294 0
+D2
+~
+~
+0 0 6273 0
+S
+#6296
+{yA Short Path Through The Trees{x~
+   {yThis short pathway leads from the central shelter to the next main
+roadway through the camp. The trees have only been partially cleared, and
+many branches hang dangerously low to the ground. A thin line of grey rocks
+have been placed along the side of the path as markers for both night and
+daytime, however many are missing, either kicked aside or taken by a
+passerby to fulfil some other purpose. The only light that illuminates this
+narrow path is the faint glow from one of the large campfires that lies to
+the southwest. A couple of large logs have been left here to rot, not being
+of high enough standard to be put to use elsewhere. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6290 0
+D3
+~
+~
+0 0 6293 0
+S
+#6297
+{yA Short Path Through The Trees{x~
+   {yThis short pathway leads from the central shelter to the next main
+roadway through the camp. The trees have only been partially cleared, and
+many branches hang dangerously low to the ground. A thin line of grey rocks
+have been placed along the side of the path as markers for both night and
+daytime, however many are missing, either kicked aside or taken by a
+passerby to fulfil some other purpose. The only light that illuminates this
+narrow path is the faint glow from one of the large campfires that lies to
+the southwest. A couple of large logs have been left here to rot, not being
+of high enough standard to be put to use elsewhere. {x
+~
+62 ag 2
+D1
+~
+~
+0 0 6294 0
+D3
+~
+~
+0 0 6288 0
+S
+#6298
+{yA Holding Cellar{x~
+   {yYou are in what appears to be some sort of holding cellar for
+prisoners, with rusting iron shackles attached to the walls in many places.
+The floors are dirty and covered in rat droppings. Small puddles of an
+unknown liquid have formed in pits in the floor, giving the air a damp
+feeling. It is clear this cellar is hardly ever opened to the fresh air and
+daylight, as the smells of the earth and the creatures living down here
+still linger in the heavy air. Loud scratching can be heard, as rats and
+mice try to eat through the rotting wooden lining of the walls. {x
+~
+62 adg 0
+D4
+~
+trapdoor~
+1 0 6289 0
+S
+#6299
+{yIn A Dark Cellar{x~
+   {yThis dark cellar has been dug out of the ground totally by hand. The
+walls, ceiling and floors have been lined with long wooden planks, into
+which shelving has been built. Four sets of long freestanding shelves stand
+in rows here, every shelf covered in multiple bags and boxes. The cellar
+seems to be used for housing dry food and grains for using during the winter
+months, and in emergency situations. A large stack of spare torches rests in
+one corner, while a thick pile of spare spears lies in another. {x
+~
+62 adg 0
+D4
+~
+trapdoor~
+1 0 6291 0
+S
+$~

@@ -1,0 +1,2192 @@
+#5600
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5580 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5620 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5601
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+56 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5581 0
+D1
+~
+~
+0 0 5602 0
+D2
+Weeping Way.
+~
+~
+0 0 5621 0
+S
+#5602
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+56 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5582 0
+D1
+Independence Avenue.
+~
+~
+0 0 5603 0
+D3
+~
+~
+0 0 5601 0
+S
+#5603
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+56 0 1
+D0
+An Abandoned Warehouse.
+~
+door~
+1 -1 5583 0
+D1
+Independence Avenue.
+~
+~
+0 0 5604 0
+D3
+Independence Avenue.
+~
+~
+0 0 5602 0
+S
+#5604
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+56 0 1
+D0
+~
+~
+0 0 5584 0
+D1
+Independence Avenue.
+~
+~
+0 0 5605 0
+D3
+Weeping Way.
+~
+~
+0 0 5603 0
+S
+#5605
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+56 0 1
+D0
+~
+~
+0 0 5585 0
+D1
+Independence Avenue.
+~
+~
+0 0 5606 0
+D3
+Weeping Way.
+~
+~
+0 0 5604 0
+S
+#5606
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+56 0 1
+D0
+Lost Lane.
+~
+~
+0 0 5586 0
+D3
+Weeping Way.
+~
+~
+0 0 5605 0
+S
+#5607
+Hope Emporium~
+   No descript yet.
+~
+56 0 0
+D1
+~
+~
+0 0 5608 0
+S
+#5608
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+56 0 1
+D0
+Town Square.
+~
+~
+0 0 5588 0
+D1
+Town Square.
+~
+~
+0 0 5609 0
+D3
+~
+~
+0 0 5607 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5609
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+56 0 1
+D1
+Town Square.
+~
+~
+0 0 5610 0
+D3
+Town Square.
+~
+~
+0 0 5608 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5610
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+56 0 1
+D0
+~
+~
+1 0 5590 0
+D1
+Town Square.
+~
+~
+0 0 5611 0
+D2
+~
+~
+0 0 5630 0
+D3
+Town Square.
+~
+~
+0 0 5609 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5611
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+56 0 1
+D1
+Town Square.
+~
+~
+0 0 5612 0
+D3
+Town Square.
+~
+~
+0 0 5610 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5612
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+56 0 1
+D0
+Town Square.
+~
+~
+0 0 5592 0
+D1
+~
+~
+0 0 5613 0
+D3
+Hope Emporium.
+~
+~
+0 0 5611 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5613
+Hope Emporium~
+   No descript yet.
+~
+56 0 0
+D3
+~
+~
+0 0 5612 0
+S
+#5614
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+56 0 0
+D0
+~
+~
+0 0 5594 0
+D1
+~
+~
+0 0 5615 0
+S
+#5615
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+56 0 0
+D1
+~
+~
+0 0 5616 0
+D3
+~
+~
+0 0 5614 0
+S
+#5616
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+56 0 0
+D1
+~
+~
+0 0 5617 0
+D3
+~
+~
+0 0 5615 0
+S
+#5617
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+56 0 0
+D0
+~
+~
+0 0 5597 0
+D1
+~
+~
+0 0 5618 0
+D3
+~
+~
+0 0 5616 0
+S
+#5618
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+56 0 0
+D0
+~
+~
+0 0 5598 0
+D3
+~
+~
+0 0 5617 0
+S
+#5619
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5599 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5639 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5620
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5600 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5640 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5621
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+56 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5601 0
+D1
+Weeping Way.
+~
+~
+0 0 5622 0
+S
+#5622
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+56 0 1
+D1
+Weeping Way.
+~
+~
+0 0 5623 0
+D3
+Weeping Way.
+~
+~
+0 0 5621 0
+S
+#5623
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+56 0 1
+D1
+Weeping Way.
+~
+~
+0 0 5624 0
+D3
+Weeping Way.
+~
+~
+0 0 5622 0
+S
+#5624
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+56 0 1
+D1
+Weeping Way.
+~
+~
+0 0 5625 0
+D3
+Weeping Way.
+~
+~
+0 0 5623 0
+S
+#5625
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+56 0 1
+D1
+Weeping Way.
+~
+~
+0 0 5626 0
+D3
+Weeping Way.
+~
+~
+0 0 5624 0
+S
+#5626
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+56 0 1
+D1
+~
+~
+0 0 5627 0
+D3
+Weeping Way.
+~
+~
+0 0 5625 0
+S
+#5627
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5628 0
+D2
+~
+~
+0 0 5647 0
+D3
+~
+~
+0 0 5626 0
+S
+#5628
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5629 0
+D2
+~
+~
+0 0 5648 0
+D3
+~
+~
+0 0 5627 0
+S
+#5629
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D2
+~
+~
+0 0 5649 0
+D3
+~
+~
+0 0 5628 0
+S
+#5630
+The First Memorial Bank Of Hope~
+   The air in here is thick with the smell of money. Plush dark red leather
+sofas sit on either side of the door, each with a highly polished mahogany
+table infront of them. Behind the counter, the many bank workers are busy,
+with the clinking of coins being counted, ringing loudly in the air. No
+expense has been spared in the decoration of the bank, hoping to give the
+citizens some faith that their meagre savings are indeed secure.  
+~
+56 cde 0
+D0
+~
+~
+0 0 5610 0
+S
+#5631
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5632 0
+D2
+~
+~
+0 0 5651 0
+S
+#5632
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5633 0
+D2
+~
+~
+0 0 5652 0
+D3
+~
+~
+0 0 5631 0
+S
+#5633
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D2
+~
+~
+0 0 5653 0
+D3
+~
+~
+0 0 5632 0
+S
+#5634
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5635 0
+D2
+~
+~
+0 0 5654 0
+S
+#5635
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5636 0
+D2
+~
+~
+0 0 5655 0
+D3
+~
+~
+0 0 5634 0
+S
+#5636
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5637 0
+D2
+~
+~
+0 0 5656 0
+D3
+~
+~
+0 0 5635 0
+S
+#5637
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5638 0
+D2
+~
+~
+0 0 5657 0
+D3
+~
+~
+0 0 5636 0
+S
+#5638
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D2
+~
+~
+0 0 5658 0
+D3
+~
+~
+0 0 5637 0
+S
+#5639
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5619 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5659 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5640
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5620 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5660 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5641
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5642 0
+D2
+~
+~
+0 0 5661 0
+S
+#5642
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D2
+~
+~
+0 0 5662 0
+D3
+~
+~
+0 0 5641 0
+S
+#5643
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5644 0
+D2
+~
+~
+0 0 5663 0
+S
+#5644
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D2
+~
+~
+0 0 5664 0
+D3
+~
+~
+0 0 5643 0
+S
+#5645
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5646 0
+D2
+~
+~
+0 0 5665 0
+S
+#5646
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D2
+~
+~
+0 0 5666 0
+D3
+~
+~
+0 0 5645 0
+S
+#5647
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5627 0
+D1
+~
+~
+0 0 5648 0
+D2
+~
+~
+0 0 5667 0
+S
+#5648
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5628 0
+D1
+~
+~
+0 0 5649 0
+D2
+~
+~
+0 0 5668 0
+D3
+~
+~
+0 0 5647 0
+S
+#5649
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5629 0
+D1
+~
+~
+0 0 5650 0
+D2
+~
+~
+0 0 5669 0
+D3
+~
+~
+0 0 5648 0
+S
+#5650
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D1
+~
+~
+0 0 5651 0
+D2
+~
+~
+0 0 5670 0
+D3
+~
+~
+0 0 5649 0
+S
+#5651
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5631 0
+D1
+~
+~
+0 0 5652 0
+D2
+~
+~
+0 0 5671 0
+D3
+~
+~
+0 0 5650 0
+S
+#5652
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5632 0
+D1
+~
+~
+0 0 5653 0
+D2
+~
+~
+0 0 5672 0
+D3
+~
+~
+0 0 5651 0
+S
+#5653
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5633 0
+D1
+~
+gate~
+1 0 5654 0
+D2
+~
+~
+0 0 5673 0
+D3
+~
+~
+0 0 5652 0
+S
+#5654
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5634 0
+D1
+~
+~
+0 0 5655 0
+D2
+~
+~
+0 0 5674 0
+D3
+~
+gate~
+1 0 5653 0
+S
+#5655
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5635 0
+D1
+~
+~
+0 0 5656 0
+D2
+~
+~
+0 0 5675 0
+D3
+~
+~
+0 0 5654 0
+S
+#5656
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5636 0
+D1
+~
+~
+0 0 5657 0
+D2
+~
+~
+0 0 5676 0
+D3
+~
+~
+0 0 5655 0
+S
+#5657
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5637 0
+D1
+~
+~
+0 0 5658 0
+D2
+~
+~
+0 0 5677 0
+D3
+~
+~
+0 0 5656 0
+S
+#5658
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5638 0
+D2
+~
+~
+0 0 5678 0
+D3
+~
+~
+0 0 5657 0
+S
+#5659
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5639 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5679 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5660
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5640 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5680 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5661
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5641 0
+D1
+~
+~
+0 0 5662 0
+S
+#5662
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5642 0
+D1
+~
+~
+0 0 5663 0
+D3
+~
+~
+0 0 5661 0
+S
+#5663
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5643 0
+D3
+~
+~
+0 0 5662 0
+S
+#5664
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5644 0
+D1
+~
+~
+0 0 5665 0
+S
+#5665
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5645 0
+D3
+~
+~
+0 0 5664 0
+S
+#5666
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5646 0
+D2
+~
+~
+1 0 5686 0
+S
+#5667
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5647 0
+D1
+~
+~
+0 0 5668 0
+S
+#5668
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5648 0
+D1
+~
+~
+0 0 5669 0
+D3
+~
+~
+0 0 5667 0
+S
+#5669
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5649 0
+D3
+~
+~
+0 0 5668 0
+S
+#5670
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5650 0
+D2
+~
+~
+1 0 5690 0
+D5
+~
+~
+1 0 5404 0
+S
+#5671
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5651 0
+D1
+~
+~
+0 0 5672 0
+S
+#5672
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5652 0
+D1
+~
+~
+0 0 5673 0
+D3
+~
+~
+0 0 5671 0
+S
+#5673
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5653 0
+D3
+~
+~
+0 0 5672 0
+S
+#5674
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5654 0
+D1
+~
+~
+0 0 5675 0
+S
+#5675
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5655 0
+D1
+~
+~
+0 0 5676 0
+D3
+~
+~
+0 0 5674 0
+S
+#5676
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5656 0
+D1
+~
+~
+0 0 5677 0
+D3
+~
+~
+0 0 5675 0
+S
+#5677
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5657 0
+D1
+~
+~
+0 0 5678 0
+D3
+~
+~
+0 0 5676 0
+S
+#5678
+An unfinished room~
+An unfinished room
+~
+56 0 0
+D0
+~
+~
+0 0 5658 0
+D3
+~
+~
+0 0 5677 0
+S
+#5679
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5659 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5699 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5680
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5660 0
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5681 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5681
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5682 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5680 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5682
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5683 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5681 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5683
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5684 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5682 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5684
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5685 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5683 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5685
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5686 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5684 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5686
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+~
+wall~
+2 0 5666 0
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5687 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5685 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5687
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5688 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5686 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5688
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5689 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5687 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5689
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5690 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5688 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5690
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+~
+wall~
+1 0 5670 0
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5691 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5689 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5691
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5692 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5690 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5692
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5693 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5691 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5693
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5694 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5692 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5694
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5695 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5693 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5695
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5696 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5694 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5696
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5697 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5695 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5697
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5698 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5696 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5698
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D1
+Outside the Walls of Hope.
+~
+~
+0 0 5699 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5697 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5699
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+56 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5679 0
+D3
+Outside the Walls of Hope.
+~
+~
+0 0 5698 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+$~

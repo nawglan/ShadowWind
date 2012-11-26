@@ -1,0 +1,181 @@
+#31
+Weirvane, South Side /Krilgar/~
+3199 20 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 3155 1 3175 100	* Garru the Mapmaker
+M 0 3150 5 3109 100	* the male traveller
+M 0 3103 6 3115 100	* a shopper
+M 0 3095 3 3115 100	* a female traveller
+D 0 3116 1 3	* A Path Through The Garden
+M 0 3116 8 3124 100	* a commoner
+M 0 3101 10 3126 100	* a young ruffian
+M 0 3111 10 3126 100	* a spoiled brat
+M 0 3114 8 3126 100	* a peasant woman
+M 0 3102 10 3133 100	* a street cleaner
+M 0 3114 8 3133 100	* a peasant woman
+M 0 3116 8 3133 100	* a commoner
+M 0 3000 5 3136 100	* a busy merchant
+E 1 3198 6 17	* a wooden key
+M 0 3102 10 3136 100	* a street cleaner
+M 0 3114 8 3136 100	* a peasant woman
+M 0 3013 6 3139 100	* the Citizen of Weirvane
+M 0 3113 8 3139 100	* a wealthy man
+M 0 3116 8 3139 100	* a commoner
+M 0 3111 10 3107 100	* a spoiled brat
+M 0 3114 8 3107 100	* a peasant woman
+M 0 3116 8 3107 100	* a commoner
+M 0 3150 5 3172 100	* the male traveller
+M 0 3114 8 3172 100	* a peasant woman
+M 0 3113 8 3174 100	* a wealthy man
+M 0 3116 8 3174 100	* a commoner
+M 0 3116 8 3159 100	* a commoner
+M 0 3114 8 3158 100	* a peasant woman
+M 0 3067 6 3156 100	* the Cityguard
+M 0 3101 10 3156 100	* a young ruffian
+M 0 3116 8 3156 100	* a commoner
+D 0 3154 1 1	* Wayside Road
+M 0 3103 6 3154 100	* a shopper
+M 0 3111 10 3154 100	* a spoiled brat
+M 0 3111 10 3134 100	* a spoiled brat
+M 0 3094 6 3137 100	* a Wolf
+M 0 3111 10 3137 100	* a spoiled brat
+M 0 3000 5 3104 100	* a busy merchant
+E 1 3198 6 17	* a wooden key
+M 0 3102 10 3104 100	* a street cleaner
+M 0 3111 10 3104 100	* a spoiled brat
+D 0 3183 5 3	* The Tavern Of The Dead Goblin
+M 0 3108 3 3183 100	* a drunken man
+M 0 3108 3 3183 100	* a drunken man
+M 0 3109 2 3183 100	* a shady mercenary
+M 0 3108 3 3183 100	* a drunken man
+M 0 3109 2 3183 100	* a shady mercenary
+M 0 3110 1 3183 100	* Mungo the Barkeep
+M 0 3152 8 3199 100	* a hobgoblin
+O 0 1280 2 3199 100	* A Portal of Ether
+M 0 3152 8 3197 100	* a hobgoblin
+M 0 3152 8 3195 100	* a hobgoblin
+M 0 3152 8 3193 100	* a hobgoblin
+M 0 3152 8 3184 100	* a hobgoblin
+D 0 3184 4 3	* A Makeshift Tunnel
+M 0 3152 8 3186 100	* a hobgoblin
+M 0 3152 8 3188 100	* a hobgoblin
+M 0 3152 8 3190 100	* a hobgoblin
+M 0 3153 4 3198 100	* a blob
+M 0 3153 4 3194 100	* a blob
+M 0 3153 4 3185 100	* a blob
+M 0 3153 4 3189 100	* a blob
+D 0 3191 3 3	* The End Of The Passage
+M 0 3105 3 3141 100	* a young swordpupil
+M 0 3105 3 3141 100	* a young swordpupil
+M 0 3105 3 3141 100	* a young swordpupil
+M 0 3104 3 3150 100	* an apprentice
+M 0 3104 3 3150 100	* an apprentice
+M 0 3104 3 3150 100	* an apprentice
+M 0 3101 10 3129 100	* a young ruffian
+M 0 3101 10 3130 100	* a young ruffian
+M 0 3068 2 3105 100	* a City Official
+M 0 3101 10 3105 100	* a young ruffian
+M 0 3144 1 3102 100	* the Town Crier
+M 0 3101 10 3102 100	* a young ruffian
+M 0 3016 1 3119 100	* Sindar the Trader
+G 1 3104 999 -1	* a simple water skin
+G 1 3000 999 -1	* a timber barrel
+G 1 3094 999 -1	* a canvas backpack
+G 1 3092 999 -1	* a length of rope
+G 1 3093 999 -1	* a leather water skin
+G 1 3003 999 -1	* a bottle of whiskey
+M 0 3015 1 3170 100	* Konei the Weaponsmith
+G 1 3020 999 -1	* a dagger
+G 1 3021 999 -1	* a small sword
+G 1 3022 999 -1	* a long sword
+G 1 3023 999 -1	* a wooden club
+G 1 3024 999 -1	* a warhammer
+G 1 3025 999 -1	* a flail
+G 1 3026 999 -1	* a halberd
+G 1 3048 999 -1	* an ivory hilted shortsword
+M 0 3149 1 3149 100	* a Human Guardian
+M 0 3140 1 3140 100	* a Barbarian Guardian
+M 0 3151 1 3123 100	* Milient the shopkeeper
+G 1 3030 999 -1	* a torch
+G 1 3012 999 -1	* some iron rations
+G 1 3063 999 -1	* a small wooden raft
+G 1 3031 999 -1	* a lantern
+G 1 3032 999 -1	* a small bag
+G 1 3000 999 -1	* a timber barrel
+G 1 3033 999 -1	* a box
+D 0 3106 1 2	* Caravan Road
+M 0 3095 3 3106 100	* a female traveller
+M 0 3009 2 3153 100	* the Trader
+G 1 3005 50 -1	* a light blue scarf
+G 1 3023 50 -1	* a wooden club
+G 1 3031 50 -1	* a lantern
+M 0 3014 3 3153 100	* the Citizen of Weirvane
+M 0 3062 10 3153 100	* a stray dog
+M 0 3008 9 3108 100	* the royal cityguard
+M 0 3023 1 3142 100	* Cai the Guildmaster
+M 0 3021 1 3151 100	* Blaise the Guildmaster
+M 0 3011 2 3145 100	* the peddler
+G 1 3080 50 -1	* a pair of bronze leggings
+M 0 3007 5 3128 100	* the mercenary
+M 0 3146 4 3180 100	* the shady thug
+M 0 3146 4 3182 100	* the shady thug
+M 0 3146 4 3181 100	* the shady thug
+M 0 3146 4 3179 100	* the shady thug
+O 0 3034 1 3169 100	* a broad counter of solid oak
+M 1 3048 1 3169 100	* Brimlock the Banker
+M 0 3004 1 3122 100	* Bedwyr the Armorer
+G 1 3040 100 -1	* a breast plate
+G 1 3042 100 -1	* a small wooden shield
+G 1 3044 100 -1	* a studded leather jacket
+G 1 3076 100 -1	* a leather cap
+G 1 3081 100 -1	* a pair of leather pants
+G 1 3070 100 -1	* a pair of bronze gauntlets
+G 1 3071 100 -1	* a pair of leather gloves
+G 1 3075 100 -1	* a bronze helmet
+G 1 3080 100 -1	* a pair of bronze leggings
+G 1 3085 100 -1	* a pair of bronze sleeves
+G 1 3086 100 -1	* a pair of leather sleeves
+G 1 3041 100 -1	* a chain mail shirt
+G 1 3043 100 -1	* a leather jacket
+G 1 3046 100 -1	* a bronze breast plate
+E 1 3022 200 16	* a long sword
+M 0 3005 1 3118 100	* Casiella the Inn Keeper
+M 0 3010 1 3168 100	* Londrin the Post Carrier
+D 0 3120 0 1	* A Wealthy Private Home
+D 0 3121 2 1	* A Wealthy Private Home
+D 0 3112 0 1	* Wayside Road
+D 0 3178 3 1	* Hole In The Wall
+D 0 3143 0 1	* A Large Wealthy Home
+D 0 3132 2 1	* Savannah Way
+D 0 3176 3 2	* City Officials Quarters
+M 0 3102 10 3101 100	* a street cleaner
+M 0 3102 10 3166 100	* a street cleaner
+M 0 3103 6 3138 100	* a shopper
+S
+$

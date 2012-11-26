@@ -1,0 +1,775 @@
+#3101
+ruffian boy dirty~
+a young ruffian~
+A young ruffian is here, eyeing your pocket suspiciously.
+~
+A young man forgotten by society, he lives purely by petty theft,
+stealing what he can, to then sell on to others.  
+~
+cd 0 -400 X 0 
+10 15 5 5d5+100
+15 5000 -1
+8 8 1 3 1 3
+T 110 2d6+2 9
+E 5 100 3044 -1
+E 16 100 3020 -1
+>rand_prog                                      5~
+if ispc ($r)
+     steal coins $r
+     mpechoat $r A young ruffian bumps into you, suddenly jumping back in surprise.
+     mpechoaround $r A young ruffian bumps into $r, suddenly jumping back in surprise.
+     say oi sorry gov', was an accident ya know.
+  endif
+ else
+endif
+~
+>rand_prog                                          15~
+mpecho A young ruffian glances at you, sizing up your purse.
+~
+|
+#3102
+cleaner street~
+a street cleaner~
+A street cleaner is here, looking for garbage to pick up.
+~
+His face covered in dirt and grime, this man looks tired and weary.
+He slowly walks the streets of the city every day, half heartedly
+picking up the obvious pieces of trash that litter the streets. 
+~
+cd 0 0 X 0 
+3 18 8 2d2+30
+5 600 -1
+8 8 1 3 1 3
+T 120 1d2+2 6
+E 9 80 3111 -1
+Str: 100
+>rand_prog                                         		10~
+  emot bends down and picks up a piece of trash.
+  mpdelay 5
+  emot holds his find close to his face, examining it carefully.
+~
+>rand_prog                                           	10~
+  emot rummages deep in a pocket of his overalls, looking for a hanky.
+~
+>rand_prog                                                10~
+  sigh
+  say one of these days I'll get a real job.
+  mpdelay 5
+  emot mutters something about his wife not burning dinner being more likely.
+~
+|
+#3103
+woman shopper~
+a shopper~
+A woman laden with bags is here, peering in the window of a shop.
+~
+Obviously out doing her family's shopping, this woman looks as though
+she has had a long day. Her hair is coming undone, and hangs infront
+of her eyes, however with carrying all her shopping bags, she doesn't
+have a hand free to sweep it behind her ears.
+~
+cd 0 0 X 0 
+8 16 6 4d4+80
+10 3500 -1
+8 8 2 3 1 3
+T 120 2d3+2 6
+E 6 70 3116 25
+E 1 15 3109 15
+>rand_prog                                        		15~
+   if ispc($r)
+    smile $r
+    mpdelay 5
+    say so many shops, such little time!
+    mpdelay 5
+    giggle
+  endif
+ else
+endif
+~
+>rand_prog                                        		10~
+  emot squeals in delight as she spies another must have purchase.
+~
+>fight_prog                                        		10~
+mpecho A shopper cries out, 'STOP STOP, leave me alone!'
+~
+>fight_prog                                        		5~
+if ispc ($n)
+  shout $n is trying to kill me! HELP
+  endif
+ else
+endif
+~
+|
+#3104
+apprentice cleric~
+an apprentice~
+A young apprentice cleric is here, praying quietly.
+~
+This young cleric is studying hard, one say he hopes to be as wise as his
+master, Blaise.  
+~
+bd 0 0 X 0 
+1 19 9 1d1+10
+0 2250 -1
+8 8 1 3 1 3
+T 150 1d1+1 0
+A 10 8 A young cleric mumbles softly, deep in prayer.
+#3105
+pupil swordpupil sword~
+a young swordpupil~
+A young swordpupil is here, practicing his technique.
+~
+A strong looking young man stands before you. Sweat pours down the side of
+his face, his straggly hair sticking to his neck. He looks vitalised and
+ready for action, you think he will one day make a formidible opponent.  
+~
+bd 0 0 X 0 
+1 19 9 1d1+10
+8 2250 -1
+8 8 1 3 1 3
+T 150 1d1+1 0
+A 10 8 A young swordpupil skillfully swings his sword, narrowly missing your ear.
+A 10 8 A young swordpupil flexes his muscles, grinning ear to ear.
+#3106
+rogue small~
+a small rogue~
+A small rogue stands in the shadows, eyeing you suspiciously.
+~
+Aspiring to little else, this young boy takes delight in his training by
+Gorlas. He too, will one day roam the dark alleys of the realm, taking what
+he can from unsuspecting passers by.  
+~
+bd 0 0 X 0 
+1 19 9 1d1+10
+8 2250 -1
+8 8 1 3 1 3
+T 150 1d1+1 0
+A 10 8 A small rogue runs his thumb down the edge of his dagger, while looking you straight in the eye.
+A 5 8 A small rogue takes a long, careful glance at at you.
+#3107
+apprentice mage young~
+an apprentice mage~
+An apprentice mage is here, carefully studying his spellbook.
+~
+An intelligent looking young man, this mage in the making has
+many more hours to spend head down in book, before he can
+call himself a true wizard.
+~
+bd 0 0 X 0 
+1 19 9 1d1+10
+8 2250 -1
+8 8 1 3 1 3
+T 150 1d1+1 0
+A 10 8 An apprentice mage looks up from his book, annoyed at the interuption.
+A 5 8 An apprentice mage ponders you, wondering if you'd make a good target.
+#3108
+man drunk~
+a drunken man~
+A drunken man clutches the edge of the bar, unable to stand without it.
+~
+After having a hard night on the bottle, this man is looking a little worse
+for wear. His shirt has big splashes of ale down the front, and his pants
+have a large rip where he fell against a chair.  
+~
+bcdl 0 0 X 0 
+7 16 6 4d4+70
+8 3500 -1
+8 8 1 3 1 3
+T 100 2d3+2 0
+A 10 0 A drunken man starts singing at the top of his lungs!
+A 10 8 A drunken man staggers toward you, only to fall over after a few steps.
+A 10 0 A drunken man says, 'Barkeep! another round over here!'
+E 16 100 3105 -1
+E 17 100 3003 -1
+#3109
+mercenary shady~
+a shady mercenary~
+A shady mercenary reclines in his chair at the back of the tavern.
+~
+Not to be trusted, this man has an unusual air about him. You think
+he would do anything for the right price, however you get the feeling
+that he still has principles. A large, burly man, you would not want
+to cross him.
+~
+bde dr 0 X 0 
+10 15 5 5d5+100
+10 8000 -1
+8 8 1 3 1 3
+T 100 1d8+2 0
+A 5 8 A shady mercenary takes a long draw on his cigar, exhaling in your direction.
+A 5 8 A shady mercenary cautiously scans the room, looking for his contact.
+E 17 100 3106 -1
+E -1 0 -1 0
+E 16 100 3020 -1
+#3110
+mungo barkeep~
+Mungo the Barkeep~
+Mungo the Barkeep is here, wiping down his bar.
+~
+Mungo is an enormous man, forarms the size of tree trunks, or so it seems.
+He looks weary from many years hard work behind this bar, but he loves his
+work, and takes pride in it. Even though his patrons come from the shadier
+side of the tracks, he treats them all with respect, which doesn't help
+clean up the place, but keeps them coming back.  
+~
+bdnopqrw dkry 0 X 0 
+60 0 -10 30d30+30000
+0 10000000 -1
+8 8 1 3 1 3
+T 80 5d10+15 8
+A 5 8 Mungo the Barkeep walks round all the tables, collecting the empty glasses.
+A 5 8 Mungo the Barkeep pushes a pint of ale toward you, spilling some over the edge.
+A 5 8 Mungo the Barkeep laughs uproariously as a drunk whispers something in his ear.
+E 13 100 3107 -1
+E 17 100 3106 -1
+E -1 100 3106 -1
+E -1 100 3003 -1
+>speech_prog                                 p jacob sent me~
+say Aye, my old friend Jacob, I could tell you a few stories about him.
+emot chuckles to himself.
+mpdelay 5
+say tell you what $n, have a beer on the house. And watch your step, if you know what I mean.
+mpoload 3107
+give ale $n
+wink $n
+~
+>act_prog                                   p trapdoor is opened from the other side.~
+mpdelay 40
+emote yells, 'How many times to I have to tell you to shut the door? Dammit!'
+mpdelay 5
+close trapdoor
+~
+>act_prog                                   p opens the trapdoor.~
+mpdelay 40
+emote yells, 'Keep the damn door closed!'
+mpdelay 5
+close trapdoor
+~
+|
+#3111
+brat boy spoiled~
+a spoiled brat~
+A spoiled little boy runs across your path, almost knocking you over.
+~
+This badly behaved little boy doesn't look at though he has ever heard
+the word no. He is wearing the finest clothes, but takes no care of
+them, as the big icecream stain down the front shows.
+~
+cd 0 0 X 0 
+5 17 7 3d3+50
+0 2000 -1
+8 8 1 3 1 3
+T 150 1d5+1 7
+A 5 8 A spoiled brat quickly shoves his leg out infront of you.
+A 5 8 A spoiled brat looks up at you and laughs.
+A 5 8 A spoiled brat says, 'I want my mommy!'
+E 6 45 3110 -1
+#3112
+housewife woman~
+a housewife~
+A tired looking housewife is here, tidying her home.
+~
+A pretty woman, she obviously takes great pride in the appearance
+of her home. Every surface is totally dust free and shining. She 
+has a red checked scarf tied over her head, keeping her hair off
+her face.
+~
+bcd 0 0 X 0 
+6 16 6 3d3+60
+10 3000 -1
+8 8 2 3 1 3
+T 120 2d3+1 7
+E 6 70 3113 -1
+E 1 75 3112 -1
+>greet_prog                                  		100~
+if isnpc($n)
+ break
+else
+if isfollow($n)
+ break
+else
+   mpdelay 5
+   mpecho A housewife quickly turns around, startled at your entrance.
+   mpdelay 5
+   say get out of my house.
+   mpdelay 5
+   shout someone help me! $n is in my house!
+   mpdelay 40
+   say well? what are you waiting for? I said OUT!
+  endif
+ endif
+endif
+~
+|
+#3113
+man wealthy~
+a wealthy man~
+A wealthy man strides down the road, ignoring you completely.
+~
+Dressed in only the finest linens and silks, this man has no fear of
+displaying his enormous wealth. His hair is perfectly groomed, and his
+spectacle frames made from the best tortoishell.  
+~
+d kr 0 X 0 
+18 13 1 9d9+180
+50 16800 -1
+8 8 1 3 1 3
+T 100 3d10+3 0
+E 17 20 3115 15
+E 7 75 3114 -1
+>rand_prog                                 10~
+  emote stops abruptly and checks his pocketwatch.
+  sigh
+  say I'm always running late.
+  emote rushes off down the road.
+~
+|
+#3114
+peasant woman~
+a peasant woman~
+A peasant woman dressed in rags, crouches on the ground.
+~
+Dressed head to toe in dirty rags, this woman has spent many years living on
+the street. She survives purely on the generosity of others, and it is clear
+that this is not a substantial income.  
+~
+cdh kr 0 X 0 
+10 5 5 5d5+100
+0 6000 -1
+8 8 2 3 1 3
+T 120 3d3+1 11
+A 5 8 A peasant woman rumages about in her rags, pulling out a mouldy piece of bread.
+A 5 8 A peasant woman stares up at you, a pleading look in her eyes.
+A 5 8 A peasant woman says, 'does thee have a spare penny?'
+>act_prog                                 p gives you~
+mpdelay 5
+thank $n
+say oh thank you so much $n, may the good Lord bless you.
+~
+|
+#3116
+commoner man~
+a commoner~
+A commoner is here, wandering the streets.
+~
+One of the lower class citizens of Weirvane, this man spends most of his
+days working hard to support his large family.  
+~
+d kr 0 X 0 
+4 18 8 2d2+40
+0 1700 -1
+8 8 1 3 1 3
+T 100 2d2+1 6
+A 10 8 A commoner pauses for a moment, scratching his head in thought.
+>rand_prog                                 5~
+if ispc ($r)
+say Welcome to Weirvane $r, you must visit the Tavern of the Dead Goblin while you're here.
+  whisper $r tell Mungo that Jacob sent you, he'll treat you right.
+ endif
+else
+endif
+~
+|
+#3120
+sexton~
+the Sexton~
+A Sexton is sitting here, drinking hot tea.
+~
+The Sexton looks like he is relaxing after another grave-digging job.
+~
+bd 0 800 X 0 
+3 18 8 2d2+30
+0 500 -1
+6 6 1 3 1 3
+T 100 1d5+0 0
+#3121
+swan~
+the swan~
+A swan is swimming around in the pond.
+~
+The white swan is very elegant.
+~
+bd 0 1000 X 0 
+1 19 10 1d1+10
+0 200 -1
+8 8 0 14 4 1
+T 100 1d1+1 0
+#3122
+duckling~
+the duckling~
+A duckling is swimming around in the pond.
+~
+The duckling is adorable, it looks most of all like a tiny furball.
+~
+bd 0 1000 X 0 
+1 19 10 1d1+5
+0 150 -1
+8 8 0 14 4 1
+T 100 1d1+0 0
+#3123
+sparrow~
+the sparrow~
+A sparrow is flapping around on the ground.
+~
+The sparrow looks like it is enjoying life.
+~
+bd 0 1000 X 0 
+1 19 10 1d1+5
+0 150 -1
+8 8 0 14 4 1
+T 100 1d1+0 0
+#3124
+duck~
+the duck~
+A duck is here, quacking happily.
+~
+The duck is quite fat.  It looks like it is enjoying life.
+~
+dg 0 1000 X 0 
+1 19 10 1d1+10
+0 80 -1
+8 8 0 14 4 1
+T 100 1d1+0 0
+#3139
+chief~
+the Chief Guard~
+The Chief Guard is looking very upset.
+~
+A very angry chief.
+~
+bcdfA d 800 X 0 
+35 2 -10 18d18+350
+0 108000 -1
+8 8 1 3 1 3
+T 60 5d5+6 0
+#3140
+guildguard guild guard guardian barbarian~
+a Barbarian Guardian~
+{yA tall burly barbarian stands here watching the guild entrance.{x
+~
+A Barbarian Guardian
+~
+abd 0 0 X 0 
+60 0 -10 30d30+30000
+0 0 -1
+8 8 1 3 1 3
+T 30 15d4+100 0
+>fight_prog                                                     60~
+mprawkill $n
+~
+|
+#3141
+cityguard guard~
+the upset cityguard~
+A cityguard stands here, looking very upset.
+~
+A big, strong, angry guard.
+~
+bcdfA 0 1000 X 0 
+20 12 0 5d5+200
+0 25000 -1
+8 8 1 3 1 3
+T 50 2d9+0 0
+#3142
+citysecretary secretary~
+the Secretary~
+A secretary is sitting at the desk, making notes on some paper.
+~
+She looks very busy.
+~
+bd 0 900 X 0 
+8 16 10 4d4+80
+0 3000 -1
+6 6 2 3 1 3
+T 100 2d7+0 0
+>greet_prog                                                              100~
+if isimmort($n)
+ say Oh, its one of your kind. Let me interrupted the mayor immediately...
+ mpdelay 5
+ emot hurries off.
+ stand
+ n
+  mpdelay 15
+ s
+ sit
+else
+ if isfollow($n)
+   break
+ else
+   if ispc ($n)
+      say Sorry, but the Mayor is extremely busy today.
+      mpdelay 10
+      say Please sit down and have a seat in the meantime.
+   else
+      say Sorry $n, the Mayor can not see you today.
+      mpdelay 10
+      say Please exit to your south.
+      mpdelay 10
+      mpforce $n nod $i
+      mpdelay 10
+      mpforce $n s
+   endif
+endif
+endif
+~
+|
+#3143
+mayor~
+the Mayor~
+The Mayor is standing here looking concerned about present matters.
+~
+He is a stocky, middle-aged man with thin, grey hair.
+~
+abdluy dh 1000 X 0 
+55 0 -10 27d27+4540
+0 700000 1
+8 8 1 3 1 3
+T 85 15d4+10 0
+>ask_prog                     hi hello hi? hello?~
+tell $n Hello there $n, have you seen the parchment that blew out my window?
+~
+>ask_prog                     parchment parchment?~
+tell $n  Yes it was an important message I need to send to the elven village. If you find it, return it to me and I will reward you!
+~
+>ask_prog                     reward reward?~
+tell $n Ahh, the reward, it is something that will help you in your many travels.
+~
+>ask_prog                     message message?~
+tell $n It's a private matter between myself and the Elven Queen!
+mpdelay 10
+wink $n
+~
+>give_prog                     parchment letter parchmentquest~
+mpjunk parchment
+mpoload 3124
+mpdelay 15
+give boots $n
+mpdelay 10
+thank $n
+say Now be gone, I have much work to do!
+mplog Parchment Quest Completed by $n
+~
+|
+#3144
+crier~
+the Town Crier~
+The Town Crier is here, weeping quietly.
+~
+He is very good at his job - completely dissolved in tears.
+~
+dgh 0 900 X 0 
+2 18 9 1d1+20
+0 300 -1
+8 8 1 3 1 3
+T 100 1d1+3 0
+>shout_prog               p shut up~
+if ispc($n)
+mpdelay 5
+shout No, YOU shut up!
+endif
+else
+endif
+~
+>time_prog                                                              */*/*/*/*/6~
+mpat 3000 shout The towns shops are now open!
+~
+>time_prog                                                              */*/*/*/*/21~
+mpat 3000 shout The towns shops have closed!
+~
+|
+#3145
+cat~
+the alley cat~
+The Alley Cat is here scrounging around.
+~
+Totally black with deep olive eyes this cat is very cunning.
+~
+deq s 0 X 0 
+0 19 -10 1d1+2
+0 15350 -1
+8 8 1 14 4 2
+T 100 1d1+2 22
+>death_prog                                                              100~
+ mpmload 14107
+~
+|
+#3146
+thug youth~
+the shady thug~
+The shady looking thug is standing here, eyeing you for profit.
+~
+This young one appears to have seen many hard times, and looks
+both dirty and corrupt.
+~
+cdl d -400 X 0 
+30 9 -5 15d15+300
+0 80000 -1
+8 8 1 3 1 3
+T 50 1d20+10 14
+#3148
+alderman~
+the alderman~
+An inquisitive alderman is here acting busy.
+~
+Although he is a happy go lucky fellow, he takes his job very seriously.
+~
+bcdlmpr d 800 X 0 
+45 4 -10 23d23+450
+0 280000 -1
+8 8 1 3 1 3
+T 150 3d8+5 9
+T 80 10d4+5 0
+#3149
+guildguard guild guard guardian human~
+a Human Guardian~
+{yA tall slender human stands here watching the guild entrance.{x
+~
+A Human Guardian
+~
+abd 0 0 X 0 
+60 0 -10 30d30+30000
+0 0 -1
+8 8 1 3 1 3
+T 30 15d4+100 0
+>fight_prog                                                     60~
+mprawkill $n
+~
+|
+#3150
+male traveller~
+the male traveller~
+A male traveller wanders about looking for adventure.
+~
+As you look at a male traveller he suddenly reaches for his weapon,
+letting you know he is ready and aware of battle.
+~
+cdlp k 175 X 0 
+32 8 -6 16d16+320
+0 92000 -1
+8 8 1 3 1 3
+T 100 3d9+2 10
+T 80 6d6+6 2
+E 7 40 3117 25
+E 14 25 3137 50
+#3151
+shopkeeper Milient~
+Milient the shopkeeper~
+Milient stands here tending his shop.
+~
+Milient stares directly at you and tells you, 'Dont waste my time, either
+buy something or get out!'
+~
+bdlopqrw k 100 X 0 
+50 2 -10 25d25+500
+0 500000 -1
+8 8 1 3 1 3
+T 50 10d5+20 0
+A 8 5 Milient scans the aisles for shoplifters.
+ResSlash: 100
+ResPierce: 100
+ResNWeap: 100
+ResMWeap: 100
+ResMagic: 100
+#3152
+goblin hobgoblin~
+a hobgoblin~
+{yA small hobgoblin stands here.{x
+~
+Dark moist skin, covered in damp mildew this small goblin smells
+like raw sewage.
+~
+cd fkr -600 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 150 2d4+0 11
+A 10 8 A small hobgoblin grunts at you.
+#3153
+blob slime~
+a blob~
+{gA slime covered blob has attached itself to the wall here.{x
+~
+Green all around its form, this thing glows with an eerie light, it is 
+almost clear enough to see into.
+~
+bcdnr fkr 0 X 0 
+18 13 1 9d9+180
+0 16800 -1
+8 8 0 15 14 2
+T 100 4d8+4 0
+#3154
+mayor~
+the Mayor~
+The Mayor is standing here looking concerned about present matters.
+~
+He is a stocky, middle-aged man with thin, grey hair.
+~
+dl dh 1000 X 0 
+55 0 -10 27d27+4540
+0 700000 1
+8 8 1 3 1 3
+T 85 15d4+10 0
+>ask_prog                     hi hello hi? hello?~
+tell $n Hello there $n, have you seen the parchment that blew out my window?
+~
+>ask_prog                     parchment parchment?~
+tell $n  Yes it was an important message I need to send to the elven village. If you find it, return it to me and I will reward you!
+~
+>ask_prog                     reward reward?~
+tell $n Ahh, the reward, it is something that will help you in your many travels.
+~
+>ask_prog                     message message?~
+tell $n It's a private matter between myself and the Elven Queen!
+mpdelay 10
+wink $n
+~
+>give_prog                     parchment letter parchmentquest~
+mpjunk parchment
+mpoload 3124
+mpdelay 15
+give boots $n
+mpdelay 10
+thank $n
+say Now be gone, I have much work to do!
+mplog Parchment Quest Completed by $n
+~
+|
+#3155
+garru mapmaker~
+Garru the Mapmaker~
+Garru the Mapmaker is here, meticulously drawing another map.
+~
+Garru is a tall, thin man, who is well past his prime.  The wrinkles which
+cover the majority of his face are like a map into his soul.  It is clear
+that he spends the better part of each day drawing the meticulous maps that
+he sells in the shop.  Although Garru looks to be well past his prime, his
+knowledge of the surrounding world and his quick wit lead you to believe
+that he's not just another old shopkeeper.
+~
+bdnopqrw dkry 0 X 0 
+60 0 -10 30d30+30000
+0 10000000 -1
+8 8 1 3 1 3
+T 80 5d10+15 8
+A 5 8 Garru dips his pen into an inkjar on his desk and continues to work on a map.
+A 5 8 Garru finishes a map, rolls it up and puts it on a shelf, then starts another.
+A 5 8 Garru looks towards you with a slight grin, then continues drawing.
+E -1 100 3126 -1
+>speech_prog      p i need a map~
+say Well, you've come to the right place, I've got the best maps around.
+mpdelay 10
+emote rubs his chin as he looks towards the maps stoed on the shelves.
+mpdelay 10
+say I hope to have more maps later on, but for now, take a look at what I've got.
+emote looks down at the map he's drawing and continues to work.
+~
+>speech_prog      weirvane~
+mpdelay 10
+say Did I hear someone say Weirvane?  Sure, I've got a map of Weirvane!
+mpdelay 5
+say It's the finest map available, guaranteed.
+~
+>act_prog                                    p looks at you.~
+emote looks at you.
+~
+|

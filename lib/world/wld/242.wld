@@ -1,0 +1,2426 @@
+#24200
+The Sphere Room~
+   This room is not rectangular, but almost seemingly perfectly round and
+spherical. The walls are marble smooth, made of a hard, dark-grey material.
+A light fog spreads out, making things hazy. You barely notice a wooden
+sign posted on the other side of the room. A small, square opening leads
+to the east.
+~
+242 acd 0
+D1
+A small, square opening leads east into a misty hallway.
+~
+~
+0 0 24201 0
+D4
+~
+rock~
+1 0 3696 0
+E
+sign~
+You read the sign:
+
++--====================================--+
+|                                        |
+| The Fire Grotto                        |
+|                                        |
+| Created by Firebird/Rooks              | 
+|                                        |
++--====================================--+
+~
+S
+#24201
+The Steamy Hallway~
+   You are in a narrow hallway, filled with hot steam. It's difficult to
+breathe and to see your surroundings. A little doorway is scarcely visible
+to the west leading out of the hallway. The steam gets thicker as you 
+travel eastward.
+~
+242 d 0
+D1
+The hallway continues eastward where the vapor gets heavier.
+~
+~
+0 0 24202 0
+D3
+A small, square doorway leads west into a hazy room.
+~
+~
+0 0 24200 0
+E
+mist steam fog vapor haze~
+The steam swirls and shifts forming ghostly shapes, as if deliberately.
+It almost seems to be alive, with a mind of its own.
+~
+S
+#24202
+A Turn In The Steamy Hallway~
+   As you walk through the steam blindly, you bump into a wall and realize
+that the hall turns here. To the west you see the steam thin out. To the 
+south, the steam becomes increasingly hard to breathe in.
+~
+242 d 0
+D2
+The hallway continues southward where the steam gets heavier.
+~
+~
+0 0 24203 0
+D3
+The hallway continues westward, back to where you entered.
+~
+~
+0 0 24201 0
+E
+mist steam fog vapor haze~
+The steam swirls and shifts forming ghostly shapes, as if deliberately.
+It almost seems to be alive, with a mind of its own.
+~
+S
+#24203
+The Steamy Hallway~
+   You are in a narrow hallway, filled with hot steam. It's difficult to
+breathe, and to see your surroundings. To the north the hall continues.
+The steam gets even thicker as you travel south, and it may be good logic
+to avoid staying there too long.
+~
+242 d 0
+D0
+The hallway continues north, but you can't see much of whats ahead.
+~
+~
+0 0 24202 0
+D2
+The hallway continues south into dense steam.
+~
+~
+0 0 24204 0
+E
+mist steam fog vapor haze~
+The steam swirls and shifts forming ghostly shapes, as if deliberately.
+It almost seems to be alive, with a mind of its own.
+~
+S
+#24204
+The Steamy Hallway~
+   You are in a narrow hallway, filled with hot steam. In this part of the
+hall its very difficult to catch a good breath of air and you start to
+cough and choke. The hall continues to unknown parts to the north, but the
+hall turns eastward to a big room. You can hear the sound of boiling water
+in that direction.. going there, would probably mean an ugly DEATH!
+A little wooden trapdoor is under your feet.
+~
+242 d 0
+D0
+The hallway continues north.
+~
+~
+0 0 24203 0
+D1
+A large room with boiling hot water!! DANGER!
+~
+~
+0 0 24205 0
+D5
+A wooden trapdoor leads downwards into the unknown.
+~
+trapdoor door wood wooden opening~
+1 -1 24206 0
+E
+mist steam fog vapor haze~
+The steam swirls and shifts forming ghostly shapes, as if deliberately.
+It almost seems to be alive, with a mind of its own.
+~
+S
+#24206
+Under The Trapdoor~
+   You are under a wooden trapdoor. It looks very old, but seems to be
+strong..it probably hasn't been used very often at all. A set of stairs
+made of stone lead straight downwards to a cavern, too dark to see from
+here. Some markings are on the steps.
+~
+242 acd 2
+D4
+A wooden trapdoor leads upwards.
+~
+trapdoor door wood wooden opening~
+1 -1 24204 0
+D5
+The stone stairs lead down to a dark cavern.
+~
+~
+0 0 24207 0
+E
+markings words marks scratches stairs steps~
+There is a letter on each of the first five steps:
+  N   S   E   E   W
+On the sixth step is a little design, looking like:  >=@=<
+~
+S
+#24207
+The Base Of The Stairs~
+   You are in a fairly large room, with passages leading south and to the
+east. The darkness prevents you from seeing very far in either direction.
+The stone steps lead back upwards, under the trapdoor. The ground here is
+is very dusty and the walls are rough and bumpy.
+~
+242 ad 0
+D1
+A passage leads eastward.
+~
+~
+0 0 24208 0
+D2
+A passage leads southward.
+~
+~
+0 0 24210 0
+D4
+The stone steps lead upwards under the trapdoor.
+~
+~
+0 0 24206 0
+E
+dust dusty floor dirt~
+The cave floor is covered with dust and small pebbles. You reach down and 
+brush your hand through and realize its thicker than you thought. Who 
+knows what could be buried under... So far, you have found nothing.
+~
+E
+walls rough bumps bump~
+The walls are very rough.. Sharp spikes protrude here and there.
+You wouldn't like to be slammed against them during a fight. That would 
+hurt.
+~
+S
+#24208
+A Cave Passage~
+   You are in a dark passage, that curves to lead west and south. To the
+north and upwards, there is a steep incline. You could probably climb up
+it because it looks to have lots of good hand and footholds. You can't
+see whats at the top of the incline from this angle. Far down south near 
+the end of the passage you can see a faint light..
+~
+242 ad 0
+D2
+The passage continues south to where there is a three-way junction.
+~
+~
+0 0 24211 0
+D3
+West takes you to the base of the stairs.
+~
+~
+0 0 24207 0
+D4
+You can climb up the steep incline with lots of grips.
+~
+~
+0 0 24209 0
+E
+dust dusty floor dirt~
+The floor is very dusty.. Who knows what could be hidden under it.
+So far..you have found nothing.
+~
+E
+incline hill climb~
+Its remarkably steep, but you imagine that you could pull yourself up.
+~
+S
+#24209
+A Small Room At The Top Of The Incline~
+   After climbing up the incline, you find yourself in a small room.
+Thie room has a small hole in the ceiling and the wall. A single shaft of
+light streams through the hole in the ceiling. The one in the wall looks
+big enough to peek through.
+~
+242 ad 0
+D5
+Going back down the incline takes you to the cave floor. It looks farther 
+down than you thought it would be.
+~
+~
+0 0 24208 0
+E
+hole peephole wall~
+Wow...outside you can see a vast, reddish-orange sky and miles of desolate
+land. As far as you can see, there is not one living thing, not even a 
+single plant.
+~
+S
+#24210
+A Tri-Section~
+   You are in a little split in the passage. It continues going 
+north-south, but you also have the option of going east. The passage to 
+the south turns to the east after a short distance.
+~
+242 ad 0
+D0
+A dark passage goes north to the base of the stairs.
+~
+~
+0 0 24207 0
+D1
+A dark passage goes east to another tri-section.
+~
+~
+0 0 24211 0
+D2
+A dark passage goes south to a turning point.
+~
+~
+0 0 24212 0
+S
+#24211
+A Tri-Section~
+   You are in a little split in the passage. Bones are strewn about here,
+unlike on other parts of the cave and the rotten stink of death is in the
+air. The passage continues north-south but you have the option of going
+west. A large dimly lit cavern is to the south.
+~
+242 ad 0
+D0
+A dark passage goes north.
+~
+~
+0 0 24208 0
+D2
+A passage goes south to a large cavern.
+~
+~
+0 0 24213 0
+D3
+West is a short path that guides you to a junction similar to this one.
+~
+~
+0 0 24210 0
+E
+bones bone skeletons skeleton~
+As you examine the bones, you realize they look human. You've seen enough
+corpses to know whats human and what's beast. It is certainly strange how 
+all the bones are in this particular area of the cave. You sense evil 
+lurking nearby.
+~
+S
+#24212
+A Cave Passage~
+You are in a dark passage that curves slightly, going to the north and
+to the east. Not much is visible in either direction due to the inky
+blackness. However, there is a dim glow to the east if you look
+carefully.
+~
+242 ad 0
+D0
+The dark passage goes north.
+~
+~
+0 0 24210 0
+D1
+The dark passage goes east to a large cavern.
+~
+~
+0 0 24213 0
+S
+#24213
+A Large Cavern~
+You are in the middle of a large, natural cavern that is exceptionally
+dusty. There are bones scattered on the floor, some of them almost totally
+buried by the age-old dust. Two large torches burn brightly on either side
+of a hole through the cavern wall which leads south. Passages go north
+and west.
+~
+242 d 0
+D0
+The dark passage goes north. It is too dark to see very far ahead.
+~
+~
+0 0 24211 0
+D2
+You see a long, stone hallway leading east-west.
+~
+~
+0 0 24215 0
+D3
+The dark passage goes west.
+~
+~
+0 0 24212 0
+D5
+A dusty, hidden trapdoor leads down.
+~
+trapdoor wooden dusty~
+1 -1 24214 0
+E
+torch torches light~
+The torches are large and burning brightly. You wonder who put them there.
+And how long have they been burning for?
+~
+E
+dusty floor dust dirt~
+Hmm..you dust off some areas..something catches your eye. A small 
+trapdoor in the corner!
+~
+E
+bones bone skeletons skeleton~
+As you examine them, they look human. Hmm..the dust is extra thick here,
+and maybe you'd find something if you search it...?
+~
+S
+#24214
+The Hidden Room~
+   This place smells very old..who knows how long its been here untouched.
+Its very dark and musty. The floor and some wooden boxes sit under layers
+of year-old dirt and cob-webs.
+~
+242 acd 0
+D4
+The trapdoor is in the ceiling leading up.
+~
+trapdoor wooden dusty~
+1 -1 24213 0
+E
+spiders cob-webs cobwebs spiderwebs~
+There are a couple spiderwebs spun in the corners of the cave. You don't
+see the spider however.
+~
+E
+boxes box wood~
+The boxes are closed tightly, and stacked on top of eachother. There are
+least 10 boxes stuffed in the room, making it very crowded.
+~
+S
+#24215
+In a Long Hallway~
+   The hallway is very long, leading in an east-west direction. Torches
+on the stone brick walls light the way down. A lit cavern is north on the
+other side of a doorway. Dark tunnels branch out from it.
+~
+242 cd 0
+D0
+A large lit cavern.
+~
+~
+0 0 24213 0
+D1
+The long hallway continues east. You can see a large iron door a little 
+ways down.
+~
+~
+0 0 24216 0
+D3
+The long hallway continues west. Two iron doors are visible on the south
+wall.
+~
+~
+0 0 24217 0
+E
+brick bricks stone stones~
+The walls and floors of the hallway are made of grey, stone brick.
+~
+S
+#24216
+In a Long Hallway~
+   You are in a long hallway leading east-west. To the east, you can see
+the end of the hall but west it continues on. A large, iron door goes
+to the north.
+~
+242 d 0
+D0
+A large iron door is to the north of you.
+~
+door iron large~
+1 24241 24218 0
+D1
+The hall ends to the east, but you can see a flight of stone stairs 
+leading down.
+~
+~
+0 0 24219 0
+D3
+The long hallway continues west.
+~
+~
+0 0 24215 0
+E
+brick bricks stone stones~
+The floor and walls of the hallway are made of grey, stone brick.
+~
+S
+#24217
+In the Long Hallway~
+  The long hallway ends if you go west, but continues to the east.
+The stone brick walls make this passage like a castle corridor, spooky and 
+mysterious. An iron door leads south.
+~
+242 d 0
+D1
+The long hallway continues east.
+~
+~
+0 0 24215 0
+D2
+A medium-sized iron door leads south.
+~
+door iron medium~
+1 24240 24220 0
+D3
+The long hallway continues west and stops.
+~
+~
+0 0 24221 0
+E
+brick bricks stone stones~
+The walls and floors of the hallway are made of grey, stone brick.
+~
+S
+#24218
+The Enormous Room~
+   You are in an enormous room..that looks like it might fit a house
+inside it. The floor and walls are smooth and shiny. The ceiling reaches
+waaay over your head and it makes you a bit dizzy looking at it. A very
+large, purple tapestry hangs on the far wall. Many torches are placed in
+careful array on the brick walls, but obviously not quite enough to light
+the whole room.
+~
+242 d 0
+D2
+The large iron door goes south.
+~
+door iron large~
+1 24241 24216 0
+E
+purple tapestry~
+It looks like a picture symbolizing great wealth and treasure. It shows
+hordes of gold and money. Jeweled swords and sparkling diamonds catch your 
+eye.
+~
+S
+#24219
+The East End of the Long Hallway~
+   You have come to the east end of the long hallway. A wide flight of stone
+stairs leads down into darkness.
+~
+242 d 0
+D3
+The entire hall stretches out before you to the west.
+~
+~
+0 0 24216 0
+D5
+A flight of stone steps go downward.
+~
+~
+0 0 24226 0
+S
+#24220
+The Large Room~
+   This room looks fairly big. The walls and floor are smooth and glassy,
+reflecting the light of the torches placed on the walls. A large, black
+tapestry hangs on the far wall displaying a picture you might want to look 
+at. The iron door you came in takes you back out to the hallway. The room
+has a somewhat majestic and royal air to it.
+~
+242 d 0
+D0
+The medium-sized iron door.
+~
+door iron medium~
+1 24240 24217 0
+E
+black tapestry~
+The tapestry depicts death. Skulls and skeletons are shown, layed out 
+across miles of barren, red desert. The vast sky is orange and unchanging. 
+It almost hypnotizes you...
+~
+S
+#24221
+The West End of the Long Hallway~
+   You are standing on the far west end of the hallway. A flight of stone 
+steps go up. On the wall, there is a picture of somebody. A door leads 
+south.
+~
+242 d 0
+D1
+The entire hallway stretches before you to the east.
+~
+~
+0 0 24217 0
+D2
+A small iron door is in front of you.
+~
+door iron small~
+1 24239 24222 0
+D4
+A set of stone stairs curve upwards.
+~
+~
+0 0 24223 0
+E
+words message signature word writing printing~
+The words on the bottom of the picture look like a bit like english..
+Teh Aemperror, cra Machk-Gyi
+~
+E
+picture somebody protrait painting~
+You blow off the dust that was collected on the ancient picture. The
+strange face of a creature you see portrayed in front of you seems to
+one of great power. He wears very nice clothing, and wears a crown made of 
+a shiny, red-golden type of metal.
+On the bottom of the painting are a couple of words.
+~
+S
+#24222
+A Small Room~
+   You are in a small room well lit because of the multitudinous number of
+of torches. Although small, you sense power radiating from it. A large blue
+tapestry covers almost the whole far wall. The small iron door which you
+came through is behind you.
+~
+242 d 0
+D0
+The small iron door leads north.
+~
+door iron small~
+1 24239 24221 0
+E
+blue tapestry~
+It looks to be showing great destruction. Fire and people dying in agony. 
+It is horribly realistic.
+~
+S
+#24223
+The Stairs~
+   You are at the top of a set of wide, stone stairs. A few steps away is
+a doorway leading into a lighted room. You can hear faint moaning and
+weeping coming from somewhere inside the room.
+~
+242 d 0
+D1
+The doorway leads into a lighted room.
+~
+~
+0 0 24224 0
+D5
+The wide set of stairs lead back down to the long hallway.
+~
+~
+0 0 24221 0
+S
+#24224
+The Bedroom~
+   You are in a wonderful bedroom. You can't seem to find the source that 
+is lighting this room, it just seems to be magically lit. The floor is 
+covered by a beautiful hand-made carpet. A wooden dresser sits in the 
+corner polished to a shine. The king-sized bed has a pillow of feathers
+and blankets of the finest silk. A bookshelf with a variety of different
+books sits by the east wall. Although you see no one here, the room is 
+well-kept. The exit is out the door to the stairs.
+~
+242 cd 0
+D1
+The bookshelf.
+~
+bookshelf shelf secret~
+2 -1 24225 0
+D3
+The doorway leads out of the room to the top of the stairs.
+~
+~
+0 0 24223 0
+E
+book books~
+The books fill the whole bookshelf. They cover a wide range of subjects.
+All the subjects are alphabetized. 
+~
+E
+blankets silk~
+Its so soft, light and comfy!!
+~
+E
+pillow feathers feather~
+One of the softest pillows you've ever felt.
+~
+E
+bed~
+It's a large bed. Bouncy too! BBOINNNG!
+~
+E
+dresser wooden~
+Very nicely made. Inside the droors are clothing made of silk.
+~
+E
+carpet rug~
+It is a royal red color with many intricate designs. Hmm... one section 
+looks particularly interesting:
+
+----------------------------------------------------------------------
+             x                                      Tryol sury ahkmack
+       \    /                 \                             Beasgt
+        +--+    Lsys           +---+---+-             |
+        |  |       teh              \                 |       
+ +-X-+  +--+    gaury..  x-+         \                V       
+  \     |  |               |\         +                    +   
+   \    +--+               | @         \                   |
+    \      |  |       |  | |            \            x-----+--+ 
+     +--+--+--+--+    +--+-+-+--+--+--+--+           |     |
+     |  |         \   |  |  \    \  \  \  \          +--   + 
+     x                  -+   \    @  @  @  +--  
+              ^          |               
+              |                   Ce schut lavss-ig..
+              Khuskt lotaoi        ATTION!
+----------------------------------------------------------------------
+There even seems to be tiny words.. but you cannot understand them. Very 
+interesting...
+~
+S
+#24225
+The Secret Space~
+   You are in a small space behind the bookshelf. It is very empty, and
+contains nothing but dust. It might be for extra storage, except there is
+nothing being stored.
+~
+242 ad 0
+D3
+The bookshelf leads back into the bedroom.
+~
+bookshelf shelf secret~
+2 -1 24224 0
+S
+#24226
+The Top Of The Vertical Shaft~
+   The room you are in is dark, and damp. Water drips from the ceiling 
+onto your head and onto puddles on the floor. A large passage goes west 
+and a fissure in the east rock wall might allow you to squeeze in. The 
+most dangerous part about this room though is the gaping hole that leads 
+down into darkness. There is a ladder that can take you downwards safely.. 
+but who knows how old it is. You wouldn't like to fall from its wooden 
+rungs..
+~
+242 ad 0
+D1
+A fissure opens up the wall..you think you can squeeze through it.
+~
+~
+0 0 24227 0
+D3
+A large passage looks the safest way to go. It leads west.
+~
+~
+0 0 24233 0
+D5
+The ladder is old and made out of wood. At least its fastened securely to 
+the side of vertical shaft.
+~
+~
+0 0 24259 0
+E
+hole chasm shaft~
+The hole is rectangular and leads into blackness. The sides are made of 
+stone brick.
+~
+E
+fissure crack~
+It may just be big enough for you to squeeze through. You can see light on 
+the other side.
+~
+E
+ladder rungs rung~
+Its old and eaten away. It is fastened securely to the side the shaft. It 
+may be a good idea to hold on tight.
+~
+S
+#24227
+A Royal Hallway~
+   You are in a large, lit hallway. A red carpet leads down the centre of 
+the hallway to a turn. Large torches burn brightly emitting an eerie glow 
+that makes you shiver. An array of weapons, armor, and shields hang on the
+walls. The way west looks to be a dead end, but then you notice the crack 
+in the wall that you might be able to go through. The hall continues 
+north.
+~
+242 d 0
+D0
+The royal hall continues north to where it turns.
+~
+~
+0 0 24228 0
+D3
+You can fit through the crack on the wall to go to the other side. You 
+cannot see whats on the other side unless you peer through.
+~
+~
+0 0 24226 0
+E
+fissure crack~
+You peer through and see a rectangular room with a huge hole in the middle.
+It is not very inviting.
+~
+E
+arsenal weapons armor shields array~
+They are made out of silver and appear to be enrcrusted with jewels and 
+gems. Some of the hilts of the swords are made of gold. They don't look to 
+be very suitable for fighting..just for display.
+~
+E
+torches torch light~
+They are larger than most and burn brightly.. Hmm..they don't give off any 
+heat! Queer.
+~
+S
+#24228
+A Turn In The Royal Hallway~
+   The Royal Hallway turns at a ninety degree angle leading south and 
+east. The torches continue to glow brilliantly and the weapons and armor 
+on the wall shine. From here you can see that the hall stops a while down 
+to the east where there are two large doors.
+~
+242 d 0
+D1
+The royal hall continues east.
+~
+~
+0 0 24229 0
+D2
+The royal hall continues south to where you first came in.
+~
+~
+0 0 24227 0
+E
+arsenal weapons armor shields array~
+They are made out of steel and appear to be enrcrusted with jewels and 
+gems. Some of the hilts of the swords are made of gold. They don't look to 
+be very suitable for fighting..just for display.
+~
+E
+torches torch light~
+They are larger than most and burn brightly.. Hmm..they don't give off any 
+heat!! Queer.
+~
+S
+#24229
+A Royal Hallway~
+   You are in a large, lit hallway. A red carpet leads down the centre of 
+the hallway to a stop. Large torches burn brightly emitting an eerie glow 
+that makes you shiver. An array of weapons, armor, and shields hang on the
+walls. The way east looks to be a dead end, but then you notice the large 
+doors set in the wall that can take you north. The hall continues east and
+west.
+~
+242 d 0
+D1
+The royal hall continues east to the steel doors.
+~
+~
+0 0 24230 0
+D3
+The royal hall continues west.
+~
+~
+0 0 24228 0
+E
+arsenal weapons armor shields array~
+They are made out of steel and appear to be enrcrusted with jewels and 
+gems. Some of the hilts of the swords are made of gold. They don't look to 
+be very suitable for fighting..just for display.
+~
+E
+torches torch light~
+They are larger than most and burn brightly.. Hmm..they don't give off any 
+heat!! Queer.
+~
+S
+#24230
+The Entrance To The Throne Room~
+   The Royal Hallway stops here where it opens up to foyer. Two huge, 
+metal doors block your way north. Everything until now looked in perfect 
+condition, but here, you notice scratch marks and burns on parts of the 
+walls and carpets. A fallen torch lies on the floor as it was knocked off 
+from its handle on the wall.
+~
+242 d 0
+D0
+Two, great steel doors go north.
+~
+doors door great steel~
+1 -1 24231 0
+D3
+The royal hall continues down west.
+~
+~
+0 0 24229 0
+E
+torch fallen~
+The torch has fallen from its place on the wall. It no longer burns.
+~
+S
+#24231
+The Huge Throne Room~
+  This room is absolutely colossal. The ceiling is built high above and a
+crystal chandelier hangs in the centre, giving off the light off a thousand
+candles. A deep red carpet stops at two giant thrones. Marble pillars hold
+up the high roof, and you notice little boys shaped into the sides of the
+great polished columns.
+~
+242 d 0
+D0
+Nothing special..
+~
+throne chair secret~
+1 -1 24232 0
+D2
+Two great metal doors go south.
+~
+doors door great steel~
+1 -1 24230 0
+E
+throne chair thrones chairs~
+The thrones are backed up right against the wall.
+~
+E
+boys boy statues~
+Little naked boys. They are carved with obvious skill.
+~
+E
+pillars pillar columns column~
+The pillars are made of marble and have statues of little boys carved into
+the sides.
+~
+E
+carpet rug red~
+The rug is a deep red.. in some places the red is a different shade. Hmm.. 
+blood?
+~
+S
+#24232
+The Secret Treasure Room~
+   Not quite as big as the throne room, but still very large. It is a very 
+clever place to hide treasure, as the king would be right by it all the 
+time, sitting on his throne. This place is only dimly lighted as it has
+only a few torches on the wall. This room could hold a fortune.
+~
+242 d 0
+D2
+The throne opens up to take you to the throne room in which you came.
+~
+throne chair secret~
+1 -1 24231 0
+S
+#24233
+The Base of the Ruined Stairs~
+  You are at the bottom of a very ancient set of stairs. Cracks and stray
+boulders are all over and you see century year old moss growing on the
+floors and steps. The railings are now only a heap of rubble on the floor,
+adding to the mess and destruction of this place. The stone brick walls are
+charred with an ancient flame, and look almost ready to collapse. You can
+imagine that at one time, this was a beautiful flight of stairs.
+~
+242 ad 0
+D1
+The passage takes you to a dark room with the vertical shaft.
+~
+~
+0 0 24226 0
+D4
+The ruined stairs can take you upwards. At the top you see only a black 
+cave.
+~
+~
+0 0 24234 0
+E
+cracks boulders rocks pebbles holes~
+Broken pieces of wall and stairs have all fallen onto to the ground. This 
+ancient place has crumbled to bits.
+~
+S
+#24234
+Entrance To The Dark Tunnels~
+   You are at a small clearing where dark passages branch off in two 
+directions. To the north, it looks very dark and mysterious. To the east, 
+you can see another clearing. Something scrawled in blood has been written 
+on the floor here.
+~
+242 acd 0
+D0
+A very dark and mysterious passage leads north to more tunnels.
+~
+~
+0 0 24236 0
+D1
+A short passage leads east to another small clearing.
+~
+~
+0 0 24235 0
+D5
+Down the ruined stairs to the top of the vertical shaft.
+~
+~
+0 0 24233 0
+E
+writing floor blood scrawl message~
+The writing clearly says:
+"
+ Now Now..  beWare the Spirits! 
+                                           "
+You suddenly hear a distant, evil cackle.
+~
+S
+#24235
+A Small Clearing~
+   You are in the middle of a small clearing. A yellowish mold covers area 
+of the wall and floor. Sharp stalactites point downward from the ceiling.
+The dark passage takes you north, or west to another small clearing.
+~
+242 ad 0
+D0
+A dark passage goes north. You can see a junction.
+~
+~
+0 0 24237 0
+D3
+A short passage takes you to another small clearing.
+~
+~
+0 0 24234 0
+E
+substance mold yellow goo~
+It is a slightly sticky substance that feels totally disgusting to the 
+touch. The goo is slightly yellowish and seems to enjoy the dank corners
+of the cave.
+~
+S
+#24236
+A Dark Tunnel~
+   The tunnel is here is dark and mysterious. You feel some evil in the 
+air. A small hole leads into the room from the west, but it is too high 
+for you to reach from here. The tunnel branches off to the north and east, 
+or south, back to the entrance of the tunnels.
+~
+242 ad 0
+D0
+The dark tunnel goes north but its hard to see where it leads.
+~
+~
+0 0 24248 0
+D1
+The dark tunnel goes east.
+~
+~
+0 0 24237 0
+D2
+The dark tunnel goes south the clearing above the ruined stairs.
+~
+~
+0 0 24234 0
+S
+#24237
+A Dark Junction~
+   The junction is quite boring. There is a narrow crawlway to the east 
+where you see a few bones.. You can also go south or west.
+~
+242 ad 0
+D1
+A narrow crawlway leads east to a passage littered with bones.
+~
+~
+0 0 24238 0
+D2
+A short tunnel goes south to a clearing.
+~
+~
+0 0 24235 0
+D3
+A dark tunnel goes west to another tunnel.
+~
+~
+0 0 24236 0
+S
+#24238
+A Narrow Crawlway Of Bones~
+   You are crawling in a narrow passage that is littered with white bones. 
+Some still have bits of flesh on them and grotesque worms eat away at the 
+meat that is remaining. The stench is unbearable so it would be a good 
+idea to move on.. The crawlway however looks quite long and it might take 
+awhile. It curves slightly up to the north, and then back out to the west.
+~
+242 acdij 3
+D0
+The crawlway continues for awhile northwards.
+~
+~
+0 0 24239 0
+D3
+The crawlway ends at a dark junction if you turn west.
+~
+~
+0 0 24237 0
+E
+worms worm~
+Eeeeeeeew!! They're so disgusting it makes you shudder. They are green and 
+covered with slime, slowly inching their way from bone to bone, eating 
+away at the meat. They have tiny red beady eyes. Because the crawlway is 
+so small, you can't help but squish a few with your hands, knees and feet. 
+It feels like jello.
+~
+E
+bones bone~
+Scattered along the passage. Some are clean eaten away, others still have 
+meat clung to them. Smelly.
+~
+S
+#24239
+A Narrow Crawlway Of Bones~
+   You are crawling in a narrow passage that is littered with white bones. 
+Some still have bits of flesh on them and grotesque worms eat away at the 
+meat that is remaining.. The stench is unbearable so it would be a good 
+idea to move on.. You can get out of the crawlway to the north and west 
+but it continues south.
+~
+242 acdij 3
+D0
+The crawlway continues for a short distance and stops at small cave.
+~
+~
+0 0 24240 0
+D2
+The crawlway continues south.
+~
+~
+0 0 24238 0
+D3
+The crawlway ends at a dark junction if you turn west.
+~
+~
+0 0 24248 0
+E
+worms worm~
+Eeeeeeeew!! They're so disgusting it makes you shudder. They are green and 
+covered with slime, slowly inching their way from bone to bone, eating 
+away at the meat. They have tiny red beady eyes. Because the crawlway is 
+so small, you can't help but squish a few with your hands, knees and feet. 
+It feels like jello.
+~
+E
+bones bone~
+Scattered along the passage. Some are clean eaten away, others still have 
+meat clung to them. Smelly.
+~
+S
+#24240
+The Maze Of Confusing Caverns~
+   You are standing in a small cave, with passages leading off in all 
+directions. No matter which way you look, it seems as if you will just 
+walk into the exact same cave. You feel a deep tug in your stomach as you 
+realize how easy it would to get lost.. Something is writting in the dirt.
+~
+242 ad 0
+D0
+A maze.
+~
+~
+0 0 24241 0
+D1
+A maze.
+~
+~
+0 0 24240 0
+D2
+The way out ..phew! It leads to a crawlway of bones.
+~
+~
+0 0 24239 0
+D3
+A maze.
+~
+~
+0 0 24240 0
+E
+writing written words design message dirt~
+It is a small design:   >=@=<
+~
+S
+#24241
+The Maze Of Confusing Caverns~
+   You are standing in a small cave, with passages leading off in all 
+directions. No matter which way you look, it seems as if you will just 
+walk into the exact same cave. You feel a deep tug in your stomach as you 
+realize how easy it would to get lost..
+~
+242 ad 0
+D0
+A maze.
+~
+~
+0 0 24242 0
+D1
+A maze.
+~
+~
+0 0 24240 0
+D2
+A maze.
+~
+~
+0 0 24243 0
+D3
+A maze.
+~
+~
+0 0 24241 0
+S
+#24242
+The Maze Of Confusing Caverns~
+   You are standing in a small cave, with passages leading off in all 
+directions. No matter which way you look, it seems as if you will just 
+walk into the exact same cave. You feel a deep tug in your stomach as you 
+realize how easy it would to get lost..
+~
+242 ad 0
+D0
+A maze.
+~
+~
+0 0 24242 0
+D1
+A maze.
+~
+~
+0 0 24242 0
+D2
+A maze.
+~
+~
+0 0 24241 0
+D3
+A maze.
+~
+~
+0 0 24242 0
+S
+#24243
+The Maze Of Confusing Caverns~
+   You are standing in a small cave, with passages leading off in all 
+directions. No matter which way you look, it seems as if you will just 
+walk into the exact same cave. You feel a deep tug in your stomach as you 
+realize how easy it would to get lost..
+~
+242 ad 0
+D0
+A maze.
+~
+~
+0 0 24243 0
+D1
+A maze.
+~
+~
+0 0 24244 0
+D2
+A maze.
+~
+~
+0 0 24243 0
+D3
+A maze.
+~
+~
+0 0 24242 0
+S
+#24244
+The Maze Of Confusing Caverns~
+   You are standing in a small cave, with passages leading off in all 
+directions. No matter which way you look, it seems as if you will just 
+walk into the exact same cave. You feel a deep tug in your stomach as you 
+realize how easy it would to get lost..
+~
+242 ad 0
+D0
+A maze.
+~
+~
+0 0 24245 0
+D1
+A maze.
+~
+~
+0 0 24246 0
+D2
+A maze.
+~
+~
+0 0 24244 0
+D3
+A maze.
+~
+~
+0 0 24243 0
+S
+#24245
+A Dead-End~
+   You have unknowingly stumbled onto a dead-end. You are half joyful, 
+half tearful. The good part, you have found a place other than the boring 
+maze cave; the bad part, you realize that this is a dead-end, the only way
+out is back into the maze.
+~
+242 ad 0
+D2
+A maze.
+~
+~
+0 0 24244 0
+S
+#24246
+The Maze Of Confusing Caverns~
+   You are standing in a small cave, with passages leading off in all 
+directions. No matter which way you look, it seems as if you will just 
+walk into the exact same cave. You feel a deep tug in your stomach as you 
+realize how easy it would to get lost..
+~
+242 ad 0
+D0
+A maze.
+~
+~
+0 0 24246 0
+D1
+A maze.
+~
+~
+0 0 24244 0
+D2
+A maze.
+~
+~
+0 0 24242 0
+D3
+An exit! You see light on the other side of an arched doorway of stone.
+~
+~
+0 0 24247 0
+S
+#24247
+The Room Of Fire~
+   You are in a large, ancient room that is as bright as the sun. The 
+walls are cracked and worn, and green moss and ivy grows on it. The 
+ceiling is aged as well, looking like it could tumble down on you any 
+moment. Fires burn in old urns, one in each corner of the room. In the 
+centre, a beautiful marble pedestal stands proudly in its glory.
+~
+242 cd 0
+D1
+The arched doorway takes you back to the confusing caverns. *sigh*
+~
+~
+0 0 24240 0
+E
+fires fire flame urn urns~
+Fires burn magically in an old, aged urns.. they give off a surprising 
+amount of light but even more strange, it does not give off any heat.
+~
+S
+#24248
+A Dark Junction~
+   The junction is quite boring. There is a narrow crawlway to the east 
+where you see a few bones.. You can also go north or west.
+~
+242 ad 0
+D1
+A narrow crawlway leads east to a passage littered with bones.
+~
+~
+0 0 24239 0
+D2
+A dark tunnel goes north to another turn.
+~
+~
+0 0 24249 0
+D3
+A dark tunnel goes west to another tunnel.
+~
+~
+0 0 24251 0
+S
+#24249
+A Dark Tunnel~
+   You are in another dark tunnel. At first glance, it looks like a 
+dead-end but you realize that a huge boulder is hiding an exit off to 
+the west. It looks moveable.
+~
+242 ad 0
+D2
+The dark tunnel goes south to a junction.
+~
+~
+0 0 24248 0
+D3
+A large boulder sits in your path.
+~
+rock boulder stone~
+1 -1 24250 0
+E
+rock boulder stone~
+It looks big and heavy but you could move it.
+~
+S
+#24250
+A Dark Tunnel~
+   At this point, there are no obvious exits. A large boulder sits to the
+east.
+~
+242 acd 0
+D1
+~
+rock boulder stone~
+1 -1 24249 0
+E
+rock boulder stone~
+It looks big and heavy but you could move it. 
+~
+S
+#24251
+A Dark Tunnel~
+   Another boring tunnel.. this one leads to the east, south and north. 
+The path north slopes slighty upwards and slightly downwards to the south 
+where you can see a room.
+~
+242 ad 0
+D0
+The dark tunnel slopes upwards to the north.
+~
+~
+0 0 24252 0
+D1
+The dark tunnel goes east.
+~
+~
+0 0 24548 0
+D2
+The dark tunnel goes south. You can see a dimly lit room and a staircase 
+there.
+~
+~
+0 0 24253 0
+S
+#24252
+A Dark Tunnel~
+   The passage gets quite narrow and low here and you scrape yourself 
+against the hard rock walls. The way north is blocked off by a natural 
+cave wall, and the most obvious exit is back south. On the other side of a 
+small hole in the east wall you drop down into another cave. If you should 
+crawl through, the hole would be too high for you to get back up.
+~
+242 ad 0
+D1
+A small hole east is a one-way exit.
+~
+~
+0 0 24250 0
+D2
+A dark tunnel slopes slightly downward to the south.
+~
+~
+0 0 24251 0
+S
+#24253
+Exit From The Dark Tunnels~
+   You are at a large clearing in the tunnels where a large stairway 
+spirals upward through the ceiling. Two torches burn close by the exit 
+shedding some light. To the north the dark tunnels continue and a very
+small crawlway goes east. The crawlway is so small that only one person 
+could probably fit in it at a time.
+~
+242 d 0
+D0
+The dark tunnels go north.
+~
+~
+0 0 24251 0
+D1
+A very small crawlspace goes east.
+~
+~
+0 0 24254 0
+D4
+A big spiral stairway goes up.
+~
+~
+0 0 24255 0
+S
+#24254
+A Very Small Crawlspace~
+   You feel very cramped in this ridiculously small crawlway and you 
+wonder why you even came here. The crawlspace ends a short distance to the 
+east or west and going to one of them would make your muscles very happy.
+~
+242 acdij 3
+D1
+The crawlway goes east.
+~
+~
+0 0 24236 0
+D3
+The crawlway goes west, back to the spiral staircase.
+~
+~
+0 0 24253 0
+S
+#24255
+On The Spiral Staircase~
+   You are travelling around and around up a spiral staircase and are 
+getting quite dizzy. Unlike other parts of the cave, this particular 
+stairway seems is good condition although you can never be too sure.
+Torches on the walls light your way upwards.
+~
+242 cd 4
+D4
+The spiral staircase continues upwards.
+~
+~
+0 0 24256 0
+D5
+The spiral staircase ends downwards.
+~
+~
+0 0 24253 0
+S
+#24256
+The Top of the Spiral Staircase~
+   You are at the top of the long staircase. Looking down makes you feel 
+faint but luckily the marble railings prevent you from toppling down. A 
+strange hallway leads west. You sense strange forces coming from it.
+~
+242 d 4
+D3
+A strange hallway. It seems to hum.
+~
+~
+0 0 24257 0
+D5
+The spiral staircase.
+~
+~
+0 0 24255 0
+S
+#24257
+The Strange Hallway~
+   This hallway is strange indeed.. the walls are a dark reddish colour and
+have a soft glowing aura. The floor looks like the ceiling and the ceiling 
+looks like the floor. You feel blood rushing to your head as if you 
+were..upside down. But when you look east and see the staircase rightside
+up. The hallway leads into blackness.
+~
+242 ad 2
+D1
+The strange hallway leads to a big spiral staircase.
+~
+~
+0 0 24256 0
+D3
+The strange hallway continues. You can't see whats through the blackness.
+~
+~
+0 0 24258 0
+S
+#24258
+The Strange Room~
+   In this room, you have the similar feeling of 'upside-downess' as in 
+the hall. Everything seems to be moving in slow-motion. Your muscles 
+respond in a very slow nature which makes it difficult to walk. The only 
+obvious exit here is back into the hallway. A black, portal sits in the
+floor. Who knows where it leads.
+~
+242 ad 2
+D1
+The strange hallway.
+~
+~
+0 0 24257 0
+D5
+A square black portal. It seems to be pulling you in.
+~
+portal black square~
+0 -1 24200 0
+E
+portal black square~
+When you look into it, its like looking through a window. You see black 
+void with shining dots. As if looking at the sky on a clear night. Its
+quite fantastic, and yet frightening at the same time...where will it take 
+you?
+~
+S
+#24259
+The Vertical Shaft~
+   You are climbing on a wooden ladder into darkness. You can see the top
+of the shaft a little ways up, but down, you see nothing. A droplet of 
+sweat trickles down your face, and you realize that its not because of the 
+effort of climbing the ladder or the fact that death is only a step away,
+but because the temperature is rising.
+~
+242 acdij 5
+D2
+A long, endless fall.
+~
+~
+0 0 24263 0
+D4
+The ladder goes up to the top of the shaft.
+~
+~
+0 0 24226 0
+D5
+The ladder goes down into darkness. Scary.
+~
+~
+0 0 24260 0
+E
+ladder wood rung rungs~
+Its old and eaten. So far it has held your weight.
+~
+S
+#24260
+The Vertical Shaft~
+   It is hot down here. You are about to wipe the sweat from your brow 
+when you realize that you'll need both hands to hang on to the ladder. A 
+doorway is in the west wall of the shaft, but the ladder you are on is
+placed on the opposite wall. Making the jump would mean taking a two and a
+half foot leap from the old wooden rungs of the ladder across a gaping
+chasm. Or you can just continue up or down the ladder.
+~
+242 acdij 5
+D2
+An endless fall.
+~
+~
+0 0 24263 0
+D3
+..a death-defying jump!! Through the door you see light and feel heat 
+flowing out.
+~
+~
+0 0 24264 0
+D4
+The ladder goes back up to where you will eventually get to the top.
+~
+~
+0 0 24259 0
+D5
+The ladder goes down. You can't see anything but blackness.
+~
+~
+0 0 24261 0
+E
+ladder wood rung rungs~
+Old. A couple steps have been broken...better watch your step.
+~
+S
+#24261
+The Vertical Shaft~
+   The ladder stops here. If you go down any further, you'd fall down for 
+who knows how long.. Not a smart thing to do. A doorway in the shaft is 
+easily accessible to the east.
+~
+242 acdij 5
+D1
+A doorway leading east. A not so very nice scent comes from that 
+direction.
+~
+~
+0 0 24262 0
+D2
+A long endless fall.
+~
+~
+0 0 24263 0
+D4
+The ladder goes back up.
+~
+~
+0 0 24260 0
+D5
+A long endless fall.
+~
+~
+0 0 24263 0
+S
+#24262
+The Dirty Room~
+   You are in a disgusting room that is full with garbage and muck. It 
+really reeks in here. Everytime you take a step, you hear a smoosh. Maybe 
+even the ladder on the brink of death is better than here.
+~
+242 ad 1
+D3
+The end of the ladder.
+~
+~
+0 0 24261 0
+E
+garbage junk muck dirt~
+Very disgusting. There are even corpses of small rodents in here. The 
+garbage piles up in all four corners of the room but there is so much, 
+most of it collapses into the centre.
+~
+S
+#24264
+The Platform~
+   The platform you are standing on comes out of a cavern wall. The 
+cavern itself is enormous, like the inside of a cathedral but filled with
+boiling lava. The only way to cross the pool of death is on a rickety
+bridge that leads to the other side. The doorway in which you first 
+entered leads through the wall back to the vertical shaft.
+~
+242 dr 0
+D1
+A jump onto the wooden ladder in the vertical shaft.
+~
+~
+0 0 24260 0
+D3
+The long rope bridge above the lava. On the other side you see a huge iron 
+gate. 
+~
+~
+0 0 24265 0
+E
+lava magma~
+The lava far below covers the whole cavern floor. The platform you are on 
+has no railings and one step off the edge means death.
+~
+S
+#24265
+On The Rope Bridge~
+   This bridge looks so very long from here. It is skinny and held 
+by thick rope. You hang on so tightly to the rope railings that your 
+knuckles turn white. The brightness from the lava below hurts your eyes if 
+you look down.
+~
+242 dr 0
+D1
+The rope bridge connects to a small stone platform.
+~
+~
+0 0 24264 0
+D3
+The rope bridge continues west. You see another stone platform on the 
+other side, and a massive iron gate.
+~
+~
+0 0 24266 0
+D5
+Boiling lava... 
+~
+~
+0 0 24268 0
+E
+bridge rope~
+The bridge is made of rope, except for the wooden planks that you walk on. 
+Parts of the rope have been frayed slightly. Its amazing that this bridge 
+has held up for this long.
+~
+E
+lava magma~
+The lava floods the whole cavern floor far below you. You see an 
+occasional splash as if something were diving in. Could be just the 
+heated bubbles.
+~
+S
+#24266
+On The Rope Bridge~
+   You estimate you are in the middle of the bridge. It is skinny and held 
+by thick rope. You hang on so tightly to the rope railings that your 
+knuckles turn white. The brightness from the lava below hurts your eyes if 
+you look down. This large cavern is the heart of the Fire Grotto.
+~
+242 dr 0
+D1
+The rope bridge goes east to the vertical shaft and stone platform.
+~
+~
+0 0 24265 0
+D3
+The rope bridge goes west where it eventually nears a massive iron gate.
+~
+~
+0 0 24267 0
+D5
+Boiling lava...
+~
+~
+0 0 24268 0
+E
+bridge rope~
+The bridge is made of rope, except for the wooden planks that you walk on. 
+Parts of the rope have been frayed slightly. Its amazing that this bridge 
+has held up for this long.
+~
+E
+lava magma~
+The lava floods the whole cavern floor far below you. Sometimes you see 
+a quick movement from one place to another. Maybe its just the bursting 
+bubbles.
+~
+S
+#24267
+On The Rope Bridge~
+   This bridge looks so very long from here. It is skinny and held 
+by thick rope. You hang on so tightly to the rope railings that your 
+knuckles turn white. The brightness from the lava below hurts your eyes if 
+you look down.
+~
+242 dr 0
+D1
+The rope bridge continues east. Its a long way across.
+~
+~
+0 0 24266 0
+D3
+The bridge connects to a platform similar to the one by the vertical 
+shaft.
+~
+~
+0 0 24269 0
+D5
+Boiling lava...
+~
+~
+0 0 24268 0
+E
+bridge rope~
+The bridge is made of rope, except for the wooden planks that you walk on. 
+Parts of the rope have been frayed slightly. Its amazing that this bridge 
+has held up for this long.
+~
+E
+lava magma~
+The lava floods the whole cavern floor far below you. The sight makes 
+you shiver despite the high temperature.
+~
+S
+#24269
+The Platform~
+   The platform you are standing on comes out of the cavern wall. The 
+cavern itself is enormous, like the inside of a cathedral but filled with
+boiling lava. The only way to cross the pool of death is on a rickety
+bridge that leads to the other side. There is a steep climb down on one 
+side of the platform and a skinny ledge to your north.
+~
+242 dr 0
+D0
+Travelling along a dangerous, skinny ledge...
+~
+~
+0 0 24277 0
+D1
+The long rope bridge above the lava. You can barely make out the entrance 
+to the vertical shaft from here.
+~
+~
+0 0 24267 0
+D3
+A short tunnel leads west to a massive gate. Its very big and strong.
+~
+~
+0 0 24279 0
+D5
+A steep climb to the ledge along the bottom of the cavern.
+~
+~
+0 0 24270 0
+E
+lava magma~
+The lava floods the entire cavern floor far below you. The sight makes 
+you shiver despite the high temperature.
+~
+S
+#24270
+On The Tiny Corner~
+   You have flattened yourself up against the wall because the ledge you 
+are standing on is only about a foot wide. If you fell backwards, you'd 
+topple into the lava. Inching your way along the wall, you come to a safe 
+floor area in the corner of the huge cavern.
+~
+242 dr 0
+D3
+Nothing special there...
+~
+wall secret~
+1 -1 24271 0
+D4
+The perilous climb back to the platform.
+~
+~
+0 0 24269 0
+E
+wall cave~
+Hmm a section of the wall looks a bit..different. Smoother than other 
+areas of the cave.
+~
+S
+#24271
+The Secret Corridor~
+   You are in a dark corridor that leads north. The sound of your 
+footsteps echo off the walls of the hall. Scratch marks can be seen if you 
+look carefully. They could be a warning.
+~
+242 ad 0
+D0
+The secret corridor goes north into darkness.
+~
+~
+0 0 24272 0
+D1
+The secret opening wall.
+~
+wall secret~
+1 -1 24270 0
+S
+#24272
+The Secret Corridor~
+   You are in a dark corridor leading south and east. To the east you see 
+a great, iron door. The walls and floor here are slashed.
+~
+242 ad 0
+D1
+A great iron door block your way.
+~
+door iron great~
+2 24243 24273 0
+D2
+The secret corridor goes south to where you entered.
+~
+~
+0 0 24271 0
+S
+#24273
+Machk-Gyi's Treasure Chambers~
+   You are standing in a large, circular hall with doors in every 
+direction. A design has been drawn on the floor, showing a vicious, 
+snarling beast. The door to the north is bronze, the one to the south is
+silver, and the one to the east is golden.
+~
+242 d 0
+D0
+A bronze door.
+~
+door bronze~
+1 -1 24274 0
+D1
+A golden door.
+~
+door golden gold~
+1 -1 24276 0
+D2
+A silver door.
+~
+door silver~
+1 -1 24275 0
+D3
+A great iron door.
+~
+door iron great~
+2 24243 24272 0
+E
+design floor beast~
+The beast looks very real and frightening. It has been outlined with pure
+gold. The eyes are displayed with two sparkling rubies, and the claws and
+teeth are made from jade. If you were able to dig it out of the ground, it 
+would surely be very valuable. The design covers the whole floor of the
+circular hall.
+~
+S
+#24274
+Machk-Gyi's Inner Treasury~
+   This room is very bright, but the source of the light is nowhere in 
+sight. The vaulted roof is high above and this room looks perfect to keep 
+one's most valuable treasures.
+~
+242 d 0
+D2
+A bronze door.
+~
+door bronze~
+1 -1 24273 0
+S
+#24275
+Machk-Gyi's Inner Treasury~
+   This room is very bright, but the source of the light is nowhere in 
+sight. The vaulted roof is high above and this room looks perfect to keep 
+one's most valuable treasures.
+~
+242 d 0
+D0
+A silver door.
+~
+door silver~
+1 -1 24273 0
+S
+#24276
+Machk-Gyi's Inner Treasury~
+   This room is very bright, but the source of the light is nowhere in 
+sight. The vaulted roof is high above and this room looks perfect to keep 
+one's most valuable treasures.
+~
+242 d 0
+D3
+A golden door.
+~
+door golden gold~
+1 -1 24273 0
+S
+#24277
+On The Dangerous Ledge~
+   You have come to small, perilous ledge high up on the cavern wall. You 
+cling onto the rocks for a dear life. A single slip and you are toast. A 
+short distance away you see a hole in the cavern wall. Its deep enough for 
+a group of people to stand safely.
+~
+242 dr 0
+D2
+The ledge leads safely ..?.. back to the stone platform.
+~
+~
+0 0 24269 0
+D3
+A hole in the cavern wall.
+~
+~
+0 0 24278 0
+D5
+Boiling lava..
+~
+~
+0 0 24268 0
+S
+#24278
+The Fire Gigas Hideout~
+   The little indentation in the cavern wall turns out to be a lot bigger 
+than presumed. The hole goes deep inwards, big enough for a room. Clay 
+urns and pottery line the jagged walls. A stench of rotten meat fills the 
+air. The ceiling, walls and floor are very black, as if burnt up by a 
+raging fire.
+~
+242 adr 0
+D1
+Along a dangerous ledge jutting out from the cavern wall.
+~
+~
+0 0 24277 0
+E
+urns pottery pots clay~
+The pottery is roughly made, and quite funny looking. Looking inside the 
+pots, you see rotten meat. So that's where the smell is coming from.. 
+Gross.
+~
+S
+#24279
+Outside the Massive Gate~
+   You are outside a very large, iron gate build firmly into the cave 
+exit. The gate is very big, and you can imagine the difficult time you
+would have trying to pull it open. A short tunnel leads east onto a 
+platform of an enormous cavern filled with lava.
+~
+242 d 0
+D1
+The platform above the lava.
+~
+~
+0 0 24269 0
+D3
+A massive iron gate is in front of you.
+~
+gate iron massive entrance~
+2 24242 24280 0
+E
+gate iron massive entrance~
+It is quite large, and whoever or whatever put it there must have been
+fairly strong. The gate consists of thick horizontial and vertical iron
+bars mended together. Looking through the gate to the other side, there 
+are sights and sounds of creatures moving.
+~
+S
+#24280
+Inside the Massive Gate~
+   You are inside the huge iron gate which stands between this and the 
+cavern of lava. This looks like any other parts of the cave except that 
+this area is populated with slaves. Torches line the walls so you can see 
+where you are going. Exits go north, west, and south.
+~
+242 d 0
+D0
+The prison area.
+~
+~
+0 0 24286 0
+D1
+The massive gate is in front of you.
+~
+gate iron massive entrance~
+2 24242 24279 0
+D2
+The prison area.
+~
+~
+0 0 24281 0
+D3
+A busy path.
+~
+~
+0 0 24283 0
+E
+gate iron massive entrance~
+It is quite large, and whoever or whatever put it there must have been
+fairly strong. The gate consists of thick horizontial and vertical iron
+bars mended together. Looking through the gate to the other side, you see a 
+bright cavern of enormous size.
+~
+S
+#24281
+The Prison~
+   You are in the east part of a large room, with small, grimy cells set in 
+the walls. The bars keep prisoners locked up into a disgusting room which
+is used to hold them until they are needed for work. Small rodents scurry
+from here to there carrying little bits of garbage. This place is truly
+heartless and cold-blooded. The prison continues west.
+~
+242 d 0
+D0
+The inside of the massive gates.
+~
+~
+0 0 24280 0
+D1
+A jail cell.
+~
+cell gate prison jail bars~
+1 24244 24291 0
+D2
+A jail cell.
+~
+cell gate prison jail bars~
+1 24244 24292 0
+D3
+The prison area.
+~
+~
+0 0 24282 0
+S
+#24282
+The Prison~
+   You are in the west part of a large room, with small, grimy cells set in 
+the walls. The bars keep prisoners locked up into a disgusting room which
+is used to hold them until they are needed for work. Small rodents scurry
+from here to there carrying little bits of garbage. This place is truly
+heartless and cold-blooded. The prison continues east.
+~
+242 d 0
+D0
+A busy path.
+~
+~
+0 0 24283 0
+D1
+The prison area.
+~
+~
+0 0 24281 0
+D2
+A jail cell.
+~
+cell gate prison jail bars~
+1 24244 24293 0
+S
+#24283
+The Slave Path~
+   You are a dusty path leading north and south. Many large footprints 
+have been left behind. On the cavern walls, you see dried blood dripping 
+down and in some spots a fallen slave who just never got up. The slaves 
+here are worked to the bone. The path leads through the cave to the north.
+~
+242 d 0
+D0
+A busy path.
+~
+~
+0 0 24284 0
+D1
+The inside of the massive gate.
+~
+~
+0 0 24280 0
+D2
+The prison area.
+~
+~
+0 0 24282 0
+S
+#24284
+The Slave Path~
+   You are a dusty path leading north and south. Many large footprints 
+have been left behind. On the cavern walls, you see dried blood dripping 
+down and in some spots a fallen slave who just never got up. The slaves 
+here are worked to the bone. The path continues north and south. To the 
+east you see more prison cells.
+~
+242 d 0
+D0
+A busy path.
+~
+~
+0 0 24285 0
+D1
+The prison area.
+~
+~
+0 0 24286 0
+D2
+A busy path.
+~
+~
+0 0 24283 0
+S
+#24285
+The Slave Path~
+   You are a dusty path leading north and south. Many large footprints 
+have been left behind. On the cavern walls, you see dried blood dripping 
+down and in some spots a fallen slave who just never got up. A rotten 
+smell comes from the north. More prison cells like to the east.
+~
+242 d 0
+D0
+A tunnel full of bones leads north.
+~
+~
+0 0 24288 0
+D1
+The prison area.
+~
+~
+0 0 24287 0
+D2
+A busy path.
+~
+~
+0 0 24284 0
+S
+#24286
+The Prison~
+   You are in the south part of a large room, with small, grimy cells set
+in the walls. The bars keep prisoners locked up into a disgusting room
+which is used to hold them until they are needed for work. Small rodents
+scurry from here to there carrying little bits of garbage. This place is
+truly heartless and cold-blooded. The prison continues north.
+~
+242 d 0
+D0
+The prison area.
+~
+~
+0 0 24287 0
+D1
+A jail cell.
+~
+cell gate prison jail bars~
+1 24244 24294 0
+D2
+Inside of the massive gate.
+~
+~
+0 0 24280 0
+D3
+A busy path.
+~
+~
+0 0 24284 0
+S
+#24287
+The Prison~
+   You are in the north part of a large room, with small, grimy cells set
+in the walls. The bars keep prisoners locked up into a disgusting room
+which is used to hold them until they are needed for work. Small rodents
+scurry from here to there carrying little bits of garbage. This place is
+truly heartless and cold-blooded. The prison continues south.
+~
+242 d 0
+D0
+A jail cell.
+~
+cell gate prison jail bars~
+1 24244 24295 0
+D1
+A jail cell.
+~
+cell gate prison jail bars~
+1 24244 24296 0
+D2
+The prison area.
+~
+~
+0 0 24286 0
+D3
+A busy path.
+~
+~
+0 0 24285 0
+S
+#24288
+The Path of Bones~
+   This is a large room that has been turned into a graveyard. Bones of 
+all types of creatures have been stacked up on either side of the slave 
+path as high as to the ceiling. The smell of death and decay is
+unbearable. All of the bones have been picked clean of flesh and most also 
+have large indentations in them, like teeth marks.
+~
+242 cd 0
+D0
+A very large cavern, screams can be heard on the other side. You can't 
+quite see whats inside from here.
+~
+~
+0 0 24289 0
+D2
+A busy path leads south.
+~
+~
+0 0 24285 0
+E
+bones bone skeletons~
+They are all many different shapes and sizes, some of them you recognize 
+to be human. Other bones are so huge, you wonder how anything could slay 
+the beast those bones belonged to. All of them are as clean as a 
+toothpick.
+~
+S
+#24289
+The Giant Cavern~
+   This is a huge cavern, and from the looks of it, that is one of its 
+main purposes..to hold corpses. Looking around, you see possibly hundreds 
+of mutilated minotaur corpses thrown into large piles. Huge stacaltites 
+hang down from the high cavern ceiling. This place has the smell to kill. 
+At the very back wall, you notice a great silver vault.
+~
+242 d 0
+D0
+A huge silver vault. Impossible to break through without a key.
+~
+vault silver~
+2 24245 24290 0
+D2
+The cavern leads out to a pathway of bones.
+~
+~
+0 0 24288 0
+S
+#24290
+The Magnificent Silver Vault~
+   You stare in awe at the total beauty of this room. You wonder how a 
+creature so ugly as the Chimera can have a room so great. The walls look
+like they're made of solid silver and gold.
+~
+242 d 0
+D2
+The giant cavern of the Chimera.
+~
+vault silver~
+2 24245 24289 0
+S
+#24291
+A Smelly Prison Cell~
+   You are in a very small prison cell. There is nothing in here but a 
+broken, wooden bench, and an unpleasant odor. Being a prisoner here 
+wouldn't really be nice at all, and you nervously glance at the gate.. 
+just in case.
+~
+242 d 0
+D3
+The prison area.
+~
+cell gate prison jail bars~
+1 24244 24281 0
+S
+#24292
+A Smelly Prison Cell~
+   You are in a very small prison cell. There is nothing in here but a 
+broken, wooden bench, and an unpleasant odor. Being a prisoner here 
+wouldn't really be nice at all, and you nervously glance at the gate.. 
+just in case.
+~
+242 d 0
+D0
+The prison area.
+~
+cell gate prison jail bars~
+1 24244 24281 0
+S
+#24293
+A Smelly Prison Cell~
+   You are in a very small prison cell. There is nothing in here but a 
+broken, wooden bench, and an unpleasant odor. Being a prisoner here 
+wouldn't really be nice at all, and you nervously glance at the gate.. 
+just in case.
+~
+242 d 0
+D0
+The prison area.
+~
+cell gate prison jail bars~
+1 24244 24282 0
+S
+#24294
+A Smelly Prison Cell~
+   You are in a very small prison cell. There is nothing in here but a 
+broken, wooden bench, and an unpleasant odor. Being a prisoner here 
+wouldn't really be nice at all, and you nervously glance at the gate.. 
+just in case.
+~
+242 d 0
+D3
+The prison area.
+~
+cell gate prison jail bars~
+1 24244 24286 0
+S
+#24295
+A Smelly Prison Cell~
+   You are in a very small prison cell. There is nothing in here but a 
+broken, wooden bench, and an unpleasant odor. Being a prisoner here 
+wouldn't really be nice at all, and you nervously glance at the gate.. 
+just in case.
+~
+242 d 0
+D2
+The prison area.
+~
+cell gate prison jail bars~
+1 24244 24287 0
+S
+#24296
+A Smelly Prison Cell~
+   You are in a very small prison cell. There is nothing in here but a 
+broken, wooden bench, and an unpleasant odor. Being a prisoner here 
+wouldn't really be nice at all, and you nervously glance at the gate.. 
+just in case.
+~
+242 d 0
+D3
+The prison area.
+~
+cell gate prison jail bars~
+1 24244 24287 0
+D5
+A trapdoor covered with dirt.. Maybe a prisoner was building a way out?
+~
+trapdoor wooden~
+1 -1 24297 0
+S
+#24297
+The Giant Cavern~
+   This cavern leads out to many unfinished tunnels that don't lead very 
+far. The air is damp and heavy. This room looks like to be dug out by
+the minotaur prisoners, determined to find a way out.
+~
+242 dghj 3
+D4
+A wooden trapdoor.
+~
+trapdoor wooden~
+1 -1 24296 0
+S
+$~

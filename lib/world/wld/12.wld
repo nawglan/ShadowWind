@@ -1,0 +1,571 @@
+#1200
+{WThe Quest Room{x~
+   {wThis is a rather large room. The room is filled with strange objects and
+monsters that you havent seen before. In the middle of the room a large,
+round table has been placed, where most of the fabulous quests has been
+invented.{x
+~
+12 d 0
+D3
+~
+~
+0 0 1204 0
+S
+#1201
+{WThe Creators Workshop{x~
+{w   This is a pretty huge room. All around you see maps and prints of
+zones that has been made or is in the making. A round conference table
+stands firmly in the middle of the room. This is where you can find the
+latest on whats going on in the field of Area creation.{x
+~
+12 d 0
+D2
+~
+~
+0 0 1204 0
+S
+#1202
+{WThe Ice Box{x~
+   {CHuge icicles hang off of the ceiling and shoot of the side of the walls. 
+Chunks of solid ice encase remnants of the past. Some of the pure white ice 
+blocks clear in spots, allowing you to see the frozen remains of previous 
+occupants.{x
+~
+12 dh 0
+D3
+~
+~
+0 0 1295 0
+D5
+~
+~
+0 0 1203 0
+S
+#1203
+{WThe Gods' Room{x~
+   {wA huge square ironwood table stands in the center of the room. Surrounded
+by a dozen or so chairs of various types.  Plans are spread evenly over the 
+table, charts cover the walls, and maps cover the ceiling. All these to make
+everything flow smoothly throughout the meetings.{x
+~
+12 cdk 0
+D5
+~
+~
+0 0 1204 0
+S
+#1204
+{WThe Bored Room of the Immortals{x~
+   {wThe confrence room of the immortals, check out "look address" for a
+listing of immo rooms and who they belong to..{x
+~
+12 d 0
+D0
+{RVolan wus here.{x
+~
+~
+0 0 1201 0
+D1
+~
+~
+0 0 1200 0
+D4
+~
+~
+0 0 1203 0
+D5
+You see the lower part of this room, and the normal board.
+~
+~
+0 -1 1205 0
+E
+address~
+Imortal Addresses
+
+Room # Title                                    Access
+-------------------------------------------------------------------------
+1200: The Quest Room                            ANYONE
+1201: The Creators Workshop                     ANYONE
+1202: The Ice Box                               ANYONE
+1203: The Gods' Room                            Admin Only
+1204: The Board Room of the Immortals           ANYONE
+1205: The Lower Board Room of the Immortals     ANYONE
+1242: Restaurant At The End Of The Universe     Nudd's Room
+1255: The Temple Of Sloth                       Gray's Room
+1256: Dark Hearth                               Jithrae's Room
+1258: 328 Meith Hall                            Meith's Room
+1259: Meith's Magical Workshop                  Meith's Workshop
+1260: The Mob Cage                              Meith's Bondage Room
+1261: The End Of Time                           Caillin's Room
+1262: Minolyn's Chamber                         Minolyn's Room
+1268: The Private Room Of Clangeddin            Clangeddin's Room
+1269: Volans Beach House                        Volan's Room
+1277: A Bright Light                            Varna's Room 
+1294: The Tavern Of The Magi                    Jilael's Room
+1295: Breena's Room                             Breena's Room
+1297: The Warrior's Grove                       Dorga's Room
+1299: Mortis and Sojat's Lounge                 Mortis & Sojat's Room
+~
+S
+#1205
+{WThe Lower Board Room of the Immortals{x~
+   {wThis room is a close twin to the main Immortal Board Room at the top of the
+spiral staircase here.  Your mind and body cannot help but relax as you gaze
+around this comfortable room, and hope that you will be able to linger here
+a while.  Many green plants line a marble stairway that leads down to
+Weirvane.{x
+~
+12 d 0
+D4
+You see the main Immortal Board Room at the top of the spiral staircase
+~
+~
+0 -1 1204 0
+D5
+You see the hustle and bustle of middle market square at the bottom of the stairs.
+~
+~
+0 -1 3000 0
+S
+#1242
+{WR{westaurant {WA{wt {WT{whe {WE{wnd {WO{wf {WT{whe {WU{wniverse{x~
+   {gThis place is alive with all sorts of creatures from around the Universe.
+They have gathered together to witness that wholly remarkable event, the End of
+the Universe. The show happens every half hour and only lasts for a few
+milliseconds. Keep your eyes peeled, you may miss it. Tickets are free and the
+show has a one hundred percent success rate of pleasing the viewers. Dead
+people have no complaints... {x
+
+~
+12 cgsvwy 0
+D0
+~
+~
+0 0 1242 0
+D1
+~
+~
+0 0 1242 0
+D2
+~
+~
+0 0 1242 0
+D3
+~
+~
+0 0 1242 0
+D4
+~
+~
+0 0 1242 0
+D5
+~
+~
+0 0 1242 0
+S
+#1255
+The Temple Of Sloth~
+   Standing in a temple full of junk, you begin to wonder if man had
+actually descended from sloths and not monkeys. It seems no one has (or
+ever) cleaned this place. Coupled with the litter, a loud, celestial voice
+booms across the room advocating the non-expenditure of energy in frivolous
+habit and saving it for a time when it might really be needed. Apparently
+cleanliness and order are frivolous habits.  
+~
+12 0 0
+S
+#1256
+Dark Hearth~
+   Matte black walls, covered with some sticky liquid, box off the room. 
+Shadows seem to dance out of an enormous marble fireplace in the center of
+one wall. The wood burns, but gives off a black flame which seems to create
+shadow as opposed to light. Rough edges on the walls hint at an unfinished
+aspect of this place. Shadows ooze from the firepit and encase you in their
+welcoming darkness, while your eyes are inevitably drawn back to the
+darkness of the fire.  
+~
+12 cd 0
+D0
+Exit To Despair.
+~
+~
+0 0 6000 0
+D5
+A very small hole.
+~
+hole~
+0 0 1204 0
+E
+liquid wall~
+The walls, made of black stone, are covered with a sticky black liquid which
+has a reddish tint in the dubious 'light' of the fire.  
+~
+E
+fireplace firepit~
+The fireplace is made out of swirled marble, it is built to absorb the heat
+and radiate throughout the room, yet the fire inside does naught but absorb
+heat.  
+~
+E
+fire flame flames~
+The dark flames lick hungrily at some form of white wood. Where real fire
+would emanate heat and light these mystical flames absorb heat and give off
+shadow. As you watch they swirl around the strange white wood, enticing you
+to join with them.  
+~
+E
+wood white~
+The fire burns along these oddly shaped white objects, yet it does not seem
+to be consuming them. Upon closer examination you realize with horror that
+this is not wood, but bone.  
+~
+S
+#1258
+{g328 {WMeith {gHall{x~
+   You stand in the back of a rather dingy, run down looking establishment.
+The neon signs boldly advertise a wide selection of cheap domestic beers,
+casting a small amount of dim, unatural light on your surroundings. It seems
+a blessing from above that the light fails to illuminate anything below your
+knees, as you imagine the floor probably has not been mopped in a very, very
+long time.
+   Tables are strewn about the building except for a small area up in front
+of the stage which remains bare. Flyers from past shows litter the ground,
+and the odor of the stagnant beer from those very same shows pervades the
+air. You wonder what kind of odd person would actually be able to stand more
+than twenty minutes of this place, much less enjoy it.
+~
+12 d 0
+D0
+   It's just the board room... You've seen it before, you'll see it again.
+~
+~
+0 0 1204 0
+D1
+   Looking to the east, you see the abode of two very strange people indeed.
+Perhaps they know the club owner.
+~
+~
+0 0 1299 0
+D2
+   To the south, you see the home of Seeker. He's the louse who comes
+over every now and again and runs up a tab. You thought you recognized
+that face on the sign in front of the register that read "Do Not Take
+Checks From This Person".
+~
+~
+0 0 1297 0
+D3
+You see here an archway leading out to the Temple.
+~
+~
+0 0 3001 0
+D4
+~
+~
+0 0 1262 0
+D5
+A charred black door leads down into the workshop.
+~
+charred black door~
+1 0 1259 0
+E
+e~
+   You see something really cool to the east.
+~
+S
+#1259
+{BMeith's {DM{ra{Rg{Wi{Rc{ra{Dl {BWorkshop{x~
+   You are in Meith's private workroom and laboratory. There are bits
+of code scattered about the floor and small bugs crawling around all
+over the place. Meith spends much of his time here trying to stamp the
+little critters out, and he hasn't been very succesful. The main
+workbench in the far northwest corner is cluttered with pieces of
+mobs, various items, X-acto knives, epoxy, rubber bands, and the
+wrappers of the millions of pieces of chewing gum that hold this world
+together.
+~
+12 dj 0
+D1
+Beyond the cage door you see the infamous mob cage.
+~
+cage~
+2 1230 1260 0
+D4
+You see a charred black door leading to the main club area.
+~
+charred black door~
+1 0 1258 0
+S
+#1260
+The Mob Cage~
+You are in Meith's mob cage, the home of all of his hybrid creations.
+~
+12 dfg 0
+D3
+Beyond the cage door you see the main workshop.
+~
+cage~
+2 1230 1259 0
+S
+#1261
+{BThe End Of Time{x~
+   Hundreds of stars encapsulate this small square of cobblestones arranged in
+a circular pattern.  It is surrounded by a short, decorative wrought iron
+fence.  A tall lamp post stands proudly in the center of the concentric
+pattern, illuminating the area with a soft glow.  To the north a small gate
+stands, and to the side a bridge reaches out, and stops abruptly.  The whole
+arrangement seems to be drifting aimlessly through space.   
+~
+12 cdg 0
+D0
+You see a small iron gate leading into nothingness.
+~
+gate~
+1 0 1 0
+D3
+~
+rift~
+1 0 1269 0
+D4
+You see more twinkling stars, and a galaxy or two.
+~
+lamppost~
+1 0 1299 0
+D5
+As you peer over the edge of the bridge, you see the faint outlines of a 
+tree far below.
+~
+~
+0 0 -1 0
+E
+cobblestones cobblestone stone cobble~
+The stones are a smooth tan color, a little green moss grows in the cracks
+between them.
+~
+E
+fence iron~
+It is an intricate pattern of strange unearthly vines, the edges of the fence
+are green with age.
+~
+E
+lamp post lamppost~
+It is a large, metal lamp post, with a moth or two hovering around it.
+~
+E
+gate~
+It is a small iron gate with a simple latch.
+~
+S
+#1262
+{mMinolyn's {DChamber{x~
+   {mThis room is seemingly empty. The {Wbright light{m in the middle of the
+room makes it difficult to see anything. {x
+~
+12 kqy 0
+D0
+{MThere is no exit to the north.
+~
+~
+0 0 -1 0
+D1
+{MThere is no exit to the east.
+~
+~
+0 0 -1 0
+D2
+{MThere is no exit to the south.
+~
+~
+0 0 -1 0
+D3
+{MThere is no exit to the west.
+~
+~
+0 0 -1 0
+E
+n no nor nort north~
+   {mAs you {Dshade{m your eyes from the {Wbright light{m you can see quite
+a collection of magical potions, scrolls, wands and staves cluttered in the
+northern portion of the room. When you attempt to reach for these items,
+they always seem just out of your grasp.{x  
+~
+E
+s so sou sout south~
+   {DShading{m your eyes and glancing south, you see an extremely large
+glass apparatus that has many pieces that would be flasks if they were
+detached from the whole, but these pieces are simply a section of the very
+large apparatus. The apparatus is filled in various parts by liquids of
+{ba{Mm{ya{rz{Yi{gn{Bg {Rc{Go{wl{do{Mr{m and {Wluminescence{m.{x  
+~
+E
+e ea eas east~
+   {mYou cannot make out anything to the east, as the {Wbright light{m
+shines into your eyes. If you attempt to {Dshade{m your eyes, you end up
+seeing only {Ddarkness{m. {x
+~
+E
+w we wes west~
+   {mAs you {Dshade{m your eyes from the {Wbright light{m and look towards
+the west, you notice the rest area of this great chamber. The western area
+of the room contains a beautiful bed of feathers floating above the ground,
+with no apparent support, and no frame, just feathers. Floating near the
+feathers are various magical tomes and a large 2 foot diameter {wcrystal
+ball{m. {x
+~
+S
+#1268
+{yThe {DPrivate {yRoom Of {WClangeddin{x~
+   {WThe room is decorated in {Dancient swords {Wand {yshields {Wof great
+Heros. At the end of the room there is a {ywooden chest {Wlined with
+{cmithril carvings. {W The floor is made of old {yoaken wood {Wsanded to a
+silken perfection.  {WThere is a prescense of {Whonorable nobility and
+loyalty in the room.{x
+~
+12 0 0
+S
+#1269
+{RVolans Beach House{x~
+   {cThis room is fairly empty. A large bed occupies one side of the room
+and a table sits quietly next to the head. The walls, except for a few
+cracks and a window that overlooks the ocean, are totally bare. Why does
+the God of Love need furnishings anyway? He keeps himself entertained
+in other ways... {x
+~
+12 dy 0
+D0
+~
+~
+0 0 1295 0
+D1
+~
+trapdoor~
+1 0 1261 0
+D5
+~
+~
+0 0 1297 0
+E
+bed~
+By looking at the condition of this bed you guess that Volan had a wild night.
+~
+E
+window~
+This window gives a stunning view of the ocean below.
+~
+E
+table~
+This table has a bottle of wine two glasses and a nice Italian dinner.
+~
+S
+#1277
+A Bright Light~
+You seemingly float in a bright light.  The light baths several floating
+platforms in a golden hue.  You see several winged forms standing on these
+islands of gold.  Nothing is below you, and nothing is above you.  You fly
+with the angels now.  May you be worthy of thier glances.
+~
+12 egksy 9
+D0
+All directions seem the same.  All contains armies of Angels on Golden
+platforms kneeling on one knee.
+~
+~
+0 -1 -1 0
+D1
+All directions seem the same.  All contains armies of Angels on Golden
+platforms kneeling on one knee.
+~
+~
+0 -1 -1 0
+D2
+All directions seem the same.  All contains armies of Angels on Golden
+platforms kneeling on one knee.
+~
+~
+0 -1 -1 0
+E
+ANGEL FORM WINGED~
+You look closely at an Angel.  You first look at his golden hair.  It is fine
+and lands softly over the feathers of his wings.  These feathery appendages
+seem to wrap around him as he stands silently on one knee.  He seems to be
+awaiting something. He turns to you, and as your eyes lock, you cannot hold
+his gaze.  Everything that you have ever done seems to be help in those eyes
+and only the coldest of hearts or the most righteous of souls could hope to
+meet the saddened gaze of the one of the Angels of Light.
+~
+S
+#1295
+{gBreena's Room{x~
+   The floor of this small room is literally covered with piles of clothes
+and books that lie strewn from one wall to the other. A sea of papers
+engulfs a small desk that has been pushed into the corner by the ever
+growing mess. With each step you take, you nervously peer around you,
+waiting for the almost inevitable crunching sound as something buried far
+below the surface, breaks beneath your feet.  
+~
+12 d 0
+D1
+~
+~
+0 0 1299 0
+D4
+~
+~
+0 0 1258 0
+D5
+~
+~
+0 0 1297 0
+E
+Breena~
+You do not see that here.
+~
+S
+#1297
+{yThe Warrior's Grove{x~
+   {gThis is a large oak grove that sourrounds what was once a pleasant
+clearing with a small brook winding through it. Now it resembles an armed
+camp under siege. High brush barriers with sharpened sticks thrust through
+them surround the grove's outer perimeter, and spears, bows, bundles of
+arrows and javelins have been set in strategic areas arround the barrier
+where they can be snatched up easily and quickly by defenders. An inner
+ring has been made of brush and dead wood, and within it nervous mares and
+foals. All of them worn and tired.{x
+~
+12 d 5
+D0
+~
+~
+0 0 1258 0
+D1
+~
+~
+0 0 1294 0
+D2
+~
+~
+0 0 1204 0
+D3
+~
+~
+0 0 1299 0
+D4
+~
+~
+0 0 1269 0
+S
+#1299
+{rMortis{x and{r Sojats{x Lounge~
+   Massive tapestries and portraits adorn the walls here. Most of them
+are of Mortis and Sojat. Along one wall is a bar made of oak and ivory.
+Carved into the face of it is a likeness of Mortis, inlaid in gold. Patrons
+flock here all hours of the day and night to partake of the splender
+brought here in tribute to the gods. Upstairs you see a row of red painted
+doors leading to delights with women from all over the world. The women
+pray for the day they can service their gods in any way possible. You 
+shudder as a cold chill passes over you. You wonder if Mortis or Sojat
+just passed by you.
+~
+12 djk 0
+S
+$~

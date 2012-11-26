@@ -1,0 +1,1166 @@
+#20500
+leather jerkin~
+a soft leather jerkin~
+A jerkin made from soft leather has been discarded on the ground.~
+~
+9 j ad f 
+4 0 0 0 20
+5 200 150
+E
+leather jerkin~
+The jerkin is light brown in colour and made from two pieces of smooth
+leather, crudely stitched together with some thick twine. The surface is
+spattered with dark red blood stains and mucus.
+~
+A
+6 -1
+#20501
+tungsten sword~
+a tungsten sword~
+A sword forged from pure tungsten shimmers in your light.~
+~
+5 dj an 0 
+3 5 3 3 11
+12 1500 500
+E
+tungsten sword~
+The sword has been forged from pure tungsten metal. The blade is razor sharp
+and thirty inches long. The silvery hilt feels cold in your hand, but offers
+a sure grip. Made from one of the hardest materials known, this is a lethal
+weapon.
+~
+A
+18 2
+#20502
+serpentine plate~
+a Serpentine plate~
+A large and heavy looking plate rusts on the damp ground.~
+~
+9 j ad f 
+7 0 0 0 0
+22 2000 1000
+E
+serpentine plate~
+The plate is incredibly heavy and made from a single piece of tungsten
+metal. It seems very solid and should be able to withstand much bashing and
+abuse. In some places, the continual exposure to the damp air has started
+to corrode it. Engraved on the surface is a picture of a giant serpent.
+~
+A
+19 1
+A
+2 -2
+#20503
+orcish shield~
+an Orcish shield~
+A metallic shield lies upturned on the ground.~
+~
+9 ej aj l 
+6 0 0 0 0
+8 800 1000
+E
+shield orcish~
+The shield is circular in design and has been beaten from a piece of solid
+tungsten metal. Many small dents cover the surface, showing scars from
+previous battles. Almost worn away, you can just make out a picture of a
+large serpent engraved into the surface.
+~
+A
+4 -1
+#20504
+wand crooked stick~
+a crooked stick~
+A small and twisted stick hums loudly.~
+~
+3 beg ao 0 
+50 1 1 73 0
+2 2000 10000
+E
+wand crooked stick~
+This small and crooked stick hums with a sound like you have never heard
+before. The tip seems to glow a brilliant white colour, and you get a sense
+of some powerful magic contained deep within.
+~
+P
+agony
+#20505
+potion white~
+{Wa white potion{x~
+A small white potion has been dropped on the ground.~
+~
+10 c a 0 
+50 189 0 0 0
+15 500 10000
+E
+potion white~
+The white potion contains enough liquid for one large mouthful. A few white
+fumes float up towards your nose, smelling of a bitter medicine. Anything
+that smells this bad must be good for you.
+~
+P
+heal
+#20506
+bracelet stone ring~
+{Da stone bracelet{x~
+A ring of granite rests heavily upon the floor.~
+~
+9 ag am 0 
+7 0 0 0 7
+8 20000 3000
+E
+bracelet ring stone~
+A pale pink lump of granite has been carved into a stone bracelet. The
+flecks of quartz studded throughout glow with a magical aura, lending it
+extra strength and durability. It feels surprising light for its size.
+~
+A
+19 1
+#20507
+bracelet stone ring~
+{Da stone bracelet{x~
+A ring of granite rests heavily upon the floor.~
+~
+9 agi am 0 
+7 0 0 0 7
+8 20000 3000
+E
+bracelet ring stone~
+A pale pink lump of granite has been carved into a stone bracelet. The
+flecks of quartz studded throughout glow with a magical aura, lending it
+extra strength and durability. It feels surprising light for its size.
+~
+A
+19 1
+#20508
+sword moria~
+the sword of Moria~
+A great sword has been stuck into the rock floor.~
+~
+5 gk an 0 
+3 9 2 3 11
+15 30000 2500
+E
+sword moria~
+This great two-handed sword was forged by the best blacksmiths in Garathorm,
+long ago in the distant past, when weapon making was far superior to
+nowadays. Detailed pictures of a bright sun, children playing and people
+relaxing can be seen down the blade. This sword was made to protect the
+freedom of Garathorm from the evilness of Moria.
+~
+A
+18 1
+A
+19 1
+#20509
+shroud cloth goodness~
+the shroud of Goodness~
+Spread at your feet is a thin layer of cloth.~
+~
+11 agik ak m 
+0 0 0 0 3
+1 20000 5000
+E
+shroud cloth goodness~
+The shroud is made from the finest material you have ever held. Its smooth
+silkiness feels wonderful to the touch. A strange glow comes from the cloth,
+and you suspect the material has been magically created. A small golden
+clasp allows you to keep the shroud in place around your body.
+~
+A
+23 -4
+A
+12 20
+#20510
+fangs~
+a pair of vicious fangs~
+A massive pair of fangs, dripping with venom, are lying here.~
+~
+11 h ap s 
+0 0 0 0 21
+4 500 50
+B
+l 
+E
+fangs~
+The fangs are eight inches long, ending in a vicious point. A tiny hole in
+the end allows poisonous venom to be secreted, ready to render a victim
+helpless.
+~
+#20511
+belt tungsten~
+a thick tungsten belt~
+A thick belt of tungsten rests on the ground.~
+~
+9 agi al 0 
+10 0 0 0 0
+10 10000 2000
+E
+belt tungsten~
+The belt is made from one of the most durable and strongest materials 
+known. It is two inches thick and eight inches wide, providing the best
+armour possible. Stamped on the inside are the initials TY, probably the
+person that made this wonderful piece.
+~
+#20512
+rags heap~
+some old rags~
+A heap of infested old rags has been left to rot here.~
+~
+13 0 ad f 
+0 0 0 0 3
+1 2 0
+E
+rags heap~
+These rags are the remains of an old shirt and trousers, long since torn to
+shreds. Hiding within the cloth is an infestation of lice and fleas, thriving
+in the dirt and grime. This should be burnt or destroyed as quickly as
+possible.
+~
+A
+5 -4
+#20513
+wailing wind~
+the Wailing Wind~
+A wailing wind whips up the dust as it spins around.~
+~
+11 bfg ao 0 
+0 0 0 0 1
+1 30000 4000
+E
+wailing wind~
+This little tornado has been magically harnessed. It continually spins
+round, stirring up the air around it. As you hold it, you feel a strange
+uplifting sensation, lighter on your feet.
+~
+A
+2 3
+A
+17 -5
+#20514
+ball lightning~
+{WBall Lightning{x~
+A small ball of light hovers above the ground.~
+~
+1 equ ao 0 
+0 0 -1 0 29
+2 1000 50
+E
+ball lighting~
+This fantastic force of nature, only rarely seen, appears to have eternal 
+life. It shines with a brilliant white light, radiating energy in all 
+directions. It doesn't burn you though, it feels cold in your palm.
+~
+A
+18 2
+A
+9 -2
+#20515
+ring~
+a Ring of Age~
+A ring has been dropped on the ground, its beauty timeless.~
+~
+11 agi abo 0 
+0 0 0 0 21
+5 3000 1000
+E
+ring~
+The ring has been intricately carved from a piece of ivory. The beauty of
+the work is astonishing, and is of the kind of design that would be sought 
+after by people of any generation. Inlaid in the ring is a carving of an old
+man.
+~
+A
+9 2
+A
+17 -4
+#20516
+ring~
+a Ring of Age~
+A ring has been dropped on the ground, its beauty timeless.~
+~
+11 agi abo 0 
+0 0 0 0 21
+5 3000 1000
+E
+ring~
+The ring has been intricately carved from a piece of ivory. The beauty of
+the work is astonishing, and is of the kind of design that would be sought 
+after by people of any generation. Inlaid in the ring is a carving of a young
+man.
+~
+A
+9 -2
+A
+17 -4
+#20517
+beard~
+{Da grey beard{x~
+A heap of grey hair, possibly infested, lies in a bundle.~
+~
+9 0 ap s 
+1 0 0 0 1
+3 5 200
+E
+beard~
+The old man seems to have lost all his hair from the shock you gave him. His
+beard is held together by grease and dirt, retaining its former shape. You
+can see a few small lice crawling between the thick grey strands.
+~
+#20518
+eyepatch patch glass~
+{wan {Gemerald {Xeyepatch~
+A flat piece of green glass gathers dust on the ground.~
+~
+11 ag ar v 
+0 0 0 0 27
+8 30000 1500
+B
+e 
+E
+eyepatch green glass~
+The piece of emerald crystal sparkles in your light. It is about the size of
+your clenched fist, but wafer thin. Just below the surface, green mists can
+be seen swirling in turmoil.
+~
+A
+18 1
+#20519
+crown bone~
+{ya bone crown{x~
+A crown made from old human bones rests on the floor.~
+~
+9 jmn ae g 
+8 0 0 0 25
+15 1000 1200
+E
+crown bone~
+The large crown looks very crude, but there is something fascinating about 
+its gruesome origins. Many human bones, ribs, skull, femurs and shoulder 
+blades have been smashed to small pieces and knitted together to form a solid 
+mass of interlacing structures. Arranged this way, the bones have become even
+stronger than usual.
+~
+A
+25 5
+#20520
+bone plate breastplate~
+{ya bone breastplate{x~
+A strong looking breastplate of bone lies unwanted here.~
+~
+9 j ad f 
+8 0 0 0 0
+20 1000 1400
+E
+bone plate breastplate~
+Many human bones and a few from other creatures too, have been smashed to 
+small pieces and skillfully woven together to form a very dense plate. The
+structure of bone is usually extremely strong by itself, but knitted
+together in this fashion has made it almost impermeable. On the outside, a
+few splinters on bone jut outwards, lethal spikes to be used in battle.
+~
+A
+25 5
+A
+19 1
+#20521
+boots~
+Elland's boots~
+A pair of green boots hover above the ground.~
+~
+11 ag ag i 
+0 0 0 0 24
+6 25000 2500
+B
+q 
+E
+boots~
+The boots are very light and float out of your grasp very easily. A dark 
+green colour, they have the texture of animal skin, probably orc. They offer 
+little in the way of armour protection, but their lightness would prove very 
+useful for making quick progress over long distances.
+~
+A
+17 20
+#20522
+cloak light~
+{wa cloak of pure {WLight{x~
+A pool of light lies in a heap on the ground.~
+~
+9 aegiop ac 0 
+2 0 0 0 29
+2 30000 8000
+E
+cloak light~
+The cloak has no substantial being, but just exists in a coalesced form of
+light. It glows brightly one minute, but then dims to almost darkness the 
+next. You feel your ability to attack opponents would be greatly increased
+by its guiding force.
+~
+A
+12 20
+A
+18 2
+#20523
+cape~
+Elland's cape~
+The cape of the Arch-Mage Elland has been discarded here.~
+~
+9 gi ak m 
+2 0 0 0 3
+5 18000 1600
+E
+cape~
+The fine cloth cape has been embroidered with a picture of Elland himself,
+busy over his cauldrons and showing a very intelligent expression on his 
+face. The golden twine pulses with a magical force, bringing the picture
+almost to life.
+~
+A
+12 25
+#20524
+potion swirling~
+{wa {Bs{bw{Bi{br{Bl{bi{Bn{bg {xpotion~
+A deep blue potion rests on the ground, its murky depths swirling.~
+~
+10 eg ao 0 
+35 189 183 0 0
+15 2000 100
+E
+swirling potion~
+The potion is dark blue in colour and will take a good two swallows to drink
+it all. The potion swirls continuously, like there is something alive inside
+it, never letting it settle down.
+~
+P
+heal
+P
+cure light
+#20525
+scroll parchment~
+a glowing scroll~
+A large piece of parchment has been stored ready for use.~
+~
+2 ag ao 0 
+50 191 0 0 0
+8 2000 200
+E
+scroll parchment~
+The piece of parchment is about book size and has many strange words written
+upon it. Luckily, you do need to know what they mean, just to read them. 
+The scroll glows brightly, the written words themselves powerful enough to
+effect some magic.
+~
+P
+group heal
+#20526
+scroll rustic~
+a rustic scroll~
+An ancient scroll, torn in places, has been forgotten here.~
+~
+2 cg ao 0 
+50 141 187 188 0
+5 2000 100
+E
+scroll rustic~
+Beneath some fairly easy to read words, there are several pictures. They 
+depict a small dagger magically transforming into a much larger weapon. Most 
+of the bottom of the scroll has been torn away, luckily leaving the main
+spell intact.
+~
+P
+armor
+P
+bless
+P
+aid
+#20527
+scroll escape parchment~
+a scroll of escape~
+Somebody has dropped a thick piece of parchment here.~
+~
+2 g ao 0 
+50 95 0 0 0
+1 2500 200
+E
+scroll escape parchment~
+Five words are printed on this scroll. DIE EST FREST GHENT LAS. The words 
+themselves hardly seem magical, requiring the focus of the parchment itself
+to enact the spell. Below the words are a few pictures. A large group of
+hobgoblins are fighting what looks like a massive dragon, and losing badly.
+The following pictures have the group vanishing and appearing at another, 
+safer location. This could be quite useful.
+~
+P
+teleport
+#20528
+pitch black staff~
+{wa {Dpitch-black {Xstaff~
+A long staff has been left against the wall.~
+~
+4 g ao 0 
+50 4 4 58 0
+2 3000 100
+E
+pitch black staff~
+The staff has been carved from an old tree limb and is about four feet long.
+Detailed workings have been made down its length, producing a very ornate
+and fine piece of work. The main picture of a large serpent, its fangs 
+dripping with venom, repeats itself all the way down its length.
+~
+P
+poison
+#20529
+bear tooth necklace teeth~
+a bear-tooth necklace~
+Some wicked looking teeth lie in a heap.~
+~
+11 i ac 0 
+0 0 0 0 21
+5 5000 1100
+E
+bear tooth necklace teeth~
+Ten large incisors have been drilled and strung onto a length of thick hair
+to make a barbaric looking necklace. Each tooth is almost two inches long,
+the animals these come from must have been huge.
+~
+A
+17 -2
+A
+13 10
+#20530
+slab bear meat~
+a slab of bear meat~
+A slab of fresh meat awaits to be eaten.~
+~
+19 0 ao 0 
+20 0 0 0 2
+1 10 0
+E
+slab bear meat~
+The slab of meat will make a great feast. Dark red in colour, there is almost
+no fat or gristle, just pure meat. It looks very tender and succulent, and
+should fill you up for a very long time.
+~
+#20531
+heap gold coins~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 0 a 0 
+0 26 0 0 15
+10 10 10
+E
+heap gold coins~
+A great heap of gold coins sparkles in your light. There must be close to 
+100,000 just lying here! After a few seconds, you realise this may be a plan
+to lure you further into Hell, in expectations of further bounty.
+~
+#20532
+crystal shard~
+{Wthe Crystal Shard{x~
+A small crystal burns brightly, lighting up the whole room.~
+~
+1 egl ao 0 
+0 0 -1 0 27
+10 3000 2000
+E
+crystal shard~
+The shard has been skillfully made to have thousands of tiny facets. Light
+pours out from each, sending a strong beam in every direction. This nature 
+of the crystal means the light does not diminish rapidly as it leaves the 
+crystal, but penetrates into every dark recess of the room.
+~
+A
+19 2
+#20533
+icicle spike ice~
+{Ca deadly {ci{Cc{xi{cc{Cl{xe~
+A long spike of ice lies here, refusing to melt.~
+~
+5 0 an 0 
+2 3 7 12 17
+10 500 300
+E
+icicle spike ice~
+The icicle is extremely cold, making you glad you have your gloves on. The
+thick end provides a surprisingly good grip in your hand, allowing you to
+pierce an opponent with the deadly sharp tip. Four feet long in length makes
+it an ideal spear.
+~
+#20534
+beer bottle~
+a bottle of chilled beer~
+Resting at your feet is a bottle of ice-cold beer.~
+~
+17 gi ao 0 
+20 20 1 0 26
+25 20 0
+E
+beer bottle~
+A bottle made from brown glass contains a refreshing drink of beer. The
+yeasty smell makes you think of the relaxing times you have spent in the
+Watchman's inn.
+~
+#20535
+diamond helm~
+{Wthe Diamond Helm{x~
+A great diamond in the shape of a helm glistens on the ground.~
+~
+9 ai ae g 
+10 0 0 0 16
+15 40000 4000
+E
+diamond helm~
+Made from a single diamond crystal, the helm is so hard that it is able 
+to deflect the force from the most powerful of blows sent at you. Your light
+is absorbed by the diamond and broken up into a coruscating stream of rainbow
+light. Created by the Gods to protect the Guardians of Hell from any possible 
+escape of Satan to the mortal world, it will last an eternity. Etched into 
+the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20536
+diamond greaves~
+{Wthe Diamond Greaves{x~
+Two great diamonds in the shape of greaves glisten on the ground.~
+~
+9 ai af h 
+10 0 0 0 16
+14 40000 4000
+E
+diamond greaves~
+Made from two single diamond crystals, the greaves are so hard that they are 
+able to deflect the force from the most powerful of blows sent at you. Your 
+light is absorbed by the diamond and broken up into a coruscating stream of 
+rainbow light. Created by the Gods to protect the Guardians of Hell from any 
+possible escape of Satan to the mortal world, they will last an eternity. 
+Etched into the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20537
+rainbow carapace~
+{wa {Rr{ba{Gi{Mn{rb{Bo{gw{x Carapace~
+A beautiful carapace glows like a rainbow, sending colour everywhere.~
+~
+9 agi ad f 
+8 0 0 0 27
+15 10000 800
+E
+rainbow carapace~
+The carapace is very hard, made from some kind of crystal, but not diamond.
+Any light that reaches it is absorbed and split up into its component 
+colours, bathing you in a rainbow. The light illuminates your face, making
+you look even more handsome than usual. Etched in the corner, in a rather
+bold script, is the word Traveller.
+~
+#20538
+diamond gauntlets~
+{Wthe Diamond Gauntlets{x~
+Two great diamonds in the shape of gauntlets glisten on the ground.~
+~
+9 ai ah j 
+10 0 0 0 16
+14 40000 4000
+E
+diamond gauntlets~
+Made from two single diamond crystals, the gauntlets are so hard that they 
+are able to deflect the force from the most powerful of blows sent at you. 
+Your light is absorbed by the diamond and broken up into a coruscating stream 
+of rainbow light. Created by the Gods to protect the Guardians of Hell from 
+any possible escape of Satan to the mortal world, they will last an eternity. 
+Etched into the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20539
+diamond boots~
+{Wthe Diamond Boots{x~
+Two great diamonds in the shape of boots glisten on the ground.~
+~
+9 ai ag i 
+10 0 0 0 16
+14 40000 4000
+E
+diamond boots~
+Made from two single diamond crystals, the boots are so hard that they are 
+able to deflect the force from the most powerful of blows sent at you. Your 
+light is absorbed by the diamond and broken up into a coruscating stream of 
+rainbow light. Created by the Gods to protect the Guardians of Hell from any 
+possible escape of Satan to the mortal world, they will last an eternity. 
+Etched into the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20540
+diamond vambraces~
+{Wthe Diamond Vambraces{x~
+Two great diamonds in the shape of vambraces glisten on the ground.~
+~
+9 ai ai k 
+10 0 0 0 16
+14 40000 4000
+E
+diamond vambraces~
+Made from two single diamond crystals, the vambraces are so hard that they 
+are able to deflect the force from the most powerful of blows sent at you. 
+Your light is absorbed by the diamond and broken up into a coruscating stream 
+of rainbow light. Created by the Gods to protect the Guardians of Hell from 
+any possible escape of Satan to the mortal world, they will last an eternity. 
+Etched into the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20541
+diamond corset~
+{Wthe Diamond Corset{x~
+A great diamond in the shape of a corset glistens on the ground.~
+~
+9 ai al 0 
+10 0 0 0 16
+15 40000 4000
+E
+diamond corset~
+Made from a single diamond crystal, the corset is so hard that it is able 
+to deflect the force from the most powerful of blows sent at you. Your light
+is absorbed by the diamond and broken up into a coruscating stream of rainbow
+light. Created by the Gods to protect the Guardians of Hell from any possible 
+escape of Satan to the mortal world, it will last an eternity. Etched into 
+the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20542
+diamond robe~
+{Wthe Diamond Robe{x~
+A great diamond in the shape of a robe glistens on the ground.~
+~
+9 ai ak m 
+10 0 0 0 16
+15 40000 4000
+E
+diamond robe~
+Made from a single diamond crystal, the robe is so hard that it is able 
+to deflect the force from the most powerful of blows sent at you. Your light
+is absorbed by the diamond and broken up into a coruscating stream of rainbow
+light. Created by the Gods to protect the Guardians of Hell from any possible 
+escape of Satan to the mortal world, it will last an eternity. Etched into 
+the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20543
+diamond bracelet~
+{Wthe Diamond Bracelet{x~
+A great diamond in the shape of a bracelet glistens on the ground.~
+~
+9 ai am 0 
+10 0 0 0 16
+15 40000 4000
+E
+diamond bracelet~
+Made from a single diamond crystal, the bracelet is so hard that it is able 
+to deflect the force from the most powerful of blows sent at you. Your light
+is absorbed by the diamond and broken up into a coruscating stream of rainbow
+light. Created by the Gods to protect the Guardians of Hell from any possible 
+escape of Satan to the mortal world, it will last an eternity. Etched into 
+the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20544
+diamond carapace~
+{Wthe Diamond Carapace{x~
+A great diamond in the shape of a carapace glistens on the ground.~
+~
+9 ai ad f 
+10 0 0 0 16
+15 40000 4000
+E
+diamond carapace~
+Made from a single diamond crystal, the carapace is so hard that it is able 
+to deflect the force from the most powerful of blows sent at you. Your light
+is absorbed by the diamond and broken up into a coruscating stream of rainbow
+light. Created by the Gods to protect the Guardians of Hell from any possible 
+escape of Satan to the mortal world, it will last an eternity. Etched into 
+the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20545
+diamond shield~
+{Wthe Diamond Shield{x~
+A great diamond in the shape of a shield glistens on the ground.~
+~
+9 ai aj l 
+10 0 0 0 16
+15 40000 4000
+E
+diamond shield~
+Made from a single diamond crystal, the shield is so hard that it is able 
+to deflect the force from the most powerful of blows sent at you. Your light
+is absorbed by the diamond and broken up into a coruscating stream of rainbow
+light. Created by the Gods to protect the Guardians of Hell from any possible 
+escape of Satan to the mortal world, it will last an eternity. Etched into 
+the corner, in a looping script, is the single word Helver.
+~
+A
+13 10
+A
+19 1
+#20546
+key crystal~
+the key to Hell~
+A crystal key glows brightly on the ground.~
+~
+18 ackl ao 0 
+2 0 0 0 27
+3 2 1
+E
+key hell crystal~
+The key is about six inches long and made from a single piece of crystal. 
+Its thousands of facets were made to fit into a lock of similar design, 
+making it one of the most secure key/door combinations possible to make. It
+would be impossible to pick the door that this key is made for.
+~
+#20547
+golden anklet~
+{wa {Ygolden {xanklet~
+An elegant chain of gold lies in a small heap.~
+~
+11 0 as 0 
+0 0 0 0 15
+3 10000 800
+E
+golden anklet~
+The anklet is made from many tiny loops of gold, chained together to make a
+very fine and elegant looking anklet. This would really make you stand out in
+a crowd, although it offers little armour protection.
+~
+A
+17 -2
+A
+6 1
+#20548
+flaming stone~
+{wa {Rflaming {xstone~
+A small stone, burning with an intense fire catches your attention.~
+~
+8 aegj ao 0 
+0 0 0 0 6
+8 300 10
+E
+flaming stone~
+The small stone easily fits into the palm of your hands. It is cool to the
+touch, but burns with a flaming red aura. As you look at it, you cant help
+but think how beautiful it is, and become slightly mesmerised. It would
+greatly increase your stature to show this off to your friends.
+~
+A
+6 3
+#20549
+spritely boots~
+some spritely boots~
+A small and dainty looking pair of boots rest on the ground.~
+~
+9 bj ag i 
+4 0 0 0 20
+5 1000 700
+E
+spritely boots~
+These knee-high red boots are made from soft leather. They look very 
+comfortable to wear, and should let you move with improved agility, although 
+the numbers 666 branded on the sides are a little ominous.
+~
+A
+2 1
+#20550
+mask serpent~
+a stitched mask of serpent tails~
+A mask stitched together from serpent tails writhes on the ground.~
+~
+11 j ap s 
+0 0 0 0 23
+6 50 700
+B
+c 
+E
+mask serpent~
+Many small serpents must have died to make this mask. Their small tails have
+been cut off and left to dry. Some kind of black thread has been used to 
+stitch them all together to make this mask. The two small eye-holes have a
+thin crystal sliver in them, the purpose of which is unknown.
+~
+A
+17 -3
+#20551
+soul stud~
+a Soul stud~
+A small stud of golden metal is stuck into the ground.~
+~
+11 j aq 0 
+0 0 0 0 15
+3 5000 100
+E
+soul stud~
+The tiny golden stud is no bigger than the iris of your eye. Round in shape,
+and made from pure gold, it is very malleable and wont stand too much wear 
+and tear. Perhaps magic could be used to strengthen it up a little. It could
+certainly be sold for a great sum of money to the right buyer.
+~
+A
+17 -3
+#20552
+fiery whip~
+{wa {Rfiery whip{x~
+A flaming whip burns brightly on the ground.~
+~
+5 ah an 0 
+0 2 1 13 1
+8 7000 100
+E
+fiery whip~
+A short leather handle allows you to pick the whip up safely. The rest of the
+six feet length of the whip burns in a fiery embrace. Some kind of magic must
+stop the leather handle from being consumed, and it is this same magic that
+protects you from the searing heat. Most of the damage the whip does is from
+the intense heat it produces as it strikes the target, rather than any kind 
+of brutal force.
+~
+#20553
+horned helm~
+a Horned helm~
+A metal helm with two spiked horns protruding from the top rests here.~
+~
+9 gj ae g 
+7 0 0 0 12
+12 7500 600
+E
+horned helm~
+The horned helm would completely cover the top and back of your head, and has 
+metal collars that extend down over the ears and cheekbones towards your 
+chin. Made from copper, the helm is reddish in colour and pitted with 
+dimples. Two large horns protrude out of the top, curling up at least six 
+inches. These horns could do lethal damage during hand to hand combat.
+~
+A
+18 1
+#20554
+blood red breastplate~
+{wa {rblood-red{x breastplate~
+A thick plate of iron has been discarded here.~
+~
+9 j ad f 
+7 0 0 0 6
+17 2000 10
+B
+j 
+E
+blood red breastplate plate~
+The thick plate of iron has been daubed a red colour with what looks like 
+blood. Through the peeling paint-work, rust has started to bubble through, 
+giving it an ugly appearance. The outlines of a large, horned being have been 
+stencilled on the outside surface in what looks like black tar.
+~
+A
+18 -1
+#20555
+ring fire~
+{wa Ring of {RF{ri{Rr{re{x~
+A flaming ring of fire burns with a deadly ferocity.~
+~
+11 j ab 0 
+0 0 0 0 0
+2 20000 2000
+E
+ring fire~
+The small ring burns with the ferocity of fire. Some unknown magic allows
+you to hold it without being burnt in the least, a small prickling the only
+sensation you can feel. The colours continually change from red to orange to
+yellow, with a multitude of colours inbetween. It would be good protection
+against somebody in a battle.
+~
+A
+17 -8
+#20556
+water goblet~
+{wa {Csilver {xgoblet~
+A goblet of purest silver shines in the light.~
+~
+17 gi ao 0 
+100 100 0 0 26
+105 50000 200
+E
+goblet~
+The goblet is made from the purest of silver. It feels good in your grasp,
+pleasing to the touch. The outside has several scenes of humans, orcs, elves
+and dwarves all in battle. Above them, looking down, is a horned being, a
+terrible grin on his face. The goblet seems to be able to hold an 
+extraordinary volume of liquid, quite in excess of its apparent size.
+~
+#20557
+cape indigo darkness heap silk~
+{wa cape of indigo {Ddarkness{x~
+A beautiful heap of silk rests here in a bundle.~
+~
+11 gjop ak m 
+0 0 0 0 3
+5 10000 500
+E
+cape indigo darkness heap silk~
+The cape is made from pure black silk with fine indigo thread woven
+throughout it. It glows with a soft aura.
+~
+A
+5 3
+A
+4 5
+#20558
+spiked club~
+a huge spiked club~
+Stuck into the ground is a huge spiked club.~
+~
+5 j an 0 
+0 6 5 11 7
+15 50000 12000
+E
+spiked club~
+The club is four feet in length and made from granite. Studded over the end
+are numerous spikes. Rotting flesh and entrails are still stuck between them
+from the last battle, stinking in their decay. Tiny quartz crystals are
+embedded in the granite which sparkle in the light.
+~
+A
+18 3
+A
+19 1
+#20559
+ring death~
+the Ring of Death~
+Floating in the air is a large red ring.~
+~
+11 abdgh abo 0 
+0 0 0 0 27
+10 1000 10000
+E
+ring death~
+The ring looks very large, intended for a big person. It is very unlikely
+that it will fit you well, and for some reason, you get the feeling you
+shouldn't even try to wear it. The red crystal sparkles with what can only
+be an evil light. An evil emanation comes from deep inside it.
+~
+A
+17 100
+A
+13 -44
+#20560
+devil horns~
+the Devil Horns~
+A pair of huge horns catch your attention.~
+~
+9 gj ae g 
+6 0 0 0 25
+6 5000 15000
+E
+devil horns~
+These are the horns of Satan Himself, cleaved from the top of his head at
+the moment of his destruction. They are magnificent looking, each ten inches
+long and pristine white in colour. Used in battle, they could cause severe
+damage to an opponent. They give you a sense of power and rejuvenated
+strength.
+~
+A
+19 2
+A
+1 2
+#20561
+devil claws~
+the Devil Claws~
+A pair of huge claws cant help but be noticed.~
+~
+9 gj ag i 
+6 0 0 0 25
+6 5000 15000
+E
+devil claws~
+These are the claws of Satan Himself, severed from his feet at the moment of
+his final annihilation. These claws are really impressive to look at. They
+both curl to fifteen inches long, razor sharp along their whole length, and
+ending in a wicked point. They would do serious damage if used in a fight.
+~
+A
+19 2
+A
+14 -20
+#20562
+soul~
+Satan's Soul~
+An incredible suit of body armour lies slumped in the corner.~
+~
+9 j ad f 
+10 0 0 0 25
+15 30000 6000
+B
+k 
+E
+soul~
+As Satan was eradicated from the face of the Earth, his evil spirit fled his
+mortal body to regain strength and rework his evil over the next millennia.
+Little was left of the mortal body, but this great piece of bone from his
+chest survived almost intact. It is still incredibly hard and seemingly
+impermeable. Just touching it gives you the feeling of total power and
+supremacy, the illusion its creator suffered also.
+~
+A
+13 20
+A
+19 1
+#20563
+puddle~
+a puddle~
+A large puddle of clear water has collected here.~
+~
+23 e 0 0 
+1000 1000 0 0 26
+1005 1 1
+E
+puddle~
+Water has washed down through the mountains above, seeping through the
+ceiling and walls, to be collected in this puddle. It contains crystal clear
+water, full of minerals and other nutrients. The ice-coldness of it is quite
+breathtaking, but wonderful and very refreshing.
+~
+#20564
+scraps food~
+some scraps of food~
+A pile of old food scraps rests on the wooden table.~
+~
+19 0 a 0 
+10 0 0 0 2
+1 1 1
+E
+scraps food~
+These scraps of food mainly comprise bread, a few strips of assorted meat
+and some potatoes. They don't look very appetizing, but if you are hungry,
+they would nourish you well enough.
+~
+$~

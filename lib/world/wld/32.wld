@@ -1,0 +1,1572 @@
+#3218
+Road Through The Plains~
+   You find yourself on a wide north-south road stretching out the plains that
+surround the city of Garathorm. All around, the plains are teeming with life.
+To the north and south, the long grasses sway casually in the wind. Even from
+here, you can make out the sounds of city life, just to the west.
+~
+32 0 0
+D1
+The road continues to the east.
+~
+~
+0 0 3219 0
+D3
+To the west, the Plains road intersects the Outer Road of Garathorm which
+circles the entire city.
+~
+~
+0 0 9783 0
+S
+#3219
+Road Through The Plains~
+   You find yourself on a wide north-south road stretching out the plains that
+surround the city of Garathorm. All around, the plains are teeming with life.
+To the north and south, the long grasses sway casually in the wind. Even from
+here, you can make out the sounds of city life, just to the west.
+~
+32 0 0
+D1
+The road continues to the east.
+~
+~
+0 0 3220 0
+D3
+The road continues to the west.
+~
+~
+0 0 3218 0
+S
+#3220
+Road Through The Plains~
+   You find yourself on a wide north-south road stretching out the plains that
+surround the city of Garathorm. All around, the plains are teeming with life.
+To the north and south, the long grasses sway casually in the wind. Even from
+here, you can make out the sounds of city life, just to the west.
+~
+32 0 0
+D3
+The road continues to the west.
+~
+~
+0 0 3219 0
+S
+#3221
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 cp 0
+D0
+The road continues to the north.
+~
+~
+0 0 3222 0
+D1
+You see the sundrenched plains stretching before you.
+~
+~
+0 0 3324 0
+D2
+To the south you see the outside of the northern gates of Weirvane.
+~
+~
+0 0 3095 0
+D3
+You see the sundrenched plains stretching before you.
+~
+~
+0 0 3323 0
+S
+#3222
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The road continues to the north.
+~
+~
+0 0 3223 0
+D1
+Off the edge of the road, the plains begin.
+~
+~
+0 0 3322 0
+D2
+The road continues to the south.
+~
+~
+0 0 3221 0
+D3
+The edge of the road crumbles away..
+~
+~
+0 0 3321 0
+S
+#3223
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+To the north, the well worn road continues...
+~
+~
+0 0 3228 0
+D1
+The desolate plains extend as far as your eye can take you.
+~
+~
+0 0 3318 0
+D2
+To the south, the well worn road continues...
+~
+~
+0 0 3222 0
+D3
+You see a dry expanse of land rolling toward the horizon.
+~
+~
+0 0 3317 0
+S
+#3225
+Road Through The Plains~
+   You find yourself on a wide north-south road stretching out the plains that
+surround the city of Garathorm. All around, the plains are teeming with life.
+To the north and south, the long grasses sway casually in the wind. Even from
+here, you can make out the sounds of city life, just to the west.
+~
+32 0 0
+D0
+The road continues to the north.
+~
+~
+0 0 3224 0
+D2
+The road continues to the south.
+~
+~
+0 0 3226 0
+S
+#3226
+Road Through The Plains~
+   You find yourself on a wide north-south road stretching out the plains that
+surround the city of Garathorm. All around, the plains are teeming with life.
+To the north and south, the long grasses sway casually in the wind. Even from
+here, you can make out the sounds of city life, just to the west.
+~
+32 0 0
+D0
+The road continues to the north.
+~
+~
+0 0 3225 0
+D2
+As you leave the plains, and enter the woods, the road which brought you here
+from Garathorm changes names. It becomes the Wilderness Way.
+~
+~
+0 0 2341 0
+S
+#3227
+Road Through the Plains~
+You are in an unfinished room.
+~
+32 0 2
+D1
+~
+~
+0 0 3228 0
+D3
+~
+~
+0 0 3220 0
+S
+#3228
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D1
+You see more of now familiar terain.
+~
+~
+0 0 3229 0
+D2
+The trail continues to the south.
+~
+~
+0 0 3223 0
+D3
+As the road falls off the plains begin.
+~
+~
+0 0 3314 0
+S
+#3229
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The well-troden road continues.
+~
+~
+0 0 3230 0
+D1
+A great expanse of nothing falls from the road.
+~
+~
+0 0 3315 0
+D2
+~
+~
+0 0 3318 0
+D3
+More of the road leads in this direction.
+~
+~
+0 0 3228 0
+S
+#3230
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+More of the path leads northward.
+~
+~
+0 0 3231 0
+D1
+To the east, you see the plains beginning..
+~
+~
+0 0 3312 0
+D2
+The road extends further.
+~
+~
+0 0 3229 0
+D3
+You see a lush green meadow.
+~
+~
+0 0 3311 0
+S
+#3231
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D1
+The path keeps going.
+~
+~
+0 0 3232 0
+D2
+The well worn track invites you to follow it.
+~
+~
+0 0 3230 0
+S
+#3232
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D1
+The trail extends to the east.
+~
+~
+0 0 3233 0
+D2
+You can leave the relative safety of the road, and join the wilds of the plains.
+~
+~
+0 0 3312 0
+D3
+You see more of the road ahead of you.
+~
+~
+0 0 3231 0
+S
+#3233
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The flat road amgles to the north.
+~
+~
+0 0 3234 0
+D2
+You can enter the plains to the south.
+~
+~
+0 0 3313 0
+D3
+The trail that you have been following continues to the west.
+~
+~
+0 0 3232 0
+S
+#3234
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+More of the road lies in this direction.
+~
+~
+0 0 3235 0
+D2
+You see the path extending to the south.
+~
+~
+0 0 3233 0
+S
+#3235
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+You can follow the well troden path to the north.
+~
+~
+0 0 3236 0
+D2
+The road extends to the south.
+~
+~
+0 0 3234 0
+S
+#3236
+An Ancient Stone Bridge~
+   You stand upon weatherd stone slabs. The faces of them are worn from 
+many centuries of unforgiving and ever changing weather. As you look 
+over the edge, not too far below you see a dry and stony riverbed, that
+leads through the plains to the east. There is a set of steps leading
+down, that may have once provided fishermen with access to the once 
+teeming waters. On the other side you see a deep blue lake, that has 
+somehow survived in the arid landscape.
+~
+32 p 0
+D0
+You can follow the trail to the north.
+~
+~
+0 0 3237 0
+D2
+The road ambles along.
+~
+~
+0 0 3235 0
+D3
+A sparkling blue lake lies beneath the bridge.
+~
+~
+0 0 -31073 0
+D5
+You see a narrow stair carved into the edge of the bridge.
+~
+~
+0 0 3327 0
+S
+#3237
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+You can step off the road and into a sea of golden grass.
+~
+~
+0 0 3287 0
+D2
+You see a continuation of the road you are on now.
+~
+~
+0 0 3236 0
+D3
+The road continues.
+~
+~
+0 0 3238 0
+S
+#3238
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+You can enter the sea of golden grasses.
+~
+~
+0 0 3286 0
+D1
+The path wanders along.
+~
+~
+0 0 3237 0
+D3
+The road leads to the west.
+~
+~
+0 0 3239 0
+S
+#3239
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+More of the road leads to the north.
+~
+~
+0 0 3240 0
+D1
+The road continues...
+~
+~
+0 0 3238 0
+S
+#3240
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The road leads further in this direction.
+~
+~
+0 0 3241 0
+D1
+You see the plains stretching into the distance.
+~
+~
+0 0 3286 0
+D2
+You can follow the road to the south.
+~
+~
+0 0 3239 0
+D3
+The road crumbles away into the barren plains.
+~
+~
+0 0 3285 0
+S
+#3241
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The familar path leads northward.
+~
+~
+0 0 3242 0
+D1
+You see the golden plains ..
+~
+~
+0 0 3286 0
+D2
+The path leads further on.
+~
+~
+0 0 3240 0
+D3
+You see a carpet of golden grasses..
+~
+~
+0 0 3285 0
+S
+#3242
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The dusty plains start from the edge of the road.
+~
+~
+0 0 3270 0
+D1
+The well worn path continues to the east.
+~
+~
+0 0 3243 0
+D2
+More of the road lies in this direction.
+~
+~
+0 0 3241 0
+D3
+You can leave the saftey of the road and join the endless plains.
+~
+~
+0 0 3274 0
+S
+#3243
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+You see the road lying ahead of you.
+~
+~
+0 0 3244 0
+D1
+You see an area that looks different from the rest of the plains.....
+~
+~
+0 0 3275 0
+D2
+The plains run far into the distance.
+~
+~
+0 0 3280 0
+D3
+The road continues.
+~
+~
+0 0 3242 0
+S
+#3244
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The trail seems to keep leading in this direction.
+~
+~
+0 0 3245 0
+D1
+A steep bank falls from the edge of the road.
+~
+~
+0 0 3271 0
+D2
+To the south you see the more of the road on which you are travelling.
+~
+~
+0 0 3243 0
+D3
+You see the plains streching toward the horizon.
+~
+~
+0 0 3270 0
+S
+#3245
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D0
+The plains road continues.
+~
+~
+0 0 3246 0
+D1
+You think you can climb down the steep bank that falls from the road.
+~
+~
+0 0 3267 0
+D2
+You can continue along the road in this direction.
+~
+~
+0 0 3244 0
+D3
+The barren plains extend to the horizon...
+~
+~
+0 0 3266 0
+S
+#3246
+Road Through The Plains~
+  You are traversing the plains on a wide dirt road that has seen
+many feet before yours. On either side of you, a featureless savannah
+stretches toward the horizon and seemingly beyond. Far to the south, 
+you can barely see the outline of the great city wall of Weirvane.
+~
+32 p 0
+D1
+The road falls away down a steep slope.
+~
+~
+0 0 3264 0
+D2
+You see the familiar sight of the Plains Road.
+~
+~
+0 0 3245 0
+D3
+You can leave the road and join the bare and endless plains.
+~
+~
+0 0 3263 0
+S
+#3261
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D0
+~
+~
+0 0 1609 0
+D1
+The golden carpet continues in this direction.
+~
+~
+0 0 3262 0
+S
+#3262
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D1
+In this direction lie more of the barren plains.
+~
+~
+0 0 3263 0
+D2
+~
+~
+0 0 3265 0
+D3
+~
+~
+0 0 3261 0
+S
+#3263
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.  
+~
+32 p 2
+D1
+You see a well-troden road crossing the plains.
+~
+~
+0 0 3246 0
+D2
+~
+~
+0 0 3266 0
+D3
+The sea of golden grass continues to the west. 
+~
+~
+0 0 3262 0
+S
+#3264
+On A Steep Hill~
+   You find yourself struggling to keep a stable footing as you stand on 
+this steep slope. It just seems to drop from the edge of the road. At the
+bottom the land levels out into almost a valley. As you look down you can
+see many large, leafy trees filled with birds. You can see an even larger
+tree somewhat to the south, as if it is standing guard over the valley.
+~
+32 p 2
+D1
+You see an old, dusty road trailing off to the east.
+~
+~
+0 0 8272 0
+D2
+You can clamber further along the slope.
+~
+~
+0 0 3267 0
+D3
+The land seems to level out onto a road.
+~
+~
+0 0 3246 0
+S
+#3265
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D0
+~
+~
+0 0 3262 0
+D1
+You stare into the distance..
+~
+~
+0 0 3266 0
+D2
+~
+~
+0 0 3269 0
+S
+#3266
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 0
+D0
+~
+~
+0 0 3263 0
+D1
+You see a wide road.
+~
+~
+0 0 3245 0
+D2
+The plains continue....
+~
+~
+0 0 3270 0
+D3
+~
+~
+0 0 3265 0
+S
+#3267
+On A Steep Hill~
+   You find yourself struggling to keep a stable footing as you stand on 
+this steep slope. It just seems to drop from the edge of the road. At the
+bottom the land levels out into almost a valley. As you look down you can
+see many large, leafy trees filled with birds. You can see an even larger
+tree somewhat to the south, as if it is standing guard over the valley.
+~
+32 p 2
+D0
+You think you acn keep walking along here without falling.
+~
+~
+0 0 3264 0
+D2
+The hill continues.
+~
+~
+0 0 3271 0
+D3
+You can join the road again in this direction.
+~
+~
+0 0 3245 0
+S
+#3268
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.  
+~
+32 p 2
+D1
+The plains continue....
+~
+~
+0 0 3269 0
+D2
+~
+~
+0 0 3273 0
+S
+#3269
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.  
+~
+32 p 2
+D0
+The golden plains continue to the north.
+~
+~
+0 0 3265 0
+D1
+~
+~
+0 0 3270 0
+D2
+The flat emptiness continues.
+~
+~
+0 0 3274 0
+D3
+~
+~
+0 0 3268 0
+S
+#3270
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.  
+~
+32 p 2
+D0
+~
+~
+0 0 3266 0
+D1
+A large road is to the east.
+~
+~
+0 0 3244 0
+D2
+You can also join the road to the south.
+~
+~
+0 0 3242 0
+D3
+~
+~
+0 0 3269 0
+S
+#3271
+On A Steep Hill~
+   You find yourself struggling to keep a stable footing as you stand on 
+this steep slope. It just seems to drop from the edge of the road. At the
+bottom the land levels out into almost a valley. As you look down you can
+see many large, leafy trees filled with birds. You can see an even larger
+tree somewhat to the south, as if it is standing guard over the valley.
+~
+32 p 2
+D0
+The bank continues.
+~
+~
+0 0 3267 0
+D2
+You see a huge tree....
+~
+~
+0 0 3275 0
+D3
+The road through the plains lies to the east.
+~
+~
+0 0 3244 0
+S
+#3272
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.  
+~
+32 p 2
+D1
+~
+~
+0 0 3273 0
+D2
+The plains stretch for miles around you....
+~
+~
+0 0 3277 0
+S
+#3273
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 0
+D0
+You see the plains stretching onward...
+~
+~
+0 0 3268 0
+D1
+~
+~
+0 0 3274 0
+D2
+The golden fields continue.
+~
+~
+0 0 3278 0
+D3
+The plains continue..
+~
+~
+0 0 3272 0
+S
+#3274
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.  
+~
+32 p 2
+D0
+~
+~
+0 0 3269 0
+D1
+You see a wide dirt road cutting through the landscape.
+~
+~
+0 0 3242 0
+D2
+The field of grass continues...
+~
+~
+0 0 3279 0
+D3
+~
+~
+0 0 3273 0
+S
+#3275
+In The Clearing Before Tane Mahuta~
+   You stand in the shadow of an ancient Pohutukawa tree. It towers
+into the sky with its gnarled branches reaching out in all directions
+as if they are searching for something they could never find. The ground
+is covered in a fine red blanket of its needle like flowers. As you place
+your foot for each step, you feel as though you are walking on air, such
+is the thickness of the bed. As you stare in awe that this enormous tree
+you feel a sense of power exuding from it, and its spirit watching you,
+guiding you through your journey.
+~
+32 p 3
+D0
+You can leave on a steep slope.
+~
+~
+0 0 3271 0
+D3
+You see a path back to the road.
+~
+~
+0 0 3243 0
+D4
+You see a thick forest of needles stopping any entry.
+~
+needles~
+1 0 3276 0
+S
+#3276
+Perched In The Branches Of Tane Mahuta~
+   As you look around you, you are amazed at the density of the foliage.
+The leaves are small, but each branch and twig is covered with them.
+The floor here too, is covered in by a blanket of fallen flowers. You
+manage to push aside a few of the branches, and catch a glimpse of the
+spectacular view that this vantage point provides. You see the familiar
+sight of the bustling city of Weirvane, however it is but a faint
+outline in the distance. As you shift your gaze, you see what looks
+to be a river stretching far into the distance.
+~
+32 ag 3
+D5
+You seem to be able to safely jump back to the ground.
+~
+needles~
+1 0 3275 0
+S
+#3277
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.  
+~
+32 p 2
+D0
+~
+~
+0 0 3272 0
+D1
+You can wade forward in the grass.
+~
+~
+0 0 3278 0
+D2
+The fields just keep going, as if to fall off the horizon.
+~
+~
+0 0 3283 0
+S
+#3278
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are. 
+~
+32 p 0
+D0
+~
+~
+0 0 3273 0
+D1
+You can wander around more in the endless plains.
+~
+~
+0 0 3279 0
+D2
+The sea of golden grass stretches to the south.
+~
+~
+0 0 3284 0
+D3
+More of the plains continue.
+~
+~
+0 0 3277 0
+S
+#3279
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are. 
+~
+32 p 0
+D0
+~
+~
+0 0 3274 0
+D1
+You can rejoin the safety of the road.
+~
+~
+0 0 3241 0
+D2
+~
+~
+0 0 3285 0
+D3
+More of the plains stretch to the west.
+~
+~
+0 0 3278 0
+S
+#3280
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D0
+You can see the road from here.
+~
+~
+0 0 3243 0
+D1
+The sea of golden grass continues.
+~
+~
+0 0 3281 0
+D2
+~
+~
+0 0 3286 0
+S
+#3281
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D0
+You can see an enormous tree....
+~
+~
+0 0 3275 0
+D1
+~
+~
+0 0 3282 0
+D2
+More of the vast empty space lies in that direction.
+~
+~
+0 0 3287 0
+D3
+And yet more emptiness...
+~
+~
+0 0 3280 0
+S
+#3282
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D3
+~
+~
+0 0 3281 0
+S
+#3283
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are. 
+~
+32 p 2
+D0
+~
+~
+0 0 3277 0
+D1
+The plains continue.
+~
+~
+0 0 3284 0
+S
+#3284
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are. 
+~
+32 p 2
+D0
+You can wander further into the plains.
+~
+~
+0 0 3278 0
+D1
+~
+~
+0 0 3285 0
+D3
+You see nothing but flat land.
+~
+~
+0 0 3283 0
+S
+#3285
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are. 
+~
+32 p 2
+D0
+This direction is barely distinguishable from any other.
+~
+~
+0 0 3279 0
+D1
+You see a clear road running through the emptiness.
+~
+~
+0 0 3240 0
+D3
+~
+~
+0 0 3284 0
+S
+#3286
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D0
+~
+~
+0 0 3280 0
+D1
+The dreary landscape continues.
+~
+~
+0 0 3287 0
+D2
+You can join the safety of the plains road.
+~
+~
+0 0 3238 0
+D3
+~
+~
+0 0 3241 0
+S
+#3287
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+32 p 2
+D0
+~
+~
+0 0 3281 0
+D2
+You can re-join the road in this direction.
+~
+~
+0 0 3237 0
+D3
+And the plains roll on...
+~
+~
+0 0 3286 0
+S
+#3288
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+32 p 7
+D1
+The velvet blue water continues...
+~
+~
+0 0 3289 0
+D2
+The velvet blue water continues...
+~
+~
+0 0 3290 0
+S
+#3289
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+32 p 7
+D2
+The velvet blue water continues...
+~
+~
+0 0 3295 0
+D3
+The velvet blue water continues...
+~
+~
+0 0 3288 0
+S
+#3290
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomless. You see what could be a 
+small island to the south, you wonder what could possibly live here,
+such is the feeling of total lifelessness.
+~
+32 p 7
+D0
+The velvet blue water continues...
+~
+~
+0 0 3288 0
+D1
+The velvet blue water continues...
+~
+~
+0 0 3295 0
+D2
+A small island invites you to step ashore.
+~
+~
+0 0 3291 0
+S
+#3291
+On A Muddy Bank~
+   You are standing on the edge of a small Island. Tiny ripples of water
+lap gently on the the edge of the bank providing the only sound in the
+otherwise deafening silence. The ground under you is saturated and any
+grass has long since been trampled into the quagmire. With every step you
+take your feet sink deeper, and thick, dark mud oozes from under you.
+There is a narrow path to the east, that leads to the door of a small hut.
+~
+32 p 2
+D0
+You see the lake..
+~
+~
+0 0 3290 0
+D1
+You see a track trodden in the mud, at the end of it a small door.
+~
+door~
+1 0 3298 0
+S
+#3292
+The Southwest Corner Of Lake Cragmere~
+   The lake feels somehow different here, the sense of peace has gone,
+and you find yourself almost looking over your shoulder. The shadows
+of huge trees on the shore cast long over you... making you feel even
+more wary. You can see a small pebbly beach, which appears to serve
+as access to a small island.
+~
+32 ap 7
+D1
+You see what looks to be a tunnel hidden in the beach.
+~
+pebbles~
+1 0 3305 0
+D2
+You see more of the eerie lake....
+~
+~
+0 0 3293 0
+S
+#3293
+The Southwest Corner Of Lake Cragmere~
+   The lake feels somehow different here, the sense of peace has gone,
+and you find yourself almost looking over your shoulder. The shadows
+of huge trees on the shore cast long over you... making you feel even
+more wary.
+~
+32 ap 7
+D0
+The eerie lake continues.
+~
+~
+0 0 3292 0
+D1
+More of the lake lies to the east.
+~
+~
+0 0 3294 0
+S
+#3294
+The Southwestern Corner Of Lake Cragmere~
+   The lake feels somehow different here, the sense of peace has gone,
+and you find yourself almost looking over your shoulder. The shadows
+of huge trees on the shore cast long over you... making you feel even
+more wary.
+~
+32 ap 7
+D3
+The inky lake goes back toward the west.
+~
+~
+0 0 3293 0
+S
+#3295
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+32 p 7
+D0
+The velvet blue water continues...
+~
+~
+0 0 3289 0
+D1
+The velvet blue water continues...
+~
+~
+0 0 3296 0
+D3
+The velvet blue water continues...
+~
+~
+0 0 3290 0
+S
+#3296
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+32 p 7
+D1
+The velvet blue water continues.
+~
+~
+0 0 3297 0
+D2
+The velvet blue water continues.
+~
+~
+0 0 3303 0
+D3
+The velvet blue water continues.
+~
+~
+0 0 3295 0
+S
+#3297
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+32 p 7
+D1
+You see a small tunnel on the shore.
+~
+~
+0 0 3326 0
+D2
+The velvet blue water continues...
+~
+~
+0 0 3299 0
+D3
+The velvet blue water continues...
+~
+~
+0 0 3296 0
+S
+#3298
+Inside A Makeshift Hut~
+   Ah, you are at last out of the mud and find your feet on firm ground.
+You are standing in what looks like a carefully built shelter. The walls
+are made of bundles of bound reeds, cemented together with thick black
+mud. A layer of soft duck feathers totally line the walls, no doubt providing
+good insulation. On closer inspection, you realise the floor is indeed mud 
+too, but has been mixed with pebbles to provide a remarkably dry and stable
+surface.
+~
+32 ap 0
+D2
+You see the back of the hut.
+~
+~
+0 0 3305 0
+D3
+You see a quagmire.
+~
+~
+0 0 3291 0
+S
+#3299
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+32 p 7
+D0
+The velvet blue water continues.
+~
+~
+0 0 3297 0
+D2
+The velvet blue water continues.
+~
+~
+0 0 3302 0
+D3
+The velvet blue water continues.
+~
+~
+0 0 3303 0
+S
+$~

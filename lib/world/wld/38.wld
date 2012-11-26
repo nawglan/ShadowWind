@@ -1,0 +1,978 @@
+#3800
+The Entrance To The Park~
+   The large black iron gate that stands before you is the only break you
+can see in the dense hedgerow here. Although the gates are obviously meant
+for keeping people out, the look like they have not been closed in a long
+time. A new family of sparrows have built their nest high up on the gate,
+in the gap between part of the thick iron frame and the hedge. Every so 
+often, you see a small beak poke itself over the top of the nest, checking
+to see if its next meal is on its way.
+~
+38 cp 1
+D1
+A carefully made path leads its way through the park.
+~
+ ~
+0 0 3116 0
+D3
+ ~
+ ~
+0 0 3801 0
+S
+#3801
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze. 
+~
+38 p 1
+D1
+You see the large gates of the park entrance to the east.
+~
+ ~
+0 0 3800 0
+D3
+The path continues west.
+~
+ ~
+0 0 3802 0
+S
+#3802
+A Junction In The Path~
+   You are walking along a very well groomed path through the city park.   
+All around you, flora and fauna of every species are thriving. Each different  
+plant has been carefully positioned for maximum visual effect. Brillant red  
+tulips bleed into a spray of yellow daisies, and all of this interspersed  
+with large, deep green leaves. You cannot help but be overwhelmed by the  
+many different perfumes that are carried on each gust of the breeze. To the  
+north, you can see a small pebbled path leading toward the edge of a lake, 
+while to the south, there lies a not quite so well tended trail, winding
+through the bushes. The main path continues to the east and west.
+~
+38 p 1
+D0
+A small path leads in this direction.
+~
+ ~
+0 0 3814 0
+D1
+A small path leads off to the north.
+~
+ ~
+0 0 3801 0
+D2
+You see a small winding path leading southward.
+~
+~
+0 0 3820 0
+D3
+The gently winding path continues.
+~
+~
+0 0 3803 0
+S
+#3803
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 1
+D1
+The path leads eastward.
+~
+ ~
+0 0 3802 0
+D2
+The path leads to the south.
+~
+~
+0 0 3804 0
+S
+#3804
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 0
+D0
+The path continues to the north.
+~
+~
+0 0 3803 0
+D3
+The path leads in this direction.
+~
+~
+0 0 3805 0
+S
+#3805
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 0
+D1
+The path leads to the east.
+~
+~
+0 0 3804 0
+D3
+The path continues.
+~
+~
+0 0 3806 0
+S
+#3806
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 0
+D0
+The main path through the park continues.
+~
+~
+0 0 3807 0
+D1
+The path continues.
+~
+~
+0 0 3805 0
+D2
+You see a perfectly painted white gazebo.
+~
+~
+0 0 3828 0
+D4
+You peer through the thick leaves and think you could climb up.
+~
+~
+0 0 3823 0
+S
+#3807
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 1
+D0
+The path continues northwards.
+~
+~
+0 0 3808 0
+D2
+The path in the park continues.
+~
+~
+0 0 3806 0
+D3
+You see longs rows of beautiful roses.
+~
+~
+0 0 3833 0
+S
+#3808
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 1
+D0
+You see the path curving round a large fountain.
+~
+~
+0 0 3809 0
+D2
+The path continues.
+~
+~
+0 0 3807 0
+S
+#3809
+Around The Fountain~
+   The path splits here, and curls around a small, and beautifully detailed 
+fountain. It has one central stem which rises from the pool of azure water. 
+The top of this stem splits into six flower shaped heads, each one different, 
+each one delivering a stream of clear water to the pool below. The rippling  
+sound of the falling water is incredibly soothing after the comotion of being  
+in the city. Small brightly flowering plants surround the foot of the fountain 
+and make it look like the fountain is resting on a bed of petals. Small birds 
+stand on the lip, taking turns at flapping around, bathing in the cool water. 
+~
+38 p 1
+D2
+The main path through the park lies to the south.
+~
+~
+0 0 3808 0
+D3
+The path continues.
+~
+~
+0 0 3810 0
+S
+#3810
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 1
+D1
+The path splits to the east.
+~
+~
+0 0 3809 0
+D3
+~
+The path in the park continues.~
+0 0 3811 0
+S
+#3811
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 0
+D1
+More of the well groomed path lies to the east.
+~
+~
+0 0 3810 0
+D2
+~
+~
+0 0 3835 0
+D3
+You can follow the path to the west.
+~
+~
+0 0 3812 0
+S
+#3812
+A Path In The Park~
+   You are walking along a very well groomed path through the city park. 
+All around you, flora and fauna of every species are thriving. Each different
+plant has been carefully positioned for maximum visual effect. Brillant red
+tulips bleed into a spray of yellow daisies, and all of this interspersed
+with large, deep green leaves. You cannot help but be overwhelmed by the
+many different perfumes that are carried on each gust of the breeze.
+~
+38 p 1
+D1
+The now familiar path continues to the east.
+~
+~
+0 0 3811 0
+D2
+The path looks as though it comes to an end.
+~
+~
+0 0 3813 0
+S
+#3813
+By The Sundial~
+   The path splits here and wraps around a large teracotta pedestal.
+On inspection, the top of this pedestal houses an exquisitly
+crafted bronze sundial. This is also the end of the path on which
+you have been travelling, trees stretch up on all sides blocking
+any further travel.
+~
+38 p 0
+D0
+The path leads to the north.
+~
+~
+0 0 3812 0
+D3
+You see a small trail that leads under the trees.
+~
+~
+0 0 3836 0
+E
+sundial pedestal terracotta~
+   The face of the sundial proves to be an absolute work of art.
+The delicate etchings depict the story of a great battle, from which
+total devastation followed, the the regrowth of the people and the
+community into the flourishing city of Weirvane today.
+~
+S
+#3814
+A Small Path Through The Park~
+   This path is much smaller and narrower than the main one, with a very
+different atmosphere. The plants here overflow the beds in a rather chaotic
+manner, reminding you of the wonderful mahem of nature. You can see a 
+small pond close by, and can hear the sounds of the menagerie that surround
+~
+38 p 1
+D0
+~
+~
+0 0 3815 0
+D2
+You can join the main path to the south.
+~
+~
+0 0 3802 0
+S
+#3815
+A Small Path Through The Park~
+   This path is much smaller and narrower than the main one, with a very
+different atmosphere. The plants here overflow the beds in a rather chaotic
+manner, reminding you of the wonderful mahem of nature. You can see a 
+small pond close by, and can hear the sounds of the menagerie that surround
+~
+38 p 1
+D2
+~
+~
+0 0 3814 0
+D3
+You see the lush green banks of the lake.
+~
+~
+0 0 3816 0
+S
+#3816
+On The Banks Of The Pond~
+   You are standing on the bank of a small pond. Everywhere around you, 
+there are small animals taking advantage of the water supply. The banks
+are covered in thick, lush, deep green grass and look perfect for resting
+on in an attempt to remove yourself from the stresses and strains of city
+life.
+~
+38 p 1
+D1
+You see a small path.
+~
+~
+0 0 3815 0
+D3
+You see a beautiful pond.
+~
+~
+0 0 3817 0
+S
+#3817
+The Shallow Pond~
+   The surface of this pond is as clear and flat as a sheet of glass. On it
+you can see the crystal reflections of the plants and flowers that live
+along the waters edge. Small fish dart frenetically about, as if searching
+for something they can never find. Every so often a larger fish shatters
+the surface to devour a brightly colored dragonfly or other small insect 
+that was resting on the water.
+~
+38 p 1
+D1
+You see the banks of the pond.
+~
+~
+0 0 3816 0
+D2
+You can continue to explore the pond.
+~
+~
+0 0 3818 0
+S
+#3818
+The Shallow Pond~
+   The surface of this pond is as clear and flat as a sheet of glass. On it
+you can see the crystal reflections of the plants and flowers that live
+along the waters edge. Small fish dart frenetically about, as if searching
+for something they can never find. Every so often a larger fish shatters
+the surface to devour a brightly colored dragonfly or other small insect 
+that was resting on the water.
+~
+38 p 1
+D0
+The pond continues to the north.
+~
+~
+0 0 3817 0
+D1
+The deep blue water of the pond extends to the east.
+~
+~
+0 0 3819 0
+S
+#3819
+The Shallow Pond~
+   The surface of this pond is as clear and flat as a sheet of glass. On it
+you can see the crystal reflections of the plants and flowers that live
+along the waters edge. Small fish dart frenetically about, as if searching
+for something they can never find. Every so often a larger fish shatters
+the surface to devour a brightly colored dragonfly or other small insect 
+that was resting on the water.
+~
+38 p 1
+D3
+More of the pond lies in this direction.
+~
+~
+0 0 3818 0
+S
+#3820
+A Narrow Path~
+   This path is smaller and narrower than most in the park. There
+has been less planting, and it seems more natural and untouched.
+Large leafy shrubs line the edges of the path, and ever so often
+you see a small animal fossicking about at the base of one, 
+creating quite a noise.
+~
+38 p 1
+D0
+You see the main path leading through the park.
+~
+~
+0 0 3802 0
+D2
+More of the winding path leads to the south.
+~
+~
+0 0 3821 0
+S
+#3821
+A Winding Path~
+   This path is smaller and narrower than most in the park. There
+has been less planting, and it seems more natural and untouched.
+Large leafy shrubs line the edges of the path, and ever so often
+you see a small animal fossicking about at the base of one,
+creating quite a noise.
+~
+38 p 1
+D0
+The winding path continues to the north.
+~
+~
+0 0 3820 0
+D5
+You see a dark burrow in the ground.
+~
+~
+0 0 3822 0
+S
+#3822
+In A Cramped Gopher Hole~
+   You are squashed into a small, dark, dingy little burrow. The fine shower 
+of dirt that is continuously falling on you indicates that this hole has
+been freshly dug by its occupant. The air is thick with the smell of furry
+little animal, and you find yourself trying not to breath too much, to 
+avoid the stench. The only exit is back up to the surface, and fresh air.
+~
+38 adp 1
+D4
+You can climb up and be back in the park.
+~
+~
+0 0 3821 0
+S
+#3823
+In The Oak Tree~
+   The huge gnarled branches of this enormous tree just clear your head as
+you manage to stand up. With ever gust of wind, a loud creaking and groaning
+can be heard from deep within the trunk. To the south you can venture out
+onto one of the large limbs extending from the thick trunk. As you look 
+up, you think it would be possible to climb even higher in this mighty 
+tree.
+~
+38 p 1
+D2
+You can shuffle further out onto the tree limb.
+~
+~
+0 0 3824 0
+D4
+You can climb further up the tree.
+~
+~
+0 0 3826 0
+D5
+You can climb back down to the ground.
+~
+~
+0 0 3806 0
+S
+#3824
+Perched On a Narrow Tree Limb~
+   This branch, although quite a distance from the ground, appears to be
+quite sturdy and safe. As you shuffle further along the branch, it starts
+to sag a little more under your weight. The dark green leaves have become
+quite dense out here, and your vision of the ground has become obscured. To
+the east you see what looks to be a very large nest of some sort, while to
+the north, you can make your way back to the relative safety of the trunk.
+~
+38 p 1
+D0
+The safety of the tree trunk lies in this direction.
+~
+~
+0 0 3823 0
+D1
+You see a small, dark nest.
+~
+~
+0 0 3825 0
+S
+#3825
+An Abandoned Nest~
+   This nest has been constructed very carefully by its occupants. Each
+twig and peice of grass has been placed with absolute precision to create
+a warm and safe shelter from the elements. On closer inspection, it does
+not appear that anything has lived in this nest for some time, as there 
+are a few small holes and other repairs that would not have been neglected.
+~
+38 ip 1
+D3
+You see a narrow limb.
+~
+~
+0 0 3824 0
+S
+#3826
+High Up In The Oak~
+   You cling tightly to the trunk for fear of losing your balance and 
+falling to the ground below. Up here, the trunk has got much thinner, and
+is constantly swaying back and forth in even the lightest of breezes. You
+have a spectacular view of the park below from this vantage point. All the
+flower faces seem to melt together into one great splash of color, and you
+can only just make out the movement of people and animals going about 
+their business many feet below you.
+~
+38 p 1
+D5
+You can make your way back down the tree.
+~
+~
+0 0 3823 0
+S
+#3828
+The Park Gazebo~
+   The wooden trelis walls of this octagonal gazebo have been overtaken
+by voracious climbing and crawling ivy, entwining itself in and out of
+every piece of fretwork. This lining gives the gazebo a refreshingly cool
+and calm atmosphere, a nice change from the bustle of the city. There are
+built in seats around the outer edge, perfect for reclining on and enjoying
+a summers day.
+~
+38 p 0
+D0
+You see the path through the park.
+~
+~
+0 0 3806 0
+D5
+You see a small gate in the wall of the gazebo.
+~
+gate~
+1 0 3829 0
+S
+#3829
+A Back Path In The Park~
+   This is definatly a service path of some sort. It is in poor condition,
+with large weeds encroaching along it from all directions. Half empty sacks
+of grass seed and fertiliser have been tossed to the side here, and left
+for the worms to take over. It is quite apparent why this area has not been
+made available to the public. You see a couple of small stairs leading up
+here, taking you back to the main part of the park.
+~
+38 ap 1
+D3
+You see that this service path continues to the west.
+~
+~
+0 0 3830 0
+D4
+You see a small step up and a gate in the wall of the gazebo.
+~
+gate~
+1 0 3828 0
+S
+#3830
+A Back Path In The Park~
+   This is definatly a service path of some sort. It is in poor condition,
+with large weeds encroaching along it from all directions. Half empty sacks
+of grass seed and fertiliser have been tossed to the side here, and left
+for the worms to take over. It is quite apparent why this area has not been
+made available to the public.
+~
+38 ap 1
+D0
+You can follow this messy path.
+~
+~
+0 0 3831 0
+D1
+The back path continues.
+~
+~
+0 0 3829 0
+S
+#3831
+A Back Path In The Park~
+   This is definatly a service path of some sort. It is in poor condition,
+with large weeds encroaching along it from all directions. Half empty sacks
+of grass seed and fertiliser have been tossed to the side here, and left
+for the worms to take over. It is quite apparent why this area has not been
+made available to the public. To the east you see a door leading into a
+shed of some description. You notice a small sign has been nailed to the
+wall here.
+~
+38 ap 1
+D1
+You see a small door in the shed.
+~
+door~
+1 0 3832 0
+D2
+The path continues.
+~
+~
+0 0 3830 0
+E
+sign~
+___________________________________
+|                                  |
+|             PRIVATE              |
+|                                  |
+|        PARK STAFF ONLY           |
+|                                  |
+|           # KEEP OUT #           |
+|                                  |
+___________________________________
+~
+S
+#3832
+The Caretaker's Shed~
+   You stand in a dark and rickety shed. Crude shelves line the walls, and
+are covered with numerous unmarked bottles of unknown content. On one wall
+there is a large tool rack, but as you look around and see many different
+implements littering the floor and propped up in corners, you decide that
+the caretaker does not take the same attitude of care to his shed as he
+does to his garden. Trays on tiny seedlings clutter the floor and you have
+to be very careful of your step so as not to crush any. The only window
+has been left open but a crack and is so dirty that it only lets a thin
+sliver of light slash through the darkness.
+~
+38 ap 0
+D3
+You see a small rusty door that leads back outside.
+~
+door~
+1 0 3831 0
+S
+#3833
+The Rose Gardens~
+   This area of the park is quite different from the rest. The other beds
+have been planted, and then left to run rampant, grow and mix as they
+please, wheras here, each rose has been specifically placed in regimented
+rows. There are no intrusive weeds, nor is there a blade of grass out of
+place around the border. The roses look as though they have been here for
+many years, and have become quite established in their surrounds. It is
+almost as if you are visiting in a great old gallery, standing in awe of
+the works.
+~
+38 p 1
+D0
+You can follow the rows of old fashioned roses.
+~
+~
+0 0 3834 0
+D1
+You can rejoin the main path through the park.
+~
+~
+0 0 3807 0
+S
+#3834
+The Rose Gardens~
+   This area of the park is quite different from the rest. The other beds
+have been planted, and then left to run rampant, grow and mix as they
+please, wheras here, each rose has been specifically placed in regimented
+rows. There are no intrusive weeds, nor is there a blade of grass out of
+place around the border. The roses look as though they have been here for
+many years, and have become quite established in their surrounds. It is
+almost as if you are visiting in a great old gallery, standing in awe of
+the works.
+~
+38 p 1
+D2
+The rose gardens continue to the south.
+~
+~
+0 0 3833 0
+D3
+You can see more of the same garden stretching to the west.
+~
+~
+0 0 3835 0
+S
+#3835
+The Rose Gardens~
+   This area of the park is quite different from the rest. The other beds
+have been planted, and then left to run rampant, grow and mix as they
+please, wheras here, each rose has been specifically placed in regimented
+rows. There are no intrusive weeds, nor is there a blade of grass out of
+place around the border. The roses look as though they have been here for
+many years, and have become quite established in their surrounds. It is
+almost as if you are visiting in a great old gallery, standing in awe of
+the works.
+~
+38 p 1
+D0
+~
+~
+0 0 3811 0
+D1
+More rows of the colorful old roses lie to the east.
+~
+~
+0 0 3834 0
+S
+#3836
+A Break In The Trees~
+   This trail does not appear to be one created by the Caretaker and his
+staff. The thick lower branches of the tall pine trees have been pushed
+aside so many times that they now lie broken and bent. This creates a small
+gap, just large enough for a person to squeeze through, in the otherwise
+dense wall of branches.
+~
+38 ap 0
+D1
+You see a paved path.
+~
+~
+0 0 3813 0
+D3
+The trail leads further into the trees.
+~
+~
+0 0 3837 0
+S
+#3837
+A Clearing Under The Trees~
+   Overhead, a thick canopy created by many layers of branches, blocks any
+glimpse of natural light. There is no wind movement at all here. The ground 
+beneath your feet is a thick bed of broken twigs and fallen leaves. These 
+twigs and leaves slowly decomposing leaves the air thick with a rich, earthy
+smell, which lingers in your mind.
+~
+38 ap 1
+D0
+You can continue along the trail.
+~
+~
+0 0 3838 0
+D1
+You can follow the trail to the east.
+~
+~
+0 0 3836 0
+D3
+You see the trail leading further under the trees.
+~
+~
+0 0 3840 0
+S
+#3838
+A Clearing Under The Trees~
+   Overhead, a thick canopy created by many layers of branches, blocks any
+glimpse of natural light. There is no wind movement at all here. The ground 
+beneath your feet is a thick bed of broken twigs and fallen leaves. These 
+twigs and leaves slowly decomposing leaves the air thick with a rich, earthy
+smell, which lingers in your mind.
+~
+38 ap 1
+D0
+The trail leads to the north.
+~
+~
+0 0 3839 0
+D2
+You see the trail continuing to the south.
+~
+~
+0 0 3837 0
+D3
+More of the clearing is to the west.
+~
+~
+0 0 3841 0
+S
+#3839
+A Clearing Under The Trees~
+   Overhead, a thick canopy created by many layers of branches, blocks any
+glimpse of natural light. There is no wind movement at all here. The ground 
+beneath your feet is a thick bed of broken twigs and fallen leaves. These 
+twigs and leaves slowly decomposing leaves the air thick with a rich, earthy
+smell, which lingers in your mind.
+~
+38 ap 1
+D2
+The trail continues to the south.
+~
+~
+0 0 3838 0
+D3
+The clearing continues to the west.
+~
+~
+0 0 3842 0
+S
+#3840
+A Clearing Under The Trees~
+   Overhead, a thick canopy created by many layers of branches, blocks any
+glimpse of natural light. There is no wind movement at all here. The ground 
+beneath your feet is a thick bed of broken twigs and fallen leaves. These 
+twigs and leaves slowly decomposing leaves the air thick with a rich, earthy
+smell, which lingers in your mind.
+~
+38 ap 1
+D0
+You can wander to the north.
+~
+~
+0 0 3841 0
+D1
+You can continue to wander under the trees.
+~
+~
+0 0 3837 0
+S
+#3841
+A Clearing Under The Trees~
+   Overhead, a thick canopy created by many layers of branches, blocks any
+glimpse of natural light. There is no wind movement at all here. The ground 
+beneath your feet is a thick bed of broken twigs and fallen leaves. These 
+twigs and leaves slowly decomposing leaves the air thick with a rich, earthy
+smell, which lingers in your mind.
+~
+38 ap 0
+D0
+You see more of the trail leading to the north.
+~
+~
+0 0 3842 0
+D1
+You can continue to the east.
+~
+~
+0 0 3838 0
+D2
+The trail continues.
+~
+~
+0 0 3840 0
+S
+#3842
+A Clearing Under The Trees~
+   Overhead, a thick canopy created by many layers of branches, blocks any
+glimpse of natural light. There is no wind movement at all here. The ground 
+beneath your feet is a thick bed of broken twigs and fallen leaves. These 
+twigs and leaves slowly decomposing leaves the air thick with a rich, earthy
+smell, which lingers in your mind.
+~
+38 ap 1
+D1
+You see more of the clearing to the east.
+~
+~
+0 0 3839 0
+D2
+You can continue to the south.
+~
+~
+0 0 3841 0
+D3
+The fallen log blocks your way to the west.
+~
+fallen~
+1 0 3843 0
+S
+#3843
+Through The Undergrowth~
+   Sharp branches threaten you as you force your way thourgh the thick
+undergrowth. Small animals and insects are busily scurrying around here,
+apparently oblivious to your presence. As you look around you, you cannot
+see the entrance from which you came, and you quickly lose your orientation.
+~
+38 ap 1
+D1
+You see a small break in the undergrowth.
+~
+branch~
+1 0 3842 0
+D3
+You think you can push further to the west.
+~
+~
+0 0 3844 0
+S
+#3844
+Through The Undergrowth~
+   Small branches threaten you as you force your way through the thick
+undergrowth. Small animals and insects are busily scurrying around here,
+apparently oblivious to your presence. There seems to be a small opening
+in the ground here, but as you peer into it, you cannot see anything for
+the darkness.
+~
+38 ap 1
+D1
+You can just make your way to the east.
+~
+~
+0 0 3843 0
+D5
+You see a dark looking cave leading down.
+~
+~
+0 0 3845 0
+S
+#3845
+A Damp Cave~
+   You find yourself in a small, dark, dank cave. Small tears of water 
+run down the craggy, black stone walls, and pool on the ground. There
+is a thick covering of slimy green mildew on the uneven ground here,
+causing you to take great care where you step.
+~
+38 ap 1
+D4
+You can clamber back up to the surface.
+~
+~
+0 0 3844 0
+S
+$~

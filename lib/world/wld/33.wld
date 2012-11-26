@@ -1,0 +1,563 @@
+#3301
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+33 p 7
+D0
+The velvet blue water continues.
+~
+~
+0 0 3303 0
+D1
+The velvet blue water continues.
+~
+~
+0 0 3302 0
+S
+#3302
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+33 p 7
+D0
+The velvet blue water continues.
+~
+2~
+0 0 3299 0
+D3
+The velvet blue water continues.
+~
+~
+0 0 3301 0
+S
+#3303
+Lake Cragmere~
+   You are standing on a sparkling blue lake. As you gaze into its
+depths, you almost lose your sense of space. Although the water is
+crystal clear, it seems to be bottomelss. A series of small ripples
+keep apprearing on the surface as if from nowhere, and then they are
+gone.....
+~
+33 p 7
+D0
+The velvet blue water continues.
+~
+~
+0 0 3296 0
+D1
+The velvet blue water continues.
+~
+~
+0 0 3299 0
+D2
+The velvet blue water continues.
+~
+~
+0 0 3301 0
+S
+#3304
+The Southwestern Corner Of Lake Cragmere~
+   The lake feels somehow different here, the sense of peace has gone,
+and you find yourself almost looking over your shoulder. The shadows
+of huge trees on the shore cast long over you... making you feel even
+more wary. You can see a small pebbly beach, which appears to serve
+as access to a small island.
+~
+33 0 7
+D1
+You see a small pebbly beach.
+~
+~
+0 0 3291 0
+D2
+The lake flows southward.
+~
+~
+0 0 3305 0
+S
+#3305
+The Back Of The Hut~
+   This dark corner looks like it is the living area of this shelter. On one
+side of the room, there is a small bed built into the wall. It looks old and
+dirty, and the worn blankets have been messily pushed to one side. On the other
+sider, a simple bench has been attached to the wall. It is overflowing with
+wood shavings and partly finished carvings. 
+~
+33 ap 0
+D0
+You see the entrance to the hut.
+~
+~
+0 0 3298 0
+D3
+You see a carefully concealed door.
+~
+door~
+1 0 3292 0
+S
+#3306
+Beneath A Wall Of Trees~
+   As you look toward the sky, you are amazed that such fine and delicate
+trees could ever manage to stand so tall. With each gust of the breeze
+the branches seem to shiver, and its miniature leaves are disturbed from 
+their rest just long enough to fill the air with the sound of their gentle fluttering.
+~
+33 cp 2
+D2
+You can wander along the line of trees.
+~
+~
+0 0 3307 0
+S
+#3307
+Beneath A Wall Of Trees~
+   As you look toward the sky, you are amazed that such fine and delicate
+trees could ever manage to stand so tall. With each gust of the breeze
+the branches seem to shiver, and its miniature leaves are disturbed from 
+their rest just long enough to fill the air with the sound of their gentle fluttering.
+~
+33 p 2
+D0
+The wall marches to the north.
+~
+~
+0 0 3306 0
+D1
+You see the edge of a sparkling lake.
+~
+~
+0 0 3310 0
+D2
+You can stroll futher along under the trees.
+~
+~
+0 0 3308 0
+S
+#3308
+Beneath A Wall Of Trees~
+   As you look toward the sky, you are amazed that such fine and delicate
+trees could ever manage to stand so tall. With each gust of the breeze
+the branches seem to shiver, and its miniature leaves are disturbed from 
+their rest just long enough to fill the air with the sound of their gentle fluttering.
+~
+33 p 2
+D0
+You see more of the enormous trees.
+~
+~
+0 0 3307 0
+D1
+The barren plains extend back to the east.
+~
+~
+0 0 3314 0
+D2
+~
+~
+0 0 3316 0
+S
+#3310
+The Edge Of The Lake~
+   You are standing on the steep banks of an eerie looking lake. Long 
+shadows are cast by the towering wall of trees that block the way westward.
+The scene here is in stark contrast to that of the bare plains you have just
+been travelling in. The grass is lush and green, and many small animals 
+manage to clamber down to the waters edge to drink and bathe.
+~
+33 p 2
+D1
+You can follow the edge of the lake.
+~
+~
+0 0 3311 0
+D2
+You can leave back to the bare plains.
+~
+~
+0 0 3314 0
+D3
+You see a large row of trees.
+~
+~
+0 0 3307 0
+S
+#3311
+The Edge Of The Lake~
+   You are standing on the steep banks of an eerie looking lake. Long 
+shadows are cast by the towering wall of trees that block the way westward.
+The scene here is in stark contrast to that of the bare plains you have just
+been travelling in. The grass is lush and green, and many small animals 
+manage to clamber down to the waters edge to drink and bathe.
+~
+33 p 2
+D1
+You can join the road through the plains.
+~
+~
+0 0 3230 0
+D3
+The edge of the lake wanders along.
+~
+~
+0 0 3310 0
+S
+#3312
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+You can join the safety of the road.
+~
+~
+0 0 3232 0
+D1
+~
+~
+0 0 3313 0
+D2
+Yes, there are more plains to the south...
+~
+~
+0 0 3315 0
+S
+#3313
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+A large road bisects the otherwise featureless horizon.
+~
+~
+0 0 3233 0
+D3
+~
+~
+0 0 3312 0
+S
+#3314
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+You see a lush teeming meadow.
+~
+~
+0 0 3310 0
+D1
+You see a road cutting through the plains.
+~
+~
+0 0 3228 0
+D2
+More of the emptiness is to the south.
+~
+~
+0 0 3317 0
+D3
+You see a towering wall of trees.
+~
+~
+0 0 3308 0
+S
+#3315
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+The plains tumble ever onward...
+~
+~
+0 0 3312 0
+D3
+You can join the well beaten path to the west.
+~
+~
+0 0 3229 0
+S
+#3316
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+You see a large row of trees.
+~
+~
+0 0 3308 0
+D1
+~
+~
+0 0 3317 0
+D2
+The nothingness continues.
+~
+~
+0 0 3320 0
+S
+#3317
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+~
+~
+0 0 3314 0
+D1
+To the east you see a clear track.
+~
+~
+0 0 3223 0
+D2
+The barren expanse stretches onward.
+~
+~
+0 0 3321 0
+D3
+~
+~
+0 0 3316 0
+S
+#3318
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+~
+~
+0 0 3229 0
+D1
+More of the golden plains stretch onward.
+~
+~
+0 0 3319 0
+D2
+You can lose yourself further deeper in the plains.
+~
+~
+0 0 3322 0
+D3
+~
+~
+0 0 3223 0
+S
+#3319
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+The nothingness continues....
+~
+~
+0 0 3315 0
+D3
+~
+~
+0 0 3318 0
+S
+#3320
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+The plains continue.
+~
+~
+0 0 3316 0
+D1
+More of the plains lie to the east...
+~
+~
+0 0 3321 0
+S
+#3321
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+You see the sunbleached plains streching before you.
+~
+~
+0 0 3317 0
+D1
+You see an inviting path.
+~
+~
+0 0 3222 0
+D2
+You see more of the plains.
+~
+~
+0 0 3323 0
+D3
+The plains strech before you.
+~
+~
+0 0 3320 0
+S
+#3322
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+~
+~
+0 0 3318 0
+D2
+You think you can wander safely through the plains..
+~
+~
+0 0 3324 0
+D3
+You can re-join the road.
+~
+~
+0 0 3222 0
+S
+#3323
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+The sunbleached plains stretch before you.
+~
+~
+0 0 3321 0
+D1
+You see a well trodden path.
+~
+~
+0 0 3221 0
+S
+#3324
+The Desolate Plains~
+   You find yourself standing knee deep in golden, sundried grass. As you
+look around at the massive expanse of nothingness that is your surround, you
+quickly become disorientated and wonder what your chances of ever finding
+your way back to civilisation are.
+~
+33 p 2
+D0
+More of the plains lie in this direction.
+~
+~
+0 0 3322 0
+D3
+You see the familiar sight of the road through the plains.
+~
+~
+0 0 3221 0
+S
+#3326
+Under The Bridge~
+   You are afraid to stand too long under this weathering bridge. Small
+pieces of mortar and stone are constantly falling around you. There are
+a few larger pieces lying on the ground. They almost look as though they
+have been placed there for a reason. On closer inspection, you realize
+that they have indeed been chiseled from the wall of the tunnel.
+~
+33 ap 5
+D1
+You see a riverbed extending to the east.
+~
+~
+0 0 3327 0
+D3
+You see the edge of a beautiful lake.
+~
+~
+0 0 3297 0
+S
+#3327
+In A Dry Riverbed~
+   You are standing in a dry, rocky riverbed that looks as though it was
+once the scene of a raging torrent. However, as you look closer at the
+ground, the lack of vegetation and wildlife indicates that this has not
+been the case for many centuries.
+~
+33 p 5
+D1
+The riverbed continues....
+~
+~
+0 0 3328 0
+D3
+It looks like you can go under the bridge...
+~
+~
+0 0 3326 0
+D4
+You see a narrow stair leading up.
+~
+~
+0 0 3236 0
+S
+#3328
+Further Along The Riverbed~
+   You clamber over the uneven terrain, and with every step, the rocks 
+that make up the ground below, shift and slide into each other, making
+it difficult to keep your balance. Sunbleached tree-trunks lie abandoned
+here, as if tossed aside by the might of some great flood of the past.
+~
+33 p 5
+D3
+You see more of the ragged terrain...
+~
+~
+0 0 3327 0
+S
+$~

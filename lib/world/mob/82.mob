@@ -1,0 +1,744 @@
+#8200
+dog farm farmdog~
+a farm dog~
+The loyal farm dog is here, keeping watch on his master.
+~
+He's a loyal dog, willing and able to protect his master and his land.
+~
+bdlm f 750 X
+1 19 9 1d1+10
+0 150
+8 8 0 4 14 2
+T 100 1d1+0 0
+#8201
+farmer man~
+the prosperous farmer~
+A prosperous farmer is here, telling stories and chewing tobacco.
+~
+He's quite proud of himself, and will tell anyone who will listen, just how
+good of a farmer he is.  He'll defend his land to the death, though.
+~
+bdhl 0 350 X
+2 19 9 1d1+20
+0 550
+8 8 1 3 1 3
+T 100 1d3+0 0
+#8202
+son~
+the loyal son~
+This man's loyal son is here.  Loyal to his father, and his land.
+~
+He's a young, strapping lad.  He's got broad shoulders and a strong back from
+long hours of work in the fields.  He loves this land, and he loves his father
+and will die to portect them.
+~
+bd 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8203
+farmer man~
+the modest farmer~
+The modest farmer is here working, he looks up at your approach.
+~
+He's an elderly man, but looks fairly strong, still.  In fact, he looks as
+though he could use that sword hanging from his belt.  But he strides up to 
+greet you as if you were a long lost friend.
+~
+bdl 0 750 X
+3 18 8 2d2+30
+0 800
+8 8 1 3 1 3
+T 100 2d2+0 0
+#8204
+boy servant~
+the servant~
+A servant is here, making meager pay by helping the farmer.
+~
+He's just a young lad, not more than 12 or 13. But he has potential to be a
+fine farmer, which is why this modest farmer has taken him on as a servant.
+He works hard, for little pay, but gets a lot of experience in running things.
+~
+bdh s 0 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8205
+elmo ranger~
+Elmo~
+The modest farmer's son, Elmo is here, evading his chores.
+~
+He's a big boy, but doesnt' appear to be too bright. But it certainly looks
+like he can fight, and fight well. He certainly doesn't like to be tickled.
+~
+dgq p 750 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d7+2 0
+E 15 40 8202 10
+>act_prog   p tickles you~
+  gig
+  sha me
+~
+|
+#8206
+son~
+the loyal son~
+This lady's loyal son is here.  Loyal to his widowed mother, and his land.
+~
+He's a young, strapping lad. He's got broad shoulders and a strong back from
+long hours of work in the fields. He loves this land, and he loves his mother
+and will die to portect them.
+~
+bd 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8207
+farmer man~
+the prosperous farmer~
+A prosperous farmer is here, telling stories and chewing tobacco.
+~
+He's quite proud of himself, and will tell anyone who will listen, just how
+good of a farmer he is. He'll defend his land to the death, though.
+~
+bdhl 0 350 X
+2 19 9 1d1+20
+0 550
+8 8 1 3 1 3
+T 100 1d3+0 0
+#8208
+boy servant~
+the servant~
+A servant is here, making meager pay by helping the farmer.
+~
+He's just a young lad, not more than 12 or 13. But he has potential to be a
+fine farmer, which is why this modest farmer has taken him on as a servant.
+He works hard, for little pay, but gets a lot of experience in running things.
+~
+bdh s 0 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8209
+leather leatherworker man~
+the leatherworker~
+A bent old leatherworker is here, making purses.
+~
+He trade as taken quite a toll on him, robbed him of his stature, and his
+dexterity, and his sight.  He won't stand for outlaws or theives, though.
+~
+bdhl 0 350 X
+3 18 8 2d2+30
+0 800
+8 8 1 3 1 3
+T 100 2d2+0 0
+#8210
+son~
+the leatherworker's eldest son~
+This man's loyal son is here, learning the trade.
+~
+He's a young man, but already you see hints of his father in him.  The long
+hours and difficult labor have begun to take their toll.  They haven't yet
+broken him, as they have his father, but soon it will happen.
+~
+bd 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8211
+ostler gundigoot innkeeper keeper man~
+Ostler Gundigoot~
+Ostler Gundigoot, the owner of the Welcome Wench is tending bar here.
+~
+He's an old, balding man, who loves his wife and family, and the Welcome
+Wench.  He always has a smile on his face, and will welcome any and all to 
+his Inn with open arms, a hot meal, and a cold beer.
+~
+bdl 0 750 X
+7 16 6 4d4+70
+0 2850
+8 8 1 3 1 3
+T 100 2d6+0 0
+#8212
+boy man stableman~
+the stableman~
+A stableman is wandering around here, obviously with nothing to do.
+~
+He's a slinky youth, always trying to shirk work and fawn over the serving
+girls at the Welcome Wench.  That's the only reason he wanted this job.  He
+loves women, and he loves beer, and the only place to get both is at the ole
+Welcome Wench.  Ostler really outta fire this guy!
+~
+bdh s 0 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8213
+smith man brother smyth~
+Brother Smyth~
+Brother Smyth, Hommlet's blacksmith is here, pounding away.
+~
+Squat and strong, he's your stereotypical blacksmith. He doesn't talk much,
+but he listens to what is said. He greets you with a firm handshake and a
+weary smile.
+~
+bdl 0 400 X
+6 17 7 3d3+60
+0 2600
+8 8 1 3 1 3
+T 100 3d3+0 0
+#8214
+son son-in-law~
+the weaver's son-in-law~
+This man's loyal son is here, learning the trade.
+~
+He steps up to greet you, and shakes your hand.  He explains that his mother
+and father-in-law are ill, and that he will be more than happy to help in any
+he can.
+~
+bd 0 350 X
+2 19 9 1d1+20
+0 450
+8 8 1 3 1 3
+T 100 1d3+0 0
+#8215
+boy apprentice~
+the weaver's apprentice~
+The weaver's apprentice is here, learning his trade.
+~
+He is very young, in fact, he's not even old enough to shave yet, but his
+skill in weaving is very high, and he is eager to learn and advance.  His
+eyes shine as he weaves his newest creation, a sweater.
+~
+bdh s 0 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8216
+tailer tailor man~
+the tailor~
+The tailor is here, sewing a fine new shirt.
+~
+His trade has taken quite a toll on him, having robbed him of his stature,
+his dexterity, and his sight.  He still sews, though, making new clothes for
+his freinds and neighbors.
+~
+bdhl 0 350 X
+4 18 8 2d2+40
+0 1200
+8 8 1 3 1 3
+T 100 1d5+1 0
+#8217
+trader rannos davl~
+Rannos Davl~
+Rannos Davl, the local tradesmaster, is here counting his money
+~
+He's a sly little devil, with beedy eyes that dart about, measuring you.  He
+knows a mark when he sees one, and he seems to think that you're an easy
+target!
+~
+bdef d -800 X
+10 15 5 5d5+100
+0 5000
+8 8 1 3 1 3
+T 100 2d9+0 0
+E 12 50 8203 20
+>greet_prog   100~
+   if isfollow($n)
+      break
+   else
+      backstab $n
+      break
+   endif
+~
+|
+#8218
+trader gremag~
+Gremag~
+Gremag, Rannos Davl's assistant, is here checking inventory.
+~
+He's a sly little devil, with beedy eyes that dart about, measuring you.  He
+knows a mark when he sees one, and he seems to think that you're an easy
+target!
+~
+bde d -800 X
+7 4 6 4d4+70
+0 2900
+8 8 1 3 1 3
+T 100 1d5+4 0
+#8219
+boy man stableman~
+the stableman~
+A stableman is wandering around here, obviously with nothing to do.
+~
+This unlucky fellow wanted the easy job of working for Ostler Gundigoot at the
+Welcome Wench, but couldn't get that job. Now he works like a slave for tehe
+traders, Rannos Davl, and Gremag.
+~
+bdh s 0 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8220
+carter teamster man~
+the carter~
+The carter is here, hitching his team to the wagon.
+~
+He's a dour man, newly arrived to Hommlet, but he's a hard worker and will 
+soon have plenty of work for himself and his apprentices.  He greets you 
+with a solid handshake and a weary smile.
+~
+bdhl 0 350 X
+3 18 8 2d2+30
+0 700
+8 8 1 3 1 3
+T 100 1d5+0 0
+#8221
+son~
+the carter's son~
+This man's loyal son is here.  Loyal to his father, and his land.
+~
+He skillfully guides his father horses and bridles them with ease. He is a
+very faster learner. In fact, he'll be off apprenticing at another carter's
+before too long.
+~
+bdh 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8222
+boy apprentice driver~
+the driver~
+The driver is here, waiting for another load to go to market.
+~
+He a little old to be an apprentice, but that's what the carter calls him: my
+apprentice.  Maybe he simply enjoys working for this carter and doesn't want
+to advance in skills. If he does, he may have to move on, and that might put
+him in a rougher town, or under a rougher master.
+~
+bdh s 0 X
+0 20 10 1d1+5
+0 20
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8223
+dog war attack~
+the attack dog~
+The huge war dog is here, and he thinks you've come to rob his master!
+~
+He's a loyal dog, willing and able to protect his master and his land.
+~
+bdf f -750 X
+2 19 9 1d1+20
+0 550
+8 8 0 4 14 2
+T 100 1d1+1 0
+#8224
+guard mercenary~
+Melubb's Guard~
+Melubb the Moneychanger's Guard stands here, watching the door.
+~
+He's dumb.
+~
+bdm d 0 X
+4 18 8 2d2+40
+0 1800
+8 8 1 3 1 3
+T 100 1d5+1 0
+#8225
+nira melubb jewler moneychanger man~
+Nira Melubb~
+Nira Melubb, the Moneychanger and Jewler is here, displaying his wares.
+~
+He's a sly devil, always looking to cheat passersby with cheap valuables and
+expensive trash.
+~
+bdel 0 0 X
+5 17 7 3d3+50
+0 2100
+8 8 1 3 1 3
+T 100 1d4+2 0
+#8226
+man maker cabinetmaker~
+the cabinetmaker~
+The cabinetmaker is here, carving out his niche in Hommlet.
+~
+This fellow is a good one to learn from, as his works have been seen as far
+away as the Elven Kingdom.  He's quite skilled, but takes only one apprentice.
+Some of his fellow craftsmen feel he's too proud to take more, but in truth,
+he just wants to make sure he gives each apprentice personal attention.
+~
+bdhl 0 350 X
+4 18 8 2d2+40
+0 1400
+8 8 1 3 1 3
+T 100 1d5+1 0
+#8227
+boy apprentice~
+the apprentice~
+The cabinetmaker apprentice is here, learning from the master.
+~
+If he learns well, he'll have secure his future.
+~
+bdh s 0 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8228
+man potter~
+the potter~
+The potter is here, making little pots and clay bowls.
+~
+He's a grizzled old fellow, been spinning clay for years. Even now, he still
+makes the mud fly around his little shop.  His grown sons help out too, now.
+He's a happy man, doing what he loves with his family besdie him.
+~
+bdhl 0 350 X
+3 18 8 2d2+30
+0 800
+8 8 1 3 1 3
+T 100 1d5+0 0
+#8229
+son~
+the potter's son~
+The potter's son is here, helping dad and goofing off.
+~
+If he ever learns to love MUD as much as his father does, he'll soon own his
+own little pottery barn and make lots of little pottery things.
+~
+bdh 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8230
+dog watchdog~
+the brewer's dog~
+The fat, half drunk, brewer's dog is here, lolling about.
+~
+He's a loyal dog, willing and able to protect his master and his land.
+~
+bdlm f 750 X
+2 19 9 1d1+20
+0 400
+8 8 0 3 0 4
+T 100 1d1+1 0
+#8231
+man brewer braumeister brau meister~
+the braumeister~
+The braumeister is here, drinking hard and working harder.
+~
+His wide grith and constantly red face let you know that this man doens't just
+brew beer, he also drinks it, and drinks alot of it, too.
+~
+bdhl 0 350 X
+5 17 7 3d3+50
+0 1700
+8 8 1 3 1 3
+T 100 2d4+0 0
+#8232
+boy apprentice~
+the apprentice~
+The apprentice brewer is here, learning the tricks of the trade.
+~
+He's learning all about how to drink properly, how to clean up after drunks.
+Oh, and how to brew, too. But that's just an afterthought.
+~
+bdh s 0 X
+0 20 10 1d1+5
+0 20
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8233
+cleric priest calmer~
+Calmer~
+Calmer, the assistant cleric, cleric is here, researching St. Cuthbert.
+~
+He's very devout, and will likely have his own church soon. His only little
+problem is that he may, just MAY, be a little TOO zealous in recruiting the
+converts. Only two or three have died so far.
+~
+bdiknp 0 500 X
+6 17 7 3d3+60
+0 2200
+8 8 1 3 1 3
+T 100 2d5+0 0
+#8234
+cleric priest terjon~
+Terjon~
+Terjon, the Priest of Cuthbert is here, and he rushes to attack!
+~
+Overzealous? Nahhh.
+~
+bdfnpr 0 500 X
+8 16 6 4d4+80
+0 3600
+8 8 1 3 1 3
+T 100 2d7+0 0
+#8235
+citizen man~
+the citizen~
+The happy citizen of Hommlet is here, happy to be alive.
+~
+He's just happy to be here in Hommlet. He loves his little town, and loves
+being here.
+~
+bdgh 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8236
+dairy farmer man~
+the dairy farmer~
+The dairy farmer is here, showing his son how to milk cows.
+~
+He's very patient, but still can't understand how or why his poor old son can'
+
+figure out how to milk a simple cow.
+~
+bdhl 0 350 X
+3 18 8 2d2+30
+0 900
+8 8 1 3 1 3
+T 100 1d5+0 0
+#8237
+son~
+the dairy farmer's son~
+The dairy farmer's son is here, watching his father with confusion on his face
+
+~
+He's a young, strapping lad. He's got broad shoulders and a strong back from
+long hours of work in the fields. He loves this land, and he loves his father
+and will die to portect them.
+~
+bd 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8238
+miller man~
+the miller~
+The miller is here, grinding his grain.
+~
+He looks up as you approach, and wipes the dust off his face. He peers at you
+through clogged up eyes, and asks, 'How may i serve you?'
+~
+bdhl 0 350 X
+4 18 8 2d2+40
+0 1100
+8 8 1 3 1 3
+T 100 1d5+1 0
+#8239
+boy apprentice~
+the apprentice~
+The apprentice miller is here, learning his trade.
+~
+He's all dusty, too, just like his master. It may not seem like it sometimes,
+but he really does want to be a milller. If he could just stay focused...
+~
+bdh s 0 X
+0 20 10 1d1+4
+0 20
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8240
+dog miller miller's~
+the miller's dog~
+The miller's dog is here, keeping watch over the mill.
+~
+He's a loyal dog, willing and able to protect his master and his land.
+~
+bdlm f 750 X
+1 19 9 1d1+10
+0 250
+8 8 0 2 0 4
+T 100 1d1+0 0
+#8241
+markahn brell druid~
+Markahn Brell~
+Markahn Brell, the druid of Hommlet is here, communing with nature.
+~
+He's a gnarled old fellow with long strangly hair and wrinkled skin. But his
+eyes...  Soemthing about his eyes makes you think he's much younger than he
+appears, and yet much older. It's kinda wierd.
+~
+bdelnpr fkm 1000 X
+7 16 6 4d4+70
+0 3200
+8 8 1 3 1 3
+T 100 2d4+2 0
+#8242
+bear~
+the bear~
+The bear is here, guarding Markahn.
+~
+He's so big, you're suprised no one else can see him...
+~
+bdemq hkst 1000 X
+10 15 5 5d5+100
+0 7000
+8 8 0 2 0 5
+T 100 2d3+6 0
+#8243
+wainwright wain wright man~
+the wainwright~
+The wainwright is here, making wheels for the carter.
+~
+He looks up as you approach, and wipes the dust off his face. He peers at you
+through clogged up eyes, and asks, 'How may i serve you?'
+~
+bdhl 0 350 X
+3 18 8 2d2+30
+0 700
+8 8 1 3 1 3
+T 100 1d1+2 0
+#8244
+boy apprentice~
+the apprentice~
+The apprentice wainwright is here, sanding down a wheel.
+~
+He barely notices your entry, so intent is he on his work. He gives the very
+smallest of acknowlegments, and turns back to his task.
+~
+bdh s 0 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8245
+elder village chief~
+the Village Elder~
+The Village Elder is here, planning the next city council meeting.
+~
+He's a grizzled old man, stuck in his ways. He likes the Village of Hommlet
+as just that, a village, not a town. And it's people like you who are 
+turning his little village into that town. He looks up at you, and screams,
+'Why are you here?!?!  Go away!  Go!  Go!'
+~
+bd d 500 X
+10 15 5 5d5+100
+0 5000
+8 8 1 3 1 3
+T 100 2d9+0 0
+#8246
+son~
+the elder's son~
+The Village Elder's son is here, looking more important than he is.
+~
+He and all his brothers just sit back and live off the work of their father.
+They've never worked a day in their life, and it shows. They're fat and 
+slovenly and have no desire to work. Poor excuses for men.
+~
+bdh 0 0 X
+3 18 8 2d2+30
+0 950
+8 8 1 3 1 3
+T 100 1d5+0 0
+#8247
+carpenter man~
+the carpenter~
+The carpenter is here, making all kinds of neat stuff.
+~
+He looks up as you approach, and wipes the dust off his face. He peers at you
+through clogged up eyes, and asks, 'How may i serve you?'
+~
+bdhl 0 350 X
+4 18 8 2d2+40
+0 1100
+8 8 1 3 1 3
+T 100 2d3+0 0
+#8248
+stone mason stonemason man~
+the stonemason~
+The stonemason is here, cutting block for his next project.
+~
+He looks up as you approach, and wipes the dust off his face. He peers at you
+through clogged up eyes, and asks, 'How may i serve you?'
+~
+bdhl 0 350 X
+5 15 5 3d3+50
+0 2700
+8 8 1 3 1 3
+T 100 2d4+0 0
+#8249
+zert~
+Zert~
+Zert the mercenary is here, sharpening his sword.
+~
+He's a lean, mean, killing machine. It's gotta be his lucky day, cause he
+was in need of an easy kill or two.
+~
+bdf 0 -300 X
+4 18 8 2d2+40
+0 1250
+8 8 1 3 1 3
+T 100 1d7+0 0
+#8250
+spug spugnior~
+Spugnior~
+Spugnior the Magnificent is here, dabbling in archane arts.
+~
+He's a lean, mean, killing machine. It's gotta be his lucky day, cause he
+was in need of an easy kill or two.
+~
+bdf 0 -300 X
+4 18 8 2d2+40
+0 1250
+8 8 1 3 1 3
+T 100 1d5+1 0
+#8251
+fur furnok~
+Furnok~
+Furnok, a known thief, is here, counting his winnings.
+~
+He's a lean, mean, killing machine. It's gotta be his lucky day, cause he
+was in need of an easy kill or two.
+~
+bdf k -300 X
+4 18 8 2d2+40
+0 1250
+8 8 1 3 1 3
+T 100 1d5+1 0
+>greet_prog   50~
+   backstab $n
+~
+|
+#8252
+citizen woman~
+the citizen~
+The happy citizen of Hommlet is here, happy to be alive.
+~
+She's just happy to living here in Hommlet during these exciting times. She
+loves being here, and her smile shows it.
+~
+bdgh 0 350 X
+1 19 9 1d1+10
+0 150
+8 8 1 3 1 3
+T 100 1d1+0 0
+#8253
+monk cleric~
+the cleric~
+The cleric of Cuthbert is here, telling you to repent.
+~
+His eyes gleam like a zealot's!!!
+~
+dgh 0 350 X
+3 18 8 2d2+30
+0 800
+8 8 1 3 1 3
+T 100 1d3+1 0

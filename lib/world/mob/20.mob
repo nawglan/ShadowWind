@@ -1,0 +1,155 @@
+#2000
+neogi~
+the ruthless neogi~
+The ruthless neogi is searching for its next victim.
+~
+The neogi appears to be a cross between a wolf spider and a moray eel. The
+short, furry, eight-limbed body is topped by a lithe, bare, fleshy neck with
+a serpentine head, it's mouth filled with needle-sharp teeth. The ends of its
+limbs are tipped with small claws. The fir of the neogi is a light tan, but
+dyed a variety of colors which signify power, rank, accomplishments, and
+warnings to other neogi.
+~
+cdelmnA dks -475 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 1 4 14 3
+T 50 3d4+1 6
+T 50 3d4+1 22
+A 5 8 The neogi peers at you and considers where to attack first.
+E -1 100 2000 -1
+Str: 60
+Dex: 80
+Agi: 80
+Int: 70
+#2001
+shmurik neogi~
+Shmurik the Grand Neogi~
+Shmurik the grand master of the neogi is waiting for another sacrifice.
+~
+This neogi while similar to others of his tribe he is quite aged and has made
+the transition and become this tribes grand master. The transition has caused
+him to grow to a height of over twenty feet and similar girth. His legs and
+arms have become useless, and his intelligence has begun to fade. He now lives
+only to eat. Of course live flesh is preferred, but the dead will sustain him.
+Once he has been fed enough he will burst open and a new crop of mature neogi
+will spill forth.
+~
+bcdenopyA dk -1000 X 0 
+36 7 -8 18d18+360
+0 118000
+8 8 1 4 14 5
+T 100 5d10+10 22
+A 5 8 Shmurik looks at you hungrily.
+E 3 100 2001 10
+Dex: 30
+Agi: 30
+Int: 20
+>all_greet_prog          100~
+ if ispc($n)
+   mpkill $n
+ endif
+~
+|
+#2002
+insectoid~
+the large insectoid~
+The large insectoid is working on its nest.
+~
+The insectoid has adapted to life below ground, it has a hard shell of 
+overlapping plates and eight legs. Hook like claws are at the end of its
+six rear legs and enable it to traverse rapidly on both horizontal and
+vertical surfaces alike. The front legs are equipped with powerful pincers
+which are used for killing and dismembering its prey.
+~
+cdgm k -351 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 0 8 15 3
+T 100 4d4+9 22
+T 100 3d7+4 22
+#2003
+takhisis goddess draconian~
+the draconian goddess~
+Takhisis the great draconian goddess.
+~
+Takhisis towers before you, fully eighteen feet in height. She appears nearly
+twelve foot wide at her chest and surely must weigh several thousand pounds.
+This dragon like creature is ready for battle with anyone who dares.
+~
+bcdeflnopryz dhkn -1000 X 0 
+59 0 -10 30d30+19000
+0 9500000
+8 8 2 5 11 5
+T 50 10d6+28 5
+A 5 8 Takhisis scowls at you ominously.
+E 16 50 2002 7
+Dex: 90
+Agi: 90
+>all_greet_prog          100~
+ if ispc($n)
+   mpkill $n
+ endif
+~
+|
+#2004
+ghost weeping~
+a weeping ghost~
+A weeping ghost wanders here, lost.
+~
+The ghost of a draconian floats around the room as if in horror at the loss
+of his kin. He was the last left behind as they made their valiant stand
+against the mighty neogi tribe. He looks as if he is pointing towards the 
+niche at the end of this tunnel.
+~
+bdnoxA bjkpq -351 X 0 
+50 2 -10 25d25+500
+0 500000
+8 8 1 7 0 3
+T 50 5d5+0 0
+A 10 8 The moaning of the dead echoes around you.
+E 17 50 2007 30
+#2005
+chief neogi~
+the neogi chief of the guard~
+The chief of the guard stares at you intently.
+~
+This neogi has obviously seen his share of battles, and it appears that few
+have been his equal. As he stares at you, you cannot help but wonder what he
+is thinking. Your blood turns cold as you hear his war cry...SCREEE..!
+~
+bcdelmnyA dks -475 X 0 
+30 9 -5 15d15+300
+0 80000
+8 8 1 4 14 3
+T 50 4d5+10 22
+A 5 8 The neogi peers at you and considers where to attack first.
+E -1 100 2004 -1
+E 5 50 2006 -1
+Str: 60
+Dex: 80
+Agi: 80
+Int: 70
+#2006
+neogi~
+the neogi guard~
+The neogi guard is watching over his master.
+~
+The neogi appears to be a cross between a wolf spider and a moray eel. The
+short, furry, eight-limbed body is topped by a lithe, bare, fleshy neck with
+a serpentine head, it's mouth filled with needle-sharp teeth. The ends of its
+limbs are tipped with small claws. The fir of the neogi is a light tan, but
+dyed a variety of colors which signify power, rank, accomplishments, and
+warnings to other neogi.
+~
+bcdelmnA dks -475 X 0 
+28 9 -4 14d14+280
+0 61000
+8 8 1 4 14 3
+T 50 2d6+2 6
+T 50 2d6+2 22
+A 5 8 The neogi peers at you and considers where to attack first.
+E -1 100 2000 -1
+Str: 60
+Dex: 80
+Agi: 80

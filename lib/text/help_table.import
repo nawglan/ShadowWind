@@ -1,0 +1,5755 @@
+#
+@FIGHTERS
+@WARRIORS
+@~
+
+{c- WARRIOR{x
+
+Available races for the warrior class:  Elf, Dwarf, Gnome, Half-Elf, 
+                                      Halfling, Human, Troll, Ogre.
+
+Warriors come under WARRIOR classification of equipment, and can be of GOOD,
+NEUTRAL or EVIL alignment. (Note that Trolls and Ogres can only be EVIL
+aligned).
+
+To see a list of warrior skills, see HELP SKILL_WARRIOR.
+
+{CSee Also: {cSKILL_WARRIOR, MONK{x
+
+#
+@SKILL_WARRIOR
+@~
+
+{c- SKILL_WARRIOR{x
+
+{c1st Level:{x    1h bludgeon, 1h slashing, 1h piercing, 1h miscellaneous,
+              2h bludgeon, 2h slashing, 2h miscellaneous, Mount, Kick, Unarmed
+              Combat, Bandage
+ 
+{c6th Level:{x    Aggressive, Bash,
+
+{c11th Level:{x   Multi Attack, Rescue
+
+{c16th Level:{x   Disarm, Dual Wield,   
+
+{c21st Level:{x   Switch Target
+
+#
+@MONKS
+@~
+
+{c- MONK{x
+
+Available races for MONKS are:   Half-Elf, Human
+
+Monks fall under the WARRIOR classification of equipment, and can
+be of GOOD, NEUTRAL and EVIL alignment.
+
+For a listing of MONK skills, see HELP SKILL_MONK
+
+{CSee Also:{c SKILL_MONK, WARRIOR{x
+
+#
+@SKILL_MONK
+@~
+
+{c- SKILL_MONK{x
+
+{c1st Level:{x    1h bludgeon, 1h slashing, 1h piercing, 1h miscellaneous,
+              2h bludgeon, 2h slashing, 2h miscellaneous, Mount, Unarmed Combat
+              Bandage
+ 
+{c6th Level:{x    Aggressive
+
+{c11th Level:{x   Multi Attack, Dodge
+
+{c16th Level:{x   Roundhouse
+
+{c21st Level:{x   Anatomy
+
+#
+@ROGUES
+@~
+
+{c- ROGUE{x
+
+Available races for rogues are:   Elf, Half-Elf, Human
+
+Rogues fall under the THIEF classification of equipment, and can be of NEUTRAL
+or EVIL alignment.
+
+For a listing of ROGUE skills, see HELP SKILL_ROGUE
+
+{CSee Also: {cSKILL_ROGUE, THIEF, MERCENARY, ASSASSIN{x
+
+#
+@SKILL_ROGUE
+@~
+
+{c- SKILL_ROGUE{x
+
+{c1st Level:{x    1h bludgeon, 1h slashing, 1h piercing, 1h miscellaneous,
+              Mount, Pick Lock, Steal, Scout, Track, Bandage
+
+{c11th Level:{x   Backstab, Dodge
+
+{c16th Level:{x   Hide, Sneak, Dual Wield
+
+{c21st Level:{x   Multi Attack
+
+#
+@THIEFS
+@THIEVES
+@~
+
+{c- THIEF{x
+
+Available races for thieves are:   Dwarf, Gnome, Halfling
+
+Thieves fall under the THIEF classification of equipment, and can be of GOOD
+NEUTRAL or EVIL alignment.
+
+For a listing of THIEF skills, see HELP SKILL_THIEF
+
+{CSee Also: {cSKILL_THIEF, ROGUE, MERCENARY, ASSASSIN{x
+
+#
+@SKILL_THIEF
+@~
+
+{c- SKILL_THIEF{x
+
+{c1st Level:{x    1h bludgeon, 1h slashing, 1h piercing, 1h miscellaneous,
+              Mount, Pick Lock, Scout, Track, Bandage
+
+{c6th Level:{x    Backstab
+
+{c11th Level:{x   Hide, Sneak, Dodge
+
+{c16th Level:{x   Dual Wield
+
+{c21st Level:{x   Multi Attack
+
+#
+@ASSASSINS
+@ASSASSAINS
+@~
+
+{c- ASSASSIN{x
+
+Available races for ASSASSINS are: Half-Elf, Halfling, Human
+
+Assassins fall under the THIEF classification of equipment, and can be of
+NEUTRAL or EVIL alignment.
+
+For a listing of ASSASSIN skills, see HELP SKILL_ASSASSIN
+
+{CSee Also: {cSKILL_ASSASSIN, THIEF, MERCENARY, ROGUE{x
+
+#
+@SKILL_ASSASSIN
+@SKILL_ASSASSAIN
+@~
+
+{c- SKILL_ASSASSIN{x
+
+{c1st Level:{x    1h bludgeon, 1h slashing, 1h piercing, 1h miscellaneous,
+              Mount, Pick Lock, Bandage
+
+{c6th Level:{x    Hide, Sneak
+
+{c11th Level:{x   Backstab, Apply Poison, Dodge, Dual Wield
+
+{c16th Level:{x   Multi Attack
+
+#
+@MERCENARYS
+@MERCENARIES
+@~
+
+{c- MERCENARY{x
+
+Available races for MERCENARIES are:   Dwarf, Half-Elf, Human, Ogre, Troll
+
+Mercenaries fall under the THIEF classification of equipment, and can be
+of GOOD, NEUTRAL or EVIL alignment. (Note that Trolls and Ogres can only
+be EVIL aligned)
+
+For a listing of MERCENARY skills, see HELP SKILL_MERCENARY
+
+{CSee Also: {cSKILL_MERCENARY, THIEF, ROGUE, ASSASSIN{x
+
+#
+@SKILL_MERCENARY
+@~
+
+{c- SKILL_MERCENARY{x
+
+{c1st Level:{x    1h bludgeon, 1h slashing, 1h piercing, 1h miscellaneous,
+              2h bludgeon, 2h slashing, 2h miscellaneous, Mount, Track, Unarmed
+              Combat, Bandage
+
+{c11th Level:{x   Aggressive, Dual Wield
+
+{c16th Level:{x   Disarm, Multi Attack, Rescue, Dodge, Backstab, Roundhouse
+
+{c21st Level:{x   Switch Target
+
+{c26th Level:{x   Anatomy
+
+#
+@WIZARDS
+@MAGES
+@MAGIC USERS
+@~
+
+{c- WIZARD{x
+
+Available races for WIZARDS are:   Elf, Gnome, Halfling
+
+Wizards fall under the MAGE classification of equipment, and can be of
+GOOD, NEUTRAL or EVIL alignment.
+
+For a listing of WIZARD spells and skills, see HELP SKILL_WIZARD
+
+{CSee Also: {cSKILL_WIZARD, ENCHANTER, CONJURER, SORCEROR{x
+
+#
+@SKILL_WIZARD
+@~
+
+{c- SKILL_WIZARD{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{c- SPELLS{x
+
+{1st Circle:{x    Magic Missile, Minor Creation
+
+{c2nd Circle:{x   Poison, Fire Bolt, Faerie Fire, Strength, Acid Arrow
+              Invisibility, Detect Invisibility, Chill Touch, Burning
+              Hands, Ice Bolt
+
+{c3rd Circle:{x   Infravision, Magical Lock, Magical Unlock, Blindness
+
+{c4th Circle:{x  Ice Ball, Fireball, Teleport, Slowness, Levitate, Sleep,
+              Locate Object, Minor Paralysis, Ray of Enfeeblement, Farsee,
+              Lightning Bolt  
+
+{c5th Circle:{x   Ice Storm, Fire Storm, Fire Shield, Mass Invisibility,
+              Cone of Cold, Ice Shield
+
+{c6th Circle:{x   Dimension Door, Fly, Prismatic Spray
+
+{c7th Circle:{x   Chain Lightning, Feeble Mind
+
+{c8th Circle:{x   Incendiary Cloud, Major Globe of Invulnerability, Major
+              Paralysis
+
+{c9th Circle:{x    -
+
+{c10th Circle:{x   Maelstrom, Wizard War
+
+{CSee Also: {cCIRCLES{x
+
+#
+@ENCHANTERS
+@~
+
+{c- ENCHANTER{x
+
+Available races for ENCHANTERS are:   Elf, Half-Elf
+
+Enchanters fall under the MAGE classification of equipment and can be
+of GOOD, NEUTRAL or EVIL alignment.
+
+For a listing of ENCHANTER spells and skills, see HELP SKILL_ENCHANTER.
+
+{CSee Also: {cSKILL_ENCHANTER, WIZARD, CONJURER, SORCEROR{x
+
+#
+@SKILL_ENCHANTER
+@~
+
+{c- SKILL_ENCHANTER{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{c- SPELLS{x
+
+{c1st Circle:{x   Magic Missile, Faerie Fire, Minor Creation
+
+{c2nd Circle:{x   Float, Strength, Invisibility, Detect
+              Invisibility, Color Spray
+
+{c3rd Circle:{x   Ice Bolt, Fire Bolt, Hide Self, Mass Invisibility, Enchant
+              Weapon, Enchant Shield, Fire Shield, Slowness, Infravision,
+              Ray of Enfeeblement, Acid Arrow, Sleep
+
+{c4th Circle:{x   Teleport, Levitate, Minor Paralysis. Continual Light
+
+{c5th Circle:{x   Nightvision, Ice Ball, Fireball, Haste
+
+{c6th Circle:{x   Identify, Ice Storm, Firestorm, True Seeing, Feeble Mind,
+              Fly
+
+{c7th Circle:{x   Prismatic Spray
+
+{c8th Circle:{x   Major Paralysis
+
+{c9th Circle:{x   Magic Shield of Gandor
+
+{CSee Also: {cCIRCLES{x
+
+#
+@CONJURER
+@CONJUROR
+@~
+
+{c- CONJURER{x
+
+Available races for CONJURERS are:   Dwarf, Gnome
+
+Conjurers fall under the MAGE classification of equipment, and can be
+of GOOD, NEUTRAL or EVIL alignment.
+
+For a listing of CONJURER skills and spells, see HELP SKILL_CONJURER
+
+{CSee Also: {cSKILL_CONJURER, ENCHANTER, WIZARD, SORCEROR{x
+
+#
+@SKILL_CONJURER
+@SKILL_CONJUROR
+@~
+
+{c- SKILL_CONJURER{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{c- SPELLS{x
+
+{c1st Circle:{x   Conjure Elemental, Detect Invisibility, Minor Creation
+
+{c2nd Circle:{x   Phantom Steed, Strength, Invisibility, Chill Touch
+
+{c3rd Circle:{x   Poison, Ice Bolt, Fire Bolt, Infravision, Dispel Magic,
+                  Sleep
+
+{c4th Circle:{x   Teleport, Telekinesis, Levitate, Blindness, Wall of Fog
+
+{c5th Circle:{x   Ice Ball, Fireball, Mass Invisibility
+
+{c6th Circle:{x   Ice Storm, Firestorm, Stoneskin, Dimension Door
+
+{c7th Circle:{x   Identify, Feeble Mind
+
+{c8th Circle:{x   Incendiary Cloud
+
+{CSee Also: {cCIRCLES{x
+
+#
+@SORCERORS
+@SORCERERS
+@~
+
+{c- SORCEROR{x
+
+Available races for SORCERORS are:   Half-Elf, Human
+
+Sorcerors fall under the MAGE classification of equipment, and can be
+of GOOD, NEUTRAL or EVIL alignment.
+
+For a listing of SORCEROR skills and spells, see HELP SKILL_SORCEROR
+
+{CSee Also: {cSKILL_SORCEROR, CONJURER, ENCHANTER, WIZARD, SORCEROR{x
+
+#
+@SKILL_SORCEROR
+@SKILL_SORCERER
+@~
+
+{c- SKILL_SORCEROR{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{c- SPELLS{x
+
+{c1st Circle:{x   Ice Bolt, Fire Bolt, Acid Arrow, Detect Invisibility,
+              Minor Creation
+
+{c2nd Circle:{x   Poison, Ice Ball, Faerie Fire, Strength, Invisibility,
+              Chill Touch
+
+{c3rd Circle:{x   Fireball, Infravision, Dispel Magic, Ray of Enfeeblement,
+              Blindness
+
+{c4th Circle:{x   Farsee, Ice Storm, Firestorm, Teleport, Cone of Cold,
+              Slowness, Lightning Bolt, Levitate, Minor Paralysis
+
+{c5th Circle:{x   Fire Shield
+
+{c6th Circle:{x   Prismatic Spray, Chain Lightning, Dimension Door, Fly
+
+{c7th Circle:{x   Agony, Incendiary Cloud, Feeble Mind, Stoneskin
+
+{c8th Circle:{x   Major Paralysis
+
+{c9th Circle:{x   Maelstrom, Major Globe of Invulnerability, Vampiric Touch
+
+{c10th Circle:{x  Disintegrate
+
+{CSee Also: {cCIRCLES{x
+
+#
+@CLERICS
+@~
+
+{c- CLERIC{x
+
+Available races for CLERICS are:   Elf, Half-Elf, Human
+
+Clerics fall under the CLERIC classification of equipment, and can be
+of GOOD, NEUTRAL or EVIL alignment.
+
+For a listing of CLERIC skills and spells, see HELP SKILL_CLERIC
+
+{CSee Also:{c SKILL_CLERIC, PRIEST, SHAMAN, DRUID{x
+
+#
+@SKILL_CLERIC
+@~
+
+{c- SKILL_CLERIC{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{c- SPELLS{x
+
+{c1st Circle:{x   Armor, Detect Magic, Preservation, Water Walk, Cure Light
+              Create Food, Create Water
+
+{c2nd Circle:{x   Remove Curse, Protection from Good, Protection from 
+              Evil, Cause Serious, Cause Critical, Cure Serious, Detect
+              Poison
+
+{c3rd Circle:{x   Earthquake, Cure Critical, Protection from Lightning,
+              Protection from Acid, Protection from Ice, Protection from
+              Gas, Protection from Fire, Word of Recall, Cure Disease, 
+              Cure Poison
+
+{c4th Circle:{x   Curse, Bless, Sense Life
+
+{c5th Circle:{x   Harm, Vitality, Silence, Heal
+
+{c6th Circle:{x   Vigorize
+
+{c7th Circle:{x   Full Harm
+
+{c10th Circle:{x  Ressurection
+
+{CSee Also: {cCIRCLES{x
+
+#
+@SHAMANS
+@~
+
+{c- SHAMAN{x
+
+Available races for SHAMANS are:   Ogre, Troll
+
+Shamans fall under the CLERIC classification of equipment, and can
+only be of EVIL alignment.
+
+For a listing of SHAMAN skills and spells, see HELP SKILL_SHAMAN
+
+{CSee Also:{c SKILL_SHAMAN, PRIEST, CLERIC, DRUID{x
+
+#
+@SKILL_SHAMAN
+@~
+
+{c- SKILL_SHAMAN{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{x- SPELLS{x
+
+{c1st Circle:{x   Armor, Detect Magic, Disease, Preservation, Waterwalk,
+              Lesser Mending, Create Food, Create Water
+
+{c2nd Circle:{x   Remove Curse, Invisibility, Detect Invisibility,
+              Cause Serious, Cause Critical, Detect Poison
+
+{c3rd Circle:{x   Conjure Elemental, Protection from Evil, Protection
+              from Good, Tidal Wave, Earthquake, Protection from Lightning,
+              Protection from Acid, Protection from Ice, Word of Recall,
+              Cure Disease, Cure Poison, Protection from Gas, Protection
+              from Fire
+
+{c4th Circle:{x   Curse, Sea Storm, Bless, Sense Life, Mending, Continual Light
+
+{c5th Circle:{x   Control Weather, Slowness, Call Lightning
+
+{c6th Circle:{x   Harm, Wyvern Watch
+
+{c7th Circle:{x   Wall of Force, Wall of Iron, Wall of Stone, Wall of Ice,
+              Wall of Fire, Wall of Thorns, Vitality, Vigorize, Greater
+              Mending
+
+{c9th Circle:{x   Arieks Shattering Iceball
+
+{CSee Also: {cCIRCLES{x
+
+#
+@PRIESTS
+@~
+
+{c- PRIEST{x
+
+Available races for PRIESTS are:   Dwarf, Halfling
+
+Priests fall under the CLERIC classification of equipment, and can be
+of GOOD, NEUTRAL and EVIL alignment.
+
+For a listing of PRIEST skills and spells, see HELP SKILL_PRIEST
+
+{CSee Also:{c SKILL_PRIEST, CLERIC, SHAMAN, DRUID{x
+
+#
+@SKILL_PRIEST
+@~
+
+{x- SKILL_PRIEST{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{x- SPELLS{x
+
+{c1st Circle:{x   Shocking Grasp, Armor Detect Magic, Disease,
+              Preservation, Water Walk, Cure Light, Create Food, 
+              Create Water  
+
+{c2nd Circle:{x   Remove Curse, Cause Serious, Cure Serious, Cure
+              Blindness, Detect Poison
+
+{c3rd Circle:{x   Earthquake, Cure Critical, Word of Recall, Cure Disease,
+              Cure Poison
+
+{c4th Circle:{x   Dispel Magic, Curse, Flamestrike, Aid, Sense Life,
+
+{c5th Circle:{x   True Seeing, Slowness, Harm
+
+{c6th Circle:{x   Vitality, Flame Blade, Heal, Vigorize
+
+{c7th Circle:{x   Full Harm, Ogrestrength, Full Heal
+
+{c8th Circle:{x   Spiritual Hammer
+
+{CSee Also: {cCIRCLES{x
+
+#
+@DRUIDS
+@~
+
+{c- DRUID{x
+
+Druids are priests of nature. Their powers and beliefs are different than
+those of other clerics. Druids are charged with protecting the cycles of
+nature. They prefer subtle and devious methods of revenge to those who
+disrupt the balance of the cycles. Druids have immense powers and are
+best not triffled with.
+
+Available races for DRUIDS are:   Half-Elf, Human
+
+Druids fall under the CLERIC classification of equipment, and can only
+be of NEUTRAL alignment.
+
+For a listing of DRUID spells and skills, see HELP SKILL_DRUID
+
+{CSee Also:{c SKILL_DRUID, PRIEST, SHAMAN, CLERIC{x
+
+#
+@SKILL_DRUID
+@~
+
+{x- SKILL_DRUID{x
+
+{c1st Level:{x    1h bludgeon, 1h piercing, Mount, Bandage, Creation Realm,
+              Divination Realm, Elemental Realm, Enchantment Realm, General
+              Realm, Healing Realm, Protection Realm, Summoning Realm.
+
+{c16th Level:{x   Quick Chant
+
+{x- SPELLS{x
+
+{c1st Circle:{x   Shocking Grasp, Detect Magic, Disease, Preservation,
+              Water Walk, Cure Light, Create Food, Create Water 
+
+{c2nd Circle:{x   Remove Curse, Cause Serious, Cure Serious, Detect Poison
+
+{c3rd Circle:{x   Cause Critical, Earthquake, Cure Critical, Word of Recall,
+              Cure Disease, Barkskin, Conjure Elemental
+
+{c4th Circle:{x   Curse, Sunray, Bless, Sense Life, Continual Light
+
+{c5th Circle:{x   Control Weather, Call Lightning, Silence, Heal
+
+{c6th Circle:{x   Harm, Protection from Good, Protection from Evil,
+              Protection from Lightning, Protection from Acid, Protection
+              from Ice, Protection from Gas, Protection from Fire,
+              
+{c7th Circle:{x   Wall of Force, Wall of Iron, Wall of Stone, Wall of Ice,
+              Wall of Fire, Wall of Thorns, Vitality, Vigorize
+
+{c8th Circle:{x   Death Fog
+
+{c9th Circle:{x   
+
+{c10th Circle:{x  Moonwell, Creeping Doom
+
+{CSee Also: {cCIRCLES{x
+
+#
+@BARDS
+@NECROMANCERS
+@RANGERS
+@~
+
+Please note that the classes BARD, NECROMANCER and RANGER, are not yet
+implemented.  
+
+Classes available on Shadowwind are as follows:
+
+{cThief Classes:{x    Assassin, Bard, Mercenary, Rogue, Thief
+{cWarrior Classes:{x  Monk, Ranger, Warrior
+{cPriest Classes:{x   Cleric, Druid, Priest, Shaman
+{cMage Classes:{x     Conjurer, Enchanter, Necromancer, Sorcerer, Wizard  
+
+#
+@CLASSES
+@~
+
+{c- CLASSES{x
+
+The classes available to you on Shaddowind are as follows:
+
+{cThief Classes:{x    Assassin, Mercenary, Rogue, Thief
+{cWarrior Classes:{x  Monk, Warrior
+{cPriest Classes:{x   Cleric, Druid, Priest, Shaman
+{cMage Classes:{x     Conjurer, Enchanter, Sorcerer, Wizard  
+
+For a listing of a class' skills and spells, see HELP SKILL_<class>
+
+> help skill_warrior
+> help skill_wizard
+
+{CSee Also: {cRACES{x
+
+#
+@SKILL_NECROMANCER
+@~
+
+{c- SKILL_NECROMANCER{x
+
+The NECROMANCER class is not yet complete.
+
+#
+@SKILL_RANGER
+@~
+
+{c- SKILL_RANGER{x
+
+The RANGER class is not yet complete.
+
+#
+@SKILL_BARD
+@~
+
+{c- SKILL_BARD{x
+
+The BARD class is not yet complete.
+
+#
+@ROUNDHOUSE
+@~
+
+{c- ROUNDHOUSE{x
+
+      {cUsage: {wroundhouse <target>{x
+{cClass/Level: {wMon 16, Merc 16{x
+
+With their superior unarmed combat training, monks and mercenaries can do
+a roundhouse kick to their opponent, causing damage.
+ 
+#
+@ANATOMY
+@~
+
+{c- ANATOMY{x
+
+      {cUsage: {w-{x
+{cClass/Level: {wMon 21, Merc 26{x
+
+From their extensive combat studies, and knowledge of their target, monks
+and mercenaries have an increased chance of placing their attacks accuratly
+on their target, thereby causing more damage.
+
+#
+@QUICK CHANT
+@QUICK_CHANT
+@~
+
+{c- QUICK CHANT{x
+
+      {cUsage: {w-{x
+{cClass/Level: {wCle, Con, Dru, Enc, Nec, Pri, Sha, Sor, Wiz 16{x
+
+QUICK CHANT is an innate skill for all casting classes which, depending
+on your proficiency, has a chance to reduce your spell casting time by
+half.
+
+{CSee Also: {cPRACTICE{x
+
+#
+@DODGE
+@~
+
+{c- DODGE{x
+
+      {cUsage: {w-{x
+{cClass/Level: {wAsn 11, Mer 16, Mon 6, Ran 16, Rog 11, Thi 11{x
+
+DODGE is an innate skill that allows you to duck out of the way of your
+opponent's attack, therefore sustaining no damage. Your success will be
+dependant on your proficiency in the skill. DODGE is an automatic skill,
+you do not have to type anything to use it.
+
+{CSee Also: {cPRACTICE{x
+
+#
+@UNARMED_COMBAT
+@UNARMED COMBAT
+@~
+
+{c- UNARMED COMBAT{x
+
+      {cUsage: {w-{x
+{cClass/Level: {wMer 1, Mon 1, Ran 1, War 1{x
+
+{CSee Also: {cPRACTICE{x
+
+#
+@ALIGNMENTS
+@GOOD
+@EVIL
+@NEUTRAL
+@~
+
+{c- ALIGNMENT{x
+
+Your ALIGNMENT is a measure of how good or evil your character is.
+At Shadowwind, you choose your alignment during the creation of
+your character. For reasons of logic, not all races can choose any
+alignment, i.e. trolls and ogres cannot be good aligned. 
+
+Alignments have been specifically designed to be very difficult to
+change, so choose carefully. 
+
+Some mobs will react differently to different alignments, as will
+some equipment.
+
+The threasholds for alignment ranges are:
+
+ +1000  -  +350      Good Aligned
+  +349  -  -349      Neutrally Aligned
+  -350  -  -1000     Evil Alignment
+
+You can see your alignment using the STAT command.
+
+{CSee Also: {cSTAT{x
+
+#
+@ADMINISTRATION
+@WIZLIST
+@IMMLIST
+@~
+
+{c- ADMINISTRATION{x
+
+WIZLIST will show you the members of the Administration of Shadowwind.
+These people have ultimate control over the mud and what happens within
+it. There will be no arguing with them, however please feel free to make
+suggestions and constructive criticism. 
+
+They understand the mud very well, and should you have any problems,
+these are the people to ask. That being said, please do not ask ANY
+immortal to help you with game play (e.g corpse retrieval, tips on an
+area, directions).
+
+If you wish to communicate to the administration at any time, please
+use the PETITION channel online, or alternativly, feel free to email
+any questions, comments or suggestions to the mailing list. See HELP
+MAILING LIST for the address.
+
+Those under the BUILDERS heading in the wizlist, are the people you 
+should thank for helping create the world in which you play. They 
+write new areas, fix old ones, and contribute in many other ways.
+
+IMMLIST shows the retired Immortals from Shadowwind, people who have
+contributed in the past, but for many reasons, have chosen to
+move on.
+
+{CSee Also: {cMAILING LIST, PETITION{x
+
+#
+@CIRCLES
+@SKILL_CIRCLE
+@~
+
+{c- CIRCLES{x
+
+You will not receive new skills and/or spells every level, only when
+you advance a full CIRCLE. Circles are given out at the following
+levels.
+
+Circle  1 = {clevel 1                   {wCircle  7 = {clevel 31{x
+Circle  2 = {clevel 6                   {wCircle  8 = {clevel 36{x
+Circle  3 = {clevel 11                  {wCircle  9 = {clevel 41{x
+Circle  4 = {clevel 16                  {wCircle 10 = {clevel 46{x
+Circle  5 = {clevel 21                  {wCircle 11 = {clevel 50{x 
+Circle  6 = {clevel 26{x
+
+{CSee Also: {cCASTING, CLASS{x
+
+#
+@SAVING THROWS
+@SAVING_THROWS
+@~
+
+{c- SAVING THROWS{x
+
+Saving throws are a chance that a spell will have no effect on your
+victim (or you if you are the victim). Saving throws can be decreased
+by equipment. (The lower the value, the higher your chance of a spell
+failing if cast upon you).
+
+Your saving throw information can be seen in STAT.
+
+Saving Throws: [PAR] 0 [ROD] 0 [PET] 0 [BRE] -4 [SPE] -10
+
+{CSee Also: {cCASTING{x
+
+#
+@HITROLL
+@DAMROLL
+@~
+
+- HITROLL, DAMROLL
+
+You will see these stats in your "stat/att" display when you reach level
+25.
+
+{CSee Also:{c AC, SCORE{x
+
+#
+@CASTING
+@SPELLS
+@CONCENTRATION
+@FAILING
+@SPELLCASTING
+@~
+
+{c- SPELLS{x
+
+A word of warning - casting classes on Shadowwind have been specifically
+designed to be difficult to play. Please do not complain when you are
+having a hard time leveling.
+
+To see a list of your spells, type: SPELLS
+
+Spells are assigned to classes in what are called "circles". Every class
+has circles assigned to the same level, but not all spells are assigned
+at the same circle, for different classes. For example, one class may
+get "fireball" at circle 2, while another will get it at circle 4.
+
+A spells' damage will not stay the same as you advance in level. The
+higher your level, the more damage a spell will do. For example, "magic 
+missile" (circle 1) may do 5-20 points damage when you first get it 
+(level 1), but at level 50 it may do 30-50 point damage. (Note these 
+numbers are for example purposes and are not to be taken literally.)
+
+Mana usage also decreases with increasing level.
+
+Circles are given at the following levels: 
+
+Circle  1 = {clevel 1                   {wCircle  7 = {clevel 31{x
+Circle  2 = {clevel 6                   {wCircle  8 = {clevel 35{x
+Circle  3 = {clevel 11                  {wCircle  9 = {clevel 41{x
+Circle  4 = {clevel 16                  {wCircle 10 = {clevel 46{x
+Circle  5 = {clevel 21                  {wCircle 11 = {clevel 50{x 
+Circle  6 = {clevel 26{x
+
+The syntax for casting spells is: {ccast 'spellname' <target>          
+                      {wExample #2: {ccast 'fireball' troll
+                      {wExample #3: {ccast 'heal' me (or your name)
+                      {wExample #4: {ccast 'earthquake'{x
+  
+As it stands now, you will have to practice each spell once when you 
+advance to a new circle (to learn that spell from your guildmaster).
+After that, your success is partially dependant on your skill in the 
+realm of magic to which that spell has been assigned. ie. summoning 
+realm, creation realm, elemental realm, etc.
+
+Other factors that can influence your success, are mentioned below.
+                                  
+{cYou lost your concentration! {w- This is probably the most annoying, but
+                               you will only ever lose concentration on
+                               your current, and previous circle.
+
+{cYou fail miserably!          {w- Because of lack of skill, you failed to
+                               cast this spell. 
+
+{cNothing seems to happen!     {w- Your target had a successful saving throw,
+                               i.e. they were successful in avoiding 
+                               your spell. This message is also used when
+                               spell resistances kick in.
+
+{cYour spells target is no     {w- Exactly that, you (or your target) moved
+{clonger here.                   {wbefore you could complete casting.
+                               
+You will notice spell casting times - these are dependant on your level,
+proficiency in the spell and for priest classes, your wisdom; for mage
+classes, your intelligence will be a factor.
+
+If you have any queries that are not covered in this file, please do 
+not hesitate to ask, using the PETITION channel.
+
+{CSee Also: {cPRACTICE, REALMS{x
+
+#
+@REALMS
+@CREATION REALM
+@SUMMONING REALM
+@PROTECTION REALM
+@DIVINATION REALM
+@GENERAL REALM
+@ELEMENTAL REALM
+@HEALING REALM
+@ENCHANTMENT REALM
+@~
+
+{c- REALMS{x
+
+Essentially, spell realms represent your skill in spell casting.
+
+Each spell is assigned to a particular realm of magic. Creation,
+Divination, Elemental, Enchantment, General, Healing, Protection or
+Summoning.
+
+Once you have learned a new spell from your guildmaster, your success
+in casting the spell will be partially dependant on your skill in the
+realm of magic to which that spell has been assigned.
+
+To see to which realm a spell belongs, read the specific spell's help
+file.
+
+{CSee Also: {cCASTING{x
+
+#
+@REGENERATE
+@REGENERATION
+@~
+
+{c- REGENERATION{x
+
+Over time, you will slowly heal from your battle wounds and weariness.
+This process can be hindered by excessive hunger or thirst, however it
+can be sped up by sleeping or resting.
+
+Due to trolls' remarkable constitution and resilience, they regenerate
+faster than any other race.
+
+{CSee Also: {cSLEEP, HUNGER, THIRST{x
+        
+#
+@MUD
+@SHADOWWIND
+@~
+
+Welcome to Shadowwind MUD. 
+
+For information on the areas we have, and the people who helped to
+create Shadowwind, please use the CREDITS command.
+
+HELP NEWBIE will display some useful information for all new players
+to Shadowwind, whether you be new to mudding or a mud-addict.
+
+To see the index for our help files, please use the HELP command.
+
+If you have any questions or comments, please feel free to direct
+them to the Administration mailing list (see HELP MAILING LIST),
+or use the PETITION channel online.
+
+The full address for this MUD is: mud.shadowwind.org 9999
+                                : 206.41.128.29 9999
+
+{CSee Also: {cNEWBIE, CREDITS, MAILING LIST, PETITION{x
+
+#
+@IP
+@SITE
+@ADDRESS
+@CONNECT
+@~
+
+{c- IP{x
+
+The full address for this MUD is: mud.shadowwind.org 9999
+                                : 206.41.128.29 9999
+
+The administration e-mail address is: swadmin@shadowwind.org
+
+Shadowwind's Web Page: http://www.shadowwind.org
+
+#
+@BLUDGEONING
+@PIERCING
+@PIERCE
+@SLASHING
+@MISCELLANEOUS
+@1H BLUDGEON
+@1H MISCELLANEOUS
+@1H PIERCING
+@1H SLASHING
+@2H BLUDGEON
+@2H MISCELLANEOUS
+@2H SLASHING
+@WEAPON SKILLS
+@WEAPON TYPES
+@WEAPONS
+@~
+
+{c- WEAPON TYPES{x
+
+1h Bludgeon, 1h Miscellaneous, 1h Piercing, 1h Slashing, 2h Bludgeon
+2h Miscellaneous, 2H Slashing.
+
+Above is a listing of weapon skills. All weapons will fall into one
+of the above categories. Your class will restrict which types of weapons
+you are able to use. To get a list of which weapon types you are able to
+use, and your proficiency in them, use the PRAC command.
+
+e.g: a small mace may be 1h bludgeon, whereas a huuuge sword will probably
+     be 2h slashing. 
+
+To increase your proficiency with any weapon skill, PRACTICE at your
+guildmaster.
+
+{CSee Also: {cPRACTICE{x
+
+#
+@IMMORTALS
+@STEWARDS
+@~
+
+{c- IMMORTAL{x
+
+For a list of all Immortals, and Administration on Shaddowind, 
+use the WIZLIST and IMMLIST commands.
+
+Immortals and members of the Administration help run the mud, they
+will not help you to cheat, however they will help you with bugs
+and questions. Please read the POLICY to see how immortals can and
+cannot help you.
+
+{CSee Also: {cPOLICY{x
+
+#
+@TROLL
+@TROLLS
+@~
+
+{c- TROLL{x
+
+Trolls are a nasty, dumb, evil, ugly digusting species that are feared
+by all other races. A troll is easy to identify, as their thick greenish
+skin, beady black eyes, and matted, rotten, stringy black hair gives 
+them quite a horrifying appearance. Trolls tend to hunt together in 
+clans, and spend a large amount of time terrorising the homes of other 
+races. Great strength and a great lack of intelligence are distinguishing
+features of most trolls, and they tend to regenerate from battle wounds 
+at a remarkably fast rate.
+
+{cClass List:       {xMercenary Shaman Warrior
+
+{cInnate Abilities: {xInfravision
+
+{CSee Also: {cRACES, INNATE{x
+
+#
+@ELF
+@ELFS
+@ELVES
+@~
+
+{c- ELF{x
+
+Elves are small, delicate, good natured creatures. They are a quite
+race, and don't usually like crowded cities, preferring to dwell in 
+sparsly forested areas, and possess remarkable intelligence and agility. 
+Their small stature makes them weaker and less durable than humans, but 
+their sharp wits and great stealth can easily make up for this.
+
+{cClass List:       {xCleric Enchanter Rogue Warrior Wizard
+
+{cInnate Abilities: {xInfravision, Sneak
+
+{CSee Also: {cRACES, INNATE{x
+
+#
+@HUMAN
+@HUMANS
+@~
+
+{c- HUMAN{x
+
+Humans are an unremarkable race. They possess no outstanding ability
+in any area, but in turn, are not noticably lacking in any particular
+area either. Humans, being the general population of most civilized 
+areas, and have the widest range of classes available to them.
+
+{cClass List:       {xAssassin Cleric Druid Enchanter Mercenary 
+                  Rogue Sorcerer Warrior
+
+{cInnate Abilities: {xNone
+
+{CSee Also: {cRACES, INNATE{x
+
+#
+@DWARF
+@DWARFS
+@DWARVES
+@~
+
+{c- DWARF{x
+
+Dwarves are a clumsy race, they are short, yet sturdy and make fearsome
+warriors with high endurance. Dwarves prefer to live in mountain 
+ranges rather than large cities, and often build fortresses into the 
+mountainside. Although their physical appearance may not make it obvious,
+dwarves can gain great wisdom over their long lifetimes Often sharing
+their knowledge with other good natured races, Dwarves have become one
+of the most respected races, both for their superb craftsmanship, and 
+friendly nature.
+
+{cClass List:       {xConjurer Mercenary Cleric Thief Warrior
+
+{cInnate Abilities: {xInfravision, Detect Alignment
+
+{CSee Also: {cRACES, INNATE{x
+
+#
+@HALFLING
+@HALF-LING
+@HALFLINGS
+@~
+
+{c- HALFLING{x
+
+Halflings are a remarkably dextrous race, and therefore are most 
+often associated with thieves, by nature aswell as by physical 
+attributes. Weaker and far smaller than humans, Halflings are a good 
+natured and kind hearted race, despite having a habit of lifting other 
+people's posessions. Where Halflings are lacking in in intelligence and
+wisdom,  they make up for in their dexterity and shining character.
+
+{cClass List:       {xAssassin Thief Warrior Wizard
+
+{cInnate Abilities: {xNone
+
+{CSee Also: {cRACES, INNATE{x
+
+#
+@GHOME
+@GNOMES
+@~
+
+{c- GNOME{x
+
+Gnomes are a small yet sturdy race, known throughout the world for their
+quick hands and good humour. A sharp wit compensates somewhat for their
+lack of strength and size. A distant relative of the Dwarf, Gnomes can be
+found in most cities and communities, and are more dextrous than their
+cousins.
+
+{cClass List:       {xConjurer Thief Warrior Wizard
+
+{cInnate Abilities: {xNone
+
+{CSee Also: {cRACES, INNATE{x
+
+#
+@HALFELFS
+@HALF-ELF
+@HALFELVES
+@HALF ELF
+@~
+
+{c- HALF-ELF{x
+
+Half-elves are the offspring of humans and elves.  Though usually
+smaller than humans, they are not as small and fragile as their
+elven parent. Their elven heritage shows in their distinctive
+looks and the tireless pace they can maintain.  Half-elves can be
+of any class, but usually prefer using their minds to their
+muscles.
+
+{cClass List:       {xAssassin Cleric Druid Mercenary Rogue
+                  Sorcerer Warrior
+
+{cInnate Abilities: {xInfravision
+
+{CSee Also: {cRACES, INNATE{x
+
+#
+@OGRES
+@OGRE
+@~
+
+{c- OGRE{x
+
+Ogres are by far the largest and strongest of all the races. They are
+immense creatures, whose ugliness is almost as astounding as their 
+lack of intelligence. Being so enormous, Ogres are quite resilient 
+beings, who posess a strong constitution and tend to heal quickly.
+
+{cClass List:       {xMercenary Shaman Warrior
+
+{cInnate Abilities: {xInfravision
+
+{CSee Also: {cRACES, INNATE{x
+
+
+#
+@RACES
+@RACES
+@~
+
+{c- RACES{x
+
+These are the races offered on Shadowwind at this time. To see what
+classes are available to a particular race, read the help file on the
+race.
+
+Dwarf, Elf, Halfling, Half-Elf, Human, Gnome, Ogre, Troll.
+
+
+{CSee Also: {cHELP <racename>, CLASS{x
+
+#
+@EMAIL
+@MAILING LIST
+@~
+
+{c- MAILING LIST{x
+
+If for any reason you wish to email the Shadowwind Administration, feel 
+free to do so: swadmin@shadowwind.org
+
+There is a list for players and admin alike, it is for general BS, and
+info for when there are problems with the mud and it is offline etc..
+If you would like to join this list, send a request to
+majordomo@shadowwind.org and in the body of the message place: 
+
+subscribe swmud
+
+You will then receive a automated responce with an authorization code you
+need to send back in order to be added to the list.  Generaly there are no
+rules to the list, but as with all mail lists rules come in time. Talk
+about what ever you want, or just be a lurker.. either way.. =)
+#
+@TOPICS
+@~
+
+{C                  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x
+
+                            {cGeneral Help Information{x
+
+                    {WCommunication{x {C-{c={C-{x {WCombat{x {C-{c={C-{x {WInformation{x
+
+                   {WMovement{x {C-{c={C-{x {WObjects{x {C-{c={C-{x {WOther {C-{c={C-{x {WUtility{x
+
+                  {cFor information on a topic type {WHELP {c<{Wtopic{c>{x
+
+{C                  =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x
+
+#
+@MOVEMENT
+@MOVING
+@~
+
+                            {cMovement Help Information{x
+
+                         {WNORTH SOUTH EAST  WEST  UP DOWN{x
+                         {WLOOK  EXITS  ENTER  LEAVE SLEEP{x
+                         {WWAKE REST SIT STAND LOCK UNLOCK{x
+                         {WOPEN CLOSE MOUNT  DISMOUNT DRAG{x
+                         {WDISEMBARK BOARD{x
+
+               {cFor information on a subtopic type {WHELP {c<{Wsubtopic{c>{x
+
+{CSee Also: {cHELP{x
+
+#
+@COMMUNICATE
+@COMMUNICATION
+@COMMUNICATIONS
+@~
+
+                         {cCommunication Help Information{x
+
+                        {WSAY  GSAY  SHOUT TELL  ASK WHISPER{x
+                        {WCHAT PRAY  EMOTE  TOGGLE  PETITION{x
+                        {WMAIL RECEIVE CHECK{x
+
+               {cFor information on a subtopic type {WHELP {c<{Wsubtopic{c>{x
+
+{CSee Also: {cHELP{x
+
+#
+@OBJECT
+@OBJECTS
+@~
+
+                             {cObject Help Information{x
+
+                         {WGET DROP JUNK PUT GIVE WEAR GRAB{x
+                         {WINVENTORY EQUIPMENT REMOVE  POUR{x
+                         {WEXAMINE EAT DRINK TASTE SIP{x
+
+               {cFor information on a subtopic type {WHELP {c<{Wsubtopic{c>{x
+
+{CSee Also: {cHELP{x
+  
+#
+@INFORMATION
+@~
+                             
+                          {cInformation Help Information{x
+
+                     {WSCORE HELP INFO WHO NEWS TIME CONSIDER{x
+                     {WWIZLIST CREDITS WHOIS NOWHOIS GOLD EXP{x
+                     {WTOGGLE POLICY WEATHER LAST STATS{x
+
+
+               {cFor information on a subtopic type {WHELP {c<{Wsubtopic{c>{x
+
+{CSee Also: {cHELP{x
+
+#
+@COMBAT
+@BATTLE
+@FIGHTING
+@~
+
+                            {cCombat Help Information{x
+ 
+                       {WKILL WIELD FLEE ASSIST TRACK KICK{x
+                       {WBASH RESCUE  BACKSTAB CAST DISARM{x
+                       {WWIMPY TARGET{x
+
+               {cFor information on a subtopic type {WHELP {c<{Wsubtopic{c>{x
+  
+{CSee Also: {cHELP{x  
+
+#
+@UTILITY
+@UTILS
+@UTILITIES
+@~
+
+                            {cUtility Help Information{x
+
+                    {W! BUG IDEA TYPO  QUIT SAVE BRIEF COMPACT{x
+                    {WCOMMANDS  SOCIALS   DISPLAY  AFK  TOGGLE{x
+                    {WAUTOLOOT AUTOCOINS AUTOSPLIT RENT GLANCE{x
+                    {WPRACTICE  DIAGNOSE AUTOEXIT  COLOR{x
+
+               {cFor information on a subtopic type {WHELP {c<{Wsubtopic{c>{x
+
+{CSee Also: {cHELP{x
+
+#
+@OTHER
+@~
+
+                             {cOther Help Information{x
+
+                     {WPCORPSE CAMP LINK NEWBIE PRAY MOTD NMOTD{x
+
+               {cFor information on a subtopic type {WHELP {c<{Wsubtopic{c>{x
+  
+{CSee Also: {cHELP{x
+
+#
+@AUTOEXIT
+@~
+
+{c- AUTOEXIT{x
+
+{cUsage: {wtoggle autoexit{x
+
+TOGGLE AUTOEXIT is an option that will display to you the exits in a
+room when you walk into it.
+
+  [Exits: e u #d]
+
+This means that you can travel east, up, and there is a closed door down.
+
+{CSee Also:{c TOGGLE, EXIT, AUTOLOOT, AUTOCOINS, AUTOSPLIT{x
+
+#
+@AREA
+@AREAS
+@BUILDER
+@BUILDERS
+@BUILDING
+@CREATION
+@OLC
+@~
+
+{c- AREA{x
+
+So you want to build an area, first speak with an admin, let them know
+what type of area you wish to build, if noone is online to help you, see
+HELP MAILING for a email address you can send your idea to. After your
+area idea is accepted then you need to ftp to the site below and get the
+documentation.
+
+ftp.ionet.net/pub/users/seeker/creation.doc
+
+Login: anonymous
+Password: youremail@yoursite
+
+At this point, build your area, use zone 999 for your building, we will
+change the 999 to what we need once your done. Dont expect to build
+the area perfect the first time, there will be errors, we will let you
+know what they are and show you how to fix them. After all problems
+are corrected the area will be placed online for testing, at which time
+you will be granted an immortal. We will then balance the mobs, and
+objects within the area. As soon as balancing is completed, and the admin
+feel the area is ready for playing it will be placed within the world, you
+will of course be able to request where it will be placed, but if the
+request is not "proper" in the grand scheme of things, we will tell you
+why and find a suitable place for it.
+
+Now, on to the ownership thing.
+
+All areas (also known as zones) created for and given to Shadowwind Mud
+with the intention of those areas being placed in and run under the code
+created for Shadowwind Mud are owned explicitly by Shadowwind Mud and
+controlled by the Administration of Shadowwind Mud.  Those areas listable
+in full context with the immortal command 'show zones' are completely
+upgradable/downgradable, removable and configurable by the Administration
+of Shadowwind Mud to allow for control of balance within the game. 
+
+If you are a current builder, or wish to be a builder, and do not agree
+to relinquish the rights to the areas you create then you do hold the
+right to not build for Shadowwind Mud.  If you do however agree to
+relinquish your rights as 'owner' of the area you create for Shadowwind
+Mud, then your area will be welcomed providing it does fit the theme
+and context of the game.
+
+These same rules apply to any, and all other work done for or to
+Shadowwind Mud, including, but not limited to, Code, Ideas, Web Pages.
+
+Any work provided to Shadowwind Mud will not be removed from Shadowwind
+Mud if you choose to, or are asked to depart from Shadowwind Mud.
+
+It would be greatly appreciated if any area you make for Shadowwind
+Mud was seen only on this world, this being very hard to control all
+we may do to enforce this is trust you to your honor and word.
+
+If you wish to build for Shadowwind, or have comments or questions, 
+please email: swadmin@shadowwind.org
+
+(A list of the areas and their builders available on Shadowwind is 
+displayed by using the CREDITS command)
+
+#
+@CLANS
+@CLAN
+@~
+
+{c- CLAN{x
+
+There are no clans on Shadowwind at this time.
+
+{CSee Also: {c-{x
+
+#
+@CAMP
+@~
+
+{c- CAMP{x
+
+{wWhen you have finished your days travelling and wish to leave the realm
+for a time, you do not have to make the often long and arduous trek back
+to a city to rent. You may CAMP in any location in the realm, as long as
+it is not in a city. 
+
+Camp is not an instant command, as it takes time to prepare you campsite.
+If you leave the room while you are preparing to camp, you will need to
+re-camp. 
+
+Next time you enter the game, you will appear in the same room you camped
+in.
+
+{cNOTE: {wOnce you have typed camp, DO NOT then quit the game, you have to
+      wait the full time until you are prompted to exit the game, or
+      all your belongings will drop to the ground.
+
+{CSee Also: {c RENT, INN{x
+
+#
+@CONSENT
+@~
+
+{c- CONSENT{x
+
+{wCONSENT allows you to give your permission to another player to remove
+items from your corpse, or to DRAG your corpse to a safer location. The 
+player whom you give consent to must be playing at the time consent is
+given. To revoke your consent once given simply type CONSENT SELF.
+
+{WNOTE - Player corpses cannot be sacrificed.{x
+
+{CSee Also: {cSACRIFICE, PCORPSE{x
+
+#
+@CORPSE
+@PCORPSE
+@~
+
+{c- PCORPSE{x
+
+When you die, you re-enter the game at your guild. You can retrieve your
+corpse by traveling to your place of death and getting the items from
+inside. Your corpse will remain intact for approximatly 2 real-time
+hours, regardless of whether the character is online.
+
+To get objects from a player corpse:
+
+> get <items> pcorpse
+> get <items> <player name>
+> get all pcorpse
+
+Each time you die you lose a percentage of experience for your level. It
+is wise to be careful to avoid death when you have recently gained a
+level. If the experience lost due to death is more than you have gained in
+your current level, you will "lose a level".
+
+You cannot remove items from another oplayer's corpse unless they have 
+given you their CONSENT.
+
+{CSee Also: {cCONSENT{x
+
+#
+@AGGRESSIVE
+@~
+
+{c- AGGRESSIVE{x
+
+      {cUsage: {w -{x
+{cClass/Level: {wMon 6, Mer 11, Ran 11, War 6{x
+
+{wAggressive is a skill for warriors, making it possible for them to get
+the first hit on aggressive mobiles.
+
+Note: AGGRESSIVE is an automatic skill, you do not have to type anything
+to use it.
+
+{CSee Also:{c PRACTICE{x
+
+#
+@APPLY_POISON
+@APPLY POISON
+@~
+
+{c- APPLY POISON{x
+
+      {cUsage: {wapply <weapon>{x
+{cClass/Level: {wAsn 11{x
+
+Using their ingenuity and cunning, assassins can cover their weapon in poison
+and if successful, poison their victim whilst fighting.
+
+{CSee Also: {cPRACTICE, SKILL_ASSASSIN{x
+
+#
+@BACKSTAB
+@~
+
+{c- BACKSTAB{x
+
+      {cUsage: {wbackstab <target>{x
+{cClass/Level: {wAsn 11, Rog 11, Thi 6{x
+
+Backstab is a way to sneak up on a person and attempt to place your dagger
+in his back, at exactly the point where it does most damage.  A successful
+backstab gives a damage multiplier, depending on level.
+
+{CSee Also:{c PRACTICE{x
+
+#
+@BASH
+@~
+
+{c- BASH{x
+
+      {cUsage: {wbash <target>{x
+{cClass/Level: {wMer 11, War 6{x 
+
+{wThe success of a bash depends upon how well you are learned. To bash someone
+is to attempt to 'knock' that person over. If you succeed you will inflict
+minor damage, and cause the victim to fall on it's rear. The victim will be
+unable to issue any commands for 2 rounds of combat. If you miss you loose
+your balance and fall, and will not be able to stand for 2 rounds
+
+A bash makes you unable to type commands for 2 rounds of combat.
+
+{CSee Also: {cRESCUE, KICK, TRACK, DISARM, PRACTICE{x
+
+#
+@DISARM
+@~
+
+{c- DISARM{x
+
+      {cUsage: {wdisarm <target>{x
+{cClass/Level: {wMer 11, Ran 11, War 11{x
+
+{wThis skill allows a fighter to attempt to disarm an oponent.  If the
+disarm is successful, the oponent drops their weapon.  If it is not
+successful, the oponent attacks immediately.
+
+{CSee Also:{c BASH, KICK, RESCUE, TRACK, PRACTICE{x
+
+#
+@DUAL WIELD
+@DUAL_WIELD
+@DUALWIELD
+@~
+
+{c- DUAL WIELD{x
+
+      {cUsage: {wwield <weapon>{x
+{cClass/Level: {wAsn 11, Mer 11, Ran 11, Rog 16, Thi 16, War 16{x
+
+DUAL WIELD will allow you to wield two weapons at once. As you only
+have two hands, you cannot use a shield, or hold anything else while
+using two weapons.
+
+- NOTE: Not all weapons are able to be dual wielded.
+
+{CSee Also: {c-{x
+
+#
+@MULTI_ATTACK
+@MULTIATTACK
+@MULTI ATTACK
+@~
+
+{c- MULTI ATTACK{x
+
+      {cUsage: {w-{x
+{cClass/Level: {wAsn 16, Mer 16, Mon 11, Ran 21, Ran 21, Rog 21, Thi 21, War 11{x
+
+MULTI ATTACK allows you to hit more than once in a round of combat. It
+is an innate skill and you do not have to type anything to use it. As
+your proficiency in multi attack increases, so will the number of successful
+attacks you achieve in a round.
+
+To see the file on MULTIPLAYING, see HELP MP
+
+{CSee Also: {cMP{x
+
+#
+@HIDE
+@~
+
+{c- HIDE{x
+
+      {cUsage: {whide
+{cClass/Level: {wRog 16, Thi 11{x
+
+{wWhen you type hide there is a chance that you hide in the room. If hidden
+you can only be sensed by the sense life spell. Even if sensed your
+identity will remain hidden. Hide is broken by pressing return, regardless
+of whether you typed a command or not.
+
+Example:
+
+  > hide
+  Ok.
+  >  (you wait for ex. 5 mins and remain hidden for 5 mins)
+
+  >  (You pressed enter and no longer hide)
+
+{CSee Also:{c SNEAK, PRACTICE{x
+
+#
+@KICK
+@~
+
+{c- KICK{x
+
+      {cUsage: {wkick <target>{x
+{cClass/Level: {wWar 1{x
+
+{wThe success of a kick depends upon how well you are learned. The higher
+level you reach the harder you kick. There is one small catch -- whenever
+you kick (or miss) you will be unable to type any command for three
+rounds of combat -- so be sure that you do not need to flee!
+
+{CSee Also:{c RESCUE, BASH, DISARM, TRACK, PRACTICE{x
+
+#
+@MOUNT
+@DISMOUNT
+@~
+
+{c- MOUNT, DISMOUNT{x
+
+      {cUsage: {wmount <target> | dismount{x
+{cClass/Level: {wAll classes, level 1{x
+
+{wAllows you to mount a beast of burden thus allowing you to travel farther
+without depleting your move points.
+
+Use dismount once you decide to return to your feet for transport.
+
+{W-NOT YET IMPLEMENTED-{x
+
+{CSee Also: {c-{x
+
+#
+@RESCUE
+@~
+
+{c- RESCUE{x
+
+      {cUsage: {wrescue <target>{x
+{cClass/Level: {wMer 16, Ran 16, War 11{x
+
+As a general rule in a group, the person who takes the first hit will
+receive most or all of the damage from the opponent.  Often, this
+person will become low on hit points and will need to be rescued.  To
+rescue someone is to attempt to take the place of that person and have
+the monster hit you instead. You can only RESCUE a player from one
+monster per attempt.
+
+{CSee Also: {cKICK, TRACK, DISARM, PRACTICE{x
+
+#
+@PICK LOCK
+@PICKLOCK
+@~
+
+{c- PICK LOCK{x
+
+      {cUsage: {wpick <door> <direction>{x
+{cClass/Level: {wAsn 1, Rog 1, Thi 1{x
+
+For picking locks.  Not all locks can be picked.
+
+> pick door north
+> pick safe
+
+{CSee Also: {cOPEN, CLOSE, LOCK, UNLOCK, PRACTICE{x
+
+#
+@SCOUT
+@~
+
+{c- SCOUT{x
+
+      {cUsage: {wscout{x
+
+Enables the player to know what's up ahead.
+
+{CSee Also:{c TRACK{x
+
+#
+@SNEAK
+@~
+
+{c- SNEAK{x
+
+      {cUsage: {wsneak{x
+{cClass/Level: {wAsn 6, Rog 16, Thi 11{x
+
+Used for sneaking (moving in and out of rooms without anyone taking notice).
+When you type sneak, there is no way to know if you're actually sneaking.
+If you sucessfully sneak, then you'll continue to sneak for a little while.
+
+> sneak
+
+{CSee Also: {cHIDE, PRACTICE{x
+
+#
+@STEAL
+@~
+
+{c- STEAL{x
+
+      {cUsage: {wsteal <item> <target>{x
+{cClass/Level: {wRog 1, Thi 1{x
+
+Use steal to steal gold or items from people. The chance of not getting
+caught depends on how well you have practiced steal, and if the person
+is asleep. You can only steal items in inventory.
+
+Example:
+
+> steal bottle drunk
+
+{WIT IS ILLEGAL TO STEAL FROM OTHER PLAYERS.{x
+
+{CSee Also:{c PRACTICE PSTEAL{x
+
+#
+@SWITCH TARGET
+@TARGET
+@~
+
+{c- SWITCH TARGET{x
+
+      {cUsage: {wtarget <mob>
+{cClass/Level: {wMer 21, Ran 21, War 21{x
+
+{wThis skill enables the player to change targets in a fight.  The
+player can switch to another mob already fighting or to a mob just
+standing in the same room, not involved in the fight.  The original
+mob(s) will still attack as before.
+
+{CSee Also:{c PRACTICE{x
+
+#
+@TRACK
+@~
+
+{c- TRACK{x
+
+      {cUsage: {wtrack <target>{x
+{cClass/Level: {wMer 1, Ran 1, Rog 1, Thi 1{x
+
+{wUsed for finding the first step on the shortest route to a monster.
+Track can only be used within a zone if you are trying to track a
+monster, but it works worldwide if you are tracking another player.
+Some monsters cannot be tracked.
+
+{CSee Also:{c PRACTICE{x
+
+#
+@DISENGAGE
+@~
+
+{c- DISENGAGE{x
+
+      {cUsage: {wdisengage{x
+
+DISENGAGE allows you to withdraw from battle. Tanks cannot disengage,
+use FLEE instead.
+
+{CSee Also: {cFLEE{x
+
+#
+@ICEBOLT
+@ICE BOLT
+@~
+
+- ICE BOLT
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 1, Wiz 2, Ench 3, Conj 3
+   {cSpell Realm:{w General
+
+#
+@ARMOR
+@~
+
+- ARMOR
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Cler 1, Sham 1, Pri 1
+   {cSpell Realm:{w Protection
+
+The caster calls his/her deity to place a magical shield around the
+target, making it harder for creatures to hit them.
+ 
+#
+@CREATE FOOD
+@~
+
+- CREATE FOOD
+
+{cArea Of Effect:{w N/A
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 1, Sham 1, Dru 1, Pri 1
+   {cSpell Realm:{w Creation
+
+The cleric asks their deity for nourishment, and they reply by
+creating food at the casters feet.
+
+#
+@CREATE SPRING
+@~
+
+- CREATE SPRING
+
+{cArea Of Effect:{w N/A
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Dru 4
+   {cSpell Realm:{w Creation
+
+The caster calls for the power of Mother Nature, creating a spring
+of fresh clear water at their feet.
+
+#
+@CREEPING DOOM
+@~
+
+- CREEPING DOOM
+
+{cArea Of Effect:{w area
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Dru 9
+   {cSpell Realm:{w Creation
+
+The druid casting this spell, calls forth a massive swarm of small
+insects. This seething mass carpets all that it can see, and will
+follow the druid for a short distance. 
+
+#
+@CURSE
+@~
+
+- CURSE
+
+{cArea Of Effect:{w <object> | <character>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w object = permanent | character = average
+  {cClass/Circle:{w Dru 4, Sha 4, Pri 4, Cler 4
+   {cSpell Realm:{w Enchantment
+
+#
+@DIMENSION DOOR
+@DIM DOOR
+@DIMDOOR
+@~
+
+- DIMENSION DOOR
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 6, Wiz 6, Ench 6, Conj 6
+   {cSpell Realm:{w General
+
+By means of this spell, the caster can create a door in their current
+plane, and transport themselves to another player.
+
+#
+@EARTHQUAKE
+@~
+
+- EARTHQUAKE
+
+{cArea Of Effect:{w area
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Dru 3, Cler 3, Pri 3, Sha 3
+   {cSpell Realm:{w General
+
+Calling power from their deity, the caster calls a tremor to rip through
+the area. The shock is over in one round and affects all in the vicinity.
+
+#
+@ENCHANT SHIELD
+@~
+
+- ENCHANT SHIELD
+
+{cArea Of Effect:{w <object>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Permanent
+  {cClass/Circle:{w Ench 3
+   {cSpell Realm:{w Enchantment
+
+More information on this spell and its effects to come.
+
+#
+@ENCHANT WEAPON
+@~
+
+- ENCHANT WEAPON
+
+{cArea Of Effect:{w <object>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Permanent
+  {cClass/Circle:{w Ench 3
+   {cSpell Realm:{w Enchantment
+
+Enchanting a weapon turns it into a magical weapon. Therefore a weapon 
+must not have any other affections, or be magic, if it is to be enchanted.
+The effect of this enchantment, is to give the weapon a hitroll and damroll
+bonus, not higher than +3.
+
+#
+@FIREBOLT
+@FIRE BOLT
+@~
+
+- FIRE BOLT
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes 
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 1, Wiz 2, Ench 3, Conj 3
+   {cSpell Realm:{w General
+
+Upon casting, bolts of flame shoot from the caster's hands, scorching
+and burning the target.
+
+#
+@FEEBLE MIND
+@FEEBLEMIND
+@~
+
+- FEEBLE MIND
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 7, Wiz 7, Ench 6, Conj 7
+   {cSpell Realm:{w General
+
+This spell causes the target's intellect to be disintegrated, rendering
+them dumb. This spell is especially useful against casting creatures.
+
+#
+@FAERIE FIRE
+@~
+
+- FAERIE FIRE
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Ench 1, Sorc 2, Wiz 2, Necro 3, Cler 3, Pri 3
+   {cSpell Realm:{w Enchantment 
+
+The caster illuminates his/her target with a bright blue light, which
+makes the creature easier to hit.
+
+#
+@CONJURE ELEMENTAL
+@~
+
+- CONJURE ELEMENTAL
+
+{cArea Of Effect:{w N/A
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Conj 1, Sham 3, Dru 3
+   {cSpell Realm:{w Summoning
+
+You may summon from the elements, one creature to assist you. To get
+your elemental to do as you say, use the ORDER command.
+
+Note that your elemental will need to be able to see you in order to
+follow you, i.e. if you walk into a dark room, and your pet does not 
+have a light source it will not follow.
+
+{CSee Also: {cORDER{x
+
+#
+@REMOVE CURSE
+@~
+
+- REMOVE CURSE 
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 2, Pri 2, Sham 2, Dru 2
+   {cSpell Realm:{w Enchantment
+
+By praying to his/her deity and absolving the target, the caster
+forgives and removes all curses.
+
+#
+@PHANTOM STEED
+@~
+
+- PHANTOM STEED
+
+{cArea Of Effect:{w N/A
+    {cAggressive:{w N/A  
+    {cCumulative:{w N/A
+      {cDuration:{w
+  {cClass/Circle:{w Conj 2
+   {cSpell Realm:{w Summoning
+
+When this spell is cast, the caster creates  quasi-real, horselike
+creature. The steed can only be ridden by the conjurer who created
+it.
+
+#
+@INFRAVISION
+@~
+
+- INFRAVISION
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 3, Wiz 3, Ench 3, Conj 3
+   {cSpell Realm:{w Enchantment
+
+If you are missing a light source, Infravsion will not allow you to
+see room descriptions, but will let you see "red shapes" where there
+are creatures in the room. Some races recieve this as an innate skill.
+
+{CSee Also: {cINNATE{x
+
+#
+@STRENGTH
+@~
+
+- STRENGTH
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 2, Wiz 2, Ench 2, Conj 2, Necro 2
+   {cSpell Realm:{w Enchantment
+
+With this spell, the caster is able to conjure an amount of magical
+strength for a time.
+
+#
+@INVISIBILITY
+@~
+
+- INVISIBILITY
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 2, Wiz 2, Ench 2, Conj 2, Necro 2, Sham 2
+   {cSpell Realm:{w General
+
+This spell causes the creature touched to vanish from sight and be
+undetectable by normal vision or even infravision.
+
+#
+@ACID ARROW
+@ACIDARROW
+@~
+
+- ACID ARROW
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 1, Wiz 2, Ench 3, Conj 3
+   {cSpell Realm:{w General
+
+The caster begins to chant, at the end of which will shoot forth 
+arrows of acid which upon contact with the target, will immediately
+burn their skin, armor, eyes..
+
+#
+@DETECT ALIGNMENT
+@~
+
+- DETECT ALINGNMENT
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Necro 1, Cler 1, Pri 1, Monk 1
+   {cSpell Realm:{w Enchantment
+
+Want to know if a mob is evil or good? This knowledge can be
+valuable in choosing your fights. This spell will enable the
+caster to tell the alignment of everyone he or she views. 
+
+#
+@SHOCKING GRASP
+@SHOCKINGGRASP
+@~
+
+- SHOCKING GRASP
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 1, Sham 1, Pri 1, Dru 1
+   {cSpell Realm:{w General
+
+Upon finishing casting this spell, the caster gains a powerful
+electrical charge in his/her hands.  This delivers a powerful
+shock to the victim when they are touched.
+
+#
+@DETECT INVISIBILITY
+@~
+
+- DETECT INVISIBILITY
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Conj 1, Sorc 2, Wiz 2, Ench 2, Necro 2, Sham 2
+   {cSpell Realm:{w Enchantment
+
+Muttering arcane words, the caster closes his or her eyes briefly.
+Upon opening them, the caster then is able to view any object or
+person who is invisible, except those hidden by HIDE or a mob
+requiring the SENSE LIFE spell to be seen.
+
+#
+@BLINDNESS
+@~
+
+- BLINDNESS
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 2, Wiz 2, Conj 3
+   {cSpell Realm:{w Enchantment
+
+Chanting an arcane phrase, the caster can cause his/her victim
+to be BLIND, unable to see to fight them effectivly. Blindness
+will blind a victim failing its saving throw.
+
+#
+@SLEEP
+@SLEEP_SPELL
+@SLEEP SPELL
+@~
+
+- SLEEP
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Wiz 2, Ench 2, Sorc 3
+   {cSpell Realm:{w Enchantment
+
+Sleeping mobs are much easier to kill, since this allows you to have
+the first blow...If failing saving throw versus spell, the victim will
+fall into a magical sleep.
+
+#
+@PROTECTION FROM EVIL
+@PROTEVIL
+@~
+
+- PROTECTION FROM EVIL
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sham 3, Cler 3, Dru 3
+   {cSpell Realm:{w Protection
+
+#
+@PROTECTION FROM GOOD
+@PROTGOOD
+@~
+
+- PROTECTION FROM GOOD
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sham 3, Cler 3, Dru 3
+   {cSpell Realm:{w Protection
+
+#
+@FIRESHIELD
+@FIRE SHIELD
+@~
+
+- FIRE SHIELD
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 5, Wiz 5, Enc 4
+   {cSpell Realm:{w Elemental
+
+This spell encases the caster or their victim in a shield of fire. When
+a creature attempts to hit through the shield, they will be burnt by it
+and sustain damage.
+
+#
+@FLAME BLADE
+@FLAMEBLADE
+@~
+
+- FLAME BLADE
+
+{cArea Of Effect:{w - (caster only)
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w caster level * mud hours
+  {cClass/Circle:{w Pri 6
+   {cSpell Realm:{w Creation
+
+With this spell, the Priest causes a flaming ray of fire to shoot forth 
+from his hand. This ray is wielded, similar to a weapon, and burns
+the victim when he is hit with it. The two-handed blade will be cast
+into your wield position, so you must not be wielding anything at the
+time. It cannot be removed, but will dissapear when the spell expires.
+
+#
+@FLAMESTRIKE
+@FLAME STRIKE
+@~
+
+- FLAMESTRIKE
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Pri 4, Sha 4
+   {cSpell Realm:{w General
+
+Upon casting, the priest evokes a vertical column of fire, which shoots
+downward onto the target, scorching and burning them badly.
+
+#
+@FLOAT
+@~
+
+- FLOAT
+
+{cArea Of Effect:{w <object>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Permanent
+  {cClass/Circle:{w Ench 2, Sha 3
+   {cSpell Realm:{w Enchantment
+
+The caster lays his hands on an object while casting this spell,
+upon completion, the object will not sink if dropped in a water
+type room.
+
+- Not Yet Implemented -
+
+#
+@FLY
+@~
+
+- FLY
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 6, Wiz 6, Ench 6
+   {cSpell Realm:{w Enchantment
+
+When cast, this spell causes the target to lift from the ground, therefore
+not suffering as many movement penalties while travelling over rough terain.
+
+#
+@MAGIC MISSILE
+@MAGICMISSILE
+@~
+
+- MAGIC MISSILE
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 1, Wiz 1, Ench 1, Conj 1, Necro 1, Sham 1
+   {cSpell Realm:{w General
+
+Use of the magic misile spell creates up to five missiles of magical
+energy that dart forth from the caster's fingertips and unerringly
+strike their target.
+
+#
+@COLORSPRAY
+@~
+
+- COLOR SPRAY
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Ench 2
+   {cSpell Realm:{w General 
+
+Calling out to the heavens with phrases long unknown to mankind,
+the caster can create his or her own rainbow of colors to throw into
+the face of his victim, causing damage.
+
+#
+@CHILL TOUCH
+@CHILLTOUCH
+@~
+
+- CHILL TOUCH
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 2, Wiz 2, Conj 2, Necro 2
+   {cSpell Realm:{w General
+
+Calling upon the very forces of nature, the caster can use their
+inate power over nature to allow them to make their hands
+freezingly cold enough to damage a victim that they touche.
+
+#
+@MINOR CREATION
+@~
+
+- MINOR CREATION
+
+{cArea Of Effect:{w < ration | barrel | torch | raft >
+    {cAggressive:{w N/A  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Conj 1
+   {cSpell Realm:{w Creation Realm
+
+The caster can use this spell to magically create small objects
+which are often needed.
+
+#
+@CAUSE SERIOUS
+@~
+
+- CAUSE SERIOUS
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 2, Pri 2, Sham 2, Dru 2
+   {cSpell Realm:{w Healing
+
+When the caster lays his/her hands on a creature they inflict minor
+amount of damage.
+
+#
+@CAUSE CRITICAL
+@~
+
+- CAUSE CRITICAL
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sham 3, Dru 3, Pri 3, Cler 3
+   {cSpell Realm:{w Healing
+
+When the caster places his/her hands on a creature they have their
+deity inflict an amount of damage through them.
+
+#
+@DETECT MAGIC
+@~
+
+- DETECT MAGIC
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Cler 1, Dru 1, Sham 1, Pri 1
+   {cSpell Realm:{w Enchantment
+
+This spell allows the caster to be able to sense where and what
+magic has been cast upon.
+
+#
+@DISEASE
+@~
+
+- DISEASE
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 1, Dru 1, Sham 1, Pri 1
+   {cSpell Realm:{w Healing
+
+When the caster lays their diseased hands upon the victim, it 
+instantly runs throughout their body, causing a minor amount
+of damage.
+
+#
+@PRESERVATION
+@~
+
+- PRESERVATION
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w Yes
+      {cDuration:{w Caster Level * 60 seconds
+  {cClass/Circle:{w Cler 1, Pri 1, Dru 1, Sham 1
+   {cSpell Realm:{w Enchantment
+
+The caster asks his/her deity to slow down the decaying process
+of a corpse.  This allows all of a persons eq to remain on the
+corpse, but most importantly the corpse will be around long enough
+for ressurection to be cast upon it.
+
+- NOT IMPLEMENTED YET -
+
+#
+@TIDAL WAVE
+@~
+
+- TIDAL WAVE
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Monk 3
+   {cSpell Realm:{w General
+
+#
+@CURE CRITICAL
+@~
+
+- CURE CRITICAL
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 3, Dru 3, Pri 3
+   {cSpell Realm:{w Healing
+
+When the caster places his/her hands on a wounded creature they
+heal a greater amount of damage.
+
+Cure Critical heals more hit points than Cure Serious.
+
+#
+@CURE SERIOUS
+@~
+
+- CURE SERIOUS
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No   
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 2, Dru 2, Pri 2
+   {cSpell Realm:{w Healing
+
+When the caster places his/her hands on a wounded creature they
+heal an amount of damage.
+
+Cure Serious heals more hit points than Cure Light.
+
+#
+@WATERWALK
+@WATER WALK
+@~
+
+- WATER WALK
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Cler 1, Pri 1, Dru 1, Sham 1
+   {cSpell Realm:{w Enchantment
+
+This spell enables the victim to be able to stand and walk on water
+as if it were land.  When this spell wears off the victim will not
+be able to move if they are still standing on water.
+
+#
+@CURE BLINDNESS
+@~
+
+- CURE BLINDNESS
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 2, Pri 2
+   {cSpell Realm:{w Healing
+
+The caster calls power from their deity, and is able to cure and
+remove all affects of blindness from a person.
+
+#
+@BARKSKIN
+@~
+
+- BARKSKIN
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Dru 3
+   {cSpell Realm:{w Protection
+
+When a Druid casts this spell on a creature their skin becomes
+as tough and durable as bark.
+
+#
+@CURE LIGHT
+@CURELIGHT
+@~
+
+- CURE LIGHT
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 1, Pri 1, Dru 1
+   {cSpell Realm:{w Healing
+
+The caster places his/her hands on the wounded creature and heals
+a minor amount of damage.
+
+#
+@CREATE WATER
+@~
+
+- CREATE WATER
+
+{cArea Of Effect:{w <target container>
+    {cAggressive:{w N/A  
+    {cCumulative:{w N/A
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 1, Pri 1, Dru 1, Sham 1
+   {cSpell Realm:{w Creation
+
+When this spell is cast, the Gods fill the specified container
+up with sparkling water.
+
+#
+@WORD OF RECALL
+@~
+
+- WORD OF RECALL
+
+{cArea Of Effect:{w <char>
+    {cAggressive:{w N/A  
+    {cCumulative:{w N/A
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 3, Pri 3, Dru 3, Sham 3
+   {cSpell Realm:{w Protection
+
+Relocates the caster to their guild.
+
+#
+@DETECT POISON
+@~
+
+- DETECT POISON
+
+{cArea Of Effect:{w <char>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Cler 2, Pri 2, Dru 2, Sham 2
+   {cSpell Realm:{w Enchantment
+
+This spell allows the caster to be able to sense if a creature
+has been poisoned.
+
+#
+@CURE DISEASE
+@~
+
+- CURE DISEASE 
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 3, Pri 3, Dru 3, Sham 3
+   {cSpell Realm:{w Healing
+
+#
+@FARSEE
+@~
+
+- FARSEE
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Ench 3, Wiz 4
+   {cSpell Realm:{w Enchantment
+
+Farsee allows you to see into the next room. This can be useful to
+prepare yourself for any waiting nasties, or to plan a quick getaway.
+Some classes receive farsee as an innate skill.
+
+{CSee Also: INNATE{x
+
+#
+@CURE POISON
+@~
+
+- CURE POISON 
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w No  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cler 3, Pri 3, Dru 3, Sham 3
+   {cSpell Realm:{w Healing
+
+The caster calls power from their deity, and is able to cure and
+remove all affects of blindness from a person.
+
+#
+@FIREBALL
+@FIRE BALL
+@~
+
+- FIREBALL
+
+{cArea Of Effect:{w <victim>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 3, Wiz 4, Ench 5, Conj 5
+   {cSpell Realm:{w General
+
+The wizard merely points their finger and speaks toward their
+target, and an explosive burst of flame shoots toward the victim,
+delivering damage proportional to the level of the caster.
+
+#
+@FIRESTORM
+@FIRE STORM
+@~
+ - FIRESTORM
+
+{cArea Of Effect:{w area
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 4, Wiz 5, Ench 6, Conj 6
+   {cSpell Realm:{w General
+
+When this spell is cast, the entire area is filled with sheets
+of roaring flame, engulfing anything in sight, and burning it
+to a crisp.
+
+#
+@ICE STORM
+@ICESTORM
+@~
+
+- ICE STORM
+
+{cArea Of Effect:{w area
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 4, Wiz 5, Ench 6, Conj 6
+   {cSpell Realm:{w General
+
+Casting this spell causes a great ice storm, with hail and sleet
+to fall over the entire vicinity. The intense cold weakens and 
+damages any victims.
+
+#
+@METEOR SWARM
+@METEORSWARM
+@~
+
+- METEOR SWARM
+
+{cArea Of Effect:{w area
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 9
+   {cSpell Realm:{w Elemental
+
+This is a very powerful and spectacular spell. When cast, spheres of
+rock spring forth from the outstretched hand of the caster, causing
+great damage upon impact with the target.
+
+#
+@BIGBY'S CLENCHED FIST
+@BIGBYS CLENCHED FIST
+@FIST
+@CLENCHED
+@~
+
+- BIGBY'S CLENCHED FIST
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 7
+   {cSpell Realm:{w General
+
+This spells brings forth a huge disembodied hand that is balled into
+a fist. This magical hand is under control of the caster, who calls
+it to strike the victim.
+
+#
+@BIGBYS CRUSHING HAND
+@BIGBY'S CRUSHING HAND
+@CRUSHING
+@HAND
+@~
+
+- BIGBYS CRUSHING HAND
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 9
+   {cSpell Realm:{w General
+
+This spells brings forth a huge disembodied hand, similar to Bigby's 
+Clenched Fist. This magical hand is under control of the caster, who 
+can call it to squeeze the life out of the victim.
+
+#
+@PRISMATIC SPRAY
+@~
+
+- PRISMATIC SPRAY
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes  
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 6, Wiz 7, Ench 7
+   {cSpell Realm:{w General
+
+With this spell, the caster causes several shimmering, multi-colored
+rays of light to flash from their hand in a triangular spray.
+
+#
+@BLESS
+@~
+
+- BLESS
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Cler 4, Sha 4, Dru 4
+   {cSpell Realm:{w Enchantment
+
+Calling down a blessing on a victim, the caster can implore their
+diety to improve the victim's hitroll by two.
+
+#
+@AID
+@~
+
+- AID
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Pri 4
+   {cSpell Realm:{w Healing
+
+Calling upon thier deity for power, the caster can give aid to anyone
+they choose, both increasing the target's hitpointsand damroll and
+affecting their hitroll like the bless spell.
+
+#
+@AGONY
+@~
+
+- AGONY
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sor 7
+   {cSpell Realm:{w General
+
+Arcane and dangerous to its victim, the caster begins to chant words
+not understood by the uninitiated. Drawn from the nexus of the world
+this spell can cause terrible waves of agony to be felt by the victim.
+
+#
+@CREEPING DEATH
+@~
+
+- CREEPING DEATH
+
+{cArea Of Effect:{w area
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Dru 9
+   {cSpell Realm:{w Summoning
+
+A ravenous horde of insects is summoned by the caster and is directed
+at all opponents in the room.
+
+#
+@BURNING HANDS
+@BURNING_HANDS
+@~
+
+- BURNING HANDS
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Conj 1, Sorc 2, Wiz 2
+   {cSpell Realm:{w General
+
+When this spell is cast, a stream of searing flame shoots from his
+fingertips, hitting the target and causing great pain.
+
+#
+@CHAIN LIGHTNING
+@CHAIN_LIGHTNING
+@~
+
+- CHAIN LIGHTNING
+
+{cArea Of Effect:{w area
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 6, Wiz 7
+   {cSpell Realm:{w Elemental
+
+Upon casting, an electrical discharge flies from the caster's fingertips
+as a single stroke of lightning. Once the charge has hit one target, it
+arcs and jumps to the next target within range.
+
+#
+@CONE OF COLD
+@CONE_OF_COLD
+~
+
+- CONE OF COLD
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sorc 4, Wiz 5
+   {cSpell Realm:{w Elemental
+
+When this spell is cast, it causes a cone shaped area of extreme cold,
+originating at the caster's hand and extending outward in a cone,
+enveloping the target and freezing them, causing damage.
+
+#
+@CONTROL WEATHER
+@CONTROL_WEATHER
+@~
+
+- CONTROL WEATHER
+
+{cArea Of Effect:{w -
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Dru 5, Sha 5
+   {cSpell Realm:{w Elemental
+
+The caster calls the forces of Mother Nature to change the weather in
+the local area. More information to come on the options and effects of
+this spell.
+
+#
+@STONESKIN
+@~
+
+- STONESKIN
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Short
+  {cClass/Circle:{w Sor 7, Con 6, Sha 6
+   {cSpell Realm:{w Protection
+
+The caster turns the skin of the target to stone, which absorbs
+any damage that is inflicted upon them. Any damage will chip away
+at the the stoneskin, which will soften and dissapear when it can
+absorb no more.
+
+#
+@PROTECTION FROM FIRE
+@PROTECTION FROM LIGHTNING
+@PROTECTION FROM GAS
+@PROTECTION FROM ICE
+@~
+
+- PROTECTION FROM FIRE/LIGHTNING/GAS/ICE
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Dru 6, Cle 3, Sha 3
+   {cSpell Realm:{w Protection
+
+While under protection from one of these elements, you will not suffer
+any damage from spells based in that element. For example: If you have
+protection from fire, you will receive no damage if an adversary throws
+a large fireball at you.
+
+#
+@CONTINUAL LIGHT
+@ILLUMINATION
+@~
+
+- CONTINUAL LIGHT
+
+{cArea Of Effect:{w <object>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Ench 3, Dru 3, Sha 3
+   {cSpell Realm:{w Enchantment
+
+This spell enchants an object with magical light, and will illuminate
+such as a torch for the wearer. 
+
+#
+@SPIRITUAL HAMMER
+@~
+
+- SPIRITUAL HAMMER
+
+{cArea Of Effect:{w - (caster only)
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w caster level * mud hours
+  {cClass/Circle:{w Pri 8
+   {cSpell Realm:{w Creation
+
+By calling upon his deity, the caster of a spiritual hammer brings into
+existence a field of force in the shape of a hammer. The two-handed 
+hammer will be cast into your wield position, so you must not be wielding
+anything at the time. It cannot be removed, but will dissapear when the
+spell expires.
+
+#
+@MAJOR PARALYSIS
+@~
+
+- MAJOR PARALYSIS
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 8, Wiz 8, Ench 8
+   {cSpell Realm:{w Enchantment
+
+Being totally paralyzed, the victim is stuck, unable to do most anything,
+including fight, until the spell expires.
+
+#
+@MINOR PARALYSIS
+@~
+
+- MINOR PARALYSIS
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Average
+  {cClass/Circle:{w Sorc 16, Wiz 16, Ench 16
+   {cSpell Realm:{w Enchantment
+
+Being paralyzed from the neck down, the target is unable to move,
+flee, or do much at all. Any damage the target receives will lessen
+the duration of the paraylsis. 
+
+#
+@ARIEKS SHATTERING ICEBALL
+@~
+
+- ARIEKS SHATTERING ICEBALL
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sha 9
+   {cSpell Realm:{w Protection
+
+Calling the forces of nature, the shaman summons an enormous iceball
+to shoot forth from their hands toward the target, freezing and crushing
+their entire body.
+
+#
+@LESSER MENDING
+@~
+
+- LESSER MENDING
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sha 1
+   {cSpell Realm:{w Healing
+
+The caster places his/her hands on the wounded creature and heals
+a minor amount of damage.
+
+#
+@MENDING
+@~
+
+- MENDING
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sha 4
+   {cSpell Realm:{w Healing
+
+The caster places their hands on the wounded creature, healing an
+amount of damage.
+
+#
+@GREATER MENDING
+@~
+
+- GREATER MENDING
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w No
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Sha 7
+   {cSpell Realm:{w Healing
+
+The caster places their hands on the wounded creature, healing a
+significant amount of damage.
+
+#
+@FULL HARM
+@~
+
+- FULL HARM
+
+{cArea Of Effect:{w <target>
+    {cAggressive:{w Yes
+    {cCumulative:{w No
+      {cDuration:{w Instant
+  {cClass/Circle:{w Cle 7, Pri 7
+   {cSpell Realm:{w Healing
+
+The caster calls power from his deity, causing great wounds to manifest
+on the target, quickly decaying and festering into enormous sores.
+
+#
+@FULL HEAL
+@~
+
+#
+@!
+@^
+@~
+
+{c- ! ^ '{x
+
+Use ! to repeat the last command typed at the keyboard.
+
+Use ^ to replace a string from the last command with a new string.  The
+syntax is the same as in csh: ^old-string^replacement  For example:
+
+> tell rasmusse Hi there, how are you?
+No-one by that name here.
+
+> ^rasmusse^rasmussen
+You tell Rasmussen, 'Hi there, how are you?'
+
+> ^you^you doing^
+You tell Rasmussen, 'Hi there, how are you doing?'
+
+{CSee Also:{c ALIAS{x
+
+#
+@AC
+@ARMORCLASS
+@ARMOR CLASS
+@~
+
+{c- ARMOR CLASS{x
+
+AC is your armor class.  It is a number from -100 to 100, roughly
+defined as follows:
+
+  100 	Naked person
+   0   	Very Heavily armored
+ -100	      Armored battle tank
+
+The LOWER your armor class (i.e. closer to -100) the harder it is for
+a mob to hit you. 
+
+{CSee Also:{c  SCORE{x
+
+#
+@AFK
+@~
+
+{c- AFK{x
+
+{cUsage: {wtoggle afk{x
+
+The afk command (away-from-keyboard) toggles a flag, that makes you
+appear as (AFK) in the who list. If someone tries to tell you something
+they get a message that you are currently afk. AFK is active until you
+type "toggle afk" a second time.
+
+{CSee Also:{c TOGGLE{x
+
+#
+@ALIASES
+@~
+
+{c- ALIAS{x
+
+An alias is a single command used to represent one or more other commands.
+The ALIAS command can be used to manipulate your character's aliases.  Type
+ALIAS alone to see a list of your currently defined aliases.
+
+> alias
+
+Type ALIAS <alias name> <command> to create a new alias.  The alias name must
+be one word.  The command can be any string.  Aliases may not be nested or
+used recursively.  Any command may be overriden by an alias (other than the
+ALIAS command itself, of course).
+
+> alias gbb get bread bag
+> alias gac get all corpse
+
+Type ALIAS <alias-name> to delete an alias that has already been defined.
+
+> alias gbb
+
+A semicolon (;) can be used to define multiple actions to be taken with
+a single alias.
+
+> alias eat get bread bag; eat bread
+
+Note that the 'eat' contained within the eat alias is interpreted as the MUD's
+internal eat command; aliases may not be nested or used recursively.  The
+variables $1, $2, ... $9 may be used to represent arguments given with
+an alias.  For example:
+
+> alias killem cast 'fireball' $1; cast 'harm' $2
+> killem fido mage
+
+Would cast fireball on fido, followed by casting harm on mage.  Variables
+may be used repeatedly and in any order:
+
+> alias helpem cast 'heal' $1; cast 'bless' $1; cast 'armor' $1
+
+The special variable $* represents the entire input line after an alias:
+
+> alias tr tell rasmussen $*
+> tr hi there, how are you today?
+You tell Rasmussen, 'hi there, how are you today?'
+
+{CSee Also:{c  ! ^{x
+
+#
+@ANSI
+@COLOR
+@~
+
+{c- ANSI COLOR{x
+
+If you have a color-capable terminal and wish to see useful color-coding
+of information, use the TOGGLE command to set the level of coloring you see.
+
+> toggle color off
+This command disables all color.
+
+> toggle color sparse
+> toggle color normal
+> toggle color complete
+
+These three commands turn color on to various levels.  Experiment to see
+which level suits your personal taste.
+
+Using color will slow down the speed at which you see messages VERY slightly.
+The effect is more noticable on slower connections.  Even if you have
+color turned on, non-colorized messages will not be slowed down at all.
+
+{CSee Also:{c TOGGLE, COLORSPRAY{x
+
+#
+@ASSIST
+@~
+
+{c- ASSIST{x
+
+{cUsage: {wassist <person in need>{x
+
+If Quifael is being beaten senseless by a warg and you feel brave enough
+to help him, type ASSIST QUIFAEL to hit the warg.  Note that the warg will
+keep hitting Quifael; assist only makes you start to fight alongside whomever
+you're trying to assist.
+
+> assist quifael
+
+{CSee Also:{c  RESCUE FLEE{x
+
+#
+@AUTOLOOT
+@AUTOSPLIT
+@AUTOCOINS
+@AUTOGOLD
+@~
+
+{c- AUTOLOOT, AUTOCOINS, AUTOSPLIT{x
+
+TOGGLE AUTOLOOT   - automatically loot corpses (get all corpse)
+TOGGLE AUTOCOINS  - automatically get coins from corpses (get coins corpse)
+TOGGLE AUTOSPLIT  - automatically split money you get (There were x coins - split x)
+
+{CSee Also:{cTOGGLE, AUTOEXIT{x
+
+#
+@BANDAGES
+@~
+
+{c- BANDAGE{x
+
+      {cUsage: {wbandage <target>{x
+{cClass/Level: {wAll Classes 1
+
+If one of your adventuring party ends up bleeding at your feet,
+incapacitated, or mortally wounded - you may attempt to stem the
+blood flow and BANDAGE their wounds. 
+
+Note: You must have bandages in your inventory to be able to bandage
+      a player. 
+
+{CSee Also:{c -{x
+
+#
+@BANK
+@WITHDRAW
+@DEPOSIT
+@BALANCE
+@~
+
+{c- BANK{x
+
+Commands to take money out of the bank, put money in the bank, or see how
+much money you have in the bank. 
+
+> deposit 400 p
+> withdraw 1000 g
+> balance
+> exchange 100 g p
+
+{CSee Also:{c - MONEY, EXCHANGE{x
+
+#
+@EXCHANGE
+@RATES
+@~
+
+{c- EXCHANGE{x
+
+Exchange at banks works as follows.
+
+> exchange 100 g p
+
+This would exchange 100 gold coins for the current value of platinum
+
+> exchange 100 c s
+> exchange 1000 copper silver
+
+Either way you choose will work to exchange one form of currency to
+another.
+
+1 Platinum coin is equal to the value of 10 Gold, 100 Silver, 1000 Copper.
+Each are divisable into the other by 10.
+
+Banks will charge a small fee for exchanging coins, these fees will vary
+from bank to bank.
+
+{CSee Also: {cBANK{x
+
+#
+@KNOCKED OUT
+@KNOCKOUT
+@KNOCK
+@UNCONCIOUS
+@~
+
+{c- KNOCKED OUT{x
+
+If you are caught fighting within a hometown, City Guards will come
+running and put an end to it. They will not kill you unless you attack
+them, but they will knock you out as a punishment for fighting within the
+city walls. While you are knocked out, you will not be able to do much.
+Type COMMANDS to see what you can do. Typically, you will regain conciousness
+and return to normal sleep  within one real-time minute.
+
+{CSee Also: {c-{x
+
+#
+@BOARDS
+@~
+
+{c- BOARDS{x
+
+Bulletin boards are the forum of interplayer communication on the MUD.
+There are different bulletin boards for different purposes -- for
+example:
+ a standard mortal board, a board for immortals, a board for fun social
+ messages, etc.  Naturally, not all players may be allowed to read all
+ types of boards.
+
+Type LOOK BOARD to see the messages already posted on a board.  Type WRITE
+<subject> to post a message to a board; terminate a message with a '/s' as
+the first character on a line. Type '/h' in the editor for a list of
+commands. Type READ <number> to read a post.  Type REMOVE <number> to
+remove your own messages. 
+
+> look board
+> write Wings for sale
+]For Sale: dragon scale wings PERM FLY ac6  100000000 coins
+]Send me a tell or leave me mudmail
+]Quiafel
+]/s
+
+[writes the message; terminates with a '/s']
+
+> look board
+> read 6
+> remove 6
+
+{CSee Also:{c WRITE, MAIL{x
+
+#
+@BRIEF
+@~
+
+{c- BRIEF{x
+
+{cUsage:{w toggle brief{x
+
+Toggles brief mode.  When in brief mode, you don't see the descriptions of
+the room you are in; only the name of the room and the people and objects
+there.  Unless you're very familiar with the area in which you're travelling,
+however, it is not advisable to use this command.  Frequently, you will find
+small but vital hints in the descriptions of the rooms: An extra peek at your
+surroundings could mean the difference between life and death!
+
+If you specifically type LOOK, even in BRIEF mode, you will not see the
+full room description. To see this in BRIEF mode, type LOOK ROOM.
+
+{CSee Also:{c COMPACT, LOOK, TOGGLE{x
+
+#
+@BUG
+@TYPO
+@IDEA
+@~
+
+{c- BUG, TYPO, IDEA{x
+
+For making useful suggestions to the Powers that Be.
+
+[ bug | typo | idea ] <text>
+
+> bug the entire game crashes when I type 'put bag in bag'
+> idea make a restaurant in caryllion
+> typo 'sence' should be spelled 'sense'
+
+{CSee Also:{c -{x
+
+#
+@BUY
+@~
+
+{c- BUY{x
+
+If you'd like to purchase an item from a shop and have the money, you can buy
+it.  Items can be bought by name, or by their number in the shop listing,
+and can be bought in quantity.
+
+Examples:
+
+> buy sword        (buy the first sword on the list)
+> buy #3           (buy the third item on the list)
+> buy 4.sword      (buy the fourth sword on the list)
+> buy 10 bread     (buy 10 pieces of bread)
+> buy 10 #2        (buy 10 of the second item on the list)
+
+{CSee Also:{c SHOPS, SELL, LIST, VALUE{x
+
+#
+@CLEAR
+@CLS
+@~
+
+{c- CLEAR{x
+
+Clears the screen on many terminals.
+
+{CSee Also:{c -{x
+
+#
+@SEARCH
+@~
+
+{c- SEARCH{x
+
+SEARCH skill will allow you to search for, and hopefully find any
+hidden exits in a room. It is quite possible you will need to try
+searching quite a few times before your efforts are successful.
+
+{CSee Also: {cEXITS{x
+
+#
+@COMMANDS
+@~
+
+{c- COMMANDS{x
+
+The COMMANDS command gives a canonical list of all the known verbs.
+
+> commands
+
+Each command listed should have help available by typing HELP <command>.
+
+{CSee Also:{c -{x
+
+#
+@COMPACT
+@~
+
+{c- COMPACT{x
+
+{cUsage: {wtoggle compact{x
+
+This command toggles the extra blank line output to your screen after each
+command.  Useful if you have a small display.
+
+{CSee Also:{c BRIEF, TOGGLE{x
+
+#
+@CONSIDER
+@~
+
+{c- CONSIDER{x
+
+{cUsage : {wconsider <monster>{x
+
+This command will compare your level with the <monsters> level. You will then
+receive a rough estimate, which is by no means exact. Consider does not take
+hitpoints/special attacks/damage into accout.
+
+> consider fido
+
+{CSee Also:{c -{x
+
+#
+@DEATH
+@DIE
+@DYING
+@~
+
+{c- DEATH{x
+
+Every so often, a monster will get the better of you and kill you. This is 
+not the end of your character, however, you will lose a portion of your
+experience points, and possibly a level. You will need to travel back to 
+the scene of your demise to retrieve your belongings.
+
+{CSee Also: {cPCORPSE{x
+
+#
+@DESCRIPTIONS
+@~
+
+{c- DESCRIPTION{x
+
+You can change your description at the main menu. This is the text that
+people will see when they look at you. 
+
+Your description must be at LEAST 3 lines.
+
+It should be fairly obvious what is not acceptable, so there is not much
+need to state what is. Sufice to say, descriptions like "You're looking
+at one bad mutha" will not be allowed.
+
+Some pointers:
+
+{c-{x Descriptions are meant to be kept within the theme of the MUD, and 
+therefore there are some things that are not appropriate. Please refrain
+from using profanity and any racial/sexual connotations.
+
+{c-{x Write your description as if you were totally naked and from the 
+point of view of someone looking at you. Only comment on permanent, 
+visable features - no "he has a wild expression on his face". 
+
+{c-{x Try to keep opinions and stories out of your description, what one
+person considers repulsive, another may see as beautiful.
+
+{c-{x Do not tell the viewer what they assume or conclude from looking at
+you, i.e "his many scars make it obvious he is an accomplished warrior" is
+not acceptable.
+
+You must have an appropriate description to be able to apply for a last
+name. See help LAST NAME for more details.
+
+{CSee Also: {cLAST NAME{x
+
+#
+@DIAGNOSE
+@~
+
+{c- DIAGNOSE{x
+
+{cUsage: {wdiagnose <character>{x
+
+The DIAGNOSE command tells you how wounded a character looks.  If you are
+fighting someone, you can use DIAGNOSE with no arguments to diagnose the
+person you're fighting.
+
+> diagnose
+> diagnose rasmussen
+
+{CSee Also:{c -{x
+
+#
+@DISPLAY
+@PROMPT
+@TANKNAME
+@TANKCOND
+@MANA
+@HIT PNT
+@ENEMYNAME
+@ENEMYCOND
+@~
+
+{c- DISPLAY{x
+
+Type TOGGLE to see the status of your diplay, and the options available
+to you.
+
+{cHit Pnt Display:{w  Displays your current hitpoints.
+   {cMove Display:{w  Displays your current movement points.       
+   {cMana Display:{w  Displays your current mana points. (only visible to casters)
+  {cTankname Disp:{w  Displays the name of the tank in your battle.      
+  {cTankcond Disp:{w  Displays the condition of the tank. e.g (bruised)
+ {cEnemyname Disp:{w  Displays the name of your opponent.
+ {cEnemycond Disp:{w  Displays the condition of your opponent. e.g. (wounded)
+
+These are the options for your prompt. To turn them on and off, use
+TOGGLE <value>. For example: toggle tankname, toggles the tank's name
+in your prompt, and would show as: Tankname disp: ON in your TOGGLE
+screen.
+
+{CSee Also:{c TOGGLE{x
+
+#
+@DRAGGING
+@LEAVE
+@~
+
+{c- DRAG{x
+
+{cUsage: {wdrag <pcorpse>
+         {wleave <pcorpse | playername | corpse>
+
+Want to move your corpse to a safer location before you try to
+retrieve your belongings? Try dragging it along behind you. You will
+suffer some loss of movement points, due to the added strain. 
+
+> drag ras
+> west
+You drag the corpse of Ras along with you.
+
+> enter portal
+You enter the portal, and drag the corpse of Ras along with you.
+
+After you are dragging the corpse, just enter movement commands as
+normal. The corpse will drag behind you until you LEAVE it.
+
+You must have a player's CONSENT to drag their corpse.
+
+{CSee Also: {cCONSENT, PCORPSE{x
+
+#
+@DROP
+@~
+
+{c- DROP{x
+
+If you lose interest in a carried item, you can drop it on the ground.
+
+> drop <item>
+> drop all.<item>
+> drop all
+> drop <number> coins
+
+> drop bottle
+> drop all.bread
+> drop all
+> drop 1000 coins
+
+{CSee Also:{c GET, JUNK{x
+
+#
+@THIRST
+@HUNGER
+@FOOD
+@DRINK
+@~
+
+{c- HUNGER, THIRST{x
+
+Unlike reality, being hungry or thirsty will not kill you. However, the
+hungrier or thirstier you are, the slower you will regenerate hit points,
+mana and movement points.
+
+{CSee Also: {cEAT, DRINK{x
+
+#
+@EAT
+@DRINK
+@SIP
+@TASTE
+@~
+
+{c- EAT, DRINK{x
+
+If you're hungry or thirsty, these commands are for you!
+
+> eat bread
+> taste bread
+> drink cup
+> sip fountain
+
+{CSee Also:{c -{x
+
+#
+@EMOTE
+@:
+@~
+
+{c- EMOTE{x
+
+Show people what you're feeling.  The shorthand is :
+
+emote <string> will display your name, then the string.  For example,
+if your name is Quifael,
+
+> emote is feeling very sad today.
+> : is feeling very sad today.
+will display:
+
+Quifael is feeling very sad today.
+
+{CSee Also:{c SOCIALS{x
+
+#
+@ENTER
+@PORTAL
+@~
+
+{c- ENTER, PORTAL{x
+
+{cUsage: {wenter <portalname>{x
+
+You see a mysterious looking portal.. and want to see what is on the
+other side? ENTER it and see..
+
+{CSee Also:{c LEAVE{x
+
+#
+@NMOTD
+@~
+
+{c- NMOTD{x
+
+NMOTD displays the Newbie Message of the Day. This is only shown 
+to players the first time they enter the game, and contains 
+important information pertinant to new players to Shadowwind.
+
+{CSee Also: MOTD, NEWS{x
+
+#
+@CRASH
+@~
+
+{c- CRASH{x
+
+Unfortunatly the code on Shadowwind, as on all muds, sometimes gets
+an attack of heartburn and will cause the MUD to crash. This means 
+that all players will be disconnected from the MUD, and once it has
+rebooted (usually within 1 minute), the next time you enter the game,
+you will be at your guild.
+
+The TIME command will show you how long it has been since the last
+CRASH or REBOOT.
+
+If you type a command or do something strange just prior to a crash,
+or notice any patterns to crashes, please notify the administration
+either by the BUG command, email, or the PRAY channel.
+
+The penalty for abusing or not reporting crash bugs is severe.
+
+{CSee Also: {cREBOOT, BUG, PRAY, EMAIL, POLICY, TIME{x
+
+#
+@REBOOT
+@RESET
+@SHUTDOWN
+@~
+
+{c- REBOOT{x
+
+Every so often, the Administration will need to REBOOT the MUD to
+implement bug fixes, code updates and new areas. This means that all
+players online will be disconnected. If you did not rent before the 
+reboot - the next time you enter the game, you will be at your guild. 
+A reboot should only take about 1 minute. 
+
+The TIME command will show you how long it has been since the last
+CRASH or REBOOT.
+
+Sometimes, the MUD will need to be shutdown for a short period of 
+time. This is to allow for maintenance of the machine, and major code
+/area changes. You will not be able to connect to Shadowwind while
+the MUD is shutdown. We try to keep these times to a minimum, but
+please be patient when they do happen, as they are generally to
+introduce bigger and better features to the game.
+
+{CSee Also: {cCRASH, TIME{x
+
+#
+@FERRY
+@BOARD FERRY
+@DISEMBARK
+@~
+
+{c- FERRY{x
+
+There are many ferries around the realm. For a fee they will take
+you to some of the more far flung reaches of the world. 
+
+BOARD is used to enter a means of transport, such as ferries. Once
+you have reached your final destination, DISEMBARK and continue with
+your journey.
+
+{CSee Also: {cPORTAL{x
+
+#
+@EQUIPMENT
+@~
+
+{c- EQUIPMENT{x
+
+Gives you a list of all the equipment you're wearing, holding, and wielding.
+
+{CSee Also:{c INVENTORY{x
+
+#
+@EVALUATE
+@~
+
+{c- EVALUATE{x
+
+{cUsage: {wevaluate <weapon>{x
+
+Before a player can use a weapon, they must first be trained in the
+correct skill. The EVALUATE command allows a player to determine the
+correct skill needed to wield any weapon they may find in the game.
+This will not tell you anything about the weapon's stats.
+
+{CSee Also:{c PRACTICE{x
+
+#
+@EXAMINE
+@~
+
+{c- EXAMINE{x
+
+May give you some valuable information about an item.
+
+{CSee Also:{c LOOK{x
+
+#
+@RECALLS
+@~
+
+{c- RECALL{x
+
+Sorry, there are no recall scrolls on Shadowwind.
+
+{CSee Also: {c-WORD OF RECALL{x
+
+#
+@EXITS
+@DOORS
+@~
+
+{c- EXIT{x
+
+Gives you a list of the obvious exits from your location. Of course, the less
+obvious ones won't show up here - you have to THINK in order to locate those.
+
+[Exits: e u #d]
+
+Means you can exit east or up, and there is a closed door down. To see the
+name of a closed door, LOOK in the direction of it.
+
+{CSee Also:{c LOOK, SEARCH, AUTOEXIT{x
+
+#
+@GAIN
+@EXPERIENCE
+@XP
+@EXP
+@LEVELS
+@LEVEL
+@~
+
+{c- EXPERIENCE, LEVEL{x
+
+Whenever you kill a monster, you earn experience points. When enough 
+experience points are earned, you raise a level. Things you should know 
+about experience points:
+
+  * When damaging a monster, you get experience points.
+
+  * If you kill a monster of higher level than yourself, you get bonus
+    experience points. If killing a monster of lower level you'll gain
+    less experience points.
+
+The amount of experience points gained from a kill, is not visible. If 
+you wish to see how your progress is to your next level, simply type:
+EXP at the prompt. This will give you a rough indication of your progress.
+
+Each time you die you lose a percentage of experience for your level. It
+is wise to be careful to avoid death when you have recently gained a
+level. If the experience lost due to death is more than you have gained in
+your current level, you will "lose a level".
+
+{CSee Also:{c GROUP, DEATH{x
+
+#
+@ANONYMOUS
+@~
+
+      {cUsage: {wanonymous{x
+
+Turning ANONYMOUS on, will prevent other players from seeing you in the
+who listing. However, if they specifically search for your name, they will
+see a listing, but it will not show your level or class.
+
+> who murtuk
+
+[-ANON-] Murtuk
+
+{CSee Also: WHO{x
+
+#
+@FILL
+@~
+
+{c- FILL{x
+
+{cUsage: {wfill <container> <source>{x
+
+If you want to fill a container you're holding with liquid from a fountain
+in the same room as you.
+
+> fill canteen fountain
+
+{CSee Also:{c POUR{x
+
+#
+@FLEE
+@~
+
+{c- FLEE{x
+
+If you are in a fight and things are beginning to get a little uncomfortable
+(maybe you are dying), just type 'flee', and presto! you are out of harm's
+way - that is, IF there is a suitable exit nearby, and IF that exit doesn't
+simply bring you from the ashes to the fire... but then, who wants to live
+forever? Fleeing won't always be successful though, you may be too busy
+casting or kicking to jump out of the way, so if at first it doesn't work -
+keep trying!
+
+> wimpy 80
+  You will automatically try to flee when you get to 80 hitpoints.
+
+{CSee Also:{cWIMPY{x
+
+#
+@FOLLOW
+@~
+
+{c- FOLLOW{x
+
+Use FOLLOW to automatically follow someone else.
+
+> follow ras
+> follow self
+
+{CSee Also:{c GROUP{x
+
+#
+@GET
+@TAKE
+@~
+
+{c- GET{x
+
+If you find something interesting on the ground, you may use GET to pick
+it up. GET can also be used to extract items from containers.
+
+> get sword corpse
+> get all corpse
+> get all all.bag
+> get all.bread all.bag
+
+{CSee Also:{c DROP, PUT{x
+
+#
+@GIVE
+@~
+
+{c- GIVE{x
+
+If you feel benevolent, you may give some stuff to someone in need.
+
+give <object> <victim>
+give <number> coins <victim>
+
+> give all ras
+> give bread onivel
+> give all.bronze romulus
+> give 400 coins aramina
+
+{CSee Also:{c -{x
+
+#
+@GOLD
+@PLATINUM
+@COPPER
+@SILVER
+@MONEY
+@COINS
+@CURRENCY
+@~
+
+{c- MONEY{x
+
+Ahh, they say money doesn't make the world go round, but it sure makes
+things a lot easier. There are a few ways to increase the size of your
+purse. As only some mobs carry a few coins, the easiest and most 
+successful means is to sell any excess objects you may find. There are
+many shops in the cities, and some in more obscure locations. You'll 
+find most shopkeepers drive a hard bargain, however, its better than
+nothing.
+
+It is not always a good idea to carry your entire wealth with you.
+Who knows what dastardly thief may be lurking round the next corner,
+or when you will need to buy a torch to recover your badly beaten corpse.
+Depositing your coins in a bank is a safe way to store it.
+
+Four coin currency:
+{WPlatinum{c, {YGold{c, {wSilver{c, {yCopper{c.{x
+
+1 Platinum coin is equal to the value of 10 Gold, 100 Silver, 1000 Copper.
+Each are divisable into the other by 10.
+
+{CSee Also: {cBANK, SPLIT, AUTOSPLIT, AUTOCOINS{x
+
+#
+@GLANCE
+@~
+
+{c- GLANCE{x
+
+{cUsage: {wglance [ <player> | <mobile> ]{x
+
+GLANCE will show you the condition of a player or mobile, and also
+any spells that are active on them.
+
+{CSee Also: {cDIAGNOSE{x
+
+#
+@NEWS
+@~
+
+{c- NEWS{x
+
+NEWS displays all updates, and general information on code and areas on
+Shadowwind. It is advisable to read the NEWS very often, as most of the
+time it will be the only notification you will get of changes that affect
+you.
+
+{CSee Also: {cMOTD{x
+
+#
+@CHANNELS
+@CHANNEL
+@CHAT
+@SHOUT
+@~
+
+{c- CHANNEL, CHAT, SHOUT{x
+
+These are channels reserved for specific purposes.  Messages on these
+channels reach everyone who is monitoring them. 
+
+> chat Helloooo, anyone out there?
+> shout argh, a warg just killed me, can anyone help?
+
+To turn a channel off, use the TOGGLE command, eg: TOGGLE CHAT
+
+To speak with a member of the administration for any reason, use the PRAY
+channel. Please be patient while waiting for a response, as immortals are
+often busy with other tasks.
+
+> petition i can't get get anything from my container..
+ 
+Other channels of communication are: SAY and TELL.
+
+{CSee Also:{c SAY, GSAY, REPEAT, PETITION, SAY, TELL{x
+
+#
+@DT
+@DEATH TRAP
+@DEATHTRAP
+@~
+
+{c- DEATH TRAP{x
+
+{wThere are none!
+
+{CSee Also: {c-{x
+
+#
+@GRAB
+@HOLD
+@~
+
+{c- GRAB{x
+
+For getting a good grip on something; a torch, for example.
+
+> hold torch
+> grab stone
+
+{CSee Also:{c WEAR, WIELD, EQUIPMENT, REMOVE{x
+
+#
+@GROUP
+@~
+
+{c- GROUP{x
+
+{cUsage : group <player>
+        group all{x
+
+GROUP with no arguments shows the status of your group.  GROUP <player>
+adds or removes <player> from your group.  GROUP ALL adds everyone who is
+following you to your group.
+
+If you are a group member, then you will share experience points for killing
+monsters equally among the group. Experience points will only be shared among
+group members that are in the same location, at the time of the killing
+blow. Sharing is regardless of wherther the group members have been
+participating in the fight.
+
+Group with no argument shows a list of people with whom you are grouped.
+group all groups all people who are following you.
+
+To make a group, a leader must be selected. All members of the group
+must then follow the leader using the follow command. The leader should
+NOT follow anyone at all! The leader can now toggle group membership for
+each player in the group, by using group <player_name>. The leader
+should remember to include himself in the group.
+
+Example:
+
+Quifael and Redferne wishes to group with Dragon.
+
+Quifael : follow dragon
+Redferne: follow dragon
+(Dragon should be following no one but himself)
+Dragon  : group dragon
+Dragon  : group redferne
+Dragon  : group quifael
+
+Later when Dragon get upset at Quifael (because he is sleeping all the time)
+he types : Group Quifael to kick Quifael out of the group.
+
+{CSee Also:{c XP EXPERIENCE UNGROUP{x
+
+#
+@GSAY
+@GTELL
+@~
+
+{c- GSAY, GTELL{x
+
+Tell something to all the members of your group, even if they're not in the
+room.
+
+> gsay where did you go?
+
+{CSee Also:{c GROUP{x
+
+#
+@GUILDS
+@GUILDMASTER
+@~
+
+{c- GUILD{x
+
+The Guildhouse is the place where mortals may go to escape the troubles and
+perils of a cruel world. Each guild is heavily guarded, so that only members
+may enter the building. Guilds are also the places where people come to
+learn and practice the skills of their trade.
+
+{CSee Also:{c PRACTICE{x
+
+#
+@HELP
+@~
+
+Following help is available:
+
+HELP            - The Shadowwind HELP FILE INDEX
+HELP DISPLAY    - A list of display commands to get your prompt setup.
+HELP COLOR      - A list of avaliable color commands.
+HELP TOGGLE     - A table of useful configuration options.
+COMMANDS        - A list of all commands avaliable in the game.
+POLICY	    - A document stating the basic rules you should be aware
+	      	of.
+Example:
+
+> help wimpy
+
+Will display the help entry for WIMPY command.
+
+Help searches for a partial match of the entered word, including any
+spaces that may follow the word. You may use help on any command in the
+game, if you are curious what its function is. If any command is found
+that does not have a help file please let us know. All unsuccessful
+help attempts are logged, in an effort for us to provide as comprehensive
+help files as is possible.
+
+{CSee Also:{c COMMANDS, MUD, NEWBIE{x
+
+#
+@HOMEPAGE
+@WEBPAGE
+@WEB SITE
+@WEB PAGE
+@~
+
+{c- HOMEPAGE{x
+
+The Shadowwind Homepage can be found at:
+
+http://www.shadowwind.org/index.html
+
+There you can find information about Shadowwind, it's implementors,
+gods and players.
+
+{CSee Also:{c -{x
+
+#
+@INFO
+@RULES
+@POLICY
+@CREDITS
+@VERSION
+@~
+
+These commands show you important information about CircleMUD. It is a good
+idea to read them every once in a while.
+
+info     - useful information about the game for beginners
+policy   - the laws of the land which you need to know
+credits  - the people who made CircleMUD and Shadowwind possible!
+version  - displays the current code version number
+
+{CSee Also:{c -{x
+
+#
+@INNS
+@RECEPTION
+@RENTING
+@~
+
+{c- RENT{x
+
+Inns are places where the weary traveller may rest while the innkeeper looks
+after his equipment and treasure. At this time, rent is free.
+
+Specifically, the game will save your equipment while you are logged out.
+As it stand now, rent is free, however you will need to rent at an inn, 
+quitting will result in all your equipment dropping to the ground.
+
+If you lose link, you will be force rented after a period of time, while
+you are linkdead however, you are not safe from aggressive mobs, and
+death. You will not be reimbursed for equipment lost in a linkdead
+death, so it is wise to attempt to reconnect and rent. Your unstable
+link is not the fault of the MUD, if your network looks shaky, don't
+risk your character - don't login.
+
+Alternativly, you may wish to CAMP outside of the city, see HELP CAMP for
+more details.
+
+{CSee Also:{c CAMP{x
+
+#
+@INNATE
+@~
+
+{c- INNATE{x
+
+Many races possess innate skills and abilities that they know 
+instinctivly. These are automatic, and don't have to be cast or 
+activated. Each race'sinnate abilities are listed under its help 
+entry.
+
+{CSee Also: {cRACES{x
+
+#
+@INVENTORY
+@~
+
+{c- INVENTORY{x
+
+If you're uncertain about what you're carrying, or simply want to check
+that no thieves have got to your backpack.
+
+{CSee Also:{c EQUIPMENT{x
+
+#
+@JUNK
+@~
+
+{c- JUNK{x
+
+JUNK command has been removed. To get rid of items you no longer want,
+sell them at a shop or drop them on the ground.
+
+{CSee Also:{c DROP, GIVE, SELL{x
+
+#
+@KILL
+@KILLING
+@HIT
+@ATTACK
+@~
+
+{c- KILL{x
+
+A good way to start a fight.  Not a good idea to hit other players.
+
+{CSee Also: {c COMBAT, MULTI ATTACK{x
+
+#
+@LAST NAMES
+@LASTNAME
+@SURNAME
+@TITLE
+@~
+
+{c- LAST NAME{x
+
+{wOnce you reach level 20, you may apply for a last name. You must have a
+good character description (see help description), and both should
+represent your race and class.
+
+Apply for a last name using the pray channel. As always, this is a
+priviledge not a right, and can be revoked at any time.
+
+{CSee Also: {cDESCRIPTION, NAME{x
+
+#
+@NAMES
+@NAMEPOLICY
+@~
+
+{c- NAME{x
+
+{cIn an effort to promote a medieval, fantasy atmosphere throughout 
+Shadowwind, a name policy regarding character creation has been
+established. Under this policy, the following guidelines must be
+adhered to when choosing a new name:{x
+
+{c[{w1{c] {wNo obscene, insulting, threatening or degrading names will
+    {wbe tolerated.{x
+
+{c[{w2{c] {wNo modern trademarks, cartoon characters, product names,
+    {wetc. are allowed.{x
+    {wFor example:  Beavis, Bacardi, Seinfeld{x
+
+{c[{w3{c] {wNo incoherent collection of random letters is allowed.{x
+    {wFor example:  Wqzlks, Xeyplw{x
+
+{c[{w4{c] {wNo names that imply rank or privilage.{x
+    {wFor example: King, Lady{x
+
+{c[{w5{c] {wNo names implying any religious reference or preference.{x
+    {wFor example: God, Buddha{x
+
+{c[{w6{c] {wNo names refering to historical figures, living or dead.{x
+    {wFor example: Stalin, Churchill{x
+
+{c[{w7{c] {wNo characters out of well known works of fiction, myth or
+legend.{x
+    {wFor example: Merlin, Aragorn{x
+
+{c[{w8{c] {wNo everyday names or everyday words.{x
+     {wFor example: Mike, Sarah, Pickle
+
+{C- {cRACES{x
+
+You will need to choose a name which is appropriate for your character's
+race. Below are some guidlines to help you.
+
+{c- DWARF{x
+
+Dwarves believe they are fine, strong warriors, unmatched in combat.
+Their names will represent this by having a strong, sharp sound.
+{CExamples: Tumal, Naruk, Gandark.{x
+
+{c- ELVES{x
+
+As elves believe strongly in the powers of music, their names tend to be
+soft, and and almost song-like.
+{CExamples: Velnarin, Myrethan, Lanthalin.{x
+
+{c- GNOMES{x
+
+Gnomes are odd creatures, and therefore have odd names. They are vibrant
+and bouncy, and their names reflect this.
+{CExamples: Lippble, Nufbby, Twypplb, Mulmble.{x
+
+{c- HALFLINGS{x
+
+Halflings are almost as odd as Gnomes, however their names can be even
+sillier. Almost anythings that is light and stupid will be acceptable
+for a halfling.
+{CExamples: Biffle, Moopal, Wolpah, Rathop{x
+
+{c- HALF-ELVES{x
+
+Being the offpring of humans and elves, half-elves can have either a
+human or an elven name.
+{CExamples: Valryn, Kealaria, Soavedna, Qupal.
+
+{c- HUMANS{x
+
+Humans have the widest variety of names, however they very rarely possess
+the sharpness or tone of, for example, a troll or ogre.
+{CExapmples: Valsar, Morvul, Taloran, Telseen, Luthar.{x
+
+{c- TROLLS{x
+
+Trolls are horrible creatures, of particularly low intelligence. Their
+names are short, badly spelt and often use odd combinations of many of
+the unused letters of the alphabet, eg. z,k,g.
+{CExamples: Voraak, Blzrog, Gorakk, Arkkz{x
+
+{c- OGRE{x
+
+Large, hulking beasts, Ogres are far dumber than trolls and have similar
+names. Harsh, but not sharp gutteral sounds, with an emphasis on phlegm.
+{CExamples: Bolag, Falrag, Moggo, Gluog.{x
+
+{cDo TRY to choose a medieval type of name.  If you have any questions
+regarding the acceptability of a certain name, feel free to ask a God
+for input and guidance.{x
+
+{CSee Also: {cLAST NAME, DESCRIPTION{x
+
+#
+@LINK DEAD
+@LINKDEAD
+@LD
+@~
+
+{c- LINK{x
+
+A lot of players have problems with their links to the game.  This can be
+very hazardous to your health in the middle of a battle, of course.
+
+ I. If your link is broken, you will automatically attempt to flee each
+    time someone attempts to hit you.  If you manage to flee, then you
+    will be saved by divine forces, and put in a safe place until you
+    reconnect to the game.
+
+II. If your link jams (freezes), you have a problem.  The only solution we
+    can give is that you break your link as quickly as possible.  By
+    breaking the link you can hope that the above procedure is initiated.
+
+    Do not try to get out of a fight by breaking link.  You will be not
+    reimbursed for any experience or equipment if you purposefully
+    cut your link.
+
+{CSee Also:{c -{x
+
+#
+@LIST
+@~
+
+{c- LIST{x
+
+If you'd like to see what items a shop has for sale, take a look at the
+list.  The list contains all of the items currently for sale and in
+what quantity.  The price for each item is also listed.  If you are
+interested in a particular type of item, you can specify which items to
+list.
+
+Examples:
+
+> list             (list all items for sale)
+> list sword       (list all swords for sale)
+
+{CSee Also:{c SHOPS, BUY, SELL, VALUE{x
+
+#
+@LOOK
+@~
+
+{c- LOOK{x
+
+For studying your surroundings. Examples:
+
+>look
+>look AT the angel   (or just: look angel)
+>look IN the bag     
+>look to the south   (or just: look south)
+
+Note that if you LOOK AT CORPSE you will not see its inventory.
+To see what's inside a container (i.e. a corpse) use LOOK IN <OBJECT>.
+
+{CSee Also:{c EXAMINE, READ{x
+
+#
+@MAIL
+@CHECK
+@RECEIVE
+@~
+
+{c- MAIL{x
+
+{cUsage: {wmail <playername>{x
+
+The commands used by the Weirvane Mail System (WMS) are MAIL, CHECK, and
+RECEIVE.  These commands can only be used while in an Official WMS Post
+Office.
+
+To write mail to Quifael:
+> mail quifael
+
+To check and see if you have any mail waiting:
+> check
+
+To ask the Postmaser to give you your mail, if you have any waiting:
+> receive
+
+Stamps cost 150 coins.
+
+{CSee Also:{c -{x
+
+#
+@MAP
+@~
+
+{B-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-{x
+		            {WThe City of Weirvane{x
+{B-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-{x
+
+      N                                 NG         
+      |				         +	
+   W--+--E  		                 |                   
+      |	  	             +--+--+--+--+--+--+--+
+      S			     |           |        | 	   
+      			     +           +        +
+  			     |           |        |         
+        	             +           +        +--+       
+	                     |	         |        BA |       
+		          +--+--+--+--+--+           +      
+        	          |              |           |       
+		          +              +           +       
+        	          |	         |	     |       
+                          +  	         +	     +--+    
+        	          | TG           |              |	 
+                 WG +--+--+--+--+--+--+--+--+--+--+--+--+EG
+	                  |  | MG        |        |     |
+-=- KEY -=-               +  +           + MA     +     +    
+ 	                  |  |           |        |     |    
+A  - Armor Shop           +  +--+--+--+--M--+--+--+  +--+    
+B  - Bank                 |     R  E     | PG        |       
+BA - Bakery               +     	 +           + 
+FG - Fighters' Guild      |              |           |
+G  - General Store        +              +           +--+
+MG - Mages' Guild         |     G  A     |  B  P  W     |
+MS - Map Shop             +  +--+--+--+--+--+--+--+     +
+PG - Priests' Guild       |	         |              |
+R  - Reception            +              +              +
+TG - Thieves' Guild       |              |              |
+E  - Emporium	          +--+--+--+--+--+--+--+--+--+--+
+NG - North Gate           |     FG       |    MS        |
+EG - East Gate            +--+           +        +--+--+  
+SG - South Gate		     |           |        |
+WG - West Gate		     +--+        +     +--+
+MA - Magic Shop                |        |     |   
+W  - Weapon Shop                +--+--+--+--+--+
+				         |
+				         +
+			                SG	
+
+#
+@MOTD
+@~
+
+{c- MOTD{x
+
+MOTD displays the message of the day, READ IT OFTEN! This is where
+you will be notified of changes that affect you.
+
+{CSee Also: {c-{x
+
+#
+@MULTIPLAYING
+@MP
+@~
+
+{c- MULTIPLAYING{x
+
+Multiplaying is defined by the playing of more than one character at any
+time by any one person, or the sharing of any character by two people.
+
+                
+       a)  	You MAY NOT have more than one character in the game at
+	    	any one time. THIS INCLUDES LINKDEAD CHARACTERS. You must rent 
+		out your second and any subsequent characters before you
+		bring on a new one.
+                
+            If you are caught, your corpse, complete with eq, will be
+            purged.
+
+		The only exception to this rule is stated below. 
+                
+    	b)    The only time that you can have more than one character in
+            the game is for the purpose of exchanging equipment
+            or gold between your characters. You MUST keep ALL of your
+            characters at the Reception at ALL TIMES. None of your
+            characters may leave this room.
+        
+            There are no exceptions to this rule.
+        
+      c)    You MAY NOT bring on another character to retrieve your 
+            corpse if you die. This includes renting, and bringing on
+            another character to relocate, summon, or locate objects
+		in your corpse.
+           
+      d)    You may not briefly log out one character, only to log on
+            another to assist your character or your group. This
+            includes picking locks, locating objects, summoning and
+            relocation. Your characters should be played as if they
+            have no connection to each other.
+        
+      e)    You MAY NOT cast any spells of any nature on another of    
+            your characters. The Reception is a !magic room for a
+            reason. This does not mean you can quickly move rooms to
+            cast a spell because you couldn't in Reception.
+                
+
+{CSee Also: {cPOLICY{x
+
+#
+@NEWBIES
+@NEW PLAYER
+@NEWBYS
+@STARTING
+@BEGINNING
+@~
+
+{c- NEWBIE{x
+
+Welcome to Shadowwind! Here is some basic information to help you get
+started in your MUD life.
+
+The number one most important thing for you to know as a newbie is that it is
+your responsibility to know the rules contained in the POLICY. You can view
+this POLICY by simply typing POLICY. You as a player will be judged by
+these rules and guidlines. Since changes are made from time to time, you
+should review it fairly often.
+
+{C-{x Type {WINV{x to see your inventory, you will have been given a newbie
+kit at level 1. Type {WWEAR ALL{x to wear your newbie kit.
+
+{C-{x If you die at level 1, you will be re-equipped with another newbie
+kit when you enter the game. 
+
+{C-{x To see the help file index, type {WHELP{x or {W?{x
+{C-{x Some other information of interest is found by typing {WTOGGLE{x
+
+{C-{x A list of commands available to you, is displayed by typing {WCOMMANDS{x 
+{C-{x A list of socials is displayed by typing {WSOCIALS{x
+
+{C-{x Spell casting classes, please read {WHELP CASTING{x, it will provide 
+you with valuable information on how to successfully play your character.
+
+{C-{x To start on your journey in this land, you may wish to visit the city
+park, located west of the Middle Market Square, here you will find many
+low level creatures.
+
+{C-{x Another good place to begin your travels, is out the east gate of
+Weirvane, just a few rooms south and west of the Turning Point, there is
+a small fishing hole, teeming with life to be stamped out ;-)
+
+{C-{x To see a map of Weirvane, see {WHELP MAP{x. (Caravan Road is the main
+road running north - south through the center of the city, so if you get
+lost, just walk round until you find Caravan Road)
+
+{C-{x After a while, you may wish to check your progress to the next level, to
+do this, type {WEXP{x, and you will get a rough indication or your status.
+
+{C-{x If at any time you wish to contact a member of the administration,
+please use the {WPETITION{x channel. PETITION is heard by all admin online,
+however  please be patient waiting for a response, as they may be busy 
+attending to other things.
+
+{C-{x If you are totally new to MUDs, we suggest you take a look at this
+website, it provides some very good information for Newbies :)
+    
+          http://www.mudconnect.com/mud_connect.html 
+
+Shadowwind is set in a different time, and a different place.  It is set in
+the time of mighty warriors, powerful mages, cunning thieves, and benevolent
+clerics.  It is a world of magic where your deeds can impact the lives of
+others and where you can change the world.
+
+Mail comments, and suggestions to swadmin@shadowwind.org
+
+#
+@NORTH
+@SOUTH
+@EAST
+@WEST
+@UP
+@DOWN
+@DIRECTIONS
+@~
+
+To move in a given direction.
+
+>north
+>south
+>east
+>west
+>up
+>down
+
+{CSee Also:{c EXITS, ENTER, LEAVE{x
+
+#
+@OPEN
+@CLOSE
+@LOCK
+@UNLOCK
+@~
+
+{cUsage: {w<open | close | lock | unlock> <door> [direction]{x
+
+To open, close, lock, and unlock doors, of course.
+
+> open window
+> lock door
+> unlock door south
+> close gate
+
+{CSee Also:{c EXITS{x
+
+#
+@ORDER
+@~
+
+{c- ORDER{x
+
+{cUsage:  {worder followers <command>{x
+
+Used for ordering pets and charmed mobs to do your evil bidding.  You
+can order everyone under your command with order followers.
+
+> ord fol assist murtok
+> ord fol rescue murtok
+
+If your pet is not responding, check that they, like you, have a lightsource.
+ 
+{CSee Also:{c-{x
+
+#
+@PLAYER KILLING
+@PK
+@PKILL
+@PLAYERKILL
+@PLAYERKILLING
+@MURDER
+@~
+
+{c- PLAYER KILLING{x
+
+There is NO player-killing on Shadowwind at this time. Attempting to
+do so will be met with swift and harsh treatment from the administration.
+
+Please type: POLICY to read the few rules we insist on.
+
+{CSee Also: {cPLAYER STEALING, POLICY{x
+
+#
+@PLAYER STEALING
+@PLAYER THEFT
+@PT
+@PLAYERSTEALING
+@PLAYERTHEFT
+@PSTEAL
+@~
+
+{x- PLAYER STEALING{x
+
+There is NO player-stealing on Shadowwind at this time. Any attempt to do
+so will be met with swift and harsh treatment from the administration.
+
+Please type: POLICY to read the few rules we insist on.
+
+{CSee Also: {cPLAYER KILLING, POLICY{x
+
+#
+@POUR
+@EMPTY
+@~
+
+{c- POUR{x
+
+If you want to pour some liquid from one container to another. Also can be
+used to empty a container.
+
+> pour canteen cup
+> pour canteen out
+
+{CSee Also:{c FILL{x
+
+#
+@PRACTICE
+@LEARN
+@IMPROVE
+@TRAIN
+@~
+
+{c- PRACTICE{x
+
+{cUsage: {wpractice <skillname>{x
+
+Practice is the way you improve your spells and skills. You must go to
+your guildmaster to let him/her help you improve. Your maximum proficiency
+in a skill is set for you, dependant on your level. When you gain a level,
+the amount you can learn a particular skill, increases. We do not use the
+"practice sessions" system on Shadowwind, however, the more you use a 
+skill, the more proficient you will become in it.
+
+Example: prac 1h bludgeon  -or-  prac 1h b
+
+To see a list of your skills and spells, type: PRACTICE
+
+For a detailed entry on spell casting, see HELP CASTING.
+
+{CSee Also:{c GUILD, PRACTICE, CASTING{x
+
+#
+@PUT
+@~
+
+{c- PUT{x
+
+For putting items into containers.
+
+> put bread bag
+> put all.bread bag
+> put all chest
+
+{CSee Also:{c GET{x
+
+#
+@PRAY
+@PETITION
+@SPEAK
+@~
+
+{c- PETITION{x
+
+{cUsage: {wpray <string>
+	   petition <string>{x
+          
+The Pray/Petition channels are the only way in which you should seek
+to communicate with the Administration of Shadowwind.  If you have a
+problem while you are online, use these channels only, do not use
+the other communication channels, they were created for other functions.
+
+The channels Petition and Pray show to all immortals that are online,
+it does not show to any other mortals playing the game, and any responce
+given to you via these channels is also seen only by you, and all of 
+the immortals online.  If you do not get an answer from anyone, 
+mostlikely there are no immortals online, or, they are busy doing
+something else. =)
+
+Note: Both PRAY and PETITION are the same channel, for the same 
+purpose. We implemented PETITION as an alternative for those players 
+who have personal reasons for not wanting to use PRAY in this manner.
+
+{CSee Also: {c COMMUNICATION{x
+
+#
+@QUAFF
+@POTIONS
+@~
+
+{c- QUAFF{x
+
+{cUsage: {cquaff <Potion>{x
+
+Quaff is used to drink a (magical) potion.
+
+{CSee Also:{c -{x
+
+#
+@QUESTING
+@QUESTS
+@~
+
+{c- QUESTS{x
+
+A few random mobiles in the game control quests for mortals. In order to
+find out which mobs these are, you must ask the mobiles questions, and see
+if they respond to you. Quests will vary greatly in difficulty, as will the
+rewards you will get for them. The lesson here is, keep an open mind and open
+eyes, you never know what you may get out of it ;-)
+
+{CSee Also:{c -{x
+
+#
+@QUIT
+@LOGOFF
+@LOGOUT
+@~
+
+{c- QUIT{x
+
+When you get tired of playing, you can leave the game by typing 'quit'.
+Note that quitting this way causes any items you might be carrying to
+simply be left on the ground.  If you wish to have your equipment stored,
+you'll have to find an inn and RENT or CAMP. There will be NO reimbursement
+if you accidentally type quit and do not find your equipement.
+
+{CSee Also:{c INN, CAMP, RENT{x
+
+#
+@READ
+@~
+
+{c-READ{x
+
+When you want to read something.
+
+READ is also used to read messages on bulletin boards; type HELP BOARDS
+for more information.
+
+> read note
+
+{CSee Also:{c BOARDS{x
+
+#
+@RECITE
+@SCROLLS
+@~
+
+{c- RECITE{x
+
+{cUsage: recite <scroll> <target>{x
+
+Is used to read a magical scroll. Target can be an object, character or
+nothing (which may be yourself).
+
+{CSee Also:{c -{x
+
+#
+@REPEAT
+@~
+
+{c- REPEAT{x
+
+{cUsage:{w toggle repeat{x
+
+REPEAT toggles the repeat function of your terminal. With repeat toggled
+OFF, you will not see an echo of text you send to the MUD.
+
+> say hi there.
+You say, 'hi there.'
+
+> tog repeat  (turned repeat function OFF)
+> say hi there.
+Okay.
+
+{CSee Also: {cCOMPACT, TOGGLE{x
+
+#
+@REMOVE
+@~
+
+{c- REMOVE{x
+
+If you tire of wearing some armor or wielding a weapon.
+
+> remove boots
+> remove sword
+> remove all
+> remove all.bronze
+
+{CSee Also: {cWEAR, WIELD{x
+
+#
+@REPLY
+@~
+
+{c- REPLY{x
+
+{cUsage: reply <message>{x
+
+This enables you to reply to the last person who used tell to speak to you.
+This works even if the person is invisible or you are in the dark.
+
+{CSee Also:{cTELL{x
+
+#
+@REPORT
+@~
+
+{c- REPORT{x
+
+This command sends a report of your current and max hp and mana to your
+group.  You can use this command to let potential rescuers know how
+low your hps are without forcing them to use the group command.  It is
+designed as a convenience for groups with members who get lag or have slow
+modems.
+
+> report
+> report group
+  You tell the group, 'I have: 442/442H, 100/100M, 187/187V'
+> report marguk
+  You tell Marguk, 'I have: 442/442H, 100/100M, 187/187V'
+
+{CSee Also:{c GROUP{x
+
+#
+@SACRIFICE
+@~
+
+{c- SACRIFICE{x
+
+{cUsage: sacrifice <target>{x
+
+Target has to be a corpse. Sacrifice removes all equpiment and money from
+the corpse and leaves it on the ground, and then sacrifices the corpse to
+the gods.
+
+{WNOTE: Player corpses cannot be sacrificed.{x
+
+{CSee Also:{cCONSENT{x
+
+#
+@SAVE
+@~
+
+{x- SAVE{x
+
+Save your persona.  This includes experience points, strength, gold, etc.
+Your equipment is also saved in the (unlikely?) event of a crash.  The
+game periodically auto-saves you and your equipment, so it is not necessary
+to have your client auto-save you as well.
+
+You CANNOT load a saved version if you die -- your persona still exists,
+but you will lose experience, and all your objects stay in the game, with
+your corpse.
+
+Note that the SAVE command only saves your equipment in the event of a
+crash.  If you are leaving the game normally, SAVE will NOT save your
+equipment -- you must find an Inn to store your belongings, or camp in a 
+safe place outside of a town
+
+> save
+
+{CSee Also:{c INN, RENT, CAMP{x
+
+#
+@TALK
+@SAY
+@TELL
+@ASK
+@WHISPER
+@'
+@~
+
+{c- SAY, TELL, ASK{x
+
+If you consider communicating with other beings, you might be understood
+better if you start your sentences with either say, tell or whisper.
+
+<say> <string>
+<tell | whisper | ask> <player> <string>
+
+> say Hey, does anyone know how to get to Oz?
+> tell uncle hi, how are you?
+> ask mayor can i help you?
+
+You can use ' as a shorthand for say, as in: ' hello there.
+
+TOGGLE TELL makes you deaf to the tell channel. You cannot send, nor can you
+receive any tells. A good command if you wish to be left alone to explore
+in peace for a while.
+
+{CSee Also:{cCHAT, GSAY, REPEAT, TOGGLE, SHOUT{x
+
+#
+@NOTELL
+@~
+
+{c- NOTELL{x
+
+NOTELL makes you deaf to the tell channel. You cannot send, nor can you
+receive any tells. A good command if you wish to be left alone to explore
+in peace for a while.
+
+{CSee Also: {cTELL TOGGLE{x
+
+#
+@SCORE
+@ATT
+@STAT
+@~
+
+{c- SCORE{x
+
+Whenever you want to check whether you're still alive and healthy
+or simply want to see how much money you have left.
+
+Other useful information is also found in STAT.
+
+{CSee Also:{c STATS{x
+
+#
+@SELL
+@~
+
+{c- SELL{x
+
+If you'd like to sell an item to a shopkeeper, trying selling it to them.
+Most shops specialize in what they will buy, so you may have to look around
+to find a buyer for your items.
+
+Examples:
+
+> sell sword       (sell the first sword in your inventory)
+> sell 3 sword     (sell the first three swords in your inventory)
+
+{CSee Also:{c SHOPS, BUY, LIST, VALUE{x
+
+#
+@SKILLS
+@ABILITIES
+@~
+
+{c- SKILLS{x
+
+Each class has skills specifically assigned to them. To see a list of the
+skills and spells that are currently available to your character, type
+SKILLS.
+
+Skills and spells are not assigned each level, but in 'circles'. See HELP
+CIRCLES to see what levels you get new spells and skills.
+
+{CSee Also: {cPRACTICE, SPELLS{x
+
+#
+@SHOPS
+@~
+
+{c- SHOPS{x
+
+Shops are places where the adventurer may purchase equipment for his quests,
+and where he may sell his treasure if he should manage to survive the perils
+with his life and sanity intact. Many shops trade only in a specific type of
+merchandise. Thus, a baker may well refuse to buy your armor, even if it is of
+high quality!
+
+To some people, the prospect of obtaining the entire inventory of a
+shop by murdering the keeper may appear tempting - but beware: The
+shopkeepers are often rugged, capable people, roughened by years of
+trading and, indeed, surviving in a world where the only safe prospect is
+death in the end. 
+
+{CSee Also:{cBUY, SELL, LIST, VALUE{x
+
+#
+@SOCIALS
+@~
+
+{c- SOCIALS{x
+
+Socials are commands used to show your affective state to others.  The
+actor, victim and bystanders may receive different messages.  Generally,
+social commands are used only to express emotion, but it is possible that
+some mobs (or players) will take action based on the social.
+
+<social> <victim>
+
+> shake homer
+> applaud marge
+> stare
+
+The SOCIALS command generates a canonical listing of all available socials.
+
+> socials
+
+{CSee Also:{cEMOTE{x
+
+#
+@SPLIT
+@~
+
+{c- SPLIT{x
+
+{cUsage:  split <amount to split> <coin type>{x
+
+SPLIT is used to split money among people in your group who are in the same
+room as you.  If you are in a group with 4 other people, all of whom are in
+the same room with you, and you type SPLIT 100 silver, you will give each
+of the other 4 group members 20 silver coins each.  (100 coins is split 5
+ways; you keep your share and give everyone else their share).
+
+{CSee Also:{c GROUP, FOLLOW, AUTOSPLIT{x
+
+#
+@STATS
+@WISDOM
+@INTELLIGENCE
+@AGILITY
+@CONSTITUTION
+@STRENGTH
+@DEXTERITY
+@~
+
+{- ATTRIBUTES{x
+
+Your character's stats help determine how healthy you are, how much
+you can learn, how well you fight and how well you can avoid being hit
+in a fight. Obviously the higher the stat, the better. Each race and
+class has advantages in some stats and disadvantages in others. This
+is why some races are limited in choices of professions.
+
+Stats are randomly rolled when your character is created. Stats can
+be increased or decreased through the use of certain objects and
+spells. Discovering which objects and spells are helpful and which
+are harmful is part of the game and will not be discussed here. 
+
+You will not see your stats in numbers for some time. With increasing
+level, you will be able to see your character attributes more clearly.
+
+Without going into coding details this is a brief rundown of what each
+stat effects:
+
+{CSTR (strength)     : {w STR effects your attack speed (how fast you
+                     attack in a fight), the amount of objects you can
+                     carry and your hitroll.
+
+{CCON (Constitution) : {w CON effects the number of hitpoints you gain each
+                     time you level.
+
+{CWIS (Wisdom)       : {w WIS is important for CLERIC type classes, and will
+                     affect your casting times and success at casting.
+
+{CINT (Intelligence) : {w INT is important for MAGE type classes, and will
+                     affect your casting times and success at casting.
+
+{CDEX (Dexterity)    : {wDEX effects your defensive ability.  A higher DEX
+                     makes it harder for a mob to hit you in a fight.
+
+{CAGI (Agility)      : {w Affects your natural ARMOR CLASS. A higher AGI means
+                     a better AC.
+
+{CSee Also:{c SCORE{x
+
+#
+@TIME
+@~
+
+{c- TIME{x
+
+Gives you the current game time.  Your initial reaction to the output of
+this command may be one of surprise, but you'll get used to it.  You'll
+have to, at any rate, since certain things in the game depend on this
+particular notion of time; the opening hours of the shops, for example.
+TIME also displays when the game was booted and calculates how long ago
+that was.
+
+{CSee Also:{c REBOOT{x
+
+#
+@TOGGLE
+@CONFIGURATION
+@~
+
+{c- TOGGLE{x
+
+      {cUsage: {wtoggle <value>{x
+             {wtoggle{x
+
+TOGGLE shows you the current values of various toggles available on the MUD.
+This command can be used to change these values, and toggle values off and
+on. All of these toggles remain the same until you change them; i.e. they
+are saved when you quit or rent.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+Hit Pnt Display: OFF       Move Display: OFF       Mana Display: OFF
+  Tankname disp: OFF      Tankcond disp: OFF     Enemyname disp: OFF
+ Enemycond disp: OFF                AFK: OFF
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+     Brief Mode: OFF       Compact Mode: OFF             NoTell: OFF
+   Repeat Comm.: ON      Auto Show Exit: ON          Wimp Level: OFF
+      Auto-loot: ON          Auto-split: OFF          Auto-gold: OFF
+   Chat Channel: ON       Shout Channel: ON         Color Level: complete  
+     Whois info: ON           Num lines: 24         Num columns: 80 
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+The top panel is information on your prompt (display). See HELP DISPLAY
+for more information.
+
+See a specific topic for more information, for example: help compact
+
+{CSee Also: {c BRIEF, COMPACT, REPEAT, WIMP{x
+
+#
+@LINES
+@PAGELENGTH
+@NUM LINES
+@~
+
+{c- PAGE LENGTH{x
+
+{cUsage: {wtog lines <value>{x
+
+TOG LINES will set the number of lines displayed to your terminal for
+paged output (such as NEWS). If you are unsure what length your terminal
+is, 24 is a standard amount.
+
+> tog lines 24
+
+{CSee Also: {cTOGGLE{x
+
+#
+@UNGROUP
+@~
+
+{c- UNGROUP{x
+
+UNGROUP can be used by group leaders to disband the entire group, or
+to kick a specific group member out of the group (and stop him/her from
+following the leader).
+
+> ungroup
+> ungroup homer
+
+{CSee Also: {cGROUP{x
+
+#
+@USE
+@STAFFS
+@WANDS
+@~
+
+{c- WANDS, STAVES{x
+
+{cUsage : use <staff>
+        use <wand> <target>{x
+
+Using staff's will automatically target everybody (or everything) in a
+room, execpt yourself. Therefore staff's are naturally very powerful, and
+yet may be very dangerous to use around other players.
+
+Using wands require that you point it at a target, which can be either a
+character or an object.
+
+Both staff's and wand's must be HELD in the hand prior to use! (Use the
+grab or hold commands). You must still supply the name of the staff or
+wand to avoid confusion.
+
+{CSee Also: {c -{x
+
+#
+@VALUE
+@~
+
+{c- VALUE{x
+
+Before selling an item to a shop, you can ask the shopkeeper how much
+he or she is willing to pay for it.
+
+Example:
+
+> value bread
+
+{CSee Also: {cSHOPS, BUY, SELL, LIST{x
+
+#
+@VISIBLE
+@~
+
+{x- VISIBLE{x
+
+Use this command to break your spell of invisibility before it expires.
+
+{CSee Also: {cINVISIBILITY{x
+
+#
+@WAKE
+@SLEEPING
+@RESTING
+@SITING
+@STANDING
+@~
+
+{c- WAKE, SLEEP, REST, STAND, SIT{x
+
+For changing your position.  If you feel weary, it's probably a good idea
+to sit and rest for a while, or maybe even take a nap.
+
+{CSee Also:{c-{x
+
+#
+@WHOAMI
+@~
+
+{x- WHOAMI{x
+
+Incase you forget....
+
+{CSee Also: {c-{x
+
+#
+@WEAR
+@~
+
+{c- WEAR{x
+
+If you want to wear some clothes, armor or the likes.
+
+Also, to wear everything in your inventory (or at least try to, as wearing
+things like loaves of bread is not a good way to win friends and influence
+people) you can type wear all.
+
+Optionally, you can specify what part of your body to wear the equipment on.
+
+> wear boots
+> wear all.bronze
+> wear all
+> wear ring finger
+
+{CSee Also: {cEQUIPMENT, REMOVE, WIELD{x
+
+#
+@WEATHER
+@~
+
+{c- WEATHER{x
+
+If you're uncertain whether the sun is shining or the rain is pouring down.
+
+{CSee Also: {c CONTROL WEATHER{x
+
+#
+@WHO
+@~
+
+{c- WHO{x
+
+Lists the people currently in the game.  Some people may be invisible.
+Command-line options can be used to limit the listing.  The parameters
+can be specified on the command-line in any order.
+
+{cwho <[minlev[-maxlev] [gods] [race] [class] [name]>{x
+
+minlev, maxlev : list only people whose level is at or above minlev, and
+                 optionally, at or below maxlev.
+gods           : shows those players online who are above level 50.
+race           : shows those players of the race that you specify.
+class          : shows those players online of the class that you specify.
+name           : shows the entry for a specific player.
+
+> who 10 -20 troll warrior
+
+Will give you a listing of all troll warriors, whose level is between
+10 and 20. 
+
+{CSee Also: {cWHOIS, FLAGS{x
+
+#
+@WHOIS
+@~
+
+{c- WHOIS{x
+
+{cUsage: {wtog whois | whois <playername>{x
+
+This command will let you give out information about your character and
+your site. WHOIS also lets you see other players information. 
+
+> tog whois
+WHOIS information is no longer visible.
+
+> whois murtuk
+Murtuk is a male level-35 Troll Warrior.
+
+{CSee Also: {cTOGGLE{x
+
+#
+@WIELD
+@~
+
+{c- WIELD{x
+
+When you get tired of bashing monsters with your fists, you might consider
+wielding a weapon.
+
+> wield sword
+
+{CSee Also: {cEQUIPMENT, REMOVE, WEAR{x
+
+#
+@WIMPY
+@~
+
+{c- WIMPY{x
+
+{cUsage: {wtog wimpy <value>{x
+
+Use the WIMP command to automatically wimp out of a fight.
+
+TOG WIMP 35 will make your character automatically flee a fight if he/she
+            has less than 35 hit points.
+		
+TOG WIMP 0  will turn off wimpy mode.
+
+TOG WIMP    will show you your current wimp status.
+
+{CSee Also: {cTOGGLE{x
+
+#
+@WRITE
+@~
+
+{c- WRITE{x
+
+In order to write a note, you need a piece of blank paper (or similar), and
+a pen of some sort. You can then type something like write on the paper with
+the pen, whereupon you'll be asked to type in your note at the keyboard.
+
+WRITE is also used to post messages to bulletin boards.  Type HELP BOARDS
+for more information.
+
+{CSee Also: {cBOARDS, MAIL{x
+
+#
+@TERMS
+@~
+
+{- TERMS{x
+
+For a list of all commands, type: COMMANDS
+For a list of all socials, type: SOCIALS
+To view the HELP index, type: HELP
+
+{CSee Also: {cCOMMANDS, SOCIALS, HELP{x
+
+#
+@SCAN
+@~
+
+{c- SCAN{x
+
+SCAN will show you all available exits in the room you are in.
+
+{CSee Also: {cSCOUT{x
+
+#
+@ZONES
+@~
+
+{c- ZONES{x
+
+To see a list of areas, their builders and approximate level range, see CREDITS.
+
+{CSee Also: {cCREDITS{x
+
+#
+@CIRCLEMUD
+@~
+{B                    C  I  R  C  L  E  M  U  D     3  .  0{x
+
+CircleMUD was developed from DikuMUD (Gamma 0.0) by Jeremy Ras Elson at
+Johns Hopkins University's Department of Computer Science.  All code unique
+to CircleMUD is protected under a copyright by the Trustees of the Johns
+Hopkins University.
+
+Many, many people contributed to CircleMUD in one way or another throughout
+the course of its development.  Although it's impossible for me to remember
+them all, I'd like to extend special thanks to certain people:
+
+  -- Jeff Fink, for submitting a veritable mountain of excellent code.
+  -- Fred Merkel, Ryan Watkins, Jay Levino, and Sharon Goza, for other
+     code and area submissions.
+  -- Danny Baker, for single-handedly managing Circle's world files.
+  -- Brett Turner, for managing the CircleMUD Mailing List.
+  -- Bryan Jolson, Steven Lacher, Cat Stanton, and Naved Surve, for being
+     there in the very early days of Circle's development.
+  -- Jean-Jack Riethoven, for porting the code to the Amiga.
+  -- Bill Bogstad and Tim Stearns, for allowing Circle to exist.
+  -- The DikuMUD folk, and the good old WhatMUD implementors Dave & Justin,
+     for starting the ball rolling.
+  -- And, of course, Ben, Erica, Aly, and Josh, for keeping me sane.
+
+...plus everyone else in the Circle community who has submitted material!
+Thanks everyone!
+
+  Anoymous FTP:  ftp.cs.jhu.edu:pub/CircleMUD
+Author's Email:  jelson@cs.jhu.edu
+           URL:  http://www.cs.jhu.edu/other/jelson/circle.html
+           URL:  http://www.circlemud.org
+  Mailing List:  circle@cspo.queensu.ca
+
+{CNote: For the file on skill/spell circles, see HELP SKILL_CIRCLE{x
+#~

@@ -1,0 +1,63 @@
+#4100
+blade black demon~
+{wa {Dblack {rdemon {xblade~
+A black demon blade is here, radiating evil.~
+~
+5 jl an 0 
+2 3 5 1 9
+8 10000 0
+E
+blade~
+You'll become as evil as the weapon, if you use it!
+~
+#4101
+gloves swordmans gloves~
+a pair of swordmans' gloves~
+A pair of finely crafted gloves are lying on the ground here.~
+~
+9 j ah j 
+2 2 0 0 3
+1 9500 100
+E
+gloves~
+They look like the right kind of equipment to use when fighting.
+~
+A
+18 2
+A
+19 1
+#4102
+scroll ysafg~
+a scroll which reads "ysafg"~
+A scroll which reads "ysafg", it looks very fragile and quite old.~
+~
+2 g a 0 
+50 64 0 0 19
+1 1500 1000
+E
+scroll~
+It looks informative.
+~
+P
+identify
+#4103
+slime mold~
+{Ga green slime mold{x~
+A green slime mold is here, stinking.~
+~
+19 0 a 0 
+24 0 0 1 2
+1 20 0
+E
+smile mold~
+It wasn't meant to be food -- at least, certainly not for humans.
+~
+#4110
+unfinished object~
+an unfinished object~
+An unfinished object is lying here.~
+~
+0 0 a 0 
+0 0 0 0 0
+0 0 0
+$~

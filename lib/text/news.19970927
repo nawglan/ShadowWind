@@ -1,0 +1,457 @@
+{W**** {Y03{W-{Y25{W-{Y97 {W*
+{W+ {c New who format.
+{W/ {c Cleaned up some of the spells stuff.
+
+{W**** {Y03{W-{Y24{W-{Y97 {W*
+{W/ {c Fixed bug in stat file <player>
+{W/ {c Cleaned up the do_stats function.
+{W/ {c Cleaned up a couple of spell functions.
+{W+ {c Added beginnings of alignment/hometowns to char generation.
+       (at this time you shouldn't notice anything different.)
+
+{W**** {Y03{W-{Y22{W-{Y97 {W*
+{W+ {c Spells are now read from a flat text file.
+{W+ {c Player files are now stored as a flat text file.
+{W/ {c Whoset is now longer. Poofin/poofout are now emotes.
+{W/ {c Fixed the infamous namecolor bug.
+{W+ {c New command for admin:  show connections. (may still be buggy).
+{W+ {c New command for admin:  config.
+{W/ {c Fixed the last of the array bounds reads/writes.
+{W+ {c Worn Equipment now affects char weight. (didn't before).
+{W/ {c No longer limited to 326 zones.
+{W- {c Removed recall command.
+{W/ {c All files are only opened when needed. No global file variables.
+
+{W**** {Y03{W-{Y21{W-{Y97 {W*
+{W! {cAdded the basic infrastructure of the world, 58 zones, not aligned yet.
+
+{W**** {Y02{W-{Y10{W-{Y97 {W*
+{W+ {cAdded an object based transport system for vehicles.
+{W/ {cChanged skill learning system around.
+{W/ {cFixed wield.
+{W+ {cAdded a learning by use for skills.
+{W/ {cFinished character generation.
+
+{W**** {Y02{W-{Y09{W-{Y97 {W*
+{W/ {cReorganized spells for the classes.
+{W+ {cAdded events for the spells... (delay) no instantaneous spells...
+{W/ {cChanged the way spells are done in the code... (no user impact)
+
+{W**** {Y01{W-{Y20{W-{Y97 {W*
+{W/ {cRearranged score and stats, adding text system for armor class.
+
+{W**** {Y01{W-{Y07{W-{Y97 {W*
+{W+ {cNew commands: copyto and dig. (aids in room creation).
+{W/ {c2 levels of brief now: brief and brief 2. (try them and see).
+
+{W**** {Y01{W-{Y04{W-{Y97 {W*
+{W/ {cImmortals are no longer blocked by guild guards.
+
+{W**** {Y01{W-{Y01{W-{Y97 {W*
+{W/ {cPlayer data files are now saved in same fashion as plrobjs.
+{W/ {cChanged spell system around... havta fix spells by hand later.
+{W/ {cFixed lots of "slow" spots in the code.
+{W! {cPlayer wipe.
+
+{W**** {Y12{W-{Y22{W-{Y96 {W*
+{W/ {cFixed the hostnames getting truncated in last and ident.c.
+{W/ {cChanged zone errors to display args too.
+{W/ {cChanged logging of -1 rnums for mobeq when booting to show vnum as well.
+
+{W**** {Y12{W-{Y17{W-{Y96 {W*
+{W+ {cAdded xname command: adds words/names to xname list.
+{W/ {cWhere now shows Id numbers for PCs.
+{W- {cTook out marry/divorce _again_.
+
+{W**** {Y12{W-{Y14{W-{Y96 {W*
+{W/ {cFixed a small bug with the help command.
+
+{W**** {Y12{W-{Y13{W-{Y96 {W*
+{W+ {cAdded seperate help for immo commands (wizhelp <command>)
+{W/ {cFixed help commands (help <command>)
+
+{W**** {Y12{W-{Y06{W-{Y96 {W*
+{W+ {cAdded stacked items to reduce spam.
+{W+ {cAdded some functionality to last command.
+{W/ {cFixed autoloot/autogold/autosplit.
+{W/ {cFixed small bug when loading socials.
+{W/ {cFixed small bug when loading equipment on mobs during bootup.
+{W/ {cSet the length of hosts provided by ident to 23 chars in users list.
+{W/ {cAssassins can no longer see inventories.
+{W/ {cThieves/Rogues can see inventories of those of equal or lesser levels.
+
+{W**** {Y12{W-{Y05{W-{Y96 {W*
+{W+ {cAdded check to ensure that players cannot name themselves after mobs.
+
+{W**** {Y12{W-{Y03{W-{Y96 {W*
+{W/ {cFixed medit?
+
+{W**** {Y11{W-{Y06{W-{Y96 {W*
+{W+ {cAdded resists to medit.
+{W/ {cFixed superinvis? try it and lemme know.
+{W/ {cFixed reconnect.
+{W+ {cAdded resists to oedit.
+
+{W**** {Y10{W-{Y31{W-{Y96 {W*
+{W+ {cAdded a text editor for motd, etc.
+{W+ {cAdded some line editor features to the current editor.
+
+{W**** {Y10{W-{Y29{W-{Y96 {W*
+{W/ {cFixed a bug allowing anyone to "force all". Admin only now.
+{W/ {cFixed an old bug in corpse saving.
+
+{W**** {Y10{W-{Y25{W-{Y96 {W*
+{W+ {cAdded resistances to certain damage types to mobs and objects.
+
+{W**** {Y10{W-{Y24{W-{Y96 {W*
+{W+ {cAdded dual wield.
+{W+ {cAdded 1h slashing etc.
+{W+ {cAdded experience command to check your progress (anywhere/anytime).
+{W+ {cAdded saving throw values for Bards/Druids.
+{W+ {cAdded warning message for chat.
+{W- {cRemoved the display of experience points.
+{W/ {cChanged saving throw structures from 41 to 52 slots.
+{W/ {cFixed extra blank line after whisper, etc.
+{W/ {cFixed snoop, force (i think), advance (i think).
+
+{W**** {Y10{W-{Y22{W-{Y96 {W*
+{W/ {cFixed tunnel, medit mobprogs, superinvis.
+
+{W**** {Y10{W-{Y19{W-{Y96 {W*
+{W+ {cAdded color to motd's and menues.
+{W/ {cIdea, bug, typo, todo now limit input to 78 characters.
+{W/ {cEmote now limits input to 78 characters for non immos.
+
+{W**** {Y10{W-{Y18{W-{Y96 {W*
+{W+ {cAdded race bonuses to character creation.
+{W/ {cFixed unknown flag reports in stat command.
+{W/ {cCamp now has a 2 minute delay and checks to see if you are
+  in same room as where camp was initiated.
+{W/ {cAlso, immortals cannot camp (they don't need to).
+{W/ {cContainers are fixed again.
+{W/ {cSyslog is now partitioned according to the COM flags.
+
+{W**** {Y10{W-{Y17{W-{Y96 {W*
+{W- {cRemoved levels 52-57.
+{W/ {cGod commands are now given by flag only.
+{W+ {cAdded dual wield flags (not implemented yet).
+{W+ {cAdded prompt for ANSI (not implemented yet).
+
+{W**** {Y10{W-{Y09{W-{Y96 {W*
+{W+ {cAdded a command/event delay system for casting times, etc.
+
+{W**** {Y10{W-{Y08{W-{Y96 {W*
+{W/ {cMade SUPERINV (i51) actually work.
+{W/ {cMade containers work (again).
+{W/ {cMade mobprog option in medit work.
+{W+ {cAdded zone flag menu (for RESTRICTED and !TELEPORT).
+
+{W**** {Y10{W-{Y06{W-{Y96 {W*
+{W/ {cMade SUPERINV (i51) an option in medit.
+
+{W**** {Y10{W-{Y04{W-{Y96 {W*
+{W/ {cMobprogs now will trigger in an empty zone.
+{W/ {cPlayers can nolonger animate a player's corpse.
+{W/ {cOedit menues now display correctly.
+{W/ {cMedit menues now display correctly.
+{W/ {cChanged pcorpses to a item type was an extra setting on containers.
+{W+ {cAdded roomflag CRIMEOK (for future use only).
+{W+ {cAdded mobprog editing from within medit.
+
+{W**** {Y10{W-{Y01{W-{Y96 {W*
+{W/ {cMade quit and camp log to mudlog.
+{W/ {cMade rent work when free_rent is on.
+{W/ {cMade consent gender friendly.
+{W/ {cFixed newbie kit bug.
+{W+ {cAdded pk counter (viewable with stat).
+{W+ {cAdded mob balance info to medit.
+
+{W**** {Y9{W-{Y30{W-{Y96 {W*
+{W/ {cUpdated *SOME* of the damage messages.
+{W/ {cFixed a small bug in corpse saving.
+
+{W**** {Y9{W-{Y29{W-{Y96 {W*
+{W/ {cFixed consent bug that occasionally reported nobody.
+{W/ {cFixed redit exit stuff.
+{W/ {cFixed redit extra descript stuff.
+{W/ {cChanged limit on rooms a shop can be in from 100 to 9999.
+{W/ {cFixed the bug with medit attacks, and equipment.
+{W/ {cAll editors should log properly now.
+
+{W**** {Y9{W-{Y28{W-{Y96 {W*
+{W+ {cAdded FASTHEAL flag for rooms. It makes chars regen 2x faster.
+{W+ {cAdded dt and death counters for chars.
+{W+ {cAdded dt and death counters for show stats.
+{W/ {cWent from 3-18 attrbutes to 1-100.
+{W/ {cRemoved Charisma and added Agility.
+{W/ {cConverted all mobs and items in game to new attribute format.
+{W+ {cAdded basis for a Resistance/Vulnerability system.
+{W/ {cFixed a mem leak in aliases.
+{W/ {cFixed a small, rare mem leak in purge.
+{W+ {cAdded a WAIT_STATE on magic item use.
+{W/ {cFixed char_from_room() to stop any combat involving char being removed.
+{W/ {cShouts to zone 31 now echo into 30 and vice versa.
+{W+ {cAdded mobdeaf commands for immos who don't want to be spammed by mobs.
+{W+ {cAdded zone_echo() function for spec procs.
+
+{W**** {Y9{W-{Y23{W-{Y96 {W*
+{W/ {cFixed stat corpse, pcorpse, coin.
+{W/ {cMade editors save to disk automatically.
+{W+ {cMade it possible to assign extra movement loss to a exit.
+
+{W**** {Y9{W-{Y22{W-{Y96 {W*
+{W+ {cAdded medit a mob editor.
+{W+ {cAdded sedit a shop editor.
+{W+ {cAdded zedit a zone editor.
+{W+ {cAdded oedit a object editor.
+{W+ {cAdded redit a room editor.
+{W- {cRemoved the old redit.
+{W- {cRemoved the old iedit.
+
+{W**** {Y9{W-{Y21{W-{Y96 {W*
+{W- {cRemoved (invis) flag from who.
+{W- {cRemoved (deaf) flag from who.
+{W- {cRemoved (notell) flag from who.
+{W- {cRemoved (nochat) flag from who.
+{W/ {cChanged (AFK) flag to display in both who, and look.
+{W/ {cChanged (THIEF) flag to display in both who, and look.
+{W/ {cChanged (KILLER) flag to display in both who, and look.
+{W/ {cChanged (editing) flag to display in both who, and look.
+{W/ {cFixed flag colors so that they don't "bleed" over to another player.
+
+{W**** {Y9{W-{Y20{W-{Y96 {W*
+{W/ {cFixed all compile warnings.
+{W/ {cFixed a small bug in mptoggle.
+{W/ {cChanged "gossip" to "chat" and "nogossip" to "nochat".
+{W+ {cAdded "vnum type <obj type> to list objects by type.
+{W+ {cAdded (Charmed) flag that is visible when you do a "look".
+{W/ {cFixed the !backstab bug.
+
+{W**** {Y9{W-{Y19{W-{Y96 {W*
+{W+ {cAdded PC thaco to stat command.
+{W/ {cChanged Mplog/Mpdelay to check for PC's.
+{W+ {cAdded Illuminating flag for torches and other non perm lights.
+{W+ {cAdded spell Illuminate and spell darken.
+{W/ {cConsolidated date and uptime into the mortal command time.
+{W/ {cFixed eq duping bug in newbie creation process.
+{W+ {cAdded drag command.
+{W+ {cAdded random mazes and a IMPL command to redraw them.
+
+{W**** {Y9{W-{Y18{W-{Y96 {W*
+{W- {cremoved LIGHT place in PC equipment list.
+{W+ {cadded in ISLIGHT for perm lights.
+{W+ {cadded in (Illuminating) for items that are lights.
+{W/ {cchanges item affection so lights may now be worn, wielded or held.
+{W+ {cadded an affection thats can set mobs to be immo invis.
+{W+ {c"pray" command added to request info/speek with immo's.
+{W/ {cshout command modified - immo's see all shouts.
+
+{W**** {Y9{W-{Y17{W-{Y96 {W*
+{W+ {cAdded corpse saving. Tell me about any bugs please.
+{W+ {cAdded a pcorpse extra flag for pcorpses.
+{W/ {cChanged the way consent works. Tell me about any bugs.
+{W/ {cFixed the display of some syslog messages from wizinvis ppl.
+
+{W**** {Y9{W-{Y12{W-{Y96 {W*
+{W+ {cAdded ability to reconnect as a new player from menu.
+{W/ {cChanged citizen levels to show Weirvane.
+{W/ {cFixed users listing to correctly show OLC modes.
+{W/ {cChanged title and nocitizen commands to be level 51 and up only.
+{W/ {cChanged command listing to not show the mp* commands.
+
+{W**** {Y9{W-{Y11{W-{Y96 {W*
+{W+ {cAdded private corpses.
+{W+ {cAdded consent.
+{W/ {cPlayer corpses now last for 1 RL hour.
+{W/ {cAutosave is now every 3 minutes instead of 5.
+
+{W**** {Y9{W-{Y10{W-{Y96 {W*
+{W/ {cCorrected the pause/paging bug.
+{W+ {cAdded a pause to the commands and socials listing.
+{W+ {cAdded show ideas.
+{W+ {cAdded show typos.
+{W+ {cAdded show bugs.
+{W+ {cAdded nmotd.
+
+{W**** {Y9{W-{Y7{W-{Y96 {W*
+{W/ {cChanged Show Zone to display a pause.
+
+{W**** {Y9{W-{Y5{W-{Y96 {W*
+{W/ {cChanged level of editor logs so builders can see them.
+
+{W**** {Y9{W-{Y1{W-{Y96 {W*
+{W+ {cNew players are displayed a help section at first login.
+{W+ {cFile locking on zones being edited via OLC.
+
+{W**** {Y8{W-{Y31{W-{Y96 {W*
+{W+ {cAdded tickless regen.
+{W/ {cChanged mpforce to work on mobs above level 51.
+
+{W**** {Y8{W-{Y30{W-{Y96 {W*
+{W/ {cFixed the blank line being added after the long desc in medit
+{W/ {cFixed the missing numbers in the act/aff flags for medit
+{W/ {cFixed the bug causing the game to crash in medit when you tried to save
+
+{W**** {Y8{W-{Y29{W-{Y96 {W*
+{W- {cRemoved ability for PC's to tell to NPC's.
+{W+ {cAdded medit - OLC Mob Editor.
+
+{W**** {Y8{W-{Y28{W-{Y96 {W*
+{W+ {cdisconnect loged.
+{W+ {cwizlock loged.
+{W+ {cunaffect loged.
+{W+ {cAdded Ident hostname resolving.
+{W+ {cAdded some super secret stuff to player/mob files.
+{W/ {cPlayerfile wipe.
+
+{W**** {Y8{W-{Y27{W-{Y96 {W*
+{W+ {cStat now shows who or what room a mob is hunting.
+
+{W**** {Y8{W-{Y26{W-{Y96 {W*
+{W/ {cFixed a missing space in user command.
+{W/ {cChanged default colors on flags: writing, invis, hidden, linkless,
+    {cmailing, deaf, afk, quest, thief, killer, editing, nogoss, notell.
+{W- {cremoved all instances of Garathorm from the code.
+{W- {cremoved names representing gods that do not exits in this realm.
+{W+ {cAdded "mphuntrm <room #>" to make a mob walk to a room, 1stp/3sec.
+{W/ {cMobs can now track players out of their zones.
+{W/ {cFixed a bug with hitroll/damroll going below -127 or over 128.
+{W/ {cChanged how hunt works, mobs now hunt constantly, 1 step per 3sec.
+
+{W**** {Y8{W-{Y25{W-{Y96 {W*
+{W+ {cAdded mphunt <victim>.
+{W/ {cChanged default system colors.
+{W/ {cFixed whoset to allow for color.
+{W+ {cAdded exiting from editor message.
+{W+ {cCreated a immortal handbook.
+{W+ {cAdded a board of creation.
+
+{W**** {Y8{W-{Y24{W-{Y96 {W*
+{W/ {cDefault color change up. (not written in stone, opinions to board)
+{W/ {cFixed the flip social and removed rave/techno.
+{W/ {cAdded recall (vnum 152) to autorecall format.
+{W/ {cchanged mob damages to all lower case messages.
+
+{W**** {Y8{W-{Y22{W-{Y96 {W*
+{W+ {cCreated a cleanall program to remove Crtl-M's from world files, added
+  {cto start of autorun.
+
+{W**** {Y8{W-{Y21{W-{Y96 {W*
+{W+ {cAdded an extended color based system.
+
+{W**** {Y8{W-{Y20{W-{Y96 {W*
+{W/ {cChanged bulleting boards, moved all into same zone, fixed broken world
+  {cboard and created a new coder board.
+
+{W**** {Y8{W-{Y17{W-{Y96 {W*
+{W/ {cChanged assassin and thief backstab capabilities. Thief maxes at 4 and
+    {cassassin at 6.
+{W/ {cFixed mptoggle to show on or off.
+
+{W**** {Y8{W-{Y16{W-{Y96 {W*
+{W/ {cSet <mob> mptoggle will now toggle mobprogs on or off.  Rand_progs
+     {ccan not be toggled yet.
+{W/ {cAuction now checks bank and items in auction.
+{W+ {cAdded randomizer to %damage categories.
+{W/ {cdoubled max_string length from 8k to 16k.
+{W/ {cChanged pc damage messages, they now reflect the percentage
+    {cof the pc's MAX dam instead of actual damage. mobs stayed
+    {cthe same.
+{W/ {cThe damage() function now takes an extra parameter.
+
+{W**** {Y8{W-{Y15{W-{Y96 {W*
+{W/ {cChanged a bunch of dam messages until feedback comes in.
+{W/ {c"Where" no longer finds characters or mobs in !track rooms.
+{W+ {cMade keys !give to all mobs.
+{W+ {cAdded item type Insturment.
+{W+ {cshow_string adds \n past 78 char.
+{W+ {cAdded reload todo.
+{W/ {cchanged todo list to lvl 55+.
+{W/ {cchanged newbie gold to 10k.
+{W/ {cchanged stat to only show qic info to lvl 57.
+{W- {cremoved limitation on "give" in shops.
+
+{W**** {Y8{W-{Y14{W-{Y96 {W*
+{W+ {cCreated a portal spec_proc (Experimental)
+{W+ {cadded 6 option for logging in as another character.
+{W+ {cadded elementals will disipate if master logs off.
+{W/ {cfixed shutdown reboot.
+
+{W**** {Y8{W-{Y13{W-{Y96 {W*
+{W+ {cAdded transfer -g.
+{W/ {cChanged login/logout menu
+
+{W**** {Y8{W-{Y12{W-{Y96 {W*
+{W+ {cAdded timers to Elementals.
+{W+ {cAdded timers into mobs.
+{W/ {cChanged level STAYGOD from Avatar down to Immortal.
+{W/ {cSpec_procs now ignore sleep.
+{W+ {cAdded sing command for Bard.
+
+{W**** {Y8{W-{Y11{W-{Y96 {W*
+{W/ {cChanged names in junk statements.
+{W/ {cDruid and Bard tables were updated.
+{W+ {cBackground story completed.
+
+{W**** {Y8{W-{Y10{W-{Y96 {W*
+{W/ {cRebuilt the policy.
+{W/ {cChanged "help help" to reflect help a new user will need.
+{W/ {cChanged some more immortal command levels.
+{W/ {cChanged the name for our main hometown.
+
+{W**** {Y8{W-{Y9{W-{Y96 {W*
+{W+ {cAdded delete command in menu.
+{W/ {cFixed loadroom problem, previously thought to be a married problem.
+{W/ {cFixed mob progs so immorts can not force mobs to mpforce immorts.
+
+{W**** {Y8{W-{Y8{W-{Y96 {W*
+{W+ {cAdded Druid and Bard subclasses. (unfinished)
+{W+ {cAdded a new paremeter to wishelp, wizh ## will show specific commands
+  {cfor the level listed in ##.
+
+{W**** {Y8{W-{Y7{W-{Y96 {W*
+{W/ {cfixed spec_assign. inform coders when areas with spec are added. 
+{W+ {cadded autokit, autokits anyone who enters without PLR_KIT set.
+{W/ {cfixed set title Avatar now have set title, and notitle.
+{W/ {cChanged shutdown to show who is shutting down.
+
+{W**** {Y8{W-{Y6{W-{Y96 {W*
+{W/ {cset the kit command so even mortals can use it.
+{W/ {cChanged some of the wizh commands to various levels.
+{W/ {cadded zone 12 and 31 to complete special procedures for spells etc.
+{W+ {cadded command show todo.
+{W+ {cadded ability for todo to relaod its own file.
+{W+ {cadded in command todo.
+{W/ {cupdated autowiz.
+{W/ {cfixed kits, all items load from zone 30 now.
+
+{W**** {Y8{W-{Y5{W-{Y96 {W*
+{W/ {cfixed act.comm.c : 358 unused variable.
+{W/ {cfixed handler.c : 108 unused character buf.
+{W/ {cfixed mobact.c : 257 unused variable vict.
+{W/ {cfixed objsave.c : 1172 long int format, int arg (arg3).
+{W/ {cfixed spec_procs.c : 1718 unused variable sound_msg.
+{W/ {cfixed mobcmd.c : 909 passing arg 1 of istype make integer etc.
+{W/ {cfixed mobcmd.c : 902 unused variable min_char_level.
+{W/ {cfixed mobcmd.c : 901 unused variable min_char_level.
+{W/ {cfixed mobcmd.c : 900 unused variable min_char_level.
+{W/ {cfixed mobcmd.c : 897 unused variable security.
+{W/ {cUpdated text files with Shadow Wind: immlist wizlist and help_table.
+{W/ {cTook PT back out to think on it a while longer.
+{W/ {cChanged circle to shadowwind in Makefile and autorun.
+{W/ {cAdded Poison and remove poison back to fountain type objects.
+{W/ {cAdded self delete back in.
+{W/ {cAllowing PT for a time to see what happens.
+{W/ {cWizlist was updated so only admin is present.
+{W/ {cUpdated address book.
+{W/ {cCleaned out 12.wld and 12.obj.
+{W/ {cPLR_TOG_CHK fixed in interpreter.c.
+{W/ {cChanged some strings to represent english.
+{W/ {cChanged wishelp back to 5 column.
+{W/ {cMoved level to left side of wishelp.
+{W/ {cChanged wizhelp to 4 column removing some spam in windows.
+{W/ {cChanged login ASCii.
+{W/ {cChanged login welcome menu.
+{W/ {cFull player wipe.
+{W+ {cCreated a new admin.
+{W+ {cSplit from Another World with concent from Helver.

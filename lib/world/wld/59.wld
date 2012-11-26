@@ -1,0 +1,1915 @@
+#5901
+{yThe Eastern Viaduct{x~
+   All about this area, people are rushing around, trying to finalise last
+minute travel plans and locate lost family members. Every so often, a deep
+groan eminates from the enormous wooden structure beneath your feet. On
+either side of the viaduct, an expanse of deep green water gently laps
+against the piles. To both the west and east, you can see the enormous
+wharfs where the many ships that visit this port, dock for their stay.  
+~
+59 0 1
+D1
+~
+~
+0 0 5902 0
+D3
+~
+~
+0 0 3705 0
+S
+#5902
+{yThe Eastern Viaduct{x~
+   Millons of small barnacles have made their home on the wooden planks of
+the viaduct. Strangly, they fulfil the function of providing some traction
+on the otherwise slippery walkway. Large dock workers stride past your
+purposefully, some carrying large crates on their shoulders others lugging
+huge coils of rope. To your north, you see a small building that is the
+ticket office.  
+~
+59 0 1
+D0
+~
+door~
+1 0 5904 0
+D1
+~
+~
+0 0 5903 0
+D3
+~
+~
+0 0 5901 0
+S
+#5903
+{yThe Eastern Viaduct{x~
+   All about this area, people are rushing around, trying to get finalise
+last minute travel plans and locate lost family members. Every so often, a
+deep groan eminates from the enormous wooden structure beneath your feet. 
+On either side of the viaduct, an expanse of deep green water gently laps
+against the piles. To both the west and east, you can see the enormous
+wharfs where the many ships that visit this port, dock for their stay.  
+~
+59 0 1
+D1
+~
+~
+0 0 5906 0
+D3
+~
+~
+0 0 5902 0
+S
+#5904
+{yThe Ticket Office{x~
+   By the unusual looks of the bare floorboards and ceiling beams in this
+small office, it appears as though it has been constructed of some of the
+many types of wood that have been washed ashore over the years. Bright
+posters and advertisements have been attached to every spare inch of wall
+space, all depicting the glories of the many destinations this port
+services.  
+~
+59 e 0
+D2
+~
+door~
+1 0 5902 0
+S
+#5905
+{cOn The Shoreline{x~
+   {wThe rocks here are large, but not large enough to make quick movement
+safe. Covered in a damp mist, the rocks have been covered in a dangerously
+slippery green slime. Offshore, large albatross' circle in the air, hovering
+above schools of fish that have come to the surface. Every so often, a loud
+squawk can be heard when a black-backed gull dares to venture toward the
+albatross' prey. {x
+~
+59 0 1
+D3
+~
+~
+0 0 5999 0
+S
+#5906
+{yThe Centre Of The Docks{x~
+   Large cargo crates stand piled in uniform rows, waiting for the cargo
+dispatcher to call the load for each ship. Each crate with a white cardboard
+tag tied to one handle, detailing both its port of origin and final
+destination. Coils of rope, discarded fishing tackle, and many other piles
+of marine equiptment litter this area. Families huddle together, trying not
+to become seperated in the hustle and bustle. To the north and south, a wide
+walkway extends into the distance, small sheds are visible on the eastern
+side of the docks. Leading westward, the Eastern Viaduct leads back to the
+city, while to the east, Larnock Quay stretches into the sea.  
+~
+59 0 1
+D0
+~
+~
+0 0 5950 0
+D1
+~
+~
+0 0 5907 0
+D2
+~
+~
+0 0 5917 0
+D3
+~
+~
+0 0 5903 0
+S
+#5907
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5908 0
+D3
+~
+~
+0 0 5906 0
+S
+#5908
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustel around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5909 0
+D3
+~
+~
+0 0 5907 0
+S
+#5909
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5910 0
+D3
+~
+~
+0 0 5908 0
+S
+#5910
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5911 0
+D3
+~
+~
+0 0 5909 0
+S
+#5911
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5912 0
+D3
+~
+~
+0 0 5910 0
+S
+#5912
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5913 0
+D3
+~
+~
+0 0 5911 0
+S
+#5913
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5914 0
+D3
+~
+~
+0 0 5912 0
+S
+#5914
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5915 0
+D3
+~
+~
+0 0 5913 0
+S
+#5915
+{yLarnock Quay{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore. A small building lies directly to the east, a small sign hangs
+above the door, squeaking noisily in the breeze.  
+~
+59 0 1
+D1
+~
+door~
+1 0 5916 0
+D3
+~
+~
+0 0 5914 0
+E
+sign~
++-------------------------------------------------------+
+|                                                       |
+|                                                       |
+|                                                       |
+|               The Official Port Shop                  |
+|                     Of Caryllion                      | 
+|                                                       |
+|                                                       |
+|                 We Buy Everything!                    |
+|                                                       |
+|                                                       |
+|                                                       |
++-------------------------------------------------------+
+~
+S
+#5916
+The Port Shop Of Caryllion~
+   Within this shop, the floors are made of a smooth wood, and waxed to a
+fine shine. Clean and tidy, all around there is no sign of any mess within
+the shop. Every item seems to have its place, and is there waiting for
+someone to claim it as their own.  
+~
+59 de 0
+D3
+~
+door~
+1 0 5915 0
+S
+#5917
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D0
+~
+~
+0 0 5906 0
+D2
+~
+~
+0 0 5918 0
+S
+#5918
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore. To the west lies the entrance to an old storage shed.  
+~
+59 0 1
+D0
+~
+~
+0 0 5917 0
+D2
+~
+~
+0 0 5919 0
+D3
+~
+door~
+1 0 5986 0
+S
+#5919
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D0
+~
+~
+0 0 5918 0
+D2
+~
+~
+0 0 5920 0
+S
+#5920
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by. Extending
+a long way to the east, is Monash Wharf, one of the six main wharves in this
+port.  
+~
+59 0 1
+D0
+~
+~
+0 0 5919 0
+D1
+~
+~
+0 0 5921 0
+D2
+~
+~
+0 0 5931 0
+S
+#5921
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5922 0
+D3
+~
+~
+0 0 5920 0
+S
+#5922
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5923 0
+D3
+~
+~
+0 0 5921 0
+S
+#5923
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5924 0
+D3
+~
+~
+0 0 5922 0
+S
+#5924
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5925 0
+D3
+~
+~
+0 0 5923 0
+S
+#5925
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5926 0
+D3
+~
+~
+0 0 5924 0
+S
+#5926
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5927 0
+D3
+~
+~
+0 0 5925 0
+S
+#5927
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5928 0
+D3
+~
+~
+0 0 5926 0
+S
+#5928
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5929 0
+D3
+~
+~
+0 0 5927 0
+S
+#5929
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5930 0
+D3
+~
+~
+0 0 5928 0
+S
+#5930
+{yMonash Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D3
+~
+~
+0 0 5929 0
+S
+#5931
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D0
+~
+~
+0 0 5920 0
+D2
+~
+~
+0 0 5932 0
+S
+#5932
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below. To your
+west lies an old looking storage shed.  
+~
+59 0 1
+D0
+~
+~
+0 0 5931 0
+D2
+~
+~
+0 0 5933 0
+D3
+~
+door~
+1 0 5987 0
+S
+#5933
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D0
+~
+~
+0 0 5932 0
+D2
+~
+~
+0 0 5934 0
+S
+#5934
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore. To the east, Sylvan Wharf extends into the distance.  
+~
+59 0 1
+D0
+~
+~
+0 0 5933 0
+D1
+~
+~
+0 0 5935 0
+D2
+~
+~
+0 0 5945 0
+S
+#5935
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5936 0
+D3
+~
+~
+0 0 5934 0
+S
+#5936
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5937 0
+D3
+~
+~
+0 0 5935 0
+S
+#5937
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5938 0
+D3
+~
+~
+0 0 5936 0
+S
+#5938
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5939 0
+D3
+~
+~
+0 0 5937 0
+S
+#5939
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5940 0
+D3
+~
+~
+0 0 5938 0
+S
+#5940
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5941 0
+D3
+~
+~
+0 0 5939 0
+S
+#5941
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5942 0
+D3
+~
+~
+0 0 5940 0
+S
+#5942
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5943 0
+D3
+~
+~
+0 0 5941 0
+S
+#5943
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5944 0
+D3
+~
+~
+0 0 5942 0
+S
+#5944
+{ySylvan Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D3
+~
+~
+0 0 5943 0
+S
+#5945
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D0
+~
+~
+0 0 5934 0
+D2
+~
+~
+0 0 5946 0
+S
+#5946
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by. The
+entrance to a small shed lies directly to the west.  
+~
+59 0 1
+D0
+~
+~
+0 0 5945 0
+D2
+~
+~
+0 0 5947 0
+D3
+A large storage shed lies to the west.
+~
+door~
+1 0 5988 0
+S
+#5947
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D0
+~
+~
+0 0 5946 0
+D5
+~
+~
+0 0 5948 0
+S
+#5948
+{cSteps By The Shoreline{x~
+   {wThe steps down this steep rocky path are short and narrow, and lead
+swiftly to the shoreline below. Carved out of the dark rock wall this dock
+was built upon the steps are worn and broken, with small pieces crumbling
+off each time another footfall lands on them. {x
+~
+59 0 1
+D4
+~
+~
+0 0 5947 0
+D5
+~
+~
+0 0 5949 0
+S
+#5949
+{cOn The Shoreline{x~
+   {wThe shoreline is made up of enormous rocks. The constant motion of
+waves breaking upon them has smoothed out any jagged edges they may have
+once had. An assortment of limpets, barnacles and oysters cling to the rock
+faces, fed by the ever splashing water. This whole area underneath the docks
+is continually showered in a fine mist of seawater, making the rocks quite
+slippery to travel on. {x
+~
+59 0 1
+D1
+~
+~
+0 0 5998 0
+D4
+~
+~
+0 0 5948 0
+S
+#5950
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D0
+~
+~
+0 0 5951 0
+D2
+~
+~
+0 0 5906 0
+S
+#5951
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below. To the
+west, a set of large double door lead into a cargo storage area.  
+~
+59 0 1
+D0
+~
+~
+0 0 5952 0
+D2
+~
+~
+0 0 5950 0
+D3
+A large shed stands to the west.
+~
+door~
+1 0 5985 0
+S
+#5952
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D0
+~
+~
+0 0 5953 0
+D2
+~
+~
+0 0 5951 0
+S
+#5953
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore. Hobson Wharf extends to the east.  
+~
+59 0 1
+D0
+~
+~
+0 0 5964 0
+D1
+~
+~
+0 0 5954 0
+D2
+~
+~
+0 0 5952 0
+S
+#5954
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5955 0
+D3
+~
+~
+0 0 5953 0
+S
+#5955
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5956 0
+D3
+~
+~
+0 0 5954 0
+S
+#5956
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5957 0
+D3
+~
+~
+0 0 5955 0
+S
+#5957
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5958 0
+D3
+~
+~
+0 0 5956 0
+S
+#5958
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5959 0
+D3
+~
+~
+0 0 5957 0
+S
+#5959
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5960 0
+D3
+~
+~
+0 0 5958 0
+S
+#5960
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5961 0
+D3
+~
+~
+0 0 5959 0
+S
+#5961
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5962 0
+D3
+~
+~
+0 0 5960 0
+S
+#5962
+{yHobson Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below. To the
+east, you can see the boarding area for one of the passenger ships that use
+this wharf.  
+~
+59 ce 1
+D1
+~
+~
+0 0 5963 0
+D3
+~
+~
+0 0 5961 0
+S
+#5963
+{yHobson Wharf Departure Dock{x~
+   This area has been seperated off from the rest of the wharf by means of a
+simple plank wall. The splinitered pine planks are nailed to tall posts at
+large enough intervals for family and friends to be able to exchange last
+minute farewells and packages. Cargo crates lie stacked along the wharf,
+waiting to be put on the next incoming vessel. On the very edge, a sturdy
+wooden boarding ramp juts out over the water.  
+~
+59 0 1
+D3
+~
+~
+0 0 5962 0
+S
+#5964
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D0
+~
+~
+0 0 5965 0
+D2
+~
+~
+0 0 5953 0
+S
+#5965
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by. A large
+storage shed lies to the west, its large door badly in need of repainting.
+~
+59 0 1
+D0
+~
+~
+0 0 5966 0
+D2
+~
+~
+0 0 5964 0
+D3
+A large storage shed lies to the west.
+~
+door~
+1 0 5984 0
+S
+#5966
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D0
+~
+~
+0 0 5967 0
+D2
+~
+~
+0 0 5965 0
+S
+#5967
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below. Madden
+Wharf stretches to the east, people and animals covering its length.  
+~
+59 0 1
+D0
+~
+~
+0 0 5978 0
+D1
+~
+~
+0 0 5968 0
+D2
+~
+~
+0 0 5966 0
+S
+#5968
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5969 0
+D3
+~
+~
+0 0 5967 0
+S
+#5969
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5970 0
+D3
+~
+~
+0 0 5968 0
+S
+#5970
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5971 0
+D3
+~
+~
+0 0 5969 0
+S
+#5971
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5972 0
+D3
+~
+~
+0 0 5970 0
+S
+#5972
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5973 0
+D3
+~
+~
+0 0 5971 0
+S
+#5973
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D1
+~
+~
+0 0 5974 0
+D3
+~
+~
+0 0 5972 0
+S
+#5974
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore.  
+~
+59 0 1
+D1
+~
+~
+0 0 5975 0
+D3
+~
+~
+0 0 5973 0
+S
+#5975
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below.  
+~
+59 0 1
+D1
+~
+~
+0 0 5976 0
+D3
+~
+~
+0 0 5974 0
+S
+#5976
+{yMadden Wharf{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by. To the east
+you can see the arrivals area, however it is blocked off by a simple wooden
+barrier and a large door.  
+~
+59 0 1
+D1
+A wooden barrier prevents you from entering the arrivals area to the east. The
+door is only accessible from the other side.
+~
+door
+~
+2 0 5977 0
+D3
+~
+~
+0 0 5975 0
+S
+#5977
+{yMadden Wharf Arrivals Dock{x~
+   This area has been seperated off from the rest of the wharf by means of a
+simple plank wall. A small door in the middle of the wall to the west seems to
+be the only exit. Thick armed men busy themselves with unloading the cargo 
+from the incoming ship, piling it high on the edge of the whaft, waiting for the
+customs inspectors to go through their routine.
+~
+59 0 1
+D3
+~
+~
+0 0 5976 0
+S
+#5978
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Huge wooden poles support the dock on either side of this walkway. Gulls can
+be heard in the distance, and the bustle around this area is making such a
+noise it is hard to make out the faint sound of laughter near by.  
+~
+59 0 1
+D0
+~
+~
+0 0 5979 0
+D2
+~
+~
+0 0 5967 0
+S
+#5979
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support the dock on either side of this long walkway,
+over the edge ripped netting and broken fishing gear can be seen floating up
+to the shore. To the west stand a small shed, its windows boarded.  
+~
+59 0 1
+D0
+~
+~
+0 0 5980 0
+D2
+~
+~
+0 0 5978 0
+D3
+A large storage shed lies to the west.
+~
+door~
+1 0 5983 0
+S
+#5980
+{yOn The Great Docks{x~
+   Wooden planks make up this great dock, from where this wood came it is
+hard to tell. The weathered texture makes it even difficult to make out just
+what type of wood it once was, now splintering and cracking from end to end.
+Great wooden poles support this dock on her side of this long walkway. The
+sound of splashing water can be heard aginst the huge poles below. A set of
+narrow steps leads down from here, toward the shoreline.  
+~
+59 0 1
+D2
+~
+~
+0 0 5979 0
+D5
+~
+~
+0 0 5981 0
+S
+#5981
+{cSteps By The Shoreline{x~
+   {wThe steps down this steep rocky path are short and narrow, and lead
+swiftly to the shoreline below. Carved out of the dark rock wall this dock
+was built upon the steps are worn and broken, with small pieces crumbling
+off each time another footfall lands on them. {x
+~
+59 0 1
+D4
+~
+~
+0 0 5980 0
+D5
+~
+~
+0 0 5982 0
+S
+#5982
+{cOn The Shoreline{x~
+   {wThe shoreline is made up of enormous rocks. The constant motion of
+waves breaking upon them has smoothed out any jagged edges they may have
+once had. An assortment of limpets, barnacles and oysters cling to the rock
+faces, fed by the ever splashing water. This whole area underneath the docks
+is continually showered in a fine mist of seawater, making the rocks quite
+slippery to travel on. {x
+~
+59 0 1
+D1
+~
+~
+0 0 5995 0
+D4
+~
+~
+0 0 5981 0
+S
+#5983
+{yA Storage Shed{x~
+   Huge packing crates and boxes are piled high around the edges of the
+room, giving little space to move. There are two small box windows on each
+wall, but long ago old boards were nailed tightly over them. The rest of the
+interior is unfinished, with rusted nails protruding dangerously from the
+bare frame of the walls. A lone light bulb swings from a thin cable set high
+in the ceiling, but it does a poor job of illuminating the area toward the
+rear. Small rodents scratch in the corners, trying to eat their way into any
+of the cargo.  
+~
+59 d 0
+D1
+The wharf lies out the door to the east.
+~
+door~
+1 0 5979 0
+D3
+~
+~
+0 0 5989 0
+S
+#5984
+{yA Large Storage Shed{x~
+   This storage room was made to withstand the bitter weather near
+coastlines, and seems almost solid enough to barricade out the evil foes of
+the whole world. What could this possibly be used for that it would need
+such grand craftsmanship. Seeming large enough to pack in the entire hold of
+a grand sea ship, yet further back there appears to be another room for
+more storage containers.  
+~
+59 d 0
+D1
+The wharf lies to the east.
+~
+door~
+1 0 5965 0
+D3
+~
+~
+0 0 5990 0
+S
+#5985
+{yA Storage Shed{x~
+   Huge packing crates and boxes are piled high around the edges of the
+room, giving little space to move. There are two small box windows on each
+wall, but long ago old boards were nailed tightly over them. The rest of the
+interior is unfinished, with rusted nails protruding dangerously from the
+bare frame of the walls. A lone light bulb swings from a thin cable set high
+in the ceiling, but it does a poor job of illuminating the area toward the
+rear. Small rodents scratch in the corners, trying to eat their way into any
+of the cargo.  
+~
+59 d 0
+D1
+The wharf is out the door to the west.
+~
+door~
+1 0 5951 0
+D3
+The storage shed extends further to the west.
+~
+~
+0 0 5991 0
+S
+#5986
+{yA Storage Shed{x~
+   Huge packing crates and boxes are piled high around the edges of the
+room, giving little space to move. There are two small box windows on each
+wall, but long ago old boards were nailed tightly over them. The rest of the
+interior is unfinished, with rusted nails protruding dangerously from the
+bare frame of the walls. A lone light bulb swings from a thin cable set high
+in the ceiling, but it does a poor job of illuminating the area toward the
+rear. Small rodents scratch in the corners, trying to eat their way into any
+of the cargo.  
+~
+59 d 1
+D1
+The large wharf is out the door to the east.
+~
+door~
+1 0 5918 0
+D3
+~
+~
+0 0 5992 0
+S
+#5987
+{yA Storage Shed{x~
+   Huge packing crates and boxes are piled high around the edges of the
+room, giving little space to move. There are two small box windows on each
+wall, but long ago old boards were nailed tightly over them. The rest of the
+interior is unfinished, with rusted nails protruding dangerously from the
+bare frame of the walls. A lone light bulb swings from a thin cable set high
+in the ceiling, but it does a poor job of illuminating the area toward the
+rear. Small rodents scratch in the corners, trying to eat their way into any
+of the cargo.  
+~
+59 d 0
+D1
+The large wharf is out the door to the east.
+~
+door~
+1 0 5932 0
+D3
+~
+~
+0 0 5993 0
+S
+#5988
+{yA Large Storage Shed{x~
+   This storage room was made to withstand the bitter weather near
+coastlines, and seems almost solid enough to barricade out the evil foes of
+the whole world. What could this possibly be used for that it would need
+such grand craftsmanship. Seeming large enough to pack in the entire hold of
+a grand sea ship, yet further back there appears to be another room for
+more storage containers.  
+~
+59 d 0
+D1
+The large wharf is out the door to the east.
+~
+door~
+1 1 5946 0
+D3
+~
+~
+0 0 5994 0
+S
+#5989
+{yThe Rear Of A Storage Shed{x~
+   This part of the storage area is a great deal tidier than the entrance.
+Empty crates are stacked tidily, excess supplies all labled in their boxes.
+A large pile of carefully folded trawling nets have been placed ontop of a
+stack of crates so as not to tangle. Large timber poles rest in the corner,
+waiting to replace some of the older, rotted support poles that hold up the
+dock area. The air is thick with the musty smell that comes from damp wood
+being left to dry indoors, with no fresh air. Large tea chests full of
+trinkets and souviners from faraway places sit here, waiting for their
+owners to retrieve them from storage.  
+~
+59 d 0
+D1
+~
+~
+0 0 5983 0
+S
+#5990
+{yThe Rear Of A Large Storage Shed{x~
+   This part of the storage area is a great deal tidier than the entrance.
+Empty crates are stacked tidily, excess supplies all labled in their boxes.
+A large pile of carefully folded trawling nets have been placed ontop of a
+stack of crates so as not to tangle. Large timber poles rest in the corner,
+waiting to replace some of the older, rotted support poles that hold up the
+dock area. The air is thick with the musty smell that comes from damp wood
+being left to dry indoors, with no fresh air. Large tea chests full of
+trinkets and souviners from faraway places sit here, waiting for their
+owners to retrieve them from storage.  
+~
+59 d 0
+D1
+~
+~
+0 0 5984 0
+S
+#5991
+{yA Storage Shed{x~
+   This part of the storage area is a great deal tidier than the entrance.
+Empty crates are stacked tidily, excess supplies all labled in their boxes.
+A large pile of carefully folded trawling nets have been placed ontop of a
+stack of crates so as not to tangle. Large timber poles rest in the corner,
+waiting to replace some of the older, rotted support poles that hold up the
+dock area. The air is thick with the musty smell that comes from damp wood
+being left to dry indoors, with no fresh air.  
+~
+59 d 0
+D1
+~
+~
+0 0 5985 0
+S
+#5992
+{yThe Rear Of A Storage Shed{x~
+   This part of the storage area is a great deal tidier than the entrance.
+Empty crates are stacked tidily, excess supplies all labled in their boxes.
+A large pile of carefully folded trawling nets have been placed ontop of a
+stack of crates so as not to tangle. Large timber poles rest in the corner,
+waiting to replace some of the older, rotted support poles that hold up the
+dock area. The air is thick with the musty smell that comes from damp wood
+being left to dry indoors, with no fresh air.  
+~
+59 d 0
+D1
+~
+~
+0 0 5986 0
+S
+#5993
+{yThe Rear Of A Storage Shed{x~
+   This part of the storage area is a great deal tidier than the entrance.
+Empty crates are stacked tidily, excess supplies all labled in their boxes.
+A large pile of carefully folded trawling nets have been placed ontop of a
+stack of crates so as not to tangle. Large timber poles rest in the corner,
+waiting to replace some of the older, rotted support poles that hold up the
+dock area. The air is thick with the musty smell that comes from damp wood
+being left to dry indoors, with no fresh air.  
+~
+59 0 3
+D1
+~
+~
+0 0 5987 0
+S
+#5994
+{yThe Rear Of A Large Storage Shed{x~
+   This part of the storage area is a great deal tidier than the entrance.
+Empty crates are stacked tidily, excess supplies all labled in their boxes.
+A large pile of carefully folded trawling nets have been placed ontop of a
+stack of crates so as not to tangle. Large timber poles rest in the corner,
+waiting to replace some of the older, rotted support poles that hold up the
+dock area. The air is thick with the musty smell that comes from damp wood
+being left to dry indoors, with no fresh air. Large tea chests full of
+trinkets and souviners from faraway places sit here, waiting for their
+owners to retrieve them from storage.  
+~
+59 d 0
+D1
+~
+~
+0 0 5988 0
+S
+#5995
+{cOn The Shoreline{x~
+   {wThe rocks here are large, but not large enough to make quick movement
+safe. Covered in a damp mist, the rocks have been covered in a dangerously
+slippery green slime. Offshore, large albatross' circle in the air, hovering
+above schools of fish that have come to the surface. Every so often, a loud
+squawk can be heard when a black-backed gull dares to venture toward the
+albatross' prey. {x
+~
+59 0 1
+D1
+~
+~
+0 0 5996 0
+D3
+~
+~
+0 0 5982 0
+S
+#5996
+{cOn The Shoreline{x~
+   {wThe shoreline is made up of enormous rocks. The constant motion of
+waves breaking upon them has smoothed out any jagged edges they may have
+once had. An assortment of limpets, barnacles and oysters cling to the rock
+faces, fed by the ever splashing water. This whole area underneath the docks
+is continually showered in a fine mist of seawater, making the rocks quite
+slippery to travel on. {x
+~
+59 0 1
+D1
+~
+~
+0 0 5997 0
+D3
+~
+~
+0 0 5995 0
+S
+#5997
+{cOn The Shoreline{x~
+   {wThe rocks here are large, but not large enough to make quick movement
+safe. Covered in a damp mist, the rocks have been covered in a dangerously
+slippery green slime. Offshore, large albatross' circle in the air, hovering
+above schools of fish that have come to the surface. Every so often, a loud
+squawk can be heard when a black-backed gull dares to venture toward the
+albatross' prey. {x
+~
+59 0 1
+D3
+~
+~
+0 0 5996 0
+S
+#5998
+{cOn The Shoreline{x~
+   {wThe rocks here are large, but not large enough to make quick movement
+safe. Covered in a damp mist, the rocks have been covered in a dangerously
+slippery green slime. Offshore, large albatross' circle in the air, hovering
+above schools of fish that have come to the surface. Every so often, a loud
+squawk can be heard when a black-backed gull dares to venture toward the
+albatross' prey. {x
+~
+59 0 1
+D1
+~
+~
+0 0 5999 0
+D3
+~
+~
+0 0 5949 0
+S
+#5999
+{cOn The Shoreline{x~
+   {wThe shoreline is made up of enormous rocks. The constant motion of
+waves breaking upon them has smoothed out any jagged edges they may have
+once had. An assortment of limpets, barnacles and oysters cling to the rock
+faces, fed by the ever splashing water. This whole area underneath the docks
+is continually showered in a fine mist of seawater, making the rocks quite
+slippery to travel on. {x
+~
+59 0 1
+D1
+~
+~
+0 0 5905 0
+D3
+~
+~
+0 0 5998 0
+S
+$~

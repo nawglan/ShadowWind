@@ -1,0 +1,1686 @@
+#5800
+A Strange Tunnel~
+   The walls of this strange, mystical tunnel are cracked with age, and it
+seems as if no one has been in this passage for ages. As you look at the
+dusty floor, you see strange footprints as if something has been here
+though. The green moss that grows on the walls also hints this passages age.
+As you further examine this tunnel, you notice carvings of faces expressing
+pure pain drawn on the walls, they seem like they are begging for your help.
+~
+58 a 0
+D0
+~
+~
+0 -1 5801 0
+D1
+One of the carvings opens, and you notice a mystical tunnel to the east.
+~
+Carving~
+1 -1 5885 0
+E
+prints hoof ground~
+In the dust you see what looks like hoof prints...
+~
+S
+#5801
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the
+thick fog that engulfs this room. The fog, strangely enough, seems as if it
+where coming straight from the ground. This mystical room seems to go on
+forever, and maybe it does.....  
+~
+58 acg 0
+D0
+~
+~
+0 -1 5801 0
+D1
+~
+~
+0 -1 5802 0
+D2
+~
+~
+0 -1 5801 0
+D3
+~
+~
+0 -1 5801 0
+S
+#5802
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the
+thick fog that engulfs this room. The fog, strangely enough, seems as if it
+where coming straight from the ground. This mystical room seems to go on
+forever, and maybe it does.....  
+~
+58 a 0
+D0
+~
+~
+0 -1 5803 0
+D1
+~
+~
+0 -1 5847 0
+D2
+~
+~
+0 -1 5802 0
+D3
+~
+~
+0 -1 5801 0
+S
+#5803
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the
+thick fog that engulfs this room. The fog, strangely enough, seems as if it
+where coming straight from the ground. This mystical room seems to go on
+forever, and maybe it does.....  
+~
+58 a 0
+D0
+~
+~
+0 -1 5803 0
+D1
+~
+~
+0 -1 5803 0
+D2
+~
+~
+0 -1 5802 0
+D3
+~
+~
+0 -1 5804 0
+S
+#5804
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the
+thick fog that engulfs this room. The fog, strangely enough, seems as if it
+where coming straight from the ground. This mystical room seems to go on
+forever, and maybe it does.....  
+~
+58 acg 0
+D0
+~
+~
+0 -1 5805 0
+D1
+~
+~
+0 -1 5803 0
+D2
+~
+~
+0 -1 5801 0
+D3
+~
+~
+0 -1 5850 0
+S
+#5805
+The Dark Passage~
+   As you enter this room you are grateful that you have finally found your
+way past that wretched fog. This passage continues east, and to the north
+your spine shivers as you notice an engraving of a deadly Minotaur on the
+huge stone door that blocks your way.  
+~
+58 a 0
+D0
+To the north this passage is blocked by a huge stone door with the engraving
+of a deadly Minotaur on it.
+~
+Stone Door~
+1 -1 5806 0
+D2
+~
+~
+0 -1 5804 0
+S
+#5806
+A Stone Maze~
+   As you enter this ominously quiet passage, you notice torches illuminate
+this otherwise dark corridoor. The walls here are cracked with age, and it
+seems as if theses hallways have been here since the begining of time.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5808 0
+D1
+~
+~
+0 -1 5807 0
+D2
+A huge stone door blocks your way to the south.
+~
+Stone Door~
+0 -1 5805 0
+D3
+A strange looking blue door leads west.
+~
+Blue Door~
+2 5819 5817 0
+S
+#5807
+A Dead-End Room~
+   As you travel along this passage, it comes to an abrupt stop. The only
+visible exit you can see is to the west, and a small skeleton is the only thing
+that furnishes this room.
+~
+58 a 0
+D3
+~
+~
+1 -1 5806 0
+S
+#5808
+A Long Corridor~
+   As you walk down this dark, forbidden corridoor, you feel as if you where
+being pulled to the east by some evil power. This ominous hallway also
+continues to lead to the north and south.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5810 0
+D1
+The Abyss~
+~
+0 -1 5809 0
+D2
+~
+~
+0 -1 5806 0
+S
+#5810
+The Maze Turning Point~
+   A strange breeze that seems to whisper voices of death circulates through
+this room and you feel very uneasy standing here. To the north leads a small
+passage and another exit leads east.
+~
+58 a 0
+D0
+~
+~
+0 -1 5811 0
+D1
+~
+~
+0 -1 5813 0
+D2
+~
+~
+0 -1 5808 0
+S
+#5811
+A Deadly Passage~
+   As you enter this room you notice you are knee-deep in corpses, blood, and
+skeletons. To the west you smell a strange gas, and you don't think it would
+be a good idea to go that way. The only other exit is the way you came in.
+~
+58 a 0
+D2
+~
+~
+0 -1 5810 0
+D3
+The Gas Chamber~
+~
+0 -1 5812 0
+S
+#5813
+A Quick Turn In The Corridor~
+   This part of the maze quickly branches off from what seems to be the main
+corridoor. Slouched in the corner is a strange looking skeleton with not one
+bit of flesh on it's bones. This passage is very eerie, and a feeling of
+death circulates through this corridoor. This small passage continues north,
+and to the west.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5814 0
+D3
+~
+~
+0 -1 5810 0
+S
+#5814
+The Dead Pool~
+   As you step into this room you notice you are up to you chest in a strange,
+green liquid. You have no clue what you have stepped into, but you feel as
+if you are getting weaker and weaker as you continue to stay in this pool.
+This pool continues to get deeper to the north, and you think you see a 
+way out of this stuff to the south.
+~
+58 acg 0
+D0
+~
+~
+0 -1 5815 0
+D2
+~
+~
+0 -1 5813 0
+S
+#5815
+The Dead Pool~
+   You are now up to your neck in a strange green liquid that almost fills this
+room. As you tilt your head up to keep from drinking this stuff, you notice
+about a dozen of bodies linched from the ceiling, halfway hanging in this
+green muck. This pool continues south, where it seems to be not as deep, and
+to the west you see a place where this pool ends.
+~
+58 a 0
+D2
+~
+~
+0 -1 5814 0
+D3
+~
+~
+0 -1 5816 0
+S
+#5816
+The Downward Spiral~
+   When you enter this room you notice a small hole in the corner that
+spirals down to another level of this maze. The only other exit is the way
+you came in, and you do not want to go back in that green stuff, do you?  
+~
+58 a 0
+D1
+~
+~
+0 -1 5815 0
+D5
+~
+~
+0 -1 5823 0
+S
+#5817
+The Ancient Troglodyte Passage~
+   As you walk down this passage, a feeling of death and destruction fills your
+body, and for some reason you feel very proud and powerfull. To the east you
+see the entrance to the Stone Maze, and to the west this passage continues.
+~
+58 a 0
+D1
+A strange looking blue door leads east.
+~
+Blue Door~
+2 5819 5806 0
+D3
+~
+~
+0 -1 5818 0
+S
+#5818
+A Turn In The Troglodyte Passage~
+   This passage comes to a sharp turn, and to the north you see the entrance to
+a long, wider corridoor. As you look around this room you notice small 
+puddles of blood on the floor, and a small human skull on the ground. This
+passage also continues to the east.
+~
+58 a 0
+D0
+~
+~
+0 -1 5819 0
+D1
+~
+~
+0 -1 5817 0
+S
+#5819
+The Ancient Troglodyte Hall~
+   As you walk through this room you try not to step on the many corpses that
+are laying on the ground. A strong feeling of death fills this room, and
+you feel that some evil preasance does not want you here. This passage leads
+to the north and the south.
+~
+58 a 0
+D0
+~
+~
+0 -1 5820 0
+D2
+~
+~
+0 -1 5818 0
+S
+#5820
+A Dead-End In The Troglodyte Passage~
+   As this passage quickly gets darker, it also comes to an abrupt end. Strange 
+footprints in the dust on the floor go directly to the west wall; You can't
+stop wondering who (or what) made them.
+~
+58 a 0
+D1
+As you look at this wall, you notice it isn't even a real one! A black veil
+covers the doorway to the east.
+~
+Veil~
+1 -1 5821 0
+D2
+~
+~
+0 -1 5819 0
+S
+#5821
+The Troglodyte Guard Room~
+   The walls of this room are covered with some sort of writting that you can't
+understand. Broken bones of humans and other creatures are scattered all over
+the floor, and in all four corners of this room you see slaves chained up
+to the walls. This room seems to have a very errie preasance to it, and you
+think that you are unwanted here.
+~
+58 a 0
+D2
+As you turn and look to the south, you are terrified by a huge stone door
+covered with blood.
+~
+door blood~
+2 5813 5822 0
+D3
+A black veil is used as a door to the west.
+~
+veil~
+1 -1 5820 0
+E
+writting walls~
+This strange writting says:
+
+	Whan at was camplatad at apanad a graat hall!
+                            -MD
+~
+S
+#5822
+The Royal Troglodyte's Chamber~
+   When you enter this room you see that all the walls are covered with gold.
+To the far south of this chamber you see a huge throne made of bones, and
+you notice many dead animals and humans that have small teeth marks on them.
+For some reason you feel you should get out of here!
+~
+58 a 0
+D0
+You see a huge door stone door covered with blood to the north.
+~
+Blood Door~
+2 5813 5821 0
+S
+#5823
+The Mud Pit~
+   As you step into this room your foot sinks into the thick mud that covers
+the floor of this round room. The leaks in the ceiling make the mud even
+thicker by the second, and you wonder if anything lives in this muck. Three
+passages branch off to the north, south, and east.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5831 0
+D1
+As you clear away some cobwebs, you see a old wooden door.
+~
+Wooden door~
+1 -1 5824 0
+D2
+~
+~
+0 -1 5828 0
+S
+#5824
+The Webbed Passage~
+   This tight corridoor is filled with a thick, sticky spider web, and as
+you continued to walk you get even more caught up in it. The only way out of
+here seems to be west.  
+~
+58 acg 0
+D1
+~
+~
+0 -1 5825 0
+D3
+As you clear away the spider webs, you notice an old wooden door.
+~
+Wooden Door~
+1 -1 5823 0
+S
+#5825
+The Crab Spider's Den~
+   Lifeless bodies are entangled in the webbing that covers this room, and
+you feel a shiver run down your spine as you notice you are surrounded by
+death. You can taste the fear in your mouth, and you do not want to continue
+down this terrifying corridoor any longer.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5826 0
+D3
+~
+~
+1 -1 5824 0
+S
+#5826
+The Crab Spider's Inner Den~
+   As you travel further into the Crab Spider's lair, the webs that fill the
+room get much thicker. Hung from thick strands of web, you see different
+cacoons of all shapes and sizes hanging from the ceiling. Maybe you could be
+the next victim...  
+~
+58 a 0
+D2
+~
+~
+0 -1 5825 0
+D3
+~
+~
+0 -1 5827 0
+S
+#5827
+The King Crab Spider's Den~
+   Skeletons line the walls of this circular room, and you are surrounded by
+death and destruction. Hundreds of bones are entangled in the thick sticky
+webs that hang from the ceiling, and in the middle of this room is a pile of
+debris where the King Crab Spider rests.  
+~
+58 a 0
+D1
+~
+~
+0 -1 5826 0
+S
+#5828
+The Mud Tunnel~
+   This whole room is made out of mud, and you sink deeper and deeper with
+every step. If this mud doesn't end soon...  
+~
+58 a 0
+D0
+~
+~
+0 -1 5823 0
+D2
+~
+~
+0 -1 5829 0
+S
+#5829
+The Mud Slide~
+   The first thing you notice about this room is the huge hole in the middle
+of the floor. As you take a look down it, it looks like a giant slide of
+mud. Maybe it could be fun... Maybe not...  
+~
+58 a 0
+D0
+~
+~
+0 -1 5828 0
+D5
+~
+~
+0 -1 5830 0
+S
+#5830
+Pillars Of The Abyss~
+   As you fall off the Mud Slide you land on a small stone pillar that wavers
+unders your fall. All around you you see nothing but blackness, and a 
+strange myst that floats slightly above your head. I wouldn't make one move
+if I where you...this thing could collapse any second!
+~
+58 acg 0
+D0
+The Abyss~
+~
+0 -1 5809 0
+D1
+~
+~
+0 -1 5809 0
+D2
+The Abyss~
+~
+0 -1 5809 0
+D3
+The Abyss~
+~
+0 -1 5809 0
+S
+#5831
+The Damp Corridor~
+   A constant leak in this corridor's ceiling adds to the giant puddle in
+the middle of this passage, and to add to your troubles, the pale blue body
+that the termites are feasting on in the corner doesn't look to delightful
+either. This passage continues to the north and south.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5832 0
+D2
+~
+~
+0 -1 5823 0
+S
+#5832
+The Entrance To The Minotaur's Lair~
+   A mixed feeling of fear and power fills your body, and you know you have
+come to some sort of lair in this maze. The walls here are made of green
+marble, and the deadly Minotaur engraved on the floor seems to give off a
+radiant, supernatural aura. This passage continues to the south and east. 
+~
+58 a 0
+D1
+~
+~
+0 -1 5833 0
+D2
+~
+~
+0 -1 5831 0
+S
+#5833
+The Minotaur's Stairway~
+   As you enter this room, you see a mystical staircase made of green marble
+that descends even further into the heart of this maze. The green marble walls
+that surround you have some form of ancient writting on them...wonder what
+it says...
+~
+58 a 0
+D3
+~
+~
+0 -1 5832 0
+D5
+~
+~
+0 -1 5834 0
+E
+walls writting~
+The writting reads:
+ 
+Ldsa Afds Wgfds Lefds Edsa Sgfd Sfds
+            -Vermillion '29
+~
+S
+#5834
+The Bottom Of The Minotaur's Stairway~
+   This small chamber seems like it has been here since the begining of time.
+Everything is quiet, and even though things seem peaceful, you know they are
+not. The walls here are made of the same green marble that almost everything
+in this room is. This passage leads back up the Minotaur's Stairway and to
+the north.
+~
+58 acg 0
+D0
+~
+~
+0 -1 5835 0
+D4
+~
+~
+0 -1 5833 0
+S
+#5835
+The Minotaur's Lair~
+   As you enter this room you notice you have come to an intersection. You also
+notice the remains of a human skull in the middle of the room. To the north
+a solid bronze door blocks your way, but all other exits are open.
+~
+58 a 0
+D0
+A large bronze door blocks your way.
+~
+Bronze Door~
+1 -1 5836 0
+D2
+~
+~
+0 -1 5834 0
+S
+#5836
+The Minor Minotaur's Chamber~
+   Instead of green marble, this chamber is coated in bronze. Writing and 
+pictures are ingraved in the bronze, but you can't understand a word of it.
+You can understand the meaning of the picture of a man being trampled by
+a powerful Minotaur, though. A silver door blocks your way north, and a
+bronze door does the same to the south.
+~
+58 a 0
+D0
+A silver door blocks you way.
+~
+Silver Door~
+1 -1 5837 0
+D2
+A large bronze door blocks your way.
+~
+Bronze Door~
+1 -1 5835 0
+S
+#5837
+The Major Minotaur's Chamber~
+   This room is covered with silver, except the bronze door to the south. A
+huge silver door covers the northern exit, and a thin, maggot filled pool of
+blood covers the floor. A mutilated body is slouched in the corner, and the
+only exits are north and south.  
+~
+58 a 0
+D0
+A huge silver door covers the northern exit.
+~
+Silver Door~
+1 -1 5838 0
+D2
+A bronze door blocks your way.
+~
+Bronze Door~
+1 -1 5836 0
+S
+#5838
+The Black Granite Room~
+   This room is formed from four giant slabs of black granite with doorways
+to the east and west. A silver door leads to the south, and two gargoyles
+are on each side of the golden door to the north. Dark rituals line the
+floors and walls of this room, and it give you a very unpleasant feeling. 
+~
+58 a 0
+D0
+A golden door with a carving of a Minotaur on it leads to the north.
+~
+Golden Door~
+1 -1 5839 0
+D1
+~
+~
+0 -1 5846 0
+D2
+A huge silver door covers the southern exit.
+~
+Silver Door~
+1 -1 5837 0
+D3
+~
+~
+0 -1 5840 0
+S
+#5839
+The Great Minotaur's Inner Sanctum~
+   This large chamber's walls are covered with gold, and on the wall is a
+drawing of a Minotaur about to impale an unfortunate man through the stomach 
+with its massice horns. About a dozen mutilated corpses litter the floor, and
+a large pile of bones is pushed into the corner of this terrifying room. On the 
+northern wall you notice a huge Pentagram drawn with blood contrasting with
+its golden background.
+~
+58 a 0
+D2
+A golden door leads to the south.
+~
+Golden Door~
+1 -1 5838 0
+S
+#5840
+The Turning Corridor~
+   This dark, damp corridor quickly turns south. Some strange, evil rituals
+are written on the walls, and you wish you could understand what they meant.
+Small drops of water drip from the ceiling onto your head and you wish you
+would get out of here before it drives you crazy!  
+~
+58 a 0
+D1
+~
+~
+0 -1 5838 0
+D2
+~
+~
+0 -1 5841 0
+S
+#5841
+Back Into The Mist~
+   As you enter this room, you feel sick to your stomach as you notice you
+have carelessly walked into the same strange fog that you did earlier. 
+Maybe it will end soon... Maybe it won't...  
+~
+58 a 0
+D0
+~
+~
+0 -1 5841 0
+D1
+~
+~
+0 -1 5841 0
+D2
+~
+~
+0 -1 5842 0
+D3
+~
+~
+0 -1 5841 0
+S
+#5842
+Back Into The Mist~
+   As you enter this room, you feel sick to your stomach as you notice you
+have carelessly walked into the same strange fog that you did earlier. 
+Maybe it will end soon... Maybe it won't...  
+~
+58 a 0
+D0
+~
+~
+0 -1 5842 0
+D1
+~
+~
+0 -1 5842 0
+D2
+~
+~
+0 -1 5842 0
+D3
+~
+~
+0 -1 5843 0
+S
+#5843
+Back Into The Mist~
+   As you enter this room, you feel sick to your stomach as you notice you
+have carelessly walked into the same strange fog that you did earlier. 
+Maybe it will end soon... Maybe it won't...  
+~
+58 a 0
+D0
+~
+~
+0 -1 5844 0
+D1
+~
+~
+0 -1 5843 0
+D2
+~
+~
+0 -1 5843 0
+D3
+~
+~
+0 -1 5843 0
+S
+#5844
+Back Into The Mist~
+   As you enter this room, you feel sick to your stomach as you notice you have
+carelessly walked into the same strange fog that you did earlier. Maybe it
+will end soon...maybe it won't...
+~
+58 a 0
+D0
+~
+~
+0 -1 5845 0
+D1
+~
+~
+0 -1 5844 0
+D2
+~
+~
+0 -1 5844 0
+D3
+~
+~
+0 -1 5844 0
+S
+#5845
+Deep Into The Mist~
+   As you enter this room, you feel sick to your stomach as you notice you have
+carelessly walked into the same strange fog that you did earlier. Maybe it
+will end soon...maybe it won't...
+~
+58 a 0
+D0
+~
+~
+0 -1 5830 0
+D1
+~
+~
+0 -1 5801 0
+D2
+~
+~
+0 -1 5800 0
+D3
+~
+~
+0 -1 5830 0
+S
+#5846
+The Room With No Ceiling~
+   A ray of light streams through a huge hole in the ceiling of the room,
+and you are happy that you are not the poor soul that fell into it and hit
+the ground after the twenty-foot drop he took before his body part were
+scattered acrossed the floor. As you further inspect the room, you notice
+four deep hoofprints sunk into the dirt directly underneath the hole... 
+These hoofprints leave the room though!  
+~
+58 a 0
+D3
+~
+~
+0 -1 5838 0
+D5
+As you look at the bottom of the well, you notice a small latch!
+~
+Latch~
+1 -1 5886 0
+S
+#5847
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the thick
+fog that engulfs this room. The fog, strangely enough, seems as if it where
+coming straight from the ground. This mystical room seems to go on forever,
+and maybe it does.....
+~
+58 a 0
+D0
+~
+~
+0 -1 5848 0
+D1
+~
+~
+0 -1 5802 0
+D2
+~
+~
+0 -1 5801 0
+D3
+~
+~
+0 -1 5801 0
+S
+#5848
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the
+thick fog that engulfs this room. The fog, strangely enough, seems as if it
+where coming straight from the ground. This mystical room seems to go on
+forever, and maybe it does.....  
+~
+58 a 0
+D0
+~
+~
+0 -1 5801 0
+D1
+~
+~
+0 -1 5849 0
+D2
+~
+~
+0 -1 5801 0
+D3
+~
+~
+0 -1 5801 0
+S
+#5849
+A Small Passage~
+   This narrow passage makes walking a very hard task. As your body skims
+the wall you feel wet moss against your body, and the thought of it makes
+you move a lot quicker. There are many cracks in the walls, and it feels
+like this passage could cave in any minute.  
+~
+58 acg 0
+D1
+~
+~
+0 -1 5852 0
+D3
+~
+~
+0 -1 5848 0
+S
+#5850
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the
+thick fog that engulfs this room. The fog, strangely enough, seems as if it
+where coming straight from the ground. This mystical room seems to go on
+forever, and maybe it does.....  
+~
+58 a 0
+D0
+~
+~
+0 -1 5801 0
+D1
+~
+~
+0 -1 5801 0
+D2
+~
+~
+0 -1 5851 0
+D3
+~
+~
+0 -1 5801 0
+S
+#5851
+The Mist~
+   As you enter this room you notice it is very hard to breathe due to the thick
+fog that engulfs this room. The fog, strangely enough, seems as if it where
+coming straight from the ground. This mystical room seems to go on forever,
+and maybe it does.....
+~
+58 acg 0
+D0
+~
+~
+0 -1 5801 0
+D1
+~
+~
+0 -1 5801 0
+D2
+~
+~
+0 -1 5801 0
+D3
+~
+~
+0 -1 5801 0
+D5
+As you sweep you hand through the mist, your hand grazes a small metal ring!
+~
+Trap~
+0 -1 5877 0
+S
+#5852
+A Dark Clearing~
+   You come to a small clearing in this dark cave, and you are grateful that
+you are not as cramped as you were before. Voices of death seem to be
+calling to you from the south, and you don't think it would be wise at all
+to go that way. This clearing also continues to the east.  
+~
+58 a 0
+D1
+~
+~
+0 -1 5854 0
+D2
+~
+~
+0 -1 5853 0
+D3
+~
+~
+0 -1 5849 0
+S
+#5854
+The Circular Hall~
+   This room is made of a weird black stone. Carvings of dark rituals line
+the walls, and you feel very uncomfortable here. A dark presence fills your
+soul .... Go west or south, but just get out of here!  
+~
+58 a 0
+D2
+~
+~
+0 -1 5855 0
+D3
+~
+~
+0 -1 5852 0
+S
+#5855
+A Black Granite Stairwell~
+   In the southern corner of this room, a crude staircase made of black
+granite spirals up to another level. Though it seems pretty sturdy, I
+wouldn't be too sure; The whole thing could collapse any second...  
+~
+58 a 0
+D0
+~
+~
+0 -1 5854 0
+D4
+~
+~
+0 -1 5856 0
+S
+#5856
+The Entrance To The Black Granite Labyrinth~
+   You are at the top of a stairway made of black granite that descends into
+a pool of utter darkness. Although you do not want to go back down these
+steps, you realy don't want to go north or west either.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5857 0
+D3
+~
+~
+0 -1 5863 0
+D5
+~
+~
+0 -1 5855 0
+S
+#5857
+The Black Granite Labyrinth~
+   As you enter this tunnel, a dark feeling enters your body. You feel like you
+are being watched from all angles, and any step you make seems like it will
+be fatal.
+~
+58 acg 0
+D0
+~
+~
+0 -1 5858 0
+D2
+~
+~
+0 -1 5856 0
+S
+#5858
+A Black, Circular Room~
+   In the far corner of this circular room made of black granite, you notice
+a pitch black strairway. This room also branches to the south and west. You
+hope you don't stay in here much longer... This place has a very eerie feel
+to it.  
+~
+58 a 0
+D2
+~
+~
+0 -1 5857 0
+D3
+~
+~
+0 -1 5859 0
+D5
+~
+~
+0 -1 5871 0
+S
+#5859
+The Black Granite Labyrinth~
+   As you enter this tunnel, a dark feeling enters your body. You feel like
+you are being watched from all angles, and any step you make seems like it
+will be fatal.  
+~
+58 acg 0
+D1
+~
+~
+0 -1 5858 0
+D3
+~
+~
+0 -1 5860 0
+S
+#5860
+A Black, Square Room~
+   In this box-shaped room you see a strange black staircase in the corner.
+This stairway leads down. You wonder why you're staying here when all you
+can think about is death...  
+~
+58 a 0
+D1
+~
+~
+0 -1 5859 0
+D2
+~
+~
+0 -1 5861 0
+D5
+~
+~
+0 -1 5866 0
+S
+#5861
+The Black Granite Labyrinth~
+   As you enter this tunnel, a dark feeling enters your body. You feel like
+you are being watched from all angles, and any step you make seems like it
+will be fatal.  
+~
+58 acg 0
+D0
+~
+~
+0 -1 5860 0
+D2
+~
+~
+0 -1 5862 0
+S
+#5862
+A Black, Triangular Room~
+   As you enter this room, the first thing you notice is its odd, triangular
+shape. Then you see a strange looking staircase in the corner that spirals
+downward. You also wonder about the small blood stains that cover these
+walls.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5861 0
+D1
+~
+~
+0 -1 5863 0
+D5
+~
+~
+0 -1 5864 0
+S
+#5863
+The Black Granite Labyrinth~
+   As you enter this tunnel, a dark feeling enters your body. You feel like
+you are being watched from all angles, and any step you make seems like it
+will be fatal.  
+~
+58 a 0
+D1
+~
+~
+0 -1 5856 0
+D3
+~
+~
+0 -1 5862 0
+S
+#5864
+A Dirt Room~
+   This empty room is very small, and the walls are made of dirt. You notice
+a small hole ion the ground, and you may be able to squeeze yourself into
+it. There are no other exits in this room except that hole, and the way you
+came in.  
+~
+58 acg 0
+D4
+~
+~
+0 -1 5862 0
+D5
+~
+~
+0 -1 5865 0
+S
+#5865
+A Small Burrow~
+   As you squeeze into this small burrow, you notice you are in the home of
+a very strange insect. A small cacoon rests against the northern wall, and
+the only exit out of this room is up.  
+~
+58 a 0
+D4
+~
+~
+0 -1 5864 0
+S
+#5866
+The Skeleton Cathedral~
+   This terrifying passage is made up of bleached white bones, some of which
+still have some meat on them. You notice that this room is very cryptic and
+silent. Another thing that seems strange about this passage is its size. 
+The ceiling is at least ten feet above your head, and the same thing goes
+for the walls of this room. You almost feel like you are in a cathedral of
+death.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5867 0
+D4
+~
+~
+0 -1 5860 0
+S
+#5867
+The End Of The Skeleton Cathedral~
+   This terrifying passage is made up of bleached white bones, some of which
+still have some meat on them. You notice that this room is very cryptic and
+silent. Another thing that seems strange about this passage is its size. 
+The ceiling is at least ten feet above your head, and the same thing goes
+for the walls of this room. You almost feel like you are in a cathedral of
+death.  
+~
+58 a 0
+D1
+A large black door blocks your way to the east.
+~
+Black Door~
+2 5802 5869 0
+D2
+~
+~
+0 0 5866 0
+D3
+A large door made of bones leads to the west.
+~
+Skeleton Door~
+2 5801 5868 0
+S
+#5868
+A Room Made Of Bones~
+   This whole room is constructed of different parts of various skeletons.
+The ceiling isn't very high, but you can still walk, and drips of blood
+vibrate through this small room.  
+~
+58 a 0
+D1
+A door made of bones leads to the east.
+~
+Skeleton Door~
+2 5802 5867 0
+S
+#5869
+Below The Lair Of The Deadly Black Dragon~
+   This whole room is made of a pitch black granite, and evil fills every ounce
+of your soul. You dodge tiny drips of green acid that fall from the ceiling,
+and you don't have to think twice about going up, for it almost means
+certain death.
+~
+58 a 0
+D3
+A large black door leads to the west.
+~
+Black door~
+2 5803 5867 0
+D4
+~
+~
+1 -1 5870 0
+S
+#5870
+The Lair Of The Deadly Black Dragon~
+   This giant room is made of a thick black granite, and as you look around
+you are positive this is where you will die. Corpses of brave warriors are
+scattered acrossed the floor, and at least a dozen skulls are stacked neatly
+in the corner. To add to your fear, you suddenly realize that a small door
+shut behind you as you walked in!  
+~
+58 a 0
+D5
+A small black door with a skull on it has trapped you in this room!
+~
+Skull door~
+2 5806 5869 0
+S
+#5871
+A Dusty Corridor~
+   There is so much dust in this passage it makes your eyes water. You are
+coughing so bad that you think you are going to make your throat bleed, and
+you wish you could get out of here. Through your watery eyes you see a
+passage to the east.  
+~
+58 acg 0
+D1
+~
+~
+0 -1 5872 0
+D4
+~
+~
+0 -1 5858 0
+S
+#5872
+A Turn In The Dusty Passage~
+   This dusty passage intersects at three points leading north, west, and
+south. To the north, you notice something bright, and to the south you see
+more dust. You can not see anything else in this room due to the dust that
+shields your vision.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5873 0
+D2
+~
+~
+0 -1 5875 0
+D3
+~
+~
+0 -1 5871 0
+S
+#5873
+A Bright Copper Room~
+   The walls of this room are forged of shiny cooper that sends streams of
+light to your eyes. Small drawings and writting are on the western wall, but
+you can not read them. To the east you notice a copper door leads to the
+east.  
+~
+58 a 0
+D1
+A large copper door blocks your passage to the east.
+~
+Copper door~
+2 5805 5874 0
+D2
+~
+~
+0 -1 5872 0
+E
+west writting~
+The writting says:
+|\+/$%@#
+       *&%$##!!! 
+~
+S
+#5874
+Before A Small Black Altar~
+   Before you stands a small black altar that matches the black granite walls
+of this room. Evil signs and rituals that are written in a strange language
+cover the floor, ceiling, and walls of this room.
+~
+58 a 0
+D3
+A shiny copper door leads to the west.
+~
+Copper door~
+2 5805 5873 0
+S
+#5875
+A Small, Dust Filled Chamber~
+   A mystical wind circulates a small cloud of dust around your head as you
+walk into this room, and you can't see a thing! You sure hope you can find
+your way out of here.  
+~
+58 a 0
+D0
+~
+~
+0 -1 5872 0
+D3
+A dust covered door leads west.
+~
+Dusty door~
+2 5804 5876 0
+S
+#5876
+A Small Hidden Room~
+   A small pool of water is in the middle of this room, and a small key made of
+bone is floating in the middle of it. The walls of this room are made of
+dirt, but the small wind that was following you has stopped. The only exit
+is back through the hidden door to the east.
+~
+58 a 0
+D1
+A dust covered door leads east.
+~
+Dusty door~
+2 5804 5875 0
+S
+#5877
+Pillars Of The Abyss~
+   You are standing on a small pillar just big enough for you to fit on. Below
+you, you can see nothing but an eternal blackness called the Abyss. You
+have no idea how far away the next pillar is, or where it may lead. This
+place has an eerie silence to it, and you have a feeling that one wrong 
+step could mean your life. You can't see any exits...
+~
+58 a 0
+D0
+~
+~
+0 -1 5878 0
+D1
+~
+~
+0 -1 5809 0
+D2
+~
+~
+0 -1 5809 0
+D3
+~
+~
+0 -1 5809 0
+D4
+The trap door has shut and closed behind you!
+~
+~
+0 -1 5851 0
+S
+#5878
+Pillars Of The Abyss~
+   You are standing on a small pillar just big enough for you to fit on. Below
+you, you can see nothing but an eternal blackness called the Abyss. You
+have no idea how far away the next pillar is, or where it may lead. This
+place has an eerie silence to it, and you have a feeling that one wrong 
+step could mean your life. You can't see any exits...
+~
+58 a 0
+D0
+~
+~
+0 -1 5879 0
+D1
+~
+~
+0 -1 5809 0
+D2
+~
+~
+0 -1 5877 0
+D3
+~
+~
+0 -1 5809 0
+S
+#5879
+Pillars Of The Abyss~
+   You are standing on a small pillar just big enough for you to fit on. Below
+you, you can see nothing but an eternal blackness called the Abyss. You
+have no idea how far away the next pillar is, or where it may lead. This
+place has an eerie silence to it, and you have a feeling that one wrong 
+step could mean your life. You can't see any exits...
+~
+58 a 0
+D0
+~
+~
+0 -1 5809 0
+D1
+~
+~
+0 -1 5809 0
+D2
+~
+~
+0 -1 5878 0
+D3
+~
+~
+0 -1 5880 0
+S
+#5880
+Pillars Of The Abyss~
+   You are standing on a small pillar just big enough for you to fit on. Below
+you, you can see nothing but an eternal blackness called the Abyss. You
+have no idea how far away the next pillar is, or where it may lead. This
+place has an eerie silence to it, and you have a feeling that one wrong 
+step could mean your life. You can't see any exits...
+~
+58 a 0
+D0
+~
+~
+0 -1 5809 0
+D1
+~
+~
+0 -1 5879 0
+D2
+~
+~
+0 -1 5809 0
+D3
+~
+~
+0 -1 5881 0
+S
+#5881
+Pillars Of The Abyss~
+   You are standing on a small pillar just big enough for you to fit on. Below
+you, you can see nothing but an eternal blackness called the Abyss. You
+have no idea how far away the next pillar is, or where it may lead. This
+place has an eerie silence to it, and you have a feeling that one wrong 
+step could mean your life. You can't see any exits...
+~
+58 a 0
+D0
+~
+~
+0 -1 5809 0
+D1
+~
+~
+0 -1 5880 0
+D2
+~
+~
+0 -1 5882 0
+D3
+~
+~
+0 -1 5809 0
+S
+#5882
+Pillars Of The Abyss~
+   You are standing on a small pillar just big enough for you to fit on. Below
+you, you can see nothing but an eternal blackness called the Abyss. You
+have no idea how far away the next pillar is, or where it may lead. This
+place has an eerie silence to it, and you have a feeling that one wrong 
+step could mean your life. You can't see any exits...
+~
+58 a 0
+D0
+~
+~
+0 -1 5881 0
+D1
+~
+~
+0 -1 5809 0
+D2
+~
+~
+0 -1 5883 0
+D3
+~
+~
+0 -1 5809 0
+S
+#5883
+Pillars Of The Abyss~
+   You are standing on a small pillar just big enough for you to fit on. Below
+you, you can see nothing but an eternal blackness called the Abyss. You
+have no idea how far away the next pillar is, or where it may lead. This
+place has an eerie silence to it, and you have a feeling that one wrong 
+step could mean your life. You can't see any exits...
+~
+58 a 0
+D0
+~
+~
+0 -1 5882 0
+D1
+~
+~
+0 -1 5884 0
+D2
+~
+~
+0 -1 5809 0
+D3
+~
+~
+0 -1 5809 0
+S
+#5884
+A Large Pillar~
+   This pillar is much bigger then any other one you have come acrossed. The
+same eerie silence is still here, and you can still see nothing but darkness,
+but for some reason you feel safe here.
+~
+58 a 0
+D0
+~
+~
+0 -1 5809 0
+D1
+~
+~
+0 -1 5809 0
+D2
+~
+~
+0 -1 5809 0
+D3
+~
+~
+0 -1 5883 0
+S
+#5885
+The Incomplete Pentagram~
+   On the floor of this room is a giant pentagram drawn with blood. Three of
+the symbols on it are missing, though. Even though this ritual usualy means
+death, you wonder what happens when the full pentagram is completed...  
+~
+58 a 0
+D3
+A stone door leads west.
+~
+stone door~
+1 -1 5800 0
+S
+#5886
+Under The Well~
+   You are knee-deep in water, and in a very small room under the well. The
+smell down here is horrible, and dead creatures such as rats, mice, and moles
+litter the water. You wish you could get out of here as soon as possible!
+~
+58 a 0
+D4
+A small ladder leads to a latch at the top of the well. 
+~
+Latch~
+1 -1 5846 0
+S
+#5887
+The Halls Of The Damned~
+   This circular hall has no exits, and above you you can see nothing but
+blackness. In the middle of this room is a giant Pentagram carved in the floor,
+and the walls of the evil room are covered with blood. Through the darkness
+you hear screams of the damned  being tortured, and every once in a while
+you hear hoof-beets. You know that something completely evil dwells here... 
+~
+58 ah 0
+S
+$~

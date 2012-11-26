@@ -1,0 +1,112 @@
+#5200
+vicuna whistling guard~
+{ya small vicuna{x~
+{yA small vicuna is here scavenging for food.{x
+~
+{yThick brown fur cover its body, with a white underbelly. On four legs this
+deer like creature searches for brush and foliage for its meal. {x
+~
+dg 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 0 4 14 3
+T 100 2d6+3 25
+#5201
+tapir~
+{wa stout tapir{x~
+{wA tapir is here snorting at the ground.{x
+~
+{wOn his four short legs this grey piglike creature is a burrower. Its top
+lip and snout are joined together to form a short trunk which it uses for
+both sniffing and tearing leaves off branches. {x
+~
+dg 0 0 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 0 4 14 3
+T 100 1d6+4 22
+#5202
+hummingbird bird humming~
+{Ya giant hummingbird{x~
+{YA giant golden hummingbird flutters about.{x
+~
+{YWith a long beak this bird flutters about from flower to flower, its
+featherd coat has a golden sheen to it, and its tail is an off white.{x
+~
+dg 0 0 X 0 
+3 18 8 2d2+30
+0 600 -1
+8 8 0 13 14 2
+T 100 1d2+1 22
+#5203
+chinchilla small~
+{Wa small chinchilla{x~
+{WA small chinchills scurries about.{x
+~
+{WLooking like an overgrown rat this small white creature has large eyes
+ears and a bushy tail. {x
+~
+dg 0 0 X 0 
+7 16 6 4d4+70
+0 2900 -1
+8 8 0 4 14 3
+T 100 1d6+1 22
+#5204
+alpaca~
+{yan alpaca{x~
+{yAn alpaca is here clomping around.{x
+~
+{yThe alpaca has a shaggy coat of fine, soft hair that reaches almost to the
+ground. A long upwardly curved neck, and resembles a camel. {x
+~
+dgt 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 0 4 14 3
+T 100 2d8+4 22
+#5205
+bear spectacled~
+{Da {Wspectacled {Dbear{x~
+{DA {Wspectacled{D bear wanders about ignoring you.{x
+~
+   {DThe white markings around the eyes of this spectacled bear make it look
+as if it is wearing spectacles. These markings vary a lot, and each animal
+has different-shaped spectacles. {x
+~
+dg 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 0 4 14 3
+T 100 2d6+3 10
+#5206
+condor bird huge~
+{wa huge condor{x~
+{wA huge condor watches the area for corpses.{x
+~
+{wThis large bird has an enormous wingspand, its deep black feathers are
+streaked with white, and has a balled head{x
+~
+adg 0 0 X 0 
+6 17 7 3d3+60
+0 2400 -1
+8 8 0 4 14 3
+T 100 1d4+2 22
+#5207
+Toshkuli vampiric yeti form~
+Toshkuli~
+{DA dark form is here in the shadows.{x
+~
+{DToshkuli the vampiric yeti is the color of darkness in which he thrives,
+and {rblood {Don which he lusts. He towers above with his long shaggy pelt
+grazing the ground beneath his flat feet. His hands have long {rblood
+{Dcovered claws protruding out, and his teeth are dark with the stain of
+many a victim's {rblood{D. His eyes glow with the power of a {Rraging fire
+{Dand the cold within his heart is numbing to the flesh of the living.{x
+~
+bcdefglpqrxyzA hprt -1000 X g 
+58 0 -10 29d29+13580
+0 9000000 -1
+8 8 1 2 14 4
+T 50 8d6+50 24
+T 50 6d4+30 22
+E 16 100 5200 1

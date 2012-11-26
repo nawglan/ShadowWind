@@ -1,0 +1,401 @@
+#5800
+pentagram~
+{Da pentagram{x~
+A Pentagram made of glowing blood floats through the air.~
+~
+12 ab 0 0 
+0 0 0 0 23
+0 0 0
+#5801
+skeleton key~
+a skeleton key~
+A small key made of bone floats in a puddle of water here.~
+~
+18 c ao 0 
+1 0 0 0 25
+1 0 0
+#5802
+black key~
+{wa {Dblack {xkey~
+A large black key is lying in the corner here.~
+~
+18 c ao 0 
+2 0 0 0 22
+1 0 0
+#5803
+stiletto~
+{wa {Ygolden stiletto{x~
+A golden stiletto is shining on the ground here.~
+~
+5 0 an 0 
+2 3 6 12 15
+4 8000 200
+A
+19 -1
+A
+13 -25
+#5804
+dusty key~
+a dusty key~
+An old dusty key has been dropped here.~
+~
+18 c ao 0 
+4 0 0 0 8
+1 0 0
+#5805
+copper key~
+{wa {ycopper {xkey~
+A small copper key lies on the ground, almost buried in dirt.~
+~
+18 c ao 0 
+5 0 0 0 12
+1 0 0
+#5806
+skull key~
+a skull key~
+A strange key made out of a skull has been dropped here.~
+~
+18 c aco 0 
+6 0 0 0 25
+1 0 0
+#5807
+onyx~
+{Dthe onyx of the black dragon{x~
+A small onyx floats magically above the ground here.~
+~
+13 bj ao 0 
+0 0 0 0 6
+2 1000 0
+E
+onyx~
+This strange little onyx glows with a bright light. It seems to be out of
+place...~
+A
+13 -100
+#5808
+horn~
+the horn of the minotaur~
+A large horn is spinning on the ground.~
+~
+13 bj ao 0 
+0 0 0 0 25
+10 2000 0
+E
+horn~
+This sharp horn has a soft humming sound to it. It seems to be out of place...~
+#5809
+claw~
+{Da black granite claw{x~
+A claw made out of black granite is driven into the ground here.~
+~
+11 0 ah j 
+0 0 0 0 7
+20 10000 4000
+A
+13 20
+A
+1 2
+#5810
+axe~
+{Gan emerald axe{x~
+An axe made out of a large green emerald is gleaming here.~
+~
+5 0 an 0 
+1 2 10 5 6
+14 5000 1500
+A
+19 1
+#5811
+spear partisan~
+a partisan~
+A long partisan is droven into the ground here.~
+~
+5 0 an 0 
+5 2 8 16 5
+13 4000 1500
+A
+19 1
+#5812
+corpse~
+a rotting corpse~
+A rotting corpse is floating in the mud here.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+#5813
+bloody key~
+{wa {rbloody {xkey~
+A key with blood smeared on it is in the dust here.~
+~
+18 c ao 0 
+13 0 0 0 8
+1 0 0
+#5814
+dark green ring~
+{wa {gdark-green {xring~
+A very valuable looking ring has carelessly been dropped here.~
+~
+11 a ab 0 
+0 0 0 0 12
+1 10000 1500
+A
+13 30
+A
+1 -2
+#5815
+blue cloak~
+{wa {bblue {xcloak~
+A strange blue cloak has been dropped on the ground here.~
+~
+11 b ac 0 
+0 0 0 0 3
+3 5000 200
+A
+17 10
+A
+13 15
+A
+19 -2
+#5816
+broad sword~
+the troglodyte broadsword~
+A large broadsword made out of a strong stone is here.~
+~
+5 0 an 0 
+6 5 4 2 6
+10 1000 0
+A
+18 -2
+#5817
+long sword~
+a troglodyte longsword~
+A deadly looking longsword lies on the ground here.~
+~
+5 0 an 0 
+3 6 2 3 6
+12 1300 0
+#5818
+well~
+a well~
+A small dried out well is in the middle of this room.~
+~
+12 0 0 0 
+0 0 0 0 6
+0 0 0
+#5819
+blue key~
+{wa {bblue {xkey~
+A strange looking blue key has mysteriously been dropped here.~
+~
+18 c ao 0 
+19 0 0 0 8
+1 0 0
+#5820
+clear potion~
+a clear potion~
+A strange looking clear potion lies on the ground here.~
+~
+10 0 a 0 
+50 56 0 0 18
+2 2000 3000
+P
+farsee
+#5821
+spider silk gown~
+a spider silk gown~
+A beautiful spider silk gown is lying on the ground.~
+~
+11 0 ak m 
+0 0 0 0 3
+4 4000 0
+A
+17 20
+A
+9 2
+A
+13 5
+#5822
+gem~
+the gem of the abyss~
+A beautiful red gem is shimmering in the light.~
+~
+13 a ao 0 
+0 0 0 0 6
+1 5000 0
+E
+gem~
+This beautiful gem seems as if it where out of its place in your hands...~
+A
+13 -30
+#5823
+body~
+a half-eaten body~
+A half-eaten body hangs on a hook in the corner.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+#5824
+hook~
+a bloody hook~
+A large bloody hook gently swings back and forth due to a small breeze.~
+~
+12 0 0 0 
+0 0 0 0 8
+0 0 0
+#5825
+incomplete pentagram~
+an incomplete pentagram~
+A large incompleted pentagram is drawn on the ground with blood.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+E
+pentagram incomplete~
+This large Incompleted Pentagram only is missing a moon and two stars.
+~
+#5826
+body~
+a seaweed-covered body~
+A seaweed covered body floats through the muck here.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+#5827
+body~
+a crucified body~
+A crucified body is nailed to the wall here. Its lower body has been chewed off!~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+#5828
+body~
+an impaled body~
+A human body is impaled on a stake driven into the ground here.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+#5829
+body parts~
+some body parts~
+Numerous body parts are scattered acrossed the floor.~
+~
+12 0 0 0 
+0 0 0 0 23
+0 0 0
+#5830
+spear triple bladed icon sin~
+{Dthe Icon of {rSin{x~
+A large triple-bladed spear has carelessly been left here.~
+~
+5 ab an 0 
+2 5 5 16 11
+18 5000 1000
+#5831
+note blood wall~
+{wa {rbloody note{x~
+A note written in blood is on the wall here.~
+~
+12 0 0 0 
+0 0 0 0 19
+0 0 0
+E
+wall note blood~
+  	                   / The Tunnels Of Sin \	
+
+                   To enter is to feed the spawns of Hell	
+
+                     This evil realm was conjured by:            
+                                  
+                                    
+                 Vermillion----Writing          MaYdEaTh |\
+                                                Traveller|/ Special Code
+~
+#5832
+hooded rob sin~
+{Dthe hooded robe of {rSin{x~
+A black robe has been thrown on the ground here.~
+~
+9 b ak m 
+0 0 0 0 3
+5 1000 0
+A
+17 10
+#5833
+black scale gloves~
+{Da pair of black scale gloves{x~
+A pair of gloves made out of black scale lay on the ground here.~
+~
+9 a ah j 
+4 0 0 0 24
+18 5000 100
+A
+18 2
+A
+1 1
+#5834
+potion golden neon~
+{wa {Mneon{x-{Ygold {xpotion~
+A bright neon-gold potion has been dropped here.~
+~
+10 0 a 0 
+50 58 58 132 18
+2 1000 1000
+P
+poison
+P
+poison
+P
+sleep
+#5835
+statues demons~
+{rthe statues of demons{x~
+Two huge stone demon statues sit on pillars to the left and right of the door.~
+~
+12 0 0 0 
+0 0 0 0 6
+0 0 0
+E
+statues demons~
+This large statue is sculpted out of black granite, and it is so realistic
+it scares you! On its feet and hands you notice it has a set of razor
+sharp claws that could rip you to shreds...~
+#5836
+throne skeleton~
+a skeletal throne~
+Against the western wall is a throne made up of many different skeletal figures.~
+~
+12 0 0 0 
+0 0 0 0 25
+0 0 0
+E
+throne skeletal~
+This strange looking throne is made up of many different, bloodstained skeletal
+figures. Cobwebs hang all over it, and it doesn't seem like this odd structure
+could even come close to holding your weight...~
+#5837
+mask sin~
+{Dthe Mask of {rSin{x~
+A evil looking mask has been dropped here.~
+~
+9 gj ap s 
+5 0 0 0 3
+2 5000 100
+A
+18 2
+A
+6 -5
+#5840
+ring fire~
+{wthe ring of {rf{Ri{rr{Re{x~
+A large ring of blue flames is floating in the center of the room.~
+~
+12 0 0 0 
+0 0 0 0 1
+0 0 0
+$~

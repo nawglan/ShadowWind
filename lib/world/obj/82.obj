@@ -1,0 +1,35 @@
+#8201
+dagger poison~
+a poison dagger~
+A dagger lies here.~
+~
+5 0 an 
+2 1 4 12 9
+1 20 20
+#8202
+bracelet beaded~
+{wa {ywooden beaded {wbracelet{x~
+A simple looking bracelet has been dropped here.~
+~
+11 gmn am 
+0 0 0 0 5
+3 1000 100
+A
+18 1
+A
+24 -1
+#8203
+robe fuscia cloth~
+{ma fuscia robe with a {Wwhite fur collar{x~
+A pile of fuscia cloth lies on the ground here.~
+~
+11 gmn ak 
+0 0 0 0 3
+1 1000 100
+A
+18 1
+A
+1 2
+A
+20 -1
+$~

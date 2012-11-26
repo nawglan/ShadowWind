@@ -1,0 +1,192 @@
+#30
+Weirvane North /Krilgar-Lythina/~
+3099 20 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+O 0 3035 1 3000 100	* the large fountain
+M 0 3001 3 3000 100	* an elite cityguard
+M 0 3001 3 3000 100	* an elite cityguard
+M 0 3001 3 3000 100	* an elite cityguard
+M 0 3008 9 3000 100	* the royal cityguard
+M 0 3008 9 3000 100	* the royal cityguard
+M 0 3067 50 3000 100	* the Cityguard
+M 0 3008 9 3000 100	* the royal cityguard
+M 0 3013 3 3000 100	* the Citizen of Weirvane
+M 0 3014 3 3000 100	* the Citizen of Weirvane
+M 0 3067 6 3000 100	* the Cityguard
+E 1 3022 200 16	* a long sword
+O 0 1291 5 3000 100	* a market board (Auction, sell, etc..)
+M 0 1200 1 3000 100	* the Wandering Wilks
+D 0 3009 5 2	* The Mayor's Office
+M 0 3143 1 3009 100	* the Mayor
+E 1 3099 1 17	* the City Key
+M 0 3042 1 3035 100	* an elite gateguard
+M 0 3008 9 3035 100	* the royal cityguard
+M 0 3094 4 3035 100	* a Wolf
+M 0 3150 5 3035 100	* the male traveller
+M 0 3041 1 3053 100	* an elite gateguard
+M 0 3008 9 3053 100	* the royal cityguard
+M 0 3094 4 3053 100	* a Wolf
+M 0 3150 5 3053 100	* the male traveller
+M 0 3040 1 3020 100	* an elite gateguard
+M 0 3008 9 3020 100	* the royal cityguard
+M 0 3094 4 3020 100	* a Wolf
+M 0 3150 5 3020 100	* the male traveller
+M 0 3070 1 3081 100	* Lauri the Centaur Cleric
+O 0 1295 6 3081 100	* a large bulletin board (Mortal discussion, chat)
+O 0 1290 1 3081 100	* A well made of worn marble
+M 0 3080 3 3035 100	* an elite cityguard
+M 0 3080 3 3035 100	* an elite cityguard
+M 0 3080 3 3035 100	* an elite cityguard
+M 0 3081 3 3020 100	* an elite cityguard
+M 0 3081 3 3020 100	* an elite cityguard
+M 0 3081 3 3020 100	* an elite cityguard
+M 0 3083 3 3053 100	* an elite cityguard
+M 0 3083 3 3053 100	* an elite cityguard
+M 0 3083 3 3053 100	* an elite cityguard
+M 0 3043 1 3109 100	* an elite gateguard
+M 0 3082 3 3109 100	* an elite cityguard
+M 0 3082 3 3109 100	* an elite cityguard
+M 0 3082 3 3109 100	* an elite cityguard
+M 0 3095 3 3004 100	* a female traveller
+M 0 3113 8 3004 100	* a wealthy man
+M 0 3116 8 3051 100	* a commoner
+M 0 3113 8 3022 100	* a wealthy man
+M 0 3114 8 3022 100	* a peasant woman
+D 0 3012 1 1	* Merchant Avenue
+D 0 3012 3 1	* Merchant Avenue
+M 0 3103 6 3012 100	* a shopper
+M 0 3114 8 3012 100	* a peasant woman
+M 0 3009 2 3011 100	* the Trader
+G 1 3090 5 -1	* a simple, elegant katana
+M 0 3102 10 3011 100	* a street cleaner
+M 0 3113 8 3011 100	* a wealthy man
+M 0 3113 8 3003 100	* a wealthy man
+M 0 3103 6 3015 100	* a shopper
+M 0 3113 8 3015 100	* a wealthy man
+M 0 3111 10 3028 100	* a spoiled brat
+M 0 3007 5 3031 100	* the mercenary
+M 0 3101 10 3031 100	* a young ruffian
+M 0 3111 10 3031 100	* a spoiled brat
+M 0 3111 10 3037 100	* a spoiled brat
+D 0 3050 0 1	* Danozi Avenue
+M 0 3111 10 3050 100	* a spoiled brat
+M 0 3062 3 3048 100	* a stray dog
+G 1 3015 200 -1	* a piece of meat
+M 0 3103 6 3048 100	* a shopper
+M 0 3111 10 3048 100	* a spoiled brat
+M 0 3111 10 3091 100	* a spoiled brat
+D 0 3080 2 1	* A Private Home
+M 0 3112 4 3080 100	* a housewife
+D 0 3079 0 1	* A Private Home
+M 0 3112 4 3079 100	* a housewife
+D 0 3078 0 1	* A Private Home
+M 0 3112 4 3078 100	* a housewife
+D 0 3077 2 1	* A Private Home
+M 0 3112 4 3077 100	* a housewife
+M 0 3107 3 3088 100	* an apprentice mage
+M 0 3107 3 3088 100	* an apprentice mage
+M 0 3107 3 3088 100	* an apprentice mage
+M 0 3106 3 3074 100	* a small rogue
+M 0 3106 3 3074 100	* a small rogue
+M 0 3106 3 3074 100	* a small rogue
+M 0 3101 10 3027 100	* a young ruffian
+M 0 3101 10 3019 100	* a young ruffian
+M 0 3101 10 3052 100	* a young ruffian
+O 1 3125 1 3178 50	* a sealed letter
+M 0 3087 1 3087 100	* a Gnome Guardian
+M 0 3073 1 3073 100	* an Elf Guardian
+M 0 3006 1 3002 100	* Ylirnah the Sorceress
+G 1 3050 500 -1	* a scroll of knowledge
+G 1 3054 500 -1	* a small grey staff
+O 0 3062 1 3046 100	* a Large Crate
+P 1 3091 1 3062	* an ornately enameled helmet
+P 0 3000 9 3062	* a timber barrel
+P 0 3047 9 3062	* a wide helmet
+M 0 3050 2 3046 100	* a merchant's guard
+M 0 3000 5 3047 100	* a busy merchant
+E 1 3198 6 17	* a wooden key
+O 0 3059 1 3047 100	* a Large Crate
+P 0 3008 10 3059	* a deep-red scarf
+P 0 3006 10 3059	* a small silver ring
+P 0 3033 10 3059	* a box
+P 0 3005 10 3059	* a light blue scarf
+M 0 3050 2 3047 100	* a merchant's guard
+D 0 3044 1 2	* The Corner Of The Merchant's Warehouse
+M 0 3049 1 3045 100	* the merchant's Supervisor
+E 1 3198 6 17	* a wooden key
+D 0 3045 3 2	* The Supervisor's Office
+M 0 3000 5 3042 100	* a busy merchant
+E 1 3198 6 17	* a wooden key
+M 0 3148 2 3008 100	* the alderman
+M 0 3148 2 3007 100	* the alderman
+M 0 3142 1 3006 100	* the Secretary
+D 0 3070 2 1	* Stonewalk Way
+M 0 3000 5 3070 100	* a busy merchant
+E 1 3198 6 17	* a wooden key
+D 0 3067 0 2	* The Brig
+D 0 3066 2 2	* The East End Of The Barracks
+D 0 3064 3 2	* The West End Of The Barracks
+M 0 3063 2 3059 100	* the Mercenary
+G 1 3070 50 -1	* a pair of bronze gauntlets
+D 0 3059 1 2	* Wall Road
+M 0 3062 10 3034 100	* a stray dog
+M 0 3003 2 3017 100	* the Landlord
+D 0 3017 3 1	* A Small Dwelling
+M 0 3002 1 3041 100	* Gwydno the Baker
+G 1 3010 999 -1	* a loaf of bread
+G 1 3011 500 -1	* a danish pastry
+G 1 3001 500 -1	* a sweet roll
+G 1 3012 999 -1	* some iron rations
+M 0 3003 2 3016 100	* the Landlord
+M 0 3007 5 3058 100	* the mercenary
+M 0 3007 5 3061 100	* the mercenary
+M 0 3007 5 3023 100	* the mercenary
+M 0 3011 2 3072 100	* the peddler
+G 1 3044 5 -1	* a studded leather jacket
+G 1 3085 5 -1	* a pair of bronze sleeves
+M 0 3020 1 3090 100	* Lostris the Guildmaster
+M 0 3022 1 3075 100	* Gorlas the Guildmaster
+M 0 3062 3 3026 100	* a stray dog
+G 1 3015 200 -1	* a piece of meat
+M 0 3062 3 3038 100	* a stray dog
+G 1 3015 200 -1	* a piece of meat
+M 0 3063 2 3023 100	* the Mercenary
+G 1 3081 50 -1	* a pair of leather pants
+M 0 3068 2 3036 100	* a City Official
+D 0 3010 4 2	* The Weirvane Treasury
+D 0 3016 1 1	* A Small Dwelling
+D 0 3049 0 1	* Danozi Avenue
+D 0 3071 2 1	* Stonewalk Way
+D 0 3082 2 1	* Merchant Avenue
+M 0 3102 10 3040 100	* a street cleaner
+M 0 3102 10 3036 100	* a street cleaner
+M 0 3102 10 3060 100	* a street cleaner
+M 0 3102 10 3057 100	* a street cleaner
+S
+$

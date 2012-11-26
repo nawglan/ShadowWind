@@ -1,0 +1,84 @@
+#14500
+stick~
+{ya stick{x~
+The wooden stick lays here.~
+~
+5 h a 0 
+0 2 4 11 5
+3 1 0
+E
+stick~
+A simple stick you could pick up most anywhere.
+~
+#14501
+necklace~
+small braided necklace~
+A small braided necklace lays here.~
+~
+9 0 ac 0 
+2 0 0 0 5
+1 100 10
+E
+necklace~
+The small braided necklace seems to be made out of vines and twigs, it seems
+almost useless.
+~
+A
+14 5
+#14502
+sword steel longsword~
+steel longsword~
+A steel longsword lays here.~
+~
+5 b an 0 
+3 5 3 3 9
+3 1000 100
+E
+sword steel long~
+The longsword is made of average steel, and seems to be just another sword.
+~
+A
+19 1
+#14503
+shield large wooden~
+large wooden shield~
+A large wooden shield lays here.~
+~
+9 0 aj l 
+5 0 0 0 5
+5 10000 200
+E
+shield large wooden~
+The large wooden shield seems to have an aura about it.
+~
+A
+2 -5
+#14504
+venison meat~
+a chunk of venison~
+A chunk of venison is laying on the ground.~
+~
+19 0 a 0 
+8 0 0 0 2
+5 10 0
+#14506
+leg lamb~
+a leg of lamb~
+A leg of lamb was forgotten here, it looks delicious.~
+~
+19 0 a 0 
+8 0 0 0 2
+5 10 0
+#14507
+cape polyester fake~
+a warm poly-wool cape~
+Some one has left some polyester on the ground.~
+~
+11 g ack 0 
+0 0 0 0 3
+10 12000 5000
+A
+24 -2
+A
+17 -10
+$~

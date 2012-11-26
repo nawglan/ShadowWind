@@ -1,0 +1,4304 @@
+#14100
+Pathway to the Lost Castle~
+  The pathyway here breaks away from the forest, utter gloom is all around 
+and the icey cold feel of death is upon you. The pathway here is nothing
+more than a dirt path that seems over travelled, there are small rocks and
+pebbles strewn all about and there are bones on the ground, not as if 
+something had fallen and died, more like someone or something has taken 
+bones of the dead and scattered them around in some sort of chatoic madness.
+~
+141 98305 1
+D0
+The Tunnel Of Sticks
+~
+~
+0 0 14499
+D1
+The forest seems to end here, trees are few and plantlife scarce.
+~
+~
+0 -1 -1
+D2
+Here lies the entrance to the fabled Castle of Death, The walls are at 
+least 40 foot tall, made of granite. On the top of the walls are walkways
+and archers ports, there are guard towers on either side of the gates
+with giant catapults placed in such a location that they could crush
+anything coming up to the entrance of the castle. Just above the gates
+to the castle appears to be a grating, which could be used to pour boiling
+oil down upon intruders, archer ports are everywhere, and the chilling
+feel that many an unwearry adventurer has seen there last days here creaps
+into mind.
+~
+~
+0 0 14101
+D3
+The forest seems to end here, trees are few and plantlife scarce.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The dirt and rubble path seems well travelled.
+~
+~
+0 -1 -1
+S
+#14101
+Pathway to the Lost Castle~
+  The pathway here is nothing more than a dirt path that seems over
+travelled, there are small rocks and pebbles strewn all about and there 
+are bones on the ground, not as if something had fallen and died, more
+like someone or something has taken  bones of the dead and scattered 
+them around in some sort of chatoic madness.
+~
+141 98305 1
+D0
+Pathway to the lost castle
+~
+~
+0 0 14100
+D1
+Pathway around the castle
+~
+~
+0 0 14205
+D2
+Withen the gates of the Castle of Death
+~
+gates~
+2 14100 14102
+D3
+Pathway around the castle
+~
+~
+0 0 14200
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The dirt and rubble path seems well travelled.
+~
+~
+0 -1 -1
+S
+#14102
+The Entrance Chambers~
+  The grand entrance is quite large, there is little light here, and the 
+torches on the walls no longer burn. There is a deafening silence all around
+and a bitter chill in the air.
+~
+141 65537 1
+D0
+Pathway to the lost castle
+~
+gates~
+1 14100 14101
+D1
+Hall along the inner wall
+~
+~
+0 0 14103
+D2
+The inner halls
+~
+~
+0 0 14138
+D3
+Hall along the inner wall
+~
+~
+0 0 14137
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14103
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14104
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14102
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14104
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14105
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14103
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14105
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14106
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14104
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14106
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. There is an elaborate tapestry on the wall.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14107
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14105
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+E
+tapestry~
+A room with two tables and chairs, a box in the corner that open with an asp
+reaching out of it clamped onto a man's hand.
+~
+S
+#14107
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. There is a spiral staircase made of wood and steel
+leading up.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14108
+D3
+Hall along the inner wall
+~
+~
+0 0 14106
+D4
+On the castle wall
+~
+~
+0 0 14174
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14108
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14107
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14109
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14109
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14108
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14110
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14110
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14109
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14111
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14111
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. The tattered remains of the castle standards
+remain on the walls here.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14110
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14112
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+E
+standards standard~
+There is a pale horse with a mounted rider who is holding a sickle.
+~
+S
+#14112
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14111
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14113
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14113
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14112
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14114
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14114
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14113
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14115
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14115
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. There is a spiral staircase made of wood and steel
+leading up.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14114
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14116
+D4
+On the castle wall
+~
+~
+0 0 14182
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14116
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14115
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14117
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14117
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14116
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14118
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14118
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14117
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14119
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14119
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14118
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14120
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14120
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. There is a table here along the southern wall, on
+this table there is a parchment.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14119
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14121
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+E
+parchment~
+
+
+
+Written in the blood of the innocent...
+
+                            All ye who enter here
+                            have sealed thy fate,
+                            for death is about 
+                            these hallowed walls.
+
+                                         Thanatos
+
+
+~
+S
+#14121
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14120
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14122
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14122
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14121
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14123
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14123
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14122
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14124
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14124
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14123
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14125
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14125
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. There is a spiral staircase made of wood and steel
+leading up.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14126
+D1
+Hall along the inner wall
+~
+~
+0 0 14124
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+On the castle wall
+~
+~
+0 0 14192
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14126
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14127
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14125
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14127
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14128
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14126
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14128
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14129
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14127
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14129
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. Upon the floor is the skeletal remains of
+something once human.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14130
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14128
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+E
+skeletal~
+The skull is severed at eye level, the top of this once human skull is
+nowhere in sight.
+~
+S
+#14130
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14131
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14129
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14131
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14132
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14130
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14132
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+Hall along the inner wall
+~
+~
+0 0 14133
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Hall along the inner wall
+~
+~
+0 0 14131
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14133
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. There is a spiral staircase made of wood and steel
+leading up.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14134
+D2
+Hall along the inner wall
+~
+~
+0 0 14132
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+On the castle wall
+~
+~
+0 0 14164
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14134
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. There is an elaborate tapestry on the wall.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14135
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14133
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+E
+tapestry~
+Death's skeletal hand is removing the soul from his latest victim's remains.
+~
+S
+#14135
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14136
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14134
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14136
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Hall along the inner wall
+~
+~
+0 0 14137
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14135
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14137
+Hall Along The Inner Wall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+The entrance chambers
+~
+~
+0 0 14102
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Hall along the inner wall
+~
+~
+0 0 14136
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14138
+The Inner Hall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. Now deeper within the castle the chill of death
+is very crisp. A painting hang's upon the west wall.
+~
+141 65537 0
+D0
+The entrance chambers
+~
+~
+0 0 14102
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+The inner hall
+~
+~
+0 0 14139
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+E
+painting~
+The frame is made of human bones, the canvis is made of human skin, upon 
+the skin is the painting, feast of the damned, which is the tortured soul's
+of the wicked being consumed by demons.
+~
+S
+#14139
+The Junction of the Inner Halls~
+  Burned out oil pots hang at each corner of this junction. A bone
+chilling cold and the smell of death permeates the room in which a beam
+hangs from the ceiling. The sounds of old are almost present.
+~
+141 65537 0
+D0
+The inner hall
+~
+~
+0 0 14138
+D1
+along the inner corridor
+~
+~
+0 0 14140
+D2
+The inner hall
+~
+~
+0 0 14150
+D3
+along the inner corridor
+~
+~
+0 0 14145
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14140
+Along The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Along the inner corridor
+~
+~
+0 0 14141
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+The junction of the inner halls
+~
+~
+0 0 14139
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14141
+Along The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Along the inner corridor
+~
+~
+0 0 14142
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Along the inner corridor
+~
+~
+0 0 14140
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14142
+Along The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+Guard room
+~
+~
+0 0 14144
+D1
+End of the inner corridor
+~
+~
+0 0 14143
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Along the inner corridor
+~
+~
+0 0 14141
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14143
+End Of The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Along the inner corridor
+~
+~
+0 0 14142
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14144
+Guard Room~
+  Burned out oil pots hang on each wall of this room. A bone chilling cold
+and the smell of death permeates the room. An overturned table lays on the
+floor next to a broken chair, the skeletal remains of something not quite 
+recognizable rest in the northeast corner with a spear protruding from it's
+chest.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Along the inner corridor
+~
+~
+0 0 14142
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14145
+Along The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+The junction of the inner halls
+~
+~
+0 0 14139
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Along the inner corridor
+~
+~
+0 0 14146
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14146
+Along The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Along the inner corridor
+~
+~
+0 0 14145
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Along the inner corridor
+~
+~
+0 0 14147
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14147
+Along The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+Guard room
+~
+~
+0 0 14148
+D1
+Along the inner corridor
+~
+~
+0 0 14146
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+End of the inner corridor
+~
+~
+0 0 14149
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14148
+Guard Room~
+  Burned out oil pots hang on each wall of this room. A bone chilling
+cold and an overpowering stench fill the room. A shattered table lays 
+on the floor next to the body of a recent victim which is teeming with 
+maggots.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Along the inner corridor
+~
+~
+0 0 14147
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14149
+End Of The Inner Corridor~
+  Burned out oil pots hang on each wall of this corridor. A bone chilling
+cold and the smell of death permeates the room, The sounds of old are
+almost present.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Along the inner corridor
+~
+~
+0 0 14147
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14150
+The Inner Hall~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. There is a deafening silence all around and a 
+bitter chill in the air. Now deeper within the castle the chill of death
+is very crisp.
+~
+141 65537 0
+D0
+The junction of the inner halls
+~
+~
+0 0 14139
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+
+~
+door~
+2 14103 14151
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14151
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+The inner hall
+~
+door~
+2 14103 14150
+D1
+Within the guardian chambers
+~
+~
+0 0 14154
+D2
+The inner halls
+~
+door~
+2 14104 14152
+D3
+Within the guardian chambers
+~
+~
+0 0 14159
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14152
+Entry-Way To The Lair Of Death~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. The screams from the tortured soul's of the damned emanate from the
+south. Chains that hold the shackled remains of what was once human hang
+from the ceiling through-out the corrodor. Crumbling stone covers the
+floor with small rats feeding on the decaying flesh of the recent victims.
+~
+141 65537 0
+D0
+The guardian chambers
+~
+door~
+2 14104 14151
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+The gates to hell
+~
+gates~
+2 14129 14153
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14153
+The Gates To Hell~
+  The cavernous expanse of the room reeks with the smell of brimstone, the
+strength sapping cold is so intense that it almost weekens the body. The 
+grotesque remains of the dead are stacked like cordwood, the floor's are 
+slick with blood from countless sacrifices. The altar of the damned sits
+in the center of the room. 
+~
+141 65537 0
+D0
+Entry-way to the lair of Death
+~
+gates~
+2 14129 14152
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+altar~
+2 -1 -1
+E
+altar~
+The altar awaits to be opened to spew the demons of hell upon our world.
+~
+S
+#14154
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Within the guardian chambers
+~
+~
+0 0 14155
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Within the guardian chambers
+~
+~
+0 0 14151
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14155
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Within the guardian chambers
+~
+~
+0 0 14156
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Within the guardian chambers
+~
+~
+0 0 14151
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14156
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Within the guardian chambers
+~
+~
+0 0 14157
+D3
+Within the guardian chambers
+~
+~
+0 0 14155
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14157
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+Within the guardian chambers
+~
+~
+0 0 14156
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Within the guardian chambers
+~
+~
+0 0 14158
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14158
+The End of the Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+Within the guardian chambers
+~
+~
+0 0 14157
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14159
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Within the guardian chambers
+~
+~
+0 0 14151
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Within the guardian chambers
+~
+~
+0 0 14160
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14160
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Within the guardian chambers
+~
+~
+0 0 14159
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+Within the guardian chambers
+~
+~
+0 0 14161
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14161
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D1
+Within the guardian chambers
+~
+~
+0 0 14160
+D2
+Within the guardian chambers
+~
+~
+0 0 14162
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14162
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+Within the guardian chambers
+~
+~
+0 0 14161
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+Within the guardian chambers
+~
+~
+0 0 14163
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14163
+The Guardian Chambers~
+  The hallway is narrow, there is little light here, and the torches on 
+the walls no longer burn. Water drips from the celling into pools of
+stagnant water, a putrid stench comes oozing out of the slime covered 
+walls. Crumbling stone covers the floor along with the feces from 
+generations of rats.
+~
+141 65537 0
+D0
+Within the guardian chambers
+~
+~
+0 0 14162
+D1
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D2
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D3
+The wall is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+D4
+The ceiling of this hall is covered in soot from burning of torches from 
+the distant past.
+~
+~
+0 -1 -1
+D5
+The floor is made of a square cut granite type rock and lain in place with no
+obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14164
+Ragged Walkway Atop The Castle~
+  There is a spiral staircase made of wood and steel leading down. A 
+ballista sits just behind the jagged spikes which ring the top of the 
+outer wall. The remnants of a shield rests upon the wheel of the ballista, 
+archer ports abound as well as vats for boiling oil. A ragged walkway leads
+around the castle rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14165
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14199
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 0 14133
+S
+#14165
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14166
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14164
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14166
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14167
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14165
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14167
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14168
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14166
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14168
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14169
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14167
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14169
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14170
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14168
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14170
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14171
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14169
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14171
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14172
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14170
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14172
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14173
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14171
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14173
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14174
+D2
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14172
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14174
+Ragged Walkway Atop The Castle~
+  There is a spiral staircase made of wood and steel leading down. A 
+ballista sits just behind the jagged spikes which ring the top of the 
+outer wall. The remnants of a helm rests upon the wheel of the ballista, 
+archer ports abound as well as vats for boiling oil. A ragged walkway leads
+around the castle rim.
+~
+141 65537 0
+D0
+The gnarled trees of the great forest of MiNar stretch as far as the eye 
+can see.
+~
+~
+0 -1 -1
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14175
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14173
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 0 14107
+S
+#14175
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14174
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14176
+D3
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14176
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14175
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14177
+D3
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14177
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14176
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14178
+D3
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14178
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14177
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14179
+D3
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14179
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14178
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14180
+D3
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14180
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14179
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14181
+D3
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14181
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14180
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14182
+D3
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14182
+Ragged Walkway Atop The Castle~
+  There is a spiral staircase made of wood and steel leading down. A 
+ballista sits just behind the jagged spikes which ring the top of the 
+outer wall. The remnants of a helm rests upon the wheel of the ballista, 
+archer ports abound as well as vats for boiling oil. A ragged walkway leads
+around the castle rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14181
+D1
+The rim of a canyon, below which is shrouded in fog.
+~
+~
+0 -1 -1
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14183
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 0 14115
+S
+#14183
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14182
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14184
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14184
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14183
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14185
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14185
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14184
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14186
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14186
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14185
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14187
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14187
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14186
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14188
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14188
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14187
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14189
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14189
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14188
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14190
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14190
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14189
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14191
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14191
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14190
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+Ragged walkway atop the castle
+~
+~
+0 0 14192
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14192
+Ragged Walkway Atop The Castle~
+  There is a spiral staircase made of wood and steel leading down. A 
+ballista sits just behind the jagged spikes which ring the top of the 
+outer wall. The remnants of a sword rests upon the wheel of the ballista, 
+archer ports abound as well as vats for boiling oil. A ragged walkway leads
+around the castle rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14193
+D1
+Ragged walkway atop the castle
+~
+~
+0 0 14191
+D2
+Rough seas breaking over the jagged rocks
+~
+~
+0 -1 -1
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 0 14125
+S
+#14193
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14194
+D1
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14192
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14194
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14195
+D1
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14193
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14195
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14196
+D1
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14194
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14196
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14197
+D1
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14195
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14197
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14198
+D1
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14196
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14198
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14199
+D1
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14197
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+#14199
+Ragged Walkway Atop The Castle~
+  Jagged spikes ring the top of the outer wall in which archer ports abound 
+as well as vats for boiling oil, a ragged walkway leads around the castle 
+rim.
+~
+141 65537 0
+D0
+Ragged walkway atop the castle
+~
+~
+0 0 14164
+D1
+The ragged walkway encircling the top of the castle, below which is the 
+roof of the castle.
+~
+~
+0 -1 -1
+D2
+Ragged walkway atop the castle
+~
+~
+0 0 14198
+D3
+The small village of Ocam's Reach
+~
+~
+0 -1 -1
+D4
+Looking up all that can be seen is a mist like canopy from the edge of the
+forest covering the entire area letting sparse light in from the outside
+world above.
+~
+~
+0 -1 -1
+D5
+The walkway is made of a square cut granite type rock and lain in place with 
+no obvious mortar of any kind.
+~
+~
+0 -1 -1
+S
+$~

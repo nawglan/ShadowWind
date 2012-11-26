@@ -1,0 +1,1275 @@
+#8202
+A Slight Bend In The Old Road~
+   You are currently travelling on a dusty old road which crosses 
+the country side in an east-west direction. On the north side of the road
+you see grassy plains with random spots of trees and low, scrubby bushes.
+To the south stands a large forest, seemingly endless it stretch to
+the east. To the northeast, beyond some rise in the hills, you see
+a small farming village. You can leave east or west along the road.
+~
+82 p 1
+D1
+~
+~
+0 0 8203 0
+D3
+~
+~
+0 0 8275 0
+S
+#8203
+A Slight Bend In The Old Road~
+   The old road bends slightly north here, leading you to the outskirts
+of a small farming village, and to the west the road continues along
+the northern edge of the large forest which can be seen to the south of
+here. You can leave north or west.
+~
+82 p 1
+D0
+~
+~
+0 0 8204 0
+D3
+~
+~
+0 0 8202 0
+S
+#8204
+The Entrance To Hommlet~
+   You are standing at the entrace to the tiny, simple village of Hommlet.
+It is a small farming village, just big enough to support tradesmen. 
+Without a doubt though, the key to this village's life is its inn, The Inn
+of the Welcome Wench.  
+~
+82 cp 1
+D0
+~
+~
+0 0 8205 0
+D1
+~
+~
+0 0 8206 0
+D2
+~
+~
+0 0 8203 0
+S
+#8205
+Modest Farmhouse And Barn~
+   This wood and plaster house is well-kept, and the barn beyond is bulging
+with hay, grain, and so forth. Several fat animals are about. Two large farm
+dogs bark at your approach, and a rosy-cheeked goodwife appears at the
+doorway.  
+~
+82 dp 0
+D2
+~
+~
+0 0 8204 0
+D5
+In the floor you notice a couple of loose boards.
+~
+floor ceiling~
+1 -1 8207 0
+S
+#8206
+A Bend In The Road~
+   Here, the old road ends, intersecting the north-south Caravan Road.
+To the north of this intersection is a prosperous-looking farmhouse
+with a huge barn. The Caravan Road begins just east of here.
+~
+82 p 1
+D0
+~
+~
+0 0 8208 0
+D1
+~
+~
+0 0 8209 0
+D3
+~
+~
+0 0 8204 0
+S
+#8207
+Store Room~
+   This is a small store room used by the farmer and his sons to store various
+tools and unneeded items. Some of this stuff appears useful.
+~
+82 adp 0
+D4
+Above you, you notice a loose board in the ceiling.
+~
+ceiling floor~
+1 -1 8205 0
+S
+#8208
+The Prosperous Farm House~
+   A clean and well kept farmhouse indicates that this is likely one of the more
+profitable farms in Hommlet.  An elderly farmer and servant run this farm, 
+with seasonal hiring as necessary.
+~
+82 dp 0
+D2
+~
+~
+0 0 8206 0
+S
+#8209
+On The Caravan Road~
+   This wide, dirt road is the life blood of Hommlet. It brings traders to this
+little town, and allows an avenue to get Hommlet's produce to market.  To the
+east and west lie small family farms, while the Caravan Road runs north and
+south.
+~
+82 p 1
+D0
+~
+~
+0 0 8210 0
+D1
+~
+~
+0 0 8211 0
+D2
+~
+~
+0 0 8212 0
+D3
+~
+~
+0 0 8206 0
+S
+#8210
+The Village Square~
+   You have arrived at the town square of Hommlet.  There is a constant hustle
+and bustle of people.  Farmers auctioning their vegetables and stock.  Traders
+selling their wares.  This is a vibrant little town.  The heart of the town, 
+the Inn of the Welcome Wench, lies to the west.  The Caravan Road runs north
+and south, and the Old Temple Road runs east.
+~
+82 p 1
+D0
+~
+~
+0 0 8213 0
+D1
+~
+~
+0 0 8214 0
+D2
+~
+~
+0 0 8209 0
+D3
+~
+~
+0 0 8215 0
+S
+#8211
+The Well-Kept Farm~
+   This house and barn show that this farmer is doing well, and the stock in his
+fenced in yard are very fine looking.  The two sons of this farmer come out
+to greet you.
+~
+82 dp 0
+D3
+~
+~
+0 0 8209 0
+S
+#8212
+Another Prosperous Farmhouse~
+   There are children everywhere around this house, and no woman to raise them.
+The farm might be going well, but the children certainly need some work.
+~
+82 dp 0
+D0
+~
+~
+0 0 8209 0
+S
+#8213
+On The Caravan Road~
+   You stand on the wide Caravan Road, the road that brings goods and
+services to and from this little farming town. The road is hard packed dirt,
+showing signs of very heavy use. To the west is the Village Hall. The shop
+of the weaver is to the east. The Caravan Road runs north and south. To the
+south, is the Town Square, and the Inn of the Welcome Wench.  
+~
+82 p 1
+D0
+~
+~
+0 0 8226 0
+D1
+~
+~
+0 0 8227 0
+D2
+~
+~
+0 0 8210 0
+D3
+~
+~
+0 0 8228 0
+S
+#8214
+On The Old Temple Road~
+   You stand on an old, old road.  Older than Hommlet, older than Garathorm.  A
+stone road covered by ages of dust and mud.  The Old Temple Road continues to
+the east, and intersects the Caravan Road to the west.  The smithy lies to 
+the north, with the clang of metal and metal ringing from inside its thin 
+walls.  A small trail leads away to the south.
+~
+82 p 1
+D0
+~
+~
+0 0 8257 0
+D1
+~
+~
+0 0 8258 0
+D2
+~
+~
+0 0 8259 0
+D3
+~
+~
+0 0 8210 0
+S
+#8215
+The Inn Of The Welcome Wench~
+   You have entered Hommlet's most famous building, and its most prosperous one.
+This village tavern is almost always occupied with merchants, and traders, 
+and especially local farmers.
+There is a bar to the west, a private dining room behind a door to the north, 
+the kitchen to the south, stairs leading up, and the main door leading back
+out to the Town Square.
+~
+82 dp 0
+D0
+A door in the north wall leads to a private dining room.
+~
+door~
+1 8299 8216 0
+D1
+~
+~
+0 0 8210 0
+D2
+~
+~
+0 0 8217 0
+D3
+~
+~
+0 0 8218 0
+D4
+~
+~
+0 0 8219 0
+D5
+The table in the center of the room seems to be a little loose.
+~
+table~
+1 -1 8220 0
+S
+#8216
+The Private Dining Room~
+   A cosy little place for people to sit back and relax. A little get-away-from-
+it-all room for wealthy merchants and visiting nobility.
+~
+82 adp 0
+D2
+The door in the south wall leads back out the common room of the Inn.
+~
+door~
+1 8299 8215 0
+S
+#8217
+The Kitchen Of The Welcome Wench~
+   There's a HUGE fireplace against the western wall with pots and kettles and
+skillets always making the lovely noise of good food cooking.  Your mouth
+waters as you enter the kitchen, and by the time you're ready to leave, the
+juices are flowing so good.
+There are stairs up and down.
+~
+82 dp 0
+D0
+~
+~
+0 0 8215 0
+D4
+~
+~
+0 0 8221 0
+D5
+~
+~
+0 0 8222 0
+S
+#8218
+The Bar Of The Welcome Wench~
+   A long, wooden bar trimmed in brown leather and brass stands between you and
+the owner of this fine establishment, Ostler Gundigoot.  The high bar stools
+put you just at about the right height to rest your elbows on the bar, and sip
+a cold brew.
+~
+82 dp 0
+D1
+~
+~
+0 0 8215 0
+S
+#8219
+The Top Of The Stairs~
+   You are now at the top of the stairs which lead down to the main room of the
+Welcome Wench.  There are four doors here, one in each direction, which you
+assume lead into various rooms of guests.  Perhaps there's gold!
+~
+82 dp 0
+D0
+A dark door in the north wall leads into a private room.
+~
+door~
+1 8298 8223 0
+D1
+A dark door in the east wall leads into a private room.
+~
+door~
+1 8298 8224 0
+D2
+A dark door in the south wall leads into a private room.
+~
+door~
+1 8298 8221 0
+D3
+A dark door in the west wall leads into a private room.
+~
+door~
+1 8298 8225 0
+D5
+~
+~
+0 0 8215 0
+S
+#8220
+The Secret Store Room~
+   This hidden storage room was used to store all kinds of weapons and supplies
+during the bad times, during the War of the Temple.  Now it is unused, and for
+the most part, forgotten.
+~
+82 acdp 0
+D2
+The south walls seems very loose in places.
+~
+wall~
+1 -1 8222 0
+D4
+Just above you, you notice the circular outline of a table.
+~
+trap trapdoor table~
+1 -1 8215 0
+S
+#8221
+Gundigoot's Quarters~
+   This is the room used by Ostler Gundigoot and his family. It's a small room, 
+but it serves its purpsoe well, keeping the family safe and warm and cosy.
+There's a big bed for Gundigoot and his wife, and two little beds for their
+children.
+~
+82 dp 0
+D0
+There is a door in the north wall.
+~
+door~
+1 8298 8219 0
+D5
+~
+~
+0 0 8217 0
+S
+#8222
+The Store Room~
+   This is the storage room of the Welcome Wench. All kinds of pots and pans,
+barrels, bags, kegs, and casks are laying around down here.  The Welcome Wench
+will certainly not run out of good things to eat anytime soon!
+~
+82 adp 0
+D0
+Against the north wall sits a large cask.
+~
+cask~
+1 -1 8220 0
+D4
+~
+~
+0 0 8217 0
+S
+#8223
+Zert's Room~
+   This is Zert's private room. The curtains on the window are drawn, making
+you think that being here might not be in your best interests. But then again,
+maybe Zert himself gives you that impression.
+~
+82 adp 0
+D2
+There is a door in the south wall.
+~
+door~
+1 8298 8219 0
+S
+#8224
+A Private Room~
+   This room is rented by Spugnior, the "Magnificent"... or was it "Masterful"?
+No matter, he doesn't like you here, and he lets you know it.
+~
+82 adp 0
+D3
+There is a door in the west wall.
+~
+door~
+1 8298 8219 0
+S
+#8225
+Furnok's Room~
+   This is the room that Ostler Gundigoot has rented to Furnok of Ferd, the 
+local card shark.  Looking around the room, you notice all kinds of gaming
+supplies: loaded dice, marked cards, etc.
+~
+82 adp 0
+D1
+There is a door in the east wall.
+~
+door~
+1 8298 8219 0
+S
+#8226
+On The Caravan Road~
+   The Caravan Road contineus on its north-south here, through the center of the
+small town.  To the east you see fields ripe with crops. To the north, the 
+road crosses a small river.  To west, is a small shop, from the looks
+of it, a tailor's shop.
+~
+82 p 1
+D0
+~
+~
+0 0 8229 0
+D2
+~
+~
+0 0 8213 0
+D3
+~
+~
+0 0 8230 0
+S
+#8227
+The Shope Of The Weaver~
+   The wooden sign over the door shows a bag of wool and a loom.  In this small
+building, the weaver, his wife, and several apprentices live and work.  There
+are bolts of woolen and flaxen cloth laying around, but nothing of much value
+to you.
+~
+82 dp 0
+D3
+~
+~
+0 0 8213 0
+S
+#8228
+The Village Hall~
+   There is no one here.  The doors are all open, and a few benches and stools
+stand by the bare walls.  A large, plain table sits at the far end of the room.
+A tapestry on the back wall show a green fieldwith two acorns above a sheaf
+of grain - the Banner of Hommlet.
+~
+82 dp 0
+D1
+~
+~
+0 0 8213 0
+S
+#8229
+On The Bridge Over The River~
+   You stand on a very old, very solid stone bridge. Much older than
+anything else you have seen in this area. Huge stone blocks have been
+used to make this crossing of the river.
+~
+82 p 1
+D0
+~
+~
+0 0 8232 0
+D2
+~
+~
+0 0 8226 0
+S
+#8230
+The Cottage Of The Tailor~
+   This modest little building is the home and office of the local tailor.  As 
+you enter his shop, he rises from his work, and greets you with a smile.  The
+shop is small, but very neat.  The work that he has done is of the highest
+quality.  He is obviously very skilled.
+~
+82 dp 0
+D1
+~
+~
+0 0 8226 0
+S
+#8231
+On The Caravan Road~
+   You are currently following a road hard packed by trampled dirt, going
+north across wide open plains, and south into the small trading town known
+as Hommlet. You can leave north or south as you please. Along the west and
+east you can barely make out openings in the brush along the river.  
+~
+82 p 1
+D0
+~
+~
+0 0 8300 0
+D2
+~
+~
+0 0 8233 0
+D3
+~
+~
+0 0 4201 0
+S
+#8232
+Caravan Road Meeting River Road~
+   You arrive at the crossing of the north-south Caravan Road with the
+east-west River Road. Shops can be seen along River Road, while further
+north on the Caravan Road, you see a large building.
+~
+82 p 0
+D0
+~
+~
+0 0 8233 0
+D1
+~
+~
+0 0 8234 0
+D2
+~
+~
+0 0 8229 0
+D3
+~
+~
+0 0 8235 0
+S
+#8233
+On The Caravan Road~
+   You are on the Caravan Road, on the Northern edge of the Village of Hommlet.
+The wide road continues to the north and south, while to the east, you see a 
+large building.  It could very well be a temple or church of some sort.
+~
+82 cp 1
+D0
+~
+~
+0 0 8231 0
+D1
+~
+~
+0 0 8236 0
+D2
+~
+~
+0 0 8232 0
+S
+#8234
+On The River Road~
+   You stand in the middle of Hommlet's traders' road, the River Road.  The 
+road runs east and west.  To the north, you see a large building, bustling
+with activity.
+~
+82 p 1
+D0
+~
+~
+0 0 8250 0
+D1
+~
+~
+0 0 8251 0
+D3
+~
+~
+0 0 8232 0
+S
+#8235
+On The River Road~
+   You stand on the narrow city street which runs parallel to the river,
+and which these people call the River Road.  The road runs east and west, 
+intersecting the Caravan Road to the east, and dead-ending to the west.  A
+rather large shop to south, seems to be a jeweler's or something like that.
+~
+82 p 1
+D1
+~
+~
+0 0 8232 0
+D2
+~
+~
+0 0 8245 0
+D3
+~
+~
+0 0 8246 0
+S
+#8236
+The Great Hall Of The Church Of Helver~
+   This is where the faithful of Hommlet come to worship and hear the
+message of their patron saint, Helver. The clerics of this small temples
+seem to appear out of nowhere to greet you and make you feel welcome. A
+small hallway leads north into a small antechamber.  
+~
+82 dhp 0
+D0
+~
+~
+0 0 8237 0
+D3
+~
+~
+0 0 8233 0
+S
+#8237
+The Small Antechamber~
+   You stand in a small antechamber of the Church of Helver.  There are doors
+to the east and west, and curtain hanging across a wide entry to the north.
+The monks and clerics continue to scurry about, always offering to assist.
+~
+82 dhp 0
+D0
+There is a curtain on the north wall.
+~
+curtain~
+1 -1 8238 0
+D1
+There is a door in the east wall.
+~
+door~
+1 -1 8239 0
+D2
+~
+~
+0 0 8236 0
+D3
+There is a door in the west wall.
+~
+door~
+1 -1 8240 0
+S
+#8238
+The Altar And Sanctuary~
+   This circular chamber is screen by a deep green curtain. In the center of the
+room is a life-sized statue of Helver, smiling, with is trademark Mace held
+high in his right hand.  Growing ferns and other plants are behind the statue,
+while to either side are large stumps from which the clerics preach. Engraved
+around the base of the statue is Helver's most famous quote:
+
+        "Salutations to the Captain."
+~
+82 dp 0
+D2
+There is a curtain in the south wall.
+~
+curtain~
+1 -1 8237 0
+S
+#8239
+The Vestry~
+   This private chamber is for the rest and relaxation of the clerics, as well 
+as for their use in dressing for services.  Steps along the eastern wall lead to
+the upper floor.
+~
+82 dp 0
+D3
+There is a door in the west wall.
+~
+door~
+1 -1 8237 0
+D4
+~
+~
+0 0 8241 0
+S
+#8240
+The Study And Audience Chamber~
+   You have walked into a small room, furnished with spartan chairs and plain
+wooden tables.  On the tables lay various works of literture, from "The Old
+Prophecies of Helver" to "Helver, Our Hero" to "The Life and Times of Helver"
+A small stairway against the western wall leads down into the cellar.
+~
+82 dhp 0
+D1
+There is a door in the east wall.
+~
+door~
+1 -1 8237 0
+D5
+~
+~
+0 0 8242 0
+S
+#8241
+The Upper Hall~
+   During sermons, visiting clerics can sit here in the large upholstered chairs
+and couches.  There is a small set of stairs leading back down the vestry, and
+doors to the east and west.
+~
+82 dp 0
+D1
+There is a door in the east wall.
+~
+door~
+1 -1 8243 0
+D3
+There is a door in the west wall.
+~
+door~
+1 -1 8244 0
+D5
+~
+~
+0 0 8239 0
+S
+#8242
+The Sacred Trophies Gallery~
+   Here, underneath the church, the monks keep their stash of holy weaponry. 
+Most is, of course, just trash disguised as valuable talimsans, but perhaps
+there could be something of value down here after all.
+~
+82 adp 0
+D4
+~
+~
+0 0 8240 0
+S
+#8243
+The Assistant Cleric's Quarters~
+   Here, the assistant clerics of Helver make their homes. It's a fairly
+small room, but it is neat and clean. However, it IS off limits to those not
+initiated into the order of Helver. It would be advisible that you not
+remain here very long.
+~
+82 adhp 0
+D3
+There is a door in the west wall.
+~
+door~
+1 -1 8241 0
+S
+#8244
+The Chief Priest's Chambers~
+   You have entered the sacred room of the Chief Priest of Helver, the
+Blessed Cleric Terjon.  You know you shouldn't be here, which is why  it doesn't
+surpise you that Terjon immediately takes you for thieves and infidels, and
+rushes to the defense of his church.
+~
+82 dhp 0
+D1
+There is a door in the east wall.
+~
+door~
+1 -1 8241 0
+S
+#8245
+The Money Changer's Shop~
+   The sign at the entrance to the shop displays three yellow balls, and three
+large jems.  And walking into the shop, you see that, yes, this is the home
+of the local jeweler/money lender, Nira Melubb.  He greets you with a wry
+grin and an appraising glance, trying to figure how much he can scam off you.
+The guard and the dog are usually enough to keep his customers at bay, but if
+that's not enough, Melubb lets you see just enough of his dagger to convince
+you that he knows how to use it.
+~
+82 dp 0
+D0
+~
+~
+0 0 8235 0
+S
+#8246
+The End Of River Road~
+   You have arrived at the western end of the River Road.  The road continues
+back to the east, and there are several buidlings surroundign this cul-de-sac.
+The brewer's is to the west, the potter's is to the south, and the cabinet
+maker's is to the north.
+~
+82 p 1
+D0
+~
+~
+0 0 8247 0
+D1
+~
+~
+0 0 8235 0
+D2
+~
+~
+0 0 8249 0
+D3
+~
+~
+0 0 8248 0
+S
+#8247
+The Cabinet Maker's House~
+   This building is the shop and home of the local cabinet maker, his wife, and
+their two children.  He is really very good at what he does, and he seems to
+attribute all his skill to the elements.  In fact, at each corner of his shopp,
+you see small shrines to the elements, and their guardians.
+~
+82 dp 0
+D2
+~
+~
+0 0 8246 0
+S
+#8248
+The Brewery~
+   This very large stone building was erected right on the banks of the river.
+Folklore says that the local  river water is the best there is for
+making good, solid ales and stout lagers.  The braumeister, his wife, and
+his two apprentices live, and work here.  They make, by far, the best brew
+this side of Weirvane.
+~
+82 dp 0
+D1
+~
+~
+0 0 8246 0
+S
+#8249
+The Potter's Cottage~
+   This is the small cottage where the potter, his wife, and their three sons
+live.  The two elder sons help their father with the business.  In fact, they
+all make a fairly good living.
+~
+82 dp 0
+D0
+~
+~
+0 0 8246 0
+S
+#8250
+The Trading Post~
+   You have entered the main room of a very large building, all filled with the
+hustle and bustle of trade and bartering.  In this main room, the local
+traders conduct auctions and sales of all kinds.
+There's a stall to the north, where you hear the sounds of animals.
+~
+82 adp 0
+D0
+To the north, is the gate to a stall.
+~
+gate stall~
+1 -1 8256 0
+D2
+~
+~
+0 0 8234 0
+D3
+There is a small, sliding panel on the west wall.
+~
+panel~
+1 -1 8255 0
+S
+#8251
+The Eastern End Of The River Road~
+   You have arrived at the eastern end of the River Road.  Lining this little
+cul-de-sac are three shops, the teamster's, the miller's, and the dairy 
+farmer's.
+~
+82 p 1
+D0
+~
+~
+0 0 8252 0
+D1
+~
+~
+0 0 8253 0
+D2
+~
+~
+0 0 8254 0
+D3
+~
+~
+0 0 8234 0
+S
+#8252
+The Teamster's Cottage~
+   A wooden sign over the door shows a cart and a horse, indicating that this
+is the residence of the local carter.  This teamster, his wife, and six young
+children live here, and make a fairly decent living.  In fact, the carter is
+a favorite at town gatherings, telling his stories of far away Garathorm and
+the fair and just King Welmar.
+~
+82 dp 0
+D2
+~
+~
+0 0 8251 0
+S
+#8253
+The House Of The Dairy Farmer~
+   This well-kept building is obviously that of a cowherd, and that particular
+odor is quite noticable in the area.  The farmer, his wife, his aged mother,
+and seven children live and work here.  They make a fair living, nothing
+extraordinary.
+~
+82 dp 0
+D3
+~
+~
+0 0 8251 0
+S
+#8254
+The Mill And Attached Home~
+   In this house dewll Mytch, his wife, and three children.  They grind the
+grain grown by local farmers into the flour and meal sold to traders and
+merchants.  They're a hard working family which has grown into one of the more
+well liked, and well respected families in Hommlet.
+~
+82 dp 0
+D0
+~
+~
+0 0 8251 0
+S
+#8255
+The Traders' Room~
+   In this small room, the traders and merchants sleep, and stash their great
+hoards of money.  But, this places is also off limits for legitimate buyers,
+and if the they find you here, they're almost certain to attack.
+~
+82 adp 0
+D1
+There is a sliding panel in the wall to the east.
+~
+panel~
+1 -1 8250 0
+S
+#8256
+The Stable~
+Just a place for horses and cows to be kept until auction.
+~
+82 adp 0
+D2
+To the south, you see the gate to the stall.
+~
+gate stall~
+1 -1 8250 0
+S
+#8257
+The Smithy~
+   Horseshoes are nailed to three faces of the post in front of this shed, and
+within sit a forge and bellows.  This is obviously the smithy.  A short, but
+brawny man is vigorously pounding away at a piece of white-hot iron.
+!
+~
+82 dfp 0
+D2
+~
+~
+0 0 8214 0
+S
+#8258
+On The Old Temple Road~
+   You stand in the middle of the Old Temple Road as it makes its long, east-
+west journey.  This old road is well built, and covered with layer upon layer
+of dust and debris from the years of travel.  To the north lies the compound
+of the Village Elder, and the whell and wainwright owns the building to the
+south.
+~
+82 p 1
+D0
+~
+~
+0 0 8261 0
+D1
+~
+~
+0 0 8262 0
+D2
+~
+~
+0 0 8263 0
+D3
+~
+~
+0 0 8214 0
+S
+#8259
+The End Of The Path~
+   This small path leads through a light grove to an open area.  This is most
+definitely a place or worship.  The trees are all neatly pruned, and the grass
+is well tended.  A carefully placed line of bluish stones sets off the path
+leading to a rock cairn.  A tiny trail leads south to an old cottage.
+~
+82 p 3
+D0
+~
+~
+0 0 8214 0
+D2
+~
+~
+0 0 8260 0
+S
+#8260
+The Druid's Cottage~
+   This small cottage is home to Markhan Brell, the local druid of Hommlet.  In
+this quaint little cottage, he communes with nature, and holds audiences with
+local farmers, advising them when to sow, and when to reap.
+~
+82 dhp 0
+D0
+~
+~
+0 0 8259 0
+S
+#8261
+The Village Elder's Compound~
+   This high walled compound is the home of the Village Elder, his wife and two
+grown sons.  These are very noble and proud people, who are very happy with
+their status in the village, and will protect any attempt to usurp their
+position.
+~
+82 dp 0
+D2
+~
+~
+0 0 8258 0
+S
+#8262
+On The Old Temple Road~
+   You stand in the middle of the Old Temple Road as it makes its long, east-
+west journey.  This old road is well built, and covered with layer upon layer
+of dust and debris from the years of travel.  To the north lies house of the
+Stonemason, while the Carpenter lives and works in the building to the south.
+~
+82 p 1
+D0
+~
+~
+0 0 8265 0
+D1
+~
+~
+0 0 8266 0
+D2
+~
+~
+0 0 8267 0
+D3
+~
+~
+0 0 8258 0
+S
+#8263
+The Wheel-Wright's Shop~
+   This is home of the Wheel-Wright, where he lives and does his business alone.
+He is a recent transplant to Hommlet, and has yet to meet a wife.  At your
+arrival he springs up as if he didn't expect anyone to walk through his door.
+He vigorously shakes your hand, asking of news of the world.
+~
+82 dp 0
+D0
+~
+~
+0 0 8258 0
+S
+#8265
+The House Of The Stonemason~
+   This well-crafted stone dwelling seems recently built.  It is set off from
+the road by a low stone wall.  No animals are seen, but some children are
+playing in the yard.
+~
+82 dp 0
+D2
+~
+~
+0 0 8262 0
+S
+#8266
+On The Old Temple Road~
+   You stand in the middle of the Old Temple Road as it makes its long,
+east-west journey. To the west, you see the small trading village known
+by many as Hommlet while to the east, the road winds its way along
+the northern border of the forest which can be seen to the south of here.
+On the north side of the road, wide open plains stretch, covered with
+some small bushes and trees. The road extends to the east and west from
+here.
+~
+82 p 1
+D1
+~
+~
+0 0 8276 0
+D3
+~
+~
+0 0 8262 0
+S
+#8267
+The House Of The Carpenter~
+   The sign before the door of this house shows a saw and hammer.  The building 
+appears to be newly constructed.
+~
+82 adp 0
+D0
+~
+~
+0 0 8262 0
+S
+#8272
+An Old Road~
+   You are currently following an old road close to the edge of a dense
+forest which stands to the east. On the west side of the road, grassy
+plains stretch, with some lone trees and scrubby bushes, scattered at
+random. You can follow the road north or west from here.
+~
+82 cp 0
+D0
+~
+~
+0 0 8273 0
+D3
+~
+~
+0 0 3264 0
+S
+#8273
+An Old Road~
+   You are on a dusty old road, following the edge of a vast forest which
+stands to the east. On the north and west side of the road, great plains,
+covered with grass and clusters of trees, stretch. To the south, the king's
+road can be seen, going in an east-west route across the grassy plains.
+You can follow the road east or south from here.
+~
+82 p 2
+D1
+~
+~
+0 0 8274 0
+D2
+~
+~
+0 0 8272 0
+S
+#8274
+An Old Road~
+   You are on an old road, going in an east-west direction along
+the northern border of the large forest which stands to the south.
+To the north, beyond the hilly grasslands, a mountain range stands.
+You can continue to follow the road east or west from here.
+~
+82 p 0
+D1
+~
+~
+0 0 8275 0
+D3
+~
+~
+0 0 8273 0
+S
+#8275
+An Old Road~
+   The road which you are currently travelling on, continues to the east
+and west, going along the northern border of a large, dense forest. Far to
+the east, barely visble beyond some hills, is a small trading town.
+To the north, beyond the hilly grasslands, a mountain range stands, with
+peaks reaching towards the sky. You can continue your journey east or
+west along the road.
+~
+82 p 2
+D1
+~
+~
+0 0 8202 0
+D3
+~
+~
+0 0 8274 0
+S
+#8276
+On The Old Temple Road~
+   You stand in the middle of the Old Temple Road as it makes its long,
+east-west journey. This road is well built, and covered with layer
+upon layer of dust and debris from years of travel. Close by to
+the south, the edge of a large forest can be seen and on the north
+side of the road, vast plains stretch, scattered with some lone bushes
+and trees. The road extends to the east and west from here.
+~
+82 p 2
+D1
+~
+~
+0 0 8277 0
+D3
+~
+~
+0 0 8266 0
+S
+#8277
+An Intersection In The Old Temple Road~
+   You have come to a three-way crossing. Here, the Old Temple Road
+meets with a murky road which comes out of the dense swamps to the north.
+Far to the west, you can see the small trading village known by many as
+Hommlet, you can leave to the north or west.
+~
+82 cp 0
+D0
+~
+~
+0 0 8278 0
+D2
+A small path goes into the forest, disappearing out of view.
+~
+~
+0 0 8624 0
+D3
+~
+~
+0 0 8276 0
+S
+#8278
+A Murky Road~
+   You are walking along a small murky road just outside a small town
+east you can see what seems to be swamps, and vegitation, trees of
+all shapes and sizes reach for the sky.  To your west is a township
+where safety remains. You can follow the road east, and south.
+~
+82 p 0
+D1
+~
+~
+0 0 14000 0
+D2
+~
+~
+0 0 8277 0
+S
+$~

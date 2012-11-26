@@ -1,0 +1,1156 @@
+#3000
+merchant busy~
+a busy merchant~
+A busy merchant is here, buzzing past you.
+~
+A busy merchant is looking you over, considering if your
+worth his time.
+~
+cdeuw k 100 X 0 
+50 2 -10 25d25+500
+0 500000 -1
+8 8 1 3 1 3
+T 50 8d5+10 7
+E -1 100 3030 -1
+>rand_prog                                                                       11~
+  if rand (70)
+    mphuntrm 3147
+  else
+    mphuntrm 3146
+  endif
+~
+>time_prog                                                                       */*/*/*/*/20~
+  if rand(70)
+    mphuntrm 3147
+  else
+    mphuntrm 3146
+  endif
+~
+>rand_prog                                                                       50~
+  if inroom ($i) == 3046
+    if rand(30)
+      rem key
+      unlock crate
+      open crate
+      get barrel crate
+      close crate
+      lock crate
+      hold key
+      w
+      s
+      s
+      w
+      s
+    else
+      if rand(30)
+        unlock crate
+        open crate
+        get wide crate
+        close crate
+        lock crate
+        hold key
+        w
+        s
+        s
+        w
+        s
+      else
+        if rand(30)
+          unlock crate
+          open crate
+          get potion crate
+          close crate
+          lock crate
+          hold key
+          w
+          s
+          s 
+          w
+          s
+       else
+          unlock crate
+          open crate
+          get enameled crate
+          close crate
+          lock crate
+          hold key
+          w
+          s
+          s
+          w
+          s
+        endif
+      endif
+    endif
+  endif
+~
+>rand_prog                                                                       70~
+  if inroom ($i) == 3047
+    if rand(30)
+      rem key
+      unlock crate
+      open crate
+      get blue crate
+      close crate
+      lock crate
+      hold key
+      w
+      w
+      n  
+    else
+      if rand(30)
+        rem key
+        unlock crate
+        open crate
+        get ring crate
+        close crate
+        lock crate
+        hold key
+        w
+        w
+        n  
+      else
+        if rand(30)
+          rem key
+          unlock crate
+          open crate
+          get red crate
+          close crate
+          lock crate
+          hold key
+          w
+          w
+          n  
+        else
+          rem key
+          unlock crate
+          open crate
+          get box crate
+          close crate
+          lock crate
+          hold key
+          w
+          w
+          n  
+        endif
+      endif
+    endif
+  endif
+~
+|
+#3001
+elite guard cityguard controlguard~
+{can {Celite {ccityguard{x~
+{cAn {Celite {ccityguard is here, keeping the peace.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+abdegmA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3002
+gwydno baker shopkeeper~
+Gwydno the Baker~
+Gwydno the Baker scurries hurriedly around the counter.
+~
+Gwydno is rather large, possible from carrying all that flour.
+~
+bdlw dh 900 X 0 
+60 0 -10 25d25+25000
+20000 76000 -1
+8 8 1 3 1 3
+T 60 5d5+10 0
+A 4 8 Gwydno pulls a knife out of his counter drawer and begins to slice some bread.
+A 10 8 Gwydno says hurriedly, 'Well, what do you want? I haven't got all day!'
+A 4 8 Gwydno scuttles about his shop straightening and re-organizing.
+#3003
+Landlord lord land~
+the Landlord~
+The Landlord is here, inspecting the premises.~
+The landlord of this boarding house is quite large, towering over you and
+watching your every move, just waiting for you to make a mistake.  
+~
+bd 0 -500 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 5d5+0 0
+#3004
+bedwyr armorer shopkeeper~
+Bedwyr the Armorer~
+Bedwyr is here scouring through his assorted armours.~
+Bedwyr is a large man, and has seen his share of blacksmiths. It is apparent
+now however that someone else must be branding his armour, for he has grown
+quite fat, and appears to be lazy.
+~
+abdlw dh 900 X 0 
+60 0 -10 30d30+30000
+0 10000000 -1
+8 8 1 3 1 3
+T 20 3d6+1 0
+A 4 8 Bedwyr the Armorer says, 'If you want clothes, go somewhere else. I sell armor here!'
+A 4 8 $n adjusts a row of great helms, moving the dusty ones to the back.
+A 4 8 $n carefully examines a fine shield.
+A 4 8 $n polishes up his finest set of vambraces.
+#3005
+receptionist Casiella inn innkeeper keeper~
+Casiella the Inn Keeper~
+Casiella the Inn Keeper is standing here tidying things a bit.
+~
+You notice a tired look in her face. She looks like she hasn't
+been happy in a long time.
+~
+abdluw dh 900 X 0 
+60 0 -10 25d25+25000
+0 25000 -1
+8 8 2 3 1 3
+T 20 3d6+1 0
+A 4 6 $n pulls a book from her desk and begins to glance through the pages.
+A 4 6 $n attempts to convice you the rooms really are clean.
+A 4 6 $n stares into space, lost in a daze.
+A 4 6 $n shifts in her chair, as if she has been sitting here a long time.
+#3006
+Ylirnah Sorceress magic shopkeeper~
+Ylirnah the Sorceress~
+Ylirnah the Sorceress is here mumbling to herself.
+~
+Ylirnah the Sorceress is quite small, and adept to your every move.
+She glimpses past you suddenly, watching the back of her shop.
+~
+bdegoqw dfghks 100 X 0 
+60 0 10 30d30+25000
+0 25000 -1
+8 8 2 3 1 3
+T 60 5d5+10 26
+A 8 2 Ylirnah scans the shop quickly, making sure every potion is intact.
+A 8 2 Ylirnah examines a scroll left at the counter, blowing some dust of an old scroll. 
+A 8 2 Ylirnah looks past you at the door, as if someone were entering.
+#3007
+mercenary merc~
+the mercenary~
+A city mercenary is waiting for a job here.
+~
+He is very mean looking, and you imagine he'd do anything for money.
+~
+cdn 0 -330 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 10d1+5 0
+E 7 75 3087 -1
+Dex: 75
+Agi: 75
+#3008
+guard cityguard royal~
+{Dthe {Rroyal {Dcityguard{x~
+{DA {Rroyal{D cityguard stands here, paying close attention to your every move.{x
+~
+This well conditioned warrior is in his prime, looking for fame and glory,
+maybe even by turning your head over to the Mayor.
+~
+acdlnoprA dk 600 X 0 
+40 2 -10 20d20+400
+0 150000 -1
+8 8 1 3 1 3
+T 50 8d4+8 0
+E 12 10 3019 5
+E 1 2 3064 -1
+Dex: 80
+Agi: 80
+#3009
+Trader Merchant~
+the Trader~
+A Merchant Trader is doing inventory in his head.
+~
+His clothes are silken, and his eyes and hands soft, but
+his movement belie combat training.  You don't think he
+would have gotten so successful by letting just anyone
+knock over his operation here.
+~
+dw 0 350 X 0 
+50 2 -10 25d25+500
+0 500000 -1
+8 8 1 3 1 3
+T 70 7d8+9 0
+#3010
+postmaster post master londrin nick~
+Londrin the Post Carrier~
+Londrin the Post Carrier is here waiting to help you with your mail.
+~
+The postmaster seems like a happy old man, though a bit sluggish. He worries
+about the reputation of the Weirvane Mail Service, as many people seem to
+think that it's slow, so Londrin scurries along here, rushing mail back and
+forth through the streets of Weirvane.
+~
+abdl dh 650 X 0 
+60 0 -10 25d25+25000
+0 25000 -1
+8 8 1 3 1 3
+T 20 3d6+1 0
+A 4 8 $n says, 'Best mail service in the realm!'
+A 4 8 $n says sternly, 'You cannot read your mail here, you must go outside.'
+A 4 8 $n chuckles good naturedly.
+#3011
+peddler man~
+the peddler~
+A lonely peddler is trying to sell his wares here.
+~
+The lonely peddler looks quite tired from having shouted at the top of his
+voice for hours. When he notices your interest, he turns and shouts some
+at you, inviting you to come and see his fine wares.
+~
+bcdh k 250 X 0 
+60 0 -10 30d30+30000
+0 10000000 -1
+8 8 1 3 1 3
+T 100 9d9+10 0
+A 3 8 $n says, 'I carry only the freshest fruit in all the realm!'
+A 3 8 $n says, 'Can I interest you in some imported fruit from Eden?'
+A 3 8 $n smiles, showing off his wares.
+#3012
+merchant man~
+the Merchant~
+A merchant walks around the market looking for something.
+~
+This fat merchant is dressed in silk robes, and looks very important. Maybe
+you should stay out of his way.
+~
+bcdh 0 100 X 0 
+6 7 10 3d3+60
+0 2050 -1
+8 8 1 3 1 3
+T 100 2d5+0 0
+A 4 8 $n flags down a nearby shopper, inviting her over.
+A 4 8 $n shows off his silk blouses.
+A 4 8 $n says, 'Back in my warehouse, I have lots of these fine silks.'
+#3013
+citizen man~
+the Citizen of Weirvane~
+A citizen of Weirvane is hurrying somewhere.
+~
+This man, perhaps a merchant or a craftsman, seems to be in a rush somewhere.
+~
+dh 0 400 X 0 
+3 18 8 2d2+30
+0 600 -1
+8 8 1 3 1 3
+T 100 1d2+2 0
+A 4 8 $n looks around, scanning quickly for a bargain.
+>rand_prog                                                                30~
+if inroom ($i) == 3000
+  drink fountain
+else
+endif
+~
+|
+#3014
+citizen woman~
+the Citizen of Weirvane~
+A citizen of Weirvane walks past.
+~
+She is finely dressed, perhaps she is a merchant or the wife of some noble.
+She moves through the crowd with confidence and grace.   
+~
+dh 0 400 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 2 3 1 3
+T 100 1d2+1 0
+A 3 8 $n carefully looks around, searching for the one last item she needs.
+#3015
+konei weaponsmith shopkeeper~
+Konei the Weaponsmith~
+Konei the weaponsmith is here, awaiting your order.
+~
+He's a retired warrior, who now leads a quiet city life. He is quite small
+compared to other men, but his marks of battle show deeply in his skin.
+~
+abdlw dh 900 X 0 
+55 0 -10 28d28+30000
+0 25000 -1
+8 8 1 3 1 3
+T 20 3d6+1 0
+#3016
+sindar trader shopkeeper~
+Sindar the Trader~
+Sindar the trader stands here, busily stocking his shelves.
+~
+You look closer at Sindar and notice he's not a small man by any means. His
+muscular figure shows that looking after this shop might be more work than
+it appears.  
+~
+bdnopqrw dh 900 X 0 
+55 0 -10 28d28+5550
+0 6000000 -1
+8 8 1 3 1 3
+T 20 3d6+1 0
+A 4 8 $n screams as he sees a gnat land nearby.
+A 4 8 $n sits very still, looking off into space.
+A 10 8 $n mumbles something to himself.
+#3019
+guild guard~
+a large guild guard~
+A large guild guard is here to block you.
+~
+It looks, err, unfinished.
+~
+abdenopq dfkpy 300 X 0 
+55 30 -10 28d28+5550
+0 5000000 -1
+8 8 1 3 1 3
+T 100 10d10+10 9
+#3020
+Lostris guildmaster master guild~
+Lostris the Guildmaster~
+Lostris, the mages' guildmaster is standing here.
+~
+Even though your guildmaster looks old and tired, you can clearly see the
+vast amount of knowledge she possesses. She is wearing fine magic clothing,
+and you notice that she is surrounded by a blue shimmering aura.
+~
+abdl dh 1000 X 0 
+50 0 -10 25d25+500
+0 25000 -1
+8 8 2 3 1 3
+T 50 2d4+0 0
+>ask_prog             help help? new newbie~
+  mpdelay 5
+   tell $n You wish my help $n?
+  mpdelay 5
+   tell $n Are you new here? If so, you would probably want to read HELP NEWBIE. Even if you are not new to MUDing, it will give you some valuable information about this realm, and some ideas on where to start.
+  mpdelay 5
+   tell $n Hmm.. after that, my best suggestion would be that you consult the many HELP files. To see the index, simply type: HELP. 
+  mpdelay 5
+   tell $n I wish you luck on your journey young one, but I am sure I will see you again soon.
+  smile $n
+~
+>ask_prog             practice practice? train train? teach teach? learn learn? skills skills? spells spells?~
+  mpdelay 5
+   tell $n Ahh.. you wish me to teach you new skills?
+  mpdelay 5
+   tell $n What you must do $n, is type: PRACTICE. This will show you what skills you are able to learn. To have me teach you, or help you practice one, type: PRACTICE <skillname>.
+  mpdelay 5
+   tell $n See, its really not that difficult.
+  mpdelay 5
+   bow $n
+~
+>rand_prog                                                                            4~
+cast 'armor' self
+~
+>rand_prog                                                                            4~
+cast 'detect invisibility' self
+~
+>rand_prog                                                                            4~
+cast 'infravision' self
+~
+>rand_prog                                                                            4~
+cast 'fly' self
+~
+>fight_prog                                                                            10~
+   emote yells, 'And now I show you POWER....'
+   cast 'agony' $n
+~
+>fight_prog                                                                            10~
+   emote yells, 'You'll pay for this with a fireball to the face!'
+   cast 'fireball' $n
+~
+>fight_prog                                                                            10~
+   emote yells, 'Thanks for the experience!'
+   cast 'energy drain' $n
+~
+>fight_prog                                                                            10~
+   emote yells, 'A spell not WORTHY of my worthless pupils!'
+   mpechoaround $n $i stares at $n and utters the words, 'zharibel'.
+   mpechoat $n $i stares at you and her head bursts with colors, striking you through the chest.
+   mpcast 'agony' $n
+   mpcast 'agony' $n
+   mpcast 'agony' $n
+   mpcast 'blindness' $n
+~
+|
+#3021
+Blaise guildmaster master guild~
+Blaise the Guildmaster~
+Blaise the venerable cleric is standing here ready to train you.
+~
+Gathered in robes before you is Blaise the High Priestess. She is wearing
+high priced robes, all of donated value, and towers over you with a smile
+and welcoming hand.
+~
+abdl dh 1000 X 0 
+50 0 -10 25d25+500
+0 25000 -1
+8 8 2 3 1 3
+T 50 2d4+0 0
+A 15 8 $n closes her eyes and starts to pray.
+>ask_prog             help help? new newbie~
+  mpdelay 5
+   tell $n You wish my help $n?
+  mpdelay 5
+   tell $n Are you new to these lands? If so, you would probably want to read HELP NEWBIE. Even if you are not new to MUDing, it will give you some valuable information about this realm, and some ideas on where to start.
+  mpdelay 5
+   tell $n Hmm.. after that, my best suggestion would be that you consult the many HELP files. To see the index, simply type: HELP. 
+  mpdelay 5
+   tell $n I wish you luck on your journey young one, but I am sure I will see you again soon.
+  smile $n
+~
+>ask_prog             practice practice? train train? teach teach? learn learn? skills skills? spells spells?~
+  mpdelay 5
+   tell $n Ahh.. you wish me to teach you new skills?
+  mpdelay 5
+   tell $n What you must do $n, is type: PRACTICE. This will show you what skills you are able to learn. To have me teach you, or help you practice one, type: PRACTICE <skillname>.
+  mpdelay 5
+   tell $n See, its really not that difficult.
+  mpdelay 5
+   bow $n
+~
+>rand_prog                                                                            4~
+   cast 'mend wounds'
+~
+>rand_prog                                                                            4~
+   cast 'sense life'
+~
+>rand_prog                                                                            4~
+   cast 'fly'
+~
+>rand_prog                                                                            4~
+   cast 'protection from evil'
+~
+>rand_prog                                                                            3~
+   cast 'armor'
+~
+>fight_prog                                                                            15~
+   cast 'heal' $i
+~
+>fight_prog                                                                            15~
+   cast 'harm' $n
+~
+>fight_prog                                                                            15~
+   cast 'curse' $n
+~
+>rand_prog                                                                            4~
+   cast 'sanctuary
+~
+>rand_prog                                                                            2~
+   cast 'detect invisibility' $i
+~
+|
+#3022
+guildmaster guild gorlas master~
+Gorlas the Guildmaster~
+Gorlas the thief is here, willing to teach you some new skills.
+~
+You realize that whenever your guildmaster moves, you fail to notice it -
+the way of the true thief. He is to be dressed in poor clothing, having
+the appearance of a beggar.
+~
+abdl dh 1000 X 0 
+50 0 -10 25d25+500
+0 500000 -1
+8 8 1 3 1 3
+T 10 2d4+0 0
+>ask_prog             help help? new newbie~
+  mpdelay 5
+   tell $n You wish my help $n?
+  mpdelay 5
+   tell $n Are you new here? If so, you would probably want to read HELP NEWBIE. Even if you are not new to MUDing, it will give you some valuable information about this realm, and some ideas on where to start.
+  mpdelay 5
+   tell $n Hmm.. after that, my best suggestion would be that you consult the many HELP files. To see the index, simply type: HELP. 
+  mpdelay 5
+   tell $n I wish you luck on your journey young one, but I am sure I will see you again soon.
+  smile $n
+~
+>ask_prog             practice practice? train train? teach teach? learn learn? skills skills? spells spells?~
+  mpdelay 5
+   tell $n Ahh.. you wish me to teach you new skills?
+  mpdelay 5
+   tell $n What you must do $n, is type: PRACTICE. This will show you what skills you are able to learn. To have me teach you, or help you practice one, type: PRACTICE <skillname>.
+  mpdelay 5
+   tell $n See, its really not that difficult.
+  mpdelay 5
+   bow $n
+~
+>fight_prog                                                                            10~
+   mpecho $i slips into the shadow's...
+   sneak
+   flee
+   hide
+   mpdelay 15
+   mpgoto $n
+   backstab $n
+~
+>fight_prog                                                                            10~
+   mpecho $i slips into the shadow's...
+   sneak
+   flee
+   hide
+   mpdelay 15
+   mpgoto $n
+   steal gold $n
+   mpkill $n
+~
+|
+#3023
+guildmaster master cai guild~
+Cai the Guildmaster~
+Cai, the mighty warrior, is standing here training his students.
+~
+This is your master. Big and strong with bulging muscles. Several scars
+across his body proves that he was using weapons before you were born. He
+has a calm peaceful look on his face.
+~
+abdl dh 1000 X 0 
+50 0 -10 25d25+5500
+0 25000 -1
+8 8 1 3 1 3
+T 50 5d4+20 0
+>ask_prog             help help? new newbie~
+  mpdelay 5
+   tell $n You wish my help $n?
+  mpdelay 5
+   tell $n Are you new here? If so, you would probably want to read HELP NEWBIE. Even if you are not new to MUDing, it will give you some valuable information about this realm, and some ideas on where to start.
+  mpdelay 5
+   tell $n Hmm.. after that, my best suggestion would be that you consult the many HELP files. To see the index, simply type: HELP. 
+  mpdelay 5
+   tell $n I wish you luck on your journey young one, but I am sure I will see you again soon.
+  smile $n
+~
+>ask_prog             practice practice? train train? teach teach? learn learn? skills skills? spells spells?~
+  mpdelay 5
+   tell $n Ahh.. you wish me to teach you new skills?
+  mpdelay 5
+   tell $n What you must do $n, is type: PRACTICE. This will show you what skills you are able to learn. To have me teach you, or help you practice one, type: PRACTICE <skillname>.
+  mpdelay 5
+   tell $n See, its really not that difficult.
+  mpdelay 5
+   bow $n
+~
+>fight_prog                                                                            20~
+   target $r
+~
+>fight_prog                                                                            10~
+   bash
+~
+>fight_prog                                                                            10~
+   kick
+~
+|
+#3024
+elite guard cityguard royal elitegateguard~
+{can {Celite {cguard{c of the {Rroyal{c force{x~
+{cAn {Celite {cguard{c of the {Rroyal{c force protects the gates.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+bdegm dfhk 600 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3025
+elite guard cityguard royal elitegateguard~
+{can {Celite {cguard{c of the {Rroyal{c force{x~
+{cAn {Celite {cguard{c of the {Rroyal{c force protects the gates.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+bdegm dfhk 600 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3026
+elite guard cityguard royal elitegateguard~
+{can {Celite {cguard{c of the {Rroyal{c force{x~
+{cAn {Celite {cguard{c of the {Rroyal{c force protects the gates.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+bdegm dfhk 600 X 0 
+51 20 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3027
+elite guard cityguard royal elitegateguard~
+{can {Celite {cguard{c of the {Rroyal{c force{x~
+{cAn {Celite {cguard{c of the {Rroyal{c force protects the gates.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+bdegm dfhk 600 X 0 
+51 0 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3040
+elite guard cityguard controlguard~
+{can {Celite {cgateguard{x~
+{cAn {Celite {cgateguard is here.{x
+~
+You examine the elite more closely and he gazes at you icily, turning your
+head away instantly.
+~
+abdegA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 4d6+6 0
+E 17 100 3099 -1
+Str: 95
+Dex: 95
+Agi: 95
+ResMagic: 90
+>time_prog                 */*/*/*/*/6~
+say The day begins, and the gates must be opened!
+unlock gate
+open gate
+~
+>time_prog                */*/*/*/*/21~
+say The day ends, and the gates must protect us from the evils of the night.
+close gate
+lock gate
+~
+|
+#3041
+elite guard cityguard controlguard~
+{can {Celite {cgateguard{x~
+{cAn {Celite {cgateguard is here.{x
+~
+You examine the elite more closely and he gazes at you icily, turning your
+head away instantly.
+~
+abdegA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 4d6+6 0
+E 17 100 3099 -1
+Str: 95
+Dex: 95
+Agi: 95
+ResMagic: 90
+>time_prog                 */*/*/*/*/6~
+say The day begins, and the gates must be opened!
+unlock gate
+open gate
+~
+>time_prog                */*/*/*/*/21~
+say The day ends, and the gates must protect us from the evils of the night.
+close gate
+lock gate
+~
+|
+#3042
+elite guard cityguard controlguard~
+{can {Celite {cgateguard{x~
+{cAn {Celite {cgateguard is here.{x
+~
+You examine the elite more closely and he gazes at you icily, turning your
+head away instantly.
+~
+abdegA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 4d6+6 0
+E 17 100 3099 -1
+Str: 95
+Dex: 95
+Agi: 95
+ResMagic: 90
+>time_prog                 */*/*/*/*/6~
+say The day begins, and the gates must be opened!
+unlock gate
+open gate
+~
+>time_prog                */*/*/*/*/21~
+say The day ends, and the gates must protect us from the evils of the night.
+close gate
+lock gate
+~
+|
+#3043
+elite guard cityguard controlguard~
+{can {Celite {cgateguard{x~
+{cAn {Celite {cgateguard is here.{x
+~
+You examine the elite more closely and he gazes at you icily, turning your
+head away instantly.
+~
+abdegA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 4d6+6 0
+E 17 100 3099 -1
+Str: 95
+Dex: 95
+Agi: 95
+ResMagic: 90
+>time_prog                 */*/*/*/*/6~
+say The day begins, and the gates must be opened!
+unlock gate
+open gate
+~
+>time_prog                */*/*/*/*/21~
+say The day ends, and the gates must protect us from the evils of the night.
+close gate
+lock gate
+~
+|
+#3048
+Brimlock manager banker~
+Brimlock the Banker~
+Brimlock the banker stands here counting his coins.
+~
+Brimlock stands here towering above you with dark fiery eyes of greed. He
+looks as if his only desire in life is money, from the way he stacks his
+so neat and tidy.
+~
+bd dh 300 X 0 
+55 0 -10 28d28+30000
+0 25000 -1
+8 8 1 3 1 3
+T 50 4d6+5 0
+A 8 4 Brimlock counts his coins into a neat pile, then pushes them over and starts again.
+#3049
+supervisor merchant~
+the merchant's Supervisor~
+The merchant's supervisor is here lost in thought.
+~
+You peer across the merchant Supervisor and notice he is not a very
+big man. Indeed his wealth must have come first, for he is a bit
+pudgy as well.
+~
+bcdhlm dgk 100 X 0 
+20 10 0 10d10+200
+0 27500 -1
+8 8 1 3 1 3
+T 80 4d5+4 6
+A 10 6 The merchant's Supervisor rests comfortably, counting his coins.
+#3050
+merchant guard~
+a merchant's guard~
+A merchant patrol guard stands before you.
+~
+A merchant guard stands tall, and proud as he guards his warehouse.
+~
+bdelmp dk 250 X 0 
+26 10 -3 13d13+260
+0 51000 -1
+8 8 1 3 1 3
+T 60 4d5+5 6
+E 16 100 3022 -1
+E 8 75 3049 -1
+Dex: 75
+>act_prog     p opens a Large Crate.~
+if ispc ($n)
+  shout Intruders in the merchant's warehouse!
+  mpkill $n
+else
+endif
+~
+|
+#3057
+cityguard guard gateguard~
+{cthe Gateguard{x~
+{cA City Gateguard is here, protecting the gate.{x
+~
+A big, strong, trustworthy guard. He is observing you rather quietly.
+~
+abdlmA k 800 X 0 
+20 12 0 10d10+200
+0 27000 -1
+8 8 1 3 1 3
+T 100 7d5+7 0
+ResMagic: 50
+#3058
+cityguard guard gateguard~
+{cthe Gateguard{x~
+{cA City Gateguard is here, protecting the gate.{x
+~
+A big, strong, trustworthy guard. He is observing you rather quietly.
+~
+abdlmA k 800 X 0 
+20 12 0 10d10+200
+0 27000 -1
+8 8 1 0 1 3
+T 100 7d5+7 0
+ResMagic: 50
+#3059
+cityguard guard gateguard~
+{cthe Gateguard{x~
+{cA City Gateguard is here, protecting the gate.{x
+~
+A big, strong, trustworthy guard. He is observing you rather quietly.
+~
+abdlmA k 800 X 0 
+20 12 0 10d10+200
+0 27000 -1
+8 8 1 3 1 3
+T 100 7d5+7 0
+ResMagic: 50
+#3060
+cityguard guard gateguard~
+{cthe Gateguard{x~
+{cA City Gateguard is here, protecting the gate.{x
+~
+A big, strong, trustworthy guard. He is observing you rather quietly.
+~
+abdlmA k 800 X 0 
+20 12 0 10d10+200
+0 27000 -1
+8 8 1 3 1 3
+T 100 7d5+7 0
+ResMagic: 50
+#3062
+stray dog~
+{ya stray dog{x~
+{yA stray dog is here, sniffing everything in sight.{x
+~
+The small dog has a foul smell and pieces of rotted meat hanging around
+his teeth.
+~
+dfh 0 -200 X 0 
+1 19 10 1d1+5
+0 30 -1
+8 8 0 4 14 1
+T 100 1d1+0 0
+#3063
+mercenary merc~
+the Mercenary~
+A mercenary is waiting for a job here.
+~
+He looks pretty mean, and you imagine he'd do anything for money.
+~
+cdl 0 -330 X 0 
+5 17 7 3d3+50
+0 1900 -1
+8 8 1 3 1 3
+T 100 1d7+1 0
+#3067
+cityguard guard~
+{cthe Cityguard{x~
+{cA gruff looking cityguard stands here, keeping an eye on things.{x
+~
+A big, strong, helpful, trustworthy guard.
+~
+adlA k 800 X 0 
+20 12 0 10d10+200
+0 27000 -1
+8 8 1 3 1 3
+T 100 2d5+0 9
+T 100 5d5+5 0
+#3068
+A City Official~
+a City Official~
+A City Official is here, looking for his city workers.
+~
+The City Official kindly states that all complaints are to be taken to
+the mayor, and swiftly turns away as you look in his direction.
+~
+dghl d 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 100 5d6+10 0
+#3070
+lauri centaur cleric~
+Lauri the Centaur Cleric~
+A beautiful female centaur cleric stands here, willing to help.
+~
+This young centaur has devoted her life to healing and helping others. The
+money she charges goes to the temple priests.
+~
+abdgnop dh 2000 X 0 
+55 0 -10 28d28+30000
+0 25000 -1
+8 8 2 3 0 4
+T 50 5d4+16 0
+E -1 100 3066 -1
+>fight_prog                                                                            30~
+   cast 'harm' $n
+~
+>fight_prog                                                                            20~
+   cast 'curse' $n
+~
+>fight_prog                                                                            10~
+   emot closes her eyes in prayer to the Temple Priests for a silent moment.
+   shout Guards, trouble has befallen me!
+   mpforce controlguard mphunt $n
+~
+|
+#3073
+guildguard guild guard guardian  elf~
+an Elf Guardian~
+{yA short wiry elf crouches here, watching the guild entrance.{x
+~
+A Human Guardian
+~
+abd 0 0 X 0 
+60 0 -10 30d30+30000
+0 0 -1
+8 8 1 3 1 3
+T 30 15d4+100 0
+>fight_prog                                            60~
+mprawkill $n
+~
+|
+#3080
+elite guard cityguard controlguard~
+{can {Celite {ccityguard{x~
+{cAn {Celite {ccityguard is here, keeping the peace.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+abdegmA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3081
+elite guard cityguard controlguard~
+{can {Celite {ccityguard{x~
+{cAn {Celite {ccityguard is here, keeping the peace.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+abdegmA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3082
+elite guard cityguard controlguard~
+{can {Celite {ccityguard{x~
+{cAn {Celite {ccityguard is here, keeping the peace.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+abdegmA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3083
+elite guard cityguard controlguard~
+{can {Celite {ccityguard{x~
+{cAn {Celite {ccityguard is here, keeping the peace.{x
+~
+You examine the elite cityguard more closely and he gazes at you
+icily, turning your head away instantly.
+~
+abdegmA dfhk 1000 X 0 
+51 2 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 20 10d10+25 0
+E -1 100 3098 -1
+Str: 95
+Dex: 95
+Agi: 95
+#3087
+guildguard guild guard guardian gnome~
+a Gnome Guardian~
+{yA short plump gnome stands here watching the guild entrance.{x
+~
+A Gnome Guardian
+~
+abd 0 0 X 0 
+60 0 -10 30d30+30000
+0 0 -1
+8 8 1 3 1 3
+T 30 15d4+100 0
+>fight_prog                                            60~
+mprawkill $n
+~
+|
+#3094
+wolf~
+a Wolf~
+A large wolf is here growling at you.
+~
+The wolf looks like a strong, fearless fighter.
+~
+cdn 0 -200 X 0 
+6 17 7 3d3+60
+0 2100 -1
+8 8 0 14 4 2
+T 100 2d5+0 0
+>rand_prog                                                                            2~
+growl $r
+~
+|
+#3095
+ale traveller hhh~
+a female traveller~
+The female traveller wanders about looking for a place to rest.
+~
+The female traveller stares back at you as she places her hand
+on her short sword.
+~
+cdl k 120 X 0 
+23 11 -2 12d12+230
+0 35000 -1
+8 8 2 3 1 3
+T 100 2d6+2 8
+T 100 4d5+7 6
+E 6 40 3118 25
+E 16 20 3119 15
+E 5 25 3065 -1
+#3099
+man~
+the withering old man~
+The withering old man
+~
+The frail old man watches you closely as if he knows something you do not.
+He exudes a strength unknown to you. There is a glimmer in his eye.
+~
+d 0 0 X 0 
+51 30 -10 26d26+1510
+0 1500000 -1
+8 8 1 3 1 3
+T 100 111d117+110 0

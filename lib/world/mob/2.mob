@@ -1,0 +1,30 @@
+#202
+energizer bunny rabbit~
+{MThe energizer bunny{x~
+{MThe energizer bunny rabbit is here still going.{x
+~
+{MA small bunny with {Wwhite {Mtrimed ears stands here beating on a {ydark
+brown drum{M, chanting {m"Im still going, and going, and going!{m"{M while
+beating on its drum.{x
+~
+d 0 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 14 14 1
+T 100 1d3+0 22
+A 10 8 BOOM BOOM BOOM
+#203
+barney purple dinosaur~
+{mBarney{x~
+{mBarney the purple dinosaur is standing here singing!{x
+~
+{mITS BARNEY!{x
+~
+d 0 0 X 
+1 19 9 1d1+10
+0 150
+8 8 0 14 14 1
+T 100 1d3+0 22
+A 15 8 {mBarney{w sings, 'I love you, you love me!'{x
+A 13 8 {mBarney{w sings, 'Lets all be friends!'{x
+A 11 8 {mBarney{w sings, 'Do you want to play?'{x

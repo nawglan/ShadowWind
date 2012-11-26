@@ -1,0 +1,216 @@
+#6100
+{yA Worn Path{x~
+   {gThis short trail seems to lead back and forth from the road to a small
+pond, seemingly well travelled there must be quite a good fishing hole near
+by. Brush surrounds this area, and would make a good cover for small fowl
+and other birds of refuge. {x
+~
+61 cp 2
+D1
+~
+~
+0 0 3407 0
+D3
+~
+~
+0 0 6101 0
+S
+#6101
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D1
+~
+~
+0 0 6100 0
+D2
+~
+~
+0 0 6102 0
+D3
+~
+~
+0 0 6103 0
+S
+#6102
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D0
+~
+~
+0 0 6101 0
+D2
+~
+~
+0 0 6109 0
+D3
+~
+~
+0 0 6104 0
+S
+#6103
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D1
+~
+~
+0 0 6101 0
+D2
+~
+~
+0 0 6104 0
+S
+#6104
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D0
+~
+~
+0 0 6103 0
+D1
+~
+~
+0 0 6102 0
+D2
+~
+~
+0 0 6106 0
+D3
+~
+~
+0 0 6105 0
+S
+#6105
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D1
+~
+~
+0 0 6104 0
+D2
+~
+~
+0 0 6110 0
+S
+#6106
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D0
+~
+~
+0 0 6104 0
+D1
+~
+~
+0 0 6109 0
+D2
+~
+~
+0 0 6107 0
+D3
+~
+~
+0 0 6110 0
+S
+#6107
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D0
+~
+~
+0 0 6106 0
+D1
+~
+~
+0 0 6108 0
+S
+#6108
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D0
+~
+~
+0 0 6109 0
+D3
+~
+~
+0 0 6107 0
+S
+#6109
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D0
+~
+~
+0 0 6102 0
+D2
+~
+~
+0 0 6108 0
+D3
+~
+~
+0 0 6106 0
+S
+#6110
+{wUpon A Small Pond{x~
+   {bThis pond is small, and shalow, yet full of life, fish ocassionaly flip
+out of the water reaching for there insect chatch while birds seem to gather
+waiting for the same meal. Trees and brush encircle this pond and seem to
+remove the whole world from view. {x
+~
+61 g 6
+D0
+~
+~
+0 0 6105 0
+D1
+~
+~
+0 0 6106 0
+S
+$~

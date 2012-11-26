@@ -1,0 +1,187 @@
+#8800
+dolphin~
+the dolphin~
+A dolphin is swimming around in the water.
+~
+A large mammal with streamlined body and a prominent forehead.
+~
+dghlms p 300 X
+6 17 7 3d3+60
+0 2400
+8 8 2 10 14 3
+T 100 1d9+1 22
+#8801
+large pike~
+the large pike~
+A large pike is lurking just below the surface.
+~
+A large green and black fish, with many small and sharp teethes.
+~
+dghs p 0 X
+4 18 8 2d2+40
+0 1000
+8 8 1 10 14 2
+T 100 1d7+0 22
+#8802
+swordfish~
+the swordfish~
+A large swordfish is swimming around in the water, hunting for food.
+~
+A large fish with along sail-like dorsal fin and a flattened, pointed snout.
+~
+dghs p 0 X
+10 15 5 5d5+100
+0 5000
+8 8 1 10 14 2
+T 100 2d6+3 1
+#8803
+seagull~
+the seagull~
+A seagull is flying in the air.
+~
+A white and black bird with a yellow beak.
+~
+dgh q 0 X
+2 19 9 1d1+20
+0 300
+8 8 1 13 14 2
+T 100 1d1+1 27
+#8804
+sea drake~
+the sea drake~
+A terrible sea drake rises up from the depths of the ocean.
+~
+A huge black water-dragon with big nasty teeth and a long red tongue 
+wiggling in and out of it's grinning mouth.
+~
+bdfgo dk -100 X
+15 14 2 8d8+150
+0 11000
+8 8 1 10 14 2
+T 50 2d8+1 24
+#8805
+hydra~
+the hydra~
+A seven headed hydra lets out deafening roars as you disturb it's slumber.
+~
+A huge water-dragon with seven heads, wide spread wings and long sharp
+claws. The scale is deep green and sparkling in the light.
+~
+bdfgo dk -200 X
+40 5 -10 20d20+400
+8000 150000
+8 8 1 4 14 6
+T 20 2d6+5 24
+E 5 100 8800 4
+>fight_prog   5~
+   cast 'fireball' $n
+~
+|
+#8806
+dagon father dragon~
+Dagon, the father of dragons~
+A majestic dragon of enormous sizes lies curled up here.
+~
+An enormous sea-monster with long pointed fangs and razor-sharp claws, 
+towers before you. With a vicious snarl it charges towards you , ready to 
+tear you into pieces.
+~
+bdfgoq bdfkp -850 X
+55 0 -10 28d28+5550
+20000 6000000
+8 8 1 5 0 7
+T 20 4d8+35 24
+E 1 30 8815 2
+E 16 30 8816 2
+E 5 30 8802 2
+E 18 30 8803 2
+Str: 90
+>fight_prog   10~
+   cast 'fireball' $n
+~
+|
+#8807
+deep one sea creature~
+the deep one~
+A fiendish, human-like, sea creature is standing here dripping with seaweed.
+~
+A creature vaguely resembling a human, with a fish-like head and long thin 
+arms that ends with claws.
+~
+dfgo dfgkp -100 X
+14 14 3 7d7+140
+1000 9900
+8 8 1 10 1 4
+T 100 3d7+5 24
+E 16 10 8809 20
+E 14 10 8811 20
+E 5 10 8812 20
+E 7 10 8813 20
+#8808
+king yellow monstrous shape~
+the King in Yellow~
+A monstrous shape towers before you, with bloated yellow skin and sick, black eyes.
+~
+A huge human-like thing, with bloated pale skin and dead, black eyes and 
+a sickly greenish tongue that hangs out if its mouth. The Yellow King 
+watches you with contempt.
+~
+bdfgoq dkp -350 X
+58 0 -10 29d29+13580
+20000 9000000
+8 8 1 2 1 5
+T 20 6d4+10 24
+E 1 30 8801 2
+E 16 30 8814 2
+E 3 30 8805 2
+E 5 30 8806 2
+E 6 30 8808 2
+E 17 30 8807 2
+>fight_prog   10~
+   cast 'agony' $n
+~
+|
+#8809
+thing dread~
+a thing of dread~
+A thing of dread is here, shuffling towards you.
+~
+It resembles a gigantic hybrid of octopus and toad, with long tentacles 
+sprouting out from its body at apparently random spots.
+~
+bdfgnopqr dhkp -500 X
+60 0 -10 30d30+30000
+0 10000000
+8 8 0 0 0 5
+T 10 9d99+99 24
+T 10 9d99+99 24
+T 10 9d99+99 24
+E 6 100 8810 4
+#8810
+guardian worms crawling thing~
+the Crawling Guardian~
+A slithering mass of worms, is here, guarding the gate.
+~
+This monstrous thing is composed of thousands of worms and maggots. Each
+worm individually alive and constantly moving, together forming the shape
+of a human body.
+~
+bdfgo dfk -200 X
+55 0 -10 28d28+5550
+5000 6000000
+8 8 1 4 14 4
+T 50 8d8+20 24
+E 17 100 8804 2
+#8811
+deep serpent~
+the deep water serpent~
+A menacing deep water serpent rises before you.
+~
+An abysmal snake from the darkest depths of the ocean. It's feverish eyes
+lusts for soft flesh to sink it's teeth in.
+~
+bdfgo dfk -250 X
+45 4 -10 23d23+450
+0 280000
+8 8 1 11 14 4
+T 50 3d9+18 22

@@ -1,0 +1,103 @@
+#1900
+skeleton key~
+a skeleton key~
+A skeleton key has fallen off a key ring.~
+~
+18 0 1
+1 0 0 0 8
+0 0 0
+E
+a skeleton key~
+The key is small and cold, and looks like it fits every lock in the house.
+~
+#1901
+glove gloves~
+some well-crafted gloves~
+Some well-made gloves were lost by someone.~
+~
+9 274 129
+0 2 0 0 0
+5 2000 150
+E
+glove gloves~
+These fine looking gloves were crafted with skill that is unmatched. The 
+leather is soft and supple, and from your wrist, they flare out in a 
+becoming fashion.
+~
+A
+19 2
+#1902
+doll alittledollformyminiquestforthegirl~
+a fragile porcelain doll~
+A fragile porcelain doll lies here waiting for a little girl.~
+~
+8 65564 16385
+0 0 0 0 0
+1 100 0
+E
+doll~
+This sweet faced little doll has long, curly blonde hair, and little pink 
+dimpled cheeks. Her dress is neatly ironed, with small pink flowers on it.
+It is just the perfect size for a small girl to carry, and sleep with.
+~
+#1903
+hat chefs~
+a chef's hat~
+A chef's hat waits for a cook.~
+~
+11 16 17
+0 2 0 0 0
+4 100 10
+E
+hat chefs~
+This hat is tall and white, and would make anyone look like a wonderful cook.
+~
+#1904
+apron~
+an apron~
+An apron lies on the ground, waiting for a cook.~
+~
+11 256 5
+0 2 0 0 0
+2 300 30
+E
+apron~
+The apron is used and worn, but still has some life in it. Once it was white,
+now it is off white, with many stains on it.
+~
+#1905
+dress uniform~
+a maid's uniform~
+A maid's uniform has been discarded here.~
+~
+11 65536 9
+0 2 0 0 0
+10 200 20
+E
+dress uniform~
+This maid's uniform is cut very short in the skirt, and quite low in the 
+front. The black skirt is short and ruffled, and ties with a big bow in the 
+back. A small white apron covers the skirt, but does not come up high enough
+to keep the dress from being quite revealing.
+~
+#1906
+Veil~
+a filmy veil~
+A veil has been carelessly tossed here.~
+~
+9 256 32785
+3 0 0 0 3
+2 12 3
+A
+6 15
+#1907
+ankle chain~
+a delicate ankle chain~
+A delicate ankle chain glints on the ground.~
+~
+9 64 262145
+3 0 0 0 15
+2 100 5
+A
+14 5
+$~

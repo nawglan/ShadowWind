@@ -1,0 +1,1134 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                             * F O O D *
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+   
+   First of all, I know it sounds silly to have a balance table for food. 
+But believe me, we could use one. Random food items spread all over the
+game with different food values and weights just don't make for a
+realistic game; and believe me, the older players NOTICE things like one
+apple filling you up three times as much as another apple. So I've put
+together a small chart to guide you in making those food items you want to
+make. 
+
+Food Type        Weight      Makes Full       Cost       (Thirst Value)
+-----------------------------------------------------------------------
+Fungus             1             3              3               0
+Fruits             1             4              5              -2
+Vegetables         1             5              8              -1
+Bread              1             6             11               2
+Nuts/Grains/Cheese 1             7             15               1
+Meat               1             8             25               0
+Prepared Other     1             9             40               0
+Prepared Meat      1            10             50              -1
+----------------------------------------------------------------------
+   
+   All the table indicates is the food value relative to a food item's
+weight.  3 pounds and cost 33 gold. The (Thirst Value) indicates how the
+food item will affect your thirst, if code for this is written. 
+   You can make special food items as well; make a magical fruit that
+fills you up completely, or whatever. But just remember, don't make such
+items readily available, make them a bit hard to get. The rules for food
+are obviously not as stringeant as for AC applies or weapon damage, but it
+is still something I'd like to keep balanced. 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                  * D R I N K   C O N T A I N E R S *       
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+   
+   The guidelines for making drink containers are very simple to follow. 
+It is simply a proportion of contains to weight which makes a drinkcon
+good or bad.  Of course, if you make it held with +13 damroll, that could
+change things a little bit... 
+
+MaxContains to Weight             Rating              Availability
+-----------------------------------------------------------------------
+        1:3                       Awful               Anywhere
+        1:2                       Bad                 Common
+        1:1                       Fair                Fairly Common
+        3:2                       Average             Uncommon
+        2:1                       Good                Hard to Find
+        3:1                       Very Good           Rare
+        4:1                       Extremely Good      Very Rare
+        5:1                       Best In Game        QIC   ;)
+-----------------------------------------------------------------------
+   
+   This is not the only guideline for when making a drinkcon. Actual
+maxcontains is important; if you have a weight 1 contains 5 gourd, it
+might say "best in game" on the chart, but who wants a contains 5 item?
+Use your own judgement; only worry about the ratio if the contains on the
+item is at the "Acceptable" Level or better. Use the following guidelines
+as well: 
+
+ Contains                               Usefulness          # of Drinks
+-----------------------------------------------------------------------
+up to 15                                Negligible              1-3
+16-25                                   Barely                  2-5
+26-35                                   Acceptable              4-7
+36-45                                   Fairly Good             6-9
+46-55                                   Good                    8-11
+56-65                                   Very Good              10-13
+66-75                                   Excellent              12-15
+76-85                                   Great                  14-17
+86+                                     Incredible              16+
+-----------------------------------------------------------------------
+
+   So....you can still have common drink containers that hold 100 units;
+just make them -heavy-. But if you have one that weighs only 30 lbs, that
+would qualify for a %load. Just the same, if you have a container with a
+3:1 ratio but only contains a small amount, there's no need to decrease
+its occurence in the game. 
+   Here's a guideline for some common containers found in the game: 
+
+Container             Contains
+------------------------------
+Cup                   4
+Glass                 8
+Mug                   12
+Bottle                16
+Pint                  20
+Tankard               25
+Small Waterskin       35
+Large Waterskin       50
+Canteen               60
+Small Barrel          70
+Medium Barrel         80
+Large Barrel          90
+------------------------------
+
+The maximum contains for a carryable drinkcon with a reasonable weight
+will be about 150. 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                * P O T I O N S    A N D    S C R O L L S*
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Potions and scrolls are simple to adjudicate and to balance. For the
+simplest, one-spell item, take the minlevel for the spell and use the
+armor chart. A 4th circle spell (which should almost NEVER be found in a
+potion or scroll) would need to be held by a level 40 mob in an
+appropriately dangerous area. Usually, use only 1st and 2nd Circle spells
+for potions and scrolls. 
+   If the item has 2 beneficial spells, take the highest level of the two
+spells and add one; so a potion with a 2nd and a 3rd circle spells would
+be considered a 4th circle potion. If a potion has a negative spell tacked
+onto it, remove one spell level. 
+   Use your own judgement; we don't want triple-group-regenerate potions
+around, unless they are found on level-60 mobs. We also don't want bless
+potions sold in every shop in Weirvane; what's the point of clerics
+having it then? 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                  * W A N D S   A N D   S T A V E S *
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Wands and Staves are similar to potions and scrolls, and should be
+treated basically the same. No wand or staff should have more than 10
+charges; the average should be one or two. Use the spell level of the item
+to decide its balance; for more than 5 charges add one spell level and
+thus decrease its availability. Add two levels for more than 8 charges.
+keep in mind we need mages and clerics to stay useful; if eventually we
+end up with a mud full of mini-mages and clerics-in-a-bottle, then they
+won't be useful. Just be smart about it. 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                      * C O N T A I N E R S *
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   Containers are funny; they dont make you fight any better, but a good
+one will greatly improve your life on the mud. After armor and weapons,
+containers are proably the most important type of item. Thus we have to
+keep a careful balance on them. 
+   A non-magical container may never hold more than 100 lbs; and otherwise
+the maximum is 250 for the most exotic of items. Don't make a container
+hold the maximum you can for your area or mob; make it realistic. We don't
+want small cloth bags holding more than another area's large backpacks.
+Here is a guideline: 
+
+Level          Contains up to
+------------------------------
+1-10                 40
+11-20                80
+21-30                120
+31-40                180
+41+                  250
+------------------------------
+
+Small bag:        30
+Small sack:       40
+Small backpack:   50
+Large bag:        60
+Large sack:       80
+Large backpack:   100
+
+Anything larger will have to be magical, hard to obtain, and okay'ed.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                            * A R M O R *
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+   This is the basic chart for ac applies for armor in ShadowWind. Objects
+should be designed specifically with the area type and difficulty in mind.
+An item should never be found on a mobile of a lower level than
+appropriate to the item power. 
+   "Levels" refers to two things: The minimum level of the mobile upon
+which the item loads, and the general level a player should be in order to
+be able to acquire the item. 
+   "Loads" enhances the old QIC system: The percentages are guidelines for
+the frequency of the item loading in the mobfile. 
+
+Levels:    (1-10)     (11-20)    (21-30)   (31-40)    (41-50)     (51+)
+Loads:     NEWBIE     AVERAGE     GOOD     30%-21%    20%-11%      10%
+                                           HIGHQIC     MEDQIC     LOWQIC
+------------------------------------------------------------------------
+                             Type: ARMOR
+------------------------------------------------------------------------
+<On Body>    5          6-7       7-8        8-9        9-10      10-12
+<About>      1          2-3       4-5         6          7          8
+<Head>       4          5-6        7          8          9         10
+<Shield>     4           5         6         7-8         9         10
+<Legs>       4          5-6        7          8          9         10
+<Arms>       4          5-6        7          8          9         10
+<Waist>      1          2-3        4          5          6          7
+<Feet>       3          4-5        6          7          8         9-10
+<Hands>      3          4-5        6          7          8         9-10
+------------------------------------------------------------------------
+                       Type: ARMOR or WORN
+------------------------------------------------------------------------
+<Face>       0           1        2-3        4-5         6          7
+<Wrist>      1          2-3        4          5          6          7
+<Neck>       1          2-3        4          5          6          7
+------------------------------------------------------------------------
+                           Type: WORN
+------------------------------------------------------------------------
+<Eyes>       0           1         2          3          4          5
+<Finger>     0           1         2         3-4         5         6-7
+<Ear>        0           0         1          2          3          4
+<Ankle>      0           1         2         3-4         5          6
+------------------------------------------------------------------------
+Total AC:   49         31_10    -5_-17     -39_-47     -70_-73  -95_-105
+Compared 
+  to MOB:   70           20        -30       -80         -100       -100  
+------------------------------------------------------------------------
+
+Items in the ARMOR category should always be type armor, no matter if they
+have 0 ac apply or otherwise. Items in the either or category can still
+have an AFFECTS ARMOR apply even if type worn; but this is not necessary.
+Items in the WORN category should never be type armor; they may however
+have ARMOR effects and thus are included in this chart. 
+
+The ratings above under the levels heading indicate what level mob
+approximately should load the eq, and what level chars should have access
+to it. If a particular mob is hard to find, or has many special progs to
+make it more difficult, lower level mobs might carry the better eq. Any eq
+in the GOOD category or better should load a max of one per reboot. Any eq
+in the MEDQIC category of better should load a max of one per reboot and
+have a percentage chance to load activated. Each category of QIC should
+allow some degree of extra, perhaps damroll or wisdom or age or whatever,
+no more than one at high qic up to three TOTAL at low qic:  AC 10 greaves
+could have for example +2 damroll and +1 hit, for a total of three
+notches. Obviously these rules cannot be followed strictly, and qicset
+will most likely be set taking into account the items specifically. QIC 1
+items held by level 50 mobs deep inside a dangerous areas will obviously be
+allowed a little extra leniency. 
+ 
+Just remember, an item doesnt HAVE to double ac and add 2 damroll to make
+it better than the next best thing, for example you could remove on point
+of ac and make it enchantable. Or add +1 int in there..or whatever. Just
+remember, when making areas, DONT make items you think your char could
+use. Make items that go along with the theme of the area, and if possable
+add some penalties, there is no need to ruin the eq but penalties are a
+good thing when used correctly. 
+ 
+Penalties make items harder to judge, and much more interesting. Some
+penalties will not bother some people, like -dex or -str for a troll, but
+for an elf they will make all the difference in the world. Just keep the
+items interesting, and remember that the short desc is the thing you see
+when looking at the mob or char wearing it, or when its in your inv, and
+make the short descs as intersting as possible. And try not to overuse the
+GLOW and HUM flags, it makes items look lame. Try to add only one or two
+keywords, and avoid words like black or scale or whatever, because the
+more keywords and the more common they are, the more they show up on
+locate. And we dont want all the level 11 magic users locating all the
+cool stuff and knowing all about it before someone actually gets it. Its
+exciting to look at a mob and see something youve never seen before. Also
+try to avoid giving one mob more than one piece of useful eq...thats just
+silly. Any one mob should have no more than one good eq, or thats half the
+work right there. Thats how people wipe areas clean...by going for the
+guys with 6 qic3 items, or whatever. 
+
+Remember, this is just an AC chart. Things like eye and earwear are better
+suited for other bonuses, such as int or con or what have you. Lots of
+items can be made interesting AND useful just by being creative with the
+combination of bonuses and penalties, you just have to do it right. 
+ 
+When you look at individual ratings, it seems pretty low, but we have so
+many wear positions that it really adds up. Light and held can obviously
+help ac, but any such objects should be qic and there wont be too many of
+them if people folow the rules. The lower end also looks very low.. -100
+is supposed to be next to impossible. However, taking into account the
+high level mobs such items are supposed to be on, and the fact that not
+too many people will be able to aquire a full set of qic 3 or lower items,
+AND that a level 50 SHOULD kick some major ass, it doesnt seem all that
+bad. 
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+What follows is a very useful guideline for determining a piece of armor's
+AC relative to its material type, and weight. All items in ShadowWind will
+be balanced using this chart; so please do the same. 
+
+Types of armor listed:
+
+1. Cloth
+2. Padded
+3. Leather
+4. Studded/Spiked Leather
+5. Hide
+6. Brigandine
+7. Scale
+8. Ring
+9. Chain
+10. Banded/Splint
+11. Bronze Plate
+12. Plate
+13. Field Plate
+14. Full Plate
+15. Helm
+16. Shield
+
+-------------------------------------------------------------------------
+
+The protection percentages used may need to be reworked.  For now, though,
+we'll just say that a particular piece of armor covers XX% of the body. As
+we get the specific %'s we'll add em.  One factor that contributes highly
+to AC's of -100 and more is that all the different little parts of the
+body that we've added have a 10% AC coverage factor associated with them. 
+
+Body:  Defined to cover just the torso (front and back) from neck to waist.
+       Not defined to cover the shoulders.
+
+Arms:  Defined to cover the arms from shoulder to wrist.
+
+Legs:  Defined to cover the legs from hips to mid-calf.
+
+Hands: Defined to cover the hands and fingers up to the wrist.
+
+Feet:  Defined to cover the feet up to mid-calf.
+
+Waist: Defined to cover the torso from the waist to the hips, covering the
+       outsides of the hips, and groin.
+
+Neck:  Defined to cover the neck (all angles) and shoulders (from the top).
+
+Head:  Defined to cover the top, and back of the head.
+
+Eyes:  Defined to cover the eyes.
+
+Face:  Defined to cover the front of the head.
+
+Wrist: Defined to cover from the wrist to mid-forearm (would preclude the use
+       of hands armor).
+
+Ankle: Defined to cover from the ankle to mid-calf (would preclude the use
+       of boots - shoes/sandals only).
+
+About: Defined to be worn over and above any other protective clothing. 
+       Would cover from head to mid-calf or any range in between (with the
+       neck or shoulders always receiving coverage). 
+
+Without further verbiage:
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+1.  Cloth   Encumbrance: None
+
+Location  Protects  Free     Average    Decent    Good    Great   Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT    AC/WT
+Body       XX%       3/3       3/2       4/2       4/1     5/2      6/1
+Head       XX%       2/1       2/1       2/1       2/1     2/1      3/1
+Legs       XX%       2/3       3/3       3/2       4/2     5/2      5/1
+Feet       XX%       1/1       1/1       1/1       1/1     1/1      1/1
+Arms       XX%       1/2       1/2       1/2       1/1     1/1      2/1
+Hands      XX%       1/1       1/1       1/1       1/1     1/1      1/1
+Face       XX%       1/1       1/1       1/1       1/1     1/1      1/1
+Neck       XX%       1/1       1/1       1/1       1/1     1/1      1/1
+About      XX%       1/3       1/2       1/2       1/1     2/2      2/1
+
+                            MATERIAL TYPES
+
+3       CLOTH - (shown)
+19      PAPER - (-50% weight, -50% AC)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+2.  Padded   Encumbrance: Light
+
+Padded leather is pretty much clothing sewn to more clothing.  Sounds
+dumb, but it's the equivalent protection of leather, just lighter and far
+easier to rip and tear and destroy.  Historically, these thick, padded
+vests and such were worn when ABSOULETLY nothing else was available, cuz
+you'd stink pretty fast, and they were excellent breeding ground for
+disease... Imagine wearing 3 heavy sweaters in the summer.  Still, they
+could look good (limited only by the talent of the tailor), and were
+pretty impressive if you had a town full of people wearing distinctly
+uniform armor... even if it was crap. 
+
+Location   Protects   Free   Average    Decent    Good    Great    Awesome
+--------------------------------------------------------------------------
+                   AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body      XX%       3/3       5/4       4/2       4/1     5/2       5/1
+Legs      XX%       2/3       3/3       3/2       4/2     4/1       5/1
+Arms      XX%       1/2       3/2       1/2       1/1     1/1       2/1
+Neck      XX%       1/1       2/2       1/1       1/1     1/1       1/1
+
+                            MATERIAL TYPES
+
+3       CLOTH - (shown)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+3.  Leather  Encumbrance: Light
+
+Despite what you might think, leather armor wasn't like the leather we
+wear today.  It was put in an oil, and hardened over wood dummys.  leather
+armor was solid, unyeilding, but made of smaller plates sewn onto soft
+leather backings, and therefore THE most easiest armor to function in,
+except perhaps for Studded Leather, which has its own problems.  It was
+also the second-cheapest, didn't need as much upkeep as the rest of the
+armors (no rust), and didn't stink half as bad as padded (though it did
+after long enough.)
+
+Location  Protects   Free    Average    Decent    Good    Great    Awesome
+--------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%       6/8       7/7       8/6       9/6     9/5       9/4
+Legs       XX%       4/10      4/6       4/5       4/4     4/3       5/2
+Feet       XX%       2/3       3/2       3/2       4/2     4/1       5/1
+Arms       XX%       2/3       3/2       3/2       4/2     4/1       5/1
+Hands      XX%       2/3       3/2       3/2       4/2     4/1       5/1
+Neck       XX%       1/4       2/3       2/2       3/2     3/1       4/1
+Waist      XX%       1/2       2/1       2/1       3/1     3/1       4/1
+Head       XX%       2/3       3/2       3/1       4/1     4/1       5/1
+
+                            MATERIAL TYPES
+
+20      LEATHER  - shown
+             Soft Leather  - (-1 AC, -10% Weight)
+             Halfling Leather  - (+1 AC, -20% Weight, No Mana or Move -'s)
+24      SKIN - (-1 AC, +20% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+4. Studded/Spiked Leather  Encumbrance: Light
+
+This is soft leather backing, with little metal studs on it. It was great
+protection with little to no encumbrance, but the studs fell off a lot
+(even though they were easily replaced), and the metal components did mean
+some rust damage could occur. 
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body      XX%       7/10      8/9       9/8      10/8    10/7       10/6
+Legs      XX%       3/7       4/6       4/5       5/5     5/4       6/4
+Arms      XX%       3/5       4/4       4/3       5/3     5/2       6/2
+Hands     XX%       3/4       4/3       4/2       5/2     5/1       6/1
+Neck      XX%       2/5       3/4       3/3       4/3     4/2       5/2
+Waist     XX%       2/3       3/2       3/1       4/1     4/1       5/1
+
+                            MATERIAL TYPES
+
+20      LEATHER - Shown
+23      FLESH - (-1 AC, +20% Weight)
+24      SKIN - (-2 AC, -10% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+5.  Hide/Skin   Encumbrance: Medium
+
+This is one of those great stand-bys.  If you let a hide of a tougher
+animal dry out and beat it, you can wear it like armor.  Some actually cut
+it up and made more form-fitting armor than others, but in tribal
+societies with low-tech levels, it was usually just sort of thrown around
+the body.  They stink, and it's a bit heavy for the protection given, but
+still, it works. 
+ 
+Leather doesn't qualify as hide, it's a different process to make Hide
+armor, though Cow Hide Armor was used.  So was elephant, Tiger, and you
+name it... ;) I don't think 'Hide Armor' should be the name.  Pick an
+animal...  Tiger-Skin Vest, or whatever... 
+
+Location  Protects  Free   Average    Decent     Good    Great    Awesome
+-------------------------------------------------------------------------
+                   AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body      XX%       5/15      6/13      7/11      8/11    9/9       10/9
+Legs      XX%       4/9       5/8       5/6       6/6     6/5       7/5
+Feet      XX%       3/5       4/4       4/3       5/3     5/2       6/2
+Arms      XX%       4/7       5/6       5/5       6/5     6/4       7/4
+Neck      XX%       3/4       4/3       4/2       5/2     5/1       6/1
+About     XX%       4/19      5/17      5/15      6/15    6/13      7/13
+
+                            MATERIAL TYPES
+
+20      LEATHER - ( +1 AC, +10% Weight)
+23      FLESH - (-1 AC, +20% Weight)
+24      SKIN - show
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+6.  Brigandine  Encumbrance: Light
+
+This stuff was neat.  It was supposedly invented by smugglers.  It is a
+sandwhich - either metal plates between 2 leather, or a leather layer
+between two metal plates.  It works out to be lighter than Scale Mail,
+with about the same level of protection, BUT!  Here's the cool part.  You
+can smuggle items in it.  It was designed to fit coins and papers and
+other items (daggers, blades included), into the slots between the layers
+of the armor.  I love this stuff. 
+
+Location  Protects   Free    Average    Decent    Good    Great    Awesome
+--------------------------------------------------------------------------
+                     AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%       6/15      7/13      8/11      9/11   11/9      13/9
+Legs       XX%       4/9       5/8       5/7       6/7     6/6       7/6
+Arms       XX%       4/7       5/6       5/5       6/5     6/4       7/4
+Neck       XX%       4/4       5/3       5/2       6/2     6/1       7/1
+
+                            MATERIAL TYPES
+
+           Smuggler's Armor:
+                Same as above (in steel) but has container space
+                equal to 2x AC Value.  So the armor would be a container
+                type, with ARMOR affects, as well as spelling out each
+                of the encumbrance affects.
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL - (+1 AC, -20% Weight)
+             Sea Elf Scale - (-50% Weight, no Mana penalties)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-1 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -30% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+7.  Scale  Encumbrance: Medium
+
+This was a neat armor.  It was small metal scales backed to hard cloth or
+soft leather, to make you pretty fish-looking.  ;) It was half-decent
+protection (not as good as Chain), and was easier to make than Chain.  It
+was also easier to fix, since usually, the breaking of one scale didn't
+mean you had to fix a whole bunch of them.  It was a half-decent armor, in
+total. 
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body      XX%       7/21      8/19      9/17     12/17   13/15     14/15
+Legs      XX%       4/14      5/12      5/10      6/10    6/9       7/9
+Arms      XX%       4/9       5/8       5/6       6/6     6/5       7/5
+Neck      XX%       4/5       5/5       5/4       6/5     6/5       7/4
+
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL - (+1 AC, -20% Weight)
+             Sea Elf Scale - (-50% Weight, no Mana penalties)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-1 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -30% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+8. Ringmail  Encumbrance: Light
+
+A variant and less-useful version of Chain Mail, it is rings of metal sewn
+or bolted into leather backing or cloth backing - the rings are not
+connected, like in Chain mail.  This is sort of a hyper-version of Studded
+leather armor, and pretty much sucks on the weight to protection ratio
+compared to Chain mail. Still, people used it. 
+
+
+Location  Protects   Free    Average    Decent    Good    Great    Awesome
+--------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%       7/16      8/14      9/12     11/12   12/10     14/10
+Legs       XX%       3/9       4/8       4/7       5/7     5/6       6/6
+Arms       XX%       3/7       4/6       4/5       5/5     5/4       6/4
+Neck       XX%       3/4       4/3       4/2       5/2     5/1       6/1
+
+                            MATERIAL TYPES
+
+20      LEATHER - shown
+24      SKIN - (-1 AC, -20% weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+9.  Chain Mail  Encumbrance: Medium
+
+The usual armor worn by anyone with some money.  The worst thing about
+chain mail is the weight.  Even though it is only mildly encumbering, the
+stuff was usually weighted from the shoulders, not the back, like most
+armos, and ended up with stiff necks and back pain.  Yay progress.  Still,
+the armor was one of the better protection values, and was easily made.
+(it took skill and time, but it was easy), Also, no one ever wore Chain
+mail alone - they wore cloth underneath.  This stuff PINCHED like hell. 
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%       8/23      9/21     10/20     12/19   14/17     16/17
+Legs       XX%       5/14      6/12      6/10      7/10    7/9       8/9
+Arms       XX%       5/9       6/8       6/7       7/7     7/6       8/6
+Neck       XX%       4/5       5/4       5/3       6/3     6/2       7/2
+Head       XX%       3/6       4/5       4/4       5/4     5/3       6/3
+Feet       XX%       4/6       5/5       5/4       6/4     6/3       7/3
+
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL
+            Elven Chain - (-50% Weight, No Mana loss)
+            Drow Chain - (-50% Weight, +1 AC, No Mana loss)
+11      TITANIUM - (+1 AC, +10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+10.  Splint/Banded(shown) Mail  Encumbrance: Medium
+
+Banded mail and Splint Mail are SO close that there's no point making two
+lists for them.  Just make Splint mail 3 lbs lighter if it's a large
+piece, and 1 lb lighter if it is a medium piece.  Banded mail is
+overlapping metal strips backed horizontally onto cloth and chainmail.
+Splint is vertical strips. *roll* Either way, they were a tad limiting for
+the protection in fine movements, but were better protection than
+chainmail. 
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%       8/22      9/20     10/18     13/18   15/16     17/16
+Legs       XX%       6/9       7/8       7/7       8/7     8/6       9/6
+Arms       XX%       6/7       7/6       7/5       8/5     8/4       9/4
+Arms       XX%       6/7       7/6       7/5       8/5     8/4       9/4
+Neck       XX%       5/4       6/3       6/2       7/2     7/1       8/1
+Waist      XX%       4/5       5/4       5/3       6/3     6/2       6/2
+Wrist      XX%       3/2       2/1       2/1       3/1     3/1       3/1
+
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+           Splint - (-(1 to 3) Weight for each piece)
+13      BRONZE (-1 AC)
+25      BONE (-2 AC, -30% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+11. Bronze Plate Mail  Encumbrance: Medium
+
+I don't want to write this out four times, so I'm going to chart form this
+one. (Wussy, I wrote the whole thing out, times four - H) Bronze Plate
+wasn't a typical plate armor, it was bronze plates on leather backings,
+whereas Plate Mail, Field Plate and Full Plate were all Plate armors with
+Chain Mail joints. These are heavy and hard armors, and limit movement and
+action quite a lot. 
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%       8/35      9/33     10/30     12/30   13/28     14/28
+Legs       XX%       6/16      7/14      7/12      8/12    8/10      9/10
+Arms       XX%       6/9       7/8       7/7       8/7     8/6       9/6
+Neck       XX%       5/5       6/4       6/3       7/3     7/2       8/2
+Feet       XX%       5/8       6/7       6/6       7/6     7/5       8/5
+Hands      XX%       4/5       5/4       5/3       6/3     6/2       7/2
+Waist      XX%       4/5       5/4       5/3       6/3     6/2       7/2
+Wrist      XX%       2/3       3/2       3/1       4/1     4/1       5/1
+
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL - (-50% Weight, No Mana Loss)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-2 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -20% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+12. Plate Mail  Encumbrance: Heavy
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%      14/43     16/40     19/37     22/37   24/35     26/33
+Legs       XX%       7/18      8/16      8/14      9/14    9/12     10/12
+Arms       XX%       7/12      8/10      8/9       9/9     9/9      10/9
+Neck       XX%       6/6       7/5       7/4       8/4     8/3       9/3
+Feet       XX%       6/9       7/8       7/7       8/7     8/6       9/6
+Hands      XX%       5/6       6/5       6/4       7/4     7/3       8/3
+Waist      XX%       5/6       6/5       6/4       7/4     7/3       8/3
+Wrist      XX%       3/3       4/2       4/1       5/1     5/1       6/1
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL - (-50% Weight, No Mana Loss)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-2 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -20% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+13. Field Plate Mail  Encumbrance: Heavy
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%      15/54     17/50     20/46     24/46   26/43     28/43
+Legs       XX%       8/21      9/19      9/17     10/17   10/15     11/15
+Arms       XX%       8/14      9/12      9/10     10/10   10/9      11/9
+Neck       XX%       7/7       8/6       8/5       9/5     9/4      10/4
+Feet       XX%       7/12      8/10      8/9       9/9     9/8      10/8
+Hands      XX%       6/7       7/6       7/5       8/5     8/4       9/4
+Waist      XX%       6/7       7/6       7/5       8/5     8/4       9/4
+Wrist      XX%       4/4       5/3       5/2       6/2     6/1       7/1
+
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL - (-50% Weight, No Mana Loss)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-2 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -20% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+14. Full Plate Mail  Encumbrance: Heavy
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Body       XX%      18/64     20/60     22/56     25/55   27/50     30/45
+Legs       XX%       9/24     10/21     10/18     11/18   11/16     12/16
+Arms       XX%       9/16     10/14     10/12     11/12   11/10     12/10
+Neck       XX%       8/9       9/8       9/7      10/7    10/6      11/6
+Feet       XX%       8/14      9/12      9/10     10/10   10/9      11/9
+Hands      XX%       7/8       8/7       8/6       9/6     9/5      10/5
+Waist      XX%       7/9       8/8       8/7       9/7     9/6      10/6
+Wrist      XX%       5/5       6/4       6/3       7/3     7/2       8/2
+
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL - (-50% Weight, No Mana Loss)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-2 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -20% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+15.  Helms
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Small Helmet  XX%    4/4       5/3       6/2       7/2     8/2       9/2
+(Light)
+Open Helmet   XX%    6/8       7/7       8/6       9/6     10/5      11/5
+(Medium)
+Closed Helmet XX%    7/11      8/10     10/9      11/9     12/8      13/8
+(Medium)
+Great Helm    XX%    8/23      9/20     11/18     13/18    14/16     15/16
+(Heavy)
+ 
+                            MATERIAL TYPES
+
+8       IRON - (+25% Weight)
+9       STEEL - shown
+10      MITHRIL - (-50% Weight, No Mana Loss)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-2 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -20% Weight)
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+16. Shields
+
+Location  Protects   Free   Average    Decent    Good    Great    Awesome
+-------------------------------------------------------------------------
+                    AC/WT     AC/WT     AC/WT     AC/WT   AC/WT     AC/WT
+Buckler      XX%     4/4       5/4       6/4       7/4     8/4       9/4
+(None)
+Small        XX%     6/6       7/5       8/5       9/5    10/6       11/6
+(Light)
+Medium       XX%     7/8       8/7       9/7      10/8    11/8       12/,
+No Mana Loss)
+11      TITANIUM - (+1 AC, +10% Weight)
+12      COPPER - (-2 AC, -10% Weight)
+13      BRONZE - (-1 AC)
+14      SILVER - (-2 AC)
+15      GOLD - (-4 AC, +100% Weight)
+25      BONE - (-2 AC, -20% Weight)
+
+
+
+
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+                          * W E A P O N S *
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+
+ Weapons
+  -------
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+DAGGER        MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Dagger       90% 80% 90% 95% 30% 30% 50% 95% 95% 95% 95% 80% 95% 80%
+
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1            1d3               1              2            backstab
+     2            3d2               1              4.5          backstab
+     3            4d2               2              6            backstab
+     4            5d2               2              7.5          backstab
+     5            6d2               3              9            backstab
+     6            7d2               3              10.5         backstab
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+SHORTSWORD     MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Shortsword   85% 80% 90% 95% 30% 30% 50% 95% 95% 95% 95% 80% 95% 95%
+    (85%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             1d3              2               2           backstab
+     2             2d3              3               4           backstab
+     3             3d3              4               6           backstab
+     4             4d3              5               8           backstab
+     5             5d3              6               10          backstab
+     6             6d3              7               12          backstab
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+QUARTERSTAFF   MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Quarterstaff 95% 95% 95% 95% 90% 90% 95% 85% 85% 85% 95% 95% 95% 95%
+    (80%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             1d4              3               2.5         two-handed
+     2             2d4              4               5           two-handed
+     3             3d4              5               7.5         two-handed
+     4             4d4              6               10          two-handed
+     5             5d4              7               12.5        two-handed
+     6             6d4              8               15          two-handed
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+HANDAXE        MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Handaxe      30% 30% 30% 40% 30% 30% 50% 80% 80% 85% 95% 80% 95% 95%
+   (95%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1            1d5               3               3     
+     2            2d4               4               5 
+     3            2d6               5               7
+     4            3d5               6               9
+     5            3d6               7               10.5
+     6            3d7               8               12
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WHIP            MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Whip         70% 70% 70% 80% 85% 80% 90% 95% 95% 95% 95% 80% 80% 80%
+    (110%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1            1d5               3               3 
+     2            1d7               3               4
+     3            1d11              4               6
+     4            1d13              4               7
+     5            1d17              5               9
+     6            1d21              5               11
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+WARHAMMER      MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Warhammer    30% 30% 30% 50% 90% 90% 95% 80% 80% 90% 95% 95% 80% 95%
+    (110%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             2d2              7               3  
+     2             2d3              7               4
+     3             2d5              8               6
+     4             2d7              8               8
+     5             2d9              9               10
+     6             2d11             9               12
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BROADSWORD     MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Broadsword   50% 50% 50% 70% 30% 30% 50% 95% 95% 95% 95% 95% 95% 95%
+   (100%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             1d6              8              3.5         
+     2             2d4              9              5
+     3             2d6             10              7
+     4             3d5             11              9
+     5             3d6             11              10.5
+     6             5d4             12              12.5
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+SPEAR           MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Spear        60% 60% 60% 70% 70% 70% 90% 95% 95% 95% 95% 75% 95% 75%
+   (110%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             2d3              8               4
+     2             2d5              8               6
+     3             2d8             10               9
+     4             2d10            11               11
+     5             2d11            11               12
+     6             2d12            12               13
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+MACE            MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Mace         30% 30% 30% 50% 85% 85% 95% 85% 85% 90% 95% 95% 80% 95%
+   (100%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             1d6              10             3.5
+     2             1d10             11             5.5
+     3             3d4              12             7.5
+     4             4d4              13             10
+     5             4d5              14             12
+     6             4d6              15             14
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BOW             MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Bow          30% 30% 30% 30% 30% 30% 50% 95% 95% 95% 95% 50% 95% 80%
+   (110%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             2d3              3               4
+     2             3d3              3               6
+     3             4d3              4               8
+     4             5d3              4               10
+     5             6d3              5               12
+     6             7d3              6               14
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==
+CLUB            MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Club         80% 80% 80% 90% 95% 95% 95% 85% 85% 90% 95% 75% 95% 95%
+   (125%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             1d7              8               4       
+     2             2d5             10               6
+     3             2d7             12               8
+     4             3d7             14               12
+     5             4d6             15               14
+     6             5d5             16               15
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+LONGSWORD      MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Longsword    30% 30% 30% 50% 30% 30% 50% 90% 90% 95% 95% 95% 95% 85%
+   (100%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+-------------------------------------------------------------------------
+     1             1d8              8              4.5
+     2             2d7              9              8
+     3             3d6              10             10.5
+     4             3d7              11             12
+     5             3d8              12             13.5
+     6             3d9              13             15
+-------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+MORNINGSTAR    MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Morningstar  30% 30% 30% 40% 85% 85% 95% 50% 50% 50% 95% 95% 90% 95%
+     (115%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+--------------------------------------------------------------------------
+     1             3d3              16              6           two-handed
+     2             3d5              17              9           two-handed
+     3             3d7              18              12          two-handed
+     4             3d9              19              15          two-handed
+     5             3d11             20              18          two-handed
+     6             3d13             21              21          two-handed
+--------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+BATTLEAXE      MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Battle Axe   30% 30% 30% 30% 30% 30% 50% 50% 50% 50% 95% 95% 85% 95%
+   (105%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+--------------------------------------------------------------------------
+     1             2d6              19              7           two-handed
+     2             2d9              20              10          two-handed
+     3             2d12             21              13          two-handed
+     4             2d15             22              16          two-handed
+     5             2d18             23              19          two-handed
+     6             2d21             24              22          two-handed
+--------------------------------------------------------------------------
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+POLEARM        MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+Polearm      30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 95% 95% 95% 95%
+   (125%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:       Specials:
+--------------------------------------------------------------------------
+    1              2d7              25             8            two-handed
+    2              3d7              26             12           two-handed
+    3              4d7              27             16           two-handed
+    4              4d8              28             18           two-handed
+    5              4d9              29             20           two-handed
+    6              4d10             30             22           two-handed
+--------------------------------------------------------------------------
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+2-HANDED SWORD MAX TRAIN
+
+WeaponType:  Ne: En: Wi: So: Cl: Hl: Cr: Th: Ro: As: Wa: Kn: Rn: Bz:
+----------------------------------------------------------------------
+2H-Sword      30% 30% 30% 30% 30% 30% 30% 30% 30% 30% 95% 95% 95% 95%
+   (120%)
+POWER LEVEL:     DieRoll:         Weight:        Ave Dam:     Specials:
+-------------------------------------------------------------------------
+     1             2d6              20              7         two-handed
+     2             3d6              22              10.5      two-handed
+     3             4d6              24              14        two-handed
+     4             4d7              26              16        two-handed
+     5             4d9              28              20        two-handed
+     6             5d9              30              25        two-handed
+------------------------------------------------------------------------
+
+   These guidelines are meant to be followed strictly. If you make an
+unusual weapon, for example a claw or a strange club of some sort, one
+that isn't human-made, ignore the dieroll values and use the average
+damage value instead.  These tables do NOT include enchants or bonuses;
+these will be regulated by the area checker. DAMROLL bonuses on weapons
+will be watched carefully; the damage is already very high. 
+
+---------------------------------------------------------------------------
+***               A Note About Adding Affects To Items                  ***
+---------------------------------------------------------------------------
+
+   Some affectations are more powerful than others, and their occurance in
+the game should be kept to a minimum. Here is a short list: 
+
+Very Rare:   Damroll, Dex
+     Rare:   Constitution
+ Uncommon:   Strength, Hitroll
+
+   Generally, only a few items in an area should have the uncommon
+bonuses; no more than two or three should have the rares; and almost never
+more than one with the very rares. 
+   Make an item's name agree more or less with its affects; a blue orchid
+earring should not have +damroll, and a full-face helm should not have
++hitroll. Strange item names can sound cool; but try to keep them to a
+minimum.  Too many weird objects can make the game seem "silly". Avoid
+dual- or multi-purpose items: make each item with ONE thing in mind, for
+example an item for a mage that has too little hitroll and can sacrifice a
+bit of intelligence for it. Setting bits should also be avoided with
+almost no exceptions;  permanent sanct is just a no-go for a rentable
+item. 
+   Above all, try to make each item unique; I know sometimes it's hard
+with such a limited range of affectations, but with a little thought and
+creativity, an item will be very flavorful even if it's not "the best in
+the game" or whatever. Try not to make items that sound like other items;
+for example "a black xxxxxxxx". 
+
+----------------------------------------------------------------------------
+***            A Note About Placement Of Items In The Area               ***
+----------------------------------------------------------------------------
+   
+   The are a few things that might be unclear to some people about items
+relative to an area's "level" or "power level". Many people would think
+that if they have an area for level 40s, they take all of their items from
+the power level 4 balance. This is wrong; an area should have only a few
+(no more than 10) items of use in them. If every mobile in the area has a
+good item, it will unbalance the game because there are so many to go
+around. If you have a P.L. 4 sword in your level 40 area, don't put it on
+every guard mob around! Even if the %load is low, there will still be more
+than what we are balanced for. Also, DO NOT put eq of any value on the
+first mob players will encounter in the area! It would be too easy to just
+run up and kill the one mob, and grab the eq. 
+   Try to keep the # of pieces of useful eq on a given mob down; there
+should really only be one or two good objects on any mobile, unless it is
+a "boss" mob (a hard to get to mob that's extremely powerful). 
+   As a general guideline, put any useful eq far into the area, to
+maximize the challenge in getting it. Tricks and puzzles are also great
+ways of hiding eq or mobs. 
+   Don't make eq with mortals in mind; make it with the area and the mob
+in mind. Don't put a piece of eq on a mob that has nothing to do with the
+name, for example a giant turtle wearing a tiny amethyst ring.
+
+EOF

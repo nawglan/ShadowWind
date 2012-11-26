@@ -1,0 +1,225 @@
+#9800
+dagger glowing~
+a glowing dagger~
+A glowing dagger glows here.~
+~
+5 ag an 0 
+2 5 2 12 11
+1 1000 0
+A
+18 2
+A
+19 2
+#9801
+glowing platemail plate mail~
+{Da suit of {Yglowing {Dplatemail{x~
+Some glowing platemail lies in a heap here.~
+~
+9 g ad f 
+9 0 0 0 9
+150 30000 1500
+A
+25 20
+A
+26 -100
+#9802
+agate gem~
+{ya piece of agate{x~
+A small gem lies here.~
+~
+8 0 a 0 
+0 0 0 0 6
+1 5000 0
+#9803
+jade jewel~
+{Ga pie{gce of j{Gade{x~
+A small jewel gleams here.~
+~
+8 0 a 0 
+0 0 0 0 6
+1 10000 0
+#9804
+sculpture~
+a piece of sculpture~
+A nice piece of sculpture is here.~
+~
+8 0 a 0 
+0 0 0 0 6
+75 20000 0
+E
+sculpture~
+Its of a beautiful woman, straining beneath a heavy weight. She looks
+tired, with chiseled tears staining her cheeks. It makes you sad.~
+#9805
+vial dragon's blood~
+{ra vial of dragon's blood{x~
+A small vial filled with a red fluid lies in the dust here.~
+~
+10 0 a 0 
+50 120 0 0 18
+5 2200 2500
+P
+strength
+#9806
+amulet~
+{Dan ebony amulet{x~
+An odd looking amulet has been discarded here.~
+~
+11 g ac 0 
+0 0 0 0 22
+3 10000 1300
+A
+2 5
+#9807
+long pole~
+a long pole~
+A long pole has been tossed away here.~
+~
+3 ag ao 0 
+50 5 5 131 5
+10 2000 5000
+P
+sleep
+#9808
+bag powder wealth~
+{wa pile of silver coins{x~
+{wa pile of silver coins{x~
+~
+20 ag a 0 
+0 0 500 0 14
+1 0 0
+#9809
+desk~
+a desk~
+There is an ebony desk here.~
+~
+15 0 0 0 
+100 13 0 0 22
+800 0 0
+#9810
+chaos book~
+{Rthe burning book of chaos{x~
+A book with a title written in moving letters rests here.~
+~
+2 g ao 0 
+50 69 69 0 19
+25 4000 2500
+P
+fireball
+P
+fireball
+#9811
+elder book~
+{cthe book of the elder{x~
+A grey-bound book lies here.~
+~
+2 abg ao 0 
+50 190 0 0 19
+25 6000 5000
+P
+group heal
+#9812
+occluded lens~
+{Dan occluded lens{x~
+A smoky lens about a foot around has been scuffled in the dirt here.~
+~
+11 gu ao 0 
+0 0 -1 0 18
+4 20000 1200
+A
+26 10
+#9813
+small potion~
+{wa large {Wmilky {wpotion{x~
+A small potion of milky fluid has been left here.~
+~
+10 0 a 0 
+50 57 129 0 18
+1 400 3000
+E
+small potion~
+Quaffing this down might provide interesting effects.
+~
+P
+poison
+P
+blindness
+#9814
+small potion~
+{wa small {Wmilky {wpotion{x~
+A small potion of milky fluid has been left here.~
+~
+10 0 a 0 
+50 188 186 140 18
+12 4000 3000
+E
+small potion~
+Quaffing this down might provide interesting effects.
+~
+P
+heal
+P
+bless
+P
+armor
+#9815
+twisted metallic staff iron~
+{ra twisted metallic staff of iron{x~
+There is a metal-shod staff here.~
+~
+8 gu ao 0 
+0 0 0 0 8
+7 10000 2500
+A
+26 20
+#9816
+chest wooden~
+a wooden chest~
+There is a wooden chest here.~
+~
+15 0 0 0 
+500 13 0 0 5
+0 0 0
+#9817
+chest wooden~
+a wooden chest~
+There is a wooden chest here.~
+~
+15 0 0 0 
+500 13 0 0 5
+0 0 0
+#9818
+chest wooden~
+a wooden chest~
+There is a wooden chest here.~
+~
+15 0 0 0 
+500 13 0 0 5
+0 0 0
+#9819
+basin water~
+a water basin~
+A basin filled with crisp, clean water is here.~
+~
+23 a 0 0 
+100 100 0 0 26
+100 0 0
+#9820
+toes food elf~
+{ysome baked {Gelf {ytoes{x~
+There's some food lying here.~
+~
+19 0 a 0 
+8 0 0 0 2
+3 20 0
+#9821
+rosebud earring~
+{Ra rosebud earring{x~
+A small red rosebud is lying on the ground.~
+~
+11 gmnu aq 0 
+0 0 0 0 4
+2 1000 100
+A
+18 1
+$~

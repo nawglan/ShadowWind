@@ -1,0 +1,2298 @@
+#3000
+The Middle Market Square~
+   You enter the middle market square as the towns people are bustling
+about. The square is filled with many sounds such as shouting, fighting in
+the distance, and shop doors banging to and from all around you. A beautiful
+fountain is before you, crafted in memory of the God Wars of the past. A sign
+hangs near that reads, 'Weirvane... Eat, Drink, Battle, and Be Merry.'
+~
+30 0 1
+D0
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3001 0
+D1
+Merchant Avenue lies in that direction.
+~
+ ~
+0 0 3015 0
+D2
+Caravan Road lies in that direction.
+~
+ ~
+0 0 3101 0
+D3
+Merchant Avenue lies in that direction.
+~
+ ~
+0 0 3082 0
+E
+sign~
+You examine a sign closer to find it's made of an oaken wood, and appears
+to be hand crafted. As you try to touch it, a guard swiftly turns your hand
+away.
+~
+S
+#3001
+Caravan Road~
+   Life in the heart of Weirvane is a constant buzz of activity. People of all
+forms and fortunes crowd around you as they try to rebuild the life that they
+once enjoyed. Sights of people and merchandise spilling from the stores around
+you fill your eyes, and the smells and sounds of trade wrap themselves around
+you, numbing your senses. Commerce hangs itself in the air, seeping into every
+life around you. To the east, a strange store selling items of magic catches
+your eye, extending an invitation to you to enter.
+~
+30 0 1
+D0
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3003 0
+D1
+A shop of magic lies in that direction.
+~
+ ~
+0 0 3002 0
+D2
+The middle market square of Weirvane lies in that direction.
+~
+ ~
+0 0 3000 0
+S
+#3002
+Ylirnah's Retreat~
+   Strange noises mermeate the room, emanating seemingly at random from the
+shadowy depths of the room. Each resembles a cry or a gentle rumble from an
+animal long forgotten in memory, each carrying an almost discernable melody
+that yet remains elusive. A dim corner of the room holds a single guttering
+candle which seems to give off more light than it should as if aided by a
+magic of its own. About you racks fill the room with vials and scrolls.
+~
+30 deh 1
+D3
+To your west lies Caravan Road.
+~
+ ~
+0 0 3001 0
+S
+#3003
+Caravan And Danozi Intersection~
+   This set of well traversed crossroads plays host to a multitude of people,
+carts and animals. Before you, merchants hurry by intent only on their affairs
+of business, milling over possible deals and opportunities. Ordinary people
+move at a weary pace, a blank distant look glazing over their eyes.
+~
+30 0 1
+D0
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3040 0
+D1
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3004 0
+D2
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3001 0
+D3
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3048 0
+S
+#3004
+Danozi Avenue~
+   The heavily matted street that lies beneath your feet shows you that many
+a tired traveller has turned down this street looking for refuge from the 
+elements as they continue their journey to whichever destination they choose.
+Blank faces with darting, searching eyes and tight lipped smiles float over
+your face to stare into your own eyes as if looking for something, before
+being lowered quickly once again with a small shake of the head.
+~
+30 0 1
+D1
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3005 0
+D3
+Caravan Road lies in that direction.
+~
+ ~
+0 0 3003 0
+S
+#3005
+Danozi Avenue~
+   Comfortable homes sit along the street alongside well established stores,
+their windows opening up onto the street allowing small lace curtains to
+float out onto the street. Neat shops with their goods displayed in broad
+windows play host to a multitude of customers, each coming out in turn to
+grumble about the significant increase in the price of each good. To the 
+north, a stately building with broad marble steps spilling out onto the street
+invites any who wish to enter. The City Offices present themselves as the 
+important rooms of power that they are.
+~
+30 0 1
+D0
+The City Offices lie in that direction.
+~
+ ~
+0 0 3006 0
+D1
+Danozi Avenue and Merchant Avenue intersect in that direction.
+~
+ ~
+0 0 3011 0
+D3
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3004 0
+S
+#3006
+The City Offices~
+   Rich oak stained panelling and dim wall lamps cast a warm golden glow over
+the room. Beautiful leather chairs, large and inviting grace the room and 
+entice any visitor to lounge in them as they wait. The rich color of the rose
+granite floor tiles are enhanced by an intricately woven rug that lies in the
+middle of the room. The exquisite scene of age old battles sealed within the
+very weave of the rug itself. About you the only sound present is the low
+rumbling buzz of hushed voices.
+~
+30 d 0
+D0
+The Selectman's Office lies in that direction.
+~
+ ~
+0 0 3009 0
+D1
+One of the Alderman's offices lies in that direction.
+~
+ ~
+0 0 3008 0
+D2
+Danozi Avenue lies outside the doors in that direction.
+~
+ ~
+0 0 3005 0
+D3
+One of the Alderman's offices lies in that direction.
+~
+ ~
+0 0 3007 0
+S
+#3007
+The Alderman's Office~
+   A deep rich wine red compliments the warmth given off by the oak furniture
+within the room. The centrepiece of the room is a solid oak writing table,
+carved in its entirety from a single piece of ancient oak. The strength of
+the table seems necessary with the piles of paper which cover the desk. Though
+they are not heavy in themselves, the weighty issues written on them make them
+a heavy burden for any single person to bear. Cabinets containing files and
+various official case studies fill the room each locked securely and safely.
+~
+30 d 0
+D1
+The City Offices start in that direction.
+~
+ ~
+0 0 3006 0
+S
+#3008
+The Alderman's Office~
+   The official air of the building carries through this room. Sitting in
+the centre of the room stands a large oak writing table, its leather covered
+surface littered with official papers waiting to be perused by an official
+eye. A bookcase lines one of the walls filled with volume after volume of
+legal cases and official impact studies. Another wall holds photographs of
+official engagements with notable people and trophies boasting of the many
+achievements and triumphs of the Alderman.
+~
+30 d 0
+D3
+The City Offices start in that direction.
+~
+ ~
+0 0 3006 0
+S
+#3009
+The Mayor's Office~
+   A neat fireplace tucks itself into a corner of the room, it's crackling
+disturbing the otherwise peaceful atmosphere of the room. The mantelpiece
+holds pictures of a family sealed lovingly in gold frames and kept free of
+dust. Bookcases lie to either side of the fireplace creaking under the
+weight of ancient scrolls of legal text. In front of the Mayor's desk stands
+a magnificient table carved from the finest black oak and trimmed with the
+softest of leathers. A grand high-backed chair tucks itself behind the desk
+waiting to seat its owner in comfort.
+~
+30 d 0
+D2
+The City Offices start in that direction.
+~
+ ~
+0 0 3006 0
+D5
+Under the desk lies a trapdoor with a stiff lock on it.
+~
+trapdoor lock stiff~
+2 0 3010 0
+S
+#3010
+The Weirvane Treasury~
+   Glittering brilliance is the hallmark of this room, filled to the brink
+precious stones and jewelery. Among the jewels, gold coins from every
+imaginable land fill the coffers made to hold them. On the far side of the
+room, a small cabinet holds important papers. Heavy parchments, signed and
+sealed in days long gone hold treaties and amnesties given to Weirvane after
+battles were fought and blood spilled. There seems to be no order to the room
+at all, you realize that anything and anyone could go missing down here and
+no-one would be any wiser.
+~
+30 adf 0
+D4
+The Mayor's Office is above you.
+~
+trapdoor~
+2 0 3009 0
+S
+#3011
+Danozi And Merchant Avenue Intersection~
+   Two well traversed roads meet here, to the south a clean, well kept road
+filled with bustling crowds and beautiful homes, while to the east and west
+the street is not so clean and the homes are not so rich. Nearby you see 
+a large distinguished building with a stately air about it which identifies
+itself as the City Offices. The crowd that surrounds you is an odd mixture
+of both rich and poor, you see merchants in their fine livery of silks and
+finely woven linens standing alongside and not noticing their counterparts
+in coarser fabrics.
+~
+30 0 1
+D1
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3018 0
+D2
+Merchant Avenue lies in that direction.
+~
+ ~
+0 0 3012 0
+D3
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3005 0
+S
+#3012
+Merchant Avenue~
+   The endless sprawl of shops and houses melting together to line the street
+continues around you. The ever present din made by the sound of people and 
+horses seeks to defean you as the display of vibrant colors in the clothing
+of the rich upper class threatens to blind you. In stark contrast, scrawny
+animals pad their way along the street unseen by the busy crowd, in search of
+morsels of food. The strange scenes of poverty and immense wealth living and
+standing side by side plays with your mind as you wander through the street,
+guided by the flowing mass of heads about you.
+~
+30 0 1
+D0
+Danozi Avenue and Merchant Avenue intersect in that direction.
+~
+ ~
+0 0 3011 0
+D1
+A private home lies in that direction.
+~
+door~
+1 0 3017 0
+D2
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3013 0
+D3
+A private cottage lies in that direction.
+~
+door~
+1 0 3016 0
+S
+#3013
+Merchant Avenue~
+   Shops in every direction spill their wares out onto the street, displaying
+their contents to the numerous crowds that mill about outside. Comfortable
+homes sit amongst them, fencing off the street in a manner and guiding the
+people that crowd within in a particular direction. Standing on the corner,
+you notice that you could easily mistake the street to the north with the one
+that lies to your west. The people that surround you glance by you unseeing,
+and the your senses are dulled by the many colors and situations that present
+themselves before you.
+~
+30 0 1
+D0
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3012 0
+D2
+~
+door~
+1 0 3183 0
+D3
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3014 0
+S
+#3014
+Merchant Avenue~
+   Richly dressed merchants walk by you with their heads together in a muted
+discussion of business affairs to one side. To the other, women chatter of
+the huge increase in vegetable prices and of their husbands. All around, the
+deep voices of shouting storekeepers booms through the street to reach your
+ears. Every so often a narrow window of amber light opens itself to the street
+as a door is opened to a comfortable residence or to a store crammed full with
+people trying to buy what they need. Turning constantly you become lost in the
+mass of people about you.
+~
+30 0 1
+D1
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3013 0
+D3
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3015 0
+S
+#3015
+Merchant Avenue~
+   Shops and houses mingle easily as they pave the sides of the street before
+your eyes, looking natural in the environment as they stand side by side. The
+street under your feet is clean swept and well used by the many feet that
+traverse this stretch of road on a daily basis. Looking south you notice a
+faint warm glow from a narrow passageway that you are sure leads into the
+very heart of the holy centre for clerical training.
+~
+30 0 1
+D1
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3014 0
+D2
+The strange passageway lies in that direction surrounded by holy symbols.
+~
+ ~
+0 0 3149 0
+D3
+The Middle Market Square lies in that direction.
+~
+ ~
+0 0 3000 0
+S
+#3016
+A Small Dwelling~
+   As you enter the small dwelling, your attention is immediately turned
+to the west wall, where a small peephole seems to have been carved. Over the
+walls are spread wonderous sketches showing adventures of old into the vast
+wilderness outside Wiervane.
+~
+30 d 0
+D1
+Danozi Avenue lies in that direction.
+~
+door~
+1 0 3012 0
+E
+peephole peep hole~
+Down is the meat grinder, you figure you'll probably be ground do DEATH 
+if you go that way.
+~
+S
+#3017
+A Small Dwelling~
+   As you enter the small dwelling, your attention is drifted to the eastern
+side where a quaint fireplace lies. Over the hardwood floor lies a large
+bearskin rug. The smell of roast duck wafts from the oven in the corner, and
+the busy hustle of market square can be heard through these thin walls.
+~
+30 d 0
+D3
+Danozi Avenue lies in that direction.
+~
+door~
+1 0 3012 0
+S
+#3018
+Danozi Avenue~
+   A well matted street carves its way through the tight squeeze of shops that
+border it in the neat jumble that is present throughout the street. Middle
+class homes stand shoulder to shoulder with solid establishments selling the
+needs and wants of Weirvane's citizens. People with packages of all sizes
+flow in and out of the narrow doors which serve as the entrances to these
+stores. About you people walk by hurriedly lost in their own troubles as they
+try to make a living in the jungle of the city streets.
+~
+30 0 1
+D1
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3019 0
+D3
+Danozi Avenue and Merchant Avenue intersect in that direction.
+~
+ ~
+0 0 3011 0
+S
+#3019
+The End of Danozi Avenue~
+   Horses trot by pulling grand carriages, both passengers and horses not
+noticing and not caring to see the empty faces which stare back at them in
+obvious need and hunger. Searching gazes flitter past the empty smiles that
+meet them, no closer to an answer or reason than before. The constant quality
+of life in Weirvane continues about you as people continues on with their
+lives of struggle. Here on the perimeters of the city, the thick crowds are no
+longer so thick and the shops are no longer so full.
+~
+30 0 1
+D0
+Wall Road lies in that direction.
+~
+ ~
+0 0 3024 0
+D1
+The great city gates of Weirvane lies in that direction.
+~
+ ~
+0 0 3020 0
+D2
+Wall Road lies in that direction.
+~
+ ~
+0 0 3021 0
+D3
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3018 0
+E
+material~
+This strange substance seems to be a type of bendable metal.
+You now recall hearing something about a magical "Weirmetal" that
+was created by the town alchemist.
+~
+S
+#3020
+The Great Eastern Gates Of Weirvane~
+   The massive gates, flanked on either side by walls of coarse, undressed
+stone, are made of immense planks of rough-hewn timber bound with great bands
+of iron. Cosmetics were clearly not a concern when this was built, but its
+strength can hardly be questioned. Still, the only light comes from a torch
+burning fitfully on each wall, and the deep shadows dancing in the corners
+inspire a deep unease in your heart.
+~
+30 d 1
+D1
+You see the Eastern Gatehouse in that direction.
+~
+gate gates great~
+1 3099 3096 0
+D3
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3019 0
+E
+roof~
+  As you look up to the roof, you see inky black holes above you, no doubt
+manned by vigilant soldiers. You can almost detect the smell of oil on the
+still air.
+~
+E
+corner corners shadow shadows~
+  Shifting and twisting with every flicker of the torches, the shadows don't
+seem to retain any one shape for long, lapping over the crevices and grooves
+in the walls at random.
+~
+S
+#3021
+Wall Road~
+   Just south of the city's eastern gate, this section of Wall Road entertains
+a handful more visitors than many other parts of this once busy road. To the
+north, the dwindling crowds of the normally busy Danozi Road carry on with
+their lives unnoticing almost, sparing only a glance for the towering
+scaffolding. Much work is still left to be completed here.
+~
+30 0 1
+D0
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3019 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3022 0
+S
+#3022
+Wall Road~
+   City walls from the north and west meet here at what will presumably be
+a tower at some future date. At this point, however, it is little more than
+a glorified wide spot in the rough stone wall, evidence of the desperate
+haste with which the wall is being built. Indeed, scaffolding can still be
+seen on the wall to the west.
+~
+30 0 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3021 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3023 0
+S
+#3023
+Wall Road~
+   New stone and mortar lie carelessly along the road as men work happily,
+humming a merry tune to keep their spirits up. Trade has been useless here
+while the wall has been under construction with people too frightened to use
+Wall Road until the protection of the wall is complete. Scaffolding which
+reaches for the sky causes you to wonder if it will ever be finished.
+~
+30 0 1
+D1
+ ~
+ ~
+0 0 3022 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3155 0
+E
+rubble~
+  After the inner side of the massive wall collapsed, tons of the fill behind
+it cascaded out into the street, totally obscuring it. You can't help
+wondering whether someone was below it when it collapsed.
+~
+E
+scaffolding~
+   Made of narrow timbers bound tightly with braided cord, this scaffolding
+was apparently not as sturdy as its designers might have hoped. Split and
+shattered, several of the ruined timbers dangle into the rubble below them.
+~
+S
+#3024
+Wall Road~
+   The wall here requires some work to be done on it yet being nearly complete
+in construction the sense of total protectiveness is still lacking. This
+section of the wall has sustained some of the heaviest damage, the pale grey
+of new stone blocks making up much of the wall standing as testament to this.
+The only people to travel here are the curious and those leaving the city's
+eastern gate to the south-east.
+~
+30 0 1
+D2
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3019 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3025 0
+S
+#3025
+Wall Road~
+   The odd scene of relaxed construction continues along this section of Wall 
+Road. Small amounts of stone blocks and mortar mix lie casually before empty
+stores on the opposite side of the street. Many have been shut, awaiting the
+end to the construction to reopen. Without the safety of the city's walls
+many are too frightened to venture here, making business unprofitable. Among
+the scaffolding, young men work to a lazy rhythm as if it was a part of them.
+~
+30 0 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3026 0
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3024 0
+S
+#3026
+Wall Road~
+   Carts line the wall, blocking the street, filled with more timber 
+scaffolding to continue the work on the wall. Here, the scaffolding does not
+reach the heights of those to the north yet there are few workers here. It
+seems that in the city's relentless push to restore safety to its citizens,
+the quarries have been drained of their supplies of stone and work has been
+slowed as a result.
+~
+30 0 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3027 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3025 0
+S
+#3027
+Wall Road~
+   More scaffolding seems to cover the wall in this section. The milling 
+crowds that you see to the north thin out as they approach, leaving only
+the gaping mouths and curious mischief of children to stare. The scraping
+sounds of rock against rock, and stone against mortar fill the air of frenzied
+activity. Men work eagerly to restore the safety and the life of the past.
+~
+30 0 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3028 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3026 0
+E
+top scafolding~
+   The top of the wall here seems discouragingly close to the ground. It
+almost seems that you could jump up to the scafolding and from there over the
+wall.
+~
+S
+#3028
+Wall Road~
+   Much of the old wall still survives here, as you cast your eye west you see
+craftsman of all trades busily tending to the wall and its repairs. As the
+supporting scaffolding is slowly taken down, people begin to flock back into
+Wall Road. Canvases of old grey stone are flecked with the pale grey of newly
+quarried stone and the white of fresh mortar. The scene appears like a 
+patchwork of strength and protection.
+~
+30 0 1
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3027 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3029 0
+S
+#3029
+Wall Road~
+   Nearing its final stages of construction, the wall here is not so thickly
+surrounded by the heavy scaffolding that you see to the north and east. 
+Tended to quickly to ensure that the citizens of Weirvane would have access
+to Gwydno's Provisions to the south, the protection of the city's wall seems
+to be most prevalent here.
+~
+30 0 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3030 0
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3028 0
+D2
+A bread shop lies there. (to be changed)
+~
+ ~
+0 0 3041 0
+S
+#3030
+Wall Road~
+   The construction at this section of the wall seems to be entering into its
+final stages. soon the scaffolding that covers the wall will be removed,
+unveiling a newly constructed wall stronger and sturdier than ever. Until then
+the street will continue to be obstructed by the numerous tools needed to make
+the wall.
+~
+30 0 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3031 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3029 0
+E
+cement fill~
+   Composed of a mixture of coarse rock and mortar, this fill actually makes
+up the bulk of the wall, the visible masonry functioning as a form. At this
+point, only about five feet of fill is in place. Hopefully, it will be
+completed soon.
+~
+S
+#3031
+Sentry Tower~
+   At this bend in the road, a large sentry tower, tall and proud in aspect
+is undergoing repairs to fortify and prepare it for any future need. Men,
+young and old work with a fevered light in their eyes and frenzy in their
+limbs. They seek to make the vast stone wall that surrounds the city safe once
+again for Wiervane's inhabitants. The passageway under the tower continues 
+both west and south.
+~
+30 d 1
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3030 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3032 0
+E
+roof ceiling~
+   Above you is an array of inky black holes in the ceiling. The acrid smell
+of tar floats gently on the still air, leaving you convinced that watchful
+sentries are above you, ready to turn this constriction into another point of
+defense for the city.
+~
+S
+#3032
+Wall Road~
+   Carved in the shadow of the city walls, Wall Road is wide enough to carry
+many a cart carrying the materials needed to rebuild it. Palisades, stone
+blocks and dried mortar line the street. To the west the continues its 
+protective embrace, while a passageway lit by guttering lamps leads under the
+sentry tower to the east.
+~
+30 0 1
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3031 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3033 0
+S
+#3033
+Wall Road~
+   Shortly after the raging Shadowwind had destroyed the lives of so many,
+the few survivors, battered and worn flocked to the safety of the city. Yet
+these walls of solid stone did not survive the season untouched. The bright
+color of new stones and mortar stand out as repairs to the older stone. To 
+the west, brilliant new gates have been forged, held in place by the pale grey
+of newly quarried stone and the white of fresh mortar.
+~
+30 0 1
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3032 0
+D3
+Caravan Road lies in that direction.
+~
+ ~
+0 0 3034 0
+S
+#3034
+Caravan Road~
+   Newly reconstructed homes stand oddly next to the scaffolding that still
+surrounds the city's protective outer walls. Looking about you, anyone could
+easily let themselves become lost in the small pockets of happiness that each
+house is, only to be jolted back to reality as their gaze washes over the
+destruction that is still very visible in the wall which lies to the north.
+~
+30 0 1
+D0
+The great northern gate of Weirvane lies in that direction.
+~
+ ~
+0 0 3035 0
+D1
+Wall Road lies in that direction.
+~
+ ~
+0 0 3033 0
+D2
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3036 0
+D3
+Wall Road lies in that direction.
+~
+ ~
+0 0 3063 0
+S
+#3035
+The Great Northern Gates Of Weirvane~
+  The gates seem to glow with an aura of protectiveness, you
+shudder to think what kind of effort it took to lift them. Then you realize
+there is some new sort of metal here. The metal looks extremely sturdy, 
+light, and seems to glow with some sort of magical property.
+~
+30 0 1
+D0
+You see the Northern Gatehouse in that direction.
+~
+gate gates great~
+1 3099 3094 0
+D2
+Caravan Road lies in that direction.
+~
+ ~
+0 0 3034 0
+S
+#3036
+Caravan Road~
+   Tall, disciplined trees and fine looking homes line the street that you see
+around you. The streets here are clean, ensuring that the middle-class of
+Weirvane enjoy a comfortable life of pleasant images. Small gardens before the
+houses remind people of the happiness that they once enjoyed before the
+ravages of the past, while the hollow faces of travellers ensure that they do
+not forget the pain that is now only freshly buried in their minds.
+~
+30 0 1
+D0
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3034 0
+D2
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3037 0
+S
+#3037
+Caravan Road~
+   Windows with small windowboxes open out onto the street, a breeze sends
+newly hung curtains flying, allowing the passerby to snatch a quick glimpse
+of the home that lies within. Businessmen in their fine silks step from the
+nearby doors on their way off to work, kissing fond goodbyes to their wives
+and children. Travellers still mingle in the crowds with their unnaturally
+empty faces and quiet eyes. In this crowd, their eyes mark them out to any
+viewer.
+~
+30 d 1
+D0
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3036 0
+D2
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3038 0
+S
+#3038
+Caravan Road~
+   Moving further away from the centre of Weirvane you notice that homes begin
+to replace the buildings that line the streets. This section of the city plays
+host to middle-class families, dressed in their silks and housed in pretty
+cottages with neat trimmings. You notice that more and more well-dressed men
+and women become a part of the scenery before your eyes. Children in bright
+britches and dresses play in the streets, their squealing carrying off into
+the distance.
+~
+30 d 1
+D0
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3037 0
+D1
+A warehouse lies in that direction through some double doors.
+~
+double door doors~
+1 0 3042 0
+D2
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3039 0
+D3
+Stonewalk Way lies in that direction.
+~
+ ~
+0 0 3072 0
+S
+#3039
+Caravan Road~
+   You notice that the footsteps that have covered the street before you have
+packed the dirt down under their weight. Looking up, you see that the people
+using this road are travel worn and weary. Their clothes are crumpled, with a
+slept-in look, and their faces are hollow, eyes pools of depthless searching.
+You notice that some of the people who use this road seem to be reasonably
+well off. Looking to the homes around you think that perhaps they could live
+nearby.
+~
+30 d 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3038 0
+D2
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3040 0
+S
+#3040
+Caravan Road~
+   The street before you leads travellers into and out of the commercial 
+district of Weirvane. People with a tired look in their eyes and a worn look
+painted upon their faces pass you by without a second glance. Merchant carts
+carry goods from distant lands to constantly replenish the shelves of stores
+that populate the heart of the city. Around you, shopfronts are gradually
+replaced with minor homes as you move further away from the heart of the city.
+~
+30 d 1
+D0
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3039 0
+D2
+Caravan Road continues in that direction.
+~
+ ~
+0 0 3003 0
+S
+#3041
+Gwydno's Provisions~
+   Though it is tidily swept and well lit, this shop will likely never be
+described as friendly or cheerful. It was not so long ago that people, driven
+by imminent starvation, braved their fear of the unknown terrors lurking
+perhaps just outside their homes and descenced upon Gwydno's shop. Since then,
+Gwydno has managed to restock somewhat, but a significant amount of vacant
+shelf space remains. Through the door to the north, you can see the city w
+wall, a symbol both of security and the proximity of the outside.
+~
+30 cdeh 1
+D0
+Wall Road lies in that direction.
+~
+ ~
+0 0 3029 0
+S
+#3042
+The Merchant's Warehouse~
+   As you enter the warehouse your squint while trying to adjust to the lack
+of light that comes into the building. A solid structure made of timber, the
+building seems a lot bigger from the inside, its width and height allowing it
+to be filled with wines of all quality from both near and far. By day, the 
+scant light that floods in from the doorway is all that lessens the haziness
+that fills the warehouse, by night dim wall lamps do much the same thing. A
+strange quietness exists here, where you'd expect things to be busiest. 
+Towards the back of the building, the distant echo of shouted orders drifts to
+your ears. The merchants back office lies in that direction.
+~
+30 ad 1
+D0
+The warehouse continues in that direction.
+~
+ ~
+0 0 3043 0
+D1
+The second lock of the merchant's warehouse lies in that direction.
+~
+ ~
+0 0 3047 0
+D3
+Caravan Road is beyond the double doors in that direction.
+~
+double doors door~
+1 0 3038 0
+S
+#3043
+The Merchant's Warehouse~
+   As you move deeper into the warehouse, the darkness around you creeps in
+closer to you than earlier. Looking in all directions you see the same sight
+before you, row after row of racks filled with wines of all sorts, sizes and
+quality. The echo of a busy man dealing out orders to his staff becomes louder
+as you head closer to the back of the warehouse. Here however, all you hear is
+silence, broken occasionally by a small rustle or squeak.
+~
+30 ad 0
+D0
+The corner of the merchant's warehouse lies in that direction.
+~
+ ~
+0 0 3044 0
+D1
+The second lock of the merchant's warehouse lies in that direction.
+~
+ ~
+0 0 3046 0
+D2
+The merchant's warehouse continues in that direction.
+~
+ ~
+0 0 3042 0
+S
+#3044
+The Corner Of The Merchant's Warehouse~
+   Before your eyes the wine racks give way to present a well-lit back office
+with tables piled high with accounts journals and customers' orders. This is
+where the merchant chases his clerks around trying to ensure that not a penny
+that is spent is not accounted for. Beyond, you see a small room with a narrow
+bed. You wonder at who uses that room as it appears to be well kept and tidy.
+~
+30 ad 1
+D1
+The Supervisor's Office is in that direction.
+~
+office door~
+1 0 3045 0
+D2
+The merchant's warehouse continues in that direction.
+~
+ ~
+0 0 3043 0
+S
+#3045
+The Supervisor's Office~
+   A small table covered in shipping documents lies in the centre of this
+room. Behind it a simple chair made of the same sturdy timber as the table is
+tucked in neatly. The furnishings about the room are simple and clinical, save
+the single family portrait that lies on the desk, tucked into a corner. Every
+item is of the same drab color and worked plainly. The walls to either side
+of you are lined with bookcases containing still more documents, each bundled
+neatly and tied with simple string. Looking out the tiny window behind the 
+desk you realize that the view outside is no better than the plainess of the
+room's interior.
+~
+30 ad 1
+D3
+The corner of the merchant's warehouse lies in that direction.
+~
+door office~
+1 3198 3044 0
+S
+#3046
+The Second Lock~
+   Rows of wine racks filled to the very brink flank you to either side, some
+filled with the more expensive bottles, others with the large kegs that the
+taverns favor because of the price. Wandering in among the racks you notice
+that here the more expensive wines are kept, away from sunlight and safe well
+inside the warehouse. Looking around you nothing save wine in its various
+forms fills your sight.
+~
+30 ad 0
+D3
+The merchant's warehoue lies in that direction.
+~
+ ~
+0 0 3043 0
+S
+#3047
+The First Lock~
+   Moving among the first of the hundreds of rack that you see before you, you
+notice that it is filled with simple bottles of wine. Glancing at the label,
+you recognise it to be one of the common house wines that are served in the 
+many taverns around town. Peering through the racks you see row after row of
+similarly filled racks and wonder at the fortune that it would take to acquire
+such a large stock on hand. 
+~
+30 ad 1
+D3
+The merchant's warehouse continues in that direction.
+~
+ ~
+0 0 3042 0
+S
+#3048
+Danozi Avenue~
+   Small shops have been set up among the rubble which is a constant reminder
+of the past destruction that still sits fresh in the minds of the people that
+you see walking past with blank, empty stares. People walk past hurriedly,
+not noticing the weary faces of travellers that surrounds them. Stallholders
+of every size and fortune cry out into the street of the wares that they 
+carry, trying to entice a customer from the crowd. Glancing north you see a
+building clad in white, as if dressed in the light itself. A strange feeling
+makes you think that potent spells of healing are being woven within.
+~
+30 d 1
+D0
+To your north lies Weirvane's High Cleric.
+~
+ ~
+0 0 3081 0
+D1
+Caravan Road lies in that direction.
+~
+ ~
+0 0 3003 0
+D3
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3049 0
+S
+#3049
+Danozi Avenue~
+   Children play merrily about your feet and about the feet of the bustling
+crowd about you, their clothes a mass of minor tears and their small faces
+streaked with dirt and weat. Looking carefully however, you notice that
+their empty faces mirror those of the adults about them who play their own
+game of survival within the crowd of people that surround them. The constant
+quality of the street is disrupted by the rubble left behind as a stark
+reminder of the past terror experienced by all.
+~
+30 d 1
+D0
+A private home lies in that direction.
+~
+door frontdoor front~
+1 0 3077 0
+D1
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3048 0
+D3
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3050 0
+S
+#3050
+Danozi Avenue~
+   The sounds of a bustling city street hang solidly in the air and fill your
+ears to the brink, the faint smells of simple cooking and sweat laden bodies
+tickles at your senses while your eyes digest the crowded scene before you.
+Small shops and minor residences intermingle as they arrange themselves in
+an awkward jumble along the street. After a moment you notice a small tingle
+that creeps its way across your skin giving you an uneasy feeling. Turning,
+you realise that it seems to be emanating from the south, from a beautiful
+tower which reaches up towards the clouds and proclaims itself to be the
+training ground of magic users of all abilities.
+~
+30 d 1
+D0
+To your north lies a private home.
+~
+door~
+1 0 3080 0
+D1
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3049 0
+D2
+To your south lies the entrance to a small tower.
+~
+ ~
+0 0 3087 0
+D3
+Danozi Avenue and Merchant Avenue intersect in that direction.
+~
+ ~
+0 0 3051 0
+S
+#3051
+Danozi And Merchant Intersection~
+   Two roads meet at the intersection that displays itself at your feet, each
+road tugging at you to enter into its depths, to explore the delights that
+they have to offer. Shops and houses line each of the streets that you peer
+down, a cleaner, grander image drifting in from the structures that lie along
+Merchant Avenue to the south. Looking west you notice that the barrier wall
+that protects the city's inhabitants lies not too distant, while to the north
+you almost miss the obscure entrance to a building that could easily be missed
+by a glancing eye. You wonder at what underhanded teachings take place behind
+the entrance which marks itself as the Thief's Guild.
+~
+30 d 1
+D0
+To your north lies a quiet alley filled with shadows.
+~
+ ~
+0 0 3073 0
+D1
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3050 0
+D2
+Merchant Avenue lies in that direction.
+~
+ ~
+0 0 3086 0
+D3
+Danozi Avenue continues in that direction.
+~
+ ~
+0 0 3052 0
+S
+#3052
+Danozi Avenue~
+   The slightly below average quality of the street to your east continues in
+this direction. Stalls selling goods for every imaginable need surround you as
+you jostle your way through the crowds at your shoulder. To the north and
+south a clean, well kept street follows the barrier wall which keeps the 
+city's residents comfortable in its protective embrace. Nearby, a large gate
+which allows weary travellers to pass through it stands proudly, gleaming
+brilliantly in the sunlight.
+~
+30 d 1
+D0
+Wall Road lies in that direction.
+~
+ ~
+0 0 3054 0
+D1
+Danozi Avenue and Merchant Avenue intersect in that direction.
+~
+ ~
+0 0 3051 0
+D2
+Wall Road lies in that direction.
+~
+ ~
+0 0 3091 0
+D3
+The great city gates of Weirvane lies in that direction.
+~
+ ~
+0 0 3053 0
+S
+#3053
+The Great Western Gates Of Weirvane~
+   Standing before the great gates which provide entrance to Weirvane, your
+eyes are taken by the odd coloring of the metal which form the gates. 
+Fashioned from a new age material that works magic with metal in white hot
+furnaces, the shimmering beauty of a thousand dancing lights has been captured
+within the gates themselves. The dull surfaces that make up the rest of the 
+city's wall only diminishes the beauty of the gates, casting drab monotony
+on what could be spectacular.
+~
+30 d 1
+D1
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3052 0
+D3
+You see the Western Gatehouse in that direction.
+~
+gate gates great~
+1 3099 3097 0
+S
+#3054
+Wall Road~
+   The wall here was finished early, holding the gates to the west of the city
+it was imperative that they be completed first and with the finest materials 
+on offer. To the south, people stream by almost uncaring. Their blank eyes
+glimpse the wide road, devoid of life and turn away immediately as they push
+on in search of safety among crowds. 
+~
+30 d 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3055 0
+D2
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3052 0
+S
+#3055
+Wall Road~
+   This section of the wall was tended to early, There is little trace of work
+ever being carried out here. The scaffolding was taken down long ago, the
+street is swept clean. The only thing that hints at this wall undergoing any
+construction is the patchwork visage of the wall. Neatly cut blocks of new
+stone stand against the smoother, rounder curves of rocks aged and tested by
+years of exposure to the elements.  
+~
+30 d 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3056 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3054 0
+S
+#3056
+Wall Road~
+   The mountains that you see to the west of the city were responsible for
+maintaining the integrity of this section of the wall. Towering high into the
+stratoshpere, they took the brunt of the terror whipped up by the Shadowwind,
+allowing this section of the wall to remain safe. The only building that you
+see here is the additional layer of new stone, put here to add peace of mind
+to the citizen's of Weirvane if nothing else. 
+~
+30 d 0
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3057 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3055 0
+S
+#3057
+Wall Road~
+   A peaceful quiet blankets the street here, casting an almost sombre mood
+over the street. In the distance you see a single city workman cleaning up
+the remains of the building in his solitary silence. Around you however, 
+emptiness is all that lies in the air, people avoid this street in fear of 
+personal safety, leaving it for only the curious and stray animals.
+~
+30 d 1
+D0
+Wall Road continues in that direction
+~
+ ~
+0 0 3058 0
+D1
+Stonewalk Way lies in that direction.
+~
+ ~
+0 0 3070 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3056 0
+S
+#3058
+Wall Road~
+   Small cracks in the wall have been patched up with liberal amounts of
+pasty white mortar that is still waiting to dry and set. North and south,
+you see the same scene unfolding before you. The barrier wall stretches out
+to either side of you for as far as the eye can see. All along that wall
+patches of white fill cracks while an icing of pale white stone adds height.
+~
+30 d 1
+D0
+Wall Road continues in that direction
+~
+ ~
+0 0 3059 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3057 0
+S
+#3059
+Wall Road~
+   The wall here has been newly finished, the rubble and dust which has yet
+to be cleared away still clutter the street. To your east, a gate closes off
+the guards barracks to the rest of the city. Guards streaming in and out, tell
+you that this is no place to be standing idly by, their suspicious glances
+making you nervous.
+~
+30 d 1
+D0
+Wall Road continues in that direction
+~
+ ~
+0 0 3060 0
+D1
+The City Barracks lie in that direction.
+~
+door~
+1 3098 3064 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3058 0
+S
+#3060
+Wall Road~
+   The signs of construction moving onto other parts of the city still exist
+here. The last logs of timber scaffolding are being loaded into a small cart
+to be carried off further east where the construction is still heavy. Within
+one of the small shops that line the street, a shopkeeper prepares to reopen
+her minor store.
+~
+30 d 1
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3061 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3059 0
+S
+#3061
+Wall Road~
+   Small crowds of people have begun to trickle back into this section of
+Wall Road as shops begin to do business again. The construction has moved on
+to the eastern sector of the city where most of the damage was done. Signs of 
+life begin to trickle back into this section of the city as merchants bring
+goods to supply the tiny stores that do a booming trade.
+~
+30 d 1
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3062 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3060 0
+S
+#3062
+Wall Road~
+   A small grocery shop with fresh fruit and vegetables spilling out onto the
+street, attracts more than one visitor. As the stores in this section of the
+city begin to open up once more, people are drawn back to Wall Road in search
+of the goods and services that are needed to live out their daily lives. 
+~
+30 d 1
+D1
+Wall Road continues in that direction.
+~
+ ~
+0 0 3063 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3061 0
+S
+#3063
+Wall Road~
+   A fine layer of grey dust covers nearly every surface while small shards
+of chipped stone litter the once clean road. The wall is complete here, the odd
+color of new stone being the only indication that work had been done here.
+People flock to use the broad road once again as part of their daily lives,
+oblivious almost to the changed scenery.  
+~
+30 d 1
+D1
+Caravan Road lies in that direction.
+~
+ ~
+0 0 3034 0
+D3
+Wall Road continues in that direction.
+~
+ ~
+0 0 3062 0
+S
+#3064
+The West End Of The Barracks~
+   You have entered the city barracks, and are immediately surrounded
+by a plentiful supply of weapons and arms, used for the most strenuous
+wars. The walls are covered with honors presented to the city of Weirvane
+for brave battles, and it's sound structure. To your west is a sturdy iron
+door leading to Wall Road, and the barracks continue to the south and east.
+~
+30 adf 1
+D1
+The barracks continue to your east.
+~
+ ~
+0 0 3065 0
+D2
+The barracks continue to your south.
+~
+ ~
+0 0 3069 0
+D3
+Wall Road lies beyond a sturdy iron door.
+~
+door sturdy iron~
+1 0 3059 0
+S
+#3065
+The Barracks~
+   This part of the barracks is rather packed with city personell.
+Battle armor lies ready for combat, swords stacked neatly upon the racks
+on the wall as a maid gently runs past dusting and shining them, ever
+proud of Weirvane's finest.
+~
+30 adf 1
+D1
+The east end of the Barracks lie in that direction.
+~
+ ~
+0 0 3066 0
+D2
+The barracks continue in that direction.
+~
+ ~
+0 0 3068 0
+D3
+Unsure atm
+~
+ ~
+0 0 3064 0
+S
+#3066
+The East End Of The Barracks~
+   The eastern end of the barracks is decorated rather drearily, and is
+where the prisoners of battle are kept and questioned before being placed
+into the cold brig to your south. The barracks continue to your east.
+~
+30 adf 1
+D2
+The brig lies in that direction.
+~
+brig door iron~
+2 3098 3067 0
+D3
+The barracks continue in that direction.
+~
+ ~
+0 0 3065 0
+S
+#3067
+The Brig~
+   This is the holding cell for the criminals of Weirvane. The city's worst
+offenders are held here. Scraped into the stone walls are various notches
+counting days in the brig, and curses to the city and it's officials.  
+~
+30 adf 1
+D0
+A very sturdy iron door lies in that direction.
+~
+brig sturdy iron door~
+2 3098 3066 0
+S
+#3068
+The Barracks~
+   This part of the barracks is a storage hold of supplies. Rations,
+gold, weapons, canteens, and assorted armors line the floor and shelving.
+Small ready packs are being put together in the event the city were in
+need of supplies fast.
+~
+30 adf 1
+D0
+The barracks continue in that direction.
+~
+ ~
+0 0 3065 0
+D3
+The barracks continue in that direction.
+~
+ ~
+0 0 3069 0
+S
+#3069
+The Barracks~
+   You have entered the relaxation rooms of the barracks. All armor and
+weaponry is left outside and not allowed here. Personell sit along the
+wall and in assorted furniture sharing stories of dragons and such outside
+of the city walls. Silently in the corner of the room is an older man
+telling of the great "Shadowwind" in a whisper.
+~
+30 adf 1
+D0
+The barracks continue in that direction.
+~
+ ~
+0 0 3064 0
+D1
+The barracks continue in that direction.
+~
+ ~
+0 0 3068 0
+S
+#3070
+Stonewalk Way~
+   Small windows from comfortable homes open up onto the street to let in the
+constant buzzing from the street drift inside along with a meagre breeze that
+brushes across every surface. Despite the scaffolding and the rubble that is
+yet to be cleared away, a sense of order exists here as if a presence was
+constantly policing the street. Houses and shops in various stages of 
+reconstruction mar the otherwise ordinary scene of daily life here as it has
+always been. 
+~
+30 d 1
+D1
+Stonewalk Way continues in that direction.
+~
+ ~
+0 0 3071 0
+D2
+A Private Home lies in that direction.
+~
+door frontdoor front~
+1 0 3079 0
+D3
+Wall Road lies in that direction.
+~
+ ~
+0 0 3057 0
+S
+#3071
+Stonewalk Way~
+   Small amounts of litter lie in the street without care, waiting for someone
+to walk by and sweep the street clean. Children play in the street, their
+clothes worn and dull, their laughter as empty as the blank faces that they
+show. Men and women intent only on the affairs within their own minds walk by
+hurriedly, sometimes in pairs with their voices at a low mumble and nothing
+more as if afraid that someone might hear of their clandestine plottings. 
+Throughout the street small window displays try to entice customers inside
+where eager shopkeepers await to service every customers' every need.
+~
+30 d 1
+D1
+Stonewalk Way continues in that direction.
+~
+ ~
+0 0 3072 0
+D2
+A Private Home lies in that direction.
+~
+door frontdoor front~
+1 0 3078 0
+D3
+Stonewalk Way continues in that direction.
+~
+ ~
+0 0 3070 0
+S
+#3072
+Stonewalk Way~
+   Rubble and debris that has yet to be carried away lies carelessly along the
+street to remind the listless crowds of the ravages that took away their lives
+not long ago. Travellers walk about aimlessly, each with a hunted look on
+their faces marking them as former farmers from the nearby land who have come
+to the city in search of safety and a means by which they can rebuild their
+lives. The many shops that surround you and the comfortable homes which sit
+among them, draw momentary envious looks from their faces before their eyes
+are cast down quickly as if afraid to look for but mere seconds.
+~
+30 d 1
+D1
+Caravan Road lies in that direction.
+~
+ ~
+0 0 3038 0
+D3
+Stonewalk Way lies in that direction.
+~
+ ~
+0 0 3071 0
+S
+#3073
+The Hall Of Thieves~
+   You peer across a great hall, leading from the street outside into the
+depths of the shadows. The hall is decorated with dark colors, hiding you
+from the average commoner or passerby. The hall leads to your north further
+into the Thieves Guild.
+~
+30 cd 0
+D0
+To your north there is a crack in the alleyway.
+~
+ ~
+0 0 3074 0
+D2
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3051 0
+S
+#3074
+Inside The Guild~
+   You enter a small burrow beyond the hall and find it appears to be quite
+small. As you scan across it you see shadows flickering in the corners. The
+shadows skate across the walls, displaying the actual hugeness of the room. In
+the northern corner is a burrow in the room, leading downwards.
+~
+30 d 0
+D2
+To your south lies the entrance to the thieves guild.
+~
+ ~
+0 0 3073 0
+D5
+Below you is the guildmaster's chambers.
+~
+ ~
+0 0 3075 0
+S
+#3075
+The Abode Of Gorlas~
+   You enter a large cavern like chamber underground. The walls are
+decorated with tools of the trade. Daggers fill the cavern with shadows as
+they glitter in the light coming from above. A small sword made of gold
+hangs solidly in the corner catching your eye as you see Gorlas practicing
+his art of quiet battle.  
+~
+30 dehy 0
+D4
+Above you is the Inner Guild
+~
+ ~
+0 0 3074 0
+S
+#3076
+The Auctioneer's Shop~
+You are in an unfinished room.
+~
+30 dh 0
+D0
+Stonewalk Way lies in that direction.
+~
+ ~
+0 0 3072 0
+S
+#3077
+A Private Home~
+   You are inside a large private dwelling. It appears to be a one room
+house, filled with different artifacts as you scan from one side of the room
+to the other. On the far wall is a bookcase made of oak, filled with many
+books. The fireplace adorns the other wall and a steady fire grows there. 
+The only exit leads back to the door to the south.  
+~
+30 d 0
+D2
+Danozi Avenues lies in that direction.
+~
+door frontdoor front~
+1 0 3049 0
+S
+#3078
+A Private Home~
+   You are inside a large private dwelling. It appears to be a one room
+house, filled with different artifacts as you scan from one side of the room
+to the other. On the far wall is a bookcase made of oak, filled with many
+books. The fireplace adorns the other wall and a steady fire grows there. 
+The only exit leads back to the door to the north.
+~
+30 d 0
+D0
+Stonewalk Way lies in that direction.
+~
+door frontdoor front~
+1 0 3071 0
+S
+#3079
+A Private Home~
+You are inside a large private dwelling. It appears to be a one room
+house, filled with different artificats as you scan from one side of the
+room to the other. The back wall has a small cot sized bed, freshly made.
+Adjoining to the bed is a stand of sorts, standing bare. The only exit is
+the door on the north wall.
+~
+30 d 0
+D0
+Stonewalk Way lies in that direction.
+~
+door frontdoor front~
+1 0 3070 0
+S
+#3080
+A Private Home~
+You are inside a large private dwelling. It appears to be a one room
+house, filled with different artificats as you scan from one side of the
+room to the other. The back wall has a small cot sized bed, freshly made.
+Adjoining to the bed is a stand of sorts, standing bare. The only exit is
+the door on the south wall.
+~
+30 d 0
+D2
+Danozi Avenue lies in that direction.
+~
+door~
+1 0 3050 0
+S
+#3081
+The Garden Of Restoration~
+Apart from the hurried life that Weirvane breeds, sits this small pocket of
+tranquility. Behind tall walls of sandstone, with a single entrance to the
+south, lies a sanctuary for the battered bodies and souls of Weirvane's
+adventurers. Delicate flowers, blossoming in the sunlight entwine their
+perfumed scents with the air as they dance happily in the wind. A gentle
+breeze sweeps through the enclosure, cooled by the shallow ponds scattered
+through the garden, each holding magnificently colored fish in shimmering
+hues of gold, white and black. In the middle of the crowd of bodies you
+notice a beautiful young centaur, robed in white, with a gentleness painted
+on her face. She moves about gracefully tending to the wounds of any who
+come to her. A shiny plaque hangs upon the wall here.  
+~
+30 cdeht 0
+D2
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3048 0
+E
+plaque honor honors~
+{cThis plaque is to honor those who have achieved the {Cmaximum {clevel of
+their race and or class. If you feel the need to be seen on this list
+what you must do is simple, make the maximum level allowed to a mortal
+and be the first to do it in either your {Crace{c, or {Cclass{c. If you
+die and lose the max level you do {RNOT{c loose your position on the
+board, you earned it, so you get to keep it.{x
+
+{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                        -=-=-=-=-=-{x
+{B[{W50 Sor{B] {cElurid Veradhil {B({CHalf-Elf{B){x
+{B[{W50 War{B] {cQuaarg Smash Sheep {B({yOgre{B){x
+{B[{W50 Sha{B] {cVraah Blood Eye {B({gTroll{B){x 
+{B[{W50 Sor{B] {cNeera {B({wHuman{B){x
+{B[{W50 Mer{B] {cKrug Bone Crusher {B({yOgre{B){x
+{B[{W50 Asn{B] {cSibbie Dabidibaliedable {B({mHalfling{B){x
+{B[{W50 War{B] {cMarnuk Eat Elf {B({gTroll{B){x
+{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                        -=-=-=-=-=-
+{x
+~
+S
+#3082
+Merchant Avenue~
+   The sounds of commotion from the east filters into the street, only
+slightly less rowdy here where rich houses being to appear among the forest
+of shops that line the street. People of all kinds walk the road before you,
+those in expensive silks with heavy embroidery of gold thread walk beside 
+those wearing tattered shards of cloth on their back that can barely be called
+rags at best. Around you, you notice that the street continues to the west 
+end the entrance to a grand home lies south attracting the notice of the 
+daring thief.
+~
+30 d 1
+D1
+The middle market square of Weirvane lies in that direction.
+~
+ ~
+0 0 3000 0
+D2
+A Wealthy Private Home lies in that direction.
+~
+door~
+1 0 3120 0
+D3
+Merhcant Avenue continues in that direction.
+~
+ ~
+0 0 3083 0
+S
+#3083
+Merchant Avenue~
+   This well used street is also well maintained, the road before you is swept
+clean, any litter is cleared away quickly. Looking about, shopfronts with
+their goods spilling out onto the street domniates the scenery before your
+eyes. People mill about, each more concerned with their own affairs than with
+the sea of faces before them. To the south you notice a constant flow of
+people streaming through a peculiar establishment that can only be Weirvane's
+Emporium, as told by the sign that hangs above the door.
+~
+30 d 1
+D1
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3082 0
+D2
+The Water Shope lies in that direction.
+~
+ ~
+0 0 3119 0
+D3
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3084 0
+E
+sign~
+Above the narrow doorway that leads into the blue menagerie that lies within
+you spy a small sign from the corner of your eye, hanging awkwardly on a
+rickety iron bar. It reads...
+
+   "The Water Shop of Weirvane...
+          - where holding water has been turned into a fine art..."
+~
+S
+#3084
+Merchant Avenue~
+   Walking about you notice that Weirvane hosts people of all fortunes and
+nationalities. This street is no different. People walk about in all states
+of dress, some hurried, others with eternity's leisure on their hands. Shops
+are still abundant as you wander through the streaming crowds. To the south,
+you notice that travellers from the various lands move easily in and out of
+an establishment that can be nothing but Weirvane's inn.
+~
+30 d 1
+D1
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3083 0
+D2
+The Inn lies in that direction.
+~
+ ~
+0 0 3118 0
+D3
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3085 0
+S
+#3085
+Merchant Avenue~
+   The constant line of shops, dotted occasionally with houses continues in
+every direction that you peer. A mass of unrecognizable faces swirls before
+you and bodies press against you. Peering above the mass of bobbing heads
+that surrounds you, a small break in the continuous line of buildings gets
+your notice. A small and lively patch of green leaps out among the drab greys
+and browns that is the buildings of Weirvane. Squinting to see what lies
+beyond it you notice that it is a small path through a brilliantly cheerful
+garden.
+~
+30 d 1
+D0
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3086 0
+D1
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3084 0
+D5
+Some steps go below the street surface here, into the public waste ridge.
+~
+ ~
+0 0 3117 0
+S
+#3086
+Merchant Avenue~
+   The sounds of shopkeepers shouting to advertise their wares, the clattering
+of horses' hooves, and the ever-present banging of doors surrounds you. Tall
+buildings grow to fill the needs of a growing populations intent on rebuilding
+what was while people scurry in every direction looking for things occupy 
+their time. This street is one of the city's main thoroughfares, illustrated
+by the constant flow of people. Life fills the air about you threatening to
+drown you in its midsts just as the crowds around you would.
+~
+30 d 0
+D0
+The intersection between Danozi and Merchant Avenues lies in that direction.
+~
+ ~
+0 0 3051 0
+D2
+Merchant Avenue continues in that direction.
+~
+ ~
+0 0 3085 0
+S
+#3087
+The Tower Entrance~
+   A sprawling garden surrounded by a high walled barrier opens itself up to
+you as you enter through a shimmering gate of liquid light. Within you find
+you the entire area has a climate of its own, somehow locking itself away in
+early spring while everything outside continues on through the seasons. Neat
+hedges line a winding path of white pebbles which leads to the entrance of 
+the mages' tower. Intimidating in its sheer size you are certain that the
+graceful weaving of the stone that makes the tower is the work of a powerful
+magic that defies your comprehension. A faint tickling brushes over your skin
+and you realise that yet another spell is being carefully woven.
+~
+30 cd 0
+D0
+Danozi Avenue lies in that direction.
+~
+ ~
+0 0 3050 0
+D1
+The entrance to the magicians guild lies in that direction.
+~
+ ~
+0 0 3088 0
+S
+#3088
+The Entrance To The Magician's Guild~
+   Tall gilded doors inlaid with mother of pearl showing mystical animals now
+long forgotten, open up to a gleaming entrance hall. Walls lined with tall
+slabs of burnished obsidian flank you. Each slab seems to carry a reflection
+of you, a less substantial image sealed within its transparent walls and
+suspended in mid-air. The circular room seems to revolve around the single
+spiral staircase which stands in the centre of this grandeur. Looking closely,
+you realise that each step hangs in mid-air with no supports. Each step a
+paper thin piece of mithril, spun so delicately that it seems brittle. The
+untold magic that fills this room sends a shiver down your spine as you think
+on what the magicians might do to you.
+~
+30 cd 0
+D3
+The Entrance to the tower lies in that direction.
+~
+ ~
+0 0 3087 0
+D4
+The Tower goes farther up in that direction.
+~
+ ~
+0 0 3089 0
+S
+#3089
+The Inner Guild~
+   You stand upon a mighty spiral staircase, each step of which is a
+delicate tracery of gleaming mithril like spun silk, floating free in
+mid-air. Runes of gold, doubtless possessed of the most profound power,
+adorn the walls of burnished, seamless obsidian. There appears to be no one
+source of the gentle light bathing you, since you cast no shadow. The stairs
+continue up and down.  
+~
+30 d 0
+D4
+The guildmaster lies in that direction and shimmering magic rays
+seem to leap forward at you.
+~
+ ~
+0 0 3090 0
+D5
+You see the entrance to the magician's guild in that direction.
+~
+ ~
+0 0 3088 0
+S
+#3090
+The Haven Of High Mage Lostris~
+   The splendors of this hall and the artifacts within it defy comprehension.
+The cool, silent air is still and completely devoid of dust, preserving the
+countless ageless tomes and scrolls here. A gently light emanates evenly from
+the entire ceiling, dispelling any hint of shadow from the room. The east,
+south and west walls are all covered in ornately carved bookcases of the very
+most exotic woods, while the northern wall is dominated by a display case
+resplendent with items retrieved and donated from mighty quests. A graceful
+staircase of burnished mithril steps, each apparently floating free in space,
+leads down from here. To even suggest that any of this were the result of
+powerful illusion would certainly incite untold wrath.
+~
+30 de 0
+D5
+The inner guild lies in that direction.
+~
+ ~
+0 0 3089 0
+S
+#3091
+Wall Road~
+   To the north the bustling crowds which are always a part of Danozi Ave
+make their presence felt and heard. People stream past, stopping momentarily
+to give this section of Wall Road only a small glance before turning away to
+head towards the more populated centres of the city. Looking up, the grand
+western gates gleam in nature's light, standing tall and radiating their
+protective presence.
+~
+30 d 1
+D0
+Danozi Avenue and Wall Road intersect there.
+~
+ ~
+0 0 3052 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3092 0
+S
+#3092
+Wall Road~
+   The scaffolding that supports the wall to the south is not present here,
+taken down only a matter of days before to be moved elsewhere. Small piles
+of ash grey dust have been collected about the base of the wall, mixed with
+small shards of broken stone. Small animals play their own games in the empty
+street. The shops that once thrived here are now closed, when they will open
+once more is uncertain. 
+~
+30 d 1
+D0
+Wall Road continues in that direction.
+~
+ ~
+0 0 3091 0
+D2
+Wall Road continues in that direction.
+~
+ ~
+0 0 3124 0
+S
+#3093
+Outside The Eastern Gates Of Weirvane~
+   You stand outside the eastern entrance to the city of Weirvane looking out
+on fields of lush green which carpets the surrounding countryside for as far
+as the eye can see. Studying the scenery you could be forgiven for forgetting
+than any evil could have touched these lands, so majestic in their simple
+beauty. Every so often a set of head and shoulders comes bobbing up from the
+crops to show a simple farmer in sturdy garb trying to make his living from
+the land.
+~
+30 c 1
+D1
+A road leads out before you tracing its way through the surrounding 
+countryside.
+~
+ ~
+0 0 3401 0
+D3
+The Eastern Gatehouse Of Weirvane lies in that direction.
+~
+ ~
+0 0 3096 0
+S
+#3094
+Northern Gatehouse Of Weirvane~
+   To one side, a small freestanding room is all that is available to provide
+shelter from the elements for the guards that patrol this section of the city
+wall. At regular intervals a pair of guards pass you by, grave expressions
+painted on their faces. At the sounding of the hour, a fresh pair of faces
+greet you with the same serious stares, continuing the watch kept by their
+comrades. 
+~
+30 c 2
+D0
+The Outside of the gates lay in that direction.
+~
+ ~
+0 0 3095 0
+D2
+The Northern City Gates Of Weirvane lie in that direction.
+~
+gate gates great~
+1 3099 3035 0
+S
+#3095
+Outside The Great Northern Gates Of Weirvane~
+   Looking out towards the horizon you see an endless expanse of level, dry,
+unforgiving earth. Appearing desolate and lifeless, the panorama that spreads
+itself across the plains is parched, baked to a golden hue by the unrelenting
+sun. The occasional breeze that carries itself across the plains picks up
+gritty dirt along its path and fills the air with a stinging haziness. Long
+sundried grass breaks up the vacant vista before you as it dances happily to
+the music of the wind.
+~
+30 c 1
+D0
+The Plains scavage across the land in that direction.
+~
+ ~
+0 0 3221 0
+D2
+The Northern Gatehouse Of Weirvane lies in that direction.
+~
+ ~
+0 0 3094 0
+S
+#3096
+Eastern Gatehouse Of Weirvane~
+   Guards with serious severity painted on their faces stand stoically before
+the eastern gates of the city. It is their responsibility to look after the
+safety of the people inside these walls, a burden that they undertake with
+a calculating care. The fortress like look to the wall that surrounds the city
+continues here, ensuring that the city is safe once more.
+~
+30 c 1
+D1
+The Outside of the gates lay in that direction.
+~
+ ~
+0 0 3093 0
+D3
+The Eastern Gates Of Weirvane lie in that direction.
+~
+gate gates great~
+1 3099 3020 0
+S
+#3097
+Western Gatehouse Of Weirvane~
+   Guards patrol the western limits of the city in quiet discipline, faces
+painted with serious expressions, intent on the business of keeping the many
+citizens of Weirvane safe as they dream in fitful slumbers. Every few hours,
+at the sounding of the hour, fresh faces trade places with the old to continue
+the vigilant watch. Day and night guards are posted to these gates to ensure
+the frightened citizens of Weirvane have the safety that they so desparately
+search for endlessly.
+~
+30 c 1
+D1
+The Western City Gates Of Weirvane lie in that direction.
+~
+gate gates great~
+1 3099 3053 0
+D3
+The Outside of the gates lay in that direction.
+~
+ ~
+0 0 3098 0
+S
+#3098
+Outside The Great Western Gates Of Weirvane~
+   Lush meadows of rich dark soil, tinged with the tender green of new shoots,
+cover the expanse that you see before you. Every so often, the bobbing of a
+pale straw hat provides evidence that a farmer is out working his fields.
+Looking into the distance, a massive natural barrier of stale grey stone 
+rises from the earth to cast coldness upon everything that lies within its
+shadow. 
+~
+30 c 1
+D1
+The Western Gatehouse Of Weirvane lies in that direction.
+~
+ ~
+0 0 3097 0
+D3
+Lush green fields lie in that direction.
+~
+~
+0 0 3600 0
+S
+#3099
+This is the top of zone 30~
+You are in an unfinished room.
+~
+30 0 0
+S
+$~

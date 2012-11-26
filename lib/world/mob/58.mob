@@ -1,0 +1,480 @@
+#5800
+cacoon~
+the Cacoon~
+A cacoon of a human is slumped in the corner, it seems to still be alive!
+~
+This cacoon's two arms and legs convince you that it is human. If you watch
+long enough, sometimes you notice the thing budge or wiggle. Could whatever's
+inside there still be alive?
+~
+bd 0 0 X 0 
+1 19 10 1d1+10
+0 200 -1
+8 8 1 3 1 3
+T 100 1d1+0 0
+#5801
+dragon black~
+{Dthe Black Dragon{x~
+{DThe Black Dragon fixes its deadly gaze on you as you bardge into its lair!{x
+~
+As you bardge into the lair of this huge evil beast, a shiver runs down your
+spine. Your life quickly flashes before your eyes, and you know the cold
+hand of death is waiting to snatch your soul. The Black Dragon's eyes glow
+red with fury, and clasped in one of its hands you notice a small glowing
+onyx. A key made of a skull is on a leather rope around its neck, but the
+acid that drips from its large fangs quickly grasp your attention. Deep
+down inside you know that this evil creature may be the last thing that
+you ever see.
+~
+abdflqxy dpr -999 X p 
+57 0 -10 29d29+9650
+100000 8000000 0
+8 8 1 4 11 6
+T 100 5d11+0 24
+T 100 5d11+0 6
+T 50 5d11+0 22
+Str: 100
+Dex: 100
+Agi: 100
+Int: 100
+Wis: 100
+Con: 100
+>fight_prog  10~
+cast 'gas breath' $n
+~
+|
+#5802
+great minotaur~
+the Great Minotaur~
+The Great Minotaur points its horns at you and charges!
+~
+This large beast is half man half bull. Its huge horns are covered in blood,
+and you know many have fallen before this great beast. Its glowing red eyes
+pierce your soul, and you know you may be the next victim of this great 
+beast.
+~
+bdf d -999 X 0 
+44 4 -10 22d22+440
+0 191000 -1
+8 8 1 3 12 5
+T 100 7d10+17 0
+#5803
+gargoyle statue~
+the Gargoyle~
+A large statue of a black demon sits on a pillar to the left of the door.
+~
+This large demon has razor sharp claws growing from all of its fingers, and on
+its back you notice a set of small wings. Its "skin" is made out of black
+granite, and its massive fangs are something to stay well clear of. It
+seems to be a statue, but then again, it seems to be alive.
+~
+bcd d -500 X 0 
+15 14 2 8d8+150
+0 15000 -1
+8 8 0 2 3 4
+T 100 4d5+3 0
+#5804
+gargoyle statue~
+the Gargoyle~
+A large statue of a black demon sits on a pillar to the right of the door.
+~
+This large demon has razor sharp claws growing from all of its fingers, and on
+its back you notice a set of small wings. Its "skin" is made out of black
+granite, and its massive fangs are something to stay well clear of. It
+seems to be a statue, but then again, it seems to be alive.
+~
+bcd d -500 X 0 
+15 14 2 8d8+150
+0 15000 -1
+8 8 0 2 3 4
+T 100 4d5+3 0
+#5805
+major minotaur~
+the Major Minotaur~
+The Major Minotaur is here, feasting on some human remains.
+~
+This medium sized man with the head of a bull has eyes that glow red with
+anger, a set of sharp horns, and an axe in its hand that could easily cut
+straight through bone. It seems disturbed from its meal of human remains as
+you walk in, and it quickly turns to face you. You have a feeling you should
+leave unless you would like a taste of its finely sharpened axe.
+~
+bdf d -600 X 0 
+16 13 2 8d8+160
+0 18000 -1
+8 8 1 3 12 3
+T 100 5d6+1 0
+#5806
+minor minotaur~
+the Minor Minotaur~
+The Minor Minotaur is here, waiting to impale you with its spear!
+~
+As you approach this man with the head of a bull, it quickly points its spear
+at you and charges. Its eyes glow red with hatred, and it doesn't like
+the fact that you have entered its small dwelling. You think you should leave
+before you become one of the Minor Minotaurs next victims!
+~
+bdf d -500 X 0 
+14 14 3 7d7+140
+0 12000 -1
+8 8 1 3 12 3
+T 100 4d4+4 0
+#5807
+mage of sin~
+the Mage of Sin~
+The Mage of Sin is kneeling here, casting an evil ritual.
+~
+This evil peson is dressed in a black robe, and is kneeling with his eyes
+closed and palms facing the ground. He seems to be in total concentration,
+and you don't even think he knows you there. You wonder what all his
+Black Magic mumbo-jumbo means.
+~
+acd d -600 X 0 
+15 14 2 8d8+150
+0 16000 -1
+7 7 1 3 1 3
+T 100 10d2+0 0
+#5808
+man slave~
+the Slave of the Minotaur~
+A slave serving the Minotaur is here, dragging a human corpse somewhere.
+~
+This skinny man is focused on one thing: To serve the Minotaur. Shivering with
+fear, and with sweat running down his body, he continues to drag a human 
+corpse across these tunnels, its destination is unknown.
+~
+adg 0 300 X 0 
+5 17 7 3d3+50
+0 2500 -1
+8 8 1 3 12 3
+T 100 2d4+0 0
+#5809
+guard troglodyte~
+the Troglodyte Guard~
+A Troglodyte guard is here, guarding the door to the south.
+~
+This Troglodyte guard is pacing back and forth looking for intruders. It seems
+shocked to see you, and it quickly readies its sword for battle. You don't
+think you are going to get what this guard is guarding!
+~
+bdf d -700 X 0 
+12 14 4 6d6+120
+0 8000 -1
+8 8 0 3 1 3
+T 100 4d5+0 0
+#5810
+troglodyte general~
+the Troglodyte General~
+The Troglodyte General gets up from his throne to kill you!
+~
+The Troglodyte General is about seven feet tall, and looks like he weighs
+about three-hundred pounds due to his heavy exoskeleton. He doesn't look
+to pleased to see you, and you sure don't think he got off of his throne
+made out of bones to greet you!
+~
+bdf d -700 X 0 
+25 10 -3 13d13+250
+0 47000 -1
+8 8 1 3 1 4
+T 100 8d5+9 0
+#5811
+troglodyte worker~
+the Worker~
+A Troglodyte worker is here, carrying some water.
+~
+This medium sized Troglodyte doesn't seem to pleased with his work as a 
+servant. He is carrying two large buckets in each hand, both of them are
+filled with water. He looks very surprised to see you, and he quickly 
+turns his head to examine you. He looks very strong and intellegent.
+~
+adg d -500 X 0 
+5 17 7 3d3+50
+0 2500 -1
+8 8 1 3 1 3
+T 100 2d4+0 0
+#5812
+troglodyte soldier~
+the Troglodyte Soldier~
+A Troglodyte soldier looks surprised to see you and unsheaths his Longsword.
+~
+This powerfull looking soldier looks very surprised to see you. He quickly
+readies his Longsword and prepares to face you in a duel to the death.
+You have a feeling that if you don't lose this fight, you will be badly
+hurt when you win!
+~
+dfg d -500 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 1 3 1 3
+T 100 4d4+0 0
+#5813
+woman drowned body man~
+the Drowned Body~
+A drowned body slowly arises from the water and attacks!
+~
+This halfway rotted body is completely blue due to drowning, and small teeth
+marks indicate that something has made a dinner out of it. Seaweed hangs
+off of its legs and arms, and about a dozen leeches feast on whats left of 
+its blood. Whoever or whatever this is, it doesn't like you being down here!
+~
+bdf d -400 X 0 
+5 17 7 3d3+50
+0 2500 -1
+8 8 0 0 1 3
+T 100 2d4+0 0
+#5814
+woman drowned body man~
+the Drowned Body~
+A body floating in the water quickly springs up and attacks!
+~
+This halfway rotted body is completely blue due to drowning, and small teeth
+marks indicate that something has made a dinner out of it. Seaweed hangs
+off of its legs and arms, and about a dozen leeches feast on whats left of 
+its blood. Whoever or whatever this is, it doesn't like you being down here!
+~
+bdf d -400 X 0 
+5 17 7 3d3+50
+0 2500 -1
+8 8 0 0 1 3
+T 100 2d4+0 0
+#5815
+woman drowned body man~
+the Drowned Body~
+A body emerges from behind you and attacks!
+~
+This halfway rotted body is completely blue due to drowning, and small teeth
+marks indicate that something has made a dinner out of it.  Seaweed hangs off
+of its legs and arms, and about a dozen leeches feast on what's left of its
+blood.  Whoever or whatever this is, it doesn't like you being down here!
+~
+bdf d -400 X 0 
+5 17 7 3d3+50
+0 2500 -1
+8 8 0 0 1 3
+T 100 2d4+0 0
+#5816
+skeleton~
+the Skeleton~
+A pile of bones start to float around in the air and begin to form a skeleton!
+~
+This skeleton's bones seem to float in the air. Within the skull of this 
+creature you notice a small blue light. Maybe that is what keeps this thing
+alive...
+~
+dfg d -800 X 0 
+5 3 7 3d3+50
+0 2500 -1
+8 8 0 0 1 3
+T 100 2d4+0 0
+#5817
+king crab spider~
+the King Crab Spider~
+A shiver goes down your spine as the King Crab Spider emerges from its den.
+~
+This five-foot long giant spider looks like something out of a horror movie.
+Its powerfull jaws look strong enough to crush the life out of you, and its
+long hairy legs quickly drive it towards you. This huge spider looks very
+hungry; No wonder it seems so glad to see you!
+~
+bdf dm -600 X 0 
+15 12 2 8d8+150
+0 16000 -1
+8 8 0 4 14 4
+T 100 2d8+5 22
+#5818
+crab spider~
+the Crab Spider~
+A small Crab Spider is here, spinning its web.
+~
+This spider is about three-feet long, and it seems to almost blend into the
+walls. It is very carefully spinning a web which almost seems beautiful 
+untill the "tiny" Crab Spider sees you...Maybe you should get out of here
+before you feel what it is like to be wrapped into a cacoon!
+~
+bdf m -400 X 0 
+9 15 5 5d5+90
+0 5000 -1
+8 8 0 4 14 2
+T 100 4d3+1 22
+#5819
+mud beetle~
+the Mud Beetle~
+A huge mud beetle is lying here, sleeping in the mud.
+~
+This beetle is five-feet long and has huge jaws which it uses to crush the
+life out of its prey. Its strange brown color blends into the mud making
+it extremely hard to see, and you wonder if there are any more of these
+creatures living under the mud or in the walls. You sure are glad that
+this one is sleeping right now!
+~
+bd 0 400 X 0 
+8 16 6 4d4+80
+0 4000 -1
+5 5 0 8 15 2
+T 100 2d7+0 22
+#5820
+mud beetle~
+the Mud Beetle~
+A huge mud beetle leaps out of the mud at you!
+~
+This five-foot long beetle has huge jaws which it uses to crush the life
+out of its prey, and its strange brown coloring makes it extremely hard
+to see. This thing doesn't look to happy to see you!
+~
+bd 0 400 X 0 
+8 16 6 4d4+80
+0 4000 -1
+5 5 0 8 15 2
+T 100 2d7+0 22
+#5821
+green muck monster~
+the Green Muck Monster~
+A giant green Muck Monster slowly arises from the green liquid.
+~
+This giant monster is covered in seaweed, and you can hear a strange humming
+sound comming from it. It stands at least four-feet above you, and it is
+acting like you have intruded into its home. It slowly walks toward you, and
+although it doesn't seem very hostile, it doesn't seem very nice either!
+~
+bdf d 400 X 0 
+16 13 2 8d8+160
+0 18000 -1
+8 8 0 15 0 5
+T 100 5d3+6 0
+#5822
+doppleganger dopple~
+the Doppleganger~
+A Doppleganger is here, grinning evilly at you.
+~
+This strange looking creature changes into different beings and objects
+right before your eyes! As you look at this odd creature, you realize
+that this thing could do as much damage as a Dragon or as much as a mouse!
+You hope you don't have to fight this thing, but things dont look too good
+as you notice that it is slowly walking toward you.
+~
+cdfg d -900 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 0 0 3 3
+T 66 1d25+7 0
+#5823
+black soul~
+the Black Soul~
+A black soul casts its sad eyes on you.
+~
+This black soul slowly drifts through the passageways with its head lowered
+in sorrow. It's sad eyes gaze at you and it seems to be begging for your
+help. You wish there was something you could do for it, but it seems to not
+even know you are there.
+~
+acdg d 100 X 0 
+12 14 4 6d6+120
+0 9000 -1
+8 8 0 0 3 3
+T 100 5d2+2 0
+#5824
+dust devil~
+the Dust Devil~
+A small Dust Devil swirls around your head.
+~
+This small whirlwind is made up of many tiny particles of dust and it keeps
+on spinning around your eyes, blocking you line of sight. No matter where
+you turn, it just keeps on following you. This thing is sure getting
+you mad...
+~
+cdg d 400 X 0 
+10 51 5 5d5+100
+0 6000 -1
+8 8 0 0 1 4
+T 100 5d3+0 0
+#5825
+soul cursed~
+the Cursed Soul~
+A Cursed Soul appears infront of you and shrieks in terror!
+~
+This strange looking soul doesn't look very happy to see you. It loudly
+shrieks in you face as if to warn you not to continue any further. The
+shrieking alone is enough to stop you from continuing!
+~
+cdfg d -100 X 0 
+13 13 3 7d7+130
+0 12000 -1
+8 8 0 0 1 3
+T 100 5d3+3 0
+#5826
+cave locust~
+the Cave Locust~
+A large Cave Locust is here, guarding its cacoon.
+~
+This giant, five-foot long locust has a hard exoskeleton, and a color that
+matches the walls of its burrow. Its huge eyes study you, and it stays very
+close to the cacoon on the far wall. As time goes by, it starts to make
+a loud hissing noise...I think it wants you to leave! 
+~
+bdf d 400 X 0 
+15 12 2 8d8+150
+0 18000 -1
+8 8 0 8 15 3
+T 100 3d8+1 0
+#5827
+master sin~
+the Great Master of Sin~
+The Great Master Of Sin lets out a loud, blood curdling roar as you enter!
+~
+This large muscular beast has curved horns coming out of its demon like head,
+and at the end of its large muscular legs are a set of hoofs, much like a 
+horses. It stands upright, and you suddenly realize the height of this great
+demon. Its eyes start to glow red, but the huge spear-like weapon in its
+hand quickly draws your attention. Fear for life, for surely the Great Master
+Of Sin will take it.
+~
+abdf d -999 X 0 
+45 4 -10 23d23+450
+0 275000 -1
+8 8 1 0 3 4
+T 100 6d12+12 0
+#5828
+spawn sin~
+the Horned Spawn of Sin~
+A horned Spawn of Sin lunges at you as you enter the room!
+~
+This short muscular beast resembles a dog with horns and hoofs. It large fangs
+drip with green slime, and as it sees you enter the room, it lunges forward 
+with it jaws wide open!
+~
+cdfg d -90 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 0 0 3 4
+T 50 5d3+5 0
+#5829
+corpse body~
+the Bloody Corpse~
+A corpse is slouched in the corner here...sometimes you think you see it blink!
+~
+Both the hands of this corpse have been completely ripped off, and the little
+shreds of cloths that still remain on it are covered in blood and many other
+unknown bodily fluids. Although you know nothing could live through the
+torture that this being underwent, everytime you turn your head, in the corner
+of your eye you think you see it blink!
+~
+cdfg d 300 X 0 
+17 13 1 9d9+170
+0 20000 -1
+5 5 0 0 3 3
+T 100 5d4+10 0
+#5830
+keeper sins~
+the Keeper of Sins~
+The Keeper of Sins is waiting here with his eyes fixed upon you.
+~
+This huge being is about ten feet tall, and it seems as if you have broken
+his deep state of concentration. A horid black mask covers his face, and when 
+his eyes start to cast an icy glaze on you, your soul tells you that in some 
+strange way, you have sinned...
+~
+bdf d -900 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 0 5
+T 50 5d6+5 23

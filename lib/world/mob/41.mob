@@ -1,0 +1,111 @@
+#4100
+mage~
+the Mage~
+A small intelligent looking mage is standing here.
+~
+His IQ makes almost any dikumud player look stupid..
+~
+47 8 -100 X
+13 14 3 7d7+130 3d3+0
+0 12000
+8 8 1 3 1 3
+T 100 3d3+7 0
+#4101
+troll~
+the troll~
+A large mean-looking troll is here.
+~
+Well, it looks dangerous!
+~
+46 0 -800 X
+12 14 4 6d6+120 2d11+0
+0 9000
+8 8 1 3 1 3
+T 100 2d10+0 0
+#4102
+snake~
+the snake~
+A large green snake is here, looks like a guardian for an evil force.
+~
+You see a evil creature.
+~
+47 0 -700 X
+9 15 5 5d5+90 3d5+0
+0 4800
+8 8 1 10 0 4
+T 100 3d5+0 0
+#4103
+thief~
+the thief~
+A thief is here, all dressed in black.
+~
+He seems to be counting a handful of coins.  Maybe you ought to count YOUR
+gold too...
+~
+77 1572874 -400 X
+10 15 5 5d5+100 2d9+0
+0 5000
+8 8 1 3 1 3
+T 100 2d9+0 0
+>greet_prog   100~
+   if ispc($n)
+      if isfollow($n)
+         mpechoat $n You see a shadow slowly slip around behind your group lea
+er.
+         break
+      else
+         backstab $n
+         break
+      endif
+      break
+   endif
+~
+|
+#4104
+orc~
+the orc~
+A ugly orc is standing here.
+~
+It's quite disgusting to look at.
+~
+236 0 -200 X
+7 16 6 4d4+70 2d5+0
+0 2250
+8 8 1 3 13 3
+T 100 2d5+1 0
+#4105
+centipede~
+a centipede~
+A small harmless centipede is here.
+~
+Well it doesn't seem to pay any attention to you.
+~
+10 0 300 X
+2 19 9 3d3+50 1d1+0
+0 300
+8 8 0 8 15 2
+T 100 1d1+1 0
+#4106
+warrior~
+the Warrior~
+A human warrior is here, an evil grin on his face.
+~
+He doesn't look friendly at all...
+~
+108 0 -300 X
+15 14 2 7d7+150 2d9+0
+0 17000
+8 8 1 3 1 3
+T 60 2d9+0 0
+#4107
+kobold~
+the kobold~
+A slimy green kobold scratches round in the shadows.
+~
+It looks slimy..
+~
+108 0 -100 X
+7 16 6 4d4+70 1d9+0
+0 2600
+8 8 1 3 1 3
+T 100 1d9+2 0

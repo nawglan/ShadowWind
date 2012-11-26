@@ -1,0 +1,19 @@
+#3300
+man craftsman~
+the Old Craftsman~
+A gentle old man is here, reclining in his rocker.
+~
+This quiet old man smiles softly as you enter his workspace.
+His face, wrinkled and aged by a life of solitude, is mostly
+covered by a thick grey beard.
+~
+bdr dhk 1000 X
+30 9 -5 15d15+300
+0 80000
+8 8 1 3 1 3
+T 50 4d6+5 10
+A 8 0 The Old Craftsman sighs loudly as he looks at you.
+A 5 8 The Old Craftsman mumbles softly, remembering the days of his youth.
+E 12 100 3304 -1
+E 15 25 3303 -1
+E 4 10 3302 5

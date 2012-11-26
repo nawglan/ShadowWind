@@ -1,0 +1,577 @@
+#15100
+key golden~
+a golden gate key~
+A golden gate key is lying here.~
+~
+18 cq ao 0 
+0 0 0 0 15
+2 0 0
+#15101
+silver key~
+a silver key~
+A silvery key is lying here.~
+~
+18 cq ac 0 
+0 0 0 0 14
+3 0 0
+#15102
+gold coins pile~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 cq a 0 
+0 30 0 0 15
+2 0 0
+#15103
+key prison grey~
+a prison key~
+A grey prison key is lying here.~
+~
+18 cq ao 0 
+0 0 0 0 8
+1 0 0
+#15104
+fishscale armor~
+fishscale armor~
+Armor made from fishscale is lying here.~
+~
+9 a ad f 
+4 0 0 0 24
+20 14000 1000
+B
+g 
+#15105
+pearlescent robe~
+a pearlescent robe~
+A pearlescent robe is lying here.~
+~
+9 a ak m 
+3 0 0 0 3
+13 10000 0
+#15106
+driftwood staff~
+a driftwood staff~
+A loose piece of driftwood is lying here~
+~
+5 0 an 0 
+0 3 4 6 5
+12 300 0
+A
+18 2
+A
+2 -5
+#15107
+rope shabby~
+a long rope~
+A long piece of rope is lying here.~
+~
+12 0 aclo 0 
+0 0 0 0 4
+2 20 0
+#15108
+jellyfish pouch~
+a jellyfish pouch~
+A pouch made of jellyfish is lying here.~
+~
+15 a a 0 
+75 0 -1 0 24
+8 300 0
+#15109
+golden trident~
+Triton's Trident~
+A golden trident is lying here.~
+~
+5 abk an 0 
+6 6 5 14 15
+15 35000 2000
+#15110
+golden crown~
+Triton's Crown~
+A golden crown is lying here.~
+~
+9 ak ae g 
+2 0 0 0 15
+14 20000 4000
+A
+4 2
+A
+3 1
+#15111
+white veil~
+a white veil~
+A laced white veil is lying here.~
+~
+11 0 ap s 
+0 0 0 0 3
+3 2 0
+A
+18 -2
+#15112
+coral sword~
+a coral sword~
+A sword made of broken coral is lying here.~
+~
+5 0 an 0 
+3 4 4 2 0
+13 6000 100
+#15113
+dagger~
+a razor sharp dagger~
+A razor sharp dagger is lying here~
+~
+5 0 an 0 
+2 3 3 12 13
+7 500 150
+A
+18 1
+#15114
+seashell necklace~
+a seashell necklace~
+A seashell necklace is lying here.~
+~
+11 0 ac 0 
+0 0 0 0 1
+7 200 50
+A
+17 -2
+#15115
+shark tooth~
+a shark tooth~
+A large tooth of a shark is lying here.~
+~
+11 0 ao 0 
+0 0 0 0 0
+3 1000 500
+A
+2 1
+#15116
+shortsword dark short~
+a dark shortsword~
+A dark shortsword is lying here.~
+~
+5 0 an 0 
+2 3 4 1 10
+11 10000 100
+#15117
+fairy pouch~
+a fairy pouch~
+A pouch left by a fairy is lying here.~
+~
+3 0 ao 0 
+50 4 4 140 3
+5 2000 3000
+P
+armor
+#15118
+crusher club~
+a crushing club~
+A heavy wooden club is lying here~
+~
+5 0 an 0 
+0 3 5 11 5
+17 300 0
+#15119
+sharp spear~
+a sharp spear~
+A razor sharp spear is lying here.~
+~
+5 0 an 0 
+2 3 4 16 5
+10 2000 0
+#15120
+wooden spear~
+a wooden spear~
+A long wooden spear is lying here.~
+~
+5 0 an 0 
+2 2 4 16 5
+7 200 0
+#15121
+leather cloak~
+a cracked leather cloak~
+A cracked leather cloak is lying here.~
+~
+9 0 ak m 
+1 0 0 0 0
+8 200 0
+#15122
+bell~
+a silver bell~
+A shiny silver bell is lying here.~
+~
+4 0 ao 0 
+50 1 1 177 0
+5 2000 10000
+P
+barkskin
+#15123
+bottle broken~
+a broken bottle~
+A small, broken bottle is here, it looks sharp.~
+~
+5 0 an 0 
+3 1 3 1 18
+5 5 0
+#15124
+bone sword~
+a bone sword~
+A sword carved from an old bone is lying here.~
+~
+5 0 an 0 
+3 2 4 3 25
+9 2000 0
+#15125
+dark robe apprentice~
+a dark apprentice robe~
+A dark cloth marked with evil relics is lying here.~
+~
+9 j ak m 
+2 0 0 0 3
+6 2000 0
+#15126
+dark cloak~
+a dark master's cloak~
+A dark cloak is lying here.~
+~
+11 aj ac 0 
+0 0 0 0 0
+9 10000 1000
+A
+12 15
+A
+1 -1
+A
+13 -5
+#15127
+dark ring~
+a dark ring~
+A small dark ring is lying here.~
+~
+11 aj ab 0 
+0 0 0 0 1
+3 3000 1000
+A
+12 10
+A
+1 -1
+#15128
+silver scale~
+a silver dragon scale~
+A shimmering silver dragon scale is lying here.~
+~
+4 a ao 0 
+50 2 2 156 24
+5 2600 4000
+P
+vitality
+#15129
+eyepatch patch~
+{Da black eyepatch{x~
+A small, black eyepatch is here.~
+~
+11 0 ar v 
+0 0 0 0 3
+3 3000 1000
+B
+k 
+A
+18 -2
+#15130
+octopus tentacle~
+an octopus tentacle~
+A severed octopus tentacle is lying here.~
+~
+5 0 an 0 
+1 4 4 13 24
+10 10000 100
+#15131
+gaudy necklace~
+a large gaudy necklace~
+A large silver gaudy necklace is lying here.~
+~
+11 0 ac 0 
+0 0 0 0 14
+10 5000 0
+#15132
+wooden spoon~
+a wooden spoon~
+A carved wooden spoon is lying here.~
+~
+5 0 an 0 
+0 1 2 11 5
+5 20 0
+#15133
+long sword~
+a long sword~
+A long sword has been left here.~
+~
+5 0 an 0 
+3 1 8 3 9
+8 600 0
+#15134
+shortsword short sword~
+a shortsword~
+A small sword lies a bit to the left of you.~
+~
+5 0 an 0 
+2 1 4 1 9
+8 30 0
+#15135
+small mace~
+a small mace~
+A small mace has been left here.~
+~
+5 0 an 0 
+0 1 6 8 8
+6 600 0
+#15136
+dagger~
+a dagger~
+A dagger with a long thin blade is here.~
+~
+5 0 an 0 
+2 1 4 12 9
+1 10 0
+#15137
+shabby leather armor~
+shabby leather armor~
+A shabby piece of leather is lying here.~
+~
+9 0 ad f 
+2 0 0 0 20
+15 300 0
+#15138
+fishscale belt~
+a fishscale belt~
+A long patch of fishscale is lying here.~
+~
+9 0 al 0 
+2 0 0 0 24
+5 3000 0
+#15139
+leather shield~
+a leather shield~
+A dried piece of hard leather is lying here.~
+~
+9 0 aj l 
+3 0 0 0 20
+10 300 0
+#15140
+war helmet~
+a goblin war helmet~
+A helmet with many foreign markings is lying here.~
+~
+9 0 ae g 
+4 0 0 0 23
+7 2000 0
+#15141
+shabby sandals~
+a pair of shabby sandals~
+A shabby pair of leather sandals is lying here.~
+~
+9 0 ag i 
+2 0 0 0 20
+6 200 0
+#15142
+fishscale gloves~
+fishscale gloves~
+A pair of gloves made from fishscale are lying here.~
+~
+9 0 ah j 
+3 0 0 0 24
+7 3000 0
+#15143
+beer keg~
+a keg of beer~
+A wooden keg of beer is lying here.~
+~
+17 0 a 0 
+20 10 1 0 5
+30 50 0
+#15144
+statue~
+statue of man riding horse~
+A statue of a horse mounted by a man is here.~
+~
+12 0 0 0 
+0 0 0 0 6
+300 0 0
+#15145
+sunken treasure chest~
+a sunken treasure chest~
+A large wooden treasure chest is stuck in the sand here.~
+~
+15 a 0 0 
+3000 13 15146 0 5
+0 0 0
+#15146
+pearlescent key~
+a pearlescent key~
+A small pearlescent key is lying here.~
+~
+18 cq ao 0 
+0 0 0 0 27
+1 0 0
+#15147
+stream water~
+a small stream of water~
+A small stream of water trickles down the path.~
+~
+23 0 0 0 
+1000 1000 0 0 26
+1000 0 0
+#15148
+tea set teaset~
+a small teaset~
+A small set of tea cups and saucers are placed on a table here.~
+~
+12 0 0 0 
+0 0 0 0 15
+0 0 0
+#15149
+throne stone~
+a goblin throne~
+A rugged throne made of marble is awaiting the goblin leader here.~
+~
+12 0 0 0 
+0 0 0 0 6
+0 0 0
+#15150
+throne~
+Triton's throne~
+A majestic throne has been built here for Triton, himself.~
+~
+12 a 0 0 
+0 0 0 0 0
+0 0 0
+#15151
+tree stump treestump~
+a small treestump~
+A small treestump is planted in the ground here.~
+~
+12 0 0 0 
+0 0 0 0 5
+0 0 0
+#15152
+rocking horse rockinghorse~
+a large rockinghorse~
+A large rockinghorse is swaying back and forth here.~
+~
+12 0 0 0 
+0 0 0 0 5
+0 0 0
+#15153
+waterfall fall~
+a waterfall~
+A steading flowing waterfall is pouring over the rugged rocks.~
+~
+23 0 0 0 
+10000 10000 0 0 26
+10000 0 0
+#15154
+feather~
+a harpy feather~
+A large feather from the harpy queen is lying here.~
+~
+11 0 ao 0 
+0 0 0 0 1
+0 0 350
+A
+14 10
+#15155
+large beetle~
+a large beetle~
+A large beetle is lying here.~
+~
+19 0 a 0 
+15 0 0 0 23
+2 20 0
+#15156
+pixie stick roasted~
+a pixie on a stick~
+A roasted pixie tied to a stick is lying here.~
+~
+19 0 a 0 
+20 0 0 0 23
+4 40 0
+#15157
+crusty loaf bread~
+a crusty loaf of bread~
+A crusty loaf of bread is lying here.~
+~
+19 0 a 0 
+16 0 0 0 2
+3 30 0
+#15158
+merfolk fin~
+a merfolk fin~
+A roasted merfolk fin is lying here.~
+~
+19 0 a 0 
+12 0 0 0 23
+2 12 0
+#15159
+rusty chainmail shirt~
+a rusty chainmail shirt~
+A rusted sheet of chainmail is lying here.~
+~
+9 0 ad f 
+4 0 0 0 9
+40 200 0
+#15160
+rusty shortsword~
+a rusty shortsword~
+A rusty shortsword is lying here.~
+~
+5 0 an 0 
+2 2 5 1 9
+9 350 0
+#15161
+wooden longsword~
+a wooden longsword~
+A longsword made entirely of wood is lying here.~
+~
+5 0 an 0 
+3 1 5 3 5
+6 20 0
+#15196
+straight jacket~
+a white straight jacket~
+A white constraining jacket is lying here.~
+~
+11 0 ad f 
+0 0 0 0 3
+6 0 0
+A
+18 -20
+A
+19 -10
+#15197
+petite black dress~
+a petite black dress~
+A small delicately laced dress is posing here.~
+~
+9 0 ad f 
+0 0 0 0 3
+5 0 0
+#15198
+bellbottoms bell pants~
+some bellbottoms~
+Some ancient 1970's relics have been thrown away, but someone found them.~
+~
+11 0 af h 
+0 0 0 0 3
+5 0 10000
+A
+6 4
+#15199
+shoes platform~
+some platform shoes~
+A set of five inch platform shoes is here.~
+~
+11 a ag i 
+0 0 0 0 0
+4 0 0
+A
+11 15
+$~

@@ -1,0 +1,84 @@
+#3500
+goblin guard~
+a goblin guard~
+A stout goblin guard is here, watching his post.
+~
+A stocky young goblin stands before you. Although short, he looks as 
+though he would make a formidable opponent.
+~
+bdglmpr k 350 X
+23 11 -2 12d12+230
+0 35000
+8 8 1 3 1 3
+T 80 3d4+5 10
+T 100 6d2+5 11
+E 24 50 3503 -1
+#3501
+goblin female~
+a young goblin~
+A young female goblin sits here, whittling some more arrows.
+~
+This beautiful you goblin sits here day after day, performing her
+duty to the village by making spears and arrows.
+~
+bd 0 0 X
+8 16 6 4d4+80
+0 3500
+8 8 2 3 1 3
+T 90 2d3+4 6
+#3502
+opossum~
+an opossum~
+An opossum is perched nervously in the branches above you.
+~
+The opossum's beady red eyes stare out at you through the leaves
+Although it is a small, almost cute furry little creature, it has
+sharp claws, and does not look very friendly.
+~
+dgl k 0 X
+3 18 8 2d2+30
+0 600
+8 8 1 4 14 2
+T 80 1d2+2 8
+#3503
+leech~
+a bloodsucking leech~
+A small, bloodthirsty leech sits in a puddle of water.
+~
+This small creature looks like nothing more than a slimy piece of 
+black muscle, however its also looks VERY hungry...
+~
+bdfl dk -350 X
+2 19 9 1d1+20
+0 300
+8 8 0 8 15 1
+T 100 1d1+1 7
+#3504
+eyes red~
+a creature of the dark~
+A pair of small red eyes are staring at you.
+~
+This small creature sneers at you as you examine it. Under its bristly
+dark fur, you catch glimpses of pale pink skin. This animal certainly
+las not seen sunlight for a very long time.
+~
+bcd dk -800 X
+5 17 7 3d3+50
+0 1600
+8 8 0 8 15 1
+T 75 2d3+2 9
+#3505
+man goblin lost~
+a lost goblin~
+A goblin stands here, looking lost and confused.
+~
+This little man peers around himself, looking for a familiar landmark
+to help lead him home. He looks weary and tired, as if he has been lost 
+for many days.
+~
+cdgh k 0 X
+12 14 4 6d6+120
+0 7500
+8 8 1 3 1 3
+T 80 3d4+4 11
+A 5 8 The goblin says, 'Do you know where the foothills are? I'm so lost..

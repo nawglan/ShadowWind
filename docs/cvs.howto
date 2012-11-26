@@ -1,0 +1,27 @@
+                 =-= 7 quick steps to using CVS =-=
+
+1. add CVSROOT=/mud/swdev ; export CVSROOT to your .profile
+
+2. Make a temp directory and do a 'cvs checkout src' this temp dir
+   can be anywhere you have perm's to write and can be any name.
+   Be sure to run the 'cvs checkout src' command from the temp dir.
+
+3. when done making changes and testing the code to make sure it works do
+   a 'cvs commit src'. Also, this command must be run from within the
+   temp dir.
+
+4. When prompted enter a description of what you did.
+
+5. To modify the production mud, login as mudadmin and cd to /mud/sw/src
+   and:
+   rm *.c *.h
+   cd ..
+   cvs export -D 19971231 src
+
+   --Note: The date needs to be at least one day in the future--
+   --Note: If you dont remove the *.c *.h files cvs will complain--
+--Note: Any file moved in by hand or edited will be lost on the next cvs run--
+
+6. cd to /mud/sw/src and compile
+
+7. Then do a shutdown reboot on the mud.

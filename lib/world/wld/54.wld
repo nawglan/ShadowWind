@@ -1,0 +1,2561 @@
+#5400
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5380 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5420 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5401
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+54 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5381 0
+D2
+Weeping Way.
+~
+~
+0 0 5421 0
+S
+#5402
+The Servant's Room~
+   This is the room where the servants occupy little of their time. They are
+often doing other tasks that prevent them from getting much rest. True to form
+the Mayor has given his servants a room that is far more extravagant than most
+masters give. The narrow, yet still plush, beds line one wall and several
+mirrors are placed on the opposite wall. The servants have placed portraits
+of their families on the walls near their bed.
+~
+54 0 1
+D0
+The Mayor's Mansion.
+~
+door~
+1 -1 5382 0
+E
+portrait portraits~
+Walking over to the portrait you notice that it is a picture of one of your
+long lost relatives. You are now even more determined to help the Mayor
+crush Cruthane once and for all.
+~
+E
+mirror mirrors~
+Looking into the mirror you see YOURSELF... What did you expect?
+~
+S
+#5403
+The Mayor's Dressing Room~
+   The Mayor's dressing room is one that most people would dream for. A large
+closet filled with the finest clothes fills the southern wall. On the western
+wall is a full length mirror that has a frame made from the purest gold. The
+ceiling here is painted in a similar mural as the one in the foyer. But this
+one shows a battle where Cruthane is killed. Maybe the Mayor had it painted
+to help him keep the hope that Cruthane might one day be destroyed.
+~
+54 0 1
+D0
+The Mayor's Office.
+~
+door~
+1 -1 5383 0
+D1
+~
+~
+0 0 5404 0
+E
+latch~
+You sigh as you notice that the latch that you was hoping for is merely a small
+piece of wood that has been chipped from the wall. So much for there being a
+secret passageway here.
+~
+E
+mirror~
+Looking at the mirror you notice a small latch behind the left edge of the
+mirror.
+~
+E
+closet~
+You pull out a garment from the closet and hold it up to yourself and look
+into the mirror. Dreaming of one day being Mayor yourself, you imagine what
+it would be like to have servants dress you every day. Puting the garment 
+back you resign yourself to the lowly status of merely a commoner. Perhaps
+one day your dream will come true.
+~
+S
+#5404
+The Mayor's Bedroom~
+   This is where the Mayor spends many restless nights. Often he is plagued
+by nightmares of the massacre by Cruthane. The room is decorated with many
+ancient relics and paintings of long lost warriors. A miniature statue
+serves as a light next to the bed. A large window with beautiful drapes
+provides the needed light during the day. Two paintings grace the wall
+opposite the window.
+~
+54 0 1
+D3
+~
+~
+0 0 5403 0
+D5
+~
+~
+1 0 5670 0
+E
+number~
+The number reads:  1 of 2.
+~
+E
+plaque~
+The plaque reads:  The Sword of Delthrain.
+~
+E
+relic relics~
+Bending over one of the relics you see that it is a sword looks as though it
+has been around for thousands of years. The edge of the sword is dull, yet
+the sword still looks like it could easily have the edge sharpened again. The
+sword has a number carved into the handle and is mounted on a stand that has
+a small plaque on the base.
+~
+E
+painting paintings~
+The two paintings are pictures of the Mayor's wife and children. They were
+killed by the demons that Cruthane used to destroy the city.
+~
+E
+statue light~
+The statue is of the Great Immortal Assassin. It glows with an unearthly 
+radiance.
+~
+E
+window~
+The window opens out to the park below. The Mayor often looks out the window
+to watch the children play. The Mayor usually has to leave the window quickly
+lest the children see him crying over the loss of his own children.
+~
+S
+#5405
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5385 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5406 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5425 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5408 0
+S
+#5406
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5386 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5407 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5426 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5405 0
+S
+#5407
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5387 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5408 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5427 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5406 0
+S
+#5408
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5388 0
+D1
+Park Road.
+~
+~
+0 0 5409 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5428 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5407 0
+S
+#5409
+Park Road~
+   This road leads towards the newly constructed Hope Memorial Park. The
+road is lit by thousands of little fireflies. Closely groomed shrubs line the
+road to prevent you from leaving the road and walking on the grass. The air
+here feels less oppressive than in other parts of the city.
+~
+54 0 1
+D1
+Dispair Boulevard.
+~
+~
+0 0 5410 0
+D3
+Hope Memorial Park.
+~
+gate~
+1 -1 5408 0
+E
+firefly fireflies~
+These little creatures provide an excellent lightsource. To bad they are too
+fast for you to catch. You think you hear laughter every time you try to 
+catch one out of the air.
+~
+S
+#5410
+Despair Boulevard~
+   A growing sense of evil fills the air. The air seems thick and does not
+let you pass through easily. Beggars come to this place to try to squease
+a dime or two from the few people that pass by. As you continue down the
+boulevard, you become increasingly aware that the source of the evil lies
+near the church. Despair Boulevard continues north to the city gates and
+south toward the church.
+~
+54 0 1
+D0
+Despair Boulevard.
+~
+~
+0 0 5390 0
+D1
+Market Plaza.
+~
+~
+0 0 5411 0
+D2
+Despair Boulevard.
+~
+~
+0 0 5430 0
+D3
+Park Road.
+~
+~
+0 0 5409 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5411
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D1
+Market Plaza.
+~
+~
+0 0 5412 0
+D3
+Dispair Boulevard.
+~
+~
+0 0 5410 0
+S
+#5412
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D1
+Market Plaza.
+~
+~
+0 0 5413 0
+D3
+Market Plaza.
+~
+~
+0 0 5411 0
+S
+#5413
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5393 0
+D2
+Market Plaza.
+~
+~
+0 0 5433 0
+D3
+Market Plaza.
+~
+~
+0 0 5412 0
+S
+#5414
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5394 0
+D2
+Circle Drive.
+~
+~
+0 0 5434 0
+S
+#5415
+The Bedroom~
+   This is the bedroom of the greedy landlord. This room is almost as bare
+as the other rooms in the house. There is one picture on the wall and a
+small window that provides light. The bed has a very thin matress and is
+covered by a thin, holey blanket.
+~
+54 d 1
+D2
+The Study.
+~
+door~
+1 -1 5435 0
+E
+picture~
+It is a picture of what the landlord loves the most. It is a 2 to 1 scale
+painting of a gold coin. You take one of your own coins and hold it up to
+the painting and note the remarkable accuracy that the painting has to the
+real coin.
+~
+S
+#5416
+The Living Room~
+   This is not what most families would consider a living room. The only
+pieces of furniture in the room are a small table, chair and a lamp. This
+is where the Landlord spends the few hours just before he goes to sleep
+counting the rent that he collected that day.
+~
+54 d 1
+D0
+The Kitchen.
+~
+door~
+1 -1 5396 0
+D2
+The Den.
+~
+door~
+1 -1 5436 0
+S
+#5417
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5397 0
+D2
+Circle Drive.
+~
+~
+0 0 5437 0
+S
+#5418
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+54 0 1
+D0
+Good Street.
+~
+~
+0 0 5398 0
+D2
+Good Street.
+~
+~
+0 0 5438 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5419
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+~
+~
+0 0 5399 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5439 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5420
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5400 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5440 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5421
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+54 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5401 0
+D1
+Park Road.
+~
+~
+0 0 5422 0
+D2
+Weeping Way.
+~
+~
+0 0 5441 0
+S
+#5422
+Park Road~
+   This road leads towards the newly constructed Hope Memorial Park. The
+road is lit by thousands of little fireflies. Closely groomed shrubs line the
+road to prevent you from leaving the road and walking on the grass. The air
+here feels less oppressive than in other parts of the city.
+~
+54 0 1
+D1
+Park Road.
+~
+~
+0 0 5423 0
+D3
+Weeping Way.
+~
+~
+0 0 5421 0
+E
+firefly fireflies~
+These little creatures provide an excellent lightsource. To bad they are too
+fast for you to catch. You think you hear laughter every time you try to 
+catch one out of the air.
+~
+S
+#5423
+Park Road~
+   This road leads towards the newly constructed Hope Memorial Park. The
+road is lit by thousands of little fireflies. Closely groomed shrubs line the
+road to prevent you from leaving the road and walking on the grass. The air
+here feels less oppressive than in other parts of the city.
+~
+54 0 1
+D1
+Park Road.
+~
+~
+0 0 5424 0
+D3
+Park Road.
+~
+~
+0 0 5422 0
+E
+firefly fireflies~
+These little creatures provide an excellent lightsource. To bad they are too
+fast for you to catch. You think you hear laughter every time you try to 
+catch one out of the air.
+~
+S
+#5424
+Park Road~
+   This road leads towards the newly constructed Hope Memorial Park. The
+road is lit by thousands of little fireflies. Closely groomed shrubs line the
+road to prevent you from leaving the road and walking on the grass. The air
+here feels less oppressive than in other parts of the city.
+~
+54 0 1
+D1
+Hope Memorial Park.
+~
+gate~
+1 -1 5425 0
+D3
+Park Road.
+~
+~
+0 0 5422 0
+E
+firefly fireflies~
+These little creatures provide an excellent lightsource. To bad they are too
+fast for you to catch. You think you hear laughter every time you try to 
+catch one out of the air.
+~
+S
+#5425
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5405 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5426 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5445 0
+D3
+Park Road
+~
+~
+0 0 5424 0
+S
+#5426
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5406 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5427 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5446 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5425 0
+S
+#5427
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5407 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5428 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5447 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5426 0
+S
+#5428
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5408 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5429 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5448 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5427 0
+S
+#5429
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 89 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5425 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5449 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5428 0
+S
+#5430
+Despair Boulevard~
+   A growing sense of evil fills the air. The air seems thick and does not
+let you pass through easily. Beggars come to this place to try to squease
+a dime or two from the few people that pass by. As you continue down the
+boulevard, you become increasingly aware that the source of the evil lies
+near the church. Despair Boulevard continues north to the city gates and
+south toward the church.
+~
+54 0 1
+D0
+Despair Boulevard.
+~
+~
+0 0 5410 0
+D2
+Despair Boulevard.
+~
+~
+0 0 5450 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5431
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D1
+Market Plaza.
+~
+~
+0 0 5432 0
+D2
+Market Plaza.
+~
+~
+0 0 5451 0
+S
+#5432
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D2
+Market Plaza.
+~
+~
+0 0 5452 0
+D3
+Market Plaza.
+~
+~
+0 0 5431 0
+S
+#5433
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5413 0
+D2
+Market Plaza.
+~
+~
+0 0 5453 0
+S
+#5434
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5414 0
+D2
+Circle Drive.
+~
+~
+0 0 5454 0
+S
+#5435
+The Study~
+   The Landlord has spent far too much money on this room. It has the most
+furnature of any of the rooms in the house. There is a lamp, desk, chair and
+bookshelf. The bookshelf contains shelves of books that contain the records
+for the previous years that the Landlord has been in business. On the desk
+is a book that is opened to today's date. It is ready to be updated after
+the Landlord finishes counting the income for today.
+~
+54 d 1
+D0
+The Bedroom.
+~
+door~
+1 -1 5415 0
+D1
+The Den.
+~
+door~
+1 -1 5436 0
+S
+#5436
+The Den~
+   The den like the rest of the house is rather drab. The walls lack the
+luxury of wallpaper or paint. The only furnishing in the room is a very
+old reclining chair from which the Landlord schemes up new ways to raise
+rent without alarming the renters.
+~
+54 d 1
+D0
+The Living Room.
+~
+door~
+1 -1 5416 0
+D3
+The Study.
+~
+door~
+1 -1 5435 0
+S
+#5437
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5417 0
+D2
+Circle Drive.
+~
+~
+0 0 5457 0
+S
+#5438
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+54 0 1
+D0
+Good Street.
+~
+~
+0 0 5418 0
+D2
+~
+~
+0 0 5458 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5439
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5419 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5459 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5440
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5420 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5460 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5441
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+54 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5421 0
+D2
+Weeping Way.
+~
+~
+0 0 5461 0
+S
+#5442
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+Independence Avenue.
+~
+~
+0 0 5443 0
+D2
+Independence Avenue.
+~
+~
+0 0 5462 0
+S
+#5443
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+Independence Avenue.
+~
+~
+0 0 5444 0
+D2
+Hope Hilton International.
+~
+~
+1 0 5463 0
+D3
+Independence Avenue.
+~
+~
+0 0 5442 0
+S
+#5444
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D2
+Independence Avenue.
+~
+~
+0 0 5464 0
+D3
+Independence Avenue.
+~
+~
+0 0 5443 0
+S
+#5445
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5425 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5446 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5465 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5449 0
+S
+#5446
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5426 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5447 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5466 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5445 0
+S
+#5447
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5427 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5448 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5467 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5446 0
+S
+#5448
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5428 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5449 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5468 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5447 0
+S
+#5449
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5429 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5445 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5469 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5448 0
+S
+#5450
+Despair Boulevard~
+   A growing sense of evil fills the air. The air seems thick and does not
+let you pass through easily. Beggars come to this place to try to squease
+a dime or two from the few people that pass by. As you continue down the
+boulevard, you become increasingly aware that the source of the evil lies
+near the church. Despair Boulevard continues north to the city gates and
+south toward the church.
+~
+54 0 1
+D0
+Despair Boulevard.
+~
+~
+0 0 5430 0
+D2
+Despair Boulevard.
+~
+~
+0 0 5470 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5451
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5431 0
+D1
+Market Plaza.
+~
+~
+0 0 5452 0
+D2
+Market Plaza.
+~
+~
+0 0 5471 0
+S
+#5452
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5432 0
+D1
+Market Plaza.
+~
+~
+0 0 5453 0
+D2
+Market Plaza.
+~
+~
+0 0 5472 0
+D3
+Market Plaza.
+~
+~
+0 0 5451 0
+S
+#5453
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5433 0
+D2
+~
+~
+0 0 5473 0
+D3
+Market Plaza.
+~
+~
+0 0 5452 0
+S
+#5454
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5434 0
+D2
+Circle Drive.
+~
+~
+0 0 5474 0
+S
+#5455
+The Bedroom~
+   The bedroom of this rent house has been recently renovated at the Banthy's
+expense. The Landlord refuses to fund any maintenance to the houses. Despite
+the lack of funding, the Banthys have done marvelous things to enhance the
+appearance of the room. They replaced the green shag carpet with a nice
+royal blue carpet. The bed is not one of the standard narrow and hard
+type, but one that is big and plush. They replaced the small window here with
+a large window with beautiful curtains. Pictures of their grand-children
+are aranged nicely on the wall.
+~
+54 d 1
+D1
+The Living Room.
+~
+door~
+1 -1 5456 0
+S
+#5456
+The Living Room~
+   This room has been recently painted. The smell of whitewash fills the air.
+The furnature has been moved to the center of the room to keep it from having
+paint splattered on it. Under the drape that covers the couch, you notice
+a blanket that Mrs. Banthy has been knitting. The blanket has the name
+Gareol Banthy neatly stitched on one corner. To the west is the bedroom
+and to the south is the kitchen area.
+~
+54 d 1
+D2
+The Kitchen.
+~
+door~
+1 -1 5476 0
+D3
+The Bedroom.
+~
+door~
+1 -1 5455 0
+S
+#5457
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5437 0
+D2
+Circle Drive.
+~
+~
+0 0 5477 0
+S
+#5458
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+54 0 1
+D0
+~
+~
+0 0 5438 0
+D2
+Good Street.
+~
+~
+0 0 5478 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5459
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5439 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5479 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5460
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5440 0
+D2
+~
+~
+0 0 5480 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5461
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+54 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5441 0
+D2
+Weeping Way.
+~
+~
+0 0 5481 0
+S
+#5462
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5442 0
+D2
+Independence Avenue.
+~
+~
+0 0 5482 0
+S
+#5463
+Hope Memorial Inn~
+   If you are having problems navigating the city of Hope, or are wanting to
+wait more people to form a big party, then you have come to the right place.
+Lush indoor plants cover the ends of the counter, and a large reservations
+book lies open. The Hope Memorial Inn offers you the luxury you deserve at a
+price we deserve. Feel free to stay as long as you wish, there are always
+vacancies.  
+~
+54 d 1
+D0
+Independence Avenue.
+~
+door~
+1 -1 5443 0
+S
+#5464
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5444 0
+D2
+Independence Avenue.
+~
+~
+0 0 5484 0
+S
+#5465
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5445 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5466 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 65 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5469 0
+S
+#5466
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5446 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5467 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 5465 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 66 0
+S
+#5467
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5447 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5468 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 67 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5466 0
+S
+#5468
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5448 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5469 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 69 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5467 0
+S
+#5469
+Hope Memorial Park~
+   This park was constructed after the great desecration in order to try
+and uplift the spirits of the citizens. You are very careful not to step
+on the children as they play. Everywhere you look you see joy and 
+hopefullness. As you pass through the children look at you with a sense
+of awe and pure inquisitiveness.
+~
+54 eh 2
+D0
+Hope Memorial Park.
+~
+~
+0 0 5449 0
+D1
+Hope Memorial Park.
+~
+~
+0 0 5465 0
+D2
+Hope Memorial Park.
+~
+~
+0 0 69 0
+D3
+Hope Memorial Park.
+~
+~
+0 0 5468 0
+S
+#5470
+Despair Boulevard~
+   A growing sense of evil fills the air. The air seems thick and does not
+let you pass through easily. Beggars come to this place to try to squease
+a dime or two from the few people that pass by. As you continue down the
+boulevard, you become increasingly aware that the source of the evil lies
+near the church. Despair Boulevard continues north to the city gates and
+south toward the church.
+~
+54 0 1
+D0
+Despair Boulevard.
+~
+~
+0 0 5450 0
+D2
+Despair Boulevard.
+~
+~
+0 0 5490 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5471
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5451 0
+D1
+Market Plaza.
+~
+~
+0 0 5472 0
+S
+#5472
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5452 0
+D3
+Market Plaza.
+~
+~
+0 0 5471 0
+S
+#5473
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+~
+~
+0 0 5453 0
+D2
+~
+~
+0 0 5493 0
+S
+#5474
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5454 0
+D1
+A Rent House.
+~
+gate~
+1 -1 5475 0
+D2
+Circle Drive.
+~
+~
+0 0 5494 0
+S
+#5475
+The Porch~
+   This is the favorite place for the elderly Banthys to sit and talk with
+the people that pass by. There is a couple of very nice rocking chairs
+here with a table between them for holding food or drinks that they bring
+out to entertain their guests with. There is a intricately woven rug
+under the table.
+~
+54 0 1
+D1
+The front door to the house lies to the east
+~
+door~
+1 0 5476 0
+D3
+Circle Drive.
+~
+gate~
+1 -1 5474 0
+E
+rug~
+The design on the rug makes your eyes water as you try to follow the
+design as it weaves around the rug. Rubbing your eyes you look away.
+~
+S
+#5476
+The Kitchen~
+   This is where the Banthys spend the portion of their day that they do
+not spend visiting with their friends. The counters here are covered with
+the purchases of the day. Onions, garlic, radishes, and other vegetables
+lie here waiting to be put together in some fabulous recipe. To the
+north is the living room and to the west is the porch area.
+~
+54 d 1
+D0
+The Living Room.
+~
+door~
+1 -1 5456 0
+D3
+The front door lies to the west.
+~
+door~
+1 0 5475 0
+S
+#5477
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5457 0
+D2
+Circle Drive.
+~
+~
+0 0 5497 0
+S
+#5478
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+54 0 1
+D0
+Good Street.
+~
+~
+0 0 5458 0
+D2
+Good Street.
+~
+~
+0 0 5498 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5479
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5459 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5499 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5480
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+~
+~
+0 0 5460 0
+D2
+~
+~
+0 0 5500 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5481
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+54 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5461 0
+D1
+~
+~
+0 0 5482 0
+D2
+~
+~
+0 0 5501 0
+S
+#5482
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5462 0
+D1
+Independence Avenue.
+~
+~
+0 0 5483 0
+D2
+Independence Avenue.
+~
+~
+0 0 5502 0
+D3
+~
+~
+0 0 5481 0
+S
+#5483
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+Independence Avenue.
+~
+~
+0 0 5484 0
+D3
+Independence Avenue.
+~
+~
+0 0 5482 0
+S
+#5484
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5464 0
+D1
+Independence Avenue.
+~
+~
+0 0 5485 0
+D2
+Independence Avenue.
+~
+~
+0 0 5504 0
+D3
+Independence Avenue.
+~
+~
+0 0 5483 0
+S
+#5485
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+Independence Avenue.
+~
+~
+0 0 5486 0
+D3
+Independence Avenue.
+~
+~
+0 0 5484 0
+S
+#5486
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+Independence Avenue.
+~
+~
+0 0 5487 0
+D3
+Independence Avenue.
+~
+~
+0 0 5485 0
+S
+#5487
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+Independence Avenue.
+~
+~
+0 0 5488 0
+D3
+Independence Avenue.
+~
+~
+0 0 5486 0
+S
+#5488
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+Independence Avenue.
+~
+~
+0 0 5489 0
+D3
+Independence Avenue.
+~
+~
+0 0 5487 0
+S
+#5489
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+54 0 1
+D1
+~
+~
+0 0 5490 0
+D3
+Independence Avenue.
+~
+~
+0 0 5488 0
+S
+#5490
+Despair Boulevard~
+   A growing sense of evil fills the air. The air seems thick and does not
+let you pass through easily. Beggars come to this place to try to squease
+a dime or two from the few people that pass by. As you continue down the
+boulevard, you become increasingly aware that the source of the evil lies
+near the church. Despair Boulevard continues north to the city gates and
+south toward the church.
+~
+54 0 1
+D0
+Despair Boulevard.
+~
+~
+0 0 5470 0
+D1
+Market Plaza.
+~
+~
+0 0 5491 0
+D2
+Despair Boulevard.
+~
+~
+0 0 5510 0
+D3
+~
+~
+0 0 5489 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5491
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D1
+Market Plaza.
+~
+~
+0 0 5492 0
+D3
+Despair Boulevard.
+~
+~
+0 0 5490 0
+S
+#5492
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D1
+Market Plaza.
+~
+~
+0 0 5493 0
+D3
+Market Plaza.
+~
+~
+0 0 5491 0
+S
+#5493
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+54 0 1
+D0
+~
+~
+0 0 5473 0
+D2
+Market Plaza.
+~
+~
+0 0 5513 0
+D3
+Market Plaza.
+~
+~
+0 0 5492 0
+S
+#5494
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5474 0
+D1
+Circle Drive.
+~
+~
+0 0 5495 0
+D2
+Circle Drive.
+~
+~
+0 0 5514 0
+S
+#5495
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D1
+Circle Drive.
+~
+~
+0 0 5496 0
+D3
+Circle Drive.
+~
+~
+0 0 5494 0
+S
+#5496
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D1
+Circle Drive.
+~
+~
+0 0 5497 0
+D3
+Circle Drive.
+~
+~
+0 0 5495 0
+S
+#5497
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+54 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5477 0
+D1
+Good Street.
+~
+~
+0 0 5498 0
+D2
+~
+~
+0 0 5517 0
+D3
+Circle Drive.
+~
+~
+0 0 5496 0
+S
+#5498
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+54 0 1
+D0
+Good Street.
+~
+~
+0 0 5478 0
+D2
+Good Street.
+~
+~
+0 0 5518 0
+D3
+Circle Drive.
+~
+~
+0 0 5497 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5499
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+54 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5479 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5519 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+$~

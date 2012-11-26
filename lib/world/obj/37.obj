@@ -1,0 +1,620 @@
+#3700
+keyring keys heavy~
+the jailer's heavy keyring~
+The jailer's heavy keyring lies here waiting to be claimed.~
+~
+15 cd a 0 
+15 0 -1 0 9
+5 0 0
+E
+keyring heavy keys~
+A large circular hoop of steels, irregular and worn with heavy use, holds the
+jailer's keys to the three dungeons. Looking at the keys you find that one has
+a brass handle, another a copper handle, and the last a steel handle. Each
+key made to match its lock.
+~
+#3701
+brass key~
+a {Ybrass{x handled key~
+A key with a simple{Y brass {xhandle has been left here carelessly.~
+~
+18 cd a 0 
+0 0 0 0 1
+2 0 0
+E
+brass key~
+A simple key with a simple {Ybrass{x handle is all that you see before you.
+~
+#3702
+copper key~
+a {ycopper{x handled key~
+A simple key with a {ycopper{x handle has been left here carelessly.~
+~
+18 cd a 0 
+0 0 0 0 12
+2 0 0
+E
+copper key~
+A simple key with a simple {ycopper{x handle is all that you see before you.
+~
+#3703
+steel key~
+a {Wsteel{x handled key~
+A simple key with a {Wsteel{x handle has been left here carelessly.~
+~
+18 cd a 0 
+0 0 0 0 9
+2 0 0
+E
+steel key~
+A simple key with a simple {Wsteel{x handle is all that you see before you.
+~
+#3704
+key~
+the gate key~
+The gate key lies here unused.~
+~
+18 cd a 0 
+0 0 0 0 9
+2 0 0
+E
+gate key~
+The gate key to Caryllion's stronghold of power looks very unassuming in its
+plain steel form. Made to illude any theif into thinking it unimportant, the
+power that lies behind this key is immense.
+~
+#3705
+bejewelled key~
+a {Mb{Be{Wj{Ye{Gw{Re{Ml{Bl{We{Yd{x vault key~
+A {Mb{Be{Wj{Ye{Gw{Re{Ml{Bl{We{Yd{x vault key has been left here carelessly.~
+~
+18 cd a 0 
+0 0 0 0 15
+0 0 0
+E
+bejewelled key~
+You see a heavy gold key, encrusted with rubies, diamonds and other precious
+stones glitter in its full glory as you twist it in the light admiringly. It
+seems odd that this key should belong to such a mundane lock as the one that
+protects that vault and its contents.
+~
+#3706
+chest small gilded~
+a small {Ygilded{x chest~
+A small {Ygilded{x chest sits quietly on a shelf protecting its contents.~
+~
+15 0 0 0 
+5 5 -1 0 15
+9 0 0
+E
+chest small gilded~
+This small chest is no match for its jewel encrusted neighbours in wealth. Small
+in size and wealth it sits quietly among the many treasures that lie in this
+vault, safely protecting its own contents.
+~
+#3707
+small credit note parchment crowleyowner~
+a small piece of parchment~
+A {Rcredit{x note on a small piece of parchment lies here unassumingly.~
+~
+16 cd a 0 
+0 0 0 0 19
+2 0 0
+E
+credit note parchment~
+This small unassuming piece of yellowing parchment is worht far more money
+that it's looks would hint at. Reading carefully you come across the words...
+
+   "... a signed credit note, redeemable at Crowley's coffee house,
+    for the sum of 5,000 gold coins, upon presentation of this note..."
+~
+#3708
+gold coins~
+{wa small mountain of silver{x~
+{wa small mountain of silver{x~
+~
+20 0 a 0 
+0 0 100 0 15
+5 0 0
+E
+gold coins~
+A small mountain of coins lies here waiting to be claimed in their glittering
+glory.
+~
+#3709
+pouch small velvet~
+a small {bvelvet{x pouch~
+A small {bvelvet{x pouch tied with gold cords hangs from a shelf.~
+~
+15 0 a 0 
+10 0 -1 0 0
+10 50 20
+E
+pouch velvet small~
+Made of a {broyal blue{x velvet and threaded through at the top with a gold thread
+of thin string, this small pouch would not be useful for carrying much other
+than the jewels it was made to carry.
+~
+#3710
+large brilliant diamond~
+{wa large brilliant cut {Wdiamond{x~
+A large brilliant cut diamond has been casually left here.~
+~
+8 0 a 0 
+0 0 0 0 16
+10 3500 1500
+E
+large brilliant diamond~
+Glittering in the sparkling light, this is truly a beautiful object. As you
+twist the jewel about in your hand you watch as the rainbow of colors dance
+happily in the light. You ponder quietly at the fortune that this jewel is
+worth and smile inside.
+~
+#3711
+keg beer~
+a beer keg~
+A beer keg has been left here waiting to be consumed.~
+~
+17 0 ao 0 
+30 25 1 0 5
+30 100 20
+E
+keg beer~
+Small and compact this keg of beer would prove to be any merry drinker's 
+soulmate. Filled with base quality beer it is cheap and popular with the
+patrons of many an inn.
+~
+#3712
+barrel wine~
+a barrel of {rwine{x~
+A small barrel of poor quality {rwine{x sits here enticingly.~
+~
+17 0 ao 0 
+25 15 2 0 5
+15 120 20
+E
+barrel wine~
+This stout barrel of poor quality {rwine{x is stamped with the insignia of a large
+trading house in Weirvane. Its contents are commonly found throughout the 
+taverns of the realms' poor quarters, not much unlike the common room of this
+establishment.
+~
+#3713
+chain small gold~
+a small {Ygold chain{x~
+A small {Ygold chain{x has been casually tossed aside here.~
+~
+15 cd ac 0 
+5 0 -1 0 0
+5 0 0
+E
+small gold chain~
+Crafted with a great deal of care and precision, this small chain of gold
+would sit very nicely around the neck of a beautiful woman. With a small
+clasp set with 3 precious stones, you notice that it would take a small
+fortune to have had it made.
+~
+#3714
+white broad apron~
+a broad {Wwhite{x apron~
+A broad {Wwhite{x apron lies crumpled in a small heap here.~
+~
+9 0 al 0 
+3 0 0 0 3
+4 200 20
+E
+white broad apron~
+Broad to cover the expanse of the head cook's wide hips, this apron was made
+of a sturdy {Wwhite{x material. Looking as if it would withstand any spill in the
+kitchen, its blinding purity of color is nothing short of brilliant.
+~
+#3715
+white dove quill~
+{Wa white dove's feather quill{x~
+A {Wwhite dove's feather quill{x lies elegantly on the floor.~
+~
+21 b ao 0 
+0 0 0 0 1
+2 350 50
+E
+white dove quill~
+Elegant and graceful in its gentle curves, this feather is of the most
+beautiful white. Made from the carefully selected feather of a dove, the
+value of such an item is immeasurable to the proud scholar who should own
+such an instrument.
+~
+A
+3 2
+#3716
+dark leather purse~
+{Da dark leather purse{x~
+{DA dark leather purse{x is lying before you.~
+~
+15 0 ao 0 
+25 5 -1 0 20
+3 500 25
+#3717
+pile coins~
+{Ya small pile of gold{x~
+{Ya small pile of gold{x~
+~
+20 0 a 0 
+0 13 0 0 15
+5 0 25
+#3718
+woven arm plates~
+a set of woven {ybronze{x arm plates~
+A set of woven {ybronze{x arm plates is lying before you.~
+~
+9 0 ai k 
+5 0 0 0 13
+6 2500 75
+#3719
+ring truth~
+a ring of {gtruth{x~
+A ring of {gtruth{x shines brilliantly here.~
+~
+1 aku abo 0 
+0 0 -1 0 29
+4 50000 1200
+E
+ring truth~
+This shimmering circle of light captured and tamed is ancient by any measure.
+Glowing in its own warm energies, it chases away the shadows from even the
+furthest corner of the room, to fill it with the light of day. Wrought from
+the purest of light by the hand of a master magician, the simple ring is truly
+a treasure.
+~
+A
+19 1
+#3720
+crystal sword blade~
+{Wa crystal sword{x~
+A pale, almost transluscent blade winks and disappears here.~
+~
+5 0 an 0 
+3 5 6 3 27
+12 35000 120
+E
+crystal sword~
+This blade was surely made by no blacksmith. The thin crystal blade that 
+stands proudly, glistening in the sunlight has been tempered by some magical
+force. The handle of strengthened gold, simple in design is just as brilliant
+as the blade that it holds.
+~
+A
+18 1
+#3721
+moonstone earring~
+a {bmoon{Bstone{x earring~
+A {bmoon{Bstone{x earring radiates its {Rr{Ya{Gi{Bn{Wb{mo{gw{x of colors in the corner.~
+~
+9 u aq 0 
+0 0 0 0 6
+5 5000 50
+E
+moonstone earring~
+Made from an odd stone that shimmers in the moonlight alone, this earring is
+an artifact from an age long gone. Delicate weaves of hair thin gold strands
+entwine themselves about circular stones to create this truly beaituful item.
+~
+A
+5 1
+#3722
+heavy cudgel~
+a heavy cudgel~
+A heavy cudgel rests on the ground.~
+~
+5 0 an 0 
+0 3 4 8 8
+16 1500 80
+E
+heavy cudgel~
+This heavy iron cudgel was made crudely by a crude craftsman. The handle is 
+raw and unfinished with splinters down the sides. The head of the weapon is
+fashioned simply, designed so that the sheer weight of the thing is the only
+factor that the user needs to cause damamge to someone else's skull.
+~
+#3723
+red ball~
+a {Rred{x ball~
+A {Rred{x ball lies carelessly here without an owner.~
+~
+12 0 ao 0 
+0 0 0 0 20
+4 300 30
+E
+red ball~
+This is a simple child's toy made crudely by a loving father most likely.
+Made from a soft leather dyed red and stuffed with rags till it was hard,
+this ball is sure to provide hours of entertainment as well as teach any
+person how to be more agile.
+~
+A
+6 1
+#3724
+tattered rag doll~
+a tattered {mrag{x doll~
+A tattered {mrag{x doll lies here waiting for her owner.~
+~
+12 0 ao 0 
+0 0 0 0 3
+4 200 20
+E
+tattered rag doll~
+The tiny painted face smiles back at you with ruby red lips and jet black
+eyes. Little braids of yellow yarn make up the mop of hair that she sports,
+and a small pink dress covers her unwieldy limbs of cloth.
+~
+A
+9 -1
+#3725
+flask grey cloudy~
+{Da cloudy grey flask{x~
+A small grey flask has been left here.~
+~
+10 0 a 0 
+50 94 0 0 18
+5 8334 0
+P
+stoneskin
+#3726
+helmet steel~
+{wa {rred {wand {ygold {wsteel helmet{x~
+A plain looking helmet has been left here.~
+~
+9 m ae g 
+6 0 0 0 9
+12 7500 0
+#3727
+breastplate steel~
+{wa {rred {wand {ygold {wsteel {wbreastplate{x~
+A plain looking breastplate has been left here.~
+~
+9 m ad f 
+6 0 0 0 9
+20 7500 0
+A
+18 1
+#3728
+vambraces steel~
+{wa pair of {rred {wand {ygold {wsteel {wvambraces{x~
+A pair of plain looking vambraces have been left here.~
+~
+9 m ai k 
+6 0 0 0 9
+12 7500 0
+#3729
+gauntlets steel~
+{wa pair of {rred {wand {ygold {wsteel {wgauntlets{x~
+A pair of plain looking gauntlets have been left here.~
+~
+9 m ah j 
+6 0 0 0 9
+12 7500 0
+A
+19 1
+#3730
+longsword sword regulation~
+{wa {ya regulation {wlongsword{x~
+A dull looking longsword has been dropped on the ground.~
+~
+5 m an 0 
+3 3 6 3 9
+9 5000 0
+A
+19 1
+A
+2 -3
+#3731
+greaves steel~
+{wa pair of {rred {wand {ygold {wsteel {wgreaves{x~
+A pair of plain looking greaves have been dropped here.~
+~
+9 m af h 
+6 0 0 0 9
+12 7500 0
+A
+25 5
+#3732
+boots steel~
+{wa pair of {rred {wand {ygold {wsteel {wboots{x~
+A plain pair of boots have been dropped here.~
+~
+9 m ag i 
+6 0 0 0 9
+12 7500 0
+A
+27 5
+#3733
+shield steel~
+{wa {rred {wand {ygold {wsteel {wshield{x~
+A plain looking shield is lying here.~
+~
+9 m aj l 
+6 0 0 0 9
+18 7500 0
+A
+18 1
+#3734
+band platinum~
+{Wan engraved platinum band{x~
+A small platinum ring lies here.~
+~
+11 g ab 0 
+0 0 0 0 15
+1 5000 500
+A
+6 2
+#3735
+boots leather~
+{ya pair of stout leather boots{x~
+A pair of well worn boots rest here.~
+~
+9 g ag i 
+7 0 0 0 20
+8 1000 100
+#3736
+shirt paisley puprle~
+{ma purple {Mp{ma{Mi{ms{Ml{me{My{m shirt{x~
+A delicate purple shirt lies on the ground.~
+~
+11 g ad 0 
+0 0 0 0 3
+3 100 0
+A
+26 10
+#3787
+coffee cup steaming~
+a steaming cup of {ycoffee{x~
+A white porcelain cup of coffee has been placed on the ground.~
+~
+17 0 a 0 
+6 6 12 0 26
+11 45 10
+#3788
+roast plate pork~
+a plate of roast pork and vegetables~
+A delicious looking plate of roast pork sits here.~
+~
+19 0 a 0 
+9 0 0 0 2
+3 80 50
+#3789
+steak pie kidney~
+{ya steak and kidney pie{x~
+A steaming pie sits here.~
+~
+19 0 a 0 
+12 0 0 0 2
+3 50 5
+#3790
+cup coffee~
+a cup of steaming coffee~
+A cup of steaming hot coffee sits here waiting to be consumed.~
+~
+17 d a 0 
+6 6 12 0 1
+11 50 10
+E
+cup coffee~
+This small white cup stands stoutly in it neat little saucer. Tiny tendrils
+of steam rise from the freshly brewed cup to fill your nostrils with its
+delicate and inviting aroma.
+~
+#3791
+pistachio tea~
+a cup of {Gpistachio{x tea~
+A small tea cup filled with hot {Bpistachio{x tea sits idly on the table.~
+~
+17 d a 0 
+5 5 11 0 1
+70 80 10
+E
+pistachio tea~
+A neat little white teacup of fine porcelin sits daintly on its delicate 
+saucer. The freshly brewed tea that lies within sends its faint scent of
+pistachio into the air to tickle at your tastebuds.
+~
+#3792
+jug peach tea~
+a jug of peach ice tea~
+A jug of peach ice tea waits here while drops of cool water collect on it.~
+~
+17 0 a 0 
+15 10 11 0 1
+15 80 20
+E
+jug peach tea~
+The pale even brown of the tea can be seen easily through the heavy glass
+of the jug. Chilled slightly, the warm air has caused small drops of cool
+water to form around the sides of the jug.
+~
+#3793
+slice teacake~
+a slice of teacake~
+A slice of pale yellow teacake waits here enticingly.~
+~
+19 d a 0 
+5 0 0 0 1
+5 45 45
+E
+slice teacake~
+Topped with a small layer of cream cheese icing and poppyseeds, this small
+slice of teacake looks very inviting. Hardly filling though, it would take 
+many a slice to fill any person up.
+~
+#3794
+stout mug ale~
+a stout mug of ale~
+A stout mug of frothy ale lies here untouched.~
+~
+17 0 a 0 
+10 10 3 0 18
+15 75 10
+#3795
+goblet wine~
+{wa small goblet of {rwine{x~
+A small goblet of wine stands waiting to be consumed here.~
+~
+17 0 a 0 
+10 8 2 0 0
+13 85 30
+E
+goblet wine~
+This small goblet has been made of a cheap pewter that was polished so that
+it would glisten in the dim candlelight that illuminates Mitress Alyss' Inn.
+A small insignia, carrying the coat of arms of Caryllion has been emblazoned
+on the shiny surface.
+~
+#3796
+shot whisky~
+a shot of whisky~
+A small shot of whisky waits enticingly at the bar.~
+~
+17 0 a 0 
+6 6 5 0 0
+9 90 25
+E
+shot whisky~
+The pungent aroma of the whisky is as much a part of the tiny shot glass as
+the glass itself is a part of the whisky. With or without the vile smelling
+substance within it that is sold as whisky, the aroma still lingers.
+~
+R
+4 30
+#3797
+deep blue cocktail~
+a {bdeep {Bblue {xcocktail~
+An expensive glass of Caryllion's famous {bdeep {Bblue {xcocktail lies here.~
+~
+17 0 a 0 
+12 12 8 0 0
+17 500 50
+E
+deep blue cocktail~
+Brewed in a single secret location within the Isle of Caryllion, this local
+speciality is reknowned for its {bdeep {Bblue {xcomplexion. It is rumoured
+among the many lands that this illustrious drink fortifies the drinker's
+strength and courage.
+~
+A
+1 5
+#3799
+fountain pristine white stone~
+a fountain of {Wpristine white stone{x~
+A fountain of {Wpristine white stone{x waits here to quench the thirsty.~
+~
+23 e 0 0 
+999999 999999 15 0 6
+1000004 0 0
+E
+pristine white stone fountain~
+Made of the same pristine white stone from which Caryllion's famous towers
+were carved, this fountain is here to quench the thirst of the poor and 
+wealthy alike. The beauty of the stone itself is brilliant, enhanced by the
+gracious flowing lines that have been carved out of it. You wonder at the
+great talents needed to work the stunning living sculpture that you see 
+before you. 
+~
+$~

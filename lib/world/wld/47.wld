@@ -1,0 +1,779 @@
+#4700
+A Trampled Patch Of Grass~
+   You are in a large open field, the grass has been squashed into the mud
+by many hundreds of feet walking over it. There are many deep cart tracks in
+the mud, criss crossing the entire field. Nearby you can hear the bustling
+sound of many people moving about and the creaking of a temporary structure
+shifting in the wind.  
+~
+47 0 2
+D2
+~
+~
+0 0 4701 0
+S
+#4701
+Before A Large Tent~
+   Large wagon wheeled carts are parked in a huge circle here, creating the
+atmosphere of a travelling village. There are many people running to and
+fro carrying coils of rope and planks of wood to the main tent. The animal
+trainers stand aside, practicing their technique with long leather whips. 
+Many of the crowd are part of the show, but many have heard of the wonders
+inside, and have travelled from miles around to see them with their own eyes.
+To the east, there is a narrow path leading towards the tent.
+~
+47 0 1
+D0
+~
+~
+0 0 4700 0
+D1
+~
+~
+0 0 4702 0
+S
+#4702
+In A Small Walkway~
+   Thick ropes tied to barrels create a small walkway here, funnelling
+people into a single file line. Directly to the east the huge canvas walls
+of the main tent rise towards the sky, casting an enormous shadow over this
+whole area. From inside you can hear the gasps, screams and laughter of 
+people making their way through the show. As you approach the ticket vendor,
+you can't help but notice the overpowering stench of alcohol hanging like a 
+cloud in the air.
+~
+47 0 2
+D1
+~
+~
+0 0 4703 0
+D3
+~
+~
+0 0 4701 0
+S
+#4703
+Inside The Tent~
+   The light is murky inside this monstrous tent. A series of small lanterns
+are suspended from a rope high in the air, but they do little to help. The
+atmosphere, however, is alive with anticipation of what eccentricities and
+abnormalities lie within these walls. Groups of people slowly meander about,
+whispering to one another about what they have just seen, while in the
+background there is always the booming sound of Bugblat himself advertising
+his many and varied attractions. The combination of a packed walkway of 
+sweating bodies and the hot lanterns dripping oil from above, makes it 
+nearly impossible to breathe in here, and with the crushing bodies it is 
+difficult to move very far.
+~
+47 0 0
+D0
+~
+~
+0 0 4704 0
+D3
+A rope barrier is preventing your passage out this door.
+~
+rope~
+2 0 4702 0
+S
+#4704
+A Small Path~
+   The crowd is even thicker on this side of the tent, as people push and 
+shove their way to the exit. The general flow of traffic is northwards as 
+everyone heads to the path on which the exhibits are situated. The stench 
+from piles of horse manure and urine that cover the ground makes it almost 
+unbearable to stand here, and with each gust of air a new wave of foul 
+odors overcomes you. In the center of this part of the tent is a large 
+platform that has been roped off. There are immense lanterns hanging over 
+it with shiny steel bowls over them like hoods, casting spotlights down 
+onto the stage. The platform is currently unoccupied, but it is clear that 
+something exciting will happen here later on.
+~
+47 0 0
+D0
+~
+~
+0 0 4705 0
+D2
+~
+~
+0 0 4703 0
+S
+#4705
+The North-West Corner Of Carnival Way~
+   You are standing at the western end of a long wide path. The light here
+is dramatically better, so there can be no chance of mistaking what you see.
+As you look down the path, small groups of people stand huddled outside each
+cage, and trainers stand proud, each exclaiming how remarkable their exhibit
+is.  
+~
+47 0 0
+D1
+~
+~
+0 0 4706 0
+D2
+~
+~
+0 0 4704 0
+S
+#4706
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+To the south, you see what appears to be a side-show, as you look closer,
+you see it to be a game proclaiming to win you many riches.
+~
+47 0 0
+D1
+~
+~
+0 0 4708 0
+D2
+~
+~
+0 0 4707 0
+D3
+~
+~
+0 0 4705 0
+S
+#4707
+A Tacky Sideshow Booth~
+An unfinished room
+~
+47 0 0
+D0
+~
+~
+0 0 4706 0
+S
+#4708
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D0
+~
+~
+0 0 4709 0
+D1
+~
+~
+0 0 4710 0
+D3
+~
+~
+0 0 4706 0
+S
+#4709
+A Dark Cave-Like Cage~
+   You find yourself in a very small, dark cage. Thick tree branches are 
+strewn everywhere to try and create the feeling of being in the forsest.
+You see a sliver of light peeking through what appears to be a window in a
+far wall, on cloer inspection you see that is has been shoddily and hastily
+covered with an ill fitting piece of wood to try and block the daylight. 
+~
+47 0 0
+D2
+~
+~
+0 0 4708 0
+S
+#4710
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D1
+~
+~
+0 0 4712 0
+D3
+~
+~
+0 0 4708 0
+S
+#4711
+The Cage Of Feorh, The Two-Horned Unicorn~
+An unfinished room. 
+~
+47 0 0
+D2
+~
+~
+0 0 4712 0
+S
+#4712
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D0
+~
+~
+0 0 4711 0
+D1
+~
+~
+0 0 4713 0
+D3
+~
+~
+0 0 4710 0
+S
+#4713
+The North-East Corner Of Carnival Way~
+   The roadway gently bends here, you wonder what oddities and abnormalities
+the next section of exhitbits may hold. A section of the lighting has fallen
+slightly here, creating some unusual shadows which make you glance twice as
+you look around. Little children run around your feet, as their parents try
+desperatly to control them. 
+~
+47 0 0
+D2
+~
+~
+0 0 4714 0
+D3
+~
+~
+0 0 4712 0
+S
+#4714
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D0
+~
+~
+0 0 4713 0
+D1
+~
+~
+0 0 4732 0
+D2
+~
+~
+0 0 4715 0
+S
+#4715
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D0
+~
+~
+0 0 4714 0
+D2
+~
+~
+0 0 4717 0
+D3
+~
+~
+0 0 4716 0
+S
+#4716
+Bugblat's Freak Show Official Souviner Shop~
+   You are overwhelmed as you walk into this marvelous emporium. Trinkets
+and souviners are stuffed and squashed onto every possible surface. Shelves
+line every inch of wall space, and are overflowing with multi colored dolls,
+and many other weird and wonderful objects. People spend many hours sifting
+through the wares, searching for that perfect souviner.
+~
+47 0 0
+D1
+~
+~
+0 0 4715 0
+S
+#4717
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D0
+~
+~
+0 0 4715 0
+D2
+~
+~
+0 0 4718 0
+S
+#4718
+The South-East Corner of Carnival Way~
+An unfinished room
+~
+47 0 0
+D0
+~
+~
+0 0 4717 0
+D1
+~
+~
+0 0 4719 0
+D3
+~
+~
+0 0 4721 0
+S
+#4719
+The Den of Talisha, The Zebra Striped Tiger~
+An unfinised room
+~
+47 0 0
+D3
+~
+~
+0 0 4718 0
+S
+#4721
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D1
+~
+~
+0 0 4718 0
+D3
+~
+~
+0 0 4723 0
+S
+#4723
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D1
+~
+~
+0 0 4721 0
+D2
+~
+~
+0 0 4724 0
+D3
+~
+~
+0 0 4725 0
+S
+#4724
+The Abode Of The Legless Ogre~
+   A rough attempt has been made to convert this cage into a small thatched
+hut. An old wooden table has been pushed into the corner, and piles of food
+remains are balanced precariously ontop of it. The pungent smell of rotting 
+food makes your head spin, and you scout round, looking for the nearest
+exit into fresh air. 
+~
+47 0 0
+D0
+~
+~
+0 0 4723 0
+S
+#4725
+Carnival Way~
+   All around you on this makeshift roadway, people hustle and bustle about.
+Groups shuffle for the best view of the exhibits while still trying to not
+commit the social faux pas of staring. Carnival workers dressed in their
+distinctive multi-colored uniforms scurry everywhere, carrying all manner 
+of supplies, from buckets of water, to coils of rope and crates of food.
+~
+47 0 0
+D1
+~
+~
+0 0 4723 0
+D3
+~
+~
+0 0 4726 0
+S
+#4726
+The End Of Carnival Way~
+   You have come to the end of Carnival Way, and the end of the main section
+of the show. There is a large banner hanging overhead however inviting you 
+to continue to the south to view some more oddities and abnormalities in the
+main attraction of this show, the live Freak Show itself.
+~
+47 0 0
+D1
+~
+~
+0 0 4725 0
+D2
+~
+~
+0 0 4727 0
+S
+#4727
+On A Path To The Main Show Ring~
+   You find yourself shuffling down a narrow, badly lit walkway. As compared
+to the rest of the show grounds, this seems quite dingy and not as well
+kempt. Peices of rubbish litter the ground here, creating quite a colorful
+carpet. Just a little way south you can see the edge of the large spectator
+stands that surround the show ring.
+~
+47 0 0
+D0
+~
+~
+0 0 4726 0
+D2
+~
+~
+0 0 4728 0
+S
+#4728
+Before The Main Show Ring~
+An unfinished room.
+~
+47 0 0
+D0
+~
+~
+0 0 4727 0
+D2
+~
+~
+0 0 4729 0
+S
+#4729
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D0
+~
+~
+0 0 4728 0
+D1
+~
+~
+0 0 4731 0
+D2
+~
+~
+0 0 4734 0
+D3
+~
+~
+0 0 4730 0
+S
+#4730
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.   
+~
+47 0 0
+D1
+~
+~
+0 0 4729 0
+D2
+~
+~
+0 0 4733 0
+S
+#4731
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D2
+~
+~
+0 0 4735 0
+D3
+~
+~
+0 0 4734 0
+S
+#4732
+The Haunted House Of The Skeleton Warrior~
+   As you enter this dark and dank cage, you peer around yourself, checking
+for the location of the nearest way out. The shadows in here make it hard
+to see exactly what lurks in the corners. You hear a strange shuffling 
+sound coming from above you in the ceiling, almost as if there were people
+walking around, trying not to be heard.
+~
+47 0 0
+D3
+~
+~
+0 0 4714 0
+S
+#4733
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D0
+~
+~
+0 0 4730 0
+D1
+~
+~
+0 0 4734 0
+D2
+~
+~
+0 0 4737 0
+S
+#4734
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D0
+~
+~
+0 0 4729 0
+D1
+~
+~
+0 0 4735 0
+D2
+~
+~
+0 0 4738 0
+D3
+~
+~
+0 0 4733 0
+S
+#4735
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D0
+~
+~
+0 0 4731 0
+D2
+~
+~
+0 0 4739 0
+D3
+~
+~
+0 0 4734 0
+S
+#4737
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D0
+~
+~
+0 0 4733 0
+D1
+~
+~
+0 0 4738 0
+D2
+~
+~
+0 0 4742 0
+S
+#4738
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D0
+~
+~
+0 0 4734 0
+D1
+~
+~
+0 0 4739 0
+D3
+~
+~
+0 0 4737 0
+S
+#4739
+In The Show Ring~
+   You stand in the main show ring of Bugblat's Travelling Freak Show, 
+as you look around you feel like somewhat of a exhibition yourself, as
+you notice the large spectator stands towering upward all around the 
+edges of the ring. Each step you take is cushioned by the thick layer
+of damp sawdust underfoot. The same sawdust gives out a rather distinct
+odor, and the footprints in it other than your own make you wonder what
+else is on show here.
+~
+47 0 0
+D0
+~
+~
+0 0 4735 0
+D2
+~
+~
+0 0 4740 0
+D3
+~
+~
+0 0 4738 0
+S
+#4740
+Infront Of A Holding Pen~
+   Infront of you lie two large and very sturdy looking wooden gates.
+The ground here has been torn up by some sort of large animal, probably
+whatever is locked up behind the gates. As you inspect the old rusty bolt
+holding the gates shut, you realise that it is indeed old, and rusty, and
+not very strong.
+~
+47 0 0
+D0
+~
+~
+0 0 4739 0
+D1
+Two large wooden gates block any exit to the east.
+~
+gate~
+1 0 4741 0
+S
+#4741
+In A Large Holding Pen~
+   This large pen has been made roughly from a number of poles driven
+deep into the ground, and planks of timber being lashed to them to 
+provide the walls. It does not look very secure, however it seems to 
+serve its purpose of temporarily housing some of the show exhibits before
+Bugblat and his trainers lead them to the ring to star in the show.
+~
+47 0 0
+D3
+~
+~
+0 0 4740 0
+S
+#4742
+Infront Of A Holding Pen~
+   Infront of you lie two large and very sturdy looking wooden gates.
+The ground here has been torn up by some sort of large animal, probably
+whatever is locked up behind the gates. As you inspect the old rusty bolt
+holding the gates shut, you realise that it is indeed old, and rusty, and
+not very strong.
+~
+47 0 0
+D0
+~
+~
+0 0 4737 0
+D3
+You see two large, well used gates.
+~
+gate~
+1 0 4743 0
+S
+#4743
+A Large Holding Pen~
+   This large pen has been made roughly from a number of poles driven
+deep into the ground, and planks of timber being lashed to them to 
+provide the walls. It does not look very secure, however it seems to 
+serve its purpose of temporarily housing some of the show exhibits before
+Bugblat and his trainers lead them to the ring to star in the show.
+~
+47 0 0
+D1
+~
+~
+0 0 4742 0
+S
+$~

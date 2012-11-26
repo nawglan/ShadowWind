@@ -1,0 +1,123 @@
+#14200
+morningstar~
+an obsidian morningstar~
+An obsidian morningstar is carelessly tossed here.~
+~
+5 a an 0 
+0 5 4 10 6
+5 180000
+#14201
+dagger~
+a double-edged dagger~
+A double-edged dagger gleams in the light.~
+~
+5 a an 0 
+2 5 4 12 11
+5 15000
+#14202
+iron rations~
+some iron rations~
+Some iron rations lie here looking tasty.~
+~
+19 0 a 0 
+20 0 0 0 2
+1 50
+#14203
+leg lamb~
+a leg of lamb~
+A leg of lamb was forgotten here, it looks delicious.~
+~
+19 0 a 0 
+20 0 0 0 2
+5 100
+#14204
+potion chartreuse~
+a chartreuse potion~
+A chartreuse potion lays here.~
+~
+10 a a 0 
+50 187 187 187 1
+5 80000
+P
+heal
+P
+heal
+P
+heal
+#14205
+potion dark grey~
+a dark grey potion~
+Adark grey potion lays here.~
+~
+10 a a 0 
+50 133 183 143 0
+5 30000
+P
+armor
+P
+bless
+P
+detect magic
+#14206
+bladder sasquatch~
+{rthe bladder of a {Dsasquatch{x~
+{rA huge {Dsasquatch's {rbladder.{x~
+~
+17 0 ao 0 
+250 250 9 0 0
+0 5000
+#14207
+ale mug~
+a mug of ale~
+A mug of ale sits here.~
+~
+17 0 a 0 
+5 5 1 0 0
+10 20
+#14208
+peanuts~
+some peanuts~
+Some peanuts are scattered here.~
+~
+19 0 0 0 
+1 0 0 0 2
+1 1
+#14209
+plate~
+a titanium breast plate~
+A titanium breast plate lies here, forgotten.~
+~
+9 ag ad f 
+10 0 0 0 11
+5 523000
+#14210
+belt~
+an equipment belt~
+An equipment belt lies here.~
+~
+15 ag al 0 
+30 1 -1 0 20
+5 150000
+A
+17 5
+#14211
+well~
+small stone well~
+{yA small stone well is here at the edge of town.{x~
+~
+23 cdeg 0 0 
+999999 999999 9 0 2
+1000004 0
+#14212
+anklet~
+{gan {Ganklet of free {gmovement{x~
+An anklet of free movement is carelessly tossed on the ground here.~
+~
+11 0 as 0 
+0 0 0 0 11
+3 150000
+A
+2 5
+A
+14 10
+$~

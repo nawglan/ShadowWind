@@ -1,0 +1,396 @@
+#1500
+stick walking~
+{ya walking stick{x~
+{yAn old, gnarled walking stick has been left here.{x~
+~
+12 g ao 0 
+0 0 0 0 5
+8 1000 100
+E
+stick walking~
+As you pick up the stick to take a closer look, you notice you feel better.
+Old aches that have been bothering your for years no longer bother you.
+~
+A
+9 -10
+A
+4 -5
+#1501
+ring copper~
+{ya tiny copper ring{x~
+{yA tiny copper ring has been left here.  You're lucky you could see it!{x~
+~
+12 g ab 0 
+0 0 0 0 12
+1 5000 0
+E
+ring copper~
+It's just a very tiny ring.  It's made of copper.  You do happen to notice 
+some markings.
+~
+E
+markings marking mark writing inscription words~
+The markings are definitly writing, but you can't make out the script.  If 
+only you could, you might get an idea of the ring's purpose.
+~
+A
+9 -3
+#1502
+robe brown old~
+{yan old brown robe{x~
+An old tattered brown robe is laying all heaped up in a pile.~
+~
+9 g ak m 
+1 2 0 0 3
+7 5000 0
+E
+robe brown old~
+It's an old, brown, woolen robe.  When you pick it up, though, it seems 
+lighter than it should.  Interesting.
+~
+A
+20 -2
+#1503
+honey honeycomb comb~
+{Ya chunk of a honeycomb{x~
+{YA big piece of a honeycomb has been left here.  And, oooh! honey!{x~
+~
+19 h ao 0 
+3 0 0 0 2
+1 5 0
+E
+honey honecomb comb~
+It's so tempting. The honey literally drips off the comb. It's a little
+sticky, though, so be sure to wash up after.
+~
+#1504
+wildflowers wild flowers~
+{Ra small bunch of wildflowers{x~
+{RSome gorgeous wildflowers of many colors are growing here.{x~
+~
+12 gk am 0 
+0 0 0 0 4
+2 1000 0
+E
+wildflowers wild flowers~
+Blue, purple, pink, red, yellow, white. All the colors of the rainbow, and
+even some you don't recognize from there. Green leaves and stalks give you a
+very comfortable place to hold these treasure, but it's a tight enough fit
+that your beau is sure to brush your hand as you give them over.
+~
+A
+23 -2
+#1505
+orchid~
+{yan orchid{x~
+{yA beautiful orchid is growing here.{x~
+~
+12 0 aeo 0 
+0 0 0 0 4
+1 3 0
+E
+orchid~
+A pale orchid, tiny steaks of pink accentuating it's white petals, unfolds
+itself for you. Its two leaves drape themselves over your hand and guard it
+against the warm summer rain.
+~
+#1506
+tulip~
+{Wa tulip{x~
+{WA wonderful little tulip has taken root here.{x~
+~
+12 0 aeo 0 
+0 0 0 0 4
+1 1 0
+E
+tulip~
+With its bright yellow petals open and worshipping the sun, the tulip is a
+marvel of beauty and grace. Its long stem and delicate leaves are the perfect
+match or wide petals.
+~
+#1507
+violets violet~
+{ma violet{x~
+{mA small cluster of violets grows here.  You can take one, if you wish.{x~
+~
+12 0 aeo 0 
+0 0 0 0 4
+1 5 0
+E
+violet violets~
+Looking at your handful of violets you are amazed. Small delicate petals, 
+bordered by dark green leaves and filled with the most amazing violet color.
+You can't hold many at once, but the once you hold are more than enough to
+keep you attention for hours.
+~
+#1508
+beehive hive~
+a busy little beehive~
+A honey bees' hive is hanging on a low branch of tree.~
+~
+15 b 0 0 
+20 0 0 0 28
+0 0 0
+E
+beehive hive~
+There are bees all over the hive, but they really don't see to be interested
+in you. Go for it!
+~
+#1509
+fruit strange~
+a strange, rotting fruit~
+There is a strange, rotting fruit here. It has a sickly glaze on it. Ugh!~
+~
+19 h ao 0 
+1 0 0 1 2
+2 0 0
+E
+fruit strange~
+You have never seen anything quite like THIS fruit before.  And you hope you
+never see its likes again.
+~
+#1510
+apple~
+{ra {Rbright {rred apple{x~
+There's a delicious apple hanging from a tree.~
+~
+19 0 a 0 
+6 0 0 0 2
+1 10 0
+E
+apple~
+It's perfect.  The most perfect apple you've ever seen.
+~
+#1511
+orange~
+a round orange~
+There's a delicious orange hanging from a tree here.~
+~
+19 0 a 0 
+6 0 0 0 2
+1 10 0
+E
+orange~
+It's perfect.  The most perfect orange you've ever seen.
+~
+#1512
+pear~
+{ga {Gbright {ggreen pear{x~
+There's a delicious pear hanging from a tree here.  It looks really juicy!~
+~
+19 0 a 0 
+6 0 0 0 2
+1 10 0
+E
+pear~
+It's perfect.  The most perfect pear you've ever seen.
+~
+#1513
+bananas bunch banana~
+{Ya bunch of bananas{x~
+There's a huge bunch of ripe bananas hanging here.~
+~
+19 0 a 0 
+9 0 0 0 2
+1 20 0
+E
+banana bananas bunch~
+They're perfect. The most perfect bunch of bananas you've ever seen.
+~
+#1514
+kiwi fuzzy~
+{Ga fuzzy little {gkiwi {Gfruit{x~
+A fuzzy little kiwi fuit hangs from a branch here.~
+~
+19 0 a 0 
+3 0 0 0 2
+1 10 0
+E
+kiwi fruit~
+It's perfect. The most perfect kiwi fruit you've ever seen.
+~
+#1515
+coconut~
+a hairy coconut~
+There's a coconut hanging in the tree.  I think you can get it if you try.~
+~
+17 0 a 0 
+15 15 10 0 2
+20 10 0
+E
+coconut~
+It's perfect.  The most perfect coconut you've ever seen.
+~
+#1516
+rose white~
+{Wa white rose{x~
+An absolutely incredible white rose has been placed here by the gods.~
+~
+12 0 aeo 0 
+0 0 0 0 4
+1 3 0
+#1517
+fountain water spring~
+a fountain~
+A small natural spring is here.  The water looks so pure!~
+~
+23 0 0 0 
+300 300 15 0 28
+305 0 0
+E
+fountain spring water~
+As look closer at the spring, you notice that the marble basin into which the
+spring flows is flecked with gold, making the sun glitter off the spring and
+giving the water a magical glow.
+~
+#1518
+lily calla~
+{Ra calla lily{x~
+Some calilillies have been placed here by the gods.~
+~
+12 0 aco 0 
+0 0 0 0 4
+1 3 0
+E
+lily calla callalily~
+You gather a group of calilillies and stand mesmerized by their grace.  Long
+stems and pure white petals hold you in awe.
+~
+#1519
+ring wedding band golden~
+{ya {Ygolden {ywedding ring{x~
+Someone has been fooling around, and left their wedding band here.~
+~
+11 g ab 0 
+0 0 0 0 29
+1 1000 0
+E
+ring wedding band golden~
+The symbol of a man's enternal love for a woman.  And a woman's eternal
+devotion to her man.  A sacred object with a heavy weight of responsibility.
+The gods would be displeased if this ring were lost or stolen.
+~
+#1520
+pearls pearl necklace~
+a pearl necklace~
+A string of large, milky white, pearls has been left here.~
+~
+11 0 ac 0 
+0 0 0 0 1
+1 1000 0
+#1521
+armbands dogskin skins dog~
+a set of dogskin armbands~
+A couple of wads of dogskins have been dumped here.~
+~
+11 g i k 
+0 2 0 0 24
+10 2000 500
+A
+17 -4
+A
+13 10
+A
+3 -5
+A
+6 -10
+#1522
+dress green~
+{Ga skin tight, Hunter green dress{x~
+A long, dark green dress has been hung up here.~
+~
+11 g ad f 
+0 2 0 0 3
+10 10000 500
+A
+2 5
+#1525
+shoufa cloth earth tone~
+an earth tone shoufa~
+A dull, ragged looking piece of cloth lies here.~
+~
+9 f ap s 
+1 2 0 0 3
+1 200 0
+#1526
+ring emerald~
+{Gs{gp{Ga{gr{Gk{gl{Gi{gn{Gg {Gemerald ring{x~
+A sparkling little green ring has been hidden in a crack in the floor.~
+~
+11 g ab 0 
+0 0 0 0 1
+2 10000 500
+A
+17 -5
+A
+13 -5
+#1528
+collar silver~
+{wa {Csilver {xcollar~
+A wide silvery colored chain has been tossed into a corner.~
+~
+9 g ac 0 
+2 0 0 0 14
+3 5000 0
+#1532
+earring silver hoop~
+{wa {Csilver {xhoop earring~
+A silver earring is laying here.~
+~
+11 g aq 0 
+0 0 0 0 14
+3 2000 0
+#1533
+earring diamond stud~
+{wa {Wdiamond {xstud earring~
+A tiny little diamond set, wedged into a piece of metal has been left here.~
+~
+11 g aq 0 
+0 0 0 0 16
+1 5000 0
+#1534
+earring ruby gold~
+{wa dangling {Rruby {xearring~
+A rather large cluster of gold and rubies is wadded up here.~
+~
+11 g aq 0 
+0 0 0 0 1
+15 10000 0
+#1535
+bracelet jade silver~
+{wa {Gjade {xstone set in a {Csilver {xbracelet~
+A large circle of silver with a green stone has been forgotten here.~
+~
+11 0 am 0 
+0 0 0 0 14
+10 4000 100
+A
+6 5
+#1537
+nosering ring silver~
+{wa {Csilver {xstud nosering~
+A tiny little silver ball with a point is here.~
+~
+11 0 ap s 
+0 0 0 0 14
+1 10 0
+A
+6 -5
+A
+23 -1
+#1538
+petrified old tree branch~
+{ya petrified old tree branch{x~
+A tree branch long petrified is floating dimly above the surface here~
+~
+5 ag an 0 
+0 2 4 6 5
+8 5000 400
+E
+petrified old tree branch~
+The tree branch is old, and you can count the lines in it, the fine
+tooling of days of old, and then mystified by powers of old.
+~
+A
+1 5
+$~

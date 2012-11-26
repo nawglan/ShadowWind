@@ -1,0 +1,1627 @@
+#12001
+The Chief's Office~
+   You stand in the midst of a large room with windows on the east and south
+walls.  These windows provide a complete view of the surrounding area.
+There are several documents, pencils and other items that are used in the
+course of business sitting on a table.  The only exit is an elegant 
+stairway leading down.
+~
+120 d 0
+D5
+There is a drape hanging across the stairway leading down.
+~
+drape~
+1 -1 12002 0
+E
+pencils pencil~
+A piece of graphite covered with wood.
+~
+E
+documents~
+The documents are writs of ownership and the like.
+~
+S
+#12002
+The Guild Office~
+   This is the best view in the house! You can see all the ships coming
+into port and all the union workers laboring to load and unload those
+ships. There is an elegant stairway leading up and a marble staircase 
+leading down.
+~
+120 d 0
+D4
+A drape is hanging across the stairway leading up.
+~
+drape~
+1 -1 12001 0
+D5
+There is a marble staircase leading down.
+~
+~
+0 -1 12003 0
+S
+#12003
+The Southwest Corner Of The Main Warehouse~
+   This is a large open space randomly filled with boxes.  Many of these
+boxes smell of saltwater, having just been unloaded from one of the ships
+at the docks. The warehouse extends to the north and east. There is a
+marble stairway going up here and a ramp going down.
+~
+120 d 0
+D0
+The warehouse continues.
+~
+~
+0 -1 12015 0
+D1
+The warehouse continues.
+~
+~
+0 -1 12023 0
+D2
+The employee breakroom. 
+~
+~
+0 -1 12004 0
+D4
+Watch your step!
+~
+stairs stairway~
+0 -1 12002 0
+D5
+Watch your step!
+~
+ramp~
+0 -1 12010 0
+E
+box boxes~
+The boxes are mostly made of pine, and many smell like saltwater.
+~
+S
+#12004
+The Small Kitchen~
+   This is the union approved employee break room. There are benches and
+tables available to sit and rest. It seems to be a fairly comfortable
+place to take a break.
+~
+120 d 0
+D0
+Passage to the warehouse.
+~
+~
+0 -1 12003 0
+D1
+There is an acrid smell coming from that direction.
+~
+~
+0 -1 12011 0
+E
+benches tables~
+They are fairly comfortable and well made. They probably cost the company
+quite a bit of many to have made.
+~
+S
+#12005
+The West Gate~
+   You are standing inside of the western gate of Port Halyon. There are two
+tall spires built into the city wall, from which the guards can see the
+whole western side of the city. The gate is currently open allowing people,
+merchants, workers, sailors and marines free entrance to the city. River 
+Avenue leads eastward into the city.
+~
+120 0 1
+D1
+River Avenue leads into the city.
+~
+~
+0 -1 12056 0
+E
+gate~
+The gate is fabricated from iron and has been designed to keep invaders out
+of the city.
+~
+E
+spires towers~
+There are two tall spires on either side of the gate and are constantly mannedby the city guards.  They are made of stone and stand about 40 feet tall.
+~
+S
+#12006
+The Weapons Shop~
+   Welcome to the weaponshop of Able the Blacksmith. Rare halberds, whips, 
+swords and other instruments of death are proudly displayed on the walls 
+and in gleaming glass cases. More common weapons are stacked like wood on 
+the floor. To the north is River Avenue.  There is a very secure looking 
+door to the west.
+~
+120 dh 0
+D0
+You can see River Avenue to the north.
+~
+~
+0 -1 12056 0
+D3
+There is a very secure looking door blocking your progress.  
+~
+door~
+2 12051 12007 0
+E
+swords weapons armor halberds whips~
+Able has enough hardware in here to outfit a large army.  Maybe that's why
+he has a lucrative contract to sell weapons to the king's armies for 
+outrageous prices.
+~
+S
+#12007
+The Back Room~
+   If you thought that there were a lot of weapons in the front of the store,
+you haven't seen anything yet!! There is barely enough room to walk amongst
+the crates of armor and swords. No wonder Halyon will stand for a thousand
+years. The only exit is through a door to the east.
+~
+120 ad 0
+D1
+Through the piles of weapons, you can see a door leading east to the rest of 
+the store.
+~
+door~
+2 12051 12006 0
+E
+weapons swords crates armor weapon sword crate~
+There are literally thousands of each.  Take your pick.
+~
+S
+#12008
+The Supervisor's Office~
+   This is the warehouse workers supervisor's office.  There is a comfortable
+looking desk and chair in here. There is nothing on the desk at the moment.
+There are openings in the walls that allow you to look out into the ware-
+house. The stairway goes down.
+~
+120 d 0
+D5
+Watch your step!
+~
+stairs stairway~
+0 -1 12015 0
+E
+warehouse openings~
+   You can see the entire warehouse from here to see if any employees are
+loafing.
+~
+S
+#12009
+The Northwest Corner Of The Basement~
+   This is the lower area of the basement. It is just as large as the area
+above it. There are boxes down here too, but they are older and musty 
+smelling. This must be where they keep the unclaimed stuff. The warehouse
+continues to the south and east.
+~
+120 d 0
+D1
+The basement continues.
+~
+~
+0 -1 12016 0
+D2
+The basement continues.
+~
+~
+0 -1 12010 0
+E
+box boxes~
+They are old and musty smelling. Nothing really valueable here.
+~
+S
+#12010
+The Southwest Corner Of The Basement~
+   This is the lower area of the basement. It is just as large as the area
+above it. There are boxes down here too, but they are older and musty 
+smelling. This must be where they keep the unclaimed stuff. The warehouse
+continues north and east.
+~
+120 d 0
+D0
+The basement continues.
+~
+~
+0 -1 12009 0
+D1
+The basement continues.
+~
+~
+0 -1 12017 0
+D4
+You see a ramp leading up into the main warehouse.
+~
+~
+0 -1 12003 0
+E
+box boxes~
+They are old and musty smelling. Nothing really valueable here.
+~
+S
+#12011
+The First-Aid Station~
+   This is where workers come if they injure themselves on the job. The 
+union approved doctor and nurse are also union members, therefore they may
+or may not be here. All kinds of medicines and modern medical wonders (such
+as leeches) are here.
+~
+120 d 0
+D1
+The river side entrance dock is that way.
+~
+~
+0 -1 12018 0
+D3
+The employee break room is that way.
+~
+~
+0 -1 12004 0
+E
+leech leeches~
+DISGUSTING!  Each is about the size of matchbox and very slimy.  You are VERY
+glad that you have access to a cleric!
+~
+E
+wonders~
+Just leeches, that's all the wonders really are.
+~
+E
+medicine medicines~
+You have no idea what they do.
+~
+S
+#12012
+On The End Of The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean stretches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D0
+~
+~
+0 0 12069 0
+D2
+~
+~
+0 0 12070 0
+D3
+~
+~
+0 0 12013 0
+S
+#12013
+Before The Passenger Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see. To the north is the arrivals area for
+incoming passenger ships, however access is blocked from here by a sturdy
+gate. Southward lies the the boarding area for departing passengers.  
+~
+120 0 1
+D0
+A sturdy gate prevents you from entering the arrivals area.
+~
+gate~
+2 0 12069 0
+D2
+~
+~
+0 0 12070 0
+D3
+~
+~
+0 0 12019 0
+S
+#12015
+The Northwest Corner Of The Warehouse~
+   This is a large open space randomly filled with boxes.  Many of these
+boxes smell of saltwater, having just been unloaded from one of the ships
+at the docks. The warehouse extends to the south and east.  There is a
+wooden stairway going up.
+~
+120 d 0
+D1
+The warehouse continues.
+~
+~
+0 -1 12022 0
+D2
+The warehouse continues.
+~
+~
+0 -1 12003 0
+D4
+The stairs look safe enough.
+~
+stairs staircase~
+0 -1 12008 0
+E
+box boxes~
+The boxes are mostly made of pine, and many smell like saltwater.
+~
+S
+#12016
+The Northeast Corner Of The Basement~
+   This is the lower area of the basement. It is just as large as the area
+above it. There are boxes down here too, but they are older and musty
+smelling. This must be where they keep the unclaimed stuff. The warehouse
+continues south and west.
+~
+120 d 0
+D2
+The basement continues.
+~
+~
+0 -1 12017 0
+D3
+The basement continues.
+~
+~
+0 -1 12009 0
+E
+box boxes~
+They are old and musty smelling. Nothing really valueable here.
+~
+S
+#12017
+The Southeast Corner Of The Basement~
+   This is the lower area of the basement. It is just as large as the area
+above it. There are boxes down here too, but they are older and musty
+smelling. This must be where they keep the unclaimed stuff. The warehouse
+continues north and west.
+~
+120 d 0
+D0
+The basement continues.
+~
+~
+0 -1 12016 0
+D3
+The basement continues.
+~
+~
+0 -1 12010 0
+E
+box boxes~
+They are old and musty smelling. Nothing really valueable here.
+~
+S
+#12018
+The River Dock Entrance To The Warehouse~
+   This is where shipments are loaded and unloaded from riverboats which
+ferry merchandise to and from the docks. The bonded area is east, and the
+first aid station is to the west.
+~
+120 d 0
+D1
+The bonded area is over there.
+~
+~
+0 -1 12025 0
+D2
+~
+~
+0 0 12057 0
+D3
+An acrid, almost medicinal smell is coming from that direction.
+~
+~
+0 -1 12011 0
+E
+dock docks~
+They are wooden and extend out into the river.
+~
+S
+#12019
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D1
+~
+~
+0 0 12013 0
+D3
+~
+~
+0 0 12026 0
+E
+barge barges~
+They are wide and flat, built for easily navigating the canal. Many are
+loaded or are being loaded with stuff being taken to the ships or to the
+warehouse.
+~
+E
+dock~
+The wooden dock is built next to the canal for east loading and unloading
+of the barges.
+~
+S
+#12021
+The Mayor's House~
+   You stand in a house, the size and splendor of which almost defies the
+imagination. The floor is done with hand crafted marble tile with silver 
+and jeweled inlays. The light coming through the exquisitely crafted stained 
+glass windows bathes the room in splendor and the furniture looks as though
+it was made by master craftsmen from all over the kingdom. A path going 
+east through the estate takes you back into the neighborhood.
+~
+120 cd 0
+D1
+You see a well manicured path that winds through the estate.
+~
+door~
+1 -1 12027 0
+E
+furniture~
+You hope to eventually be able to own a piece of furniture just like these
+someday.  These are only dreams, of course.
+~
+E
+windows~
+They are intricate and the scenes that they depict cast honor on several of
+the gods.
+~
+E
+floor tile~
+Very expensive!  A lot of master craftsmen labored long and hard to produce
+such a work of art.
+~
+S
+#12022
+The Northwest Corner Of The Warehouse~
+   This is a large open space randomly filled with boxes.  Many of these
+boxes smell of saltwater, having just been unloaded from one of the ships
+at the docks. The warehouse extends to the south and west.
+~
+120 d 0
+D2
+The warehouse continues.
+~
+~
+0 -1 12023 0
+D3
+The warehouse continues.
+~
+~
+0 -1 12015 0
+E
+box boxes~
+The boxes are mostly made of pine, and many smell like saltwater.
+~
+S
+#12023
+The Southwest Corner Of The Warehouse~
+   This is a large open space randomly filled with boxes.  Many of these
+boxes smell of saltwater, having just been unloaded from one of the ships
+at the docks. The warehouse extends to the south and west.
+~
+120 d 0
+D0
+The warehouse continues.
+~
+~
+0 -1 12022 0
+D2
+The warehouse entrance.
+~
+~
+0 -1 12024 0
+E
+box boxes~
+The boxes are mostly made of pine, and many smell like saltwater.
+~
+S
+#12024
+East Entrance To Warehouse~
+   You are standing at the east entrance to the Warehouse. There are people
+using this entrance to carry out boxes that recently arrived from a ship,
+or are bringing things here to be carried out on one of the ships.
+~
+120 cd 0
+D0
+The warehouse floor.
+~
+~
+0 -1 12023 0
+D1
+Main Street lies in that direction.
+~
+~
+0 -1 12031 0
+D2
+The bonded area lies in that direction.
+~
+~
+0 -1 12025 0
+S
+#12025
+The Bonded Area~
+   The bonded area is where boxes from certain countries are brought to
+be checked and taxed before being allowed into the country. There is a
+cashbox here where taxes are collected. The street side entrance is to
+the north, and the river side entrance is to the west.
+~
+120 d 0
+D0
+The entrance to the warehouse is that way.
+~
+~
+0 -1 12024 0
+D3
+The river dock used for unloading items from ships is there.
+~
+~
+0 -1 12018 0
+E
+cashbox~
+Sorry friend, but this box is cleared out regularly.
+~
+S
+#12026
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D1
+~
+~
+0 0 12019 0
+D3
+~
+~
+0 0 12047 0
+S
+#12027
+The Wealthy Neighborhood~
+   You are in an extremely wealthy neighborhood. There are many rich looking
+houses in here, most belonging to merchants who have made their fortunes 
+trading with other merchants across the sea. Among them are the mayor's 
+house to the east and the Dock Master's house to the south. All of the lawns
+are well manicured with trees and plants and shrubs.
+~
+120 0 2
+D0
+River Avenue lies in that direction.
+~
+~
+0 -1 12058 0
+D1
+Main Street lies in that direction.
+~
+~
+0 -1 12034 0
+D2
+You see an incredible house in that direction.
+~
+~
+0 -1 12028 0
+D3
+You see an incredible house in that direction.
+~
+door~
+1 -1 12021 0
+E
+trees tree shrubs shrub plants plant~
+All of the plants, trees and shrubs are perfectly trimmed, without so much as 
+a dead leaf anywhere to be seen.  You welcome the shade that they give from 
+the harsh sun above.
+~
+S
+#12028
+The Dock Master's House~
+   You stand in a house, the size and splendor of which almost defies the 
+imagination. The floor is done with hand crafted marble tile with silver 
+and jeweled inlays. The light coming through the exquisitely crafted stained 
+glass windows bathes the room in splendor and the furniture looks as though
+it was made by master craftsmen from all over the kingdom. A path going 
+north through the estate takes you back into the neighborhood.
+~
+120 cd 0
+D0
+You see a well manicured path that winds through the estate.
+~
+~
+0 -1 12027 0
+E
+furniture~
+You hope to eventually be able to own a piece of furniture just like these 
+someday.  These are only dreams, of course.
+~
+E
+windows~
+They are intricate and the scenes that they depict cast honor on several of
+the gods.
+~
+E
+floor tile~
+Very expensive!  A lot of master craftsmen labored long and hard to produce
+such a work of art.
+~
+S
+#12029
+The North Gate~
+   This is the northern gateway to the city of Port Halyon. The huge gate 
+appears to be closed and locked against intrusion. A large road muddy road runs 
+through the gate and into the countryside. Main Street runs south from here.
+~
+120 0 1
+D2
+~
+~
+0 0 12072 0
+E
+road~
+The road is wide and very muddy.
+~
+E
+gate~
+The gate is made of solid iron and is well maintained.
+~
+S
+#12030
+Main Street~
+   You are on North Main Street. To the north lies the main gates of the
+city, while to the south you can see the entrance to one of the cargo
+warehouses. All around, the sound of work fills the air, workers unloading
+and moving cargo, marines on shore leave enjoying themselves, there is
+activity everywhere.  
+~
+120 0 1
+D0
+~
+~
+0 0 12071 0
+D1
+The tavern is under construction.
+~
+~
+0 -1 -1 0
+D2
+Main Street continues in that direction.
+~
+~
+0 -1 12031 0
+S
+#12031
+North Main Street~
+   You are on North Main Street, which runs north and south. North takes 
+you towards the north gate, while south takes you to the North Main Street
+Intersection. To the west is the street entrance to the warehouse. This is 
+where the merchants pick up their goods that have just arrived from across
+the sea.
+~
+120 0 1
+D0
+Main Street continues in that direction.
+~
+~
+0 -1 12030 0
+D2
+The North Main Street Intersection is that way.
+~
+~
+0 -1 12032 0
+D3
+The street entrance of the warehouse.
+~
+~
+0 -1 12024 0
+S
+#12032
+The North Main Street Intersection~
+   You are in the main intersection of town. Main Street runs north and 
+south from here, while Wharf Avenue heads east towards the ocean. To the 
+south is the Main Street Bridge, which goes across the canal.
+~
+120 0 1
+D0
+Main Street heads in the direction of the northern gate.
+~
+~
+0 -1 12031 0
+D1
+Wharf Avenue heads in the direction of the ocean.
+~
+~
+0 -1 12039 0
+D2
+The bridge across the canal.
+~
+~
+0 -1 12033 0
+S
+#12033
+The Main Street Bridge~
+   This bridge crosses the canal beneath you. You can see barges on the 
+canal ferrying merchandise back and forth between the docks and the ware-
+house. Main Street continues north and south, with the North Main Street
+Intersection to the north, and the South Main Street Intersection to the 
+south.
+~
+120 0 1
+D0
+The North Main Street Intersection lies in that direction.
+~
+~
+0 -1 12032 0
+D2
+The South Main Street Intersection lies in that direction.
+~
+~
+0 -1 12059 0
+E
+barge barges~
+They are large and flat, easily carrying large boxes between the warehouse
+and docks.
+~
+E
+canal~
+The canal is wide and fairly shallow, built exactly for the barges travel-
+ling on it.
+~
+S
+#12034
+South Main Street~
+   You are on Main Street, a north-south road the run the length of Port 
+Halyon. To the east is the magic shop, while there is a wealthy looking 
+neighborhood to the west. The south gate is to the south.
+~
+120 0 1
+D0
+Main Street leads in that direction.
+~
+~
+0 -1 12059 0
+D1
+The magic shop is that way.
+~
+~
+0 -1 12042 0
+D2
+The south gate is in that direction.
+~
+~
+0 -1 12035 0
+D3
+It looks like a wealthy neighborhood.
+~
+~
+0 -1 12027 0
+S
+#12035
+The South Gate~
+   This is the southern gateway to Port Halyon. The large gate is closed and 
+locked. Looking through the bars, you see a heavily traveled road leading 
+out of the city. Main Street starts here and runs north.
+~
+120 0 1
+D0
+Main Street leads towards the center of town.
+~
+~
+0 -1 12034 0
+D2
+The gate appears to be closed and locked against intruders.
+~
+gate~
+0 -1 -1 0
+S
+#12036
+The Dock Master's Private Office~
+   You are in the dock master's private office.  The room is richly furnished
+with the finest of the loot brought that organized crime can steal. There is 
+a massive, intricately carved desk here, upon which are important documents, 
+decrees and other paperwork involved in running the syndicate. On the far 
+wall, there is a marble bookcase that is well stocked with the encoded finan-
+cial records of the group. For a crime boss to have an official office so 
+close to the seat of power in this wealthy town, speaks poorly of the ethics
+of the government as a whole. There is a french door leading to the waiting
+room and a wooden door to the south.
+~
+120 d 0
+D1
+Through the door, you see a waiting room.
+~
+door french~
+2 12052 12043 0
+D2
+The south door leads directly to the senate chambers. This man is powerful
+indeed.
+~
+wooden~
+2 12053 12037 0
+E
+bookcase books records~
+They are all in code, you would have no hope of deciphering them.
+~
+E
+documents decrees paperwork document decree papers paper~
+The documents are all written on reed scrolls and have been sealed with wax.  
+~
+E
+desk~
+The desk is made of solid walnut and gold inlay.  It is exquisitely carved 
+with superior craftsmanship, the likes of which has rarely been seen.
+~
+S
+#12037
+The Council Room~
+   This is the working room where elected councilmen from the town gather to 
+make laws concerning the operation of the town. There is a wooden door to the 
+north and a bronze door to the east and doublehung door to the south leading
+to the commitee meeting room.
+~
+120 d 0
+D0
+The door is made of thick walnut.
+~
+wooden~
+2 12052 12036 0
+D1
+The door leads to the foyer.
+~
+bronze~
+1 12053 12044 0
+D2
+The commitee meeting room is in that direction.
+~
+doublehung~
+1 12054 12038 0
+S
+#12038
+The Committee Meeting Room~
+   This is where committee members meet when they are working on a new set of
+laws or a revision of the existing ones. The only exit is to the north.
+~
+120 d 0
+D0
+You see that the doublehung door leads to the Council Room.
+~
+doublehung~
+1 12054 12037 0
+S
+#12039
+Wharf Avenue~
+   You are on a wide well traveled road running east and west through the 
+heart of Port Halyon. The Main Street intersection is to the west and the
+road continues to the east.
+~
+120 0 1
+D1
+Wharf Avenue continues in that direction.
+~
+~
+0 -1 12046 0
+D3
+The Main Street intersection is in that direction.
+~
+~
+0 -1 12032 0
+S
+#12042
+The Mage's Shop~
+   You are standing in the mage's shop.  Magical ointments, charms and potions
+are sitting on shelves and behind a glass counter.  There is a dense neon
+blue fog hugging the floor here, making it impossible to see below your knees.
+There are burn marks and holes all over the walls that you can see. It looks
+like a regular magical war zone.
+~
+120 d 0
+D1
+The door is reinforced with steel and looks VERY sturdy.  Considering the 
+damage to the walls, it is a good thing that it stands between you and
+whatever is going on behind it. 
+~
+door~
+2 12055 12049 0
+D3
+You see Main Street through the door.
+~
+~
+0 -1 12034 0
+E
+fog mist~
+This is some really strange stuff!  You have never seen anything this color
+before.  Your legs are totally obscured from the knee down.
+~
+S
+#12043
+The Waiting Room~
+   You are standing in a very large room with a high ceiling and there are
+a few people waiting here to see the mayor on what they believe to be urgent
+matters. The sign tells you to have a seat and wait for the clerk to call
+you into the office. There are large doors to the east and west and an exit
+leads south to the foyer.
+~
+120 d 0
+D1
+There is a sign on the door that says:  OFFICE OF THE MAYOR.  It appears 
+to be open.
+~
+~
+0 -1 12050 0
+D2
+The foyer is directly to the south.
+~
+~
+0 -1 12044 0
+D3
+There is a large door to the west.
+~
+door~
+2 12052 12036 0
+E
+sign~
+  Please have a seat. When the clerk calls you 
+  into the office state your case briefly and
+  clearly.
+  Thank you for your patience.
+
+                   The Office of the Mayor
+~
+S
+#12044
+The Entrance Foyer~
+   You have just entered the main government building of Port Halyon and 
+are standing in a massive room with an elaborately decorated domed roof.
+There are many people here; messengers and councilmen being the most
+numerous. There is a large, ornate door to the west, a hallway leads north
+and there are marble stairs that lead down out of the building here.
+~
+120 d 0
+D0
+You see a hallway leading north to what looks like a waiting room.
+~
+~
+0 -1 12043 0
+D3
+There is a large door to the west that blocks your path.
+~
+door~
+1 12053 12037 0
+D5
+You see a stairway leading out of the building.
+~
+~
+0 -1 12045 0
+S
+#12045
+Outside The Capitol~
+   You stand on white marble steps that lead up and into the Capitol 
+Building. There are several statues, none of any real significance, at the 
+entrance to the building. The main entrance to the building is at the top 
+of the steps.
+~
+120 0 1
+D4
+The steps lead into the Capitol Building.
+~
+~
+0 -1 12044 0
+D5
+The steps terminate onto Wharf Avenue.
+~
+~
+0 -1 12046 0
+E
+statue statues~
+There is really nothing noteworthy about them.
+~
+E
+stairs stairway steps~
+The stairs are immaculately polished and made of white marble.
+~
+S
+#12046
+Wharf Avenue~
+   You are standing on a wide, heavily traveled road that runs east and west 
+through the heart of the city.  There are marble steps leading up.  To the 
+south, through a fence, you can see the canal used to tranfer mechanise from
+the ships to the warehouse. There is a general store to the north.
+~
+120 0 1
+D0
+The general store lies in that direction.
+~
+~
+0 -1 12063 0
+D1
+There is what appears to be a large gate in that direction.
+~
+~
+0 -1 12051 0
+D3
+Wharf Avenue continues.
+~
+~
+0 -1 12039 0
+D4
+There are some white marble steps leading up.
+~
+~
+0 -1 12045 0
+E
+canal~
+The canal is used to ferry barges that carry merchandise between the ships
+and the warehouse.
+~
+S
+#12047
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D1
+~
+~
+0 0 12026 0
+D3
+~
+~
+0 0 12052 0
+S
+#12049
+Altoor's Workshop~
+   You are standing in the workshop of Altoor the Great, the most powerful and 
+famous mage that Altoor can think of. Workbenches line the walls and are
+covered with various test tubes, beakers, petri dishes and crucibles and there
+is an odor in here that can best be described as a combination of old sweat
+socks and burning tires. The only exit is back through the door through which
+you came. In the middle of the room, you see a pile of ashes that looks like 
+it once was a body.
+~
+120 d 0
+D3
+There is a door, reinforced with steel, in that direction.
+~
+door~
+2 12055 12042 0
+E
+cinders ashes pile~
+The ashes are a very fine grayish white powder that seems to be the only 
+worldly remains of Altoor's "test specimens". 
+~
+E
+workbench workbenches tubes beakers crucibles dishes~
+These are all tools of great power.  You cannot even begin to understand what
+any of this stuff does.
+~
+S
+#12050
+The Office Of The Court Clerk~
+   You stand inside of a large office in which common civil disputes and 
+criminal matters are decided. There is a desk for the clerk to work at, as 
+well as a front counter where he listens to members of the public. If he
+deems your case important enough, he will refer you to the mayor. Otherwise
+he will pass a ruling himself.  There is a door, possibly leading to the 
+mayor's office to the east and the waiting room is to the west. There is a
+small hallway to the south, with a sign over the entrance.
+~
+120 d 0
+D1
+The door might lead into the mayor's office.
+~
+door~
+1 12056 12055 0
+D2
+The sign indicates that the city records are stored there.
+~
+~
+0 -1 12060 0
+D3
+The waiting room lies in that direction.
+~
+~
+0 -1 12043 0
+E
+desk~
+It is piled high with important looking documents.
+~
+E
+counter stand~
+You see large wooden structures that are designed to separate the clerk from
+members of the public. Some of his decisions are not very popular.
+~
+E
+sign~
+It reads: City Records.
+~
+S
+#12051
+The East Gate Of Port Halyon~
+   You are standing inside of the eastern gate of Port Halyon. There are two
+tall spires built into the city wall, from which the guards can see the
+whole eastern side of the city.  The gate is currently open allowing dock
+workers, sailors and marines free entrance to the city. East of this gate
+is the loading dock from the canal and the docks for the ocean going ships.
+Another road leads westward into the city.
+~
+120 0 1
+D1
+Outside the gate is the canal unloading dock.
+~
+~
+0 -1 12064 0
+D3
+The dirty street leads into the city.
+~
+~
+0 -1 12046 0
+E
+gate~
+The gate is fabricated from iron and has been designed to keep invaders out 
+of the city.
+~
+E
+spires towers~
+There are two tall spires on either side of the gate and are constantly manned
+by the city guards.  They are made of stone and stand about 40 feet tall. 
+~
+S
+#12052
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D1
+~
+~
+0 0 12047 0
+D3
+~
+~
+0 0 12054 0
+S
+#12054
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D0
+The ocean side unloading dock.
+~
+~
+0 -1 12064 0
+D1
+~
+~
+0 0 12052 0
+S
+#12055
+Mayor's Office~
+   You are in a small room that is filled with official looking papers.
+There is a small desk here, literally buried under legal documents. There
+is also a small window overlooking the northern part of the city.
+~
+120 d 0
+D3
+The clerks office lies in that direction.
+~
+door~
+1 12056 12050 0
+E
+papers documents~
+There are hundreds of pages of petitions, lawsuits and court orders sitting
+on the desk.
+~
+S
+#12056
+River Avenue~
+   You are on an east-west street called River Avenue. North over the fence
+you can see the canal that carries merchandise from the warehouse to the 
+ships at the docks. South is the weapon shop, and west is the west gate.
+~
+120 0 1
+D0
+You can't climb the fence.
+~
+~
+0 -1 -1 0
+D1
+~
+~
+0 0 12057 0
+D2
+The weapon shop.
+~
+~
+0 -1 12006 0
+D3
+The west gate is in that direction.
+~
+~
+0 -1 12005 0
+E
+fence~
+You can't climb the fence.
+~
+E
+canal~
+The canal is man made, and built for the purpose of carrying merchandise
+from the warehouse to the docks. There are several barges on the canal.
+~
+E
+warehouse~
+The warehouse stores goods being transfered between the ships and the
+merchants who purchased or sold them.
+~
+E
+barge barges~
+They are large and flat, for carrying large boxes. Many of the barges on
+the canal are heavily loaded.
+~
+S
+#12057
+River Avenue~
+   You are on an east-west street called River Avenue. Over a fence to the
+north you can see the canal that carries merchandise from the warehouse
+to the ships at the docks. 
+~
+120 0 1
+D0
+~
+~
+0 0 12018 0
+D1
+~
+~
+0 0 12058 0
+D3
+~
+~
+0 0 12056 0
+E
+fence~
+You can't climb the fence.
+~
+E
+canal~
+The canal is man made, and built for the purpose of carrying merchandise
+from the warehouse to the docks. There are several barges on the canal.
+~
+E
+warehouse~
+The warehouse stores goods being transfered between the ships and the 
+merchants who purchased or sold them.
+~
+E
+barge barges~
+They are large and flat, for carrying large boxes. Many of the barges on 
+the canal are heavily loaded.
+~
+S
+#12058
+River Avenue~
+   You are on River Avenue. The South Main Street Intersection is to the 
+east. Over a fence, to the north is the canal; and across the canal is the
+warehouse. River Avenue goes east and west. South of here is a very rich
+looking neighborhood.
+~
+120 0 1
+D0
+You can't climb the fence.
+~
+~
+0 -1 -1 0
+D1
+The Main Street Intersection is in that direction.
+~
+~
+0 -1 12059 0
+D2
+A wealthy looking neighborhood.
+~
+~
+0 -1 12027 0
+D3
+~
+~
+0 0 12057 0
+E
+fence~
+You can't climb the fence.
+~
+E
+canal~
+The canal is man made, and built for the purpose of carrying merchandise
+from the warehouse to the docks. There are several barges on the canal.  
+~
+E
+warehouse~
+The warehouse stores goods being transfered between the ships and the 
+merchants who purchased or sold them.
+~
+E
+barge barges~
+They are large and flat, for carrying large boxes. Many of the barges on 
+the canal are heavily loaded.
+~
+S
+#12059
+The South Main Street Intersection~
+   You are in the south intersection of town. Main Street runs north and
+south from here, while River Avenue heads west out of town. To the
+north is the Main Street Bridge, which goes across the canal.
+~
+120 0 1
+D0
+The bridge across the canal.
+~
+~
+0 -1 12033 0
+D2
+Main Street heads in the direction of the southern gate.
+~
+~
+0 -1 12034 0
+D3
+River Avenue heads in that direction.
+~
+~
+0 -1 12058 0
+S
+#12060
+The Records Room~
+   You are standing in the records room, just down a hallway from the 
+clerk's office. This is a huge room extending far to the east, and there
+is a hallway to the north taking you back to the clerk's office. There are
+complete records for the city is this room. Some have been filed, and some
+haven't. If the Record Keeper finds you here he is likely to be upset, he
+is very behind, and wishes the city would hire someone to help him.
+~
+120 d 0
+D0
+The courtroom lies to the north.
+~
+~
+0 -1 12050 0
+D1
+The records room continues.
+~
+~
+0 -1 12061 0
+E
+records paper files~
+They contain all sorts of details on the merchandise leaving and arriving
+through this port, and the taxes that were collected on them.
+~
+S
+#12061
+The Records Room~
+   You are standing in the records room, just down a hallway from the 
+clerk's office. This is a huge room extending far to the west. There are
+complete records for the city is this room. Some have been filed, and some
+haven't. If the Record Keeper finds you here he is likely to be upset, he
+is very behind, and wishes the city would hire someone to help him.
+~
+120 d 0
+D3
+The records room continues.
+~
+~
+0 -1 12060 0
+S
+#12062
+The Bakery~
+   You are standing in the bakery of Port Halyon and your mouth waters at
+the delicious aromas wafting from the kitchen. The only exit is to the east.
+~
+120 d 0
+D1
+~
+~
+0 0 12072 0
+S
+#12063
+The General Store~
+   You are standing in the only general store of Port Halyon. The walls and 
+shelves are covered with all of the various items required by the citizens
+of Port Halyon and stalwart mudders.  Wharf Avenue lies to the south.
+~
+120 d 0
+D2
+Wharf Avenue lies in that direction.
+~
+~
+0 -1 12046 0
+S
+#12064
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see. To the west lies the entrance of Port
+Halyon.  
+~
+120 0 1
+D0
+The docks continue.
+~
+~
+0 -1 12065 0
+D1
+The great expanse of the ocean.
+~
+~
+0 -1 -1 0
+D2
+Into the canal.
+~
+~
+0 -1 12054 0
+D3
+Into the east gate of Port Halyon
+~
+~
+0 -1 12051 0
+S
+#12065
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D0
+The dock continues.
+~
+~
+0 -1 12066 0
+D2
+The canal loading dock.
+~
+~
+0 -1 12064 0
+S
+#12066
+On The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D0
+The dock continues.
+~
+~
+0 -1 12067 0
+D2
+The dock continues.
+~
+~
+0 -1 12065 0
+S
+#12067
+On The End Of The Docks Of Port Halyon~
+   Merchandise is being transported along the docks, to and from the ships
+along this small wharf. The great expance of the ocean streatches out to the
+east here, as far as the eye can see.  
+~
+120 0 1
+D2
+The docks continue.
+~
+~
+0 -1 12066 0
+D5
+~
+~
+0 0 12068 0
+S
+#12068
+On The Broken Ladder~
+   {yAn old broken ladder, barely able to hold you in safety's grip reaches
+down for the rocks along the sea's shoreline.  
+~
+120 a 1
+D0
+~
+~
+0 0 1619 0
+D4
+~
+~
+0 0 12067 0
+S
+#12069
+Port Halyon Arrivals Dock~
+   You step off the ship and into the arrivals area. Along the water's edge
+five huge piles have been driven deep into the sea bed to provide the incoming
+ships with a place to anchor their ropes to. Large brass cleats are dotted 
+along very edges of the wharf, from the amount of tarnish on them, it appears
+they have not been polished in a while. To the south, you see the exit to the
+rest of the dock area and after that, Port Halyon.
+~
+120 cy 1
+D2
+~
+~
+0 0 12013 0
+S
+#12070
+Port Halyon Departures Dock~
+   You have been ushered into what appears to be a holding pen of sorts. A
+crude fence has been erected along the northern entrance to this area, in an
+effort to prevent people getting past the ticket taker. Along the water's edge
+five huge piles have been driven deep into the sea bed to provide the incoming
+ships with a place to anchor their ropes to. Large brass cleats are dotted 
+along very edges of the wharf, from the amount of tarnish on them, it appears
+they have not been polished in a while.
+~
+120 cy 1
+D0
+~
+~
+0 0 12013 0
+S
+#12071
+Main Street~
+   You are on north Main Street. Directly to the north lies the main gates
+of the city, while to the south the road continues. All around, the sound of
+work fills the air, workers unloading and moving cargo, marines on shore
+leave enjoying themselves, there is activity everywhere.  
+~
+120 0 1
+D0
+~
+~
+0 0 12072 0
+D1
+~
+~
+0 0 12073 0
+D2
+~
+~
+0 0 12030 0
+S
+#12072
+Main Street~
+   You are on North Main Street, a north-south street that runs the length
+of the Port Halyon. North is the north gate and south takes you to the North
+Main Street Intersection. West is a bakery, while east is the tavern that
+was burned down by brawling sailors and marines. It is currently under
+construction.  
+~
+120 0 1
+D0
+~
+~
+0 0 12029 0
+D2
+~
+~
+0 0 12071 0
+D3
+~
+~
+0 0 12062 0
+S
+#12073
+Sailor's Rest~
+   Decoration is sparse in the reception area of this small inn. Two simple
+wooden chairs sit at either end of the polished oak counter. The walls have
+been shodily painted with a rather depressing shade of brown in an effort to
+cover some of the dry rot. Despite appearances, the rooms provided here are
+warm, comfortable and at a reasonable rate.  
+~
+0 cehy 0
+D3
+~
+~
+0 0 12071 0
+S
+$~

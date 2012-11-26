@@ -1,0 +1,1989 @@
+#3700
+The Northern Lookout~
+   Jutting out into nothingness, this lookout provides more than the average
+sightseeing tourist would wish for. A strong river breeze whips at you here,
+threatening to topple the thin barrier that holds you in. Contemplating that
+thought you tighten your grip on the barrier's thin railing, knuckles 
+whitening. You watch as the water below lashes at the rocky foundations of
+the island and wonder at your own sanity for being here.
+~
+37 d 1
+D2
+Northern Keep Road lies in that direction.
+~
+~
+0 0 3763 0
+S
+#3701
+At The Ferry Dock~
+   Before you a sprawling metropolis built upon this tiny isle arranges itself
+before you, showing off the age old glory that is associted with this place.
+As your gaze drifts upwards, they are met by the magnificent stonework of
+Caryllion's Palace. Intricate in design, as if wrought by nature's own hand
+aided by powerful magic, the structures stand in their delicate beauty as a
+tribute to their creators' enduring labours. Across the river stands a forest
+where sunlight is swallowed by the heavy canopy of branches. 
+~
+37 0 0
+D1
+The North-East gate of Caryllion lies in that direction.
+~
+~
+0 0 3720 0
+S
+#3703
+The Southern Lookout~
+   The rocky outcrop that lies under your feet seem hardly adequate to hold
+your own weight let alone those of others. You shudder as your gaze drifts
+downwards to play in your mind the horrible rocky demise that could be your
+fate. The cooling river wind lashes at you unrelentingly, sending a chill
+through your body and numbing your senses. You ponder on your own insanity
+for wanting to be here in the first place.
+~
+37 0 1
+D0
+Southern Keep Road lies in that direction.
+~
+~
+0 0 3753 0
+S
+#3705
+The Entrance To Port Caryllion~
+   Back to your west the hustle and bustle of Caryllion seems to squeeze
+every every energy from your body so that it's frantic paced lifestyle can
+continue. Looking into the distance you can see scenes of men and women
+haggling over the price of life's basic needs and luxuries alike. The cries
+of trickery and deception raised by both buyer and seller alike come
+crashing upon you like a breaking wave, overwhelming you. A large wooden
+wharf begins begins to the east, leading toward the busy Port of Caryllion.
+~
+37 c 0
+D1
+~
+~
+0 0 5901 0
+D3
+The South-West gate of Caryllion lies in that direction.
+~
+~
+0 0 3740 0
+S
+#3706
+The White Dove Tavern~
+   As you walk in from the bustling crowds outside, you find that within the
+tavern's common room there is little difference. The same rowdy faces greet
+you with a mug of ale in hand, toasting to the health of drinking partners
+who were strangers only minutes before. In the far corner a young girl, pale
+and slender with long blonde hair, sings a bawdy tune as her admirers leer in
+praise. To the south you see the bar, crowded with patrons and serving girls.
+To one side however you see Mistress Alyss, tavern owner, a plump woman with
+powerful arms and a stern gaze that warns you not to toy with her.
+~
+37 d 0
+D0
+Travellers' Avenue lies in that direction.
+~
+~
+0 0 3734 0
+D2
+The bar lies in that direction.
+~
+~
+0 0 3707 0
+S
+#3707
+At The Tavern's Bar~
+   Crowds jeer at you and the serving girls frown as you push your way through
+them and make your way to the bar. When you arrive a bartender with heavy
+shoulders and thick eyebrows leans over to ask for your drink. Looking behind
+the bar you notice that the racks are filled with nothing but ale and cheap
+wine, both of which seem to be flowing freely tonight like every other.
+Peering to the west you notice an narrow door in the corner of the tavern's
+common room which piques your interest.
+~
+37 d 0
+D0
+The rest of the common room lies in that direction.
+~
+~
+0 0 3706 0
+D3
+The tavern's backroom lies in that direction.
+~
+door~
+1 0 3708 0
+D4
+A short set of wide stairs lies in that direction.
+~
+~
+0 0 3999 0
+S
+#3708
+A Small Storage Room~
+   Every supply that you could ever need to run a tavern exists in this room.
+Along one wall, the shelving creaks now and again under the strain placed
+upon it by the beer and wine casks that fill them to near breaking. In one
+corner a small stool rests itself next to a cabinet whose surface is now
+rough and worn with age and heavy use. In another corner bags of flour and
+tins of pickles fill sturdy shelves. To your west, the small door leads you 
+back out to the raucous laughter of the tavern's common room.
+~
+37 d 0
+D1
+The bar lies in that direction.
+~
+door~
+1 0 3707 0
+D5
+A tiny trapdoor lies carefully hidden in the wooden floor.
+~
+tiny trapdoor~
+1 0 3900 0
+S
+#3709
+Crossing The River To Caryllion~
+You are in an unfinished room.
+~
+37 0 0
+S
+#3710
+Northern Keep Road Meets Merchant Street~
+   Busy merchants intent on carrying out their affairs as quickly as possible
+jostle you from side to side, too busy to consider the possible consequences
+of their actions. Carts filled with merchandise roll in and out of the gates
+bound for the abundant trade within the city's walls, or on their way to
+distant lands where they may fetch high prices and high profits. Soldiers keep
+the peace here, eyes drifting languidly over the carts rumbling by. Inside the
+gates you see warehouses lining the streets of Caryllion's merchant district.
+~
+37 0 1
+D0
+The Northern Keep Road lies in that direction.
+~
+~
+0 0 3769 0
+D1
+The North-West dock lies in that direction.
+~
+~
+0 0 3704 0
+D3
+Merchant Street lies in that direction.
+~
+~
+0 0 3711 0
+S
+#3711
+Merchant Street~
+   Tall wooden structures make up the scene before your eyes. Merchants'
+warehouses of every shape and size marking the relative wealth of their
+owners. Reasonable clean and tidy, Merchant Street winds its way through the
+city. Life here is always busy, deals must be made and shipping must be 
+booked to ensure a healthy profit.
+~
+37 0 1
+D1
+The North-West gate of Caryllion lies in that direction.
+~
+~
+0 0 3710 0
+D2
+Merchant Street continues in that direction.
+~
+~
+0 0 3712 0
+S
+#3712
+Merchant Street~
+   Tall wooden structures make up the scene before your eyes. Merchants'
+warehouses of every shape and size marking the relative wealth of their
+owners. Reasonable clean and tidy, Merchant Street winds its way through the
+city. Life here is always busy, deals must be made and shipping must be
+booked to ensure a healthy profit.
+~
+37 0 1
+D0
+Merchant Street continues in that direction.
+~
+~
+0 0 3711 0
+D2
+Merchant Street continues in that direction.
+~
+~
+0 0 3713 0
+D3
+Corindra's Silk Shipping House lies in that direction.
+~
+~
+0 0 3790 0
+S
+#3713
+Merchant Street~
+   Tall wooden structures make up the scene before your eyes. Merchants'
+warehouses of every shape and size marking the relative wealth of their
+owners. Reasonable clean and tidy, Merchant Street winds its way through the
+city. Life here is always busy, deals must be made and shipping must be
+booked to ensure a healthy profit.
+~
+37 0 1
+D0
+Merchant Street continues in that direction.
+~
+~
+0 0 3712 0
+D3
+Merchant Street continues in that direction.
+~
+~
+0 0 3714 0
+S
+#3714
+Merchant Street~
+   Tall wooden structures make up the scene before your eyes. Merchants'
+warehouses of every shape and size marking the relative wealth of their
+owners. Reasonable clean and tidy, Merchant Street winds its way through the
+city. Life here is always busy, deals must be made and shipping must be
+booked to ensure a healthy profit.
+~
+37 0 1
+D1
+Merchant Street continues in that direction.
+~
+~
+0 0 3713 0
+D2
+Merchant Street continues in that direction.
+~
+~
+0 0 3715 0
+S
+#3715
+Merchant Street~
+   Tall wooden structures make up the scene before your eyes. Merchants'
+warehouses of every shape and size marking the relative wealth of their
+owners. Reasonable clean and tidy, Merchant Street winds its way through the
+city. Life here is always busy, deals must be made and shipping must be
+booked to ensure a healthy profit.
+~
+37 0 1
+D0
+Merchant Street continues in that direction.
+~
+~
+0 0 3714 0
+D2
+Merchant Street continues in that direction.
+~
+~
+0 0 3716 0
+S
+#3716
+Merchant Street~
+   Life here seems busier than ever as the heart of Caryllion, and the heart
+of the city's trade lies not too distant. Merchants walk briskly along, 
+looking for a better deal or a new trade opportunity. Shopkeepers mill about
+looking for someone to help them stock their stores so that they might keep
+up with the demand for their goods. You drink in commerce with every sight
+and sounds before you.
+~
+37 0 1
+D0
+Merchant Street continues in that direction.
+~
+~
+0 0 3715 0
+D3
+Merchant Street continues in that direction.
+~
+~
+0 0 3717 0
+S
+#3717
+Merchant Street~
+   Life here seems busier than ever as the heart of Caryllion, and the heart
+of the city's trade lies not too distant. Merchants walk briskly along,
+looking for a better deal or a new trade opportunity. Shopkeepers mill about
+looking for someone to help them stock their stores so that they might keep
+up with the demand for their goods. You drink in commerce with every sight
+and sounds before you.
+~
+37 0 1
+D1
+Merchant Street continues in that direction.
+~
+0~
+0 0 3716 0
+D2
+Merchant Street continues in that direction.
+~
+~
+0 0 3718 0
+S
+#3718
+Merchant Street~
+   Life here seems busier than ever as the heart of Caryllion, and the heart
+of the city's trade lies not too distant. Merchants walk briskly along,
+looking for a better deal or a new trade opportunity. Shopkeepers mill about
+looking for someone to help them stock their stores so that they might keep
+up with the demand for their goods. You drink in commerce with every sight
+and sounds before you.
+~
+37 0 1
+D0
+Merchant Street continues in that direction
+~
+~
+0 0 3717 0
+D3
+Caryllion Square lies in that direction.
+~
+~
+0 0 3799 0
+S
+#3719
+Smuggler's Rest~
+   The walls of this shady looking cave are covered with pieces of paper
+with times, dates, meeting places and other codes. Scattered about the room
+are a few tables and chairs, mostly covered in empty bottles and smoking
+ashtrays. It is clear the people who frequent this hideout, consider
+themselves above the law. Behind a stack of wooden crates scene.  
+~
+37 0 0
+D2
+A large grey stone slab lies across the exit.
+~
+slab~
+1 0 3750 0
+S
+#3720
+At The North-West Gate of Caryllion~
+   Pristine white walls surround the island city for as far as the eye can see
+while clean lines mark the landscape before you. The same white walls border
+the street before you, holding in palace grounds to one side and the city's
+garrison to the other. Two roads diverge at your feet, one leading northbound
+and the other east and into the heart of the city.
+~
+37 0 1
+D0
+The Northern Keep Road lies in that direction.
+~
+~
+0 0 3737 0
+D1
+Manor Road lies in that direction.
+~
+~
+0 0 3721 0
+D3
+The North-East dock lies in that direction.
+~
+~
+0 0 3701 0
+S
+#3721
+Manor Road~
+   The North-East gate lies not too far away, playing host to teeming crowds
+of visitors who come to trade and explore within Caryllion's walls. The
+street before you is clean, paved with cobblestones that glisten in the
+sunlight by day and the moonlight by night. The quiet of the street is
+broken by the distant sound of clashing swords, drifting over the wall that
+houses the garrison. That same sound floats over walls to the east, yet here
+it seems closer.  
+~
+37 0 1
+D1
+The Warrior's Guild lies in that direction.
+~
+~
+0 0 3987 0
+D2
+Manor Road continues in that direction.
+~
+~
+0 0 3722 0
+D3
+The North-East gate of Caryllion lies in that direction.
+~
+~
+0 0 3720 0
+S
+#3722
+Manor Road~
+   Peace and serenity walk the streets beside the ordinary traveller. The
+sounds of battle wafting in from beyond the walls to your south become clearer
+as you draw nearer the garrison. Soldiers are more common here, in their dress
+uniforms marching in small companies. The clean lines of their clothing 
+blending perfectly with the clean lines of the city.
+~
+37 0 1
+D0
+manor Road continues in that direction.
+~
+~
+0 0 3721 0
+D2
+Manor Road continues in that direction.
+~
+~
+0 0 3723 0
+S
+#3723
+Manor Road~
+   Standing outside the garrison entrance you realise that a sense of order
+is very much a part of this section of the city. Strange seeing as Caryllion
+is infamous for offering some of life's seedier pleasures. Citizens hurry by
+intent on their business as soldiers dutifully police the streets.
+~
+37 0 1
+D0
+Manor Road continues in that direction.
+~
+~
+0 0 3722 0
+D1
+Manor Road continues in that direction.
+~
+~
+0 0 3724 0
+D2
+The Entrance to Caryllion's garrison lies in that direction.
+~
+~
+0 0 3778 0
+S
+#3724
+Manor Road~
+   A peaceful calm drifts over every aspect of this part of the city not too
+far from two of the buildings which house the most powerful in Caryllion. From
+behind the walls that keep intruders out of the garrison, the sound of 
+clashing swords wafts into the streets as soldiers engage in their daily
+practive sessions. Behind the other wall, you see nothing but spires of
+magnificent stonework that seem to reach for the skies themselves.
+~
+37 0 1
+D1
+Manor Road continues in that direction.
+~
+~
+0 0 3725 0
+D3
+Manor Road continues in that direction.
+~
+~
+0 0 3723 0
+S
+#3725
+Manor Road~
+   The same cobblestone road stretches out before you to either side. Peeking
+over a tall wall to one side of you is an ancient tree, a withered branch
+reaching into the street, encouraging any child to mischief. Beyond, beautiful
+stonework captures any wandering eye, marking the residence of the city's most
+powerful. The Keeper of Peace. 
+~
+37 0 1
+D2
+Manor Road continues in that direction.
+~
+~
+0 0 3726 0
+D3
+Manor Road continues in that direction.
+~
+~
+0 0 3724 0
+S
+#3726
+Manor Road~
+   Serenity still fills the air as people begin to fill the streets before 
+you. Soldiers maintain the peace with a vigilant eye this close to the Keeper
+of Peace's palace. Not too far in the distance you notice grand gates of a
+strange metal that rust does not touch. The bustle of the city picks up as you
+head towards the heart of the city.
+~
+37 0 1
+D0
+Manor Road continues in that direction.
+~
+~
+0 0 3725 0
+D1
+manor Road continues in that direction.
+~
+~
+0 0 3727 0
+S
+#3727
+Manor Road~
+   The clamour of people grows, yet is still not what you would expect of a 
+city so famous for its trade and entertainment. You glance at the soldiers
+before you and a single look into their eyes makes you understand the
+reluctance of people to engage in fights. High walls give way as the city
+begins to open itself up to you to the south. To the north high gates protect
+what you suspect to be an important person within.
+~
+37 0 1
+D0
+The Entrance to the Keeper of Peace's Palace lies in that direction.
+~
+~
+0 0 3770 0
+D2
+Manor Road continues in that direction.
+~
+~
+0 0 3728 0
+D3
+Manor Road continues in that direction.
+~
+~
+0 0 3726 0
+S
+#3728
+Manor Road~
+   Life begins to pick up this close to the throbbing heart of the city 
+itself. Merchants walk by briskly intent on nothing save the affairs of 
+commerce which occupy their minds. The streets broadens as it sweeps into
+Caryllions Square to the south, the centre of the island city. The street
+continues to the north, leading out of the city.
+~
+37 0 1
+D0
+Manor Road continues in that direction.
+~
+~
+0 0 3727 0
+D2
+Caryllion Square lies in that direction.
+~
+~
+0 0 3799 0
+S
+#3730
+Southern Keep Road Meets Traveller's Avenue~
+   Beyond these gates lies Caryllion, traveller's thoroughfare and merchant's
+trading house. Masses of people and merchandise flow without pause through
+these gates, some quickly without a thought as to their surroundings, while
+others stop to take in the sight before them. Inside the gates, you see a
+melange of rich and poor, begging, working, carousing. The possibility of
+finding adventure and fortune has drawn many a traveller before you, and it
+tugs at you know, inviting you to enter.
+~
+37 0 1
+D1
+Traveller's Avenue lies in the direction.
+~
+~
+0 0 3731 0
+D2
+The Southern Keep Road lies in that direction.
+~
+~
+0 0 3759 0
+D3
+The South-East dock lies in that direction.
+~
+~
+0 0 3702 0
+S
+#3731
+Traveller's Avenue~
+   The street carries none of the majesty that is hinted by the white 
+stonework that you see as you peer northwards. Worn buildings covered in the
+patchwork of hasty repairs dot the landscape before you. This must be one of
+the poorer sections of the city. Life of all forms and fortunes spill out
+from the many taverns, filling the street with an unkept air.
+~
+37 0 1
+D0
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3732 0
+D3
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3730 0
+S
+#3732
+Traveller's Avenue~
+   The street carries none of the majesty that is hinted by the white
+stonework that you see as you peer northwards. Worn buildings covered in the
+patchwork of hasty repairs dot the landscape before you. This must be one of
+the poorer sections of the city. Life of all forms and fortunes spill out
+from the many taverns, filling the street with an unkept air. 
+~
+37 0 1
+D0
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3733 0
+D2
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3731 0
+S
+#3733
+Traveller's Avenue~
+   The street carries none of the majesty that is hinted by the white
+stonework that you see as you peer northwards. Worn buildings covered in the
+patchwork of hasty repairs dot the landscape before you. This must be one of
+the poorer sections of the city. Life of all forms and fortunes spill out
+from the many taverns, filling the street with an unkept air.
+~
+37 0 1
+D1
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3734 0
+D2
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3732 0
+S
+#3734
+Traveller's Avenue~
+   The street carries none of the majesty that is hinted by the white
+stonework that you see as you peer northwards. Worn buildings covered in the
+patchwork of hasty repairs dot the landscape before you. This must be one of
+the poorer sections of the city. Life of all forms and fortunes spill out
+from the many taverns, filling the street with an unkept air.
+~
+37 0 1
+D1
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3735 0
+D2
+The entrance to Mistress Alyss' tavern lies in that direction.
+~
+~
+0 0 3706 0
+D3
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3733 0
+S
+#3735
+Traveller's Avenue~
+   Old establishments of solid stone live side by side with newer, less 
+solidly built buildings in a jumble that looks odd to the eye. One common
+feature however is that cheap repairs have given them both a patchwork look.
+A handful of poor line the streets searching for a generous patron, standing
+out among the regular crowd that inhabit this part of Caryllion. They look to
+be only slightly better off than the people they hand money to.
+~
+37 0 1
+D0
+Travelelr's Avenue continues in that direction.
+~
+~
+0 0 3736 0
+D3
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3734 0
+S
+#3736
+Traveller's Avenue~
+   Old establishments of solid stone live side by side with newer, less
+solidly built buildings in a jumble that looks odd to the eye. One common
+feature however is that cheap repairs have given them both a patchwork look.
+A handful of poor line the streets searching for a generous patron, standing
+out among the regular crowd that inhabit this part of Caryllion. They look to
+be only slightly better off than the people they hand money to.
+~
+37 0 1
+D1
+Caryllion Square lies in that direction.
+~
+~
+0 0 3799 0
+D2
+Traveller's Avenue continues in that direction.
+~
+~
+0 0 3735 0
+S
+#3737
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D0
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3738 0
+D2
+The North-East gate of Caryllion lies in that direction.
+~
+~
+0 0 3720 0
+S
+#3738
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D1
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3739 0
+D2
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3737 0
+S
+#3739
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D0
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3760 0
+D3
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3738 0
+S
+#3740
+At The Gates Of Port Caryllion~
+   You marvel at the sheer size of the gates that lie before you as well as
+the barrier of white stone that surrounds the island city. Beyond that gates
+you see wagons being hauled from warehouses, and small shops servicing the
+middle class of Caryllion. Merchants walk briskly through the street, ignoring
+the small number of poor that dot the street. Soldiers and sailors walk the
+streets, their broad shoulders commanding attention. You feel a tugging as the
+city draws you into its depths.
+~
+37 0 1
+D1
+The city's port lies in that direction.
+~
+~
+0 0 3705 0
+D2
+The Souther Keep Road lies in that direction.
+~
+~
+0 0 3747 0
+D3
+Trade Road lies in that direction.
+~
+~
+0 0 3741 0
+S
+#3741
+Trade Road~
+   Warehouses sit next to establishments catering for the trade that passes
+through these streets, operating hand in hand. This is the place where deals
+are negotiatied and contracts signed. The smell of commerce is thick in the 
+air. Mercenaries and sailors behave here in front of their employers, with a
+look of confidence in their eyes that would discourage even the bravest soul
+from starting a fight here. A small number of poor look odd here, as they
+look for a generous patron.
+~
+37 0 1
+D0
+Trade Road continues in that direction.
+~
+~
+0 0 3742 0
+D1
+The South-West gate of Caryllion lies in that direction.
+~
+~
+0 0 3740 0
+S
+#3742
+Trade Road~
+   Warehouses sit next to establishments catering for the trade that passes
+through these streets, operating hand in hand. This is the place where deals
+are negotiatied and contracts signed. The smell of commerce is thick in the
+air. Mercenaries and sailors behave here in front of their employers, with a
+look of confidence in their eyes that would discourage even the bravest soul
+from starting a fight here. A small number of poor look odd here, as they
+look for a generous patron.
+~
+37 0 1
+D0
+Crowley's Coffee House lies in that direction waiting to welcome patrons
+warmly.
+~
+~
+0 0 3795 0
+D2
+Trade Road continues in that direction.
+~
+~
+0 0 3741 0
+D3
+Trade Road continues in that direction.
+~
+~
+0 0 3743 0
+S
+#3743
+Trade Road~
+   Warehouses sit next to establishments catering for the trade that passes
+through these streets, operating hand in hand. This is the place where deals
+are negotiatied and contracts signed. The smell of commerce is thick in the
+air. Mercenaries and sailors behave here in front of their employers, with a
+look of confidence in their eyes that would discourage even the bravest soul
+from starting a fight here. A small number of poor look odd here, as they
+look for a generous patron.
+~
+37 0 1
+D1
+Trade Road continues in that direction.
+~
+~
+0 0 3742 0
+D3
+Trade Road continues in that direction.
+~
+~
+0 0 3744 0
+S
+#3744
+Trade Road~
+   Warehouses sit next to establishments catering for the trade that passes
+through these streets, operating hand in hand. This is the place where deals
+are negotiatied and contracts signed. The smell of commerce is thick in the
+air. Mercenaries and sailors behave here in front of their employers, with a
+look of confidence in their eyes that would discourage even the bravest soul
+from starting a fight here. A small number of poor look odd here, as they
+look for a generous patron.
+~
+37 0 1
+D0
+Trade Road continues in that direction.
+~
+~
+0 0 3745 0
+D1
+Trade Road continues in that direction.
+~
+~
+0 0 3743 0
+S
+#3745
+Trade Road~
+   Warehouses sit next to establishments catering for the trade that passes
+through these streets, operating hand in hand. This is the place where deals
+are negotiatied and contracts signed. The smell of commerce is thick in the
+air. Mercenaries and sailors behave here in front of their employers, with a
+look of confidence in their eyes that would discourage even the bravest soul
+from starting a fight here. A small number of poor look odd here, as they
+look for a generous patron.
+~
+37 0 1
+D2
+Trade Road continues in that direction.
+~
+~
+0 0 3744 0
+D3
+Trade Road continues in that direction.
+~
+~
+0 0 3746 0
+S
+#3746
+Trade Road~
+   Warehouses sit next to establishments catering for the trade that passes
+through these streets, operating hand in hand. This is the place where deals
+are negotiatied and contracts signed. The smell of commerce is thick in the
+air. Mercenaries and sailors behave here in front of their employers, with a
+look of confidence in their eyes that would discourage even the bravest soul
+from starting a fight here. A small number of poor look odd here, as they
+look for a generous patron.
+~
+37 0 1
+D0
+Caryllion Square lies in that direction.
+~
+~
+0 0 3799 0
+D1
+Trade Road continues in that direction.
+~
+~
+0 0 3745 0
+S
+#3747
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in 
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D0
+The South-East gate of Caryllion lies in that direction.
+~
+~
+0 0 3740 0
+D2
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3748 0
+S
+#3748
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D0
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3747 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3749 0
+S
+#3749
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3748 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3750 0
+S
+#3750
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D0
+~
+slab~
+1 0 3719 0
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3749 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3751 0
+S
+#3751
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier
+wall of Caryllion, and on the other the gushing flow of the river. Soldiers
+in their perfect uniforms use this road to patrol the city limits, ensuring
+that the citizens of Caryllion can sleep easy at night. To the north you see
+a small unassuming ssandstone arch.  
+~
+37 0 1
+D0
+A small unassuming building lies in that direction.
+~
+~
+0 0 3984 0
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3750 0
+D2
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3752 0
+S
+#3752
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D0
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3751 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3753 0
+S
+#3753
+Before The Southern Lookout~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3752 0
+D2
+The southern lookout lies in that direction
+~
+~
+0 0 3703 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3754 0
+S
+#3754
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3753 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3755 0
+S
+#3755
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3754 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3756 0
+S
+#3756
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3755 0
+D3
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3757 0
+S
+#3757
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D0
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3758 0
+D1
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3756 0
+S
+#3758
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D0
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3759 0
+D2
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3757 0
+S
+#3759
+Southern Keep Road~
+   A mirror image of the Northern Keep Road, this road traces a path around
+the southern perimeter of the island, flanked on one side by the barrier wall
+of Caryllion, and on the other the gushing flow of the river. Soldiers in
+their perfect uniforms use this road to patrol the city limits, ensuring that
+the citizens of Caryllion can sleep easy at night.
+~
+37 0 1
+D0
+The South-West gate of Caryllion lies in that direction.
+~
+~
+0 0 3730 0
+D2
+The Southern Keep Road continues in that direction.
+~
+~
+0 0 3758 0
+S
+#3760
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D1
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3761 0
+D2
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3739 0
+S
+#3761
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D1
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3762 0
+D3
+The Northern Keep Road continues in that direction.
+~
+~
+0 0 3760 0
+S
+#3762
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D1
+~
+~
+0 0 3763 0
+D3
+~
+~
+0 0 3761 0
+S
+#3763
+Before The Northern Lookout~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D0
+The northern lookout lies in that direction.
+~
+~
+0 0 3700 0
+D1
+~
+~
+0 0 3764 0
+D3
+~
+~
+0 0 3762 0
+S
+#3764
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D1
+~
+~
+0 0 3765 0
+D3
+~
+~
+0 0 3763 0
+S
+#3765
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D2
+~
+~
+0 0 3766 0
+D3
+~
+~
+0 0 3764 0
+S
+#3766
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D0
+~
+~
+0 0 3765 0
+D1
+~
+~
+0 0 3767 0
+S
+#3767
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D1
+~
+~
+0 0 3768 0
+D3
+~
+~
+0 0 3766 0
+S
+#3768
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D2
+~
+~
+0 0 3769 0
+D3
+~
+~
+0 0 3767 0
+S
+#3769
+Northern Keep Road~
+   Travellers use this road to take in the sights that are present in the
+great expanse of river that lies to the north of the island. Soldiers use this
+road to patrol the Caryllions shoreline, ensuring the safety of those that
+live and trade within. The entire section of road that you see is bordered by
+the white stone wall that surrounds the city to one side, and the river itself
+on the other.
+~
+37 0 1
+D0
+~
+~
+0 0 3768 0
+D2
+~
+~
+0 0 3710 0
+S
+#3770
+Entrance To the Manta'cor's Palace~
+   Graceful gates made from a lightweight metal greet you as you are
+confronted with Caryllion's stronghold of power. Once the home of any powerful
+warlord able to capture it, today the Manta'cor's sole interest is in commerce
+and wealth. Solemn faces and hard eyes stare back at you as you glance from
+guard to guard, their uniforms a brilliant array of opulent gold on pure
+white. The serious visages worn by the guards weighs heavily on the air about
+you. Your gaze darts from the small inlaid tablet at the gate to the guards
+and you wonder if you must swear allegiance to the throne to pass the guards.
+~
+37 0 1
+D0
+The palace gardens lie in that direction.
+~
+gate~
+2 3704 3771 0
+D2
+~
+~
+0 0 3727 0
+E
+small inlaid tablet~
+A beautiful script of gold, written in a delicate hand covers the rose granite
+surface. On it a useful lesson is told.
+
+   "...there are times when dialogue will win over force,
+     Swear allegiance to the Manta'cor, reap the benefits of your discourse.."
+
+~
+S
+#3771
+The Palace Courtyard~
+   The slow trickle of a nearby fountain is the only sound that drifts to 
+your ears. The simple beauty of a garden arranged in geometric perfection is
+all that touches your eyes. Peace wafts over you to drug your senses into
+believing that this courtyard holds the last of nature's calm. Your reverie
+is interrupted only by the leisurely and deliberate movements of an old
+gardener who seems so much a part of the scenery in his pale straw hat that
+you almost fail to notice him.
+~
+37 0 0
+D0
+The great hall lies in that direction.
+~
+~
+0 0 3772 0
+D2
+The palace entrance lies in that direction.
+~
+gate~
+1 0 3770 0
+S
+#3772
+The Great Hall of Peace~
+   Opulence and grandeur are the only words that could describe what lies
+behind the heavily gilded double doors. This expansive hall is dwarfed by the
+multitudes of people that crowd within it, awaiting an audience with the
+Manta'cor himself. The high domed ceiling is painted with a fresco depicting
+Caryllion's long lost past. Upon a dias lies a throne, covered in gold leaf
+and so bejewelled that it threatens to blind. The immense wealth of this
+room causes you to gawk at the sheer fortune needed to furnish it.
+~
+37 0 0
+D2
+The palace gardens lie in that direction.
+~
+~
+0 0 3771 0
+D3
+The Manta'cor's private study lies in that direction.
+~
+~
+0 0 3773 0
+E
+ceiling painted fresco~
+A strange scene of odd beauty is shown with only the delicate stone spires of
+pure white appearing slightly familiar. The scene that unfolds itself to you
+appears as a gold and crystal palace, lit by a blue flame. Women with a
+mystical beauty dance about the scene in long silver veils, white lilies
+entwined in their raven hair. Each bestows their heavenly blessings upon a
+city of majesty, twinkling in the moonlight.
+~
+S
+#3773
+The Manta'cor's Private Study~
+   Mahogony bookcases line the walls, throwing off rich reflections from their
+beautifully polished surfaces. Thick leatherbound books, brimming with
+knowledge collected in ages now long forgotten, stand erect in their silent
+antiquity. A single table carved from a single piece of blackwood stands
+proudly as the centrepiece of the room, while highbacked chairs in subdued
+tones scatter themselves about the room. A single colorful rug fills the
+small area before a brilliant hearth to lift the room's sombre atmosphere and
+make it almost inviting. Looking once more at the bookcases you ponder on any
+possible secret passages.
+~
+37 0 0
+D0
+~
+bookcase secret~
+1 0 3774 0
+D1
+~
+~
+0 0 3772 0
+S
+#3774
+At The Bottom Of A Narrow Staircase~
+   Darkness blankets you, swallows you whole as you fumble clumsily, searching
+for your bearings as your eyes slowly adjust to the lack of light. A narrow
+pixie staircase winds itself up to a single line of light above your head.
+As you grope hopelessy in the confining darkness you become aware of the
+restricting air that you breathe. Musky with the claustrophobic smell of
+trapped air, you search eagerly for the exit and the escape.
+~
+37 0 0
+D2
+~
+bookcase secret~
+1 0 3773 0
+D4
+~
+~
+0 0 3775 0
+S
+#3775
+Rodrin's Private Chambers~
+   A large fireplace on the far wall fills the room with a beautiful rich
+amber glow, coloring the nearby silver pitcher and wash basin with a patient
+warmth. In the centre of the room stands a square canopied bed, piled high
+with thick warm blankets, soft fluffy pillows and silky satin sheets. Every
+comfort is catered for in these chambers.
+~
+37 0 0
+D0
+~
+~
+0 0 3776 0
+D5
+~
+~
+0 0 3774 0
+S
+#3776
+Rodrin's Personal Manservant's Quarters~
+   This room stands in stark contrast to the previous. Where the other is
+rich and cluttered with the objects of wealth, this one stands sparse and
+simple in its decor. A narrow bed has been thrust into a corner while a single
+table and chair stand beside it. A small shelf above the bed holds the worldy
+possessions of Rodrin's personal servant. There a small picture of a childhood
+sweetheart stands lovingly along with trinkets and treasures collected over
+the years. On the bed lies the uniform of a palace servant looking strangely
+out of place here.
+~
+37 0 0
+D2
+~
+~
+0 0 3775 0
+D5
+~
+~
+0 0 3777 0
+S
+#3777
+Palace Kitchens~
+   The sounds of clanging pots and pans emanate from this room at regular
+intervals despite the time of day. Two large fires burn brightly at either
+end of the room, the first houses a spit carefully tended to by a bright eyed
+scullion girl, the second a large pot of stew bubbling away contentedly. In
+one corner another girl is lost scrubbing away at a another large black
+cauldron and up to her elbows in greasy, soapy water.
+~
+37 0 0
+D4
+~
+~
+0 0 3776 0
+S
+#3778
+Garrison Entrance~
+   Here lies the central headquarters of disciplinary power for Caryllion. 
+A tall white wall surrounds the buildings which lie beyond the gates of an
+odd metal which lies before you. Serious guards confront you, intent on 
+keeping outsiders from entering beyond the gates and into the city's dungeons.
+Beyond you see glistening bodies engaged in drills, the sweat of exertion
+trickling down their sculptured bodies. The grace with which they handle their
+weapons warns you to be wary.
+~
+37 0 0
+D0
+Manor Road lies in that direction.
+~
+~
+0 0 3723 0
+D2
+The training yard lies in that direction.
+~
+~
+0 0 3779 0
+S
+#3779
+Garrison Training Grounds~
+   A large square of packed down dirt and bordered by buildings on every side
+is what presents itself to you. To one side, you see racks of practice swords
+and other practice weapons, each ready to be put into use. The spaces in that
+neat row show up in the hands of the sweating bodies before you, darting about
+with a graceful ease that does more than merely hint at the danger that these
+soldiers are capable of. 
+~
+37 0 0
+D0
+The garrison entrance lies in that direction.
+~
+~
+0 0 3778 0
+D1
+An important looking building lies in that direction.
+~
+~
+0 0 3781 0
+D3
+The barracks lie in that direction.
+~
+~
+0 0 3780 0
+S
+#3780
+The Garrison's Barracks~
+   A set of long, low buildings lines themselves up in neat disciplines rows.
+Quiet in the middle of the day, these buildings show no sign of life except 
+at dawn and dusk when the soldiers retire from a long day's training, and when
+they are roused from their fitful slumbers as soon as a single ray of light
+splits the night`s blanket. 
+~
+37 0 0
+D1
+The garrison's training yard lies in that direction.
+~
+~
+0 0 3779 0
+S
+#3781
+The Great Hall Of Battles~
+   Maps cover the walls on every side of the room, each painted in careful 
+detail and showing the yellowing signs of age. A large oval table, carved out
+of a single piece of solid timber stands grandly in the middle of the room.
+Made simply, this table is also covered with maps, this time marked with troop
+movements and battle sites. Along one side, the banners of captured and 
+defeated opponents stand as a reminder of battles past, of companions lost,
+and of the prices paid.
+~
+37 d 0
+D2
+Elryn's private quarters lies in that direction.
+~
+door~
+1 0 3787 0
+D3
+The training yard lies in that direction.
+~
+~
+0 0 3779 0
+D5
+A dark staircase lies in that direction.
+~
+~
+0 0 3782 0
+S
+#3782
+A Deep Dark Staircase~
+   Damp musty air fills your nostrils as you enter the room and you stumble
+before your eyes adjust to the change in lighting conditions. The darkness of
+the room wraps itself around you and you search carefully for the next step,
+hoping that you do not lose your footing a send yourself tumbling into the
+obsidian darkness below. You notice a faint glimmer in the distance and 
+realise that its a small torch, standing against the wall. The distant glow
+barely lights the way down the staircase as you make your way down with care.
+~
+37 ad 0
+D4
+The Great Hall of Battle lies beyond casting a small ray of light into the 
+room.
+~
+~
+0 0 3781 0
+D5
+The city's dungeons lies in that direction.
+~
+~
+0 0 3783 0
+S
+#3783
+The City's Dungeons~
+   Cold stone makes up the solid walls here, holding in any prisoner who even
+thinks of escaping. Three heavy doors of solid timber lie before you to the
+north, east and west, a small barred window being the only way for the 
+prisoner to communicate with the guards that hold them. A small narrow bench
+of simple timber is all that is here to provide the solitary guard with any
+comfort. You wonder who has a worse life, the guard or the prisoners.
+~
+37 ad 0
+D0
+A dungeon door with a copper lock lies in that direction.
+~
+dungeon heavy door~
+1 3702 3785 0
+D1
+A dungeon door with a brass lock lies in that direction.
+~
+dungeon iron heavy door~
+1 3701 3784 0
+D3
+A dungeon door with a steel lock lies in that direction.
+~
+dungeon iron heavy door~
+1 3703 3786 0
+D4
+A narrow staircase lies in that direction.
+~
+~
+0 0 3782 0
+S
+#3784
+A Cold Dark Dungeon~
+   Kept in this corner of the barracks, the cold wet air that lies still
+within the surround walls of solid black stone are enough to chill you to
+the bone, let alone send a shiver down your spine. Metal chains and cuffs of
+all kinds hang limply where they are not used, each buried deep into the
+stone walls, ensuring no prisoner escapes. A small shuttered grate in the door
+and a narrow arrowslit window are all that the prisoner has left here to
+remind them of the world outside.
+~
+37 0 0
+D3
+~
+iron heavy door~
+1 3701 3783 0
+S
+#3785
+A Cold Dark Dungeon~
+   Kept in this corner of the barracks, the cold wet air that lies still
+within the surround walls of solid black stone are enough to chill you to
+the bone, let alone send a shiver down your spine. Metal chains and cuffs of
+all kinds hang limply where they are not used, each buried deep into the
+stone walls, ensuring no prisoner escapes. A small shuttered grate in the door
+and a narrow arrowslit window are all that the prisoner has left here to
+remind them of the world outside.
+~
+37 0 0
+D2
+~
+iron heavy door~
+1 3702 3783 0
+S
+#3786
+A Cold Dark Dungeon~
+   Kept in this corner of the barracks, the cold wet air that lies still
+within the surround walls of solid black stone are enough to chill you to
+the bone, let alone send a shiver down your spine. Metal chains and cuffs of
+all kinds hang limply where they are not used, each buried deep into the
+stone walls, ensuring no prisoner escapes. A small shuttered grate in the door
+and a narrow arrowslit window are all that the prisoner has left here to
+remind them of the world outside.
+~
+37 0 0
+D1
+~
+iron heavy door~
+1 3703 3783 0
+S
+#3787
+Elryn's Private Quarters~
+   A small room filled with simple furnishings greets you. You stop as you
+realise that this is supposed to be the private chambers of one of the most
+powerful people in Caryllion. The garrison's commander. Comfortable in its
+simplicity you realise that Elryn has held onto the disciplined life of the
+soldier, even with his rise in power. A small window on the far wall shows a
+view of a small garden of cheerful flowers, and armor hangs on a wall nearby.
+~
+37 d 0
+D0
+The Great Hall of Battles lies in that direction.
+~
+door~
+1 0 3781 0
+S
+#3790
+Corindra's Silk Shipping House~
+   Silk is all that matters here. Here stand the offices of one of the most
+wealthy and powerful silk traders in the realm. Corindra has made her fortune
+trading in one of the most demanded commoditites available. Looking about you
+see cart after cart arranged in a neat row and ready to be used. Each has a
+specialized protective covering which ensures that the bolts of silk that are
+being transported are not harmed in any way by nature's elements. The plain
+building which houses these precious goods seems odd considering the vast
+amounts of gold which are traded here daily.
+~
+37 0 0
+D0
+~
+~
+0 0 3791 0
+D1
+~
+~
+0 0 3712 0
+S
+#3791
+The Main Warehouse~
+   Waxed canvas covered rolls form neat piles throughout the warehouse. Now
+and again a brightly colored patch peeps out from it's protective covering
+to give Corindra's employees a envious peep of the valuable goods that they
+tend to. A single bolt of silk would provide for their family for months if
+sold on the right markets to the right buyers. In the distance the sound of
+muffled voices drifts in from the north causing you to wonder at what might
+be causing such a commotion.
+~
+37 0 0
+D0
+~
+~
+0 0 3792 0
+D2
+~
+~
+0 0 3790 0
+S
+#3792
+The Back Office~
+   Walking in from the relative quiet of the warehouse, you are stunned by the
+commotion that is present here. A large table carved from fine wood stands at
+the centre of the room. Seated at opposite ends of the table are Corindra
+herself and a gaggle of buyers, each bickering with each other and haggling
+ruthlessly with Corindra over the current market price of a single bolt of
+silk. To the west lies the entrance to a heavy iron vault.  
+~
+37 0 0
+D2
+~
+~
+0 0 3791 0
+D3
+~
+door vault steel~
+2 3705 3793 0
+S
+#3793
+The Vault~
+   Walls of solid six inch steel make up this stronghold of wealth. The
+shelves around you are filled with nothing but documents in varying shades of
+brown and the glittering brilliance of gold and jewels. Chests of all shapes
+and sizes are filled to overflowing with jewels of every color and enough
+gold coin to last a lifetime.
+~
+37 0 0
+D1
+~
+vault large steel~
+2 3705 3792 0
+S
+#3795
+Crowley's Coffee House~
+   The smells of freshly ground and brewed coffee along with the sweet scent of
+honeycakes fills the air with a mouthwatering sweetness. Behind the long
+counter that stretches the entire length of the room, steam gushes almost
+angrily from the tops of the coffee machines. All about waiters rush to fill
+every requirement that the patrons of the coffee house should need. Every so
+often a merchant rushes in seeking his colleagues or business associates,
+wrapped in the same frenzy that possesses the waiters.  
+~
+37 0 0
+D0
+~
+~
+0 0 3796 0
+D2
+~
+~
+0 0 3742 0
+S
+#3796
+Customs and Shipping Merchants Area~
+   Small tables are spread out throughout the room, each with at least two
+people sitting at opposite ends. Merchants took over Crowley's as their
+preferred place to strike deals long ago. In a reaction to that decision the
+shipping houses of Caryllion came to set up a secondary office here as well.
+Soon after the government's customs office did the same. Maps depicting many
+unknown lands are spread throughout the room, each marked with shipping routes
+for the various shipping companies. Beside them are tables marking when the
+various ships are due to leave or dock into port. A gentle buzzing fills the
+air constantly as merchants come and go about their business.
+~
+37 0 0
+D2
+~
+~
+0 0 3795 0
+D4
+~
+~
+0 0 3797 0
+S
+#3797
+The Dealing Room~
+   This is where the noise generated by the coffee house's patrons can reach 
+its noisiest. Small groups of merchants arrange themselves in small clumps
+about the room, each trying to ensure the exclusivity of their deal and mask
+any movement from their competitors. Each group talks quietly, hushed voices
+filling the room, however should there be any major disagreement, the usually
+placid faces turn red with rage and fights have been known to break out among
+these seemingly composed and meek gentlemen. Waiters duck in and out of the
+room quietly and discretely as they try to pick up any stray tips to aid in
+making their own fortunes.
+~
+37 0 0
+D4
+~
+~
+0 0 3798 0
+D5
+~
+~
+0 0 3796 0
+S
+#3798
+The Atrium~
+   An air of exclusivity fills the air here as you enter into the inner
+sanctum of the coffee houe's heirarchy. This is the place where powerful deals
+and alliances are forged. Only the richest and most well known of merchants
+may dine and do business here where they are envied by even the nobility.
+About you see distinguished people dressed in expensive silks and finely
+woven linens. Your mind boggles at the thought of having so many powerful
+people and much of Caryllion's wealth contained in such a small room.
+~
+37 0 0
+D5
+~
+~
+0 0 3797 0
+S
+#3799
+Caryllion Square~
+   Here lies the heart of Caryllion. Bustling crowds mill in the streets,
+merchants busy plying their wares, children playing in the streets in a world
+of their own. The main thoroughfares of Caryllion filter into this square
+bringing with them people from every part of the city. A fountain lies here,
+seemingly endless in its supply of fresh water.
+~
+37 0 1
+D0
+Manor Road lies in that direction.
+~
+~
+0 0 3728 0
+D1
+Merchant Street lies in that direction.
+~
+~
+0 0 3718 0
+D2
+Trade Road lies in that direction.
+~
+~
+0 0 3746 0
+D3
+Traveller's Avenue lies in that direction.
+~
+~
+0 0 3736 0
+S
+$~

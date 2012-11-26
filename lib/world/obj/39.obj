@@ -1,0 +1,120 @@
+#3900
+statue small sapphire~
+a {Bblue{X-eyed statue~
+{WA small statue{w stares at you with serene {Ds{bap{Bph{bir{De {weyes.{x~
+~
+8 a 0 0 
+0 0 0 0 6
+9999 0 0
+E
+statue small sapphire~
+Sparkling {Bsapphire{x eyes stare at you from the serene face. Those eyes
+seem to penetrate into the very depths of your soul as if weighing your
+worthiness to kneel before him and be transported to the inner sanctum of
+the Mages' Guild.  
+~
+#3901
+carved peg~
+{ya carved peg{x~
+A peg carved with dancing dragons lies here {Dhidden in the shadows.{x~
+~
+18 cdq a 0 
+0 0 0 0 5
+5 0 0
+E
+carved peg dragons~
+Swirling dragons entwine themselves about this peg, its dull unfinished 
+surface polished by the thousands of hands which have held it over the ages.
+It seems to have been made as a key of some sort by an ancient craftsman.
+~
+#3902
+ancient gold key~
+{wan ancient {Ygold {xkey~
+An ancient gold key emblazoned with a dragon lies here.~
+~
+18 cdq a 0 
+0 0 0 0 15
+5 0 0
+E
+ancient gold key dragon~
+Caught at the height of its firery rage the dragon that drapes its lovely
+form along the length of the key is almost lifelike. This key had been made
+long ago, the ages taking away some of the {Ygolden{x lustre that had once
+been there.
+~
+#3903
+silver choker~
+{wa {Csilver {xchoker~
+A silver chocker lies here whispering of its origins in black magic.~
+~
+11 jp ac 0 
+0 0 0 0 14
+8 900 100
+E
+silver choker~
+This delicate chain of overlapping silver leaves looks to be too beautiful
+to have been wrought by such a dark and devious hand. Yet from somewhere
+deep within the very fibre of the chain dozens of whispered cries scream of
+thier anguish.  
+~
+A
+3 4
+#3904
+battered watercan~
+a battered watercan~
+A battered watercan lies here.~
+~
+3 g a 0 
+40 5 5 84 9
+10 500 100
+P
+true seeing
+#3905
+small red pocketknife knife~
+{wa small {Rred {xpocket{x knife~
+A small red pocket knife is lying on the ground here.~
+~
+5 0 an 0 
+2 3 3 12 0
+8 80 8
+A
+2 4
+#3906
+purse gold~
+a {bblue velvet{x purse of gold~
+A purse of {bblue velvet{x lies here brimming with {Ygold{x.~
+~
+15 0 ao 0 
+20 1 -1 0 3
+4 35 10
+#3907
+crystal ancient kris~
+an ancient crystal kris~
+An ancient crystal handled kris lies here waiting for a master.~
+~
+5 a an 0 
+2 4 7 12 27
+12 15000 150
+A
+18 2
+A
+19 1
+#3908
+small pendant~
+a small lapis lazuli pendant~
+A small lapis lazuli pendant lies here untouched.~
+~
+0 0 a 0 
+0 0 0 0 0
+0 0 0
+#3909
+withered walking cane~
+a withered walking cane~
+A withered walking cane lies here.~
+~
+12 0 ao 0 
+0 0 0 0 5
+10 500 50
+A
+6 8
+$~

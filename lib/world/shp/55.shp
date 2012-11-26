@@ -1,0 +1,135 @@
+CircleMUD v3.0 Shop File~
+#5500~
+5306
+5316
+5318
+5319
+5320
+5321
+5322
+5323
+5324
+5325
+5326
+5327
+5328
+-1
+1.70
+0.45
+ARMOR
+WORN
+-1
+%s Hmm.. I don't seem to have that in stock sorry.~
+%s Check again, you don't seem to have that to sell!~
+%s I'm sorry, I don't think I would have a market for that.~
+%s My coffers don't stretch to such a fine item sorry.~
+%s Excuse me, but you don't seem to be able to afford that.~
+%s Okay, that will be %s{r, a fine purchase indeed!~
+%s Alright, a deal! I'll give you %s{r for that.~
+2
+0
+5307
+0
+5527
+-1
+0
+28
+0
+0
+#5501~
+5308
+5309
+5310
+5311
+5329
+5330
+-1
+1.55
+0.45
+WEAPON
+-1
+%s Hmm.. I don't seem to have that in stock sorry.~
+%s Check again, you don't seem to have that to sell!~
+%s I'm sorry, I don't think I would have a market for that.~
+%s My coffers don't stretch to such a fine item sorry.~
+%s Excuse me, but you don't seem to be able to afford that.~
+%s Okay, that will be %s{r, a fine purchase indeed!~
+%s Alright, a deal! I'll give you %s{r for that.~
+2
+0
+5308
+0
+5533
+-1
+0
+28
+0
+0
+#5502~
+5304
+5307
+5312
+5313
+5314
+5315
+5354
+-1
+1.55
+0.45
+1
+8
+11
+12
+13
+15
+17
+21
+-1
+%s Hmm.. I don't seem to have that in stock sorry.~
+%s Check again, you don't seem to have that to sell!~
+%s I'm sorry, I don't think I would have a market for that.~
+%s My coffers don't stretch to such a fine item sorry.~
+%s Excuse me, but you don't seem to be able to afford that.~
+%s Okay, that will be %s{r, a fine purchase indeed!~
+%s Alright, a deal! I'll give you %s{r for that.~
+2
+0
+5301
+0
+5567
+-1
+0
+28
+0
+0
+#5503~
+5331
+5332
+5333
+5334
+5335
+5336
+-1
+1.55
+0.45
+17
+19
+-1
+%s Hmm.. I don't seem to have that in stock sorry.~
+%s Check again, you don't seem to have that to sell!~
+%s I'm sorry, I don't think I would have a market for that.~
+%s My coffers don't stretch to such a fine item sorry.~
+%s Excuse me, but you don't seem to be able to afford that.~
+%s Okay, that will be %s{r, a fine purchase indeed!~
+%s Alright, a deal! I'll give you %s{r for that.~
+2
+0
+5309
+0
+5573
+-1
+0
+28
+0
+0
+$~

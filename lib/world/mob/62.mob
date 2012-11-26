@@ -1,0 +1,413 @@
+#6200
+guard elite battered~
+a battered {Celite cityguard{x~
+A battered {Celite cityguard{w lies here, shackled and near death.{x
+~
+After being sent on a mission by the Mayor of Weirvane to recapture the
+outcast leader, this elite guard was captured and taken prisoner. His face
+is covered in swollen purple bruises, and his uniform stained with blood. 
+He has suffered a lot since his capture, but as the code of the Elite Force
+maintains, he has not betrayed his city.  
+~
+bdgnor dfy 1000 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 200 2d10+5 10
+A 5 5 $n moans softly in pain.{x
+>greet_prog       100~
+if isnpc($n)
+  break
+    if isfollow($n)
+      break
+    else
+     mpdelay 5
+      emot tries to hide his head in an attempt to protect his eyes from the light.
+    endif
+  endif
+endif
+~
+|
+#6201
+guard patrol~
+a {gGate Patrol{x guard{x~
+A {gGate Patrol{x guard{x stands here.
+~
+A member of the Gate Patrol troop, this seasoned fighter takes his job very
+seriously. Keen to protect the camp from outsiders, especially any sent by
+the Mayor, he is ever alert.  
+~
+bdmn kr -800 X
+20 12 0 10d10+200
+0 25000
+8 8 1 3 1 3
+T 50 4d4+4 10
+#6202
+guard patrol~
+a {BWall Patrol{x guard{x~
+A {BWall Patrol{x guard{x is here, patrolling the wall.
+~
+Ever wary of any threat to the camp, this guard and the rest of his troop
+always have their wits about them.  
+~
+dgn kr -800 X
+16 13 2 8d0+160
+0 12500
+8 8 1 3 1 3
+T 100 3d9+5 11
+#6203
+guard platform patrol~
+a {cPlatform Patrol{x guard~
+{wA {cPlatform Patrol{w guard stands here scanning the forest below.{x 
+~
+This guard has a keen eye, and is always carefully searching the forest
+floor below for any sign of an attack. If he spies the signs of an attack,
+the few minutes warning he can provide, could be vital.  
+~
+bdgjkmnp kr -800 X
+18 13 1 9d9+180
+0 16800
+8 8 1 3 1 3
+T 100 6d2+6 11
+#6204
+scout~
+a camp scout~
+A young camp scout darts about, watching for outsiders. 
+~
+He has been sent by the guards to keep an eye on the outer walls of the
+camp, reporting back to them if he spies any trouble.  
+~
+cdfg 0 -800 X
+10 15 5 5d5+100
+0 5000
+8 8 1 3 1 3
+T 100 3d2+4 10
+#6205
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6206
+blacksmith angus~
+Angus the Blacksmith~
+Angus the Blacksmith is here pounding away with a hammer.
+~
+A brawny man, Angus would dwarf most people. His thick arms have been built
+up by many years of carrying loads of metal and tools. His hands and
+forearms are covered in an assortment of scars, some from burns and some
+from battle.  
+~
+bcdegnp kr -800 X
+35 7 -8 18d18+350
+0 112000
+8 8 1 3 1 3
+T 50 4d8+3 10
+#6207
+mercenary dwarf dwarven~
+a dwarven mercenary~
+A haggard dwarven mercenary walks slowly past you.
+~
+Many years of work in the forests and mountains has left this man with dark
+leathery skin and a bent stance. He has come to stay in this camp, so he can
+be safe and with his own kind for a while, not having to watch his back at
+every turn.  
+~
+degj 0 -800 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 4d3+3 10
+#6208
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6209
+keeper~
+a fire keeper~
+A fire keeper carefully stokes the embers.
+~
+His old arms have many scars from accidents round the fireplace. His job
+here is to ensure the fire is burning all day and night, providing light and
+warmth to the inhabitants.  
+~
+bd kr 0 X
+18 13 1 9d9+180
+0 16800
+8 8 1 3 1 3
+T 100 4d7+4 10
+A 2 8 The fire keeper throws another log on the fire, sending ashes and embers flying.
+#6210
+rugged man~
+a rugged man~
+A rugged man is resting here, having a drink by the fire.
+~
+Taking some time out, this man is enjoying telling tall tales of conquests
+from his past, weather they be true or not. The main objective here, is to
+make himself seem hardier and more brave than the next man.  
+~
+bcdm kr 0 X
+12 14 4 6d6+120
+0 7500
+5 5 1 3 1 3
+T 300 2d5+2 11
+A 2 5 A rugged man throws a rock at the fire, narrowly missing his foot.
+A 2 5 A rugged man laughs scornfully across the fire at someone telling a story.
+A 2 5 A rugged man yells, 'Oi! who's for another drink?'
+#6211
+horse chestnut~
+a chestnut horse~
+A large chestnut horse has been tethered to the wall here.
+~
+An unfinished mob
+~
+bdgnq 0 0 X
+10 15 5 5d5+100
+0 5000
+8 8 1 4 14 3
+T 100 2d4+2 22
+A 2 8 A chestnut horse stomps his foot threateningly.
+#6212
+lizard~
+a speckled lizard~
+A speckled lizard scuttles around in the leaves.
+~
+An unfinished mob
+~
+dfgq 0 0 X
+5 17 7 3d3+50
+0 1600
+8 8 1 11 14 1
+T 100 1d1+1 22
+T 100 1d2+1 24
+#6213
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6214
+man sleeping~
+An old man~
+A man lies here, sleeping on a thin layer of cloth bedding.
+~
+Trying to catch a nap out of the way of the hoards, this man doesn't look
+particularly comfortable.  
+~
+bdgp 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 3d4+3 10
+#6215
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6216
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6217
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6218
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6219
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6220
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6221
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6222
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6223
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6224
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6225
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6226
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6227
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6228
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6229
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10
+#6230
+mob~
+an unfinished mob~
+A mob stands here.
+~
+An unfinished mob
+~
+d 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 3 1 3
+T 100 2d10+5 10

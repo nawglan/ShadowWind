@@ -1,0 +1,474 @@
+#24200
+spirit steam~
+the Steam Spirit~
+A steam spirit is floating along within the mist.
+~
+The steam spirit is a being of air, and moves like wind. Its wispy body
+moves along in any direction as it has no destination. Its two, piercing
+red eyes land on you.
+~
+cdegpq bq 0 X 0 
+8 16 6 4d4+80
+0 4350
+8 8 0 7 0 4
+T 100 2d3+4 0
+>fight_prog    10~
+   mpcast 'cure critic' self
+   mpecho The Steam Spirit gathers more mist!
+~
+|
+#24201
+keymaster keeper keykeeper~
+the Keeper of the Keys~
+The Keeper of the Keys stands here, looking through a hole outside.
+~
+The Keeper of the Keys is a large, minotaur-like beast but without the 
+horns. He tries to catch a glimpse of the area outside by looking through
+a small hole in the wall. He seems sad, yearning for freedom. But for some 
+unknown reason, he is bound here forever being the guardian of the keys.
+~
+bdlnor 0 10 X 0 
+15 14 2 8d8+150
+0 17000
+8 8 1 3 12 5
+T 120 2d6+11 24
+A 6 8 $n sighs loudly.
+#24202
+skeleton knight bones~
+the Skeletal Knight~
+A pile of bones arise to form a skeletal knight!
+~
+It is one of the most frightnening creatures you have ever seen. The
+skeletal knight looms overhead menacingly, at about 8 feet tall. Its eyes
+flash bright red from deep within its socket. It clicks and clatters as it 
+swiftly swings toward your direction, and you can feel its hatred and 
+evil.
+~
+bdfnop dhkr -550 X 0 
+17 13 1 9d9+170
+0 17000
+8 8 0 2 1 4
+T 70 3d5+8 6
+E -1 10 24204 10
+#24203
+behemoth beast small~
+the Small Behemoth~
+A small behemoth sleeps in the centre of the room quietly.
+~
+The Behemoth is about the size of a large horse, but despite its size he
+looks like a ferocious beast that is quite capable of tearing you limb from
+limb. Its claws are exceptionally long... and quite dangerous. A mane of 
+magenta colored hair sits on its neck.
+~
+bdr kr 0 X 0 
+13 14 3 7d7+130
+0 10000
+4 4 0 4 14 4
+T 100 2d4+8 24
+E -1 75 24205 -1
+#24204
+behemoth beast large~
+the Large Behemoth~
+A large behemoth sleeps in the centre of the room quietly.
+~
+This particular behemoth is one of large proportion. You wouldn't want to 
+wake it from its sleep. You have heard behemoth's can range from small, 
+to very very large... you would hate to see one that big. They aren't
+exactly the friendliest of creatures.
+~
+bdnor kr 0 X 0 
+17 13 1 9d9+170
+0 21000
+4 4 0 4 14 6
+T 45 2d3+4 24
+T 100 2d6+2 24
+E -1 40 24206 4
+#24205
+behemoth beast enormous~
+the Enormous Behemoth~
+An enormous behemoth sleeps in the centre of the room.
+~
+It is simply huuge!! This titanic beast is so big, you wonder if even a
+normal attack would even tickle it. You stare in awe at its presence, to 
+see a living thing like that. Its tough hide seems to move like water when 
+the monster moves its muscles, sending little ripples from here to there.
+It suddenly dawns on you that you are about the same size as his front leg.
+~
+bdnoqr hkr 0 X 0 
+25 10 -3 13d13+250
+0 67000
+4 4 0 5 0 7
+T 40 2d9+5 24
+E -1 75 24206 4
+#24206
+spirit ghost emperor Machk-Gyi~
+the Ghost of the Emperor, Machk-Gyi~
+The Ghost of the Emperor, Machk-Gyi is here wailing and moaning in sorrow.
+~
+The ghost is transparent and glows with a tint of blue. It fades in and 
+out, as if it were about to die out suddenly. It is wailing terribly, a
+sad, hollow sound... one of lost hope and loneliness. Seeing you, the ghost
+beckons you over and quietly tells you its story.
+
+     'Thousands of years ago, the wizards and sorcerers of my time foresaw
+      a great tragedy. Many believed it to be the End of the World. We
+      prepared to face the day when it happened, but we could not survive.
+      Plagues, famines, and earthquakes struck the globe and my family
+      perished along with the rest of my people. Parts of my castle became 
+      buried underground inside this cave. I have never seen another
+      living soul except the beasts who dwell in this underground cave to 
+      which I was forced to seek refuge to. With my last ounce of strength 
+      I hid my treasures and wealth. But even after death I remain banished
+      here for all eternity.'
+
+The ghost buries its face in its hands and begins to sob.
+~
+bdnop ht 500 X 0 
+12 14 4 6d6+120
+0 8080
+6 6 0 1 1 4
+T 100 2d4+7 6
+A 5 6 $n wails terribly.
+A 15 6 $n bursts into tears.
+A 17 6 $n moans.
+#24207
+king behemoth huge~
+the King Behemoth~
+The King Behemoth is growling in rage here, slashing and clawing the air!
+~
+The King Behemoth is of exeptional size, but still not one of the largest 
+behemoths to have lived. But he sure is one of the most ferocious. He 
+claws and tears at the air in wild anger. Even with his great size, his 
+speed is lightning fast and his strength could break a building. The claws
+and teeth are sharp as knives and his tail swishes back and forth 
+menacingly, ready at any moment to whip you down.
+~
+bdfgnoq kr -100 X 0 
+37 6 -9 19d19+370
+0 116000
+8 8 0 5 0 7
+T 100 6d10+15 13
+A 5 8 $n roars tremendously loud!
+E 17 15 24204 10
+E 12 75 24206 4
+E 25 70 24209 10
+#24208
+dark beast shadow~
+the Dark Beast~
+A shadowy beast waits in the corner, his red eyes glaring at you in fury.
+~
+The Dark Beast looks to be about two times the size of you but its hard to 
+tell because you can't see much except shadows. It has no solid form or no
+shape. The main thing you see are two, piercing eyes watching you from
+behind a wall of darkness. Suddenly, without you realizing it, the Beast
+lashes out a massive claw the size of your head, capable of ripping through
+your mortal flesh in a moment.
+~
+bdgklnop hkr -350 X 0 
+24 11 -2 12d12+240
+0 65000
+8 8 0 1 0 5
+T 75 4d8+8 24
+>fight_prog    25~
+   cast 'lightning bolt'
+~
+|
+#24209
+ghast ghost spirit demon~
+the Ghast~
+A transparent, floating ghast is here snickering softly.
+~
+It looks like a blue cloud with little eyes. It moves silently with the 
+air and sometimes you think you notice a slight grin play on its lips.
+Ghasts such as these roam caves and like to make trouble for any
+unsuspecting adventurers.
+~
+cdfghm js -500 X 0 
+8 16 6 4d4+80
+0 4300
+8 8 0 1 0 3
+T 100 2d3+4 0
+A 13 8 $n sucks up some dirt off the floor and spits it back at you.
+A 14 8 $n sneaks up on you and shouts, 'BOOOO!'
+A 15 8 $n pushes you from behind and giggles.
+#24210
+ghost geist poltergeist~
+the Poltergeist~
+A large, ghostly spirit prances from corner to corner laughing at you.
+~
+The Poltergeist is an invisible soul dancing about the room, darting from
+corner to corner and taunting you. It makes repulsive, annoying noises and
+smells aimed directly at you. This ghost is extremely annoying!
+~
+dghlnp hqs -999 X 0 
+14 14 3 7d7+140
+0 10503
+8 8 0 1 0 4
+T 50 2d4+2 26
+A 10 8 $n starts spinning really fast and creates a mini-tornado.
+A 13 8 $n belches loudly in your face.
+A 15 8 $n farts in your general direction.
+A 18 8 $n points at you and giggles uncontrollably.
+A 20 8 $n snickers and snorts.
+#24211
+muck garbage junk beast creature monster~
+the Muck Monster~
+A slimy, disgusting creature erupts from a pile of garbage.
+~
+Not a very big creature, half of its size comes from all of the junk and 
+garbage clinging to it. A thick brown substance oozes down from its 
+body onto the floor, leaving a trail behind when the creature moves. You 
+see a couple tiny rodent bones are stuck in its crooked teeth as it grins 
+evilly. It seems to be enjoying itself.
+~
+bcdjl j -520 X 0 
+10 15 5 5d5+100
+0 5005
+8 8 0 13 0 4
+T 60 2d2+3 13
+A 10 8 $n slurps up a stringy piece of garbage into its mouth.
+A 15 8 $n slops some slimy garbage on your head and grins.
+#24212
+fire gigas ogre giant~
+the Fire Gigas~
+A large Fire Gigas sits on the floor eating away at some bones and meat.
+~
+A large, ogre type creature. It is engulfed in a red flame that makes the 
+room you are sharing very hot. Possibly a friendly creature, that usually 
+minds its own business. However, it wouldn't take kindly to an attack and
+you imagine that it could withstand numerous blows.
+~
+bdop kr -50 X 0 
+36 7 -8 18d18+360
+0 103000
+6 6 1 5 9 6
+T 150 6d12+24 0
+A 13 6 $n chomps loudly on a bone.
+#24213
+neck lava monster~
+the Lava Monster~
+An extremely long neck reaches out from the lava and attacks!
+~
+A very long, worm type monster covered in lava. Its neck stretches all
+the way from the pool of lava and attacks you ferociously. As it opens its 
+mouth at you, about to chomp on your head, you notice rows of razor-sharp
+teeth.
+~
+bdfnop bdg -20 X 0 
+11 14 4 6d6+110
+0 5700
+8 8 0 13 0 6
+T 45 2d2+2 22
+E 17 15 24204 10
+#24214
+gargoyle guard red~
+the Red Gargoyle~
+A statue of a gargoyle sits beside the gate guarding it.
+~
+A very ugly, dangerous looking monster. Its only worry is to make sure no 
+intruders pass the iron gate. Especially you.
+~
+bdmno d -400 X 0 
+16 13 2 8d8+160
+0 11800
+8 8 0 3 0 5
+T 50 2d6+4 13
+A 5 8 $n says, 'Go away!'
+E -1 100 24219 -1
+#24215
+gargoyle guard red~
+the Red Gargoyle~
+A statue of a gargoyle sits beside the gate guarding it.
+~
+A very ugly, dangerous looking monster. Its only worry is to make sure no 
+intruders pass the iron gate. Especially you.
+~
+bdmno d -400 X 0 
+16 13 2 8d8+160
+0 11800
+8 8 0 3 0 5
+T 30 2d3+4 13
+A 5 8 $n growls.
+E -1 60 24218 -1
+#24216
+minotaur slave laborer prisoner~
+the Minotaur Slave~
+A beaten minotaur slave drags along tiredly, carrying a sack of gold.
+~
+Once, probably a healthy, citizen of Mahn-Tor. And now, reduced to a 
+withered slave, beaten and tired. You have never seen a minotaur layed so 
+low. He is carrying a sack of gold along the slave path for his master.
+~
+dgh d 50 X 0 
+8 16 6 4d4+80
+0 4400
+8 8 1 3 4 4
+T 100 2d4+3 24
+A 10 8 $n cries, 'Please help us!'
+E 17 100 24227 -1
+E 13 100 24226 -1
+#24217
+minotaur slave laborer prisoner~
+the Minotaur Slave~
+A beaten minotaur slave drags along tiredly, carrying a heavy corpse.
+~
+Once, probably a healthy, citizen of Mahn-Tor. And now, reduced to a 
+withered slave, beaten and tired. You have never seen a minotaur layed so 
+low. He is carrying a heavy looking corpse.
+~
+dgh d 50 X 0 
+8 16 6 4d4+80
+0 4400
+8 8 1 3 4 4
+T 100 2d4+3 24
+A 10 8 $n trips and falls, but quickly stands up and continues on.
+E 13 100 24226 -1
+#24218
+minotaur slave laborer prisoner~
+the Minotaur Slave~
+A minotaur slave sits on a wooden bench looking very grieved.
+~
+Once, probably a healthy, citizen of Mahn-Tor. And now, reduced to a 
+withered slave, beaten and tired. You have never seen a minotaur layed so 
+low. You can feel his pain.
+~
+bdg d 50 X 0 
+8 16 6 4d4+80
+0 4400
+6 6 1 3 4 4
+T 100 2d4+3 24
+E 13 100 24226 -1
+#24219
+minotaur slave laborer prisoner~
+the Minotaur Slave~
+A worn out minotaur is sleeping on the hard floor here.
+~
+Once, probably a healthy, citizen of Mahn-Tor. And now, reduced to a 
+withered slave, beaten and tired. You have never seen a minotaur layed so 
+low. You can see several deep, red, whiplashes on his back.
+~
+bdg d 50 X 0 
+8 16 6 4d4+80
+0 4400
+4 4 1 3 4 4
+T 100 2d4+3 24
+E 13 100 24226 -1
+#24220
+slavemaster master beast~
+the Slave Master~
+The Slave Master is roaring at beating at the minotaur slaves here.
+~
+A hairy giant towering over the poor minotaur slaves. He shows no mercy as 
+he smashes the minotaur slaves against the wall even if he has no reason. 
+He has huge muscles and a deep, growling voice. A very dangerous enemy.
+~
+dgjlnop hkr -680 X 0 
+40 5 -10 20d20+400
+0 150000
+8 8 0 5 0 6
+T 100 2d8+4 26
+T 40 2d9+6 26
+A 5 8 $n flexes his giant muscles and grins.
+A 10 8 $n smashes his fist against the wall.
+A 15 8 $n roars loudly, 'Get back to work NOW!'
+E 20 35 24223 -1
+E 5 20 24222 3
+>greet_prog    40~
+   slap $n
+   cackle
+~
+>fight_prog    50~
+   bash
+~
+>rand_prog    10~
+   hit slave
+~
+|
+#24221
+silver guard bodyguard armor~
+the Silver Bodyguard~
+A silver-armored bodyguard watches for intruders, sees you, and attacks!
+~
+All you see of it is the silvery armor. It moves quickly and silently, 
+almost like a gust of wind. You wonder if there is anything actually
+inside the armor.
+~
+bdflmno kr -349 X 0 
+14 14 3 7d7+140
+0 15000
+8 8 0 1 1 5
+T 50 2d3+3 13
+E 16 100 24229 -1
+E 11 100 24228 -1
+>fight_prog    80~
+   bash
+~
+|
+#24222
+ugly bug fly~
+the Bug~
+An ugly bug flies around here, but more than meets the eye...
+~
+Very large and loud. You feel something strange about it.
+~
+bdlnopqr gjkqr -300 X 0 
+8 16 6 4d4+80
+0 1000
+8 8 0 7 0 2
+T 100 2d3+4 21
+>hitprcnt_prog    50~
+   mpecho The bug begins to transform into a huge, horrifying Chimera!!
+   mpecho An evil cackle is heard as the transformation takes place.
+   mpat 396 mpmload 24223
+   mptrans chimera
+   mpgoto 1
+   mppurge self
+~
+|
+#24223
+chimera~
+the Chimera~
+The Chimera of Death sits on its back two paws grinning at you hungrily.
+~
+A truly hideous creature. She has the head of a lion, a goat's body and a 
+serpent's tail. The movements are quick, agile and dangerous. You see her 
+watch you slyly, but she doesn't stop with her constant chewing of mangled 
+slave bodies. It seems that the Chimera thinks you are safely in her grasp.
+~
+bdefnopr dhkpr -999 X 0 
+50 2 -10 25d25+500
+0 500000
+6 6 2 5 0 6
+T 100 5d10+50 22
+E -1 100 24245 1
+E -1 100 24234 1
+>fight_prog  20~
+cast 'agony' $n
+~
+|
+#24224
+bat black~
+the Black Bat~
+A black bat hangs upside down in the shadows.
+~
+A small creature that looks harmless.
+~
+bd dkr 50 X 0 
+2 19 9 1d1+20
+0 260
+6 6 0 3 0 2
+T 100 2d1+0 22
+#24225
+flame fire fireball~
+the Fireball~
+A little fireball bounces around the room here.
+~
+A small little fireball that hops slowly around the room. It looks quite 
+harmless and almost 'cute'.
+~
+dg m 400 X 0 
+4 18 8 2d2+40
+0 1680
+8 8 0 8 0 2
+T 25 1d2+0 6
+E 17 20 24204 10

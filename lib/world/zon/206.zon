@@ -1,0 +1,194 @@
+#206
+Lower Moria /Smut/~
+20699 90 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 20600 3 20607 100	* the Miner
+D 0 20607 5 3	* The Tunnels Of Darkness
+O 0 20611 1 20632 100	* a golden treasure chest
+P 0 20612 1 20611	* a pile of gold coins
+O 0 20613 1 20619 100	* a wrought iron range
+P 0 20614 1 20613	* a chocolate cake
+O 0 20604 1 20629 100	* a Stone Fountain
+O 0 20686 1 20665 100	* a hot-pot
+M 0 20653 1 20651 100	* Magluff
+M 0 20654 1 20656 100	* Drapor
+M 0 20655 1 20635 100	* Brunswick
+M 0 20656 1 20659 100	* Deirdre
+M 0 20600 3 20601 100	* the Miner
+M 0 20600 3 20605 100	* the Miner
+M 0 20601 3 20602 100	* the Rock Horta
+M 0 20601 3 20606 100	* the Rock Horta
+M 0 20601 3 20609 100	* the Rock Horta
+M 0 20639 3 20603 100	* the rat
+M 0 20639 3 20604 100	* the rat
+M 0 20639 3 20608 100	* the rat
+M 0 20602 2 20615 100	* the Miner Watchman
+M 0 20602 2 20615 100	* the Miner Watchman
+M 0 20603 11 20622 100	* the Miner Guard
+M 0 20603 11 20616 100	* the Miner Guard
+M 0 20603 11 20634 100	* the Miner Guard
+M 0 20603 11 20631 100	* the Miner Guard
+M 0 20603 11 20629 100	* the Miner Guard
+M 0 20603 11 20627 100	* the Miner Guard
+M 0 20603 11 20624 100	* the Miner Guard
+M 0 20603 11 20645 100	* the Miner Guard
+M 0 20603 11 20643 100	* the Miner Guard
+M 0 20603 11 20640 100	* the Miner Guard
+M 0 20603 11 20636 100	* the Miner Guard
+M 0 20604 1 20626 100	* the Overseer
+M 0 20605 1 20647 100	* the Overseer's Wife
+M 0 20606 2 20631 100	* the Treasury Guard
+M 0 20606 2 20631 100	* the Treasury Guard
+M 0 20607 1 20655 100	* the Treasury Master
+M 0 20608 1 20663 100	* Doctor Goldmine
+M 0 20609 1 20662 100	* the Secretary
+M 0 20610 1 20663 100	* Mrs. Bandell
+M 0 20611 1 20662 100	* the sick child
+M 0 20612 1 20662 100	* the child's mother
+M 0 20613 1 20662 100	* the injured Miner
+M 0 20614 4 20637 100	* the warehouse Worker
+M 0 20614 4 20637 100	* the warehouse Worker
+M 0 20614 4 20637 100	* the warehouse Worker
+M 0 20614 4 20637 100	* the warehouse Worker
+M 0 20615 1 20638 100	* the Guardian of Forever
+M 0 20616 1 20654 100	* the Stone-Mason
+M 0 20617 1 20642 100	* the prospective Buyer
+M 0 20618 1 20642 100	* the Estate Agent
+M 0 20619 1 20653 100	* the Gate Master
+M 0 20620 2 20641 100	* the Gate Guard
+M 0 20620 2 20641 100	* the Gate Guard
+M 0 20621 6 20652 100	* the Construction Worker
+M 0 20621 6 20652 100	* the Construction Worker
+M 0 20621 6 20652 100	* the Construction Worker
+M 0 20621 6 20652 100	* the Construction Worker
+M 0 20621 6 20643 100	* the Construction Worker
+M 0 20621 6 20643 100	* the Construction Worker
+M 0 20622 1 20651 100	* the Old Adventurer
+M 0 20623 1 20651 100	* the off-duty Miner
+M 0 20624 1 20651 100	* the retired Guardswoman
+M 0 20625 1 20652 100	* the Foreman
+M 0 20626 1 20651 100	* the Drunk Miner
+M 0 20627 1 20625 100	* the Captain of the Guard
+M 0 20628 1 20644 100	* the Boyfriend
+M 0 20629 1 20644 100	* the Girlfriend
+M 0 20630 1 20644 100	* the Old Miner
+M 0 20631 1 20659 100	* the posh lady
+M 0 20632 1 20659 100	* the suave gentleman
+M 0 20633 1 20659 100	* the Porter
+M 0 20634 1 20658 100	* the Head Cook
+M 0 20635 2 20658 100	* the Miner Chef
+M 0 20635 2 20658 100	* the Miner Chef
+M 0 20636 1 20658 100	* the Waitress
+M 0 20637 4 20657 100	* the diner
+M 0 20637 4 20657 100	* the diner
+M 0 20637 4 20665 100	* the diner
+M 0 20637 4 20665 100	* the diner
+M 0 20638 1 20657 100	* the Maitre d'Hotel
+M 0 20640 1 20618 100	* the woman
+M 0 20641 2 20618 100	* the child
+M 0 20641 2 20618 100	* the child
+M 0 20642 1 20619 100	* the man
+M 0 20643 1 20621 100	* the old woman
+M 0 20644 1 20660 100	* the Janitor
+M 0 20645 1 20660 100	* the young Elf
+M 0 20646 1 20666 100	* the embarrassed lady
+M 0 20647 1 20661 100	* the Cleaner
+M 0 20648 1 20656 100	* the customer
+M 0 20649 6 20634 100	* the Fat Miner
+M 0 20649 6 20617 100	* the Fat Miner
+M 0 20649 6 20630 100	* the Fat Miner
+M 0 20649 6 20625 100	* the Fat Miner
+M 0 20649 6 20639 100	* the Fat Miner
+M 0 20649 6 20645 100	* the Fat Miner
+M 0 20650 6 20622 100	* the Miner
+M 0 20650 6 20633 100	* the Miner
+M 0 20650 6 20629 100	* the Miner
+M 0 20650 6 20623 100	* the Miner
+M 0 20650 6 20640 100	* the Miner
+M 0 20650 6 20644 100	* the Miner
+M 0 20651 6 20633 100	* the shopper
+M 0 20651 6 20634 100	* the shopper
+M 0 20651 6 20643 100	* the shopper
+M 0 20651 6 20644 100	* the shopper
+M 0 20651 6 20625 100	* the shopper
+M 0 20651 6 20627 100	* the shopper
+M 0 20652 2 20628 100	* the small child
+M 0 20652 2 20628 100	* the small child
+D 0 20634 0 0	* The Shopping District
+D 0 20656 2 0	* Drapor's Shoe Fayre
+D 0 20633 0 0	* In Front Of The Shops
+D 0 20635 2 0	* Bits and Pieces
+D 0 20631 0 1	* Entrance To The Treasury
+D 0 20631 3 2	* Entrance To The Treasury
+D 0 20655 2 1	* The Treasury Master's Office
+D 0 20632 1 2	* The Treasury
+D 0 20630 3 0	* The Extreme Western Wall
+D 0 20662 1 0	* The Doctor's Waiting Room
+D 0 20662 3 1	* The Doctor's Waiting Room
+D 0 20663 1 1	* Doctor Goldmine's Surgery
+D 0 20636 3 0	* The South Western Corner
+D 0 20636 2 0	* The South Western Corner
+D 0 20637 1 0	* The Warehouse
+D 0 20654 0 0	* The Repair Shed
+D 0 20639 2 0	* The Cavern Wall
+D 0 20642 0 0	* An Empty House
+D 0 20640 2 1	* The Cavern Wall
+D 0 20653 0 1	* The Guard House
+D 0 20641 2 2	* By The Huge Stone Gates
+D 0 20650 0 2	* Before The Bridge To Moria Deep
+D 0 20644 2 0	* The Great Escape
+D 0 20651 0 0	* Magluff's Tavern
+D 0 20645 2 0	* The South Eastern Corner
+D 0 20659 0 0	* The Miner's Rest
+D 0 20645 1 2	* The South Eastern Corner
+D 0 20646 3 2	* The Overseer's Consultation Room
+D 0 20646 1 1	* The Overseer's Consultation Room
+D 0 20646 0 1	* The Overseer's Consultation Room
+D 0 20648 1 1	* The Study
+D 0 20648 2 1	* The Study
+D 0 20647 0 1	* The Orangery
+D 0 20647 3 1	* The Orangery
+D 0 20622 1 0	* The North-Eastern Corner
+D 0 20622 0 0	* The North-Eastern Corner
+D 0 20660 2 0	* The Gent's Washroom
+D 0 20661 3 0	* The Ladies Washroom
+D 0 20661 0 2	* The Ladies Washroom
+D 0 20666 2 2	* The Cubicle
+D 0 20617 0 1	* The Back Of The Cavern
+D 0 20618 2 1	* The Living Room
+D 0 20618 0 0	* The Living Room
+D 0 20618 1 1	* The Living Room
+D 0 20619 3 1	* The Kitchen
+D 0 20620 2 0	* The Hallway
+D 0 20616 0 0	* The Back Of The Cavern
+D 0 20657 0 1	* Spaymoore's Diner
+D 0 20657 2 0	* Spaymoore's Diner
+D 0 20658 2 1	* Spaymoore's Kitchen
+S
+$

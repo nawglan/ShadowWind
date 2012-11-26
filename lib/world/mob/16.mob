@@ -1,0 +1,94 @@
+#1600
+centaur centaurs~
+the Centaur~
+The centaur is here cloping about watching the area for trouble.
+~
+A short thick coat of very coarse hair, golden brown in color, with a 
+deep black tail this centaur is built for fighting. The upper body of
+this centaur is quite large and powerfull, fair skin, and black hair on 
+his head, his eyes show a glimmer of extreme intelligence.
+~
+cdglor dfg 0 X
+15 14 2 8d8+150
+0 11000
+8 8 1 4 14 4
+T 100 5d2+8 25
+T 100 5d2+8 1
+E 16 100 1600 -1
+E 11 100 1601 -1
+Str: 100
+>fight_prog      30~
+if ispc $n
+ kick $n
+ kick $n
+endif
+~
+>fight_prog      30~
+if ispc $n
+ bash $n
+ bash $n
+endif
+~
+|
+#1601
+centaur centaurs stallion~
+the Stallion Centaur~
+The stallion centaur is here cloping about watching the area for trouble.
+~
+A short thick coat of very coarse hair, golden brown in color, with a 
+deep black tail this centaur is built for fighting. The upper body of
+this centaur is quite large and powerfull, fair skin, and black hair on 
+his head, his eyes show a glimmer of extreme intelligence.
+~
+cdglor dfg 0 X
+20 12 0 10d10+200
+0 25000
+8 8 1 4 14 4
+T 100 5d2+13 25
+T 100 5d2+13 1
+E 16 100 1600 -1
+E 11 100 1601 -1
+Str: 100
+>fight_prog      30~
+if ispc $n
+ kick $n
+ kick $n
+endif
+~
+>fight_prog      30~
+if ispc $n
+ bash $n
+ bash $n
+endif
+~
+|
+#1602
+anemone giant~
+the Giant Anemones~
+The Giant Anemone is here waving in the breeze.
+~
+Appearing like a huge purple, pink, and blue flower set among the waving
+greenish-yellow sea grasses. There translucent tentacles sway languicly 
+with motion of the water, and tiny puffer fish weave among them, darting 
+away at the first sign that larger creatures are around.
+~
+cdeglnoqr 0 0 X
+20 12 0 10d10+200
+0 25000
+8 8 1 10 14 4
+T 100 5d2+13 1
+T 100 5d2+13 1
+E -1 100 1602 -1
+>fight_prog      30~
+if ispc ($n)
+  mpcast 'poison' $n
+  mpechoat $n From the brese of the tentacle poison splashes upon you.
+endif
+~
+>fight_prog      30~
+if ispc ($r)
+  mpcast 'poison' $r
+  mpechoat $r From the brese of the tentacle poison splashes upon you.
+endif
+~
+|

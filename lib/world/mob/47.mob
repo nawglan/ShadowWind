@@ -1,0 +1,178 @@
+#4700
+sheep~
+{wa young {Wwooly sheep{x~
+{wa cute young {Wwooly sheep {wwith a {Dblack snout {wstands here.{x
+~
+It looks, err, unfinished.
+~
+bdt 0 0 X 0 
+60 30 -10 30d30+30000
+0 10000000
+8 8 2 0 0 0
+T 30 36d100+100 0
+T 30 100d36+100 0
+>rand_prog                               5~
+emot licks you.
+~
+|
+#4701
+vendor man~
+the ticket vendor~
+a snaggle-toothed ticket vendor stands here, waiting to take your money.
+~
+   The man standing here selling tickets to the show can barely stand up on 
+his own. He is half slumped over his ticket stand and the smells of body odor 
+and alcohol permeate the air around him. Despite his obvious drunkeness he 
+still catches the occasional young boy trying to sneak past him into the tent.
+~
+bdgnopr 0 0 X 0 
+51 -10 -10 26d26+1510
+1 1500000
+8 8 1 0 0 0
+T 130 10d3+20 6
+T 100 10d4+25 6
+>speech_prog         ticket tickets~
+if ispc($n)
+  mpdelay 10
+  say did you say you want a ticket, $n? Only 500 coins to see
+  Bugblat's Famous Travelling Freak Show. A bargain if ever I saw one!
+endif
+~
+>all_greet_prog            100~
+if isfollow ($n)
+  break
+else
+  mpdelay 10
+  say 'allo there, so you want to see the freaks eh?
+  mpdelay 10
+  say that'll cost you the bargain price of 5 gold coins, squire.
+endif
+~
+>bribe_prog            500~
+if ispc($n)
+   mpdelay 15
+  say alright then, one ticket it is.
+   mpdelay 10
+  whisper $n just a word squire, there are some pretty nasty sights in there, 
+ hope you're prepared..
+   mpdelay 10
+  mpechoat $n The ticket vendor unhooks the rope barrier and ushers you into t
+e tent.
+   mpechoaround $n The ticket vendor unhooks the rope barrier and ushers $n in
+o the tent.
+  mpechoaround $n $n leaves east.
+   mptransfer $n 4703
+  mpat $n mpechoaround $n The ticket vendor lifts the rope barrier and lets $n
+pass.
+   mpat $n mpechoaround $n $n enters from the west.
+  mpforce $n look
+if isnpc($n)
+  mpdelay 5
+  say I don't allow your kind in here..
+  poke $n
+  mpdelay 5
+  give 500 coins $n
+ endif
+endif
+~
+|
+#4702
+a pretty woman~
+a pretty woman~
+A pretty woman in a small {Cs{Me{Cq{Mu{Ci{Mn{Ce{Md {Cd{Mr{Ce{Ms{Cs{x stands here, catching your eye.
+~
+   Just trying to make a dollar, this stunning young woman parades through
+the showgrounds. Flaunting her shapely legs, and running her fingers through
+her long copper hair, she really does seem to enjoy her work. You wonder
+what she would do for a tip.  
+~
+cdgn 0 0 X 0 
+18 11 1 9d9+180
+0 16800
+8 8 2 0 0 0
+T 100 2d8+10 6
+>rand_prog       10~
+ look $r
+ if sex($r)==1
+  wiggle $r
+say hey sugar..
+ else
+  if sex($r)==2
+   smile $r
+   mpdelay 10
+   say Enjoying the show, pervert?
+emote sticks her nose in the air and turns away.
+  endif
+ endif
+~
+|
+#4703
+goblin~
+the two-headed goblin~
+a small goblin crouches here, questioning your presence.
+~
+It looks, err, unfinished.
+~
+bdo 0 -500 X 0 
+45 25 -10 23d23+450
+0 280000
+8 8 1 0 0 0
+T 90 3d10+5 6
+>fight_prog    20~
+kick $n
+~
+>fight_prog    25~
+bash $n
+~
+|
+#4704
+unicorn feorh~
+Feorh the two-horned unicorn~
+Feorh the two-horned unicorn is here, pacing around her cage.
+~
+It looks, err, unfinished.
+~
+bd 0 0 X 0 
+35 18 -8 18d18+350
+0 112000
+8 8 2 0 0 0
+T 100 3d8+15 8
+#4705
+warrior skeleton man~
+the skeleton warrior~
+a tall skinny man dressed in a skeleton suit jumps out from behind a curtain.
+~
+It looks, err, unfinished.
+~
+bd 0 0 X 0 
+43 23 -10 22d22+430
+0 220000
+8 8 1 0 0 0
+T 85 4d10+10 1
+>rand_prog 5~
+mpecho A skeleton warrior looks up in annoyance and taps on the ceiling.
+mpecho A skeleton warrior says, 'Shhhhhhh! You're ruining it!'
+~
+|
+#4706
+talisha tiger cat~
+Talisha the zebra-striped tiger~
+a large ginger cat is here, gaudy black stripes painted down her back.
+~
+It looks, err, unfinished.
+~
+bdgh 0 0 X 0 
+40 0 -10 20d20+400
+0 150000
+8 8 2 0 0 0
+T 100 3d8+10 0
+>fight_prog   15~
+if ispc($n)
+  mpcast 'fireball' $n
+  mpechoat $n Talisha rears up on her hind legs and swipes her claws across yo
+r body.
+  mpechoaround $n Talisha rears up on her hind legs, swiping her claws across 
+n's body.
+endif 
+~
+|

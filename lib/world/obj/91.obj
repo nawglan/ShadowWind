@@ -1,0 +1,151 @@
+#9100
+sword iron~
+an iron sword~
+An iron sword has dropped  here.~
+~
+5 0 an 0 
+3 2 6 3 8
+12 1000 0
+#9101
+shield wooden~
+a wooden shield~
+A wooden shield has been left here.~
+~
+9 0 aj l 
+2 0 0 0 10
+5 100 0
+#9102
+scrubby moss tree~
+a scrubby moss-covered tree~
+An old, scrubby and moss-covered tree is standing here, with brown leaves 
+rattling in the cold air.~
+~
+12 0 0 0 
+0 0 0 0 5
+0 0 0
+E
+tree scrubby moss~
+You see a dying tree with last years leaves upon its branches.~
+#9103
+black boulder~
+{Da black boulder{x~
+A large, black boulder has been tossed here by a giant, cracking the 
+earth open.~
+~
+12 0 0 0 
+0 0 0 0 6
+0 0 0
+E
+black boulder~
+You see that the boulder has some deep cracks in it, probably due to 
+the impact with the ground.~
+#9104
+plant brown~
+{ya brown plant{x~
+There is a brown plant with long stabbing thorns swaying in the cold 
+air here.~
+~
+8 0 amoq 0 
+0 0 0 0 4
+0 100 0
+E
+plant brown~
+You see a brown sullen plant with long barb-like thorns, sharp as knives.~
+#9105
+dark pool oil oily water~
+{Da pool of oily dark water{x~
+{DThere is a small pool with some oily dark water in it.{x~
+~
+23 0 0 0 
+10000 10000 0 1 0
+10005 0 0
+E
+water pool dark oil oily~
+You see a pool with some oily dark water, after tasting it you decide that
+it was the first and last time. Yuck that really tasted bad!~
+#9106
+stone club~
+a stone club~
+An enormous stone club is lying here.~
+~
+5 0 an 0 
+0 5 6 11 6
+35 0 0
+E
+stone club~
+Only a giant could wield this club.~
+#9107
+tablet tablets stone cabal~
+Tablets of the Cabal~
+Some stone tablets are lying here.~
+~
+12 0 0 0 
+0 0 0 0 6
+0 0 0
+E
+tablet tablets stone cabal~
+The stone tablets read:
+
+'In the woods, the tree that walks. Terror from the sky, snakes
+with wings, fish that talk, evil cannot die.'
+
+'Vampire stars, physics mangled, city formed of unkind angles.'
+
+'Eyes of glass, arms of steel, everything you think turns real.'
+
+'In the water, when you cross the weave of dreams, dead and gone
+ain't what it seems.'
+
+'The time has come, the gate appears, ending the usurper's realm
+of years.'
+
+~
+#9108
+mirror black magna illusions~
+the Magna of Illusions~
+A mirror of absolute darkness stands here.~
+~
+12 ag ao 0 
+0 0 0 0 0
+5000 50000 5000
+E
+mirror black magna illusions~
+The dark mirror seems to absorb every ray of light that should be reflected
+upon it. At the bottom of the frame is an inscription which reads:
+
+                        The Magna of Illusions
+
+~
+A
+3 2
+A
+12 50
+#9109
+cape spotted~
+{Wa red and green {Rs{Gp{Ro{Gt{Rt{Ge{Rd{W cape{x~
+A magnificent cape lies on the ground.~
+~
+9 gjmn ac 0 
+6 0 0 0 3
+8 5000 500
+#9110
+boots scale~
+{yfur lined {cscale mail boots{x~
+A comfortable pair of boots are sitting here.~
+~
+9 g ag 0 
+8 0 0 0 20
+8 1500 0
+A
+3 -3
+#9111
+orc bone ring~
+{Wan orc-bone nose ring{x~
+A small piece of carved bone has been discarded here.~
+~
+11 gop ap 0 
+0 0 0 0 25
+1 200 0
+A
+26 8
+$~

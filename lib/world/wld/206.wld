@@ -1,0 +1,3435 @@
+#20600
+Through The Rubble~
+   After much effort, you have managed to squeeze down through the hole
+in the floor above and have entered an old mining tunnel. Rubble is
+scattered all around you from the recent collapse of the ceiling above,
+covering the walls with a thick layer of dust. Looking all around, you
+see tunnels, tunnels and more tunnels.
+~
+206 acdef 0
+D0
+The roof of the tunnel has collapsed in, blocking any passage back this way.
+Dust still hangs heavy in the air, choking you.
+~
+~
+0 0 -1 0
+D1
+The grey rock wall of the tunnel is covered in a fine, white dust, probably
+from the recent rockfall in the tunnel ceiling.
+~
+~
+0 0 -1 0
+D2
+The tunnel system starts. Looks like could be a mapping job. *groan*
+~
+~
+0 0 20601 0
+D3
+The grey rock wall of the tunnel is covered in a fine, white dust, probably
+from the recent rockfall in the tunnel ceiling.
+~
+~
+0 0 -1 0
+D4
+You see the broken hole in the tunnel roof through which you have just
+descended. To climb back up could be quite some effort.
+~
+~
+0 0 4074 0
+D5
+Small pebbles and stones are scattered about, showered here from the recent
+rockfall.
+~
+~
+0 0 -1 0
+S
+#20601
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20602 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20602
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20603 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20602 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20603
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20602 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20604 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20604
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20605 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20602 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20603 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20605
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20606 0
+D2
+A long, dark drop to your DEATH can be seen. Don't even think about going
+this way. The abyss plunges to a bottomless hole.
+~
+~
+0 0 20611 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20603 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20606
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20607 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20603 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20605 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20601 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20607
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working. You notice a wooden trapdoor in the floor.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20607 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20608 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20604 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20607 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The 
+rough texture gives you a sure grip underfoot. You notice an old wooden
+trapdoor covered in coal dust.
+~
+trapdoor~
+1 0 20533 0
+S
+#20608
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+A long, dark drop to your DEATH can be seen. Don't even think about 
+going this way. The abyss plunges into a bottomless hole.
+~
+~
+0 0 20611 0
+D1
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20605 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20609 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20607 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20609
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 ad 0
+D0
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20607 0
+D1
+A long, dark drop to your DEATH can be seen. Don't even think about
+going this way. The abyss plunges into a bottomless hole.
+~
+~
+0 0 20611 0
+D2
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20610 0
+D3
+Through the shadowy darkness, the tunnels seem to go on forever.
+~
+~
+0 0 20605 0
+D4
+The tunnel ceiling lies about three feet above your head. Small gemstones
+reflect the light back towards you, illuminating the passage.
+~
+~
+0 0 -1 0
+D5
+The rocky floor has been carved very crudely, the result of mining. The
+rough texture gives you a sure grip underfoot.
+~
+~
+0 0 -1 0
+S
+#20610
+Tunnels End~
+   At last, you have come to the end of the labyrinth. After wandering
+around in the maze for so many hours, now would be a good time to take a 
+break before you carry on with your journey. You can see a large cavern to 
+the south, whilst to the north you can get lost in the maze again.
+~
+206 cde 0
+D0
+The maze system of tunnels starts again this way.
+~
+~
+0 0 20604 0
+D1
+The tunnel has been mined by some very skilled workers. There are no beams
+to shore up the tunnel, just the naked walls.
+~
+~
+0 0 -1 0
+D2
+You see a HUGE cavern, at least a mile across and climbing up to 200 feet
+high. Many people are wandering around, the place looks alive with life.
+~
+~
+0 0 20615 0
+D3
+The tunnel has been mined by some very skilled workers. There are no beams
+to shore up the tunnel, just the naked walls.
+~
+~
+0 0 -1 0
+D4
+The tunnel roof is quite low here, only a foot above your head. To the
+south, it starts to climb quite rapidly as it meets the start of the huge
+cavern.
+~
+~
+0 0 -1 0
+D5
+This looks like it must be the only exit out into the mining tunnels. The 
+rocky floor has been worn smooth here by the passage of many feet.
+~
+~
+0 0 -1 0
+S
+#20611
+The Tunnels Of Darkness~
+   The maze of tunnels stretch on through the darkness in all directions.
+The rock here is made from a rich brown mineral, containing gemstones and
+metal ores in abundance. A loud clanging sound and hammering echoes around
+you, the sound of mine working.
+~
+206 acd 0
+D0
+~
+~
+0 0 20600 0
+D1
+~
+~
+0 0 20605 0
+D2
+~
+~
+0 0 20603 0
+D3
+~
+~
+0 0 20601 0
+S
+#20615
+Cavern Entrance~
+   You find yourself at the entrance to a HUGE cavern. The ceiling stretches
+up into the darkness and must be at least two-hundred feet high. Looking to
+the east and west, you estimate that the cavern must be about a mile across.
+In front of you, the far side of the cavern can be seen about half a mile
+away. You feel really small standing here. Miners, their wives and children
+can be seen going about their business. Surrounding the edge of this cave,
+built into the walls, are numerous houses. You suddenly realise this place
+for what it is, a large underground mining colony.
+~
+206 d 1
+D0
+The end of the mining tunnel can be seen. Mine workings stretch off far into
+the distance in a confusing tunnel system.
+~
+~
+0 0 20610 0
+D1
+The cavern stretches out, following the northern wall.
+~
+~
+0 0 20616 0
+D2
+To the south you may head towards the centre of the cavern, and join the
+bustling activity.
+~
+~
+0 0 20627 0
+D3
+The back wall of the cavern stretches off into the distance.
+~
+~
+0 0 20634 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20616
+The Back Of The Cavern~
+   You are walking along the back wall of the cavern, trying not to be
+noticed by the miners. Set into the wall are many dwellings, carved out of
+the solid bed-rock of the cavern. Most look as though they are buzzing with
+life, and the people look very happy. To your north, you can see the
+entrance to a rather expensive looking restaurant.
+~
+206 d 1
+D0
+Through a gold and silver doorway, you can see into a rather expensive and
+posh restaurant.
+~
+diner~
+1 0 20657 0
+D1
+The back wall of the cavern continues.
+~
+~
+0 0 20617 0
+D2
+A very large pedestal can be seen in the middle of the cavern.
+~
+~
+0 0 20625 0
+D3
+The entrance to the cavern lies back this way.
+~
+~
+0 0 20615 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+houses~
+Houses have been carved out of the bedrock itself by sheer brute force and
+mining skills. Several faces can be seen at a few of the windows, although
+they take little notice of you. You try a few of the doors at the empty
+houses, but they are all locked.
+~
+S
+#20617
+The Back Of The Cavern~
+   Continuing your walk along the back wall, you notice that there are less
+people here. A really nice smell is coming from a house to the north,
+setting your taste buds off. You feel very hungry.
+~
+206 d 1
+D0
+A large house can be seen. The entrance is through a large green door.
+~
+green~
+1 0 20618 0
+D1
+You see the extreme north-eastern corner of the cavern.
+~
+~
+0 0 20622 0
+D2
+You can move further towards the centre of the cavern.
+~
+~
+0 0 20624 0
+D3
+The cavern continues back this way.
+~
+~
+0 0 20616 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20618
+The Living Room~
+   Two large leather couches are in the centre of the room along with many
+other chairs and carpets to sit on. Obviously get-togethers with friends and
+relatives must play a key role in the social life of these people. After
+all, there cannot be that much else to do down here... Exits lead off to the
+east into a small kitchen and north into a hallway. To the south you can
+exit back out into the cavern.
+~
+206 cd 1
+D0
+A hall and staircase can be seen through a doorway.
+~
+door~
+1 0 20620 0
+D1
+The kitchen lies off this way. The smell of home cooking is incredible in
+the air.
+~
+door~
+1 0 20619 0
+D2
+Leaving the house will take you back out into the cavern.
+~
+green~
+1 0 20617 0
+D3
+A large bookcase lines the whole length of the wall. A quick scan through
+the titles shows most of them to be story books, telling tales of fantastic
+legends and heroes of the land. The books look very well read.
+~
+~
+0 0 -1 0
+D4
+The ceiling of the room is no more than three above your head. It is painted
+a pale green colour, reminding you of spring. A crystal chandelier hangs
+from the centre, made from many multi-coloured glasses.
+~
+~
+0 0 -1 0
+D5
+Thick woollen and fur carpets have been scattered on the ground around the
+two large couches. They look very comfortable to relax upon.
+~
+~
+0 0 -1 0
+E
+leather couches~
+Each couch is made from a dark brown leather and has enough space to sit
+three people easily. Two large cushions have been placed at each side,
+embroidered with pictures of rabbits and horses.
+~
+E
+chair chairs~
+The armchairs look like the type where if you sit down in them, you will be
+buried in the mounds of padding and cushions, so comfortable, but very hard
+to get back up again. They are the ultimate in relaxation.
+~
+E
+carpet carpets~
+The carpets are made from either thick fur or wool. They are scattered about
+the room, providing further sitting spaces for people to lounge about in.
+~
+S
+#20619
+The Kitchen~
+   This is a fair size kitchen with all manner of pots, pans and dishes
+lying around or stacked on the shelves. The far wall is dominated by a huge
+iron range which looks spotlessly clean. The nice smell is coming from the
+range.
+~
+206 d 1
+D0
+Along the wall stands a huge iron range. Heat is coming from it as well as
+an incredible smell.
+~
+~
+0 0 -1 0
+D1
+The wall is lined with wooden shelves filled with herbs, spices, fresh food,
+pots and pans. Everything that a cook could want really.
+~
+~
+0 0 -1 0
+D2
+Along this side of the kitchen is a large wooden dining table, which seems
+to double as the place to prepare the food. The table bears many scars from
+the carving knife and deep slashes from a cleaver.
+~
+~
+0 0 -1 0
+D3
+The living room is through the doorway this way
+~
+door~
+1 0 20618 0
+D4
+The low ceiling has been whitewashed, giving the kitchen a sparkling clean
+feeling.
+~
+~
+0 0 -1 0
+D5
+The stone floor has been highly polished until you can almost see your
+reflection in it. It is absolutely clean with none of the usual kitchen
+messes around.
+~
+~
+0 0 -1 0
+E
+pots pans dishes~
+There is almost every variety you could imagine. These people must really
+take their food seriously. The crockery is very highly coloured, in sharp
+contrast to the general dullness of living underground. The cooking pots
+and pans are made from shiny titanium, likely to last forever.
+~
+E
+range~
+The range dominates the northern wall of the kitchen. It is made from
+wrought iron that has been painted a dark matt colour. Fired from coal gas,
+heat radiates from the metalwork. A small door at the front allows you to
+open it.
+~
+S
+#20620
+The Hallway~
+   This is a very grande hallway, with a large stone staircase leading 
+upwards. Set into the eastern wall is a wooden trophy cabinet, full of cups
+and medals. Hanging on the western wall is a grotesque troll head, its face
+jeering at you. A doorway leads back into the living room to the south.
+You see a trophy cabinet here.
+~
+206 d 1
+D0
+Some stone steps have been carved into the wall. They lead upwards to the
+upper floor.
+~
+~
+0 0 -1 0
+D1
+A wooden trophy cabinet lines the whole of this wall. It is filled to
+brimming with assorted cups, medals and trophies.
+~
+~
+0 0 -1 0
+D2
+The living room lies back this way. You can see two large couches and
+numerous carpets scattered on the ground.
+~
+door~
+1 0 20618 0
+D3
+Hanging in the centre of the wall is a grotesque troll head. It has been
+stuffed and looks as fresh as the day it was caught, perhaps as part of a
+hunt. The two glass eyes stare at you with evil menace in them.
+~
+~
+0 0 -1 0
+D4
+Climbing the stone stairs, you can reach the second story of the miner's 
+house.
+~
+~
+0 0 20621 0
+D5
+Like the rest of the floors in this house, the stone floor has been polished
+to a high finish. The stone is a deep red colour here, with veins of dark
+green running through it. It actually looks very pretty.
+~
+~
+0 0 -1 0
+E
+head troll~
+Hanging in the centre of the wall is a grotesque troll head. It has been
+stuffed and looks as fresh as the day it was caught, perhaps as part of a
+hunt. The two glass eyes stare at you with evil menace in them.
+~
+E
+stone staircase stairs~
+The staircase has been chiselled directly out of the northern all, leading
+up towards the rooms above. Each step is quite high, only ten needed to
+climb up towards the ceiling. Its surface is so highly polished, the stone
+has become almost glass-like, although it still provides a good grip
+underfoot.
+~
+E
+wooden cabinet~
+The cabinet is about ten feet long and seven feet high. It has a glass
+front, which allows you to see the medals, cups and trophies inside. The
+wooden panelling has pictures of the Great Gods, Helver and Traveller carved
+into them.
+~
+E
+cups~
+One of the cups catches your eye. It is made from pure gold and is about six
+inches high. The inscription reads, 'Awarded for the mining of the largest
+emerald', followed by the year.
+~
+E
+medal medals~
+The medals are all shapes and made from many different metals and materials.
+One appears to have been made from a single diamond, a single hole in the
+top allowing a silver thread to be looped through.
+~
+E
+trophy~
+You cant help but laugh when you see one of the inscriptions on a trophy.
+Awarded to Fin Friffton for best storytelling, age 12-14. Another cup was
+awarded for needlework.. wow these people lead an exciting life.
+~
+S
+#20621
+Upstairs In A Miner's House~
+   This is one gigantic room. The only part that is partitioned off leads to
+a washroom. The rest of the room seems to be communal, with five separate
+beds, one of them larger than the other four. There cant be very much
+privacy for the poor people who live here.
+~
+206 d 1
+D0
+A beautiful picture, drawn with many coloured chalks and charcoals fills the
+whole wall. You can see a wonderful summer garden, filled with a variety of
+flowers and plants, with a bright yellow sun watching over. Down, deep
+underground, the miners must miss the open air awfully.
+~
+~
+0 0 -1 0
+D1
+A set of stone stairs leads back down into the hallway beneath. A stone
+banister has been built around the steps to prevent anybody from falling
+down.
+~
+~
+0 0 -1 0
+D2
+A large double sized bed takes up most of this wall. Thick piles of fur have
+been scattered on top for blankets.
+~
+~
+0 0 -1 0
+D3
+A children's cradle and a smaller bed have been pushed up alongside the
+wall. Further along, a table dresser stands with its back towards the wall,
+covered in hair brushes, mirrors, assorted jewellery and a few trinkets.
+~
+~
+0 0 -1 0
+D4
+Hanging from the ceiling, at well spaced intervals, are several gas lamps,
+each radiating a crisp white light. The mantle glows an intense silver
+colour as it feeds on the coal gas.
+~
+~
+0 0 -1 0
+D5
+The stone stairway leads back down into the main hallway.
+~
+~
+0 0 20620 0
+E
+bed beds~
+Each bed is about six feet long and three feet wide. Thick furs have been
+laid on top to act as blankets, and soft, billowing cushions are used as
+pillows. Each has a carved wooden headrest showing flowers in bloom, fruit
+trees, wild animals and country scenes.
+~
+S
+#20622
+The North-Eastern Corner~
+   At last, you reach a corner of this vast cavern. Most of the wall is just
+rock here with no houses built into it, but to the north and east you can 
+see two buildings with a sign outside each. A few people occasionally enter
+these and leave again a few minutes later.
+~
+206 d 1
+D0
+You can enter through a small doorway into a building which is trying hard
+not to be noticed. A small sign on the wall outside has the word 'GENTLEMEN'
+written upon it.
+~
+mens~
+1 0 20660 0
+D1
+You can enter the building through a small doorway. A small sign on the 
+outside wall has the word 'LADIES' written upon it.
+~
+womens~
+1 0 20661 0
+D2
+The cavern wall leads south here, further into the cavern.
+~
+~
+0 0 20623 0
+D3
+The cavern wall continues back to the west.
+~
+~
+0 0 20617 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+sign signs~
+Fastened onto the wall outside each building is a rather discrete sign. To
+the north, the sign has the word 'GENTLEMEN' printed upon it, whilst to the
+east the sign reads 'LADIES'.
+~
+S
+#20623
+The Far Eastern Wall~
+   The cavern continues to the north where it reaches the far corner. To the
+south, you can see a lot of large mansions set into the cavern walls, the 
+area dominated by a four storey building. Set into the eastern wall is a 
+room which look to be almost deserted. A marble plaque hangs above the door, 
+the writing inlaid in gold.
+~
+206 d 1
+D0
+You can make out the north-eastern corner of the cavern.
+~
+~
+0 0 20622 0
+D1
+A small building has been built into the cavern wall. It seems to be almost
+deserted and rather spartan looking, unlike other buildings you have visited
+on this trip.
+~
+~
+0 0 20664 0
+D2
+You will reach the south-eastern corner of the cavern this way. Many 
+magnificent buildings have been constructed in the walls, making this area
+seem slightly more upper class than what you have encountered thus far.
+~
+~
+0 0 20645 0
+D3
+The cavern continues this way.
+~
+~
+0 0 20624 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+marble plaque~
+
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                ^                               ^
+                ^                               ^
+                ^             NEWS              ^
+                ^            OFFICE             ^
+                ^                               ^
+                ^                               ^
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+~
+S
+#20624
+Middle Of The Cavern~
+   You continue to wander along the centre of the cavern. Although nobody
+seems to mind your presence here, you do seem to be attracting a certain
+amount of attention from the locals. As you glance around, you cant help but
+notice a few of them pointing at you and talking excitedly to their friends.
+~
+206 d 1
+D0
+Going this way takes you to the back wall of the cavern.
+~
+~
+0 0 20617 0
+D1
+The far eastern wall of the cavern can be seen this way.
+~
+~
+0 0 20623 0
+D2
+The sound of merriment can be heard from this direction.
+~
+~
+0 0 20644 0
+D3
+A very large man is shouting orders to the passers by.
+~
+~
+0 0 20625 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20625
+The Overseer's Pedestal~
+   This place is dominated by a huge pedestal. Standing atop this would
+afford you a very good view of a great deal of this splendid cavern. There
+are many citizens walking around here, all going about their own business. 
+Exits lead off in all directions around the cavern, including up, atop the
+pedestal.
+~
+206 d 1
+D0
+This way leads away to the back of the cavern.
+~
+~
+0 0 20616 0
+D1
+The middle of the cavern extends this way.
+~
+~
+0 0 20624 0
+D2
+Some construction work in the southern wall is taking place.
+~
+~
+0 0 20643 0
+D3
+The centre of the cavern lies thisaway, crowded with many people.
+~
+~
+0 0 20627 0
+D4
+You can easily climb up the ladder to the top of the pedestal.
+~
+~
+0 0 20626 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+pedestal~
+The pedestal is about five feet across and fifteen feet high, made entirely
+out of gold. Engravings of miners with their families, dancing around in
+celebration, can be seen around its base. Carved into one side is a ladder
+which reaches to the top. It looks safe to climb up.
+~
+S
+#20626
+Atop the Pedestal~
+   What a view!! You can see almost all of the cavern from here, including
+an awesome looking fortress structure to the south. Some of the people are
+looking up at you with a little anger in their eyes. This may be some kind
+of sacred or very important place to them.
+~
+206 cd 5
+D0
+Far off you can see the entrance to this cavern, through which lies the maze
+of mine workings. It looks like a few miners are on their way to work, pick
+axes slung over their shoulders.
+~
+~
+0 0 -1 0
+D1
+The cave stretches off towards the far eastern wall. Many people are
+bustling around the pedestal below you, men, women and children all chatting
+excitedly with one another.
+~
+~
+0 0 -1 0
+D2
+About half a mile away you can see a massive pair of gates. Very briefly
+they swing open, and you glimpse a large fortress structure behind them, an
+ominous looking place which radiates evil.
+~
+~
+0 0 -1 0
+D3
+The cavern continues this way towards the far western wall. A little way off
+you can see a statue standing erect, and a little way past that is a
+bubbling fountain.
+~
+~
+0 0 -1 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+You can safely climb back down to the ground on the golden ladder amid the
+gathering crowd of people.
+~
+~
+0 0 20625 0
+S
+#20627
+The Cavern Centre~
+   This is the direct centre of the cavern, and also the centre of social
+activities. There is a huge statue, which is surrounded by benches and seats
+galore. Everybody sits chatting away in a very jovial mood. You almost feel
+like stopping to join in the celebrations.
+~
+206 d 1
+D0
+The cavern entrance invites you back to the labyrinth of tunnels.
+~
+~
+0 0 20615 0
+D1
+The Overseer's pedestal lies in this direction.
+~
+~
+0 0 20625 0
+D2
+You see a pair of huge stone gates set into the wall.
+~
+~
+0 0 20641 0
+D3
+The cavern stretches off to the west, crowded with people.
+~
+~
+0 0 20628 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+statue~
+This is a very large marble sculpture of King Welmar. It is a very good
+likeness, and you marvel at the talents of the person who carved it. You
+wonder if they would do one for you, if you asked nicely, or failing that,
+under threat of death.
+~
+E
+benches seats~
+These are all made out of a white marble, but have thin cloth coverings on
+the seats and back rests to remove the coldness. They have been used a great
+deal and shine from constant wear.
+~
+S
+#20628
+The Middle Of The Cavern~
+   The cavern stretches in all directions. To the east you can see the
+centre of the cavern and a huge marble statue, whilst to the west there is a
+magnificent stone fountain. Many children are playing here, a form of
+skittles with six inch marble pegs being particulary popular.
+~
+206 d 1
+D0
+This way leads to the back wall of the cavern where there are far fewer
+people about.
+~
+~
+0 0 20634 0
+D1
+Walking this way leads to the centre of the cavern, where you can see a huge
+marble statue of King Welmar.
+~
+~
+0 0 20627 0
+D2
+Heading this way will take you to the southern wall of the cavern.
+~
+~
+0 0 20640 0
+D3
+A magnificent stone fountain lies this way, splashing water high into the
+air.
+~
+~
+0 0 20629 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20629
+The Stone Fountain~
+   This could be a good point to replenish your water supply. The water
+seems to be coming from a natural spring in the ground and sprays up high
+into the air, showering you with the ice cold liquid. It tastes wonderful,
+and all it needs now is a hint of lemon and you would be able to sell the
+stuff back in Garathorm.
+~
+206 d 1
+D0
+The back wall of the cavern can be reached this way.
+~
+~
+0 0 20633 0
+D1
+The middle of the cavern stretches on and on...In the distance you can see a
+large golden pedestal.
+~
+~
+0 0 20628 0
+D2
+You see lots of houses set into the cavern wall.
+~
+~
+0 0 20639 0
+D3
+Going this way will take you to the extreme western wall of the cavern.
+~
+~
+0 0 20630 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20630
+The Extreme Western Wall~
+   There is nothing much remarkable about this place. Most of the activity
+in the cavern seems to take place in the centre around the huge pedestal. A
+few older people pass you, entering a building to the west. They barely take
+any notice of you. There is a sign on the outside wall.
+~
+206 d 1
+D0
+Moving this way will take you to the far north-western part of the cavern.
+~
+~
+0 0 20631 0
+D1
+The magnificent stone fountain lies off this way.
+~
+~
+0 0 20629 0
+D2
+The corner of the cavern is this way.
+~
+~
+0 0 20636 0
+D3
+A doorway leads into a building carved out of the rock wall. A few people
+pass in and out, most looking a little under the weather.
+~
+door~
+1 0 20662 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+sign~
+
+                                **********
+                                *        *
+                                *        *
+                                *        *
+                        *********        *********
+                        *                        *
+                        *    DOCTOR GOLDSMITH    *
+                        *                        *
+                        *********         ********
+                                *         *
+                                *         *
+                                *         *
+                                ***********
+
+~
+S
+#20631
+Entrance To The Treasury~
+   Quite by accident, you seem to have stumbled upon the treasury. Your
+mouth starts to salivate as you think of all the money that must be locked
+up inside that building. After all, its quite apparent that these are not
+poor people. Having a monopoly on all of Garathorm's raw material needs is 
+not to be sneezed at. The building itself seems to have been carved directly
+out of the stone, just like the houses, which means the only way inside is
+to go through the front door...
+~
+206 d 1
+D0
+You can see a small door leading into a small office building.
+~
+door~
+1 0 20655 0
+D1
+You can follow the wall back towards the cavern entrance.
+~
+~
+0 0 20633 0
+D2
+There are few people around here, the grey cavern wall your guide towards
+the centre of the cavern.
+~
+~
+0 0 20630 0
+D3
+You can see the miner's treasury, probably filled with their incredible
+wealth.
+~
+mithril~
+2 20600 20632 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20632
+The Treasury~
+   This place is just splendid, there is gold everywhere!! All of the desks,
+tables, even the floor are solid gold. It is a pity it is all too heavy for
+you to carry away, because you would be rich beyond your wildest dreams if
+you could just take a small part of it. You wonder if they pay their full
+taxes to Welmar, if not, perhaps a word in the King's ear may prove of some 
+benefit to you. There is a large golden throne resting along the western
+wall. The only exit is back to the east.
+~
+206 cd 0
+D0
+A golden desk with a golden chair stand along the wall. Pens and papers show
+you this must be the administration for the wealth kept here. To your
+surprise, the paper isn't made of gold leaf.
+~
+~
+0 0 -1 0
+D1
+Going back this way will take you back to the treasury entrance.
+~
+mithril~
+2 20600 20631 0
+D2
+Stacked neatly in several pyramidal piles are hundreds of heavy gold bars.
+Each bar has Welmar's stamp on it and another symbol denoting the year it
+was smelted.
+~
+~
+0 0 -1 0
+D3
+Magnificent in its appearance, this appears to be an exact copy of King 
+Welmar's throne. Perhaps these people made Welmar's in the first place, if
+not, you have no idea what it is doing here.
+~
+~
+0 0 -1 0
+D4
+The ceiling of the treasury has been plated in solid gold. A few gas lamps
+have been fixed at intervals along the roof, their light turning a golden
+hue as it reflects off the mounds of treasure in here.
+~
+~
+0 0 -1 0
+D5
+Scattered around the treasury are several stacks of gold bars piled high. A
+few mounds of gold coins also litter the floor, all stamped with the face of
+King Welmar.
+~
+~
+0 0 -1 0
+E
+golden throne~
+Magnificent in its appearance, this appears to be an exact copy of King 
+Welmar's throne. Perhaps these people made Welmar's in the first place, if
+not, you have no idea what it is doing here. Lying on the golden seat is a
+purple cushion embroidered with golden thread, intended for the royal
+posterior.
+~
+S
+#20633
+In Front Of The Shops~
+   You seem to have arrived in the shopping district of the cavern, busy
+with avid shoppers. The whole wall is lined with shops of all kinds, and
+most appear to be bustling with life. A general store lies directly to the
+north of you.
+~
+206 d 1
+D0
+You can enter a general store through a small door.
+~
+door~
+1 0 20635 0
+D1
+The cavern wall continues this way through the shopping district.
+~
+~
+0 0 20634 0
+D2
+A magnificent stone fountain is spraying cool water into the air.
+~
+~
+0 0 20629 0
+D3
+You see the north-western corner of the cavern.
+~
+~
+0 0 20631 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20634
+The Shopping District~
+   Shops have been carved into the back wall of the cavern, all filled with
+busy people. To the east you see the cavern entrance, whilst to the west 
+there appear to be large crowds of people, their arms full of new purchases.
+In front of you to the north there is a shoe shop. 
+~
+206 d 1
+D0
+Through an arched door you can enter into a shoe shop.
+~
+door~
+1 0 20656 0
+D1
+This way leads you back to the cavern entrance where many miners are on
+their way to work out in the maze of mines.
+~
+~
+0 0 20615 0
+D2
+The middle of the cavern lies in this direction, many small children playing
+games with one another.
+~
+~
+0 0 20628 0
+D3
+The cavern looks very much crowded this way in the very heart of the
+shopping district.
+~
+~
+0 0 20633 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20635
+Bits and Pieces~
+   This appears to be a general store, selling all sorts of stuff. As well
+as selling various unusual items, such as the finger clamp, they sell some
+rather exotic food. The walls are lined with shelves containing all manner
+of rubbish, but you think a bargain or two may be had here, if only you
+needed any of it.
+~
+206 dh 0
+D0
+A smiling man stands behind the wooden counter awaiting your order. A shiny
+golden bell sits on the counter, just waiting to be pressed.
+~
+~
+0 0 -1 0
+D1
+The wooden shelves are stacked high with items for you to browse through.
+There is probably anything here you could possibly ever want, and many you
+definitely would never want.
+~
+~
+0 0 -1 0
+D2
+The door spills you back out into the cavern.
+~
+door~
+1 0 20633 0
+D3
+A display of fresh meats and vegetables as well as many exotic looking items
+are laid out on a stone table. The place is spotlessly clean, easing any
+worries about possible food poisoning.
+~
+~
+0 0 -1 0
+D4
+Pots and pans, coal scuttles and all sorts of junk hang from large hooks
+in the high ceiling. You can barely see the bare rock through all the
+clutter.
+~
+~
+0 0 -1 0
+D5
+Like the rest of this cavern, the floor is meticulously clean and free from
+dirt. This is in sharp contrast to the rest of the clutter and mess around
+you.
+~
+~
+0 0 -1 0
+E
+shelf shelves~
+The wooden shelves are stacked with almost any item you could possibly
+imagine. Most of it of course is junk, but there may be something worth your
+while if you search through it all.
+~
+S
+#20636
+The South Western Corner~
+   You have arrived at the far south western corner of the cavern. All
+around you are large wooden trucks, piled high with all sorts of raw 
+materials. Slate, coal, stone, marble, and quartz can all be seen. How do
+they actually ship all of this stuff back to Garathorm? It would certainly
+be impossible to take it back the route you came by, and there are no other
+apparent exits. To the west you see a very wide archway leading into a
+smaller cavern.
+~
+206 d 1
+D0
+This way leads back to the middle of the cavern along the grey rock wall.
+~
+~
+0 0 20630 0
+D1
+You can follow the wall of the cavern this way further into the cavern.
+~
+~
+0 0 20639 0
+D2
+Through a wide doorway you can see some sort of repair shed. Broken carts
+fill the place.
+~
+door~
+1 0 20654 0
+D3
+A large archway can be seen leading into a smaller cavern.
+~
+warehouse~
+1 0 20637 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+wooden trucks~
+The wooden trucks are about twenty feet long and twelve feet wide. They have
+stone wheels which look like they are impervious to any wear and tear. Most
+are loaded up with mined materials. Coal, quartz and various other minerals.
+They look very lumbering, and surely couldn't be used to make the whole
+journey back to Garathorm.
+~
+S
+#20637
+The Warehouse~
+   This place is piled high with large wooden crates. On each is stamped
+their contents and what you think must be the date they are due for
+delivery. Many workers are busy packing new crates with the raw materials.
+To the west, you see a strange fuzziness in the air, as though the whole
+western corner of the cavern is rippling. Periodically, a worker will drag a
+box over to the rippling, and with a small push, it seems to disappear in a
+bright flash.
+~
+206 cd 1
+D0
+Piles of crates are stacked up ready for delivery back to Garathorm. They
+seem to be sorted by delivery date rather than contents, so the miners must
+have long standing orders with the officials who run Garathorm. It must be
+very lucrative.
+~
+~
+0 0 -1 0
+D1
+You can go back through the archway into the main cavern. A few wooden
+trucks loaded with minerals can be seen waiting outside, ready to be
+unloaded and sorted.
+~
+warehouse~
+1 0 20636 0
+D2
+Many people are working on unloading the large carts and filling the smaller
+crates. For the more valuable materials, such as diamond and gold, scales
+are used to weigh accurately the contents.
+~
+~
+0 0 -1 0
+D4
+Many small gas lanterns light this warehouse up very well, allowing you to
+see very clearly the whole place. The ceiling is quite high, affording a
+great deal of space for the materials to be piled up high.
+~
+~
+0 0 -1 0
+D5
+The floor is covered in piles of the raw materials, as well as coal dust
+everywhere. Large crates are stacked towards the north, whilst packing of
+the crates takes place to the south side of the warehouse. Metal tracks in
+the floor allow the big carts to be brought in and guided into place for
+unloading more easily.
+~
+~
+0 0 -1 0
+E
+create crates~
+The crates are six feet square and made from a hard wood. Once full, they
+are nailed shut with metal pins and the delivery date and contents burnt
+onto the side.
+~
+E
+fuzziness~
+Perhaps it could be a way to transport these materials, and possibly you,
+back to Garathorm...
+~
+S
+#20638
+The Rift In Space~
+   You feel a very strange sensation in your stomach, as though you are
+being turned inside out. For a very brief instant, you feel like you are
+being torn limb from limb, but then...
+~
+206 cdef 5
+S
+#20639
+The Cavern Wall~
+   This appears to be a large residential district. There are lots of houses
+here and not all appear to be occupied. To the south you see a small house,
+seemingly empty. There is a small sign here.
+~
+206 d 1
+D0
+The magnificent stone fountain can be seen, spraying fresh and cold water
+into the air.
+~
+~
+0 0 20629 0
+D1
+The cavern wall continues into the distance.
+~
+~
+0 0 20640 0
+D2
+You can enter through the front door of a small house.
+~
+door~
+1 0 20642 0
+D3
+You can get to the far south western corner of the cavern by hiking further
+this way. Large carts can be seen, loaded with minerals and other materials.
+~
+~
+0 0 20636 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+sign small~
+              ************************************
+            ************************************ * 
+            *                                  * *
+            *             FOR SALE             * *
+            *                                  * *
+            *   PLEASE ENTER AND LOOK AROUND   * *
+            *                                  * *
+            *           BIDS WELCOME           * *
+            *                                  * *
+            ************************************
+            *  *
+            *  *
+            *  *
+            *  *
+            *  *
+            *  *
+            *  *
+            *  *
+            *  *
+            ****
+~
+S
+#20640
+The Cavern Wall~
+   The wall continues to the east and west. To the north, you can go back
+into the middle of the cavern, whilst a small guard house can be seen to the
+south, watching any movement through the huge gates of Moria Deep.
+~
+206 d 1
+D0
+The middle of the cavern lies along this pathway.
+~
+~
+0 0 20628 0
+D1
+Strangely, the area immediately to the east seems quite deserted
+compared to the rest of the cavern.
+~
+~
+0 0 20641 0
+D2
+A small house has been built into the rock wall. It looks like some kind of
+guard house.
+~
+door~
+1 0 20653 0
+D3
+The houses seem more cramped together in this direction. It is probably the
+*slightly* poorer district.
+~
+~
+0 0 20639 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20641
+By The Huge Stone Gates~
+   You stand at the far southern side of the cavern. Set into the wall are a
+pair of huge stone gates. It is a mystery what could possibly be behind
+them. This area seems to be either off-limits to most of the people who live
+here, or they simply don't want to be near here. It is absolutely deserted.
+Maybe it wouldn't be such a good idea to try to open them, but that has 
+never stopped you before. You see a red marble plaque set into one of the
+gates with some writing etched in gold.
+~
+206 d 1
+D0
+The centre of the cavern can be seen, replete with a large marble statue.
+~
+~
+0 0 20627 0
+D1
+Looking to the east, you see some construction work going on.
+~
+~
+0 0 20643 0
+D2
+The gates are enormous. It really is going to take some hard work to 
+open them. You are sweating just at the thought of it.
+~
+huge~
+1 20601 20650 0
+D3
+The wall of the cavern continues along this way.
+~
+~
+0 0 20640 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+E
+red marble plaque writing~
+
+              -----------------------------------------                
+              |                                        |
+              |               KEEP OUT                 |
+              |                                        |
+              |              MORIA DEEP                |
+              |                                        |
+              |   ETERNAL HOME TO GARATHORM'S WORST    |
+              |                                        |
+              |________________________________________|
+
+~
+S
+#20642
+An Empty House~
+   This house is a very small, one bedroom affair. It would make an ideal
+residence for a single person, perhaps instead of continual renting at
+Camilla's. Only problem is, it may be a long way from your friends in
+Garathorm.
+~
+206 d 0
+D0
+You can leave the house, back out into the main cavern.
+~
+door~
+1 0 20639 0
+D1
+A small kitchen, replete with stove takes up most of this side of the room.
+There looks little storage space for pots and pans, but one person usually
+doesn't use that many.
+~
+~
+0 0 -1 0
+D2
+A small dining table and a compact bookcase fill this side of the house. An
+old paperback is the only book on the shelf, titled 'A miners guide to
+etiquette.'
+~
+~
+0 0 -1 0
+D3
+A single bed has been pushed up against the wall, close to an open
+fireplace. The bed, without covers or proper bedding is just a flat slab of
+cold rock, very uncomfortable looking.
+~
+~
+0 0 -1 0
+D4
+The stone ceiling has been painted a light blue colour, but it has started
+to peel and looks a little untidy. There are a few fittings for the gas
+lamps favoured by the miners down here.
+~
+~
+0 0 -1 0
+D5
+The once highly polished rock floor is starting to look a little tarnished.
+Many prospective buyers must have visited here, their boots scuffing the
+floor quite badly.
+~
+~
+0 0 -1 0
+S
+#20643
+The Construction Site~
+   Piles of stone are scattered all around here which must have come from
+the hole in the wall to the south. There are construction workers
+everywhere, all tunnelling out the wall to make room for new houses or 
+shops. It looks a very slow process, since the rock is diamond hard.
+~
+206 d 1
+D0
+A very high pedestal dominates the area to the north.
+~
+~
+0 0 20625 0
+D1
+The cavern wall continues.
+~
+~
+0 0 20644 0
+D2
+A hole in the southern wall can be seen, where the miners have been at work
+excavating the wall for new houses or shops.
+~
+~
+0 0 20652 0
+D3
+The area is deserted to the west in front of two huge stone gates.
+~
+~
+0 0 20641 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20644
+The Great Escape~
+   This looks like it is where the young people who live here hang out and
+where the older miners go occasionally to escape their families for a few
+relaxing hours. After a quick scout of the area, you can see at least eight
+bars and taverns in the immediate area, all of which are doing a roaring
+trade. The tavern to the south of here catches your attention.
+~
+206 d 1
+D0
+The middle of the cavern extends off in this direction.
+~
+~
+0 0 20624 0
+D1
+You will reach the far south-eastern corner of the cavern going this way.
+~
+~
+0 0 20645 0
+D2
+A small, homely looking tavern lies nestled between two larger inns.
+~
+tavern~
+1 0 20651 0
+D3
+A construction site can be seen in the distance, rubble everywhere.
+~
+~
+0 0 20643 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20645
+The South Eastern Corner~
+   This is the south eastern corner of the cavern. The houses here seem much
+larger than those that you have seen so far, and you suspect that this is
+where the more important officials and such must live. To the east, you
+notice a house that is even bigger than the rest. To the south there is a
+magnificent looking building.
+~
+206 d 0
+D0
+You can follow the wall northwards into the middle of the cavern.
+~
+~
+0 0 20623 0
+D1
+To the east is a very big house, much larger than any you have seen so far.
+A very important person must live there.
+~
+official~
+2 20602 20646 0
+D2
+A rather magnificent looking building stands amid the other buildings. Four
+storeys high, it towers above all of the others in the area.
+~
+inne~
+1 0 20659 0
+D3
+This direction looks very crowded with people, and you can hear the sound of
+much merriment and laughter. The smell of beer floats towards you in the
+air.
+~
+~
+0 0 20644 0
+D4
+The roof of the cavern lies about two hundred feet above your head. Even so,
+you can see large stalactites growing downwards, each carved into the shape
+of an animal or humanoid figure. It really is quite breathtaking.
+~
+~
+0 0 -1 0
+D5
+The ground is made from solid, grey stone, that has been highly polished. It
+is miraculously clean, not a hint of dirt or dust around.
+~
+~
+0 0 -1 0
+S
+#20646
+The Overseer's Consultation Room~
+   This is the room where any of the miners can meet the overseer for a
+private meeting. It is the overseer's job to oversee the welfare of all the
+people who live here, and it is to him that anybody comes for help with any
+problem. This room is very rarely used though, since most people air their
+grievances in public at his pedestal. It is also his job to recount all the
+local and external news that comes his way. He is a very important man in
+the miner society.
+~
+206 cd 0
+D0
+You can leave the consultation room into the family living room.
+~
+door~
+1 0 20648 0
+D1
+You can see a very large kitchen/dining room.
+~
+door~
+1 0 20647 0
+D2
+A very large wooden desk is in this part of the room, with a big chair
+behind it. Stacks of papers litter the surface, and you notice a few copies
+of the local newspaper from Garathorm. This must be where the overseer holds
+his consultations, intimidating his visitors slightly behind the large desk.
+~
+~
+0 0 -1 0
+D3
+You can leave the overseer's house back into the cavern.
+~
+official~
+2 20602 20645 0
+D4
+The high ceiling has been painted in gold lustre. Beautiful sculpturing
+surround the edges of the ceiling, taking the forms of many tiny animals and
+angelic faces. A single gas-lit chandelier hangs down from the centre.
+~
+~
+0 0 -1 0
+D5
+The floor has been fitted with a pink marble, golden veins streaking through
+it. It has been highly polished, reflecting your image back up towards you.
+~
+~
+0 0 -1 0
+S
+#20647
+The Orangery~
+   To match the splendour of the rest of the house, this room is just huge.
+Set on the southern side of the room is a very large kitchen which contains
+the largest selection of exotic looking utensils and cooking ingredients 
+that you have ever seen. The rest of the room is almost like a large
+banqueting hall, with a large oak table in the centre. The overseer must do
+a lot of entertaining.
+~
+206 cd 0
+D0
+You can see a rather grande room to the north, a kind of study.
+~
+door~
+1 0 20648 0
+D1
+Half of the wall is covered by a mirror, which reflects most of the room you
+are standing in, giving the impression that the room is even bigger than it
+already is. Two enormous pot plants stand on either side of the mirror,
+their large green leaves the picture of health.
+~
+~
+0 0 -1 0
+D2
+You see the kitchen of this marvellous house. The kitchen area is about
+thirty feet long by twenty feet, maybe bigger. Every kitchen utensil you
+could imagine, and some you have no idea what they are for, are scattered
+around or stacked on the many shelves. The same goes for spices, herbs and
+the rest of the ingredients. Everything you could possibly need.
+~
+~
+0 0 -1 0
+D3
+This way leads back into the consultation room.
+~
+door~
+1 0 20646 0
+D4
+This is starting to look a little garish. The golden ceiling is encrusted
+with hundreds of diamonds each seemingly absorbing the light from a single
+gas lamp and scattering it in every direction. The affect is to give a
+rather diffuse light which is quite relaxing to the eye.
+~
+~
+0 0 -1 0
+D5
+The floor is made from the whitest of white marble. There are no
+imperfections in it and it is as clean as a whistle. Your boots make a
+satisfying clunk noise as you walk over it.
+~
+~
+0 0 -1 0
+E
+oak table~
+The table is thirty feet long by ten feet long. There are thirty oaken
+chairs around it, although you could get many more than that at a squeeze.
+It has the place settings already prepared, so there may be a formal dinner
+planned for sometime soon.
+~
+E
+pot plants~
+They are a type of fern with massive leaves, dark green in colour and a
+picture of health. A few little white flowers have started to bud.
+~
+S
+#20648
+The Study~
+   This room is lined on two sides with bookcases, completely filled up with
+all sorts of leather bound volumes. One corner has a large wooden staircase
+leading up to the second floor, whilst another corner has an ornate golden
+desk, entirely covered in paper. The centre of the room has several comfy
+looking chairs, where the Overseer and his family get together to talk about 
+the days events.
+~
+206 d 0
+D0
+The wall is covered in one large bookcase. Thousands of books are crammed
+into the small space, their leather jackets groaning under the force. The
+titles are very wide ranged, from gardening and cooking on one side to civil
+engineering on the other. They appear to be all reference books
+~
+~
+0 0 -1 0
+D1
+The kitchen and banqueting area can be seen this way.
+~
+door~
+1 0 20647 0
+D2
+You can get back to the Overseer's consultation room through this door.
+~
+door~
+1 0 20646 0
+D3
+The wall is covered in one large bookcase. Thousands of books are crammed
+into the small space, their leather jackets groaning under the force. The
+titles are very wide ranged, from children's books, through to tales of
+ancient legends, stories of the Gods, horror books and the latest in fiction
+from some of Garathorm's finest. These books appear to be all storybooks.
+~
+~
+0 0 -1 0
+D4
+The solid wooden staircase leads up to the second floor.
+~
+~
+0 0 20649 0
+D5
+The floor is made from pitch black marble tiles, about 1 foot square each.
+All of the tiles have a tiny ruby in the corner which is only noticeable on
+close inspection. They match well with the furniture in the room, really
+setting off the golden desk and the oaken bookcases.
+~
+~
+0 0 -1 0
+E
+large wooden staircase~
+The wooden staircase is very wide, and made completely of highly polished
+oak. You haven't seen much wood around the cavern, probably because it must
+be very hard to actually get down here. This fact alone shows you with what
+high regard the miners must hold the Overseer.
+~
+E
+ornate golden desk~
+The desk is rather more ornate and showy than that in the outer office. The
+gold has been worked into large flowing sculptures which give the desk as a
+whole a flowery but elegant appearance. The top is covered by hundreds of
+sheets of paper, all stacked up high. The in-tray is rather more full than
+the out going tray.
+~
+E
+leather bound volumes~
+Each book is about eight inches long by five inches wide. The leather on the
+covers have all been dyed to give a multitude of hues. Some of the covers
+have started to fray or get damaged by their cramming in to such a small
+place.
+~
+E
+paper~
+The papers are all book sized and either stacked up or scattered over the
+whole of the desk. They seem to be recent memorandums about things the
+overseer must attend to quickly. One marked URGENT and much red writing on
+it deals with a sewerage problem.
+~
+E
+comfy chairs~
+The chairs have been wrought from iron and covered in gold leaf. Large
+purple cushions cover their every exposed surface to form a very
+comfortable and warm seat. The seats are quite close to the ground next to
+the scattered rugs and carpets, which probably affords a more homely feeling
+when the family gets together.
+~
+S
+#20649
+The Upstairs Bedroom~
+   Like the other houses in this mining colony, the upstairs of the house
+appears to be just one large room with a small section partitioned off as a
+washroom. This room though, has just one large bed, and so it looks like the
+Overseer has no immediate family other than his wife.
+~
+206 d 0
+D0
+A large bed has been pushed against the centre of the back wall with two
+wooden cabinets flanking it on either side. A book rests upon one of the
+cabinets, titled 'All You Ever Needed To Know About Miner's Rations, But
+Were Afraid To Ask'.
+~
+~
+0 0 -1 0
+D1
+You can see the stairwell leading down to the ground floor below. The ornate
+golden balustrade prevents you from slipping to your death down the hole in
+the floor.
+~
+~
+0 0 -1 0
+D2
+Through a partition formed by a single sheet of exquisite silk you can see
+the washroom. A hand basin and bath made from fine porcelain inlaid with
+gold and silver, a water heater fueled by coal gas, toilet plumbed into a
+sewage system and pink fluffy towels everywhere, make this one of the most
+modern and luxurious bathrooms you have ever encountered.
+~
+~
+0 0 -1 0
+D3
+A window fitted with lead-plate glass overlooks the cavern below. You can
+see people going about their shopping or recreation, seemingly without a
+care in the world.
+~
+~
+0 0 -1 0
+D4
+A fabulous rainbow has been painted on the ceiling, every colour you can
+imagine present. At either end of the arch are two golden chandeliers, their
+soft light warming the room with a homely feel.
+~
+~
+0 0 -1 0
+D5
+The staircase descends back down into the study.
+~
+~
+0 0 20648 0
+E
+washroom~
+Through a partition formed by a single sheet of exquisite silk you can see
+the washroom. A hand basin and bath made from fine porcelain inlaid with
+gold and silver, a water heater fueled by coal gas, toilet plumbed into a
+sewage system and pink fluffy towels everywhere, make this one of the most
+modern and luxurious bathrooms you have ever encountered.
+~
+E
+bed~
+The bed measures twelve feet wide by seven feet long. Silken sheets with
+thick silk blankets have been neatly folded over the top. It must be 
+wonderful to get lost in such a beast.
+~
+S
+#20650
+Before The Bridge To Moria Deep~
+   Passing through the huge stone gates, you find yourself standing in a
+tunnel. To the south, the tunnel ends and a bridge extends into the
+distance, spanning what looks like a bottomless chasm. The bridge is
+deserted, but you still feel a little nervous at crossing it into the
+unknown.
+~
+206 acd 3
+D0
+You can pass through the huge stone gates back into the main cavern.
+~
+huge~
+1 20601 20641 0
+D1
+You can see the dark sides of a tunnel which link the miner's cavern to
+Moria Deep. The rock has been covered in a thick layer of rich earth which
+crawls with earthworms and other small creatures.
+~
+~
+0 0 -1 0
+D2
+The bridge extends over a chasm into the darkness of Moria Deep.
+~
+~
+0 0 -1 0
+D3
+You can see the dark sides of a tunnel which link the miner's cavern to
+Moria Deep. The rock has been covered in a thick layer of rich earth which
+crawls with earthworms and other small creatures.
+~
+~
+0 0 -1 0
+D4
+The tunnel ceiling is very low, only a foot or so above your head. The rock
+is plastered with a rich brown earth which is teeming with life. Small worms
+are writhing about, mingling with one another.
+~
+~
+0 0 -1 0
+D5
+The rock floor has been worn smooth to an almost glass-like finish. There
+are patches of green, red and even bright blue amongst the ocean of black
+colour, lending the ground an unearthly look.
+~
+~
+0 0 -1 0
+S
+#20651
+Magluff's Tavern~
+   This place is really crowded with old miners. They are sitting around 
+telling each other old tales from their younger days, which have no doubt 
+been told many times before. A fire crackles away in the corner casting 
+a warm red glow over the whole room and really warming your heart and soul. 
+A dartboard is on the wall here.
+~
+206 d 0
+D0
+You can leave back into the cavern. Why not stay and have another drink 
+first, there is plenty of time for exploring later.
+~
+tavern~
+1 0 20644 0
+D1
+An open fireplace is centred in the wall burning brightly. After a few 
+minutes, you notice that the wood does not appear to be burning. On a closer
+inspection, you see that the wood is artificial and that it is a stream of 
+coal gas that burns and crackles. The overall effect is still is very 
+realistic.
+~
+~
+0 0 -1 0
+D2
+A wooden bar has been built the whole length of this side of the room. The
+wood has been decorated with golden knobs, rails and beer pumps. A wide 
+selection of beers are on draft and there are three shelves well stocked 
+with wines and spirits. Standing behind the bar with a watchful eye over his
+establishment is Magluff himself.
+~
+~
+0 0 -1 0
+D3
+At about your eye level in the centre of the wall is a well used dartboard.
+Blackboards are placed on either side to provide room to keep scores. From
+the current scores it looks like they play the 501 to zero, finish on a 
+double rules. The surrounding wall has many tiny holes in it, no doubt from
+some not so well able players.
+~
+~
+0 0 -1 0
+D4
+The ceiling is wood panelled which reflects the warm red glow from the open
+fireplace, warming your spirit still further. At the edges of the ceiling 
+with the walls are many lights containing candles which burn fiercely. The
+smoke passes along the ceiling and is quickly mixed with the smell and 
+atmosphere produced in the rest of the room.
+~
+~
+0 0 -1 0
+D5
+The wood-block floor, once highly polished, is covered in small puddles of
+beer which froth as you walk through them.
+~
+~
+0 0 -1 0
+E
+wall dartboard~
+Well, its a.. dartboard. There are three darts stuck into the bulls-eye 
+which you take out. After playing a few games with the rest of your group
+you quickly get bored at losing so badly, and so put the darts back where 
+you got them from. Best stick to fighting...
+~
+E
+fire fireplace~
+An open fireplace is centred in the wall burning brightly. After a few 
+minutes, you notice that the wood does not appear to be burning. On a closer
+inspection, you see that the wood is artificial and that it is a stream of 
+coal gas that burns and crackles. The overall effect is still is very 
+realistic.
+~
+S
+#20652
+The Hole~
+   Climbing through the rubble, you find yourself in a hole which is still 
+being dug out to make even larger. It must be the first process in building
+one of the houses or shops that you have seen around. There is nothing else
+of interest in here.
+~
+206 cd 5
+D0
+You can make your way back to the construction site, through the rubble.
+~
+~
+0 0 20643 0
+D1
+The grey rock walls are almost totally featureless. They bear the marks from 
+the tools that excavated them, roughly formed and having sharp edges. It is
+quit amazing how this will be turned into one of houses.
+~
+~
+0 0 -1 0
+D2
+The grey rock walls are almost totally featureless. They bear the marks from 
+the tools that excavated them, roughly formed and having sharp edges. It is
+quit amazing how this will be turned into one of houses.
+~
+~
+0 0 -1 0
+D3
+The grey rock walls are almost totally featureless. They bear the marks from 
+the tools that excavated them, roughly formed and having sharp edges. It is
+quit amazing how this will be turned into one of houses.
+~
+~
+0 0 -1 0
+D4
+The roof is still quite low, no upstairs storeys for the house having yet 
+been mined out. The start of the staircase has been chiselled out, its form
+still very crude.
+~
+~
+0 0 -1 0
+D5
+The floor is covered in rubble and stones, debris from the mining of this 
+hole. A few gemstones can be seen scattered out, nothing more to these 
+miners than worthless pebbles.
+~
+~
+0 0 -1 0
+S
+#20653
+The Guard House~
+   This is a very small utilitarian house built to watch over the gates 
+which guard the entrance to Moria Deep. There is a stone desk and chair 
+against one side of the room and a sturdy metal cabinet along the other 
+side. The desk is covered in paperwork and official looking seals essential
+for the continual security of the mining colony against Moria Deep.
+~
+206 cd 1
+D0
+Through the open doorway you can see the sprawling cavern quite close to 
+the huge gates which guard Moria Deep.
+~
+door~
+1 0 20640 0
+D1
+Along the wall is a sturdy metal filing cabinet, wrought from heavy iron
+and impervious to attack. A great padlock keeps the contents locked away
+safely inside.
+~
+~
+0 0 -1 0
+D2
+Along the wall you see a stone desk, devoid of markings or design but 
+covered with a deep pile of paperwork, waxen seals and other common office 
+equipment. This is the administration point for all traffic passing into and 
+out of Moria Deep, and as such is very important. A stone chair is tucked up 
+beneath the desk, its size indicating the size of the person it fits.
+~
+~
+0 0 -1 0
+D3
+A few charts are stuck onto the wall, nothing frivolous but only the 
+essentials. A calendar with some dates ringed, timetables for changing of 
+the guards, supply needs and the like.
+~
+~
+0 0 -1 0
+D4
+The rock ceiling has no ornaments unlike most other places you have seen 
+here. In the centre is a single lamp burning the yellow coal gas, sending
+shadows into the corners of the room.
+~
+~
+0 0 -1 0
+D5
+A single woven carpet covers the floor. Dark green in colour, it bears the
+the crest of King Welmar. The words 'Doe tres die hon' have been 
+incorporated into the design, although their meaning is unknown to you.
+~
+~
+0 0 -1 0
+E
+cabinet~
+The metal filing cabinet is very sturdy and wrought from heavy iron. It is
+impervious to any attack. A great padlock keeps the contents locked away
+safely inside.
+~
+E
+desk stone~
+Along the wall you see a stone desk, devoid of markings or design but 
+covered with a deep pile of paperwork, waxen seals and other common office 
+equipment. This is the administration point for all traffic passing into and 
+out of Moria Deep, and as such is very important.
+~
+S
+#20654
+The Repair Shed~
+   A few old stones carts have been left here awaiting repair. Many have 
+broken wheels whilst others have broken backs. Pots of tassker are scattered
+around the floor, that mystical material which seems to magically knit
+together broken rock to its former strength. A few of the more traditional
+stone-masons equipment are also lying around, chisels, hammers and even a
+whetstone.
+~
+206 cd 1
+D0
+You can leave the repair shed and head back out into the main cavern.
+~
+door~
+1 0 20636 0
+D1
+Hanging up on the wall are numerous chisels and hammers used to carve new
+stone parts for the carts, bits that cannot be repaired by even tassker. 
+Their keen edges are able to slice through rock like a knife through butter.
+~
+~
+0 0 -1 0
+D2
+The back wall is covered in stone wheels of many sizes. Lying on the ground
+underneath are many stone axles, their surface smooth and polished to the
+touch.
+~
+~
+0 0 -1 0
+D3
+Standing alongside the wall is a metal crane with a hand-turned pulley 
+system. This must be used to remove the main body of the cart from the 
+wheels for repair. Without its use, it would take many men to move the two
+tonne main body.
+~
+~
+0 0 -1 0
+D4
+A few winches have been fitted to the ceiling to help in moving around the
+stone wheels and other parts of the carts. Their thick metal rings hang down
+to almost touch the ground. Made from titanium, there is no rust around.
+~
+~
+0 0 -1 0
+D5
+Scattered about the floor are large pots of tassker in amongst the shattered
+remains of many wheels and bodies. This material allows two broken pieces of
+stone to be knitted together seemingly without a flaw. So fine is the repair
+that it is impossible to see the break afterwards.
+~
+~
+0 0 -1 0
+E
+pot pots tassker~
+The pots are more the size of a beer barrel, containing a milky white fluid.
+Dipping your hand inside, it comes back out dripping with an odourless 
+liquid. A small droplet hits the stone floor, where it solidifies straight
+away, merging with the floor to become invisible.
+~
+E
+stone carts cart~
+The carts are very similar to the ones you saw outside filled with minerals.
+These however all have something broken on them, whether it be a wheel, a 
+broken body or the main axle.
+~
+E
+whetstone~
+The whetstone is made from one large round block of rough stone. Using a 
+foot pedal, this can be made to turn at high speeds. Metal objects can be
+finely sharpened, gaining a very keen edge.
+~
+E
+chisels hammers equipment~
+These are all in fine condition and present in all shapes and sizes. The 
+hammers range from one the size of a small toffee hammer up to a massive
+sledgehammer used for breaking huge slabs of stone.
+~
+S
+#20655
+The Treasury Master's Office~
+   This is the office of one of the most important people in the mining
+colony. The treasury master keeps records on all sales transactions with the
+outer world and collects the payments due the miners. Gold to pay wages and
+the miner's personal wealth is also recorded here and stored in the
+treasury. A silver desk covered with sales transactions stands proudly
+against one wall.
+~
+206 d 1
+D0
+Straddled across half the room is a big silver desk. Upon the top are
+thousands of sheets of paper recording sales transactions with not only
+Garathorm but other provinces of the world too. Behind the desk is a silver
+chair covered with green leather and encrusted with rubies.
+~
+~
+0 0 -1 0
+D1
+A cork noticeboard has been nailed onto the wall. Important memorandums have
+been pinned to it, most regarding due dates of payments from the Royal
+Treasury in Garathorm to here. One paper shows a line-graph of tonnes of
+exported granite to Elvandar, the line almost starting to shoot off scale by
+the increased volumes.
+~
+~
+0 0 -1 0
+D2
+You can leave this office back out into the corner of the cavern. Through
+the doorway you can see the entrance to the great treasury itself.
+~
+door~
+1 0 20631 0
+D3
+The wall is dominated by two life sized oil paintings. The first looks quite
+old, and shows a picture of King Welmar in his youth, a grinning smile of
+innocence on his face. The second painting is more recent, and shoes a
+picture of the Overseer of this colony in full official clothing. The date
+in the bottom corner tells you it was finished last year, probably the time
+the Overseer came to office.
+~
+~
+0 0 -1 0
+D4
+The ceiling has been painted a very pale, powdery blue colour. Streaks of
+silver have been inlaid to form the pattern of a waterfall, streams of water
+gushing everywhere.
+~
+~
+0 0 -1 0
+D5
+The floor is made from a pale blue marble with streaks of silver running
+through it. The effect is to remind you off the fine spray given off by a
+fast running stream in the middle of summer, its cool waters cooling you.
+~
+~
+0 0 -1 0
+E
+desk silver~
+Straddled across half the room is a big silver desk about ten feet long by
+six feet wide. Upon the top are thousands of sheets of paper recording sales
+transactions with not only Garathorm but other provinces of the world too.
+Under the many sheets, you can see a dark red leather surface and many ink 
+pens.
+~
+S
+#20656
+Drapor's Shoe Fayre~
+   Footwear must be quite a big business down here in the colony. You have
+noticed many shoe shops as you have walked through the shopping district,
+but this is by far the largest. On display are hundreds of different types
+of shoe including boots, slippers and sandals. Most are in blacks and
+browns, but many more are in outrageous colours like gold and purple.
+~
+206 dh 1
+D0
+You can see the shop counter with Drapor himself standing behind it. Be very
+careful that you show no expression of interest in anything, because they
+will be on your feet before you can utter the golden phrase 'I'm only
+looking!'.
+~
+~
+0 0 -1 0
+D1
+A display of shoe care equipment has been carefully set up. There are
+brushes, cloths, creams, boot oil, and new laces. All of the things that you
+seem to buy when getting new shoes, but hardly ever seem to use afterwards.
+Looking down out your own boots, you wonder if they have an anti-blood
+retardant.
+~
+~
+0 0 -1 0
+D2
+The streets are crowded with bustling shoppers as they make their way from
+one shop to another.
+~
+door~
+1 0 20634 0
+D3
+On the many golden shelves, shoes of all varieties have been set up to
+attract you to buy a pair. Among the hundreds on view there must be a pair
+that takes your fancy.
+~
+~
+0 0 -1 0
+D4
+The ceiling is one huge mirror, allowing you to see how well your new shoes
+look. It also makes this room seem twice as big as it really is.
+~
+~
+0 0 -1 0
+D5
+On the floor are seats for you to sit upon whilst you try your new shoes on.
+There are also some hand-held shoe size measurers and some small mirrors.
+The ground is covered in a lemon coloured fluffy carpet, specially made to
+keep your feet warm as you walk around barefooted.
+~
+~
+0 0 -1 0
+S
+#20657
+Spaymoore's Diner~
+   This is a rather classy restaurant, especially by the usual Garathorm
+standards. The small wooden tables all look like antiques and are covered in
+fine lace tablecloths. The tables are set with golden cutlery, porcelain
+crockery and have bleached white napkins. A quick look at the menu confirms
+that this is an expensive place.
+~
+206 cd 1
+D0
+You can see the rear of the restaurant. An arched doorway leads into the
+back kitchens where some steam occasionally wafts through the door.
+~
+sliding~
+1 0 20658 0
+D1
+A tank has been set up against the wall. Inside you can see some lobsters
+and crayfish slowly moving around, oblivious to there fate in the near
+future.
+~
+~
+0 0 -1 0
+D2
+The doorway leads back out into the cavern. A few people can be seen
+hurrying about their business.
+~
+diner~
+1 0 20616 0
+D3
+The restaurant spreads out this way. You quickly count fifteen tables, all
+spaced well apart and all full of people enjoying their meals. The smell in
+the air is quite amazing.
+~
+~
+0 0 20665 0
+D4
+A large golden fan spins around on the ceiling, cooling the air from the
+heat produced in the kitchens. A few candles have been lit in their golden
+holders, the light they produce somehow lending a more intimate atmosphere
+to the restaurant.
+~
+~
+0 0 -1 0
+D5
+The floor is covered in a thick, dark green carpet which you sink into at
+least an inch. It feels very luxuriant to the touch and matches the rest of
+the restaurant perfectly.
+~
+~
+0 0 -1 0
+E
+menu~
+      A quick look at the first page of the menu shows you these 
+      meals on offer,
+
+      **********************************************************
+      *                                                        *
+      *                    Spaymoore's                         *
+      *                    -----------                         *
+      *                                                        *
+      *                    Main Courses               g/p      *
+      *                                                        *
+      *                                                        *
+      *       Fresh salmon in lemure sauce            850      *
+      *                                                        *
+      *       Breast of Orc with lurker fries         450      *
+      *                                                        *
+      *       Casserole of Troll                      575      *
+      *                                                        *
+      *       Boiled lobster & lamia steaks           975      *
+      *                                                        *
+      *       Roast dragon with dervish dumplings     2000     *
+      *                                                        *
+      **********************************************************
+~
+E
+table tables~
+The tables are of two kinds. There are some the size for two people to be
+able to get very intimate at, and there are the size that allows a group of
+four people to enjoy an evening together.
+~
+E
+cutlery~
+The cutlery is all made from solid gold, stamped with the seal of King
+Welmar and bearing his coat of arms.
+~
+E
+crockery~
+The crockery is very beautiful. Made from fine porcelain, it is all hand
+painted with a flower design. Gold leaf has been used to set the design off
+to its fullest.
+~
+E
+napkins~
+The napkins are all pristine white, bleached and pressed to give a fine
+feeling of quality. In red silk thread, the word Spaymoore's has been
+carefully sewn into the corner.
+~
+E
+tablecloth cloth~
+The tablecloths are all made from a fine lace, hand-knitted into the most
+elegant designs. Many show patterns of magnificent animals, the table
+nearest to you showing a peacock with fanned tail.
+~
+S
+#20658
+Spaymoore's Kitchen~
+   As you enter into the kitchen a cloud of steam belches out of the nearby
+pressurised oven. For a place which is continually preparing food, this
+place is absolutely clean, not a scrap of waste food anywhere or a speck of
+dirt. The cooker is very big and takes up the whole of the far wall. The
+rest of the kitchen is taken up by a wooden work surface to prepare the food
+upon and many shelves and cupboards to store food and crockery.
+~
+206 d 1
+D0
+The far wall has a great iron cooker standing up against it. The oven box is
+about four feet cubed, allowing plenty of room to cook many dishes at the
+same time. The hob of the oven is coal-gas powered, and has space for twelve
+pans, many of which are currently in use.
+~
+~
+0 0 -1 0
+D1
+This side of the kitchen has a wooden work surface. Many sharp knifes and a
+meat cleaver, all very clean, lie on its surface. Measuring about fifteen
+feet long and four feet wide, the work surface allows plenty of room for
+many cooks to work in the space at once.
+~
+~
+0 0 -1 0
+D2
+You can leave the kitchen and get back into the restaurant.
+~
+sliding~
+1 0 20657 0
+D3
+This side of the kitchen is filled with cupboards which contain all of the
+crockery, and many shelves, upon which are stacked fresh and dried food.
+Most of the cupboards are labelled in a neat, flowing script what their
+contents are.
+~
+~
+0 0 -1 0
+D4
+The ceiling has been coated with titanium plate, rust proof and unaffected
+by the heat and steam from the cooking. A large extractor fan takes most of
+the steam and moisture out of the air and up a vent to the outside cavern.
+~
+~
+0 0 -1 0
+D5
+The floor has been cobbled with red brick. Each brick has been highly
+polished, but the floor is not the least bit slippery. It would be very easy
+to clean up any mess accidentally spilt upon it.
+~
+~
+0 0 -1 0
+E
+pressurised oven~
+The pressurised oven is quite small, only two feet across and about the same
+high. The high pressure of the steam allows meats and other foods to be
+cooked in a fraction of the time by normal boiling, and also keeps most of
+the nutrients intact.
+~
+E
+cooker~
+The far wall has a great iron cooker standing up against it. The oven box is
+about four feet cubed, allowing plenty of room to cook many dishes at the
+same time. The hob of the oven is coal-gas powered, and has space for twelve
+pans, many of which are currently in use.
+~
+E
+wooden work surface~
+Measuring about fifteen feet long and four feet wide, the work surface 
+allows plenty of room for many cooks to work in the space at once. Many
+sharp knifes and a meat cleaver, all very clean, lie on its surface.
+~
+E
+cupboard cupboards~
+The cupboards contain all of the crockery that is needed in the kitchen.
+Most are labelled in a neat, flowing script with what their contents are.
+~
+E
+shelves~
+The shelves are stacked high with both fresh and dried foods, many of which
+you don't recognise.
+~
+S
+#20659
+The Miner's Rest~
+   You find yourself at the reception desk in the Miner's Rest Hotel. Many
+people are walking around, most of them from the far corners of the realm.
+The carpets here are very plush as well as the thick velvety curtains. The
+atmosphere is one of relaxation and you feel you could get a very good
+nights sleep in one of their special rooms.
+~
+206 dh 1
+D0
+You can leave the hotel through the front door. You see the corner of the 
+cavern and many people walking around.
+~
+inne~
+1 0 20645 0
+D1
+The eastern wing of the hotel extends off down a corridor. You can see the
+doors on either side, each with a number stencilled on in large black
+numerals.
+~
+~
+0 0 -1 0
+D2
+You can see the reception desk immediately in front of you, but further
+along a staircase leads upwards to the upper floors of this grande hotel.
+~
+~
+0 0 -1 0
+D3
+The western wing of the hotel extends off down a corridor. You can see the
+doors on either side, each with a number stencilled on in large black
+numerals.
+~
+~
+0 0 -1 0
+D4
+A magnificent oil painting of King Welmar's castle fills the whole of the
+ceiling in this reception area. It looks very impressive indeed. At either
+end of the room, large crystal chandeliers hang down, each having twelve
+candles which burn brightly and without any smoke.  
+~
+~
+0 0 -1 0
+D5
+The carpets are maroon in colour and must have a pile of at least three
+inches thick, making it feel more like wading through mud than dry ground. A
+warmth radiates through your boots from the carpet, easing some of your
+aches and pains.
+~
+~
+0 0 -1 0
+S
+#20660
+The Gent's Washroom~
+   You stand in the centre of the gents public toilets. The room is covered
+in shiny white tiles and smells surprisingly fresh. A trough has been gouged
+out of the ground to the north of you whilst there are two cubicles if you
+need more privacy.
+~
+206 d 1
+D0
+Along the northern wall a trough has been gouged out in the floor. The
+slight downward gradient of the trough to the east ensures good drainage
+into the sewerage system.
+~
+~
+0 0 -1 0
+D1
+Two cubicles take up most of the space on this side of the room. They have a
+little rotating knob on the outside which displays a word. At the moment it
+says 'vacant'. Unfortunately, a large sign has been pinned onto both,
+'Sorry, temporarily out of order'.
+~
+~
+0 0 -1 0
+D2
+You can leave the gents toilets and head back out into the cavern.
+~
+mens~
+1 0 20622 0
+D3
+Set into the wall are four stone hand basins complete with running water.
+The water is ice cold and must come straight from some natural spring. A
+mirror has been fixed above each basin, allowing you to groom yourself as
+you wash.
+~
+~
+0 0 -1 0
+D4
+The ceiling has been covered in white tiles. Several small coal-gas lanterns
+burn brightly allowing you to do your business easily.
+~
+~
+0 0 -1 0
+D5
+The floor is kept very clean and free from mess, most unlike any other gents
+toilet you have been in.
+~
+~
+0 0 -1 0
+E
+trough~
+The trough has been gouged into the rock floor. The slight downward gradient
+to the east ensures good drainage into the sewerage system.
+~
+E
+cubicles cubicle~
+The cubicles have little rotating knobs on the outside which display a word.
+At the moment it says 'vacant'. Unfortunately, a large sign has been pinned
+onto both, reading 'Sorry, temporarily out of order'.
+~
+S
+#20661
+The Ladies Washroom~
+   You have entered the ladies public toilets. The walls are covered in pale
+blue tiles which sparkle in the light. Along the northern and eastern walls
+are three cubicles. Four stone wash basins have been carved into the
+southern wall, complete with running water. A smell of disinfectant is in
+the air, partially hidden by the odour of fresh roses.
+~
+206 cd 1
+D0
+Three cubicles can be seen, built from solid black marble blocks. Each has a
+small knob on the door and a small sign which shows whether it is occupied.
+At the moment, all are vacant, but one...
+~
+cubicle~
+2 20603 20666 0
+D1
+Three cubicles can be seen, built from solid black marble blocks. Each has a
+small knob on the door and a small sign which shows whether it is occupied.
+At the moment, all are vacant, but you seem to have no inclination to use
+them.
+~
+~
+0 0 -1 0
+D2
+The washbasins have all been carved directly out of the rock in the wall.
+Each has a single stone tap which gushes ice cold water as you switch it
+on. A clean towel hangs up on the wall which soaks up the water extremely
+well. Mirrors hang above each basin, affording the ladies to prune
+themselves as they freshen up.
+~
+~
+0 0 -1 0
+D3
+You can leave the ladies washroom and enter back into the cavern.
+~
+womens~
+1 0 20622 0
+D4
+The ceiling has been covered in pale blue tiles which sparkle in the light.
+A few coal-gas lanterns illuminate the room very efficiently.
+~
+~
+0 0 -1 0
+D5
+The floor has been made by a mosaic of tiny pieces of tile, all patched
+together to create a picture of the mighty god Helver. He wields a mighty
+mace and glows with an unearthly light.
+~
+~
+0 0 -1 0
+E
+basin basins washbasins~
+The washbasins have all been carved directly out of the rock in the wall.
+Each has a single stone tap which gushes ice cold water as you switch it
+on. A clean towel hangs up on the wall which soaks up the water extremely
+well. Mirrors hang above each basin, affording the ladies to prune
+themselves as they freshen up.
+~
+E
+cubicles cubicle~
+Three cubicles can be seen, built from solid black marble blocks. Each has a
+small knob on the door and a small sign which shows whether it is occupied.
+At the moment, all are vacant, but you seem to have no inclination to use
+them.
+~
+S
+#20662
+The Doctor's Waiting Room~
+   There is a small reception desk with an appointment book spread across  
+its surface on the northern side of the room. Around the rest of the room   
+are comfortable armchairs for the patients to relax in whilst they await
+their turn. The walls are covered in drawings and posters pertaining to good 
+health. Some loud chuckling can be from the doctor's surgery to the west.
+~
+206 cd 1
+D0
+A metal desk, six feet long by three feet wide stands against the wall. 
+Lying open on the top at today's date is a leather bound appointment book.
+~
+~
+0 0 -1 0
+D1
+You can see the doorway which leads back out into the cavern. A few stone
+carts occasionally trundle past.
+~
+door~
+1 0 20630 0
+D2
+The wall has been plastered with drawings and posters giving messages of 
+good health practice. One warns of the danger of breathing coal dust to the
+lungs and another shows pictures of a rock-mite. Below the pictures are
+several comfortable armchairs.
+~
+~
+0 0 -1 0
+D3
+The doctor's surgery is through the doorway. Some loud chuckling can be 
+heard.
+~
+surgery~
+1 0 20663 0
+D4
+The ceiling has been painted a pastel green colour, very comfortable on the
+eyes and quite soothing. Coal-gas lamps have been used which burn more 
+cleanly than open candles, reducing the amount of smoke in the air.
+~
+~
+0 0 -1 0
+D5
+The floor has been fitted with wooden blocks which have been varnished to a
+dark brown colour. A few thick bearskin rugs are scattered about warming the
+place considerably.
+~
+~
+0 0 -1 0
+E
+desk reception~
+A metal desk, six feet long by three feet wide stands against the wall. The
+top surface is covered with black leather. An appointment book lies open in 
+the centre alongside an ink pen and blotter.
+~
+E
+appointment book~
+The appointment book is quite big, two feet square. It lies open at today's
+date and has several entries made for throughout the day. You notice that
+Mrs. Bandell is currently being seen by Dr. Goldmine.
+~
+E
+drawings posters~
+The wall has been plastered with drawings and posters giving messages of 
+good health practice. One warns of the danger of breathing coal dust to the
+lungs and another shows pictures of a rock-mite. A few thankyou drawings
+from your children have also been pinned up.
+~
+E
+armchairs armchair~
+The armchairs are made out of soft brown leather with big cushions. Sitting
+in one, you feel completely lost but totally relaxed.
+~
+S
+#20663
+Doctor Goldmine's Surgery~
+   You have burst in upon the doctor whilst he is in mid consultation. He is
+sitting at his desk talking to one of his patients who lies on an 
+examination couch. On the far side of the room is a wooden screen for the 
+patients to change behind. A bookcase lines the southern wall, filled with
+books on every medical subject imaginable. The smell of medicine and 
+healing hangs heavy in the air.
+~
+206 d 1
+D0
+The doctor's desk leans against the wall with a padded couch beside it. It
+looks a little crowded but is necessary for a good patient to doctor 
+relationship.
+~
+~
+0 0 -1 0
+D1
+Through the doorway you can see the reception desk in the waiting room.
+~
+surgery~
+1 0 20662 0
+D2
+The whole of the wall is covered by a wooden bookcase. There are five 
+shelves, all of which are completely full with large leather bound volumes 
+on every aspect of medicine.
+~
+~
+0 0 -1 0
+D3
+A wooden screen made from five wooden panels which can concertina up stands
+against the rock wall.
+~
+~
+0 0 -1 0
+D4
+Like the ceiling in the waiting room, it has been painted a pastel green 
+colour. Two lights that you have not yet encountered on this trip light the 
+office. They emit a bright yellow glow, much more powerful than the coal-gas
+lamps or candles, but you do not understand what powers them.
+~
+~
+0 0 -1 0
+D5
+The floor has been fitted with a pale green carpet. Entwined into it with
+golden thread is a '+' sign, the universal sign of medical help.
+~
+~
+0 0 -1 0
+E
+desk~
+The desk is made from a silvery metal but is quite small, only four feet 
+long and two feet wide. A few books and medical notes lie scattered on the 
+top along with a page with some illegible writing on it.
+~
+E
+couch~
+The couch is seven feet long, the top two feet inclined upwards at 45 
+degrees allowing the patient to sit up and talk to the doctor. It is made
+from a padded furry material that feels very soft to the touch and is very
+relaxing to lie on.
+~
+E
+screen~
+The screen is made from five wooden panels, each one hinged so that the 
+whole thing can be concertina'd up and stored. The panels all have animals
+painted onto them with fine detail. You recognise a deer and a stallion 
+amongst them.
+~
+E
+bookcase~
+The whole of the wall is covered by a wooden bookcase, running at least 
+fifteen feet long and ten feet high. There are five shelves, all of which 
+are completely full with large leather bound volumes on every aspect of 
+medicine. A few small holes can be seen in the woodwork, where once it must
+have come under attack by some sort of worm.
+~
+S
+#20664
+The Newsroom~
+   This is where the miners and their families can come to read for 
+themselves what is happening in the world above and perhaps mail replies to
+enquiries. The noticeboard has been hung onto the far wall leaving all the
+other walls bare rock. The room is deserted, perhaps showing how well the 
+Overseer does in keeping everybody informed.
+~
+206 d 1
+D0
+The wall is bare rock which has been whitewashed. Nothing else hangs upon 
+it, leaving a perfectly clean surface.
+~
+~
+0 0 -1 0
+D1
+You can see a noticeboard which allows the people to read what is happening 
+in the world above. A few pens have been left around in case they want to 
+reply to any of the messages.
+~
+~
+0 0 -1 0
+D2
+The wall is bare rock which has been whitewashed. Nothing else hangs upon 
+it, leaving a perfectly clean surface.
+~
+~
+0 0 -1 0
+D3
+You can leave the newsroom back out into the cavern.
+~
+~
+0 0 20623 0
+D4
+The rock ceiling has been whitewashed and has no other detail. A few small
+coal-gas lamps light up the room letting you read the board more easily.
+~
+~
+0 0 -1 0
+D5
+The floor is bare rock without any coverings or design. This may indicate 
+how little this room is used, since it doesn't match up to the standard of 
+the rest of the rooms you have seen on this journey.
+~
+~
+0 0 -1 0
+S
+#20665
+The Dining Area~
+   Entering the dining area of the restaurant, you quickly count fifteen
+tables, all of which are crowded with people enjoying their dinners. There
+are several small tables for two people which are quite secluded from the 
+rest, allowing the diners some privacy. You notice that all of the tables
+are full, making it a very popular place. The diner nearest to you is eating
+fresh lobster, maybe a little too fresh by the way it squirms on the plate.
+~
+206 d 1
+D0
+The tables are completely full, and spread out towards the far wall.
+~
+~
+0 0 -1 0
+D1
+You can see the entrance to the restuarant and a group of people awaiting
+their turn to dine.
+~
+~
+0 0 20657 0
+D2
+A small bar with bottles of beer and foreign looking beverages lines most of
+the wall. A sky blue drink seems to be very popular with many of the
+customers, served in small glass tumblers.
+~
+~
+0 0 -1 0
+D3
+The tables are completely full, and spread out towards the far wall.
+~
+~
+0 0 -1 0
+D4
+A large golden fan spins around on the ceiling, cooling the air from the
+heat produced in the kitchens. A few candles have been lit in their golden
+holders, the light they produce somehow lending a more intimate atmosphere
+to the restaurant.
+~
+~
+0 0 -1 0
+D5
+The floor is covered in a thick, dark green carpet which you sink into at
+least an inch. It feels very luxuriant to the touch and matches the rest of
+the restaurant perfectly.
+~
+~
+0 0 -1 0
+S
+#20666
+The Cubicle~
+  You have entered into a cubicle in the ladies washrooms. The place is
+spotlessly clean and contains nothing more than a toilet and a paper-roll
+dispenser. It is not a very interesting place to stay in.
+~
+206 d 1
+D0
+You can see the toilet with a small cistern above it. A metal chain allows
+you to flush when finished.
+~
+~
+0 0 -1 0
+D1
+The walls are a plain pink colour, spotlessly clean.
+~
+~
+0 0 -1 0
+D2
+You can see the cubicle door, through which you can enter the main part of
+the washroom.
+~
+cubicle~
+2 20603 20661 0
+D3
+The walls are a plain pink colour, spotlessly clean.
+~
+~
+0 0 -1 0
+D4
+The ceiling has been covered in pale blue tiles which sparkle in the light.
+A few coal-gas lanterns illuminate the room very efficiently.
+~
+~
+0 0 -1 0
+D5
+The floor has been made from a mosaic of tiles. You can see part of a
+pattern which extends out into the rest of the washroom.
+~
+~
+0 0 -1 0
+S
+$~

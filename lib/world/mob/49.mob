@@ -1,0 +1,15 @@
+#4900
+maple tree trembling~
+{yThe trembling maple tree{x~
+{yThe trembling maple tree of Misty Grove wavers here untouched by time.{x
+~
+{yThis large tree has been standing for centuries. Its roots waver into the
+mist, almost snakelike, but dont seem to find the ground as you search
+further. A bright aura surrounds it, and it seems to smile as you investigate
+further.{x
+~
+bdeloq dhkr 0 X
+55 0 -10 28d28+5550
+0 6000000
+8 8 0 15 16 6
+T 40 6d6+16 23

@@ -1,0 +1,92 @@
+#98
+Rand's Tower~
+9899 60 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 9802 1 9812 100	* the Book Monster
+G 1 9810 2 -1	* the burning book of chaos
+G 1 9811 1 -1	* the book of the elder
+D 0 9812 1 1	* The Library
+D 0 9812 3 1	* The Library
+D 0 9812 3 3	* The Library
+M 0 9800 3 9800 100	* a mountain goat
+M 0 9800 3 9802 100	* a mountain goat
+M 0 9800 3 9804 100	* a mountain goat
+M 0 9801 2 9807 100	* a Demon of Decay
+M 0 9801 2 9807 100	* a Demon of Decay
+O 0 9809 1 9811 100	* a desk
+M 0 9803 1 9811 100	* a Bad Feeling
+P 1 9802 1 9809	* a piece of agate
+P 1 9803 1 9809	* a piece of jade
+P 1 9800 1 9809	* a glowing dagger
+M 0 9805 1 9837 100	* the Guardian
+O 0 9804 1 9811 100	* a piece of sculpture
+O 0 9813 1 9841 100	* a large milky potion
+O 0 9814 1 9841 100	* a small milky potion
+O 0 9815 1 9836 100	* a twisted metallic staff of iron
+O 0 9816 1 9816 100	* a wooden chest
+O 0 9817 1 9816 100	* a wooden chest
+O 0 9818 1 9816 100	* a wooden chest
+O 0 9819 1 9810 100	* a water basin
+M 0 9804 1 9816 100	* Your Worst Nightmare
+P 1 9801 1 9816	* a suit of glowing platemail
+P 1 9805 1 9817	* a vial of dragon's blood
+P 1 9807 1 9817	* a long pole
+P 1 9806 1 9818	* an ebony amulet
+P 1 9808 1 9818	* a pile of silver coins
+P 1 9812 1 9818	* an occluded lens
+O 1 9820 2 9824 100	* some baked elf toes
+O 1 9820 2 9824 100	* some baked elf toes
+D 0 9806 5 1	* In a Clearing
+D 0 9807 4 1	* A Stairwell
+D 0 9807 2 1	* A Stairwell
+D 0 9808 0 1	* A Linen Closet
+D 0 9809 0 1	* Along A Corridor
+D 0 9809 2 1	* Along A Corridor
+D 0 9810 0 1	* A Cramped Bathroom
+D 0 9811 2 1	* A Master Bedroom
+D 0 9813 3 1	* In A Dark Stairwell
+D 0 9814 1 1	* A Hidden Hall
+D 0 9814 5 1	* A Hidden Hall
+D 0 9815 3 1	* In A  Dark Stairwell
+D 0 9816 4 1	* Hidden Treasure Room
+D 0 9817 0 1	* A Damp Hallway
+D 0 9817 1 1	* A Damp Hallway
+D 0 9817 2 1	* A Damp Hallway
+D 0 9818 0 1	* The Servant's Room
+D 0 9819 2 1	* The Servant's Room
+D 0 9820 0 1	* A Damp Hallway
+D 0 9821 2 1	* The Servant's Room
+D 0 9823 0 1	* The Dining Hall
+D 0 9824 2 1	* A Kitchen Area
+D 0 9835 3 2	* An Entranceway
+D 0 9836 1 2	* An Old Doorway
+D 0 9837 3 1	* Along A Narrow Hallway
+D 0 9838 1 1	* On The Steep Stairs
+S
+$

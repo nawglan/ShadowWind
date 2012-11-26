@@ -1,0 +1,2673 @@
+#2000
+Entrance To The Draconian Encampment~
+   The forest seems darker here than it was a moment ago, something is
+apparently amiss. There is a great sense of evil in the air that is pulling
+at your very soul, beckoning you to come west. The only evidence of any
+civilization is the ragged sign leaning against a fallen tree. A path leads
+to the east and west.
+~
+20 cp 3
+D0
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D1
+To the west, you enter seemingly endless plains.
+~
+~
+0 -1 9134 0
+D2
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2001 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+sign~
+                  ###########################################
+                  #                                         #
+                  #       "The Draconian Encampment"        #
+                  #                                         #
+                  #  Abandon hope, all ye who enter here!   #
+                  #                                         #
+                  #              Designed by,               #
+                  #                                         #
+                  #           Sojat & Seeker  '95           #
+                  #                                         #
+                  ###########################################
+                                      ##
+                                      ##
+                                      ##
+                                      ##
+~
+S
+#2001
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the north,
+east, and west.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2013 0
+D1
+The entrance to the draconian encampment.
+~
+~
+0 -1 2000 0
+D2
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2002 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2002
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the north,
+east, and west.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2012 0
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2001 0
+D2
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2003 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2003
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off in all
+directions.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2006 0
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2002 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+Into the darkness.
+~
+~
+0 -1 2004 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2004
+In The Dark~
+   Even with a light the evil is so thick you still cannot see well enough to
+make out any specific shapes.
+~
+20 acfhip 0
+D0
+Total darkness and void.
+~
+~
+0 -1 -1 0
+D1
+Total darkness and void.
+~
+~
+0 -1 -1 0
+D2
+Total darkness and void.
+~
+~
+0 -1 -1 0
+D3
+Total darkness and void.
+~
+~
+0 -1 -1 0
+D4
+A trodden path.
+~
+~
+0 -1 2003 0
+D5
+Total darkness and void.
+~
+~
+0 -1 -1 0
+S
+#2005
+The Deadly Draconian Trap~
+   As you step towards the pit you discover the footing is weak and cannot
+support your weight. You fall into the pit and can clearly see the sharpened
+staves reaching out in hunger for your blood. Your body comes to rest upon
+no less than a dozen of these instruments of death. Your bones will now rest
+here forever with those fools who have gone before you. 
+
+                       Welcome to the Draconian Trap.
+~
+20 cjk 0
+D0
+A trodden path.
+~
+~
+0 -1 2003 0
+S
+#2006
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the north
+and south. The path to the west leads downward into a tunnel.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2016 0
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+The entrance to the draconian encampment.
+~
+~
+0 -1 2003 0
+D3
+A narrowing tunnel.
+~
+~
+0 -1 2007 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2007
+A Narrow Tunnel~
+   The tunnel walls seem to have been dug with claw like hands. Although the
+tunnel is large enough for several people here as it continues west it seems
+to narrow slightly more. The tunnel leads slightly up to the east and is
+deeper to the west.
+~
+20 adgq 0
+D0
+The walls are damp and cool.
+~
+~
+0 -1 -1 0
+D1
+A trodden path.
+~
+~
+0 -1 2006 0
+D2
+The walls are damp and cool.
+~
+~
+0 -1 -1 0
+D3
+A narrowing tunnel.
+~
+~
+0 -1 2008 0
+D4
+The ceiling is damp with moisture.
+~
+~
+0 -1 -1 0
+D5
+The floor is slimy and slick.
+~
+~
+0 -1 -1 0
+E
+walls tunnel~
+The walls are damp and musty as if there has been very little activity in
+here for many generations.
+~
+S
+#2008
+A Narrow Tunnel~
+   The tunnel walls seem to have been dug with claw like hands. Although the
+tunnel is large enough for several people here as it continues west it seems
+to narrow slightly more. The tunnel leads slightly up to the east and is
+deeper to the west.
+~
+20 adgq 0
+D1
+A narrowing tunnel.
+~
+~
+0 -1 2007 0
+D2
+The walls are damp and cool.
+~
+~
+0 -1 -1 0
+D3
+A narrowing tunnel.
+~
+~
+0 -1 2009 0
+D4
+The ceiling is damp with moisture.
+~
+~
+0 -1 -1 0
+D5
+The floor is slimy and slick.
+~
+~
+0 -1 -1 0
+E
+walls tunnel~
+The walls are damp and musty as if there has been very little activity in
+here for many generations.
+~
+S
+#2009
+A Narrow Tunnel~
+   The tunnel walls seem to have been dug with claw like hands. Although the
+tunnel is large enough for several people here as it continues west it seems
+to narrow slightly more. The tunnel leads slightly up to the east and is
+deeper to the west.
+~
+20 adgq 0
+D1
+A narrowing tunnel.
+~
+~
+0 -1 2008 0
+D2
+The walls are damp and cool.
+~
+~
+0 -1 -1 0
+D3
+A narrowing tunnel.
+~
+~
+0 -1 2010 0
+D4
+The ceiling is damp with moisture.
+~
+~
+0 -1 -1 0
+D5
+The floor is slimy and slick.
+~
+~
+0 -1 -1 0
+E
+walls tunnel~
+The walls are damp and musty as if there has been very little activity in
+here for many generations.
+~
+S
+#2010
+A Narrow Tunnel~
+   The tunnel walls seem to have been dug with claw like hands. Although the
+tunnel is large enough for several people here as it continues west it seems
+to narrow slightly more. The tunnel leads slightly up to the east and is
+deeper to the west leaving only room for one person to travel.
+~
+20 adgiq 0
+D1
+A narrowing tunnel.
+~
+~
+0 -1 2009 0
+D2
+The walls are damp and cool.
+~
+~
+0 -1 -1 0
+D3
+A narrowing tunnel.
+~
+~
+0 -1 2011 0
+D4
+The ceiling is damp with moisture.
+~
+~
+0 -1 -1 0
+D5
+The floor is slimy and slick.
+~
+~
+0 -1 -1 0
+E
+walls tunnel~
+The walls are damp and musty as if there has been very little activity in
+here for many generations.
+~
+S
+#2011
+End Of The Narrow Tunnel~
+   The tunnel walls are so narrow now that they seem to close in upon you.
+Moisture drops all around you and the air is so think it is hard to breathe.
+~
+20 adgq 0
+D1
+A narrowing tunnel.
+~
+~
+0 -1 2010 0
+D2
+The walls are damp and cool.
+~
+~
+0 -1 -1 0
+D3
+The end of the tunnel.
+~
+~
+0 -1 -1 0
+D4
+The ceiling is damp with moisture.
+~
+~
+0 -1 -1 0
+D5
+The floor is slimy and slick.
+~
+~
+0 -1 -1 0
+E
+walls tunnel~
+The walls are damp and musty as if there has been very little activity in
+here for many generations. It seems as if this tunnel has not been finished.
+~
+E
+niche~
+There is a small flicker of light emitting through the tiny niche here but
+there is no way to open this sealed tunnel. The Draconian closed this passage
+when they fled back into their homelands.
+~
+S
+#2012
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the east 
+and south.
+~
+20 p 3
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2013 0
+D2
+You see a path leading further into the forest.
+~
+~
+0 -1 2002 0
+D3
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2013
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the west
+and south.
+~
+20 p 3
+D0
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+You see a path leading further into the forest.
+~
+~
+0 -1 2001 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2012 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2014
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the east 
+and west.
+~
+20 p 3
+D0
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D1
+A large clearing in the trees.
+~
+~
+0 -1 2054 0
+D2
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D3
+~
+~
+0 0 2015 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2015
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the north,
+east, and west.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2018 0
+D1
+~
+~
+0 0 2014 0
+D2
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2016 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2016
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the north,
+east, and south. To the north you see a small hut.
+~
+20 p 3
+D0
+A small hut made of sticks.
+~
+~
+0 -1 2017 0
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2015 0
+D2
+You see a path leading further into the forest.
+~
+~
+0 -1 2006 0
+D3
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2017
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the
+simplest of items needed for a warrior. A small cot for sleeping is placed 
+against the north wall, a table with two chairs is placed against the west
+wall. A door to the south leads back into the forest.
+~
+20 adp 0
+D0
+A small cot.
+~
+~
+0 -1 -1 0
+D1
+A ragged wall.
+~
+~
+0 -1 -1 0
+D2
+A path into the forest.
+~
+~
+0 -1 2016 0
+D3
+A table and chairs.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+S
+#2018
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the north,
+south, and west. To the west you see a small hut.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2020 0
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+You see a path leading further into the forest.
+~
+~
+0 -1 2015 0
+D3
+A small hut made of sticks.
+~
+~
+0 -1 2019 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2019
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the simplest
+simplest of items needed for a warrior. A small cot for sleeping is placed 
+against the south wall, a chair is placed against the west wall. Doors lead to
+the north and east.
+~
+20 adp 0
+D0
+A path into the forest.
+~
+~
+0 -1 2022 0
+D1
+A path into the forest.
+~
+~
+0 -1 2018 0
+D2
+A small cot.
+~
+~
+0 -1 -1 0
+D3
+A simple chair.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+S
+#2020
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the south 
+and west.
+~
+20 p 3
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+You see a path leading further into the forest.
+~
+~
+0 -1 2018 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2022 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2021
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off to the west.
+To the west you see a small hut.
+~
+20 p 3
+D0
+~
+~
+0 0 3667 0
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D3
+A small hut.
+~
+~
+0 -1 2023 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2022
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off in all
+directions. Small huts lie to the north and south.
+~
+20 p 3
+D0
+A small hut.
+~
+~
+0 -1 2023 0
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2020 0
+D2
+A small hut.
+~
+~
+0 -1 2019 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2024 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2023
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the simplest
+simplest of items needed for a warrior. A small cot for sleeping is placed 
+against the north wall, a chair is placed against the west wall. Doors lead to
+the east and south.
+~
+20 adp 0
+D0
+A small cot.
+~
+~
+0 -1 -1 0
+D1
+A path into the forest.
+~
+~
+0 -1 2021 0
+D2
+A path into the forest.
+~
+~
+0 -1 2022 0
+D3
+A simple chair is rotting here.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+S
+#2024
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off in all
+directions. Small huts lie to the north and south.
+~
+20 p 3
+D0
+A small hut.
+~
+~
+0 -1 2031 0
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2022 0
+D2
+A small hut.
+~
+~
+0 -1 2026 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2025 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2025
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off north, east
+and south. Small huts lie to the north and south.
+~
+20 p 3
+D0
+A small hut.
+~
+~
+0 -1 2030 0
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2024 0
+D2
+A small hut.
+~
+~
+0 -1 2027 0
+D3
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2026
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the simplest
+simplest of items needed for a warrior. A small cot for sleeping is placed
+against the east wall, a table with two chairs is placed against the south
+wall. A door to the north leads back into the forest and a door to the west
+leads to a neighboring hut.
+~
+20 adp 0
+D0
+A path into the forest.
+~
+~
+0 -1 2024 0
+D1
+A small cot.
+~
+~
+0 -1 -1 0
+D2
+A table and chairs.
+~
+~
+0 -1 -1 0
+D3
+A small neighboring hut.
+~
+~
+0 -1 2027 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+S
+#2027
+A Small Abandoned Hut~
+   As you step into the hut you see nothing of interest. This hut has
+apparently been vacated in a hurry. Nothing is left except the dirt on the
+floor. A door leads north into the forest and east into a neighboring hut.
+~
+20 adp 0
+D0
+A path into the forest.
+~
+~
+0 -1 2025 0
+D1
+A neighboring hut.
+~
+~
+0 -1 2026 0
+D2
+The wall is falling down.
+~
+~
+0 -1 -1 0
+D3
+This wall has been knocked down as if there were a great struggle here.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+S
+#2028
+The Chief Guard's Hut~
+   As you step into the hut you see a dwelling furnished with fine linens,
+carpets of wool, a small fireplace to the south, a large oak bed to the west,
+and a table with four chairs to the east. On the walls there are crude maps
+and charts with markings which you cannot read, but looking closer you can
+make out the trail from here to Garathorm. This hut looks as if it is used to
+decide where their next raid will be.
+~
+20 adp 0
+D0
+A path into the forest.
+~
+~
+0 -1 2033 0
+D1
+A fine table with four chairs.
+~
+~
+0 -1 -1 0
+D2
+A small fireplace.
+~
+~
+0 -1 -1 0
+D3
+A large oak bed.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+bed~
+A sturdy oak bed built for a fine warrior.
+~
+E
+chairs~
+Large oak chairs surround the table here.
+~
+E
+table~
+The table is covered with maps of the surrounding area and from other far
+away lands not yet discovered.
+~
+E
+fireplace~
+The warm fire crackles in the hearth and glows softly.
+~
+S
+#2029
+A Small Abandoned Hut~
+   As you step into the hut you see nothing of interest. This hut has
+apparently been vacated in a hurry. Nothing is left except the dirt on the
+floor. A door leads north into the forest.
+~
+20 adp 0
+D0
+A path into the forest.
+~
+~
+0 -1 2034 0
+D1
+A wall stands here with no window at all.
+~
+~
+0 -1 -1 0
+D2
+A wall stands here with no window at all.
+~
+~
+0 -1 -1 0
+D3
+A wall stands here with no window at all.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+S
+#2030
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the simplest
+simplest of items needed for a warrior. A small cot for sleeping is placed 
+against the north wall, a table with two chairs is placed against the east
+wall. A door to the south leads back into the forest and a door to the west
+leads to a neighboring hut.
+~
+20 adp 0
+D0
+A small cot.
+~
+~
+0 -1 -1 0
+D1
+A table and two chairs.
+~
+~
+0 -1 -1 0
+D2
+A path into the forest.
+~
+~
+0 -1 2025 0
+D3
+A door leading to a neighboring hut.
+~
+~
+0 -1 2032 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+S
+#2031
+A Small Abandoned Hut~
+   As you step into the hut you see nothing of interest. This hut has
+apparently been vacated in a hurry. Nothing is left except the dirt on the
+floor and a pile of garbage. A door leads south into the forest.
+~
+20 adp 0
+D0
+There is nothing special here.
+~
+~
+0 -1 -1 0
+D1
+There is nothing special here.
+~
+~
+0 -1 -1 0
+D2
+A path into the forest.
+~
+~
+0 -1 2024 0
+D3
+There is nothing special here.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+garbage~
+Something is different about this garbage as if someone has been moving it 
+around recently.
+~
+S
+#2032
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the simplest
+simplest of items needed for a warrior. A small cot for sleeping is placed
+against the north wall, a table with two chairs is placed against the west
+wall. A door to the south leads back into the forest and a door to the east
+leads to a neighboring hut.
+~
+20 adp 0
+D0
+A small cot.
+~
+~
+0 -1 -1 0
+D1
+A door leading to a neighboring hut.
+~
+~
+0 -1 2030 0
+D2
+A path into the forest.
+~
+~
+0 -1 2033 0
+D3
+A small table and two chairs.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+S
+#2033
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads off north, south
+and west. Small huts lie to the north and south.
+~
+20 p 3
+D0
+A small hut.
+~
+~
+0 -1 2032 0
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+A small hut.
+~
+~
+0 -1 2028 0
+D3
+You see a path leading further into the forest.
+~
+~
+0 -1 2034 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2034
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. Paths lead off in all directions. A path through the
+low trees leads north end east. Small huts lie south and west.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2037 0
+D1
+You see a path leading further into the forest.
+~
+~
+0 -1 2033 0
+D2
+A small hut.
+~
+~
+0 -1 2029 0
+D3
+A small hut.
+~
+~
+0 -1 2035 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2035
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the
+simplest of items needed for a warrior. A small cot for sleeping is placed
+against the north wall, a table with two chairs is placed against the west
+wall. A door to the east leads back into the forest. 
+~
+20 adp 0
+D0
+A small cot.
+~
+~
+0 -1 -1 0
+D1
+A path into the forest.
+~
+~
+0 -1 2034 0
+D2
+A table and two chairs.
+~
+~
+0 -1 -1 0
+D3
+There seems to be nothing at this wall.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+S
+#2036
+A Small Hut~
+   As you step into the hut you see a dwelling furnished with only the
+simplest of items needed for a warrior. A small cot for sleeping is placed
+against the north wall, a table with two chairs is placed against the west
+wall. A door to the east leads back into the forest. 
+~
+20 adp 0
+D0
+A simple cot.
+~
+~
+0 -1 -1 0
+D1
+A path into the forest.
+~
+~
+0 -1 2037 0
+D2
+A small window.
+~
+~
+0 -1 -1 0
+D3
+A table and several chairs.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+window~
+This window is so covered with dirt you cant even see the glass.
+~
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+S
+#2037
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads north and south.
+A small hut lies to the west.
+~
+20 p 3
+D0
+You see a path leading further into the forest.
+~
+~
+0 -1 2038 0
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+You see a path leading further into the forest.
+~
+~
+0 -1 2034 0
+D3
+A small hut.
+~
+~
+0 -1 2036 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2038
+A Trodden Path~
+   A dense forest lies around you, with briars in all directions which
+seemingly reach out towards you. The light from above barely shows through
+the dense canopy above. A path through the low trees leads to the south.
+Small huts lie to the east and west. To the north is a cave.
+~
+20 p 3
+D0
+You see the entrance to what seems a small cave.
+~
+~
+0 -1 2041 0
+D1
+A small hut.
+~
+~
+0 -1 2039 0
+D2
+You see a path leading further into the forest.
+~
+~
+0 -1 2037 0
+D3
+A small hut.
+~
+~
+0 -1 2040 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the low trees.
+~
+~
+0 -1 -1 0
+E
+briars~
+Spindly vinelike plants with razor sharp thorns seem to almost choke the
+other vegetation trying to grow here.
+~
+E
+path trodden~
+A well beaten path travelled by many feet every day.
+~
+E
+canopy~
+The treelimbs entwine so densely that it seems light can barely pass.
+~
+E
+forest~
+Low trees surround you in every direction.
+~
+S
+#2039
+A Small Hut~
+   As you enter the hut you see a dwelling furnished with only the simplest
+of items needed for a warrior. A small cot for sleeping is placed against the
+north wall, a table with two chairs is placed against the east wall. A door to
+the west leads back into the forest. 
+~
+20 adp 0
+D0
+A very simple cot.
+~
+~
+0 -1 -1 0
+D1
+A table and two chairs.
+~
+~
+0 -1 -1 0
+D2
+This wall is covered with the blood of the huts previous owner.
+~
+~
+0 -1 -1 0
+D3
+A path into the forest.
+~
+~
+0 -1 2038 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+S
+#2040
+A Small Hut~
+   As you enter the hut you see a dwelling furnished with only the simplest
+of items needed for a warrior. A small cot for sleeping is placed against the
+north wall, a table with two chairs is placed against the west wall. A door to
+the east leads back into the forest. 
+~
+20 adp 0
+D0
+A small cot.
+~
+~
+0 -1 -1 0
+D1
+A path into the forest.
+~
+~
+0 -1 2038 0
+D2
+A table with two chairs.
+~
+~
+0 -1 -1 0
+D3
+A picture hangs here.
+~
+~
+0 -1 -1 0
+D4
+A tattered roof that can be seen through.
+~
+~
+0 -1 -1 0
+D5
+A very dusty and cluttered floor.
+~
+~
+0 -1 -1 0
+E
+cot~
+A sturdy cot built to hold the weight of a warrior.
+~
+E
+chair~
+A simple wooden chair.
+~
+E
+table~
+A rickety old table.
+~
+E
+picture~
+A picture of Death himself hangs here.
+~
+S
+#2041
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2044 0
+D1
+The wandering caves.
+~
+~
+0 -1 2042 0
+D2
+The wandering caves.
+~
+~
+0 -1 2042 0
+D3
+Something you have seen before.
+~
+~
+0 -1 2000 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2042
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2045 0
+D1
+The wandering caves.
+~
+~
+0 -1 2043 0
+D2
+The wandering caves.
+~
+~
+0 -1 2041 0
+D3
+The wandering caves.
+~
+~
+0 -1 2041 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2043
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2046 0
+D1
+The wandering caves.
+~
+~
+0 -1 2044 0
+D2
+The wandering caves.
+~
+~
+0 -1 2042 0
+D3
+The wandering caves.
+~
+~
+0 -1 2041 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2044
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2047 0
+D1
+The wandering caves.
+~
+~
+0 -1 2045 0
+D2
+The wandering caves.
+~
+~
+0 -1 2041 0
+D3
+The wandering caves.
+~
+~
+0 -1 2043 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2045
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2048 0
+D1
+The wandering caves.
+~
+~
+0 -1 2046 0
+D2
+The wandering caves.
+~
+~
+0 -1 2042 0
+D3
+The wandering caves.
+~
+~
+0 -1 2044 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2046
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2049 0
+D1
+The wandering caves.
+~
+~
+0 -1 2047 0
+D2
+The wandering caves.
+~
+~
+0 -1 2043 0
+D3
+The wandering caves.
+~
+~
+0 -1 2045 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2047
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2041 0
+D1
+The wandering caves.
+~
+~
+0 -1 2048 0
+D2
+The wandering caves.
+~
+~
+0 -1 2044 0
+D3
+The wandering caves.
+~
+~
+0 -1 2046 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2048
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2051 0
+D1
+The wandering caves.
+~
+~
+0 -1 2049 0
+D2
+The wandering caves.
+~
+~
+0 -1 2045 0
+D3
+The wandering caves.
+~
+~
+0 -1 2047 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2049
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The wandering caves.
+~
+~
+0 -1 2052 0
+D1
+The wandering caves.
+~
+~
+0 -1 2050 0
+D2
+The wandering caves.
+~
+~
+0 -1 2046 0
+D3
+The wandering caves.
+~
+~
+0 -1 2048 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2050
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+The Draconian Shrine.
+~
+~
+0 -1 2053 0
+D1
+The wandering caves.
+~
+~
+0 -1 2051 0
+D2
+The wandering caves.
+~
+~
+0 -1 2041 0
+D3
+The wandering caves.
+~
+~
+0 -1 2049 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2051
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+Somewhere you have been before.
+~
+~
+0 -1 2000 0
+D1
+The wandering caves.
+~
+~
+0 -1 2052 0
+D2
+The wandering caves.
+~
+~
+0 -1 2048 0
+D3
+The wandering caves.
+~
+~
+0 -1 2050 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2052
+The Wandering Caves~
+   This cave is moist and cool, there are many rock formations on the floor 
+and ceiling. The walls seem to come together at the sides and form what could
+be seen from a distance as the shape of an eye, possibly this cave was
+created by an ancient underground river. The cave seems to lead off in all
+directions.
+~
+20 adp 5
+D0
+Somewhere you have been before.
+~
+~
+0 -1 2003 0
+D1
+The wandering caves.
+~
+~
+0 -1 2041 0
+D2
+The wandering caves.
+~
+~
+0 -1 2049 0
+D3
+The wandering caves.
+~
+~
+0 -1 2051 0
+D4
+Rock formations push up under your feet.
+~
+~
+0 -1 -1 0
+D5
+Rock formations hang down over your head.
+~
+~
+0 -1 -1 0
+S
+#2053
+The Draconian Shrine~
+    The shrine of the Draconian goddess, Takhisis, is crafted of pure stone
+and is in the shape of a small winged dragon. The horns of the dragon 
+emit a slight aura and the eyes glow red. 
+~
+20 adp 5
+D0
+This wall is ornamented with golden statues.
+~
+~
+0 -1 -1 0
+D1
+This wall is ornamented with golden statues.
+~
+~
+0 -1 -1 0
+D2
+The wandering caves.
+~
+~
+0 -1 2045 0
+D3
+This wall is ornamented with golden statues.
+~
+~
+0 -1 -1 0
+D4
+There is a mural of the god Takhisis.
+~
+~
+0 -1 -1 0
+D5
+A dusty floor.
+~
+~
+0 -1 -1 0
+E
+shrine beast stone shape dragon~
+The mouth of the beast is open. No matter where you stand in this room it 
+seems that the beast is watching your every move and waiting for the right 
+moment to use you and fulfill it's desire and aching hunger for blood.
+~
+S
+#2054
+The Large Clearing~
+   A particularly dense thicket of trees and briars nearly hides this
+clearing from the outside world. Maybe that is why it has been chosen to be
+the birthplace for future generations of neogi. The clearing appears to be
+about sixty feet long and thirty feet wide. 
+~
+20 p 3
+D0
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D1
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D2
+Vines and brush are very thick here.
+~
+~
+0 -1 -1 0
+D3
+A trodden path.
+~
+~
+0 -1 2014 0
+D4
+The dense forest canopy.
+~
+~
+0 -1 -1 0
+D5
+A path through the large clearing.
+~
+~
+0 -1 -1 0
+S
+#2055
+In the light~
+Colors are swirling all around you, the light is very bright and intense.
+~
+20 c 3
+D0
+Colors are swirling all around you, the light is very bright and intense.
+~
+~
+0 -1 -1 0
+D1
+Colors are swirling all around you, the light is very bright and intense.
+~
+~
+0 -1 2003 0
+D2
+Colors are swirling all around you, the light is very bright and intense.
+~
+~
+0 -1 -1 0
+D3
+Colors are swirling all around you, the light is very bright and intense.
+~
+~
+0 -1 -1 0
+D4
+Colors are swirling all around you, the light is very bright and intense.
+~
+~
+0 -1 3497 0
+D5
+Colors are swirling all around you, the light is very bright and intense.
+~
+~
+0 -1 -1 0
+S
+#2097
+The Warriors Grove~
+  This is a large oak grove that surrounds what was once a pleasant clearing
+with a small brook winding through it. Now it resembles an armed camp under
+siege. High brush barriers with sharpened sticks thrust through them sur-
+round the grove's outer perimeter, and spears, bows, bundles of arrows and 
+javelins have been set in strategic areas around the barrier where they can
+be snatched up easily and quickly by defenders. An inner ring has been
+constructed of brush and dead wood, and within it nervous mares and year-old
+colts patrol while keeping watch over the foals. All of them seem warn and
+tired.
+~
+20 e 3
+D0
+~
+~
+0 0 1258 0
+D2
+~
+~
+0 0 1204 0
+D3
+~
+~
+0 0 1299 0
+S
+$~

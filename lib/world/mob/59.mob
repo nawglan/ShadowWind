@@ -1,0 +1,685 @@
+#5900
+bwello shopkeeper~
+Bwello~
+Bwello the ticket master stands here.
+~
+Small and slinky, this old reformed drunk has one eye on his tickets
+and another on everyone around. His small size is only overseen by 
+his bright red hair, long, almost to his ankels.
+~
+bdenw dfkr 0 X 0 
+60 0 -10 30d30+30000
+0 10000000 -1
+8 8 1 3 1 3
+T 30 10d20+50 0
+A 5 8 Bwello says, 'Wish to buy a ticket do ye?'
+E -1 100 5927 -1
+#5901
+gormon shopkeeper~
+Gormon~
+Gormon the shopkeeper stands here.
+~
+A large man, made of solid muscel, his hair is a dark brown, and
+his arms are long, and thick as a tree trunk.  His burly build
+makes it easy to see why he is covered in scars.
+~
+bdgnw dfkr 0 X 0 
+60 0 -10 30d30+30000
+0 10000000 -1
+8 8 1 3 1 3
+T 30 10d20+50 0
+A 5 8 Gormon says, 'Aye matie, what shall ye buy this day?'
+#5902
+sailor strong~
+an off-duty sailor~
+An off duty sailor wanders along, enjoying the sites.
+~
+Enjoying his day off, this young sailor joined the merchant navy to see the
+world and what it had to offer him. Still in his early years, he is missing
+some of the tell tale signs of a hardened sailor, his face still being soft
+and free of scars.  
+~
+cd 0 0 X 0 
+30 9 -5 15d15+300
+0 80000 -1
+8 8 1 3 1 3
+T 50 6d5+5 6
+A 5 8 $n frowns as he notices your presence.
+>rand_prog           5~
+if isnpc($r)
+  break
+ else
+  say I can never get enough of the fresh sea air..
+  say Its good for all that ails you, y'know.
+  nod $r
+ endif
+endif
+~
+|
+#5903
+mate shipsmate ships' ship mate~
+a ships' mate~
+A ships' mate walks past you, a large coil of rope over one shoulder.
+~
+A large shock of sun bleached blond hair covers half this yound boy's
+face. He gets to do many of the more menial tasks onboard the ship,  
+scrubbing decks and untangling fishing nets. He loves his life on the
+sea however, and can't wait to follow in his father's footsteps.
+~
+cd 0 0 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 0 3
+T 50 6d5+5 9
+A 5 8 $n puffs his chest out, attempting to impress you.
+A 5 8 $n skillfully throws a coil of rope from one shoulder to the other.
+E -1 75 5917 -1
+E 17 80 5910 -1
+E 3 5 5923 10
+#5904
+dockhand hand~
+a dockhand~
+A young dock hand is here, scurrying about.
+~
+A short, stocky young man, this dockhand takes his work very seriously.
+He runs errands back and forth for the Dock Master, ferrying important
+information of arrivals and deaprtures. Occaisionally he will get to
+help out the cargo movers when time is short.
+~
+cd 0 100 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 80 2d6+3 9
+A 8 5 $n says, 'hey get out of my way, I'm in a hurry!'
+E -1 100 5911 -1
+#5905
+bum dirty~
+a dirty bum~
+A dirty bum shuffles along, dragging a sack behind him.
+~
+Once a stowaway, this dirty old man now lives out of a paper bag. He
+is unwashed, and his clothes even dirtier. Wandering the port area
+that was once his home, reminds him of his younger days.
+~
+cd 0 100 X 0 
+12 14 4 6d6+120
+0 7500 -1
+8 8 1 3 1 3
+T 100 2d4+4 10
+A 5 8 $n searchs through his many layers of clothing.
+A 5 8 $n mumbles something under his breath.
+E -1 100 5914 -1
+#5906
+dog wild~
+a hairy dog~
+A stray dog wanders across your path.
+~
+A shaggy light brown crossbreed, this big dog looks utterly adorable.
+The absense of a collar of any sort means he is probably one of the
+many strays that inhabit the dock area, scavenging for food from
+the many people that pass by.
+~
+cd 0 -300 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 1 4 0 3
+T 100 1d8+2 22
+>greet_prog          60~
+if isfollow($n)
+  break
+else
+  mpechoat $n A hairy dog runs up to you, wildly sniffing your feet.
+  mpechoaround $n A hairy dog runs up to $n, wildly sniffing $s feet. 
+ endif
+endif
+~
+|
+#5907
+rat large brown~
+a large rat~
+A large brown rat scurries infront of your feet.
+~
+Short, dark brown hair covers this nasty rodent. He glares around him
+with bright red eyes, looking for something new to sharpen his teeth
+on.
+~
+cd 0 -1000 X 0 
+2 19 9 1d1+20
+0 300 -1
+8 8 1 4 14 1
+T 100 3d4+5 24
+A 5 8 $n rustles through a pile of trash.
+#5908
+guard wharf~
+a wharf guard~
+A wharf guard stands here, watching for trouble.
+~
+A large, strong man, this guard is ever alert for trouble. He wears
+his uniform with pride, and takes little pity on offenders, no matter
+how petty the crime.
+~
+cd 0 1000 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 1 3 1 3
+T 50 5d4+5 11
+A 5 8 $n says, 'Don't you even be thinking about causing trouble.'
+A 5 8 $n raises an eyebrow at you, evaulating your nuisance potential.
+E 26 80 5920 -1
+E 10 50 5924 30
+#5909
+cargo mover~
+a cargo mover~
+A cargo mover stands here, sweat pouring down his face.
+~
+A giant of a man, with enormous forearms and thighs, the cargo mover
+looks as though he could lift almost anything. A large tattoo peeks
+out from under his shirt sleeve, an anchor bearing the name of his
+true love.
+~
+cd 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 3d3+1 10
+A 5 8 $n checks his list, looking for the next crate to find.
+E 16 70 5921 -1
+>rand_prog          5~
+  if isnpc($r)
+    break
+  else
+    mpecho A cargo mover looks at you and sighs.
+    say damn tourists, always getting in the way.
+ endif
+endif
+~
+|
+#5910
+supervisor cargosupervisor~
+the Cargo Supervisor~
+The Cargo Supervisor stands here, watching all movement closely.
+~
+Eagle eyed, the Dock Supervisor is aware of almost everything that goes
+on around him. Who is where, doing what, and what is where, and why.
+Very little escapes the attention of the supervisor, as his boss, the
+Dock Master, demands he know everything there is to know about this dock.
+~
+bcd 0 0 X 0 
+40 5 -10 20d20+400
+0 150000 -1
+8 8 1 3 1 3
+T 50 4d9+5 11
+T 100 2d5+2 8
+E 16 70 5921 -1
+#5911
+master~
+the Dock Master~
+The Dock Master stands here, surveying his peons.
+~
+An officious man, the Dock Master is in control of all the happenings
+in and around the port area. He manages the shipping schedule, both
+passenger and cargo, and oversees all operations from this dock. He is
+dressed in an offical looking navy blue suit, with gold braid stripes  
+covering his cuffs and shoulder lapels.
+~
+cd 0 350 X 0 
+40 5 -10 20d20+400
+0 150000 -1
+8 8 1 3 1 3
+T 70 5d10+10 10
+T 120 3d4+3 9
+E 12 30 5922 1
+E 16 100 5920 -1
+E 12 10 5925 1
+#5912
+fisher fisherman man~
+a fisherman~
+An old fisherman rests here, waiting for the his catch of the day.
+~
+This old man has spent much of his life fishing from these docks, albeit 
+with little success. He has tought all his children, his grandchildren,
+and his great-grandchildren the finer points of fishing, from this very
+wharf. When waiting for that elusive bite, he likes to sit back and watch
+all the many people streaming by.
+~
+cd 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 100 2d8+5 11
+T 100 2d6+2 9
+A 2 8 $n says, 'Aye there, don't believe what them landlubbers from Weirvane say, its great fishing out here!'
+E 16 100 5915 -1
+E -1 100 5917 -1
+E -1 100 5917 -1
+E -1 100 5914 -1
+>act_prog          p thanks you~
+  mpdelay 5
+  say Aye, it be my pleasure, no need to thank me.
+~
+>speech_prog          fish~
+  mpdelay 5
+  say You want a fish? let me see what I can do, my catch has been rather light today.
+  mpecho A fisherman rustles around in his bucket.
+  mpdelay 5
+  say Sorry me matie, nothing to spare today, try me again tomorrow.
+~
+>greet_prog       40~
+if isnpc($n)
+break
+else
+if isfollow($n)
+break
+else
+  mpecho A fisherman starts struggling with his fishing rod, the end twitching violently.
+  mpecho A fisherman leans over the edge of the wharf, reeling in his catch.
+  mpoload 5926
+  mpdelay 5
+  drop bass
+  say There you go, that one's for you.
+endif
+endif
+endif
+~
+|
+#5913
+warehouse worker~
+the worker~
+A burly warehouse worker stands here, his hands on his hips.
+~
+A disinterested look on his face, this cargo worker keeps checking
+his watch to see how much longer his shift has. He spends his day
+taking orders from the wharehouse supervisor, and shuffling the 
+huge crates and tea chests from one part of the warehouse to the
+other.
+~
+cd 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 3d3+4 11
+A 2 8 $n groans loudly as he contemplates moving another crate.
+E 16 70 5921 -1
+#5914
+supervisor~
+the supervisor~
+The warehouse supervisor is here, checking the cargo.
+~
+A bald headed, sunburnt man, this very organised supervisor oversees
+the day to day running of this warehouse, its workers and contents.
+He reports to the Warehouse Controller, who in turn is meant to   
+keep all the records to do with the incoming and outgoing cargo. In
+reality however, it is the supervisor who does most of the work.
+~
+cd 0 0 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 1 3 1 3
+T 100 4d10+10 9
+A 2 8 $n grabs the tag dangling off one of the crates, and scribbles a new date on it.
+A 2 8 $n says, 'Hurry up you lot, we've got a ship leaving in 10 minutes!'
+E 16 50 5921 -1
+#5915
+warehouse storage controller~
+the controller~
+The warehouse storage controller is here, checking his list.
+~
+Thin and pale, this man doesn't look as though he has ever lifted
+a finger in his life, let along shifted a packing crate. He carries
+a clipboard with him wherever he goes, to at least give the appearance
+of having some authority and knowledge, when infact the only knowledge
+he has is of how to avoid any work.
+~
+cd 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 70 3d9+8 11
+A 2 8 $n taps his clipboard with the end of a pen, trying to get the supervisor's attention.
+A 2 8 $n strides officiously across the warehouse.
+E 16 50 5921 -1
+>speech_prog          work~
+ mpdelay 5
+ say work, whats that?
+ cack
+~
+|
+#5916
+warehouse worker~
+the worker~
+A burly warehouse worker stands here, his hands on his hips.
+~
+A disinterested look on his face, this cargo worker keeps checking
+his watch to see how much longer his shift has. He spends his day  
+taking orders from the wharehouse supervisor, and shuffling the 
+huge crates and tea chests from one part of the warehouse to the
+other.
+~
+cd 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 3d3+4 11
+A 2 8 $n groans loudly as he contemplates moving another crate.
+E 16 50 5921 -1
+#5917
+supervisor~
+the supervisor~
+The warehouse supervisor is here, checking the cargo.
+~
+A bald headed, sunburnt man this very organised supervisor oversees   
+the day to day running of this warehouse, its workers and contents.   
+He reports to the Warehouse Controller, who in turn is meant to
+keep all the records to do with the incoming and outgoing cargo. In
+reality however, it is the supervisor who does most of the work.
+~
+cd 0 0 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 1 3 1 3
+T 100 4d10+10 9
+A 2 8 $n grabs the tag dangling off one of the crates, and scribbles a new date on it.
+A 2 8 $n says, 'Hurry up you lot, we've got a ship leaving in 10 minutes!'
+E 16 50 5921 -1
+#5918
+warehouse storage controller~
+the controller~
+The warehouse storage controller is here, checking his list.
+~
+Thin and pale, this man doesn't look as though he has ever lifted
+a finger in his life, let along shifted a packing crate. He carries
+a clipboard with him wherever he goes, to at least give the appearance
+of having some authority and knowledge, when infact the only knowledge
+he has, is of how to avoid do any work.
+~
+cd 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 70 3d9+8 11
+A 2 8 $n taps his clipboard with the end of a pen, trying to get the supervisor's attention.
+A 2 8 $n strides officiously across the warehouse.
+E 16 50 5921 -1
+>act_prog          work~
+ mpdelay 5
+ say work, whats that?
+ cack
+~
+|
+#5919
+warehouse worker~
+the worker~
+A burly warehouse worker stands here, his hands on his hips.
+~
+A disinterested look on his face, this cargo worker keeps checking
+his watch to see how much longer his shift has. He spends his day  
+taking orders from the wharehouse supervisor, and shuffling the 
+huge crates and tea chests from one part of the warehouse to the
+other.
+~
+cd 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 3d3+4 11
+A 2 8 $n groans loudly as he contemplates moving another crate.
+E 16 50 5921 -1
+#5920
+supervisor~
+the supervisor~
+The warehouse supervisor is here, checking the cargo.
+~
+A bald headed, sunburnt man this very organised supervisor oversees   
+the day to day running of this warehouse, its workers and contents.   
+He reports to the Warehouse Controller, who in turn is meant to
+keep all the records to do with the incoming and outgoing cargo. In
+reality however, it is the supervisor who does most of the work.
+~
+cd 0 0 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 1 3 1 3
+T 100 4d10+10 9
+A 2 8 $n grabs the tag dangling off one of the crates, and scribbles a new date on it.
+A 2 8 $n says, 'Hurry up you lot, we've got a ship leaving in 10 minutes!'
+E 16 50 5921 -1
+#5921
+warehouse storage controller~
+the controller~
+The warehouse storage controller is here, checking his list.
+~
+Thin and pale, this man doesn't look as though he has ever lifted
+a finger in his life, let along shifted a packing crate. He carries
+a clipboard with him wherever he goes, to at least give the appearance
+of having some authority and knowledge, when infact the only knowledge
+he has, is of how to avoid do any work.
+~
+cd 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 70 3d9+8 11
+A 2 8 $n taps his clipboard with the end of a pen, trying to get the supervisor's attention.
+A 2 8 $n strides officiously across the warehouse.
+E 16 50 5921 -1
+>speech_prog          work~
+ mpdelay 5
+ say work, whats that?
+ cack
+~
+|
+#5922
+warehouse worker~
+the worker~
+A burly warehouse worker stands here, his hands on his hips.
+~
+A disinterested look on his face, this cargo worker keeps checking
+his watch to see how much longer his shift has. He spends his day  
+taking orders from the wharehouse supervisor, and shuffling the 
+huge crates and tea chests from one part of the warehouse to the
+other.
+~
+cd 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 3d3+4 11
+A 2 8 $n groans loudly as he contemplates moving another crate.
+E 16 50 5921 -1
+#5923
+supervisor~
+the supervisor~
+The warehouse supervisor is here, checking the cargo.
+~
+A bald headed, sunburnt man this very organised supervisor oversees   
+the day to day running of this warehouse, its workers and contents.   
+He reports to the Warehouse Controller, who in turn is meant to
+keep all the records to do with the incoming and outgoing cargo. In
+reality however, it is the supervisor who does most of the work.
+~
+cd 0 0 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 1 3 1 3
+T 100 4d10+10 9
+A 2 8 $n grabs the tag dangling off one of the crates, and scribbles a new date on it.
+A 2 8 $n says, 'Hurry up you lot, we've got a ship leaving in 10 minutes!'
+E 16 50 5921 -1
+#5924
+warehouse storage controller~
+the controller~
+The warehouse storage controller is here, checking his list.
+~
+Thin and pale, this man doesn't look as though he has ever lifted
+a finger in his life, let along shifted a packing crate. He carries
+a clipboard with him wherever he goes, to at least give the appearance
+of having some authority and knowledge, when infact the only knowledge
+he has, is of how to avoid do any work.
+~
+cd 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 70 3d9+8 11
+A 2 8 $n taps his clipboard with the end of a pen, trying to get the supervisor's attention.
+A 2 8 $n strides officiously across the warehouse.
+E 16 50 5921 -1
+>speech_prog          work~
+ mpdelay 5
+ say work, whats that?
+ cack
+~
+|
+#5925
+warehouse worker~
+the worker~
+A burly warehouse worker stands here, his hands on his hips.
+~
+A disinterested look on his face, this cargo worker keeps checking
+his watch to see how much longer his shift has. He spends his day  
+taking orders from the wharehouse supervisor, and shuffling the 
+huge crates and tea chests from one part of the warehouse to the
+other.
+~
+cd 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 3d3+4 11
+A 2 8 $n groans loudly as he contemplates moving another crate.
+E 16 50 5921 -1
+#5926
+supervisor~
+the supervisor~
+The warehouse supervisor is here, checking the cargo.
+~
+A bald headed, sunburnt man this very organised supervisor oversees   
+the day to day running of this warehouse, its workers and contents.   
+He reports to the Warehouse Controller, who in turn is meant to
+keep all the records to do with the incoming and outgoing cargo. In
+reality however, it is the supervisor who does most of the work.
+~
+cd 0 0 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 1 3 1 3
+T 100 4d10+10 9
+A 2 8 $n grabs the tag dangling off one of the crates, and scribbles a new date on it.
+A 2 8 $n says, 'Hurry up you lot, we've got a ship leaving in 10 minutes!'
+E 16 50 5921 -1
+#5927
+warehouse storage controller~
+the controller~
+The warehouse storage controller is here, checking his list.
+~
+Thin and pale, this man doesn't look as though he has ever lifted
+a finger in his life, let along shifted a packing crate. He carries
+a clipboard with him wherever he goes, to at least give the appearance
+of having some authority and knowledge, when infact the only knowledge
+he has, is of how to avoid do any work.
+~
+cd 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 70 3d9+8 11
+A 2 8 $n taps his clipboard with the end of a pen, trying to get the supervisor's attention.
+A 2 8 $n strides officiously across the warehouse.
+E 16 50 5921 -1
+>speech_prog          work~
+ mpdelay 5
+ say work, whats that?
+ cack
+~
+|
+#5928
+warehouse worker~
+the worker~
+A burly warehouse worker stands here, his hands on his hips.
+~
+A disinterested look on his face, this cargo worker keeps checking
+his watch to see how much longer his shift has. He spends his day  
+taking orders from the wharehouse supervisor, and shuffling the 
+huge crates and tea chests from one part of the warehouse to the
+other.
+~
+cd 0 0 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 100 3d3+4 11
+A 2 8 $n groans loudly as he contemplates moving another crate.
+E 16 50 5921 -1
+#5929
+supervisor~
+the supervisor~
+The warehouse supervisor is here, checking the cargo.
+~
+A bald headed, sunburnt man this very organised supervisor oversees   
+the day to day running of this warehouse, its workers and contents.   
+He reports to the Warehouse Controller, who in turn is meant to
+keep all the records to do with the incoming and outgoing cargo. In
+reality however, it is the supervisor who does most of the work.
+~
+cd 0 0 X 0 
+25 10 -3 13d13+250
+0 45500 -1
+8 8 1 3 1 3
+T 75 4d5+8 0
+A 2 8 $n grabs the tag dangling off one of the crates, and scribbles a new date on it.
+A 2 8 $n says, 'Hurry up you lot, we've got a ship leaving in 10 minutes!'
+E 16 50 5921 -1
+#5930
+warehouse storage controler~
+a storage controller~
+The warehouse storage controller is here, checking his list.
+~
+Thin and pale, this man doesn't look as though he has ever lifted  
+a finger in his life, let along shifted a packing crate. He carries
+a clipboard with him wherever he goes, to at least give the appearance
+of having some authority and knowledge, when infact the only knowledge
+he has, is of how to avoid do any work.
+~
+cd 0 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 100 2d4+0 0
+A 2 8 $n taps his clipboard with the end of a pen, trying to get the supervisor's attention.
+A 2 8 $n strides officiously across the warehouse.
+E 16 50 5921 -1
+#5999
+ticketer~
+a Ticketer~
+A bored looking ticketer stands here, staring into space.
+~
+This ticketer is a young man, and from his stance and general disposition
+you can tell he really isn't interested in his job. 
+~
+abdl 0 450 X 0 
+55 0 -10 28d28+5550
+0 6000000 -1
+8 8 1 0 0 0
+T 75 3d6+2 0
+A 2 8 A ticketer says, 'Tickets! Tickets anyone?'
+A 5 8 $n shuffles around listlessly.
+A 5 8 $n casually counts a pile of used tickets.
+>give_prog     halyonticket1 ticket halyon~
+ mpdelay 5
+  tell $n Thank you, if you would please step this way.
+ mpdelay 5
+  mpecho The Ticketer gestures toward the departure dock.
+  mpechoaround $n $n leaves east.
+  mptransfer $n 5963
+  mpforce $n look
+  mpat $n mpechoaround $n $n enters from the west.
+endif
+~
+>rand_prog      5~
+say You can get tickets from Bwello's shop, at the entrance to the docks.
+~
+>rand_prog      5~
+say The boat for Port Halyon leaves at 10am sharp. Boarding begins at 8am.
+~
+|

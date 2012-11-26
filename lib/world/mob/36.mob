@@ -1,0 +1,51 @@
+#3600
+mountain goat~
+{WA mountain goat{x~
+{WA mountain goat is standing here, startled by your approach.{x
+~
+With white fur the goat roams the muntains looking for foilage and other plant
+ to feed on.
+~
+dg 0 100 X
+12 14 4 6d6+120
+0 7500
+8 8 0 4 14 3
+T 100 3d3+6 0
+A 20 8 {WA mountain goat{X grazes quietly here.
+#3601
+large vulture~
+{xa {Dlarge{y vulture{x~
+{wA {Dlarge {yvulture{w squawks nearby{x
+~
+It looks really upset at being disturbed.
+~
+dg kq 0 X
+8 16 6 4d4+80
+0 3500
+8 8 0 13 14 2
+T 80 3d3+2 0
+#3602
+wild boar~
+a {ywild boar{x~
+{xA {ywild boar{x roams the mountains in search of food.
+~
+The {ywild boar{x looks unhappy at being disturbed.
+~
+cdfg 0 0 X
+15 14 2 8d8+150
+0 11000
+8 8 0 4 14 2
+T 80 4d3+3 0
+#3603
+wild horse~
+{yA wild horse{x~
+{yA wild horse wanders the hills aimlessly.{x
+~
+With a hairy mane, the rather large horse looks like it could ride for a while
+
+~
+dgt 0 0 X
+22 11 -1 11d11+220
+0 31000
+8 8 0 4 14 4
+T 80 6d4+8 0

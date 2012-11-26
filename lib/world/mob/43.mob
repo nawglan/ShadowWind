@@ -1,0 +1,247 @@
+#4351
+patron thief~
+a regular patron~
+A laughing patron of the inn is standing here.
+~
+   This guy seems to be having a lot of fun. He is being rowdy, laughing,
+and generally having a good time. Every now and then he glances your way. 
+
+~
+cdl 0 0 X
+10 15 5 5d5+100
+500 5000
+8 8 1 3 1 3
+T 100 3d3+3 0
+A 10 8 A patron's laugh roars through the room.
+>greet_prog         50~
+if ispc ($n)
+steal coins $n
+else
+endif
+~
+|
+#4352
+patron thief~
+a grinning patron~
+A patron is here, grinning widely.
+~
+   This guy is not as loud as some of the others, but he still seems to be
+in a good mood. Perhaps he has't had his fill of ale yet.  
+~
+bcd 0 0 X
+10 15 5 5d5+100
+500 5000
+8 8 1 3 1 3
+T 100 3d4+0 0
+A 10 8 One of the patrons scans the room with a grin on his face.
+>greet_prog         50~
+if ispc ($n)
+steal coins $n
+else
+endif
+~
+|
+#4353
+patron lady thief~
+a female patron~
+A lady is here, telling bad jokes.
+~
+   Pretty non-descript, the lady seems to have a knack for telling bad
+jokes. The other don't seem to mind, she being the only live entertainment
+around.  
+~
+bcdl 0 0 X
+10 15 5 5d5+100
+500 5000
+8 8 2 3 1 3
+T 100 2d4+2 0
+A 10 8 A female patron asks, 'Have you heard the one about the dragon with the golden fleas?'
+A 10 8 A female patron breaks into a bad rhyme, 'There once was a man from Hommlet...'
+A 10 8 A female patron scratches her head and says, 'Hmm, I seem to have forgotten the punch line.'
+#4354
+patron slob fat~
+a fat, slobby patron~
+A fat slob of a man is here, eating more than his fill.
+~
+   Covered in dirt, food, and ale, this guy is disgusting. He never stops
+shoveling food in his face, and dropping bits of it onto his clothes.  
+~
+bd 0 0 X
+10 15 5 5d5+100
+500 5000
+8 8 1 3 1 3
+T 100 3d3+3 0
+A 10 8 A great slob stuffs some more food into his mouth.
+A 10 8 Between mouthfuls, the slob burps, spraying people nearby with food.
+A 10 8 A slob takes a swig of ale, splashing it everywhere.
+#4355
+patron thief man shifty~
+a shifty man~
+A man sits here quietly, looking shifty.
+~
+   Different from the other patrons, this guy isn't making a sound. His eyes
+dart left and right, giving him a creepy look.  
+~
+dlm 0 0 X
+15 14 2 8d8+150
+1000 11000
+8 8 1 3 1 3
+T 100 6d2+3 0
+A 10 8 A suspicious look man scans the room with beady eyes.
+>all_greet_prog         50~
+if ispc ($n)
+mpdelay 10
+mpechoat $n A shifty man turns his narrowed eyes to you as you enter the room.
+endif
+else
+endif
+~
+|
+#4356
+troll thief kem~
+Kem the troll~
+Kem is here breaking things.
+~
+   Being of troll blood, Kem is always breaking things. He wears light
+clothing and looks pretty mean. He and his companions of the 'Woodland
+Reapers' are well known for their exploits.  
+~
+bdmq fk 0 X
+25 10 -3 13d13+250
+2650 45500
+8 8 1 3 2 3
+T 100 10d4+5 8
+A 10 8 Kem grumbles, 'Me need person to bash!'
+A 10 8 Kem gets a rock from his pocket and eats it whole.
+A 10 8 Kem picks up a chair and breaks it for no good reason.
+#4357
+elf shessare~
+Shessare~
+Shessare is standing around, sipping some wine.
+~
+   Like most of her elven sisters, Shessare is quite pretty. Her long blonde
+hair frames her toned body, and contrasts nicely with the blue leather she
+wears. She is also a member of the 'Woodland Reapers'.  
+~
+bdmnp dks 0 X
+25 10 -3 13d13+250
+2650 45500
+8 8 2 3 1 3
+T 100 10d4+5 1
+A 10 8 Shessare asks, 'What are we Reapers going to do now?'
+A 10 8 Shessare twiddles a dagger in her hand, making it glitter dangerously.
+A 10 8 Shessare smiles at the antics of those in the tavern.
+#4358
+diamande man~
+Diamande~
+Diamande lounges here, counting a stack of coins.
+~
+   Being leader of 'Woodland Reapers', he calls all the shots. He is dressed
+in typical travel clothing, and seems to be relaxing before their next
+adventure. His head is clean shaven, and bears a number of archaic tattoos.
+~
+bcdm dks 0 X
+30 9 -5 15d15+300
+5000 80000
+8 8 1 3 2 3
+T 1 10d5+10 0
+A 10 8 Diamande scans the room, making sure his Reapers are staying out of trouble.
+A 10 8 You hear the clinking of coins as Diamande counts them.
+#4359
+tsar mage thief~
+Tsar~
+Tsar stands here frowning.
+~
+   He is dressed in the traditional clothes of thieves, but smells of spell
+components. With dark brown hair and brown eyes, he looks completely
+average. He is a member of 'Woodland Reapers' though, so you know he must be
+capable at something.  
+~
+bdhr dk 0 X
+25 10 -3 13d13+250
+1000 45500
+8 8 1 3 1 3
+T 100 10d5+0 0
+>rand_prog    10~
+say Now, where did I leave my spellbook.....
+~
+>rand_prog    10~
+mpecho Tsar mutters something about which spells to memorize.
+~
+>rand_prog    10~
+mpecho Tsar utters some arcane words and there is a bright flash.
+mpdelay 10
+mpforce Diamande say Cut it out, Tsar, you'll never get it to work
+mpdelay 10
+huff
+~
+|
+#4360
+patron man~
+a rowdy man~
+A man is walking around here, being rowdy.
+~
+   A typical looking tavern patron, this guy is walking around being loud
+and obnoxious. Dressed in common clothes, he looks pretty ordinary.  
+~
+dhm k 0 X
+10 15 5 5d5+100
+0 5000
+8 8 1 3 0 0
+T 100 4d2+2 0
+>greet_prog        30~
+mpdelay 10
+pat $n
+mpdelay 10
+mpechoat $n A rowdy man tells you, 'Whoa! What happened to your face?'
+mpdelay 10
+grin
+~
+|
+#4361
+minotaur cook~
+the minotaur cook~
+A huge minotaur is here preparing food.
+~
+   Being a minotaur, the cook is pretty big. No doubt he is an expert on how
+meat is prepared. Despite being a big brute, his hands move gracefully.  
+~
+bcdloq k 0 X
+16 13 2 8d8+160
+1000 12500
+8 8 1 3 12 4
+T 100 4d5+10 11
+>rand_prog     10~
+mpecho The cook mutters, 'Damn humans, always picky about their meats.'
+mpdelay 10
+mpecho The cook mutters, 'How come nobody appreciates a plain piece of raw meat anymore,'
+~
+>rand_prog     10~
+huff
+~
+|
+#4362
+man old storyteller~
+the old storyteller~
+A wizened old man is resting here.
+~
+   Wearing the rags of a peasant, this old man seems happy enough. He wears
+a grin that indicates he knows important things that you don't. Complete
+with long, white beard and a pipe, he looks like every other persons
+grandfather.  
+~
+bcd k 0 X
+20 12 0 10d10+200
+0 25000
+5 5 1 3 1 3
+T 50 2d10+0 11
+A 10 5 The sagely storyteller mumbles, 'Spare coins for an old man?'
+A 10 5 The sagely storyteller giggles and says, 'Why no, miss, I did not eat your hat.'
+A 10 5 The old man wheezes and says, 'The sun is against us, baking our frogs such. Yes yes.'
+>bribe_prog   1~
+mpdelay 10
+say Fear the shadows, for they walk like men and the season of change controls them.
+mpdelay 5
+mpecho The old man weeps.
+~
+|

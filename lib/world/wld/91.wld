@@ -1,0 +1,1695 @@
+#9100
+The Badlands~
+   You are close to the northern edge of a deep chasm. Just by looking 
+at it gives you the shivers. There seems to be no possible way to cross it. 
+To the north you see a dark and twisted landscape stretch, known as 
+the Badlands. The soil looks burned and charred as if a great fire once 
+swept this land cleaned of all living things. Scattered on the ground you 
+see the remains of some battle that once raged this land. Broken swords 
+and splintered shields lying at random among the large, moss-covered 
+boulders. The deep chasm continues to the east and west of here.
+~
+91 cp 2
+D0
+There are some dark hills up ahead.
+~
+~
+0 -1 9105 0
+D1
+The edge of the chasm stretch to the east.
+~
+~
+0 -1 9101 0
+D2
+A deep chasm is to the south.
+~
+~
+0 -1 -1 0
+S
+#9101
+The Badlands~
+   You are close to the northern edge of a deep chasm. Just by looking 
+at it gives you the shivers. There seems to be no possible way to cross 
+it here. To the north you see a dark and twisted landscape stretch, know 
+as the Badlands. The soil looks burned and charred as if a great fire once 
+swept this land cleaned of all living things. Scattered on the ground you 
+see the remains of some battle that once raged this land. The deep chasm 
+continues to the east and west of here. To the east, on this side of 
+the chasm, great black mountains rises high up in the air, forming 
+an impassable wall that stretch on to north.
+~
+91 cp 2
+D0
+ A dark and gloomy landscape stretch to the north.
+~
+~
+0 -1 9106 0
+D1
+A mountain wall makes further progress impossible.
+~
+~
+0 -1 -1 0
+D2
+A deep chasm lies to the south.
+~
+~
+0 -1 -1 0
+D3
+The edge of the chasm stretch to the west.
+~
+~
+0 -1 9100 0
+S
+#9102
+The Badlands~
+   You are close to the northern edge of a deep chasm. Just by looking 
+at it gives you the shivers. There seems to be no possible way to cross 
+it here. To the north you see the dark and twisted landscape better known 
+as  the Badlands. The soil looks burned and charred as if a great fire once 
+swept this land cleaned of all living things. Scattered on the ground you 
+see the remains of some battle that once raged this land. Broken swords 
+and splintered shields lying at random among the large, moss-covered 
+boulders. The chasm continues to the east and west of here.
+~
+91 cp 2
+D0
+Some dark hills can be seen to the north.
+~
+~
+0 -1 9104 0
+D3
+The edge of the chasm stretch to the west.
+~
+~
+0 -1 9103 0
+S
+#9103
+The Badlands~
+   You are close to the northern edge of a deep chasm. Just by looking 
+at it gives you the shivers. There seems to be no possible way to cross 
+it here. To the north and west, on this side of the chasm, great black 
+mountains rises high up in the air, forming an impassable wall that 
+stretch to north as far as you see.
+~
+91 cp 2
+D0
+A mountain wall makes further progress impossible.
+~
+~
+0 -1 -1 0
+D1
+The edge of the chasm stretch to the east.
+~
+~
+0 -1 9102 0
+D2
+A deep chasm lies to the south.
+~
+~
+0 -1 -1 0
+D3
+A mountain wall makes further progress impossible.
+~
+~
+0 -1 -1 0
+S
+#9104
+The Black Hills~
+   You are walking through the dark and lonely hills. The landscape is 
+cold and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks can be seen in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. To the north you see the faint outlines of a great 
+mountain range.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north..
+~
+~
+0 -1 9120 0
+D1
+Dark and gloomy hills stretch to the east.
+~
+~
+0 -1 8305 0
+D2
+There is a deep chasm far to the south.
+~
+~
+0 -1 9102 0
+D3
+A mountain wall makes further progress impossible.
+~
+~
+0 -1 -1 0
+S
+#9105
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and 
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. Perhaps they are remains from some battle that once 
+raged here. Up ahead to the north you see the faint outlines of a great 
+mountain range trailing off to the east and west then turning southward 
+eventually reaching a deep chasm to the south.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9119 0
+D1
+Dark and gloomy hills stretch to the east and far beyond, a mountain range 
+trails north and south along the distant horizon.
+~
+~
+0 -1 9106 0
+D2
+There is a deep chasm far to the south.
+~
+~
+0 -1 9100 0
+D3
+Dark and gloomy hills stretch to the west and far beyond, a mountain range 
+trails north and south along the distant horizon.
+~
+~
+0 -1 8305 0
+S
+#9106
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is 
+cold and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. Perhaps they are remains from some battle that once 
+raged here. Up ahead to the north you see the faint outlines of a great
+mountain range trailing east and west along the distant horizon.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9118 0
+D1
+More hills stretch to the east, and beyond towers a high mountain range.
+~
+~
+0 -1 9107 0
+D2
+There is a deep chasm far to the south.
+~
+~
+0 -1 9101 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 9105 0
+S
+#9107
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet. Up ahead to the north you see the faint outlines 
+of a great mountain range. To the east, a deep and narrow ravine, just 
+wide enough to make it impossible to jump across, is blocking your 
+way and beyond, a mountain range trails north and south. To the west 
+more if this dying landscape can be seen.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9108 0
+D1
+ A narrow ravine stretch to the north and south, eventually vanishing 
+out of view.
+~
+~
+0 -1 -1 0
+D2
+A large cliff juts out from the mountain, blocking your way to the south.
+~
+~
+0 -1 -1 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 9106 0
+S
+#9108
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet. Up ahead to the north you see the faint outlines 
+of a great mountain range and to the east, a deep and narrow ravine, just 
+wide enough to make it impossible to jump across, is blocking your way. 
+Beyond you see the mountain range trailing north and south along 
+the horizon. To the south and west more if this dying landscape can 
+be seen.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9109 0
+D1
+A narrow ravine stretch to the north and south, eventually vanishing 
+out of view.
+~
+~
+0 -1 -1 0
+D2
+Dark and gloomy hills stretch to the south.
+~
+~
+0 -1 9107 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 9117 0
+S
+#9109
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet. Up ahead to the north you see the faint outlines 
+of a great mountain range. To the east, a deep and narrow ravine, just 
+wide enough to make it impossible to jump across, is blocking your 
+way.  Beyond the ravine you see a mountain range trailing north and 
+south along the horizon and to the west, more if this dying landscape 
+can be seen.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9110 0
+D1
+A narrow ravine stretch to the north and south, eventually vanishing 
+out of view.
+~
+~
+0 -1 -1 0
+D2
+Dark and gloomy hills stretch to the south.
+~
+~
+0 -1 9108 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 9116 0
+S
+#9110
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet. From the north a thick white mist is rolling in, 
+cloaking the mountain range. To the east, a deep and narrow ravine,
+just wide enough to make it impossible to jump across, is blocking 
+your way and beyond you see a mountain range going north and south, 
+eventually disappearing into the mist. To the west more if this dying 
+landscape can be seen.
+~
+91 p 2
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead.
+~
+~
+0 -1 9111 0
+D1
+A narrow ravine stretch to the north and south, eventually vanishing 
+out of view.
+~
+~
+0 -1 -1 0
+D2
+Dark and gloomy hills stretch to the south.
+~
+~
+0 -1 9109 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 9113 0
+S
+#9111
+The Black Hills~
+   You are walking through a dying landscape which seems to go on 
+forever. To the south, a black and twisted landscape stretch, and to 
+the east, a narrow ravine, just wide enough to make it impossible to 
+jump across, is blocking your way. A white cold mist is rolling in 
+from the north, obscuring your vision and cloaking the mountain 
+range.
+~
+91 p 2
+D0
+A steep hill is blocking your way to the north.
+~
+~
+0 -1 -1 0
+D1
+A narrow ravine stretch north and south, eventually vanishing 
+out of view.
+~
+~
+0 -1 -1 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9110 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9112 0
+S
+#9112
+The Black Hills~
+   All around you hills stretch, seemingly endless in appearance. Far in 
+the northern horizon towers the shadow of the ever-present mountain range. 
+A thick mist cloaks most of the gloomy landscape, obscuring your vision. 
+Beneath your feet the earth makes writhing sounds as if it were hollow and 
+would give away at any moment. Black dust swirls up behind you from 
+the dry and charred ground.
+~
+91 p 4
+D0
+Some steep hills blocks your way.
+~
+~
+0 -1 -1 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9111 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9113 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 8311 0
+S
+#9113
+The Black Hills~
+   All around you hills stretch, seemingly endless in appearance. Far in 
+the northern horizon towers the shadow of the ever-present mountain range. 
+A thick mist cloaks most of the gloomy landscape, obscuring your vision. 
+Beneath your feet the earth makes writhing sounds as if it were hollow and 
+would give away at any moment. Black dust swirls up behind you from 
+the dry and charred ground.
+~
+91 p 4
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9112 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9110 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9116 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9114 0
+S
+#9114
+The Black Hills~
+   All around you hills stretch, seemingly endless in appearance. Far in 
+the northern horizon towers the shadow of the ever-present mountain range. 
+A thick mist cloaks most of the gloomy landscape, obscuring your vision. 
+Beneath your feet the earth makes writhing sounds as if it were hollow and 
+would give away at any moment. Black dust swirls up behind you from 
+the dry and charred ground.
+~
+91 p 4
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 8311 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9113 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9115 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 8309 0
+S
+#9115
+The Black Hills~
+   All you can see is hills and the dark mountain range to the north.
+A thick mist cloaks most of the gloomy landscape, obscuring your 
+vision. Beneath your feet the earth makes writhing sounds as if it 
+were hollow and would give away at any moment. Black dust swirls
+ up behind you from to dry and charred ground.
+~
+91 p 4
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9114 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9116 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9118 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 8308 0
+S
+#9116
+The Black Hills~
+   All you can see is hills and the dark mountain range to the north.
+A thick mist cloaks most of the gloomy landscape, obscuring your 
+vision. Beneath your feet the earth makes writhing sounds as if it 
+were hollow and would give away at any moment. Black dust swirls
+up behind you from to dry and charred ground.
+~
+91 p 4
+D0
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9113 0
+D1
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9109 0
+D2
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9117 0
+D3
+A thick mist cloaks the gloomy landscape making it impossible to see what 
+lies ahead. 
+~
+~
+0 -1 9115 0
+S
+#9117
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. Perhaps they are remains from some battle that once 
+raged here. Up ahead to the north you see the faint outlines of a great 
+mountain range. To the east and west, more if this dying landscape can 
+be seen.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9116 0
+D1
+Dark and gloomy hills stretch to the east.
+~
+~
+0 -1 9108 0
+D2
+Some steep hills are blocking your way.
+~
+~
+0 -1 -1 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 9118 0
+S
+#9118
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. Perhaps they are remains from some battle that once 
+raged here. Up ahead to the north you see the faint outlines of a great 
+mountain range. To the east and west, more if this dying landscape can 
+be seen.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9115 0
+D1
+Dark and gloomy hills stretch to the east.
+~
+~
+0 -1 9117 0
+D2
+Dark and gloomy hills stretch to the south.
+~
+~
+0 -1 9106 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 9119 0
+S
+#9119
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. Perhaps they are remains from some battle that once 
+raged here. Up ahead to the north you see the faint outlines of a great 
+mountain range. To the east and west, more if this dying landscape can 
+be seen.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 8308 0
+D1
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9118 0
+D2
+There is a deep chasm far to the south.
+~
+~
+0 -1 9105 0
+D3
+Dark and gloomy hills stretch to the west.
+~
+~
+0 -1 8306 0
+S
+#9120
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. Perhaps they are remains from some battle that once 
+raged here. Up ahead to the north you see the faint outlines of a great 
+mountain range. To the east and west, more if this dying landscape can 
+be seen.
+~
+91 p 2
+D0
+Dark and gloomy hills stretch to the north.
+~
+~
+0 -1 9121 0
+D1
+Dark and gloomy hills stretch to the east.
+~
+~
+0 -1 8306 0
+D2
+Dark and gloomy hills stretch to the south.
+~
+~
+0 -1 9104 0
+D3
+Some steep hills are blocking your way.
+~
+~
+0 -1 -1 0
+S
+#9121
+The Black Hills~
+   You are walking through dark and lonely hills. The landscape is cold 
+and barren, but here and there things still grows, harsh, twisted and
+bitter, struggling for life. Deep cracks are found in the dark and dusty
+earth beneath your feet and you notice some broken swords and shields 
+has been left here. Perhaps they are remains from some battle that once 
+raged here. Up ahead to the north you see the faint outlines of a great 
+mountain range. To the east and west, more if this dying landscape can 
+be seen.
+~
+91 p 2
+D0
+Some steep hills are blocking your way.
+~
+~
+0 -1 -1 0
+D1
+Dark and gloomy hills stretch to the east.
+~
+~
+0 -1 8307 0
+D2
+Dark and gloomy hills stretch to the south.
+~
+~
+0 -1 9120 0
+D3
+Some steep hills are blocking your way.
+~
+~
+0 -1 -1 0
+S
+#9122
+The Plains~
+   Cold and barren plains are all around you. To the north, great 
+mountains rise up in the air, with some pinnacles even disappearing 
+among the dark clouds above. Far to the east a deep ravine can be seen 
+and to the west, the plains stretch on forever. A small path is going 
+north and south over the plains.
+~
+91 p 2
+D0
+You see the path going northward winding its way slowly towards 
+the snow-clad mountain range.
+~
+~
+0 -1 9123 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9127 0
+D2
+A path is heading south toward the forest.
+~
+~
+0 -1 8338 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9132 0
+S
+#9123
+The Plains~
+   Cold and barren plains are all around you. To the north, great 
+mountains rise up in the air, with some pinnacles even disappearing 
+among the dark clouds above. Far to the east a deep ravine can be seen 
+and to the west, the plains stretch on forever. A small path leaves north 
+and south.
+~
+91 p 2
+D0
+A mountain range towers in the northern horizon.
+~
+~
+0 -1 9124 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9128 0
+D2
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9122 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9133 0
+S
+#9124
+The Icy Claw Of Malebranche~
+   You stand before the snow-clad mountain-range called Malebranche.
+To the south the seemingly endless plains stretch, and far to the east
+is a deep ravine. There is an old path here, splitting in three ways,
+one going east, another one south, crossing the plains, and the last
+one trails off to the west.
+~
+91 p 2
+D1
+A path is leading eastward, trailing along the foot of the mountain.
+~
+~
+0 -1 9129 0
+D2
+A path is leading southward across the wind-swept plains.
+~
+~
+0 -1 9123 0
+D3
+A path is leading westward, trailing along the foot of the mountain.
+~
+~
+0 -1 8339 0
+S
+#9125
+The Plains~
+   The wind-swept plains slope upwards to the north, eventually merging 
+with an ice-clad mountain-range. Some lonely bushes, with last year leaves 
+upon their scrawny branches, grows here. The cold, northern winds has 
+successfully extinguished all other forms of life here. To the south, 
+an old, twisted forest stand, observing you in utter silence. There is 
+a path leading east and west from here.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north..
+~
+~
+0 -1 9132 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 8338 0
+D2
+An immense forest stands to the south.
+~
+~
+0 -1 -1 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9130 0
+S
+#9126
+The Plains~
+   You are at the western edge of a deep ravine. On both sides of the ravine
+piers and jagged pinnacles of stone can be seen and between them dark 
+crevices and black fissure where forgotten winters have gnawed and carved 
+the sunless stone. To the south, the immense forest called Spirit Wood 
+stands, watching in utter silence.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north.
+~
+~
+0 -1 9127 0
+D1
+A deep ravine blocks our way.
+~
+~
+0 -1 -1 0
+D2
+An immense forest is blocking your way.
+~
+~
+0 -1 -1 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 8338 0
+S
+#9127
+The Plains~
+   You are at the western edge of a deep ravine that splits the rough plains
+in two. On both sides of the ravine piers and jagged pinnacles of stone can
+be seen and between them dark crevices and black fissure where forgotten
+winters have gnawed and carved the sunless stone. Far to the south a great 
+forest stand.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north.
+~
+~
+0 -1 9128 0
+D1
+A deep ravine is blocking your way.
+~
+~
+0 -1 -1 0
+D2
+An immense forest blocks your way.
+~
+~
+0 -1 9126 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9122 0
+S
+#9128
+The Plains~
+   You are at the western edge of a deep ravine that splits the rough plains
+in two. On both sides of the ravine piers and jagged pinnacles of stone can
+be seen and between them dark crevices and black fissure where forgotten
+winters have gnawed and carved the sunless stone. Far to the south, a dark 
+forest stands.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north towards a great mountain 
+range.
+~
+~
+0 -1 9129 0
+D1
+A deep ravine blocks our way.
+~
+~
+0 -1 -1 0
+D2
+Cold and barren plains stretch to the south towards a large forest.
+~
+~
+0 -1 9127 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9123 0
+S
+#9129
+The Rickety-Rope Bridge~
+   You stand before the high mountains of Malebranche. The mountain-
+wall, far too smooth and steep to climb. To the east, a deep ravine
+splits the rocky plains in two, making further progress impossible if
+not for the rickety-rope bridge that spans it. On both sides of
+the ravine, piers and jagged pinnacles of stone can be seen and between
+them dark crevices and black fissure where forgotten winters have gnawed
+and carved the sunless stone. Far to the south a dark and twisted forest
+stands.
+~
+91 p 2
+D0
+A steep mountain wall is blocking your way.
+~
+~
+0 -1 -1 0
+D1
+A rickety-rope bridge spans the deep ravine.
+~
+~
+0 -1 9168 0
+D2
+Cold and barren plains stretch to the south.
+~
+~
+0 -1 9128 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9124 0
+S
+#9130
+The Plains~
+   Bleak and stony plains, which constantly inclines to the north, are all 
+around. Some scrubby bushes with dry leaves rattling in the cold wind 
+can be seen hiding in small crevices and between the rough boulders that 
+litters these plains. The high winds, shallow soil and tortuous inclines 
+have prevented more extensive growth. Far to the north, an ice-clad 
+mountain-range towers. To the south and west, a dark and twisted forest 
+stands. There is a path leading north and east from here.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north..
+~
+~
+0 -1 9131 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9125 0
+D2
+An immense forest blocks your way to the south.
+~
+~
+0 -1 -1 0
+S
+#9131
+The Plains~
+   A desolated landscape, barren of life, is all around you. Bleak and
+rocky plains, with random spots of scrubby bushes and large, moss-
+covered boulders, constantly slope upwards to the north. There are 
+faint traces of a path leading south and west from here.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north..
+~
+~
+0 -1 8341 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9132 0
+D2
+Far to the south an old forest can be seen.
+~
+~
+0 -1 9130 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9134 0
+S
+#9132
+The Plains~
+   Bleak and stony plains that constantly slopes upward to the north, 
+are all around you. Some scrubby bushes with dry leaves rattling in 
+the cold wind, hiding in small crevices and between the rough boulders 
+that litters the plain, grows here. The high winds, shallow soil and 
+tortuous inclines have prevented more extensive growth. Far to the north
+the great mountains of Malebranche towers, and to the south the old and 
+twisted forest known as Spirit Wood stands.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north..
+~
+~
+0 -1 9133 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9122 0
+D2
+An immense forest stands to the south.
+~
+~
+0 -1 9125 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 9131 0
+S
+#9133
+The Plains~
+   Bleak and stony plains that constantly slopes upward to the north, 
+are all around you. Some scrubby bushes with dry leaves rattling in 
+the cold wind, hiding in small crevices and between the rough boulders 
+that litters the plain, grows here. The high winds, shallow soil and 
+tortuous inclines have prevented more extensive growth. Far to the north
+the great mountains of Malebranche towers, and to the south the old and 
+twisted forest known as Spirit Wood stands.
+~
+91 p 2
+D0
+Far to the north a mountain range can be seen.
+~
+~
+0 -1 8339 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9123 0
+D2
+Cold and barren plains stretch to the south.
+~
+~
+0 -1 9132 0
+D3
+Cold and barren plains stretch to the west.
+~
+~
+0 -1 8341 0
+S
+#9134
+The Plains~
+   Scrubby bushes and rough, moss-covered boulders litters this 
+desolated landscape. To the south and west, an old and twisted forest
+forest stands. Ancient in appearance it stands, watching and waiting for
+time to have its toll. Far to the north you see an ice-clad mountain-
+range with pinnacles reaching above the dark storm-clouds. There is
+a faint path leading east and west from here.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north..
+~
+~
+0 -1 9135 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 9131 0
+D3
+Just over the next rise of hills you see the edge of a dark, sinister
+forest.
+~
+~
+0 -1 2000 0
+S
+#9135
+The Plains~
+   Bleak and stony plains that constantly slopes upward to the north, 
+are all around you. Some scrubby bushes with dry leaves rattling in 
+the cold wind, hiding in small crevices and between the rough boulders 
+that litters the plain, grows here. The high winds, shallow soil and 
+tortuous inclines have prevented more extensive growth. Far to the north
+the great mountains of Malebranche towers, and to the south the old and 
+twisted forest known as Spirit Wood stands.
+~
+91 p 2
+D0
+Cold and barren plains stretch to the north..
+~
+~
+0 -1 8342 0
+D1
+Cold and barren plains stretch to the east.
+~
+~
+0 -1 8341 0
+D2
+An immense forest stands to the south.
+~
+~
+0 -1 9134 0
+S
+#9156
+The Frozen Trail~
+   You are on a wide mountain trail climbing ever higher up the mountain
+side to the north, and sloping steadily downward to the south. Most of
+this rocky mountain-side is covered by a thick layer of powdery snow,
+but here and there some of the bare stones show through. Scattered across
+this harsh landscape, are some bony trees struggling for life, waiting for
+the summer that never touches this part of the land.
+~
+91 pq 5
+D0
+The road winds its way up the mountain-side to the north.
+~
+~
+0 -1 9157 0
+D2
+The mountain-road slopes downward growing more narrow as it closes in on
+a flowing stream of cold water.
+~
+~
+0 -1 9167 0
+S
+#9157
+The Frozen Trail~
+   The wide mountain trail goes in twisted turns, zig-zagging its way around
+great stone blocks covered by ice, climbing ever higher up into this frozen
+land. The trail is thick with ice and very treacherous to travel, making
+every progress slow and tiresome. The freezing wind blows cold and harsh
+whenever the shielding of higher peaks around are at miss. 
+~
+91 pq 5
+D0
+The road winds its way up the mountain-side to the north.
+~
+~
+0 -1 9158 0
+D2
+The mountain-road slopes downward to the south.
+~
+~
+0 -1 9156 0
+S
+#9158
+The Frozen Trail~
+   Although the air is thin and achingly cold, the icy mountain is a thing
+of painful beauty. The ice sparkles in every imaginable colour, warped and
+twisted, and buckled by the freezening wind, a dream-forest of colours and
+strange shapes. Great ice towers shot through with veins of sea-green and
+violet leans out above the mountain trail. Scattered around are fallen
+crystalline chunks of ice which have crashed down from the cracked cliffs
+above, gem-like raw edges etched in stormy blue, crumbling into tesselate
+confusion like the abandoned blocks of some giant architect.
+~
+91 pq 5
+D2
+The mountain-road slopes downward to the south.
+~
+~
+0 -1 9157 0
+D4
+The road winds its way up the mountain-side to the north.
+~
+~
+0 -1 9159 0
+S
+#9159
+The Frozen Trail~
+   Before you stands the black bones of two frozen, long-dead trees,
+standing guard like abandoned sentinels before the rim of a white-
+misted crevice. The ice sheet that stretch between them has once been
+melted parchment-thin by a long forgotten sun. The mummified trees looks
+like the gatepost of Heaven, the ice between them a shimmering, evanescent
+fan that shatters the day- or moonshine into a glowing rainbow of ruby and
+nectarine light, into swirls of gold and lavender and pale rose that would
+make the most beautiful painting seem as dull as pondwater and candle-strip.
+~
+91 pq 5
+D1
+The mountain trail curves east, going into a dark cleft in the mountain-
+side, but still climbing higher up.
+~
+~
+0 -1 9160 0
+D5
+The mountain trail slopes steeply downward to the south.
+~
+~
+0 -1 9158 0
+S
+#9160
+The Doors To The Dwarven Kingdom~
+   Tucked beneath icy rock walls, in a ravine that knife into the cold
+face of Malebranche, is two huge iron-gates. Ageless in appearance they
+stand, guarding the way into the Dwarven Kingdom. Within these doors, the
+city rests, protected from the ravages of the harsh climate and ecology of
+the outer world. The powdery snow stands little chance against the freezing
+winds up here, and is flung up into the air like a swirling mist of biting
+nails as it cascades down upon every exposed part of your body.
+~
+91 pq 5
+D3
+To the west, a wide mountain-road trails off, disappearing between two
+snow-clad peaks.
+~
+~
+0 -1 9159 0
+E
+etching etchings~
+The etchings read:
+
+                    Durgar's Gate
+
+~
+S
+#9161
+The Canyon Of Khel-zaram~
+   This deep and narrow canyon splits the rough mountain, slowly ascending
+to north. To the south, the canyon ends, opening up to the barren and wind-
+swept mountain-side. The ground is moist and covered with black soil and
+scattered with jagged rocks which has tumbled
+down from the steep mountain-sides. 
+~
+91 pq 5
+D0
+You can follow the canyon to the north.
+~
+~
+0 -1 9162 0
+D2
+The canyon opens up to the south.
+~
+~
+0 -1 9177 0
+S
+#9162
+The Canyon Of Khel-zaram~
+   On both side of this deep and narrow cleft, steep mountains rise
+up towards the sky. To the south, the canyon eventually opens up to
+the craggy mountain-side, and to the north, the cleft continues it's
+ascension towards the Towers of the World. The ground is moist and
+scattered with stone-blocks which has tumbled down from the jagged
+mountain-sides above.
+~
+91 pq 5
+D0
+You can follow the canyon to the north.
+~
+~
+0 -1 9163 0
+D2
+Far to the south the canyon merges with wide open plains.
+~
+~
+0 -1 9161 0
+S
+#9163
+The Canyon Of Khel-zaram~
+   On both side of this deep and narrow cleft, steep mountains rise
+up towards the sky. To the south, the canyon eventually opens up to
+the craggy mountain-side, and to the north, the cleft continues it's
+ascension towards the Towers of the World. The ground is moist and
+scattered with stone-blocks which has tumbled down from the jagged
+mountain-sides. The sound of fast moving waters rushing by can be
+heard further up the mountain.
+~
+91 pq 5
+D1
+You can follow the canyon as it bends slightly to the east.
+~
+~
+0 -1 9164 0
+D2
+Far to the south the canyon merges with wide open plains.
+~
+~
+0 -1 9162 0
+S
+#9164
+The Vale of Dim Streams~
+   Tucked between the great stone-spires of Malebranche - the Icy Claw
+of the North - is a beautiful vale. Feathery mosses and tall, noble ever-
+greens covers most of the vale's less peciptious slopes. A host of rivulets
+carren into this blessed vale, which once was carved by glaciers and finely
+sculpted by a cold mountain stream spawned by runoff from the flanks of
+the mountain-range which surrounds it. This great brook - narrow, thundering
+torrent the Blackwaters, flows around the northern flank of Malebranche
+and drops over a series of small water falls called the Dim Stairs, before
+entering the northwestern end of the valley. There it feeds a deep lake.
+~
+91 pq 5
+D0
+You can follow the shores of a still lake northward.
+~
+~
+0 -1 9165 0
+D3
+A narrow cleft leads west into the mountain-side.
+~
+~
+0 -1 9163 0
+S
+#9165
+Along The Shores Of Lake Zaram~
+   The Lake Zaram fills most of this arrow shaped vale. Dammed by rocky
+moraine, this cold tarn is more than hundreds of feet deep. Its placid
+waters calms you and gives this vale a peacful aura that soothes even the
+most restless of souls. Far to the northwest, a set of small water falls
+carries a roaring torrent of icy waters down into the vale, and to the
+north, the mighty pinnacles of Malebranche stretch up towards the sky.
+~
+91 pq 5
+D2
+You can follow the shore of the lake to the south.
+~
+~
+0 -1 9164 0
+D3
+A narrow trail climbs the rocky mountains-side, following the fast moving
+rapids higher up into the mountains.
+~
+~
+0 -1 9166 0
+S
+#9166
+The Trail Along The Dim Stairs~
+   This narrow trail runs dangerously close to the fast moving turrents
+that cascades over a series of rapids and small water falls which fills
+the air with refreshing spray. Limestone, sandstone, granite, and basalt
+give these mountains their general grey-brown hue, while occasional
+intrusions of black obsidan and red phorphyry provide luster and variety
+to the sharp peaks. To the east, the trail descends down into a beautiful
+vale where also the flowing current spills its waters into a dark lake.
+~
+91 pq 5
+D0
+You can follow the trail to the north.
+~
+~
+0 -1 9167 0
+D1
+You can follow the trail to the east down to the vale.
+~
+~
+0 -1 9165 0
+S
+#9167
+The Trail Along The Dim Stairs~
+   This narrow trail runs dangerously close to the fast moving turrents
+that cascades over a series of rapids and small water falls which fills
+the air with refreshing spray. Limestone, sandstone, granite, and basalt
+give these mountains their general grey-brown hue, while occasional
+intrusions of black obsidan and red phorphyry provide luster and variety
+to the sharp peaks. To the east, the trail descends down into a beautiful
+~
+91 pq 5
+D0
+You can follow the trail to the north where it grows wider and becomes
+more like a minor road, climbing ever higher up the mountain-side.
+The fast flowing current trails off eastward where it cascades down
+from a high water fall, making it impossible to follow it any further.
+~
+~
+0 -1 9156 0
+D2
+You can follow the trail to the south
+~
+~
+0 -1 9166 0
+S
+#9168
+The Old Gravel Road Crossing The Desolated Plains~
+   You are upon an old road made of piled gravel, stones and dirt, it
+often gets dusty and irritating in the dry seasons. Potholes are not
+uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black of the landscape on either side. To the north, the snow
+caped mountain-range known as Malebranche towers, stretching its rocky
+arms out to the east and west as far as one can see, making up an impass-
+able wall where only winged creatures are capable of going. To the south,
+the plains of Litash stretch, a barren landscape of awesome desolation.
+Those who are foolish enough to try and cross it are supposedly doomed
+to perish by cold or hail, or to be blown by a gust of wind down one of
+the black crevasses concealed in the winters blizzards and the summer
+dust storms.
+~
+91 p 2
+D1
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9169 0
+D3
+The road ends to the west where it arrives at a wide ravine, spanned by
+a rickety-rope bridge.
+~
+~
+0 -1 9129 0
+S
+#9169
+The Old Gravel Road Crossing The Desolated Plains~
+   You are upon an old road made of piled gravel, stones and dirt, it
+often gets dusty and irritating in the dry seasons. Potholes are not
+uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black of the landscape on either side. To the north, the snow
+caped mountain-range known as Malebranche towers, stretching its rocky
+arms out to the east and west as far as one can see, making up an impass-
+able wall where only winged creatures are capable of going. To the south,
+the plains of Litash stretch, a barren landscape of awesome desolation.
+Those who are foolish enough to try and cross it are supposedly doomed
+to perish by cold or hail, or to be blown by a gust of wind down one of
+the black crevasses concealed in the winters blizzards and the summer
+dust storms.
+~
+91 p 2
+D1
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9170 0
+D3
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9168 0
+S
+#9170
+The Old Gravel Road Crossing The Desolated Plains~
+   You are upon an old road made of piled gravel, stones and dirt, it
+often gets dusty and irritating in the dry seasons. Potholes are not
+uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black of the landscape on either side. To the north, the snow
+caped mountain-range known as Malebranche towers, stretching its rocky
+arms out to the east and west as far as one can see, making up an impass-
+able wall where only winged creatures are capable of going. To the south,
+the plains of Litash stretch, a barren landscape of awesome desolation.
+Those who are foolish enough to try and cross it are supposedly doomed
+to perish by cold or hail, or to be blown by a gust of wind down one of
+the black crevasses concealed in the winters blizzards and the summer
+dust storms.
+~
+91 p 2
+D1
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9171 0
+D3
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9169 0
+S
+#9171
+The Old Gravel Road Crossing The Desolated Plains~
+   You are upon an old road made of piled gravel, stones and dirt, it
+often gets dusty and irritating in the dry seasons. Potholes are not
+uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black of the landscape on either side. To the north, the snow
+caped mountain-range known as Malebranche towers, stretching its rocky
+arms out to the east and west as far as one can see, making up an impass-
+able wall where only winged creatures are capable of going. To the south,
+the plains of Litash stretch, a barren landscape of awesome desolation.
+Those who are foolish enough to try and cross it are supposedly doomed
+to perish by cold or hail, or to be blown by a gust of wind down one of
+the black crevasses concealed in the winters blizzards and the summer
+dust storms.
+~
+91 p 2
+D1
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9172 0
+D3
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9170 0
+S
+#9172
+The Old Gravel Road~
+   The cragged mountain-side is devoid of plants, only a few shrubs grow
+but no trees. The road which threads its way upp the mountain-side is built
+upp like a causeway and heavily cambered. Made of piled gravel, stones and
+dirt, it often gets dusty and irritating in the dry seasons. Potholes are
+not uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black and craggy landscape on either side. To the south, the plains
+of Litash stretch, a barren landscape of awesome desolation. 
+~
+91 p 2
+D0
+The road winds its way northward, climbing the mountain-side.
+~
+~
+0 -1 9173 0
+D3
+The road winds its way eastward, following the foot of the great mountains.
+~
+~
+0 -1 9171 0
+S
+#9173
+The Old Gravel Road~
+   The cragged mountain-side is devoid of plants, only a few shrubs grow
+but no trees. The road which threads its way upp the mountain-side is built
+upp like a causeway and heavily cambered. Made of piled gravel, stones and
+dirt, it often gets dusty and irritating in the dry seasons. Potholes are
+not uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black and craggy landscape on either side. To the south, the plains
+of Litash stretch, a barren landscape of awesome desolation. 
+~
+91 p 2
+D2
+The road winds its way southward, descending down to the plains below.
+~
+~
+0 -1 9172 0
+D4
+The road winds its way northward, climbing the mountain-side.
+~
+~
+0 -1 9174 0
+S
+#9174
+The Old Gravel Road~
+   The cragged mountain-side is devoid of plants, only a few shrubs grow
+but no trees. The road which threads its way upp the mountain-side is built
+upp like a causeway and heavily cambered. Made of piled gravel, stones and
+dirt, it often gets dusty and irritating in the dry seasons. Potholes are
+not uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black and craggy landscape on either side. To the south, the plains
+of Litash stretch, a barren landscape of awesome desolation. 
+~
+91 p 2
+D0
+The road winds its way northward, climbing the mountain-side.
+~
+~
+0 -1 9175 0
+D5
+The road winds its way southward, descending down to the plains below.
+~
+~
+0 -1 9173 0
+S
+#9175
+The Old Gravel Road~
+   The cragged mountain-side is devoid of plants, only a few shrubs grow
+but no trees. The road which threads its way upp the mountain-side is built
+upp like a causeway and heavily cambered. Made of piled gravel, stones and
+dirt, it often gets dusty and irritating in the dry seasons. Potholes are
+not uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black and craggy landscape on either side. To the south, the plains
+of Litash stretch, a barren landscape of awesome desolation. 
+~
+91 p 2
+D1
+The road winds its way eastward, climbing the mountain-side.
+~
+~
+0 -1 9176 0
+D2
+The road winds its way southward, descending down to the plains below.
+~
+~
+0 -1 9174 0
+S
+#9176
+The Old Gravel Road~
+   The cragged mountain-side is devoid of plants, only a few shrubs grow
+but no trees. The road which threads its way upp the mountain-side is built
+upp like a causeway and heavily cambered. Made of piled gravel, stones and
+dirt, it often gets dusty and irritating in the dry seasons. Potholes are
+not uncommon, and its pitted grey, yellow, and dull red surface contrasts
+with the black and craggy landscape on either side. To the south, the plains
+of Litash stretch, a barren landscape of awesome desolation. 
+~
+91 p 2
+D3
+The road winds its way westward, descending down to the plains below.
+~
+~
+0 -1 9175 0
+D4
+The road winds its way northward, climbing the mountain-side.
+~
+~
+0 -1 9177 0
+S
+#9177
+The Old Watchtower~
+   The Gravel road ends here, going up to a old watchtower located on
+a rocky plateu. Withered and ancient in appereance it stands like some
+old relic out of forgotten ages. The tower can only be reached by a long
+snaking path treacherously iced and cross a narrow bridge without any
+handrails and little support. Only a fool or an adventurer would take
+this barren, bleak, and thankless track. To the north is a dark cleft
+leading further up the mountains, and to the south the gravel road
+descends down to the ragged plains far below.
+~
+91 p 2
+D0
+A dark cleft leads further up the mountains to the north.
+~
+~
+0 -1 9161 0
+D1
+A snaking path leads up to the gate of the tower which is apparently open.
+~
+~
+0 -1 9178 0
+D5
+The road winds its way southward, descending down to the plains below.
+~
+~
+0 -1 9176 0
+S
+#9178
+Inside The Old Watchtower~
+   Within the 30-foot-wide tower, the walls are smooth and cold to
+the touch, and the floor is of polished slate. No light illuminates
+the stark interior. A narrow ramp winds around a central pillar to
+end some 60 feet off the floor at an broken trapdoor which leads up
+to the look-out area.
+~
+91 adp 0
+D3
+The gate to the west is wide open, hanging loosely from its rusty hinges.
+~
+~
+0 -1 9177 0
+D4
+The narrow ramp leads up to the look-out area.
+~
+~
+0 -1 9179 0
+S
+#9179
+The Look-Out~
+   The chilling wind which constantly blows this far up in the mountains
+tears at you, forcing you to grab hold of the iron-railing which encircles
+the look-out, if not you would soon be thrown off the tower and eventually
+crashing to the ground far below. To the north stands the towering mountains
+of Malebranche. Because of its low tree line, severe inclines, and vast snow
+fields, the mountains forms a virtually impassable barrier. Its steep face
+challange even the thoughest alpine beast and the most skilled ranger. Far
+to the down to the south is the Litash Plains, bleak barren and cold.
+The only exit is down through the open trapdoor.
+~
+91 dp 0
+D5
+The trapdoor leads down into the watchtower.
+~
+~
+0 0 9178 0
+S
+$~

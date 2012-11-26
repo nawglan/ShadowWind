@@ -1,0 +1,60 @@
+#5140
+-goal- object
+-flags- acd
+-knowledge-
+The mage says, 'Aye, Now I shall be able to release the dreaded Yochlol so that
+we may slay him this fine day!'
+~
+-classlist- r
+-racelist- j
+-value- 5133
+-maxlevel- 51
+-needs- object
+-needs_complete_msg-
+The mage says, 'This is but one head, I require all four in sequence! Bring me
+the head of the mother from the second house, make haste!'
+~
+-vnum- 5129
+-amount- 1
+-needs- object
+-needs_complete_msg-
+The mage says, 'Now bring me the head of the mother from the third house!'
+~
+-vnum- 5130
+-amount- 1
+-needs- object
+-needs_complete_msg-
+The mage says, 'Now you must bring me the head of the mother from the fourth
+house! Do not fail or we shall all be doomed!'
+~
+-vnum- 5131
+-amount- 1
+-needs- object
+-needs_complete_msg-
+The mage says, I need thee to take this note to the priestess within the temple
+walls, give it to her soon.'
+~
+-vnum- 5132
+-amount- 1
+-keywords- quest
+-message-
+The mage says, 'Aye, I can help thee, my goal is to be gone with the Yochlol,
+but I require several objects to complete my spell.'
+~
+-keywords- objects spell
+-message-
+The mage says, 'The objects I need for my spell to releace the Yochlol are the
+heads of the four mothers that protect this temple.
+~
+-keywords- mother mothers head heads
+-message-
+The mage says, 'There heads I must have, they must be given by only one of you,
+and they must be given in there proper order or my spell shall fail so go now,
+and get me what I need!'
+~
+-keywords- yochlol
+-message-
+The mage says, 'The yochlol is my great advisery, and I shall be eternaly
+gratefull if ye would assist me in his downfall!'
+~
+S

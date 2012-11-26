@@ -1,0 +1,2105 @@
+#3400
+The Void~
+  You don't think that you are not floating in nothing.
+~
+34 d 1
+D4
+void~
+~
+0 -1 3001 0
+S
+#3401
+A Road Through The Countryside~
+   A carefree life abounds here even at the very edges of the township. Lush
+fields of green paint a picture perfect scene of serenity to your west, marred
+only by the muted sounds of commotion wafting in from the city beyond. To the
+east an endless expanse of trees forms a formidable barrier where a farmer's
+clearing of the land has stopped. Out of the corner of your eye a small gap 
+in the tree line seems to flicker into existence and then disappears again as
+you try to discover its whereabouts.
+~
+34 0 2
+D1
+The road continues to the east towards the forest barrier.
+~
+~
+0 0 3402 0
+D3
+The paths leads to the city's eastern gate before disappearing into the depths
+of Weirvane itself.
+~
+~
+0 0 3093 0
+S
+#3402
+A Road Through The Countryside~
+   A carefree life abounds here even at the very edges of the township. Lush
+fields of green paint a picture perfect scene of serenity to your west, marred
+only by the muted sounds of commotion wafting in from the city beyond. To your
+east an endless expanse of trees forms a formidable barrier where a farmer's
+clearing of the land has stopped. Out of the corner of your eye a small gap in
+the tree line seems to flicker into existence and then disappear again as you
+try to discover its whereabouts.
+~
+34 0 2
+D1
+The road continues to the east towards the forest barrier.
+~
+~
+0 0 3403 0
+D3
+The road leads back to the hustle and bustle of city life to the west.
+~
+~
+0 0 3401 0
+S
+#3403
+A Road Through The Countryside~
+   A carefree life abounds here even at the very edges of the township. Lush
+fields of green paint a picture perfect scene of serenity to your west, marred
+only by the muted sounds of commotion wafting in from the city beyond. To the
+east an endless expanse of trees forms a formidable barrier where a farmer's
+clearing of the land has stopped. Out of the corner of your eye a small gap in
+the tree line seems to flicker into existence and then disappears again as you
+try to discover its whereabouts.
+~
+34 0 2
+D1
+The road continues to the east towards the forest barrier.
+~
+~
+0 0 3404 0
+D3
+The road leads back to the hustle and bustle of city life to the west.
+~
+~
+0 0 3402 0
+S
+#3404
+A Road Through The Countryside~
+   A carefree life abounds here even at the very edges of the township. Lush
+fields of green paint a picture perfect scene of serenity to your west, marred
+only by the muted sounds of commotion wafting in from the city beyond. To the
+east an endless expanse of trees forms a formidable barrier where a farmer's
+clearing of the land has stopped. Out of the corner of your eye a small gap in
+the tree line seems to flicker into existence and then disappears again as you
+try to discover its whereabouts.
+~
+34 0 2
+D1
+The road continues to the east towards the forest barrier.
+~
+~
+0 0 3497 0
+D3
+The road leads back to the hustle and bustle of city life to the west.
+~
+~
+0 0 3403 0
+S
+#3405
+At The Edges Of The Forest~
+   Before you stand age old trees, seemingly untouched in many decades.
+Peering into the apparent darkness you see a forest floor littered by fallen
+leaves. The forest is both sanctuary and danger for many of nature's creatures
+where prey and predator live side by side. You see nothing but a boundless
+barrier of tightly clustered trees to the north. To the south what seems like
+a small man-made clearing appears seemingly out of nowhere.
+~
+34 0 2
+D2
+A small path of trampled foilage skirts its way along the tree line leading 
+you to the south.
+~
+~
+0 0 3406 0
+D3
+The road leads back to a large field to the west.
+~
+~
+0 0 3497 0
+S
+#3406
+At The Edges Of The Forest~
+   Before you stand age old trees, seemingly untouched in many decades. 
+Peering into the apparent darkness you see a forest floor littered by fallen
+leaves. The forest is both sanctuary and danger for many of nature's creatures
+where prey and predator live side by side. You see nothing but a boundless
+barrier of tightly clustered trees to the north. To the south what seems like
+a small man-made clearing appears seemingly out of nowhere. 
+~
+34 0 2
+D0
+To the north, the dense tree line continues. Where the path ends, a road 
+begins, cutting its way through the countryside and leading westward towards
+the city of Weirvane.
+~
+~
+0 0 3405 0
+D2
+A small path of trampled foilage skirts its way along the tree line leading
+you to the south.
+~
+~
+0 0 3407 0
+S
+#3407
+A Gap In The Trees~
+   The tree line appears to open up before you revealing a well-worn path cut
+through the forest floor. The eastbound trail leads you into the darkness
+created by thick canopies and tall trunks before disappearing only a few 
+metres ahead. To the north and south the boundary of trees continues on
+relentlessly. To the west appears to be a small pond.
+~
+34 0 2
+D0
+To the north, the dense tree line continues. Where the path ends, a road 
+begins, cutting through the countryside, leading westward towards the city of
+Weirvane.
+~
+~
+0 0 3406 0
+D1
+A small circle carved out from the trees marks the beginning of the forest
+path to the east.
+~
+~
+0 0 3408 0
+D3
+~
+~
+0 0 6100 0
+S
+#3408
+The Forest Clearing~
+   It seems that a diminuitive clearing has been made for you by adventurers
+who have travelled here before you. A circle of trees surrounds you a short
+distance away, allowing sunlight and rain alike to tumble down upon you. The
+ordinarily busy forest, brimming with life in every crevice, is quiet here
+where stumps mark trees fallen to create the clearing. A surprisingly well
+used path through the forest begins to the east. To the west is the path back
+to the city of Weirvane.
+~
+34 0 2
+D1
+The path continues to the east through the forest.
+~
+~
+0 0 3409 0
+D3
+Beyond the trees lies a road leading from the outskirts of town into the 
+city's walls.
+~
+~
+0 0 3407 0
+S
+#3409
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues to the east, leading deeper into the dense forest.
+~
+~
+0 0 3410 0
+D3
+A small clearing carved from the forest lies a short distance to the west.
+~
+~
+0 0 3408 0
+S
+#3410
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues to the east, leading deeper into the dense forest.
+~
+~
+0 0 3411 0
+D3
+The path continues to the west.
+~
+~
+0 0 3409 0
+S
+#3411
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues to the east, leading deeper into the dense forest.
+~
+~
+0 0 3412 0
+D3
+The path continues to the west.
+~
+~
+0 0 3410 0
+S
+#3412
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+A small trial through the undergrowth branches off in this direction.
+~
+~
+0 0 3440 0
+D1
+The path continues to the east, leading deeper into the dense forest.
+~
+~
+0 0 3413 0
+D3
+The path continues to the west.
+~
+~
+0 0 3411 0
+S
+#3413
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a 
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues to the east, leading deeper into the dense forest.
+~
+~
+0 0 3414 0
+D3
+The path continues to the west.
+~
+~
+0 0 3412 0
+S
+#3414
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues to the east, leading deeper into the dense forest.
+~
+~
+0 0 3415 0
+D3
+The road continues to the west.
+~
+~
+0 0 3413 0
+S
+#3415
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+A little way ahead the path you notice that the path bends southwards.
+~
+~
+0 0 3416 0
+D3
+The path continues to the west.
+~
+~
+0 0 3414 0
+S
+#3416
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where 
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D2
+The path leads further into the forest as it heads southwards.
+~
+~
+0 0 3417 0
+D3
+The path continues to the west.
+~
+~
+0 0 3415 0
+S
+#3417
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+Ahead you notice that the path cuts to the west.
+~
+~
+0 0 3416 0
+D2
+The path continues to the south.
+~
+~
+0 0 3418 0
+S
+#3418
+The Well-Worn Road Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+The path continues to the north.
+~
+~
+0 0 3417 0
+D1
+The paths leads on through the darkness to the east.
+~
+~
+0 0 3419 0
+S
+#3419
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the suurounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+Up ahead you notice the path snake teast again before disappearing in what 
+seems like a multitude of curves.
+~
+~
+0 0 3420 0
+D3
+The path curves to the north a little way ahead.
+~
+~
+0 0 3418 0
+S
+#3420
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+A short stretch of path continues before you leading eastwards before turning
+south again.
+~
+~
+0 0 3421 0
+D2
+Ahead you notice the path cut to the west.
+~
+~
+0 0 3419 0
+S
+#3421
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from teh heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D2
+A small stretch of straight road lies before you leading south.
+~
+~
+0 0 3422 0
+D3
+Your eye becomes uncomfortable as you notice the road twist south before
+disappearing.
+~
+~
+0 0 3420 0
+S
+#3422
+The Well-Worn Road Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+A twist in the path ahead sends it westbound.
+~
+~
+0 0 3421 0
+D2
+The path continues to the south.
+~
+~
+0 0 3423 0
+S
+#3423
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+The path continues to the north.
+~
+~
+0 0 3422 0
+D2
+The path continues to the south.
+~
+~
+0 0 3424 0
+S
+#3424
+The Well-Worn Road Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+The path continues to the north.
+~
+~
+0 0 3423 0
+D3
+Here you are confronted by a path leading to the west.
+~
+~
+0 0 3425 0
+S
+#3425
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from thee heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues to the east.
+~
+~
+0 0 3424 0
+D3
+The path continues to the west before branching off south further ahead.
+~
+~
+0 0 3426 0
+S
+#3426
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues to the east.
+~
+~
+0 0 3425 0
+D2
+You notice that the path continues on south before turning east once again.
+~
+~
+0 0 3427 0
+S
+#3427
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+The path continues to the north before heading westwards.
+~
+~
+0 0 3426 0
+D1
+You notice a fork in the path up ahead which piques your interest.
+~
+~
+0 0 3428 0
+S
+#3428
+A Fork In The Path~
+   Two paths branch off at your feet from the single behind you. The first,
+well used and accustomed to the trampling cause by people, horses and wagons
+continues to the east. The second, appears more like a narrow trail than a
+path. Less commonly used than the other, it branches off to the south into a
+denser part of the forest.  
+~
+34 a 3
+D1
+The path stretches out before you straight and undisturbed. You can see why
+this path is often chosen over the other.
+~
+~
+0 0 3429 0
+D2
+A deeper darkness blankets the path, you see it head south only to disappear
+metres from where you stand.
+~
+~
+0 0 3450 0
+D3
+The path continues to the west.
+~
+~
+0 0 3427 0
+S
+#3429
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The paht continues to the east.
+~
+~
+0 0 3430 0
+D3
+You notice a junction ahead begging you to decide between west and south. 
+~
+~
+0 0 3428 0
+S
+#3430
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues east.
+~
+~
+0 0 3431 0
+D3
+The path continues to the west.
+~
+~
+0 0 3429 0
+S
+#3431
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues east.
+~
+~
+0 0 3432 0
+D3
+The path continues to the west.
+~
+~
+0 0 3430 0
+S
+#3432
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The path continues east.
+~
+~
+0 0 3433 0
+D3
+The path continues to the west.
+~
+~
+0 0 3431 0
+S
+#3433
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D2
+The path bends southwards here leading you further into the forest.
+~
+~
+0 0 3434 0
+D3
+The path continues to the west.
+~
+~
+0 0 3432 0
+S
+#3434
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+Ahead the path winds its way westwards.
+~
+~
+0 0 3433 0
+D1
+No path exists in that direction, trees sprawl before you for miles.
+~
+~
+0 0 3480 0
+D2
+The path continues to the south.
+~
+~
+0 0 3435 0
+S
+#3435
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D0
+The path continues to the north.
+~
+~
+0 0 3434 0
+D1
+Here the path turns east into a straight stretch which leads to a faint,
+distant flickering of light.
+~
+~
+0 0 3436 0
+S
+#3436
+The Well-Worn Path Through The Forest~
+   This unassuming path winds its way through the surrounding woodlands. Tall
+spires to the north and south reach upwards in their ceaseless climbing, each
+grasping for illusive trickles of sunlight which spill from the heavens where
+the forest canopy thins. The occasional river breeze from the east causes a
+rustle of leaves, disturbing the forest's otherwise peaceful slumber. The path
+continues to the south-east.
+~
+34 a 3
+D1
+The faint glimmer of light ahead brightens as you notice the trees beginning
+to thin out.
+~
+~
+0 0 3437 0
+D3
+The path continues to the west.
+~
+~
+0 0 3435 0
+S
+#3437
+A Lighter Part Of The Forest~
+   You notice a gradual thinning of the forest as you peer east. To the west,
+the forest's darkness deepens to envelop any who choose to enter its confining
+midsts. Sunlight slashes through the foreboding canopy in more places here,
+lessening the forest's heavy curtain. The path at your feet continues on both
+east and west. In the distance you ehar the faint sounds of water carried in
+by a rare breeze from your east.
+~
+34 a 3
+D1
+The forest continues to thin as the you notice the forest's heavy curtain of
+darkness slowly lift.
+~
+~
+0 0 3438 0
+D3
+The path continues west into the darkness.
+~
+~
+0 0 3436 0
+S
+#3438
+A Sparsely Wooded Part Of The Forest~
+   Your eyes adjust to the change in light as you stumble over your own feet.
+Tall treetops shoot branches above you, entwining with one another and
+slashing darkness on the canvas of the sky to create a haziness that surrounds
+you, flanks you. The faint chirping of birds drifts in from the distance. To
+the east the path continues to a ferry dock in the distance, while to the west
+the path leads into the forest's foreboding darkness.
+~
+34 a 3
+D1
+The path leads out of the forest to a distant ferry dock.
+~
+~
+0 0 3439 0
+D3
+The path continues to the west.
+~
+~
+0 0 3437 0
+S
+#3439
+A Clearing Before The Forest~
+   Tall spires stand before you, intimidating in their height. To the north
+and south trees in a ragged line fill your eyes. To the west a path leads any
+explorer into the dark depths of the forest before seeming to disappear
+abruptly. The east holds a ferry dock where ships wait to take eager 
+travellers and merchants alike to an island city which is both famous and 
+infamous for the wealth and commerce that threatens to tear the city apart at
+its seams.
+~
+34 0 2
+D1
+A ferry dock stands in that direction.
+~
+~
+0 0 3499 0
+D3
+The path continues to the west.
+~
+~
+0 0 3438 0
+S
+#3440
+A Small Trail Through The Undergrowth~
+   This stretch of trampled leaves and broken branches can barely be called a
+trail. Leading downwards into the undergrowth itself, you become lost in the
+masses of thick, wide leaves that cover your head, leaving you in dank,
+confining darkness as you wade your way further inside. Your chest seems tight
+as the air around you becomes warmer and humidity sets in, blanketing you.
+~
+34 a 3
+D0
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3441 0
+D2
+A well-worn path through the forest lies in that direction.
+~
+~
+0 0 3412 0
+S
+#3441
+A Small Trail Through The Undergrowth~
+   This stretch of trampled leaves and broken branches can barely be called a
+trail. Leading downwards into the undergrowth itself, you become lost in the
+masses of thick, wide leaves that cover your head, leaving you in dank,
+confining darkness as you wade your way further inside. Your chest seems tight
+as the air around you becomes warmer and humidity sets in, blanketing you.
+~
+34 a 3
+D1
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3442 0
+D2
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3440 0
+S
+#3442
+A Small Trail Through The Undergrowth~
+   This stretch of trampled leaves and broken branches can barely be called a
+trail. Leading downwards into the undergrowth itself, you become lost in the
+masses of thick, wide leaves that cover your head, leaving you in dank,
+confining darkness as you wade your way further inside. Your chest seems tight
+as the air around you becomes warmer and humidity sets in, blanketing you.
+~
+34 a 3
+D1
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3443 0
+D3
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3441 0
+S
+#3443
+A Small Trail Through The Undergrowth~
+   This stretch of trampled leaves and broken branches can barely be called a
+trail. Leading downwards into the undergrowth itself, you become lost in the
+masses of thick, wide leaves that cover your head, leaving you in dank,
+confining darkness as you wade your way further inside. Your chest seems tight
+as the air around you becomes warmer and humidity sets in, blanketing you.
+~
+34 a 3
+D0
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3444 0
+D3
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3442 0
+S
+#3444
+A Small Trail Through The Undergrowth~
+   This stretch of trampled leaves and broken branches can barely be called a
+trail. Leading downwards into the undergrowth itself, you become lost in the
+masses of thick, wide leaves that cover your head, leaving you in dank,
+confining darkness as you wade your way further inside. Your chest seems tight
+as the air around you becomes warmer and humidity sets in, blanketing you.
+~
+34 a 3
+D0
+You notice a structure of some sort ahead.
+~
+~
+0 0 3445 0
+D2
+The trail through the undergrowth continues in that direction.
+~
+~
+0 0 3443 0
+S
+#3445
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and 
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north.
+~
+34 ac 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3446 0
+D2
+The trail through the undergrowth lies in that direction.
+~
+~
+0 0 3444 0
+S
+#3446
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3447 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3445 0
+S
+#3447
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3448 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3446 0
+S
+#3448
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3449 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3447 0
+S
+#3449
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3471 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3448 0
+S
+#3450
+A Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of thte path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads. 
+~
+34 a 3
+D0
+Ahead you come abruptly to a well-worn road leading both east and west.
+~
+~
+0 0 3428 0
+D2
+You see the trail continue southbound before disappearing into the forest's
+dark depths.
+~
+~
+0 0 3451 0
+S
+#3451
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intercals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads. 
+~
+34 a 3
+D0
+The trail continues to the north.
+~
+~
+0 0 3450 0
+D2
+The trail continues to the south.
+~
+~
+0 0 3452 0
+S
+#3452
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut 
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trails leads.
+~
+34 a 3
+D0
+The trail continues to the north.
+~
+~
+0 0 3451 0
+D2
+The trail continues to the south.
+~
+~
+0 0 3453 0
+S
+#3453
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads. 
+~
+34 a 3
+D0
+The trail continues to the north.
+~
+~
+0 0 3452 0
+D2
+The trail continues to the south.
+~
+~
+0 0 3454 0
+S
+#3454
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads. 
+~
+34 a 3
+D0
+The trail continues to the north.
+~
+~
+0 0 3453 0
+D1
+The scraggly trail bend its way to the east before being lost in the 
+darkness.
+~
+~
+0 0 3455 0
+S
+#3455
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D1
+Your eye follows the trail easterly before losing it when it turns south.
+~
+~
+0 0 3456 0
+D3
+The trail leads west before turning north through the endless expanse of 
+trunks.
+~
+~
+0 0 3454 0
+S
+#3456
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D2
+The trail continues to the south.
+~
+~
+0 0 3457 0
+D3
+The trail continues to the west.
+~
+~
+0 0 3455 0
+S
+#3457
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D0
+Ahead the path twists its way through the forest floor to the west.
+~
+~
+0 0 3456 0
+D1
+The Narrow trail continues in that direction.
+~
+~
+0 0 3476 0
+D2
+Ahead you see a small structure, odd in the surroundings, which captures your
+eye.
+~
+~
+0 0 3458 0
+S
+#3458
+Outside The Traveller's Cabin~
+   A cabin stands before you inside a little niche which seems to have been 
+carved out from the dense woods. Walls made of ancient timbers mark the 
+cabin's age, while newly spilt firewood beside the doorway hint at it being
+recently used. The sturdy little cabin appears very inviting, providing warmth
+and shelter from the harsh elements outside. The trail continues to the 
+south-east whilst the cabin door awaits enticingly to the west.
+~
+34 a 3
+D0
+The trail continues to the north.
+~
+~
+0 0 3457 0
+D2
+The trail continues to the south.
+~
+~
+0 0 3459 0
+D3
+The entrance to the cabin lies this way.
+~
+door~
+1 3403 3470 0
+S
+#3459
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks in all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D0
+The trail continues to the north.
+~
+~
+0 0 3458 0
+D2
+The trail continues south before heading east further up ahead.
+~
+~
+0 0 3460 0
+S
+#3460
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the east
+where the trail leads.
+~
+34 a 3
+D0
+The trail continues to the north.
+~
+~
+0 0 3459 0
+D1
+The trail continues to the east.
+~
+~
+0 0 3461 0
+S
+#3461
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all side, save to the east
+where the trail leads.
+~
+34 a 3
+D1
+The trail continues to the east.
+~
+~
+0 0 3462 0
+D3
+The trail continues to the west.
+~
+~
+0 0 3460 0
+S
+#3462
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the east
+where the trail leads.
+~
+34 ap 3
+D0
+The narrow trail continues in that direction.
+~
+~
+0 0 3479 0
+D1
+The trail continues on to the east.
+~
+~
+0 0 3463 0
+D3
+The trail continues on to the west.
+~
+~
+0 0 3461 0
+S
+#3463
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the east
+where the trail leads.
+~
+34 a 3
+D1
+The trail continues on the the east.
+~
+~
+0 0 3464 0
+D3
+The path continues to the west.
+~
+~
+0 0 3462 0
+S
+#3464
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by ealier travellers. Rays of sunlight cut 
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the east
+where the trail leads.
+~
+34 a 3
+D1
+In the distance, you see what seems to be a small speck of sunlight marking
+a distant end to the path.
+~
+~
+0 0 3465 0
+D3
+The trail continues to the west.
+~
+~
+0 0 3463 0
+S
+#3465
+A Lighter Part Of The Forest~
+   You notice a gradual thinning of the forest as you peer east. To the west,
+the forest's darkness deepens to envelop any who choose to enter its confining
+midsts. Sunlight slashes through the foreboding canopy in more places here,
+lessening the forest's heavy curtain. The path at your feet continues on both
+east and west. In the distance you hear the faint sounds of water carried in
+by a rare breeze from the east.
+~
+34 a 3
+D1
+Trees become sparser and the air surrounding the forest seems to brighten to
+the east.
+~
+~
+0 0 3466 0
+D3
+The trail continues west deeper into the forest.
+~
+~
+0 0 3464 0
+S
+#3466
+A Sparsely Wooded Part Of The Forest~
+   Your eyes adjust to the change in light as you stumble over your own feet.
+Tall treetops shoot branches above you, entwining with one another and
+slashing darkness on the canvas of the sky to create a haziness that surrounds
+you, flanks you. The faint chirping of birds drifts in from the distance. To
+the east the path continues to a ferry dock in the distance, while to the west
+the path leads into the forest's foreboding darkness.
+~
+34 a 3
+D1
+Ahead the forest seems to open up causing you to blink as your eyes adjust to
+the change in lighting conditions.
+~
+~
+0 0 3467 0
+D3
+The trail continues to the west.
+~
+~
+0 0 3465 0
+S
+#3467
+A Clearing Before The Forest~
+   Tall spires stand before you, intimidating in their height. To the north
+and south trees in a ragged line fill your eyes. To the west, a path leads any
+explorer into the dark depths of the forest before seeming to disappear
+abruptly, as if swallowed by the artificial midnight created by the trees. In
+the distance you hear the rustling of leaves created by the forest's animal
+inhabitants and a far off bird chirps its happy song merrily.
+~
+34 0 2
+D3
+The trail leads into the deep darkness of the forest to the west.
+~
+~
+0 0 3466 0
+S
+#3468
+Before The Ruin~
+   A small clearing has been made in the dense forest here, revealing to the
+careful eye a small structure. From where you stand it seems like nothing more
+than a single room. Eons of neglect show in the crumbling stonework that makes
+the simple building here all alone, without even a hint of anything that leads
+from it. You wonder why the people who constructed this building and the wall
+would even bother to carry such large amounts of stone to build such things
+which look as if they serve no apparent purpose.
+~
+34 a 2
+D1
+The entrance to the ruin lies in that direction.
+~
+~
+0 0 3469 0
+D3
+An ancient stone wall lies in that direction.
+~
+~
+0 0 3475 0
+S
+#3469
+Inside The Ruin~
+   The room that you see before you is small. Bare now, save the mossy growth
+that looks as if it would take over the building. You consider what this room
+was once used for. Tattered shards of cloth lie on the ground, hinting that
+they were once used as wall hangings on the empty walls that confront you.
+Looking up you notice a domes ceiling, painted with a strange fresco. The
+scenes of ancient gods immersed in duels withtin the heavens send a chill down
+your spine. This room once contained people of power and influence, today it
+plays host to weeds which threaten to destroy it.
+~
+34 ad 0
+D3
+A small clearing in the forest lies outside the entrance.
+~
+~
+0 0 3468 0
+S
+#3470
+The Traveller's Cabin~
+   A fireplace stands in the centre of the far wall waiting to cover the room
+in a blanket of amber warmth. A bearskin rug is sprawled before the fireplace
+with a rocking off to one side. Tucked into another corner stands a small wood
+fire stove along with a simple table and chair. Two plain wood shelves appear
+bare except for the single metal cannister, rusted and old with age. Above the
+fireplace an empty mantelpiece collects nothing save dust. A single bed sits
+behind the door, narrow and small, it holds a thin coarse mattress but still
+looks considerably more comfortable than the cold forest floor.
+~
+34 d 0
+D1
+~
+door~
+1 3403 3458 0
+S
+#3471
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3472 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3449 0
+S
+#3472
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3473 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3471 0
+S
+#3473
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3474 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3472 0
+S
+#3474
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D0
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3475 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3473 0
+S
+#3475
+Along An Ancient Stone Wall~
+   Made of a slate grey stone not normally found in this part of the forest,
+you wonder at what ancient people constructed it. Snow white lichen and
+emerald green moss covers the wall, almost hiding the stone itself. The wall
+has taken on the role of a dam over the years, stopping up shifting earth and
+allowing only crawling vines to tumble across the barrier. As far as the eye
+can see the wall continues in a ragged line to the north and south.
+~
+34 a 3
+D1
+A small clearing peeks out from its surroundings in that direction.
+~
+~
+0 0 3468 0
+D2
+The ancient stone wall continues in that direction.
+~
+~
+0 0 3474 0
+S
+#3476
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D1
+The narrow trail continues in that direction.
+~
+~
+0 0 3477 0
+D3
+The narrow trail continues in that direction.
+~
+~
+0 0 3457 0
+S
+#3477
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D2
+The narrow trail continues in that direction.
+~
+~
+0 0 3478 0
+D3
+The narrow trail continues in that direction.
+~
+~
+0 0 3476 0
+S
+#3478
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D0
+The narrow trail continues in that direction.
+~
+~
+0 0 3477 0
+D2
+The narrow trail continues in that direction.
+~
+~
+0 0 3479 0
+S
+#3479
+The Narrow Trail~
+   Tiny plants straining to reclaim the small trail for the forest sprout on
+the edges of the path cleared by earlier travellers. Rays of sunlight cut
+through the tree tops at random intervals when the wind causes leaves to part
+for a mere moment. You are flanked by trunks on all sides, save to the south
+where the trail leads.
+~
+34 a 3
+D0
+The narrow trail continues in that direction.
+~
+~
+0 0 3478 0
+D2
+The narrow trail continues in that direction.
+~
+~
+0 0 3462 0
+S
+#3480
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D1
+Trees fill your vision in every direction.
+~
+~
+0 0 3481 0
+D3
+A well-worn path through the forest lies in that direction.
+~
+~
+0 0 3434 0
+S
+#3481
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+Trees fill your vision in every direction.
+~
+~
+0 0 3482 0
+D3
+Trees fill your vision in every direction.
+~
+~
+0 0 3480 0
+S
+#3482
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+Trees fill your vision in every direction.
+~
+~
+0 0 3483 0
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3481 0
+S
+#3483
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+trees fill your vision in every direction.
+~
+~
+0 0 3484 0
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3482 0
+S
+#3484
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3483 0
+D3
+Trees fill you vision in every direction.
+~
+~
+0 0 3485 0
+S
+#3485
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D1
+trees fill your vision in every direction.
+~
+~
+0 0 3484 0
+D3
+Trees fill your vision in every direction.
+~
+~
+0 0 3486 0
+S
+#3486
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+Trees fill your vision in every direction.
+~
+~
+0 0 3487 0
+D1
+Trees fill your vision in every direction.
+~
+~
+0 0 3485 0
+S
+#3487
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+trees fill you vision in every direction.
+~
+~
+0 0 3488 0
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3486 0
+S
+#3488
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+Trees fill your vision in every direction.
+~
+~
+0 0 3489 0
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3487 0
+S
+#3489
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D1
+Trees fill your vision in every direction.
+~
+~
+0 0 3490 0
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3488 0
+S
+#3490
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D1
+trees fill your vision in every direction.
+~
+~
+0 0 3491 0
+D3
+Tress fill your vision in every direction.
+~
+~
+0 0 3489 0
+S
+#3491
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D1
+Tress fill you vision in every direction.
+~
+~
+0 0 3492 0
+D3
+Trees fill you vision in every direction.
+~
+~
+0 0 3490 0
+S
+#3492
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D1
+Trees fill your vision in every direction.
+~
+~
+0 0 3493 0
+D3
+Trees fill your vision in every direction.
+~
+~
+0 0 3491 0
+S
+#3493
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+Trees fill you vision in every direction.
+~
+~
+0 0 3494 0
+D3
+Trees fill your vision in every direction.
+~
+~
+0 0 3492 0
+S
+#3494
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+Trees fill your vision in every direction.
+~
+~
+0 0 3495 0
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3493 0
+S
+#3495
+Among The Trees~
+   Very few people dare to venture among the trees themselves, fearing that
+a bear might come up behind them while they were sleeping, or that chipmunks
+would wreak havoc with their supplies in the endless searching of the forest.
+A claustrophobic air hangs in itself in the atmosphere as trees fill your
+vision in all direction, and branches invade your personal space, threatening
+in their close proximity.
+~
+34 a 3
+D0
+Trees fill your vision in every direction.
+~
+~
+0 0 3496 0
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3494 0
+S
+#3496
+Before A Huge Oak~
+   A huge oak tree stands before you dwarfing everything around it. You feel
+like you would stand shoulder to shoulder with an ant compared to the size of
+this tree. With a girth so wide that it blocks out everything that you might
+see beyond it, you know that you can no longer continue your exploration
+through the untamed trees. Huge buttresses at the base of the tree provide
+shelter to animals in their folds. Thick branches provide even more homes to
+the creatures of the forest.
+~
+34 a 3
+D2
+Trees fill your vision in every direction.
+~
+~
+0 0 3495 0
+S
+#3497
+Turning Point~
+   You find youself in a small field between the roads, in a place of
+relative saftey and comfort. Old carvings on the ground display crude maps
+and elaborate battle plans from ages long past. Small shrubs and grasses
+dot this field, and tracks of various kinds scar the ground. To your west
+lies a lush field, to the east is a thick wood. 
+~
+34 cs 2
+D1
+The forest barriers lie to your east.
+~
+~
+0 0 3405 0
+D3
+The fields leads to a countryside road to your west.
+~
+~
+0 0 3404 0
+S
+#3498
+{yOn The Ferry{x~
+   The ferry is quite large, handling the bulk of passengers quickly across
+the river before you. It spans before you with rows and benches for what
+little comfort might be provided for your voyage. The ferry is designed for
+quick travel rather than comfort.
+~
+34 de 0
+S
+#3499
+Before The Ferry Dock~
+   The forest to the west thins out to reveal before you a sprawling city
+built upon an island that causes the river to split to the north and then
+merge once again further south. Your gaze drifts to the magnificent intricacy
+of the stonework and the brilliant flying buttresses that appear to be too
+delicate to support the building's walls. Ancient stonemasons gave their lives
+to create this city, the sheer beauty of their work a tribute to their
+enduring labours. You are so captured by the sight that you almost fail to
+notice the ferry dock that stands before you. Across the river, the Isle of
+Caryllion's north-east gate tugs at you, beckoning you to travel into its city
+walls and to experience the dangers and the delights of this ancient city.
+~
+34 0 0
+D1
+The {yFerry Dock{x lies in that direction.
+~
+~
+0 0 398 0
+D3
+The path leads into the depths of the forest beyond in that direction.
+~
+~
+0 0 3439 0
+S
+$~

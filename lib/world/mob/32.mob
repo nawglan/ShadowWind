@@ -1,0 +1,161 @@
+#3200
+mouse field~
+a tiny field mouse~
+A tiny field mouse is here, scavenging for food.
+~
+It's a very small mouse.  It probably couldn't hurt anyone.
+~
+cd 0 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 4 14 1
+T 100 1d1+0 0
+E -1 100 3200 -1
+#3201
+hamster~
+a small hamster~
+A small hamster is here, looking for his master.
+~
+It's a very small hamster. It looks so lonely and lost.
+~
+cd 0 200 X
+1 19 9 1d1+10
+0 150
+8 8 0 4 14 1
+T 100 1d1+0 0
+E -1 100 3201 -1
+#3202
+dog prarie~
+a prarie dog~
+A prarie dog is here, digging out a new burrow.
+~
+It's a good sized prarie dog. It probably doesn't have anything you'd want.
+~
+cd 0 -50 X
+2 19 9 1d1+20
+0 300
+8 8 0 4 14 1
+T 100 1d1+1 0
+E -1 100 3202 -1
+#3203
+coyote~
+a wily coyote~
+A smart, sneaky coyote is here.  He tries to shy away from you.
+~
+He's devious.  He'll attack you when you least expect it.  Count on it!
+~
+cdfh dfst -200 X
+6 17 7 3d3+60
+0 2400
+8 8 1 4 14 2
+T 100 2d4+1 16
+E -1 100 3203 -1
+#3204
+dog wild~
+a wild dog~
+A vicious, wild dog is here. Stay too long, and he'll attack.
+~
+He's vicious. He'll attack you, even when you expect it.
+~
+cdf dfst -750 X
+4 18 8 2d2+40
+0 1000
+8 8 1 4 14 2
+T 75 1d3+1 0
+E -1 100 3204 -1
+#3205
+bird pukeko blue small~
+a pukeko~
+A small blue bird is here picking through the grass.
+~
+The Pukeko is a small bird with a big beak.
+
+~
+dgq k 50 X
+2 19 9 1d1+20
+0 300
+8 8 2 13 14 2
+T 60 1d2+1 22
+#3206
+giant man~
+the plains giant~
+A large man is wandering aimlessly over the plains.
+~
+You just about pass out at the stench coming from this giant man. His skin,
+hair and clothes caked with dirt and dust. He has been wearing his ragged
+clothes for so long, it almost appears that they have become part of him. 
+
+~
+dglp dk -50 X
+25 10 -3 13d13+250
+0 45500
+8 8 1 3 1 5
+T 70 5d3+8 23
+#3207
+duck bird~
+a duck~
+An emerald-green feathered duck glides across the water.
+~
+You examine an emerald green backed duck and immediately
+notice it's bright yellow beak and blue feathered neck.
+~
+ds g 200 X
+2 19 9 1d1+20
+0 300
+8 8 1 13 14 2
+T 80 1d2+1 22
+#3208
+elf man~
+an elf~
+A small elf is standing here, annoyed at your interuption.
+~
+This elf looks like your typical tree elf. His scraggly black hair
+falls over his bony face, and you can only see just see his little
+eyes peering out at you from under it.
+~
+bdilp cdkp 100 X
+10 15 5 5d5+100
+0 5000
+8 8 1 3 5 3
+T 80 3d3+5 27
+E 3 50 3207 20
+E 13 100 3205 20
+E 9 100 3206 20
+>rand_prog                   8~
+peer $r
+~
+>rand_prog                   8~
+glare $r
+~
+|
+#3209
+troll man figure~
+a dark troll~
+A leathery skinned figure stands hunched in the shadows.
+~
+As you peer at this short stocky old troll, you get the impression
+he likes his solitude and would rather be left alone. His thick
+skinned, wrinkly face screws up, as if questioning your right to
+be here.
+~
+bcdfglpr bdk -700 X
+22 11 -1 11d11+220
+0 31000
+8 8 1 3 1 4
+T 100 2d3+4 11
+T 75 4d5+4 6
+E 24 50 3301 9
+#3210
+traveller man tired weary~
+a weary traveller~
+A tired looking traveller is shuffling along.
+~
+This man looks as though he has been on the road for a long time.
+He shuffles quietly along with his gaze firmly fixed on the ground
+at his feet.
+~
+dh 0 100 X
+5 17 7 3d3+50
+0 1600
+8 8 1 3 1 3
+T 70 2d3+2 27

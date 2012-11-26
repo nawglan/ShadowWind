@@ -1,0 +1,297 @@
+         ********         REPORT MORE IDEAS!!!         ********
+Farrot   (Sep 30) [ 3047] make keys "dissipate" on the zone reset of the vnum.
+Palance  (Oct  1) [ 1242] hidden objects in corpses... use search corpse to find.
+Seeker   (Feb 27) [ 1297] zoneechos maybe in the *.zon file.. ie: stuff you hear citywide.
+Dorga    (May 30) [ 1297] show newusers - shows last 15 lines of ~/shadowwind/log/newusers
+Dorga    (Jun 24) [ 3149] add total deaths to att, and total kills to score
+Dorga    (Jun 27) [ 1295] stack drag commands: drag pcorpse drag 2.pcorpse drag 3.pcorpse d
+Dorga    (Jul  9) [ 1258] change followers to: Dorga's fire tells you, chats, shouts.. etc..
+Dorga    (Jul 10) [ 1295] add a new object flag(extra flags) for dust - item gets purge when on ground.
+Mlok     (Jul 14) [ 3447] only show HP/Mana/Moves in 'group' if people are in the room.
+Novo     (Aug  6) [ 1258] give door keyname when walking into a closed door... "The iron is closed"
+Krilgar  (Aug 10) [ 1250] add race bonuses for hit/dam
+Breena   (Aug 29) [ 3621] log advances and lost levels in plog
+Dorga    (Oct 26) [ 3082] exits/scan should show closed doors,, (not hidden)
+Dorga    (Nov 10) [ 1297] allow ACT_WRAITHLIKE to cast in there level's circle's spells.
+Breena   (Nov 16) [ 1295] be able to "sell item <shopkeeper>" to get round merchants being in shops
+Nudd     (Nov 20) [ 3038] keep mobs from hunting through !mob rooms.
+Breena   (Nov 27) [ 5909] when looking at a mob's inv, make objs stack
+Dorga    (Dec  2) [14108] addition to zone file, field A for action -next-
+Dorga    (Dec  2) [14108] A #time# text -  A sets it off, #time# is what -next-
+Dorga    (Dec  2) [14108] MUDtime the action takes place each day and -next-
+Dorga    (Dec  2) [14108] text is the text echoed to the whole zone. -end-
+Dorga    (Dec  3) [ 1297] elementals and other created followers. set there dam/etc from -next-
+Dorga    (Dec  3) [ 1297] the same set of defaults that medit uses. -next-
+Dorga    (Dec  3) [ 1297] im not talken about there HP.. just the rest of it.. mainly -next-
+Dorga    (Dec  3) [ 1297] there attacks and thaco and ac.
+Dorga    (Dec  3) [ 1297] mimics.. need a specproc for them.. ie: biting chest etc.
+Breena   (Dec  6) [ 1295] need to add room vnum to player death logs
+Kreesha  (Dec  6) [ 3602] remove the emot to room when someone looks at someone else.
+Kreesha  (Dec  7) [ 5991] New warrior/merc/monk skill hitall
+Novo     (Dec 10) [ 3833] class only items
+Breena   (Dec 10) [ 1295] is it possible to add E fields into mob stat?
+Breena   (Dec 13) [ 1295] be able to do a vnum p <wear position>, eg vnum p arms
+Dorga    (Dec 13) [ 1297] possably make people wake up if combat is going on in the same room.
+Breena   (Dec 14) [ 1295] for classes that don't get a choice of align, at least put the1 option
+Breena   (Dec 14) [ 1295] ^ in char creation so they know what align they are
+Breena   (Dec 14) [ 1295] should mercenaries be able to choose good alignment?
+Nudd     (Dec 14) [ 1242] add a !shout flag.
+Dorga    (Dec 14) [ 2207] make superinvis also have holylight
+Dorga    (Dec 14) [ 2207] make search fine not_obvious items and remove not_obvious flag?
+Dorga    (Dec 16) [ 1297] linkdead command show - name - room - site
+Dorga    (Dec 18) [ 1297] need multiple switch echos, one for who, and one for who saw
+Dorga    (Dec 18) [ 1297] reload with no arg should show all args.
+Dorga    (Dec 18) [ 1297] add dragon code, add worm code..
+Dorga    (Dec 19) [ 1297] add char sex back into score. =) it got lost somewhere. heh
+Dorga    (Dec 21) [14071] a log for pcorpse's that melt and the room they were in if possable.
+Dorga    (Dec 21) [ 1297] Mob Race: Golum - Flesh,Clay,Stone,Iron
+Breena   (Dec 23) [ 1295] put the number of kills a player has in stat player maybe
+Novo     (Dec 24) [ 1258] log prays/petitions & auto approved names
+Breena   (Dec 25) [ 1295] undead/spirit or something as a race type for mobs
+Breena   (Dec 26) [ 1297] a room flag that stops magic to be cast INTO it, like moonwell or summon..
+Breena   (Dec 26) [ 3009] can we get ask/tell/ etc progs to deal with punctuaion like <keyword>?
+Kreesha  (Dec 26) [ 3185] echo on search.. for room.
+Chkkra   (Dec 27) [ 5122] be able to report group in yer sleep
+Dorga    (Dec 27) [ 1297] add an echo for a crit hit.
+Dorga    (Dec 27) [ 1297] add a show 'spec' to show all specprocs.
+Chkkra   (Dec 27) [  399] make the ferry master shout at 398 when it arrives
+Oguz     (Dec 28) [ 4060] add ignore command
+Dorga    (Jan  1) [ 1297] add a line in score for "Total Kills (), Total Deaths ().
+Mlok     (Jan  1) [ 3081] command: order follower return - sets follower to hunt to its master.
+Dorga    (Jan  2) [14503] log copyto and dig - to file not wizlogs
+Mlok     (Jan  2) [14509] new flag on mobs, rescuer
+Oguz     (Jan  2) [14552] allow point to point to obj too... *shrug*
+Jithrae  (Jan  3) [ 6007] Allow mobs to group against players, and flee to healers
+Nudd     (Jan  4) [ 1242] make zstat command
+Novo     (Jan  4) [ 1258] add peace command... set all fighting in room off and hunting
+Sisp     (Jan  5) [ 3118] SHould the remove curse work on cursed items? It doesn't.
+Dorga    (Jan  6) [ 1297] make copyto only copyto zone being copyed from.. might be a good thing.
+Dorga    (Jan  7) [ 1297] arrange 'set' fields please.
+Breena   (Jan  7) [ 1295] Novo (Nov 7) [1258] Help on: need to add vnum t to vnum help/no arg output
+Dorga    (Jan  8) [ 1297] Rember: Vialquest - plague - quest for cure.
+Breena   (Jan 14) [ 1295] a !camp flag for rooms
+Dorga    (Jan 14) [ 1297] UPDATE docs - help zones weather
+----Leave dis line!:)
+
+Breena   (Jan 20) [ 3090] with ask progs and tell progs, make it stop after the first trigger word in the phrase..
+Breena   (Jan 20) [ 3090] ^ so ya don't get it repeating itself if there is more than on keyword in someone's ask
+Grohg    (Jan 20) [ 3113] if you actually tell wilks the correct way to lawton, how about a prize?
+Breena   (Jan 22) [ 1295] make rooms with sector type NOBITS default to !camp?
+Paulo    (Jan 31) [ 3804] How about putting meat on animals such as rabbits etc in park? thanks enjoying mud, Ccore.
+Breena   (Feb  9) [ 1295] put in a table of some sort for ac messages, just a ranking, not numbers. Cause PEOPLE ARE DUMB
+Vadicus  (Feb 18) [ 3815] show followers on score
+Jilael   (Feb 18) [ 1294] show "someone stops following you" when air elementals dissipate
+Vadicus  (Feb 18) [ 3184] dont allow search unless standing
+Volan    (Mar  4) [ 1261] we need a slot to enter why the name was denied on the deny command
+Incanus  (Mar 14) [ 3118] Make shopkeepers say at what time they will open (should vary in different shops)
+Incanus  (Mar 14) [ 3118] and when only few hours left: Shopkeeper says: 'We will open in a few hours'
+Nudd     (Mar 27) [ 5530] make deny specific to races...
+Breena   (Mar 28) [ 1295] be able to deny a name without an arg.. or just deny name other which shows the old "your name has been declined" :)
+Sivrak   (Mar 30) [ 3787] put eat and drink echos back in! :)
+Nemo     (Apr  4) [14552] make it so gsay, chat etc are like tell where you can type tell to see what was last said
+Nemo     (Apr  4) [14552] if sunray works make mob NOT attack
+Dorga    (Apr  4) [ 1297] add player description to stat..
+Sivrak   (Apr  5) [14333] make the elven guards that wield swords "slash" instead of "whip"
+Nemo     (Apr 15) [ 3550] get around to making so when you typo on a spell it doesn't take mana  =P
+Volan    (Apr 17) [ 1269] Caillin tells you, 'idea: mana should increase as one becomes older
+Dorga    (Apr 17) [ 1297] Skill: Assassin: Level46+ - Instantkill
+Nudd     (Apr 20) [ 1242] make strings <playername> display the strings for that player.
+Novo     (Apr 21) [ 1258] show groups
+Novo     (Apr 22) [ 3728] let immos junk... better than drop and purge
+Caillin  (Apr 23) [ 3075] immortals should be able to see people walk in and out even if they sneak
+Grundle  (Apr 25) [ 3191] make the open command so you can you directions with it, like open west.
+Dorga    (Apr 27) [ 1297] Containers: let them show ShortDescript when "look in" instead of first keyword.
+Oguz     (Apr 30) [ 4341] put room number in the load logs...
+Mordrid  (May  2) [ 3804] commands such as sc and idea should work when asleep, as they aren't related to combat and such
+Nudd     (May  4) [ 1297] a hmm social
+Breena   (May  6) [ 1295] add position worn into identify
+Dorga    (May  8) [ 1297] Move :Q: flag off of switch, put switch on :G: maybe..
+Breena   (May  8) [ 1295] meditate skill for faster mana regen
+Breena   (May  9) [ 1295] Yuggugg chats, 'mercs need headbutt :P'
+Drunsul  (May  9) [ 3096] a spell that unlock regular doors
+Mlok     (May 10) [ 5136] Innate Abilitys should be above Spells: in stat
+Sivrak   (May 10) [ 5963] put a time chart for ship departures at bwello's
+Thut     (May 10) [ 3126] put max hps, moves, and mana in the prompt as well as your current hps and such, would make it easier then typing att or score to see how close to being full you are
+Dorga    (May 12) [ 1297] Mass Total weight (body + carried)
+Breena   (May 12) [ 1295] in spell <class> command, sort spells by circle/level rather than alphabetically
+Breena   (May 12) [ 1295] wear off msgs for spells - make em echo to room
+Novo     (May 13) [ 1258] add please, gate, open to the elven guardian mobprog
+Novo     (May 13) [14534] show loads <m|o> <vnum> would print where, who and percent that vnum loads
+Dorga    (May 13) [ 1297] allow "list name" as in shopkeepers name so shops will work with more than one keeper in them.
+Breena   (May 13) [ 1295] with superinvis mobs.. make their actions not echo to the room maybe
+Breena   (May 13) [ 1295] ^ like opening doors and such
+Dorga    (May 15) [ 1297] Nudd take a look at how help is done in the bpl12 of Circ.. i think it does what we were talken about.
+Breena   (May 15) [ 1295] make camping a skill maybe? the higher your skill = the faster you camp
+Breena   (May 15) [ 1295] show portals = show all the rooms portals are in, and where they goto
+Breena   (May 16) [ 1295] re-word the ac messages
+Palance  (May 17) [ 3725] make the rooms on north and south ends of the docks fast heal. 8)
+Nudd     (May 17) [ 1242] put the last from (x.x.x.x) to the bad password log... There have been 3 unsuccessful attempts, the last from (x.x.x.x).
+Dorga    (May 17) [ 1297] change "Dorga gives you ITEM" to "You receive ITEM from Dorga" maybe to do what he was asking above.
+Jerephaim (May 18) [20601] A leg sweep attack for monks and trip for thief class.. Like bash.. knocks the opponent down...
+Lecha    (May 20) [ 3048] Cone of Cold doesn't seem to have a 'damage' message asscociated with it... We can't tell when it hits.  Maybe something should be added?
+Ortho    (May 25) [14552] Container's need to have holding weight number listed when identified..
+Sumr     (May 25) [ 3000] is it a bug that npc's don't invis when I cast it on them?
+Novo     (May 27) [ 1258] allow immos to purge all items carried by a mortal :)
+Dorga    (May 28) [ 1297] item typo food needs option: foodfill or potion so yuou can EAT stuff for effects.
+Palance  (May 29) [ 5181] make anon also block out the level/class in group list...
+Dorga    (Jun  2) [ 1297] show peti - shows last 10 peti
+Novo     (Jun  3) [ 1295] add class to the :A: level log
+Novo     (Jun  3) [ 1295] and maybe even the monster they killed and how much exp they got
+Sivrak   (Jun  5) [14549] make it where players can ANNIHILATE i just love seeing that on my screen
+Sivrak   (Jun  5) [20626] put a magic shop in this area :)
+Palance  (Jun  7) [14528] forcerent/drop link should nuke keys...
+Palance  (Jun  7) [14528] check camp make sure it not store keys either.
+Krodar   (Jun  7) [14552] prehapes a higher circle priest spell could be gate, which would summon a demon or devil type charmie for the priest to controll , sort of like summon elemental
+Elurid   (Jun  7) [14552] Would be nice if you couldn't flee unless you were actually fighting.
+Nemo     (Jun 12) [ 3084] increase power of creeping death and make it so if mob dies from the spell the maggots eat the corpse
+Nemo     (Jun 12) [ 3084] that would include the eq of course
+Oxal     (Jun 12) [ 3189] can we give the monks some kind of special punch attack..dragon punch or something, I'm looking for something to distiguish them from mercenaries.
+Hoggis   (Jun 24) [10299] fire elementals can't go in water, and can't pass under water like in cascades...
+Nudd     (Jul  5) [ 1242] !physical rooms... where magic combat is only allowed.
+Reslyn   (Jul  7) [ 3174] show that rescue is being tried.  Meaning a warrior is trying to rescue me, but I didn't know until he succeeded...
+Rak      (Jul  9) [ 3199] tell the user when they are in a sancuary (safe place where no fighting can be had)
+Rak      (Jul 14) [ 3081] have the contents of the well saved so it's immune to crashes.  =)
+Rak      (Jul 14) [ 9806] be able to point in a direction..  poi n or whatever.  It's handy.
+Rak      (Jul 14) [ 9100] the sleep command should say "You are already sleeping!" if you use it while sleeping.
+Rak      (Jul 14) [10287] encumbrance for having lots of items.. lower dex/agi/tohit or something.
+Rak      (Jul 15) [ 5183] give more in-depth information about classes for new players.  I myself didn't really know what your idea of a half-elf was...
+Dorga    (Jul 15) [ 1297] loss of moves for taking damage..
+Reslyn   (Jul 19) [ 3001] if a mob picks up a weapon or a piece of eq, have the mob wield it.
+Dorga    (Jul 19) [ 1297] well at lauri, make anything put IN it, NOSELL =)
+Reslyn   (Jul 20) [ 3047] skill for assassins called shadow...follow without the victim knowing?
+Dorga    (Jul 21) [ 1297] add an echo on tog follow?
+Tihm     (Jul 24) [ 5230] if I have levitation, moving up/down should be really cheap for vitality cost.
+Tihm     (Jul 27) [ 5183] be able to tell (at least approx.) how much weight you are carrying.
+Tihm     (Jul 27) [ 5183] make it the more weight you carry, the more vitality movement costs.
+Tihm     (Jul 27) [ 3039] be able to have "group" anon just like whois can be annon.
+Tihm     (Jul 28) [ 3997] be able to make small bags with the spell "minor creation"
+Tihm     (Jul 29) [ 3084] allow people to purchase a "recharge" for an item, for each # of recharged charges, it costs a formula based on the circle of the spell.
+Kar      (Jul 30) [ 3763] list, with ID, the class of a weapon, like pierce or slash etc..
+Kar      (Aug  1) [ 3499] disallow a person to "enchant shield" a wepon by accident.
+Kar      (Aug  1) [ 3499] because if they do it, they can't enchant weapon it.
+Kar      (Aug  1) [  301] on the bulletin boards, wrap the subject such that it'll appear only in that subject column, and not way over to the left.
+Kar      (Aug  1) [  301] brighten up the bulletin board with a little colour here and there.
+Kar      (Aug  1) [ 5924] to fix spamstabbing, make all people who have been attacked or are hunting "alert".
+Kar      (Aug  1) [ 3414] a creature that is hunting should not necessarily be made visible if it was invisible (hiding) before.
+Kar      (Aug  3) [ 3772] if player killing isn't allowed, don't allow people to hurt oneanother with kicks/bashes/backstabs etc..
+Kar      (Aug  3) [ 3999] allow "cls" in sleep.
+Novo     (Aug  3) [ 1258] 2 more commands... objtochar and objfromchar to give/take objs to/from players with no
+Novo     (Aug  3) [ 1258] message, and no regard to curse, etc
+Vorik    (Aug  7) [ 3997] for the message of the day, say what the current date is as well.
+Vorik    (Aug  8) [14546] have actual artifacts which are unique.
+Vorik    (Aug  8) [ 3734] give priests the spell bless!
+Vorik    (Aug  9) [ 5983] the messages displayed in battle like "blabla mauls you with his pound" should be based on the %age total HPs you've lost, not the amount of damage they've done.  A 40 point hit may mean nothing to one person, and a severe blow to another.
+Bugglewump (Aug  9) [ 6108] Maybe it could be possible for enchanters to scribe scrolls or brew potions?
+Vorik    (Aug 10) [  399] add in a little file for information about each of the top ranking characters on the plaque.  like a "look quaarg" or "help quaarg" which gives a little history or whathaveyou.
+Vorik    (Aug 10) [ 3787] add in a complete removal command to remove any one person's ideas, typos, bugs and messages (on boards or in the mailbox).  A great way to laugh off a morons attempts to disrupt the mud.
+Kar      (Aug 14) [ 3081] add a deaf mode to a specific person so that all chat/talk/shout/say/emote are ignored.
+Kar      (Aug 14) [ 3081] be able to use "summon" to summon some lesser creatures too. (makes them aggressive)
+Kar      (Aug 14) [ 3081] add an "unconsent" to remove the consent for any one person.
+Kar      (Aug 14) [ 3081] don't allow magicstabbing - make invisible things become "vis" at the start of casting.  After all,;they are mumbling magical words and whatnot, which makes their position known.  In the same;strain, perhaps some aggressive spells to some creatures should make the creature attack at the;beginning of casting if it knows it's an aggressive spell (like a mage / priest).
+Kar      (Aug 14) [ 3081] make lesser creation spells for weapons for wizards for their off hand?
+Kar      (Aug 14) [ 3081] if I have 3 longswords, 2 of one kind, and 1 of another.. and I "sell 2 longsword", it might sell
+Kar      (Aug 14) [ 3081] if I have 3 longswords, 2 of one kind, and 1 of another.. and I -- sell 2 longsword --, it might sell
+Kar      (Aug 14) [ 3081] doh!
+Kar      (Aug 14) [ 3081] if I have three items: 2 deadly drow longswords and one venemous drow longsword, and I do a sell 2 longsword, it can sometimes sell one of each type, and not the first two (the deadly) longswords shown in my inventory.  (sorry about the last two attempts at this idea, something wierd happened.. hrm)
+Kar      (Aug 14) [ 3081] allow skill specialization as well?
+Kar      (Aug 14) [ 3081] be able to remove the burning blade (or others like it), to dispell it.
+Kar      (Aug 14) [ 3081] add in a little notice in the "who" list to say of a persons specialization?
+Kar      (Aug 14) [ 3081] add in a wimp mode that flees as per normal until successful at that one point, then dukes it
+Kar      (Aug 14) [ 3081] add in a wimp mode that flees as per normal until successful at that one point, then dukes it out until a secondary wimp number.  Sometimes I'd want to wimp out from one enemy, but not wimp out after that point to avoid fleeing back into the room I was in originally.
+Kar      (Aug 14) [ 3081] remove the ability to flee multiple times in quick succession.  This saves lives in the sense that sometimes I try to flee manually, and my autoflee kicks in before my manual flee does, and then I end up fleeing back into the room I autofled from, which kills me.
+Kar      (Aug 14) [ 3081] be able to deposit into another person's account and/or attach money to mail for a person.
+Kar      (Aug 14) [ 3081] make a spell to rouse unconscious people?
+Kar      (Aug 14) [ 3081] if a person has to consent to allow their summoning, should not they have to consent to be used as a Dimension Door target?
+Kar      (Aug 14) [ 3081] make occaisional room saves for places like the donations well (garden of restoration).  People have a fear of donating because of the crashes wiping out the well.  Perhaps make all healing areas like that?  -- (Sorry if I've mentioned this before already.. I might have.)
+Karkazz  (Aug 14) [ 3534] Not that I'd like to see any, but if there are places where the healing rate is doubled, shouldn't there also be places where it is halved?
+Vorik    (Aug 14) [10271] have the flameblade illuminate
+Sibbie   (Aug 14) [ 3775] rogue type classes get exp for pick lock and steal..and rogue stuff...because they arn't good solo fighters..but always picking locks for peole..
+Vorik    (Aug 14) [ 5189] don't always repop after a crash.
+Voril    (Aug 14) [ 3081] add in some common names to each of the race descriptions.  Give some height/weight averages too.
+Karkazz  (Aug 14) [ 3081] Would like to see more evil races.  Berhaps an undead race (zombie?) or demon, 
+Karkazz  (Aug 14) [ 3081] would like to see a "ghost" or "shade" race--innate wraithform, but unable to wear armor (unless armor is likewise wraithform)
+Karkazz  (Aug 15) [ 3686] "word of recall" scrolls.  Even hideously expensive ones.
+Karkazz  (Aug 15) [ 3002] Perhaps a prog could be added to wandering merchants so if the see "R.I.P
+Karkazz  (Aug 15) [ 3002] they will flee.  (punch delivers a R.I.P. message
+Zlark    (Aug 15) [ 3151] be able to ungroup people without their needing to be there.
+Drunsul  (Aug 15) [ 3084] guilds are good
+Zlark    (Aug 16) [ 3079] autoloot should also let you get everything when your elemental kills.
+Zlark    (Aug 16) [10271] be able to dismiss an elemental.
+Zlark    (Aug 16) [ 5191] let conjurors summon strange and wonderful creatures with a higher level conjuring spell.  Make creatures like angels demons and devils based on their alignment. (good/neu/evil)
+Zlark    (Aug 16) [ 5191] allow people to speciailize in a specific type of creature/elemental to conjure to give them a greater chance of summoning that one, or perhaps give them a different spell to only conjure that one.
+Zlark    (Aug 17) [10287] have elementals report when enchantments have worn off.
+Bugglewump (Aug 17) [ 5707] At least one more conjuring spell, possibly demon summoning?
+Bugglewump (Aug 17) [ 5700] also, perhaps "conjure para-elemental" (lava, smoke, steam, rain, mud, dust)
+Zlark    (Aug 17) [ 3046] I don't believe an elemental should be allowed to wear arms or armor.
+Zlark    (Aug 17) [ 3770] allow an elemental to do things to your group, like "rep group"
+Bugglewump (Aug 17) [ 3089] Enchantment spell: Sticky fingers: totally prevents fumbles & disarms while spell is active.
+Zlark    (Aug 17) [ 3151] be able to cast nonagressive spells in a !magic area.
+Bugglewump (Aug 18) [ 3081] social: beckon: $n beckons to you follow $s
+Bugglewump (Aug 18) [ 3081] social: Collapse: $n collapses in a boneless heap. (force $n to sit?)
+Graag    (Aug 19) [ 3118] carapack
+Fulgrim  (Aug 21) [ 9816] carapace
+Zlark    (Aug 22) [14552] have spells cast on onesself not say "okay", and instead give the appropriate description.
+Zlark    (Aug 22) [14552] have faerie fire be viewable just like a flameshield is (his body is lit by a blueish light) or something..
+Fulgrim  (Aug 23) [20588] elder
+Fulgrim  (Aug 23) [ 3048] dagger
+Zlark    (Aug 24) [ 5115] as a fighter type, is it not possible to give monks the skill "rescue" ?
+Thudnuffle (Aug 25) [ 5953] Would it be possible to make it so that mobs who cannot see invis are unable to switch to an invis character?
+Karkazz  (Aug 27) [ 3005] Perhaps even knocked-out characters should wake up, if they are attacked.
+Zlark    (Aug 27) [ 3042] give a little more warning before knocking a person out with a guard.
+Sibbie   (Aug 28) [ 3011] Assassins should have double backstab.:)
+Zlark    (Aug 29) [ 3691] add a spell which gives the person (or enemy - aggressive unless consented) a magical aura semi-displaying their mana total.
+Zlark    (Aug 29) [20626] when a new monster walks into a room, make it on the bottom of the list such that people casting aggressive spells who are not in combat will not end up casting in on the new person..
+Zlark    (Aug 29) [20626] sorry if that was a duplicate idea.  =)
+Zlark    (Aug 29) [20654] give chanellers the ability/spell to "channel" their mana to others or if they're specialized, act as catalysts to improve others spells if they're both speced in the same field etc..
+Zlark    (Aug 29) [ 3081] a nasty spell "deaden land" which reduces the healing rate in an area.  Is considered an area aggressive spell for anything in there though.
+Zlark    (Aug 30) [ 3081] when an enemy switches to a new target, say who it switches _to_.
+Zlark    (Aug 30) [ 3077] elementals, when attacked, should roundhouse/kick/etc..
+Elrich   (Aug 31) [ 3081] it would be nice if, when elementals burned out, they would not take our material objects with them...ie daggers or torches...it would make sense that these things would then fall to the ground
+Novo     (Sep  4) [ 1258] modify last to take an ip, and scan pfiles for people logging in with that ip
+Novo     (Sep  4) [ 1258] like last *.aol.com
+Dorga    (Sep  4) [ 1297] and spawn that bad boy as a second child process!
+Zlark    (Sep  4) [ 3081] add a function to determine how much vitality a person has.. to see how exausted they look.
+Eerzal   (Sep  6) [ 3020] for vamp: have it give no hps till the mob DIES... then give like 1/3 of the mobs hps to the killer or something
+Zlark    (Sep  8) [ 4074] tell the group when new people join it.
+Dorga    (Sep  9) [ 1297] show zone should show ZoneFlags: A B etc
+Zlark    (Sep 10) [ 3052] during a KO, regeneration should be minimal.
+Dorga    (Sep 11) [ 1205] Created: [Thu Jul 23], Last Logon: [Fri Sep 11] - Change to MM/DD/YYYY format (Stat)
+Jilael   (Sep 12) [ 3000] the elites dont *have* to spit, I'm sure of it, better emot here
+Zlark    (Sep 16) [10206] if I fly, make a "diag me" tell me so.
+Zlark    (Sep 18) [ 3151] add a collection box at the cleric's guild.  =)
+Zlark    (Sep 18) [ 3081] have citizens and whatnot visit the garden of healing if they're hurt.  =)
+Zlark    (Sep 19) [14577] be able to have area effect spells only affect a certain "race".. like "cast 'earthquake' squeaker"
+Zlark    (Sep 20) [ 3149] add a speailization in "quick chant" ?
+Breena   (Sep 20) [ 1295] get a fucking clue zlark
+Gragz    (Sep 20) [20654] how about a helper channel with a flag by names of anyone over 40 that wishes to be flaged as a helper?
+Zlark    (Sep 20) [20646] format the "group" list to deal with people with 4 digit HPs
+Breena   (Sep 21) [ 1295] log petitions to a file somewhere
+Zlark    (Sep 22) [ 3081] have spellcasting be heard from the nearby rooms?  Perhaps just certain aggressive one's?
+Nalet    (Sep 22) [ 3816] when casting an offensive spell in battle.....such as "poison"....during battle if you do cast 'poison' well...it poisons yourself......if its a bug or idea..i dont know :P
+Breena   (Sep 22) [ 1295] add paging into object extra descriptions:) for Neera's map :
+Dorga    (Sep 23) [ 1297] force casters to have free hands to cast.
+Nudd     (Sep 23) [ 1242] server side gags.
+Novo     (Sep 23) [ 1258] client side jokes
+Valkil   (Sep 24) [ 3048] g = get
+Nudd     (Sep 25) [ 1242] short stat (sc <playername>, att <playername>)
+Zlark    (Sep 25) [ 3081] make all detection spells divination not enchantment.
+Zlark    (Sep 27) [ 3007] make a diseased person look diseased
+Zlark    (Sep 27) [ 5183] spell idea -- hammerhand, gives +dam but wears off with use.. like a reverse stoneskin, the more dam it inflicts the less time it'll last.  Stats with like +5dam and drop to nada in time.
+Zlark    (Sep 27) [ 3081] bandage should take longer to attempt.. successful or not..
+Kalzan   (Sep 29) [ 3197] be able to see hit/dam like ac
+Zlark    (Sep 29) [ 3081] have necro's 
+Zlark    (Sep 29) [ 3081] have necro's "raise" followers from the bodies of the dead they slay.  =P
+Dorga    (Oct  1) [ 1205] magic lock doors magic lock/unlock spell.. interesting idea, from Ternak..
+Zlark    (Oct  3) [ 3326] give water elementals 'water walk'.
+Chadra   (Oct  3) [ 3809] list
+Zlark    (Oct  4) [ 3081] if there are two aggressive mobs in a room, have them both attack, not just one, and then later the other.. such that they both become hunters, for example.
+Zlark    (Oct  4) [ 3081] allow the stacking of aliases, as with "sleep;exp" where "exp" is another alias.
+Jithrae  (Oct  6) [ 1205] ought toi be able to use socials on items 
+Jithrae  (Oct  6) [ 1205] newbies should be mountable and charmable ;)
+Palance  (Oct  6) [ 3081] make the map into 2 pieces... north weirvane and south weirvane.
+Allanon  (Oct 10) [ 3814] Abbreviations when wearing things (such as wear back to wear backpack)?
+Mayelyn  (Oct 10) [ 3073] Social - Smirk/smirks?
+Allanon  (Oct 11) [ 3411] Abbreviations for mobs and other stuff... abbv's are very nice ;)
+Breena   (Oct 13) [ 1297] make force all builder level
+Vandia   (Oct 13) [14552] wow
+Sibbie   (Oct 19) [ 3081] should have assassin skill shadow..where assassin could follow a char and that char not know.

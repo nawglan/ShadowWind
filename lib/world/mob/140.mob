@@ -1,0 +1,247 @@
+#14000
+troll swamp swamptroll~
+the large troll~
+A large slime covered troll.
+~
+This large beast is covered in green goo, it has a stench that compairs
+to nothing else in the realm, obviousley a troll.
+~
+cdfglnoprA dfgkn -800 X 0 
+30 9 -5 15d15+300
+0 80000
+8 8 2 3 2 3
+T 50 7d4+2 7
+Str: 100
+Dex: 75
+Agi: 75
+>rand_prog            15~
+if isgood($n)
+  disarm $n
+    get all
+      wield mace
+      wield sword
+      wield longsword
+      wield beater
+ endif
+else
+ kill $r
+endif
+~
+|
+#14001
+troll swamp swamptroll twoheaded two-headed two headed~
+the large two-headed troll~
+A large slime covered two-headed troll.
+~
+This large beast is covered in green goo, it has a stench that compairs
+to nothing else in the realm, obviousley a troll with two salivating 
+heads.
+~
+cdfglnoprA dfgkn -850 X 0 
+40 5 -10 20d20+400
+0 150000
+8 8 1 3 2 3
+T 50 9d4+4 7
+Str: 100
+Dex: 90
+Agi: 90
+>rand_prog            15~
+if isgood($n)
+  disarm $n
+    get all
+      wield mace
+      wield sword
+      wield longsword
+      wield beater
+ endif
+else
+ kill $r
+endif
+~
+|
+#14002
+alligator large~
+the large alligator~
+A large alligator prowls along.
+~
+This massive beast almost looks like a tree floating in the muck, 
+covered with a greenish gooie muck.
+~
+cdefgnopr fgkn -400 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 0 4 14 2
+T 100 8d6+2 22
+#14003
+beaver~
+the beaver~
+A small beaver scurries along.
+~
+This little brown creature swims along gathering wood for its home,
+it is one of the only things around not covered with the greenish 
+goo that so covers this land.
+~
+cdfgn gk 0 X 0 
+10 15 5 5d5+100
+0 5000
+8 8 0 4 14 2
+T 100 2d4+2 22
+#14004
+snake swamp~
+the swamp snake~
+A small swamp snake slithers along the top of the muck.
+~
+This little green snake looks harmless enough, but those hallow black
+eyes may hold a hidden truth about the evils of this place.
+~
+cdfgn gk 0 X 0 
+10 15 5 5d5+100
+0 5000
+8 8 0 4 14 1
+T 100 2d4+2 22
+>fight_prog            30~
+if ispc ($n)
+ mpcast 'poison' $n
+ mpcast 'energy drain' $n
+ mpechoat $n OUCH! You've been bit, poison runs through your body!
+endif
+~
+|
+#14005
+sasquatch~
+{Dthe sasquatch{x~
+{DThe sasquatch is here forraging through the muck.{x
+~
+This huge beast is covered with bushy goo covered fur, sticky and smelly.
+~
+cdgnoprA ks 0 X 0 
+57 0 -10 29d29+9650
+0 8000000
+8 8 0 3 0 4
+T 33 6d6+21 8
+#14006
+minotaur~
+the minotaur~
+The minotaur is here watching the path.
+~
+This huge beast is ready for war, watching every move you make, waiting
+hopeing you will attack.
+~
+abcdlnopryA dfks 0 X 0 
+54 1 -10 27d27+4540
+0 4800000
+8 8 1 3 12 4
+T 100 20d6+42 8
+A 6 6 $n says, 'Pay you fool!'
+A 6 6 $n says, 'I should use you for my dinner this day!'
+A 6 6 $n says, 'Pay the toll now or be gone!'
+A 6 6 To pass you must pay the toll of 5 platinum coins!
+E 16 30 14005 1
+>bribe_prog      5000~
+mpdelay 15
+say Your passing is granted $n.
+mpdelay 5
+mpechoat $n You pass the guardian leaving east.
+mpechoaround $n $n is allowed safe passage.
+mpechoaround $n $n leaves east.
+mptransfer $n 14095
+mpat $n mpechoaround $n $n enters from the east.
+mpforce $n look
+~
+|
+#14007
+lizardman~
+the lizardman~
+The lizardman is here watching the path.
+~
+This huge beast is ready for war, watching every move you make, waiting
+hopeing you will attack.
+~
+abcdlnopryA dfks 0 X 0 
+54 1 -10 27d27+4540
+0 4800000
+8 8 1 3 0 4
+T 100 20d6+42 8
+A 6 6 $n says, 'Pay you fool!'
+A 6 6 $n says, 'I should use you for my dinner this day!'
+A 6 6 $n says, 'Pay the toll now or be gone!'
+A 6 6 To pass you must pay the toll of 5 platinum coins!
+E 16 30 14006 1
+>bribe_prog       5000~
+mpdelay 15
+say You may pass $n.
+mpdelay 5
+mpechoat $n You pass the lizardman leaving south.
+mpechoaround $n $n is allowed passage.
+mpechoaround $n $n leaves south.
+mptransfer $n 14071
+mpat $n mpechoaround $n $n enters from the north.
+mpforce $n look
+~
+|
+#14008
+troll swamp swamptroll~
+the large troll~
+A large slime covered troll.
+~
+This large beast is covered in green goo, it has a stench that compairs
+to nothing else in the realm, obviousley a troll.
+~
+cdfglnoprxA dfgkn -800 X 0 
+30 9 -5 15d15+300
+0 80000
+8 8 1 3 2 3
+T 33 2d6+8 7
+E 3 15 14002 1
+E 16 15 14000 1
+Str: 100
+Dex: 75
+Agi: 75
+>rand_prog            15~
+if isgood($n)
+  disarm $n
+    get all
+      wield mace
+      wield sword
+      wield longsword
+      wield beater
+ endif
+else
+ kill $r
+endif
+~
+|
+#14009
+troll swamp swamptroll twoheaded two-headed two headed~
+the large two-headed troll~
+A large slime covered two-headed troll.
+~
+This large beast is covered in green goo, it has a stench that compairs
+to nothing else in the realm, obviousley a troll with two salivating 
+heads.
+~
+cdfglnoprxA dfgkn -850 X 0 
+40 5 -10 20d20+400
+0 150000
+8 8 1 3 2 3
+T 33 3d6+8 7
+E 16 10 14004 1
+E 16 15 14003 1
+E 8 15 14001 1
+Str: 100
+Dex: 90
+Agi: 90
+>rand_prog            15~
+if isgood($n)
+  disarm $n
+    get all
+      wield mace
+      wield sword
+      wield longsword
+      wield beater
+ endif
+else
+ kill $r
+endif
+~
+|

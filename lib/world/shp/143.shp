@@ -1,0 +1,146 @@
+#14301~
+14301
+14304
+14306
+3020
+3021
+1.3
+0.4
+4
+5
+6
+7
+0
+%s Sorry, I don't have that weapon.~
+%s Sorry, you don't seem to have that...~
+%s I don't buy such an item, try some other shop.~
+%s Sorry, that's a too expensive weapon for me, try in Thewston.~
+%s Get some money if you wanna buy something...~
+%s Ok, I'll charge you %s{r for it.~
+%s Here you are, I'll give you %s{r for it.~
+2
+0
+14304
+2
+14311
+0
+28
+0
+0
+#14302~
+14302
+14303
+14307
+14308
+3042
+1.3
+0.5
+9
+11
+0
+0
+0
+%s Sorry, I don't have that armour.~
+%s Sorry, you don't seem to have that.~
+%s I don't buy such a item, try some other shop.~
+%s Sorry, that's a too expensive armour for me, try in Thewston.~
+%s Get some money if you like to buy something...~
+%s Ok, that'll be %s{r, please.~
+%s Here you are, I'll give you %s{r for it.~
+0
+0
+14305
+2
+14310
+0
+28
+0
+0
+#14303~
+3050
+3051
+14310
+14309
+14311
+1.05
+0.15
+2
+3
+4
+10
+0
+%s To bad, I don't seem to have that item.~
+%s Sorry, I don't buy something you don't have.~
+%s Sorry that's not my part of business...~
+%s Sorry, that's a too expensive item for me, try in Thewston.~
+%s Get lost punk! You don't have that much money.~
+%s That'll be %s{r!~
+%s I'll give you about %s{r for it.~
+0
+0
+14306
+2
+14314
+0
+28
+0
+0
+#14304~
+14313
+14314
+14315
+14316
+14317
+1.5
+0.4
+1
+8
+12
+15
+22
+%s Sorry, I'm unfortunatly out of that for the moment.~
+%s You don't seem to be a honest man, maybe I should call the guards?~
+%s I don't trade in that kind of objects.~
+%s Sorry, I'm out of cash, try in Thewston, or give it to me. :-)~
+%s You seem to have been robbed if you thought you had that kind of money? ~
+%s That'll be %s{r, please...~
+%s I'll give you about %s{r for it, here you go...~
+0
+0
+14307
+2
+14313
+0
+28
+0
+0
+#14305~
+-1
+3102
+14318
+14319
+14320
+1.4
+0.6
+17
+19
+0
+0
+0
+%s It's very noisy in here, what did you say you wanted to buy?~
+%s You don't seem to be a honest man, maybe I should call the guards?~
+%s I don't trade in that kind of objects.~
+%s Sorry, I'm out of cash, try in Thewston, or give it to me for free...:-)~
+%s Are you drunk or what ??? - NO CREDIT!~
+%s That'll be - say %s{r.~
+%s I'll give you about %s{r for it, here you go...~
+0
+0
+14308
+2
+14316
+0
+28
+0
+0
+$~

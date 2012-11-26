@@ -1,0 +1,72 @@
+CircleMUD v3.0 Shop File~
+#5900~
+5910
+5911
+5912
+5913
+5914
+5915
+5916
+5917
+5918
+-1
+1.50
+0.60
+1
+2
+3
+4
+5
+8
+9
+10
+11
+12
+13
+15
+17
+19
+21
+22
+-1
+%s I don't think I have that one me matie..~
+%s I think ye eyes be deceiving you, I canne see that on you.~
+%s I don't be buying such items.~
+%s I don't think me coffers will stretch to that I'm afraid.~
+%s Ye may be a good and honest person, but ye need gold to trade here!~
+%s Aye, good purchase, I'll only charge you %s{r for that!~
+%s I be feeling in a good mood, I'll give %s{r for that.~
+2
+0
+5901
+0
+5916
+-1
+0
+28
+0
+0
+#5901~
+5927
+-1
+1.5
+0.6
+-1
+%s Sorry, don't have a ticket to there sorry~
+%s You should never see this message. Bug report if you do.~
+%s Sorry, I don't buy that.~
+%s You should never see this, bug report if you do.~
+%s Sorry, you don't seem to be able to afford that.~
+%s That will be %s{r coins please, enjoy your trip!~
+%s You should never see this %s{r, bug report if you do.~
+2
+0
+5900
+0
+5904
+-1
+6
+20
+0
+0
+$~

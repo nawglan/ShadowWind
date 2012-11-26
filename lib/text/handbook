@@ -1,0 +1,158 @@
+
+{CThe purpose of this handbook is to assist immortals in becoming
+an asset to the mud.  In it you will find guidelines for conduct
+expected of immortals and some information on the new found commands
+available to you as an immortal.  These commands are privileged and
+their abuse can come to only one end.  Your deletion as an immortal.{x
+
+{CThere is only {WONE {Cimmortal level at Shadowwind, that is level 51
+once that level is given, to then have the ability to do anything you
+first need flags.  Flags come in a simple order of:{x
+
+{WIMMORT  {C- Gives you basic Immortal abilitiess.
+{WQUEST   {C- Allows you to help with quest and various other jobs.
+{WBUILDER {C- Allows you to build/fix areas while online.
+{WADMIN   {C- Gives you freedom, and you answer only to other Admin.
+
+{CEach of these flags has its own command set, following are the commands
+for each flag, and a brief description of what they command is.{x
+
+
+{WIMMORT Flag.
+
+{c[{WIM{c] {wat        {cPerforms command 'at' location specified.
+{c[{WIM{c] {wactd      {cListing of objects with specproc's
+{c[{WIM{c] {wdelay     {c??? {R Give me a DESCRIPTION!{x
+{c[{WIM{c] {wecho      {cEchos exact text in the room you are in.
+{c[{WIM{c] {wgoto      {cTakes you directly to a specific place, pc, or npc.
+{c[{WIM{c] {whandbook  {cThis text.
+{c[{WIM{c] {wholylight {cEnables you to see regardless of night and day.
+{c[{WIM{c] {wimotd     {cDisplays the Immortal Message of The Day.
+{c[{WIM{c] {winvis     {cUsers to set Immortal invisibility.
+{c[{WIM{c] {wlast      {cDisplays all PC/Immo's connected since last bootup.
+{c[{WIM{c] {wmobdeaf   {cTurns mob's shouting off for your console.
+{c[{WIM{c] {wmobedit   {cTemporary edit of mobiles. Only lasts until next reboot.
+{c[{WIM{c] {wnamecolor {cAllows you to change your name color in who.
+{c[{WIM{c] {wnohassle  {cPrevents aggressive mobs from attacking you.
+{c[{WIM{c] {wnoiquest  {cToggles the Immortal quest channel on and off.
+{c[{WIM{c] {wnowiz     {cTurns off WIZ channel.
+{c[{WIM{c] {wobjedit   {cTemporary edit of objects. Only lasts until next reboot.
+{c[{WIM{c] {wpage      {cUsed to page another Immortal.
+{c[{WIM{c] {wpardon    {cRemoves THIEF / KILLER flag from player.
+{c[{WIM{c] {wpoofin    {cString displayed in room when you arrive via 'goto'.
+{c[{WIM{c] {wpoofout   {cString displayed in room when leaving via 'goto'.
+{c[{WIM{c] {wqm        {cShows avtive Quest Masters.
+{c[{WIM{c] {wroomflags {cToggles the showing of active roomflags in room description.
+{c[{WIM{c] {wroomedit  {cTemporary edit of room. Only lasts until next reboot.
+{c[{WIM{c] {wsend      {cSends exact text to a specific player.
+{c[{WIM{c] {wshow      {cType 'show' alone to get a list of uses.
+{c[{WIM{c] {wstat      {cShows stats on an active object, player or mob.
+{c[{WIM{c] {wstrings   {cDisplays what all your strings are set as.
+{c[{WIM{c] {wsyslog    {cToggles the System logs on and off. Refer to help for details.
+{c[{WIM{c] {wteleport  {cTeleports PC or NPC to any location specified. 
+{c[{WIM{c] {wusers     {cShows users ip addresses etc.
+{c[{WIM{c] {wwhoinfo   {cInformation to be viewed with whois
+{c[{WIM{c] {wwhoset    {cUsed to change 'whoset' string.
+{c[{WIM{c] {wwizhelp   {cDisplays priviliged commands available to you.
+
+
+{WQUEST Flag.
+
+{c[{WQU{c] {wbootmaze  {cReboot the maze in specific zone.
+{c[{WQU{c] {wclone     {cUsed to clone an object or mob.
+{c[{WQU{c] {wforce     {cUsed to force the action of a PC or NPC to do something.
+{c[{WQU{c] {wgecho     {cEchos exact text globally. 
+{c[{WQU{c] {wiquest    {cUsed by Immos during quests to avoid spamming WIZ channel. 
+{c[{WQU{c] {wload      {cUsed to load items/mobs into the game.
+{c[{WQU{c] {wlogcheck  {cShows the logs of the player for up to 30 days.
+{c[{WQU{c] {wmute      {cUsed to mute a player, making them unable to gossip etc.
+{c[{WQU{c] {wnoemote   {cToggles a players ability to use the emote command.
+{c[{WQU{c] {wnosocial  {cToggles a players ability to use any socials.
+{c[{WQU{c] {wpurge     {cUsed to purge PC, NPC, room or other item.
+{c[{WQU{c] {wqecho     {cEchos exact text to everyone with their quest flag on.
+{c[{WQU{c] {wswitch    {cAllows you to switch into and take control of a mob.
+{c[{WQU{c] {wset       {cSet any togable field.
+{c[{WQU{c] {wtransfer  {cUsed to transfer a PC, NPC or group to your location.
+{c[{WQU{c] {wunaffect  {cRemoves affection flags for PC and NPC's. 
+{c[{WQU{c] {wvlist     {cGives you a list of objects, mobs or rooms in a zone.
+{c[{WQU{c] {wvnum      {cShows vnums of objects or mobs with related keywords.
+{c[{WQU{c] {wvstat     {cShows stats on ANY object, PC or NPC.
+{c[{WQU{c] {wzecho     {cEchos exact text to the entire zone you are in. 
+{c[{WQU{c] {wzreset    {cWill reset the specified zone.
+
+
+{WBUILDER Flag.
+
+{c[{WBU{c] {wauclist   {cWill show all items in the auction inventory.
+{c[{WBU{c] {wcopyto    {cCopy's the room description to another room.
+{c[{WBU{c] {wdc        {cDisconnects the specified port.
+{c[{WBU{c] {wdig       {Digs a direction to make a new room.
+{c[{WBU{c] {wfreeze    {cWill freeze the player named.
+{c[{WBU{c] {wmedit     {cOnline Mob editor - Saves to file
+{c[{WBU{c] {woedit     {cOnline Object editor - Saves to file
+{c[{WBU{c] {wredit     {cOnline Room editor - Saves to file
+{c[{WBU{c] {wreload    {cWill reload specified text file.
+{c[{WBU{c] {wsedit     {cOnline Shop editor - Saves to file
+{c[{WBU{c] {wshutdow   {cFake Shutdown command - Prevents accidents.
+{c[{WBU{c] {wshutdown  {cShutdown - Reboot/Die/Pause
+{c[{WBU{c] {wtedit     {cOnline Text editor - Saves to file
+{c[{WBU{c] {wthaw      {cWill thaw a frozen player.
+{c[{WBU{c] {wzedit     {cOnline Zone editor - Saves to file
+
+
+{WADMIN Flag.
+
+{c[{WAD{c] {wadvance   {cWill advance a player not exceding your own.
+{c[{WAD{c] {wanimate   {cAnimates rented charachter.
+{c[{WAD{c] {waucecho   {cWorld echo into the auction channel.
+{c[{WAD{c] {wban       {cUsed to ban a specific IP address.
+{c[{WAD{c] {wcitizen   {cUsed to change a players citizen status.
+{c[{WAD{c] {wconfig    {cDisplay current configuration and set options
+{c[{WAD{c] {wfrent     {cForces an animated player to rent.
+{c[{WAD{c] {whcontrol  {cHouse control.
+{c[{WAD{c] {wident     {cWill enable/disable ident notification
+{c[{WAD{c] {wnuke      {cWill delete all files of a non-connected pc
+{c[{WAD{c] {wobjtochar {cWill put an object into a characters inventory.
+{c[{WAD{c] {woutlaw    {cWill prevent player from immorting, killing or stealing.
+{c[{WAD{c] {wowners    {cUsed to check ownership of items.
+{c[{WAD{c] {wprent     {cPurges a players rentfile.
+{c[{WAD{c] {wptext     {cPurges a players text file.
+{c[{WAD{c] {wqicinfo   {cShows a list of currently defined QIC items.
+{c[{WAD{c] {wqicsave   {cForces save and reload of QIC database.
+{c[{WAD{c] {wqload     {cUsed to load QIC items.
+{c[{WAD{c] {wreroll    {cUsed to re-roll the stats of a charachter.
+{c[{WAD{c] {wrestore   {cRestores full health, mana, and hit points.
+{c[{WAD{c] {wrload     {cLoads object or mobile by real number.
+{c[{WAD{c] {wsetqic    {cSets the number of a QIC item allowed in game.
+{c[{WAD{c] {wskillset  {cUsed to set a specific skill of a player.
+{c[{WAD{c] {wslowns    {cUsed to turn off DNS verification.
+{c[{WAD{c] {wsnoop     {cUsed to snoop a players session to see what they are doing.
+{c[{WAD{c] {wtodo      {cAdd to the To-Be-Done Textfile
+{c[{WAD{c] {wunban     {cRemoves a siteban from a specific IP address.
+{c[{WAD{c] {wwizlock   {cLocks the game to specified levels only.
+{c[{WAD{c] {wwizupdate {cUpdates the Wiz List and Immo List -Innactive-
+{c[{WAD{c] {wxname     {cAdds entered name into refusename file.
+
+
+{CNow here are some guidelines to help your on your journey as an Immortal.
+
+
+{CAs an Immortal here at ShadowWind you are expected to act in accordance
+with the guidelines set forth by the administration.  Disciplinary action
+is not something that should have to be exercised with Immortals.  
+Therefore, if it is needed, rest assured that it will be swift and harsh.{x
+
+
+{CThe administration itself consists of those listed on the wizlist.{x
+
+{CIn the event of ANY problem that may occur, bug, error, whatever.
+The highest level Immortal online at the time has the final say in
+how it is handled.  They are expected to find a fix for the problem
+within the scope of their power.  This decision, can and may, be 
+changed by another higher level Immortal at a later time.  The main
+idea here is to keep the MUD running.  There will be no arguments
+with higher level Immortals tolerated.  They are a higher level for
+a reason and what they say goes.{x
+
+
+{DMore to follow{c...{x

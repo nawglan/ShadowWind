@@ -1,0 +1,427 @@
+#5700
+falchion sword~
+a falchion~
+A strange looking sword lies discarded here.~
+~
+5 g an 0 
+3 2 6 3 0
+5 900 300
+E
+falchion sword~
+It is a short sword of the hacking variety, it seems a bit worn.
+~
+A
+18 1
+#5701
+chalice~
+a chalice~
+A blood-stained chalice has been set down here.~
+~
+17 0 ao 0 
+6 6 13 5 0
+11 300 100
+E
+chalice~
+What a perfect gift for mother!
+~
+#5702
+coffer copper ornate~
+the copper coffer~
+An ornate copper coffer is set against the far wall.~
+~
+15 0 0 0 
+200 13 0 0 0
+0 0 0
+E
+coffer copper ornate~
+This small coffer looks like it could contain all of your belongings,
+which isn't really saying a lot.
+~
+#5703
+tonic root comfrey~
+a tonic of comfrey root~
+A tonic of comfrey root has been discarded here.~
+~
+10 g ao 0 
+50 121 121 58 0
+1 600 200
+E
+tonic root comfrey~
+What doesn't kill you makes you stronger, right?
+~
+P
+strength
+P
+strength
+P
+poison
+#5704
+elixir tongue adder~
+an elixir of Adder's Tongue~
+An elixir of Adder's Tongue lies here.~
+~
+10 g ao 0 
+50 194 195 0 0
+1 600 200
+E
+elixir tongue adder~
+This elixer may be good for you, but it sure looks disgusting.
+Adder's tongue indeed.
+~
+P
+sense life
+P
+detect poison
+#5705
+key skeleton~
+a skeleton key~
+An old skeleton key lies on the floor.~
+~
+18 0 ao 0 
+5705 0 0 0 0
+2 500 20
+E
+key skeleton~
+It is made of bone.  What did you expect, in this place of death?
+~
+#5706
+staff wooden charred~
+{wa {Dcharred {wwooden staff{x~
+A charcoal black staff rests on the ground.~
+~
+5 0 an 0 
+4 2 7 7 0
+5 1600 3000
+A
+18 1
+#5707
+blood pool~
+the pool~
+You seem to be standing in a pool of blood.~
+~
+17 0 0 0 
+15 15 13 5 0
+500 500 50
+E
+blood pool~
+Wow!  Perfect for the vampire in you!  I wonder if it is human or
+animal blood however...
+~
+#5708
+bloodstone~
+{rthe Bloodstone{x~
+A large, dull red stone awaits, invitingly to be picked up.~
+~
+3 bgj ao 0 
+50 3 3 135 0
+10 550 15000
+E
+bloodstone stone red~
+It glows malignantly with its own ruddy light.  You peer within
+the stone only to see the vague impression of some misshaped soul
+trapped within.
+~
+A
+19 -2
+P
+protection from good
+#5709
+obsidian dagger~
+{Dan obsidian dagger{x~
+A nasty looking dagger with a shiny black blade lies amid the dust.~
+~
+5 bgjp an 0 
+2 2 6 12 0
+3 2000 3500
+E
+obsidian dagger blade~
+This blade has a distinct aura of evil surrounding its fine blade.
+~
+A
+18 2
+A
+25 -10
+#5710
+bone shield carved~
+{Wa carved bone shield{x~
+A pale shield, covered in intricate carvings lies here.~
+~
+9 gmn aj l 
+8 0 0 0 0
+12 9000 3000
+E
+carving carvings~
+The carvings on this shield are incredibly detailed and would have taken 
+the artist many many days to complete. They tell the tale of the days when
+the dragon could take to the air and rule the skies.
+~
+A
+5 5
+#5711
+mace barbed adamantium~
+{Wa {Cbar{Wbe{Cd ad{Waman{Ctiu{Wm {Wmace{x~
+A large mace has been dropped in the dust.~
+~
+5 gj an 0 
+0 2 6 8 10
+14 12000 4000
+E
+mace fred skull~
+The stout leather-wrapped shaft is topped with the animated skull of Fred 
+himself.  Though the jawbone is missing, you can hear him scream obscenities
+even in the midst of a fray.  A vague light stirs within his eyesockets as
+he says, 'What are ye looking at, maggot breath!'
+~
+A
+19 3
+A
+6 -6
+#5712
+buckler arsenal~
+{Dan arsenal buckler{x~
+A spiked buckler with a circle of knives set in it, has been left here.~
+~
+15 0 aj l 
+3 0 -1 0 0
+7 2400 800
+E
+buckler arsenal~
+The buckler has a circle of throwing knives set around its center spike.
+~
+A
+17 -5
+A
+19 1
+#5713
+knife throwing~
+a throwing knife~
+A well balanced throwing knife lies on the ground.~
+~
+5 0 an 0 
+2 1 4 12 0
+1 10 1
+E
+knife throwing~
+This knife has been carefully crafted to provide maximum balance,
+so that it can be used for accurate throwing.
+~
+#5714
+pile debris~
+the pile~
+A pile of debris has been stacked on a small plateau, away from the acid.~
+~
+15 0 0 0 
+1000 0 -1 0 0
+0 0 0
+E
+pile debris~
+It contains all manner of rusty items and beaten equipment garnered by
+the fastidious denizens of this place.
+~
+#5715
+guisarme polearm~
+a guisarme~
+A long, sharp polearm has been left here.~
+~
+5 0 an 0 
+3 2 7 7 0
+16 1500 500
+E
+guisarme polearm~
+What more can be said?  It is a rather long weapon of destruction.
+~
+A
+18 -2
+A
+19 2
+#5716
+glove minstrels minstrel~
+a minstrel's glove~
+A single, white minstrel's glove has been discarded here.~
+~
+9 ag ah j 
+6 0 0 0 0
+8 4500 1000
+E
+glove minstrels minstrel harp pattern~
+The glove has a small needlework pattern in the back formed in the
+shape of a small harp.
+~
+A
+18 2
+#5717
+mail shabby~
+some shabby mail~
+A worn and shabby suit of ring mail has been cast away here.~
+~
+9 g ad f 
+9 0 0 0 0
+20 900 10000
+E
+mail shabby~
+It seems about ready to fall apart!
+~
+A
+26 3
+#5718
+key granite~
+a granite key~
+A key fashioned of stone has been left here.~
+~
+18 0 ao 0 
+5718 0 0 0 0
+2 1500 90
+E
+key granite~
+This key appears to have be crafted from solid granite.  You wonder what
+kind of tools could have been used to do such a thing.
+~
+#5719
+flesh embalmed~
+the embalmed flesh~
+A large pile of presumably human flesh has been embalmed and stored here.~
+~
+12 0 a 0 
+0 0 0 0 0
+100 600 200
+E
+flesh embalmed~
+Ugh.  You have never seen such sickly looking flesh before in your
+life.  And the smell of it!
+~
+#5720
+flail beater grave~
+{ya gra{Dve be{rater{x~
+A rusty grave beater flail has been dropped here.~
+~
+5 0 an 0 
+0 2 8 8 0
+12 1500 150
+E
+flail beater grave~
+This flail seems only to have been used to keep the dead in their place.
+~
+A
+19 1
+#5721
+dagger rusty~
+a rusty dagger~
+An old and rusty dagger has been left here.~
+~
+5 0 an 0 
+2 2 2 12 8
+1 2 2
+E
+dagger rusty~
+This dagger appears to be rather old and by the looks of it,
+has been left here to rust for quite some time.
+~
+#5722
+vial potion puce~
+a puce potion~
+A small vial has been forgotten here.~
+~
+10 g ao 0 
+25 157 0 0 0
+2 35 20
+E
+vial potion puce~
+The vial contains a disgusting looking liquid, which appears to
+be almost puce in colour.
+~
+P
+vitality
+#5723
+shield large shiny~
+a large, shiny shield~
+A glistening metal object is here, it appears to be a shield.~
+~
+9 g aj l 
+9 0 0 0 0
+1 1000 100
+E
+shield large shiny~
+This shield is very shiny, and appears to have been recently polished
+by something or someone, yet it also appears to be several decades old
+from the style is has been crafted in.
+~
+A
+1 -2
+A
+9 10
+#5724
+torch green~
+{ga green torch{x~
+{gAn odd torch glowing green has been left here.{x~
+~
+1 u ao 0 
+0 0 -1 0 0
+1 200 25
+E
+torch green~
+This torch is quite odd, since you have never seen a torch glow with
+an everlasting flame before, and a green flame no less...
+~
+#5725
+helm silver metal~
+{wa {Csilver {xhelm~
+A helm made of a silverish metal has been left here.~
+~
+9 0 aeo 0 
+0 0 0 0 0
+10 1000 250
+E
+engravings lines pattern~
+The lines appear to be a part of a pattern, but you cannot make out
+exactly what the pattern is.
+~
+E
+helm silver metal~
+This helm looks to be purely ornamental, and does not look like it
+would afford the wearer any protection whatsoever.  It is finely
+engraven with small wavy lines however.
+~
+#5726
+jacket rotted leather~
+a rotted leather jacket~
+An old, rotted leather jacket is decomposing on the ground here.~
+~
+9 0 ad f 
+-8 0 0 0 0
+3 0 0
+E
+jacket rotted leather~
+This jacket looks like it may have once been in decent condition,
+but is no longer in any condition to speak of.
+~
+#5727
+rod metal strange~
+a strange metal rod~
+A rather strange rod of a metallic material has been left here.~
+~
+13 0 ao 0 
+0 0 0 0 0
+15 7 2
+E
+rod metal strange~
+This strange metallic rod looks like it was once a wooden branch, so
+carefully crafted are the "knots", bends, and bumps along the shaft.
+You have no clue whatsoever of anything you could use it for, but you
+should hang onto it since there could always be some use beyond your
+imagination.
+~
+#5728
+anklet batwing~
+{Da batwing anklet{x~
+A small pile of black skin lies in a heap.~
+~
+11 gop as 0 
+0 0 0 0 24
+3 500 50
+A
+12 5
+A
+4 1
+A
+24 -2
+$~

@@ -1,0 +1,3637 @@
+* MUST BE FIRST
+-spell_begin-
+-spell_name- <NONE>
+
+* SKILLS ********************************************************
+*    ************************************************************
+**** THIEF SKILLS ***********************************************
+* apply poison
+-spell_begin-
+-spell_name- apply poison
+-cost_multiplier- 4
+-prime_stat- 3
+-second_stat- 2
+-difficulty- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* backstab
+-spell_begin-
+-spell_name- backstab
+-cost_multiplier- 6
+-prime_stat- 2
+-second_stat- 1
+-difficulty- 2
+-class_lvl_list- 0 11 6 0 0 0 0 0 0 0 0 0 0 11 0 0 16
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* hide
+-spell_begin-
+-spell_name- hide
+-cost_multiplier- 2
+-prime_stat- 2
+-difficulty- 2
+-class_lvl_list- 0 16 11 0 0 0 0 0 0 0 0 0 0 6 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* pick lock
+-spell_begin-
+-spell_name- pick lock
+-cost_multiplier- 6
+-prime_stat- 3
+-second_stat- 2
+-difficulty- 2
+-class_lvl_list- 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* sneak
+-spell_begin-
+-spell_name- sneak
+-cost_multiplier- 4
+-prime_stat- 6
+-difficulty- 2
+-class_lvl_list- 0 16 11 0 0 0 0 0 0 0 0 0 0 6 0 0 16
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* steal
+-spell_begin-
+-spell_name- steal
+-cost_multiplier- 6
+-prime_stat- 2
+-difficulty- 2
+-class_lvl_list- 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+*    ************************************************************
+**** WARRIOR SKILLS *********************************************
+* aggressive
+-spell_begin-
+-spell_name- aggressive
+-cost_multiplier- 3
+-prime_stat- 5
+-difficulty- 2
+-class_lvl_list- 6 0 0 0 0 0 0 0 0 0 0 6 0 0 0 11 11
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* bash
+-spell_begin-
+-spell_name- bash
+-cost_multiplier- 15
+-prime_stat- 1
+-difficulty- 1
+-class_lvl_list- 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 11
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* dodge
+-spell_begin-
+-spell_name- dodge
+-cost_multiplier- 4
+-prime_stat- 6
+-difficulty- 3
+-class_lvl_list- 0 11 11 0 0 0 0 0 0 0 0 6 0 11 0 16 16
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* disarm
+-spell_begin-
+-spell_name- disarm
+-cost_multiplier- 5
+-prime_stat- 2
+-difficulty- 2
+-class_lvl_list- 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* dual wield
+-spell_begin-
+-spell_name- dual wield
+-cost_multiplier- 6
+-prime_stat- 2
+-second_stat- 1
+-difficulty- 2
+-class_lvl_list- 16 16 16 0 0 0 0 0 0 0 0 0 0 11 0 11 11
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* kick
+-spell_begin-
+-spell_name- kick
+-cost_multiplier- 12
+-prime_stat- 2
+-second_stat- 1
+-class_lvl_list- 1 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* roundhouse
+-spell_begin-
+-spell_name- roundhouse
+-cost_multiplier- 6
+-prime_stat- 6
+-difficulty- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 16 0 0 0 0 16
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+
+* multi attack
+-spell_begin-
+-spell_name- multi attack
+-cost_multiplier- 12
+-prime_stat- 2
+-second_stat- 1
+-difficulty- 2
+-class_lvl_list- 11 21 21 0 0 0 0 0 0 0 0 11 0 16 0 21 16
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* rescue
+-spell_begin-
+-spell_name- rescue
+-cost_multiplier- 10
+-prime_stat- 2
+-second_stat- 1
+-difficulty- 1
+-class_lvl_list- 11 0 0 0 0 0 0 0 0 0 0 0 0 0 0 16 16
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* switch target
+-spell_begin-
+-spell_name- switch target
+-cost_multiplier- 8
+-prime_stat- 2
+-second_stat- 3
+-difficulty- 1
+-class_lvl_list- 21 0 0 0 0 0 0 0 0 0 0 0 0 0 0 21 21
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* unarmed combat
+-spell_begin-
+-spell_name- unarmed combat
+-cost_multiplier- 7
+-prime_stat- 1
+-difficulty- 1
+-class_lvl_list- 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* anatomy
+-spell_begin-
+-spell_name- anatomy
+-cost_multiplier- 12
+-prime_stat- 2
+-difficulty- 3
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 21 0 0 0 0 26
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+*    ************************************************************
+**** RANGER SKILLS **********************************************
+* scout
+-spell_begin-
+-spell_name- scout
+-cost_multiplier- 4
+-prime_stat- 3
+-difficulty- 1
+-class_lvl_list- 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* track
+-spell_begin-
+-spell_name- track
+-cost_multiplier- 5
+-prime_stat- 3
+-difficulty- 1
+-class_lvl_list- 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+*    ************************************************************
+**** GENERIC SKILLS *********************************************
+* 1h bludgeon
+-spell_begin-
+-spell_name- 1h bludgeon
+-cost_multiplier- 1
+-prime_stat- 1
+-difficulty- 2
+-class_lvl_list- 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* 1h slashing
+-spell_begin-
+-spell_name- 1h slashing
+-cost_multiplier- 1
+-prime_stat- 1
+-second_stat- 6
+-difficulty- 2
+-class_lvl_list- 1 1 1 0 0 0 0 0 0 0 0 1 0 1 1 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* 1h piercing
+-spell_begin-
+-spell_name- 1h piercing
+-cost_multiplier- 1
+-prime_stat- 1
+-second_stat- 2
+-difficulty- 2
+-class_lvl_list- 1 1 1 1 1 1 1 1 0 0 0 1 0 1 1 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* 1h miscellaneous
+-spell_begin-
+-spell_name- 1h miscellaneous
+-cost_multiplier- 1
+-prime_stat- 1
+-difficulty- 3
+-class_lvl_list- 1 1 1 0 0 0 0 0 0 0 0 1 0 1 0 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* 2h bludgeon
+-spell_begin-
+-spell_name- 2h bludgeon
+-cost_multiplier- 2
+-prime_stat- 1
+-difficulty- 2
+-class_lvl_list- 1 0 0 0 0 0 0 0 1 1 1 0 1 0 1 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* 2h slashing
+-spell_begin-
+-spell_name- 2h slashing
+-cost_multiplier- 2
+-prime_stat- 1
+-second_stat- 6
+-difficulty- 2
+-class_lvl_list- 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* 2h miscellaneous
+-spell_begin-
+-spell_name- 2h miscellaneous
+-cost_multiplier- 2
+-prime_stat- 1
+-difficulty- 3
+-class_lvl_list- 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* mount
+-spell_begin-
+-spell_name- mount
+-cost_multiplier- 3
+-prime_stat- 6
+-class_lvl_list- 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* Bandage
+-spell_begin-
+-spell_name- bandage
+-cost_multiplier- 2
+-prime_stat- 3
+-difficulty- 1
+-class_lvl_list- 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+*    ************************************************************
+**** MAGICAL REALMS *********************************************
+* meditate
+-spell_begin-
+-spell_name- meditate
+-cost_multiplier- 2
+-prime_stat- 3
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* quick chant
+-spell_begin-
+-spell_name- quick chant
+-cost_multiplier- 5
+-prime_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 16 16 16 16 16 16 16 16 0 16 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* general realm
+-spell_begin-
+-spell_name- general realm
+-cost_multiplier- 7
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* creation realm
+-spell_begin-
+-spell_name- creation realm
+-cost_multiplier- 6
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* divination realm
+-spell_begin-
+-spell_name- divination realm
+-cost_multiplier- 9
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* elemental realm
+-spell_begin-
+-spell_name- elemental realm
+-cost_multiplier- 13
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* enchantment realm
+-spell_begin-
+-spell_name- enchantment realm
+-cost_multiplier- 9
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* healing realm
+-spell_begin-
+-spell_name- healing realm
+-cost_multiplier- 9
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* protection realm
+-spell_begin-
+-spell_name- protection realm
+-cost_multiplier- 11
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* summoning realm
+-spell_begin-
+-spell_name- summoning realm
+-cost_multiplier- 11
+-prime_stat- 3
+-second_stat- 4
+-difficulty- 3
+-class_lvl_list- 0 0 0 1 1 1 1 1 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+*    ************************************************************
+
+*****************************************************************
+
+* SPELLS ********************************************************
+**** WIZARD SPELLS **********************************************
+* wizard war
+-spell_begin-
+-spell_name- wizard war
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-num_dice- 80
+-size_dice- 10
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 46 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* farsee
+-spell_begin-
+-spell_name- farsee
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-spell_plr_bit2- b
+-min_position- 8
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 16 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your eyes become as keen as an eagle's.
+-wear_off_msg- You feel your eyesight return to normal.
+
+* moonwell
+-spell_begin-
+-spell_name- moonwell
+-spell_type- char
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 6
+-min_position- 8
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-vnum_list- 1287
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* poison
+-spell_begin-
+-spell_name- poison
+-spell_type- char
+-spell_event- char
+-resist_type- 6
+-saving_throw- 4
+-spell_realm- 7
+-spell_plr_bit- l
+-min_position- 7
+-max_mana- 20
+-min_mana- 10
+-mana_chg- 2
+-class_lvl_list- 0 0 0 6 6 0 0 11 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel suddenly ill.
+-send_to_room- $n has been poisoned!
+-wear_off_msg- The burning in your veins eases.
+
+* nightvision
+-spell_begin-
+-spell_name- nightvision
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-spell_plr_bit- r
+-min_position- 8
+-max_mana- 50
+-min_mana- 25
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 21 0 0 0 0 0 0 0 0 0 0 0
+-send_to_vict- Your eyes become more attuned to the darkness.
+-wear_off_msg- Your eyes lose their nightvision.
+
+* magic shield of gandor
+-spell_begin-
+-spell_name- magic shield of gandor
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-spell_plr_bit2- cd
+-min_position- 7
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-class_lvl_list- 0 0 0 0 0 41 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You are now virtually unkillable!
+-wear_off_msg- You feel your magical protection wane.
+
+* float
+-spell_begin-
+-spell_name- float
+-spell_type- obj
+-spell_event- obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-obj_affs_loc- 1
+-spell_obj_bit- x
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 6 0 0 0 0 11 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* ritual of black eternity
+-spell_begin-
+-spell_name- ritual of black eternity
+-spell_type- general
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-class_lvl_list- 0 0 0 0 0 0 0 46 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You are now immune to death!
+-wear_off_msg- You're magical immunity fades away.
+
+* maelstrom
+-spell_begin-
+-spell_name- maelstrom
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 90
+-min_mana- 70
+-mana_chg- 10
+-num_dice- 50
+-size_dice- 15
+-aggressive- 1
+-class_lvl_list- 0 0 0 36 46 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* identify
+-spell_begin-
+-spell_name- identify
+-spell_type- obj
+-spell_event- identify
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 4
+-min_position- 5
+-max_mana- 50
+-min_mana- 20
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 26 31 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* ice storm
+-spell_begin-
+-spell_name- ice storm
+-spell_type- general
+-spell_event- area_dam
+-spell_realm- 1
+-resist_type- 4
+-saving_throw- 1
+-min_position- 7
+-max_mana- 40
+-min_mana- 10
+-mana_chg- 50
+-aggressive- 1
+-num_dice- 50
+-size_dice- 6
+-dice_limit- 1
+-class_lvl_list- 0 0 0 16 21 26 26 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* ice bolt
+-spell_begin-
+-spell_name- ice bolt
+-spell_type- char
+-spell_event- dam
+-spell_realm- 1
+-delay- 15
+-resist_type- 4
+-saving_throw- 1
+-min_position- 7
+-max_mana- 25
+-min_mana- 10
+-mana_chg- 2
+-num_dice- 9
+-size_dice- 4
+-aggressive- 1
+-class_lvl_list- 0 0 0 1 6 11 11 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* iceball
+-spell_begin-
+-spell_name- iceball
+-spell_type- char
+-spell_event- dam
+-spell_realm- 1
+-resist_type- 4
+-saving_throw- 1
+-min_position- 7
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-num_dice- 36
+-size_dice- 10
+-aggressive- 1
+-class_lvl_list- 0 0 0 11 16 21 21 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* arieks shattering iceball
+-spell_begin-
+-spell_name- arieks shattering iceball
+-spell_type- char
+-spell_event- dam
+-spell_realm- 1
+-resist_type- 4
+-saving_throw- 1
+-spell_realm- 5
+-min_position- 7
+-max_mana- 80
+-min_mana- 60
+-mana_chg- 5
+-num_dice- 50
+-size_dice- 8
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 41 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* creeping death
+-spell_begin-
+-spell_name- creeping death
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 15
+-saving_throw-10-
+-min_position- 7
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-num_dice- 20
+-size_dice- 10
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class_list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* firestorm
+-spell_begin-
+-spell_name- firestorm
+-spell_type- general
+-spell_event- area_dam
+-spell_realm- 1
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 40
+-min_mana- 10
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 50
+-size_dice- 5
+-dice_limit- 1
+-num_dice2- 1
+-size_dice2- 50
+-size_limit2- 1
+-class_lvl_list- 0 0 0 16 21 26 26 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* blades of fury
+-spell_begin-
+-spell_name- blades of fury
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 80
+-min_mana- 60
+-mana_chg- 3
+-num_dice- 12
+-size_dice- 10
+-aggressive- 7
+-class_lvl_list- 0 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* fire bolt
+-spell_begin-
+-spell_name- fire bolt
+-spell_type- char
+-spell_event- dam
+-spell_realm- 1
+-delay- 12
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 25
+-min_mana- 10
+-mana_chg- 2
+-num_dice- 9
+-size_dice- 4
+-aggressive- 1
+-class_lvl_list- 0 0 0 1 6 11 11 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* fireball
+-spell_begin-
+-spell_name- fireball
+-spell_type- char
+-spell_event- dam
+-spell_realm- 1
+-delay- 20
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-num_dice- 36
+-size_dice- 10
+-aggressive- 1
+-class_lvl_list- 0 0 0 11 16 21 21 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* molten spray
+-spell_begin-
+-spell_name- molten spray
+-spell_type- char
+-spell_event- dam
+-delay- 20
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-num_dice- 30
+-size_dice- 3
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 16 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+
+* faerie fire
+-spell_begin-
+-spell_name- faerie fire
+-spell_type- char
+-spell_event- char
+-resist_type- 3
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-plr_affs_loc- 17
+-plr_affs_mod- 20
+-class_lvl_list- 0 0 0 6 6 1 0 0 11 11 11 0 6 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your body is encased in blue flame!
+-send_to_room- $n is outlined in blue flames.
+-wear_off_msg- The blue flame enshrouding your body fades away.
+
+* hide self
+-spell_begin-
+-spell_name- hide self
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-spell_plr_bit- t
+-max_mana- 15
+-min_mana- 10
+-mana_chg- 1
+-class_lvl_list- 0 0 0 0 0 11 21 11 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* agony
+-spell_begin-
+-spell_name- agony
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 70
+-min_mana- 30
+-mana_chg- 5
+-num_dice- 20
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 31 0 0 0 36 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* power word kill
+-spell_begin-
+-spell_name- power word kill
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-num_dice- 20
+-aggressive- 1
+-size_dice- 20
+-class_lvl_list- 0 0 0 46 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* meteor swarm
+-spell_begin-
+-spell_name- meteor swarm
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 1
+-min_position- 7
+-max_mana- 80
+-min_mana- 60
+-mana_chg- 5
+-aggressive- 1
+-num_dice- 50
+-size_dice- 11
+-dice_limit- 1
+-class_lvl_list- 0 0 0 41 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* energy drain
+-spell_begin-
+-spell_name- energy drain
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-num_dice- 10
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* soul snare
+-spell_begin-
+-spell_name- soul snare
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-spell_realm- 6
+-min_position- 8
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* prismatic wall
+-spell_begin-
+-spell_name- prismatic wall
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class_lvl_list- 0 0 0 21 31 31 31 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* incendiary cloud
+-spell_begin-
+-spell_name- incendiary cloud
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 70
+-min_mana- 20
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 100
+-size_dice- 7
+-class_lvl_list- 0 0 0 31 36 0 36 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* bigby's clenched fist
+-spell_begin-
+-spell_name- bigbys clenched fist
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 50
+-min_mana- 30
+-mana_chg- 3
+-aggressive- 1
+-num_dice- 92
+-size_dice- 6
+-class_lvl_list- 0 0 0 31 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* prismatic spray
+-spell_begin-
+-spell_name- prismatic spray
+-spell_type- char
+-spell_event- prismatic_spray
+-resist_type- 1
+-saving_throw- 1
+-min_position- 7
+-max_mana- 40
+-min_mana- 25
+-mana_chg- 2
+-num_dice- 10
+-size_dice- 6
+-aggressive- 1
+-class_lvl_list- 0 0 0 31 37 31 37 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* delayed fireball
+-spell_begin-
+-spell_name- delayed fireball
+-spell_type- char
+-spell_event- dam
+-spell_realm- 1
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 50
+-min_mana- 30
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 36
+-size_dice- 10
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* mass invisibility
+-spell_begin-
+-spell_name- mass invisibility
+-spell_type- char
+-spell_event- group
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 5
+-max_mana- 50
+-min_mana- 25
+-mana_chg- 1
+-spell_plr_bit- b
+-class_lvl_list- 0 0 0 0 21 11 21 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You slowly fade into nothingness.
+-send_to_room- $n slowly fades from sight.
+-wear_off_msg- You snap into visibility.
+
+* true seeing
+-spell_begin-
+-spell_name- true seeing
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-spell_plr_bit- y
+-class_lvl_list- 0 0 0 0 0 26 0 0 0 21 21 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your awareness of your surroundings is greatly improved.
+-wear_off_msg- Your newfound awareness fades.
+
+* major globe of invulnerability
+-spell_begin-
+-spell_name- major globe of invulnerability
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-spell_plr_bit- h
+-min_position- 8
+-max_mana- 80
+-min_mana- 30
+-mana_chg- 10
+-class_lvl_list- 0 0 0 41 0 36 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You are encased in a protective globe.
+-send_to_room- $n is incased in a protective globe.
+-wear_off_msg- Your protective globe fades away.
+
+* minor globe of invulnerability
+-spell_begin-
+-spell_name- minor globe of invulnerability
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-spell_plr_bit2- z
+-min_position- 8
+-max_mana- 70
+-min_mana- 20
+-mana_chg- 10
+-class_lvl_list- 0 0 0 21 0 21 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You are encased in a shimmering globe.
+-send_to_room- $n is incased in a shimmering globe.
+-wear_off_msg- Your shimmering globe fades away.
+
+* enchant weapon
+-spell_begin-
+-spell_name- enchant weapon
+-spell_type- obj
+-spell_event- obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-obj_affs_loc- 7 8
+-obj_affs_mod- 3 3
+-min_position- 8
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* enchant shield
+-spell_begin-
+-spell_name- enchant shield
+-spell_type- obj
+-spell_event- obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-obj_affs_loc- 2
+-obj_affs_mod- 5
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* disintegrate
+-spell_begin-
+-spell_name- disintegrate
+-spell_type- char
+-spell_event- disintegrate
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 5
+-num_dice- 25
+-aggressive- 1
+-size_dice- 25
+-class_lvl_list- 0 0 0 46 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* death fog
+-spell_begin-
+-spell_name- death fog
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 30
+-mana_chg- 2
+-num_dice- 9
+-size_dice- 9
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 36 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_room- {DA billowing cloud of {ggreen fog{D swallows $n{D as $e screams in agony.{x
+-send_to_vict- {DA billowing cloud of {green fog{Dswallows you as you scream in agony.{x
+
+* control weather
+-spell_begin-
+-spell_name- control weather
+-spell_type- general
+-spell_event- control_weather
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 8
+-max_mana- 40
+-min_mana- 10
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 21 0 21 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* chain lightning
+-spell_begin-
+-spell_name- chain lightning
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 16
+-saving_throw- 1
+-spell_realm- 1
+-min_position- 7
+-max_mana- 70
+-min_mana- 20
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 40
+-size_dice- 11
+-dice_limit- 1
+-class_lvl_list- 0 0 0 26 31 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+
+* bigbys crushing hand
+-spell_begin-
+-spell_name- bigbys crushing hand
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 80
+-min_mana- 60
+-mana_chg- 3
+-num_dice- 30
+-size_dice- 20
+-aggressive- 1
+-class_lvl_list- 0 0 0 41 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* wall of force
+-spell_begin-
+-spell_name- wall of force
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 2
+-vnum_list- 1227
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* wall of iron
+-spell_begin-
+-spell_name- wall of iron
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 2
+-vnum_list- 1228
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* wall of stone
+-spell_begin-
+-spell_name- wall of stone
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 2
+-vnum_list- 1229
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* teleport
+-spell_begin-
+-spell_name- teleport
+-spell_type- general
+-spell_event- teleport
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 2
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* telekinesis
+-spell_begin-
+-spell_name- telekinesis
+-spell_type- general
+-spell_event- telekinesis
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 5
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 16 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* feeble mind
+-spell_begin-
+-spell_name- feeble mind
+-spell_type- char
+-spell_event- char
+-plr_affs_loc- 3 4
+-plr_affs_mod- -100 -100
+-spell_plr_bit2- y
+-resist_type- 15
+-saving_throw- 4
+-min_position- 7
+-max_mana- 70
+-min_mana- 30
+-mana_chg- 2
+-aggressive- 1
+-class_lvl_list- 0 0 0 31 31 26 31 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your mind becomes sluggish.
+-wear_off_msg- Your mind slowly regains it's full capabilities.
+
+* gate
+-spell_begin-
+-spell_name- gate
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* conjure elemental
+-spell_begin-
+-spell_name- conjure elemental
+-spell_type- general
+-spell_event- create_mob
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 2
+-min_position- 8
+-max_mana- 100
+-min_mana- 80
+-mana_chg- 1
+-vnum_list- 1201 1202 1203 1204
+-class_lvl_list- 0 0 0 0 0 0 1 0 0 0 11 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* cone of cold
+-spell_begin-
+-spell_name- cone of cold
+-spell_type- char
+-spell_event- dam
+-resist_type- 4
+-saving_throw- 1
+-spell_realm- 1
+-min_position- 7
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 35
+-size_dice- 9
+-dice_limit- 1
+-num_dice2- 2
+-size_dice2- 8
+-class_lvl_list- 0 0 0 16 21 0 26 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* animate dead
+-spell_begin-
+-spell_name- animate dead
+-spell_type- obj
+-spell_event- create_mob
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 2
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-vnum_list- 1205 1206 1207 1208 1209
+-class_lvl_list- 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* wall of ice
+-spell_begin-
+-spell_name- wall of ice
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 2
+-vnum_list- 1225
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* wall of fire
+-spell_begin-
+-spell_name- wall of fire
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 2
+-vnum_list- 1226
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* stoneskin
+-spell_begin-
+-spell_name- stoneskin
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 7
+-spell_plr_bit2- d
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 5
+-class_lvl_list- 0 0 0 31 0 0 26 0 0 0 26 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {DYour skin turns to stone.{x
+-send_to_room- {D$n{D's skin turns to stone.{x
+-wear_off_msg- Your skin softens once again.
+
+* remove curse
+-spell_begin-
+-spell_name- remove curse
+-spell_type- obj_char
+-spell_event- obj_char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 5
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-unaffect- curse
+-class_lvl_list- 0 0 0 0 0 0 0 0 6 6 6 0 6 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel your {Dcurse{w has been lifted.{x
+
+* fire shield
+-spell_begin-
+-spell_name- fire shield
+-spell_type- char
+-spell_event- char
+-resist_type- 3
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-spell_plr_bit2- e
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-class_lvl_list- 0 0 0 21 21 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {RYour body is encased in protective flames.{x
+-send_to_room- {R$n{R's body is encased in fire!{x
+-wear_off_msg- The fire about your body vanishes in a puff of smoke.
+
+* ice shield
+-spell_begin-
+-spell_name- ice shield
+-spell_type- char
+-spell_event- char
+-resist_type- 3
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-spell_plr_bit2- u
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-class_lvl_list- 0 0 0 21 21 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {BYour body is encased in protective ice.{x
+-send_to_room- {B$n{B's body is encased in ice!{x
+-wear_off_msg- The ice about your body vanishes in a pool of water.
+
+* fear
+-spell_begin-
+-spell_name- fear
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 2
+-min_position- 7
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 16 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- BOOOOOOOOOOOOOOOOOOOOOOOOOOOO!
+
+* dimension door
+-spell_begin-
+-spell_name- dimension door
+-spell_type- general
+-spell_event- dimdoor
+-resist_type- 15
+-saving_throw- 4
+-min_position- 8
+-max_mana- 60
+-min_mana- 30
+-mana_chg- 2
+-class_lvl_list- 0 0 0 26 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* wraith form
+-spell_begin-
+-spell_name- wraith form
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 150
+-min_mana- 100
+-mana_chg- 10
+-spell_plr_bit2- f
+-spell_plr_bit- bps
+-class_lvl_list- 0 0 0 0 0 46 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your soul and body seperate (temporarily).
+-send_to_room- $n's body suddenly appears lifeless.
+-wear_off_msg- Your soul begins its trek along the eternal path.
+
+* water breathing
+-spell_begin-
+-spell_name- water breathing
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* vampiric touch
+-spell_begin-
+-spell_name- vampiric touch
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 90
+-min_mana- 60
+-mana_chg- 2
+-spell_plr_bit2- g
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your hands glow blood {rred{w!{x
+-send_to_room- $n's hands glow blood {rred{w!{x
+-wear_off_msg- Your vampiric touch fades.
+
+* slowness
+-spell_begin-
+-spell_name- slowness
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-spell_realm- 7
+-min_position- 7
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 2
+-aggressive- 1
+-spell_plr_bit2- h
+-class_lvl_list- 0 0 0 16 16 11 0 0 0 21 21 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel sluggish.
+-send_to_room- $n sloooows doooooown.
+-wear_off_msg- Your sluggishness fades.
+
+* phantom steed
+-spell_begin-
+-spell_name- phantom steed
+-spell_type- general
+-spell_event- create_mob
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 2
+-min_position- 5
+-max_mana- 30
+-min_mana- 10
+-vnum_list- 1210
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 6 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* lightning bolt
+-spell_begin-
+-spell_name- lightning bolt
+-spell_type- char
+-spell_event- dam
+-resist_type- 16
+-saving_throw- 1
+-min_position- 7
+-max_mana- 40
+-min_mana- 10
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 31
+-size_dice- 8
+-dice_limit- 1
+-class_lvl_list- 0 0 0 16 16 0 16 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* infravision
+-spell_begin-
+-spell_name- infravision
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-spell_plr_bit- k
+-class_lvl_list- 0 0 0 11 11 11 11 11 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your eyes glow {rred.{x
+-send_to_room- $n's eyes glow {rred.{x
+-wear_off_msg- Your eyes lose their ability to see heat.
+
+* haste
+-spell_begin-
+-spell_name- haste
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 50
+-min_mana- 15
+-mana_chg- 3
+-spell_plr_bit2- i
+-class_lvl_list- 0 0 0 0 0 21 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You begin moving with super-natural speed.
+-send_to_room- $n begins to move with super-natural speed.
+-wear_off_msg- You return to normal speed.
+
+* fly
+-spell_begin-
+-spell_name- fly
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 55
+-min_mana- 20
+-mana_chg- 2
+-spell_plr_bit- q
+-class_lvl_list- 0 0 0 26 26 26 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {WYou rise and begin flying as free as a bird.{x
+-send_to_room- {W$n{W begins flying free as a bird.{x
+-wear_off_msg- You stop flying.
+
+* dispel magic
+-spell_begin-
+-spell_name- dispel magic
+-spell_type- char
+-spell_event- dispel_magic
+-delay- 12
+-resist_type- 15
+-saving_throw- 4
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-class_lvl_list- 0 0 0 11 0 0 11 0 16 16 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You are bathed in a white light.  You feel different somehow.
+-send_to_room- $M dispells $n's magic.
+
+* magical lock
+-spell_begin-
+-spell_name- magical lock
+-spell_type- general
+-spell_event- magical_lock
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 35
+-min_mana- 10
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* strength
+-spell_begin-
+-spell_name- strength
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-plr_affs_loc- 1
+-plr_affs_mod- 4
+-class_lvl_list- 0 0 0 6 6 6 6 6 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel stronger.
+-wear_off_msg- You become the puny runt you truly were.
+
+* dexterity
+-spell_begin-
+-spell_name- dexterity
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-plr_affs_loc- 2
+-plr_affs_mod- 4
+-class_lvl_list- 0 0 0 6 6 6 6 6 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel more dexterous.
+-wear_off_msg- You become less dexterous.
+
+
+* ray of enfeeblement
+-spell_begin-
+-spell_name- ray of enfeeblement
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 35
+-min_mana- 15
+-mana_chg- 2
+-aggressive- 1
+-plr_affs_loc- 1 18 19
+-plr_affs_mod- -20 -3 -3
+-class_lvl_list- 0 0 0 16 16 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your strength and fighting power diminishes.
+-wear_off_msg- Your strength and fighting power returns.
+
+* acid arrow
+-spell_begin-
+-spell_name- acid arrow
+-spell_type- char
+-spell_event- dam
+-delay- 12
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 25
+-min_mana- 10
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 30
+-size_dice- 6
+-dice_limit- 1
+-class_lvl_list- 0 0 0 1 6 11 11 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* levitate
+-spell_begin-
+-spell_name- levitate
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-spell_plr_bit2- j
+-class_lvl_list- 0 0 0 16 16 16 16 16 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {WYou begin floating a few inches above the ground.{x
+-send_to_room- {W$n{W begins to float a few inches off the ground.{x
+-wear_off_msg- You stop floating.
+
+* magical unlock
+-spell_begin-
+-spell_name- magical unlock
+-spell_type- general
+-spell_event- magical_unlock
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 35
+-min_mana- 10
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* invisibility
+-spell_begin-
+-spell_name- invisibility
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 25
+-min_mana- 5
+-mana_chg- 2
+-spell_plr_bit- b
+-class_lvl_list- 0 0 0 6 6 6 6 6 0 0 6 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You fade from view.
+-send_to_room- $n slowly fades from view.
+-wear_off_msg- You pop back into visibility.
+
+* detect invisibility
+-spell_begin-
+-spell_name- detect invisibility
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 25
+-min_mana- 5
+-mana_chg- 2
+-spell_plr_bit- d
+-class_lvl_list- 0 0 0 6 6 6 1 6 0 0 6 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your eyes begin to {Wtingle{w.{x
+-wear_off_msg- Invisible things vanish again.
+
+* detect alignment
+-spell_begin-
+-spell_name- detect alignment
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-spell_plr_bit- c
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your eyes begin to {Ytingle{w.{x
+-wear_off_msg- Your ability to see auras diminishes.
+
+* darkness
+-spell_begin-
+-spell_name- darkness
+-spell_type- obj
+-spell_event- obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-spell_obj_bit- u
+-class_lvl_list- 0 0 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* blindness
+-spell_begin-
+-spell_name- blindness
+-spell_type- char
+-spell_event- char
+-delay- 12
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 3
+-aggressive- 1
+-spell_plr_bit- a
+-class_lvl_list- 0 0 0 11 11 0 16 0 11 11 0 0 21 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {DYou have been blinded!{x
+-send_to_room- $n begins to stumble around as if {Dblind{w.{x
+-wear_off_msg- Your vision returns.
+
+* wall of fog
+-spell_begin-
+-spell_name- wall of fog
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 2
+-vnum_list- 1230
+-class_lvl_list- 0 0 0 0 0 0 16 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* sleep
+-spell_begin-
+-spell_name- sleep
+-spell_type- char
+-spell_event- char
+-resist_type- 9
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-aggressive- 1
+-spell_plr_bit- o
+-class_lvl_list- 0 0 0 0 16 11 11 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel VERY sleepy.
+-send_to_room- $n falls asleep.
+-wear_off_msg- You wake up feeling rested.
+
+* shocking grasp
+-spell_begin-
+-spell_name- shocking grasp
+-spell_type- char
+-spell_event- dam
+-resist_type- 16
+-delay- 12
+-saving_throw- 2
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 15
+-size_dice- 7
+-dice_limit- 1
+-num_dice2- 5
+-size_dice2- 6
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* protection from evil
+-spell_begin-
+-spell_name- protection from evil
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 5
+-spell_plr_bit- m
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 0 11 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel protected from evil.
+-wear_off_msg- Your protection from evil fades.
+
+* protection from good
+-spell_begin-
+-spell_name- protection from good
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 5
+-spell_plr_bit- n
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 0 11 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel protected from good.
+-wear_off_msg- Your protection from good fades.
+
+* magic missile
+-spell_begin-
+-spell_name- magic missile
+-spell_type- char
+-spell_event- magic_missile
+-delay- 13
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 10
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 1
+-size_dice- 5
+-dice_add- 1
+-class_lvl_list- 0 0 0 1 1 1 1 1 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* continual light
+-spell_begin-
+-spell_name- continual light
+-spell_type- obj
+-spell_event- obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-obj_affs_loc- 1
+-spell_obj_bit- u
+-class_lvl_list- 0 0 0 0 0 11 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* color spray
+-spell_begin-
+-spell_name- color spray
+-spell_type- char
+-spell_event- dam
+-delay- 18
+-resist_type- 1
+-saving_throw- 1
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 50
+-size_dice- 2
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 6 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* chill touch
+-spell_begin-
+-spell_name- chill touch
+-spell_type- char
+-spell_event- dam
+-delay- 11
+-resist_type- 4
+-saving_throw- 1
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 10
+-size_dice- 8
+-dice_limit- 1
+-class_lvl_list- 0 0 0 6 6 0 6 6 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* burning hands
+-spell_begin-
+-spell_name- burning hands
+-spell_type- char
+-spell_event- dam
+-delay- 12
+-resist_type- 3
+-saving_throw- 4
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 16
+-size_dice- 6
+-dice_limit- 1
+-class_lvl_list- 0 0 0 6 6 0 1 6 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* armor
+-spell_begin-
+-spell_name- armor
+-spell_type- char
+-spell_event- char
+-delay- 15
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 7
+-max_mana- 20
+-min_mana- 10
+-mana_chg- 2
+-plr_affs_loc- 17
+-plr_affs_mod- -10
+-spell_plr_bit2- x
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You are encased in protective bands.
+-send_to_room- $n is encased in protective bands.
+-wear_off_msg- Your armor spell wanes.
+
+* Locate Object
+-spell_begin-
+-spell_name- locate object
+-spell_type- general
+-spell_event- locate_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 4
+-min_position- 8
+-max_mana- 50
+-min_mana- 30
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 16 0 16 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* minor creation
+-spell_begin-
+-spell_name- minor creation
+-spell_type- general
+-spell_event- create_obj
+-delay- 12
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 6
+-min_position- 8
+-max_mana- 10
+-min_mana- 5
+-mana_chg- 2
+-vnum_list- 1236 1238 1237 1235
+-class_lvl_list- 0 0 0 1 1 1 1 0 0 0 0 0 0 0 0 0 0
+*-class__list-  Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+*    ************************************************************
+**** PRIEST SPELLS **********************************************
+* cause light
+-spell_begin-
+-spell_name- cause light
+-spell_type- char
+-spell_event- dam
+-delay- 15
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 3
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 1
+-size_dice- 8
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* cause serious
+-spell_begin-
+-spell_name- cause serious
+-spell_type- char
+-spell_event- dam
+-delay- 15
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 3
+-min_position- 7
+-max_mana- 30
+-min_mana- 10
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 3
+-size_dice- 8
+-dice_add- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 6 6 6 0 6 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* cause critical
+-spell_begin-
+-spell_name- cause critical
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 3
+-min_position- 7
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 4
+-size_dice- 10
+-dice_add- 15
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 11 11 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* full harm
+-spell_begin-
+-spell_name- full harm
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 3
+-min_position- 7
+-max_mana- 100
+-min_mana- 30
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 300
+-size_dice- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 31 31 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* ray of hope
+-spell_begin-
+-spell_name- ray of hope
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 3
+-min_position- 7
+-max_mana- 50
+-min_mana- 30
+-mana_chg- 3
+-aggressive- 1
+-num_dice- 12
+-size_dice- 5
+-class_lvl_list- 0 0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* hand of fate
+-spell_begin-
+-spell_name- hand of fate
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 3
+-min_position- 7
+-max_mana- 50
+-min_mana- 30
+-mana_chg- 3
+-aggressive- 1
+-num_dice- 20
+-size_dice- 4
+-class_lvl_list- 0 0 0 0 0 0 0 0 16 0 0 0 0 0 0 0 
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* harm
+-spell_begin-
+-spell_name- harm
+-spell_type- char
+-spell_event- dam
+-resist_type- 15
+-saving_throw- 1
+-spell_realm- 3
+-min_position- 7
+-max_mana- 50
+-min_mana- 15
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 100
+-size_dice- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 21 21 26 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* detect magic
+-spell_begin-
+-spell_name- detect magic
+-spell_type- char
+-spell_event- char
+-delay- 12
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 15
+-min_mana- 5
+-mana_chg- 2
+-spell_plr_bit- e
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your magical insight is increased.
+-wear_off_msg- Magic things appear normal again.
+
+* disease
+-spell_begin-
+-spell_name- disease
+-spell_type- char
+-spell_event- char
+-delay- 13
+-resist_type- 7
+-saving_throw- 4
+-spell_realm- 3
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-spell_plr_bit- w
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your body has been infected with a serious disease.
+-send_to_room- $n's skin turns splotchy as $s is infected with a wicked disease.
+-wear_off_msg- Your immune system finally overcomes the disease.
+
+* creeping doom
+-spell_begin-
+-spell_name- creeping doom
+-spell_type- general
+-spell_event- add_dam_event
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 2
+-min_position- 7
+-max_mana- 150
+-min_mana- 90
+-mana_chg- 2
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* holy word
+-spell_begin-
+-spell_name- holy word
+-spell_type- char
+-spell_event- area_dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 80
+-min_mana- 20
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 7
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* ogrestrength
+-spell_begin-
+-spell_name- ogrestrength
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-spell_plr_bit2- p
+-plr_affs_mod- 100
+-plr_affs_loc- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your arms bulge with newfound muscles.
+-send_to_room- $n's begin to bulge with newfound muscles!
+-wear_off_msg- You are a weanie again.
+
+* bearstrength
+-spell_begin-
+-spell_name- bearstrength
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-delay- 12
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-plr_affs_mod- 5
+-plr_affs_loc- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your mouth fizzles with drool as you glare around.
+-send_to_room- $n's begins to growl with newly found energy.
+-wear_off_msg- You are no longer mad at everyone.
+
+* curse
+-spell_begin-
+-spell_name- curse
+-spell_type- obj_char
+-spell_event- obj_char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-aggressive- 1
+-spell_plr_bit- j
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been cursed.
+-send_to_room- $t has been cursed.
+-wear_off_msg- You managed to outlive the curse.
+
+* wall of thorns
+-spell_begin-
+-spell_name- wall of thorns
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 2
+-vnum_list- 1231
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* preservation
+-spell_begin-
+-spell_name- preservation
+-spell_type- obj
+-spell_event- obj
+-delay- 20
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 10
+-min_mana- 5
+-mana_chg- 2
+-obj_affs_loc- 33
+-obj_affs_mod- 12
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_char- $p won't decay any time soon.
+-send_to_room- $p glows briefly.
+
+* sea storm
+-spell_begin-
+-spell_name- sea storm
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 50
+-min_mana- 15
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 10
+-size_dice- 15
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 16 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* vitality
+-spell_begin-
+-spell_name- vitality
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 3
+-min_position- 8
+-max_mana- 80
+-min_mana- 30
+-mana_chg- 2
+-plr_affs_mod- 2
+-plr_affs_loc- 13
+-class_lvl_list- 0 0 0 0 0 0 0 0 26 26 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel your vitality increase.
+-wear_off_msg- Your vitality returns to normal.
+
+* wither
+-spell_begin-
+-spell_name- wither
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 50
+-min_mana- 20
+-mana_chg- 2
+-aggressive- 1
+-spell_plr_bit2- q
+-plr_affs_loc- 18 19
+-plr_affs_mod- -5 -5
+-class_lvl_list- 0 0 0 0 0 0 0 21 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You're feel older now!
+-send_to_room- $n's skin turns wrinkled as $s is withered.
+-wear_off_msg- You are no longer withered.
+
+* plane shift
+-spell_begin-
+-spell_name- plane shift
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* flamestrike
+-spell_begin-
+-spell_name- flamestrike
+-spell_type- char
+-spell_event- dam
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 50
+-min_mana- 20
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 50
+-size_dice- 5
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 16 16 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* dispel evil
+-spell_begin-
+-spell_name- dispel evil
+-spell_type- char
+-spell_event- dam
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 50
+-size_dice- 5
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* dispel good
+-spell_begin-
+-spell_name- dispel good
+-spell_type- char
+-spell_event- dam
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 50
+-size_dice- 5
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* tidal wave
+-spell_begin-
+-spell_name- tidal wave
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-num_dice- 8
+-aggressive- 1
+-size_dice- 15
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 11 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* earthquake
+-spell_begin-
+-spell_name- earthquake
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 15
+-saving_throw- 1
+-min_position- 7
+-max_mana- 40
+-min_mana- 1
+-mana_chg- 2
+-num_dice- 8
+-aggressive- 1
+-size_dice- 15
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 11 11 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* sunray
+-spell_begin-
+-spell_name- sunray
+-spell_type- char
+-spell_event- char
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-aggressive- 1
+-spell_plr_bit- a
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 16 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You begin to see spots after being blinded by a sunray.
+-wear_off_msg- Your vision clears and returns to normal.
+
+* cure critical
+-spell_begin-
+-spell_name- cure critical
+-spell_type- char
+-spell_event- points
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 3
+-delay- 16
+-min_position- 7
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-num_dice- 10
+-size_dice- 3
+-dice_add- 10
+-point_loc- 13
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 11 0 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel MUCH better.
+
+* cure serious
+-spell_begin-
+-spell_name- cure serious
+-spell_type- char
+-spell_event- points
+-delay- 12
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 3
+-min_position- 7
+-max_mana- 25
+-min_mana- 10
+-mana_chg- 2
+-num_dice- 3
+-size_dice- 8
+-point_loc- 13
+-class_lvl_list- 0 0 0 0 0 0 0 0 6 6 0 0 6 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel better.
+
+* water walk
+-spell_begin-
+-spell_name- water walk
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 35
+-min_mana- 20
+-mana_chg- 2
+-spell_plr_bit- g
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your toes flatten to form webbed feet.
+-send_to_room- $n's toes flatten to form webbed feet.
+-wear_off_msg- Your feet lose their webbing.
+
+* major paralysis
+-spell_begin-
+-spell_name- major paralysis
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-spell_realm- 7
+-min_position- 7
+-max_mana- 80
+-min_mana- 35
+-mana_chg- 2
+-spell_duration- 5
+-aggressive- 1
+-spell_plr_bit- x
+-class_lvl_list- 0 0 0 41 41 41 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your body stops responding to commands.
+-send_to_room- $n has been paralyzed!
+-wear_off_msg- You nolonger are a park fixture.
+
+* minor paralysis
+-spell_begin-
+-spell_name- minor paralysis
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-spell_realm- 7
+-min_position- 7
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 2
+-spell_duration- 10
+-aggressive- 1
+-spell_plr_bit2- r
+-class_lvl_list- 0 0 0 16 16 16 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your body stops responding to commands.
+-send_to_room- $n has been paralyzed!
+-wear_off_msg- You nolonger are a park fixture.
+
+* cure blindness
+-spell_begin-
+-spell_name- cure blindness
+-spell_type- char
+-spell_event- char
+-delay- 11
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-unaffect- blindness
+-class_lvl_list- 0 0 0 0 0 0 0 0 6 6 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your vision returns!
+
+* call lightning
+-spell_begin-
+-spell_name- call lightning
+-spell_type- char
+-spell_event- dam
+-resist_type- 16
+-saving_throw- 1
+-spell_realm- 1
+-min_position- 7
+-max_mana- 60
+-min_mana- 20
+-mana_chg- 3
+-aggressive- 1
+-num_dice- 50
+-size_dice- 8
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 21 0 21 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* resurrection
+-spell_begin-
+-spell_name- resurrection
+-spell_type- char
+-spell_event- resurrection
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 3
+-min_position- 8
+-max_mana- 150
+-min_mana- 90
+-mana_chg- 15
+-class_lvl_list- 0 0 0 0 0 0 0 0 46 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your past life has been restored to you.
+-send_to_room- $n looks shocked as past and present lives merge into one.
+
+* wyvern watch
+-spell_begin-
+-spell_name- wyvern watch
+-spell_type- general
+-spell_event- create_mob
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 2
+-min_position- 8
+-max_mana- 70
+-min_mana- 50
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 26 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_char- A wyvern appears before you ready to be your spy.
+-send_to_room- A wyvern appears before $n, ready to be $m spy.
+
+* spiritual hammer
+-spell_begin-
+-spell_name- spiritual hammer
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 6
+-min_position- 8
+-max_mana- 90
+-min_mana- 70
+-mana_chg- 5
+-vnum_list- 1232
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 36 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_char- A misty substance appears in your hand and forms itself into a war hammer.
+-send_to_room- A misty substance appears in $n's hand and forms itself into a war hammer.
+-wear_off_msg- Your spiritual hammer returns to mist and vanishes.
+
+* silence
+-spell_begin-
+-spell_name- silence
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 25
+-min_mana- 10
+-mana_chg- 2
+-spell_plr_bit- u
+-class_lvl_list- 0 0 0 0 0 0 0 0 21 0 0 0 21 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your ability to cast magic fades.
+-send_to_room- $n has been silenced.
+-wear_off_msg- Your ability to cast magic returns.
+
+* flame blade
+-spell_begin-
+-spell_name- flame blade
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 6
+-min_position- 8
+-max_mana- 70
+-min_mana- 40
+-mana_chg- 5
+-vnum_list- 1233
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 26 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_char- A glowing ember appears in your hand and lengthens into a flaming sword.
+-send_to_room- A glowing ember appears in $n's hand and lengthens into a flaming sword.
+-wear_off_msg- Your flaming blade burns out with a large puff of smoke.
+
+* barkskin
+-spell_begin-
+-spell_name- barkskin
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 7
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 2
+-spell_plr_bit2- s
+-plr_affs_loc- 17
+-plr_affs_mod- -5
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your skin gains a striking resemblence to that of a tree.
+-send_to_room- $n's skin gains a wooden texture.
+-wear_off_msg- Your skin loses it's wooden texture.
+
+* sanctuary
+-spell_begin-
+-spell_name- sanctuary
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* protection from lightning
+-spell_begin-
+-spell_name- protection from lightning
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 5
+-spell_plr_bit2- k
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 0 11 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel protected from lightning.
+-wear_off_msg- Your protection from lightning fades.
+
+* protection from acid
+-spell_begin-
+-spell_name- protection from acid
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 5
+-spell_plr_bit2- l
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 0 11 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel protected from acid.
+-wear_off_msg- Your protection from acid fades.
+
+* protection from ice
+-spell_begin-
+-spell_name- protection from ice
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 5
+-spell_plr_bit2- m
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 0 11 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel protected from ice.
+-wear_off_msg- Your protection from ice fades.
+
+* cure light
+-spell_begin-
+-spell_name- cure light
+-spell_type- char
+-spell_event- points
+-delay- 12
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 3
+-min_position- 7
+-max_mana- 15
+-min_mana- 10
+-mana_chg- 2
+-num_dice- 1
+-size_dice- 8
+-point_loc- 13
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your cuts and scrapes don't look as bad anymore.
+-send_to_room- $n's cuts and scrapes don't look so bad anymore.
+
+* create spring
+-spell_begin-
+-spell_name- create spring
+-spell_type- general
+-spell_event- create_obj
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 6
+-min_position- 8
+-max_mana- 90
+-min_mana- 70
+-mana_chg- 5
+-vnum_list- 1234
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 16 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_char- A pool of water forms at your feet.
+-send_to_room- A pool of water forms at your feet.
+
+* create food
+-spell_begin-
+-spell_name- create food
+-spell_type- general
+-spell_event- create_obj
+-delay- 11
+-spell_realm- 6
+-vnum_list- 1236
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* create water
+-spell_begin-
+-spell_name- create water
+-spell_type- obj
+-spell_event- create_water
+-delay- 11
+-spell_realm- 6
+-min_position- 8
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 1 1 1 0 1 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* bless
+-spell_begin-
+-spell_name- bless
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-plr_affs_loc- 18
+-plr_affs_mod- 2
+-spell_plr_bit- F
+-spell_duration- 20
+-class_lvl_list- 0 0 0 0 0 0 0 0 16 0 16 0 16 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been blessed.
+-send_to_room- $n has been blessed.
+-wear_off_msg- Your blessing fades.
+
+* hawkvision
+-spell_begin-
+-spell_name- hawkvision
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-plr_affs_loc- 18
+-plr_affs_mod- 2
+-spell_duration- 20
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your eyes become wide and you see your target much clearer.
+-send_to_room- $n eyes begin to {gglow{w.{x
+-wear_off_msg- Your eyes return to normal and your victim is farther away.
+
+* blind rage
+-spell_begin-
+-spell_name- blind rage
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 40
+-min_mana- 15
+-mana_chg- 2
+-plr_affs_loc- 19
+-plr_affs_mod- 3
+-spell_duration- 20
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You become angry and furious.
+-send_to_room- $n eyes flare {Rred{w and starts to turn around in circles.{x
+-wear_off_msg- Your rage wears off.
+
+
+* aid spell
+-spell_begin-
+-spell_name- aid
+-spell_type- char
+-spell_event- char
+-spell_realm- 3
+-min_position- 8
+-max_mana- 50
+-min_mana- 20
+-mana_chg- 3
+-plr_affs_loc- 18 25 19
+-plr_affs_mod- 2 30 2
+-spell_plr_bit- E
+-spell_duration- 20
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 16 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your patron gods come to your aid.
+-wear_off_msg- Your patron gods lose interest in your affairs.
+
+* heal
+-spell_begin-
+-spell_name- heal
+-spell_type- char
+-spell_event- points
+-spell_realm- 3
+-min_position- 7
+-max_mana- 80
+-min_mana- 40
+-mana_chg- 5
+-point_loc- 13
+-num_dice- 100
+-size_dice- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 21 26 0 0 21 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been healed.
+-send_to_room- $n looks to be in better health.
+
+* lesser mending
+-spell_begin-
+-spell_name- lesser mending
+-spell_type- char
+-spell_event- points
+-spell_realm- 3
+-delay- 12
+-min_position- 7
+-max_mana- 20
+-min_mana- 10
+-mana_chg- 5
+-point_loc- 13
+-num_dice- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel slightly better.
+-send_to_room- $n looks a little better.
+
+* mending
+-spell_begin-
+-spell_name- mending
+-spell_type- char
+-spell_event- points
+-spell_realm- 3
+-delay- 17
+-min_position- 7
+-max_mana- 60
+-min_mana- 40
+-mana_chg- 5
+-point_loc- 13
+-num_dice- 3
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 16 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel better.
+-send_to_room- $n looks better.
+
+* greater mending
+-spell_begin-
+-spell_name- greater mending
+-spell_type- char
+-spell_event- points
+-spell_realm- 3
+-min_position- 8
+-max_mana- 80
+-min_mana- 60
+-mana_chg- 5
+-point_loc- 13
+-num_dice- 10
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 31 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel much better.
+-send_to_room- $n looks much better.
+
+* full heal
+-spell_begin-
+-spell_name- full heal
+-spell_type- char
+-spell_event- points
+-spell_realm- 3
+-min_position- 8
+-max_mana- 140
+-min_mana- 80
+-mana_chg- 2
+-point_loc- 13
+-num_dice- 300
+-size_dice- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 31 31 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* group heal
+-spell_begin-
+-spell_name- group heal
+-spell_type- general
+-spell_event- group_points
+-spell_realm- 3
+-min_position- 7
+-max_mana- 90
+-min_mana- 60
+-mana_chg- 5
+-point_loc- 13
+-num_dice- 300
+-size_dice- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 41 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been healed.
+-send_to_room- $n looks to be in better health.
+
+* summon
+-spell_begin-
+-spell_name- summon
+-spell_type- general
+-spell_event- summon
+-spell_realm- 2
+-min_position- 8
+-max_mana- 80
+-min_mana- 40
+-mana_chg- 5
+-class_lvl_list- 0 0 0 0 0 0 0 0 21 21 21 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* vigorize
+-spell_begin-
+-spell_name- vigorize
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 3
+-min_position- 8
+-max_mana- 80
+-min_mana- 30
+-mana_chg- 2
+-plr_affs_loc- 14
+-plr_affs_mod- 2
+-class_lvl_list- 0 0 0 0 0 0 0 0 26 26 31 0 31 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You don't feel as tired as you did before.
+-send_to_room- $n has new found energy.
+
+* Word of Recall
+-spell_begin-
+-spell_name- word of recall
+-spell_type- general
+-spell_event- word_recall
+-delay- 18
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 7
+-max_mana- 30
+-min_mana- 5
+-mana_chg- 5
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 11 11 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* sense life
+-spell_begin-
+-spell_name- sense life
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 45
+-min_mana- 20
+-mana_chg- 2
+-spell_plr_bit- f
+-class_lvl_list- 0 0 0 0 0 0 0 0 16 16 16 0 16 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your eyes begin to {Dtingle{w.{x
+-wear_off_msg- Your ability to sense life wanes.
+
+* detect poison
+-spell_begin-
+-spell_name- detect poison
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 8
+-max_mana- 25
+-min_mana- 10
+-mana_chg- 2
+-spell_plr_bit- A
+-class_lvl_list- 0 0 0 0 0 0 0 0 6 6 6 0 6 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your eyes begin to {Gtingle{g.{x
+-wear_off_msg- Your ability to see poisoned things fades.
+
+* cure disease
+-spell_begin-
+-spell_name- cure disease
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-unaffect- disease
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 11 11 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- Your immune system finally overcomes the disease.
+
+* cure poison
+-spell_begin-
+-spell_name- cure poison
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 7
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-unaffect- poison
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 11 11 0 11 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- The burning in your veins eases.
+
+* protection from gas
+-spell_begin-
+-spell_name- protection from gas
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 5
+-spell_plr_bit2- n
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 0 11 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel protected from gas.
+-wear_off_msg- Your protection from gas fades.
+
+* protection from fire
+-spell_begin-
+-spell_name- protection from fire
+-spell_type- char
+-spell_event- char
+-resist_type- 15
+-saving_throw- 4
+-spell_realm- 5
+-min_position- 8
+-max_mana- 40
+-min_mana- 20
+-mana_chg- 5
+-spell_plr_bit2- o
+-class_lvl_list- 0 0 0 0 0 0 0 0 11 0 11 0 26 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You feel protected from fire.
+-wear_off_msg- Your protection from fire fades.
+
+*    ************************************************************
+**** RANGER SPELLS **********************************************
+* hard wind
+-spell_begin-
+-spell_name- hard wind
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {WYou have been fully healed.{x
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* whirlwind
+-spell_begin-
+-spell_name- whirlwind
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {WYou have been fully healed.{x
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* summon nourishment
+-spell_begin-
+-spell_name- summon nourishment
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- {WYou have been fully healed.{x
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* summon mount
+-spell_begin-
+-spell_name- summon mount
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* call wind
+-spell_begin-
+-spell_name- call wind
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* call fog
+-spell_begin-
+-spell_name- call fog
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* call rain
+-spell_begin-
+-spell_name- call rain
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* clear skies
+-spell_begin-
+-spell_name- clear skies
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+* call storm
+-spell_begin-
+-spell_name- call storm
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+
+*    ************************************************************
+*****************************************************************
+* repel undead
+-spell_begin-
+-spell_name- repel undead
+-spell_type- char
+-spell_event- dam
+-resist_type- 0
+-saving_throw- 0
+-spell_realm- 0
+-min_position- 7
+-max_mana- 20
+-min_mana- 5
+-mana_chg- 2
+-num_dice- 1
+-aggressive- 1
+-size_dice- 10
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+-send_to_vict- You have been fully healed.
+-send_to_room- $n is now in perfect health.
+-wear_off_msg- This is a wear off msg.
+
+*    ************************************************************
+*NPC SPELLS******************************************************
+* fire breath
+-spell_begin-
+-spell_name- fire breath
+-spell_type- general
+-spell_event- destroy_inventory
+-spell_realm- 1
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 1
+-min_mana- 1
+-aggressive- 1
+-num_dice- 50
+-size_dice- 8
+-dice_add- 25
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* frost breath
+-spell_begin-
+-spell_name- frost breath
+-spell_type- general
+-spell_event- destroy_inventory
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 1
+-min_mana- 1
+-aggressive- 1
+-num_dice- 50
+-size_dice- 8
+-dice_add- 25
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* acid breath
+-spell_begin-
+-spell_name- acid breath
+-spell_type- general
+-spell_event- destroy_equipment
+-resist_type- 3
+-saving_throw- 1
+-min_position- 7
+-max_mana- 1
+-min_mana- 1
+-aggressive- 1
+-num_dice- 50
+-size_dice- 8
+-dice_add- 25
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* gas breath
+-spell_begin-
+-spell_name- gas breath
+-spell_type- general
+-spell_event- area
+-resist_type- 6
+-saving_throw- 4
+-spell_realm- 7
+-spell_plr_bit- l
+-min_position- 7
+-max_mana- 1
+-min_mana- 1
+-aggressive- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* lightning breath
+-spell_begin-
+-spell_name- lightning breath
+-spell_type- general
+-spell_event- area_dam
+-resist_type- 16
+-saving_throw- 1
+-spell_realm- 1
+-min_position- 7
+-max_mana- 70
+-min_mana- 20
+-mana_chg- 2
+-aggressive- 1
+-num_dice- 50
+-size_dice- 8
+-dice_add- 25
+-dice_limit- 1
+-class_lvl_list- 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+*-class__list- Wa Ro Th So Wi En Co Ne Cl Pr Sh Mo Dr As Ba Ra Me
+
+* MUST BE LAST
+-spell_begin-
+-spell_name- <RETURN>

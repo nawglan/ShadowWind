@@ -1,0 +1,494 @@
+#3400
+firefly fire fly tiny spry~
+a tiny spry {Rfire{rfly{x~
+A tiny spry {Rfire{rfly{x darts about aimlessly.
+~
+Peering into the darkness of the forest you nearly miss the firefly
+itself. It darts about aimlessly through the swollen tree trunks with 
+only it's glowing body to trace out its path in the forest's depths. 
+~
+dfgoq fkq 0 X 0 
+2 19 9 1d1+20
+0 300
+8 8 0 8 15 1
+T 90 1d1+1 22
+T 80 1d1+1 21
+#3401
+chipmunk furry~
+a furry chipmunk~
+A furry chipmunk wanders around looking for acorns.
+~
+Before you, dark beady eyes meet your own in an unblinking stare. 
+Tilting its little furry head to one side it looks carefully at
+you, big bushy tail twitching as it considers you before trying
+to dart off.
+~
+cdghl kps 300 X 0 
+4 18 8 2d2+40
+0 1000
+8 8 0 4 14 1
+T 60 1d3+2 24
+>rand_prog                        8~
+emot tilts it's head sideways, and considers your for a second.
+mpdelay 10
+emot scrubs it's face in bewilderment.
+~
+|
+#3402
+wildcat powerful large~
+a large powerful {Dw{yi{Dl{yd{Dc{ya{Dt{x~
+{wA large powerful {Dw{yi{Dl{yd{Dc{ya{Dt{w carefully stalks his prey on padded feet.{x
+~
+You see power and cofidence radiating from the smooth sinuous curves of his 
+body. Untold grace allows this animal to move as if it were gliding on air 
+even through the toughest terrains. Danger lurks in every move that it makes.
+Be wary.
+~
+cdgl k -100 X 0 
+12 14 4 6d6+120
+0 7500
+8 8 0 14 4 2
+T 140 1d4+4 22
+T 60 2d3+4 24
+#3403
+large brown bear~
+a large brown bear~
+a large brown bear is here, glaring hungrily at you.
+~
+You gawk at the sheer size of this beast. Broad shoulders and wide body block
+out any view beyond this creature. A load roar rumbles out from its angry
+jaws suddenly, and paws which could engulf a man's head lash out at you.
+~
+cdeglq k -300 X 0 
+16 13 2 8d8+160
+0 12500
+8 8 0 14 4 4
+T 120 2d5+4 24
+T 100 3d4+5 25
+#3404
+woodsman big hairy~
+a big hairy {Dw{ro{Do{rd{Ds{rm{Da{rn{x~
+A big hairy {Dw{ro{Do{rd{Ds{rm{Da{rn{x stands here with a stoic look upon his face.
+~
+Before you stands a large man with broad shoulders and commanding eyes. His
+face is covered with a beard, and long hair hangs to his shoulders. Dressed
+in checks and holding his trusty axe, this man is not to be toyed with.
+~
+dgl 0 350 X 0 
+35 7 -8 18d18+350
+0 112000
+8 8 1 3 1 3
+T 100 3d9+7 0
+T 100 5d6+5 9
+E 16 75 3408 -1
+E 13 50 3409 50
+#3410
+ferry master~
+the {Gferry{x master~
+The {GFerry{x Master waits patiently for the next ferry to arrive.
+~
+Aging eyes peep out at you from under the brim of a small conical hat. Dressed
+in the navy blue dress suit of his station, he looks distinguished in his age.
+A weathered, leathery face watches you carefully with attentive eyes. You 
+wonder at whether anyone has travelled on the ferry without paying their fare.
+~
+abdlw h 450 X 0 
+55 0 -10 28d28+5550
+0 6000000
+8 8 1 3 1 3
+T 75 3d6+2 0
+A 15 8 The ferry master says, 'You will not get past me without paying 5 gold coins.'
+A 10 8 The ferry master says, 'It will cost you 5 gold coins to cross the ferry!'
+>all_greet_prog                  100~
+if isfollow ($n)
+   break
+else
+   mpdelay 15
+   say Welcome travellers, it will cost you 5 gold coins to cross the ferry.
+endif
+~
+>bribe_prog                  500~
+mpdelay 15
+say Aye, one ticket for the Caryllion Ferry.
+mpdelay 5
+mpechoat $n The Ferry Master leads you through the gate into the ferry dock.
+mpechoaround $n The Ferry Master leads $n through the gate onto the ferry dock.
+mpechoaround $n $n leaves east.
+mptransfer $n 398
+mpat $n mpechoaround $n The Ferry Master leads $n through the gate onto the fe ry dock.
+mpat $n mpechoaround $n $n enters from the west.
+mpforce $n l
+~
+|
+#3411
+ferryprog1~
+ferry mob prog one (ferryprog1)~
+
+~
+
+~
+bdu dfkpyz 0 X 0 
+60 0 10 1d1+0
+0 0
+8 8 0 0 0 0
+T 10 1d1+1 0
+>time_prog     */*/*/*/*/0~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/1~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/2~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/3~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/4~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/5~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/6~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/7~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/8~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/9~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/10~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/11~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/12~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/13~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/14~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/15~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/16~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/17~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/18~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/19~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/20~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/21~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/22~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/23~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/24~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/25~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/26~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/27~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/28~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/29~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/30~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/31~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/32~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/33~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/34~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/35~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/36~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/37~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/38~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/39~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/40~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/41~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/42~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/43~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/44~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/45~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/46~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/47~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/48~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/49~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/50~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/51~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/52~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/53~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+>time_prog     */*/*/*/*/54~
+mpat 398 mpoload 3499
+mpat 398 mpecho {yThe Caryllion ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Eastern Dock.'
+~
+>time_prog     */*/*/*/*/55~
+mpat 398 mppurge ferry
+mpat 398 mpecho {yThe Caryllion ferry{x sails eastward.
+mpat 399 mpecho {yThe ferry{x sails eastward.
+~
+>time_prog     */*/*/*/*/56~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues east.
+~
+>time_prog     */*/*/*/*/57~
+mpat 3701 mpoload 3499
+mpat 3701 mpecho {yThe Caryllion Ferry{x docks here.
+mpat 399 mpecho {yThe ferry{x docks here.
+mpat 399 mpecho The ferry master shouts, 'We have arrived at the Western Dock of Caryllion.'
+~
+>time_prog     */*/*/*/*/58~
+mpat 3701 mppurge ferry
+mpat 3701 mpecho {yThe Caryllion ferry{x sails westward.
+mpat 399 mpecho {yThe ferry{x sails westward.
+~
+>time_prog     */*/*/*/*/59~
+mpat 399 mpecho {yThe Caryllion Ferry{x continues west.
+~
+|
+#3412
+ferry master~
+the {Gferry {xmaster~
+The {GFerry{x Master waits patiently for the next ferry to arrive.
+~
+Aging eyes peep out at you from under the brim of a small conical hat. Dressed
+in the navy blue dress suit of his station, he looks distinguished in his age.
+A weathered, leathery face watches you carefully with attentive eyes. You 
+wonder at whether anyone has travelled on the ferry without paying their fare.
+~
+abdlw h 450 X 0 
+55 30 -10 28d28+5550
+0 6000000
+8 8 1 0 0 0
+T 75 3d6+2 0
+A 15 8 The ferry master says, 'You will not get past me without paying 5 gold coins.'
+A 10 8 The ferry master says, 'It will cost you 5 gold coins to cross the ferry!'
+>all_greet_prog                  100~
+if isfollow ($n)
+   break
+else
+   mpdelay 15
+   say Welcome travellers, it will cost you 5 gold coins to cross the ferry.
+ endif
+endif
+~
+>bribe_prog                  500~
+mpdelay 15
+say Aye, one ticket for the Caryllion Ferry.
+mpdelay 5
+mpechoat $n The Ferry Master leads you through the gate into the ferry dock.
+mpechoaround $n The Ferry Master leads $n through the gate onto the ferry dock.
+ 
+mpechoaround $n $n leaves west.
+mptransfer $n 3701
+mpat $n mpechoaround $n The Ferry Master leads $n through the gate onto the ferry dock.
+mpat $n mpechoaround $n $n enters from the east.
+mpforce $n l
+~
+|
+#3413
+ferry master~
+the {Gferry{x master~
+The {GFerry{x Master waits patiently for the next ferry to arrive.
+~
+Aging eyes peep out at you from under the brim of a small conical hat. Dressed
+in the navy blue dress suit of his station, he looks distinguished in his age.
+A weathered, leathery face watches you carefully with attentive eyes. You 
+wonder at whether anyone has travelled on the ferry without paying their fare.
+~
+abdlw h 450 X 0 
+55 0 -10 28d28+5550
+0 6000000
+8 8 1 0 0 0
+T 75 3d6+2 0
+A 15 8 The ferry master says, 'You will not get past me without paying 5 gold coins.'
+A 10 8 The ferry master says, 'It will cost you 5 gold coins to cross the ferry!'
+>all_greet_prog                  100~
+if isfollow ($n)
+   break
+else
+   mpdelay 15
+   say Welcome travellers, it will cost you 5 gold coins to cross the ferry.
+ endif
+endif
+~
+>bribe_prog                  500~
+mpdelay 15
+say Aye, one ticket for the Caryllion Ferry.
+mpdelay 5
+mpechoat $n The Ferry Master leads you through the gate into the ferry dock.
+mpechoaround $n The Ferry Master leads $n through the gate onto the ferry dock. 
+mpechoaround $n $n leaves west.
+mptransfer $n 3702
+mpat $n mpechoaround $n The Ferry Master leads $n through the gate onto the ferry dock.
+mpat $n mpechoaround $n $n enters from the east.
+mpforce $n l
+~
+|

@@ -1,0 +1,1096 @@
+* Note: all lines between records which start with '*' are comments and
+* are ignored.  Comments can only be between records, not within them.
+*
+* This file is where the damage messages go for offensive spells, and
+* skills such as kick and backstab.  Also, starting with Circle 3.0, these
+* messages are used for failed spells, and weapon messages for misses and
+* death blows.
+*
+* All records must start with 'M' in the first column (for 'Message').
+* The next line must contain either the damage number from spells.h or
+* the spell/skill command defined in lib/misc/spells.
+* then the messages (one per line):
+*   Death Message (damager, damagee, onlookers)
+*   Miss Message (damager, damagee, onlookers)
+*   Hit message (damager, damagee, onlookers)
+*
+* All messages must be contained in one line.  They will be sent through
+* act(), meaning that all standard act() codes apply, and each message will
+* automatically be wrapped to 79 columns when they are printed.  '#' can
+* be substituted for a message if none should be printed.  Note however
+* that, unlike the socials file, all 9 lines must be present for each
+* record, regardless of any '#' fields which may be contained in it.
+
+***************************************************************************
+*                           Offensive Spells                              *
+***************************************************************************
+
+* Holy word
+M
+holy word
+$N{G hears your{W holy word{G and shrieks in agony!
+You hear $n's{W holy word{R and you bellow in agony as it consumes you!
+$n's{W holy word{x has completely consumed $N{x!
+Your{W holy word{x was unable to reach $N's{x ears!
+You manage to avoid hearing $n's{W holy word{x!
+$n's{W holy word{x tries to enter $N's{x ears, but $E escapes!
+$N{G hears your{W holy word{G and $E begins to writhe in pain!
+You writhe in pain as $n's{W holy word{R reaches out to you!
+$N{x screams in pain as $n's{W holy word{x reaches $M!
+
+* Earthquake
+M
+earthquake
+The{D earth{G opens up and completely swallows $N{G!
+The{D earth{R opens up and completely swallows you.
+$n{x causes the{D earth{x to open up and completely swallow $N{x!
+$N{x barely manages to keep $S feet as your earthquake shakes the area.
+You barely manage to keep your feet as you avoid $n's{x earthquake.
+$n's{x earthquake shakes the area but $N{x manages to escape.
+Your rumbling earthquake has injured $N{G, who nearly falls to the ground.
+The{D earth{R responds to $n's{R command and nearly swallows you!
+$N{x nearly stumbles as $E is injured by $n's{x rumbling earthquake.
+
+* Wizard War
+M
+wizard war
+Your{R fiery war flames{G have burnt $N{G to a crisp!
+Your flesh is consumed by the{Y fiery war flames{R sent by $n{R!
+$n's{R fiery war flames{x have turned $N{x into crisp corpse!
+Your{R fiery war flames{x flow past $N{x, leaving $M unharmed.
+You easily escape $n's{R fiery war flames{x!
+$n's{R fiery war flames{x try to consume $N{x, but $E escapes!
+Your{R fiery war flames{G engulf $N{G, causing $M to writhe in pain.
+You writhe in pain as $n's{Y fiery war flames{R engulf you!
+$N{x writhes in pain as $n's{R fiery war flames{x engulf $M!
+
+
+* Bigby's Clenched Fist
+M
+bigbys clenched fist
+$N's{G body turns limp as your{m clenched fist{G squeezes $M to a lifeless pulp!
+A{m huge fist{R reaches out from $n{R and squeezes the life out of you!
+$n's{m clenched fist{x squeezed $N{x into a lifeless pulp!
+Your{m clenched fist{x is unable to grab $N{x!
+You barely dodge $n's{m clenched fist{x!
+$n's{x hand grows and grabs $N{x, but $E is able to wiggle loose.
+Your{m clenched fist{G squeezes $N{G, who gasps in pain!
+You gasp in pain as $n's{m clenched fist{R closes in around you!
+$N{x gasps in pain as $n's{m clenched fist{x closes in around $M!
+
+* Bigbys Crushing Hand
+M
+bigbys crushing hand
+Your{M huge hand{G grows and crushes $N{G into a flattened clump!
+A{M huge hand{R reaches out from $n{R and crushes you out of existence!
+$n's{M huge hand{x has crushed $N{x into an inanimate clump!
+Your{M huge hand{x crushes down on the ground right next to $N{x!
+You are barely able to dodge $n's{M crushing hand{x!
+$n's{x hand grows and speeds toward $N{x, but $E avoids the{M crushing hand{x.
+Your{M huge hand{G crushes $N{G to a point of insanity!
+You gasp for air as $n's{M huge hand{R crushes the feeling out of you!
+$N{x gasps in horror as $n's{M huge hand{x crushes $M into the ground!
+
+* Creeping Death
+M
+creeping death
+A tremendous horde of{y maggots{G completely consumes $N's{G flesh!
+$n's{R horde of{y maggots{R slithers over to you and completely consumes your flesh!
+$n{x sends a horde of{y maggots{x towards $N{x, whose flesh is completely devoured!
+Your horde of{y maggots{x slide right past $N{x, leaving $M unharmed!
+You are barely able to avoid $n's{x creeping horde of{y maggots{x!
+$n's{x creeping horde of{y maggots{x slithers towards $N{x, but $E manages to escape.
+A tremendous horde of{y maggots{G begins to consume $N{G, who screams in terror!
+You scream in terror as your body is eaten away by $n's{R horde of{y maggots{R!
+$N{x screams in terror as $n's{x horde of{y maggots{x begins to consume $S flesh!
+
+
+*Molten spray
+M
+molten spray
+Your{R deadly spray{G of molten rock shoots out and burns $N{G to a crisp!
+$n's{r molten spray{R covers you completely, turning you into a lump of coal!
+$n's{R molten spray{x has burned $N{x beyond recognition!
+Your{R molten spray{x just shoots past $N{x!
+You dodge $n's{R molten spray{x with a quick step!
+$n's{R molten spray{x shoots towards $N{x, but $E manages to dodge the spray!
+Your{R molten spray{G scorches $N{G, leaving $M charred from head to toe.
+Your body is badly scorched by $n's{r molten spray{R!
+$N{x screams in pain as $n's{R molten spray{x reaches it's target!
+
+*Blades of fury
+M
+blades of fury
+Hundreds of{W gleaming sharp knives{G come out of nowhere and shred $N{G to pieces!
+Hundreds of{W sharp knives{R sent by $n{R shred you to pieces!
+$n's{W blades of fury{x slice and dice $N{x into several pieces!
+Your{W blades of fury{x fail to make contact with $N{x!
+You barely avoid $n's{W blades of fury{x!
+$n's{W blades of fury{x fly towards $N{x, but $E manages to side step the knives!
+Your{W brilliant knives{G slice and dice $N{G leaving $M a{r bloody{x mess!
+You are badly cut and torn by $n's{W blades of fury{R!
+$N{x screams in agony as $n's{W brilliant knives{x begin to rip $S flesh!
+
+
+* Hand of fate
+M
+hand of fate
+A{W giant hand of white light{G appears from above and thrashes $N{G to death!
+$n's{W hand of light{R catches you and literally thrashes you to death.
+$n's{W hand of light{x grabs $N{x and thrashes $M out of existence!
+Your{W hand of light{x just isn't able to grab $N{x!
+You manage to dodge out of the way of $n's{W hand of fate{x!
+$n's{W hand of fate{x tries to grab $N{x, but $E manages to evade the attack!
+Your{W hand of light{G grabs $N{G and begins to thrash $M!
+You are beaten repeatedly by $n's{W holy hand of fate{R!
+$N{x yelps as $n's{W hand of fate{x thrases him repeatedly!
+
+* Ray of hope
+M
+ray of hope
+A{W beaming ray of white light{G comes from the heavens and impales $N{G!
+$n's{W holy ray of hope{R impales you and your soul is lost to the heavens!
+$n's{W holy light{x totally consumes $N{x, who begs for $S soul to return.
+Your{W holy ray of hope{x narrowly misses $N{x!
+You barely manage to escape $n's{W holy ray of hope{x!
+$n's{W holy ray of hope{x shoots towards $N{x, but $E manages to side step the ray!
+Your{W holy light{G engulfs $N{G, leaving $M pleading for mercy!
+Your soul is nearly taken by $n's{W ray of hope{R!
+$n's{W ray of hope{x engulfs $N{x, who begs for mercy from the heavenly light!
+
+*Meteor swarm
+M
+meteor swarm
+Deadly{y meteors{G fall from the sky and crush $N{G, leaving $M motionless!
+Your life passes before your eyes as $n's{y meteors{R pound you to death!
+$n's{x swarms of{y meteors{x pour down on $N{x, crushing $M to death!
+Your{y meteor swarm{x showers the area, but misses $N{x!
+You nimbly avoid the{y meteors{x created by $n's{x meteor swarm!
+$n's{y meteors{x drive towards $N{x, but $E manages to dodge the meteors!
+Your{y meteors{G pound $N{G, leaving $M bruised and cringing in pain.
+Your body is beaten and bruised by $n's{R powerful{y meteors{R!
+$N{x cringes as $n's{x meteor swarm pounds $M without mercy!
+
+*arieks shattering iceball
+M
+arieks shattering iceball
+Your awesome{C ball of ice{G smashes into $N{G, freezing $S entire body!
+$n's{R shattering{C iceball{R hits you squarely and freezes your body solid!
+$N{x wails and falls to the ground as $n's{x huge{C iceball{x freezes $S entire body!
+Your{C huge iceball{x screams towards $N{x, but $E manages to step to the side!
+An huge{C iceball{x sent by $n{x flies just past you, today must be your lucky day!
+$n{x sends a huge{C iceball{x hurling toward $N{x, but $N{x manages to avoid the attack!
+Your huge{C iceball{G screams towards $N{G and hits $M with full force!
+You body turns numb as $n's{R shattering{C iceball{R strikes you solidly!
+$n's{x calls upon Ariek's, and throws a huge{C iceball{x that smashes into $N{x!
+
+* Burning Hands
+M
+burning hands
+You have{r burnt{G $N{G to a crisp with your hot little hands!
+$n's{R grabs you with $s{Y burning{R hands, and you are{r burnt{R to a crisp!
+$n{x reaches out and{r burns{x $N{x to a crisp with a single touch!
+You are unable to grab $N{x with your burning hands!
+$n{x reaches for you with burning hands, but misses!
+$n{x tries to burn $N{x, but the attack fails!
+You burn $N{G with your{R hot{G little hands!
+You cry out in pain as $n{R grabs you with{r burning{R hands!
+$N{x cries out as $n{R burns{x $M!
+
+* Lightning Bolt
+M
+lightning bolt
+Your{B{F lightning bolt{G sends tremendous energy through $N{G, leaving $M lifeless!
+The energy from $n's{B{F lightning bolt{R is too much for your body to handle!
+$N{x slumps to the ground as $n's{B{F lightning bolt{x delivers a fatal shock!
+Your{B{F lightning bolt{x scores the ground in front of $N{x, missing $M by a hair!
+The ground before you is scored as $n{x misses you with $s{B{F lightning bolt{x!
+$N{x jumps backwards just in time to avoid the{B{F lightning bolt{x sent by $n{x!
+Your impressive{B{F lightning bolt{G hits $N{G, bullseye!
+You are hit by a{B{F lightning bolt{R sent by $n{R, OUCH!
+$N{x screams in pain as a{B{F lightning bolt{x from $n{x hits it's target!
+
+* Chain Lightning
+M
+chain lightning
+Your{B{F lightning bolt{G sends tremendous energy through $N{G, leaving $M lifeless!
+The energy from $n's{B{F lightning bolt{R is too much for your body to handle!
+$N{x slumps to the ground as $n's{B{F lightning bolt{x delivers a fatal shock!
+Your{B{F lightning bolt{x scores the ground in front of $N{x, missing $M by a hair!
+The ground before you is scored as $n{x misses you with $s{B{F lightning bolt{x!
+$N{x jumps backwards just in time to avoid the{B{F lightning bolt{x sent by $n{x!
+Your impressive{B{F lightning bolt{G hits $N{G, bullseye!
+You are hit by a{B{F lightning bolt{R sent by $n{R, OUCH!
+$N{x screams in pain as a{B{F lightning bolt{x from $n{x hits it's target!
+
+* Call Lightning
+M
+call lightning
+Your{B{F lightning bolt{G sends tremendous energy through $N{G, leaving $M lifeless!
+The energy from $n's{B{F lightning bolt{R is too much for your body to handle!
+$N{x slumps to the ground as $n's{B{F lightning bolt{x delivers a fatal shock!
+Your{B{F lightning bolt{x scores the ground in front of $N{x, missing $M by a hair!
+The ground before you is scored as $n{x misses you with $s{B{F lightning bolt{x!
+$N{x jumps backwards just in time to avoid the{B{F lightning bolt{x sent by $n{x!
+Your impressive{B{F lightning bolt{G hits $N{G, bullseye!
+You are hit by a{B{F lightning bolt{R sent by $n{R, OUCH!
+$N{x screams in pain as a{B{F lightning bolt{x from $n{x hits it's target!
+
+* Chill Touch
+M
+chill touch
+You{C chill{G $N{G, it'll be a long time before $E thaws!
+You are unable to withstand $n's{C chill{R touch, alas you are{C frozen{R solid...
+$n{x touches $N{x who slumps to the ground,{C frozen{x and lifeless!
+The atmosphere turns{C chilly{x as you miss $N{x!
+You dodge $n{x and $s{C chill{x touch!
+$n{x tries unsuccesfully to{C chill{x $N{x!
+You{C chill{G $N{G with your{C icy{G fingers!
+Your veins feel a bit{C icy{R as $n{C chills{R you!
+$n{x cackles as $N{x turns{C blue{x from a{C chill{x touch!
+
+* Death Touch
+M
+death touch
+$N{G dies as you touch $M, remember to put {Yf{Rl{Mo{Bw{Ce{Wr{bs{G on $S grave...
+You feel a touch by $n{R and then you feel no more...
+$n{x touches $N{x who slumps to the ground...
+You can feel{D death{x in the air as your touch misses $N{x!
+You dodge the{D deadly{x touch of $n{x!
+$n{x tries unsuccesfully to affect $N{x with $s{D deadly{x touch!
+You hit $N{G with your touch of{D death{G!
+You feel your life flowing away as $n{R touches you!
+$n{x touches $N{x who suddenly seems less lively!
+
+* Color Spray
+M
+color spray
+Your {Rc{Yo{Gl{Bo{Mr{G spray enlightens $N{G!!! Now $E knows what death feels like.
+Your head is filled with all the {Rc{Yo{Gl{Bo{Mr{Rs of the {rr{ya{Yi{Gn{Bb{Mo{mw{R just before it bursts!
+$n{x turns $N{x into a {Rc{yo{Yl{Go{Br{Mf{mu{gl{x corpse!
+Your dazzling {Rc{Yo{Gl{Bo{Mr{x spray misses $N{x -- what a dull world...
+$n{x unsuccesfully tries to add {Rc{Yo{Gl{Bo{Mr{x to your life!
+$n{x splashes {Rc{Yo{Gl{Bo{Mr{x everywhere except on $N{x.
+Your own private {rr{ya{Yi{Gn{Bb{Mo{mw{G hits $N{G in the face -- WOWIE!!
+A sudden burst of {Rc{Yo{Gl{Bo{Mr{Rs sends you reeling!
+$n{x throws {Rc{Yo{Gl{Bo{Mr{xs at $N{x, who is ungrateful for this enlightenment!
+
+* Agony
+M
+agony
+You give $N{G one last memory, that of an agonizing{D death{G!
+$n{R fills your head with{w agony{R, then you feel no more...
+$n{x makes $N{x twitch and turn in{w agony{x until $E is no more!
+Your agonizig spell fails to affect $N{x.
+$n{x unsuccesfully tries to make your life more agonizing.
+$n{x is unsuccessful in $s attempt at creating{w agony{x in $N's{x life.
+Your spell makes $N{G feel the{w agony{G of defeat!
+A sudden burst of{w agony{R sends you reeling!
+$n{x causes{w agonizing pain{x to run through $N's{x body!
+
+* Dispel Evil
+M
+dispel evil
+$N{G is dissolved by your{W goodness{G.
+$n{R dissolves you, you regret having been so{D evil{R, and then nothing...
+$n{x completely dissolves $N{x!
+$N{x is unaffected by your{W goodness{x!
+$n{x thinks that $e is really good, and tries to dispel you.
+$N{x laughs at $n{x as $e tries to dispell $M!
+$N{G shivers and suffers from $S{D evilness{G!
+$n{R makes your{D evil soul{R hurt and suffer!
+$n{x makes $N's{D evil spirit{x shiver and suffer!
+
+* Energy Drain
+M
+energy drain
+$N{G crumples as you drain all of $S{w energy{G!
+As $n{R drains your remaining{w energy{R you look forward to the peace of the graveyard.
+$n{x drains the{w enegy{x out of $N{x, who crumples into a{D lifeless{x cocoon!
+You need more draining lessons... $N{x easily avoided your attack!
+Luckily for you $n{x slept during draining lessons!
+$n{x fails to drain $N{x -- what a waste of energy!
+You drain $N's{w energy{G, those draining lessons paid off!
+You feel less energetic as $n{D drains{R you!
+$n{x drains $N{x, a draining lesson that $N{x would have rather skipped!
+
+* Flamestrike
+M
+flamestrike
+You call{R flames{G down from the heavens which strike $N{G with deadly precision!
+Your last glimpse of life shows $n{R grinning with delight as the gods have answered $s plea with a brilliant{Y pillar of fire{R!
+$N{x melts from the heavenly heat caused by $n's{R flamestrike{x.
+The gods refuse to answer your call for{R fire{x.
+The gods refuse to answer $n's{x call for{R fire{x.
+The gods refuse to answer $n's{x call for{R fire{x.
+The heavens open and a{R column of fire{G blazes towards $N{G, who screams in anguish.
+The heavens open to $n's{R call and a{Y column of fire{R comes crashing down on you.
+The heavens open in response to $n's{x call, and a{R column of fire{x engulfs $N{x.
+
+* Fireball
+M
+fireball
+Your{R fireball{G hits $N{G with full force, $E screams as $S body is burnt to a crisp!
+As you burst into{Y flames{G, the last thing you see is $n{R winking at you.
+$n's{x strikes $N{x with a{R fiery ball{x, all that's left are charred remains.
+Your{R fireball{x explodes a few feet in front of $N{x, who jumps back in fear.
+$n{x aims a{R fireball{x at you but it blooms a few feet before you.
+A{R fireball{x from $n{x misses $N{x -- what great fireworks around here!!
+You throw a{R fireball{G at $N{G and have the satisfaction of seeing $M enveloped in{R flames{G!
+You are enveloped in{Y flames{R from a{Y fireball{R sent by $n{R -- OUCH!!
+$n{x smirks as $s{R fireball{x explodes in the face of $N{x!
+
+* Fire Shield
+M
+fire shield
+Your{R fire shield{G burns $N{G severely,  $E screams as $S body collapses!
+$n{R winks at you as $e sees that $s{Y fire shield{R has just taken your life...
+The heat from $n's{R fire shield{x turns $N{x into a charred corpse!
+#
+#
+#
+Your{R fire shield{G burns $N{G as $E tries to attack you.
+You are burned as you make contact with $n's{Y fire shield{R!
+$n{x grins as $s{R fire shield{x burns $N{x!
+
+* Ice Shield
+M
+ice shield
+Your{C ice shield{G freeses $N{G severely,  $E screams as $S body is frozen solid!
+You{C freeze{R to death as you penetrate $n's{C ice shield{R.
+The{C cold{x from $n's{C ice shield{x turns $N{x into a{C icicle{x.
+#
+#
+#
+Your{C ice shield{G freezes $N{G as $E tries to damage you.
+You shudder as you are{C chilled{R by your contact with $n's{C ice shield{R!
+$n{x grins as $s{C ice shield{x chills $N{x!
+
+* Iceball
+M
+iceball
+Your{C iceball{G hits $N{G with full force, $E{C freezes{G with a horrified look!
+$n's{C iceball{R smashes into you and you{G freeze{R instantly...
+$n's{C iceball{x smashes into $N{x, leaving nothing but a{C cold{x corpse.
+Your{C iceball{x shatters a few feet in front of $N{x who jumps back in fear.
+$n{x aims an{C iceball{x at you, but the iceball completely misses you!
+$N{x narrowly avoids the{C iceball{x sent by $n{x.
+You throw an{C iceball{G at $N{G and grin as it shatters in $S face!
+You are crushed by an{C iceball{R hurled at you by $n{R -- OUCH!!
+$n{x chuckles as $s{C iceball{x smashes into $N's{x face!
+
+* Ice Storm
+M
+ice storm
+Your{C ice storm{G encases $N{G in{C ice{G, sending $M back to the{C ice{G age!
+You are unable to recover from the{C ice storm{R sent by $n{R, alas you have fallen.
+An{C ice storm{x sent by $n{x centers on $N{x who is completely{C frozen{x by the storm.
+Your{C ice storm{x melts before harming $N{x, who laughs at your attempts.
+$n{x aims an{C ice storm{x at you but it melts before it reaches you.
+$n's{C ice storm{x melts before harming $N{x.
+You send an{C ice storm{G at $N{G who is numbed from the cold.
+You are frostbitten from an{C ice storm{R sent by $n{R -- BURRRR!!
+$n{x cackles as $s{C ice storm{x freezes $N{x!
+
+* Firestorm
+M
+firestorm
+Your{R firestorm{G engulfs $N{G in{R flames{x, causing an immediate death!
+Your life force fades as you are engulfed by $n's{Y firestorm{R.
+A{R firestorm{x sent by $n{x turns $N{x into a charred corpse!
+Your{R firestorm{x disappears before harming $N{x, who mocks your attempts.
+$n{x aims a{R firestorm{x at you but it disappears before it reaches you.
+A{R firestorm{x from $n{x misses $N{x.  Aren't you glad it wasn't aimed at you?
+You send a{R firestorm{G at $N{G and have the satisfaction of seeing $M enveloped in flames!
+You are enveloped in flames by a{Y firestorm{R sent by $n{R -- OUCH!!
+$n{x cackles as $s{R firestorm{x engulfs $N{x in flames!
+
+* Ice Bolt
+M
+ice bolt
+Your{C ice bolt{G freezes $N{G. Doesn't look like $E will thaw anytime soon.
+You are frozen by $n's {C ice bolt{R, only the gods can thaw you now...
+$N{x freezes solid as an{C ice bolt{x from $n{x crashes into $M!
+Your aim goes from bad to worse, and your{C ice bolt{x misses $N{x!
+$n{x has bad aim and the{C ice bolt{x misses you!
+$n{x tries to hit $N{x with a{C ice bolt{x but only hits the ground!
+Your{C ice bolt{G hits $N{G with full impact!
+YOU'RE HIT!  An{C ice bolt{R from $n{R has reached its target!
+$N{x wavers under the impact of $n's{C ice bolt{x!
+
+* Fire Bolt
+M
+fire bolt
+Your{R fire bolt{G turns $N{G into a scorched corpse.
+You are burned by $n's{Y fire bolt{R; a flash, then nothing...
+$N{x receives a fatal blow from $n's{R fire bolt{x.
+Your{R fire bolt{x totally misses $N{x.
+$n{x has bad aim and the{R fire bolt{x misses you!
+$n{x tries to hit $N{x with a{R fire bolt{x but it totally missed.
+Your{R fire bolt{G hits $N{G square in the head!
+YOU'RE HIT!  A{Y fire bolt{R from $n{R hits you square in the face!
+$N{x wavers under the impact of $n's{R fire bolt{x!
+
+* Acid Arrow
+M
+acid arrow
+Your{y acid arrow{G dissolves a good portion of $N's{G body, leaving a dead lump!
+Your body dissolves before your eyes as $n's{G acid arrow{R reaches it's target!
+$n{x dissolves $N's{x heart into a fleshy goo as $s{G acid arrow{x strikes true.
+You try to pierce $N's{x heart, but your{G acid arrow{x flies past $M.
+You avoid $n's{G acid arrow{x, which strikes the ground behind you.
+$N{x avoids $n's{G acid arrow{x.
+Your{y acid arrow{G corrodes $N{G, leaving intense acid burns.
+$n{R corrodes your skin with $s{G acid arrow{R.
+$N{x is corroded as $n's{G acid arrow{x strikes it's mark.
+
+* Bolt of force
+M
+bolt of force
+Your{w bolt of force{G shatters $N{G into tiny pieces!
+You feel the{w force{R of $n's{R bolt, and then you feel nothing...
+$N{x recieves a fatal blow from $n's{x bolt of{w force{x...
+Your aim goes from bad to worse, and your bolt of{w force{x misses $N{x!
+$n{x has bad aim and $s bolt of{w force{x misses you!
+$n{x tries to hit $N{x with a bolt of{w force{x, but it misses completely!
+Your bolt of{w force{G hits $N{G with squarely in the chest!
+YOU'RE HIT!  A bolt of{w force{R from $n{R slams into your chest!
+$N{x wavers under the impact of $n's{x bolt of{w force{x!
+
+* Magic Missile
+M
+magic missile
+Your{g magic missile{G tears away the remaining life of $N{G!
+$n{R utters a few unusual syllables, a{g magic missile{R flies at you, then all is dark!
+$n's{g magic missile{x causes $N{x to stagger and collapse into a lifeless heap!
+Your{g magic missile{x penetrates the air miles above $N{x.
+You don't even have to duck as $n{x sends a{g magic missile{x way over your head.
+$n{x tries in vain to correct the course of the{g magic missile{x meant to hit $N{x.
+You watch with selfpride as your{g magic missile{G hits $N{G!
+You stagger as a{g magic missile{R from $n{R hits you!
+$n{x throws a{g magic missile{x at $N{x who staggers under the blow!
+
+* Shocking Grasp
+M
+shocking grasp
+$N{G dies while looking rather{B{F shocked{G!
+$n{B{F shocks{R you.  Unfortunately your heart can't stand it...
+$n{x grasps $N{x, killing $M instantly.
+$N{x evades your grasp!
+You evade $n's{B{F shocking{x grasp.
+$N{x evades the grasp of $n{x!
+You grasp $N{G and{B{F shock{G $M painfully!
+Your hair stands on end as $n{B{F shocks{R you with $s grasp!
+A{C surge of energy{x passes through $N{x as $n{B{F shocks{x $M!
+
+* Dispel Good
+M
+dispel good
+$N{G is dissolved by your extreme{D evil{G.
+$n{R dissolves you, you regret having been so{W good{R, and then you die...
+$n{x completely dissolves $N{x!
+$N{x is unaffected by your extreme{D evil{x!
+$n{x thinks that $e is really{D evil{x, and tries to dispel you.
+$N{x laughs at $n{x as $e tries to dispell $M!
+$N{r quivers{G and{r suffers{G from $S{W goodness{G!
+$n{R makes your{W good{R spirit writhe in pain!
+$n{x makes $N's{W good spirit{x shiver and suffer!
+
+* Harm
+M
+harm
+You grin with delight as your spell causes irreparable{D harm{G to $N{G!
+As $n{R finishes $s spell, you feel great{D harm{R inside your body, then nothing.
+$n{x grins with delight as $s spell has removed life from $N's{x body.
+$N{x manages to avoid the harmful affects of your spell.
+$n's{x spell fails to harm you.
+$N{x sighs with relief as $n's{x spell is unable to harm $M.
+$N's{G face{r cringes{G as your harmful spell arrives at it's target!
+You{r cringe{R as you feel harmed by $n's{R spell.
+$N{r cringes{x as $n's{x harmful intentions are made known to the world!
+
+* Full Harm
+M
+full harm
+You grin with delight as your spell causes incurable{D harm{G to $N{G!
+As $n{R finishes $s spell, you feel great{D harm{R inside your body, then nothing.
+$n{x grins with delight as $s spell has removes life from $N's{x body.
+$N{x manages to avoid the harmful affects of your spell.
+$n's{x spell fails to harm you.
+$N{x sighs with relief as $n's{x spell is unable to harm $M.
+$N's{G face{r cringes{G as you fully harm $M!
+You{r cringe{R as you feel fully{D harmed{R by $n's{R spell.
+$N{r cringes{x as $n's{x harmful intentions are made known to the world!
+
+* Cause Light Wounds
+M
+cause light
+Your spell has caused{r wounds{G to appear all over $N's{G body, $E slumps to the ground.
+$n{R causes irreparable{r wounds{R to appear all over your body, say your prayers!
+$n's{x spell has taken $N's{x life!
+$N{x is unaffected by your malicious spell.
+$n's{x malicious spell does not affect you.
+$N{x is unaffected by $n's{x malicious spell.
+Your spell causes{r wounds{G to appear all over $N's{G body!
+$n's{R malicious spell has created{r wounds{R that cover your entire body!
+$n's{x malicious spell has caused{r wounds{x to cover $N's{x body!
+
+* Cause Serious Wounds
+M
+cause serious
+Your spell has caused{R severe wounds{G to appear all over $N's{G body, $E slumps to the ground.
+$n{R causes irreparable{r wounds{x to appear all over your body, say your prayers!
+$n's{x spell has taken $N's{x life!
+$N{x is unaffected by your malicious spell.
+$n's{x malicious spell does not affect you.
+$N{x is unaffected by $n's{x malicious spell.
+Your spell causes{R severe wounds{G to appear all over $N's{R body!
+$n's{R malicious spell has created{r severe wounds{R that cover your entire body!
+$n's{x malicious spell has caused{R severe wounds{x to cover $N's{x body!
+
+* Cause Critical Wounds
+M
+cause critical
+Your spell has caused{R enormous wounds{G to appear all over $N's{G body, $E slumps to the ground.
+$n{R causes irreparable{r wounds{R to appear all over your body, say your prayers!
+$n's{x spell has taken $N's{x life!
+$N{x is unaffected by your malicious spell.
+$n's{x malicious spell does not affect you.
+$N{x is unaffected by $n's{x malicious spell.
+Your spell causes{R enormous wounds{G to appear all over $N's{G body!
+$n's{R malicious spell has created{r enormous wounds{R that cover your entire body!
+$n's{x malicious spell has caused{R enormous wounds{x to cover $N's{x body!
+
+*Incendiary Cloud
+M
+incendiary cloud
+Your{r incendiary cloud{G burns $N{G beyond recognition, leaving only ashes!
+$n{R waves $s{r incendiary cloud{R towards you, and then a violent{Y{F flash{R...
+$n's{r incendiary cloud{x has completely consumed $N{x in a violent{Y{F flash{x!
+$N{x stands, unharmed, by your{r incendiary cloud{x!
+You miraculously avoid the affects of $n's{r incendiary cloud{x!
+$N{x somehow avoids the violent affects of $n's{r incendiary cloud{x.
+Your{r incendiary cloud{G consumes $N{G in an impressive explosion!
+$n{R sends a cloud of gases towards you and it{R{F explodes{R right in your face!
+$n's{r incendiary cloud{x has engulfed $N{x in violent{R flames{x!
+
+*Maelstrom
+M
+maelstrom
+Your irresistable{m maelstrom{G has destroyed $N{G!
+$n's{R violent{m maelstrom{R thrashes your body until all feeling is lost.
+$n's{x violent{m maelstrom{x has taken $N's{x life!
+$N{x narrowly escapes the wrath of your maelstrom.
+You narrowly escape the path of $n's{x terrible{m maelstrom{x.
+$N{x manages to avoid the path of $n's{m maelstrom{x.
+Your powerful{m maelstrom{G thrashes $N{G, who screams in anguish!
+You scream in anguish as $n's{R powerful{m maelstrom{R thrashes you!
+$N{x screams in anguish as $n's{x powerful{m maelstrom{x reaches it's target!
+
+*Power Word Kill
+M
+power word kill
+Your powerful word instantly{R kills{G $N{G!
+You hear $n{R utter a single word, then you hear nothing...
+$n{x utters a single word, and $N{x slumps to the ground...
+$N{x avoids the deadly affects of your spell.
+You narrowly avoid the deadly affects of $n's{x spell.
+$N{x narrowly avoids the deadly affects of $n's{x spell.
+Your powerful word causes $N{G to scream as the pain is unbearable!
+You scream as $n{R utters a single word and creates unbearable pain in your body!
+$N{x screams in terror as $n{x utters a single word.
+
+*Cone of Cold
+M
+cone of cold
+Your{C cone of cold{G turns $N{G into a block of{C ice{x!
+$n's{C cone of cold{R engulfs you and freezes your body solid!
+$N{x is frozen solid by $n's{C cone of cold{x! 
+$N{x steps out of the path of your{C cone of cold{x!
+You step out of the path of $n's{C cone of cold{x!
+$N{x jumps out of the path of $n's{C cone of cold{x!
+Your{C cone of cold{G engulfs $N{G, who shivers uncontrollably!
+You quiver violently as $n{R hits you with a{C cone of cold{R!
+$N{x begins shivering as $n's{C cone of cold{x hits $M dead on.
+
+*Death Fog
+M
+death fog
+Your{D death fog{G steals any and all life from $N!
+$n's thick {D death fog{R surrounds your body until you can breathe no more!
+$N{x is overcome by $n's{D death fog{x! 
+$N{x steps out of the path of your{D death fog{x!
+You step out of the path of $n's{D death fog{x!
+$N{x quickly maneuvers out of the path of $n's{D death fog{x!
+Your{D death fog{G is inhaled by $N{G, who begins gasping and choking!
+You gasp and choke violently as $n's{D death fog{R surrounds you!
+$N{x begins gasping and choking as $n's{D death fog{x surrounds $M.
+
+***************************************************************************
+*                           Offensive Skills                              *
+***************************************************************************
+
+* Backstab
+M
+backstab
+$N makes a strange sound but is suddenly very silent as you place $p in $S back.
+Suddenly $n stabs you in the back, R.I.P....
+$n places $p in the back of $N, resulting in some strange noises, a lot of{r blood{x, and a corpse.
+$N quickly avoids your backstab and you nearly cut your own finger!
+$n tries to backstab you, but you avoid $m!
+$n tries to backstab $N but nearly cuts $s own finger!
+$N makes a strange sound as you place $p in $S back!
+Suddenly $n stabs you in the back!
+$n places $p in the back of $N, resulting in some strange noises and some{r blood{x!
+
+* Bash
+M
+bash
+$N doesn't recover from your bash! -- $E is dead.
+As $n bashes at you, you give up living and die...
+$N dies after $n has bashed $M!
+As $N avoids your bash, you topple over and fall to the ground!
+You dodge a bash from $n who loses $s balance and falls!
+$N avoids being bashed by $n who loses $s balance and falls!
+Your bash at $N sends $M sprawling!
+$n sends you sprawling with a powerful bash!
+$n sends $N sprawling with a powerful bash!
+
+* Round house
+M
+roundhouse
+You place your round house kick perfectly causing $M to die.
+$n kills you with a perfectly placed round house kick!
+$N dies from $n's round house kick!
+Your beautiful full-circle kick misses $N by a mile.
+$n makes a nice balletstep which plants $s foot a mile above your head.
+$n makes a nice balletstep which plants $s foot a mile above $N's head.
+Your round house kick connects solidly with $N's face!
+$n's round house kick connects solidly with your face!
+$n's round house kick connects solidly with $N's face!
+
+
+* Kick
+M
+kick
+Your kick at $N's kidneys made $M die.
+$n kills you by kicking your kidneys in!
+$N dies from $n's last kick in $S kidneys!
+Your beautiful full-circle kick misses $N by a mile.
+$n makes a nice balletstep which plants $s foot a mile above your head.
+$n makes a nice balletstep which plants $s foot a mile above $N's head.
+Your boots need polishing again --{r blood{x all over them...
+$n wipes $s boots in your face!
+$n wipes $s boots in the face of $N!
+
+M
+kick
+Your kick at $N's face splits $S head open -- yummy!
+$n aims a kick at your face which splits your head in two!
+$n neatly kicks $N's head into pieces -- YUMMY!
+You miss your kick at $N's groin, much to $S relief...
+$n misses a kick at your groin, you breathe lighter now...
+$n misses a kick at $N's groin, much to $N's relief...
+Your kick hits $N in the solar plexus!
+You're hit in solar plexus, wow, this is breathtaking!!
+$n kicks $N in solar plexus, $N is rendered breathless!
+
+***************************************************************************
+*                           Weapon Attacks                                *
+***************************************************************************
+
+* Hit
+M
+ 600
+You punch $N's head with a blow that crushes $S skull!
+$n punches your head with a blow that crushes your skull!
+$n punches $N's head so hard that $S skull cracks open!
+You swing your fist at $N, but miss $M!
+You barely avoid $n's fist as $e takes a swing at you!
+$N barely avoids a blow from $n!
+#
+#
+#
+
+M
+ 600
+You punch $N in $S kidneys resulting in $S immediate death!
+You recieve a punch in your kidneys which ends your worldly misery -- R.I.P.!
+$n punches $N in the kidneys causing immediate death!
+You wildly punch at the air, missing $N.
+$n misses a wild punch at you.
+$n's wild punch totally misses $N.
+#
+#
+#
+
+M
+ 600
+You hit $N with such force that $S neck snaps in two!
+$n hits you with such force that your neck snaps in two!
+$N's neck is snapped in two by a powerful blow from $n!
+You try to hit $N who easily avoids the blow.
+You easily avoid $n's blow.
+$N easily avoids $n's blow.
+#
+#
+#
+
+M
+ 600
+You hit $N with a blow that breaks $S spine!
+$n hits you with a blow that breaks your spine!
+$n hits $N with a blow that breaks $S spine!
+$N ducks under your fist as you try to hit $M.
+You duck under $n's fist as $e takes a swing at you.
+$N ducks under $n's fist as $e takes a swing at $M.
+#
+#
+#
+
+* Whip
+M
+ 602
+You whip $N's head right off of $S body!
+$n whips your head right off of your body!
+$n whips $N's head right off of $S body!
+You crack your whip at $N but it hits you in the face!
+$n cracks $s whip at you and it hits $m in the face!
+$n cracks $s whip at $N but only hits $mself in the face!
+#
+#
+#
+
+M
+ 602
+Your dextrous whip messily tears $N's torso right off!
+$n's whip messily tears you right in half!
+With an evil grin, $n messily whips $N in half!
+You try to whip $N but whip the ground instead!
+$n tries to whip you but whips the ground instead!
+$n tries to whip $N but whips the ground instead!
+#
+#
+#
+
+* Slash
+M
+ 603
+You beautifully slash $N into two parts -- both dead.
+Your upper body is disconnected from your legs as $n slashes at you -- R.I.P.!
+$N is slashed in two by a masterful stroke of $n!
+Your desperate slash at $N is easily avoided by $M.
+You easily avoid a slash from $n.
+$N nimbly avoids $n's slash.
+#
+#
+#
+
+M
+ 603
+Your slash at $N results in a pool of blood and $S immediate death!
+Blood spurts all over as $n slashes at you.  You die...
+$n slashes at $N who colors everything red with blood from $S lethal wound.
+You miss $N by an inch, curse that brat!
+You manage to dodge $n's slash and laugh, HA!
+$n's slash misses $N who laughs in sheer delight, HA!
+#
+#
+#
+
+M
+ 603
+$N cries out in agony as you slash $S ribcage open!
+Your ribcage is slashed open by $n -- R.I.P.!
+$n nicely dissects $N's ribcage with a single slash!
+You try to slash $N but miss by a mile.
+$n's slash misses you by mile.
+$n's slash at $N misses $M by a mile.
+#
+#
+#
+
+M
+ 603
+Your powerful slash cleanly cuts off $N's head, which rolls away with a look of horror on it.
+You briefly feel the sensation of flight as $n slices your head cleanly off!
+$n cleanly slices off $N's head which rolls away with a look of horror on it!
+$N is cooled by the breeze of your missed slash at $M.
+$n cools you with the breeze of $s missed slash at you.
+$n cools $N with the breeze of $s missed slash.
+#
+#
+#
+
+* Bite
+M
+ 604
+You sink your teeth deep into $N's neck -- blood sprays everywhere!
+$n sinks $s teeth deep into your neck, tearing your jugular vein to bits!
+$n sinks $s teeth deep into $N's neck, tearing $S jugular vein to bits!
+You snap your teeth at $N but miss him.
+$n snaps $s teeth at you fiercly but misses.
+$n fiercly snaps $s teeth at $N but misses the mark.
+#
+#
+#
+
+M
+ 604
+You bite $N through $S ribcage and into $S heart -- $e falls to the ground in agony.
+$n bites you right your ribcage and into your heart -- you fall to the ground writhing in agony...
+$n's powerful jaw bites through $N's ribcage into $S heart -- $E falls to the ground writhing in agony!
+You try to bite $N but bite your tongue instead.
+$n tries to bite you but bites $s tongue instead!
+$n tries to bite $N but bites $s own tongue instead!
+#
+#
+#
+
+* Bludgeon
+M
+ 605
+You forcefully bludgeon $N whose head suddenly cracks open like a walnut!
+$n bludgeons your head which cracks open like a walnut!
+$n ruthlessly bludgeons $N whose head cracks open like a walnut!
+You fruitlessly try to bludgeon $N.
+You easily dodge $n's attempt to bludgeon you.
+$n tries to bludgeon $N who easily avoids the blow.
+#
+#
+#
+
+M
+ 605
+Your relentless bludgeoning of $N finally results in $S broken neck!
+$n's relentless bludgeoning of you finally results in your broken neck!
+$n's relentless bludgeoning of $N finally results in $N's broken neck!
+You try to bludgeon $N who simply laughs at you.
+$n tries to bludgeon you, but you avoid $m and laugh.
+$N laughs at $n's attempt to bludgeon $M.
+#
+#
+#
+
+* Crush
+M
+ 606
+You crush $N right out of existence!
+$n crushes you right out of existence!
+$n crushes $N right out of existence!
+You try to crush $N who jumps out of the way!
+$n tries to crush you but you jump out of the way!
+$n tries to crush $N who jumps out of the way!
+#
+#
+#
+
+M
+ 606
+You crush $N's entire body, making a terrible mess!
+$n crushes your entire body, making a terrible mess!
+$n crushes $N's entire body, making a terrible mess!
+You hopelessly try to crush $N.
+$n hopelessly tries to crush you.
+$n hopelessly tries to crush $N.
+#
+#
+#
+
+* Claw
+M
+ 608
+You claw $N's face right off!
+$n claws your face right off!
+$n claws $N's face right off!
+You try to claw at $N but miss!
+$n tries to claw at you but misses by a hair!
+$n tries to claw at $N, missing by a hair!
+#
+#
+#
+
+M
+ 608
+Your razor-sharp claws rip $N wide open!
+$n's razor-sharp claws rip you wide open!
+$n's razor-sharp claws rip $N wide open!
+You try to claw at $N but almost nick yourself instead!
+$n tries to claw at you but nearly nicks $mself instead!
+$n tries to claw at $N but nearly nicks $mself instead!
+#
+#
+#
+
+* Pierce
+M
+ 611
+You succesfully pierce $N and $S dead body falls to the ground in a lifeless heap.
+$n pierces you.  You are no longer a living member of this world -- R.I.P.!
+$n pierces $N whose suddenly lifeless body falls to the ground!
+You try to pierce $N but pierce the air instead!
+$n pierces holes in the air.
+$n tries to pierce air instead of fighting $N.
+#
+#
+#
+
+M
+ 611
+You pierce $N's heart, you heartbreaker you...
+$n breaks your heart, goodbye cruel world...
+$n pierces the heart of $N who falls to the ground clutching at the wound!
+You lunge at $N without managing to pierce $M.
+$n tries to pierce you but fails miserably.
+$n lunges at $N but can't pierce $M.
+#
+#
+#
+
+* Suffering
+M
+ 699
+#
+You feel wounded -- too wounded -- you die...
+$N lies suffering on the ground until no blood is left in $S body.
+#
+suffer miss victim - should never see.
+suffer miss room - should never see.
+#
+You lie on the ground suffering from your terrible wounds...
+$N lies helplessly on the ground and suffers...
+
+M
+ 699
+#
+You can only lie still as your last heartbeat ebbs...
+$N suffers from bloodloss, and the lack of a beating heart...
+#
+suffer miss victim - should never see.
+suffer miss room - should never see.
+#
+You lie on the ground suffering from{r bleeding{x wounds...
+$N lies immobile on the ground, suffering...
+
+* Poison
+M
+poison
+#
+{V Poison{x burns intensely in your veins.. you shiver.. you die.
+$N has a few cramps and dies, suffering from the effects of{V poison{x.
+#
+suffer miss victim - should never see.
+suffer miss room - should never see.
+#
+You feel burning{V poison{x in your blood, and suffer.
+$N looks really sick and shivers uncomfortably.
+
+* Disease
+M
+disease
+#
+Disease finally takes over your body... you die.
+$N coughs violently before dying from an unknown disease.
+#
+suffer miss victim - should never see.
+suffer miss room - should never see.
+#
+You cough up{r blood{x as an unknown disease ravages your body.
+$N looks really sick and coughs violently.
+
+***************************************************************************
+*                              NPC Attacks                                *
+***************************************************************************
+
+* Fire Breath
+M
+ 502
+You burned $N to ashes with your{R fire{x breath.  May $E rest in peace.
+You are burned to ash, as $n breathes{R fire{x on you.
+$n turns $N to ash with $s {R fire{x breath.  Gods grant $M peace.
+You miss $n with your breath of{R fire{x.
+$n breathes{R fire{x at you, but luckily $e misses.
+$N barely avoids $n's{R fire{x breath.
+You burn $n with your{R fire{x breath.
+$n burns you with $s{R fire{x breath.
+$N is burned as $n breaths{R fire{x at $M.
+
+* Gas Breath
+M
+ 503
+$N dies a horrible death as you{V breathe gas{x at $M.
+You die gasping for air as $n{V breathes gas{x at you.
+$n kills $N with $s{V gas breath{x.
+$N held $S breath and survived your{V posionous gas breath{x.
+$n{V breathes gas{x at you, but it has no effect.
+$N avoids $n's{V poisonous gas breath{x.
+You see $N gasp as the{V gas{x you breathed on $M takes effect.
+$n gasses you with $s{V poisonous gas breath{x.
+$N is{V gassed{x by $n.
+
+* Frost Breath
+M
+ 504
+$N is frozen to death by your{C frost breath{x.
+You are frosen to{C ice{x, as $n hits you with his{C frost breath{x.
+$n turns $N to ice after being engulfed by $s{C frost breath{x.
+You missed $N with your{C frost breath{x.
+$n{C breathes frost{x at you, but you avoid it.
+$N avoids $n's{C frost breath{x.
+$N shivers and cries out in pain as you hit $M with your{C frost breath{x.
+You shiver and cry out in pain as $n{C freezes{x you with $s breath.
+$N is partly made ice, as $n{C breathes frost{x at $M.
+
+* Acid Breath
+M
+ 505
+You corrode $N into a gooey puddle with your{G acid breath{x.
+You are corroded to nothing, as $n{G breathes acid{x on you.
+$n's{G acid breath{x corrodes $N to nothing but a gooey puddle.
+You try to{G breathe acid{x at $N, but $E dodges your attack.
+$n{G breathes acid{x at you, but you doge $s attack.
+$N avoids $n's{G acid breath{x.
+You corrode $N with your nasty{G acid breath{x.
+$n corrodes you with $s nasty{G acid breath{x!
+$N is corroded by $n's nasty{G acid breath{x!
+
+* Breath of acid
+M
+breath of acid
+You corrode $N into a gooey puddle with your{G acid breath{x.
+You are corroded to nothing, as $n{G breathes acid{x on you.
+$n's{G acid breath{x corrodes $N to nothing but a gooey puddle.
+You try to{G breathe acid{x at $N, but $E dodges your attack.
+$n{G breathes acid{x at you, but you doge $s attack.
+$N avoids $n's{G acid breath{x.
+You corrode $N with your nasty{G acid breath{x.
+$n corrodes you with $s nasty{G acid breath{x!
+$N is corroded by $n's nasty{G acid breath{x!
+
+* Acid cloud
+M
+acid cloud
+You engulf $N within a{G cloud of acid{x and corrode $M to death.
+You are dissolved into a puddle of goo, as $n sends an{G acid cloud{x at you.
+$N is engulfed in a{G cloud of acid{x and dissolves into a puddle of goo.
+You try to send{G acid{x at $N, who jumps out of the way.
+$n tries to engulf you with an{G acid cloud{x, but you avoid it.
+$N avoids $n's{G acid cloud{x.
+You corrode $N with your{G acid cloud{x.
+$n corrodes you with $s{G acid cloud{x.
+$N is corroded as $n sends an{G acid cloud{x to engulf $M.
+
+* Lightning Breath
+M
+ 506
+$N is killed by your{B{F lightning breath{x.
+You are killed by $n's{B{F lightning breath{x.
+$n kills $N with $s{B{F lightning breath{x.
+Your{B{F lightning breath{x missed $N.
+$n breathes{B{F lightning{x at you, but you avoid it.
+$N avoids $n's{B{F lightning breath{x.
+$N has been hit by your{B{F lightning breath{x.
+$n hits you with $s{B{F lightning breath{x.
+$N is hit by $n's{B{F lightning breath{x.
+
+$

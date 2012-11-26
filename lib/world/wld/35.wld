@@ -1,0 +1,1154 @@
+#3500
+An Old Cart Track~
+   You stand on a dusty old road which was once one of the busiest in
+the realm. It serviced the city that was once a thriving trading center,
+until its sad demise. It connected the city with the great southern lands,
+but now it lies unused. Weeds are sprouting up in the deep tracks 
+left by the many thousands of merchant carts that would have travelled
+this road. To the north, the imposing south gates of the new city of
+Weirvane remind you of how times have changed.
+~
+35 cp 2
+D0
+You see the Southern Gatehouse to the great city of Weirvane.
+~
+~
+0 0 3111 0
+D2
+The cart track rambles south.
+~
+~
+0 0 3501 0
+S
+#3501
+An Old Cart Track~
+   You stand on a dusty old road which was once one of the busiest in
+the realm. It serviced the city that was once a thriving trading center,
+until its sad demise. It connected the city with the great southern lands,
+but now it lies unused. Weeds are sprouting up in the deep tracks 
+left by the many thousands of merchant carts that would have travelled
+this road. To the north, the imposing south gates of the new city of
+Weirvane remind you of how times have changed.
+~
+35 p 2
+D0
+The cart track continues.
+~
+~
+0 0 3500 0
+D1
+You see a wide green field.
+~
+~
+0 0 3502 0
+S
+#3502
+On A Trail Through A Meadow~
+   You are surrounded but beautiful green grass, interspersed with 
+brightly colored flowers. The air is sweet with their scent and full of 
+the sounds of the bustling wildlife that lives in the meadow. The trail
+which you are following is faint, and is marked more by a break in the
+woods ahead, than by a track on the ground.
+~
+35 p 2
+D2
+The meadow continues.
+~
+~
+0 0 3503 0
+D3
+You see a dusty old road.
+~
+~
+0 0 3501 0
+S
+#3503
+On A Trail Through A Meadow~
+   You are surrounded but beautiful green grass, interspersed with 
+brightly colored flowers. The air is sweet with their scent and full of 
+the sounds of the bustling wildlife that lives in the meadow. The trail
+which you are following is faint, and is marked more by a break in the
+woods ahead, rather than by a track on the ground.
+~
+35 p 2
+D0
+The green meadow continues northward.
+~
+~
+0 0 3502 0
+D2
+More of the meadow lies to the south.
+~
+~
+0 0 3504 0
+S
+#3504
+On A Trail Through A Meadow~
+   You are surrounded but beautiful green grass, interspersed with 
+brightly colored flowers. The air is sweet with their scent and full of 
+the sounds of the bustling wildlife that lives in the meadow. The trail
+which you are following is faint, and is marked more by a break in the
+woods ahead, than by a track on the ground.
+~
+35 p 2
+D0
+You see more of the vibrant green grass.
+~
+~
+0 0 3503 0
+D3
+The landscape chages...
+~
+~
+0 0 3505 0
+S
+#3505
+The Outskirts Of The Woods~
+   The landscape changes dramatically here. Gone are the grass and
+flowers. They have been replaced by squat, bristly shrubs and a few tall
+trees. The ground is dusty and dry, with a few rocks and stones scattered
+carelessly across it. To the east, you see a vibrant green meadow, almost
+in total contrast to this dreary landscape. Southward lies increasingly
+denser and darker areas of woodland.
+~
+35 p 3
+D1
+You can leave to a cheerful field.
+~
+~
+0 0 3504 0
+D2
+To the south, nothing seems any different from here...
+~
+~
+0 0 3506 0
+S
+#3506
+The Outskirts Of The Woods~
+   The landscape changes dramatically here. Gone are the grass and
+flowers. They have been replaced by squat, bristly shrubs and a few tall
+trees. The ground is dusty and dry, with a few rocks and stones scattered
+carelessly across it. To the south you see the woods getting thicker and
+darker.
+~
+35 p 3
+D0
+The same drearyness continues.
+~
+~
+0 0 3505 0
+D2
+To the south, more of this boring landscape continues.
+~
+~
+0 0 3507 0
+S
+#3507
+The Sparse Woodlands~
+   You begin to notice that the natural light is fading as you travel
+deeper into the woods. A definite canopy of tree branches is beginning
+to be formed by the towering trees around you. The air is starting to
+feel thick with moisture as sunlight has difficulty making its presence
+felt here to dry out the damp ground.
+~
+35 p 3
+D0
+The woods look lighter there.
+~
+~
+0 0 3506 0
+D1
+You see a vague path that has been overgrown.
+~
+~
+0 0 3508 0
+D3
+The woods continue.
+~
+~
+0 0 3512 0
+S
+#3508
+An Overgrown Path~
+   You beat your way through the underbrush, pushing aside thorny branches 
+that scratch your arms deeply, and kicking tangled massess of blackberry 
+out of your way. If this really is a path, it certainly has not been in
+regular use for many years.
+~
+35 ap 3
+D2
+You think you can bash your way further on.
+~
+~
+0 0 3509 0
+D3
+You see a well defined path.
+~
+~
+0 0 3507 0
+S
+#3509
+An Overgrown Path~
+   You beat your way through the underbrush, pushing aside thorny branches 
+that scratch your arms deeply, and kicking tangled massess of blackberry 
+out of your way. If this really is a path, it certainly has not been in
+regular use for many years.
+~
+35 ap 3
+D0
+You can push your way north through the scrub.
+~
+~
+0 0 3508 0
+D1
+With some effort, you could make your way to the east.
+~
+~
+0 0 3510 0
+S
+#3510
+An Overgrown Path~
+   You beat your way through the underbrush, pushing aside thorny branches 
+that scratch your arms deeply, and kicking tangled massess of blackberry 
+out of your way. If this really is a path, it certainly has not been in
+regular use for many years.
+~
+35 ap 3
+D2
+You think you see the path leading south.
+~
+~
+0 0 3511 0
+D3
+You can force your way to the west.. you think..
+~
+~
+0 0 3509 0
+S
+#3511
+An Overgrown Path~
+   You beat your way through the underbrush, pushing aside thorny branches 
+that scratch your arms deeply, and kicking tangled massess of blackberry 
+out of your way. If this really is a path, it certainly has not been in
+regular use for many years.
+~
+35 ap 3
+D0
+You can force your way back to the north.
+~
+~
+0 0 3510 0
+S
+#3512
+The Sparse Woodlands~
+   You begin to notice that the natural light is fading as you travel
+deeper into the woods. A definite canopy of tree branches is beginning
+to be formed by the towering trees around you. The air is starting to
+feel thick with moisture as sunlight has difficulty making its presence
+felt here to dry out the damp ground.
+~
+35 p 3
+D1
+The woodlands continue.
+~
+~
+0 0 3507 0
+D2
+A dark trail leads south.
+~
+~
+0 0 3513 0
+S
+#3513
+A Trail Through The Thick Woods~
+   As you make your way along the winding trail, the surrounding woods
+seem to become less and less inviting. It seems like the branches have
+eyes, watching your every move, and the small creatures that dart in and
+out behind the leaves are whispering about you. The undergrowth here is 
+getting much thicker than in earlier parts of the woods, and you would find
+it very difficult to travel off the worn path.
+~
+35 p 3
+D0
+You see a slightly clearer area to the north.
+~
+~
+0 0 3512 0
+D3
+The trail continues..
+~
+~
+0 0 3514 0
+S
+#3514
+A Trail Through The Thick Woods~
+   As you make your way along the winding trail, the surrounding woods
+seem to become less and less inviting. It seems like the branches have
+eyes, watching your every move, and the small creatures that dart in and
+out behind the leaves are whispering about you. The undergrowth here is 
+getting much thicker than in earlier parts of the woods, and you would find
+it very difficult to travel off the worn path.
+~
+35 p 3
+D1
+The worn path continues.
+~
+~
+0 0 3513 0
+D2
+You can follow the trail south.
+~
+~
+0 0 3515 0
+S
+#3515
+A Trail Through The Thick Woods~
+   As you make your way along the winding trail, the surrounding woods
+seem to become less and less inviting. It seems like the branches have
+eyes, watching your every move, and the small creatures that dart in and
+out behind the leaves are whispering about you. The undergrowth here is 
+getting much thicker than in earlier parts of the woods, and you would find
+it very difficult to travel off the worn path.
+~
+35 p 3
+D0
+The trail extends north.
+~
+~
+0 0 3514 0
+D2
+More of the path lies to the south.
+~
+~
+0 0 3516 0
+S
+#3516
+A Trail Through The Thick Woods~
+   As you make your way along the winding trail, the surrounding woods
+seem to become less and less inviting. It seems like the branches have
+eyes, watching your every move, and the small creatures that dart in and
+out behind the leaves are whispering about you. The undergrowth here is 
+getting much thicker than in earlier parts of the woods, and you would find
+it very difficult to travel off the worn path.
+~
+35 p 3
+D0
+You can wander the trail northward.
+~
+~
+0 0 3515 0
+D1
+You can follow the path east.
+~
+~
+0 0 3517 0
+S
+#3517
+A Trail Through The Thick Woods~
+   As you make your way along the winding trail, the surrounding woods
+seem to become less and less inviting. It seems like the branches have
+eyes, watching your every move, and the small creatures that dart in and
+out behind the leaves are whispering about you. The undergrowth here is 
+getting much thicker than in earlier parts of the woods, and you would find
+it very difficult to travel off the worn path.
+~
+35 p 3
+D2
+The thick forest continues to the south.
+~
+~
+0 0 3518 0
+D3
+The familiar trail winds in this direction.
+~
+~
+0 0 3516 0
+S
+#3518
+A Trail Through The Thick Woods~
+   As you make your way along the winding trail, the surrounding woods
+seem to become less and less inviting. It seems like the branches have
+eyes, watching your every move, and the small creatures that dart in and
+out behind the leaves are whispering about you. Here you come to a fork in
+the path, to the west you see a muddy looking track leading off into the
+darkness, and to the east the woods seem to get thicker and darker, the
+trail leading into the distance.
+~
+35 ap 3
+D0
+The trail leads north.
+~
+~
+0 0 3517 0
+D1
+You can see a dark trail.
+~
+~
+0 0 3522 0
+D3
+This direction looks very muddy and wet.
+~
+~
+0 0 3519 0
+S
+#3519
+The Flooded Track~
+   You are standing ankle deep in stagnant muddy water. The stench is quite
+overpowering and there is much movement from the under the surface of the
+water borne creature attach themselves to your skin. It is not apparent
+where all this water has come from, nor why it has not yet drained away.
+~
+35 p 3
+D1
+You can see a much drier trail to the east.
+~
+~
+0 0 3518 0
+D3
+The puddle continues.
+~
+~
+0 0 3520 0
+S
+#3520
+The Flooded Track~
+   You are standing ankle deep in stagnant muddy water. The stench is quite
+overpowering and there is much movement from the under the surface of the
+water borne creature attach themselves to your skin. It is not apparent
+where all this water has come from, nor why it has not yet drained away.
+~
+35 p 3
+D1
+You can slosh your way east.
+~
+~
+0 0 3519 0
+S
+#3522
+A Dark Trail Through The Dense Woods~
+   You continually scan around you for signs of any movement as you make
+your way through this part of the woods. The overhead canopy has got so thick
+that very little natural light could make its way in. You can just make out
+shapes and shadows in the distance, and it appears as though some of these
+shadows are infact following you, ready to take advantage of the first 
+moment you let your guard down.
+~
+35 ap 3
+D2
+The darkness stretches south.
+~
+~
+0 0 3523 0
+D3
+You can see a lighter trail.
+~
+~
+0 0 3518 0
+S
+#3523
+A Dark Trail Through The Dense Woods~
+   You continually scan around you for signs of any movement as you make
+your way through this part of the woods. The overhead canopy has got so thick
+that very little natural light could make its way in. You can just make out
+shapes and shadows in the distance, and it appears as though some of these
+shadows are infact following you, ready to take advantage of the first 
+moment you let your guard down.
+~
+35 ap 3
+D0
+The eerie path continues.
+~
+~
+0 0 3522 0
+D2
+You can follow this dark path south.
+~
+~
+0 0 3524 0
+S
+#3524
+A Dark Trail Through The Dense Woods~
+   You continually scan around you for signs of any movement as you make
+your way through this part of the woods. The thick canopy has got so thick
+that very little natural light could make its way in. You can just make out
+shapes and shadows in the distance, and it appears as though some of these
+shadows are infact following you, ready to take advantage of the first 
+moment you let your guard down. It is quite cold and damp now, and as you
+look into the distance, these woods do not seem to get anymore inviting.
+~
+35 ap 3
+D0
+You can follow the path to the north.
+~
+~
+0 0 3523 0
+D3
+You peer into the half-light, and think you can make out a path.
+~
+~
+0 0 3525 0
+S
+#3525
+A Dark Trail Through The Dense Woods~
+   You continually scan around you for signs of any movement as you make
+your way through this part of the woods. The overhead canopy has got so thick
+that very little natural light could make its way in. You can just make out
+shapes and shadows in the distance, and it appears as though some of these
+shadows are infact following you, ready to take advantage of the first 
+moment you let your guard down.
+~
+35 ap 3
+D1
+You can stumble along the trail to the east.
+~
+~
+0 0 3524 0
+D2
+You have a feeling the path continues...
+~
+~
+0 0 3526 0
+S
+#3526
+A Dark Trail Through The Dense Woods~
+   You continually scan around you for signs of any movement as you make
+your way through this part of the woods. The overhead canopy has got so thick
+that very little natural light could make its way in. You can just make out
+shapes and shadows in the distance. You spin around violently as you hear the
+loud crack of a breaking twig somewhere off the track.
+~
+35 ap 3
+D0
+You can barely see the familiar trail
+~
+~
+0 0 3525 0
+D2
+The trail winds south.
+~
+~
+0 0 3527 0
+S
+#3527
+A Dark Trail Through The Dense Woods~
+   You continually scan around you for signs of any movement as you make
+your way through this part of the woods. The overhead canopy has got so huge
+that very little natural could make its way in. You can just make out
+shapes and shadows in the distance, and it appears as though some of these
+shadows are infact following you, ready to take advantage of the first 
+moment you let your guard down. You have come to another fork in the path. 
+To the west, its seems clearer, and lighter, while to the east, the path 
+seems ever more foreboding.
+~
+35 p 3
+D0
+The dense woods seem to lead north.
+~
+~
+0 0 3526 0
+D1
+You see a trail leading through the dark woods.
+~
+~
+0 0 3538 0
+D3
+You see a clearing in the woods..
+~
+2~
+0 0 3528 0
+S
+#3528
+A Clearing In The Woods~
+   As you leave the clutches of the woods, there seems to be some respite
+from the evil that has been surrounding you. Here you get glimpses of the
+sky, something you have not seen for quite a while. The ground has been
+cleared of all the scrub, and the many tree stumps are evidence that this
+clearing is not natural.
+~
+35 p 3
+D1
+You can enter the evil presence of the woods.
+~
+~
+0 0 3527 0
+D3
+You see some foothills..
+~
+~
+0 0 3529 0
+S
+#3529
+A Clearing In The Woods~
+   As you leave the clutches of the woods, there seems to be some respite
+from the evil that has been surrounding you. Here you get glimpses of the
+sky, something you have not seen for quite a while. The ground has been
+cleared of all the scrub, and the many tree stumps are evidence that this
+clearing is not natural.
+~
+35 p 3
+D1
+You see a clearing to the east.
+~
+~
+0 0 3528 0
+D2
+You see some foothills to the south.
+~
+~
+0 0 3530 0
+S
+#3530
+A Rocky Clearing~
+   As you stand on this rocky terrain, you can see the evidence of much
+life around you. Burnt out fireplaces, some still smoking, and piles of
+animal skeletons litter the ground. Twigs that have been whittled to form
+deadly sharp tips have been left in tidy bundles here, awaiting collection.
+Many animal hides are streched over makshift drying racks, soon to be made 
+into clothes for the inhabitants of this rugged area.
+~
+35 p 3
+D0
+You can see a clearing to the north.
+~
+~
+0 0 3529 0
+D1
+You see more of the foothills.
+~
+~
+0 0 3533 0
+D2
+You can see an upward slope.
+~
+~
+0 0 3531 0
+S
+#3531
+On The Side Of A Small Hill~
+   You only just manage to keep your footing on this rocky slope. The
+creatures that live around here must be extremely agile in order to move
+so quickly on such uneven and treacherous terrain. On either side of you,
+dense scrub blocks any travel east or west and as you look up the hill,
+you can see what looks like some sort of guard station.
+~
+35 ap 3
+D0
+You can see some rocky foothills.
+~
+~
+0 0 3530 0
+D1
+You almost miss a small well hidden trail to the east.
+~
+scrub~
+1 0 3534 0
+D4
+You see a guard post.
+~
+~
+0 0 3532 0
+S
+#3532
+A Lookout Over The Black Woods~
+   This is a cleverly hidden scout point. You have a clear and unimpeded 
+veiw over the dark woods below you, but it appears that you could not be 
+seen from below in the woods. This must prove very useful for protecting the
+makeshift village at the bottom of the hill. In the corners of the lookout 
+lie piles of rocks, and bundles of arrows like those you saw in the
+village.
+~
+35 p 0
+D5
+You can clamber down the hill.
+~
+~
+0 0 3531 0
+S
+#3533
+A Rocky Clearing~
+   As you stand on this rocky terrain, you can see the evidence of much
+life around you. Burnt out fireplaces, some still smoking, and piles of
+animal skeletons litter the ground. Twigs that have been whittled to form
+deadly sharp tips have been left in tidy bundles here, awaiting collection.
+Many animal hides are streched over makshift drying racks, soon to be made 
+into clothes for the inhabitants of this rugged area.
+~
+35 p 3
+D3
+You see more foothills to the west.
+~
+~
+0 0 3530 0
+S
+#3534
+The Secret Path~
+   This narrow path looks as though it has been literally dug out of the 
+dense bush on either side of you. It appears as though it would be used to 
+quickly move the inhabitants of the foothills quickly to a another, safer
+location if danger was noticed approaching.
+~
+35 ap 3
+D3
+You think you can possibly squeeze through the scrub to the rocky hillside.
+~
+scrub~
+1 0 3531 0
+D5
+You see the path leading downwards.
+~
+~
+0 0 3535 0
+S
+#3535
+The Secret Path~
+   This narrow path looks as though it has been literally dug out of the 
+dense bush on either side of you. It appears as though it would be used to 
+quickly move the inhabitants of the foothills quickly to a another, safer
+location if danger was noticed approaching.
+~
+35 ap 0
+D1
+The path winds its way east.
+~
+~
+0 0 3536 0
+D4
+You can clamber up to follow the path.
+~
+~
+0 0 3534 0
+S
+#3536
+The Secret Path~
+   This narrow path looks as though it has been literally dug out of the 
+dense bush on either side of you. It appears as though it would be used to 
+quickly move the inhabitants of the foothills quickly to a another, safer
+location if danger was noticed approaching.
+~
+35 ap 3
+D1
+You can squeeze along the narrow path.
+~
+~
+0 0 3537 0
+D3
+The secret path leads west.
+~
+~
+0 0 3535 0
+S
+#3537
+The Secret Path~
+   This narrow path looks as though it has been literally dug out of the 
+dense bush on either side of you. It appears as though it would be used to 
+quickly move the inhabitants of the foothills quickly to a another, safer
+location if danger was noticed approaching.
+~
+35 ap 3
+D2
+You see a parting in the bush that leads to a road.
+~
+scrub~
+1 0 3544 0
+D3
+You can follow the narrow trail west.
+~
+~
+0 0 3536 0
+S
+#3538
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+of a sudden, the woods have become very quiet. You would have expected this
+to be reassuring, but instead it makes this trail seem more eerie. It seems
+that the thick darkness that surrounds you is itself pure evil. A chill
+runs down your spine as a cool breeze whistles past your ears.
+~
+35 ap 3
+D2
+The darkness bleeds onward.
+~
+~
+0 0 3539 0
+D3
+You can see a lighter part of the trail.
+~
+~
+0 0 3527 0
+S
+#3539
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+of a sudden, the woods have become very quiet. You would have expected this
+to be reassuring, but instead it makes this trail seem more eerie. It seems
+that the thick darkness that surrounds you is itself pure evil. A chill
+runs down your spine as a cool breeze whistles past your ears.
+~
+35 ap 3
+D0
+The trail leads north.
+~
+~
+0 0 3538 0
+D2
+You peer into the dark, and you think you see a trail.
+~
+~
+0 0 3540 0
+S
+#3540
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+of a sudden, the woods have become very quiet. You would have expected this
+to be reassuring, but instead it makes this trail seem more eerie. It seems
+that the thick darkness that surrounds you is itself pure evil. A chill
+runs down your spine as a cool breeze whistles past your ears.
+~
+35 ap 3
+D0
+By your lamp-light, you see a faint path leading north.
+~
+~
+0 0 3539 0
+D1
+You can stumble along eastward.
+~
+~
+0 0 3541 0
+S
+#3541
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+of a sudden, the woods have become very quiet. You would have expected this
+to be reassuring, but instead it makes this trail seem more eerie. It seems
+that the thick darkness that surrounds you is itself pure evil. You cannot 
+escape it, you cannot remove it, every step you take, it follows you.
+~
+35 ap 3
+D2
+The path seems to continue.
+~
+~
+0 0 3542 0
+D3
+More of the trail leads west.
+~
+~
+0 0 3540 0
+S
+#3542
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+of a sudden, the woods have become very quiet. You would have expected this
+to be reassuring, but instead it makes this trail seem more eerie. It seems
+that the thick darkness that surrounds you is itself pure evil. You cannot 
+escape it, you cannot remove it, every step you take, it follows you.
+~
+35 ap 3
+D0
+You think you see the path leading north.
+~
+~
+0 0 3541 0
+D2
+You believe you can see a faint track leading south.
+~
+~
+0 0 3543 0
+S
+#3543
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+you can smell is the thick musty scent of decaying foliage. As you place
+your feet for each step, the feel as though they are sinking into the
+soft, cushioning bed of rotting undergrowth.
+~
+35 ap 3
+D0
+The black trail ambles north.
+~
+~
+0 0 3542 0
+D3
+You squint hard, and make out a track you think.
+~
+~
+0 0 3544 0
+S
+#3544
+A Trail Through The Black Woods~
+   Through the shadows you can see and hear small creatures scuffling
+about in the scrub. This is the first time you have seen any evidence
+of life for quite some time. Although the sense of evil still pervades
+every corner and every crack in every tree in this thick, dark, dense
+area of the woods.
+~
+35 ap 3
+D0
+You almost miss a carefully hidden trail north.
+~
+scrub~
+1 0 3537 0
+D1
+As you hold your lamp high, you see the faint outlines of a path.
+~
+~
+0 0 3543 0
+D3
+You see a bend in the path.
+~
+~
+0 0 3545 0
+S
+#3545
+A Sharp Turn In The Trail~
+   You have come to a very sharp bend in the path. As you look to
+the west, you realize why the trail was diverted at this point. A
+towering giant of a tree stands blocking the way. As you peer skyward
+you almost lose sight of the top of this enormous tree, as is ploughs
+its way through the canopy.
+~
+35 ap 3
+D1
+The darkness bleeds east...
+~
+~
+0 0 3544 0
+D2
+More of the eerie track continues.
+~
+~
+0 0 3546 0
+S
+#3546
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+of a sudden, the woods have become very quiet. You would have expected this
+to be reassuring, but instead it makes this trail seem more eerie. It seems
+that the thick darkness that surrounds you is itself pure evil. You cannot 
+escape it, you cannot remove it, every step you take, it follows you.
+~
+35 ap 3
+D0
+The faint trail leads north.
+~
+~
+0 0 3545 0
+D2
+The black woods lie south.
+~
+~
+0 0 3547 0
+S
+#3547
+A Trail Through The Black Woods~
+   It is pitch black here, you can see little through the murky light. All
+of a sudden, the woods have become very quiet. You would have expected this
+to be reassuring, but instead it makes this trail seem more eerie. It seems
+that the thick darkness that surrounds you is itself pure evil. You cannot 
+escape it, you cannot remove it, every step you take, it follows you.
+~
+35 ap 3
+D0
+You can stumble along in the darkness.
+~
+~
+0 0 3546 0
+D2
+The black woods continue to surround you.
+~
+~
+0 0 3548 0
+S
+#3548
+A Bend In The Trail~
+   This section of the trail is incredibly still. There is no movement
+from any wildlife, nor from any breeze. With each step you take, the
+sound of snapping twigs breaks the otherwise deafening silence. Again,
+the smell here is quite distinctive, but this time it is not of
+decaying undergrowth, but you think of rotting meat. You scan around
+looking for the source of this vile stench, and see a decomposing
+carcass partially hidden in the scrub. 
+~
+35 ap 3
+D0
+The evilness of the woods rolls north.
+~
+~
+0 0 3547 0
+D1
+The black woods continue to enshroud you.
+~
+~
+0 0 3549 0
+S
+#3549
+A Trail Through The Black Woods~
+   It is pitch black here apart from your lamplight, you can see nothing
+past the safe and familiar glow. All of a sudden, the woods have become
+very quiet, you would have expected this to be reassuring, but it makes
+this trail even more terrifying. It seems that the thick darkness
+surrounding you is itself pure evil. You cannot escape it, you cannot
+remove it, it follows you, every step you take, it follows you
+~
+35 ap 3
+D2
+The trail leads onward.
+~
+~
+0 0 3550 0
+D3
+More of the now familiar path leads west.
+~
+~
+0 0 3548 0
+S
+#3550
+A Trail Through The Black Woods~
+   It is pitch black here apart from your lamplight, you can see nothing
+past the safe and familiar glow. All of a sudden, the woods have become
+very quiet, you would have expected this to be reassuring, but it makes
+this trail even more terrifying. It seems that the thick darkness
+surrounding you is itself pure evil. You cannot escape it, you cannot
+remove it, it follows you, every step you take, it follows you
+~
+35 ap 3
+D0
+The murky path leads north you think....
+~
+~
+0 0 3549 0
+D1
+~
+~
+0 0 5757 0
+D3
+You peer into the haze and make out a path to the west.
+~
+~
+0 0 3551 0
+S
+#3551
+A Trail Through The Black Woods~
+   It is pitch black here apart from your lamplight, you can see nothing
+past the safe and familiar glow. All of a sudden, the woods have become
+very quiet, you would have expected this to be reassuring, but it makes
+this trail even more terrifying. It seems that the thick darkness
+surrounding you is itself pure evil. You cannot escape it, you cannot
+remove it, it follows you, every step you take, it follows you
+~
+35 ap 3
+D1
+You can choose to stumble along through the darkness.
+~
+~
+0 0 3550 0
+D3
+The thick woods continue to surround you.
+~
+~
+0 0 3552 0
+S
+#3552
+A Trail Through The Black Woods~
+   It is pitch black here apart from your lamplight, you can see nothing
+past the safe and familiar glow. All of a sudden, the woods have become
+very quiet, you would have expected this to be reassuring, but it makes
+this trail even more terrifying. It seems that the thick darkness
+surrounding you is itself pure evil. You cannot escape it, you cannot
+remove it, it follows you, every step you take, it follows you
+~
+35 ap 3
+D0
+Not that you can see that much, but it appears the path continues to the north.
+~
+~
+0 0 3553 0
+D1
+The trail leads west.. you think...
+~
+~
+0 0 3551 0
+S
+#3553
+A Trail Through The Black Woods~
+   It is pitch black here apart from your lamplight, you can see nothing
+past the safe and familiar glow. All of a sudden, the woods have become
+very quiet, you would have expected this to be reassuring, but it makes
+this trail even more terrifying. It seems that the thick darkness
+surrounding you is itself pure evil. You cannot escape it, you cannot
+remove it, it follows you, every step you take, it follows you
+~
+35 ap 3
+D2
+The narrow and windy trail continues south.
+~
+~
+0 0 3552 0
+D3
+The woods continue.
+~
+~
+0 0 3554 0
+S
+#3554
+A Trail Through The Black Woods~
+   It is pitch black here apart from your lamplight, you can see nothing
+past the safe and familiar glow. All of a sudden, the woods have become
+very quiet, you would have expected this to be reassuring, but it makes
+this trail even more terrifying. It seems that the thick darkness
+surrounding you is itself pure evil. You cannot escape it, you cannot
+remove it, it follows you, every step you take, it follows you
+~
+35 ap 3
+D1
+The dark trail leads east.
+~
+~
+0 0 3553 0
+D2
+The black woods lurch onward.
+~
+~
+0 0 3555 0
+S
+#3555
+A Trail Through The Black Woods~
+   It is pitch black here apart from your lamplight, you can see nothing
+past the safe and familiar glow. All of a sudden, the woods have become
+very quiet, you would have expected this to be reassuring, but it makes
+this trail even more terrifying. It seems that the thick darkness
+surrounding you is itself pure evil. You cannot escape it, you cannot
+remove it, it follows you, every step you take, it follows you
+~
+35 ap 3
+D0
+As you peer into the darkness, you can make out a path to the north.
+~
+~
+0 0 3554 0
+D3
+You see an sharp halt to the path.
+~
+~
+0 0 3556 0
+S
+#3556
+The Black Woods~
+   You are on a trail through the Black Woods. The trail is covered with
+walls of dense scrub, and trees block your view in most directions. You
+see a ravine to your south, and the trail continues to your east. 
+~
+35 ap 3
+D1
+You see the well-worn trail through the woods.
+~
+~
+0 0 3555 0
+D2
+A bridge over a ravine lies in that direction.
+~
+~
+0 0 8355 0
+S
+$~

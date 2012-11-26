@@ -1,0 +1,128 @@
+#120
+Port Halyon /Harmless/~
+12099 120 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 12017 15 12071 100	* the sailor
+O 0 12020 1 12071 100	* A marble fountain
+M 0 12042 1 12073 100	* Melsa
+M 0 12015 1 12025 100	* the bondsman
+M 0 12017 15 12034 100	* the sailor
+M 0 12017 15 12045 100	* the sailor
+M 0 12019 3 12045 100	* the merchant marine
+M 0 12013 2 12045 100	* the runner
+D 0 12038 0 2	* The Committee Meeting Room
+M 0 12041 2 12037 100	* the councilman
+M 0 12027 2 12037 100	* the councilman
+D 0 12037 0 2	* The Council Room
+D 0 12037 1 2	* The Council Room
+D 0 12037 2 2	* The Council Room
+M 0 12009 1 12011 100	* the doctor
+M 0 12010 1 12011 100	* the nurse
+M 0 12017 15 12072 100	* the sailor
+D 0 12021 1 1	* The Mayor's House
+D 0 12027 3 1	* The Wealthy Neighborhood
+M 0 12039 1 12013 100	* a ticket taker
+D 0 12013 0 2	* Before The Passenger Docks Of Port Halyon
+M 0 12038 1 12054 100	* a ticket vendor
+M 0 12000 1 12001 100	* the Chief
+M 0 12001 1 12001 100	* the boss
+D 0 12001 5 1	* The Chief's Office
+M 0 12025 1 12049 100	* Altoor
+D 0 12049 3 2	* Altoor's Workshop
+M 0 12035 1 12061 100	* the city records keeper
+M 0 12003 10 12003 100	* a warehouse worker
+M 0 12003 10 12004 100	* a warehouse worker
+M 0 12003 10 12008 100	* a warehouse worker
+M 0 12003 10 12022 100	* a warehouse worker
+M 0 12003 10 12023 100	* a warehouse worker
+M 0 12003 10 12003 100	* a warehouse worker
+M 0 12003 10 12004 100	* a warehouse worker
+M 0 12003 10 12008 100	* a warehouse worker
+M 0 12003 10 12022 100	* a warehouse worker
+M 0 12003 10 12023 100	* a warehouse worker
+M 0 12004 3 12002 100	* the wealthy merchant
+M 0 12004 3 12028 100	* the wealthy merchant
+M 0 12004 3 12043 100	* the wealthy merchant
+M 0 12006 5 12010 100	* the warehouse worker
+M 0 12006 5 12010 100	* the warehouse worker
+M 0 12006 5 12010 100	* the warehouse worker
+M 0 12006 5 12009 100	* the warehouse worker
+M 0 12040 5 12009 100	* the warehouse worker
+M 0 12007 4 12016 100	* the warehouse worker
+M 0 12007 4 12016 100	* the warehouse worker
+M 0 12007 4 12016 100	* the warehouse worker
+M 0 12008 1 12009 100	* the warehouse supervisor
+M 0 12011 1 12006 100	* Able's shopkeeper
+M 0 12012 2 12032 100	* the peddler
+M 0 12012 2 12032 100	* the peddler
+M 0 12013 2 12043 100	* the runner
+M 0 12014 1 12050 100	* the merchant
+M 0 12016 3 12004 100	* the supervisor
+M 0 12016 3 12008 100	* the supervisor
+M 0 12016 3 12023 100	* the supervisor
+M 0 12017 15 12032 100	* the sailor
+M 0 12017 15 12031 100	* the sailor
+M 0 12017 15 12018 100	* the sailor
+M 0 12017 15 12032 100	* the sailor
+M 0 12017 15 12039 100	* the sailor
+M 0 12017 15 12039 100	* the sailor
+M 0 12017 15 12046 100	* the sailor
+M 0 12017 15 12033 100	* the sailor
+M 0 12017 15 12019 100	* the sailor
+M 0 12017 15 12024 100	* the sailor
+M 0 12018 5 12051 100	* the gateguard
+M 0 12018 5 12029 100	* the gateguard
+M 0 12018 5 12035 100	* the gateguard
+M 0 12018 5 12051 100	* the gateguard
+M 0 12018 5 12005 100	* the gateguard
+M 0 12019 3 12006 100	* the merchant marine
+M 0 12019 3 12042 100	* the merchant marine
+M 0 12020 1 12036 100	* the dock master
+M 0 12021 2 12036 100	* the dock master's bodyguard
+M 0 12021 2 12036 100	* the dock master's bodyguard
+M 0 12022 1 12055 100	* the mayor
+M 0 12023 1 12043 100	* the master dock scheduler
+M 0 12026 1 12007 100	* Able the Blacksmith
+M 0 12028 1 12050 100	* the mayor's clerk
+M 0 12029 1 12050 100	* the ship owner
+M 0 12030 1 12042 100	* Altoor's shopkeeper
+M 0 12036 1 12062 100	* the Baker
+M 0 12037 1 12063 100	* the Grocer
+D 0 12002 4 1	* The Guild Office
+D 0 12006 3 2	* The Weapons Shop
+D 0 12007 1 2	* The Back Room
+D 0 12036 1 2	* The Dock Master's Private Office
+D 0 12043 3 2	* The Waiting Room
+D 0 12036 2 2	* The Dock Master's Private Office
+D 0 12044 3 2	* The Entrance Foyer
+D 0 12042 1 2	* The Mage's Shop
+D 0 12050 1 2	* The Office Of The Court Clerk
+D 0 12055 3 2	* Mayor's Office
+S
+$

@@ -1,0 +1,221 @@
+#1200
+wilks wandering wanderer~
+the Wandering Wilks~
+A strange looking man, with a beard is here, looking rather confused.
+~
+A man memorialized for acts of kindness and bad taste for years and years.
+His long, scraggly beard and pony tail show him to be a rebel with a
+cause. His cause - Universality. For years, he researched the secrets of
+time, space and operating systems. However, in a freak accident, his
+space-time theories warped with his operating system theories, zapping him
+through time, space and hardware platforms into this world. His quest is
+to finally return to the home he once knew, but the randomness of life
+continually zaps him from place to place, never giving him a chance to
+regain his bearings - never letting him go - home.
+~
+cdehnopqruwxy dfhkpq 1000 X 0 
+40 -10 -10 10d10+25000
+0 200000
+8 8 1 1 0 4
+T 100 1d3+3 22
+A 90 8 The Wandering Wilks says, 'No, that won't work after all.'
+A 80 8 The Wandering Wilks says, 'Damn! Where AM I?'
+A 70 8 The Wandering Wilks says, 'Huh? Where am I now?'
+A 60 8 The Wandering Wilks taps his forehead absentmindedly.
+A 50 8 The Wandering Wilks sighs as he looks around.
+A 40 8 The Wandering Wilks says, 'Which way to Lawton?'
+A 30 8 The Wandering Wilks points in all directions, definitely confused.
+A 20 8 The Wandering Wilks drops down on his haunches, analyzing the situation.
+A 10 8 The Wandering Wilks snaps his fingers and says, 'Yes! That'll work!'
+>fight_prog          100~
+   say Yeah... Whatever.
+   mpecho The Wandering Wilks fades out of existance and is gone.
+   mpgoto 0
+   mpecho The Wandering Wilks appears suddenly!
+~
+>rand_prog          35~
+   say Maybe it's...
+   mpechoaround The Wandering Wilks slowly fades from view and is gone.
+   mpcast 'teleport'
+~
+|
+#1201
+elemental air~
+{Cthe air elemental{x~
+{CAn air elemental is here looking like a living tornado.{x
+~
+{C
+Nothing more than the spirit of the air, the air elemental commands, and
+gets, your attention. Its body is totally translucent, making him nearly
+invisible. It moves without a sound. As it attacks, you hear the rush of the
+wind and as it strikes home with its blow, you hear a mighty peal of 
+thunder!
+{x
+~
+bdlnopqr bpqy 0 X 0 
+20 12 0 10d10+200
+0 25000
+8 8 0 9 0 4
+T 100 1d5+2 0
+Dex: 90
+Agi: 90
+#1202
+elemental water~
+{bthe water elemental{x~
+{bA water elemental stands before you made entirely from ice.{x
+~
+{b
+The spirit of water stands before you, having taken the form of man. The
+purest white, he stands, awaiting an order from his master. His frozen hair
+stands in spikes, and long teardrop icicles follow the course from his white
+eyes down to his chin.
+{x
+~
+bdlnopqr py 0 X 0 
+24 11 -2 12d12+240
+0 40000
+8 8 0 8 0 4
+T 100 1d7+3 0
+Str: 85
+Dex: 85
+Agi: 85
+#1203
+elemental earth~
+{ythe earth elemental{x~
+{yAn earth elemental stands before you a mound of dirt and stone{x
+~
+{y
+With hands made of stone, and unseeing, coal black eyes, the spirit of the 
+Earth clothes itself in the shape of a giant. Strings of roots and dirt fall
+down its back imitating hair. Mammoth stones are set as crushing fists, and
+pulverizing feet. It sees nothing. It hears nothing. It knows only to obey.
+{x
+~
+bdlnopqr py 0 X 0 
+28 9 -4 14d14+280
+0 61000
+8 8 0 8 0 4
+T 75 1d5+4 0
+Str: 90
+Dex: 70
+Agi: 70
+#1204
+elemental fire~
+{ra fire elemental{x~
+{rA fire elemental stands here a ghost, consumed in flames.{x
+~
+{r
+What stands before you is the spirit of fire forced into human form by the
+whim of a wizard of great power and strength. The eyes of the spirit of Fire
+are just that, a flame. Its anger and hatred are focused on its master only
+slightly less than upon its master's enemies. Its deafening roar blocks out
+sound and it thrashes as it does its master's bidding.
+{x
+~
+bdlnopqr pqy 0 X e 
+30 9 -5 15d15+300
+0 80000
+8 8 0 8 0 4
+T 50 6d1+0 0
+Str: 90
+Dex: 90
+Agi: 90
+ResFire: 200
+#1205
+skeleton~
+the skeleton of <animated corpse>~
+A shuffling mass of flesh, alive and yet not, stands, awaiting an order.
+~
+The mound of bones and skin which was once alive now follows its new master,
+seeking only eternal release from the bonds of the mortal world.
+~
+bdelnopqr gkpqs 0 X 0 
+20 5 10 10d10+40
+0 2
+8 8 1 1 0 4
+T 100 4d4+2 1
+#1206
+zombie~
+the zombie of <animated corpse>~
+A shambling sack of skin and bones, an animated corpse stands in wait.
+~
+It follow, unknowing. It acts, uncaring. Two thoughts, and two thoughts alone
+live within this shattered body. Release, and Obedience. It longs for the
+former and lives the latter.
+~
+bdelnopqr gkpqs 0 X 0 
+20 5 10 10d10+40
+0 2
+8 8 1 1 0 4
+T 100 4d4+2 1
+#1207
+spectre~
+the spectre of <animated corpse>~
+a spectre~
+In time, it will return to the earth which gave it life. In time, it will know
+the release it so desperately long for. In time, it will know peace. But for 
+now, it knows only death, and unwavering obedience. It will follow until it is
+no more.
+~
+bdelnopqr gkpqs 0 X 0 
+20 5 10 10d10+40
+0 2
+8 8 1 1 0 4
+T 100 5d5+5 1
+#1208
+vampire~
+the vampire of <animated corpse>~
+With sunken eyes, and hollowed cheeks, it waits for its master.
+~
+In time, it will return to the earth which gave it life. In time, it will know
+the release it so desperately long for. In time, it will know peace. But for 
+now, it knows only death, and unwavering obedience. It will follow until it is
+no more.
+~
+bdelnopqr gkpqs 0 X 0 
+20 5 10 10d10+40
+0 2
+8 8 1 1 0 4
+T 100 5d5+5 1
+#1209
+wraith~
+the wraith of <animated corpse>~
+With sunken eyes, and hollowed cheeks, it waits for its master.
+~
+In time, it will return to the earth which gave it life. In time, it will know
+the release it so desperately long for. In time, it will know peace. But for 
+now, it knows only death, and unwavering obedience. It will follow until it is
+no more.
+~
+bdelnopqr gkpqs 0 X 0 
+20 5 10 10d10+40
+0 2
+8 8 1 1 0 4
+T 100 5d5+5 1
+#1210
+phantom steed horse mount~
+{Dthe phantom steed{x~
+{DA forken phantom steed stands here waiting for a real descrioption.{x
+~
+{DA lame description for a phantom steed...{x
+~
+bdlnopqrt bp 0 X 0 
+20 5 10 1d10+40
+0 2
+8 8 1 8 0 4
+T 100 1d5+2 1
+Dex: 90
+Agi: 90
+#1211
+wyvern watcher~
+a small hideous wyvern is hiding here in the shadows.~
+A small hideious wyvern is hiding here in the shadows.
+~
+A matted pelt covered with grass and other debris, appearing as if
+this beast never cleans its self.
+~
+abcd bdfkprs 0 X 0 
+1 1 9 1d1+10
+0 150
+8 8 1 0 0 0
+T 100 1d1+1 0

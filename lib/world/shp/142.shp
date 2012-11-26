@@ -1,0 +1,131 @@
+CircleMUD v3.0 Shop File~
+#14200~
+-1
+1.1 
+1.0 
+5
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %s{r.~
+%s Oops - %s{r a minor bug - please report!~
+1 
+0 
+14200
+0 
+14256 
+-1
+0 
+28 
+0 
+0 
+#14201~
+14202
+14203
+-1
+1.1 
+1.0 
+19
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %s{r.~
+%s Oops - %s{r a minor bug - please report!~
+1 
+0 
+14202
+0 
+14258
+-1
+0 
+28 
+0 
+0 
+#14202~
+14204
+14205
+14138
+14139
+-1
+1.1 
+1.0 
+2
+3
+4
+10
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %s{r.~
+%s Oops - %s{r a minor bug - please report!~
+1 
+0 
+14203
+0 
+14262
+-1
+0 
+28 
+0 
+0 
+#14203~
+14206
+14207
+14208
+-1
+1.1 
+1.0 
+17
+19
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %s{r.~
+%s Oops - %s{r a minor bug - please report!~
+1 
+0 
+14204
+0 
+14263
+-1
+0 
+28 
+0 
+0 
+#14204~
+14210
+-1
+1.1 
+1.0 
+9
+-1
+%s Haven't got that on storage - try list!~
+%s I don't buy!~
+%s I don't buy!~
+%s I don't buy!~
+%s If you have no money, you'll have to go!~
+%s That'll be %s{r.~
+%s Oops - %s{r a minor bug - please report!~
+1 
+0 
+14205
+0 
+14264
+-1
+0 
+28 
+0 
+0 
+$~

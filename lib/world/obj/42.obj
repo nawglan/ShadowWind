@@ -1,0 +1,455 @@
+#4201
+crimson leaf~
+{wa {rcrimson {xleaf~
+A crimson leaf is lying here.~
+~
+9 u aci 0 
+2 0 0 0 4
+1 0 0
+E
+leaf crimson~
+This leaf is atually made of wood, and stained crimson.
+~
+#4202
+cloak leather black~
+{Da black, leather cloak{x~
+A cloak of leather with a crimson leaf emblem is lying here.~
+~
+9 0 ack 0 
+3 0 0 0 20
+2 100 0
+B
+c 
+E
+cloak emblem~
+   Stitched onto the back of this cloak is a large, faded crimson leaf
+symbol.  
+~
+#4203
+hood leather black~
+{Da black, leather hood{x~
+A small pile of black leather is lying here.~
+~
+9 0 ae g 
+3 0 0 0 20
+1 300 10
+B
+e 
+E
+hood~
+   This hood is made of completely black leather. The eye holes seem a tad
+small, perhaps providing you with extra focus on some things?  
+~
+#4204
+mask leather~
+{wa {Dblack leather {wmask{x~
+A small pile of black leather is lying here.~
+~
+9 0 ap s 
+1 0 0 0 20
+1 1000 100
+B
+A 
+E
+mask~
+   This small piece of leather fits neatly over your mouth and ties behind
+your neck. While you wear it, it makes the taste of your food more
+pronounced, letting you know exactly what your eating.  
+~
+#4205
+sleeves leather~
+{Dsome black, faded sleeves{x~
+Some worn leather sleeves lay here.~
+~
+9 0 ai k 
+4 0 0 0 20
+2 200 20
+#4206
+leather leggings~
+{Dsome black, faded leggings{x~
+A pair of faded, black leggings lay crumpled here.~
+~
+9 0 af h 
+4 0 0 0 20
+2 200 20
+#4207
+boots leather~
+{Da pair of black boots{x~
+A pair of black boots have been left here.~
+~
+9 0 ag i 
+3 0 0 0 20
+2 600 60
+B
+p 
+E
+boots~
+   These faded, black boots look well worn. They lace up the front with huge
+straps and look very secure. The soles look smooth, providing that extra
+edge you need to pass without leaving a trace.  
+~
+#4208
+spiky dagger~
+a spiky gripped dagger~
+A dagger with spikes on the grip and hilt is lying here.~
+~
+5 0 ano 0 
+2 4 3 12 0
+2 500 50
+E
+dagger spiky~
+   Spikes cover the grip and hilt of this wicked looking dagger. It must
+hurt as much to wield it as to hit someone with it.  
+~
+A
+19 2
+A
+25 -5
+#4209
+leather armor~
+{gsome leaf green armor{x~
+A pile of green leather armor is lying here.~
+~
+9 0 ad f 
+3 0 0 0 20
+1 100 10
+E
+armor leather~
+This armor is very light, and is colored green through use of dye.
+~
+#4228
+statue autumn~
+{Wan ivory statue{x~
+An {wivory {nstatue of a woman stands here.~
+~
+12 0 0 0 
+4299 0 0 0 21
+999999 0 0
+E
+statue autumn~
+   This statue resembles a fairly comely woman. Carefully carved from a
+single piece of ivory, this is truly a work of art. Long hair cascades down
+her back, partially covering a large leaf motif on her back. This leaf, and
+two smaller ones on each of her shoulders, are colored crimson. She appears
+to be dressed in light leather armor and carries a shortsword at her hip. 
+There is an inscription at it's base.  
+~
+E
+inscription base~
+-Be with me, heart and thought. Be with us, body and soul-
+-Autumn, Queen of Thieves-
+~
+#4229
+leaf key~
+{wa {gleaf-shaped {xkey~
+A key in the shape of crimson leaf is lying here.~
+~
+18 0 a 0 
+0 0 0 0 5
+1 0 0
+#4230
+chest~
+a wooden chest~
+A small, wooden chest is sitting here.~
+~
+15 0 0 0 
+99999 5 -1 0 5
+99999 0 0
+E
+chest~
+   The chest is made of wood and is very plain looking. Written across the
+side is 'Autumn's Share'.  
+~
+#4231
+note~
+a note~
+A note titled 'remember' is lying here.~
+~
+12 w ao 0 
+0 0 0 0 3
+1 0 0
+E
+note~
+This note is for the new collector. Keep what I write in mind, lest you are late with delivery. 
+1. Show thy respect and wear my symbol before 'me'.
+2. Show thy fealty and drop thy tithe before 'me'.
+3. Speak my name aloud, and steady thy weak stomach and knees for the journey.
+~
+#4232
+bundle coins~
+{Wa pile of silver{x~
+{wa pile of silver{~
+~
+20 0 a 0 
+0 0 100 0 0
+100 0 0
+#4234
+golden key~
+{wa {Ygolden {xkey~
+A golden key rests here.~
+~
+18 0 a 0 
+99999 13 0 0 15
+1 0 0
+#4235
+key silver~
+{wa {Wsilver {xkey~
+A silver key rests here.~
+~
+18 0 a 0 
+99999 13 4234 0 14
+1 0 0
+#4236
+key blood~
+{wa key of {rblood{x~
+A red stained key is lying here.~
+~
+18 0 a 0 
+0 0 0 0 5
+1 0 0
+E
+key blood~
+This key is fashioned from a single bone and stained blood red.
+~
+#4237
+key~
+a key in the shape of a man~
+A small, man-shaped key is lying here.~
+~
+18 0 a 0 
+0 0 0 0 5
+1 0 0
+E
+man key~
+This small key is carved to resemble a man. It is made up of a single piece of wood.
+~
+#4243
+key sapling~
+{wa {ywood {xkey~
+A tiny key carved into the shape of a sapling is lying here.~
+~
+18 0 a 0 
+0 0 0 0 5
+1 0 0
+E
+key wood sapling~
+This key is carved of wood, made to resemble a young tree or sapling.
+~
+#4244
+key~
+a rough, unrefined key~
+A slender piece of rough metal is lying here.~
+~
+18 0 a 0 
+0 0 0 0 8
+1 0 0
+E
+key metal~
+You can barely tell this piece of unrefined metal is a key.
+~
+#4246
+key keeper~
+the keeper's key~
+A finely polished key is lying on the ground here.~
+~
+18 0 a 0 
+0 0 0 0 9
+1 0 0
+E
+key keeper~
+This key is made of finely polished steel. Etched upon the side is, 'Keeper's Key'.
+~
+#4251
+blindfold cloth~
+a diry white blindfold~
+A long strip of dirty cloth is lying here.~
+~
+9 mp ar v 
+0 0 0 0 3
+1 0 0
+B
+kuy 
+E
+cloth blindfold~
+   Made up of a single strip of worn cloth, you wonder what good this
+blindfold can be.  
+~
+#4252
+key~
+a sandalwood key~
+A key made from sandalwood is lying here.~
+~
+18 0 a 0 
+0 0 0 0 0
+1 0 0
+#4253
+pool darkness hole~
+{Da pool of darkness{x~
+There is a hole of absolute black in the ground here.~
+~
+9 j ai k 
+5 0 0 0 1
+0 0 0
+B
+n 
+A
+1 5
+#4254
+ring~
+a ring called 'Honor'~
+A small band of wood lies here.~
+~
+9 0 ab 0 
+2 0 0 0 0
+1 0 0
+B
+h 
+E
+wood ring~
+   Made up of a single, flexible piece of wood, this ring looks very flimsy.
+Etched upon the inside is the word 'Honor'.  
+~
+#4255
+drop hole darkness~
+{Da single drop of darkness{x~
+There is a tiny hole in the ground here.~
+~
+9 j aq 0 
+0 0 0 0 1
+0 0 0
+B
+n 
+A
+6 5
+#4256
+darkness hole boots~
+a pair of boots made of nothing~
+A hole in the shape of a pair of boots is lying here.~
+~
+9 j ag i 
+2 0 0 0 1
+0 0 0
+B
+qu 
+#4257
+sliver dagger darkness~
+{Da sliver of darkness{x~
+A single sliver of darkness marks the ground here.~
+~
+5 j an 0 
+2 4 4 12 0
+0 0 0
+A
+19 2
+#4258
+anklet chain~
+{wa {rcrimson {xanklet~
+A crimson chain is lying here.~
+~
+9 0 as 0 
+2 0 0 0 9
+0 0 0
+#4259
+ring twigs braided~
+a ring of protection~
+A small ring made of braided twigs is lying here.~
+~
+9 0 ab 0 
+2 0 0 0 5
+0 0 0
+A
+17 -2
+#4260
+bracer defense~
+bracers of lesser defense~
+A pair of green leather bracers have been left here.~
+~
+9 0 ai k 
+4 0 0 0 20
+2 0 0
+A
+17 4
+#4261
+bracelet~
+a bracelet of the Queen~
+A dull black bracelet is lying here.~
+~
+9 0 am 0 
+2 0 0 0 8
+2 0 0
+A
+18 1
+A
+19 1
+#4262
+vest~
+the vest of freedom~
+A dark green vest is lying here.~
+~
+9 0 ad f 
+4 0 0 0 0
+2 0 0
+E
+vest freedom~
+   Originally made for thieves by a legendary thief/mage, very few of these
+vests remain in existence. Made up of green leather, this vest fits loosely,
+and seems to add a little quickness in your step.  
+~
+A
+18 2
+A
+27 10
+#4263
+slippers~
+{Da pair of pitch black slippers{x~
+A pair of very dark slippers are sitting here.~
+~
+9 p ag i 
+4 0 0 0 3
+1 0 0
+B
+gp 
+A
+27 5
+A
+2 5
+A
+6 5
+#4264
+moonlight beam ray~
+{wa captured beam of {Wmoonlight{x~
+A beam of moonlight is striking the floor, lighting the room.~
+~
+1 0 ao 0 
+0 0 -1 0 29
+0 0 0
+A
+9 2
+#4298
+corpse~
+a corpse~
+The corpse of an unknown thief is lying here.~
+~
+15 0 a 0 
+100 0 -1 0 23
+99999 0 0
+E
+corpse~
+   Having been here for sometime, the corpse is rotting nicely. Most of his
+equipment is also rotting. There is, however, something clutched in his
+hand, as if it might be his last hope.  
+~
+#4299
+wire xxxx~
+a slim but sturdy wire~
+A very slim wire is lying here.~
+~
+18 0 a 0 
+4228 0 0 0 8
+1 0 0
+E
+wire~
+   This wire is very slim, almost indetectable. It is also, however,
+extremely firm.  
+~
+$~

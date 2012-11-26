@@ -1,0 +1,2396 @@
+#10200
+Grand Entrance To The Crimson Valley~
+   You stand before a large valley. Around you are tall crimson cliffs which
+lean inward, looking about ready to crumble and bury you. The rocks and
+ground here are a deep red. No plant life is around, but in the red dust
+you notice footprints. You see passages leading off in all directions
+inside the valley, giving the impression of a maze-like structure. On top
+of the cliffs far north which overlook the entire valley, you spot some
+dark cave entrances.
+~
+102 c 2
+D0
+The crimson valley is to the north.
+~
+~
+0 0 10201 0
+D3
+~
+~
+0 0 14599 0
+E
+footprints~
+The footprints are of all sizes, some are very strangely shaped.
+~
+S
+#10201
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The crimson valley continues north.
+~
+~
+0 0 10202 0
+D1
+The eastern side of the pass.
+~
+~
+0 0 10204 0
+D2
+To the south is the entrance to the valley, not too far away.
+~
+~
+0 0 10200 0
+S
+#10202
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The crimson valley continues north.
+~
+~
+0 0 10203 0
+D1
+The eastern side of the pass.
+~
+~
+0 0 10205 0
+D2
+The crimson valley is to the south. A distance down you see the entrance of
+the valley.
+~
+~
+0 0 10201 0
+S
+#10203
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D1
+The valley splits into four directions.
+~
+~
+0 0 10206 0
+D2
+The valley continues south. At the end of the pass is the entrance to the
+crimson valley.
+~
+~
+0 0 10202 0
+S
+#10204
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The crimson valley continues in that direction.
+~
+~
+0 0 10205 0
+D3
+The western side of the crimson valley.
+~
+~
+0 0 10201 0
+S
+#10205
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The crimson valley continues north to an intersection.
+~
+~
+0 0 10206 0
+D2
+The valley continues south.
+~
+~
+0 0 10204 0
+D3
+You see the western side of this particular mountain pass.
+~
+~
+0 0 10202 0
+S
+#10206
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. Crimson colored dust and boulders are scattered across the valley
+floor. There is an exit in every cardinal direction.
+~
+102 0 2
+D0
+The valley is slightly smaller in that direction.
+~
+~
+0 0 10272 0
+D1
+To the east the valley becomes smaller.
+~
+~
+0 0 10207 0
+D2
+The wide valley continues south.
+~
+~
+0 0 10205 0
+D3
+The western side of the wide valley is to the west.
+~
+~
+0 0 10203 0
+S
+#10207
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor. The valley widens in both directions, and you see only
+desolation.
+~
+102 0 2
+D1
+To the east the valley widens.
+~
+~
+0 0 10208 0
+D3
+To the west the valley widens.
+~
+~
+0 0 10206 0
+S
+#10208
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D1
+To the east is the eastern part of this wide valley.
+~
+~
+0 0 10238 0
+D2
+The valley continues for a ways south.
+~
+~
+0 0 10209 0
+D3
+The valley is thinner to the west, and widens again at the end of the pass.
+~
+~
+0 0 10207 0
+S
+#10209
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The northern section of the crimson pass.
+~
+~
+0 0 10208 0
+D1
+To the east is the other side of the canyon.
+~
+~
+0 0 10239 0
+D2
+The southern section of the crimson pass. You see the shining blue cascades
+which stand out against the red background like a second head further down.
+~
+~
+0 0 10210 0
+S
+#10210
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. You are
+at the southern end of a wide pass, leading north and east to the other
+parts of the valley, or south to the cascades. The water and fine mist from
+the small waterfalls look refreshing. The red cliffs lean slightly inward
+and look about ready to fall right over. Crimson colored dust and boulders
+are scattered across the valley floor.
+~
+102 0 2
+D0
+The wide valley continues to the north.
+~
+~
+0 0 10209 0
+D1
+To the east is the other side of the pass.
+~
+~
+0 0 10240 0
+D2
+A passage south leads to a large area where the beautiful cascades are.
+They look very inviting, especially compared to this dry, red valley.
+~
+~
+0 0 10211 0
+S
+#10211
+The Bottom Of The Cascades~
+   You are at one of the most beautiful sights you have ever seen. To the
+north and east of here are great canyons, a deep crimson color. West and
+south you see a large clearing full of crystal-clear water rushing over
+boulders and cliffs. There are so many little waterfalls you can't even
+count them. They fall from up near the top of a crescent shaped mountain,
+and rush all the way down to to here. You can climb the cascades and reach
+the top, which overlooks the entire valley.
+~
+102 c 2
+D0
+To the north is a wide valley.
+~
+~
+0 0 10210 0
+D1
+To the east is the great crimson canyon. Many of the waterfalls join at the
+bottom of the canyon here and form a small river which flows eastward
+through the crimson valley.
+~
+~
+0 0 10234 0
+D2
+The bottom of the cascades continue south.
+~
+~
+0 0 10214 0
+D3
+The bottom of the cascades continue west.
+~
+~
+0 0 10212 0
+S
+#10212
+The Bottom Of The Cascades~
+   You are at the base of a small mountain, rushing with crystal-clear water
+all the way down. There are stone steps and rocky ridges on the mountain
+which create a trail to the very top of the cascades. The shimmering water
+looks very refreshing. You even see some small fish swimming around in the
+calm little pools.
+~
+102 0 2
+D1
+To the east is where the great canyon is and where a river flows through.
+You can go in all directions there.
+~
+~
+0 0 10211 0
+D2
+To the south are the bottom of the cascades.
+~
+~
+0 0 10213 0
+D4
+A thin mountain trail of stones leads up to higher parts of the mountain.
+~
+~
+0 0 10215 0
+S
+#10213
+The Bottom Of The Cascades~
+   You are at the base of a small mountain, rushing with crystal-clear water
+all the way down. There are stone steps and rocky ridges on the mountain
+which create a trail to the very top of the cascades. The shimmering water
+looks very refreshing. You even see some small fish swimming around in the
+calm little pools.
+~
+102 0 2
+D0
+To the north are many waterfalls and little pools.
+~
+~
+0 0 10212 0
+D1
+The cascades are to the east, with numerous mini-sized waterfalls and calm
+pools.
+~
+~
+0 0 10214 0
+D4
+A trail by a trickle of falling water leads higher up into the cascades.
+~
+~
+0 0 10216 0
+S
+#10214
+The Bottom Of The Cascades~
+   You are at the base of a small mountain, rushing with crystal-clear water
+all the way down. There are stone steps and rocky ridges on the mountain
+which create a trail to the very top of the cascades. The shimmering water
+looks very refreshing. You even see some small fish swimming around in the
+calm little pools.
+~
+102 0 2
+D0
+To the north is the very bottom of the cascades.
+~
+~
+0 0 10211 0
+D3
+You see mini-waterfalls and rivers winding through the mountain.
+~
+~
+0 0 10213 0
+D4
+A trail up the mountain. Eventually you would reach the very top of the
+cascades.
+~
+~
+0 0 10217 0
+S
+#10215
+The Cascades~
+   Here the waterfalls are slightly larger than they are down below, at the
+base of the mountain. A fine mist of water is constantly around you as the
+water splashes against other rivers and pools. It is difficult to tell what
+path is best to the top, or bottom. The mountain is very oddly shaped, and
+has many strange paths and trails worn away by the rush of water. Wherever
+you go, there seems to be a waterfall or small river nearby.
+~
+102 0 5
+D2
+There is a path between waterfalls leading south, towards the centre of
+the mountains.
+~
+~
+0 0 10216 0
+D5
+Some stone stairs go down to the bottom of the cascades.
+~
+~
+0 0 10212 0
+S
+#10216
+The Cascades~
+   Here the waterfalls are slightly larger than they are down below, at the
+base of the mountain. A fine mist of water is constantly around you as the
+water splashes against other rivers and pools. It is difficult to tell what
+path is best to the top, or bottom. The mountain is very oddly shaped, and
+has many strange paths and trails worn away by the rush of water. Wherever
+you go, there seems to be a waterfall or small river nearby.
+~
+102 0 5
+D0
+More cascades are to the north.
+~
+~
+0 0 10215 0
+D2
+More cascades are to the south. There seems to be more waterfalls in that
+direction, as it is the centre of the mountain.
+~
+~
+0 0 10220 0
+D4
+A trail leads higher up the mountain.
+~
+~
+0 0 10221 0
+D5
+A winding trail down, through the spray of water.
+~
+~
+0 0 10213 0
+S
+#10217
+The Cascades~
+   Here the waterfalls are slightly larger than they are down below, at the
+base of the mountain. A fine mist of water is constantly around you as the
+water splashes against other rivers and pools. It is difficult to tell what
+path is best to the top, or bottom. The mountain is very oddly shaped, and
+has many strange paths and trails worn away by the rush of water. Wherever
+you go, there seems to be a waterfall or small river nearby.
+~
+102 0 5
+D2
+A path south along a rocky ridge.
+~
+~
+0 0 10218 0
+D5
+A path down to the base of the mountain, where there is the least amount
+of water.
+~
+~
+0 0 10214 0
+S
+#10218
+The Cascades~
+   Here the waterfalls are slightly larger than they are down below, at the
+base of the mountain. A fine mist of water is constantly around you as the
+water splashes against other rivers and pools. It is difficult to tell what
+path is best to the top, or bottom. The mountain is very oddly shaped, and
+has many strange paths and trails worn away by the rush of water. Wherever
+you go, there seems to be a waterfall or small river nearby.
+~
+102 0 5
+D0
+The rocky ridge goes north through some mini-waterfalls.
+~
+~
+0 0 10217 0
+D3
+A ridge to the west leads to the centre of the crescent-shaped mountain. It
+is very wet over there.
+~
+~
+0 0 10219 0
+D4
+Some stone stairs lead up, higher up the mountain. Almost near the top.
+~
+~
+0 0 10226 0
+S
+#10219
+The Cascades~
+   Here the waterfalls are slightly larger than they are down below, at the
+base of the mountain. A fine mist of water is constantly around you as the
+water splashes against other rivers and pools. It is difficult to tell what
+path is best to the top, or bottom. The mountain is very oddly shaped, and
+has many strange paths and trails worn away by the rush of water. Wherever
+you go, there seems to be a waterfall or small river nearby.
+~
+102 0 5
+D1
+The ridge goes east.
+~
+~
+0 0 10218 0
+D3
+The ridge progresses west.
+~
+~
+0 0 10220 0
+D4
+There is a path behind a large waterfall leading upwards.
+~
+~
+0 0 10224 0
+S
+#10220
+The Cascades~
+   Here the waterfalls are slightly larger than they are down below, at the
+base of the mountain. A fine mist of water is constantly around you as the
+water splashes against other rivers and pools. It is difficult to tell what
+path is best to the top, or bottom. The mountain is very oddly shaped, and
+has many strange paths and trails worn away by the rush of water. Wherever
+you go, there seems to be a waterfall or small river nearby.
+~
+102 0 5
+D0
+More cascades to the north.
+~
+~
+0 0 10216 0
+D1
+A rocky ridge east has many waterfalls nearby.
+~
+~
+0 0 10219 0
+D4
+A trail higher into the cascades. There is even more mist and water up
+higher. You would get soaked for sure.
+~
+~
+0 0 10222 0
+S
+#10221
+The Cascades~
+   The mountain becomes more flat here. The rivers and pools are very calm.
+The fine mist from the splashing waterfalls makes you all wet. You see the
+top of the mountain just above you, where the water starts its journey down
+to the valley floor. You almost see the entire crimson valley from this
+high point.
+~
+102 0 5
+D2
+Through the cascades.
+~
+~
+0 0 10222 0
+D5
+A path down the mountain.
+~
+~
+0 0 10216 0
+S
+#10222
+The Cascades~
+   The mountain becomes more flat here. The rivers and pools are very calm.
+The fine mist from the splashing waterfalls makes you all wet. You see the
+top of the mountain just above you, where the water starts its journey down
+to the valley floor. You almost see the entire crimson valley from this
+high point.
+~
+102 0 5
+D0
+More water is to the north.
+~
+~
+0 0 10221 0
+D2
+More water is to the south.
+~
+~
+0 0 10223 0
+D5
+The lower area of the cascades.
+~
+~
+0 0 10220 0
+S
+#10223
+The Cascades~
+   The mountain becomes more flat here. The rivers and pools are very calm.
+The fine mist from the splashing waterfalls makes you all wet. You see the
+top of the mountain just above you, where the water starts its journey down
+to the valley floor. You almost see the entire crimson valley from this
+high point. The clearing has exits to the east, west, and north.
+~
+102 0 5
+D0
+The northern area of the mountain.
+~
+~
+0 0 10222 0
+D1
+The eastern section of the mountain.
+~
+~
+0 0 10224 0
+D3
+A path beside the river leads up to the very top of the cascades.
+~
+~
+0 0 10227 0
+S
+#10224
+The Cascades~
+   The mountain becomes more flat here. The rivers and pools are very calm.
+The fine mist from the splashing waterfalls makes you all wet. You see the
+top of the mountain just above you, where the water starts its journey down
+to the valley floor. You almost see the entire crimson valley from this
+high point.
+~
+102 0 5
+D1
+A wet ride along the mountain is to the east, winding through more water.
+~
+~
+0 0 10225 0
+D3
+To the west there is a clearing with no water or waterfalls.
+~
+~
+0 0 10223 0
+D5
+A path to the lower path on the mountain.
+~
+~
+0 0 10219 0
+S
+#10225
+The Cascades~
+   The mountain becomes more flat here. The rivers and pools are very calm.
+The fine mist from the splashing waterfalls makes you all wet. You see the
+top of the mountain just above you, where the water starts its journey down
+to the valley floor. You almost see the entire crimson valley from this
+high point.
+~
+102 0 5
+D0
+On the side of the mountain where you see some large waterfalls falling.
+~
+~
+0 0 10226 0
+D3
+A wet ridge is the west.
+~
+~
+0 0 10224 0
+S
+#10226
+The Cascades~
+   The mountain becomes more flat here. The rivers and pools are very calm.
+The fine mist from the splashing waterfalls makes you all wet. You see the
+top of the mountain just above you, where the water starts its journey down
+to the valley floor. You almost see the entire crimson valley from this
+high point.
+~
+102 0 5
+D2
+A curved path on the mountain.
+~
+~
+0 0 10225 0
+D5
+A slope to the lower cascades.
+~
+~
+0 0 10218 0
+S
+#10227
+The Cascades~
+   The mountain becomes more flat here. The rivers and pools are very calm.
+The fine mist from the splashing waterfalls makes you all wet. You see the
+top of the mountain just above you, where the water starts its journey down
+to the valley floor. You almost see the entire crimson valley from this
+high point. A path leads up from here to the highest part of the mountain,
+and a very large waterfall is to the west.
+~
+102 0 5
+D0
+A sloping path north goes up to the higher cascades.
+~
+~
+0 0 10229 0
+D1
+To the east is a mountain path that runs alongside rivers and waterfalls.
+~
+~
+0 0 10223 0
+D3
+The lake of crystal-clear water from above overflows and creates a great
+waterfall, splashing into rivers and rocks. You suddenly realize that there
+is a small cavern behind the waterfall.
+~
+waterfall water fall~
+2 -1 10299 0
+S
+#10228
+The Lake At The Top Of The Cascades~
+   You are at the very top of the mountain from which many many waterfalls
+of all sizes flow from. You see the mountain is generally in a crescent
+shape, and you overlook the entire Crimson Valley. The valley looks like an
+enormous labyrinth of red rock. The entrance is to the west, and some caves
+on the other side of the valley to the north. You see many huge waterfalls
+tumbling down, creating a refreshing spray. The lake here is fantastic.
+~
+102 0 1
+D0
+By the shimmering lake.
+~
+~
+0 0 10233 0
+D1
+By the shimmering lake.
+~
+~
+0 0 10229 0
+D2
+By the shimmering lake.
+~
+~
+0 0 10232 0
+D3
+By the shimmering lake.
+~
+~
+0 0 10229 0
+D5
+Down the path and towards the bottom of the mountain.
+~
+~
+0 0 10227 0
+S
+#10229
+The Lake At The Top Of The Cascades~
+   You are at the very top of the mountain from which many many waterfalls
+of all sizes flow from. You see the mountain is generally in a crescent
+shape, and you overlook the entire Crimson Valley. The valley looks like an
+enormous labyrinth of red rock. The entrance is to the west, and some caves
+on the other side of the valley to the north. You see many huge waterfalls
+tumbling down, creating a refreshing spray. The lake here is fantastic.
+~
+102 0 1
+D0
+By the shimmering lake.
+~
+~
+0 0 10230 0
+D1
+By the shimmering lake.
+~
+~
+0 0 10228 0
+D2
+A sloping path beside a winding river.
+~
+~
+0 0 10227 0
+D3
+By the shimmering lake.
+~
+~
+0 0 10228 0
+S
+#10230
+The Lake At The Top Of The Cascades~
+   You are at the very top of the mountain from which many many waterfalls
+of all sizes flow from. You see the mountain is generally in a crescent
+shape, and you overlook the entire Crimson Valley. The valley looks like an
+enormous labyrinth of red rock. The entrance is to the west, and some caves
+on the other side of the valley to the north. You see many huge waterfalls
+tumbling down, creating a refreshing spray. The lake here is fantastic.
+~
+102 0 1
+D0
+By the shimmering lake.
+~
+~
+0 0 10231 0
+D1
+By the shimmering lake.
+~
+~
+0 0 10233 0
+D2
+By the shimmering lake.
+~
+~
+0 0 10229 0
+D3
+By the shimmering lake.
+~
+~
+0 0 10233 0
+S
+#10231
+The Lake At The Top Of The Cascades~
+   You are at the very top of the mountain from which many many waterfalls
+of all sizes flow from. You see the mountain is generally in a crescent
+shape, and you overlook the entire Crimson Valley. The valley looks like an
+enormous labyrinth of red rock. The entrance is to the west, and some caves
+on the other side of the valley to the north. You see many huge waterfalls
+tumbling down, creating a refreshing spray. The lake here is fantastic.
+~
+102 0 1
+D0
+By the shimmering lake.
+~
+~
+0 0 10229 0
+D1
+By the shimmering lake.
+~
+~
+0 0 10232 0
+D2
+By the shimmering lake.
+~
+~
+0 0 10230 0
+D3
+By the shimmering lake.
+~
+~
+0 0 10232 0
+S
+#10232
+The Lake At The Top Of The Cascades~
+   You are at the very top of the mountain from which many many waterfalls
+of all sizes flow from. You see the mountain is generally in a crescent
+shape, and you overlook the entire Crimson Valley. The valley looks like an
+enormous labyrinth of red rock. The entrance is to the west, and some caves
+on the other side of the valley to the north. You see many huge waterfalls
+tumbling down, creating a refreshing spray. The lake here is fantastic.
+~
+102 0 1
+D0
+By the shimmering lake.
+~
+~
+0 0 10228 0
+D1
+By the shimmering lake.
+~
+~
+0 0 10231 0
+D2
+By the shimmering lake.
+~
+~
+0 0 10233 0
+D3
+By the shimmering lake.
+~
+~
+0 0 10231 0
+S
+#10233
+The Lake At The Top Of The Cascades~
+   You are at the very top of the mountain from which many many waterfalls
+of all sizes flow from. You see the mountain is generally in a crescent
+shape, and you overlook the entire Crimson Valley. The valley looks like an
+enormous labyrinth of red rock. The entrance is to the west, and some caves
+on the other side of the valley to the north. You see many huge waterfalls
+tumbling down, creating a refreshing spray. The lake here is fantastic.
+~
+102 0 1
+D0
+By the shimmering lake.
+~
+~
+0 0 10232 0
+D1
+By the shimmering lake.
+~
+~
+0 0 10231 0
+D2
+By the shimmering lake.
+~
+~
+0 0 10228 0
+D3
+By the shimmering lake.
+~
+~
+0 0 10231 0
+S
+#10234
+The Great Crimson Canyon~
+   This is an especially large canyon. It makes you feel small and so
+unimportant. A small river runs through the canyon, to the west and east.
+Crimson precipices are on either side of you. You notice some footprints
+which are almost totally covered by the red sand on the canyon floor.
+Looking up, even the sky seems have a faint tint of red in it.
+~
+102 0 1
+D1
+The great canyon continues to the east for a ways.
+~
+~
+0 0 10235 0
+D3
+To the west you see sparkling water, cascading down a small mountain.
+~
+~
+0 0 10211 0
+S
+#10235
+The Great Crimson Canyon~
+   This is an especially large canyon. It makes you feel small and so
+unimportant. A small river runs through the canyon, to the west and east.
+Crimson precipices are on either side of you. You notice some footprints
+which are almost totally covered by the red sand on the canyon floor.
+Looking up, even the sky seems have a faint tint of red in it.
+~
+102 0 1
+D1
+The great canyon continues to the east for a ways.
+~
+~
+0 0 10236 0
+D3
+The canyon continues to the west before reaching sparkling water, cascading
+down a small mountain.
+~
+~
+0 0 10234 0
+S
+#10236
+The Great Crimson Canyon~
+   This is an especially large canyon. It makes you feel small and so
+unimportant. A small river runs through the canyon, to the west and east.
+Crimson precipices are on either side of you. You notice some footprints
+which are almost totally covered by the red sand on the canyon floor.
+Looking up, even the sky seems have a faint tint of red in it.
+~
+102 0 1
+D1
+The great canyon continues to the east for a ways.
+~
+~
+0 0 10237 0
+D3
+To the west is the great canyon. At the end, you see sparkling water,
+cascading down a small mountain.
+~
+~
+0 0 10235 0
+S
+#10237
+The Great Crimson Canyon~
+   This is an especially large canyon. It makes you feel small and so
+unimportant. A small river runs through the canyon, to the west and east.
+Crimson precipices are on either side of you. You notice some footprints
+which are almost totally covered by the red sand on the canyon floor.
+Looking up, even the sky seems have a faint tint of red in it.
+~
+102 0 1
+D0
+The great canyon continues to the east for a ways.
+~
+~
+0 0 10243 0
+D3
+To the west you see sparkling water, cascading down a small mountain.
+~
+~
+0 0 10236 0
+S
+#10238
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D2
+Through the crimson valley.
+~
+~
+0 0 10239 0
+D3
+To the west you see a pass branching off from this wide valley.
+~
+~
+0 0 10208 0
+S
+#10239
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The crimson valley.
+~
+~
+0 0 10238 0
+D2
+Down the crimson valley.
+~
+~
+0 0 10240 0
+D3
+The other side of this particular pass.
+~
+~
+0 0 10209 0
+S
+#10240
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The crimson valley.
+~
+~
+0 0 10239 0
+D1
+Another pass leads to the east.
+~
+~
+0 0 10241 0
+D3
+The other side of the valley. An exit leads south from there.
+~
+~
+0 0 10210 0
+S
+#10241
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads east and west.
+~
+102 c 2
+D1
+Further into the pass.
+~
+~
+0 0 10242 0
+D3
+Out into the open of a wide valley.
+~
+~
+0 0 10240 0
+S
+#10242
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads east, west, and north.
+~
+102 0 2
+D0
+To the north the pass continues. At the end you see another wide valley.
+~
+~
+0 0 10262 0
+D1
+Further into the pass.
+~
+~
+0 0 10243 0
+D3
+Out into the open of a wide valley.
+~
+~
+0 0 10241 0
+S
+#10243
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads east, west, and south.
+~
+102 0 2
+D1
+Further into the pass.
+~
+~
+0 0 10244 0
+D2
+The great crimson canyon is to the south.
+~
+~
+0 0 10237 0
+D3
+Out into the open of a wide valley.
+~
+~
+0 0 10242 0
+S
+#10244
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads west, and to the north you see a great clearing.
+~
+102 c 2
+D0
+The exit out of the pass and into the open.
+~
+~
+0 0 10245 0
+D3
+Out into the open of a wide valley.
+~
+~
+0 0 10243 0
+S
+#10245
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads in every direction.
+You notice giant boulders in the middle of this wide open area, split down
+the middle. They are too far away from the precipices to have been broken by
+a fall. The area is generally bowl-shaped, containing you within large red
+cliffs. Passages lead out of the clearing from various places.  
+~
+102 0 1
+D0
+Out in the open.
+~
+~
+0 0 10248 0
+D1
+The eastern area of the clearing.
+~
+~
+0 0 10249 0
+D2
+A pass leads south into a maze of twists and turns.
+~
+~
+0 0 10244 0
+D3
+The western side of the clearing.
+~
+~
+0 0 10246 0
+S
+#10246
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads to the north and
+the east. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D0
+Through the valley.
+~
+~
+0 0 10247 0
+D1
+In the open. You see a narrow pass lead to the south in that direction.
+~
+~
+0 0 10245 0
+S
+#10247
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads to the south and
+the east. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D1
+Into the open valley.
+~
+~
+0 0 10248 0
+D2
+The south-west corner of the open valley.
+~
+~
+0 0 10246 0
+S
+#10248
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads in all possible
+directions. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D0
+Out in the open.
+~
+~
+0 0 10256 0
+D1
+The central area of the open valley.
+~
+~
+0 0 10250 0
+D2
+The southern section of the open valley. You see a narrow pass leading out.
+~
+~
+0 0 10245 0
+D3
+The western side of the clearing.
+~
+~
+0 0 10247 0
+S
+#10249
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads to the north and
+the west. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D0
+Out in the open.
+~
+~
+0 0 10250 0
+D3
+The southern side of the clearing.
+~
+~
+0 0 10245 0
+S
+#10250
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads in all possible
+directions. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D0
+The central area of the open valley.
+~
+~
+0 0 10257 0
+D1
+The eastern area of the clearing. A pass leads south from there.
+~
+~
+0 0 10251 0
+D2
+The south-eastern corner of the wide open valley.
+~
+~
+0 0 10249 0
+D3
+Into the valley.
+~
+~
+0 0 10248 0
+S
+#10251
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads to the north and
+west, and a narrow pass leads south. You notice giant boulders in the
+middle of this wide open area, split down the middle. They are too far
+away from the precipices to have been broken by a fall. The area is
+generally bowl-shaped, containing you within large red cliffs. Passages
+lead out of the clearing from various places.
+~
+102 0 1
+D0
+Out in the open.
+~
+~
+0 0 10252 0
+D2
+A pass leads south into the valley.
+~
+~
+0 0 10278 0
+D3
+The central area of the clearing. Some boulders are split in half in that
+direction.
+~
+~
+0 0 10250 0
+S
+#10252
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing goes in every direction
+save for the east. You notice giant boulders in the middle of this wide
+open area, split down the middle. They are too far away from the precipices
+to have been broken by a fall. The area is generally bowl-shaped, containing
+you within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D0
+The north-eastern corner of the wide open valley. You see a rugged path
+leading up the valley side.
+~
+~
+0 0 10253 0
+D2
+A pass leads out of the wide open valley a distance away in that direction.
+~
+~
+0 0 10251 0
+D3
+The central area of the clearing. You notice many large boulders that are
+split in half.
+~
+~
+0 0 10257 0
+S
+#10253
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads to the south and
+the west. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D2
+Into the valley.
+~
+~
+0 0 10252 0
+D3
+Into the valley.
+~
+~
+0 0 10254 0
+D4
+A rugged path leads up the valley. From up there you could overlook all of
+the Crimson Valley.
+~
+~
+0 0 10284 0
+S
+#10254
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads in every direction
+save for the north. You notice giant boulders in the middle of this wide
+open area, split down the middle. They are too far away from the precipices
+to have been broken by a fall. The area is generally bowl-shaped,
+containing you within large red cliffs. Passages lead out of the clearing
+from various places.
+~
+102 0 1
+D1
+The north-eastern corner of the wide open valley. A path leads up the
+valley side there.
+~
+~
+0 0 10253 0
+D2
+The central area of the wide open valley. You see many broken boulders
+piled on top eachother.
+~
+~
+0 0 10257 0
+D3
+The north-western side of the clearing.
+~
+~
+0 0 10255 0
+S
+#10255
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing is to the east and the
+south. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D1
+The eastern area of the clearing.
+~
+~
+0 0 10254 0
+D2
+The valley floor clearing is to the south, leading in all directions.
+~
+~
+0 0 10256 0
+S
+#10256
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads in every cardinal
+direction. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D0
+In the open valley.
+~
+~
+0 0 10255 0
+D1
+The central area of the clearing. You see many large boulders that have
+been split apart by some very strong force.
+~
+~
+0 0 10257 0
+D2
+Through the open valley.
+~
+~
+0 0 10248 0
+D3
+A pass leads west out of the open valley.
+~
+~
+0 0 10258 0
+S
+#10257
+The Floor Of The Crimson Valley~
+   This wide open area is enormous. The clearing spreads out in every
+direction. You notice giant boulders in the middle of this wide open area,
+split down the middle. They are too far away from the precipices to have
+been broken by a fall. The area is generally bowl-shaped, containing you
+within large red cliffs. Passages lead out of the clearing from various
+places.
+~
+102 0 1
+D0
+The northern part of the open valley.
+~
+~
+0 0 10254 0
+D1
+The eastern part of the open valley.
+~
+~
+0 0 10252 0
+D2
+Through the open valley.
+~
+~
+0 0 10250 0
+D3
+The western side of the clearing.
+~
+~
+0 0 10256 0
+S
+#10258
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 c 2
+D0
+A path leads through the valley to the north, leading up the side to a dark
+cave entrance.
+~
+~
+0 0 10259 0
+D1
+To the east is a great open area.
+~
+~
+0 0 10256 0
+D3
+The valley continues west.
+~
+~
+0 0 10260 0
+S
+#10259
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor. A path leads up the valley side to a dark cave entrance.
+~
+102 0 2
+D2
+The valley.
+~
+~
+0 0 10258 0
+D4
+Up a short path to a black cave entrance on the crimson cliffs.
+~
+~
+0 0 10289 0
+S
+#10260
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+Through the valley.
+~
+~
+0 0 10263 0
+D1
+Through the valley.
+~
+~
+0 0 10258 0
+D2
+A pass to the south.
+~
+~
+0 0 10261 0
+D3
+Into the valley. You see it leads for a long ways.
+~
+~
+0 0 10265 0
+S
+#10261
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads north or south.
+~
+102 0 2
+D0
+Into another wide valley.
+~
+~
+0 0 10260 0
+D2
+Through the pass.
+~
+~
+0 0 10262 0
+S
+#10262
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads east and west.
+~
+102 0 2
+D0
+Through the narrow pass. At the end it widens out.
+~
+~
+0 0 10261 0
+D2
+A tri-section leading north, east, and west.
+~
+~
+0 0 10242 0
+S
+#10263
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D2
+An intersection in the valley.
+~
+~
+0 0 10260 0
+D3
+Into the valley.
+~
+~
+0 0 10264 0
+S
+#10264
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D1
+The Crimson Valley.
+~
+~
+0 0 10263 0
+D2
+The Crimson Valley.
+~
+~
+0 0 10265 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10267 0
+S
+#10265
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The Crimson Valley.
+~
+~
+0 0 10264 0
+D1
+The Crimson Valley.
+~
+~
+0 0 10260 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10266 0
+S
+#10266
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The Crimson Valley.
+~
+~
+0 0 10267 0
+D1
+The Crimson Valley.
+~
+~
+0 0 10265 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10269 0
+S
+#10267
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D1
+The Crimson Valley.
+~
+~
+0 0 10264 0
+D2
+The Crimson Valley.
+~
+~
+0 0 10266 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10268 0
+S
+#10268
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D1
+The Crimson Valley.
+~
+~
+0 0 10267 0
+D2
+The Crimson Valley.
+~
+~
+0 0 10269 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10271 0
+S
+#10269
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The Crimson Valley.
+~
+~
+0 0 10268 0
+D1
+The Crimson Valley.
+~
+~
+0 0 10266 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10270 0
+S
+#10270
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 c 2
+D0
+The Crimson Valley.
+~
+~
+0 0 10271 0
+D1
+The Crimson Valley.
+~
+~
+0 0 10269 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10272 0
+S
+#10271
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor. A path here curves up the valley side.
+~
+102 0 2
+D1
+The flat valley spreads out to the east.
+~
+~
+0 0 10268 0
+D2
+To the south is more valley, with exits going west and east.
+~
+~
+0 0 10270 0
+D4
+Up a short rugged path to a cave entrance.
+~
+~
+0 0 10298 0
+S
+#10272
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+A dead-end.
+~
+~
+0 0 10273 0
+D1
+The Crimson Valley.
+~
+~
+0 0 10270 0
+D2
+Another wide valley to the south.
+~
+~
+0 0 10206 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10274 0
+S
+#10273
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. The only
+visible directions is to the south. It seems you have reached a dead-end.
+The red cliffs lean slightly inward and look about ready to fall right
+over. Crimson colored dust and boulders are scattered across the valley
+floor.
+~
+102 0 2
+D2
+The only exit out, back to the east-west pass.
+~
+~
+0 0 10272 0
+S
+#10274
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The Crimson Valley.
+~
+~
+0 0 10275 0
+D1
+The Crimson Valley.
+~
+~
+0 0 10272 0
+D3
+The Crimson Valley.
+~
+~
+0 0 10276 0
+S
+#10275
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. The only
+visible directions is to the south. It seems you have reached a dead-end.
+The red cliffs lean slightly inward and look about ready to fall right
+over. Crimson colored dust and boulders are scattered across the valley
+floor.
+~
+102 0 2
+D2
+The only exit out, back to the east-west pass.
+~
+~
+0 0 10274 0
+S
+#10276
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. In all
+directions where the valley leads, there is no change in the color or
+terrain. The red cliffs lean slightly inward and look about ready to fall
+right over. Crimson colored dust and boulders are scattered across the
+valley floor.
+~
+102 0 2
+D0
+The Crimson Valley.
+~
+~
+0 0 10277 0
+D1
+The Crimson Valley.
+~
+~
+0 0 10274 0
+S
+#10277
+The Crimson Valley~
+   This valley you are in is enormous, a truly awe-inspring sight. The only
+visible directions is to the south. It seems you have reached a dead-end.
+The red cliffs lean slightly inward and look about ready to fall right
+over. Crimson colored dust and boulders are scattered across the valley
+floor.
+~
+102 0 2
+D2
+The only exit out, back to the east-west pass.
+~
+~
+0 0 10276 0
+S
+#10278
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads east and west.
+~
+102 0 2
+D0
+Out of the narrow pass into a great open area.
+~
+~
+0 0 10251 0
+D2
+Through the pass.
+~
+~
+0 0 10279 0
+S
+#10279
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads east and west.
+~
+102 c 2
+D0
+Through the narrow pass. At the end it widens out.
+~
+~
+0 0 10278 0
+D2
+Further into the pass.
+~
+~
+0 0 10280 0
+S
+#10280
+The Crimson Pass~
+   This pass is quite narrow compared to other sections of the Crimson
+Valley. Great precipices are overhead, and every once awhile a pebble or
+two falls from the top. Its almost like they are about to cave in. The pass
+leads east and west.
+~
+102 0 2
+D0
+Through the narrow pass.
+~
+~
+0 0 10279 0
+D4
+A curvy mountain path leads up and out of the valley, onto the high cliffs
+above.
+~
+~
+0 0 10281 0
+S
+#10281
+On The Crimson Cliffs~
+   These cliffs surround the entire north-eastern area of the Crimson
+Valley. The cliffs are a deep red hue, just like everywhere else you can
+see. To the east is a sheer drop to the red plains. The Crimson Valley
+looks like a maze of passages from up here. You notice small footprints
+in the dust that seem to walk right off the cliff.
+~
+102 0 5
+D0
+The crimson cliffs span northwards.
+~
+~
+0 0 10282 0
+D5
+Down a path to the floor of the crimson valley.
+~
+~
+0 0 10280 0
+S
+#10282
+On The Crimson Cliffs~
+   These cliffs surround the entire north-eastern area of the Crimson
+Valley. The cliffs are a deep red hue, just like everywhere else you can
+see. To the east is a sheer drop to the red plains. The Crimson Valley
+looks like a maze of passages from up here. You notice small footprints
+in the dust that seem to walk right off the cliff.
+~
+102 0 5
+D0
+The crimson cliffs.
+~
+~
+0 0 10283 0
+D2
+The crimson cliffs.
+~
+~
+0 0 10281 0
+S
+#10283
+On The Crimson Cliffs~
+   These cliffs surround the entire north-eastern area of the Crimson
+Valley. The cliffs are a deep red hue, just like everywhere else you can
+see. To the east is a sheer drop to the red plains. The Crimson Valley
+looks like a maze of passages from up here. You notice small footprints
+in the dust that seem to walk right off the cliff.
+~
+102 0 5
+D0
+The crimson cliffs.
+~
+~
+0 0 10284 0
+D2
+The crimson cliffs.
+~
+~
+0 0 10282 0
+S
+#10284
+On The Crimson Cliffs~
+   These cliffs surround the entire north-eastern area of the Crimson
+Valley. The cliffs are a deep red hue, just like everywhere else you can
+see. To the east is a sheer drop to the red plains. The Crimson Valley
+looks like a maze of passages from up here. You notice small footprints
+in the dust that seem to walk right off the cliff.
+~
+102 c 5
+D2
+The crimson cliffs.
+~
+~
+0 0 10283 0
+D3
+The crimson cliffs. Further on you see a cave entrance.
+~
+~
+0 0 10285 0
+S
+#10285
+On The Crimson Cliffs~
+   These cliffs surround the entire north-eastern area of the Crimson
+Valley. The cliffs are a deep red hue, just like everywhere else you can
+see. To the east is a sheer drop to the red plains. The Crimson Valley
+looks like a maze of passages from up here. You notice small footprints
+in the dust that seem to walk right off the cliff.
+~
+102 0 5
+D1
+The crimson cliffs.
+~
+~
+0 0 10284 0
+D3
+The crimson cliffs. A cave entrance nears.
+~
+~
+0 0 10286 0
+S
+#10286
+Outside A Dark Cave~
+   The cliffs are to the east, and behind you to the south spans the great
+Crimson Valley. The cave entrance is not all that large, and peering inside
+reveals that the cave itself doesn't look all that large either. Further
+into the cave you see that the stone walls have been scorched by some
+extreme heat.
+~
+102 0 1
+D0
+Into the dark cave. The forces of darkness prevent you from seeing very
+far inside.
+~
+~
+0 0 10287 0
+D1
+On the crimson cliffs.
+~
+~
+0 0 10285 0
+S
+#10287
+A Scorched Cave Tunnel~
+   The tunnel is dark, quite cramped and dusty. Much like any other cave
+tunnel you've been in except the walls are very evidently blackened and
+charred. Light comes from the south, and the tunnel continues west.
+~
+102 acd 1
+D0
+Some {madamantite{x gates lie to the north.
+~
+gates adamantite~
+1 0 5100 0
+D2
+Back into the open air on the crimson cliffs.
+~
+~
+0 0 10286 0
+D3
+The tunnel progresses in that direction.
+~
+~
+0 0 10288 0
+S
+#10288
+A Scorched Cave Tunnel~
+   The tunnel slightly widens here, making room for a passage to the south.
+Other exits go east and west to more darkness. The ceiling isn't quite
+large enough for you to stand up straight, and when you touch the cave
+walls it crumbles beneath your fingers. The top layer seems to have been
+burned to dust.
+~
+102 ad 1
+D1
+The tunnel continues east.
+~
+~
+0 0 10287 0
+D2
+An exit from the south leads back outside.
+~
+~
+0 0 10289 0
+D3
+The tunnel continues west.
+~
+~
+0 0 10290 0
+S
+#10289
+Outside A Dark Cave~
+   The Crimson Valley is behind you and is all you see to the south. The
+cave entrance is not all that large, and peering inside reveals that the
+cave itself doesn't look all that large either. Further into the cave you
+see that the stone walls have been scorched by some extreme heat.
+~
+102 c 1
+D0
+Into the dark cave. The forces of darkness prevent you from seeing very
+far inside.
+~
+~
+0 0 10288 0
+D5
+A steep path into the Crimson Valley.
+~
+~
+0 0 10259 0
+S
+#10290
+A Scorched Cave Tunnel~
+   You squeeze through the tunnel here. The charred walls crumble at your
+touch. The heavy smell of something burning reaches your nose. This is no
+ordinary cave. Exits go east and west.
+~
+102 adi 1
+D1
+Into the tunnel.
+~
+~
+0 0 10288 0
+D3
+Into the tunnel.
+~
+~
+0 0 10291 0
+S
+#10291
+A Scorched Cave Tunnel~
+   The tunnel here is wide enough for a group of people. Everywhere you look
+the walls, floors and ceiling are all charred. A thick layer of black dust
+sits here untouched for a long time. The heat here increases, the source
+seems to be to the north. Darkness is to the east and west.
+~
+102 ad 1
+D0
+A short passage opens up into a giant cavern. The heat is unbearable from
+that direction. If you had one guess, you would think something powerful
+lives in that direction.
+~
+~
+0 0 10292 0
+D1
+Darkness lies to the east.
+~
+~
+0 0 10290 0
+D3
+Darness lies to the west.
+~
+~
+0 0 10297 0
+S
+#10292
+The Dragon's Scorched Lair~
+   The heat suddenly increases an exponential amount the moment you enter
+the room. This cavern is large, not so much high, but very wide in all
+directions. Generally circular, along the cave wall are stone pillars half
+covered by crimson rock. The floor of the cave is free from any rocks or
+boulders; it has only dust that has been disturbed by giant claws evident
+by the imprints. You suddenly notice a large pair of doors hidden into the
+rock wall. They look very ancient, and look to have been covered by stone.
+~
+102 ad 1
+D1
+The doors to the east are made of stone and are camoflaged by the cavern
+wall. They are ancient as time. Some crude pictures and words have been
+carved into them, but it is too difficult to make anything out.
+~
+doors ancient stone~
+2 10202 10293 0
+D3
+A short tunnel goes west and turns sharply to the south. The quickest way
+out.
+~
+~
+0 0 10291 0
+E
+doors~
+The doors to the east are made of stone and are camoflaged by the cavern
+wall. They are ancient as time. Some crude pictures and words have been
+carved into them, but it is too difficult to make anything out.
+~
+E
+pillars wall~
+The pillars have been half-covered by the stone wall so you can only see
+the front of them. Over time they have been destroyed and don't possess the
+beauty they may have once had.
+~
+S
+#10293
+The Cavern Of The Golden Pillars~
+   This giant cave is shining with mountains of gold and treasure. The walls
+sparkle like diamonds, and there are massive pillars of gold that stand
+before you. With a treasury this large, only a dragon could possibly own
+all of it.
+~
+102 cdfgh 1
+D0
+The cavern continues.
+~
+~
+0 0 10296 0
+D1
+The cavern continues.
+~
+~
+0 0 10294 0
+D3
+Two ancient doors made of dull grey stone disturb the beautiful, sparkling
+environment.
+~
+doors ancient stone~
+2 10202 10292 0
+S
+#10294
+The Cavern Of The Golden Pillars~
+   This giant cave is shining with mountains of gold and treasure. The walls
+sparkle like diamonds, and there are massive pillars of gold that stand
+before you. With a treasury this large, only a dragon could possibly own
+all of it.
+~
+102 cdfgh 1
+D0
+The cavern continues.
+~
+~
+0 0 10295 0
+D3
+The cavern continues.
+~
+~
+0 0 10293 0
+S
+#10295
+The Cavern Of The Golden Pillars~
+   This giant cave is shining with mountains of gold and treasure. The walls
+sparkle like diamonds, and there are massive pillars of gold that stand
+before you. With a treasury this large, only a dragon could possibly own
+all of it.
+~
+102 cdfgh 1
+D2
+The cavern continues.
+~
+~
+0 0 10294 0
+D3
+The cavern continues.
+~
+~
+0 0 10296 0
+S
+#10296
+The Cavern Of The Golden Pillars~
+   This giant cave is shining with mountains of gold and treasure. The walls
+sparkle like diamonds, and there are massive pillars of gold that stand
+before you. With a treasury this large, only a dragon could possibly own
+all of it.
+~
+102 cdfgh 1
+D1
+The cavern continues.
+~
+~
+0 0 10295 0
+D2
+The cavern continues.
+~
+~
+0 0 10293 0
+S
+#10297
+A Scorched Cave Tunnel~
+   The tunnel is dark, quite cramped and dusty. Much like any other cave
+tunnel you've been in except the walls are very evidently blackened and
+charred. Light comes from the south, and the tunnel continues east.
+~
+102 acd 1
+D1
+Further into the blackened tunnel.
+~
+~
+0 0 10291 0
+D2
+Back into the open air.
+~
+~
+0 0 10298 0
+S
+#10298
+Outside A Dark Cave~
+   The Crimson Valley is behind you and is all you see to the south. The
+cave entrance is not all that large, and peering inside reveals that the
+cave itself doesn't look all that large either. Further into the cave you
+see that the stone walls have been scorched by some extreme heat.
+~
+102 c 1
+D0
+Into the dark cave. The forces of darkness prevent you from seeing very
+far inside.
+~
+~
+0 0 10297 0
+D5
+A steep path into the Crimson Valley.
+~
+~
+0 0 10271 0
+S
+#10299
+Behind A Waterfall~
+   A little spot behind a large waterfall. This is a nice secret area. The
+spray doesn't reach you at the back of the room so it's quite dry. You can
+exit by walking right through the waterfall to the east, but you will get
+wet for sure.
+~
+102 d 0
+D1
+Through the pouring water and to the other side. Prepared to get wet.
+~
+waterfall water fall~
+2 -1 10227 0
+S
+$~

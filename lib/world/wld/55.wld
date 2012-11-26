@@ -1,0 +1,2290 @@
+#5500
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+~
+~
+0 0 5480 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5520 0
+D3
+~
+~
+0 0 5200 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5501
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+55 0 1
+D0
+~
+~
+0 0 5481 0
+D2
+Weeping Way.
+~
+~
+0 0 5521 0
+S
+#5502
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5482 0
+D1
+An Abandoned Warehouse.
+~
+door~
+1 -1 5503 0
+D2
+Independence Avenue.
+~
+~
+0 0 5522 0
+S
+#5503
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D3
+Independence Avenue.
+~
+door~
+1 -1 5502 0
+S
+#5504
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5484 0
+D2
+Independence Avenue.
+~
+~
+0 0 5524 0
+S
+#5505
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D1
+Lost Lane.
+~
+~
+0 0 5506 0
+D2
+~
+~
+0 0 5525 0
+S
+#5506
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D1
+Lost Lane.
+~
+~
+0 0 5507 0
+D2
+~
+~
+0 0 5526 0
+D3
+Lost Lane.
+~
+~
+0 0 5505 0
+S
+#5507
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D1
+Lost Lane.
+~
+~
+0 0 5508 0
+D3
+Lost Lane.
+~
+~
+0 0 5506 0
+S
+#5508
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D1
+Lost Lane.
+~
+~
+0 0 5509 0
+D3
+Lost Lane.
+~
+~
+0 0 5507 0
+S
+#5509
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D3
+Lost Lane.
+~
+~
+0 0 5508 0
+S
+#5510
+Despair Boulevard~
+   A growing sense of evil fills the air. The air seems thick and does not
+let you pass through easily. Beggars come to this place to try to squease
+a dime or two from the few people that pass by. As you continue down the
+boulevard, you become increasingly aware that the source of the evil lies
+near the church. Despair Boulevard continues north to the city gates and
+south toward the church.
+~
+55 0 1
+D0
+Despair Boulevard.
+~
+~
+0 0 5490 0
+D2
+Despair Boulevard.
+~
+~
+0 0 5530 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5511
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+55 0 1
+D1
+Market Plaza.
+~
+~
+0 0 5512 0
+S
+#5512
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+55 0 1
+D1
+Market Plaza.
+~
+~
+0 0 5513 0
+D3
+Market Plaza.
+~
+~
+0 0 5511 0
+S
+#5513
+Market Plaza~
+   Great activity fills this place. Sounds of merchants and stallholders fill
+the air. The growing economy of Hope has forced the expansion of the old
+Market Plaza. Many of the Citizens of Hope have turned to selling goods to
+the occasional tourist in hopes of making a very big profit. Many of the
+stallholders have resorted to forcing the tourists to buy their wares.
+~
+55 0 1
+D0
+Market Plaza.
+~
+~
+0 0 5493 0
+D3
+Market Plaza.
+~
+~
+0 0 5512 0
+S
+#5514
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5494 0
+D2
+Circle Drive.
+~
+~
+0 0 5534 0
+S
+#5515
+A Living Room~
+   The living room of this rent house looks like a little child has once
+again disobeyed its parents. The toybox has been tipped over leaving a
+pile of toys in the middle of the floor. A beautiful sculpture stands in
+one corner and a large family portrait graces the wall.  To the east
+is the bedroom and to the south is the kitchen.
+~
+55 0 1
+D1
+A Bedroom.
+~
+door~
+1 -1 5516 0
+D2
+A Kitchen.
+~
+door~
+1 -1 5535 0
+S
+#5516
+A Bedroom~
+   This room has been decorated in a rather gawdy fashion. The walls are
+a putrid color of brown and the wood floor has been painted bright pink.
+The only light in the room comes from a window that opens into Circle
+Drive. A desk with a large pile of papers on it occupies one corner of
+the room. The bed has an unusual ridge running down its center.
+~
+55 0 1
+D3
+A Living Room.
+~
+door~
+1 -1 5515 0
+S
+#5517
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+~
+~
+0 0 5497 0
+D2
+Circle Drive.
+~
+~
+0 0 5537 0
+S
+#5518
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+55 0 1
+D0
+Good Street.
+~
+~
+0 0 5498 0
+D2
+Good Street.
+~
+~
+0 0 5538 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5519
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5499 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5539 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5520
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5500 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5540 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5521
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+55 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5501 0
+D2
+Weeping Way.
+~
+~
+0 0 5541 0
+S
+#5522
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5502 0
+D2
+Independence Avenue.
+~
+~
+0 0 5542 0
+S
+#5523
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D1
+Independence Avenue.
+~
+door~
+1 -1 5524 0
+S
+#5524
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5504 0
+D2
+Independence Avenue.
+~
+~
+0 0 5544 0
+D3
+An Abandoned Warehouse.
+~
+door~
+1 -1 5523 0
+S
+#5525
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+~
+~
+0 0 5505 0
+D2
+Lost Lane.
+~
+~
+0 0 5545 0
+S
+#5526
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+~
+~
+0 0 5506 0
+D2
+Lost Lane.
+~
+~
+0 0 5546 0
+S
+#5527
+Hope Memorial Armory~
+   The most remarkable aspect of this fine shop is its almost regimental
+appearance, with every item having a specific place, and always being kept
+in that place. Rows of shields stand to attention down one wall, while racks
+of sleeves and gauntlets are displayed down another. Not a speck of dust
+would ever be seen on any surface in here, as Jarlok spends much of his day
+polishing, sweeping and cleaning.  
+~
+55 d 1
+D1
+Town Square.
+~
+~
+0 0 5528 0
+S
+#5528
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D1
+Town Square.
+~
+~
+0 0 5529 0
+D2
+Town Square.
+~
+~
+0 0 5548 0
+D3
+Hope Emporium.
+~
+~
+0 0 5527 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5529
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D1
+Town Square.
+~
+~
+0 0 5530 0
+D3
+Town Square.
+~
+~
+0 0 5528 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5530
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D0
+Despair Boulevard.
+~
+~
+0 0 5510 0
+D1
+Town Square.
+~
+~
+0 0 5531 0
+D2
+~
+~
+1 0 5550 0
+D3
+Town Square.
+~
+~
+0 0 5529 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5531
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D1
+~
+~
+0 0 5532 0
+D3
+Town Square.
+~
+~
+0 0 5530 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5532
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D1
+Hope Emporium.
+~
+~
+0 0 5533 0
+D2
+Town Square.
+~
+~
+0 0 5552 0
+D3
+~
+~
+0 0 5531 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5533
+Segine's Weapons Of Distinction~
+   Large weapon racks as tall as the ceiling create quite an overwhelming
+feeling in this large shop. Hundreds of different weapons, of all types and
+made of all materials are stacked and displayed carefully around the room.
+The most magnificent display lies in the center of the room, making it
+impossible to miss.  
+~
+55 d 1
+D3
+Town Square.
+~
+~
+0 0 5532 0
+E
+display~
+An impressive array of antique and ancient weapons have been put on display
+for a time. Enormous swords, with thick gleaming blades, engraved from hilt
+to tip rest against each other, almost creating a cage of blades.  
+~
+S
+#5534
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5514 0
+D2
+Circle Drive.
+~
+~
+0 0 5554 0
+S
+#5535
+A Kitchen~
+   The smell from the garbage can here could probably kill a horse. Flies
+are swarming over the trash can in a dense black cloud. The window here
+is wide open in a vain attempt to releave the smell. Dishes cover the
+counters and the ramains of the last meal are still on the kitchen table.
+To the north is the living room and to the east is the porch.
+~
+55 0 1
+D0
+A Living Room.
+~
+door~
+1 -1 5515 0
+D1
+~
+~
+1 0 5536 0
+S
+#5536
+The Porch~
+   The porch of this house has some serious problems. The awning overhead
+sags almost to the point of collapsing. A large hole just in front of the
+door leading inside makes going in that direction a bit of a challenge.
+A solitary chair sits to one side of the hole and looks as though it has
+seen many years of abuse.
+~
+55 0 1
+D1
+~
+gate~
+1 0 5537 0
+D3
+~
+~
+1 0 5535 0
+S
+#5537
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5517 0
+D2
+Circle Drive.
+~
+~
+0 0 5557 0
+D3
+~
+gate~
+1 0 5536 0
+S
+#5538
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+55 0 1
+D0
+Good Street.
+~
+~
+0 0 5518 0
+D2
+Good Street.
+~
+~
+0 0 5558 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5539
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5519 0
+D2
+~
+~
+0 0 5559 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5540
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5520 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5560 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5541
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+55 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5521 0
+D2
+Weeping Way.
+~
+~
+0 0 5561 0
+S
+#5542
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5522 0
+D1
+An Abandoned Warehouse.
+~
+door~
+1 -1 5543 0
+D2
+Independence Avenue.
+~
+~
+0 0 5562 0
+S
+#5543
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D3
+Independence Avenue.
+~
+door~
+1 -1 5542 0
+S
+#5544
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5524 0
+D2
+Independence Avenue.
+~
+~
+0 0 5564 0
+S
+#5545
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+Lost Lane.
+~
+~
+0 0 5525 0
+D2
+Lost Lane.
+~
+~
+0 0 5565 0
+S
+#5546
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+Lost Lane.
+~
+~
+0 0 5526 0
+D1
+~
+~
+0 0 5547 0
+D2
+Lost Lane.
+~
+~
+0 0 5566 0
+S
+#5547
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D3
+~
+~
+0 0 5546 0
+S
+#5548
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D0
+Town Square.
+~
+~
+0 0 5528 0
+D2
+Town Square.
+~
+~
+0 0 5568 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5549
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D1
+Hope Independent Church.
+~
+~
+0 0 5550 0
+D2
+Hope Independent Church.
+~
+~
+0 0 5569 0
+S
+#5550
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D0
+~
+~
+1 0 5530 0
+D1
+Hope Independent Church.
+~
+~
+0 0 5551 0
+D2
+Hope Independent Church.
+~
+~
+0 0 5570 0
+D3
+Hope Independent Church.
+~
+~
+0 0 5549 0
+S
+#5551
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D2
+Hope Independent Church.
+~
+~
+0 0 5571 0
+D3
+Hope Independent Church.
+~
+~
+0 0 5550 0
+S
+#5552
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D0
+Town Square.
+~
+~
+0 0 5532 0
+D2
+Town Square.
+~
+~
+0 0 5572 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5553
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D1
+Circle Drive.
+~
+door~
+1 -1 5554 0
+S
+#5554
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5534 0
+D1
+Circle Drive.
+~
+~
+0 0 5555 0
+D2
+Circle Drive.
+~
+~
+0 0 5574 0
+D3
+An Abandoned Warehouse.
+~
+door~
+1 -1 5553 0
+S
+#5555
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D1
+Circle Drive.
+~
+~
+0 0 5556 0
+D3
+Circle Drive.
+~
+~
+0 0 5554 0
+S
+#5556
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D1
+Circle Drive.
+~
+~
+0 0 5557 0
+D2
+~
+~
+1 0 5576 0
+D3
+Circle Drive.
+~
+~
+0 0 5555 0
+S
+#5557
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5537 0
+D2
+Circle Drive.
+~
+~
+0 0 5577 0
+D3
+Circle Drive.
+~
+~
+0 0 5556 0
+S
+#5558
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+55 0 1
+D0
+Good Street.
+~
+~
+0 0 5538 0
+D2
+~
+~
+0 0 5578 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5559
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+~
+~
+0 0 5539 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5579 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5560
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5540 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5580 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5561
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+55 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5541 0
+D2
+Weeping Way.
+~
+~
+0 0 5581 0
+S
+#5562
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5542 0
+D2
+Independence Avenue.
+~
+~
+0 0 5582 0
+S
+#5563
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D1
+~
+~
+1 0 5564 0
+S
+#5564
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5544 0
+D2
+Independence Avenue.
+~
+~
+0 0 5584 0
+D3
+An Abandoned Warehouse.
+~
+door~
+1 -1 5563 0
+S
+#5565
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+Lost Lane.
+~
+~
+0 0 5545 0
+D2
+Lost Lane.
+~
+~
+0 0 5585 0
+S
+#5566
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+Lost Lane.
+~
+~
+0 0 5546 0
+D2
+Lost Lane.
+~
+~
+0 0 5586 0
+S
+#5567
+Hope Emporium~
+   This small shop is overflowing with the many hundreds of trinkets and
+treats that travellers have brought back from their travels. Every so often,
+a brightly colored sign has been tacked to the front of one of the shelves,
+indicating what Lagan believes to be a special deal. On closer inspection
+however, the deal appears to be one of which only Lagan would benefit from,
+the item being old, worn and in poor condition.  
+~
+55 d 1
+D1
+Town Square.
+~
+~
+0 0 5568 0
+S
+#5568
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D0
+Town Square.
+~
+~
+0 0 5548 0
+D1
+Hope Independent Church.
+~
+door~
+1 5500 5569 0
+D2
+Town Square.
+~
+~
+0 0 5588 0
+D3
+Hope Emporium.
+~
+~
+0 0 5567 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5569
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D0
+Hope Independent Church.
+~
+~
+0 0 5549 0
+D1
+Hope Independent Church.
+~
+~
+0 0 5570 0
+D2
+Hope Independent Church.
+~
+~
+0 0 5589 0
+D3
+Town Square.
+~
+door~
+1 5500 5568 0
+S
+#5570
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D0
+Hope Independent Church.
+~
+~
+0 0 5550 0
+D1
+Hope Independent Church.
+~
+~
+0 0 5571 0
+D2
+Hope Independent Church.
+~
+~
+0 0 5590 0
+D3
+Hope Independent Church.
+~
+~
+0 0 5569 0
+D5
+A Dark and Evil Place.
+~
+boards~
+1 -1 -1 0
+S
+#5571
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D0
+Hope Independent Church.
+~
+~
+0 0 5551 0
+D1
+Town Square
+~
+door~
+1 5500 5572 0
+D2
+Hope Independent Church.
+~
+~
+0 0 5591 0
+D3
+Hope Independent Church.
+~
+~
+0 0 5570 0
+S
+#5572
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D0
+Town Square.
+~
+~
+0 0 5552 0
+D1
+Hope Emporium.
+~
+~
+0 0 5573 0
+D2
+Town Square.
+~
+~
+0 0 5592 0
+D3
+Hope Independent Church.
+~
+door~
+1 5500 5571 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5573
+The Daisy Lane Teashop~
+   Beautifully decorated tables fill this cosy little shop, each with a
+perfect place-setting for four. Small vases filled with fresh flowers are
+placed on every available surface, filling the air with a most wonderful
+perfume. Patrons of this teashop receive only the finest service from Betina
+and her neices, who have proudly catered to the culinary needs of Hope for
+many years now.  
+~
+55 d 1
+D3
+Town Square.
+~
+~
+0 0 5572 0
+S
+#5574
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5554 0
+D2
+Circle Drive.
+~
+~
+0 0 5594 0
+S
+#5575
+A Kitchen~
+   No descript yet.
+~
+55 0 1
+D1
+The Porch.
+~
+door~
+1 -1 5576 0
+D2
+A Living Room.
+~
+door~
+1 -1 5595 0
+S
+#5576
+The Porch~
+   No descript yet.
+~
+55 0 1
+D0
+~
+~
+1 0 5556 0
+D3
+A Kitchen.
+~
+door~
+1 -1 5575 0
+S
+#5577
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5557 0
+D2
+Circle Drive.
+~
+~
+0 0 5597 0
+S
+#5578
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+55 0 1
+D0
+~
+~
+0 0 5558 0
+D2
+~
+~
+0 0 5598 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5579
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5559 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5599 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5580
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5560 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5600 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+#5581
+Weeping Way~
+   This is the street that the citizens of Hope lined up and passed the
+coffins of their dead soldiers to each other as they made their way to the
+graveyard. The procession of coffins lasted for 30 days and the streams of
+tears was endless. The mayor renamed this street 50 years ago to keep the
+city constantly aware of the need for revenge and redemption.
+~
+55 0 1
+D0
+Weeping Way.
+~
+~
+0 0 5561 0
+D2
+Weeping Way.
+~
+~
+0 0 5601 0
+S
+#5582
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5562 0
+D2
+Independence Avenue.
+~
+~
+0 0 5602 0
+S
+#5583
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D2
+Independence Avenue.
+~
+door~
+1 -1 5603 0
+S
+#5584
+Independence Avenue~
+   Just before the last delegation was sent into the pits below the city,
+the Mayor named this street Independence Avenue in hopes of finally destroying
+Cruthane. That mission failed, but the street remains named such in hopes
+that one day a group of adventurers will come and deliver the city from
+Cruthane.
+~
+55 0 1
+D0
+Independence Avenue.
+~
+~
+0 0 5564 0
+D2
+~
+~
+0 0 5604 0
+S
+#5585
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+Lost Lane.
+~
+~
+0 0 5565 0
+D2
+~
+~
+0 0 5605 0
+S
+#5586
+Lost Lane~
+  The Citizens of Hope took it upon themselves to rename this street. They
+chanted LOST ALL IS LOST, for three days when the Mayor decided to rename the
+street to reflect the first crusaid into the labrynth. From that day forward
+Lost Lane has been the name of this street. Nothing but thugs and vandals
+occupy the street and reconstruction efforts here have been thwarted by the
+menions of Cruthane.
+~
+55 agh 1
+D0
+Lost Lane.
+~
+~
+0 0 5566 0
+D1
+~
+~
+1 0 5587 0
+D2
+Lost Lane.
+~
+~
+0 0 5606 0
+S
+#5587
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D3
+~
+~
+0 0 5586 0
+S
+#5588
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D0
+Town Square.
+~
+~
+0 0 5568 0
+D2
+Town Square.
+~
+~
+0 0 5608 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5589
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D0
+Hope Independent Church.
+~
+~
+0 0 5569 0
+D1
+Hope Independent Church.
+~
+~
+0 0 5590 0
+S
+#5590
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D0
+Hope Independent Church.
+~
+~
+0 0 5570 0
+D1
+Hope Independent Church.
+~
+~
+0 0 5591 0
+D2
+~
+~
+0 0 5610 0
+D3
+Hope Independent Church.
+~
+~
+0 0 5589 0
+S
+#5591
+Hope Independent Church~
+   No Descript Yet.
+~
+55 0 1
+D0
+Hope Independent Church.
+~
+~
+0 0 5571 0
+D3
+Hope Independent Church.
+~
+~
+0 0 5590 0
+S
+#5592
+Town Square~
+   The once bustling Town Square is now all but deserted. Litter cloggs the
+drainage system, and large puddles have formed near the drains. Homeless
+Citizens of Hope gather in bunches in order to protect themselves from the
+unseen evil that lurks within the church. Many of the citizens avoid this
+place and try to stay as far away as possible.
+~
+55 0 1
+D0
+Town Square.
+~
+~
+0 0 5572 0
+D2
+Town Square.
+~
+~
+0 0 5612 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5593
+An Abandoned Warehouse~
+   This warehouse looks as though a tornado has just ripped through it. 
+There are piles of trash all over the place. Light streames through the
+many holes in the roof, and the smell of decomposing trash fills the air.
+Rats skimper around your feet as you wade through the trash looking for
+clues to assist you in your battle with Cruthane.
+~
+55 0 1
+D1
+Circle Drive.
+~
+door~
+1 -1 5594 0
+S
+#5594
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5574 0
+D2
+~
+~
+0 0 5614 0
+D3
+An Abandoned Warehouse.
+~
+door~
+1 -1 5593 0
+S
+#5595
+A Living Room~
+   No descript yet.
+~
+55 0 1
+D0
+A Kitchen.
+~
+door~
+1 -1 5575 0
+D1
+A Bedroom.
+~
+door~
+1 -1 5596 0
+S
+#5596
+A Bedroom~
+   No descript yet.
+~
+55 0 1
+D3
+A Living Room.
+~
+door~
+1 -1 5595 0
+S
+#5597
+Circle Drive~
+   This road marks the beginning of the reconstruction of Hope. The quality
+of the road is much better than the other streets in the city. Citizens walk
+from their homes to the Market Plaza to buy the goods they need for the day.
+The houses in this part of the city look as though they have only recently
+been constructed.
+~
+55 0 1
+D0
+Circle Drive.
+~
+~
+0 0 5577 0
+D1
+~
+~
+0 0 5598 0
+D2
+~
+~
+0 0 5617 0
+S
+#5598
+Good Street~
+   You are standing on what is possibly the oldest street in the town. This was
+the only street that was not destroyed when Cruthane the Destroyer demolished
+the city of Hope. This road goes west towards the Mayor's house and east
+to the still developing housing district.
+~
+55 0 1
+D0
+~
+~
+0 0 5578 0
+D2
+~
+~
+0 0 5618 0
+D3
+~
+~
+0 0 5597 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see cobblestones.
+~
+~
+0 0 -1 0
+S
+#5599
+Outside the Walls of Hope~
+   This is where most of the soldiers of Hope died during the last battle
+with Cruthane. Their crumpled bodies were thrown over the wall to be
+feasted upon by wild carrion eaters. The cracks in the wall are still
+lightly stained with blood. The grass here is unusually green and is very
+thick.
+~
+55 ac 2
+D0
+Outside the Walls of Hope.
+~
+~
+0 0 5579 0
+D2
+Outside the Walls of Hope.
+~
+~
+0 0 5619 0
+D4
+You notice the signs of corruption in the air.
+~
+~
+0 0 -1 0
+D5
+You see somewhat unlevel ground.
+~
+~
+0 0 -1 0
+S
+$~

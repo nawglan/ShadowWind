@@ -1,0 +1,289 @@
+#1200
+brook stream creek~
+{ba small winding brook{x~
+{bA small winding brook has woven its way around the grove.{x~
+~
+23 0 0 0 
+999999 999999 15 0 26
+999999 0 0
+#1202
+hidden~
+a hidden object.~
+If you can read this your TOO close.~
+If you can read this your TOO close
+~
+5 y a 0 
+0 0 0 0 0
+0 0 0
+E
+hidden~
+If you can read this your TOO close.
+~
+#1203
+corpse~
+a temp corpse.~
+This is a temp corpse.~
+This is a temp corpse.
+~
+5 y 0 0 
+0 0 0 0 0
+0 0 0
+#1225
+wall ice~
+{Wa wall of {Bice{x~
+{Wa wall of {Bice {Wblocks~
+~
+12 agx 0 0 
+0 0 0 0 1
+999999 0 0
+#1226
+wall fire~
+{Wa wall of {Rfire{x~
+{Wa wall of {Rfire {Wblocks~
+~
+12 agx 0 0 
+0 0 0 0 1
+999999 0 0
+#1227
+wall force~
+{Wa wall of {gforce{x~
+{Wa wall of {gforce {Wblocks~
+~
+12 agx 0 0 
+0 0 0 0 1
+999999 0 0
+#1228
+wall iron~
+{Wa wall of {Diron{x~
+{Wa wall of {Diron {Wblocks~
+~
+12 agx 0 0 
+0 0 0 0 1
+999999 0 0
+#1229
+wall stone~
+{Wa wall of {wstone{x~
+{Wa wall of {wstone {Wblocks~
+~
+12 agx 0 0 
+0 0 0 0 1
+999999 0 0
+#1230
+wall fog~
+{Wa wall of {Cfog{x~
+{Wa wall of {Cfog {Wblocks~
+~
+12 agx 0 0 
+0 0 0 0 1
+999999 0 0
+#1231
+wall thorns~
+{Wa wall of {ythorns{x~
+{Wa wall of {ythorns {Wblocks~
+~
+12 agx 0 0 
+0 0 0 0 1
+999999 0 0
+#1232
+hammer spiritual~
+{wan ancient two-handed {yspiritual battle hammer{x~
+{wan ancient two-handed {yspiritual battle hammer{x~
+~
+5 g an 0 
+4 1 1 9 5
+12 15097 0
+#1233
+sword flame~
+{RA great sword of burning flame{x~
+{RA great sword of burning flame{x~
+~
+5 g an 0 
+1 1 1 3 8
+9 17500 0
+#1234
+spring~
+{ba spring of bubbling {Cclear {bwater{x~
+{ba spring of bubbling {Cclear {bwater{x~
+~
+23 g 0 0 
+999999 999999 15 0 26
+999999 0 0
+#1235
+raft wooden~
+{ya small wooden raft{x~
+{yA small wooden raft lies here.{x~
+~
+22 0 a 0 
+0 0 0 0 5
+10 0 0
+#1236
+ration iron~
+{ysome iron rations{x~
+{wSome {yiron rations{w are here.{x~
+~
+19 0 a 0 
+18 0 0 0 2
+2 0 0
+#1237
+torch~
+{ya torch{x~
+{yA large torch lies on the ground.{x~
+~
+1 0 ao 0 
+0 0 24 0 5
+1 0 0
+#1238
+water barrel timber~
+{ya timber barrel{x~
+{yA timber barrel{w has been left here.{x~
+~
+17 0 a 0 
+50 50 0 0 5
+65 0 0
+#1280
+portal ether~
+{BA Portal of {mEther{x~
+{BA portal of {mEther {Bis floating above the surface.{x~
+~
+28 0 0 0 
+14552 0 0 0 29
+999999 0 0
+E
+portal ether~
+{BA swirling mass of colors form a portal of {mEther{B.{x
+~
+#1281
+portal ether~
+{BA Portal of {mEther{x~
+{BA portal of {mEther {Bis floating above the surface.{x~
+~
+28 0 0 0 
+3199 0 0 0 29
+999999 0 0
+E
+portal ether~
+{BA swirling mass of colors form a portal of {mEther{B.{x
+~
+#1285
+portal gate gateway~
+{WA {CS{ch{Ci{cm{Cm{ce{Cr{ci{Cn{cg {Wportal, swirling with brilliant colors.{x~
+{WA {CS{ch{Ci{cm{Cm{ce{Cr{ci{Cn{cg {Wportal is here floating just above the surface.~
+~
+28 x 0 0 
+5800 0 0 0 26
+999999 0 0
+E
+portal moonwell well~
+{WGlowing from a magical aura, this moonwell floats here waiting for 
+{Wthose that called upon its powers to enter within.
+~
+#1286
+portal gate gateway~
+{WA {CS{ch{Ci{cm{Cm{ce{Cr{ci{Cn{cg {Wportal, swirling with brilliant colors.{x~
+{WA {CS{ch{Ci{cm{Cm{ce{Cr{ci{Cn{cg {Wportal is here floating just above the surface.~
+~
+28 0 0 0 
+14073 0 0 0 26
+999999 0 0
+E
+portal moonwell well~
+{WGlowing from a magical aura, this moonwell floats here waiting for 
+{Wthose who called upon its powers to enter within.
+~
+#1287
+moonwell well~
+{wa well of {Cs{Dw{Ci{Dr{Cl{Di{Cn{Dg {Cm{Do{Ct{Di{Co{Dn{x~
+{gA mass of {Cs{Dw{Ci{Dr{Cl{Di{Cn{Dg {Cm{Do{Ct{Di{Co{Dn {gfloats here.{x~
+~
+28 gu 0 0 
+1204 0 0 0 26
+9999 0 0
+E
+moonwell well~
+{gA pool of {Cs{Dw{Ci{Dr{Cl{Di{Cn{Dg {Cm{Do{Ct{Di{Co{Dn {gleading to another part of the world{x
+~
+#1290
+well~
+{wA well made of worn {Wma{Drb{wle{x~
+{wA well made of worn {Wma{Drb{wle{x~
+~
+15 cexz 0 0 
+5000 0 -1 0 6
+0 0 0
+E
+sign~
+You are here.
+~
+#1291
+board bulletin market~
+{ya market board{x (Auction, sell, etc..)~
+{yA market board, for trades of all types.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1292
+board bulletin creation creators~
+{ya board of creation{x (Builders)~
+{yA board full of maps and other strange artifacts.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1293
+board bulletin code coders~
+{ya board full of strange code{x (Coders)~
+{yA board full of strange runes and scribes.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1294
+board bulletin world~
+{ya world wide bulletin board{x -To be used at a later time-~
+{yA board is hanging here in midair.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1295
+board large bulletin~
+{ya large bulletin board{x (Mortal discussion, chat)~
+{yA large bulletin board is standing here.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1296
+board freeze bulletin~
+{ya frozen bulletin board{x (Info on frozen players)~
+{yA board chipped out of a huge block of ice sits here.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1297
+board holy bulletin~
+{ya holy bulletin board{x (Immortal only board)~
+{yA board of the arcane ways of immortals floats here.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1298
+board bulletin godly~
+{ya godly bulletin board{x (Admin only accessable board)~
+{yA board scribed with words of the Gods rests here.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+#1299
+board bulletin quest~
+{ya board of quests{x (Quest Info - Immort only)~
+{yA board of questly visions.{x~
+~
+12 a 0 0 
+0 0 0 0 5
+1 1 1
+$~

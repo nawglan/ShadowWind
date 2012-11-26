@@ -1,0 +1,101 @@
+#38
+City Park /Breena/~
+3899 20 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 3815 5 3801 100	* a rabbit
+M 0 3816 3 3801 100	* a dalmation puppy
+M 0 3818 4 3801 100	* a pigeon
+M 0 3802 1 3805 100	* a lost child
+E 1 3801 999 20	* a shiny copper earring
+E 1 3802 999 17	* a half eaten sticky bun
+M 0 3818 4 3805 100	* a pigeon
+M 0 3818 4 3816 100	* a pigeon
+M 0 3815 5 3814 100	* a rabbit
+M 0 3819 4 3814 100	* the kitten
+M 0 3818 4 3814 100	* a pigeon
+M 0 3816 3 3806 100	* a dalmation puppy
+M 0 3819 4 3806 100	* the kitten
+M 0 3801 4 3804 100	* a tiny butterfly
+M 0 3819 4 3804 100	* the kitten
+M 0 3819 4 3821 100	* the kitten
+M 0 3817 5 3803 100	* a small sparrow
+M 0 3817 5 3836 100	* a small sparrow
+O 0 3809 1 3813 100	* an intricately carved bronze sundial
+M 0 3817 5 3813 100	* a small sparrow
+M 0 3806 4 3811 100	* an Assistant Caretaker
+E 1 3800 999 11	* a sturdy iron shield
+E 1 3805 999 9	* a pair of dirty leather gloves
+M 0 3817 5 3811 100	* a small sparrow
+M 0 3803 3 3810 100	* the Park Cleaner
+M 0 3820 2 3810 100	* a little girl
+M 0 3809 1 3809 100	* a worried mother
+E 1 3807 999 17	* a red canvas satchel
+M 0 3816 3 3809 100	* a dalmation puppy
+M 0 3806 4 3802 100	* an Assistant Caretaker
+E 1 3806 999 16	* a small spade
+E 1 3805 999 9	* a pair of dirty leather gloves
+M 0 3811 5 3802 100	* a citizen of Weirvane
+M 0 3820 2 3802 100	* a little girl
+O 0 3808 1 3842 100	* a large log
+D 0 3842 3 3	* A Clearing Under The Trees
+M 0 3801 4 3812 100	* a tiny butterfly
+M 0 3815 5 3812 100	* a rabbit
+M 0 3811 5 3835 100	* a citizen of Weirvane
+M 0 3815 5 3835 100	* a rabbit
+M 0 3814 4 3840 100	* a dirty grub
+M 0 3814 4 3840 100	* a dirty grub
+M 0 3814 4 3838 100	* a dirty grub
+M 0 3814 4 3839 100	* a dirty grub
+D 0 3843 1 1	* Through The Undergrowth
+M 0 3813 1 3843 100	* an invisible thing is here
+M 0 3805 1 3833 100	* the Head Caretaker
+D 0 3832 3 1	* The Caretaker's Shed
+M 0 3803 3 3832 100	* the Park Cleaner
+D 0 3828 5 1	* The Park Gazebo
+M 0 3803 3 3828 100	* the Park Cleaner
+M 0 3801 4 3820 100	* a tiny butterfly
+M 0 3801 4 3800 100	* a tiny butterfly
+M 0 3808 3 3817 100	* a dragonfly
+M 0 3804 4 3817 100	* a small goldfish
+M 0 3804 4 3819 100	* a small goldfish
+M 0 3808 3 3819 100	* a dragonfly
+M 0 3812 2 3844 100	* a hairy spider
+D 0 3831 1 1	* A Back Path In The Park
+D 0 3829 4 1	* A Back Path In The Park
+M 0 3810 3 3830 100	* a slimy worm
+M 0 3810 3 3830 100	* a slimy worm
+M 0 3811 5 3815 100	* a citizen of Weirvane
+M 0 3804 4 3818 100	* a small goldfish
+M 0 3804 4 3818 100	* a small goldfish
+M 0 3808 3 3818 100	* a dragonfly
+M 0 3807 4 3824 100	* a tree gecko
+M 0 3807 4 3823 100	* a tree gecko
+M 0 3800 1 3822 100	* the furry gopher
+S
+$

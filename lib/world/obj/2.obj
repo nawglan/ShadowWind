@@ -1,0 +1,37 @@
+#200
+wand test~
+a test wand~
+A test wand is here~
+~
+3 0 a 0 
+50 10 10 55 0
+0 0
+P
+firestorm
+#201
+acme light-o-matic generic~
+an Acme generic Light-O-Matic~
+A wonderous Light-O-Matic has been left here by some fool who doesn't undertand what a wonderous invention it is.~
+~
+1 xB ao r 
+0 0 12 0 18
+3 1500
+#203
+pipe bong~
+{Da pipe filled with fragrant herbs{x~
+{Da pipe filled with fragrant herbs.{x~
+~
+8 aghi ao 0 
+0 0 0 0 25
+0 0
+B
+r 
+#204
+chest~
+{Da {ywooden {Dchest lined with {cmithril {Dcarved ruins~
+{Da {ywooden {Dchest lined with {cmithril {Dcarved ruins lies here {cp{Du{cl{Ds{ca{Dt{ci{Dn{cg{D.{x~
+~
+15 0 0 r 
+500 13 -1 0 5
+500 0
+$~

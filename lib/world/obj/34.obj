@@ -1,0 +1,93 @@
+#3400
+coins gold pile~
+{wa small pile of silver coins{x~
+{wa small pile of silver coins{x~
+~
+20 0 a 0 
+0 0 200 0 15
+0 0 0
+#3401
+timber firewood pile~
+a pile of newly cut firewood~
+A pile of newly cut firewood stands here by the door.~
+~
+15 0 0 0 
+100 0 -1 0 5
+100 0 0
+#3402
+chest small iron ironbound~
+a small {Dironbound{x chest~
+A small {Dironbound{x chest stands at the end of the bed.~
+~
+15 0 0 0 
+300 13 3403 0 8
+300 0 0
+#3403
+small iron key~
+a small {Diron{x key~
+A small {Diron{x key peeks out from under the firewood.~
+~
+18 cq a 0 
+0 0 0 0 8
+0 0 0
+#3404
+small acorn~
+a small acorn~
+A small acorn is lying on the ground here.~
+~
+19 d a 0 
+5 0 0 0 2
+1 5 1
+E
+acorn small~
+Small and hard this acorn would make the perfect meal for a chipmunk but for
+a human it seems doubtful. You consider what attracts chipmunks to them in the
+first place as it does not appear to be very satisfying.
+~
+#3408
+wooden axe~
+a heavy wooden axe with a {Wgleaming blade{x~
+A heavy wooden axe with a gleaming blade lies here, radiating danger.~
+~
+5 0 au lqryzA 
+6 3 4 5 1
+15 2000 100
+E
+axe wooden~
+An instrument of destruction as well as a tool to cut firewood, this axe is
+dangerous. With a long heavy wooden handle, and a gleaming blade of solid
+steel, the size of this axe indicates that a big, strong person was meant to
+handle it.
+~
+A
+19 2
+A
+18 -1
+#3409
+belt flax woven~
+{wa belt of {ywo{Yven {Wflax{x~
+An intricatly woven piece of flax lies here.~
+~
+9 gmn al 0 
+2 0 0 0 4
+1 1000 100
+A
+18 1
+#3499
+ferry~
+{yThe Caryllion Ferry{x~
+{yThe Caryllion Ferry is docked here.{x~
+~
+12 0 0 0 
+0 0 0 0 5
+478 3720000 27000
+E
+ferry~
+This sturdy rivercraft that you see before you is simple in design and free
+of any extraneous frills or decorations. Built for speed and agility in the
+sometimes rough conditions of the river, her body is such that she would
+easily dance over the waves that any wind could whip up. Any passenger, 
+though not impressed by her lack of polish and lustre, would feel safe
+travelling on this vessel.
+~
+$~

@@ -1,0 +1,375 @@
+#5100
+longsword sword long spider~
+{ra {Dspider{r-{Dhilted {rlongsword{x~
+A long thin sword with an intricately-carved spider hilt lies here.~
+~
+5 g an 0 
+3 2 8 3 11
+12 3000
+A
+18 1
+A
+19 1
+#5101
+longsword noble sword~
+{wa {mvenemous drow {wlongsword{x~
+A drow noble's longsword lies here.~
+~
+5 g an 0 
+3 2 8 3 11
+12 5500
+A
+18 2
+A
+19 3
+#5102
+whip snake twoheaded~
+a two-headed snake whip~
+A whip with two snake heads lies here.~
+~
+5 g an 0 
+0 2 6 13 20
+12 1750
+A
+18 2
+A
+19 2
+#5103
+whip snake threeheaded~
+a three-headed snake whip~
+A whip with three snake heads has been left here.~
+~
+5 g an 0 
+0 2 7 13 20
+12 5000
+A
+18 2
+A
+19 2
+#5104
+whip snake fourheaded~
+a four-headed snake whip~
+A whip with four snake heads has been carelessly left here.~
+~
+5 g an 0 
+0 2 8 13 20
+12 10250
+A
+18 2
+A
+19 2
+#5105
+longsword black~
+{Ba deadly {Cd{Dr{Co{Dw{B longsword{x~
+A black longsword has been carelessly left here.~
+~
+5 g an 0 
+3 2 9 3 9
+12 10250
+A
+18 3
+A
+19 3
+#5106
+whip snake fiveheaded~
+a five-headed snake whip~
+A whip with five snake heads has been carelessly dropped here.~
+~
+5 gj an 0 
+0 3 6 13 20
+12 12000
+A
+1 -5
+A
+3 -5
+#5107
+whip snake sixheaded~
+a six-headed snake whip~
+A whip with six snake heads has been dropped here very carelessly.~
+~
+5 gj an 0 
+0 4 5 13 20
+12 8000
+A
+1 -8
+A
+3 -8
+#5108
+bracer arachnoid~
+an arachnoid bracer~
+Thousands of tiny spiders crawl over a silvery bracer lying on the ground.~
+~
+11 ag am 0 
+0 2 0 0 11
+3 2000
+A
+6 -10
+A
+17 -5
+#5109
+gauntlets silky spiderweb web~
+{Csilky {Wspiderweb {Cgauntlets{x~
+A small cobweb hangs threateningly from the ceiling.~
+~
+9 ag ah j 
+3 2 0 0 3
+2 10000
+A
+1 10
+#5110
+wand lightning blue silver~
+{wa {Csilvery {Bblue {wwand{x~
+A silvery blue wand has been dropped in the dirt.~
+~
+3 g ao 0 
+50 3 3 168 5
+1 2000
+P
+call lightning
+#5111
+helmet helm~
+a small helmet~
+A small helmet lies up against a rock.~
+~
+9 g ae g 
+4 0 0 0 9
+5 6000
+A
+3 5
+#5112
+ring ruby~
+{Ra small ruby ring{x~
+A small ruby ring lies in the dirt.~
+~
+11 g ab 0 
+0 2 0 0 6
+1 2000
+A
+13 25
+#5113
+dagger spider shaped~
+{Ba {Dspider shaped{B dagger{x~
+A dagger with spider leg shaped blades lies on the ground.~
+~
+5 gj an 0 
+2 3 4 12 9
+3 12000
+A
+18 3
+A
+19 3
+#5114
+crown arachnid~
+{Dthe crow{Gn of the {Darachnid{x~
+A crown made of black silky threads is lying here.~
+~
+9 g ae g 
+2 0 0 0 3
+1 2000
+A
+9 -15
+A
+6 5
+#5115
+breastplate black silver~
+{wa {Dblack {wand {Csilver {wbreastplate{x~
+A gleaming black breastplate scriven with silver designs lies here.~
+~
+9 j ad f 
+5 2 0 0 11
+35 36000
+A
+24 -2
+#5116
+shield black silver~
+{wa {Dblack {wand {Csilver {wshield{x~
+A gleaming black shield scriven with silver designs lies here.~
+~
+9 j aj l 
+5 2 0 0 11
+8 15000
+A
+24 -1
+#5117
+vambraces black silver~
+{wsome {Dblack {wand {Csilver {wvambraces{x~
+Some gleaming black vambraces scriven with silver designs lie here.~
+~
+9 j ai k 
+5 2 0 0 11
+12 24000
+A
+24 -1
+#5118
+greaves black silver~
+{wsome {Dblack {wand {Csilver {wgreaves{x~
+Some gleaming black greaves scriven with silver designs lie here.~
+~
+9 j af h 
+5 2 0 0 11
+12 24000
+A
+24 -1
+#5119
+boots black silver~
+{wsome {Dblack {wand {Csilver {wboots{x~
+Some gleaming black boots scriven with silver designs lie here.~
+~
+9 j ag i 
+5 2 0 0 11
+1 18000
+A
+24 -1
+A
+18 1
+#5120
+anklet black silver~
+{wa {Dblack {wand {Csilver {wanklet{x~
+A gleaming black anklet scriven with silver designs lies here.~
+~
+11 j as 0 
+0 2 0 0 11
+1 14000
+A
+17 -2
+A
+24 -1
+#5121
+headdress spidery~
+a spidery headdress~
+A spidery headdress sits on the ground here.~
+~
+9 gj ae g 
+4 2 0 0 14
+3 0
+A
+24 -3
+#5122
+robes black silver~
+{wsome flowing {Dblack {wand {Csilver {wrobes{x~
+Long, flowing black and silver robes lie in a heap.~
+~
+9 j ad f 
+4 2 0 0 3
+2 12305
+A
+24 -3
+#5123
+regalia black silver~
+{wa {Dblack {wand {Csilver {wregalia{x~
+Some black and silver religious regalia lie forgotten.~
+~
+9 0 ad f 
+4 2 0 0 3
+1 19060
+A
+24 -1
+A
+18 1
+#5124
+dagger black silver~
+{wa {Dblack {wand {Csilver {wdagger{x~
+A silver dagger with a black hilt is stuck into the ground.~
+~
+5 j an 0 
+2 4 2 12 11
+4 13450
+#5125
+fungus phosphorescent~
+some phosphorescent fungus~
+A patch of glowing green fungus grows on the wall.~
+~
+19 a a 0 
+6 0 0 0 2
+1 6
+E
+fungus~
+It looks edible. Yum!
+~
+#5126
+casks cask gold treasure~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 0 a 0 
+0 50 0 0 15
+0 0
+#5127
+pool water ~
+a pool of {Dgleaming black{x water~
+A wide pool filled with {Dinky black{x water glistens in the {Ddarkness{x.~
+~
+23 e 0 0 
+999999 500000 0 0 26
+500005 0
+E
+pool water~
+This pool takes up most of the space in the center of the city in its breadth.
+Surrounded by a low stone rim, the pool is very still and calm. Fed by an
+underground spring, it is the main source of water for the city.
+~
+#5128
+black pearl~
+{Da black pearl{x~
+A small round pearl is lying on the ground.~
+~
+11 gj aq 0 
+0 0 0 0 25
+1 1000
+A
+3 2
+A
+17 -2
+#5129
+head~
+{ra bloody head{x~
+{ra crushed and maingled bloody head is lying here on the ground.~
+~
+0 c a 0 
+0 0 0 0 0
+1 1
+#5130
+head~
+{ra bloody head{x~
+{ra crushed and maingled bloody head is lying here on the ground.~
+~
+0 c a 0 
+0 0 0 0 0
+1 1
+#5131
+head~
+{ra bloody head{x~
+{ra crushed and maingled bloody head is lying here on the ground.~
+~
+0 c a 0 
+0 0 0 0 0
+1 1
+#5132
+head~
+{ra bloody head{x~
+{ra crushed and maingled bloody head is lying here on the ground.~
+~
+0 c a 0 
+0 0 0 0 0
+1 1
+#5133
+note noteforpriestesintemple~
+{ya torn note{x~
+{ya torn note is laying here.~
+~
+0 0 0 0 
+0 0 0 0 0
+1 1
+E
+note~
+It is complete my'lady, the adventurers have taken all four of the vile
+mother's head's, and shall free you from the reigns of this wretched place,
+I beg thee, flee this dredded city as soon as they finish off the Yochlol
+the spells that have been cast upon you are reversable and you can once
+again lead all good elf to glory.
+
+Your humble mage for all eternity,
+
+        Vincer the Grand.
+~
+$~

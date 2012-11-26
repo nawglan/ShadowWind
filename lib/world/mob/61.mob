@@ -1,0 +1,113 @@
+#6100
+duckling duck~
+{Ya duckling{x~
+{YA small duckling is swimming.{x
+~
+ ~
+d 0 0 X
+2 19 9 1d1+20
+0 300
+8 8 0 10 14 2
+T 100 1d1+1 22
+#6101
+duck~
+{ya duck{x~
+{yA large duck swims about.{x
+~
+ ~
+d 0 0 X
+4 18 8 2d2+40
+0 1000
+8 8 0 10 14 2
+T 100 1d4+0 22
+#6102
+gosling goose~
+{Wa gosling{x~
+{WA gosling wallows about in the water.{x
+~
+ ~
+d 0 0 X
+3 18 8 2d2+30
+0 600
+8 8 0 10 14 2
+T 100 1d7+0 0
+#6103
+goose~
+{wa goose{x~
+A goose swims around looking for its hatchlings.
+~
+ ~
+d 0 0 X
+5 17 7 3d3+50
+0 1600
+8 8 0 10 14 1
+T 100 1d4+1 22
+#6104
+fish bass~
+{wa bass{x~
+{wA striped {cbass{w swims around.{x
+~
+ ~
+d 0 0 X
+2 19 9 1d1+20
+0 300
+8 8 0 10 14 1
+T 100 1d1+1 22
+#6105
+mayfly~
+{wa mayfly{x~
+A mayfly skims along the top of the pond.
+~
+ ~
+d 0 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 10 14 1
+T 100 1d1+0 22
+#6106
+gnat~
+{Da gnat{x~
+{DA gnat swarms around your head.{x
+~
+ ~
+d q 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 8 15 1
+T 100 1d1+0 22
+#6107
+man old fisherman~
+An old fisherman~
+An old fisherman stands here.
+~
+Smelling of freshly cleaned fish this old fart has made the last years of
+his life to be that of fishing and nothing else.  
+~
+bd dfkr 0 X
+60 0 -10 30d30+30000
+0 10000000
+8 8 0 3 1 3
+T 100 1d4+1 11
+>all_greet_prog 100~
+if isnpc($n)
+  break
+    else
+      if level($n) >= 7
+      tell $n Hay this area is for newbies, beat it bub!
+      mpechoat $n An old fisherman pushes you off to the east.
+      mpechoaround $n An old fisherman pushes $n off to the east.
+      mptrans $n 3407
+      mpforce $n look
+      mpechoaround $n $n stumbles in from the west.
+    break
+      else
+        mpoload 1235
+        drop raft
+        smile
+        mpdelay 10
+        tell $n It's a lovely day for fishing!
+     endif  
+  endif
+endif
+~
+|

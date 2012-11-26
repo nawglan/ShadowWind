@@ -1,0 +1,1062 @@
+#4200
+Temp Room~
+It's a temp room, gimme a break.
+~
+42 0 0
+S
+#4201
+In Some Bushes Along The River~
+   Forging west, you can barely make out a trail along the river. The
+absence of noise makes you wonder what is out there watching you. The
+shadows here don't seem to conform with their surroundings, and sometimes
+move of their own accord.  
+~
+42 p 3
+D1
+~
+~
+0 0 8231 0
+D3
+~
+~
+0 0 4202 0
+S
+#4202
+In Some Bushes Along The River~
+   Expertly concealed from Caravan Road, a gully leads downward just north
+of the river. A line of small trees and scrub hide the gully from plain
+view, adding even deeper shadows. Your almost positive you see a humanoid
+shaped pool of darkness moving among the trees.  
+~
+42 p 3
+D1
+~
+~
+0 0 4201 0
+D5
+~
+~
+0 0 4203 0
+S
+#4203
+In The Gully~
+   Dipping down below eye level, this gully is well hidden. Along the south
+side is wooden shoring, holding back the river. There isn't much here except
+rocks and dirt. Your only company is the almost inaudible murmuring of the
+river.  
+~
+42 p 3
+D3
+~
+~
+0 0 4204 0
+D4
+~
+~
+0 0 4202 0
+S
+#4204
+In The Gully~
+   Dipping down below eye level, this gully is well hidden. Along the south
+side is wooden shoring, holding back the river. There isn't much here except
+rocks and dirt. Your only company is the almost inaudible murmuring of the
+river.  
+~
+42 p 0
+D1
+~
+~
+0 0 4203 0
+D4
+~
+~
+0 0 4205 0
+S
+#4205
+Deeper In The Bushes~
+   Standing here on the far side of the gully, you notice there isn't much
+to look at. There are enough tress around to indicate the beginning of a
+light forrest. Every now and then you can hear a loud voice coming from
+Hommlet, making it seem very far away indeed.  
+~
+42 p 3
+D3
+~
+~
+0 0 4206 0
+D5
+~
+~
+0 0 4204 0
+S
+#4206
+In A Clearing Past The Line Of Trees~
+   Unlike the line of light foliage to the east, this area is surprisingly
+open. It consists mostly of dirt and large rocks. Also unlike the trail
+east, this place seems peaceful and not in the least bit threatening. The
+only thing that catches your eye is some scribble on a rather large rock. 
+~
+42 p 2
+D0
+~
+~
+0 0 4301 0
+D1
+~
+~
+0 0 4205 0
+E
+scribble rock~
+.....git ye gon fromme here, lest ye find yuir throate slash'd.....
+..........by orders com'd fromme Autumn, Queen of Thieves..........
+~
+S
+#4207
+A Small Trail Through Light Bushes~
+   A small trail here leads north and south through some very light brush.
+The trail is enclosed by very thick bushes, making sure you don't stray from
+the path. Up north, where the foliage gives way to open plains, you think
+you can make out a dwelling of some sort, looking slightly out of place.  
+~
+42 0 3
+D0
+~
+~
+0 0 4208 0
+D2
+~
+~
+0 0 4366 0
+S
+#4208
+A Thinning Of The Foliage~
+   Here, the trees and shrubbery thin, indicating clear fields ahead. There
+are, however, enough shadows in the remaining foliage to make you move with
+caution.  
+~
+42 0 3
+D0
+~
+~
+0 0 4209 0
+D2
+~
+~
+0 0 4207 0
+S
+#4209
+The Beginning Of Clear Fields~
+   Finally clear of the bushes and trees, you are standing before a small
+strip of open field. North lies more of the clear field, and beyond that
+what looks to be a mid-sized wooden structure.  
+~
+42 0 2
+D0
+~
+~
+0 0 4210 0
+D2
+~
+~
+0 0 4208 0
+S
+#4210
+The Clear Field~
+   As you walk further down the trail, your field of vision widens and
+notice for the first time the ring of boulders surrounding this small
+clearing. Farther to the east and west, boulders line your passage and
+continue past the wooden construct to the north. They curve behind it and
+appear to enclose this entire area. This area, being larger than you
+assumed, is actually a small valley.  
+~
+42 0 2
+D0
+~
+~
+0 0 4213 0
+D1
+~
+~
+0 0 4214 0
+D2
+~
+~
+0 0 4209 0
+D3
+~
+~
+0 0 4211 0
+S
+#4211
+Along The Wall Of Boulders~
+   Just off the main trail, you are standing next to the wall of huge slabs
+of rock that line the west and south. You can see the wall continue north
+and curve around to the east and back again, neatly creating a small pocket
+of privacy.  
+~
+42 0 2
+D0
+~
+~
+0 0 4212 0
+D1
+~
+~
+0 0 4210 0
+D2
+~
+~
+0 0 -1 0
+S
+#4212
+Along The Wall Of Boulders~
+   Just off the main trail, you are standing next to the wall of huge slabs
+of rock that line the west, continues on north, and curves around to the far
+side.  
+~
+42 0 2
+D0
+~
+~
+0 0 4218 0
+D1
+~
+~
+0 0 4213 0
+D2
+~
+~
+0 0 4211 0
+S
+#4213
+The Clear Field~
+   Standing in the center of the small field, you can see the walls extend
+from either side and curve to meet behind the wooden building just down the
+trail to the north. The only thing present besides that is dirt and more
+dirt.  
+~
+42 0 2
+D0
+~
+~
+0 0 4217 0
+D1
+~
+~
+0 0 4215 0
+D2
+~
+~
+0 0 4210 0
+D3
+~
+~
+0 0 4212 0
+S
+#4214
+Along The Wall Of Boulders~
+   Just off the main trail, you are standing next to the wall of huge slabs
+of rock that line the east and south. You can see the wall continue north
+and curve around to the west and back again, neatly creating a small pocket
+of privacy.  
+~
+42 0 2
+D0
+~
+~
+0 0 4215 0
+D3
+~
+~
+0 0 4210 0
+S
+#4215
+Along The Wall Of Boulders~
+   Just off the main trail, you are standing next to the wall of huge slabs
+of rock that line the east, continues on north, and curves around to the far
+side.  
+~
+42 0 2
+D0
+~
+~
+0 0 4216 0
+D2
+~
+~
+0 0 4214 0
+D3
+~
+~
+0 0 4213 0
+S
+#4216
+Along The Wall Of Boulders~
+   Just off the main trail, you are standing next to the wall of huge slabs
+of rock that line the east, continues on north, and curves around to the far
+side.  
+~
+42 0 2
+D0
+~
+~
+0 0 4221 0
+D2
+~
+~
+0 0 4215 0
+D3
+~
+~
+0 0 4217 0
+S
+#4217
+The Clear Field~
+   Just north of here lies the small, wooden structure you have seen from
+afar. Being this close, it doesn't look very imposing, and resembles a small
+shack more than anything.  
+~
+42 0 2
+D0
+~
+~
+0 0 4220 0
+D1
+~
+~
+0 0 4216 0
+D2
+~
+~
+0 0 4213 0
+D3
+~
+~
+0 0 4218 0
+S
+#4218
+Along The Wall Of Boulders~
+   Just off the main trail, you are standing next to the wall of huge slabs
+of rock that line the west, continues on north, and curves around to the far
+side.  
+~
+42 0 2
+D0
+~
+~
+0 0 4219 0
+D1
+~
+~
+0 0 4217 0
+D2
+~
+~
+0 0 4212 0
+S
+#4219
+Along The Wall Of Boulders~
+   Here, you stand between the wall and the western face of the wooden
+structure. Both walls extend to the north, where the boulders curve east,
+and come to a dead-end.  
+~
+42 0 2
+D0
+~
+~
+0 0 4224 0
+D1
+~
+~
+0 0 4220 0
+D2
+~
+~
+0 0 4218 0
+S
+#4220
+Standing Before The Wooden Shack~
+   Confirming your observations, this structure is not very impressive to
+look at. Consisting of nothing more than old boards and nails, you wonder
+why this place is even here. The only thing remarkable about it is the lack
+of any kind of visible door.  
+~
+42 0 2
+D1
+~
+~
+0 0 4221 0
+D2
+~
+~
+0 0 4217 0
+D3
+~
+~
+0 0 4219 0
+D5
+Looking closely, you notice a trapdoor hidden under the dirt.
+~
+trapdoor~
+1 0 4226 0
+S
+#4221
+Along The Wall Of Boulders~
+   Here, you stand between the wall and the western face of the wooden
+structure. Both walls extend to the north, where the boulders curve east,
+and come to a dead-end.  
+~
+42 0 2
+D0
+~
+~
+0 0 4225 0
+D2
+~
+~
+0 0 4216 0
+D3
+~
+~
+0 0 4220 0
+S
+#4222
+Along The Wall At A Dead-End~
+   You are standing at a dead-end created by the curving wall of rock and
+the eastern side of the small building. There is not much here besides shade
+from the sun.  
+~
+42 0 2
+D2
+~
+~
+0 0 4225 0
+S
+#4223
+Along The Wall At A Dead-End~
+   You are standing at a dead-end created by the curving wall of rock and
+the western side of the small building. There is not much here besides shade
+from the sun.  
+~
+42 0 2
+D2
+~
+~
+0 0 4224 0
+S
+#4224
+Along The Wall Of Boulders~
+   Here, you stand between the wall and the western face of the wooden
+structure. Both walls extend to the north, where the boulders curve east,
+and come to a dead-end.  
+~
+42 0 2
+D0
+~
+~
+0 0 4223 0
+D2
+~
+~
+0 0 4219 0
+S
+#4225
+Along The Wall Of Boulders~
+   Here, you stand between the wall and the western face of the wooden
+structure. Both walls extend to the north, where the boulders curve east,
+and come to a dead-end.  
+~
+42 0 2
+D0
+~
+~
+0 0 4222 0
+D2
+~
+~
+0 0 4221 0
+S
+#4226
+A Small Pit~
+   Without having to look around, you find yourself in an extremely small
+pit. There is barely enough room to move around without hitting a wall and
+sending dirt and dust into the air.  
+~
+42 d 0
+D0
+~
+~
+0 0 4227 0
+D2
+~
+~
+0 0 -1 0
+D4
+Above you lies the trapdoor leading out.
+~
+trapdoor~
+1 0 4220 0
+S
+#4227
+At A Wooden Ladder~
+   The small pit abruptly ends here. Set into the wall is a wooden ladder
+that leads up into the shack. From here you can't make out much besides a
+faint glow. Being in such a cramped space, you feel vulnerable and awkward.
+It doesn't help that you get the feeling your not alone either.  
+~
+42 d 0
+D0
+Staring intently at the dirt wall, you notice some wood beneath it.
+~
+door concealed~
+1 0 4229 0
+D2
+~
+~
+0 0 4226 0
+D4
+~
+~
+0 0 4228 0
+S
+#4228
+Inside The Wooden Shack~
+   From outside this resembles nothing more than a small shack. From here
+though, it looks to fit royalty. An ornate crimson carpeting lines the
+floor, showing not a speck of dirt. Standing in the middle of the small room
+is a statue of a woman, made out of what looks like ivory. It is surrounded
+by intricate murals that cover each wall. Each combine at the corners to
+form a large depiction of a battle between men dressed in black leather and
+cloth. What catches your eye though is the contest taking place on the
+eastern wall. It portrays a woman dressed in green leather with a crimson
+leaf emblem. Her opponent is a man covered head-to-toe in black cloth. On
+his back, you can make out the symbol of a downward pointed dagger as he
+swings his short blade for eternity, forever captured in this depiction of
+what must have been an epic battle.  
+~
+42 df 0
+D0
+Inspecting the mural closely, you notice it is actually a secret panel.
+~
+panel mural~
+1 4229 4230 0
+D5
+~
+~
+0 0 4227 0
+S
+#4229
+A Small Cubby Used For Ambush~
+   Looking around, you see nothing of interest except odd scrath marks on
+the walls. After a moment, you realize these are marks to keep a tally of
+the number of successful ambushes. With horror you notice that they cover
+every available inch of the small room.  
+~
+42 d 0
+D2
+There is a small peephole set in the door clearly visible from this side.
+~
+door~
+1 0 4227 0
+S
+#4230
+The Collector's Room~
+   Furnished with a small stool, workbench, and numerous scales, you wonder
+what exactly goes on in this room. At first glance, there is nothing to
+indicate it has anything to do with the small shack to the south. Looking
+more closely, you can see flecks of metals scattered about the floor, as
+well as a few bent coins. Looks like a lot of currency goes through this
+room, but to where and what from your not too sure.  
+~
+42 d 0
+D2
+From this side the panel looks like a blank wooden wall.
+~
+panel mural~
+1 4229 4228 0
+S
+#4231
+The Beginning Of The Kingdom Of Thieves~
+   Not sure where you have landed, you look around and wonder at the riches
+around you. Tapestry of woven platinum hang upon the walls, each bearing a
+large crimson leaf. The floor is carpeted in dark green, and has the texture
+of thick fur. A single glowing orb floats near the ceiling, giving a soft
+blue glow. Rising just barely above the silence, you think you hear what
+sounds like the ocean.  
+~
+42 d 0
+D2
+~
+~
+0 0 4232 0
+S
+#4232
+A Short Hallway~
+   Similar to the room just north of here, this hallway sports tapesty and
+lush carpeting, giving it warm feeling. The air, however, is stale and it's
+only light source is what filters in from the north. Here, the shadows grow
+deeper and slightly menacing.  
+~
+42 0 0
+D0
+~
+~
+0 0 4231 0
+D2
+~
+~
+0 0 4233 0
+S
+#4233
+End Of A Short Hallway~
+   The hallway comes to an end here. Though still adorned with tapestry
+sporting a crimson leaf, this section of the hallway dreary. Almost no light
+filters in from the north, and the shadows are inky pools of darkness. It
+hurts your eyes just to look at something that black. Set into the west wall
+is a golden door, and opposite to it is a silver one set in the east wall.
+Before you, on the south wall, there is a plaque.  
+~
+42 eghs 0
+D0
+~
+~
+0 0 4232 0
+D1
+~
+door~
+2 4235 4235 0
+D3
+~
+door~
+2 4234 4234 0
+E
+plaque~
+   Speak your mind. Which door dost thou choose? The Golden or the Silver?
+
+Also on the plaque is a story, drawn in vivid colors. It depicts a man who
+has commited his second offense of thievery. With no mercy, he is being hung
+before a large crowd of spectators, who have nothing but lust for his death
+in their eyes. Having been dragged from the prison for a second time, you
+can make out the fear in his eyes. He knows this time, one time too many, is
+the last.  
+
+       "He, himself, and no one else, is the key to salvation"
+~
+S
+#4234
+A Very Dreary Corridor~
+   Totally unlike what you have seen in the previous hallways, this has no
+furnishings at all. Here the gloom pools into almost tangible forms. The
+walls are rough stone blocks, as is the floor, and your shadow seems to
+cling to them, dragging itself slowly as you move.  
+~
+42 i 0
+D1
+~
+door~
+2 0 4233 0
+D2
+~
+~
+0 0 4237 0
+S
+#4235
+The Hall Of Rememberance~
+   This section of the hallway is made up of stone blocks. Upon these
+blocks, on either side of you, are thousands of names. On the western wall
+the names are followed by a small etching of a leaf. The eastern, they are
+followed by a small carving of a downward pointed dagger. Gazing around at
+th names, you nearly stumble over a plaque embedded in the floor.  
+~
+42 d 0
+D2
+~
+door~
+1 4236 4236 0
+D3
+~
+door~
+2 0 4233 0
+E
+plaque~
+It reads:
+   We honor the memories of those fallen during the War of Shadows. We honor
+guildmember and outcast alike, who have given their lives for the betterment
+of the rest. We honor our foe, for he was once our brother, our companions,
+and our peers. We honor them even though they have stumbled and made war
+with us. One day we hope they shall come back to the fold.  
+~
+S
+#4236
+The Hall Of Rememberance~
+   This section of the hall is decorated by paintings. In the center of each
+wall on eiher side of you hang the two largest paintings. On the west wall
+there is a portrait of a red-haired female, sporting dark leathers. On the
+east, a portrait of a dark-haired man, dressed in all black cloth. Around
+them a number of smaller pictures tell the story of the great War of
+Shadows. As you read each, the story unfolds. The beginning of the story is
+unclear, though it is apparent it leads to conflict among the thieves and
+assassins. Toward the end, much blood is spilled between them.  
+~
+42 d 0
+D0
+~
+door~
+1 4236 4235 0
+D2
+~
+door~
+1 4237 4243 0
+S
+#4237
+End Of A Dreary Corridor~
+   This part of the corridor is much the same as the first, dark and dismal.
+There is a tension in the air here, alerting your sixth sense to danger. On
+the south wall is a plaque, the only decoration you are able to make out. 
+~
+42 0 0
+D0
+~
+~
+0 0 4234 0
+E
+plaque~
+   To those who have come this far, let it be known that the Queen of
+Thieves sees none slow of wit. Answer her riddle, and thou shall attain
+salvation.  
+The riddle is thus:
+  "Who is hidden from all other men? The same for each, yet unique."
+~
+S
+#4238
+An Isolated Room~
+   You find yourself in a nearly completely featureless room. Bare walls
+greet you on each side. Your only comfort is the fact that there is light,
+though you are not sure where it comes from. Noticing a glint of gold coming
+from the ceiling, you notice a plaque is set there. Craning a sore neck up
+to look at it, you see it has some writting etched into it.  
+~
+42 d 0
+E
+plaque~
+It reads:
+"Where can a thief never go a second time?"
+~
+S
+#4239
+The Beginning Of a Short Passage~
+   Gone from here are the pits of darkness and flickering shadows. Once
+again tapestry lines the walls, and rich carpet soothe your weary feet. A
+single, blue glowing orb hangs near the ceiling, providing you with
+comfortable light.  
+~
+42 0 0
+D2
+~
+~
+0 0 4240 0
+S
+#4240
+A Short Passage~
+   This section of the passage is similar to its beginning, replete with all
+the same adornments. The air here is chilly and invigorating.  
+~
+42 d 0
+D0
+~
+~
+0 0 4239 0
+D2
+~
+~
+0 0 4241 0
+S
+#4241
+A Turn In The Passage~
+   Here the passage angles east. Though you are still walking on lush
+carpet, the walls have become bare. It's as if whoever put them there
+decided they were no longer needed.  
+~
+42 d 0
+D0
+~
+~
+0 0 4240 0
+D1
+~
+~
+0 0 4242 0
+S
+#4242
+Before The Doors Of Mist~
+   At this juncture of passages, to the north, is a pair of large doors made
+of what looks like mist. Another glowing orb is here hanging from the
+ceiling, giving off a bright light. The rest of the room is bare, blank
+stone blocks.  
+~
+42 d 0
+D0
+~
+mist door~
+1 -1 4247 0
+D1
+~
+door~
+2 0 4246 0
+D3
+~
+~
+0 0 4241 0
+S
+#4243
+The Hall Of Rememberance~
+   This section of the hall has more names written on it. These names appear
+to have been etched in very recently. Since there has been no recent
+bloodshed, thist must be in dedication to those recent recruits into either
+guild. As before, the names on the west wall are followed by a leaf symbol,
+and on the east are followed by a downward pointed dagger.  
+~
+42 0 0
+D0
+~
+door~
+1 4237 4236 0
+D2
+~
+door~
+1 4243 4244 0
+S
+#4244
+The Hall Of Rememberance~
+   This part of the hallway is completely blank, not a scratch cover any
+surface. Afer the grueling lessons from the previous rooms, this place is a
+perfect place to rest your eyes.  
+~
+42 d 0
+D0
+~
+door~
+1 4243 4243 0
+D2
+~
+door~
+1 0 4245 0
+S
+#4245
+The Hall Of Rememberance~
+   This part of the hallway is also blank, and leads further south. Rough
+stone blocks line the entire way, giving you little to look at.  
+~
+42 d 0
+D0
+~
+door~
+2 4244 4244 0
+D2
+~
+~
+0 0 4246 0
+S
+#4246
+The End Of The Hallway Of Rememberance~
+   Here the hallway ends, stopping at a rough stone wall. This place is
+devoid of any decoration. Upon the western wall stands a door, the only
+break in the monotonous grey you grown accustomed to.  
+~
+42 0 0
+D0
+~
+~
+0 0 4245 0
+D3
+~
+door~
+1 0 4242 0
+S
+#4247
+Walking The Tunnel Of Mist~
+   Completely unlike the rest of the hallways, this place is not made up of
+stone, but mist and fog. Not having any true walls, floor, or ceiling, it is
+roughly tube shaped. This tube of flowing mist continues onward to the
+north.  
+~
+42 fi 0
+D0
+~
+~
+0 0 4248 0
+D2
+~
+mist door~
+1 0 4242 0
+S
+#4248
+Walking The Tunnel Of Mist~
+   A continuation of the tunnel, this place is also made up of mists. The
+walls and floors flow and sway as a fog would. Your thankful they appear
+solid, for you get the impression you're walking on thin air.  
+~
+42 fi 0
+D0
+~
+~
+0 0 4249 0
+D2
+~
+~
+0 0 4247 0
+S
+#4249
+Standing Amidst The Mists~
+   As you enter the room, the mist closes behind you. The way south seems as
+solid as the rest of the room, leaving you stranded. The only thing of note
+is a plaque stuck to the northern section of the mist room.  
+~
+42 fi 0
+D2
+~
+~
+0 0 -1 0
+E
+plaque~
+It reads:
+"Tell me who thou art, and mayhap I will let thee pass"
+
+-To be with us, you must be one of us.-
+-Autumn, Queen Of Thieves-
+~
+S
+#4250
+Standing Amidst The Mists~
+   As you enter the room, the mist closes behind you. The way south seems as
+solid as the rest of the room, leaving you stranded. The only thing of note
+is a plaque stuck to the northern section of the mist room.  
+~
+42 d 0
+D5
+~
+hatch~
+1 0 4251 0
+E
+plaque~
+It reads:
+The Queen Of Thieves awaits your arrival.
+~
+S
+#4251
+Autumn's Retreat~
+   Standing before the self-styled throne of the Queen of thieves, you find
+yourself looking at nothing special at all. The walls each bear the symbol
+of a crimson leaf, but that's about it. The throne itself is made of stained
+wood, with leaf carvings on the frame. It sits far back against the northern
+wall. Besides that, the room is nearly empty.  
+~
+42 0 0
+D4
+~
+~
+0 0 4250 0
+D5
+~
+hatch~
+2 4252 4252 0
+S
+#4252
+Riding A Beam Of Light~
+   You find yourself floating inside a beam of light. This beam, ending just
+above your head, shoots down through the floor. It looks like it goes down
+through several feet of rock and stone.  
+~
+42 d 0
+D1
+~
+~
+0 0 -1 0
+D4
+~
+hatch~
+2 4252 4251 0
+D5
+~
+~
+0 0 4253 0
+S
+#4253
+Riding A Beam Of Light~
+   The beam continues in this room, going both up and farther down. Still
+floating inside, it's hard to make out anything outside your immediate
+vicinity.  
+~
+42 d 0
+D4
+~
+~
+0 0 4252 0
+D5
+~
+~
+0 0 4254 0
+S
+#4254
+End Of The Beam Of Light~
+   The beam gradually ends here, softening before letting up completely. It
+hangs around the ceiling, seemingly waiting for other passengers. Standing
+in the middle of the room, your guessing this is one of Autumn's private
+chambers. It has her symbol all over the place, though it's different
+slightly. Instead of a single crimson leaf by itself, it appears to be on
+the hilt of a dagger. These combine symbols are on each wall. Scattered
+around are coins and jewels, perhaps a treasury of some sort. Here the
+riches brought by the thieves guild come and go, collected and used to buy
+sordid provisions for dirty deeds.  
+~
+42 d 0
+D4
+~
+~
+0 0 4253 0
+S
+#4298
+A Very Tiny Cell~
+   Just your luck, these thieves believe in imprisonment. There isn't much
+here besides the corpse of other foolhardy adventurers. Only one door
+decorates the walls, and it looks very strong.  
+~
+42 df 0
+D0
+~
+door~
+2 4299 4299 0
+S
+#4299
+Throne Room Of Joined Hearts~
+   This rather large room is lavishly and expensively decorated. Huge chairs
+and couches lay about, inlaid with precious metals and gems. Rare works of
+art line the walls, leaving not one space bare. Food and wine sit upon long
+oak tables, having been bought from far off lands. Amidst all this, sitting
+in the middle of the room, are two thrones. One with a crimson leaf design
+and the other with the symbol of the dagger. There is an old, dusty book
+sitting upon a stand here, open for all to read.  
+~
+42 d 0
+D2
+~
+door~
+2 4298 4298 0
+E
+book~
+   Many historians often contemplate what forced the thieves and assassins
+to war with each other. Some say it was typical thief greed, others say it
+was brought upon by the assassins' lack of emotion. Whatever the reason,
+many generations have suffered in this battle between the outcasts of
+society. And any hopes of reconciliation between them have long since
+disappeared beneath the wheels of hatred and paranoia. Or so it was thought.
+Never did anyone expect the leaders of the two opposing forces to not only
+reconcile, but to fall in love. Realizing that their love would only anger
+their companions, they hid it away, vowing only to meet in secret. To this
+day, in this writers opinion, they both still meet and plan to reunite their
+warring guilds, and start a new era of peace among the shadows.  
+
+-Gorlas, Guildmaster of Thieves-
+~
+S
+$~

@@ -1,0 +1,921 @@
+#9800
+Mountain Trail~
+   The trail leads up into the snow covered mountains that peak above the
+clouds.  You want to move carefully here because falling would hurt!  The
+trail continues to the east, and you can go back to the main trail to the
+west. 
+~
+98 p 5
+D1
+The trail climbs up out of sight.
+~
+~
+0 -1 9801 0
+D3
+~
+~
+0 0 4076 0
+S
+#9801
+Mountain Trail~
+   You are high in the mountains.  A chill wind sends shivers down your
+back.  You can keep going farther up into the mountains to the east, or go
+back down to the west. 
+~
+98 p 5
+D1
+The trail continues to wind east, taking you farther up the mountain.
+~
+~
+0 -1 9802 0
+D3
+The trail winds to the west down the mountain.
+~
+~
+0 -1 9800 0
+S
+#9802
+Mountain Trail~
+   You walk through the wispy clouds and your ears begin to pop due to the
+altitude.  To the east, you see the summit of the mountain, and judging
+from the distance to the mountains behind it, you believe you're on your
+way to a big valley.  You can also go down to the west. 
+~
+98 p 5
+D0
+A steep, rocky trail leads you up into the mountains.
+~
+~
+0 0 8567 0
+D1
+You can see the mountain summit.
+~
+~
+0 -1 9803 0
+D3
+To the west you see the trail that leads down the mountain.
+~
+~
+0 -1 9801 0
+S
+#9803
+Near the Mountain's Peak~
+   The peak of this mountain is another couple hundred feet above you, but
+from here the trail leads down into the valley...  What an odd valley!  It
+seems to have been filled up by hundreds of feet of lava many years ago. 
+It gives the valley an odd, 'flat' look.  The ground is very dark.  The
+path leads down east into the valley, and west back to civilization. 
+~
+98 p 5
+D1
+The path leads into the valley.
+~
+~
+0 -1 9804 0
+D3
+The path leads toward civilization.
+~
+~
+0 -1 9802 0
+S
+#9804
+Trail to the Valley~
+   The trail leads down into the valley where it disappears into the small
+forest in the valley.  The size of the trees tells you that the lava flow
+happened at least a hundred years ago.  East leads into the valley, west
+back to civilization. 
+~
+98 p 5
+D1
+The trail leads into the forest in the valley.
+~
+~
+0 -1 9805 0
+D3
+The trail leads to civilization.
+~
+~
+0 -1 9803 0
+S
+#9805
+In the Valley~
+   The ground is covered with fine dirt, but this valley is far too flat and
+too rocky to disguise the catastrophe that happened here so long ago. 
+Looking up at the mountains ringing this area, you notice several of them
+look as if they had exploded, which is unusual considering they are not
+volcanos. The path leads into the woods to the east, and back up the
+mountain to the west.  
+~
+98 p 3
+D1
+The path leads into the woods.
+~
+~
+0 -1 9806 0
+D3
+The path leads back up the mountain.
+~
+~
+0 -1 9804 0
+S
+#9806
+In a Clearing~
+   After walking for several minutes through the silent woods you come to
+a small clearing. An odd block sticks up here and there in the ground... 
+wait a minute. These stones seem a little too regular. From the circular
+formation and size you could almost swear that they were crenellations. 
+Could some sort of building have been buried by the lava here? A rusty
+ring sticks out of the earth in the center... Could it be a trapdoor? 
+This is almost too good to be true! 
+~
+98 p 3
+D1
+~
+~
+0 0 4815 0
+D3
+To the west the trail leads up to the mountain.
+~
+~
+0 -1 9805 0
+D5
+An ancient trapdoor, grimed with earth and age.
+~
+trapdoor trap~
+1 -1 9807 0
+S
+#9807
+A Stairwell~
+   This small room is the top of a stairwell leading down deep into the
+tower.  A small trapdoor overhead leaks the light of day around its edges. 
+To the south is a wooden door, preserved through the ages by means
+unknown.  To the west is a short hall. 
+~
+98 adp 0
+D2
+A well preserved door.
+~
+door~
+1 -1 9808 0
+D3
+A short hall leading west.
+~
+~
+0 -1 9809 0
+D4
+An ancient trapdoor, grimed with earth and age.
+~
+trapdoor trap~
+1 -1 9806 0
+D5
+The stairs continue down beyond your meager light, into the darkness.
+~
+~
+0 -1 9813 0
+S
+#9808
+A Linen Closet~
+   This small room holds many types of linen on shelves along the walls. 
+They are undoubtedly preserved by magic against the toil of the ages,
+since they seem freshly washed and folded.  You wonder what sort of mage
+could wield so much power to waste on such little things. 
+~
+98 adp 0
+D0
+The door opens onto the stairwell.
+~
+door~
+1 -1 9807 0
+E
+linen shelf shelves~
+White sheets, pillow-cases, etc.  Not really anything that you need, but
+interesting. 
+~
+S
+#9809
+Along A Corridor~
+   This is only a clean corridor, that leads back to the stairwell to the
+east, and has doors leading to other rooms to the north and south. 
+~
+98 adp 0
+D0
+The stout wooden door keeps out the cool drafts of the stone hall.
+~
+door north~
+1 -1 9811 0
+D1
+You can see the stairs going up and down into the darkness outside your light.
+~
+~
+0 -1 9807 0
+D2
+The stout wooden door keeps out the cool drafts of the stone hall.
+~
+door south~
+1 -1 9810 0
+S
+#9810
+A Cramped Bathroom~
+   This is some sort of bathroom, like you've never seen before... Water
+appliances leading from nowhere deliver hot and cold running water to
+basins that drain to...  where?  What wondrous magic is this?
+~
+98 adp 0
+D0
+The doorway back to the hall.
+~
+door~
+1 -1 9809 0
+S
+#9811
+A Master Bedroom~
+   This is an opulent room, decorated in silks and gold. There is an ebony
+desk against one wall, cooled lava rock spilling over its surface from the
+window it once looked out at.  A nice, spacious closet is filled with
+clothes just cleaned and pressed.  Everything here seems perfectly normal,
+perfectly preserved.  If it were not for the silence and lava, you would 
+think someone still lived here. 
+~
+98 adp 0
+D2
+The doorway back to the hall.
+~
+door~
+1 -1 9809 0
+E
+desk~
+   The desk is basically uninteresting, as are the papers on top of it...
+~
+E
+closet~
+   Nice clothes, but not your size at all.
+~
+S
+#9812
+The Library~
+   A great mages' library is contained on this floor of the tower.  The
+walls are lined with bookshelves.  You have never seen so many books in
+one place before.  There are several comfortable chairs placed around the
+room.  A large mahgony table covered with books sits in the middle of the
+room. You feel you could learn anything you wanted to if you only looked
+and read long enough.  A door opens to the stairwell to the east. 
+~
+98 adp 0
+D1
+The door to the stairs.
+~
+door~
+1 -1 9813 0
+D3
+There is an odd looking bookcase on this wall.
+~
+bookcase~
+1 -1 9814 0
+E
+book books~
+There are books on every subject in this library.  The owner must have 
+been a scholar.
+~
+S
+#9813
+In A Dark Stairwell~
+   This stairwell continues up and down into the darkness, and there is a 
+door to the west. 
+~
+98 adp 0
+D3
+You see a wooden door.
+~
+door~
+1 -1 9812 0
+D4
+The stairs go up beyond your meager light, into the darkness.
+~
+~
+0 -1 9807 0
+D5
+The stairs go down beyond your meager light, into the darkness.
+~
+~
+0 -1 9815 0
+S
+#9814
+A Hidden Hall~
+   This is a small hidden hall with a secret entrance to the library on
+the wall, and a trapdoor at the south end. 
+~
+98 adp 0
+D1
+You see a latch on the wall.  This must be the back of a secret door.
+~
+book bookcase~
+1 -1 9812 0
+D5
+A trapdoor that opens down.
+~
+trapdoor trap~
+1 -1 9816 0
+S
+#9815
+In A  Dark Stairwell~
+   This stairwell continues up and down, and there is a door to the west 
+that opens onto this level.
+~
+98 adp 0
+D3
+You see a wooden door.
+~
+door~
+1 -1 9817 0
+D4
+The stairs go up beyond your meager light, into the darkness.
+~
+~
+0 -1 9813 0
+D5
+The stairs go down beyond your meager light, into the darkness.
+~
+~
+0 -1 9822 0
+S
+#9816
+Hidden Treasure Room~
+   Jackpot!  A small room filled with treasure chests!
+~
+98 adp 0
+D4
+You see a trapdoor in the ceiling.
+~
+trapdoor trap~
+1 -1 9814 0
+S
+#9817
+A Damp Hallway~
+   This hall runs through the tower.  There's more hall to the west, and
+doors to your north and south.  A door to the east leads back to the
+stairwell. 
+~
+98 adp 0
+D0
+The hallway ends in a door.
+~
+door north~
+1 -1 9819 0
+D1
+You see a wooden door.
+~
+east door~
+1 -1 9815 0
+D2
+You see a wooden door.
+~
+door south~
+1 -1 9818 0
+D3
+The hall continues to the west.
+~
+~
+0 -1 9820 0
+S
+#9818
+The Servant's Room~
+   This seems to be a small servant's bedroom, sparsely decorated and
+outfitted with a bed, nightstand, chair and table, etc.  There is nothing
+of importance here. 
+~
+98 adp 0
+D0
+The door leads back into the hall.
+~
+door~
+1 -1 9817 0
+S
+#9819
+The Servant's Room~
+   This seems to be a small servant's bedroom, sparsely decorated and
+outfitted with a bed, nightstand, chair and table, etc.  There is nothing
+of importance here. 
+~
+98 adp 0
+D2
+The door leads back into the hall.
+~
+door~
+1 -1 9817 0
+S
+#9820
+A Damp Hallway~
+   This long dark hallway continues to the east out of sight.  There
+is a door on the north wall.
+~
+98 adp 0
+D0
+You can see a wooden door.
+~
+door~
+1 -1 9821 0
+D1
+The hallway continues east.
+~
+~
+0 -1 9817 0
+S
+#9821
+The Servant's Room~
+   This seems to be a small servant's bedroom, sparsely decorated and
+outfitted with a bed, nightstand, chair and a table, etc.  There is
+nothing of importance here. 
+~
+98 adp 0
+D2
+The door opens onto the hallway.
+~
+door~
+1 -1 9820 0
+S
+#9822
+In A Dark Stairwell~
+   This stairwell leads up and down into darkness, and there is a big
+open room to your west.
+~
+98 adp 0
+D3
+You can see a big open room.
+~
+~
+0 -1 9823 0
+D4
+The stairs go up beyond your meager light, into the darkness.
+~
+~
+0 -1 9815 0
+D5
+The stairs go down beyond your meager light, into the darkness.
+~
+~
+0 -1 9825 0
+S
+#9823
+The Dining Hall~
+   This is a large dining hall, with a long table that runs
+down the length of it.  Chairs are set up along the sides
+to accommodate approximately 10 people.  There are paintings
+and tapestries on the walls, adding color to the stonework,
+The cooled lava that had poured in the windows makes the place 
+seem eerie somehow .  There is a door to the north, and
+the stairwell is to the east.
+~
+98 adp 0
+D0
+You see a wooden door.
+~
+door~
+1 -1 9824 0
+D1
+You can see the stairwell leading up and down beyond your meager light, into the darkness. 
+~
+~
+0 -1 9822 0
+E
+tapestry tapestries painting paintings~
+   Many of these once beautiful tapestries show scenes of high 
+magic and heroism.
+~
+S
+#9824
+A Kitchen Area~
+   This is a well-stocked kitchen, the larders still fresh
+and full as if by magic.  Perhaps this would be a good
+place to take a break.
+~
+98 adp 0
+D2
+The door leads back to the dining room.
+~
+door~
+0 -1 9823 0
+S
+#9825
+In A Dark Stairwell~
+   The stairwell leads up and down into darkness.  You can see a dark
+hallway to the west.
+~
+98 adp 0
+D3
+The hallway leads west beyond your meager light, into the darkness.
+~
+~
+0 -1 9826 0
+D4
+The stairway leads up beyond your meager light, into the darkness.
+~
+~
+0 -1 9822 0
+D5
+The stairway leads down beyond your meager light, into the darkness.
+~
+~
+0 -1 9829 0
+S
+#9826
+Along a Dark Hall~
+   This area of the tower seems dank and oppressive.  The
+hall runs north-south, and there is an empty cell to your
+west.  The stairwell is to your east.
+~
+98 adp 0
+D0
+The hall continues beyond your meager light, into the darkness.
+~
+~
+0 -1 9827 0
+D1
+The stairwell goes up and down beyond your meager light, into the darkness.
+~
+~
+0 -1 9825 0
+D2
+The hall continues beyond your meager light, into the darkness.
+~
+~
+0 -1 9828 0
+E
+cell cells~
+The cell door is open.  It is dark, damp and grimy, but empty.
+~
+S
+#9827
+Along A Dark Hall~
+   This is the northern end of a dark, damp, dreary hall.  There 
+are cells to your right and left.  They are all empty and awaiting 
+occupants.
+~
+98 adp 0
+D2
+The dreary hallway is dark to the south.
+~
+~
+0 -1 9826 0
+E
+cell cells~
+The cell door is open.  The cell is dark, damp and empty.
+~
+S
+#9828
+The End Of The Hall~
+   This is the southern end of the hall.  There are cells to
+your right and left.  They are all empty and awaiting occupants.
+~
+98 adp 0
+D0
+The hallway is dark to the north.
+~
+~
+0 -1 9826 0
+E
+cell cells~
+The cell door is open.  The cell is dark, damp and empty.
+~
+S
+#9829
+In A Dark Stairwell~
+   The stairwell continues up and down here.  A large room
+opens up to the west.
+~
+98 adp 0
+D3
+The large room is shrouded in shadows.
+~
+~
+0 -1 9830 0
+D4
+The stairway goes up beyond your meager light, into the darkness.
+~
+~
+0 -1 9825 0
+D5
+The stairway goes down beyond your meager light, into the darkness.
+~
+~
+0 -1 9831 0
+S
+#9830
+The Mage's Study~
+   A small desk here is cluttered with well preserved papers and
+documents.  A Historian would find them priceless.  Perhaps they were
+magically preserved.  
+~
+98 adp 0
+D1
+The stairway goes up and down beyond your meager light, into the
+darkness.
+~
+~
+0 -1 9829 0
+E
+paper papers documents document~
+   Well, one of the documents tells the story of how the mage
+of this tower, Rand, angered many kings.  The kings banded 
+together and sent their armies to attack the wizard.  The 
+lava filled valley was an attempt to destroy the armies 
+sieging the tower, but Rand miscalculated and trapped his 
+tower as well as destroying the armies.
+~
+E
+desk~
+   It's cluttered with all sorts of papers.  Some look 
+interesting.
+~
+S
+#9831
+In A Dark Stairwell~
+   The stairs go up and down here, and there is a room to the
+west...
+~
+98 adp 0
+D3
+You can see a small, comfortably furnished lit room.
+~
+~
+0 -1 9832 0
+D4
+The stairway goes up beyond your meager light, into the darkness
+~
+~
+0 -1 9829 0
+D5
+The stairway goes down beyond your meager light, into the darkness
+~
+~
+0 -1 9833 0
+S
+#9832
+The Sitting Room~
+   This warm, cozy room is comfortably furnished, with several
+overstuffed chairs in front of a fireplace. You are surprised to see a
+a fire burning in the fireplace providing warmth and light.  Rand
+obviously liked his comfort.  This would be a nice place to rest
+awhile.
+~
+98 adp 0
+D1
+The stairway goes up and down beyond your meager light, into the
+darkness.
+~
+~
+0 -1 9831 0
+S
+#9833
+In A Dark Stairwell~
+    You have finally reached the bottom of the stairs.  A hall leads
+from the stairs to the west.
+~
+98 adp 0
+D3
+The dark hallway runs north and south.
+~
+~
+0 -1 9834 0
+D4
+The stairway goes up beyond your meager light, into the darkness.
+~
+~
+0 -1 9831 0
+S
+#9834
+Along a Narrow Hallway~
+   This small hallway on the former 'ground floor' ran north-
+south.  To the east is the stairwell that leads up into 
+the shadowy recesses of the tower.  To the west is the
+entrance way to the tower.  The north is completely blocked
+off by lava, and the way south is still clear.
+~
+98 adp 0
+D1
+The stairway goes down beyond your meager light, into the darkness.
+~
+~
+0 -1 9833 0
+D2
+The hall continues south into the darkness.
+~
+~
+0 -1 9837 0
+D3
+You can see the large room that was the original entrance to the tower.
+~
+~
+0 -1 9835 0
+S
+#9835
+An Entranceway~
+   This is a grand chamber with giant double-doors to the
+west.  To the east is the main floor of the tower.
+This room was decorated to impress visitors with expensive
+sculptures and tapestries everywhere. The doors open 
+into the room.
+~
+98 adp 0
+D1
+Through the grand archway you can see the first floor of the tower.
+~
+~
+0 -1 9834 0
+D3
+
+   These doors are made of oak and would be very heavy if you could
+open them.  Unfortunately, they're locked.
+
+~
+door double~
+1 0 9836 0
+E
+sculpture tapestry sculptures tapestries~
+   They were once very fine and valuable, but now time has faded 
+their brilliance.
+~
+S
+#9836
+An Old Doorway~
+   This was the entrance to the tower.  Now lava has blocked
+it completely.  However:
+   It seems when the lava came down a man was outside the
+doors.  He was blasted into the doors, and died instantly,
+but his skeleton still clutches a staff in perfect 
+condition...
+~
+98 adp 0
+D1
+The doors have the outline of a man blasted into them...
+~
+double doors~
+1 0 9835 0
+S
+#9837
+Along A Narrow Hallway~
+    This is the southern part of the hallway.  There is 
+a heavy wooden door to the west, barred with gleaming bands 
+of light.  The hallway continues north into the darkness.
+~
+98 adp 0
+D0
+The hallway continues north into the darkness.
+~
+~
+0 -1 9834 0
+D3
+The heavy wooden door is barred with gleaming bands of light.
+~
+door~
+2 -1 9838 0
+S
+#9838
+On The Steep Stairs~
+   Stairs lead down here into the tower's dark basement, or you
+can head east into the main floor of the tower.
+~
+98 adp 0
+D1
+A dark hall leads away from the stairs to the east.
+~
+door~
+2 -1 9837 0
+D5
+The stairs lead down into the darkness.  Are you sure you want 
+to go down there?
+~
+~
+0 -1 9839 0
+S
+#9839
+On The Steep Stairs~
+   Stairs lead up here to the main level.  To the east is the damp, dark 
+basement of the tower.
+~
+98 adp 0
+D1
+You shiver uncomfortably in this damp, dark place.  
+~
+~
+0 -1 9840 0
+D4
+The stairs go up to the main floor.
+~
+~
+0 -1 9838 0
+S
+#9840
+In An Alcove~
+   This alcove leads into a huge room to your north, and
+to stairs leading down to the east, and stairs going 
+up to your west.
+~
+98 adp 0
+D0
+The room seems filled with an odd assortment of objects.
+~
+~
+0 -1 9841 0
+D1
+There are stairs leading down into the darkness.
+~
+~
+0 -1 9842 0
+D3
+There are stairs leading up into the darkness.
+~
+~
+0 -1 9839 0
+S
+#9841
+The Laboratory~
+   This is a typical Wizard's laboratory, crowded with strange and
+interesting objects.  Looking around you can see beakers, flasks,
+burners, tongs, mortars and pestles, jars filled with normal things,
+jars filled with abnormal things, and jars filled with things you'd
+rather not think about.  A search could reveal many things...
+~
+98 adp 0
+D2
+Looking south you can see the small alcove that leads to the stairs.
+~
+~
+0 -1 9840 0
+E
+beaker beakers flask flasks burner tong mortar mortars pestle pestles jar jars~
+Looks like normal, fragile lab equipment to you.
+~
+S
+#9842
+On The Steep Stairs~
+   Stairs lead down further into the tower's dark basement.  Or you
+can return west to the alcove
+~
+98 adp 0
+D3
+Looking west you can see a small alcove.
+~
+~
+0 -1 9840 0
+D5
+You are standing at the top of a set of stairs leading down into the 
+darkness.  
+~
+~
+0 -1 9843 0
+S
+#9843
+On The Steep Stairs~
+   Stairs lead up here to the first level of the basement.  To the
+east you see a strange glow through an archway.
+~
+98 adp 0
+D1
+The strange glow almost compels you to explore.
+~
+~
+0 -1 9844 0
+D4
+The stairs lead up into the darkness.
+~
+~
+0 -1 9842 0
+S
+#9844
+The Summoning Room~
+   This room is dimly lit by a glowing pentagram drawn on the floor in
+the center of the room.  Bands of force encircle some sort of being
+trapped inside.  You think that going inside would be an EXTREMELY BAD
+idea...  
+~
+98 adp 0
+D3
+You can leave this room to safety that way.
+~
+~
+0 -1 9843 0
+E
+pentagram~
+   It's centuries old.  You don't think standing close
+to it would be a good idea.
+~
+E
+being~
+   You can't see it clearly through the energy field
+of the pentagram, but you sense that whatever it is,
+it is very, very, very, very angry.
+~
+S
+#9845
+Inside The Deadly Pentagram~
+The small god entrapped by the wizard looks at you with
+an insane expression.  Four hundred years of imprisonment
+doesn't do much for ones...
+~
+98 djk 0
+D2
+~
+~
+0 -1 9844 0
+S
+$~

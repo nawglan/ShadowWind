@@ -1,0 +1,27 @@
+#1600
+sword shining clover~
+{Ca shining sword with {ga clover {Cengraved upon it{x~
+A shining sword lies here.~
+~
+5 0 an 0 
+3 2 3 3 21
+5 500 100
+#1601
+shield bark petrified~
+{ya shield of petrified bark{x~
+Some rotting wood lays here.~
+~
+9 0 aj l 
+5 0 0 0 5
+5 1000 100
+#1602
+vial murky~
+{bA murky vial{x~
+{bA murky vial{x~
+~
+10 0 a 0 
+1 128 0 0 18
+1 250 1
+P
+detect alignment
+$~

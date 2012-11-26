@@ -1,0 +1,677 @@
+#4800
+A Gently Sloping Trail~
+   You are on a broad path that leads away from the main trail. The ground
+here is a lot softer than that you have just been travelling on, and is much
+easier on your feet. There are the beginnings of more plantlife here, with
+small flowers and plants sprouting up in cracks in the road. A little into
+the distance you can see the trail leading toward a light and airy looking
+forest.  
+~
+48 p 2
+D1
+~
+~
+0 0 1603 0
+D3
+The trail leads to the west.
+~
+~
+0 0 4801 0
+S
+#4801
+A Gently Sloping Trail~
+   You are on a broad path that leads away from the main trail. The ground
+here is a lot softer than that you have just been travelling on, and is much
+easier on your feet. There are the beginnings of more plantlife here, with
+small flowers and plants sprouting up in cracks in the road. A little into
+the distance you can see the trail leading toward a light and airy looking
+forest.  
+~
+48 p 2
+D1
+The trail leads to the east.
+~
+~
+0 0 4800 0
+D3
+You can continue along the trail. 
+~
+~
+0 0 4802 0
+S
+#4802
+A Gently Sloping Trail~
+   Along the side of the trail, the trees are starting to get larger and
+denser here. A distinct wall of green is starting to form on either side of
+you towering up into the sky. Every so often the leaves and branches will
+be disturbed by a squirrel rampaging from one tree to another, searching
+for food.
+~
+48 p 2
+D0
+The trail streches northward.
+~
+~
+0 0 4803 0
+D1
+The trail leads eastward.
+~
+~
+0 0 4801 0
+S
+#4803
+A Gently Sloping Trail~
+   Along the side of the trail, the trees are starting to get larger and
+denser here. A distinct wall of green is starting to form on either side of
+you towering up into the sky. Every so often the leaves and branches will
+be disturbed by a squirrel rampaging from one tree to another, searching
+for food.
+~
+48 p 2
+D0
+Along the forest floor.
+~
+~
+0 0 4804 0
+D2
+The trail continues along to the south.
+~
+~
+0 0 4802 0
+S
+#4804
+A Bend In The Trail~
+   Here the road veers quite sharply, and turn around yourself, you get a
+remarkably different view of the horizon. To the west you see a towering
+mountain range, looking dark and quite formidable, while to the north, the
+landscape seems to settle down a little, and the forest looks as though it
+thins out and returns to normal.
+~
+48 p 2
+D1
+~
+~
+0 0 4823 0
+D2
+You can see the road leading southward.
+~
+~
+0 0 4803 0
+S
+#4810
+Along A Forest Trail~
+   The path becomes almost non-existent here, the usual bushes lining the
+trail giving way to open space between slim tree trunks. The ground is
+bare and even, except for the occasional nut or fallen branch. Animals
+dart across the clearing, leaping into the bushes when they find a chance.
+~
+48 0 0
+D0
+~
+~
+0 0 4826 0
+D2
+~
+~
+0 0 4809 0
+S
+#4811
+Along A Forest Trail~
+   You pass on what seems to be a well-treaded forest trail, perhaps level
+maintained. Vegetation grows a respectable distance away, leaving enough
+room for two average sized humans to walk side by side. The ground is even
+on the most part, with the exception of some of the roots breaking the
+earth's surface, but even those are minimal.
+~
+48 0 0
+D1
+~
+~
+0 0 14317 0
+D3
+~
+~
+0 0 4812 0
+S
+#4812
+Along A Forest Trail~
+   The path becomes almost non-existent here, the usual bushes lining the
+trail giving way to open space between slim tree trunks. The ground is
+bare and even, except for the occasional nut or fallen branch. Animals
+dart across the clearing, leaping into the bushes when they find a chance.
+To the north the path seems to become narrower, as it snakes its way around
+the large copse of trees directly to your east.
+~
+48 0 0
+D0
+~
+~
+0 0 4813 0
+D1
+~
+~
+0 0 4811 0
+S
+#4813
+Along a Forest Trail~
+   The trail zig-zags past the enormous trunks of two dominating evergreen
+trees, which sprout up on either side of the path. They completely overshadow
+any of the lesser plant life by their size and grandeur, and only humble
+ferns grow at their wide base, giving color to what might other be only
+bare earth. A rope ladder has been laid down the trunk of a huge tree to the
+east.
+~
+48 c 2
+D2
+~
+~
+0 0 4812 0
+D3
+~
+~
+0 0 4814 0
+S
+#4814
+Along A Forest Trail~
+   The trail zig-zags past the enormous trunks of two dominating evergreen
+trees, which sprout up on either side of the path. They completely overshadow
+any of the lesser plant life by their size and grandeur, and only humble
+ferns grow at their wide base, giving color to what might other be only
+bare earth.
+~
+48 0 0
+D0
+~
+~
+0 0 4815 0
+D1
+~
+~
+0 0 4813 0
+S
+#4815
+Along A Forest Trail~
+   The trail zig-zags past the enormous trunks of two dominating evergreen
+trees, which sprout up on either side of the path. They completely overshadow
+any of the lesser plant life by their size and grandeur, and only humble
+ferns grow at their wide base, giving color to what might other be only
+bare earth.
+~
+48 0 0
+D0
+~
+~
+0 0 4816 0
+D2
+~
+~
+0 0 4814 0
+D3
+~
+~
+0 0 9806 0
+S
+#4816
+Along A Forest Trail~
+   The trail zig-zags past the enormous trunks of two dominating evergreen
+trees, which sprout up on either side of the path. They completely overshadow
+any of the lesser plant life by their size and grandeur, and only humble
+ferns grow at their wide base, giving color to what might other be only
+bare earth.
+~
+48 0 0
+D1
+~
+~
+0 0 4817 0
+D2
+~
+~
+0 0 4815 0
+S
+#4817
+Along A Forest Trail~
+   The trail zig-zags past the enormous trunks of two dominating evergreen
+trees, which sprout up on either side of the path. They completely overshadow
+any of the lesser plant life by their size and grandeur, and only humble
+ferns grow at their wide base, giving color to what might other be only
+bare earth.
+~
+48 0 0
+D0
+~
+~
+0 0 4818 0
+D3
+~
+~
+0 0 4816 0
+D4
+~
+~
+0 0 1402 0
+S
+#4818
+A Path Through The Light Woods~
+   A dirt trail free of anything obstructing travel winds through the forest
+here in a north-south direction, the edge lined with bushes and flowers eager
+to display their flourishing. Above, the skies' light has no troubles in
+sifting through the trees' branches, leaving abstract patterns of light
+and shadow on the soil, and giving illumination whether by sun or star. To
+the north, you see what looks to be a fork in the road.
+~
+48 0 0
+D0
+~
+~
+0 0 4819 0
+D2
+~
+~
+0 0 4817 0
+S
+#4819
+A Fork In The Trail~
+   Here the path splits away into three directions. To the south a large,
+wide, grassy trail winds away, while to the east, by comparison, a narrow,
+slightly covered path leads into a wooded area. A large road seems to be
+snaking off the to the west, leading through the underbrush. Far in the
+distance to the west, you see an enormous imposing mountain range, towering
+over the horizon.  
+~
+48 0 3
+D1
+~
+~
+0 0 4836 0
+D2
+~
+~
+0 0 4818 0
+D3
+~
+~
+0 0 4820 0
+S
+#4820
+A Wide Forest Roadway~
+   You find yourself on a wide dirt track here. Obviously at some time it
+was used as a major roadway. The dirt beneath your feet has long since had
+any vegetation trampled out of it. On each side of the road, there is a
+narrow strip of clear grass before the woods start again, however it is
+guarded by thick clumps of blackberry. The road continues along to the west,
+while to the east you can see some sort of junction.  
+~
+48 0 2
+D1
+~
+~
+0 0 4819 0
+D3
+~
+~
+0 0 4821 0
+S
+#4821
+A Wide Forest Roadway~
+   You continue to make your way along this path, all around you the sweet
+song of the many wild birds floats in the wind. Every so often a small daisy
+has managed to push its head up through a crack in the road, proudly
+displaying its bright face to the world. The air carries a slightly earthy
+smell, from the deeper forest on either side of you. The road continues both
+east and west.  
+~
+48 0 2
+D1
+~
+~
+0 0 4820 0
+D3
+~
+~
+0 0 4822 0
+S
+#4822
+By A Fallen Tree~
+   You have come to what seems to be an impassable block in the road. At
+some stage, one of the large evergreens in the forest, fell across the road
+here. Smaller trees and plants have taken this as an opportunity to have
+something to grow on, and have created almost a wall of scrub and branches,
+preventing any passage to the west.  
+~
+48 0 2
+D0
+~
+~
+0 0 2599 0
+D1
+~
+~
+0 0 4821 0
+S
+#4823
+The Light Forest Trail~
+   A dirt trail free of anything obstructing travel winds through the forest
+here in a south-west direction, the edge lined with bushes and flowers eager
+to display their flourishing. Above, the skies' light has no troubles in
+sifting through the trees' branches, leaving abstract patterns of light
+and shadow on the soil, and giving illumination whether by sun or star.
+~
+48 p 2
+D0
+~
+~
+0 0 4824 0
+D3
+~
+~
+0 0 4804 0
+S
+#4824
+A Light Forest Trail~
+   You pass on what seems to be a well-treaded forest trail, perhaps level
+maintained. Vegetation grows a respectable distance away, leaving enough
+room for two average sized humans to walk side by side. The ground is even
+on the most part, with the exception of some of the roots breaking the
+earth's surface, but even those are minimal.
+~
+48 p 2
+D1
+~
+~
+0 0 4825 0
+D2
+~
+~
+0 0 4823 0
+S
+#4825
+A Light Forest Trail~
+   A dirt trail free of anything obstructing travel winds through the forest
+here in a south-west direction, the edge lined with bushes and flowers eager
+to display their flourishing. Above, the skies' light has no troubles in
+sifting through the trees' branches, leaving abstract patterns of light
+and shadow on the soil, and giving illumination whether by sun or star.
+~
+48 p 2
+D0
+~
+~
+0 0 4826 0
+D3
+~
+~
+0 0 4824 0
+S
+#4826
+A Light Forest Trail~
+   You pass on what seems to be a well-treaded forest trail, perhaps level
+maintained. Vegetation grows a respectable distance away, leaving enough
+room for two average sized humans to walk side by side. The ground is even
+on the most part, with the exception of some of the roots breaking the
+earth's surface, but even those are minimal.
+~
+48 p 2
+D0
+~
+~
+0 0 4827 0
+D2
+~
+~
+0 0 4825 0
+S
+#4827
+A Light Forest Trail~
+   The path becomes almost non-existent here, the usual bushes lining the
+trail giving way to open space between slim tree trunks. The ground is
+bare and even, except for the occasional nut or fallen branch. Animals
+dart across the clearing, leaping into the bushes when they find a chance.
+To the north, you can see the trail begin to take form and continue on its
+winding way through the woods.
+~
+48 p 2
+D2
+~
+~
+0 0 4826 0
+D3
+~
+~
+0 0 14301 0
+S
+#4828
+A Hilly Light Forest Trail~
+   The trail leads north-south through the radiant woods, amongst all flavors
+of plant life that grow in abundance here. An incredible evergreen sprouts
+far into the high reaches of the forest canopy here, supported by massive
+roots, which break the soil floor at places. A wooden rope ladder camoflaged
+by the bark leads up the trunk's far side, somewhere into the hidden depths
+of the branches high above.
+~
+48 0 2
+D0
+~
+~
+0 0 4829 0
+D4
+~
+~
+0 0 1411 0
+S
+#4829
+A Light Forest Trail~
+   The trail zig-zags past the enormous trunks of two dominating evergreen
+trees, which sprout up on either side of the path. They completely overshadow
+any of the lesser plant life by their size and grandeur, and only humble
+ferns grow at their wide base, giving color to what might other be only
+bare earth.
+~
+48 0 2
+D2
+Along the trail.
+~
+~
+0 0 4828 0
+D3
+Along the trail.
+~
+~
+0 0 4830 0
+S
+#4830
+A Light Forest Trail~
+   A dirt trail free of anything obstructing travel winds through the forest
+here in a north-east direction, the edge lined with bushes and flowers eager
+to display their flourishing. Above, the skies' light has no troubles in
+sifting through the trees' branches, leaving abstract patterns of light
+and shadow on the soil, and giving illumination whether by sun or star.
+~
+48 0 2
+D0
+The trail continues, past a massive trunk.
+~
+~
+0 0 4831 0
+D1
+The trail continues in that direction.
+~
+~
+0 0 4829 0
+S
+#4831
+A Light Forest Trail~
+   The trail leads north-south through the radiant woods, amongst all flavors
+of plant life that grow in abundance here. An incredible evergreen sprouts
+far into the high reaches of the forest canopy here, supported by massive
+roots, which break the soil floor at places. A wooden rope ladder camoflaged
+by the bark leads up the trunk's far side, somewhere into the hidden depths
+of the branches high above.
+~
+48 0 2
+D0
+Along the forest floor.
+~
+~
+0 0 4832 0
+D2
+Along this forest path.
+~
+~
+0 0 4830 0
+D4
+The wooden ladder leads up the tree's trunk, its destination invisible
+from here.
+~
+~
+0 0 1405 0
+S
+#4832
+A Light Forest Trail~
+   A dirt trail free of anything obstructing travel winds through the forest
+here in a south-west direction, the edge lined with bushes and flowers eager
+to display their flourishing. Above, the skies' light has no troubles in
+sifting through the trees' branches, leaving abstract patterns of light
+and shadow on the soil, and giving illumination whether by sun or star.
+~
+48 0 2
+D1
+~
+~
+0 0 4837 0
+D2
+~
+~
+0 0 4831 0
+D3
+~
+~
+0 0 4833 0
+S
+#4833
+A Lightly Wooded Path~
+   This section of the path isn't quite as clear as the others you have been
+travelling on. Many small saplings are trying to push their skyward, to get
+a taste of the light and air. Above you, large branches stretch outward from
+their enormous trunks. The weight of some of these is so great that they are
+almost touching the ground.  
+~
+48 0 3
+D1
+~
+~
+0 0 4832 0
+D3
+~
+~
+0 0 4834 0
+S
+#4834
+A Lightly Wooded Path~
+   This section of the path isn't quite as clear as the others you have been
+travelling on. Many small saplings are trying to push their skyward, to get
+a taste of the light and air. Above you, large branches stretch outward from
+their enormous trunks. The weight of some of these is so great that they are
+almost touching the ground.  
+~
+48 0 3
+D0
+~
+~
+0 0 4835 0
+D1
+~
+~
+0 0 4833 0
+S
+#4835
+A Lightly Wooded Path~
+   This section of the path isn't quite as clear as the others you have been
+travelling on. Many small saplings are trying to push their skyward, to get
+a taste of the light and air. Above you, large branches stretch outward from
+their enormous trunks. The weight of some of these is so great that they are
+almost touching the ground.  
+~
+48 0 3
+D2
+~
+~
+0 0 4834 0
+D3
+~
+~
+0 0 4836 0
+S
+#4836
+A Lightly Wooded Path~
+   This section of the path isn't quite as clear as the others you have been
+travelling on. Many small saplings are trying to push their skyward, to get
+a taste of the light and air. Above you, large branches stretch outward from
+their enormous trunks. The weight of some of these is so great that they are
+almost touching the ground.  
+~
+48 0 3
+D1
+~
+~
+0 0 4835 0
+D3
+~
+~
+0 0 4819 0
+S
+#4837
+A Narrow Tangled Path~
+   The forest trail branches off into a stray off-shoot, wandering into a
+rather tangled area of vegetation where everything seems to be fighting
+for space and light. However, the path itself is able to make free an area
+for walking, branching off to clearings to the north and east of here.
+~
+48 0 3
+D0
+A small grassy clearing is to the north.
+~
+~
+0 0 4839 0
+D1
+A narrow trail leads to a grassy clearing in that direction.
+~
+~
+0 0 4838 0
+D3
+The main trail through the forest is visible to the west.
+~
+~
+0 0 4832 0
+S
+#4838
+A Grassy Clearing Encircled With Bushes~
+   A circular clearing opens up in the underbrush here, revealing a grassy
+spot sheltered by one of the massive evergreen's that dominant this forest.
+Encircling you is thick, leafy shrubbery, beyond of which lies denser woods
+and less appealing brambles. The light fragrance of some forest flowers
+is carried in the fresh air, the striking colors of which lead your gaze
+to an opening in the bushes to the west.
+~
+48 ct 2
+D3
+~
+~
+0 0 4837 0
+S
+#4839
+A Shaded Clearing~
+   The narrow path leads to a shaded clearing, a carpet of thick green grass
+at your feet, still wet from the morning dew, and unlikely to dry in the
+perpetual shade of a nearby evergreen. The chatter of small forest animals
+reaches your ears as they carry their simple and mostly undisturbed life
+in nature's arms.
+~
+48 0 0
+D2
+A trail hints at a path through the forest.
+~
+~
+0 0 4837 0
+S
+$~

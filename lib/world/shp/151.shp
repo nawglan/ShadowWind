@@ -1,0 +1,83 @@
+CircleMUD v3.0 Shop File~
+#15100~
+15155
+15156
+15157
+15158
+-1
+3
+1
+FOOD
+-1
+%s Sorry, we don't consider that to be food.~
+%s I don't think you even have one.~ 
+%s Why would I want one of those?~
+%s Do you really think I can afford that?~
+%s You can't even pay for this, GO AWAY!~
+%s That will be %s{r.~
+%s I will give you %s{r for that, NOTHING MORE!~
+0
+0
+15161
+0
+15103
+-1
+0
+24
+0
+0
+#15101~
+15137
+15141
+15139
+15121
+15159
+-1
+3
+1
+ARMOR
+-1
+%s I don't buy that kind of stuff.~
+%s Your not even carrying that.~
+%s This is the armory, I have no use for that.~
+%s I can't afford that, GO AWAY!~
+%s You test my patience, You can't afford it.~
+%s That will be %s{r, PAY ME!~ 
+%s I will give you %s{r for that, NOTHING MORE!~
+0
+0
+15162
+0
+15129
+-1
+0
+24
+0
+0
+#15102~
+15120
+15160
+15161
+-1
+3
+1
+WEAPON
+-1
+%s Worthless junk, I've no need that.~
+%s You don't even have one, FHAOIWE!~
+%s We don't even sell that, stranger.~
+%s I don't have money to spend on that.~
+%s You going to pay for it with money?~
+%s PAY UP, That is %s{r.~
+%s I will give you %s{r for that, NO MORE!~
+0
+0
+15163
+0
+15119
+-1
+0
+24
+0
+0
+$~

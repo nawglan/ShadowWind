@@ -1,0 +1,172 @@
+#242
+Fire Grotto /Firebird/~
+24299 120 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+D 0 24270 3 3	* On The Tiny Corner
+D 0 24200 4 1	* The Sphere Room
+D 1 24297 4 2	* The Giant Cavern
+* M 0 24223 1 24297 100	* the Chimera 
+D 1 24231 2 1	* The Huge Throne Room
+D 0 24231 0 1	* The Huge Throne Room
+M 0 24207 1 24231 100	* the King Behemoth
+O 0 24247 1 24231 100	* a crystal chandelier
+D 0 24204 5 1	* The Steamy Hallway
+D 1 24206 4 1	* Under The Trapdoor
+D 0 24213 5 1	* A Large Cavern
+D 1 24214 4 1	* The Hidden Room
+D 0 24221 2 2	* The West End of the Long Hallway
+D 1 24222 0 2	* A Small Room
+D 0 24217 2 2	* In the Long Hallway
+D 1 24220 0 2	* The Large Room
+D 0 24216 0 2	* In a Long Hallway
+D 1 24218 2 2	* The Enormous Room
+D 0 24224 1 1	* The Bedroom
+D 1 24225 3 1	* The Secret Space
+D 0 24230 0 1	* The Entrance To The Throne Room
+D 1 24232 2 1	* The Secret Treasure Room
+D 0 24249 3 1	* A Dark Tunnel
+D 1 24250 1 1	* A Dark Tunnel
+D 1 24271 1 1	* The Secret Corridor
+D 0 24272 1 2	* The Secret Corridor
+D 1 24273 3 2	* Machk-Gyi's Treasure Chambers
+D 0 24273 0 1	* Machk-Gyi's Treasure Chambers
+D 1 24274 2 1	* Machk-Gyi's Inner Treasury
+D 0 24273 1 1	* Machk-Gyi's Treasure Chambers
+D 1 24276 3 1	* Machk-Gyi's Inner Treasury
+D 0 24273 2 1	* Machk-Gyi's Treasure Chambers
+D 1 24275 0 1	* Machk-Gyi's Inner Treasury
+D 0 24279 3 2	* Outside the Massive Gate
+D 1 24280 1 2	* Inside the Massive Gate
+D 0 24281 1 2	* The Prison
+D 1 24291 3 2	* A Smelly Prison Cell
+D 0 24281 2 2	* The Prison
+D 1 24292 0 2	* A Smelly Prison Cell
+D 0 24282 2 2	* The Prison
+D 1 24293 0 2	* A Smelly Prison Cell
+D 0 24286 1 2	* The Prison
+D 1 24294 3 2	* A Smelly Prison Cell
+D 0 24287 0 2	* The Prison
+D 1 24295 2 2	* A Smelly Prison Cell
+D 0 24287 1 2	* The Prison
+D 1 24296 3 2	* A Smelly Prison Cell
+D 0 24289 0 2	* The Giant Cavern
+D 1 24290 2 2	* The Magnificent Silver Vault
+D 0 24296 5 2	* A Smelly Prison Cell
+M 0 24200 4 24201 100	* the Steam Spirit
+M 1 24200 4 24202 100	* the Steam Spirit
+M 1 24200 4 24203 100	* the Steam Spirit
+M 1 24200 4 24204 100	* the Steam Spirit
+M 0 24201 1 24209 100	* the Keeper of the Keys
+G 1 24239 1 -1	* a small iron key
+G 1 24240 1 -1	* a medium iron key
+G 1 24241 1 -1	* a huge iron key
+M 0 24202 1 24211 100	* the Skeletal Knight
+G 1 24201 1 -1	* a skull helm
+E 1 24202 1 9	* a genji glove
+E 1 24203 1 16	* a scimitar
+M 0 24203 1 24222 100	* the Small Behemoth
+M 0 24204 1 24220 100	* the Large Behemoth
+M 0 24205 1 24218 100	* the Enormous Behemoth
+M 0 24206 1 24225 100	* the Ghost of the Emperor, Machk-Gyi
+E 1 24207 1 12	* a fading gown
+E 1 24208 1 18	* a fading cloth
+M 0 24208 1 24272 100	* the Dark Beast
+E 1 24243 1 17	* a shadowy iron key
+M 0 24209 7 24235 100	* the Ghast
+M 1 24209 7 24236 100	* the Ghast
+M 1 24209 7 24237 100	* the Ghast
+M 1 24209 7 24248 100	* the Ghast
+M 1 24209 7 24249 100	* the Ghast
+M 1 24209 7 24251 100	* the Ghast
+M 0 24210 1 24253 100	* the Poltergeist
+M 0 24211 2 24262 100	* the Muck Monster
+M 0 24212 1 24278 100	* the Fire Gigas
+E 1 24216 1 16	* a bone club
+E 1 24217 1 13	* a red leather belt
+M 0 24213 3 24265 100	* the Lava Monster
+M 1 24213 3 24266 100	* the Lava Monster
+M 0 24214 1 24279 100	* the Red Gargoyle
+E 1 24242 1 17	* a massive iron key
+M 0 24215 1 24279 100	* the Red Gargoyle
+M 0 24216 3 24280 100	* the Minotaur Slave
+M 1 24216 3 24284 100	* the Minotaur Slave
+M 0 24217 2 24282 100	* the Minotaur Slave
+M 1 24218 3 24292 100	* the Minotaur Slave
+M 1 24218 3 24293 100	* the Minotaur Slave
+M 1 24218 3 24295 100	* the Minotaur Slave
+M 0 24219 4 24292 100	* the Minotaur Slave
+M 1 24219 4 24296 100	* the Minotaur Slave
+M 1 24219 4 24296 100	* the Minotaur Slave
+M 1 24219 4 24294 100	* the Minotaur Slave
+M 0 24220 1 24282 100	* the Slave Master
+E 1 24244 1 17	* the jail key
+G 1 24224 2 -1	* a roast pig
+E 1 24220 1 16	* a nimbus chain
+E 1 24221 1 14	* a bracelet of needles
+M 0 24221 2 24289 100	* the Silver Bodyguard
+M 1 24221 2 24289 100	* the Silver Bodyguard
+M 0 24222 1 24289 100	* the Bug
+M 0 24224 5 24210 100	* the Black Bat
+M 1 24224 5 24210 100	* the Black Bat
+M 1 24224 5 24248 100	* the Black Bat
+M 1 24224 5 24236 100	* the Black Bat
+M 1 24224 5 24252 100	* the Black Bat
+M 0 24225 5 24211 100	* the Fireball
+M 0 24225 5 24208 100	* the Fireball
+M 0 24225 5 24253 100	* the Fireball
+M 0 24225 5 24253 100	* the Fireball
+O 0 24246 1 24230 100	* a crushed skull
+O 0 24200 1 24203 100	* a steamy cloth
+O 0 24212 1 24247 100	* the Orb of Fire
+O 0 24225 4 24293 100	* a bowl of gruel
+O 0 24225 4 24295 100	* a bowl of gruel
+O 0 24225 4 24296 100	* a bowl of gruel
+O 0 24225 4 24291 100	* a bowl of gruel
+O 0 24230 1 24290 100	* a jeweled tiara
+O 0 24231 1 24290 100	* the Sword of Gems
+O 0 24232 1 24290 100	* a moonstone ring
+O 0 24233 1 24290 100	* a silk strip
+O 0 24249 5 24232 100	* a huge mountain of copper coins
+O 0 24250 1 24232 100	* a large mountain of coins
+O 0 24249 5 24274 100	* a huge mountain of copper coins
+O 0 24249 5 24275 100	* a huge mountain of copper coins
+O 0 24251 1 24276 100	* a fortune of coins
+O 0 24252 1 24290 100	* a glimmering statue of the Chimera made of coins
+O 0 24249 5 24290 100	* a huge mountain of copper coins
+O 0 24210 1 24245 100	* the skeleton
+P 0 24211 1 24210	* a gold ring
+P 0 24248 1 24210	* a pile of gold coins
+O 0 24236 1 24274 100	* a bronze chest
+P 0 24213 1 24236	* a zephyr cape
+O 0 24237 1 24275 100	* a silver chest
+P 0 24214 1 24237	* a pair of royal boots
+O 0 24238 1 24276 100	* a golden chest
+P 0 24215 1 24238	* a red metallic crown
+S
+$

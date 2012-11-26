@@ -1,0 +1,145 @@
+CircleMUD v3.0 Shop File~
+#12001~
+3000
+3001
+3010
+3011
+12006
+12007
+-1
+1.1
+0.8
+-1
+%s We don't have that item in stock right now.~
+%s I don't think you have that item.~
+%s The city tax collector just came. I don't have the cash.  Sorry.~
+%s No credit. GO AWAY!~
+%s No credit. GO AWAY!~
+%s That will be %s{r. Enjoy!~
+%s You'll get %s{r for that.~
+2
+0
+12036
+0
+12062
+-1
+6
+20
+0
+0
+#12002~
+3030
+3031
+3032
+3005
+12001
+-1
+1.7
+0.6
+1
+8
+12
+15
+17
+22
+-1
+%s We don't have that item on stock.~
+%s I don't think you have that.~
+%s I don't stock that stuff. Try another shop.~
+%s I can't afford it right now. Come back tomorrow.~
+%s No cash, no goods!~
+%s Here you go.  That'll be.....%s{r.~
+%s Thank-you very much. Here is %s{r as payment.~
+2
+0
+12037
+0
+12063
+-1
+6
+20
+0
+0
+#12003~
+3050
+3053
+3054
+-1
+1.85
+0.5
+2
+3
+4
+10
+-1
+%s We don't carry that item.~
+%s You don't have that.~
+%s I can't buy that. See another shop.~
+%s We are low on cash. Come back later.~
+%s Sorry, but you can't afford that.~
+%s Here you go. That will cost you %s{r.~
+%s I will give you %s{r for that.~
+2
+0
+12030
+0
+12042
+-1
+6
+20
+0
+0
+#12004~
+3024
+3025
+12008
+12057
+12059
+12060
+12062
+-1
+2.25
+0.6
+5
+9
+-1
+%s We are out of that item right now.~
+%s You don't have that. Stop wasting my time!~
+%s This is a weapon and armor shop! Go someplace else!~
+%s A fine weapon indeed, but more than I can afford.~
+%s Sorry, NO credit.~
+%s Here you go. That will be %s{r. Don't get hurt!~
+%s You'll get %s{r for that.~
+2
+0
+12011
+0
+12006
+-1
+6
+20
+0
+0
+#12005~
+12099
+-1
+1.5
+0.6
+-1
+%s Sorry, don't have a ticket to there sorry~
+%s You should never see this message. Bug report if you do.~
+%s Sorry, I don't buy that.~
+%s You should never see this, bug report if you do.~
+%s Sorry, you don't seem to be able to afford that.~
+%s That will be %s{r coins please, enjoy your trip!~
+%s You should never see this %s{r, bug report if you do.~
+2
+0
+12038
+0
+-1
+0
+28
+0
+0
+$~

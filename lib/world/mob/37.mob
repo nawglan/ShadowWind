@@ -1,0 +1,433 @@
+#3700
+surly gateguard guard~
+a surly {Yg{Wa{Yt{We{Yg{Wu{Ya{Wr{Yd{x~
+A surly {Yg{Wa{Yt{We{Yg{Wu{Ya{Wr{Yd{x surveys the area with a menacing look about him.
+~
+Before you stands what could be taken for a cross between a man and a
+beast. Broad powerful shoulders dominate the massive body that radiates
+a feeling of awareness. These beings move with a very dangerous grace that
+warns you to be wary and to tread lightly when they are nearby. Their
+gleaming swords with hair thin blades make them hazardous foes.
+~
+abdl k 475 X 0 
+32 8 -6 16d16+320
+0 92000 -1
+8 8 1 3 1 3
+T 90 6d6+5 2
+E 2 15 3734 5
+#3701
+Elryn captain guard~
+Elryn the captain of the guards~
+Elryn the captain of the guards is here quietly lost in thought.
+~
+You see before you a tall man with a weathered face creased by years of 
+faithful service to the Mantacor. With a pleasant fatherly face, his
+abilities to wage a successful campaign in bloody battle has often been
+underestimated. Behind that soft face, lie eyes hardened by decades of 
+fighting. Hidden by the wrinkles of age, lies the deadly sinuous grace
+of a tiger.
+~
+bdlno dhk 475 X 0 
+45 4 -10 23d23+450
+0 280000 -1
+8 8 1 3 1 3
+T 120 3d5+2 9
+T 60 6d7+8 2
+E 16 25 3720 5
+#3702
+guard powerful~
+a guard of Caryllion~
+A guard of Caryllion garrison walks about trying to keep the peace.
+~
+Dressed in the red and gold of Caryllion's general garrison force, the
+stern face that this guard wears warns you to tread lightly where this man
+is concerned. Moving with the easy grace of a deadly cat, this man seems as
+dangerous with his bare hands as he would be wielding a gleaming sword at his
+side.
+~
+dglm k 0 X 0 
+20 12 0 10d10+200
+0 25000 -1
+8 8 1 3 1 3
+T 100 3d6+2 23
+T 100 4d4+4 0
+E 5 3 3727 5
+E 6 3 3726 5
+E 10 3 3728 5
+E 9 3 3729 5
+E 16 3 3730 5
+E 7 3 3731 5
+E 11 3 3733 5
+>fight_prog                                   30~
+order 2.powerful ass 2.powerful
+~
+>rand_prog                                 90~
+mpcast 'charm' 2.powerful
+~
+|
+#3703
+jailer~
+the jailer~
+The city's jailer is here passing time guarding the dungeons.
+~
+Sitting on his simple stool, the city's jailer waits languishingly as the
+hours pass and nothing changes in these dungeons. A large man with an ugly
+aspect, his pale skin is evidence that many of his days are spent down here
+in the deep depths of the city's dungeons. Glancing to his sword you ponder
+on how odd it seems for this man to be carrying such a weapon.
+~
+bdl k 0 X 0 
+22 11 -1 11d11+220
+0 31000 -1
+8 8 1 3 1 3
+T 110 3d9+5 2
+#3704
+prisoner scrawny~
+a scrawny prisoner~
+A scrawny prisoner is here, chained to the dungeon's wall.
+~
+Pale from the lack of sunlight, and scrawny from the lack of nourishment,
+there is little life left within this man. Bulging eyes look at you strangely
+as you approach. Drawing near, you notice that this shadow of a man can barely
+see as hunger has caused him to lose some of his eyesight.
+~
+bd 0 -200 X 0 
+18 13 1 9d9+180
+0 16800 -1
+8 8 1 3 1 3
+T 110 4d7+4 0
+#3705
+dignified palace gateguard~
+a palace {Yg{Wa{Yt{We{Yg{Wu{Ya{Wr{Yd{x~
+A palace {Yg{Wa{Yt{We{Yg{Wu{Ya{Wr{Yd{x stands here with a sombre look.
+~
+Dressed in the brilliant gold on white that is the uniform of the palace
+guards, this man has danger carved in his dark eyes. With skills honed to
+a fine grace by campaign after bloody campaign, his ability to handle a
+weapon would be difficult to surpass.
+~
+bdelm dfhk 0 X 0 
+43 5 -1 22d22+430
+0 220000 -1
+8 8 1 3 1 3
+T 60 6d7+6 3
+>speech_prog                               p i swear allegiance to the manta'cor~
+if inroom ($n) == 3770
+   mpdelay 10
+   mpechoaround $n $I turns around and opens the large gate and leads $n through it.
+   mptrans $n 3771
+   mpat $n mpechoat $n $I turns around and opens the large gate, leading you through.
+   mpechoaround $n $I leads $n through the gates from your south.
+   mpat $n mpforce $n look
+  endif 
+ else
+endif
+~
+|
+#3706
+merchant anxious~
+an anxious merchant~
+An anxious merchant clutches documents as he waits patiently for an audience.
+~
+Dressed in the finest of silks, this man's clothing is as crumpled as the
+papers he clutches to his breasts. He scans through the pages, searching
+for some sort of hidden comfort in the lines that grace it. Sweat streaks
+across his brow as he waits patiently for an audience with the most
+powerful man in Caryllion.
+~
+bdh k -50 X 0 
+18 13 1 9d9+180
+0 16800 -1
+8 8 1 3 1 3
+T 100 4d8+2 11
+#3707
+nervous merchant~
+a nervous merchant~
+A nervous merchant wrings her sweaty palms in anticipation of an audience.
+~
+With her hair piled high in a cascading stream of bountiful curls, the
+richness of her dress details her wealth. With head held high, and nerves
+held close, the only aspect of her cairrage that hints at her nervousness
+are the sweaty palms that she so desperately tries to hide.
+~
+bdh k -50 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 2 3 1 3
+T 90 4d4+0 1
+#3708
+Rodrin manta'cor~
+Rodrin~
+Rodrin, Caryllion's Manta'cor sits here patiently as he is waited upon.
+~
+Rodrin has always been a man of many talents. Adept at learning and a great
+scholar, his library is evidence enough that his is a man comfortable with
+books. As he moves however you also see the deadly grace and hard body that
+belongs only to a great warrior. Here stands a man of great power and
+influence, a man to be wary of.
+~
+bdloq dfhkp 350 X 0 
+50 0 -1 25d25+500
+0 500000 -1
+8 8 1 3 1 3
+T 100 5d6+5 9
+T 70 7d7+4 8
+E 10 30 3718 -1
+E 1 20 3719 4
+#3709
+scullion maid girl~
+a scullion maid~
+A young scullion maid is here in a simple servants dress.
+~
+Young and pretty if not beautiful, this young woman has not been here long.
+Her young hands are still soft having not seen many months of service and her
+eyes still bright with the energy of a young woman. Long blonde hair in a
+braid hangs down her back to her waist, swaying as she works and dances to
+the tune dictated by the head cook.
+~
+bdhm k 50 X 0 
+8 16 6 4d4+80
+0 3500 -1
+8 8 2 2 1 3
+T 90 4d2+0 5
+#3710
+driver wagon~
+a wagon driver~
+A wagon driver is here idly passing the time.
+~
+A young man presents himself before you, hair cropped short and a youthful
+face filled with eager mischief. Despite the wide eyes look of this man who
+seems littler more than a boy, a closer look at his eyes reveals that this
+is a well travelled soul. While doing his masters bidding, this young man has
+seen many a skirmish, each of which have hardened the black eyes that stare
+back at you in icy coldness.
+~
+dg k -100 X 0 
+15 14 2 8d8+150
+0 11000 -1
+8 8 1 3 1 3
+T 80 3d4+3 0
+#3711
+clerk small bespectacled man~
+a small bespectacled man~
+A small bespectacled man wanders aimlessly tallying inventory in his head.~
+You see a small man, pasty white and wearing a pair of odd looking spectacles.
+His deep set eyes are red rimmed, and wearing crumpled clothes that look as if
+they had been slept in, you realize this man is not one who cares entirely too
+deeply about his physical appearance.
+~
+dgh k -100 X 0 
+12 14 4 6d6+120
+0 7500 -1
+8 8 1 3 1 3
+T 110 4d3+2 0
+A 8 5 A small bespectacled man mutters something quietly to himself.
+A 8 5 A small bespectacled man pauses abruptly, putting his hand on his chin.
+#3712
+corindra silk merchant~
+Corindra the silk merchant~
+Corindra wears a smile as she surverys her growing fortunes.
+~
+Dressed in the finest of the very silks that she sells throughout the realm,
+the richness of Corindra's dress would rival those of nobility. Her fingers
+are covered with rings set with glittering stones of every shape and color
+and a fat purse of gold hangs at her side.
+~
+bdl 0 -100 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 2 3 1 3
+T 120 6d10+5 0
+E 19 40 3721 -1
+#3713
+erik head waiter~
+Erik the head waiter~
+Erik the head waiter stands patiently waiting for the shop's next patron.
+~
+A man with a distinguished air about him stands before you. Ash blonde hair
+and deep blue eyes give him an appearance that has been known to capture
+more than just a mere glance from any person, both male and female alike. The
+quick mind that lies behind that pretty face has earned him this station, one
+that he undeniably deserves.
+~
+bdhl k 350 X 0 
+16 13 2 8d8+160
+0 12500 -1
+8 8 1 3 1 3
+T 80 3d8+3 4
+A 8 8 Erik the head waiter clears his throat then goes back to work.
+A 8 8 Erik the head waiter stands tall and straightens his waistcoat.
+E -1 100 3790 -1
+E -1 100 3791 -1
+E -1 100 3792 -1
+E -1 100 3793 -1
+#3714
+Crowley owner~
+Crowley the coffee shop's owner~
+Crowley the owner lounges casually at a table with some of his patrons.
+~
+A man with a considerable girth sits casually before you. His fine clothes of
+brightly colored silk makes you think that he could easily pass for one of his
+many patrons. As you walk towards him, his wary eyes regard you with a
+weighing look.
+~
+bdl k 350 X 0 
+27 10 -4 14d14+270
+5000 55500 -1
+8 8 1 3 1 3
+T 100 4d6+3 1
+>give_prog    small credit note parchment crowleyowner~
+mpdelay 5
+say Here's 50 silver coins, pleasure doing business with you.
+mpdelay 5
+give 50 silver $n
+~
+|
+#3715
+kristian contract maker~
+Kristian the contract maker~
+Kristian the contract maker sits here quietly sipping his coffee.
+~
+A quiet man in a dark suit sits here at ease. He stands apart from other
+people that frequent this level of the coffee house, surveying the scene
+before him with a careful eye.
+~
+bdgl 0 350 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 1 3
+T 50 4d9+2 0
+E 17 30 3715 -1
+#3716
+drunk oaf~
+a drunken oaf~
+A drunken oaf is sprawled across a table here, oblivious to his surroundings.~
+Lost in his own world of images and made by beer and wine, this man is
+completely oblivious to the things that are happening around him. With a mug
+still clutched firmly in his hand, the only sounds that he makes are low
+unintelligable groans about drink.  
+~
+dgl 0 350 X 0 
+35 7 -8 18d18+350
+0 112000 -1
+8 8 1 3 1 3
+T 100 3d10+5 8
+T 100 5d7+5 0
+E 16 50 3722 10
+>rand_prog                             15~
+  wake
+mpdelay 5
+  rest
+mpdelay 10
+  emot squinches his eyes and scans the room before taking another swig and passing out.
+sleep
+~
+|
+#3717
+innocent child~
+an innocent child~
+An innocent little boy wanders about in search of some fun.
+~
+This scruffy child dressed in little more than rags plays happily in the
+street with friends from his imaginary world. His face is streaked with sweat
+and dirt and his eyes are nothing but large pools of innocence.
+~
+dgh 0 400 X 0 
+5 17 7 3d3+50
+0 1600 -1
+8 8 1 3 1 3
+T 110 1d4+3 0
+#3718
+innocent child boy~
+an innocent child~
+An innocent little boy wanders about searching for some fun.
+~
+This scruffy child dressed in little more than rags plays happily in the
+street with friends from his imaginary world. His face is streaked with sweat
+and dirt and his eyes are nothing but large pools of innocence.
+~
+dgh 0 400 X 0 
+5 17 7 3d3+50
+0 1600 -1
+8 8 1 3 1 3
+T 110 1d4+3 0
+E 17 50 3723 -1
+#3719
+small girl~
+a small girl~
+A small girl plays happily with her dolls here.
+~
+Dressed in a small tattered dress with more patches than you could possibly
+imagine, this girl plays quietly with her ragdoll by the road. A small smile
+of contentment graces her tiny face streaked with sweat and dirt.
+~
+dgh 0 425 X 0 
+4 18 8 2d2+40
+0 1000 -1
+8 8 2 3 1 3
+T 90 1d3+3 0
+E 5 20 3736 5
+#3720
+small girl~
+a small girl~
+A small girl plays happily here with her dolls.
+~
+Dressed in a small tattered dress with more patches than you could possibly
+imagine, this girl plays quietly with her rag doll by the road. A small smile
+of contentment graces her tiny face streaked with sweat and dirt.
+~
+dgh 0 425 X 0 
+4 18 8 2d2+40
+0 1000 -1
+8 8 2 3 1 3
+T 90 1d3+3 0
+E 17 50 3724 -1
+#3721
+mistress alyss~
+Mistress Alyss~
+Mistress Alyss watches over her patrons with a careful eye.
+~
+A large woman presents herself before you, dressed in a low cut gown of coarse
+linen which shows off an ample amount of her buxom figure. About her waist a
+broad white apron is draped, tied off in a neat bow about her back. A face of
+bounty stares at you blankly, eyes transfixed.  
+~
+bd 0 325 X 0 
+40 5 -10 20d20+400
+0 150000 -1
+8 8 2 3 1 3
+T 80 3d10+10 9
+T 80 6d7+1 8
+E 13 35 3714 -1
+#3722
+barman large~
+the large barman~
+A large barman stands here with a sinister gleam in his eyes.
+~
+Dressed in sturdy leathers, this man has the look of a now retired warrior.
+His wide girth and the innocent looking apron around his waist do nothing to
+hide his powerful limbs.
+~
+bdw dfh 350 X 0 
+55 -10 -10 28d28+5550
+0 6000000 -1
+8 8 1 3 1 3
+T 100 7d8+5 8
+E -1 100 3789 -1
+E -1 100 3788 -1
+E -1 100 3794 -1
+E -1 100 3795 -1
+E -1 100 3796 -1
+#3723
+sailor old smuggler~
+the Old Sailor~
+A weathered old sailor stands here, puffing on his pipe.
+~
+Dressed entirely in black, this seasoned smuggler eyes you with a
+cautionary glance.
+~
+bd dfh 350 X 0 
+55 0 -10 28d28+5550
+0 6000000 -1
+8 8 1 3 1 3
+T 100 10d42+5 8

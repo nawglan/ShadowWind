@@ -1,0 +1,73 @@
+#3200
+meat mouse~
+a small piece of mouse meat~
+A small mouse has been nicely fileted and left here.~
+~
+19 0 a 0 
+3 0 0 0 23
+1 0 0
+#3201
+meat hamster~
+a small piece of hamster meat~
+A small hamster has been diced up and left here.~
+~
+19 0 a 0 
+3 0 0 0 23
+1 0 0
+#3202
+meat dog prarie~
+a morsel of prarie dog meat~
+A nice, bite sized portion of prarie dog meat can be found here.~
+~
+19 0 a 0 
+5 0 0 0 23
+2 0 0
+#3203
+meat coyote~
+a hunk of coyote meat~
+A large hunk of coyote rump roast is here.~
+~
+19 0 a 0 
+8 0 0 0 23
+7 0 0
+#3204
+meat dog~
+a slab of wild dog meat~
+A dog meat t-bone steak is here.~
+~
+19 0 a 0 
+12 0 0 0 23
+8 0 0
+#3205
+belt leather~
+{ya belt of finest leather{x~
+A well crafted belt is lying here.~
+~
+11 k al 0 
+0 0 0 0 20
+5 10000 800
+A
+17 -4
+#3206
+gloves leather~
+a pair of beautiful hide gloves~
+A pair of beautiful hide gloves lie abandoned here.~
+~
+9 k ah j 
+2 0 0 0 20
+3 500 10
+A
+25 5
+#3207
+cape velvet~
+{ma purple velvet cape{x~
+A heap of {mpurple velvet{x lies here.~
+~
+11 gop ac 0 
+0 0 0 0 3
+8 10000 100
+A
+12 5
+A
+3 1
+$~

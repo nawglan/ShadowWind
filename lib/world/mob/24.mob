@@ -1,0 +1,65 @@
+#2400
+tarmonster tar monster~
+the Tarmonster~
+The Dreaded TarMonster rises up to to you!
+~
+The dreaded TarMonster oozes before you. He appears as a mountainous pile of
+slime. Everything seems to be moving in slow motion near him. 
+~
+bcdenopqr dhkpt -1000 X
+53 1 -10 27d27+3530
+0 3700000
+8 8 1 14 14 6
+T 30 3d8+10 23
+T 65 3d8+25 26
+A 10 8 $n attempts to tar you.
+A 5 8 $n attempts to tar another user.
+E -1 75 2401 10
+E 16 75 2400 10
+Str: 100
+Int: 90
+Con: 100
+#2401
+tar warrior~
+the Tarwarrior~
+The Dreaded TarWarrior towers over you, ready to attack.
+~
+The dreaded TarWarrior towers over you. He appears to have been human once 
+upon a time. His feature are hard to define due to the gray mist surrounding
+him.
+~
+bcdfmnpr dhk -900 X
+50 2 -10 25d25+500
+0 500000
+8 8 1 14 1 4
+T 100 10d10+0 27
+E 5 100 2405 100
+E 16 100 2402 100
+#2402
+tar slave tarslave~
+the Tarslave~
+The tarslave is here, going about his daily tasks.
+~
+The TarSlave is here going about his daily tasks. He is attempting to tar
+users at random.
+~
+cdghmp dhk -800 X
+30 9 -5 15d15+300
+0 80000
+8 8 1 14 1 4
+T 66 4d8+2 27
+E 16 100 2403 100
+#2403
+tar baby tarbaby~
+the Tarbaby~
+The Tarbaby is here, whining loudly.
+~
+The TarBaby looks like the annoying, sniveling, whining brat that he is.
+He is here to do nothing but slow you down.
+~
+cdghmo dhk -700 X
+15 14 2 8d8+150
+0 11000
+8 8 1 14 1 2
+T 20 1d5+0 22
+E 16 100 2404 100

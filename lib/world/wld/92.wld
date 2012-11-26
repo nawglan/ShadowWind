@@ -1,0 +1,1829 @@
+#9200
+The Grassland~
+   You are at the southern extreme of the large grassland where the settlers
+graze their animals. Patches of the grass have been cut short by the teeth
+of the animals and some has been trampled beneath their feet. The remainder
+grows high and can obscure vision for shorter adventurers. A log wall blocks
+passage south.  
+~
+92 0 2
+D0
+~
+~
+0 0 9211 0
+D3
+~
+~
+0 0 9201 0
+S
+#9201
+The Grassland~
+   This is the southern edge of the field of grass. The grass is very high
+and sways in the breeze and really limits your vision. To the south the lake
+shore begins and there is a beach. Areas of the grass have been flattened by
+footfalls, feeding, or sleeping, and other evidence of animals both large
+and small is visible.  
+~
+92 0 2
+D0
+~
+~
+0 0 9212 0
+D1
+~
+~
+0 0 9200 0
+D3
+~
+~
+0 0 9202 0
+S
+#9202
+The Grassland~
+   This is the southern edge of the grassland. Travel to the south is
+blocked by the walls of the settlers fort. The grass here is tall and rises
+up to keep you from seeing very far into the distance. All you can see is
+that there is a cart path to the north and east of you and more grass to the
+west.  
+~
+92 0 2
+D0
+~
+~
+0 0 9213 0
+D1
+~
+~
+0 0 9201 0
+D3
+~
+~
+0 0 9203 0
+S
+#9203
+The Grassland~
+   Small runways, used by rabbits, cross this field of grass. They are too
+small for you to follow and don't really lead anywhere interesting but they
+do indicate that rabbits can be found in abundance here. This is the
+southern edge of the grassland, you can see the corn fields to the south and
+the outer wall of the fort to the southeast.  
+~
+92 0 2
+D0
+~
+~
+0 0 9214 0
+D1
+~
+~
+0 0 9202 0
+D3
+~
+~
+0 0 9204 0
+S
+#9204
+The Grassland~
+   Here along the southern edge of the grassland the grass thins a little
+and you can see the corn field that lies to the south. There are patches of
+grass that have been flattened, some by hooves and some by teeth. There are
+also some patches that look as though some beast might have slept in them.
+The tall grass keeps your sight localized and all you can see in the other
+directions is more of it.  
+~
+92 0 2
+D0
+~
+~
+0 0 9215 0
+D1
+~
+~
+0 0 9203 0
+D3
+~
+~
+0 0 9205 0
+S
+#9205
+The Grassland~
+   You can see animal trails all over the place that cut through the tall
+grasses here. Some of the trails are smallish for mice and some are even
+smaller for things like voles. Rabbit-sized trails and cow- sized ones are
+visible also. This is all you can see though as the tall grass prevents you
+from seeing very far in any direction. You can spot the top of a rock pile
+in the northwest.  
+~
+92 0 2
+D0
+~
+~
+0 0 9216 0
+D1
+~
+~
+0 0 9204 0
+D3
+~
+~
+0 0 9206 0
+S
+#9206
+The Grassland~
+   This is a narrow strip of grassland that lies between a rock pile to the
+north and the corn field to the south. The grass still grows tall and
+straight like it does everywhere else and animal trails run back and forth
+through the tall stalks. There is more grass east and west.  
+~
+92 0 2
+D0
+~
+~
+0 0 9219 0
+D1
+~
+~
+0 0 9205 0
+D3
+~
+~
+0 0 9207 0
+S
+#9207
+The Grassland~
+   The southern edge of the grassland gives way to a field of corn. The
+green and gold grasses rise high in the air and blocks the horizon from
+view. The only thing you can see is more grass all around you and a rockpile
+in the northeast.  
+~
+92 0 2
+D0
+~
+~
+0 0 9230 0
+D1
+~
+~
+0 0 9206 0
+D3
+~
+~
+0 0 9208 0
+S
+#9208
+The Grassland~
+   This is the grazing area for the livestock the serve the outpost. Tall
+green and gold grass is the main food, the stalks grow very tall and block
+the horizon from view. This is the southern edge of the field, farmland
+starts to the south.  
+~
+92 0 2
+D0
+~
+~
+0 0 9231 0
+D1
+~
+~
+0 0 9207 0
+D3
+~
+~
+0 0 9209 0
+S
+#9209
+The Grassland~
+   This is the southern edge of the grazing lands for the outpost livestock.
+Tall stalks of green and gold grass rise towards the sky and block the
+horizon from view. Only tall things, like the hardwood forest in the west are
+visible. The grass gives way to a field of corn to the south.  
+~
+92 0 2
+D0
+~
+~
+0 0 9232 0
+D1
+~
+~
+0 0 9208 0
+D3
+~
+~
+0 0 9210 0
+S
+#9210
+The Grasslands~
+   This grassland ends here where the forest and corn fields begin. Due west
+you see a forest composed of hardwoods and to the south a large field of
+corn grows. The tall green and gold grass extends to the east and north.  
+~
+92 0 2
+D0
+~
+~
+0 0 9233 0
+D1
+~
+~
+0 0 9209 0
+D2
+~
+~
+0 0 9210 0
+S
+#9211
+The Grassland~
+   You are in the midst of a large rolling field of tall grass. Here and
+there patches have been trampled by animals or eaten by them. You can spot
+places where large beasts have spent the night and spoor is everywhere. 
+There is more grass to the north, south and west. The towering walls of
+Wiervane can be seen to the east across the tops of the grass plants.  
+~
+92 0 2
+D0
+~
+~
+0 0 9234 0
+D2
+~
+~
+0 0 9200 0
+D3
+~
+~
+0 0 9212 0
+S
+#9212
+The Grassland~
+   The tall green and golden grass rises above your head and makes it
+difficult to determine which way you are heading. Here and there in the
+field you find flattened patches that have been left by grazing or sleeping
+animals. The vista of green and yellow continues in every direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9235 0
+D1
+~
+~
+0 0 9211 0
+D2
+~
+~
+0 0 9201 0
+D3
+~
+~
+0 0 9213 0
+S
+#9213
+The grassland~
+   The endless plain of grass is unbroken in every direction. Here, the
+grass has been trampled flat in some places and eaten down in others. The
+remainder grows tall and strong and gently sways in the breeze. It is
+difficult to see far in any direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9236 0
+D1
+~
+~
+0 0 9212 0
+D2
+~
+~
+0 0 9202 0
+D3
+~
+~
+0 0 9214 0
+S
+#9214
+The Grassland~
+   The grass here at the edge of the field is a little less thick and a
+little less tall than it is elsewhere. Small animal paths cross this area
+all over and one large one runs from east to west. There is more grass on
+every side of you.  
+~
+92 0 2
+D0
+~
+~
+0 0 9237 0
+D1
+~
+~
+0 0 9213 0
+D2
+~
+~
+0 0 9203 0
+D3
+~
+~
+0 0 9215 0
+S
+#9215
+The Grasslands~
+   The grass here grows tall and straight. Some wizard must have modified
+the normal grass that lives here, since you've never seen grass that grew
+this quickly or this high. The special grass enables the inhabitants of the
+outpost to feed their livestock on a smaller field than would normally be
+required. There is more of this field all around and you can see a rockpile
+off to the west in the distance.  
+~
+92 0 2
+D0
+~
+~
+0 0 9238 0
+D1
+~
+~
+0 0 9214 0
+D2
+~
+~
+0 0 9204 0
+D3
+~
+~
+0 0 9216 0
+S
+#9216
+The Grassland~
+   The grass here is very tall and covers the horizon from view. The green
+and gold stalks can be bent easily and there are a bunch of animal paths
+running through the area as a result. There is one path leading from east to
+west towards a pile of rocks in the west. There is nothing in any other
+direction except grass.  
+~
+92 0 2
+D0
+~
+~
+0 0 9239 0
+D1
+~
+~
+0 0 9215 0
+D2
+~
+~
+0 0 9205 0
+D3
+~
+~
+0 0 9217 0
+S
+#9217
+On the Rockpile~
+   You are climbing up the eastern face of a pile of rocks. At this point
+you are just about at the height of the grass plants that lies to the east
+and so you can see a little ways over them. There is a cart path in the
+distance that way. There are more rocks to climb on north and south and you
+can reach to the top of the rockpile by going up.  
+~
+92 0 4
+D0
+~
+~
+0 0 9224 0
+D1
+~
+~
+0 0 9216 0
+D2
+~
+~
+0 0 9218 0
+D4
+~
+~
+0 0 9225 0
+S
+#9218
+On the Rockpile~
+   The rock pile slopes gently up from the grasslands that lie east and
+south of you. While you are not that high, you can see a little ways over
+the plants. There in the southeast you see the outpost and the cart path
+that leads to it. You can work your way around the rockpile to the north and
+west, and climb it upwards.  
+~
+92 0 4
+D0
+~
+~
+0 0 9217 0
+D1
+~
+~
+0 0 9216 0
+D2
+~
+~
+0 0 9206 0
+D3
+~
+~
+0 0 9219 0
+D4
+~
+~
+0 0 9225 0
+S
+#9219
+On the Rockpile~
+   Being a little ways up on the rock pile allows you to see south into the
+distance. Too bad there is nothing to see but a little grass and a lot of
+corn. The rocks are a little loose and you must move carefully. You can
+skirt along the lower portion of the rock pile going east and west or climb
+it by going up. The grassy plain lies south of you.  
+~
+92 0 4
+D1
+~
+~
+0 0 9218 0
+D2
+~
+~
+0 0 9206 0
+D3
+~
+~
+0 0 9220 0
+D4
+~
+~
+0 0 9225 0
+S
+#9220
+On the Rockpile~
+   The rockpile is a roughly circular mound of rocks with a single peak and
+a broad base. You are midway up the pile here at about the the height of the
+tall grass plants that lie west and south. You can see a little ways in both
+directions but there is nothing more than grass and a little corn in the
+south. The rockpile continues north, east and upwards.  
+~
+92 0 4
+D0
+~
+~
+0 0 9221 0
+D1
+~
+~
+0 0 9219 0
+D2
+~
+~
+0 0 9206 0
+D4
+~
+~
+0 0 9925 0
+S
+#9221
+On the Rockpile~
+   This is the western face of the rock pile. From here you can see more of
+the tall grass plants than in possible when you are down among them. There
+is nothing more to see to the west than many more grass plants. The rock
+pile can be moved around upon both north and south and you can climb higher
+onto it by going up.  
+~
+92 0 4
+D0
+~
+~
+0 0 9222 0
+D2
+~
+~
+0 0 9220 0
+D3
+~
+~
+0 0 9230 0
+D4
+~
+~
+0 0 9925 0
+S
+#9222
+On the Rockpile~
+   You are partway up a pile of rocks. From here you can see a little
+farther over the grass that lies north and west of you. You spot some apple
+trees in the northwest just barely in view. The rocks here are not the most
+stable and it takes some effort to go from place to place. You can circle
+the pile going east and south or climb up to the top.  
+~
+92 0 0
+D1
+~
+~
+0 0 9223 0
+D2
+~
+~
+0 0 9221 0
+D4
+~
+~
+0 0 9225 0
+S
+#9223
+On the Rockpile~
+   At this level of the rockpile you are not quite over the tops of the
+grass plants that lie to the north but you can see a little farther to the
+north than you could while in the grass. Unfortunately there really is
+nothing more to see. You can skirt around the rockpile by going east and
+west, go down to the grasslands in the north, or climb up higher on the rock
+pile.  
+~
+92 0 4
+D0
+~
+~
+0 0 9240 0
+D1
+~
+~
+0 0 9224 0
+D3
+~
+~
+0 0 9222 0
+D4
+~
+~
+0 0 9225 0
+S
+#9224
+On the Rockpile~
+   This level of the rock pile is almost over the the tops of the tall grass
+plants that lie north and east. You can see a cart path in the distance to
+the northeast. The rocks are a little loose and you have to pick your way
+carefully as you move over them. There are more rocks west and south of you
+and you can climb up to the top also.  
+~
+92 0 4
+D1
+~
+~
+0 0 9216 0
+D2
+~
+~
+0 0 9217 0
+D3
+~
+~
+0 0 9223 0
+D4
+~
+~
+0 0 9225 0
+S
+#9225
+Atop the Rockpile~
+   You are on the top of a moderately sized pile of rocks. Up here you can
+see for quite a distance because you are higher than the surrounding grass.
+You can see the hardwoods forest to the west and the little apple orchard in
+the northwest.. There is another small copse of trees far to the northwest
+The south is full of corn. Some of the rocks here are loose and you can
+dislodge them.  
+~
+92 0 5
+D0
+~
+~
+0 0 9223 0
+D1
+~
+~
+0 0 9217 0
+D2
+~
+~
+0 0 9219 0
+D3
+~
+~
+0 0 9221 0
+D5
+Loose rocks.
+~
+rock rocks~
+1 0 9226 0
+S
+#9226
+Small Corridor~
+   This is a small corridor running down in to the rock pile. The walls are
+made of oddly shaped rocks and the tunnel is not regular. Its hard to tell
+whether this tunnel exists by chance or was planned during the assembly of
+this pile. You can go up and out of the rock pile or travel deeper into it.
+ 
+~
+92 a 0
+D4
+~
+~
+0 0 9225 0
+D5
+~
+~
+0 0 9227 0
+S
+#9227
+Foyer~
+   This small room is at the bottom of the small corridor. It is a little
+wider and serves as a collection point for anything that might get int this
+far. The walls here look sturdy and well-formed from flat stones. The
+corridor leads up and out of here and there are two small rooms off to the
+north and east.  
+~
+92 0 0
+D0
+~
+~
+0 0 9228 0
+D1
+~
+~
+0 0 9229 0
+D4
+~
+~
+0 0 9226 0
+S
+#9228
+Burial Chamber~
+   This chamber served as the burial site for important members of the
+community that lived here ages ago. The broken and scattered pieces of
+pottery come from different time periods and the remains that are strewn
+about are clearly from at least 10 persons. At one time it looks like the
+bones we re all piled neatly in one corner and associated artifacts were
+neatly places along the walls. Now its just a mess.  
+~
+92 0 0
+D2
+~
+~
+0 0 9227 0
+S
+#9229
+Burial Vault~
+   This burial vault was reserved for the most important member of the
+community. By the look of the furnishings, this person was buried a long
+time ago. Possibly before the age of the Empire even. There are paintings on
+the walls that have faded with time so most of the colors are varieties of
+brown. Bit of smashed pottery lie strewn about, victims of grave robbers
+searching for gold. There is a flat black stone in the center of the room.
+ 
+~
+92 0 0
+D3
+~
+~
+0 0 9227 0
+S
+#9230
+The Grassland~
+   The tall grass rises up straight and high to block a large fraction of
+the sky from your view. From within your little cuccoon of green and gold
+you are left to wonder if your sense of direction is still working properly.
+There is a pile of rocks to the east, a small path leads to it from the west
+and nothing but grass everywhere else.  
+~
+92 0 0
+D0
+~
+~
+0 0 9241 0
+D1
+~
+~
+0 0 9221 0
+D2
+~
+~
+0 0 9207 0
+D3
+~
+~
+0 0 9231 0
+S
+#9231
+The Grassland~
+   There is a lot to see from this point in the grassland which is unusual.
+Normally the tall grass hides everything from view, but here you can see
+apple trees to the north, a large house on a hill to the southwest, and a
+pile of rocks to the east. The grass here is criss-crossed with animal
+trails, one large one leads north and east.  
+~
+92 0 0
+D0
+~
+~
+0 0 9242 0
+D1
+~
+~
+0 0 9230 0
+D2
+~
+~
+0 0 9208 0
+D3
+~
+~
+0 0 9232 0
+S
+#9232
+The Grassland~
+   You are standing atop a small rise which barely swells above the tops of
+the waving grass. The field continues in every direction, except for north
+where there are some aple trees.  
+~
+92 0 0
+D0
+~
+~
+0 0 9243 0
+D1
+~
+~
+0 0 9231 0
+D2
+~
+~
+0 0 9209 0
+D3
+~
+~
+0 0 9233 0
+S
+#9233
+The Grassland~
+   This is the western edge of the grassland. The grass has had little luck
+encroaching on the territory of the large hardwoods to the west. North of
+here you see a small copse of apple trees that look cultivated. When the
+grass is blown just right you can see strange forms conjoured out of the
+bare stalks.  
+~
+92 0 0
+D0
+~
+~
+0 0 9244 0
+D1
+~
+~
+0 0 9232 0
+D2
+~
+~
+0 0 9210 0
+S
+#9234
+The Grassland~
+   The grass here is tall and healthy. So tall, in fact, that it is
+difficult for you to see very far in any single direction. Evidence abounds
+that leads you to believe that there are plenty of small rodents living in
+this field and the trampled patches of grass indicate that larger beasts
+frequent this area also. A massive wall of closely fitted stones rises to
+the east and there is nothing but more grass in every other direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9245 0
+D2
+~
+~
+0 0 9211 0
+D3
+~
+~
+0 0 9235 0
+S
+#9235
+The Grassland~
+   You are in the middle of a large field of grass. The tall grass sways in
+the breeze and prevents you from seeing very far. There are trampled
+sections of grass and parts that look eaten. The grass runs as far as you
+can see in any direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9246 0
+D1
+~
+~
+0 0 9234 0
+D2
+~
+~
+0 0 9212 0
+D3
+~
+~
+0 0 9236 0
+S
+#9236
+The Grassland~
+   This is the edge of a large field of grass. It is very difficult ot see
+very far into the green and gold stalks. The height of these plants is such
+that you cannot see anything in the distance except the sky. There is
+grassland everywhere.  
+~
+92 0 2
+D0
+~
+~
+0 0 9247 0
+D1
+~
+~
+0 0 9235 0
+D2
+~
+~
+0 0 9213 0
+D3
+~
+~
+0 0 9237 0
+S
+#9237
+The Grassland~
+   The grass here is not as thick as it is to the west and south. The grass
+that is here is very tall and sways lightly in the breeze. The green and
+gold stalks can be moved through with relative ease.  
+~
+92 0 2
+D0
+~
+~
+0 0 9248 0
+D1
+~
+~
+0 0 9236 0
+D2
+~
+~
+0 0 9214 0
+D3
+~
+~
+0 0 9238 0
+S
+#9238
+The Grassland~
+   The grass here grows thickly even as it tries to reach the sky. It is
+possible that this grass was created by some wizard in order to provide lots
+of food for the animals that graze here. Certainly it is hard to believe
+that grass this high is natural. It is hard to see anything since the grass
+is taller than you. There is nothing you can see in any direction except
+more of the same.  
+~
+92 0 4
+D0
+~
+~
+0 0 9249 0
+D1
+~
+~
+0 0 9237 0
+D2
+~
+~
+0 0 9215 0
+D3
+~
+~
+0 0 9239 0
+S
+#9239
+The Grassland~
+   The grass here is tall and thick. Gold and green stalks rise up and
+obscure part of the sky. If you got lost in here it might be tough to find a
+way out. There is plenty of animal sign so if you did get lost it looks like
+you would not starve at least. Nothing but grass all around you except for a
+pile of rocks in the southwest.  
+~
+92 0 4
+D0
+~
+~
+0 0 9250 0
+D1
+~
+~
+0 0 9238 0
+D2
+~
+~
+0 0 9216 0
+D3
+~
+~
+0 0 9240 0
+S
+#9240
+The Grassland~
+   You are in the middle of a large field of grass. The tall green and gold
+stalks rise up and hide to horizon from your eyes. Numerous animal paths cut
+through the field but don't seem to go anywhere. There is more of the same
+every way except south where a large pile of rocks rises up.  
+~
+92 0 4
+D0
+~
+~
+0 0 9251 0
+D1
+~
+~
+0 0 9239 0
+D2
+~
+~
+0 0 9223 0
+D3
+~
+~
+0 0 9241 0
+S
+#9241
+The Grassland~
+   You are in among the tall grasses that the inhabitants grow to feed their
+livestock. The green and gold stalks reach for the sky and hide a large
+fraction of it from your view. You can see some apple trees to the west of
+you and there is a pile of rocks in the southeast.  
+~
+92 0 4
+D0
+~
+~
+0 0 9252 0
+D1
+~
+~
+0 0 9240 0
+D2
+~
+~
+0 0 9230 0
+D3
+~
+~
+0 0 9242 0
+S
+#9242
+Apple Orchard~
+   You are on the edge of a small orchard maintained by the outpost
+inhabitants. Two types of apples grow here to help feed the people that live
+nearby. The orchard is bordered by the tall green and gold stalks of the
+grassland on the east and south sides at this point.  
+~
+92 0 3
+D0
+~
+~
+0 0 9253 0
+D1
+~
+~
+0 0 9241 0
+D2
+~
+~
+0 0 9231 0
+D3
+~
+~
+0 0 9243 0
+S
+#9243
+Apple Orchard~
+   You are on the edge of a small orchard. Two distinct types of apple trees
+are growing here. During the fruiting season, the residents of the outpost
+can harvest fresh apples to supplement their diet. The trees exist on every
+side except south where you see the tall green and gold grass the the
+livestock feeds on.  
+~
+92 0 3
+D0
+~
+~
+0 0 9254 0
+D1
+~
+~
+0 0 9242 0
+D2
+~
+~
+0 0 9232 0
+D3
+~
+~
+0 0 9244 0
+S
+#9244
+Apple Orchard~
+   This is the western edge of the apple orchard where it comes up against
+the hardwood forest. The townspeople most likely didn't have the energy to
+remove the trees to the west to plant more apples. There is grassland to the
+south and more apples north and east.  
+~
+92 0 3
+D0
+~
+~
+0 0 9255 0
+D1
+~
+~
+0 0 9243 0
+D2
+~
+~
+0 0 9233 0
+S
+#9245
+The Grassland~
+   The grass here is very tall and obscures the horizon from your view. 
+Small areas have been flattened where animals have slept or passed by. 
+There are signs that large animals have been by here and eaten some of the
+grass. A tall stone wall runs north and south just east of here and there is
+more grass in every other direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9256 0
+D2
+~
+~
+0 0 9234 0
+D3
+~
+~
+0 0 9246 0
+S
+#9246
+The Grassland~
+   This field of grass provides plenty of fodder for the animals that serve
+the outpost. Grass has been trampled in every direction as the beasts made
+they was from point to point. A cart path cuts through the field to the west
+and grass lies in every other direction. A mouse is scurrying through the
+weeds.  
+~
+92 0 2
+D0
+~
+~
+0 0 9257 0
+D1
+~
+~
+0 0 9245 0
+D2
+~
+~
+0 0 9235 0
+D3
+~
+~
+0 0 9247 0
+S
+#9247
+The Cart Path~
+   You are standing on a cart path, which continues to the south and west.
+North and east of here you see grassland that is used for grazing.  
+~
+92 0 2
+D0
+~
+~
+0 0 9258 0
+D1
+~
+~
+0 0 9246 0
+D2
+~
+~
+0 0 9236 0
+D3
+~
+~
+0 0 9248 0
+S
+#9248
+The Cart Path~
+   You are standing on a cart path, which continues to the north and east.
+South and West of here you see grassland that is used for grazing.  
+~
+92 0 2
+D0
+~
+~
+0 0 9259 0
+D1
+~
+~
+0 0 9247 0
+D2
+~
+~
+0 0 9237 0
+D3
+~
+~
+0 0 9249 0
+S
+#9249
+The Grasslands~
+   The grass is a little thinner here along the cart path than south of you.
+It is the same green and gold stalks that reach over your head though. 
+There are places where the grass has been variously trampled, eaten, or
+slept on. In this area there seems to be a bit of a trail running east and
+west dug into the grass by various animal traffic. The cart path lies north
+of you.  
+~
+92 0 2
+D0
+~
+~
+0 0 9260 0
+D1
+~
+~
+0 0 9248 0
+D2
+~
+~
+0 0 9238 0
+D3
+~
+~
+0 0 9250 0
+S
+#9250
+The Grassland~
+   These tall stalks of green and golden grass rise up higher than you. 
+This makes it very hard to see anything in the distance. In fact, its very
+hard to see anything more than a few feet in front of your face. There is a
+broken animal path that leads generally east to west through here. Nothing
+to see but grass in every direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9261 0
+D1
+~
+~
+0 0 9249 0
+D2
+~
+~
+0 0 9239 0
+D3
+~
+~
+0 0 9251 0
+S
+#9251
+The Grasslands~
+   There is not much to see here except for the tall stalks of green and
+gold grass that sway in the breeze. Thanks to the movement you can sometimes
+catch a glimpse of a pile of rocks to the south in the distance. Animal
+trails run all over the place and a rather large one runs north and east
+from here.  
+~
+92 0 2
+D0
+~
+~
+0 0 9262 0
+D1
+~
+~
+0 0 9250 0
+D2
+~
+~
+0 0 9240 0
+D3
+~
+~
+0 0 9252 0
+S
+#9252
+The Grasslands~
+   The tall green and gold grass plants conspire to block your view of the
+horizon. Good thing the apple trees to the west are tall enough for you to
+see over the grass. Trying to look level through the stalks is a waste of
+time unless something has passed through recently and flattened the plants.
+There is grass all around you.  
+~
+92 0 2
+D0
+~
+~
+0 0 9263 0
+D1
+~
+~
+0 0 9251 0
+D2
+~
+~
+0 0 9241 0
+D3
+~
+~
+0 0 9253 0
+S
+#9253
+Apple Orchard~
+   This is the eastern edge of the small orchard that serves the outpost. 
+It is here that the residents can acquire some variety in their diets during
+the late summer and fall months. There seem to be two different types of
+trees and more of them to the west and south. The grasslands lie to the east
+and north.  
+~
+92 0 3
+D0
+~
+~
+0 0 9264 0
+D1
+~
+~
+0 0 9252 0
+D2
+~
+~
+0 0 9242 0
+D3
+~
+~
+0 0 9254 0
+S
+#9254
+Apple Orchard~
+   There are two types of apples trees growing here. It is clear by the
+number and spacing of the trees that this is an artificial stand and here
+for the use of the residents of the outpost. The orchard lies all around you
+except for north where the grassland lies.  
+~
+92 0 3
+D0
+~
+~
+0 0 9265 0
+D1
+~
+~
+0 0 9253 0
+D2
+~
+~
+0 0 9243 0
+D3
+~
+~
+0 0 9255 0
+S
+#9255
+Apple Orchard~
+   This is a small orchard where the inhabitants of the outpost can get
+fresh apples in the late summer and fall months. Earlier in the year you can
+get apples but they won't be good for you. The trees seem to be of two
+different types. There is grassland to the north and hardwood forest to the
+the west.  
+~
+92 0 3
+D0
+~
+~
+0 0 9266 0
+D1
+~
+~
+0 0 9254 0
+D2
+~
+~
+0 0 9244 0
+S
+#9256
+Outside The Great Western Gates Of Weirvane~
+   Lush meadows of rich dark soil and luxuriant grass cover the expanse that
+you see before you. Every do often, the bobbing of a pale straw hat provides
+evidence that a farmer is out working his fields or a herder is tending his
+flock. Looking into the distance a dark forest shrouds the feet of a massive
+natural barrier of grey stone. The mountains cast coldness upon everything
+that lies within their shadow. A road, little more than ruts in the fields
+and grass heads west.  
+~
+92 c 2
+D0
+~
+~
+0 0 9267 0
+D1
+~
+~
+0 0 3053 0
+D2
+~
+~
+0 0 9245 0
+D3
+~
+~
+0 0 9257 0
+S
+#9257
+On the Cart Road~
+   You are standing on a cart path. Wiervane lies south in the distance and
+the path continues west on toward who-knows-what. North and South of here
+you see grassland that is used for grazing.  
+~
+92 0 0
+D0
+~
+~
+0 0 9268 0
+D1
+~
+~
+0 0 9256 0
+D2
+~
+~
+0 0 9246 0
+D3
+~
+~
+0 0 9258 0
+S
+#9258
+On the Cart Road~
+   You are standing on a cart path which continues to the east and west. 
+North and south of here you see lakes of grass set apart for animal grazing.
+ 
+~
+92 0 2
+D0
+~
+~
+0 0 9269 0
+D1
+~
+~
+0 0 9257 0
+D2
+~
+~
+0 0 9247 0
+D3
+~
+~
+0 0 9259 0
+S
+#9259
+On the Cart Road~
+   The grassland continues in every direction. The tall grass waves gently
+and hypnotically in the breeze. Ruts stretch off to the east and west.  
+~
+92 0 2
+D0
+~
+~
+0 0 9270 0
+D1
+~
+~
+0 0 9258 0
+D2
+~
+~
+0 0 9248 0
+D3
+~
+~
+0 0 9260 0
+S
+#9260
+On the Cart Road~
+   An unfinished room You are standing on a narrow cart path which continues
+east and west. North and south of here you see grasslands set apart for
+grazing. These rich lands support the majority of Wiervane's agricultural
+demands.  
+~
+92 0 2
+D0
+~
+~
+0 0 9271 0
+D1
+~
+~
+0 0 9259 0
+D2
+~
+~
+0 0 9249 0
+D3
+~
+~
+0 0 9261 0
+S
+#9261
+On the Cart Road~
+   You are in the middle of a two-rut cart path. The path has seen little
+use of late and is beginning to get overgrown with grass. The ruts continue
+to the north and east of here. Fields of grass lie to the west and south. 
+~
+92 0 2
+D0
+~
+~
+0 0 9272 0
+D1
+~
+~
+0 0 9260 0
+D2
+~
+~
+0 0 9250 0
+D3
+~
+~
+0 0 9262 0
+S
+#9262
+The Grassland~
+   The tall green and golden grass rises above your head and makes it
+difficult to determine which way you are heading. Here and there in the
+field you find flattened patches that have been left by grazing or sleeping
+animals. The vista of green and yellow continues in every direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9273 0
+D1
+~
+~
+0 0 9261 0
+D2
+~
+~
+0 0 9251 0
+D3
+~
+~
+0 0 9263 0
+S
+#9263
+The Grassland~
+   This plain of green and gold grasses isolates you from the neighboring
+world quite adequately. The height of the stalks prevents you from seeing
+anything but the sky overhead and the density of plants keeps you from
+seeing anything very far away. About all you can say is that the field
+continues in all directions as far as you can see.  
+~
+92 0 0
+D0
+~
+~
+0 0 9274 0
+D1
+~
+~
+0 0 9262 0
+D2
+~
+~
+0 0 9252 0
+D3
+~
+~
+0 0 9264 0
+S
+#9264
+The Grassland~
+   Tall green and gold stalks of grass wave slightly in the breeze. These
+moving fronds give the impression that you are looking into a vast sea. The
+density of the plants makes it difficult to see for very far in any
+direction but the animal trails that cross here can be used to move rapidly
+through the grass. The same vista greets you on all sides, except to the
+south where you see some apple trees.  
+~
+92 0 2
+D0
+~
+~
+0 0 9275 0
+D1
+~
+~
+0 0 9263 0
+D2
+~
+~
+0 0 9253 0
+D3
+~
+~
+0 0 9265 0
+S
+#9265
+The Grassland~
+   The grass here is higher than an elephant's eye and that makes it very
+hard to see into the distance. In places where the animals have not trampled
+or eaten the grass, it is difficult to see more than a few feet in front of
+you. The same vista greets you on all sides and you can see some apple trees
+to the south.  
+~
+92 0 2
+D0
+~
+~
+0 0 9276 0
+D1
+~
+~
+0 0 9264 0
+D2
+~
+~
+0 0 9254 0
+D3
+~
+~
+0 0 9266 0
+S
+#9266
+The Grassland~
+   The dominance of the tall green and gold grass is broken to the south
+where an apple orchard grows. You can also see a hardwood forest off to the
+distance in the west. Here, though, you are stuck with tall grass stalks
+that make it hard for you to find you path and tend to scramble your sense
+of direction.  
+~
+92 0 2
+D0
+~
+~
+0 0 9277 0
+D1
+~
+~
+0 0 9265 0
+D2
+~
+~
+0 0 9255 0
+S
+#9267
+The Grassland~
+   This is the eastern extent of the tall field of grass. The massive wall
+of Wiervane prevents travel to the east. The grass here is very tall and if
+it were not for the efforts of a few dedicated stock animals from the
+city it would be higher yet. Places have been variously trampled, eaten,
+or slept on. These activities have limited the height of the grass but it
+still obscures any views in the distance.  
+~
+92 0 0
+D2
+~
+~
+0 0 9256 0
+D3
+~
+~
+0 0 9268 0
+S
+#9268
+The Grassland~
+   You are standing in a field of grass that goes on and on. Some of the
+grass has been cut short as though by grazing animals. There are mice and
+voles and rabbits scampering about in this field. There are signs that
+bigger animals have passed this way. It looks at though the taller grass may
+confuse the unwary traveler and cause him/her to get lost. You can see grass
+in the every direction.  
+~
+92 0 2
+D1
+~
+~
+0 0 9267 0
+D2
+~
+~
+0 0 9257 0
+D3
+~
+~
+0 0 9269 0
+S
+#9269
+The Grassland~
+   The grass here is very tall and quite fragile. The beasts that serve as
+food for the city graze here and get fat. You can see trails they leave as
+they wander along in the field. The horizon is hidden from view by the tall
+green and gold stalks so it is difficult to keep or regain your bearings. 
+
+~
+92 0 2
+D1
+~
+~
+0 0 9268 0
+D2
+~
+~
+0 0 9258 0
+D3
+~
+~
+0 0 9270 0
+S
+#9270
+The Grassland~
+   You are in a large field of grass. The grass is unusual in that it grows
+very quickly and reaches a height of over 6 feet and yet the green and gold
+stalks are still tender and make good fodder for the stock that service the
+outpost. Animal trails lead back and forth through the grass and you can see
+nothing else in any direction.  
+~
+92 0 2
+D1
+~
+~
+0 0 9269 0
+D2
+~
+~
+0 0 9259 0
+D3
+~
+~
+0 0 9271 0
+S
+#9271
+The Grassland~
+   This is the edge of the grassy field. Tall stalks of grass rise over your
+head and obscure the horizon. The field has been flattened in places by the
+footfalls of stock and where they have slept. The grass continues in every
+direction except west where you can see a narrow cart path.  
+~
+92 0 2
+D1
+~
+~
+0 0 9270 0
+D2
+~
+~
+0 0 9260 0
+D3
+~
+~
+0 0 9272 0
+S
+#9272
+On the Cart Path~
+   You are standing on a cart path which continues to the south and west. 
+In every other direction waves of grass meet your eye spotted by grazing
+herds.  
+~
+92 0 2
+D1
+~
+~
+0 0 9271 0
+D2
+~
+~
+0 0 9261 0
+D3
+~
+~
+0 0 9273 0
+S
+#9273
+On the Cart Path~
+   A trail of dirt and broken grass crosses the path, brought by the feet of
+one wandering herd or another. The path continues to the east and to the
+west.  
+~
+92 0 2
+D1
+~
+~
+0 0 9272 0
+D2
+~
+~
+0 0 9262 0
+D3
+~
+~
+0 0 9274 0
+S
+#9274
+On The Cart Path~
+   A faint green smudge topped by jagged peaks mars the western horizon. 
+The cart path continues to the east and to the west.  
+~
+92 0 2
+D1
+~
+~
+0 0 9273 0
+D2
+~
+~
+0 0 9263 0
+D3
+~
+~
+0 0 9275 0
+S
+#9275
+An unfinished room~
+An unfinished room
+~
+92 0 2
+D1
+~
+~
+0 0 9274 0
+D2
+~
+~
+0 0 9264 0
+D3
+~
+~
+0 0 9276 0
+S
+#9276
+An unfinished room~
+An unfinished room
+~
+92 0 2
+D1
+~
+~
+0 0 9275 0
+D2
+~
+~
+0 0 9265 0
+D3
+~
+~
+0 0 9277 0
+S
+#9277
+An unfinished room~
+An unfinished room
+~
+92 0 2
+D1
+~
+~
+0 0 9276 0
+D2
+~
+~
+0 0 9266 0
+S
+$~

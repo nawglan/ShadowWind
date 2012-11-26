@@ -1,0 +1,1927 @@
+#1402
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. South would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D2
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1499 0
+D4
+~
+~
+0 0 1403 0
+D5
+~
+~
+0 0 4817 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1403
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever 
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. East would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D1
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1499 0
+D4
+Up the stairs.
+~
+~
+0 -1 1404 0
+D5
+~
+~
+0 0 1402 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1404
+Stairs Under A Large Platform~
+   You are on the stairs carved into one of the largest trees you have ever 
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up onto a huge wooden platform or down the stairs. North 
+would plunge you to a rather spectacular death on the forest floor below.
+~
+14 0 1
+D0
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1499 0
+D4
+You are underneath the northwest corner of what looks like a huge
+platform.
+~
+~
+0 -1 1421 0
+D5
+Down the stairs.
+~
+~
+0 -1 1403 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+E
+platform wooden wood~
+You are looking at the underside of a large area. If you go up the stairs, 
+you will be able to walk on it.
+~
+S
+#1405
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever 
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. North would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D0
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1499 0
+D4
+Up the stairs.
+~
+~
+0 -1 1406 0
+D5
+~
+~
+0 0 4831 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1406
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. West would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D3
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1499 0
+D4
+Up the stairs.
+~
+~
+0 -1 1407 0
+D5
+Down the stairs.
+~
+~
+0 -1 1405 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1407
+Stairs Under A Large Platform~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up onto a huge wooden platform or down the stairs. South
+would plunge you to a rather spectacular death on the forest floor below.
+~
+14 0 1
+D2
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1499 0
+D4
+You are underneath the northwest corner of what looks like a huge
+platform.
+~
+~
+0 -1 1423 0
+D5
+Down the stairs.
+~
+~
+0 -1 1406 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+E
+platform wooden wood~
+You are looking at the underside of a large area. If you go up the stairs,
+you will be able to walk on it.
+~
+S
+#1408
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. South would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D2
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1498 0
+D4
+Up the stairs.
+~
+~
+0 -1 1409 0
+D5
+~
+~
+0 0 14335 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1409
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. East would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D1
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1498 0
+D4
+Up the stairs.
+~
+~
+0 -1 1410 0
+D5
+Down the stairs.
+~
+~
+0 -1 1408 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1410
+Stairs Under A Large Platform~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up onto a huge wooden platform or down the stairs. North
+would plunge you to a rather spectacular death on the forest floor below.
+~
+14 0 1
+D0
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1498 0
+D4
+You are underneath the northwest corner of what looks like a huge
+platform.
+~
+~
+0 -1 1441 0
+D5
+Down the stairs.
+~
+~
+0 -1 1409 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+E
+platform wooden wood~
+You are looking at the underside of a large area. If you go up the stairs,
+you will be able to walk on it.
+~
+S
+#1411
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. North would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D0
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1498 0
+D4
+Up the stairs.
+~
+~
+0 -1 1412 0
+D5
+~
+~
+0 0 4828 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1412
+Stairs On A Humongous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. West would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D3
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1498 0
+D4
+Up the stairs.
+~
+~
+0 -1 1413 0
+D5
+Down the stairs.
+~
+~
+0 -1 1411 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+S
+#1413
+Stairs Under A Large Platform~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up onto a huge wooden platform or down the stairs. South
+would plunge you to a rather spectacular death on the forest floor below.
+~
+14 0 1
+D2
+Looking down, over the edge of the stairway, gives you a rather queasy
+feeling in your stomach. You had better stay away from the edge.
+~
+~
+0 -1 1498 0
+D4
+~
+~
+0 0 1443 0
+D5
+Down the stairs.
+~
+~
+0 -1 1412 0
+E
+steps stairs~
+They are carved from the tree itself.
+~
+E
+platform wooden wood~
+You are looking at the underside of a large area. If you go up the stairs,
+you will be able to walk on it.
+~
+S
+#1414
+The Mages Guild~
+   This place is wierd.... at first you don't understand, then suddenly you 
+realize... everything is upside down. You are on the ceiling.  There is 
+little in the way of decoration, mostly only shelves with books on them.
+~
+14 d 0
+D1
+Out onto the street.
+~
+~
+0 -1 1415 0
+E
+shelves~
+There are a variety of books resting on the shelves.
+~
+E
+books~
+They are books of magic, ancient languages and history.
+~
+S
+#1415
+The North End Of Moredhel Branch~
+You are at the North end of Moredhel Branch. To the west is the mages
+guild, to the east is the clerics guild. Both are currently under
+construction. To the north, the branch thins out and looks too weak
+to support your weight. South continues along Moredhel Branch.
+~
+14 0 1
+D0
+The branch will not support your weight.
+~
+~
+0 -1 1401 0
+D1
+The clerics guild is still under construction.
+~
+~
+0 -1 1416 0
+D2
+South along Moredhel Branch.
+~
+~
+0 -1 1418 0
+D3
+The mages guild is still under construction
+~
+~
+0 -1 1414 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1416
+The Clerics Guild~
+   Everything in here is soft and ethereal looking. It is very relaxing 
+in here. The walls are a soft white, while the floor and ceiling are
+a paler color. There is absolutely no dirt anywhere in here. Even as the 
+dirt falls off you, it promptly disappears as it touches the floor.
+~
+14 d 0
+D3
+Out onto the street.
+~
+~
+0 -1 1415 0
+E
+dirt~
+There is none in here.
+~
+S
+#1417
+The Thieves Guild~
+   This is a barren room, it doesn't seem to get much business. But
+the elves do revere the art of stealth, so you know you'll only get the
+best of training here.
+~
+14 d 0
+D1
+Out onto the street.
+~
+~
+0 -1 1418 0
+E
+wall walls~
+All of the walls are empty of decoration.
+~
+S
+#1418
+On Moredhel Branch~
+   You are on Moredhel Branch. To the west is the Thieves Guild, and 
+to the east is the Warrior's Guild, both of which are currently under
+construction. The buildings are not what you would expect. They were 
+not built in the usual sense. The tree and the foliage have grown 
+together to form enclosed areas that serve as buildings. The Branch 
+continues north and south.
+~
+14 0 1
+D0
+North along Moredhel Branch.
+~
+~
+0 -1 1415 0
+D1
+The Warrior's guild is under construction.
+~
+~
+0 -1 1419 0
+D2
+South along Moredhel Branch.
+~
+~
+0 -1 1420 0
+D3
+The Thieves Guild is under construction.
+~
+~
+0 -1 1417 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1419
+The Warrior's Guild~
+   The room is full of trappings of the elven hunters. Lots of furs and
+antlers decorate the room. There is ruggedness to this room that gives you
+the feeling that anything can be conquered.
+~
+14 d 0
+D3
+Out onto the street.
+~
+~
+0 -1 1418 0
+E
+fur furs~
+The furs on the walls come from a variety of different animals.
+~
+E
+antler antlers~
+The antlers on the walls are a variety of sizes.
+~
+S
+#1420
+The South End Of Moredhel Branch~
+   You are at the south end of Moredhel Branch. It can't really be called
+a street, because it it is really a branch from a tree. If you go too
+far from the center of the branch you will fall off. North takes you down 
+Moredhel Branch and south takes you onto the common platform.
+~
+14 0 1
+D0
+Along Moredhel Branch.
+~
+~
+0 -1 1418 0
+D1
+A spectacular death.
+~
+~
+0 -1 1401 0
+D2
+Onto the common platform.
+~
+~
+0 -1 1422 0
+D3
+A spectacular death.
+~
+~
+0 -1 1401 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1421
+Northwest Corner Of The Common Platform~
+   You are at the corner of what serves as a common gathering area for the
+citizens of Elvandar. The platform stretches south and east and there are
+stairs carved into a tree going down from here. 
+   There is a warning sign here that you should read.
+~
+14 0 1
+D0
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D1
+The common platform.
+~
+~
+0 -1 1422 0
+D2
+The common platform.
+~
+~
+0 -1 1431 0
+D3
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D5
+Down the stairs.
+~
+~
+0 -1 1404 0
+E
+sign warning~
+               WARNING
+           to all visitors
+Be careful when visiting our fair city in the
+trees. There are no railings and you are very
+high up.  If you fall off the platform or off
+any  of  the tree  branches, the  citizens of 
+Elvandar  will consider  the loot  from  your 
+corpse to belong to them.
+~
+E
+stairs~
+They go down from here.
+~
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1422
+North Side Of The Common Platform~
+   You are at the north side of the common platform. The platform 
+continues west, east and south. North takes you onto a huge tree
+branch labeled Moredhel Branch.
+~
+14 0 1
+D0
+Onto a huge branch labeled Moredhel Branch.
+~
+~
+0 -1 1420 0
+D1
+A corner of the common platform.
+~
+~
+0 -1 1423 0
+D2
+The middle of the common platform.
+~
+~
+0 -1 1432 0
+D3
+A corner of the common platform.
+~
+~
+0 -1 1421 0
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1423
+Northeast Corner Of The Common Platform~
+   You are at the corner of what serves as a common gathering area for the
+citizens of Elvandar. The platform stretches south and west and there are
+stairs carved into a tree going down from here.
+   There is a warning sign here that you should read.
+~
+14 0 1
+D0
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D1
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D2
+The common platform.
+~
+~
+0 -1 1433 0
+D3
+The common platform.
+~
+~
+0 -1 1422 0
+D5
+Down the stairs.
+~
+~
+0 -1 1407 0
+E
+sign warning~
+               WARNING
+           to all visitors
+Be careful when visiting our fair city in the
+trees. There are no railings and you are very
+high up.  If you fall off the platform or off
+any  of  the tree  branches, the  citizens of
+Elvandar  will consider  the loot  from  your
+corpse to belong to them.
+~
+E
+stairs~
+They go down from here.
+~
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1424
+The Elven Magic Shop~
+The walls are filled with magical items that you can buy.
+~
+14 dh 0
+D2
+West Glamredhel Branch.
+~
+~
+0 0 1428 0
+S
+#1425
+The General Store~
+There is lots of equipment in here that you can use for adventuring.
+~
+14 d 0
+D2
+West Glamredhel Branch.
+~
+~
+0 0 1429 0
+S
+#1426
+The Elven Weapon Shop~
+The walls are filled with weapon of various use.
+~
+14 d 0
+D2
+East Glamredhel Branch.
+~
+~
+0 0 1435 0
+S
+#1427
+The Elven Hospital~
+The walls are white and clean, this looks like a very safe place.
+~
+14 de 0
+D2
+East Glamredhel Branch.
+~
+~
+0 0 1436 0
+S
+#1428
+The West End Of West Glamredhel Branch~
+   You are at the west end of West Glamredhel Branch. The north is the magic
+shop and to the south is the Venison shop. The branch thins out to the
+west and looks too weak to support your weight. West Glamredhel Branch
+continues east.
+~
+14 0 1
+D0
+The magic shop.
+~
+~
+0 -1 1424 0
+D1
+East along West Glamredhel Branch.
+~
+~
+0 -1 1429 0
+D2
+The Venison Shop.
+~
+~
+0 -1 1437 0
+D3
+The branch will not support your weight.
+~
+~
+0 -1 1401 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1429
+West Glamredhel Branch~
+   You are on West Glamredhel Branch. The north is the general store and south
+is the bakery. The branch continues to the east and to the west.
+~
+14 0 1
+D0
+The General Store.
+~
+~
+0 -1 1425 0
+D1
+West Glamredhel Branch.
+~
+~
+0 -1 1430 0
+D2
+The Bakery.
+~
+~
+0 -1 1438 0
+D3
+The west end of West Glamredhel Branch.
+~
+~
+0 -1 1428 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1430
+The East End Of West Glamredhel Branch~
+   You are at the east end of West Glamredhel Branch. It can't really be
+called a street, because it it is really a branch from a tree. If you go
+too far from the center of the branch you will fall off. East takes you
+down West Glamredhel Branch and west takes you onto the common platform.
+~
+14 0 1
+D0
+A spectacular death.
+~
+~
+0 -1 1401 0
+D1
+The common platform.
+~
+~
+0 -1 1431 0
+D2
+A spectacular death.
+~
+~
+0 -1 1401 0
+D3
+West Glamredhel Branch.
+~
+~
+0 -1 1429 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1431
+The West Side Of The Common Platform~
+   You are at the west side of the common platform. The platform 
+contines north, south and east. West takes you onto a huge tree
+branch that is labeled West Glamredhel Branch.
+~
+14 0 1
+D0
+A corner of the common platform.
+~
+~
+0 -1 1421 0
+D1
+The middle of the common platform.
+~
+~
+0 -1 1432 0
+D2
+A corner of the common platform.
+~
+~
+0 -1 1441 0
+D3
+Along West Glamredhel Branch.
+~
+~
+0 0 1430 0
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1432
+The Middle Of The Common Platform~
+   You are in the middle of a huge platfrom. You have a hard time
+imagining how a tree could have grown to create such an area.
+~
+14 0 1
+D0
+The north side of the common platform.
+~
+~
+0 -1 1422 0
+D1
+The east side of the common platform.
+~
+~
+0 -1 1433 0
+D2
+The south side of the common platform.
+~
+~
+0 -1 1442 0
+D3
+The west side of the common platform.
+~
+~
+0 -1 1431 0
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1433
+The East Side Of The Common Platform~
+   You at the east side of the common platform. The platform
+continues north, south and west. East takes you onto a huge tree
+branch that is labeled East Glamredhel Branch.
+~
+14 0 1
+D0
+A corner of the common platform.
+~
+~
+0 -1 1423 0
+D1
+Along West Glamredhel Branch.
+~
+~
+0 0 1434 0
+D2
+A corner of the common platform.
+~
+~
+0 -1 1443 0
+D3
+The middle of the common platform.
+~
+~
+0 -1 1432 0
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1434
+The West End Of East Glamredhel Branch~
+   You are at the west end of East Glamredhel Branch. It can't really be
+called a street, because it is really a branch from a tree. If you go
+too far from the center of the branch you will fall off. West takes you
+down East Glamredhel Branch and east takes you onto the common platform.
+~
+14 0 1
+D0
+A spectacular death.
+~
+~
+0 -1 1401 0
+D1
+East Glamredhel Branch.
+~
+~
+0 -1 1435 0
+D2
+A spectacular death.
+~
+~
+0 -1 1401 0
+D3
+The common platform.
+~
+~
+0 -1 1433 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1435
+East Glamredhel Branch~
+   You are on East Glamredhel Branch. The north is the weapon shop and south
+is the Armor shop. The branch continues to the east and to the west.
+~
+14 0 1
+D0
+The Weapon Shop.
+~
+~
+0 -1 1426 0
+D1
+East Glamredhel Branch.
+~
+~
+0 -1 1436 0
+D2
+The Armor Shop.
+~
+~
+0 -1 1439 0
+D3
+The west end of East Glamredhel Branch.
+~
+~
+0 -1 1434 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1436
+The East End Of East Glamredhel Branch~
+You are at the east end of East Glamredhel Branch. The north is the Hospital
+and to the south is the Inn. The branch thins out to the east and looks
+too weak to support your weight. East Glamredhel Branch continues west.
+~
+14 0 1
+D0
+The Hospital.
+~
+~
+0 -1 1427 0
+D1
+The branch will not support your weight.
+~
+~
+0 -1 1401 0
+D2
+The Elven Hospitality Inn.
+~
+~
+0 -1 1440 0
+D3
+East Glamredhel Branch.
+~
+~
+0 -1 1435 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1437
+The Venison Shop~
+There are delicious smells of elven food wafting through the air in here.
+~
+14 d 0
+D0
+West Glamredhel Branch.
+~
+~
+0 0 1428 0
+S
+#1438
+The Bakery~
+The fresh bread smells delicious.
+~
+14 d 0
+D0
+West Glamredhel Branch.
+~
+~
+0 0 1429 0
+S
+#1439
+The Elven Armor Shop~
+The walls are filled with various types of protective devices.
+~
+14 d 0
+D0
+East Glamredhel Branch.
+~
+~
+0 0 1435 0
+S
+#1440
+The Elven Hospitality Inn~
+There is a desk at the entrance where you can request a room.
+~
+14 d 0
+D0
+East Glamredhel Branch.
+~
+~
+0 0 1436 0
+S
+#1441
+The Southwest Corner Of The Common Platform~
+   You are at the corner of what serves as a common gathering area for the
+citizens of Elvandar. The platform stretches north and east and there are
+stairs carved into a tree going down from here. 
+   There is a warning sign here that you should read.
+~
+14 0 1
+D0
+The west side of the common platform.
+~
+~
+0 -1 1431 0
+D1
+The south side of the common platform.
+~
+~
+0 -1 1442 0
+D2
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D3
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D5
+Down the stairs.
+~
+~
+0 -1 1410 0
+E
+sign warning~
+               WARNING
+           to all visitors
+Be careful when visiting our fair city in the
+trees. There are no railings and you are very
+high up.  If you fall off the platform or off
+any  of  the tree  branches, the  citizens of
+Elvandar  will consider  the loot  from  your
+corpse to belong to them.
+~
+E
+stairs~
+The go down from here.
+~
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1442
+The South Side Of The Common Platform~
+   You are at the south side of the common platform. The platform 
+continues east, west and north. South takes you onto a huge tree
+branch labeled Eledhel Branch.
+~
+14 0 1
+D0
+The middle of the common platform.
+~
+~
+0 -1 1432 0
+D1
+A corner of the common platform.
+~
+~
+0 -1 1443 0
+D2
+The north end of Eledhel Branch.
+~
+~
+0 0 1444 0
+D3
+A corner of the common platform.
+~
+~
+0 -1 1441 0
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1443
+The Southeast Corner Of The Common Platform~
+   You are at the corner of what serves as a common gathering area for the
+citizens of Elvandar. The platform stretches north and west and there are
+stairs carved into a tree going down from here. 
+   There is a warning sign here that you should read.
+~
+14 0 1
+D0
+The east side of the common platform.
+~
+~
+0 -1 1433 0
+D1
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D2
+Off the edge of the platform.
+~
+~
+0 -1 1401 0
+D3
+The south end of the common platform.
+~
+~
+0 -1 1442 0
+D5
+~
+~
+0 0 1413 0
+E
+sign warning~
+               WARNING
+           to all visitors
+Be careful when visiting our fair city in the
+trees. There are no railings and you are very
+high up.  If you fall off the platform or off
+any  of  the tree  branches, the  citizens of
+Elvandar  will consider  the loot  from  your
+corpse to belong to them.
+~
+E
+stairs~
+They go down from here.
+~
+E
+platform~
+This amazing platform does not seem to have been built at all.  It seems more
+like it was GROWN from the living trees.
+~
+S
+#1444
+The North End Of Eledhel Branch~
+   You are at the north end of Eledhel Branch. It can't really be called
+a street, because it it is really a branch from a tree. If you go too
+far from the center of the branch you will fall off. South takes you
+down Eledhel Branch. and north takes you onto the common platform.
+~
+14 0 1
+D0
+The common platform.
+~
+~
+0 -1 1442 0
+D1
+A spectacular death.
+~
+~
+0 -1 1401 0
+D2
+On Eledhel Branch.
+~
+~
+0 0 1445 0
+D3
+A spectacular death.
+~
+~
+0 -1 1401 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1445
+On Eledhel Branch~
+   You are on Eledhel Branch. If you go too far from the center of the branch
+you will fall off. The branch continues north and south.
+~
+14 0 1
+D0
+The north end of Eledhel Branch.
+~
+~
+0 -1 1444 0
+D1
+A spectacular death.
+~
+~
+0 -1 1401 0
+D2
+On Eledhel Branch.
+~
+~
+0 0 1447 0
+D3
+A spectacular death.
+~
+~
+0 -1 1401 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1446
+A Guard Room~
+   On duty guards wait in here to answer the call of their queen. The only
+exit is the way you came in.
+~
+14 d 0
+D1
+On Eledhel Branch.
+~
+~
+0 0 1447 0
+S
+#1447
+On Eledhel Branch~
+   You are on Eledhel Branch. The branch continues north and south and
+there are rooms to the east and west.
+~
+14 0 1
+D0
+On Eledhel Branch.
+~
+~
+0 -1 1445 0
+D1
+A guard room.
+~
+~
+0 -1 1448 0
+D2
+On Eledhel Branch.
+~
+~
+0 0 1450 0
+D3
+A guard room.
+~
+~
+0 -1 1446 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1448
+A Guard Room~
+   On duty guards wait in here to answer the call of their queen. The only
+exit is the way you came in.
+~
+14 d 0
+D3
+On Eledhel Branch.
+~
+~
+0 0 1447 0
+S
+#1449
+An Advisor's Office~
+   This is an office of one of the queen's advisors. He works in here and
+answers the call of his queen anytime she needs his services. The only 
+exit is the way you came in.
+~
+14 d 0
+D1
+On Eledhel Branch.
+~
+~
+0 0 1450 0
+S
+#1450
+On Eledhel Branch~
+   You are on Eledhel Branch. The branch continues north and south and
+there are rooms to the east and west.
+~
+14 0 1
+D0
+On Eledhel Branch.
+~
+~
+0 -1 1447 0
+D1
+An advisor's office.
+~
+~
+0 -1 1451 0
+D2
+On Eledhel Branch.
+~
+~
+0 0 1453 0
+D3
+An advisor's office.
+~
+~
+0 -1 1449 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1451
+An Advisor's Office~
+   This is an office of one of the queen's advisors. He works in here and
+answers the call of his queen anytime she needs his services. The only
+exit is the way you came in.
+~
+14 d 0
+D3
+On Eledhel Branch.
+~
+~
+0 0 1450 0
+S
+#1452
+A Guard Room~
+   On duty guards wait in here to answer the call of their queen. The only
+exit is the way you came in.
+~
+14 d 0
+D1
+On Eledhel Branch.
+~
+~
+0 0 1453 0
+S
+#1453
+On Eledhel Branch~
+   You are on Eledhel Branch. The branch continues north and south and
+there are rooms to the east and west.
+~
+14 0 1
+D0
+On Eledhel Branch.
+~
+~
+0 -1 1447 0
+D1
+A guard room.
+~
+~
+0 -1 1454 0
+D2
+The Waiting area into the throne room.
+~
+~
+0 0 1456 0
+D3
+A guard room.
+~
+~
+0 -1 1452 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+farther away from the tree it gets smaller and smaller to the point that it
+won't be able to hold your weight.
+~
+S
+#1454
+A Guard Room~
+   On duty guards wait in here to answer the call of their queen. The only
+exit is the way you came in.
+~
+14 d 0
+D3
+On Eledhel Branch.
+~
+~
+0 0 1453 0
+S
+#1455
+The West Wing Of The Waiting Room~
+   This is a long, narrow corridor extending to the east. There are
+benches where people wait for their turn to present themselves and
+their request to the queen. This room is open to the west and the
+south, so BE CAREFUL, if you fall off, the queen will not take any
+responsibility.
+~
+14 0 0
+D1
+The waiting area into the throne room.
+~
+~
+0 0 1456 0
+D2
+A spectacular death.
+~
+ ~
+0 0 1401 0
+D3
+A spectacular death.
+~
+~
+0 0 1401 0
+E
+bench benches~
+They seem to have been grown from the trees.
+~
+S
+#1456
+The Waiting Area Into The Throne Room~
+   This is a long, narrow corridor extending to the east and west. There are
+benches where people wait for their turn to present themselves and
+their request to the queen. North takes you onto Eledhel Branch, while
+doors to the south take you into the throne room.
+~
+14 0 0
+D0
+On Eledhel Branch.
+~
+~
+0 0 1453 0
+D1
+The east wing of the waiting room.
+~
+~
+0 0 1457 0
+D2
+The throne room.
+~
+door doors~
+0 0 1458 0
+D3
+The west wing of the waiting area.
+~
+~
+0 0 1455 0
+E
+bench benches~
+They seem to have been grown from the trees.
+~
+S
+#1457
+The East Wing Of The Waiting Room~
+   This is a long, narrow corridor extending to the west. There are
+benches where people wait for their turn to present themselves and
+their request to the queen. This room is open to the east and the
+south, so BE CAREFUL, if you fall off, the queen will not take any
+responsibility.
+~
+14 0 0
+D1
+A spectacular death.
+~
+~
+0 0 1401 0
+D2
+A spectacular death.
+~
+ ~
+0 0 1401 0
+D3
+The waiting area into the throne room.
+~
+~
+0 0 1456 0
+E
+bench benches~
+They seem to have been grown from the trees.
+~
+S
+#1458
+The Throne Room~
+   This is not an overly large room, certainly smaller than you would have
+expected. The room is dominated by two thrones in the middle of the 
+south wall. There are decorative tapestries lining the east and west
+walls and there are large doors leading out to the north.
+~
+14 0 0
+D0
+The waiting area to the throne room.
+~
+door doors~
+0 0 1456 0
+D2
+The private stairway.
+~
+throne thrones~
+2 -1 1459 0
+E
+throne thrones~
+They are very large and ornate, all hand carved. They look like you might be 
+able to move them.
+~
+E
+tapestry tapestries wall walls~
+The tapestries that hang on the walls are woven with bright colors and 
+depict beautiful forest scenery.
+~
+S
+#1459
+The Private Stairway~
+   You are standing at the top of a staircase which spirals downward. The
+north wall is really the back of the royal thrones.
+~
+14 d 0
+D0
+The throne room.
+~
+throne thrones~
+2 -1 1458 0
+D5
+Down the spiral stairway.
+~
+~
+0 0 1466 0
+E
+stairs stairway~
+The stairs go down from here.
+~
+S
+#1461
+The Elvardien Laboratory~
+   This is the laboratory of the Elvardien, Elven High Mages. Many of 
+objects in the room are vaguely familiar, but there are some things that
+even the most powerful mortal mages could not fathom the use of. There
+is a door to the south. The north wall is shimmering brightly. It 
+looks like you could see through it, but whatever is beyond is too
+dark.
+~
+14 d 0
+D2
+The guard's barracks.
+~
+door doors~
+0 0 1462 0
+E
+portal shimmering wall~
+The portal shimmers brightly, but it looks like you could easily
+walk through it.
+~
+E
+objects object~
+They probably have some magical use, but what they do is impossible to know.
+~
+S
+#1462
+The Guard's Barracks~
+   Off duty guards live here, there are bunks evenly distributed around
+the room. These residents of this room are very disciplined indeed to
+keep it so clean. In addition to the entry to the south, there are 
+doors to the north.
+~
+14 d 0
+D0
+The Elvardien Laboratory.
+~
+door doors~
+0 0 1461 0
+D2
+On the lower branch.
+~
+~
+0 0 1464 0
+E
+bunk bunks~
+Each bunk is neatly made.
+~
+S
+#1463
+The Guard's Barracks~
+   Off duty guards live here, there are bunks evenly distributed around
+the room. These residents of this room are very disciplined indeed to
+keep it so clean.
+~
+14 d 0
+D1
+On the lower branch.
+~
+~
+0 0 1464 0
+E
+bunk bunks~
+Each bunk is neatly made.
+~
+S
+#1464
+The Lower Branch~
+   You are on a branch way underneath the Elven city. The branch continues
+to the south. North, east and west are guard's barracks.
+~
+14 d 0
+D0
+The guard's barracks.
+~
+~
+0 0 1462 0
+D1
+The guard's barracks.
+~
+~
+0 0 1465 0
+D2
+The lower branch.
+~
+~
+0 0 1466 0
+D3
+The guard's barracks.
+~
+~
+0 0 1463 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+don't wander too far from the middle, or you might fall off.
+~
+S
+#1465
+The Guard's Barracks~
+   Off duty guards live here, there are bunks evenly distributed around
+the room. These residents of this room are very disciplined indeed to
+keep it so clean.
+~
+14 d 0
+D3
+On the lower branch.
+~
+~
+0 0 1464 0
+E
+bunk bunks~
+Each bunk is neatly made.
+~
+S
+#1466
+The Lower Branch~
+   You are on a branch way underneath the Elven city. You are still very
+high in the air, you if you fall off, you will still die. The branch
+continues to the north and south. There is also a spiral stairway 
+leading up.
+~
+14 d 0
+D0
+The lower branch.
+~
+~
+0 0 1464 0
+D1
+A spectacular death.
+~
+~
+0 0 1401 0
+D2
+The lower branch.
+~
+~
+0 0 1467 0
+D3
+A spectacular death.
+~
+~
+0 0 1401 0
+D4
+Up the spiral stairway.
+~
+~
+0 0 1459 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+don't wander too far from the middle, or you might fall off.
+~
+S
+#1467
+The Lower Branch~
+   You are on a branch way underneath the Elven city. The branch continues
+to the north. South, east and west are guard's barracks.
+~
+14 d 0
+D0
+The lower branch.
+~
+~
+0 0 1466 0
+D1
+The guard's barracks.
+~
+~
+0 0 1471 0
+D2
+The guard's barracks.
+~
+~
+0 0 1468 0
+D3
+The guard's barracks.
+~
+~
+0 0 1470 0
+E
+branch~
+The tree branch that you are walking on is very wide and sturdy here, but 
+don't wander too far from the middle, or you might fall off.
+~
+S
+#1468
+The Guard's Barracks~
+   Off duty guards live here, there are bunks evenly distributed around
+the room. These residents of this room are very disciplined indeed to
+keep it so clean.
+~
+14 d 0
+D0
+On the lower branch.
+~
+~
+0 0 1467 0
+D2
+The Elven Treasury.
+~
+door doors~
+2 1407 1469 0
+E
+bunk bunks~
+Each bunk is neatly made.
+~
+S
+#1469
+The Elven Treasury~
+   You are in the elven treasury room. Unfortunately many of the treasures
+here are uniquely Elven, and no one would buy them from you. However
+there is usually plenty of cash in here too.
+~
+14 d 0
+D0
+The guard's barracks.
+~
+door doors~
+2 1407 1468 0
+E
+treasure treasures loot~
+Most of them are very beautiful and very valueable, but unfortunately they 
+are also too Elven to disguise without ruining their value. It's better just
+to take the money that no one can trace.
+~
+S
+#1470
+The Guard's Barracks~
+   Off duty guards live here, there are bunks evenly distributed around
+the room. These residents of this room are very disciplined indeed to
+keep it so clean.
+~
+14 d 0
+D1
+On the lower branch.
+~
+~
+0 0 1467 0
+E
+bunk bunks~
+Each bunk is neatly made.
+~
+S
+#1471
+The Guard's Barracks~
+   Off duty guards live here, there are bunks evenly distributed around
+the room. These residents of this room are very disciplined indeed to
+keep it so clean.
+~
+14 d 0
+D3
+On the lower branch.
+~
+~
+0 0 1467 0
+E
+bunk bunks~
+Each bunk is neatly made.
+~
+S
+#1472
+Stairs On A Humungous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. East would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D4
+~
+~
+0 0 1411 0
+D5
+~
+~
+0 0 4828 0
+S
+#1473
+Stairs On A Humungous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. East would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D4
+~
+~
+0 0 1474 0
+D5
+~
+~
+0 0 1472 0
+S
+#1474
+Stairs On A Humungous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. East would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D4
+~
+~
+0 0 1475 0
+D5
+~
+~
+0 0 1473 0
+S
+#1475
+Stairs On A Humungous Tree~
+   You are on the stairs carved into one of the largest trees you have ever
+seen. The craftmanship that went into creating this stairway is staggering.
+You may proceed up or down. East would plunge you to a rather spectacular
+death on the forest floor below.
+~
+14 0 1
+D5
+~
+~
+0 0 1474 0
+S
+$~

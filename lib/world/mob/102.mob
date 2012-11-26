@@ -1,0 +1,224 @@
+#10200
+crawler creature spider~
+the Crawler~
+A scaly spider-like creature scitters away from you.
+~
+A very strange looking creature, about the size of a dog. It has five long
+legs covered with grey scales and jagged pincers. You don't know how it can
+see you, but it does sense your prescence. It acts timidly.
+~
+dghr 0 0 X
+12 14 4 6d6+120
+0 7500
+8 8 0 4 14 2
+T 100 3d3+5 28
+#10201
+crawler creature red spider~
+the Red Crawler~
+A large spider-like creature with reddish scales crawls near you.
+~
+A very strange looking creature, about the size of a dog. It has five long
+legs covered with red scales and jagged pincers. You don't know how it can
+see you, but it does sense your prescence. It doesn't seem to be very
+scared of you, and approaches without fear.
+~
+dgr 0 -100 X
+15 14 2 8d8+150
+0 11000
+8 8 0 4 14 2
+T 100 3d3+6 28
+#10202
+pebble creature cluster~
+the Pebble Cluster~
+A small cluster of pebbles seems to wobble in your direction.
+~
+It curls up into a cluster of pebbles when you approach. Then, when you
+turn away it seems to be closer when you see it again.
+~
+dg 0 0 X
+8 16 6 4d4+80
+0 3500
+8 8 0 1 0 3
+T 100 1d8+3 0
+#10203
+magician~
+the Magician~
+A cloaked magician is here gathering samples, not aware of you.
+~
+You cannot see much of the magician's features. You can't even tell if it
+is female, or male. A black hood totally covers the magician's face.
+~
+dgno 0 50 X
+17 13 1 9d9+170
+0 14300
+8 8 0 3 1 3
+T 100 2d10+2 9
+T 120 1d9+3 0
+E 3 50 10200 -1
+E 17 25 10201 -1
+>fight_prog    20~
+ cast 'burning hands' $n
+~
+>fight_prog    15~
+ cast 'frost bolt' $n
+~
+|
+#10204
+imp fighter~
+the Imp Fighter~
+An imp brandishing a shiny dagger runs along here shouting obscenities.
+~
+It has a long pointy nose that sticks out of its face. Rushing along to who
+knows where, the imp almost seems to be running around in circles. It is
+amazingly quick.
+~
+dg 0 -200 X
+14 14 3 7d7+140
+0 9900
+8 8 0 3 1 3
+T 60 1d6+2 0
+A 14 8 $n brandishes its weapon in your face.
+E 16 100 3020 -1
+#10205
+bug insect giant~
+the Giant Insect~
+A huge bug with black beady eyes flies through the valley.
+~
+It is very large for what looks like a normal fly, approximately the size
+of a small boulder. You can hear the constant buzzing from its wings as it
+flies near the ground.
+~
+dgp q 0 X
+13 14 3 7d7+130
+0 8700
+8 8 0 8 15 3
+T 100 2d6+5 21
+#10206
+rock giant~
+the Rock Giant~
+A giant made of solid rock moves slowly around here.
+~
+A huge creature that looks to be a pile of moving boulders. Its arms, legs,
+head, and body are made of cracked grey rock. It moves very slowly. You
+glance at its two fists of rock clenched together.
+~
+bdloqr 0 -351 X
+23 11 -2 12d12+230
+0 35000
+8 8 0 3 1 5
+T 300 3d10+5 6
+T 300 5d5+10 23
+A 8 20 Some rocks and pebbles tumble off of the Rock Giant.
+E 3 20 10217 5
+#10207
+blob gelatinous~
+the Red Gelatinous Blob~
+A red gelatinous blob inches along here, absorbing dust and pebbles.
+~
+It looks similar to the green blobs you've often seen in other parts of the
+world, only it is colored a deep red. A hulking mass of jello.  
+~
+cdghlno 0 0 X
+19 12 0 10d10+190
+0 20000
+8 8 0 14 14 3
+T 100 4d5+8 0
+A 8 15 A sucking sound is heard as nearby rocks are absorbed by the Blob.
+#10208
+climber~
+the Cliff Climber~
+You notice a scaly creature hanging on the cliff here.
+~
+A very strange looking creature, about the size of a dog. It has five long
+legs covered with grey scales and jagged pincers. You don't know how it can
+see you, but it does sense your prescence.
+~
+dg 0 -50 X
+12 14 4 6d6+120
+0 7500
+8 8 0 1 14 2
+T 150 3d4+4 0
+#10209
+crawler creature water spider~
+the Water Crawler~
+A wet spider-like creature with bluish scales acknowledges your prescence.
+~
+A very strange looking creature, about the size of a dog. It has five long
+legs covered with bluish scales and jagged pincers. You don't know how it
+can sense you, but it knows you're here.
+~
+dg 0 -50 X
+12 14 4 6d6+120
+0 7500
+8 8 0 1 14 2
+T 80 3d3+4 28
+#10210
+trout fish~
+the Trout~
+A small trout is swimming in the water here.
+~
+It just swims around in a pool of crystal-clear water.
+~
+bd 0 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 10 14 1
+T 100 1d2+1 0
+A 8 10 $n splashes some water on to the crimson rock.
+#10211
+trout fish~
+the Trout~
+A trout is trying to swim up a small waterfall here.
+~
+It is making a valiant effort to swim up the waterfall, but with no
+success.
+~
+bd 0 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 10 14 1
+T 100 1d2+1 0
+A 8 10 $n splashes some water on to the crimson rock.
+#10212
+turtle giant~
+the Giant Turtle~
+A giant turtle with a strong looking shell peers at you curiously.
+~
+The turtle is even larger than you, and with a protective shell.
+~
+dn 0 0 X
+19 12 0 10d10+190
+0 20000
+8 8 0 4 14 4
+T 200 6d4+3 22
+T 200 6d3+2 22
+A 15 8 $n snaps at you with its teeth.
+#10213
+dragon crimson red~
+the Crimson Dragon~
+A smokey crimson dragon sleeps in peace in the middle of the cavern.
+~
+You see before you a monstrous beast equipped with claws, teeth, tail and
+wings. The dragon has shiny crimson colored scales that protects its
+entire body. A globe of heat surrounds its body.
+~
+bdfnopqr fkp 0 X
+55 0 -10 28d28+5550
+0 6000000
+4 4 0 5 11 6
+T 100 4d9+30 26
+T 150 4d5+20 24
+T 400 13d3+45 22
+>fight_prog    15~
+ mpcast 'fireball' $r
+ mpechoat $n The Crimson Dragon scorches you with burning breath!
+ mpechoaround $n The Crimson Dragon scorches $n with its burning breath!
+~
+>fight_prog    10~
+ mpcast 'fire breath'
+ mpechoaround $n The Crimson Dragon scorches you with burning breath!
+~
+>death_prog    50~
+ mpoload 10202
+~
+|

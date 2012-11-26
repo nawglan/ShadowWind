@@ -1,0 +1,209 @@
+         ********         REPORT MORE BUGS!!!         ********
+Nudd     (Oct 26) [ 1204] wraiths should be able to cast.
+Dorga    (Nov  9) [ 1297] switched to mobs shows in WHO list.
+Dorga    (Nov 13) [ 1297] color sparse has same bug color off did.. :)
+Dorga    (Nov 14) [ 3050] pvt rooms are set to 1 person..
+Tegar    (Nov 16) [ 3185] when buffer flees, mob waits for next player to make 1st hit
+Tegar    (Nov 16) [ 3185] ^ so when next plr is caster and is casting, can take a LONG time
+Kandara  (Nov 23) [ 1295] anon doesn't cover class in whois
+Chkkra   (Dec  5) [ 3081] I get spell echos while writing on the boards:)
+Nemo     (Dec  7) [ 3000] can't ungroup a person if they aren't in the same screen
+Alison   (Dec  9) [ 3186] i killed a mob in a room where a pcorpse was and (to be cont.)
+Alison   (Dec  9) [ 3186] the message in the room was [2] corpse and pcorpse (to be cont)
+Alison   (Dec  9) [ 3186] when i sacrificed the corpse. the message listed just pcorpse
+Alison   (Dec 10) [ 3041] 1 of the msg displayed about Gwydno has no ending. (slice some ???)
+Chkkra   (Dec 13) [ 5931] Torakk taps you on your shoulder. <- i got that when i was sleeping
+Dorga    (Dec 19) [ 1297] char-sex got lost in stat.. *snort*
+Breena   (Dec 21) [ 1295] deny still lets them re-enter the denied name
+Wrrok    (Dec 21) [14592] Im sleeping..I see Morcheeba look at you.
+Novo     (Dec 25) [ 2291] gsays show up even when you're in an editor
+Dorga    (Dec 25) [ 1297] ifisfollow ($n) in mobprogs crashes. vstat m 2200
+Dorga    (Jan  2) [ 1297] tedit sucks my pecker.
+Nemo     (Jan  3) [ 3795] It's hot out here. It's a bit nippy here.  at the same time
+Nudd     (Jan  3) [ 1242] harm rooms gave me negetive mana
+Dorga    (Jan  3) [ 1242] harm room gave me negative moves. =)
+Myrddin  (Jan  5) [ 6110] typed a space after ' (2nd) when casting and it thought i gave arg
+Dorga    (Jan  5) [ 3191] search - when found, both sides dont show keyname.
+Dorga    (Jan  5) [ 1297] make sure cityguard specproc doesnt ignore !mob
+Chkkra   (Jan  5) [ 4352] when you are made to rest after a missed bash, you can stand up immediately
+Nemo     (Jan 10) [ 3000] when I look in a spring, it chrashed the mud
+Breena   (Jan 12) [ 1297] nuke doesn't work on linkdead players
+Nemo     (Jan 18) [ 3413] you get additional spaces if you use $* in an alias
+Nudd     (Jan 24) [ 1242] sex isn't there for mobs in stat.
+Dorga    (Feb  7) [ 1297] color sparce frags who.
+Dorga    (Feb 19) [ 1297] ali may move rapidly one way and slow the other.. odd..
+Nudd     (Mar 14) [ 1242] this is the 100th time my light has begun to flicker and fade over the last few days...
+Breena   (Mar 17) [ 1202] ::Caillin:: the isimmort check in a mobprog doesn't work
+Sivrak   (Mar 31) [ 3787] if you remove kopesh sword it disbands the group
+Jaga     (Apr  4) [ 3051] track <mobname> doesnt seem to work
+Breena   (Apr 13) [ 1295] losing a level which takes you below a circle, say 16 to 15.. when you get 16 again you can't prac your new spells
+Perigorne (Apr 16) [ 3836] Spent torches and lightable torches still stack in inv...
+Breena   (Apr 19) [ 1295] Loryc tells you, 'when I held a burn up torch it gave me the message you light a torch and hold it'
+Dorga    (Apr 27) [ 1297] when switched to PC, PC shows in WHO.
+Dorga    (Apr 28) [ 1297] you can see someone cast on you while sleeping.
+Mlok     (Apr 30) [ 5113] 2nd wield needs CR/LF or somethign after it.
+Rumplestilskin (May  4) [ 1204] I52 = cant see shit in users.
+Bingle   (May  7) [ 3048] coins on ground - look coins -= You guess there are, maybe, 0p 0g 0s 0c.
+Bingle   (May  7) [ 3048] there is 96 g btw:)
+Breena   (May 11) [ 1295] bug items that take away more maxhit than you have ie. lvl 1 wearing a -100 max_hit item.. leaves player in a very very bad state.. it needs to zap em.
+Breena   (May 11) [ 1295] ^ or kill em instantly :P
+Breena   (May 12) [ 1295] need messages for full harm
+Tareth   (May 13) [ 3002] if a merchant wanders into a shop, you can't list from shop owner, only merchant
+Thangil  (May 26) [ 8214] No success message upon casting 'cause serious' on a mob.
+Nudd     (May 29) [ 1242] decrease the amount of crits yet more...
+Vraah    (Jun  1) [14552] when I cast 'create water' on barrel... I can only refer to the barrel as water until it is empty... if I refer to it as barrel, it says I can't find it...
+Vraah    (Jun  2) [ 3169] when I practised, I didn't have coins in inv, it automatically withdrew from bank... but it only withdrew copper (not gold or plat)  now I have a negative copper cause I never saved any...
+Dorga    (Jun  9) [ 1297] draging corpse/stuff lets moves go into negative.
+Breena   (Jun 17) [ 1295] nuking people who are at the menu = crash.
+Vraah    (Jun 27) [14527] there is no damage message for harm :) thanks.
+Kheldim  (Jun 29) [ 3198] The skills hide, sneak, and scout have been added to priest skill list just by trying them
+Dorga    (Jul  9) [ 1297] hoggis passed 97 aliases and it put the last as his name-title in who. score stat was normal, .tdat was fine.
+Rak      (Jul  9) [ 3123] if "iron rations" is the name, how come we have to manipulate them as "ration"
+Rak      (Jul 10) [ 1444] if I have the gatekey for the elves, and sleep on the north side of their northern gate, (camp) it'll teleport me back to town later.. I think WITH the key too.. heh
+Vraah    (Jul 11) [ 4074] true seeing shows invisible people, but not invisible items.
+Rak      (Jul 11) [14316] the fire opal rings (from the housewife in town) say that they give + to dex but do not!
+Rak      (Jul 12) [ 3048] the ring of truth reports that it is a shield when it is worn, even though it is still on the finger.  =)
+Tihm     (Jul 17) [ 5197] I was 11th level, lost a level and suddenly all my spells were free to train.
+Tihm     (Jul 18) [14309] I used the spell "hide self" and then tried "hide".. and I *learned* the skill.. I now have hide as a skill.
+Tihm     (Jul 20) [ 3025] if I "minor paralysis" myself.. I can still "follow
+Tihm     (Jul 21) [14533] I am exausted and try a direction (improper dir).. it drops my vitality to -16, and then -32 when I do it again.
+Ganon    (Jul 21) [ 3084] When I try to cast curse on my nimbus chain it crashes the mud.
+Tihm     (Jul 23) [ 3003] please be aware that previously it would crash the game if I paralyze someone, and then later try to "ray of enfeeblement" that person.
+Ganon    (Jul 28) [ 3084] whenever I cast create water on my barrel the barrel still showes in my inv but when I try to drink from it it says I don't have it. problem corrects itself once I log off and ack on.
+Irri     (Jul 29) [ 3014] when my mentals stop following, all my followers stop following
+Neera    (Jul 29) [ 5102] a mob that died by fireshield was still attacking and could not be 'killed' even though it said he was lying there dead.
+Breena   (Jul 31) [ 1295] < leave this line >
+Kar      (Aug  1) [ 5907] working theory:  If I wield two weapons, then remove one (right hand), then wear a shield, it says I'm fighting with a <NULL> because I'm using the "secondary" weapon.
+Kar      (Aug  3) [ 3776] a sleeping drunken oaf in Caryllion can recognize me in his sleep and attack without ever waking up.
+Nudd     (Aug  6) [ 1242] well u have to wait for the ferry from carrylon to arive when it does u eneter it and u r instantly at carrylon so all u have to do is enter and disembark right away
+Reslyn   (Aug  6) [ 3778] shouldn't rouges be able to disengage and backstab when somone else is tanking...the lag is too long right now:(
+Neera    (Aug  7) [ 3084] Hrm, I'd venture to say that the crash at 9:40 am was my fault.  Was casting incendiary cloud on 3 wraiths and Morticia (in stone dragon) one died by fireshield (he was target of the spell).
+Vorik    (Aug  7) [ 3743] if I try to cast a spell like "shocking grasp" on a creature which is not there, it says "Your spell's target is nolonger here." and not the other message like "cast on who?!"
+Thudnuffle (Aug  9) [ 3000] Drink containers reset when logging on... My flask of sasparilla, emtied and filled with water, was half full of slimy mold juice when I logged back on.
+Karkazz  (Aug  9) [  301] There's a problem with introducing self.  $n introduces $mself to all $s other personalities.
+Vorik    (Aug 10) [10271] consent vorik, summon vorik, summon vorik = crash
+Vorik    (Aug 10) [10271] summoning self puts self in nowhere'sville.
+Sibbie   (Aug 11) [ 3770] raise and eye do the same emote...should have raise, raise hand.
+Thudnuffle (Aug 11) [ 3088] Sleep spell is aggro even when successful. Cast it on an apprentice in the guild, he fell asleep, and then he attacked me... How can he do that if asleep?
+Vorik    (Aug 11) [10271] identifying the flame blade gives wierd results
+Vorik    (Aug 11) [ 5194] cure serious heals the same amount as cure critical?
+Kadim    (Aug 12) [ 3121] theres a door thats fucked in the house just w and n of crossing of wayside and caravan
+Kadim    (Aug 12) [ 3013] now if i attack a man in the inn and cityguard comes in he will knock me unconscious but the man will still keep hitting me ???
+Vorik    (Aug 12) [14552] I gave a crooked stick to an anclar and it crashed the game.
+Vorik    (Aug 13) [ 3084] I did a "cast 'curse'" and it seemed to have crashed the mud.
+Kadir    (Aug 13) [ 3074] if you kill someone with a backstab (one hit dead, you cant backstab a new mob even 2 min after ???
+Vorik    (Aug 13) [ 3102] cannot pick items up when carrying my barrel, but can drop it, pick items up, and then go buy a barrel to avoid the weight problem.
+Thudnuffle (Aug 13) [14502] Something wrong with the message broadcast to others when I cast 'chill touch'. Variables are reversed.
+Thudnuffle (Aug 13) [ 3603] "the earth elemental is lying here, dead. (charmed)" Dunno what happened. Sumptin wrong, tho.
+Kar      (Aug 14) [ 3081] I"m confused.. I add in some ideas and they seem to bomb.  =(
+Kar      (Aug 14) [ 3081] nevermind, figured it out.
+Kar      (Aug 14) [ 3081] it is possible to teleport to caryllion from the wiervane side of the docks simply by waiting for the ferry to be on the caryllion side, while you are in WV, and using "board ferry" when there isn't a visible ferry.  You appear on the ferry docked in caryllion, and then you can disembark and be in caryllion without the wait.
+Kar      (Aug 14) [ 3081] a specific time to check it out is at 6am on the WV side.  It is untested in its reverse.
+Vorik    (Aug 14) [14552] Although it's nice that I can't fumble it, I still can't get rid of my flamesword by camping and coming back in like 4 hours RT or dispel magic it.
+Hawthos  (Aug 14) [ 3017] When I backstab with my venomous drow sword I usually get the following message:The insert mob name makes a strange sound as you place NULL in his back.  The mob name, I put there. The NULL is what I get.  Let me know If I have caused confusion.
+Zlark    (Aug 15) [ 3150] I formerly attacked an apprencice cleric, using an elemental as a tank, and it ended up being dead and bleeding.. i couldn't kill it so I left it there, and after a repop it was still there, with two other apprentices.. I cast "earthquake", which ignored the dying one.. I could only kill it after bandaging it..
+Thudnuffle (Aug 15) [ 3701] Ferry masters can see invis ppl good enuff to take gold from them, but not good enuff to let them pass...
+Breena   (Aug 16) [ 1295] they can still kill shopkeepers.. well, Mungo at least, odd
+Mirac    (Aug 17) [ 3151] Blaise the Guildmaster starts casting a spell.
+Mirac    (Aug 17) [ 3151] Blaise the Guildmaster's magic fizzles out and dies.
+Zlark    (Aug 17) [ 4002] if i give an item of +max_hps to an elemental, and it wears it, and then heals up, then removes it.. it keeps the additional hitpoints.
+Zlark    (Aug 17) [ 3081] the spell 'control weather' ends up pausing at the end, and is not abortable.
+Dorga    (Aug 18) [ 1295] dagger to mental, order mental to circle, over and over fast as you want.
+Dorga    (Aug 18) [ 1295] Mentals useing weapons and armor, there created as a weapon and as armor themsleves, why give more?
+Breena   (Aug 18) [ 1295] when i try to use reply, i get a repeat of the last tell i was sent
+Dorga    (Aug 18) [ 1297] no shit me too.. or it doesnt always send anything.
+Dorga    (Aug 19) [ 1297] nuken someone at the main menu = crash=)
+Breena   (Aug 21) [ 1295] successful player theft does not show up in logs
+Dorga    (Aug 23) [ 3057] wansd (books from rands tower) no work, not sure why.
+Zlark    (Aug 23) [ 3077] when I kill an elemental, I end up searching the corpse that's there, if I had killed something before attacking the elemental, instead of being given the message "There is no corpse" (or whatever it is).
+Zlark    (Aug 23) [ 3086] I was KOed by a guard, and when I awoke, and did a "look", I saw that my fire elemental was still fighting, even though I was getting no text updating the fight..  it was "frozen".
+Zlark    (Aug 23) [20588] the command "squeeze zlark" won't work.. gives "$n squeezes $mself."
+Elgaerd  (Aug 24) [ 3119] i get spells for free when i type prac <spell name> instead of learning it
+Dorga    (Aug 28) [ 1297] show bug <- definatly a bug=)
+Gragz    (Aug 29) [ 4074] the guards in breathenmere no longer assist the overseer
+Elrich   (Aug 29) [ 3151] spells have to be re-learned when loss of level occurs and that level is gained back
+Illian   (Aug 30) [ 3188] hrm i just made 9 bsses in a row, never done that before, the max was 2 or 3 in a row, a bug?
+Illian   (Aug 30) [ 3192] nevah mind not happenning no mor
+Breena   (Aug 31) [ 1295] Elrich chats, 'hmmm, word of recall restores all mv'
+Breena   (Aug 31) [ 1295] ^^ tis true, it does restore all moves *doh*
+Breena   (Aug 31) [ 3020] need an echo to room for players being knocked out
+Dorga    (Aug 31) [ 3020] followers should not be able to speak.
+Zlark    (Sep  1) [ 5195] fighting, and I mortally wound the enemy, but somehow it can get in a killing shot to my elemental _after_ it has been mortally wounded and dying soon (the round after).
+Zlark    (Sep  1) [ 5197] the previously mentioned bug happens when I am alone as well.  Enemies can attack after being incapacitated and dying.
+Zlark    (Sep  1) [ 3197] spamstabbing lives on as a flee after backstabbing.  Disallow other actions for a time after backstabbing to let the enemy engage before the person can flee.
+Sibbie   (Sep  2) [ 3138] all classes and races can hide, and sneak.
+Zlark    (Sep  2) [14552] the halberd (available in town) is a two handed polearm.. I got my elemental to wield one and hold a torch.
+Dorga    (Sep  2) [ 1295] (Hidden) Mobs with inate hidden unhide when thye start casting.
+Whid     (Sep  2) [ 3057] It seems that every so often I can't backstab to start a fight..it's says "You're too busy fighting" when I'm not fighting anyone.
+Breena   (Sep  2) [ 1295] boards are showing the wrong author of messages :)
+Novo     (Sep  2) [20641] can bs with drow longswords
+Novo     (Sep  2) [20641] among other things
+Dorga    (Sep  4) [ 1297] when knocked out it shows Name is sleeping here. it should show Name is knocked out.
+Breena   (Sep  5) [ 1295] Tholm tells you, 'cast magic missile. :p  second time it's crashed at the end of spell tho.'
+Breena   (Sep  8) [ 1295] people can still kill shopkeepers, the !kill thing being auto on the don't work :)
+Tholm    (Sep  8) [ 3050] I died and came back without dim door (didn't lose level) and was wearin Cer' eq
+Novo     (Sep  8) [ 1297] dwarves have evil option
+Dorga    (Sep  9) [ 1297] when guards knock you out they NEED to SOON force the other mob to STOP killing the player.
+Neera    (Sep 10) [ 3148] Something in both the Sneak skill and the Hide skill allow all classes to use it AND to improve at it...  by spamming 'sneak' for a minute or so, my sneak skill improved up to above average.  Of course, I like the skill, but I'm afraid I shouldn't have it :(
+Dorga    (Sep 11) [ 1205] Played [1204h 4m], Age [21] - Possably age is busted. maybe calculating time in rent? and is freaking after 127days turning to -'s
+Jilael   (Sep 12) [24662] Zone 246: rooms 24660 - 24663 the exits are screwed
+Dorga    (Sep 12) [ 1297] non thives getting thief skills by SPAM useing it.. this is an OLD ASS BUG!
+Breena   (Sep 14) [ 1295] needs to be a couple of round delay on fleeing
+Breena   (Sep 14) [ 1295] people are getting really mixed up text again - Breena is standing here. When i walk into a room and stuff =)
+Dorga    (Sep 16) [ 1297] stat/score neither one have the characters SEX.. i say we incorp the info from whois into score..
+Krug     (Sep 16) [ 3148] neera
+Krug     (Sep 16) [ 3148] neera
+Tholm    (Sep 16) [14552] after keeping potions for an extended time, thier funcyions seem to change.  a small milky potion cast 3 flies instead of bless/armor/heal etc
+Breena   (Sep 17) [ 1295] humm.. mayor has tracker, and says he is hunting marnuk, but he's not moving from 1s of his office
+Breena   (Sep 17) [ 1295] Marnuk prays, 'umm i just rented with a royal septer and thats a !rent item if i remeber correctly and got no warning and i did get to rent'
+Breena   (Sep 17) [ 1295] the old bug where the game thinks there are items in the game but there aren't (i.e a flea carrying an ice chest) is screwing up loads, cause it really does think its there, so does'nt load stuff
+Breena   (Sep 17) [ 1295] ^ talk to me if you don't understand what i meant by that :)
+Zlark    (Sep 18) [ 3081] things which are knocked unconscious with negative HPs should still be engaged in combat and should be considered auto-kills the next round in combat.. they shouldn't bleed to death and take away the person's xp gain.
+Breena   (Sep 20) [ 1295] Neera tells you, 'assister mobs always seem to attack the leader of the group (whether they're fighting or not).'
+Zlark    (Sep 21) [14552] brief mode is ignored when entering a portal.
+Zlark    (Sep 21) [10287] brief mode seems to fail when in "light" areas..
+Dorga    (Sep 22) [ 1297] fix the damn health bug where you do not die after you have -health, vig or some shit does not kill you right. ask hawthos.
+Breena   (Sep 23) [ 1295] we crash when a player practices.. that has feeble mind on
+Dorga    (Sep 23) [ 1297] How can you score a critical hit after the mob you are fighting is dead.
+Zlark    (Sep 23) [ 3081] wimp mode makes me flee even though I've got stoneskin..
+Podar    (Sep 24) [14520] every time I try to cast shocking grasp after assisting the tank with no target, I get a message "Cast on who" but I'm not positive it's a bug
+Zlark    (Sep 25) [ 3102] even DODGED bashes knock me down!  Verified they mess up the casting of new spells.  Will look into this further..
+Zlark    (Sep 25) [ 5196] drow guards are able to attempt to bask every round if they miss!
+Zlark    (Sep 25) [ 5196] oops.. typo on that one.  Drow guards can miss, and keep trying to bash.. every round..
+Dorga    (Sep 25) [ 1297] wizlock should log to :G: not :J:
+Breena   (Sep 25) [ 1295] i think quick chant improves too quickly, it seems everyone over level 35 is superb in it =)
+Dorga    (Sep 26) [ 3000] immort can not see people sneak.. 
+Zlark    (Sep 26) [ 3005] there's a chance that there's a bug while grouped..  I find that when solo, I get more xp, and grouped, but the person in the group is not present, I get regular grouped xp as if they assist me and were in the room.
+Zlark    (Sep 26) [ 3081] did you know that all drinking makes people drunk?  =P
+Zlark    (Sep 26) [ 3081] Umm.. that wasn't a joke.. we're actually _drunk_ when drinking barrels, the fountain, water from a "create water" spell or spring.. whatever..
+Breena   (Sep 26) [ 1295] Wands don't work against mobs.. 
+Valkil   (Sep 26) [ 3081] faerie fire and blindness can be cast on yerself
+Breena   (Sep 26) [ 1297] ::Breena:: wands and staves aren't targetting on npc's properly *grin*
+Zlark    (Sep 27) [ 3727] in caryllion, rodrin, for example will "hit" me when I have stoneskin, but do no damage (as per normal), as opposed to "missing".. this is only in caryllion with the dignified or rodrin (so far), and doesn't happen elsewhere, in Wiervane for example..
+Zlark    (Sep 27) [ 5196] elementals cannot rescue after a kick/roundhouse?
+Zlark    (Sep 27) [ 5182] Umm.. not directly after.  =P
+Dorga    (Sep 27) [ 1297] monks get way too many crit hits..
+Zlark    (Sep 27) [ 3081] the shattering iceball is a protection realm?!?!
+Valkil   (Sep 27) [14552] tidal wave help files list as monk skill
+Breena   (Sep 27) [ 1297] high level mobs need to fail at casting less =)
+Zlark    (Sep 27) [ 8321] elementals stay invisible if invis and attacked (as in a fire elemental being made invisible)
+Zlark    (Sep 27) [ 9169] elementals stay invis when made invis.. wierd.
+Breena   (Sep 29) [ 1295] why do we still have NOAUCTION as an item flag? :)
+Zlark    (Sep 30) [ 3007] with the flameshield and stoneshield the enemy "hits" me, but does no damage..
+Grangel  (Oct  7) [ 3041] rations
+Breena   (Oct  8) [ 1295] locate obj is locating some objs that don't have the key word i specificed
+Breena   (Oct  9) [ 1295] you can "drop 2.sword" but you can't "give <player> 2.sword" GRR =)
+Breena   (Oct  9) [ 1295] i get to see when people social me when i'm in an editor
+Mayelyn  (Oct 10) [ 3073] I got killed, went back to my corpse, got my stuff, wore it and realized I had double of everything..
+Mayelyn  (Oct 10) [ 3073] then I tried again to see if it was a fluke, and came back to get my corpse and the mob killed me after I already died once..
+Dorga    (Oct 10) [ 1297] ignore those bugs, level 1's get re-equiped at death.
+Allanon  (Oct 11) [ 3803] How can a pigeon pick up a dagger?
+Allanon  (Oct 11) [ 3820] Ice Bolt has no help description
+Allanon  (Oct 11) [ 3020] Search is not in the HELP list anywhere
+Vandia   (Oct 13) [14552] me
+Vandia   (Oct 13) [14552] kudin
+Hawthos  (Oct 14) [ 3081] royals are not hunting properly anymore
+Sibbie   (Oct 19) [ 5109] the bloody head in the second house is "bleeding" (no pun) the red color is bleeding into everything
+Kudin    (Oct 21) [ 3997] i had two objects in my inventory that are called bugs after dropping them at the receptionist on Carrylon, it says they are a bad object and to please report it.
+Kudin    (Oct 22) [14552] the 'create spring' spell isn't working
+Uzog     (Oct 27) [  399] when you ride the ferry, it leaves the dock you board at and bring you back there first, making it twice as painful to ride *grin*

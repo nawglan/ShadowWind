@@ -1,0 +1,713 @@
+#24200
+cloth rag steamy~
+a steamy cloth~
+A pile of steaming cloth sits in on the floor here.~
+~
+13 0 ao 0 
+0 0 0 0 3
+1 0 0
+E
+cloth rag steamy~
+A steaming cloth. It is very soothing when you grab it..
+~
+#24201
+skull helm helmet~
+a skull helm~
+A large looking human skull sits here on the ground.~
+~
+9 agh ae g 
+4 0 0 0 25
+10 200 3000
+B
+k 
+E
+skull helm helmet~
+The skull is extra large, made to fit around your head. When you put it 
+on, it seems to move like water to fit the shape of your skull. It feels 
+very tight and protective.
+~
+A
+1 -1
+A
+13 -15
+#24202
+glove genji~
+a genji glove~
+A shadowy assassin's glove lies on the floor.~
+~
+9 g ah j 
+3 0 0 0 1
+3 1200 3000
+E
+glove genji~
+A sleek grey glove made of tough leather. It fits tightly around your hand.
+You notice small dangerous spikes protruding from the knuckles.
+~
+A
+18 1
+#24203
+scimitar~
+a scimitar~
+A huge, curved blade is here.~
+~
+5 g an 0 
+3 2 8 2 9
+17 270 0
+E
+scimitar~
+A large, curved blade made of steel.
+~
+#24204
+potion flaming red~
+a flaming red potion~
+A flaming red potion bubbles and steams in a glass decanter here.~
+~
+10 g ao 0 
+50 128 59 0 0
+2 900 3000
+E
+potion flaming red~
+The boiling hot liquid is kept in a triangular glass decanter. It's kept 
+inside by a cork stopper.
+~
+P
+detect invisibility
+P
+nightvision
+#24205
+behemoth hide skin~
+a small behemoth hide~
+A dark purple hide lays in a pile on the ground.~
+~
+9 0 ak m 
+4 0 0 0 1
+10 600 500
+E
+behemoth hide skin~
+It is a deep violet and smooth to the touch. The thick hide would offer
+good protection.
+~
+#24206
+behemoth hide skin~
+a large behemoth hide~
+A dark purple hide lays in a pile on the ground.~
+~
+9 0 ak m 
+6 0 0 0 1
+17 1200 700
+E
+behemoth hide skin~
+It is a deep violet and smooth to the touch. The thick, heavy hide would
+offer warmth and good protection.
+~
+#24207
+fading gown~
+a fading gown~
+A gown is barely visible here on the floor.~
+~
+11 ag ad f 
+0 0 0 0 3
+1 1800 50
+E
+fading gown~
+A transparent gown that seems to be slowly fading away into another 
+dimension. It is very light and airy.
+~
+A
+17 -2
+A
+24 -3
+#24208
+fading cloth~
+a fading cloth~
+A strange, transparent cloth is hovering over the ground.~
+~
+11 fg aop 0 
+0 0 0 0 3
+1 800 30
+E
+fading cloth~
+A small cloth that is hardly visible at all.
+~
+A
+24 -2
+#24209
+giant claw~
+a giant claw~
+A very large and very sharp claw is lying on the ground.~
+~
+11 g ao 0 
+0 0 0 0 1
+2 10 100
+E
+giant claw~
+A very large claw that seems to have come of some very hideous beast, or so 
+you guess from the size of it.
+~
+A
+19 1
+#24210
+skeleton corpse human~
+the skeleton~
+A human skeleton is slumped up against the wall here.~
+~
+15 0 0 0 
+20 0 -1 0 23
+20 0 0
+E
+skeleton human corpse~
+From the remains, you can tell that the person was exceedingly tall. Even 
+though there is no flesh on its skull, strangely enough, it seems to an
+expression of hopelessness.
+~
+#24211
+ring gold band~
+a gold ring~
+A tiny and battered gold band has been left on the floor.~
+~
+11 g ab 0 
+0 0 0 0 15
+1 1500 0
+E
+ring gold band~
+A small, simple golden band. It looks beaten and dirty. You notice some 
+small words and markings on the inside.
+~
+E
+words markings marking word inscription~
+Its hard to make out, but as far as you can see, the words seem to be in a 
+different langauge. 
+~
+#24212
+orb fire sphere ball~
+the Orb of Fire~
+A crystal orb is here on the pedestal, a burning flame within.~
+~
+1 ghu ao 0 
+0 0 -1 0 27
+7 3000 600
+E
+orb fire sphere ball~
+It is made of crystal and shines brilliantly. A magical eternal fire burns 
+in its centre.
+~
+#24213
+cape zephyr~
+a zephyr cape~
+An airy, white cape is on the floor here.~
+~
+9 ag ac 0 
+2 0 0 0 3
+1 750 200
+E
+cape zephyr~
+It is a soft, light cape that billows in the wind.
+~
+A
+9 3
+#24214
+boots royal boot~
+a pair of royal boots~
+A set of fancy leather boots sit on the floor.~
+~
+9 gl ag i 
+7 0 0 0 0
+9 2500 900
+E
+boots royal boot~
+They are very fancy, made of red leather.
+~
+A
+14 10
+#24215
+crown metal metallic~
+{Ca {Rred {Cmetallic crown{x~
+A crown made of a dark red metal has been lost here.~
+~
+9 fg ae g 
+2 0 0 0 1
+9 4000 500
+E
+crown metal~
+It is made of a smooth, hard metal that you haven't seen before. Small gems 
+have been set around it.
+~
+A
+17 -12
+A
+9 -2
+#24216
+bone club~
+a bone club~
+A big bone has been left on the floor.~
+~
+5 g an 0 
+0 4 4 11 25
+20 0 0
+E
+bone club~
+A huge bone made into a powerful weapon. You wonder from what creature the 
+bone came from.
+~
+A
+3 -2
+#24217
+belt leather red~
+a red leather belt~
+A wide red strap is on the floor.~
+~
+11 gjk al 0 
+0 0 0 0 20
+2 50 0
+E
+belt leather red~
+A long red leather strap that buckles nicely around your waist.
+~
+#24218
+redwing dagger wing edge~
+a red-wing dagger~
+The edge of a sharp wing rests here.~
+~
+5 g an 0 
+2 4 3 12 1
+3 500 2000
+E
+redwing dagger wing edge~
+The dagger is long and slender. It looks like it came from the edge of a 
+sharp wing.
+~
+A
+2 5
+A
+19 1
+#24219
+wings red gargoyle~
+a pair of red gargoyle wings~
+A couple of fiery wings off some creature's back is here.~
+~
+11 agl ak m 
+0 0 0 0 1
+1 2000 800
+E
+wings red gargoyle~
+A pair of flaming wings which have come off of some creatures back.
+~
+A
+14 20
+#24220
+chain nimbus~
+a nimbus chain~
+A long, glowing chain with a spiked ball on its tip lays here.~
+~
+5 aj an 0 
+0 5 5 10 10
+17 6000 500
+E
+chain nimbus~
+The chain has a long reach with a deadly spiked ball attached to the end. 
+Its magical powers make it easy to wield and lighter than the average 
+morning star. It would strike fear into the heart of any foe.
+~
+A
+18 1
+#24221
+bracelet needles spiked spikes~
+a bracelet of needles~
+A black spiked bracelet is here.~
+~
+11 gj am 0 
+0 0 0 0 1
+13 1000 200
+A
+13 -7
+A
+18 1
+#24222
+mithril black vest chainmail~
+a mithril vest~
+A shiny, black chainmail lies on the floor.~
+~
+9 a ad f 
+12 0 0 0 1
+45 27000 6000
+E
+mithril black vest chainmail~
+A strong protective chainmail. It is mainly black, but has a faint red aura
+visible around it. When you wear it, it constricts about your body like a 
+tightening boa until you are barely breathing. You see a little name 
+engraved on it: Annyuex Tch .. Perhaps the name of the maker?
+~
+A
+13 -10
+A
+18 -2
+#24223
+finger~
+a finger~
+You are disgusted by a finger that lies near your foot.~
+~
+13 0 ao 0 
+0 0 0 0 27
+1 0 0
+#24224
+pig roast~
+a roast pig~
+A big, delicious roast pig is here!~
+~
+19 g a 0 
+15 0 0 0 2
+4 50 0
+E
+pig roast~
+A yummy roast pig! Your mouth waters just thinking about it.
+~
+#24225
+gruel bowl~
+a bowl of gruel~
+A small bowl filled with gruel is here.~
+~
+19 0 a 0 
+1 0 0 0 2
+2 1 0
+E
+gruel bowl~
+Disgusting gruel fed to the prisoners.
+~
+#24226
+loincloth cloth~
+a slave's loincloth~
+A brown pile of cloth is here.~
+~
+11 0 al 0 
+0 0 0 0 0
+3 10 0
+E
+loincloth cloth~
+A simple, dirt pile of cloth given to slaves to wear as they do their work.
+~
+#24227
+sack large~
+a heavy sack~
+A large sack sits on the ground.~
+~
+15 0 a 0 
+80 0 -1 0 3
+30 150 0
+#24228
+ecu shield~
+an ecu~
+A small, triangular shield rests on the floor.~
+~
+9 0 aj l 
+2 0 0 0 1
+1 220 0
+E
+ecu shield~
+A plain, triangular shield that is small and lightweight.
+~
+#24229
+broadsword sword silver~
+a silver broadsword~
+A big silver broadsword rests on the ground here.~
+~
+5 0 an 0 
+3 2 7 2 14
+18 860 0
+E
+broadsword sword silver~
+A big stout sword that would serve you well in battle.
+~
+#24230
+tiara jeweled~
+a jeweled tiara~
+A beautiful cluster of jewels on gold shines the light in your eyes!~
+~
+11 agk ae g 
+0 0 0 0 15
+10 3200 2000
+E
+jeweled tiara~
+The tiara is made of pure gold, and has clusters of jewels and invaluable
+gems set all over it.
+~
+A
+3 1
+A
+12 4
+#24231
+sword gems gem~
+the Sword of Gems~
+A huge sword of dazzling gems is stuck in the ground, shining brilliantly!~
+~
+5 agk an 0 
+6 4 8 14 0
+19 10000 7200
+E
+gems gem sword~
+At first, the sword looks heavy and hard to manage, but when you touch it 
+its magical powers make it possible to wield. Powerful beams of light 
+emanate from its blade radiantly.
+~
+A
+13 5
+A
+17 -5
+#24232
+ring moon moonstone~
+a moonstone ring~
+A ring with a big moonstone set on the front has been lost here.~
+~
+11 g ab 0 
+0 0 0 0 0
+1 1000 222
+E
+ring moon moonstone~
+A silver banded ring with a large moonstone placed in the middle. It has a 
+special ability that seems to help protect you from magic spells.
+~
+A
+24 -2
+A
+23 -3
+#24233
+strip silk~
+a silk strip~
+A simple strip of silk lays on the floor.~
+~
+11 g ai k 
+0 0 0 0 3
+1 180 200
+E
+silk band~
+A very plain silk strip. It feels very soft.
+~
+A
+18 2
+#24234
+head chimeras chimera~
+the Chimera's head~
+A horrifying head of a hideous beast is here on the ground staring at you!~
+~
+13 gh ao 0 
+0 0 0 0 23
+40 1 0
+E
+chimeras chimera head~
+A large terrifying head that stares at you in hatred. Its stare is flat and 
+terrifying.
+~
+A
+13 -100
+A
+5 -2
+#24235
+medal medallion golden~
+a golden medal of heroism~
+A shining gold medal has been lost.~
+~
+12 ag ac 0 
+1 0 0 0 15
+1 2 0
+E
+medal medallion golden~
+A beautiful shining medallion. It is hanging on a colourful strap to be 
+worn around one's neck. On it is an engraved symbol of the phoenix, bird 
+of fire. Words under the picture read:
+   'For ridding the land of evil and destruction...'
+~
+E
+phoenix firebird bird symbol~
+A picture of a fiery bird. Firebird's symbol.
+~
+A
+18 1
+#24236
+chest bronze~
+a bronze chest~
+A large, bronze plated chest is sitting here.~
+~
+15 c 0 0 
+200 5 -1 0 13
+0 0 0
+#24237
+chest silver~
+a silver chest~
+A shining silver plated chest is sitting here.~
+~
+15 c 0 0 
+220 5 -1 0 14
+0 0 0
+#24238
+chest golden gold~
+a golden chest~
+A magnificent chest of gold is here.~
+~
+15 c 0 0 
+250 5 -1 0 15
+0 0 0
+#24239
+key small iron~
+a small iron key~
+A small iron key is left unoticed here.~
+~
+18 c ao 0 
+0 0 0 0 8
+1 0 0
+E
+key small iron~
+A very small key made of iron. It's not much bigger than your thumb.
+~
+#24240
+key medium iron~
+a medium iron key~
+A medium sized iron key has been discarded here.~
+~
+18 c ao 0 
+0 0 0 0 8
+2 0 0
+E
+key medium iron~
+A normal sized key made of iron.
+~
+#24241
+key huge iron~
+a huge iron key~
+On the floor is a very large iron key.~
+~
+18 c ao 0 
+0 0 0 0 8
+5 0 0
+E
+key huge iron~
+This key is very large and heavy, made of iron. It is about as big as your 
+fist, and you wonder what kind of door would need such a key.
+~
+#24242
+key massive iron~
+a massive iron key~
+A massive iron key is here.~
+~
+18 c ao 0 
+0 0 0 0 8
+10 0 0
+E
+key massive iron~
+A ridiculously huge and heavy key.
+~
+#24243
+key shadow shadowy iron~
+a shadowy iron key~
+Hiding in the shadows is an iron key.~
+~
+18 c ao 0 
+0 0 0 0 8
+3 0 0
+E
+shadow shadowy iron key~
+A mysterious iron key that seems to be in the shadows no matter where you 
+place it..
+~
+#24244
+key jail~
+the jail key~
+A small steel key on a chain is here.~
+~
+18 c ao 0 
+0 0 0 0 9
+1 0 0
+E
+jail key~
+A small steel key attached to a long chain.
+~
+#24245
+tail serpents serpent~
+a serpent's tail~
+A segment of a serpent's tail is on the ground here.~
+~
+18 c ao 0 
+0 0 0 0 23
+1 0 0
+E
+tail serpents serpent~
+A small segment of a serpent's tail. It feels slimy, and writhes in your
+hand as if it were still attached to the serpent itself.
+~
+A
+13 -30
+A
+14 -80
+#24246
+skull cranium bone head~
+a crushed skull~
+A skull that looks to have been crushed now lies in the corner.~
+~
+13 0 ao 0 
+0 0 0 0 25
+1 0 0
+E
+skull cranium bone head~
+It is human. Deep indentations have been left on the top and back part of
+the skull...they look like claw marks. The whole head looks to have been 
+crushed somehow.
+~
+#24247
+crystal chandelier light~
+a crystal chandelier~
+A magnificent crystal chandelier is hanging from the ceiling.~
+~
+12 0 0 0 
+0 0 0 0 27
+0 0 0
+E
+crystal chandelier light~
+Its very big and bright. It hangs by a single chain that barely looks
+strong enough to hold its weight.. The chandelier holds what looks like
+1000 candles that light the room splendidly. Glass prisms dangle delicately
+from it changing the light to a beautiful spectrum of colors which are
+displayed on parts of the wall.
+~
+#24248
+coins money gold pile~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 0 a 0 
+0 7 0 0 15
+1 0 0
+#24249
+coins~
+{ya huge mountain of copper coins{x~
+{ya huge mountain of copper coins{x~
+~
+20 0 a 0 
+0 0 0 500 15
+18 0 0
+#24250
+coins mountain~
+{Ya large mountain of coins{x~
+{Ya large mountain of coins{x~
+~
+20 0 a 0 
+0 1 15 250 15
+36 0 0
+#24251
+coins fortune~
+{Ya fortune of coins{x~
+{YA fortune of coins is lying here.{x~
+~
+20 0 a 0 
+0 8 15 300 15
+84 0 0
+#24252
+coins statue chimera~
+{Wa glimmering statue of the {YChimera{W made of coins{x~
+{Wa glimmering statue of the {YChimera{W made of coins{x~
+~
+20 g a 0 
+0 0 58 173 15
+140 0 0
+E
+coins statue chimera~
+It looks like a Chimera.
+~
+$~

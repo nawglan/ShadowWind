@@ -1,0 +1,137 @@
+#2000
+purse~
+a small purse~
+The small leather purse lays here.~
+~
+15 0 ao 0 
+50 0 -1 11 3
+1 15000
+E
+purse~
+A small purse that may be worn around the neck.
+~
+#2001
+ruby medallion~
+{wa {Wshiny {Rruby {xmedallion~
+A small {Mshiny ruby medallion{x is lying here.~
+~
+11 g ac 0 
+0 0 0 0 6
+2 10000
+E
+medallion~
+The medalion looks nice.
+~
+A
+3 10
+A
+17 -5
+#2002
+carved wooden sword~
+{ya carved wooden short sword{x~
+An almost black wooden sword lays here.~
+~
+5 g an 0 
+2 5 4 1 5
+15 50000
+E
+shortsword~
+The shortsword is very dark and stained from the blood of many battles.
+~
+A
+18 1
+A
+19 1
+A
+9 -2
+#2003
+garbage~
+a small pile of garbage~
+A small pile of garbage is rotting here.~
+~
+15 0 0 0 
+60 0 -1 0 1
+9999 0
+E
+garbage~
+A small pile of garbage is rotting here and giving off a foul stench.
+~
+#2004
+simple sword~
+a simple sword~
+A very simple looking sword lays here.~
+~
+5 0 an 0 
+2 3 2 1 12
+10 800
+E
+sword simple~
+A very, very simple looking sword.
+~
+#2005
+gold~
+{Wa small pile of platinum coins{x~
+{WA small pile of platinum sits here.{x~
+~
+20 0 a 0 
+5 0 0 0 15
+50 0
+E
+gold mountain~
+A small mountain of gold sits here.
+~
+#2006
+vest woollen~
+{ya thick {Wwoollen{y vest{x~
+A heavy looking vest lies in a crumpled heap.~
+~
+11 gop ad f 
+0 0 0 0 3
+10 500
+A
+12 5
+A
+4 1
+A
+24 -2
+#2007
+orb red~
+{Da mot{rled red {Dorb{x~
+A large strangely colored orb rests here.~
+~
+12 gmn ao 0 
+0 0 0 0 18
+1 10000
+A
+18 1
+A
+19 1
+#2050
+brook~
+{bsmall brook{x~
+A small brook is winding through the grove.~
+~
+23 cdeg 0 0 
+999999 999999 15 0 0
+1000004 0
+E
+brook~
+The water here flows cool and clear, as if beconing you to drink it.
+~
+#2051
+tree bark limb~
+{ya broken tree limb{x~
+A broken tree limb lays here~
+~
+13 0 0 0 
+0 0 0 0 0
+0 0
+#2099
+bone leg~
+{Wa bone{x~
+{Wa broken bone is lying here.{x~
+~
+13 0 ao 0 
+0 0 0 0 0
+0 0
+$~

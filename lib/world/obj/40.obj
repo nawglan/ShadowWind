@@ -1,0 +1,109 @@
+#4000
+ring yellow green~
+{wa {Yyellow {xand {ggreen {xring~
+A ring is here, with yellow and green ornamentation.  It looks very old.~
+~
+9 gh ab 0 
+0 2 0 0 12
+1 50 0
+E
+ring~
+It feels heavy.
+~
+A
+1 -5
+#4001
+corpse~
+a corpse~
+A halfway decayed corpse of a goblin is here, giving off a foul odor.~
+~
+15 0 a 0 
+50 0 -1 0 23
+100 0 0
+#4002
+coins~
+{ya huge pile of copper{x~
+{ya huge pile of copper coins{x~
+~
+20 0 a 0 
+0 0 0 500 12
+0 0 0
+#4050
+potion purple~
+{ma purple potion{x~
+A purple potion is here.~
+~
+10 g ao 0 
+50 172 189 0 18
+1 1000 1000
+E
+potion purple~
+It looks rather strange!
+~
+P
+cure blindness
+P
+aid
+#4051
+helmet metal~
+a metal helmet~
+A metal helmet in here.~
+~
+9 g ae g 
+4 2 0 0 13
+4 3000 50
+E
+helmet metal~
+It looks somehow magical!.
+~
+A
+24 -2
+A
+23 -2
+#4052
+mushroom~
+a mushroom~
+A small mushroom is here.~
+~
+19 0 ao 0 
+2 0 0 1 2
+1 9 0
+E
+mushroom~
+Let's put it this way - I wouldn't eat it!!
+~
+#4053
+dirk~
+a thieves' dirk~
+A beautifully crafted dirk is lying here.~
+stab~
+5 g an 0 
+2 2 4 12 8
+2 850 0
+E
+dirk~
+It's a medium sized, beautifully crafted dirk made from some greyish alloy.
+Its blade is double-edged and very thin...this looks like a good thieves'
+weapon.
+~
+A
+18 1
+A
+19 1
+#4054
+ankh ancient~
+an ancient ankh~
+A beautiful ancient ankh has been dropped here.~
+~
+8 gk ac 0 
+0 0 0 0 14
+1 10000 600
+E
+ankh ancient~
+It is a beautiful ancient silver ank with a glowing aura radiating from it.
+It looks far to valuable to be lying in such a place, and you cannot stop
+wondering if someone accidentially dropped it.
+~
+A
+13 10
+$~

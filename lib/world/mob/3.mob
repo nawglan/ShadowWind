@@ -1,0 +1,127 @@
+#301
+shipprog1 ship~
+shipprog1~
+Shipprog1 is here. DO NOT PURGE!!!!!!!!
+~
+It looks unfinished.
+~
+d 0 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 0 0 0
+T 100 2d2+2 0
+>time_prog     */*/*/*/*/8~
+mpat 5963 mpecho A large passenger ship pulls up to the dock.
+mpat 5963 mpoload 301
+mpat 5962 mpforce ticketer shout The ship to Port Halyon has docked. All aboard!
+~
+>time_prog     */*/*/*/*/10~
+mpat 5963 mppurge ship1
+mpat 5963 mpecho The ship sails eastward.
+mpat 301 mpecho The ship begins to pull away from the wharf.
+~
+>time_prog     */*/*/*/*/11~
+mpat 301 mpecho The ship continues to travel eastward.
+~
+>time_prog     */*/*/*/*/12~
+mpat 301 mpecho The ship continues to travel eastward.
+~
+>time_prog     */*/*/*/*/13~
+mpat 301 mpecho The ship slowly changes its heading and starts toward the south.
+~
+>time_prog     */*/*/*/*/14~
+mpat 301 mpecho The ship continues to travel southward.
+~
+>time_prog     */*/*/*/*/15~
+mpat 301 mpecho The ship continues to travel southward.
+~
+>time_prog     */*/*/*/*/16~
+mpat 301 mpecho The ship slowly changes its heading and starts toward the west.
+~
+>time_prog     */*/*/*/*/17~
+mpat 301 mpecho The ship continues to travel westward.
+~
+>time_prog     */*/*/*/*/18~
+mpat 12069 mpoload 301
+mpat 12069 mpecho A large ship pulls up to the dock.
+mpat 301 mpecho {WThe Ship's Captain shouts, 'We've arrived at Port Halyon. Mind the gap!'{x
+mpat 301 mpecho The ship pulls up to the wharf and docks.
+~
+>time_prog     */*/*/*/*/19~
+mpat 301 mpforce all wake
+mpat 301 mpforce all stand
+mpat 301 mpecho The Ships's Captain wakes the sleeping travellers.
+mpdelay 5
+mpat 301 mpecho {WThe Ship's Captain shouts, 'Oi, its the end of the line here. All out!'{x
+mpdelay 5
+mpat 301 mpecho With amazing force, the Captain drags you off the ship.
+mpat 301 mpforce all disembark
+mpdelay 5
+mpat 12069 mppurge ship1
+mpat 12069 mpecho The ship pulls away from the wharf.
+~
+|
+#302
+shipprog2 ship~
+shipprog2~
+Shipprog2 is here. DO NOT PURGE!!!!!!!!
+~
+It looks unfinished.
+~
+d 0 0 X
+1 19 9 1d1+10
+0 150
+8 8 0 0 0 0
+T 100 2d2+2 0
+>time_prog     */*/*/*/*/8~
+mpat 12070 mpecho The ship to Caryllion pulls up to the dock.
+mpat 12070 mpoload 302
+mpat 12012 mpforce tickettaker shout The ship to Caryllion has docked.
+All aboard!
+~
+>time_prog     */*/*/*/*/10~
+mpat 12070 mppurge ship2
+mpat 12070 mpecho The ship sails eastward.
+mpat 302 mpecho The ship begins to pull away from the wharf.
+~
+>time_prog     */*/*/*/*/11~
+mpat 302 mpecho The ship continues to travel eastward.
+~
+>time_prog     */*/*/*/*/12~
+mpat 302 mpecho The ship continues to travel eastward.
+~
+>time_prog     */*/*/*/*/13~
+mpat 302 mpecho The ship slowly changes its heading and starts toward the north.
+~
+>time_prog     */*/*/*/*/14~
+mpat 302 mpecho The ship continues to travel northward.
+~
+>time_prog     */*/*/*/*/15~
+mpat 302 mpecho The ship continues to travel northward.
+~
+>time_prog     */*/*/*/*/16~
+mpat 302 mpecho The ship slowly changes its heading and starts toward the west.
+~
+>time_prog     */*/*/*/*/17~
+mpat 302 mpecho The ship continues to travel westward.
+~
+>time_prog     */*/*/*/*/18~
+mpat 5977 mpoload 302
+mpat 5977 mpecho A large ship pulls up to the dock.
+mpat 302  mpecho {WThe Ship's Captain shouts, 'We've arrived at Caryllion. Mind the gap!'{x
+mpat 302 mpecho The ship pulls up to the wharf and docks.
+~
+>time_prog     */*/*/*/*/19~
+mpat 302 mpforce room wake
+mpat 302 mpforce room stand
+mpat 302 mpecho The Ships's Captain wakes the sleeping travellers.
+mpdelay 5
+mpat 302 mpecho {WThe Ship's Captain shouts, 'Oi, its the end of the line here. All out!'{x
+mpdelay 5
+mpat 302 mpecho With amazing force, the Captain drags you off the ship.
+mpat 302 mpforce room disembark
+mpdelay 5
+mpat 5977 mppurge ship2
+mpat 5977 mpecho The ship pulls away from the wharf.
+~
+|

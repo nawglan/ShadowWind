@@ -1,0 +1,137 @@
+#3800
+shield iron~
+{Da sturdy iron shield{x~
+A simple iron shield lies here.~
+~
+9 0 aj l 
+4 0 0 0 8
+7 900 10
+#3801
+earring copper shiny~
+{wa {yshiny copper{w earring{x~
+A small earring lies here, glinting in the light.~
+~
+11 0 aq 0 
+0 0 0 0 12
+1 840 0
+A
+17 -2
+#3802
+bun sticky~
+a half eaten sticky bun~
+A delicious looking bun lies here, however it has a large bite out of one side.~
+~
+19 0 ao 0 
+6 0 0 0 2
+1 0 0
+#3803
+wristband silver plated~
+{wa {Wp{wl{wa{Wi{wt{We{wd {Wsilver{w wristband{x~
+A lovely silver wristband has been left here.~
+~
+11 u am 0 
+0 0 0 0 14
+2 3300 50
+A
+17 -1
+#3804
+girth woven~
+{wa {Dwoven leather{w girth{x~
+A well crafted woven leather girth has been left here.~
+~
+9 0 al 0 
+4 0 0 0 20
+5 2110 10
+#3805
+gloves dirty~
+{Da pair of {ydirty{D leather gloves{x~
+A pair of well worn leather gloves have been tossed to the ground.~
+~
+9 0 ah j 
+4 0 0 0 20
+2 1980 10
+#3806
+spade~
+a small spade~
+A small spade has been carelessly dropped here.~
+~
+9 0 ao 0 
+2 1 3 7 9
+6 945 10
+#3807
+satchel canvas~
+{ra red canvas satchel{x~
+A small red satchel has been carelessly dropped here.~
+~
+15 0 ao 0 
+60 5 -1 0 3
+6 2600 100
+#3808
+log ~
+{ya large log{x~
+{yA large log has fallen here, blocking your way westward.{x~
+~
+12 0 0 0 
+0 0 0 0 0
+0 0 0
+#3809
+sundial~
+{yan intricately carved bronze sundial{x~
+{yA large terracotta pedestal stands in the centre of the path.{x~
+~
+12 0 0 0 
+0 0 0 0 0
+99999 0 0
+#3810
+hoe~
+a large {ggarden{w hoe{x~
+A large hoe has been carelessly dropped here.~
+~
+5 0 an 0 
+3 2 2 3 8
+6 785 2
+#3811
+gecko tail~
+{ga delicious {Ggecko{g tail{x~
+{ga delicious looking {Ggecko{g tail lies shriveled on the ground{x~
+~
+19 0 a 0 
+7 0 0 0 2
+2 0 0
+#3812
+fish fillet~
+{wa {cfish{w fillet{x~
+{wa perfectly carved {cfish{w fillet lies on the ground{x~
+~
+19 0 a 0 
+6 0 0 0 2
+2 0 0
+#3813
+leggings~
+{ca pair of pale {Bblue{c leggings{x~
+A pair of blue leggings have been carelessly dropped here.~
+~
+11 gop af h 
+0 0 0 0 3
+5 1755 50
+A
+25 5
+A
+12 5
+#3814
+flower yellow daisy~
+{Ya large yellow daisy{x~
+A beautiful yellow daisy is lying on the ground.~
+~
+8 0 aeo 0 
+0 0 0 0 4
+1 20 0
+#3815
+lollypop lolly pop~
+{wa {rred{w lollypop{x~
+A sticky red lollypop has been dropped here.~
+~
+19 0 ao 0 
+4 0 0 0 2
+1 10 0
+$~

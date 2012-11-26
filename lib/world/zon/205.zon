@@ -1,0 +1,203 @@
+#205
+Brethrenmere /Smut/~
+20599 210 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+M 0 20504 2 20500 100	* the Guardian of Moria
+M 0 20504 2 20500 100	* the Guardian of Moria
+O 0 20525 1 20562 50	* a glowing scroll
+O 0 20526 1 20562 50	* a rustic scroll
+O 0 20527 1 20562 100	* a scroll of escape
+O 0 20527 1 20562 50	* a scroll of escape
+M 0 20506 1 20516 100	* the Werewolf
+M 0 20507 1 20518 100	* the Spirit of Sorrel
+M 0 20508 1 20528 100	* the Troglodyte
+O 0 20564 1 20528 100	* some scraps of food
+M 0 20509 1 20536 100	* the Troll King
+M 0 20510 1 20552 100	* Elland
+M 0 20511 1 20563 100	* the large brown Bear
+M 0 20512 1 20575 100	* the Ice Monster
+M 0 20514 1 20578 100	* the Air Guardian
+M 0 20515 1 20581 100	* the Water Guardian
+M 0 20516 1 20584 100	* the Earth Guardian
+M 0 20517 1 20586 100	* the Stone Guardian
+M 0 20518 1 20588 100	* the Fire Guardian
+M 0 20522 2 20597 100	* the Protector of Hell
+M 0 20522 2 20597 100	* the Protector of Hell
+M 0 20523 1 20597 100	* Satan
+M 0 20500 30 20501 100	* the Monstrous Troll
+M 0 20500 30 20503 100	* the Monstrous Troll
+M 0 20500 30 20579 100	* the Monstrous Troll
+M 0 20500 30 20523 100	* the Monstrous Troll
+M 0 20500 30 20525 100	* the Monstrous Troll
+M 0 20500 30 20527 100	* the Monstrous Troll
+M 0 20500 30 20530 100	* the Monstrous Troll
+M 0 20500 30 20521 100	* the Monstrous Troll
+M 0 20500 30 20585 100	* the Monstrous Troll
+M 0 20500 30 20509 100	* the Monstrous Troll
+M 0 20500 30 20511 100	* the Monstrous Troll
+M 0 20500 30 20513 100	* the Monstrous Troll
+M 0 20500 30 20515 100	* the Monstrous Troll
+M 0 20500 30 20534 100	* the Monstrous Troll
+M 0 20500 30 20538 100	* the Monstrous Troll
+M 0 20500 30 20540 100	* the Monstrous Troll
+M 0 20500 30 20542 100	* the Monstrous Troll
+M 0 20500 30 20544 100	* the Monstrous Troll
+M 0 20500 30 20545 100	* the Monstrous Troll
+M 0 20500 30 20561 100	* the Monstrous Troll
+M 0 20500 30 20559 100	* the Monstrous Troll
+M 0 20500 30 20557 100	* the Monstrous Troll
+M 0 20500 30 20555 100	* the Monstrous Troll
+M 0 20500 30 20548 100	* the Monstrous Troll
+M 0 20500 30 20550 100	* the Monstrous Troll
+M 0 20500 30 20565 100	* the Monstrous Troll
+M 0 20500 30 20567 100	* the Monstrous Troll
+M 0 20500 30 20568 100	* the Monstrous Troll
+M 0 20501 30 20502 100	* the Grotesque Orc
+M 0 20501 30 20505 100	* the Grotesque Orc
+M 0 20501 30 20506 100	* the Grotesque Orc
+M 0 20501 30 20524 100	* the Grotesque Orc
+M 0 20501 30 20526 100	* the Grotesque Orc
+M 0 20501 30 20529 100	* the Grotesque Orc
+M 0 20501 30 20531 100	* the Grotesque Orc
+M 0 20501 30 20520 100	* the Grotesque Orc
+M 0 20501 30 20587 100	* the Grotesque Orc
+M 0 20501 30 20514 100	* the Grotesque Orc
+M 0 20501 30 20512 100	* the Grotesque Orc
+M 0 20501 30 20510 100	* the Grotesque Orc
+M 0 20501 30 20508 100	* the Grotesque Orc
+M 0 20501 30 20517 100	* the Grotesque Orc
+M 0 20501 30 20537 100	* the Grotesque Orc
+M 0 20501 30 20577 100	* the Grotesque Orc
+M 0 20501 30 20541 100	* the Grotesque Orc
+M 0 20501 30 20543 100	* the Grotesque Orc
+M 0 20501 30 20546 100	* the Grotesque Orc
+M 0 20501 30 20535 100	* the Grotesque Orc
+M 0 20501 30 20560 100	* the Grotesque Orc
+M 0 20501 30 20558 100	* the Grotesque Orc
+M 0 20501 30 20556 100	* the Grotesque Orc
+M 0 20501 30 20554 100	* the Grotesque Orc
+M 0 20501 30 20553 100	* the Grotesque Orc
+M 0 20501 30 20547 100	* the Grotesque Orc
+M 0 20501 30 20549 100	* the Grotesque Orc
+M 0 20501 30 20551 100	* the Grotesque Orc
+M 0 20501 30 20564 100	* the Grotesque Orc
+M 0 20501 30 20566 100	* the Grotesque Orc
+M 0 20513 4 20570 100	* the Ice Block
+M 0 20513 4 20570 100	* the Ice Block
+M 0 20513 4 20570 100	* the Ice Block
+M 0 20513 4 20570 100	* the Ice Block
+M 0 20519 3 20590 100	* the She-Devil
+M 0 20519 3 20593 100	* the She-Devil
+M 0 20519 3 20596 100	* the She-Devil
+M 0 20520 3 20591 100	* the Little Devil
+M 0 20520 3 20594 100	* the Little Devil
+M 0 20520 3 20595 100	* the Little Devil
+M 0 20521 4 20590 100	* the Evil Soul
+M 0 20521 4 20592 100	* the Evil Soul
+M 0 20521 4 20594 100	* the Evil Soul
+M 0 20521 4 20596 100	* the Evil Soul
+M 0 20502 15 20501 100	* the Hobgoblin Mistress
+M 0 20502 15 20505 100	* the Hobgoblin Mistress
+M 0 20502 15 20525 100	* the Hobgoblin Mistress
+M 0 20502 15 20580 100	* the Hobgoblin Mistress
+M 0 20502 15 20519 100	* the Hobgoblin Mistress
+M 0 20502 15 20515 100	* the Hobgoblin Mistress
+M 0 20502 15 20512 100	* the Hobgoblin Mistress
+M 0 20502 15 20537 100	* the Hobgoblin Mistress
+M 0 20502 15 20540 100	* the Hobgoblin Mistress
+M 0 20502 15 20543 100	* the Hobgoblin Mistress
+M 0 20502 15 20548 100	* the Hobgoblin Mistress
+M 0 20502 15 20585 100	* the Hobgoblin Mistress
+M 0 20502 15 20558 100	* the Hobgoblin Mistress
+M 0 20502 15 20561 100	* the Hobgoblin Mistress
+M 0 20502 15 20567 100	* the Hobgoblin Mistress
+M 0 20503 15 20502 100	* the Green Blob
+M 0 20503 15 20506 100	* the Green Blob
+M 0 20503 15 20524 100	* the Green Blob
+M 0 20503 15 20529 100	* the Green Blob
+M 0 20503 15 20520 100	* the Green Blob
+M 0 20503 15 20576 100	* the Green Blob
+M 0 20503 15 20509 100	* the Green Blob
+M 0 20503 15 20534 100	* the Green Blob
+M 0 20503 15 20553 100	* the Green Blob
+M 0 20503 15 20539 100	* the Green Blob
+M 0 20503 15 20544 100	* the Green Blob
+M 0 20503 15 20582 100	* the Green Blob
+M 0 20503 15 20551 100	* the Green Blob
+M 0 20503 15 20559 100	* the Green Blob
+M 0 20503 15 20568 100	* the Green Blob
+M 0 20505 15 20502 100	* the Midnight Lurker
+M 0 20505 15 20523 100	* the Midnight Lurker
+M 0 20505 15 20529 100	* the Midnight Lurker
+M 0 20505 15 20519 100	* the Midnight Lurker
+M 0 20505 15 20512 100	* the Midnight Lurker
+M 0 20505 15 20566 100	* the Midnight Lurker
+M 0 20505 15 20537 100	* the Midnight Lurker
+M 0 20505 15 20541 100	* the Midnight Lurker
+M 0 20505 15 20544 100	* the Midnight Lurker
+M 0 20505 15 20550 100	* the Midnight Lurker
+M 0 20505 15 20554 100	* the Midnight Lurker
+M 0 20505 15 20560 100	* the Midnight Lurker
+M 0 20505 15 20580 100	* the Midnight Lurker
+M 0 20505 15 20585 100	* the Midnight Lurker
+M 0 20505 15 20547 100	* the Midnight Lurker
+O 0 20531 1 20589 100	* a pile of gold coins
+O 0 20563 1 20520 100	* a puddle
+D 0 20516 1 1	* The Wolverines Den
+D 0 20522 3 1	* Bottoms Up
+D 0 20517 1 1	* The Smelly Tunnel
+D 0 20518 2 1	* Sorrels Lair
+D 0 20518 3 1	* Sorrels Lair
+D 0 20519 0 1	* The Wet Tunnel
+D 0 20527 1 1	* Light At The End Of The Tunnel
+D 0 20528 3 1	* The Small Cave
+D 0 20533 4 1	* On The Ladder
+D 0 20549 3 1	* A Shored-Up Tunnel
+D 0 20552 3 1	* Elland's Chamber
+D 0 20558 0 1	* A Barren Cavern
+D 0 20563 2 1	* A Bear Cave
+D 0 20544 5 1	* A Dead-End
+D 0 20564 4 1	* Into The Labyrinth
+D 0 20572 1 1	* Into The Labyrinth
+D 0 20575 3 1	* The Freezer
+D 0 20577 2 1	* A Shadowy Tunnel
+D 0 20578 0 1	* The Air Guardian's Chamber
+D 0 20580 0 1	* A Shadowy Tunnel
+D 0 20581 2 1	* The Water Guardian's Chamber
+D 0 20583 1 1	* A Shadowy Tunnel
+D 0 20584 3 1	* The Earth Guardian's Chamber
+D 0 20585 1 1	* A Shadowy Tunnel
+D 0 20586 2 1	* The Stone Guardian's Chamber
+D 0 20586 3 1	* The Stone Guardian's Chamber
+D 0 20587 1 1	* End Of The Shadowy Tunnel
+D 0 20588 3 1	* The Fire Guardian's Chamber
+D 0 20588 5 2	* The Fire Guardian's Chamber
+D 0 20589 4 2	* The Tunnel To Hell
+S
+$

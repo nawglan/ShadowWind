@@ -1,0 +1,955 @@
+#24600
+key~
+a holy key~
+You see a holy key on the ground! ACK! This shouldnt be on ground, report to farrot plz~
+you see a holy key on the ground! ACK! This shouldnt be on ground, report to farrot plz~
+18 cq ao 0 
+0 0 0 0 6
+1000 0 0
+#24601
+bloody key~
+a bloody key~
+A bloody key lies here before you.~
+~
+18 cfqs a 0 
+0 0 0 0 25
+2 0 0
+E
+key~
+The key appears to be made from a skeleton of some sort, possibly the finger.It is covered in blood.~
+#24602
+light key~
+a light key~
+A key made entirely from light lies here.~
+~
+18 acq a 0 
+0 0 0 0 6
+2 0 0
+E
+key light~
+You examine the key in more detail to find you can see right through it!
+~
+#24603
+dark key~
+a dark key~
+A key darkening the room lies here, swallowed in blackness.~
+~
+18 cq a 0 
+0 0 0 0 6
+2 0 0
+E
+key dark~
+You examine the key in more detail to find it's made of a sludge type substance,
+and emits a dark grey light.
+~
+#24604
+key~
+a heavy glowing key~
+A key of stone lies here.~
+~
+18 acq a 0 
+0 0 0 0 6
+5 0 0
+E
+key glowing~
+You examine the glowing key to find a soft glowing auro about it.
+~
+#24605
+key~
+a lightweight key~
+A key is hovering above the surface here.~
+~
+18 acq a 0 
+0 0 0 0 29
+0 0 0
+E
+key~
+You examine the key closer to find it has no weight, and as you drop it
+to the ground, it appears to float approximately 1 inch from any surface.
+~
+#24606
+key stone white~
+a white stone key~
+A beutiful white stone key lies before you.~
+~
+18 acq a 0 
+0 0 0 0 6
+2 0 0
+#24607
+dark key~
+a dark scummy key~
+A dark key lies here in filth.~
+~
+18 acq a 0 
+0 0 0 0 6
+2 0 0
+#24608
+golden key~
+a Golden Key~
+A Golden Key wrapped in jewelery casing lies here.~
+~
+18 abcq a 0 
+0 0 0 0 15
+0 0 0
+E
+key golden~
+You examine a Golden Key to find it has no weight, yet appears to be wrapped in jewellry and gold.~
+#24609
+gold coin key~
+a Key Of Coins~
+A Gold Coin has been shaped into a key here.~
+~
+18 abcq ao 0 
+0 0 0 0 15
+2 0 0
+#24610
+stone anklet~
+{Da grey stone anklet{x~
+A grey stone anklet lies before you.~
+~
+11 g as 0 
+0 0 0 0 6
+2 8000 250
+A
+12 5
+#24611
+stone belt~
+{wa {Ws{wh{Wi{wm{Wm{we{wr{wi{Wn{wg {Dstone belt{x~
+A spiked stone belt lies here.~
+~
+11 gm al 0 
+0 0 0 0 6
+6 12000 500
+A
+17 -8
+A
+18 1
+#24612
+stone boots~
+{Da pair of stone boots{x~
+A rough pair of stone boots lies before you.~
+~
+11 g ag i 
+0 0 0 0 6
+12 12000 750
+A
+17 -10
+A
+18 1
+A
+14 -15
+#24613
+grey stone sword~
+{Da grey stone sword{x~
+A grey stone sword lies about waiting to be wielded.~
+~
+5 gik an 0 
+6 4 6 14 6
+16 15000 1500
+B
+m 
+E
+grey stone sword~
+   You scroll across the stone ruins on the sword, it's magnificent colors
+and shiney edges dazzle you to no end. On the handle is carved the following
+inscription...
+ "To those who vow to protect the Cirlce of Stones from our foes"
+~
+A
+18 2
+#24614
+grey stone shield~
+{Da grey stone shield{x~
+A grey stone shield lies before you.~
+~
+11 gi aj l 
+0 0 0 0 6
+8 10000 500
+A
+24 -3
+A
+17 -8
+#24615
+altar~
+an old altar~
+An old altar lies before you looking unused for many centuries.~
+~
+12 e 0 0 
+0 0 0 0 6
+100000 0 0
+E
+altar torch stone~
+As you look across the stones, you see one that was apparently used as an 
+altar many centuries ago. It has a torch set upon it, and, although it is
+definitely producing light, the torch is not lit.
+~
+#24616
+bright altar~
+{Wa bright altar made of light.{x~
+An altar made of pure light lies before you, blood trickling down it~
+~
+12 ae 0 0 
+0 0 0 0 29
+100000 0 0
+E
+light altar torch~
+As you peer across the altar, you see the colors of the rainbow being emitted
+from deep within it. The extreme brightness of the colors force you to squint
+slightly, and the last thing you notice is fresh blood trickling down the sides.
+~
+#24617
+altar~
+{Da stone altar{x~
+A stone altar lies before you looking rather bland.~
+~
+12 e 0 0 
+0 0 0 0 6
+100000 0 0
+E
+altar~
+A you examine the altar, it looks rather bland. Besides the blood-stains and 
+obvious uses for this altar, it looks out of place. On the bottom of the altar
+is a memorial for Hydroglix.
+~
+#24618
+altar fire~
+{wan Altar Of {RF{ri{Rr{re{x~
+An Altar lies before you engulfed in fire!~
+~
+0 e 0 0 
+0 0 0 0 0
+100000 0 0
+E
+altar~
+You stand back as you examine this altar. The fire occasionally spurts out
+and catches stray items, burning them to ashes. This altar is used often and 
+looks more like a grave than anything else. On the bottom of the altar is a 
+memorial of some sort.
+~
+#24619
+altar power~
+the Altar Of Power~
+The Altar Of Power lies before you.~
+~
+12 e 0 0 
+0 0 0 0 15
+100000 0 0
+E
+altar power~
+As you examine the altar more closely, you notice inscriptions that are unreadable.
+The altar is extremely large and spikes seem to jut out from the sides. When you
+reach out to touch it, one of the spikes sprouts up and nicks your finger. It's 
+made of a gold substance.
+~
+#24620
+altar arms~
+the Altar Of Arms~
+The Altar Of Arms lies before you.~
+~
+12 be a 0 
+0 0 0 0 15
+100000 0 0
+E
+altar arms~
+The altar before you stands about four feet high and is made of gold. The humming
+noise is starting to hurt your ears. The words " Death to All " are inlaid on the
+bottom of each side of the altar.
+~
+#24621
+altar eclipse~
+Altar Of The Eclipse~
+The Altar Of The Eclipse lies here, reflecting light everywhere~
+~
+12 abe 0 0 
+0 0 0 0 23
+100000 0 0
+E
+altar eclipse~
+The Altar Of The Eclipse is made entirely of the flesh of immortals, their dignity
+sheared from them when dissipated. It emits such a humming sound, it is rather
+painful to hear. It has a wierd shape, and appears to be used for purposes other 
+than sacrifice. When you hold a light close to it, it is reflected back to you, and
+a few stones begin to shift.
+~
+#24622
+fountain~
+a Golden Fountain~
+A Golden Fountain is here with ten faucets in a swirling design.~
+~
+23 ei 0 0 
+999999 999999 0 0 26
+1000004 0 0
+#24623
+sturdy oak~
+a Sturdy Oak Podium~
+A Sturdy Oak Podium sits here unattended.~
+~
+12 0 0 0 
+0 0 0 0 5
+1000004 0 0
+#24624
+bed~
+a bed with white sheets~
+A neatly made bed lies before you, inviting you to go to sleep.~
+~
+15 0 0 0 
+500 15 24625 0 5
+1000004 0 0
+E
+bed spring~
+A soft white bed lies here. It is made up with flowing white sheets,
+there appears to be a spring that is loose under the sheets.
+~
+#24625
+key~
+a small key~
+A small key lies here.~
+~
+18 0 a 0 
+0 0 0 0 6
+2 0 0
+#24626
+desk~
+a Stone Desk~
+A Grey Stone Desk lies in the northern corner of the room.~
+~
+15 0 0 0 
+500 7 -1 0 6
+1000004 0 0
+E
+desk stone~
+The desk is made of grey stone, and looks rather plain. From the cracks andpen marks covering its surface, you would say it is well used. There is alarge drawer.~
+#24627
+scroll stone~
+a stone scroll~
+A stone scroll lies before you.~
+~
+2 0 a 0 
+50 141 187 0 6
+4 6000 500
+P
+armor
+P
+bless
+#24628
+scroll flesh~
+a scroll of flesh~
+A scroll weaved and created from flesh lies before you.~
+~
+2 0 a 0 
+50 127 84 0 23
+1 6000 100
+P
+detect invisibility
+P
+true seeing
+#24629
+jewels rubies saphires mound~
+a mound of jewels, rubies, and saphires~
+A large mound of jewels, rubies, and saphires is shining before you.~
+~
+8 0 a 0 
+0 0 0 0 1
+50 42957 500
+E
+jewels saphires rubies mound~
+A enourmous mound of jewels, saphires, and rubies lie here untarnished with
+time. They seem to be very pure in quality, and of the highest value.
+~
+#24630
+gold coins~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 0 a 0 
+0 20 0 0 15
+40 0 0
+#24631
+bed stone~
+a stone bed~
+A stone bed covered in grey sheets lies before you, unattended for the day.~
+~
+15 e 0 0 
+500 15 24632 0 6
+100 0 0
+E
+bed stone~
+You examine the bed more closely to find that the sheets are covering a loose
+spring. You fiddle with the spring a bit, and discover that this is a container
+of some sort.
+~
+#24632
+skeleton key~
+a skeleton key~
+A skeleton key lies before you.~
+~
+18 g am 0 
+0 0 0 0 12
+1 0 0
+#24633
+broom~
+a long handle broom~
+A long handle broom lies here, looking very used.~
+~
+5 0 an 0 
+0 4 3 11 5
+9 8000 250
+E
+broom~
+You examine the broom to find little detail. It's approximately four feetlong, and its handle is made of finely crafted oak. The bristles are goldplated, and this looks like it could make quite a decent weapon.~
+#24634
+duster black~
+{Da black duster{x~
+A black duster lies here, attracting dust.~
+~
+12 0 ao 0 
+0 0 0 0 5
+4 4000 100
+E
+duster black~
+A black duster sits here unattended, attracting dust.  From the appearanceof it, it is very used, and could be quite hazardous!~
+A
+17 -5
+A
+12 10
+#24635
+whip~
+Shimrock's whip~
+A long fiery whip lies before you with 'Shimrock' carved into the handle.~
+~
+5 beg an 0 
+0 5 5 13 21
+10 12000 750
+B
+p 
+E
+whip~
+You examine Shimrock's whip in more detail to find it does not get much use.It's made of thin ivory strips, weaved into the handle, where 5 more ivorystrips make up the whip portion. On the handle is his name carved nicely.~
+A
+2 5
+#24636
+belt~
+{wShimrock's belt{x~
+An ivory belt lies before you, on its buckler is inscribed the word "Shimrock"~
+~
+11 beg al 0 
+8 0 0 0 21
+7 12000 750
+A
+17 -10
+A
+2 5
+#24637
+tiny cross earring~
+Shimrock's tiny cross~
+A tiny cross earring lies before you.~
+~
+11 eg aq 0 
+0 0 0 0 21
+2 5000 100
+E
+cross earring~
+You examine a tiny cross earring to notice is made of the ancient ivory bone of
+a large animal of some sort. It appears to be more of a trophy than an actual
+earring.~
+A
+9 1
+A
+12 5
+A
+13 -5
+#24638
+light faith~
+{Wthe Light Of Faith{x~
+A shiny ball of light lays on the floor, causing your eyes to squint slightly.~
+~
+1 egiu ao 0 
+0 0 -1 0 29
+2 45000 1000
+B
+k 
+A
+17 -5
+#24639
+reward coins~
+{Ya pile of gold coins{x~
+{Ya pile of gold coins{x~
+~
+20 0 a 0 
+0 10 0 0 15
+0 0 0
+#24640
+cloak sunlight~
+{Wcloak of sunlight{x~
+A cloak made entirely from sunlight lies before you.~
+~
+11 a ac 0 
+0 0 0 0 29
+8 12500 500
+A
+17 -4
+A
+24 -2
+A
+23 -2
+#24641
+white light vambraces~
+{Wa pair of white light vambraces{w~
+A bright pair of vambraces lies before you.~
+~
+11 eg ai k 
+0 0 0 0 29
+8 12500 400
+A
+17 -8
+A
+24 -1
+A
+23 -1
+A
+14 5
+#24642
+white light greaves~
+{Wa pair of white light greaves{w~
+A bright pair of greaves lies before you.~
+~
+11 eg af h 
+0 0 0 0 29
+12 12500 400
+A
+17 -8
+A
+24 -1
+A
+23 -1
+A
+14 5
+#24643
+white light boots~
+{Wa pair of white light boots{w~
+A bright pair of boots lies before you.~
+~
+11 eg ag i 
+0 0 0 0 29
+8 12500 400
+A
+17 -8
+A
+23 -1
+A
+24 -1
+A
+14 15
+#24644
+cape light~
+a cape of light~
+A cape made entirely from light lies before you.~
+~
+11 eg ak m 
+0 0 0 0 29
+6 15000 600
+A
+17 -4
+A
+24 -2
+A
+23 -2
+A
+14 5
+#24645
+shiny medallion~
+{Wa shiny medallion{w~
+A shiny medallion lies before you.~
+A shiny medallion lies before you.~
+9 gi ac 0 
+2 0 0 0 0
+4 7000 200
+E
+shiny medallion~
+You examine  a shiny medallion in more detail and are able to recognize thefollowing phrase, although not able to decipher it:"RFO EHT RPEOW FO EHT ECLICR"~
+A
+5 10
+A
+13 -25
+#24646
+thicket shield~
+a thicket shield~
+A shield made from the strongest vines in the manigua thicket lies here.~
+~
+11 mn aj l 
+10 0 0 0 4
+8 30000 1500
+A
+3 -10
+A
+6 -10
+A
+17 -12
+#24647
+scrub skull~
+a scrub skull~
+A skull created from the scrub bushes lies before you.~
+~
+15 ain ao 0 
+125 5 -1 0 4
+4 15000 1000
+E
+scrub skull~
+   You examine the skull more closely to find it is not acutally a skull, but
+the image of a skull. It was evidently created from the local scrub bushes in
+the Manigua thicket. It was weaved very fine, and could not be told apart from
+a real skull without very close examination. As you look inside, you notice it
+is very large, stretching to fit every need.
+~
+#24648
+painted fleur leggings~
+some painted fleur leggings~
+Some painted fleur leggings lie before you.~
+~
+9 0 af h 
+8 0 0 0 3
+4 20000 1000
+E
+painted fleur leggings~
+   You examine some painted fleur leggings to find thier green with a red
+stripe and golden tassle trim.
+~
+A
+3 5
+#24649
+painted fleur girth~
+a painted fleur girth~
+A painted fleur girth is lying before you.~
+~
+9 gi al 0 
+8 0 0 0 3
+4 10000 500
+E
+painted fleur girth~
+   You examin a painted fleur girth to find it is green with a red
+stripe and gold tassle trim.
+~
+A
+3 5
+#24650
+light blouse~
+a light colored see through blouse~
+A light-colored see-through blouse is lying before you.~
+~
+11 gi ad f 
+0 0 0 0 3
+4 10000 1000
+A
+17 -6
+A
+19 -1
+A
+2 10
+#24651
+painted fleur breastplate plate breast~
+a painted fleur breastplate~
+A painted fleur breastplate is lying before you.~
+~
+9 gi ak m 
+10 0 0 0 3
+4 10000 1000
+E
+painted fleur breastplate plate breast~
+   You examin a painted fleur breastplate and notice its green with
+a red stripe and a gold tassle trim.
+~
+A
+13 10
+A
+3 5
+#24652
+whip vines~
+{wa whip of {Gv{gi{Gn{ge{Gs{x~
+A long whip made of finely crafted vines lies before you.~
+~
+5 bfgin an 0 
+0 6 4 13 4
+12 20000 1500
+E
+whip vines~
+   You examin a whip of vines to find it's crafted in a weaving
+motion. The vines entwined around each other, and sparkling against
+the light.
+~
+A
+2 5
+A
+19 2
+A
+18 1
+#24653
+glowing ivory tusk~
+a glowing ivory tusk~
+A slim tusk of a large animal illuminates the room before you without fire.~
+~
+1 egiu ao 0 
+0 0 -1 0 21
+6 25000 1500
+E
+glowing tusk ivory~
+   You examine a glowing ivory tusk and find it's a solid white,
+unharmed by the darkness, it radiates its own light and energy.
+~
+A
+24 -2
+#24654
+tattered pair sleeves~
+a tattered pair of sleeves~
+A tattered pair of sleeves lies before you.~
+~
+11 ginp ai k 
+5 0 0 0 10
+10 12500 750
+E
+tattered pair sleeves~
+   You examine a tattered pair of sleeves and notice they are
+scuffed scarcely. The dark brown mithril sparkles against its
+scratches lightly.
+~
+A
+3 5
+A
+13 10
+#24655
+cup~
+a beggar's cup~
+A cup lies before you, it is made to carry money in.~
+~
+12 0 ao 0 
+0 0 0 0 6
+6 500 0
+B
+j 
+A
+17 50
+#24656
+pearl necklace~
+a shiny pearl necklace~
+A shiny pearl necklace lies before you looking very valuable~
+~
+8 0 ac 0 
+0 0 0 0 27
+2 5000 100
+#24657
+boots gold~
+a pair of golden boots~
+A pair of golden boots lies before you.~
+~
+8 0 ag i 
+0 0 0 0 15
+4 5000 100
+#24658
+leather cloak~
+a fashionable leather cloak~
+A fashionable leather cloak lies before you.~
+~
+15 0 ak m 
+50 5 -1 0 20
+8 10000 0
+#24659
+blade sword~
+Kittle's blade~
+A long blade lies before you.~
+~
+5 gik an 0 
+3 6 7 3 6
+18 15000 1000
+E
+kittle kittle's blade~
+   You examine Kittle's blade closely. It has many distinct details,
+but the one that catches your attention is the inscription in the handle
+that reads.
+      "To Kittle I bless thee sword and blade eternally, may it always
+          serve your purpose and protect the forces of good"
+
+                       Jostoricath
+~
+A
+19 1
+#24660
+mask decorated leather black~
+{Da black leather decorated mask{x~
+A black leather decorated mask is here shimmering.~
+~
+11 agi ap s 
+0 0 0 0 20
+4 20000 2000
+E
+mask decorated black leather~
+   A black leather decorated mask has a rough texture. When you roll it
+through your fingers, it feels like putty, molding to the touch and
+stimulating your sense of feel.
+~
+A
+17 -5
+A
+18 2
+#24661
+holy helm weaved stone~
+{xa {Wholy {xhelm {Ww{xe{Wa{xv{We{wd of stone~
+The holy helm of weaved stone is lying before you.~
+~
+11 agik ae g 
+0 0 0 0 6
+8 20000 2500
+E
+holy helm weaved stone~
+   You examine a helm weaved entirely of stone to find great detail.
+Within the weaves, there seems to be human flesh and blood, hundreds of years
+old. The stone and weaves react to your touch with strange patters, slowly
+changing shape and molding to fit your touch perfectly with divine power.
+~
+A
+17 -9
+A
+13 10
+A
+18 1
+#24662
+holy anklets anklet weaved stone~
+{wa {Wholy {wanklet {Ww{xe{Wa{xv{We{wd of stone~
+Some holy anklets of weaved stone lie before you.~
+~
+11 agik as 0 
+0 0 0 0 6
+4 15000 1500
+E
+holy anklets weaved stone~
+   You examine some anklets weaved of stone more closely to find great detail.
+Within the weaves, there seems to be human flesh and blood, hundreds of years
+old. The stone and weaves react to your touch with strange patters, slowly
+changing shape and molding to fit your touch perfectly with divine power.
+~
+A
+17 -1
+A
+18 1
+#24663
+diamond wood vambraces~
+{Wa set of Diamond Wood vambraces{x~
+A set of Diamond Wood vambraces lie before you, sparkling immensely.~
+~
+11 0 ai k 
+0 0 0 0 5
+8 35000 3000
+E
+diamond wood vambraces~
+   You closely examine some Diamond Wodd vambraces and find some quite
+extraordinary details. The Diamonds are apparently what the wood was
+carved with. It appears some strange mystical power made them one with
+the wood. They begin to form words in the wood, and tell a story. The
+story goes on about the Haven os Stones and its followers. It tells tales
+of old battles and a rising of a great cleric by the name of "Jostoricath."
+Wherein these stories tell of Jostircath rising from a revolution inside the
+stones and imprisoning the high clerics. It finishes all the stories that
+Jostoricath has deafeated the realm, and hiding it from the outside world.
+~
+A
+19 1
+A
+17 -8
+A
+13 10
+#24664
+diamond wood boots~
+{Wa set of Diamond Wood boots{x~
+A pair of Diamond Wood boots is lying here, sparkling immensely.~
+~
+11 agi ag i 
+0 0 0 0 5
+8 35000 3000
+E
+diamond wood boots~
+   You closely examine some Diamond Wodd vambraces and find some quite
+extraordinary details. The Diamonds are apparently what the wood was
+carved with. It appears some strange mystical power made them one with
+the wood. They begin to form words in the wood, and tell a story. The
+story goes on about the Haven os Stones and its followers. It tells tales
+of old battles and a rising of a great cleric by the name of "Jostoricath."
+Wherein these stories tell of Jostircath rising from a revolution inside the
+stones and imprisoning the high clerics. It finishes all the stories that
+Jostoricath has deafeated the realm, and hiding it from the outside world.
+~
+A
+17 -8
+A
+19 1
+A
+13 10
+#24665
+polished granite ring~
+{wa ring of polished {Dgranite{x~
+A ring of polished granite is lying before you.~
+~
+11 agi ab 0 
+0 0 0 0 7
+4 25000 2500
+E
+polished granite ring~
+   You examine a ring of polished granite and immediately notice some
+hyroglyphics scattered across. As you scan the hyroglyphics, you make out
+the following symbols, "Jostoricath, ruler of the Haven of Stones" The
+rest of the symbols seem to be undecipherable.
+"It pulsates with unearthy power"...
+~
+A
+17 -6
+A
+18 1
+A
+2 -5
+A
+19 1
+#24666
+holy vambraces weaved stone~
+{wsome {Wholy {wvambraces {Ww{xe{Wa{xv{We{wd of stone~
+A pair of holy vambraces of weaved stone.~
+~
+11 agik ai k 
+0 0 0 0 6
+6 20000 2500
+E
+holy vambraces weaved stone~
+  You examine some vambraces weaved of stone more closely to find great detail.
+Within the weaves, there seems to be human flesh and blood, hundreds of years
+old. The stone and weaves react to your touch with strange patters, slowly
+changing shape and molding to fit your touch perfectly with divine power.
+~
+A
+17 -8
+A
+13 10
+A
+18 1
+#24667
+diamond wood greaves~
+{Wa set of Diamond Wood greaves{x~
+A pair of Diamond Wood greaves is lying here, sparkling immensely.~
+~
+11 agi af h 
+0 0 0 0 5
+8 35000 3500
+E
+diamond wood greaves~
+   You closely examine some Diamond Wodd vambraces and find some quite
+extraordinary details. The Diamonds are apparently what the wood was
+carved with. It appears some strange mystical power made them one with
+the wood. They begin to form words in the wood, and tell a story. The
+story goes on about the Haven os Stones and its followers. It tells tales
+of old battles and a rising of a great cleric by the name of "Jostoricath."
+Wherein these stories tell of Jostircath rising from a revolution inside the
+stones and imprisoning the high clerics. It finishes all the stories that
+Jostoricath has deafeated the realm, and hiding it from the outside world.
+~
+A
+17 -8
+A
+19 1
+A
+13 10
+$~

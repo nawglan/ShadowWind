@@ -1,0 +1,618 @@
+#4900
+{GA Path Through The Trees{x~
+   {GTrees part the path through the woods here, giving way to a clearing to
+the north. Along the ground before you a fine mist starts to wrap itself
+about your legs, giving you a dim vision of what lies ahead, or behind. 
+The trail simply vanishes as you continue, leaving no trace of its passing.{x
+~
+49 g 3
+D0
+{GThe path continues to your north into what appears to be a grove.{x
+~
+~
+0 0 4903 0
+S
+#4901
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog at the
+grassy floor. An enormous tree rises to your north, barely visible as the mists
+encompass your line of sight. The ground is perfect here, filled with
+flowing tall grass that barely ruffles as you make your way through it. To
+your west and south a strong glow emanates forth, marking the end of this
+magical grove. {x
+~
+49 g 3
+D0
+{GAn immense tree lies to your north through the fog and swirling mist.{x
+~
+~
+0 0 4907 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4902 0
+S
+#4902
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your south a strong glow emanates forth, marking a barrier to
+this magical grove. {x
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4908 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4903 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4901 0
+S
+#4903
+{GThe Entrance To The Mist Enshrouded Grove{x~
+   {GThe entrance to a grove is here, enshrouded by swirling mists and fog
+from the grassy floor. The ground is perfect here, tall waves of grass rolling 
+back and forth gently as you continue along your path, eliminating any sings
+of your passing. To your south a twin set of magical bushes glow brightly,
+marking this magical grove's entrance. {x
+~
+49 g 3
+D0
+{GA gigantic tree hovers above the mist to your north in the grove.{x
+~
+~
+0 0 4909 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4904 0
+D2
+{GA small path covered by two trees hover to your south marking the end of the grove.{x
+~
+~
+0 0 4900 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4902 0
+S
+#4904
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your south a strong glow emanates forth, marking a barrier to
+this magical grove. {x
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4910 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4905 0
+D3
+{GThe entrance to the grove lies in that direction through the fog and mist.{x
+~
+~
+0 0 4903 0
+S
+#4905
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog at the
+grassy floor. An enormous tree rises to your north, barely visible as the mists
+encompass your line of sight. The ground is perfect here, filled with
+flowing tall grass that barely ruffles as you make your way through it. To
+your east and south a strong glow emanates forth, marking the end of this
+magical grove. {x
+~
+49 g 3
+D0
+{GAn immense tree lies to your north through the fog and swirling mist.{x
+~
+~
+0 0 4911 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4904 0
+S
+#4906
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog at the
+grassy floor. The ground is perfect here, filled with flowing tall grass 
+that barely ruffles as you make your way through it. To your west and south
+a strong glow emanates forth, marking the end of this magical grove. {x
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4913 0
+D1
+{GAn immense tree lies to your east through the fog and swirling mist.{x
+~
+~
+0 0 4907 0
+S
+#4907
+{GA Small Clearing{x~
+   {GThe grove flattens here, enshrouded by swirling mists and fog from the
+grassy floor winding their way up a great maple tree. Enchanted roots spurt
+from the ground through the mists, glowing just bright enough to be caught
+by the eyes. To your north the swirling mists get thicker and fog fills
+your sights, preventing any warning you might get from that direction. {x
+~
+49 g 3
+D0
+{WFog and Swirling mists prevent you from seeing ahead.{x
+~
+~
+0 0 4914 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4908 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4901 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4906 0
+S
+#4908
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. All around you the mists rise and fall, leaving you without knowing
+any direction from the next.{X
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4915 0
+D1
+{GAn immense tree lies to your east through the fog and swirling mist.{x
+~
+~
+0 0 4909 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4902 0
+D3
+{GAn immense tree lies to your west through the fog and swirling mist.{x
+~
+~
+0 0 4907 0
+S
+#4909
+{GA Large Clearing{x~
+   {GThe grove flattens here, into a large clearing. Swirling mists and fog
+wind their way up a great heartwood tree. The tall grass around this
+clearing seems to stop abruptly, and you feel a cold breeze across the floor
+below. The mist is deeper here, the fog covering your eyes. All directions
+look the same, as the roots from this great tree give no trace of confident
+direction. {x
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4916 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{X
+~
+~
+0 0 4910 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4903 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4908 0
+S
+#4910
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+pasing. All around you the mists rise and fall, leaving you without knowing one
+direction from the next.
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4917 0
+D1
+{GAn immense tree lies to your east through the fog and swirling mists.{x
+~
+~
+0 0 4911 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4904 0
+D3
+{GAn immense tree lies to your west through the fog and swirling mists.{x
+~
+~
+0 0 4909 0
+S
+#4911
+{GA Mist Enshrouded Grove{x~
+   {GThe grove flattens here, enshrouded by swirling mists and fog winding
+their way up a great oak tree. Enchanted roots spurt from the ground through
+the ists, glowing just bright enough to be caught by the eyes. A cold breeze
+flows across the grass as the mist is much deeper here. All directions look
+the same as the roots leave no pattern to there whereabouts. {X
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4918 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4912 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4905 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4910 0
+S
+#4912
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your south a strong glow emanates forth, marking a barrier to
+this magical grove. {x
+~
+49 g 3
+D0
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4919 0
+D3
+{GAn immense tree lies to your west through the fog and swirling mists.{x
+~
+~
+0 0 4911 0
+S
+#4913
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your north and west a strong glow emanates forth, marking a barrier to
+this magical grove. {x
+~
+49 g 3
+D1
+{WA blinding white cloud of swirling mists blocks any sight in that direction.{x
+~
+~
+0 0 4914 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4906 0
+S
+#4914
+{BA Large Pond{x~
+   {BA large pond begins here, the source of all mist and fog in this grove.
+A heavy glow emenates from the borders of the pond, as waves trickle across
+it in all directions. Swirling mists and fog completely fill your vision and
+a sense of powerful magic can be felt from underneath. {x
+~
+49 g 3
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4915 0
+D2
+{GAn immense tree lies to your south through the fog and swirling mists.{x
+~
+~
+0 0 4907 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4913 0
+S
+#4915
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your north a strong glow emanates forth, marking a barrier to
+this magical grove. {x
+~
+49 g 3
+D1
+{GA path forms before you through the fog and swirling mists.{x
+~
+~
+0 0 4916 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4908 0
+D3
+{WA blinding white cloud of swirling mists blocks any sight in that direction.{x
+~
+~
+0 0 4914 0
+S
+#4916
+{GAn Emerging Path{x~
+   {GA small path emerges from the grove here, enshrouded by the swirling
+mists and fog from the grassy floor. The ground is perfect, tall waves of
+grass rolling gback and forth gently as you continue, eliminating any sign
+that this path was ever travelled. All around you the path seems to
+continue, leaving you no marker to guide from.  
+~
+49 g 3
+D0
+~
+~
+0 0 4921 0
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4917 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{X
+~
+~
+0 0 4909 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4915 0
+S
+#4917
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your north a strong glow emanates forth, marking a barrier to
+this magical grove. {x
+~
+49 g 3
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4918 0
+D2
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4910 0
+D3
+{GA path forms before you through the fog and swirling mists.{x
+~
+~
+0 0 4916 0
+S
+#4918
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your north a strong glow emanates forth, marking a barrier to
+this magical grove. {x
+~
+49 g 3
+D1
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4919 0
+D2
+{GAn immense tree lies to your south through the fog and swirling mists.{x
+~
+~
+0 0 4911 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4917 0
+S
+#4919
+{GA Mist Enshrouded Grove{x~
+   {GThe grove continues here, enshrouded by swirling mists and fog from the
+grassy floor. The ground is perfect here, tall waves of grass rolling back and
+forth gently as you continue along your path, eliminating any sings of your
+passing. To your north and east a strong glow emanates forth, marking a
+barrier to this magical grove.{x
+~
+49 g 3
+D0
+{RAn arch of burning flames lies in that direction.{x
+~
+~
+0 0 4921 0
+D3
+{GThe grove continues in that direction through the fog and swirling mist.{x
+~
+~
+0 0 4918 0
+S
+#4920
+{rThe Red Arch Guard's Post{x~
+   The guard's post is decorated very drably in dark red suits of armor for
+the knights of this ward. Upon the walls of this small entryway lie many
+trophies and trinkets noting their many accomplishments and feats. Beds line
+the west wall, and a large chair adorns outwards as if of importance. The
+Red Arch is to your east. {x
+~
+49 dry 0
+D1
+A huge arch of fire lies in that direction illumination everything in sight.
+~
+~
+0 0 4921 0
+S
+#4921
+{rBeneath An Arch Of Fire{x~
+   An enourmous Arch has been erected here, untouched by time and burning
+full of fire, yet no smoke nor ash fills the skies above. Humming and
+shining brightly, the arch emits a bright aura about the area. Strange runes
+are carved at the foot of the arch, and to your north appears to be an
+ancient bridge. To your south is a fog filled grove.  
+~
+49 drty 0
+D0
+~
+~
+0 0 4923 0
+D1
+The guard's barracks lie in that direction.
+~
+~
+0 0 4922 0
+D2
+~
+~
+0 0 4916 0
+D3
+The guard's barracks lie in that direction.
+~
+~
+0 0 4920 0
+S
+#4922
+{rThe Red Arch Guard's Post{x~
+   The guard's post is decorated very drably in dark red suits of armor for
+the knights of this ward. Upon the walls of this small entryway lie many
+trophies and trinkets noting their many accomplishments and feats. Beds line
+the west wall, and a large chair adorns outwards as if of importance. The
+Red Arch is to your east. {x
+~
+49 dry 0
+D3
+A huge arch of fire lies in that direction illumination everything in sight.
+~
+~
+0 0 4921 0
+S
+#4923
+{yOn An Ancient Bridge{x~
+   {yThis bridge was obviously built long ago, with a great deal of
+planning. Petrified wood enchants the floor, tied by ropes as thick
+around as a human arm. Below a small stream trickles passed you, and through
+the crystal clear water you can see the marble floor. To your south a
+blazing fire rises, and to your north the path narrows into a staircase. {x
+~
+49 ry 0
+D0
+~
+~
+0 0 4924 0
+D2
+~
+~
+0 0 4921 0
+S
+#4924
+{yThe Staircase Of Horror{x~
+   {yPetrified wood enchants the steps of the staircase before you as it
+lines in a swirling fashion upwards. There are no rails or other visible
+means of support to guide you up the staircase, just magical beams of wooden
+steps upheld by nonthing yet withstanding the greatest of weights. To your
+south lies an ancient bridge while the stairs continue to your east. {x
+~
+49 0 0
+D1
+~
+~
+0 0 4925 0
+D2
+~
+~
+0 0 4923 0
+S
+#4925
+{yThe Staircase Of Horror{x~
+   {yPetrified wood enchants the steps of this staircase unsupported by
+beams or rails. The wood hangs magically in the air and a clear stream can
+be seen below you. The staircase continues in a swirling fashion to your
+north. {x
+~
+49 0 0
+D3
+~
+~
+0 0 4924 0
+D4
+~
+~
+0 0 4926 0
+S
+#4926
+{yThe Staircase Of Horror{x~
+   {yPetrified wood enchants the steps of this staircase unsupported by beams
+or rails. The wood hangs magically in the air and a clear stream can be seen
+below you. The staircase continues in a swirling fashion upwards.{x  
+~
+0 0 0
+D5
+~
+~
+0 0 4925 0
+S
+$~

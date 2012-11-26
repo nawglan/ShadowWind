@@ -1,0 +1,1895 @@
+#
+@ACTD
+@~
+
+{wACTD gives a list of object virtual numbers that have spec_procs.
+
+{CSee also: {c-{x
+
+#
+@ADMIN
+@~
+
+{wThese are the commands associated with the ADMIN flag:
+
+ADVANCE		AUCECHO		BAN		CITIZEN		CONFIG
+
+FRENT		HCONTROL	IDENT		NUKE		OBJTOCHAR
+
+OUTLAW		OWNERS		PRENT		PTEXT		QICINFO
+
+QICSAVE		QLOAD		REROLL		RESTORE		RLOAD
+
+SETQIC		SKILLSET	SLOWNS		SNOOP		TODO	
+
+UNBAN		WIZLOCK		XNAME
+
+{CSee Also: {c IMMORT BUILDER QUEST {x
+
+#
+@ADVANCE
+@~
+
+{cUsage: advance <victim> <level>
+
+{wADVANCE moves a player to a new level.  If used to promote a player to an
+immortal level, and if you have the autowiz program installed, the wizlist and
+immlist will automatically be recreated.
+
+> advance rasmussen 54
+
+{CSee Also: {c-{x
+
+#
+@ANIMATE
+@~
+
+{cUsage: animate <victim>
+
+{wANIMATE unrents a 'ghost' of a player. They will be seen as linkdead in 
+the room. This is used to add/extract equiptment and such from a rented
+player. They will need to be forcerented.
+
+> animate murtuk
+
+{CSee Also: {cFRENT{x
+
+#
+@AUCLIST
+@~
+
+{wAUCLIST shows a list of items and gold in the auction database.
+
+{CSee Also: {c-{x
+
+#
+@AT
+@~
+
+{cUsage: at <roomnumber> <action>
+       at <player> <action>
+       at <mobile> <action>
+       at <object> <action>
+
+{wThe AT command allows you to perform any action at any location, while
+not having to be standing in that room.
+
+Any commands that you do, will be echoed in the room that you "at", while
+they will not be seen in the room that you are standing in.
+
+> at 3000 purge
+> at murtuk clonk murtuk
+> at guard exit
+> at chest look
+> at 3.corpse get all corpse
+
+{CSee Also: {c-{w
+
+#
+@APPROVE
+@DECLINE
+@DENY
+@~
+
+{cUsage:  approve  <playername>
+{cUsage:  decline  <playername> <reason>
+
+{wAPPROVE is used to approve a request for a new character name. Once
+approved the character can continue their creation. If the name is not
+approved within 3 minutes, it is automatically approved, and they
+receive a warning that their name may subject to change if it is deemed
+unsuitable at a later time. A character who's name has been approved,
+will carry the ACCEPTED flag.
+
+DECLINE or DENY is used to deny unacceptable player names. Once declined,
+they will receive a prompt to enter a new name, and the denied name will
+be automatically added to the XNAMES list, to ensure that it cannot be 
+tried again.
+
+Reasons for declining a name:
+  obscene:    The player's name contains or is an obscene word.
+  trademark:  The player's name is a trademark.
+  random:     The player's name is random junk.
+  rank:       The player's name implies a rank of some kind.
+  religious:  The player's name implies a religious preference.
+  historical: The player's name is historical in nature.
+  myth:       The player's name is from a myth or legend.
+  everyday:   The player's name is a common everyday name.
+  stupid:     The player's name is just plain stupid.
+  theme:      The player's name doesn't conform to Shadowwind's midieval theme.
+  race:       The player's name is inappropriate for their chosen race.
+
+{CSee Also: {c-{x
+
+#
+@BAN
+@UNBAN
+@~
+
+{cUsage: ban < ALL | NEW | SELECT > <site>
+       unban <site>
+
+{wThese commands prevent anyone from a site with a hostname containing the
+site substring from logging in to the game. You may ban a site to ALL, NEW
+or SELECT players.  Banning a site to NEW players prevents any new players
+from registering.  Banning a site to ALL players disallows ANY connections
+from that site.  Banning a site SELECTively allows only players with site-ok
+flags to log in from that site. Ban with no argument returns a list of
+currently banned sites.
+
+Unban removes the ban.
+
+> ban new ai.mit.edu
+> unban ai.mit.edu
+
+{CSee Also: {c-{x
+
+#
+@BOOTMAZE
+@~
+
+{cUsage: bootmaze <zone number>
+
+{wUsed to reboot the maze in a specific zone to a random pattern.
+
+{CSee Also: {c-{x
+
+#
+@BUILDER
+@~
+
+{wThese are the commands associated with the BUILDER flag:
+
+AUCLIST		COPYTO		DC		DIG		FREEZE
+
+MEDIT		OEDIT		REDIT		RELOAD		SEDIT	
+
+SHUTDOW		SHUTDOWN	TEDIT		THAW		ZEDIT
+
+{CSee Also: {cIMMORT QUEST ADMIN{x
+
+#
+@CLONE
+@~
+
+{cUsage: clone { obj | mob } <name>
+
+Used to make exact copies of restrung objects or mobiles.
+
+{CSee Also:{c MOBEDIT, OBJEDIT{x
+
+#
+@COLORCODES
+@COLOR CODES
+@~
+
+Color makes life a little more interesting, but try not to overuse
+them, or have garish combinations.
+
+Color codes are always preceded by {{ and should be terminated with
+a {{x to prevent any unnecesary color bleeding. 
+
+Low Colors
+~~~~~~~~~~
+{{y {x= {yyellow{x
+{{r {x= {rred{x
+{{g {x= {ggreen{x
+{{b {x= {bblue{x
+{{m {x= {mmagenta{x
+{{c {x= {ccyan{x
+{{w {x= {wwhite{x
+
+Bold Colors
+~~~~~~~~~~~
+{{Y {x= {YBold yellow{x
+{{R {x= {RBold red{x
+{{G {x= {GBold green{x
+{{B {x= {BBold blue{x
+{{M {x= {MBold magenta{x
+{{C {x= {CBold cyan{x
+{{W {x= {WBold white{x
+{{D {x= {DBold black{x
+
+Special Characters
+~~~~~~~~~~~~~~~~~~
+{{x {x= Normal
+{{F {x= {FFlashing (the {{F must go AFTER the color code{x
+{{  {x= The {{ character
+
+> gecho {{RReboot in 3 minutes!{{x
+{RReboot in 3 minutes!{x
+
+> echo {{Y{{Fflashing!!{{x
+{Y{Fflashing!!{x
+
+{CSee Also: {cNAMECOLOR{x
+
+#
+@COPYTO
+@~
+
+{cUsage: copyto <roomnum>
+
+{wCopies the description of the room you are in, to the room you specify.
+Used for OLC and quests.
+
+> copyto 3001
+
+{CSee Also: {cDIG  REDIT {x
+
+#
+@DC
+@~
+
+{cUsage: dc <descriptor number>
+       dc * (disconnects all non-playing sockets)
+
+{wDC (DisConnect) is used to disconnect a socket.  If used on a playing socket,
+the player will lose his/her link, but, unlike PURGE, will not extract the
+player or dump the player's inventory on the ground.
+
+DC is also useful for disconnecting people who have accidentally left
+themselves at the main menu, or connections sitting in the "Get name" state.
+
+{CSee Also:{c USERS{x
+
+#
+@DIG
+@~
+
+{cUsage: dig <dir> <roomnum>
+
+{wDIG will create exits between the room you are in, and the room you
+specify. If the room does not exist, it will create it.  Used for OLC.
+You will need to edit the new room to add descriptions and roomflags.  To
+'undig' if you make a mistake, you must edit both rooms in the normal way
+and remove the exits. 
+ 
+> dig n 3001
+
+{CSee Also: {cCOPYTO REDIT{c
+
+#
+@ECHO
+@GECHO
+@ZECHO
+@AUCECHO
+@SEND
+@~
+
+{cUsage: echo <message>
+       gecho <message>
+       zecho <message>
+       aucecho <message>
+       send <victim> <message>
+       qecho <message>
+
+{wECHO displays a string to everyone in your room.  GECHO displays the string
+to everyone in the game.  SEND displays the string to a particular person.
+ZECHO displays to everyone in the zone you are in. AUCECHO displays in the
+same format as the auction channel. QECHO siplays to everyone with their
+quest flag turned on.
+
+> echo Hi, everyone in the room.
+> gecho Hi, everyone in the game, isn't this annoying?
+> zecho The mighty lagbeast flies overhead.
+> aucecho Don't abuse auction. (shows as [AUC] Don't abuse auction)
+> send rasmussen You are being watched.
+> qecho Hi, everyone in the quest.
+
+{CSee Also: {c-{x
+
+#
+@FORCE
+@~
+
+{wFORCE forces a character, either mobile or player, to perform a certain
+action.  FORCE ALL forces everyone in the game; FORCE ROOM forces everyone in
+your room.
+
+> force fido drop meat
+> force all save
+> force room look fido
+
+{CSee Also: {c-{x
+
+#
+@FREEZE
+@THAW
+@~
+
+{cUsage: freeze <playername>
+       thaw <playername>
+	
+{wFREEZE, originally invented here at CircleMUD (we think), is used to prevent
+a player from playing.  If frozen, the game will ignore all commands entered
+by the player, including QUIT, until the player is unfrozen with THAW.
+
+Obviously, this command should only be used in extreme disciplinary
+circumstances.
+
+{CSee Also:{c SET FROZEN{w
+
+#
+@FRENT
+@~
+
+{cUsage: frent <victim>
+
+{wFRENT rents animated players.
+
+{CSee Also: {cANIMATE{x
+
+#
+@GOTO
+@TRANS
+@TELEPORT
+@~
+
+{cUsage: goto <location>
+       trans <victim>
+       teleport <victim> <location>
+
+{wThese commands are used to transport yourself and others to different rooms.
+GOTO allows you to go to other rooms; TRANS transports a person from wherever
+they are to the room YOU are in; TELEPORT transports your victim to some other
+location (with teleport your victom does not have to be in the same room 
+as you).
+
+trans -g <groupleader> will transfer an entire group to another location.
+
+For both GOTO and TELEPORT, the location specifier can be either a virtual
+room number, or the name of a character or object.
+
+> goto 3001
+> goto rasmussen
+> trans fido
+> trans -g <groupleader>
+> teleport fido 3001
+> teleport fido 2.fido
+
+{CSee Also:{c WIZAT, SET ROOM, POOFIN{x
+
+#
+@HANDBOOK
+@~
+
+{wGuidelines for having an Immortal character -- you should read it.
+
+{CSee Also:{c IMMORTAL
+
+#
+@HOLYLIGHT
+@~
+
+{wA toggle which allows you to see:
+    -Invisible people and objects, even if you don't have 'detect invisibility'
+    -Hidden people, even if you don't have 'sense life'
+    -Dark rooms, even if you don't have a light
+
+It is expected most immortals will keep HOLYLIGHT on most of the time;
+it exists so that you have the ability to see what mortals see for
+debugging purposes.
+
+{CSee Also: {c-{x
+
+#
+@IDENT
+@~
+
+{cUsage: ident
+
+{wIDENT enables/disables username lookups.
+
+{CSee Also: {cSLOWNS{x
+
+#
+@IMOTD
+@~
+
+Displays the Immortal Message of the Day.
+
+{CSee Also: {cMOTD NMOTD{x
+
+#
+@IMMORT
+@~
+
+{wThese are the commands that are associated with the IMMORT flag:
+
+AT		ACTD		DELAY		GECHO		GOTO
+
+HANDBOOK	HOLYLIGHT	IMOTD		INVIS		LAST	
+
+MOBEDIT		MOBDEAF		NAMECOLOR	NOHASSLE	NOIQUEST
+
+NOWIZ		OBJEDIT		PAGE		PARDON		POOFIN	
+
+POOFOUT		QM		ROOMFLAGS	ROOMEDIT	SEND	
+
+SHOW		STAT		STRINGS		SYSLOG		TELEPORT
+
+USERS		WHOINFO		WHOSET		WIZHELP
+
+{CSee Also: {cQUEST BUILDER ADMIN{x
+
+#
+@INVIS
+@~
+
+{cUsage: invis <level>
+
+{wINVIS sets your invisibility level.  With no argument, invis toggles between
+making you fully visible and fully invisible.  If you specify a level, only
+people at and above the level you specify will be able to see you.
+
+> invis
+> invis 51
+
+{CSee Also: {c-{x
+
+#
+@LAST
+@~
+
+{cUsage: last <playername>
+       last
+		
+{wFor checking the last time a person logged on, their sitename, and their
+ID number.
+
+Last without any arguments will show a list of players that have connected
+since last boot.
+
+> last rasmussen
+
+{CSee Also: {c-{x
+
+#
+@LOAD
+@~
+
+{cUsage: load <mob|obj> <virtual number>
+
+{wLOAD is used to create mobiles and objects.  The first argument specifies if
+you are trying to load a mobile or an object; the second is the virtual
+number.
+
+> load obj 3099
+> load mob 3005
+
+{CSee Also:{c VNUM
+
+#
+@LOGCHECK
+@~
+
+{cUsage: logcheck <playername>
+
+{wLOGCHECK shows the logs for a specific player for up to 30 days.
+
+> logcheck marguk
+
+{CSee Also: {cSYSLOG{x
+
+#
+@MEDIT
+@~
+
+{cUsage: medit <vnum>
+
+{wMEDIT is the online mob editor. You will need to reboot the game for
+changes to properly take effect.
+
+> medit 3100
+
+{CSee Also: {cOEDIT  REDIT  SEDIT  ZEDIT{x
+
+#
+@MOBDEAF
+@~
+
+{wTurns mobshouts off for your console.
+
+{CSee Also: {c-{x
+
+#
+@MOBEDIT
+@OBJEDIT
+@ROOMEDIT
+@~
+
+{cUsage: MOBEDIT  - Used to edit mobiles
+       OBJEDIT  - Used to edit objects
+       ROOMEDIT - Used to edit rooms
+
+{wType the command without arguments for a short help.
+
+{CSee Also:{c CLONE
+
+#
+@MUTE
+@~
+
+{wMUTE is used to shut a player up; if a player is muted, he/she will not be
+able to use most communication channels until he/she is unmuted.
+
+> mute rasmussen
+
+{CSee Also: {c-{x
+
+#
+@NAMECOLOR
+@~
+
+{cUsage: namecolor <color code>
+
+{wNAMECOLOR color's your name entry in the who listing, aswell as the default
+color setting for your title.
+
+{CSee Also: {cSomething about immortal color here{x
+
+#
+@NOEMOTE
+@~
+
+{cUsage: noemote <playername>
+
+{wThis will turn off the ability of a character to emote.  It should be used to
+curb a character who is abusing emotes.
+
+{CSee Also: {c-{x
+
+#
+@NOHASSLE
+@~
+
+{wToggles a flag to prevent aggressive monsters from attacking.
+
+{CSee Also: {c-{x
+
+#
+@NOSOCIAL
+@~
+
+{cUsage: nosocial <playername>
+
+{wThis will turn off the ability of a character to use socials.  It should be
+used to curb a character who is abusing social.
+
+{CSee Also: {c-{x
+
+#
+@NOTITLE
+@~
+
+{cUsage: notitle <playername>
+
+{wNOTITLE is used to prevent players from being able to set their own titles;
+i.e., if the player consistently has an offensive title.  The definition of
+offensive is left as an exercise for the reader.
+
+{CSee Also: {c-{x
+
+#
+@NOWIZ
+@~
+
+{wAllows you to toggle the wiz channel on/off.
+
+{CSee Also:{c WIZNET{x
+
+#
+@NUKE
+@~
+
+{cUsage: nuke <victim>
+
+{wNUKE deletes all a player's files from the system. *cackle*
+
+{CSee Also: {c-{x
+
+#
+@OEDIT
+@~
+
+{cUsage: oedit <vnum>
+
+{wOEDIT is the online object editor. Be aware that editing an existing 
+object will NOT affect those already in the game, or in rent.
+
+> oedit 3001
+
+{CSee Also: {cMEDIT SEDIT REDIT ZEDIT{x
+
+#
+@OWNERS
+@~
+
+{cUsage: owners <vnum>
+
+{wOWNERS shows a list of the players who own a specific piece of QIC. This 
+includes those in rent.
+
+> owners 3020
+
+{CSee Also: {cQICINFO SETQIC{x
+
+#
+@OUTLAW
+@~
+
+{cUsage: outlaw <playername>
+
+{wThis command turns on the flags : !PK, !PS and !IMMO
+
+This is used to make sure a player who has been accused of Pking or
+Pstealing can no longer attempt these actions
+
+{CSee Also: {c-{x
+
+#
+@PAGE
+@~
+
+{cUsage: page <player|'all'> <message>
+
+{wPAGE is used to send a message, along with a beep, to another player.  Use
+PAGE ALL to send a message and a beep to everyone in the game.
+
+> page rasmussen Hey, are you still at the keyboard?
+> page all GAME WILL BE SHUTTING DOWN IN 10 MINUTES
+
+Do not abuse this command.
+
+{CSee Also: {c-{x
+
+#
+@PARDON
+@~
+
+{wRemoves killer and thief flags from a player.
+
+{CSee Also: {c-{x
+
+#
+@POOFIN
+@POOFOUT
+@~
+
+{wSets the message seen by players when you use GOTO to move to a different
+room.  POOFIN with no argument resets your poofin to the default "appears with
+an ear-splitting bang"; POOFOUT with no argument defaults to "disappears in
+a puff of smoke."
+
+{CSee Also:{c GOTO
+
+#
+@PRENT
+@~
+
+{cUsage: prent <victim>
+
+{wPRENT purges a player's rent file. They will enter the game with no 
+equiptment next time they unrent.
+
+> prent murtuk
+
+{CSee Also: {cPTEXT NUKE{x
+
+#
+@PTEXT
+@~
+
+{cUsage: ptext <victim>
+
+{wPTEXT purges a player's text file, i.e. aliases
+
+> ptext murtuk
+
+{CSee Also: {cPRENT NUKE{x 
+
+#
+@PURGE
+@~
+
+{cUsage: purge <playername>
+
+{wPurge destroys things.  If used with no arguments, it will clear a room of all
+mobiles and objects, but will not harm players.  If the argument is an object,
+that object (and all of its contents, if any) will be destroyed.  If the
+argument is a mobile, the mobile will be destroyed, leaving its inventory and
+equipment lying on the ground.
+
+If the argument is the name of a player, the player's inventory and equipment
+will drop on the ground and the player will lose his/her connection.  For this
+reason, PURGE should only be used on players in disciplinary situations.
+
+> purge
+> purge <character>
+> purge <object>
+
+{CSee Also:{c DC{x
+
+#
+@QICINFO
+@~
+
+QICINFO shows a list of all currently defined QIC.
+
+{CSee Also: {cQICSAVE OWNERS{x
+
+#
+@QICSAVE
+@~
+
+QICSAVE forces a save and reload of the QIC database.
+
+{CSee Also: {cQICINFO OWNERS{c
+
+#
+@QLOAD
+@~
+
+{cUsage: qload <vnum>
+
+{wQLOAD is used to load QIC items.
+
+{CSee Also: {cLOAD QICINFO OWNERS{x
+
+#
+@QM
+@~
+
+{wGives you a list of currently active quest masters. These
+are the ones you should talk to if you want to run a quest.
+
+{CSee Also: {c-{x
+
+#
+@QUEST
+@~
+
+{wThese are the commands associated with the QUEST flag:
+
+BOOTMAZE	CLONE		FORCE		GECHO		IQUEST
+
+LOAD 		LOGCHECK	MUTE		NOEMOTE		NOSOCIAL
+
+PURGE		QECHO		SWITCH		SET		TRANSFER
+	
+UNAFFECT	VLIST		VNUM		VSTAT		ZECHO
+
+ZRESET
+
+{CSee Also: {cIMMORT BUILDER ADMIN{x
+
+#
+@RLOAD
+@~
+
+{cUsage: load { obj | mob } <realnum>
+
+{wLoads an object or mobile by its real number, not virtual.
+
+{CSee Also: {cLOAD QLOAD{x
+
+#
+@REDIT
+@~
+
+{cUsage: redit <vnum>
+
+{wREDIT is the online room editor. Changes, additions and deletions take
+effect immediatly the file has been edited.
+
+> redit 3001
+
+{CSee Also: {cMEDIT OEDIT SEDIT ZEDIT{x
+
+#
+@SETQIC
+@~
+
+{Usage: set <vnum> <limit>
+
+{wSETQIC sets an object's QIC limit. Once an object has reached its limit,
+no more should load in the game, and QLOAD would have to be used to load
+any manually.
+
+> setqic 3050 5
+
+{CSee Also: {cQICINFO OWNERS QLOAD{x
+
+#
+@SEDIT
+@~
+
+{cUsage: sedit <vnum>
+
+{wSEDIT is the online shop editor.
+
+> sedit 3010
+
+{CSee Also: MEDIT OEDIT REDIT ZEDIT{x
+
+#
+@SHUTDOW
+@~
+
+{wJust to prevent accidental shutdowns.
+This command doesn't DO anything, it simply is.
+
+{CSee Also: {c-{x
+
+#
+@RELOAD
+@~
+
+{cUsage: reload <'*'|file>
+
+{wRELOAD is used to load text files such as the MOTD from disk into memory.
+RELOAD * reads all text files.  Valid files are: wizlist, immlist, news
+credits, motd, imotd, help, info, policy, handbook, background, xhelp
+
+{CSee Also: {c-{x
+
+#
+@REROLL
+@~
+
+{cUsage: reroll <player>
+
+{wREROLL gives a player new stats (i.e., str, int, wis, dex, and con.)
+
+{CSee Also:{c STATS{x
+
+#
+@RESTORE
+@~
+
+{cUsage: restore <playername|all>
+
+{wRESTORE restores a player or mobile to full hit, mana, and move points.  If
+used on immortals, it sets all skill levels to 100%.
+
+If you restore all, the skills wont be set to 100% on immortals.
+
+{CSee Also: {c-{x
+
+#
+@ROOMFLAGS
+@~
+
+{wToggles a flag which causes the virtual room number and room flags, if any,
+to be displayed next to room names.
+
+{CSee Also: {c-{x
+
+#
+@SET
+@~
+
+{cUsage: set [file|player] <character> <field> <value>
+
+{wSET is an extremely powerful command, capable of setting dozens of aspects of
+characters, both players and mobiles.
+
+SET PLAYER forces set to look for a player and not a mobile; useful for
+players with lame names such as 'guard'.
+
+SET FILE lets you change players who are not logged on.  If you use SET FILE
+on a player who IS logged on, your change will be lost.  If you wish to set
+a player who is in the game but is linkless, use set twice -- once with the
+FILE argument, and once without -- to make sure that the change takes.
+
+For toggled fields, the value must be ON, OFF, YES, or NO.
+
+Type SET with no argument for a list of set fields.
+
+{CSee Also:{c STAT{x
+
+#
+@SHOW
+@~
+
+{wThe SHOW command displays information. Some modes of show require additional
+information, such as a player name. Show without any arguments shows a list
+of valid modes.
+
+
+{CSee Also: {c-{x
+
+#
+@SHUTDOWN
+@~
+
+{cUsage: shutdown [reboot|die|pause]
+
+{wSHUTDOWN shuts the MUD down.  The SHUTDOWN command works in conjunction with
+CircleMUD's 'autorun' script.  If you are not using autorun, the arguments are
+meaningless.  If you are using autorun, the following arguments are available:
+
+REBOOT     Pause only 5 seconds instead of the normal 40 before trying to
+           restart the MUD.
+DIE        Kill the autorun script; the MUD will not reboot until autorun is
+           explicitly run again.
+PAUSE      Create a file called 'paused' in Circle's root directory; do not
+           try to restart the MUD until 'paused' is removed.
+
+{CSee Also: {c-{x
+
+#
+@SKILLSET
+@~
+
+{cUsage: skillset name 'skill' value
+         skillset <playername>
+
+{wLets you set a players skills/spells. Type skillset without arguments for a
+list of valid choices.
+
+SKILLSET <playername> allows you to see a player's list of skills and
+spells and their proficiency in them.
+
+{CSee Also: {c-{x
+
+#
+@SLOWNS
+@~
+
+{wToggles the namserver_is_slow setting.  See circle/src/config.c for
+more information.
+
+{CSee Also: {c-{x
+
+#
+@SNOOP
+@~
+
+{cUsage: snoop <playername>
+
+{wSnoop allows you to listen in on another player's session; everything the
+player sees or types will be displayed on your terminal preceeded by a '%'.
+
+Obviously, there are many ethical considerations to the use of this command;
+snoop should be used minimally, and only for disciplinary purposes.
+
+Type snoop <your name> to stop snooping.
+
+{CSee Also: {c-{x
+
+#
+@STAT
+@~
+
+{cUsage: stat [ player | object | mobile ] <name>
+
+{wGives information about players, monsters, and objects in the game.  The type
+argument is optional.
+
+STAT PLAYER will search only for players; useful for statting people with lame
+names such as Red or Cityguard.
+
+STAT OBJECT will search only for objects.
+
+STAT MOBILE will search only for monsters.
+
+> stat fido
+> stat player red
+> stat mobile red
+> stat object thunderbolt
+
+{CSee Also:{c VSTAT{x
+
+#
+@STRINGS
+@~
+
+{wSTRINGS will show a list of your current poofin/out, whoset, title, and 
+whois information.
+
+Who setting: ....SHEEP....
+Poof-in    : steps out of a small portal.
+Poof-out   : steps into a small portal.
+Title      : - Goddess of All Things Evil
+Extra info : (null)
+
+{CSee Also: {c-{x
+
+#
+@SWITCH
+@~
+
+{cUsage: switch <monster>
+
+{wSWITCH is used to take over the body of mobiles; useful for interactive
+adventures.
+
+{CSee Also:{c RETURN{x
+
+#
+@SYSLOG
+@~
+
+{wThe syslog command gives you several new channels to monitor.  Messages
+from each flag you have set will automatically show up on your screen.
+
+Warning : Some flags produce a lot of messages and may spam your screen.
+
+{cUsage: syslog [+/-][flags] (example +acz)
+       syslog list  (list current status)
+       syslog       (toggles syslog on/off)
+       syslog +*    (turns all the flags on)
+       syslog -*    (turns all of the flags off)
+
+{wBelow is the current list of flags:
+
+	A Advancement	
+	B Boards
+	C Connections	
+	E Errors
+	F Flags
+	G God commands
+	H Houses
+	I QIC transactions
+	J Extensive QIC
+	K Kills
+	L Load
+	M Messages
+	O Other kills
+	P Password
+	Q Quest
+	R Rent
+	S Server
+	T Ticks
+	U Auction
+	W Warnings
+	X Extensive GC
+	Y Player steal/kill
+	Z Zone resets
+
+{CSee Also: {c-{x
+
+#
+@TODO
+@~
+
+{cUsage: todo <what needs to be done>
+
+TODO adds to the to-be-done text file in the same manner as 'typo' or
+'bug'.
+
+> todo redo zone 50 - too easy
+
+{CSee Also: {c-{x
+
+#
+@TEDIT
+@~
+
+{cUsage: tedit <filename>
+
+{wTEDIT is the online text file editor. Used to edit files such as MOTD,
+bugs, typos, news etc.
+
+> tedit motd
+
+{CSee Also: {c-{x
+
+#
+@ZEDIT
+@~
+
+{cUsage: zedit <roomnum>
+
+{wZEDIT is the online zone file editor. It is used to change the zone
+information for a specific room. ZEDIT without arguments edits the 
+information for the room you are standing in.
+
+> zedit 3001
+> zedit
+
+{CSee Also: {cMEDIT OEDIT REDIT SEDIT{x
+
+#
+@UNAFFECT
+@~
+
+{cUsage: unaffect <victim>
+
+{wRemoves all affections (i.e., spell effects) from a player.
+
+{CSee Also: {c-{x
+
+#
+@USERS
+@~
+
+{wUSERS gives a list of all sockets (i.e., connections) currently active on the
+MUD.  The multi-column display shows the socket number (used by DC), class,
+level, and name of the player connected, connection state, idle time, and
+hostname.
+
+The following switches are available:
+
+-k or -o   Show only outlaws (killers and thieves)
+-p	   Show only sockets in the playing sockets
+-d         Show only non-playing (deadweight) sockets.
+-l min-max Show only sockets whose characters are from level min to max
+-n <name>  Show the socket with <name> associated with it.
+-h <host>  Show all sockets from <host>.
+-c list	   Show only sockets whose characters' classes are in list
+
+{CSee Also:{c DC{x
+
+#
+@VLIST
+@~
+
+{CUsage: vlist { room | obj | mob } <zonenum>
+
+VLIST shows the short names of all mobiles, objects or rooms in a given
+zone.
+
+> vlist room 30
+> vlist mob 30
+> vlist obj 30
+
+{CSee Also: {cVNUM{x
+
+#
+@VNUM
+@~
+
+{cUsage: vnum [ mob | obj | t ] <name>
+
+{wGives a list of the virtual numbers of objects or mobiles which have the
+specified name.
+
+Vnum t <keyword> gives a list of all objects of that type. (light, armor,
+weapon, trash, container, other, wand, potion, scroll, liq container)
+
+> vnum obj ring
+> vnum mob dragon
+> vnum t light
+
+{CSee Also: {c-{x
+
+#
+@VSTAT
+@~
+
+{CUsage: vstat <mob|obj> <virtual number>
+
+{wUsed to stat a prototypical mobile or object by virtual number.
+
+> vstat obj 3000
+> vstat mob 3001
+
+{CSee Also:{c  STAT  VNUM  LOAD{x
+
+#
+@WHOINFO
+@~
+
+{wDisplays the infomation you have visible on whois.
+
+{CSee Also: {cWHOIS{x
+
+
+#
+@WHOSET
+@~
+
+{cUsage: whoset string
+
+{wWhoset lets you change what is displayed within the brackets [] on the
+who list. This string is not save when you quit, just like the poof-in/out
+strings. Whoset without arguments removes your string and replaces it with
+the default level/class string.
+
+{CSee Also: {c-{x
+
+#
+@WIZHELP
+@~
+
+{wGives a list of the special commands available at your level.
+
+{CSee Also: {c-{x
+
+#
+@WIZLOCK
+@~
+
+{cUsage: wizlock [value]
+
+{wWIZLOCK allows you to restrict the game.  WIZLOCK 1 prevents new characters
+from being created.  WIZLOCK n, 2 <= n <= 34, prevents new characters and
+allows only characters level n and above to log on.  WIZLOCK with no argument
+displays the current WIZLOCK level.
+
+{CSee Also: {c-{x
+
+#
+@WIZNET
+@;
+@~
+
+{wThe immortal communication channel.
+
+wiznet [ '@' | '#' ] [<text>]
+(Semicolen) ; also may be used in place of wiznet
+
+>; <text>     - just sends text
+>; @          - shows all gods that are on and visible to you
+              - also shows if the gods who are visible to you are writing
+>; #QU <text> - sends text that may only be seen by Questnasters and up.
+>; #BU <text> - sends text that may only be seen by Builders and up.
+>; #AD <text> - sends text that may only be seen by Admin.
+
+This code was provided by Gnort.
+
+{CSee Also:{c NOWIZ{x
+
+#
+@WIZUPDATE
+@~
+
+WIZUPDATE is used to automatically update the wizlists.
+
+- INACTIVE -
+
+{CSee Also: {c-{x
+
+#
+@XNAME
+@~
+
+{cUsage: xname <name>
+
+{wXNAME adds a name to the list of banned player names. No names on the
+XNAME list are able to be used for new players.
+
+> xname toaster
+
+{CSee Also: {c-{x
+
+#
+@ZRESET
+@~
+
+{cUsage: zreset <zone | '*' | '.'>
+
+{wUsed to force a zone to reset.  '*' forces all zones to reset.  '.' forces
+the zone you are in to reset.
+
+{CSee Also:{c SHOW ZONES{x
+
+#
+@ACT_PROG
+@~
+
+{cSyntax:  act_prog [p] <ARGUMENT>
+
+{wThe argument is a list of keywords separated by spaces. If the
+first word is the character 'p' by itself then the rest of the word 
+list is considered to be a phrase.  The trigger is activated whenver a
+keyword (or the phrase) is contained in the act() message. Both the 
+phrase and keywords are case insensitive.
+
+Most general trigger. Applies to almost every event which happens
+in the mud. Anytime the function act() is called with a message
+to be delivered TO_CHAR,TO_VICT,TO_ROOM,etc. the act can be
+triggered.  Basically this will trigger on almost everything
+you'll ever want (and some things you wont as well)
+
+For example: MOBprogram: >act_prog p pokes you in the ribs.~
+
+This trigger will only be activated if a mobile receives a message
+in which the above five words are found in the exact order and
+spacing given. Note that the period is needed because the words
+must be found on their own. This eliminates confusion when the
+keyword is 'hi' and a message with the word 'this' is being checked.
+In Shadowwind, neither emote nor say can trigger and act_prog,
+so it can ONLY be triggered by socials.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@SPEECH_PROG
+@~
+
+{cSyntax:  speech_prog [p] <ARGUMENT>
+
+The argument is the same as for an act_prog.
+
+This is only triggered when the keyword or phrase is contained in a
+message which has been said by a PC in the same room as the mob.
+The PC restriction is not necessary, but makes infinite loops
+between two talking mobiles impossible. It also makes it impossible
+for two NPC's to stand and discuss the weather however.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@RAND_PROG
+@~
+
+{cSyntax:  rand_prog <NUMBER>
+
+{wThe argument is a number betweeen 1 and 100 inclusive.
+
+This trigger is checked at each PULSE_MOBILE and if the argument is
+greater than a percentage roll the trigger is activated. This
+will happen even if there is no PC in the room with the mob,
+but there must be players in the same area.
+
+It is useful to give mobiles a bit of a personality. For instance
+a janitor who stops to spit tobacco, or complain about the hours,
+or wonder why there are no woman janitors on muds, or a fido which
+barks or growls or pees on the curb is much more alive than one
+which just sits there scavenging.
+
+This trigger will even be checked when the mobile is fighting,
+so can provide some confusion if you don't expect it (for instance
+an mpecho about a fido peeing on the curb can happy during a fight
+or even while the mobile is lying mortally wounded!)
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@FIGHT_PROG
+@~
+
+{cSyntax:  fight_prog <NUMBER>
+
+{wThe argument is a percentage like in rand_prog.
+
+Useful for giving mobiles combat attitude.  It is checked every
+PULSE_VIOLENCE when the mobile is fighting.  Can be used to cast
+spells, curse at the opponent, or whatever. Only the first successful
+one will be processed to save time.  Also, this means that the
+mobile wont get lucky and 1. curse, cast a fireball and 2. spit on the
+player, cast another fireball in the same pulse
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@HITPRCNT_PROG
+@~
+
+{cSyntax:  hitprcnt_prog <NUMBER>
+
+{wThe argument is a percentage.
+Is activated at each PULSE_VIOLENCE when the mobile is fighting. It
+checks to see if the hitpoints of the mobile are below the given
+percentage.  Multiple hitprcnt_progs should be listed in increasing
+order of percent since a 40% will always be activated before a 20%
+and, only the first successful hitprcnt trigger is performed.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@GREET_PROG
+@~
+
+{cSyntax:  greet_prog <NUMBER>
+
+{wAgain a percentage argument.
+
+Whenever someone enters the room with the mobile, and the mobile saw
+the person enter, this is checked. Good for shopkeepers who want
+to welcome customers, or for pseudo-aggressive mobiles which need to
+discriminate on who they attack.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@ALL_GREET_PROG
+@~
+
+{cSyntax:  all_greet_prog <NUMBER>
+
+Again a percentage argument.
+
+Like greet_prog, but it can be triggered even if the mobile didnt
+see the arrival (i.e. sneak, invis, etc). Most useful for faking
+teleport rooms (if your mobiles can transfer) or for impassable
+guardians.
+
+**NOTE: neither greet_prog is activated if the mobile is fighting.**
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@ENTRY_PROG
+@~
+
+{cSyntax:  entry_prog <NUMBER>
+
+Again a percentage argument.
+
+The opposite of a greet_prog. Whenver the mobile itself enters a new
+room, this can be triggered.  Useful for looking around, or waving
+or other things that real PCs do when they arrive at a crowded room.
+Only the first successful one of these is done so the mobile doesnt
+look stupid by repeating commands resulting from multiple MOBprograms.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@GIVE_PROG
+@~
+
+{cSyntax:  give_prog <ARGUMENT>
+
+The argument is either the complete name of an object, or the word
+'all'. A complete name is like: "sword shiny magic" vs "sword". It
+is whatever is on the line of the object section following the VNUM.
+
+This is triggered whenever something is given to the mobile.  Best used
+for quests.  Since the first successful trigger is the only one of
+this type which is processed, having an "all" argument give_prog
+at the end of the MOBprogram list is essentially a default response.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@BRIBE_PROG
+@~
+
+{cSyntax:  bribe_prog <NUMBER>
+
+The argument is any positive integer number.
+
+This trigger is activated whenever money is given to the mobile. If the
+amount given exceeds the number, then process the commands. Note
+again, that an argument of '1' would act as a default response.
+If money is given to a mobile with this trigger type, instead of the
+cash being added to mob->gold, the mobile is instead given a pile of
+coins in the proper amount. In this way, the mobile can drop the coins
+or refer to the object by "amount" (short description:"%d gold coins")
+This surely has some drawbacks, but it lets the mobile do something
+with the bribe (NOTE: dropping it and getting it turns it into cash)
+This can be done sneakily if a NPC-only "at" command exists.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@DEATH_PROG
+@~
+
+{cSyntax:  death_prog <NUMBER>
+
+{wThe argument is a percent once again.
+
+When the mobile dies, if the random percentage is less than the argument
+the mobile performs the MOBprogram commands rather than the usual
+death_cry sequence.  This is done before the corpse is made, so the
+commands can be considered the mobiles last gasp.  It could perhaps
+destroy the items it was holding, or create some, or cast a spell
+on the killer and the room, or even goto a new location and die
+there (with a text message, the corpse would seem to vanish)  The
+position of the mobile is set to STANDING, and so it can do all the
+normal commands, without worrying about being DEAD.  However, even
+if the mobile restores itself to full hitpoints, it will still die.
+
+This is not a way to immortal mobiles. However, the last thing this
+mobile does could be to goto some vacant room, load a fresh version
+of itself, drop all its items, force the new mobile to get all the
+items and wear them, send the new mobile back to the character who
+killed it and force the new mobile to attack that character. Along
+with a text message which said the mobile restored itself, this
+might be a convincing effect. (Note that your kitten could turn into
+a dragon this way too).  Of course this assumes that some NPC
+commands have been implemented.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@VARIABLE
+@MOB_VARIABLE
+@~
+
+To make things come alive, variables are needed.  These are represented
+in the MOBprograms by using a dollar sign convention as in the socials.
+When the mud command is processed, these variables are expanded into the
+values shown below.  Usually, it is best to use the short descriptions
+of mobiles and the names of players when speaking them, but if you are
+performing an action to someone almost always you want the name. The
+title field for players is an extra that probably wont often be used.
+Without further hesitation... the variables:
+
+$i      the first of the names of the mobile itself.
+$I      the short description of the mobile itself.
+$n      the name of whomever caused the trigger to happen.
+$N      the name and title of whomever caused the trigger to happen.
+$t      the name of a secondary character target (i.e A smiles at B)
+$T      the short description, or name and title of target (NPC vs PC)
+$r      the name of a random char in the room with the mobile (never == $i)
+$R      the short description, or name and title of the random char
+
+$j      he,she,it based on sex of $i.
+$e      he,she,it based on sex of $n.
+$E      he,she,it based on sex of $t.
+$J      he,she,it based on sex of $r.
+
+$k      him,her,it based on sex of $i.
+$m      him,her,it based on sex of $n.
+$M      him,her,it based on sex of $t.
+$K      him,her,it based on sex of $r.
+
+$l      his,hers,its based on sex of $i.
+$s      his,hers,its based on sex of $n.
+$S      his,hers,its based on sex of $t.
+$L      his,hers,its based on sex of $r.
+
+$o      the first of the names of the primary object (i.e A drops B)
+$O      the short description of the primary object
+$p      the first of the names of the secondary object (i.e A puts B in C)
+$P      the short description of the secondary object
+
+$a      a,an based on first character of $o
+$A      a,an based on first character of $p
+
+  Also, in if_checks, the accepted variables are the basic ones
+(i,n,t,r,o,p).  If a variable is referenced that doesnt exist, then the value
+is simply left blank. (i.e referring to $o when the trigger is: A kisses B)
+
+  The only problem with the variables is that the secondary object and
+the secondary target are passed by act() in the same location.  This means that
+if you reference $t in an  A puts B in C  situation, the result will probably
+be a happy mud crash or some weird side effect, espescially if $t is used in
+an if_check (i.e. if isnpc($t) in the above situation) The basic fix for this
+is to change everyone who calls the act() procedure to specify a secondary
+object and a secondary character. But that is a fairly comprehensive trivial
+twiddle, so we left it the way it is so that, you arent forced to make all
+those twiddles to use the MOBprograms.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@OPERATORS
+@~
+
+Most of the basic numeric operators are legal and perform the same
+function as in C. The string operators are a bit more confusing. There 
+are negative versions of some of the operators. These are not strictly
+needed,  since the if/else construct of Control Flow commands can handle 
+either case.
+
+Numeric Operators: == != > < >= <= & |     String Operators: == != / !/
+
+For strings, == and != check for exact match between the two strings
+and the other two, / and !/ check to see if the second string is 
+contained in the first one.  This is so things like:  if name($n) / guard 
+will  respond true to "cityguard" "guard" "guardian"  etc. Using == on a 
+name implies that you are matching the complete name "cityguard guard" or
+whatever.
+
+The string operators are case SENSITIVE.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@IF_CHECKS
+@~
+
+        The provided list of if_checks and their arguments are below.
+They should all be fairly obvious in what they do, but some of the more
+obtuse deserve a slight explanation. Any '==' operator can be replaced 
+with any of the available ones described above.  The argument ($*) 
+refers to any of the variables which make sense for that if_check (i.e.
+for an if_check which is referencing a person the only valid variables 
+would be $i, $n, $t or $r) A value type of string is a sequence of
+characters. It does not need to be included in quotes or anything like
+that (i.e. name($n)== orc large brown)
+
+rand     (num)             Is random % less than or equal to num
+isnpc     ($*)             Is $* an NPC
+ispc      ($*)             Is $* a PC
+isgood    ($*)             Does $* have a good alignment
+isfight   ($*)             Is $* fighting
+isimmort  ($*)             Is the level of $* greater than max_mortal
+ischarmed ($*)             Is $* affected by charm
+isfollow  ($*)             Is $* a follower with their master in the room
+isaffected($*)  & integer  Is ($*->affected_by & integer) true
+                           (person only)
+hitprcnt  ($*)  = percent  Is the hit/max_hit of $* equal to percent
+inroom    ($*)  = integer  Is the room of $* equal to integer
+                           (person only)
+sex       ($*)  = integer  Is the sex of $* equal to integer
+position  ($*)  = integer  Is the position of $* equal to integer
+level     ($*)  = integer  Is the level of $* equal to integer
+class     ($*)  = integer  Is the class of $* equal to integer
+goldamt   ($*)  = integer  Does $* have a gold total equal to integer
+objtype   ($*)  = integer  Is the type of $* equal to integer
+                           (armor,boat,etc)
+objval#   ($*)  = integer  Is $*->value[#] equal to integer (# from 0-3)
+number    ($*)  = integer  Is the vnum of $* equal to integer
+name      ($*)  = string   Is the name of $* equal to string
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPSTAT
+@~
+
+{cSyntax:  MPSTAT <mobile>
+
+{wShows the MOBprograms which are set on the mob of the given name or
+vnum and some basic stats for the mobile
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPASOUND
+@~
+
+{cSyntax:  MPASOUND <text_string>
+
+{wPrints the text string to the rooms around the mobile in the same
+manner as a death cry. This is really useful for powerful aggressives
+and is also nice for wandering minstrels or mobiles like that in
+concept.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPJUNK
+@~
+
+{cSyntax:  MPJUNK <object>
+
+{wDestroys the object refered to in the mobiles inven. It prints no
+message to the world and you can do things like junk all.bread or
+junk all. This is nice for having janitor mobiles clean out their
+inventory if they are carrying too much (have a MOBprogram trigger on
+the 'full inventory')
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPECHO
+@MPECHOAT
+@MPECHOAROUND
+@~
+
+{cSyntax:  MPECHO                 <text_string>
+         MPECHOAT      <victim> <text_string>
+         MPECHOAROUND  <victim> <text_string>
+
+Prints the text message to the room of the mobile. The three options
+let you tailor the message to goto victims or to do things sneaky
+like having a merchant do: mpat guard mpechoat guard rescue_please
+This coupled with a guard act_prog trigger on rescue_please to
+mpgoto $n and mpecho $I has arrived.  It is an affective way of quickly
+bringing guards to the scene of an attack.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPOLOAD
+@MPMLOAD
+@~
+
+{cSyntax:  MPMLOAD <vnum>
+         MPOLOAD <vnum>
+
+{wLoads the obj/mobile into the inven/room of the mobile. Even if the
+item is non-takable, the mobile will receive it in the inventory.
+This lets a mobile distribute a quest item or load a key or something.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPKILL
+@~
+
+{cSyntax:  MPKILL <victim>
+
+{wLets a mobile kill a player without having to murder and be fifth
+level.  Lots of MOBprograms end up with mpkill $n commands floating
+around. It works on both mobiles and players.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPPURGE
+@~
+
+{cSyntax:  MPPURGE [argument]
+
+{WDestroys the argument from the room of the mobile. Without an argument
+the result is the cleansing of all NPC's and items from the room with
+the exception of the mobile itself.  However, mppurge $i will indeed
+purge the mobile, but it MUST be the last command the mobile tries to
+do, otherwise the mud cant reference the acting mobile trying to do the
+commands and bad things happen.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPGOTO
+@~
+
+{cSyntax:  MPGOTO < player | mobile | roomvnum >
+
+{wMoves the mobile to the room or mobile or object requested.  It makes
+no message of its departure or of its entrance, so these must be
+supplied with mpecho commands if they are desired.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPAT
+@~
+
+{cSyntax:  MPAT <dest> <command>
+
+{wPerfoms the command at the designated location. Very useful for doing
+magic slight of hand tricks that leave players dumbfounded.. such as
+metamorphing mobiles, or guard summoning, or corpse vanishing.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPTRANSFER
+@~
+
+{CSyntax:  MPTRANSFER <victim> [dest]
+
+{wSends the victim to the destination or to the room of the mobile as a
+default.  if the victim is "all" then all the characters in the room
+of the mobile are transfered to the destination.  Good for starting
+quests or things like that.  There is no message given to the player
+that it has been transfered and the player doesnt do a look at the
+new room unless the mob forces them to. Immortals cannot be tranfered.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPFORCE
+@~
+
+{cSyntax:  MPFORCE <victim> <command>
+
+{wForces the victim to do the designated command.  The victim is not told
+that they are forced, they just do the command so usually some mpecho
+message is nice.  You can force players to remove belongings and give
+them to you, etc.  The player sees the normal command messages (such as
+removing the item and giving it away in the above example)  Again, if
+the victim is "all" then everyone in the mobiles room does the command.
+This cannot be used on immortals.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MPCAST
+@~
+
+{cSyntax:  MPCAST '<spell>' <victim>
+
+{wJust like spell, but doesnt show a message. Useful when you want to
+use your own messages.
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS MP_COMMANDS{x
+
+#
+@MOB_PROGS
+@MOBILE PROGRAMS
+@MOB PROG
+@~
+
+MOBprogram quick reference to triggers/variables/ifchecks/mobcommands
+
+trigger         argument and what must happen to activate trigger
+{c--------------------------------------------------------------------{x
+act_prog       WORDLIST or P WORD_PHRASE to match from act() to mob
+bribe_prog     INTEGER amount of miminum gold amount given to mob
+entry_prog     PERCENT chance to check when mob moves to a new room
+give_prog      FULL OBJECT NAME or ALL to match when obj given to mob
+greet_prog     PERCENT chance to check if visable char enters mob's room
+all_greet_prog PERCENT chance to check when any char enters mob's room
+fight_prog     PERCENT chance to check at fight_pulse if mob is fighting
+hitprcnt_prog  PERCENT lower than mob's hit/max_hit if mob is fighting
+death_prog     PERCENT chance to check after mob has been slain
+rand_prog      PERCENT chance to check when a PC is in the mob's zone
+speech_prog    WORDLIST or P WORD_PHRASE to match in dialogue to mob
+
+To see the specific file on a command, use: wizh <XXX_prog>
+
+{cExample:{w
+
+>act_prog p pokes you in the~
+if isnpc($n)
+   chuckle
+   poke $n
+else
+   if level($n) <= 5
+   or isgood($n)
+      tell $n I would rather you didnt poke me.
+   else
+      if level($n)>15
+         scream
+         say Ya know $n. I hate being poked!!!
+         kill $n
+         break
+      endif
+      slap $n
+      shout MOMMY!!! $N is poking me.
+   endif
+endif
+~
+|
+
+Ok.. time to translate.. the trigger will only happen when the mobile
+gets the message "... pokes you in the ..." If the offender (recall
+the $n and $N refer to the char who did the poking...) is an NPC, then
+the mobile merely chuckles and pokes back. If the offender was a PC
+then good and low level characters get a warning, high level chars
+get attacked, and midlevel chars get slapped and whined at.
+
+Note that two of these mobiles could easily get into an infinite poke
+war which slows down (or frequently crashes) the mud just a bit :(
+Be very careful about things like that if you can. (i.e dont respond
+to a poke with a poke, and try not to let heavily programmed robot mobiles
+wander around together. More on that is given above.)
+
+{CSee Also: {cVARIABLES OPERATORS MP_COMMANDS IF_CHECKS{x
+
+#
+@MP_COMMANDS
+@~
+
+MOBcommand   argument_list      MOBcommand    argument_list
+{c------------------------------------------------------------------{x
+MPSTAT       <mobile>           MPASOUND      <text_string>
+MPJUNK       <object>           MPECHO        <text_string>
+MPMLOAD      <mobile>           MPECHOAT      <victim> <text_string>
+MPOLOAD      <object> <level>   MPECHOAROUND  <victim> <text_string>
+MPKILL       <victim>           MPPURGE       [argument]
+MPGOTO       <dest>             MPAT          <dest> <command>
+MPTRANSFER   <dest> [location]  MPFORCE       <victim> <command>
+MPCAST       'spell name'
+
+{CSee Also: {cIF_CHECKS MOB_PROGS VARIABLES OPERATORS{x
+
+#
+@WHERE
+@~
+
+{cUsage: where [ player | keyword ]{x
+
+WHERE PLAYER will show a listing of the roomname and roomnumber of the
+player's current location. 
+
+WHERE <keyword> will show a listing of the room numbers and virtual
+numbers of all the mobiles and objects with that keyword.
+
+{CSee Also: {cVNUM, VSTAT{x
+
+#~
+

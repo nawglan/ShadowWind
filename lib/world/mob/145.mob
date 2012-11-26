@@ -1,0 +1,109 @@
+#14500
+squeaker~
+{wthe busy squeaker{x~
+{wA squeaker is working in almost ant-like organization.{x
+~
+Squeakers were first encountered a few years ago. It is believed they were 
+created by a wizard's spell gone bad. These small, humanoid creatures have 
+disproportionately large heads and spindly bodies. They look vaguely 
+pixie-like, but they wear no clothes and display no gender.
+~
+cdegm drs -200 X 0 
+9 15 5 5d5+90
+0 4200 -1
+8 8 0 4 14 2
+T 100 2d4+1 7
+A 15 8 The squeaker grunts and looks away.
+A 10 8 The squeaker throws a rock at you.
+A 5 8 The squeaker totally ignores you.
+E 16 100 14500 -1
+E 3 5 14501 100
+#14501
+bobcat cat~
+{ythe small bobcat{x~
+{yA small bobcat rustles around, searching for prey.{x
+~
+{yThis little bobcat seems to ignore your very existance, his coat is a
+dark brown color and the fur is long and thick.{x
+~
+den kr -100 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 1 4 14 2
+T 100 2d4+2 22
+#14502
+anclar huge large~
+{Ythe huge anclar{x~
+{YA huge anclar is here grazing.{x
+~
+{YThis huge beast is as solid as a rock, his coat is very bright, almost
+golden yet there is a hint of brown.{x
+~
+dgnpqA kr 0 X 0 
+40 5 -10 20d20+400
+0 150000 -1
+8 8 1 4 14 4
+T 50 8d4+8 24
+#14503
+sasquatch~
+{Dthe sasquatch{x~
+{DThe Sasquatch is here hiding in the shadows.{x
+~
+{yThis huge beast is covered with coarse bushy hair. The smell coming from
+him is quite revolting. {x
+~
+cdgoprA rs 0 X 0 
+57 0 -10 29d29+9650
+0 8000000 -1
+8 8 1 3 14 4
+T 33 20d6+51 8
+>rand_prog            5~
+moan
+mpdelay 20
+peer $n
+~
+|
+#14504
+deer~
+{ythe deer{x~
+{yA small deer scurries about.{x
+~
+{yThis little deer is terrified at the site of you and scurries away.{x
+~
+den kr -100 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 1 4 14 2
+T 100 2d4+2 24
+>death_prog    100~
+mpoload 14504
+~
+|
+#14505
+antelope~
+{ythe antelope{x~
+{yAn antelope jumps about looking for a good getaway.{x
+~
+{yThis antelope is startled by your aproach, his coat is a tan color and the fur is short.
+~
+den kr -100 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 1 4 14 2
+T 100 2d4+2 24
+#14506
+sheep ewe~
+{wa young {Wwoolly sheep{x~
+{xa cute young {Wwoolly sheep {xwith a {Dblack snout {xstands here.
+~
+{wAll covered in {Wwhite wool {wthis little sheep roams about.{x
+~
+den kr -100 X 0 
+10 15 5 5d5+100
+0 5000 -1
+8 8 1 4 14 2
+T 100 2d4+2 24
+>death_prog    100~
+mpoload 14506
+~
+|

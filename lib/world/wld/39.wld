@@ -1,0 +1,1923 @@
+#3900
+A Damp Passageway~
+    A bleak darkness surrounds you as you enter, blanketing you in its
+oppressive humidity. Mildew and mould have found a haven here, growing and
+suffocating the very brick from which the walls are made. Every visitor
+is told to be careful as they grope their way through the slippery passage.
+~
+39 di 0
+D4
+A tiny trapdoor of solid wood hangs above your head.
+~
+tiny trapdoor~
+1 0 3708 0
+D5
+The passageway continues in that direction.
+~
+~
+0 0 3901 0
+S
+#3901
+A Damp Passageway~
+    The air about you hangs heavily here, weighted down by the dank humidity
+and the sombre smells of stale air. Leading downwards is a narrow, winding
+staircase covered with slippery moss and mildew.
+~
+39 di 0
+D4
+The passageway continues in that direction.
+~
+~
+0 0 3900 0
+D5
+The passageway continues in that direction.
+~
+~
+0 0 3902 0
+S
+#3902
+A Damp Passageway~
+    The air about you hangs heavily here, weighted down by the dank humidity
+and the sombre smells of stale air. Leading downwards is a narrow, winding
+staircase covered with slippery moss and mildew.
+~
+39 di 0
+D4
+The passageway continues in that direction.
+~
+~
+0 0 3901 0
+D5
+The passageway continues in that direction.
+~
+~
+0 0 3903 0
+S
+#3903
+A Damp Passageway~
+    The humidity seems to lift a little here as the stale tunnel air that
+is very much a part of the staircase opens up into a tunnel to the east. The
+bleak surroundings cause the light cast by any torch to be cut off abruptly
+and prematurely, giving the tunnels an eerie feel to them.
+~
+39 di 0
+D1
+The passageway continues in that direction.
+~
+~
+0 0 3904 0
+D4
+The passageway continues in that direction.
+~
+~
+0 0 3902 0
+S
+#3904
+Inside A Sewer Tunnel~
+   Damp, stale air hangs heavily about your shoulders as the darkness
+embraces you tightly. The faint trickling of water in the distance seems
+loud in your ears as it echos through the cavernous tunnels which extend in
+all directions. You realise you could easily be lost here with each exit
+looking as familiar as one before.  
+~
+39 d 0
+D1
+The tunnel continues in that direciton.
+~
+~
+0 0 3912 0
+D2
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3905 0
+D3
+A damp passageways lies in that direction.
+~
+~
+0 0 3903 0
+S
+#3905
+Inside A Sewer Tunnel~
+    The ground under your feet seems to slope downwards as you make your way
+deeper into tunnel's darkness. Your footsteps through the shallow puddles
+echo about you, building in strength and before returning. You sense a dark
+danger to the east and a desire to explore.
+~
+39 d 0
+D0
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3904 0
+D1
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3906 0
+S
+#3906
+Inside A Sewer Tunnel~
+    The ground under your feet seems to slope downwards as you make your way
+deeper into tunnel's darkness. Your footsteps through the shallow puddles
+echo about you, building in strength and before returning. You sense a dark
+danger to the south and a desire to explore.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3912 0
+D2
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3907 0
+D3
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3905 0
+S
+#3907
+Before A Shallow Drop~
+    The water that flows about your feet plummets over the edge to fill a
+shallow pool below. To the east you see a tunnel leading to a narrow alcove,
+while to the north the array of cavernous tunnels continues endlessly.
+~
+39 d 0
+D0
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3906 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3917 0
+D5
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3908 0
+S
+#3908
+Wading Through A Shallow Pool~
+    You plunge into a shallow pool of water, murky with the remnants of
+discarded waste from the city above. To the north you see a thin line of
+aging concrete over which water continues to spill, while to the south you
+see the faint aura of a misty sunlight tinged with an element of danger.
+~
+39 d 0
+D2
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3909 0
+D4
+The sewer tunnel continues in that direction.
+~
+~
+0 0 3907 0
+S
+#3909
+Inside A Narrow Tunnel~
+   The faint misty glow of sunlight trickling in from a not so distant
+opening, hums in the air. You stand knee deep within a small gushing
+waterway fed from a shallow pool of water to the north. To the west the glow
+of light seems brighter still accompanied by the sounds of water breaking
+upon rocks.  
+~
+39 d 0
+D0
+A shallow pool lies in that direction.
+~
+~
+0 0 3908 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3910 0
+S
+#3910
+At The End Of The Tunnel~
+    Your eyes are filled with bright spots as the unabated sunlight pours in
+from your south. You see a splendid view in the distance of mountain ranges,
+forests and rivers. Below you however, lie the sharp tipped points of rocks
+honed to a deadly razor's edge by nature herself.
+~
+39 d 0
+D1
+The narrow tunnel continues in that direction.
+~
+~
+0 0 3909 0
+S
+#3912
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. To the west however, the shroud of
+darkness seems to have a different texture.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3918 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3913 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3906 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3904 0
+S
+#3913
+Inside A Sewer Tunnel~
+   Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. To the east you see shallow slits of
+light floating atop the water.  
+~
+39 d 0
+D1
+The tunnel contines in that direction.
+~
+~
+0 0 3914 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3912 0
+S
+#3914
+Inside A Sewer Tunnel~
+   Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. The eastern tunnel seems to be blocked
+by an old, rusty, iron grate. 
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3922 0
+D1
+A rusty old iron grate blocks your passage.
+~
+grate rusty iron~
+1 0 3941 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3915 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3913 0
+S
+#3915
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3914 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3916 0
+S
+#3916
+Before A Small Alcove~
+    The stench of unmoving sewerage fills your nose while the darkness of
+the tunnels dulls your sight. To your east, you see a small mossy archway,
+made from a deep red brick and now lined with the stringy tendrils of an
+underground creeper. 
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3915 0
+D1
+A room shrouded in the darkness of night lies in that direction.
+~
+~
+0 0 3948 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3917 0
+S
+#3917
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. From the west you hear the faint
+sounds of falling water.
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3916 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3907 0
+S
+#3918
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3919 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3912 0
+S
+#3919
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. As you examine the canals to your 
+west however, it seems that fewer travellers have ventured there.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3923 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3920 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3918 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3932 0
+S
+#3920
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well.
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3921 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3919 0
+S
+#3921
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. As you look northwards, you realize 
+that moss seems to have overtaken much of the brick walls that make the 
+tunnel itself.
+~
+39 d 0
+D0
+The tunnel darkens in that direction.
+~
+~
+0 0 3927 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3922 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3920 0
+S
+#3922
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. To the south you see a tiny slit of
+light flickering on the water's surface.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3921 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3914 0
+S
+#3923
+Inside A Sewer Tunnel~
+    Peering into the darkness you realize that every exit that lies before
+you lives in utter monotony. Dark sewer tunnels lie in every direction, each
+so familiar and yet unfamiliar as well. As you examine the canals to your
+west however, it seems that fewer travellers have ventured there.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3924 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3919 0
+S
+#3924
+At An Intersection~
+    Here lies the crossroads of the tunnels, their separate travels meeting
+silently. To the north, the amber life of torch flames dance along the walls
+while to the east, walls consumed by evergreen moss and dusted with frosty
+lichen wait patiently to greet you. The west holds newly dulled pipes, while
+the south lies shrouded in bleak darkness.
+~
+39 d 0
+D0
+Torchilight flickers quietly in that direction.
+~
+~
+0 0 3933 0
+D1
+A tunnel covered in green moss lies in that direction.
+~
+~
+0 0 3925 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3923 0
+D3
+An unused section of tunnel lies in that direction.
+~
+~
+0 0 3928 0
+S
+#3925
+A Mossy Tunnel~
+    An eerie darkness tinged with the faint emerald glow of bright moss
+envelopes you as you enter the tunnels embrace. The walls seem to have been
+eaten away, only to be replaced by an evergreen carpet and scraggly tangles.
+The floor beneath your feet is slick, glistening with moisture from trickles
+that run down the walls. To the west lies an intersection of tunnels.
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3926 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3924 0
+S
+#3926
+A Mossy Tunnel~
+    An eerie darkness tinged with the faint emerald glow of bright moss
+envelopes you as you enter the tunnels embrace. The walls seem to have been
+eaten away, only to be replaced by an evergreen carpet and scraggly tangles.
+The floor beneath your feet is slick, glistening with moisture from trickles
+that run down the walls.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3937 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3927 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3925 0
+S
+#3927
+A Mossy Tunnel~
+    An eerie darkness tinged with the faint emerald glow of bright moss
+envelopes you as you enter the tunnels embrace. The walls seem to have been
+eaten away, only to be replaced by an evergreen carpet and scraggly tangles.
+The floor beneath your feet is slick, glistening with moisture from trickles
+that run down the walls.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3926 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3921 0
+S
+#3928
+An Unused Section Of Tunnel~
+    New piping seems to have been put through this section of the tunnel,
+leaving it free of the stagnant water that fills the underground canals to
+the east and north. The roof and walls seem to be free of moss and left
+untouched since cleaners made their way here.
+~
+39 d 0
+D1
+A sewer tunnel continues in that direction.
+~
+~
+0 0 3924 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3929 0
+S
+#3929
+An Unused Section Of Tunnel~
+   New piping seems to have been put through this section of the tunnel,
+leaving it free of the stagnant water that fills the underground canals to
+the east and north. The roof and walls seem to be free of moss and left
+untouched since cleaners made their way here. To your north a dark and
+narrow passageway opens up behind layers of rubble.  
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3940 0
+D1
+A more commonly traversed section of tunnel continues in that direction.
+~
+~
+0 0 3928 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3930 0
+S
+#3930
+An Unused Section Of Tunnel~
+    New piping seems to have been put through this section of the tunnel,
+leaving it free of the stagnant water that fills the underground canals to
+the east and north. The roof and walls seem to be free of moss and left
+untouched since cleaners made their way here.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3929 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3931 0
+S
+#3931
+An Unused Section Of Tunnel~
+    New piping seems to have been put through this section of the tunnel,
+leaving it free of the stagnant water that fills the underground canals to
+the east and north. The roof and walls seem to be free of moss and left
+untouched since cleaners made their way here.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3930 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3932 0
+S
+#3932
+An Unused Section Of Tunnel~
+   New piping seems to have been put through this section of the tunnel,
+leaving it free of the stagnant water that fills the underground canals to
+the eastern and northern ends of the sewers. To the north a faint trickle of
+light peeks into the dusty air of a room locked behind bars.  
+~
+39 d 0
+D0
+A room with multitudes of piping lies behind heavy iron bars in that direction.
+~
+bars iron~
+1 0 3971 0
+D1
+A more commonly traversed section of tunnel continues in that direction.
+~
+~
+0 0 3919 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3931 0
+S
+#3933
+A Torchlit Tunnel~
+   Flickering lights dance merrily along the brick surface of the tunnel
+walls. Every ten paces a torch holder stands at the ready to light a path
+for the weary traveller.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3934 0
+D2
+An intersection lies in that direction.
+~
+~
+0 0 3924 0
+S
+#3934
+A Torchlit Tunnel~
+   Flickering lights dance merrily along the brick surface of the tunnel
+walls. Every ten paces a torch holder stands at the ready to light a path
+for the weary traveller.
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3935 0
+D2
+The tunnel contineus in that direction.
+~
+~
+0 0 3933 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3938 0
+S
+#3935
+A Torchlit Tunnel~
+   Flickering lights dance merrily along the brick surface of the tunnel
+walls. Every ten paces a torch holder stands at the ready to light a path
+for the weary traveller.
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3936 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3934 0
+S
+#3936
+A Torchlit Tunnel~
+   Flickering lights dance merrily along the brick surface of the tunnel
+walls. Every ten paces a torch holder stands at the ready to light a path
+for the weary traveller. To the south the light extinguishes a short way
+into a tunnel tinged with green while the east holds the entrance to a damp
+stairwell.  
+~
+39 d 0
+D1
+A dark, uninviting tunnel lies in that direction.
+~
+~
+0 0 3950 0
+D2
+A mossy tunnel lies in that direction.
+~
+~
+0 0 3937 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3935 0
+S
+#3937
+A Mossy Tunnel~
+   An eerie darkness tinged with the faint emerald glow of bright moss
+envelopes you as you enter the tunnels embrace. The walls seem to have been
+eaten away, only to be replaced by an evergreen carpet and scraggly tangles.
+The floor beneath your feet is slick, glistening with moisture from trickles
+that run down the walls. To the north, torchlight casts an inviting yellow
+glow.  
+~
+39 d 0
+D0
+Torchlight flickers easily in that direction.
+~
+~
+0 0 3936 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3926 0
+S
+#3938
+A Torchlit Tunnel~
+   Flickering lights dance merrily along the brick surface of the tunnel
+walls. Every ten paces a torch holder stands at the ready to light a path
+for the weary traveller.
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3934 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3939 0
+S
+#3939
+A Torchlit Tunnel~
+   Flickering lights dance merrily along the brick surface of the tunnel
+walls. Every ten paces a torch holder stands at the ready to light a path
+for the weary traveller. To the south a pile of rubble lies at the foot of a
+darkened entrance.  
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3938 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3940 0
+S
+#3940
+Before Some Rubble~
+    The wall to the west seems to have been blasted away to reveal a narrow
+passage. The sounds of silent mutterings and sad laughter seem to echo in
+a distant room at the end of the passageway. To the south, the clean landscape
+of unused tunnels stands as a marked contrast to the filth that lies naked
+and uncovered in the torchlight to the north.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3939 0
+D2
+An unused section of tunnel lies in that direction.
+~
+~
+0 0 3929 0
+D3
+A bleak, narrow passage lies in that direction.
+~
+~
+0 0 3968 0
+S
+#3941
+Along A Blackened Tunnel~
+    The suffocating darkness of this tunnel seems to choke away any sign of
+life. There seems to be no hint of life among the walls, no lichen, no moss.
+A thick blanket of soot is the only covering that decorates the walls of the
+tunnel.
+~
+39 d 0
+D1
+The balckened tunnel continues in that direction.
+~
+~
+0 0 3942 0
+D3
+A rusty old iron grate lies in that direction.
+~
+grate rusty iron~
+1 0 3914 0
+S
+#3942
+Along A Blackened Tunnel~
+    The suffocating darkness of this tunnel seems to choke away any sign of
+life. There seems to be no hint of life among the walls, no lichen, no moss.
+A thick blanket of soot is the only covering that decorates the walls of the
+tunnel.
+~
+39 d 0
+D0
+The blackened tunnel continues in that direction.
+~
+~
+0 0 3943 0
+D3
+The blackened tunnel continues in that direction.
+~
+~
+0 0 3941 0
+S
+#3943
+Along A Blackened Tunnel~
+    The suffocating darkness of this tunnel seems to choke away any sign of
+life. There seems to be no hint of life among the walls, no lichen, no moss.
+A thick blanket of soot is the only covering that decorates the walls of the
+tunnel.
+~
+39 d 0
+D2
+The blackened tunnel continues in that direction.
+~
+~
+0 0 3942 0
+D3
+The blackened tunnel continues in that direction.
+~
+~
+0 0 3944 0
+S
+#3944
+Along A Blackened Tunnel~
+    The suffocating darkness of this tunnel seems to choke away any sign of
+life. There seems to be no hint of life among the walls, no lichen, no moss.
+A thick blanket of soot is the only covering that decorates the walls of the
+tunnel.
+~
+39 d 0
+D0
+The blackened tunnel continues in that direction.
+~
+~
+0 0 3945 0
+D1
+The blackened tunnel continues in that direction.
+~
+~
+0 0 3943 0
+S
+#3945
+Along A Blackened Tunnel~
+    The suffocating darkness of this tunnel seems to choke away any sign of
+life. There seems to be no hint of life among the walls, no lichen, no moss.
+A thick blanket of soot is the only covering that decorates the walls of the
+tunnel.
+~
+39 d 0
+D1
+A faint glow appears in that direction.
+~
+~
+0 0 3946 0
+D2
+The blackened tunnel continues in that direction.
+~
+~
+0 0 3944 0
+S
+#3946
+The Apothecary's Antechamber~
+    A faint hum fills the air and a dull prickling heat sweeps across the
+room as an ancient forbidden magic is tapped in the room to your east. Here
+in the antechamber, small vials holding bizarre substances and bone fragments
+lie strewn across the room. This very room makes you extremely uncomfortable.
+~
+39 d 0
+D1
+An odd room filled with mixtures and potions of all sorts lies in that 
+direction.
+~
+~
+0 0 3947 0
+D3
+The blackened tunnel lies in that direction.
+~
+~
+0 0 3945 0
+S
+#3947
+The House Of Bones~
+   As you pass through the doorway made of the femurs of some unknown beast,
+a flash of prickly heat shoots through your body. You gape as your eyes
+drink in this room, walls and floor covered in bones. It is here that an
+ancient and powerful magic is brewed, a dangerous magic that can take and
+give life just as easily. The apothecary stands before you, tall and
+impressive. His eyes alive with a dancing fire that causes you to wonder if
+this man is a genius or a fool.  
+~
+39 d 0
+D3
+The antechamber lies in that direction.
+~
+~
+0 0 3946 0
+S
+#3948
+At The Foot Of Some Steps~
+    A pale glow of misty sunlight floods the raised platform before you. 
+There a small figurine stands upon its own perch of flecked marble. The image
+of scupltured white hands raising the tiny statue to the sun leaves you
+spellbound for a moment. The glittering jewelled sapphire eyes that stare at
+you seem to possess a life of their own.
+~
+39 d 0
+D3
+A sewer tunnel lies in that direction.
+~
+~
+0 0 3916 0
+D4
+A sunlit platform holding a small figurine lies in that direction.
+~
+~
+0 0 3949 0
+S
+#3949
+Upon A Sunlit Platform~
+    Pale white sunlight streams down from the circular hole above, flooding
+and bathing the small figurine that sits in the centre of the platform. 
+Brilliant cut sapphire eyes look at you penetratingly as you move about the
+statue itself. You notice that a short inscription has been etched into the
+wrists of the odd pedestal upon which the statue sits.
+~
+39 d 0
+D5
+A set of five steps lies in that direction.
+~
+~
+0 0 3948 0
+E
+wrists pedestal inscription~
+Gold veins course through the white marbled flesh of the pedestal to rest in
+the grooves of an ancient message which has been sent through the ages to you.
+It reads...
+
+     "Heavens bathe this offering in your ethereal glow,
+      Spread forth your knowledge for all to know.
+      Should we kneel before this humble gift,
+      Gods take us home and our ignorance lift."
+~
+S
+#3950
+Before A Damp Stairwell~
+   The friendly faces of dancing flames retreat in the face of the quiet
+darkness that lies to the east. The floor seems to end abruptly in the
+distance only to be replaced by a dense darkness and the cloying smell of
+dank, suffocatingly still air. Cloaked in subterfuge, the south seems to
+hold a dimly lit doorway.  
+~
+39 d 0
+D1
+A spiral stairwell lies in that direction.
+~
+~
+0 0 3951 0
+D2
+A dimly lit doorway lies in that direction.
+~
+~
+0 0 3981 0
+D3
+A torchlit tunnel lies in that direction.
+~
+~
+0 0 3936 0
+S
+#3951
+Within A Spiral Stairwell~
+    As you step into the darkness you are sure that each step is a simple
+leap of faith, trusting that the unseen step below will still be there. The
+high slippery steps are unforgiving, tainted with a slick wetness that could
+spell your doom at any moment.
+~
+39 di 0
+D3
+A torchlit tunnel lies beyond a narrow passageway in that direction.
+~
+~
+0 0 3950 0
+D5
+The stairwell continues in that direction.
+~
+~
+0 0 3952 0
+S
+#3952
+Within A Sprial Stairwell~
+    As you step into the darkness you are sure that each step is a simple
+leap of faith, trusting that the unseen step below will still be there. The
+high slippery steps are unforgiving, tainted with a slick wetness that could
+spell your doom at any moment.
+~
+39 di 0
+D4
+The stairwell continues in that direction.
+~
+~
+0 0 3951 0
+D5
+The stairwell continues in that direction.
+~
+~
+0 0 3953 0
+S
+#3953
+Within A Sprial Stairwell~
+    As you step into the darkness you are sure that each step is a simple
+leap of faith, trusting that the unseen step below will still be there. The
+high slippery steps are unforgiving, tainted with a slick wetness that could
+spell your doom at any moment.
+~
+39 di 0
+D2
+A dark tunnel lies in that direction.
+~
+~
+0 0 3954 0
+D4
+The stairwell continues in that direction.
+~
+~
+0 0 3952 0
+S
+#3954
+Along A Dark Tunnel~
+    An odd sense of still order exists here. Out of the corner of your eye
+you notice that the detritus of the tunnels elsewhere has been carefully
+cleared away. You wonder at who would have gone to the trouble of sculpting
+such an air of false chaos.
+~
+39 d 0
+D0
+A narrow stairwell lies in that direction.
+~
+~
+0 0 3953 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3955 0
+S
+#3955
+Along A Dark Tunnel~
+    An odd sense of still order exists here. Out of the corner of your eye
+you notice that the detritus of the tunnels elsewhere has been carefully
+cleared away. You wonder at who would have gone to the trouble of sculpting
+such an air of false chaos.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3954 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3956 0
+S
+#3956
+Along A Dark Tunnel~
+    An odd sense of still order exists here. Out of the corner of your eye
+you notice that the detritus of the tunnels elsewhere has been carefully
+cleared away. You wonder at who would have gone to the trouble of sculpting
+such an air of false chaos.
+~
+39 d 0
+D0
+The tunnel continues in that direction.
+~
+~
+0 0 3957 0
+D3
+The tunnel lies in that direction.
+~
+~
+0 0 3955 0
+S
+#3957
+Along A Dark Tunnel~
+    An odd sense of still order exists here. Out of the corner of your eye
+you notice that the detritus of the tunnels elsewhere has been carefully
+cleared away. You wonder at who would have gone to the trouble of sculpting
+such an air of false chaos.
+~
+39 d 0
+D1
+The tunnel continues in that direction.
+~
+~
+0 0 3958 0
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3956 0
+S
+#3958
+Along A Dark Tunnel~
+   An odd sense of still order exists here. Out of the corner of your eye
+you notice that the detritus of the tunnels elsewhere has been carefully
+cleared away. You wonder at who would have gone to the trouble of sculpting
+such an air of false chaos. To the north you hear the silent lapping of
+water.  
+~
+39 d 0
+D0
+The tunnel seems to get more waterlogged in that direction.
+~
+~
+0 0 3959 0
+D3
+The tunnel continues in that direction.
+~
+~
+0 0 3957 0
+S
+#3959
+Wading Through A Tunnel~
+    The water level seems to rise here, the brackish water swirling about
+your knees as you wade through the vast resevoir. You step warily trying not
+to allow your mind to wander to the midnight creatures that lurk under the
+water's surface.
+~
+39 d 6
+D0
+The waterlogged tunnel continues in that direction.
+~
+~
+0 0 3960 0
+D2
+The waterlogged tunnel continues in that direction.
+~
+~
+0 0 3958 0
+S
+#3960
+Wading Through A Tunnel~
+    The water level seems to rise here, the brackish water swirling about
+your knees as you wade through the vast resevoir. You step warily trying not
+to allow your mind to wander to the midnight creatures that lurk under the
+water's surface.
+~
+39 d 6
+D2
+The waterlogged tunnel continues in that direction.
+~
+~
+0 0 3959 0
+D3
+The waterlogged tunnel continues in that direction.
+~
+~
+0 0 3961 0
+S
+#3961
+Wading Through A Tunnel~
+    The water level seems to rise here, the brackish water swirling about
+your knees as you wade through the vast resevoir. You step warily trying not
+to allow your mind to wander to the midnight creatures that lurk under the
+water's surface.
+~
+39 d 6
+D0
+The waterlogged tunnel continues in that direction.
+~
+~
+0 0 3962 0
+D1
+The waterlogged tunnel continues in that direction.
+~
+~
+0 0 3960 0
+S
+#3962
+Wading Through A Tunnel~
+    The water level seems to rise here, the brackish water swirling about
+your knees as you wade through the vast resevoir. You step warily trying not
+to allow your mind to wander to the midnight creatures that lurk under the
+water's surface.
+~
+39 d 6
+D2
+The tunnel continues in that direction.
+~
+~
+0 0 3961 0
+D3
+An old brick wall with loose bricks lies in that direction.
+~
+wall bricks~
+2 3901 3963 0
+S
+#3963
+Through The Loose Brick Wall~
+    The bricks of the wall shift seamlessly, coming apart like the pieces
+of a giant jigsaw puzzle and swinging open deftly. Looking about you see that
+each brick has been removed with the utmost care and each jagged edge has 
+been sculpted with a skillful chisel.
+~
+39 d 0
+D1
+An old brick wall with loose bricks lies in that direction.
+~
+wall bricks~
+2 3901 3962 0
+D2
+The commons room lies in that direction.
+~
+~
+0 0 3964 0
+S
+#3964
+The Thieves' Common Room~
+    A handful of rickety wooden tables have been strewn about the room, some
+closer to a heap of planks than a table. All the needs of a thief looking for
+a haven in which to hide lie about the room along with handfuls of gold, the
+booty from a minor foray into the bustling crowds above.
+~
+39 d 0
+D0
+A passageway through a brick wall lies in that direction.
+~
+~
+0 0 3963 0
+D3
+A narrow passage lies in that direction.
+~
+~
+0 0 3965 0
+S
+#3965
+A Narrow Passageway~
+    This dingy hallway stands as a stark contrast to the gaudy colors that
+grace the rooms at either end. It seems to be the only respite from the
+colorful people that live to the west and the serious faces to the north.
+~
+39 di 0
+D0
+A heavily guarded room lies in that direction.
+~
+~
+0 0 3966 0
+D1
+The common room lies in that direction.
+~
+~
+0 0 3964 0
+S
+#3966
+The Inner Chambers~
+    The young, smiling faces that illuminated the common room vanish here.
+Faces locked within a serious expression of deadly certainty cut through you
+like a blade to paper. This is the inner sanctum, a place of secrets and a
+place where one wrong footstep could spell instant death.
+~
+39 d 0
+D2
+A narrow passageway lies in that direction.
+~
+~
+0 0 3965 0
+D4
+A large circular door, clad in iron, lies in that direction.
+~
+iron door circular~
+2 3902 3967 0
+S
+#3967
+Mother's Den~
+   The distinguished furnishings of this room seem to transport you to a
+completely different time and space. Here antiques stand alongside the
+daggers and garottes of its owners trade. A plush leather chair stands
+proudly behind a carved blackwood table whose origins stem from the dawn of
+antiquity itself.  
+~
+39 d 0
+D5
+A large circular door, clad in iron, is your only escape.
+~
+iron door circular~
+2 3902 3966 0
+S
+#3968
+A Narrow Passageway~
+    The air here remains still eternally, choked by the too narrow opening to
+the east and the lack of an opening to the west. Light is swallowed up along
+this crude passageway, forcing each traveller to be guided only by an odd pull
+that emanates from deep within.
+~
+39 di 0
+D1
+A torchlit tunnel lies in that direction.
+~
+~
+0 0 3940 0
+D3
+The passageway continues in that direction.
+~
+~
+0 0 3969 0
+S
+#3969
+A Narrow Passageway~
+    The air here remains still eternally, choked by the too narrow opening to
+the east and the lack of an opening to the west. Light is swallowed up along
+this crude passageway, forcing each traveller to be guided only by an odd pull
+that emanates from deep within.
+~
+39 di 0
+D0
+A large clearing lies in that direction.
+~
+~
+0 0 3970 0
+D1
+The passageway continues in that direction.
+~
+~
+0 0 3968 0
+S
+#3970
+The Hall Of Shadows~
+    Your skin tingles as you pass through an unseen curtain of magic. You
+glance about the room, only to be greeted by darkness and a wall filled with
+carvings. You feel the weight of a thousand unseen eyes upon you, bearing
+down on you and refusing you a place to hide. You swivel your head and a dull
+flicker of bronzed light winks at you from the northern wall.
+~
+39 d 0
+D2
+A narrow passageway lies in that direction.
+~
+~
+0 0 3969 0
+E
+light bronzed wall~
+An ancient battle scene tells its own tale of victory and defeat as the silent
+narrative plays itself along the wall. Worked into the very texture of the
+bronze itself this wall has obviously been created by a powerful magic now
+long forgotten. The skill and the living grace of the dancing dragons shows
+that this magic is the twin of that magic used to create the towers of
+Caryllion above, only it is darker...
+~
+S
+#3971
+The Pipes Room~
+    As you step through the boundaries of the shimmering tower of sunlight,
+you feel the warming energy seep through you to push away the cold darkness.
+Casting your eyes forward a myriad of tubular color greets your vision to
+mark this as the control centre for the piping outside. Looking up to the
+source of the light you see reds and greens dancing before you.
+~
+39 di 0
+D2
+An unused section of tunnel lies in that direction.
+~
+bars iron~
+1 0 3932 0
+D4
+A tranquil, lush garden lies in that direction.
+~
+~
+0 0 3972 0
+S
+#3972
+A Lush Underground Haven~
+   As you raise your head through the narrow tunnel, you are treated to a
+spectacular view of flourishing life. A minor forest seems to have bloomed
+here at the mezzanine level of life. Vibrant greens slash through fiery
+reds and placid yellow, all drenched in the white glow of sunlight to form a
+living kaleidoscope.  
+~
+39 0 0
+D5
+A room filled with pipes lies below.
+~
+~
+0 0 3971 0
+S
+#3976
+The White Room~
+   White blankets this entire room in a snowy softness which beckons you to
+enter. All about, magicians with serene faces call upon unseen forces to
+deliver from thin air, books of knowledge, books of magic, books of potions.
+Standing in the centre of the room, an old man in a simple white tunic and
+snowy white hair looks up from the crowd about him to capture your eyes and
+entice you to come join him.  
+~
+39 d 0
+D3
+The gathering room lies in that direction.
+~
+~
+0 0 3977 0
+S
+#3977
+The Gathering Room~
+   In stark contrast to the Isle's entrance, this room has no windows except
+for the brilliant milky dome which sits in the centre of the ceiling's
+fresco. Shimmering black onyx cover both floor and walls of the room save for
+the intricate patterned circles which ring the room; eight in total. You 
+wonder at what each of the patterns mean when to your east a door of blazing
+hot white appears.
+~
+39 d 0
+D1
+The white room lies in that direction.
+~
+~
+0 0 3976 0
+D2
+The entrance to Magician's Isle lies in that direction.
+~
+~
+0 0 3978 0
+S
+#3978
+The Magician's Isle~
+   Tall glass panes form a single undisturbed mirror into an unknown world
+to your west. Picturesque landscaspes weave themselves flawlessly into an
+unblemished amber rose horizon that appears to have been frozen still within
+time. Magic created this place, the same magic which is taught here, and magic
+paves your path home to the east.
+~
+39 d 0
+D0
+A gathering room lies in that direction.
+~
+~
+0 0 3977 0
+D1
+The shimmering reflection of a sunlit platform a world away lies there.
+~
+~
+0 0 3949 0
+S
+#3979
+The Master's Chamber~
+   Dim guttering tochlight flickers uneasily throughout the room, enough to
+allow the master to instruct the generations that follow him while still
+hiding the features of each face behind shadows. The raucous sounds of any
+other theives gatherings is missing here as each comes to seek guidance and
+knowledge of a true master of trickery.  
+~
+39 d 0
+D0
+A dark passageway lies in that direction.
+~
+~
+0 0 3980 0
+S
+#3980
+A Damp Passageway~
+   The dark corners that are lost in the darkness of a paassageway such as
+these remind even a thief that trickery and treachery are close at hand. 
+The only light that is cast into the cloaked shadows of the passageway comes
+from the south, where a small handful of torches chases away some of the
+oppressive darkness.  
+~
+39 d 0
+D0
+The entrance to the theives' guild lies in that direction.
+~
+~
+0 0 3981 0
+D2
+A dark chamber lies in that direction.
+~
+~
+0 0 3979 0
+S
+#3981
+The Den Of Thieves~
+   Subterfuge and sleight of hand are the words by which all theives live by.
+and the mossy clamouflage that hides this dimly lit entrance whispers of
+those words unrelentlessly. To the south the damp passageway continues in
+its slippery footing, disappearing into the suffocating darkness.
+~
+39 d 0
+D0
+A dark tunnel lies in that direction.
+~
+~
+0 0 3950 0
+D2
+A dim passageway leads off in that direction.
+~
+~
+0 0 3980 0
+S
+#3982
+The Garden Of Peace~
+   The peaceful sounds of a trickling fountain fill your ears while the
+sweet smell of roses tickle your nostrils. Here serenity and meditation seem
+as much a part of the landscape as the carefully positioned pieces of carved
+stone furniture. In the centre of the garden you see the quiet figure of an
+aging woman passing on his knowledge to the generations that gather at her
+feet.  
+~
+39 de 0
+D2
+A small pebbled path lies in that direction.
+~
+~
+0 0 3983 0
+S
+#3983
+Along A Small Pebbled Path~
+   Tall well groomed trees line the pebbled path which carries you eastward
+through the gardens. Small triangular pieces of dark grey slate have been
+cut to perfect precision and laid neatly along the path to guide you to the
+guildmaster's abode. 
+~
+39 d 0
+D0
+A large circular garden lies in that direction.
+~
+~
+0 0 3982 0
+D3
+A small tranquil garden lies in that direction.
+~
+~
+0 0 3984 0
+S
+#3984
+The House Of Prayer~
+   A small sandstone archway entwined with the limb of an ancient rose bush
+is all that marks the entrance to the priest's guild. The tranquillity of
+the gardens attracts all those who would pray and meditate. To the east you
+see a small path pebbled path which leads to another garden beyond.
+~
+39 d 0
+D1
+A pebbled path lies in that direction.
+~
+~
+0 0 3983 0
+D2
+The Southern Keep Road lies in that direction.
+~
+~
+0 0 3751 0
+S
+#3985
+The Master's Landing~
+   As you move onto the landing you seem to enter an entirely different
+world. For all the shouts and battlecries that can be heard below, a silent
+whisper echos loudly throughout the room. The heavy blanket of reverence
+weighs down the rowdiness of the room below and replaces with awe and stupor
+as the great master passes on his knowledge.  
+~
+39 d 0
+D5
+A practice yard lies in that direction.
+~
+~
+0 0 3986 0
+S
+#3986
+The Practice Grounds~
+   The smell of sweat fills the air here alongside the grunts of exertion
+which emanate from the mouths of the many combatants who fill the yard. All
+about you weapons of war litter the grounds which skirt the stone walls of
+this yard to remind you that upon the landing above you, the deadly art of
+war and death is taught by a great master.
+~
+39 d 0
+D0
+A set of heavy gates lies in that direction.
+~
+~
+0 0 3987 0
+D4
+An open yard stands high on its perch in that direction.
+~
+~
+0 0 3985 0
+S
+#3987
+The Warrior's Battleground~
+   Penants painted in vibrant colors wave happily at all who pass through
+these heavy gates. Within the clanging sounds of swords sparring blend with
+the heavy thuds of practice swords finding flesh. The sounds and smells of
+people engaged in combat are the same here as they would be on any
+battlefield, the only difference is the amount of blood spilled.  
+~
+39 d 0
+D2
+A set of stone stairs lies in that direction.
+~
+~
+0 0 3986 0
+D3
+A peaceful street lies in that direction.
+~
+~
+0 0 3721 0
+S
+#3988
+The Chamber Of Song~
+   As you enter, music embraces you in its seductive caress and draws your
+mind's eye to the tall figure who stands before you. Musical instruments of
+all shapes and sizes stand proudly in their stands about the room. Here is 
+the bard's haven, a place of learning, a place of safety, and above all; it
+is a place of music.
+~
+39 d 0
+D5
+A bright staircase lies in that direction.
+~
+~
+0 0 3989 0
+S
+#3989
+Upon A Staircase~
+   Made of the finest oaks, this beautifully polished staircase glistens in
+the light of a thousand candles shimmering at the head of the staircase. The
+reverent sounds of a chorus drift down and mingle with the friendly voices
+from the room below and compel you to seek out what lies above.
+~
+39 d 0
+D1
+A well lighted room lies in that direction.
+~
+~
+0 0 3990 0
+D4
+A large candlelit loft lies in that direction.
+~
+~
+0 0 3988 0
+S
+#3990
+The Bard's Musical Loft~
+   The simplicity of this room stands as a reminder of a bard's simple life.
+Scanning the room, you see faces both young and old greet you with a smile
+of warm welcome. Across the room you see a wide bar set ready to quench your
+thirst while to the west the sound of sonorous voices drift down from a well
+lighted staircase.
+~
+39 d 0
+D1
+The jarring noises of a cluttered street emanate from that direction.
+~
+~
+0 0 3732 0
+D3
+A set of stairs lies in that direction.
+~
+~
+0 0 3989 0
+S
+#3991
+A Guest Room~
+   This narrow room has all the plush trimmings of a state room everywhere
+the eye can see and none where the eye cannot see. The king sized bed is
+just large enough to look impressive while the walls are adorned with cheap
+tapestries and copper finishes.
+~
+39 0 0
+D0
+The hallway lies in that direction.
+~
+wooden door~
+1 0 3993 0
+S
+#3992
+A Guest Room~
+   This narrow room has all the plush trimmings of a state room everywhere
+the eye can see and none where the eye cannot see. The king sized bed is
+just large enough to look impressive while the walls are adorned with cheap
+tapestries and copper finishes.
+~
+39 0 0
+D2
+The hallway lies in that direction.
+~
+wooden door~
+1 0 3993 0
+S
+#3993
+Along A Hallway~
+    This bare hallway is insignificant on its own. The walls and floor have
+been left unpainted and dull. Narrow and unadorned doorways lead off to your
+north and south.
+~
+39 0 0
+D0
+A guest room lies in that direction.
+~
+wooden door~
+1 0 3992 0
+D1
+A wide landing lies in that direction.
+~
+~
+0 0 3998 0
+D2
+A guest room lies in that direction.
+~
+wooden door~
+1 0 3991 0
+S
+#3994
+A Guest Room~
+   This narrow room has all the plush trimmings of a state room everywhere
+the eye can see and none where the eye cannot see. The king sized bed is
+just large enough to look impressive while the walls are adorned with cheap
+tapestries and copper finishes.
+~
+39 0 0
+D0
+The hallway lies in that direction.
+~
+wooden door~
+1 0 3996 0
+S
+#3995
+A Guest Room~
+   This narrow room has all the plush trimmings of a state room everywhere
+the eye can see and none where the eye cannot see. The king sized bed is
+just large enough to look impressive while the walls are adorned with cheap
+tapestries and copper finishes.  
+~
+39 0 0
+D2
+The hallway lies in that direction.
+~
+wooden door~
+1 0 3996 0
+S
+#3996
+Along A Hallway~
+    This bare hallway is insignificant on its own. The walls and floor have
+been left unpainted and dull. Narrow and unadorned doorways lead off to your
+north and south.
+~
+39 0 0
+D0
+A guest room lies in that direction.
+~
+wooden door~
+1 0 3995 0
+D2
+A guest room lies in that direction.
+~
+wooden door~
+1 0 3994 0
+D3
+A wide landing lies in that direction.
+~
+~
+0 0 3998 0
+S
+#3997
+The Receptionist's Office~
+    Cleanliness is the order of the day here, the neat piles of books and well
+polished wooden floor stand out in stark contrast to the rooms below. A small
+bell lies neatly polished on the narrow table at the front of the room. A
+sign at the front of the desk makes you feel more at ease with the saftey of
+this establishment.
+~
+39 0 0
+D5
+A wide landing lies in that direction.
+~
+~
+0 0 3998 0
+E
+sign~
+Written in a neat and simple script you read the message carefully...
+
+     "The rules of this establishment are unbreachable,
+          1. All clients must remain orderly while here.
+          2. All clients must respect the rights of others.
+          3. We will look after you if you look after us, please 
+             pay all bills promptly.
+          4. We believe we are a clean and safe establishment,
+             all thugs will be thown out."
+~
+S
+#3998
+Upon A Wide Landing~
+    Hallways lead off to the east and west, the sounds of women and men 
+engaged in lust, love and drink echoing down the hallway. Glancing up once
+more, you see the quiet light of a receptionist's office and the simple 
+quarters where there is less chaos.
+~
+39 0 0
+D1
+A short hallway lies in that direction.
+~
+~
+0 0 3996 0
+D3
+A short hallway lies in that direction.
+~
+~
+0 0 3993 0
+D4
+The receptionist's office.
+~
+~
+0 0 3997 0
+D5
+A short staircase lies in that direction.
+~
+~
+0 0 3999 0
+S
+#3999
+Up A Wooden Staircase~
+    With each step that you make the wooden floorboards beneath you creak as
+if threatening to collapse. Years of faithful use have worn away the middle
+of each plank leaving a muddy and greasy veneer commonly found throughout the
+inn's patrons.
+~
+39 0 0
+D4
+A broad landing lies in that direction.
+~
+~
+0 0 3998 0
+D5
+A rowdy common room lies in that direction.
+~
+~
+0 0 3707 0
+S
+$~

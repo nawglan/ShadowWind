@@ -1,0 +1,1126 @@
+#4300
+Room One~
+You are in an unfinished room.
+~
+43 0 0
+S
+#4301
+A Light Trail Leading Towards The Plains~
+   The land clears even more here, leaving nothing but a few clumps of
+bushes and the occasional tree. This area mostly consist of yellowish grass,
+common to the plains. It ranges anywhere from ankle to waist high, depending
+how far you stray from the trail. This path seems clear of any obstacles. 
+
+~
+43 p 2
+D0
+~
+~
+0 0 4302 0
+D2
+~
+~
+0 0 4206 0
+S
+#4302
+A Light Trail Leading To The Plains~
+   The land clears even more here, leaving nothing but a few clumps of
+bushes and the occasional tree. This area mostly consist of yellowish grass,
+common to the plains. It ranges anywhere from ankle to waist high, depending
+how far you stray from the trail. This path seems clear of any obstacles. 
+
+~
+43 p 2
+D2
+~
+~
+0 0 4301 0
+D3
+~
+~
+0 0 4303 0
+S
+#4303
+Heading Towards The Plains~
+   The land clears even more here, leaving nothing but a few clumps of
+bushes and the occasional tree. This area mostly consist of yellowish grass,
+common to the plains. It ranges anywhere from ankle to waist high, depending
+how far you stray from the trail. This path seems clear of any obstacles. 
+
+~
+43 p 2
+D0
+~
+~
+0 0 4304 0
+D1
+~
+~
+0 0 4302 0
+S
+#4304
+Near The Plains~
+   Almost well into the plains, there is nothing of interest around. Far to
+the northwest you can make out a few pockets of trees, perhaps leading to a
+forrest. To the northeast the land rises slightly, obscuring your view.  
+~
+43 p 2
+D0
+~
+~
+0 0 4305 0
+D2
+~
+~
+0 0 4303 0
+S
+#4305
+A Bend In The Trail Near The Plains~
+   As you approach the plains, the trail wanders a bit, refusing to take a
+straight course. Winding it's way around brush and tall grass, the trail
+inevitably steers you in the right direction despite it's many curves.  
+~
+43 p 2
+D1
+~
+~
+0 0 4306 0
+D2
+~
+~
+0 0 4304 0
+S
+#4306
+Another Bend In The Trail~
+   The trail bends yet again, leaving you cursing it's haphazard course. To
+make matters worse, the land is starting to slope, giving you a difficult
+time walking the sparse land.  
+~
+43 p 2
+D0
+~
+~
+0 0 4307 0
+D3
+~
+~
+0 0 4305 0
+S
+#4307
+The Edge Of The Plains~
+   Finally reaching the plains, the trail seems to straighten a bit. The
+slope northward however, remains, making walking and keeping your balance a
+bit of a chore . The tree to the northwest grow larger as you get closer,
+giving you a better view of something other than grass and dirt.  
+~
+43 p 2
+D1
+~
+~
+0 0 4308 0
+D2
+~
+~
+0 0 4306 0
+S
+#4308
+Wandering The Plains~
+   More grass, dirt, and brush populate the plains here. The trail northward
+straightens, even as the slope gets steeper, easing just a little ache from
+your legs. Perhaps whoever forged this trail did something right after all.
+ 
+~
+43 p 2
+D0
+~
+~
+0 0 4309 0
+D3
+~
+~
+0 0 4307 0
+S
+#4309
+Wandering The Plains~
+   The trail here runs up a gentle slope north, and down toward the south.
+More trees come into view farther northwest, clearly outlining the
+beginnings of a forrest. To the north and east, your vision is still
+obscured by the rising plains.  
+~
+43 p 2
+D0
+~
+~
+0 0 4310 0
+D2
+~
+~
+0 0 4308 0
+S
+#4310
+Wandering The Plains~
+   The trail here runs up a gentle slope north, and down toward the south.
+More trees come into view farther northwest, clearly outlining the
+beginnings of a forrest. To the north, your vision is still obscured by the
+rising plains. On the eastern side of the trail, you can almost make out a
+hidden path running through a rather large clump of bushes.  
+~
+43 p 2
+D0
+~
+~
+0 0 4338 0
+D1
+~
+path~
+1 -1 4321 0
+D2
+~
+~
+0 0 4309 0
+D3
+~
+~
+0 0 -1 0
+S
+#4311
+A Small Side Trail~
+   Besides the grass growing a bit higher, the landscape is pretty
+unremarkable. To the west, you can make out a large clump of trees. Back
+east is the main trail through the plains.  
+~
+43 p 2
+D0
+~
+~
+0 0 4312 0
+D1
+~
+~
+0 0 4339 0
+S
+#4312
+A Small Side Trail~
+   The trail bends west and south. To the west leads closer to a large clump
+of tree. Back south leads to the main trail through the plains.  
+~
+43 p 0
+D2
+~
+~
+0 0 4311 0
+D3
+~
+~
+0 0 4313 0
+S
+#4313
+A Small Trail~
+   The trail here heads west toward some trees. Though not very large, they
+are closely packed, giving the impression of a dense forrest just on the
+western edge of the plains. To the east the trail heads back into the middle
+of the plains.  
+~
+43 p 2
+D1
+~
+~
+0 0 4312 0
+D3
+~
+~
+0 0 4314 0
+S
+#4314
+A Small Trail~
+   The trail here heads west toward some trees. Though not very large, they
+are closely packed, giving the impression of a dense forrest just on the
+western edge of the plains. To the east the trail heads back into the middle
+of the plains.  
+~
+43 p 2
+D1
+~
+~
+0 0 4313 0
+D3
+~
+~
+0 0 4315 0
+S
+#4315
+A Small Trail~
+   The trail here heads west toward some trees. Though not very large, they
+are closely packed, giving the impression of a dense forrest just on the
+western edge of the plains. To the east the trail heads back into the middle
+of the plains.  
+~
+43 p 2
+D1
+~
+~
+0 0 4314 0
+D3
+~
+~
+0 0 4316 0
+S
+#4316
+Standing Before The Trees~
+   Looking closely, the area the trees contain isn't very large, just
+heavily populated. The trail contines into the trees, winding their way
+among them.  
+~
+43 p 2
+D1
+~
+~
+0 0 4315 0
+D2
+~
+~
+0 0 4317 0
+S
+#4317
+Winding Through The Trees~
+   The trees here are about three or four times your height. The are
+relatively clear of leaves till about halfway up. A few branches and twigs
+line the ground here, making silent movement impossible.  
+~
+43 p 3
+D0
+~
+~
+0 0 4316 0
+D3
+~
+~
+0 0 4318 0
+S
+#4318
+Winding Through The Trees~
+   The trees here are about three or four times your height. The are
+relatively clear of leaves till about halfway up. A few branches and twigs
+line the ground here, making silent movement impossible.  
+~
+43 p 3
+D1
+~
+~
+0 0 4317 0
+D2
+~
+~
+0 0 4319 0
+S
+#4319
+Winding Through The Trees~
+   The trees are thick here, obscuring your vision greatly. You think,
+though, you might see a large structure very nearby. Standing here, looking
+around, you feel slightly uneasy. The dense forrest seems much to quiet to
+be normal.  
+~
+43 p 3
+D0
+~
+~
+0 0 4318 0
+D3
+~
+~
+0 0 4320 0
+S
+#4320
+Before A Large Building~
+   Totally hidden from anywhere except within the trees, this building looks
+quite large. It probably takes up most of the area within the trees, which
+circle it and use it for cover. Other than back east through the trees, the
+trail ends here. You can see no signs that anyone is here, or why they would
+build something this large so far from civilization.  
+~
+43 p 3
+D1
+~
+~
+0 0 4319 0
+D3
+~
+door~
+1 -1 4351 0
+S
+#4321
+A Hidden Path~
+   Shoving your way through a clump of foliage, you happen upon a hidden
+trail. Waist high grass hides it's destination from you, giving no clue as
+to were it will end up.  
+~
+43 p 2
+D1
+~
+~
+0 0 4322 0
+D3
+~
+path~
+1 -1 4310 0
+S
+#4322
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D2
+~
+~
+0 0 4323 0
+D3
+~
+~
+0 0 4321 0
+S
+#4323
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4322 0
+D1
+~
+~
+0 0 4324 0
+S
+#4324
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D1
+~
+~
+0 0 4325 0
+D3
+~
+~
+0 0 4323 0
+S
+#4325
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D2
+~
+~
+0 0 4326 0
+D3
+~
+~
+0 0 4324 0
+S
+#4326
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4325 0
+D2
+~
+~
+0 0 4327 0
+S
+#4327
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4326 0
+D2
+~
+~
+0 0 4328 0
+S
+#4328
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4327 0
+D1
+~
+~
+0 0 4329 0
+S
+#4329
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D2
+~
+~
+0 0 4330 0
+D3
+~
+~
+0 0 4328 0
+S
+#4330
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4329 0
+D1
+~
+~
+0 0 4331 0
+S
+#4331
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4332 0
+D3
+~
+~
+0 0 4330 0
+S
+#4332
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D1
+~
+~
+0 0 4333 0
+D2
+~
+~
+0 0 4331 0
+S
+#4333
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4334 0
+D3
+~
+~
+0 0 4332 0
+S
+#4334
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D1
+~
+~
+0 0 4335 0
+D2
+~
+~
+0 0 4333 0
+S
+#4335
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4336 0
+D3
+~
+~
+0 0 4334 0
+S
+#4336
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D0
+~
+~
+0 0 4337 0
+D2
+~
+~
+0 0 4335 0
+S
+#4337
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D2
+~
+~
+0 0 4336 0
+S
+#4338
+Wandering The Plains~
+   The trail continues north uneventfully. This section of the plains gives
+new meaning to the word featureless. The clump of trees is now almost
+directly to the west of you, and look closer than you previously thought. 
+
+~
+43 p 2
+D0
+~
+~
+0 0 4339 0
+D2
+~
+~
+0 0 4310 0
+S
+#4339
+A Split In The Trail~
+   The trail split off here, with the smaller fork leading west towards the
+trees. To the north and south, the trail continues on.  
+~
+43 p 2
+D0
+~
+~
+0 0 4340 0
+D2
+~
+~
+0 0 4338 0
+D3
+~
+~
+0 0 4311 0
+S
+#4340
+A Bend In The Trail~
+   Standing at one of the numerous bends in the trail, you wonder how far it
+will go. The land here is level, giving you clear view down the slope to the
+south. To the east the ground looks firm, a comfort from the loose dirt of
+the trail to the south.  
+~
+43 p 2
+D1
+~
+~
+0 0 4341 0
+D2
+~
+~
+0 0 4339 0
+S
+#4341
+Walking The Easy Trail~
+   The land here is level and the ground is firm, making travel very easy.
+It continues on like this for a while to the north, and heads back west onto
+softer ground.  
+~
+43 p 2
+D0
+~
+~
+0 0 4342 0
+D3
+~
+~
+0 0 4340 0
+S
+#4342
+Walking The Easy Trail~
+   This section runs north and south for a little while. You are surrounded
+by flat, level lands, a healthy amount of grass, and brush. An occasional
+tree spots the landscape now and then.  
+~
+43 p 2
+D0
+~
+~
+0 0 4343 0
+D2
+~
+~
+0 0 4341 0
+S
+#4343
+Walking The Easy Trail~
+   This section runs north and south for a little while. You are surrounded
+by flat, level lands, a healthy amount of grass, and brush. An occasional
+tree spots the landscape now and then.  
+~
+43 p 2
+D0
+~
+~
+0 0 4344 0
+D2
+~
+~
+0 0 4342 0
+S
+#4344
+Walking The Easy Trail~
+   This section runs north and south for a little while. You are surrounded
+by flat, level lands, a healthy amount of grass, and brush. An occasional
+tree spots the landscape now and then. The plant life looks as if it is
+getting thicker around you. There is what looks like a line of large bushes
+blocking you view, farther to the north.  
+~
+43 p 0
+D0
+~
+~
+0 0 4345 0
+D2
+~
+~
+0 0 4343 0
+S
+#4345
+Walking The Easy Trail~
+   This section runs north and south for a little while. You are surrounded
+by flat, level lands, a healthy amount of grass, and brush. An occasional
+tree spots the landscape now and then. The plant life looks as if it is
+getting thicker around you. The trail seems to curve around a series of tall
+bushes to the north.  
+~
+43 p 2
+D0
+~
+~
+0 0 4346 0
+D2
+~
+~
+0 0 4344 0
+S
+#4346
+On The Trail Through The Bushes~
+   The trail bends here, cutting through a break in some thick plant life.
+Looking east down the trail, bush and small trees line the passage through.
+To the south the trail continues on for a long stretch.  
+~
+43 p 2
+D1
+~
+~
+0 0 4347 0
+D2
+~
+~
+0 0 4345 0
+S
+#4347
+On The Trail Through The Bushes~
+   More bush and shrub crowd the trail here, not as clear as farther south
+in the plains. The trail seems to be narrowing, as the plant life increases,
+and looks like it might end farther up ahead. The land itself looks a little
+bit darker, though this might be because of the extra shade.  
+~
+43 p 2
+D1
+~
+~
+0 0 4348 0
+D3
+~
+~
+0 0 4346 0
+S
+#4348
+On A Narrow Trail~
+   The trail definately gets smaller here, many low growing bushes stand in
+its way. The trees also become a more familiar sight, though they look weak
+and sickly. To the south, a clearer and healthier trail leads through the
+plains. To the north, it appears as if the plant life gets worse, more
+crowded and possibly unhealthier.  
+~
+43 p 2
+D0
+~
+~
+0 0 4349 0
+D3
+~
+~
+0 0 4347 0
+S
+#4349
+On A Narrow Trail~
+   The trail definately gets smaller here, many low growing bushes stand in
+its way. The trees also become a more familiar sight, though they look weak
+and sickly. To the south, a clearer and healthier trail leads through the
+plains. To the north, it appears as if the plant life gets worse, more
+crowded and possibly unhealthier.  
+~
+43 p 2
+D0
+~
+~
+0 0 4350 0
+D2
+~
+~
+0 0 4348 0
+S
+#4350
+An unfinished room~
+An unfinished room
+~
+43 p 0
+D2
+~
+~
+0 0 4349 0
+S
+#4351
+The Entrance Of The Tavern Of The Empty Purse~
+   Unlike the forrest surrounding this tavern, the sound here is loud and
+nearly deafening. Laughter and curses alike mingle in the air, reminding you
+of numerous other rowdy taverns. The walls here are bare, sporting no
+trophies, windows, or other decorations. To the west you can make out large
+groups of shifty looking people behaving in a boisterous manner.  
+~
+43 dp 0
+D1
+~
+door~
+1 -1 4320 0
+D3
+~
+~
+0 0 4352 0
+S
+#4352
+Tavern Of The Empty Purse~
+   Filled with tables, chairs, and the people occupying them, this place is
+really crowded. The guests here all look a questionable in character. 
+Eating, drinking, and games seems to take up most of their attention, hardly
+giving you a second glance. At least, thats your first impression. It seems
+a number of them are paying you closer attention than it seems. Most are
+dressed in light leather, making it hard to distinguish any of them. Some,
+however, stand out among the crowd. Perhaps your guildmaster's training is
+paying off after all.  
+~
+43 dp 0
+D0
+~
+~
+0 0 4353 0
+D1
+~
+~
+0 0 4351 0
+D2
+~
+~
+0 0 4357 0
+D3
+~
+~
+0 0 4355 0
+S
+#4353
+Tavern Of The Empty Purse~
+   Filled with tables, chairs, and the people occupying them, this place is
+really crowded. The guests here all look a questionable in character. 
+Eating, drinking, and games seems to take up most of their attention, hardly
+giving you a second glance. At least, thats your first impression. It seems
+a number of them are paying you closer attention than it seems. Most are
+dressed in light leather, making it hard to distinguish any of them. Some,
+however, stand out among the crowd. Perhaps your guildmaster's training is
+paying off after all.  
+~
+43 dp 0
+D2
+~
+~
+0 0 4352 0
+D3
+~
+~
+0 0 4354 0
+S
+#4354
+Tavern Of The Empty Purse~
+   Filled with tables, chairs, and the people occupying them, this place is
+really crowded. The guests here all look a questionable in character. 
+Eating, drinking, and games seems to take up most of their attention, hardly
+giving you a second glance. At least, thats your first impression. It seems
+a number of them are paying you closer attention than it seems. Most are
+dressed in light leather, making it hard to distinguish any of them. Some,
+however, stand out among the crowd. Perhaps your guildmaster's training is
+paying off after all.  
+~
+43 dp 0
+D1
+~
+~
+0 0 4353 0
+D2
+~
+~
+0 0 4355 0
+D3
+~
+~
+0 0 4358 0
+S
+#4355
+Center Of The Tavern~
+   There is one long table here, seating a number of people. Huge plates of
+food and mugs of ale sit before each, waiting to be devoured. There is a lot
+of good natured shoving and teasing going on here. You get the impression
+the people here have known each other for some time and that they are close
+companions.  
+~
+43 dp 0
+D0
+~
+~
+0 0 4354 0
+D1
+~
+~
+0 0 4352 0
+D2
+~
+~
+0 0 4356 0
+D3
+~
+~
+0 0 4359 0
+S
+#4356
+Tavern Of The Empty Purse~
+   Filled with tables, chairs, and the people occupying them, this place is
+really crowded. The guests here all look a questionable in character. 
+Eating, drinking, and games seems to take up most of their attention, hardly
+giving you a second glance. At least, thats your first impression. It seems
+a number of them are paying you closer attention than it seems. Most are
+dressed in light leather, making it hard to distinguish any of them. Some,
+however, stand out among the crowd. Perhaps your guildmaster's training is
+paying off after all.  
+~
+43 dp 0
+D0
+~
+~
+0 0 4355 0
+D1
+~
+~
+0 0 4357 0
+D3
+~
+~
+0 0 4360 0
+S
+#4357
+Tavern Of The Empty Purse~
+   Filled with tables, chairs, and the people occupying them, this place is
+really crowded. The guests here all look a questionable in character. 
+Eating, drinking, and games seems to take up most of their attention, hardly
+giving you a second glance. At least, thats your first impression. It seems
+a number of them are paying you closer attention than it seems. Most are
+dressed in light leather, making it hard to distinguish any of them. Some,
+however, stand out among the crowd. Perhaps your guildmaster's training is
+paying off after all.  
+~
+43 dp 0
+D0
+~
+~
+0 0 4352 0
+D3
+~
+~
+0 0 4356 0
+S
+#4358
+Tavern Of The Empty Purse~
+   Here the tables are smaller, with fewer people. The rest of the tavern
+drowns out anything they might be saying, and shadows partially cloak them
+in secrecy.  
+~
+43 dp 0
+D1
+~
+~
+0 0 4354 0
+D2
+~
+~
+0 0 4359 0
+S
+#4359
+Tavern Of The Empty Purse~
+   Here the tables are smaller, with fewer people. The rest of the tavern
+drowns out anything they might be saying, and shadows partially cloak them
+in secrecy. Against the south wall there is a door, perhaps leading to the
+kitchen.  
+~
+43 dp 0
+D0
+~
+~
+0 0 4358 0
+D1
+~
+~
+0 0 4355 0
+D2
+~
+~
+0 0 4360 0
+D3
+~
+door~
+1 -1 4361 0
+S
+#4360
+Tavern Of The Empty Purse~
+   Here the tables are smaller, with fewer people. The rest of the tavern
+drowns out anything they might be saying, and shadows partially cloak them
+in secrecy.  
+~
+43 dp 0
+D0
+~
+~
+0 0 4359 0
+D1
+~
+~
+0 0 4356 0
+S
+#4361
+In The Kitchen Of The Tavern~
+   The kitchen is a real mess as it tries to keep up with their customers
+demands. Alot of dead animals lay about on wood block, and very few
+vegetable can be seen. Though not looking very healthy, the smell is
+delicious.  
+~
+43 dp 0
+D1
+~
+door~
+1 -1 4359 0
+D3
+~
+door~
+1 0 4362 0
+S
+#4362
+A Small Trail Behind The Tavern~
+   You are walking a small path hidden from view by the tavern and dense
+trees. Back here the small growth of trees stop, and the plains start again.
+~
+43 p 2
+D1
+~
+door~
+1 0 4361 0
+D3
+~
+~
+0 0 4363 0
+S
+#4363
+A Small Trail~
+   The small path leads east back to the tavern and dense trees, and to the
+west deeper into the plains. The view is obscured by gently rolling hills,
+making it difficult to see anything beyond your general area. Surrounding
+you are small plants and shrubbery common to the plains.  
+~
+43 p 2
+D1
+~
+~
+0 0 4362 0
+D3
+~
+~
+0 0 4364 0
+S
+#4364
+A Small Trail~
+   The small path leads east back to the tavern and dense trees, and to the
+west deeper into the plains. The view is obscured by gently rolling hills,
+making it difficult to see anything beyond your general area. Surrounding
+you are small plants and shrubbery common to the plains.  
+~
+43 p 2
+D1
+~
+~
+0 0 4363 0
+D3
+~
+~
+0 0 4365 0
+S
+#4365
+A Small Trail~
+   The small path leads east back to the tavern and dense trees, and to the
+west deeper into the plains. The view is obscured by gently rolling hills,
+making it difficult to see anything beyond your general area. A few large
+rocks and boulders start appearing, dotting the landscape.  
+~
+43 p 2
+D1
+~
+~
+0 0 4364 0
+D3
+~
+~
+0 0 4366 0
+S
+#4366
+A Bend In The Small Trail~
+   The path bends here suddenly through a particularly large group of
+bushes. Nothing you saw indicated there would be heavy foliage to wade
+through, but here it is. You get the impression it might not be natural,
+maybe man-made. The shadows are deeper, and perhaps thats the effect they
+were trying to achieve.  
+~
+43 p 2
+D0
+~
+~
+0 0 4207 0
+D1
+~
+~
+0 0 4365 0
+S
+$~

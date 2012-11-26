@@ -1,0 +1,594 @@
+#1600
+The Centaur Grove~
+  A large oak grove that surrounds what was once a pleasant clearing with a
+small brook winding through it. Now it resembles an armed encampment under
+siege. Huge brush barriers with sharpened sticks thrust through them sur-
+round the grove's outer perimeter, and spears, bows, bundles of arrows and
+javelins have been set in strategic areas around the barrier where they 
+can be snatched up easily and quickley by dedenders. 
+~
+16 p 3
+D0
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+Trail of the Centaur.
+~
+~
+0 0 1601 0
+D3
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1601
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+The Centaur grove.
+~
+~
+0 0 1600 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+Trail of the Centaur.
+~
+~
+0 0 1602 0
+D3
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1602
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Trail of the Centaur.
+~
+~
+0 0 1601 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D3
+Trail of the Centaur.
+~
+~
+0 0 1603 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1603
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D1
+Trail of the Centaur.
+~
+~
+0 0 1602 0
+D2
+Trail of the Centaur.
+~
+~
+0 0 1604 0
+D3
+~
+~
+0 0 4800 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1604
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Trail of the Centaur.
+~
+~
+0 0 1603 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+Trail of the Centaur.
+~
+~
+0 0 1605 0
+D3
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1605
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Trail of the Centaur.
+~
+~
+0 0 1604 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+Trail of the Centaur.
+~
+~
+0 0 1606 0
+D3
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1606
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Trail of the Centaur.
+~
+~
+0 0 1605 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D3
+Trail of the Centaur.
+~
+~
+0 0 1607 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1607
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D1
+Trail of the Centaur.
+~
+~
+0 0 1606 0
+D2
+Trail of the Centaur.
+~
+~
+0 0 1608 0
+D3
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1608
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Trail of the Centaur.
+~
+~
+0 0 1607 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+Trail of the Centaur.
+~
+~
+0 0 1609 0
+D3
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1609
+Trail of the Centaur~
+  A roomy trail made for someone or something that needs room for moving 
+around, the trail is beaten and packed dirt, no grass or shrub of any kind
+grow directly on the pathway. Around the trail life is full and active as
+if there are no dangers here at all.  
+~
+16 p 3
+D0
+Trail of the Centaur.
+~
+~
+0 0 1608 0
+D1
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D2
+~
+~
+0 0 3261 0
+D3
+Brush barriers block any passage this direction.
+~
+~
+0 -1 -1 0
+D4
+The tops of the trees are thick, but not so think you cant see the sky beyond.
+~
+~
+0 -1 -1 0
+D5
+A well traveled path, obviousley used to guard there lair.
+~
+~
+0 -1 -1 0
+S
+#1610
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+The Rocky Ledge Along The Sea Ends Here
+~
+~
+0 -1 -1 0
+D1
+Rappid waves crashing on shorline rocks makes this way too dangerious.
+~
+~
+0 -1 -1 0
+D2
+The Rocky Ledge Along The Sea
+~
+~
+0 0 1611 0
+D3
+The upward slope is not passable.
+~
+~
+0 -1 -1 0
+D4
+Sky, big open sky is all around.
+~
+~
+0 -1 -1 0
+D5
+Rocks, sand, shells, small bones, junk and other rubbish is all around.
+~
+~
+0 -1 -1 0
+S
+#1611
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+The Rocky Ledge Along The Sea
+~
+~
+0 0 1610 0
+D1
+~
+~
+0 0 1612 0
+S
+#1612
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D2
+~
+~
+0 0 1613 0
+D3
+~
+~
+0 0 1611 0
+S
+#1613
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+~
+~
+0 0 1612 0
+D2
+~
+~
+0 0 1614 0
+S
+#1614
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+~
+~
+0 0 1613 0
+D3
+~
+~
+0 0 1615 0
+S
+#1615
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D1
+~
+~
+0 0 1614 0
+D2
+~
+~
+0 0 1616 0
+S
+#1616
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+~
+~
+0 0 1615 0
+D2
+~
+~
+0 0 1617 0
+S
+#1617
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+~
+~
+0 0 1616 0
+D2
+~
+~
+0 0 1618 0
+S
+#1618
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+~
+~
+0 0 1617 0
+D2
+~
+~
+0 0 1619 0
+S
+#1619
+The Rocky Ledge Along The Sea~
+  This downward sloping face of the ledge makes it difficult for any creature
+to move around freely, the abundance of marine life as well as the occasional
+sea birds make this area of the sea shore alive. There are tall greenish-
+yellow sea grasses waiving in the breese, soft to the eye and pleasing to the
+sences, this would seem to be a place to nap in the sun.
+~
+16 0 3
+D0
+~
+~
+0 0 1618 0
+D2
+~
+~
+0 0 12068 0
+S
+$~

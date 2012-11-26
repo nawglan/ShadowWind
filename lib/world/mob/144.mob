@@ -1,0 +1,162 @@
+#14400
+noran~
+the sluggish noran~
+a noran is looking for loose boulders to eat.
+~
+It looks like a sickly, petrified treant, with knots and holes covering its 
+entire surface, and a face hidden in the trunk. It has two long, whiplike
+prehensile branches which it can use to pick up small items. Finally, it
+has a cavity on its top which extends down into its main body, which narrows
+until it ends in a knothole.
+~
+bcdefnoqx dfhkr -500 X 0 
+28 9 -4 14d14+280
+0 61000
+8 8 0 15 16 4
+T 50 3d6+2 23
+A 15 8 The noran peers at you.
+A 10 8 The noran looks at you.
+Str: 90
+Dex: 100
+Agi: 100
+Int: 30
+>fight_prog      20~
+if ispc ($n)
+  mpcast 'agony' $n
+  mpecho THWOMP! A huge boulder slams you in the mid section!!
+endif
+~
+>fight_prog      15~
+if ispc ($n)
+ mpcast 'earthquake'
+ mpecho CRASH - Creeeeek - Whoosh - A huge boulder knocks over a tree that falls onto you.
+endif
+~
+|
+#14401
+ophidian~
+the ophidian~
+the ophidian slithers along.
+~
+These snakemen look like large snakes with human-like arms and hands. They
+are not long and slender like true snakes. They are mottled green and 
+yellow, and quite unpleasant to look at and smell.
+~
+cdfgnox dfkrst -350 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 0 11 14 3
+T 100 2d6+13 25
+T 100 4d6+1 22
+A 10 8 Hisssssssssssss.
+#14402
+rautym~
+the rautym~
+the rautym is here listening to your thoughts.
+~
+The rautym is a relatively harmless-looking creature, resembling a small,
+teatless, hairless, freckle-backed monkey. They are never far from 
+companions and for good reason, they simply gain power by being together.
+~
+cdefgnox bdfkrs -370 X 0 
+20 12 0 10d10+200
+0 25000
+8 8 0 4 14 2
+T 50 3d6+2 6
+#14403
+mosquito~
+the large mosquito~
+the large mosquito is here searching for warm blood.
+~
+This six legged flying bug is very fast and has a dagger-like needle 
+coming right out of its face, which is very useful for sucking the life's 
+blood right out of your body.
+~
+cdefoq bdfkrs -500 X 0 
+1 19 9 1d1+10
+0 150
+8 8 0 8 15 1
+T 20 1d1+0 22
+#14404
+noran~
+the sluggish noran~
+a noran is looking for loose boulders to eat.
+~
+It looks like a sickly, petrified treant, with knots and holes covering its 
+entire surface, and a face hidden in the trunk. It has two long, whiplike
+prehensile branches which it can use to pick up small items. Finally, it
+has a cavity on its top which extends down into its main body, which narrows
+until it ends in a knothole.
+~
+bcdefnoqxy dfhkr -500 X 0 
+28 9 -4 14d14+280
+0 61000
+8 8 0 15 16 4
+T 50 3d6+10 23
+A 15 8 The noran peers at you.
+A 10 8 The noran looks at you.
+E -1 7 14400 1
+Str: 90
+Dex: 100
+Agi: 100
+Int: 30
+>fight_prog      20~
+if ispc ($n)
+  mpcast 'agony' $n
+  mpecho THWOMP! A huge boulder slams you in the mid section!!
+endif
+~
+>fight_prog      15~
+if ispc ($n)
+ mpcast 'earthquake'
+ mpecho CRASH - Creeeeek - Whoosh - A huge boulder knocks over a tree that falls onto you.
+endif
+~
+|
+#14405
+ophidian~
+the ophidian~
+the ophidian slithers along.
+~
+These snakemen look like large snakes with human-like arms and hands. They
+are not long and slender like true snakes. They are mottled green and 
+yellow, and quite unpleasant to look at and smell.
+~
+cdfgnoxy dfkrst -350 X 0 
+25 10 -3 13d13+250
+0 45500
+8 8 1 11 14 3
+T 100 2d6+13 25
+T 100 4d6+1 22
+A 10 8 Hisssssssssssss.
+E -1 15 14402 1
+#14406
+rautym~
+the rautym~
+the rautym is here listening to your thoughts.
+~
+The rautym is a relatively harmless-looking creature, resembling a small,
+teatless, hairless, freckle-backed monkey. They are never far from 
+companions and for good reason, they simply gain power by being together.
+~
+cdefgnoxy bdfkrs -370 X 0 
+20 12 0 10d10+200
+0 25000
+8 8 0 4 14 2
+T 50 3d6+2 8
+E -1 15 14401 1
+#14407
+mosquito~
+the large mosquito~
+the large mosquito is here searching for warm blood.
+~
+This six legged flying bug is very fast and has a dagger-like needle 
+coming right out of its face, which is very useful for sucking the life's 
+blood right out of your body.
+~
+cdefoq bdfkrs -500 X 0 
+1 19 9 1d1+10
+0 150
+8 8 0 8 15 1
+T 20 1d1+0 22
+E -1 15 14403 1

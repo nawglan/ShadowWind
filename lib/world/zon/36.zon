@@ -1,0 +1,60 @@
+#36
+West of City /Krilgar-Lythina/~
+3699 40 2 0 
+
+* Help for weather:
+* <Season Pattern> <season flags> <energy to add on reset>
+* <Wind 1> <Wind 2> <Wind 3> <Wind 4>
+* <Wind-dir 1> <Wind-dir 2> <Wind-dir 3> <Wind-dir 4>
+* <Wind-varience 1> <Wind-varience 2> <Wind-varience 3> <Wind-varience 4>
+* <Precip 1> <Precip 2> <Precip 3> <Precip 4>
+* <Temp 1> <Temp 2> <Temp 3> <Temp 4>
+
+1 0 25
+1 1 1 1 
+0 0 0 0 
+1 1 1 1 
+1 1 1 1 
+6 6 6 6 
+
+* Help for commands:
+* Command     Arg #1     Arg #2    Arg #3           Arg #4
+* M (Mobile)  Mob-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* O (Object)  Obj-Vnum   Wld-Max   Room-Vnum        Percent-Load
+* G (Give)    Obj-Vnum   Wld-Max   Unused           Unused
+* E (Equip)   Obj-Vnum   Wld-Max   EQ-Position      Unused
+* P (Put)     Obj-Vnum   Wld-Max   Target-Obj-Vnum  Unused
+* D (Door)    Room-Vnum  Door-Dir  Door-State       Unused
+* R (Remove)  Room-Vnum  Obj-Vnum  Unused           Unused
+* a comment
+
+D 0 3696 5 3	* Inside The Dark Caverns 
+D 0 3691 0 1	* Inside A Dank Old Hut
+O 0 3032 999 3691 100	* a small bag
+P 1 3020 999 3032	* a dagger
+P 1 3012 999 3032	* some iron rations
+P 1 3012 999 3032	* some iron rations
+P 1 3012 999 3032	* some iron rations
+P 1 3012 999 3032	* some iron rations
+P 1 3031 999 3032	* a lantern
+P 1 3031 999 3032	* a lantern
+O 0 3600 1 3691 100	* a bronze oil lamp
+D 0 3690 2 1	* On The Deck Before A Small Hut
+M 0 3603 3 3632 100	* A wild horse
+M 0 3603 3 3608 100	* A wild horse
+M 0 3603 3 3656 100	* A wild horse
+M 0 3602 2 3667 100	* a wild boar
+M 0 3602 2 3617 100	* a wild boar
+M 0 3601 3 3675 100	* a large vulture
+M 0 3601 3 3650 100	* a large vulture
+M 0 3601 3 3625 100	* a large vulture
+M 0 3600 7 3687 100	* A mountain goat
+M 0 3600 7 3679 100	* A mountain goat
+M 0 3600 7 3668 100	* A mountain goat
+M 0 3600 7 3654 100	* A mountain goat
+M 0 3600 7 3642 100	* A mountain goat
+M 0 3600 7 3628 100	* A mountain goat
+M 0 3600 7 3613 100	* A mountain goat
+M 0 3600 7 3603 100	* A mountain goat
+S
+$

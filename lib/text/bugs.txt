@@ -1,0 +1,75 @@
+         ********         REPORT MORE BUGS!!!         ********
+Nudd     (Oct 26) [ 1204] wraiths should be able to cast.
+Dorga    (Nov  9) [ 1297] switched to mobs shows in WHO list.
+Dorga    (Nov 13) [ 1297] color sparse has same bug color off did.. :)
+Dorga    (Nov 14) [ 3050] pvt rooms are set to 1 person..
+Tegar    (Nov 16) [ 3185] when buffer flees, mob waits for next player to make 1st hit
+Tegar    (Nov 16) [ 3185] ^ so when next plr is caster and is casting, can take a LONG time
+Kandara  (Nov 23) [ 1295] anon doesn't cover class in whois
+Chkkra   (Dec  5) [ 3081] I get spell echos while writing on the boards:)
+Nemo     (Dec  7) [ 3000] can't ungroup a person if they aren't in the same screen
+Alison   (Dec  9) [ 3186] i killed a mob in a room where a pcorpse was and (to be cont.)
+Alison   (Dec  9) [ 3186] the message in the room was [2] corpse and pcorpse (to be cont)
+Alison   (Dec  9) [ 3186] when i sacrificed the corpse. the message listed just pcorpse
+Alison   (Dec 10) [ 3041] 1 of the msg displayed about Gwydno has no ending. (slice some ???)
+Chkkra   (Dec 13) [ 5931] Torakk taps you on your shoulder. <- i got that when i was sleeping
+Dorga    (Dec 19) [ 1297] char-sex got lost in stat.. *snort*
+Breena   (Dec 21) [ 1295] deny still lets them re-enter the denied name
+Wrrok    (Dec 21) [14592] Im sleeping..I see Morcheeba look at you.
+Novo     (Dec 25) [ 2291] gsays show up even when you're in an editor
+Dorga    (Dec 25) [ 1297] ifisfollow ($n) in mobprogs crashes. vstat m 2200
+Dorga    (Jan  2) [ 1297] tedit sucks my pecker.
+Nemo     (Jan  3) [ 3795] It's hot out here. It's a bit nippy here.  at the same time
+Nudd     (Jan  3) [ 1242] harm rooms gave me negetive mana
+Dorga    (Jan  3) [ 1242] harm room gave me negative moves. =)
+Myrddin  (Jan  5) [ 6110] typed a space after ' (2nd) when casting and it thought i gave arg
+Dorga    (Jan  5) [ 3191] search - when found, both sides dont show keyname.
+Dorga    (Jan  5) [ 1297] make sure cityguard specproc doesnt ignore !mob
+Chkkra   (Jan  5) [ 4352] when you are made to rest after a missed bash, you can stand up immediately
+Nemo     (Jan 10) [ 3000] when I look in a spring, it chrashed the mud
+Breena   (Jan 12) [ 1297] nuke doesn't work on linkdead players
+Nemo     (Jan 18) [ 3413] you get additional spaces if you use $* in an alias
+Nudd     (Jan 24) [ 1242] sex isn't there for mobs in stat.
+Dorga    (Feb  7) [ 1297] color sparce frags who.
+Dorga    (Feb 19) [ 1297] ali may move rapidly one way and slow the other.. odd..
+Nudd     (Mar 14) [ 1242] this is the 100th time my light has begun to flicker and fade over the last few days...
+Breena   (Mar 17) [ 1202] ::Caillin:: the isimmort check in a mobprog doesn't work
+Sivrak   (Mar 31) [ 3787] if you remove kopesh sword it disbands the group
+Jaga     (Apr  4) [ 3051] track <mobname> doesnt seem to work
+Breena   (Apr 13) [ 1295] losing a level which takes you below a circle, say 16 to 15.. when you get 16 again you can't prac your new spells
+Perigorne (Apr 16) [ 3836] Spent torches and lightable torches still stack in inv...
+Breena   (Apr 19) [ 1295] Loryc tells you, 'when I held a burn up torch it gave me the message you light a torch and hold it'
+Dorga    (Apr 27) [ 1297] when switched to PC, PC shows in WHO.
+Dorga    (Apr 28) [ 1297] you can see someone cast on you while sleeping.
+Mlok     (Apr 30) [ 5113] 2nd wield needs CR/LF or somethign after it.
+Rumplestilskin (May  4) [ 1204] I52 = cant see shit in users.
+Bingle   (May  7) [ 3048] coins on ground - look coins -= You guess there are, maybe, 0p 0g 0s 0c.
+Bingle   (May  7) [ 3048] there is 96 g btw:)
+Breena   (May 11) [ 1295] bug items that take away more maxhit than you have ie. lvl 1 wearing a -100 max_hit item.. leaves player in a very very bad state.. it needs to zap em.
+Breena   (May 11) [ 1295] ^ or kill em instantly :P
+Breena   (May 12) [ 1295] need messages for full harm
+Tareth   (May 13) [ 3002] if a merchant wanders into a shop, you can't list from shop owner, only merchant
+Thangil  (May 26) [ 8214] No success message upon casting 'cause serious' on a mob.
+Nudd     (May 29) [ 1242] decrease the amount of crits yet more...
+Vraah    (Jun  1) [14552] when I cast 'create water' on barrel... I can only refer to the barrel as water until it is empty... if I refer to it as barrel, it says I can't find it...
+Vraah    (Jun  2) [ 3169] when I practised, I didn't have coins in inv, it automatically withdrew from bank... but it only withdrew copper (not gold or plat)  now I have a negative copper cause I never saved any...
+Dorga    (Jun  9) [ 1297] draging corpse/stuff lets moves go into negative.
+Breena   (Jun 17) [ 1295] nuking people who are at the menu = crash.
+Vraah    (Jun 27) [14527] there is no damage message for harm :) thanks.
+Kheldim  (Jun 29) [ 3198] The skills hide, sneak, and scout have been added to priest skill list just by trying them
+Dorga    (Jul  9) [ 1297] hoggis passed 97 aliases and it put the last as his name-title in who. score stat was normal, .tdat was fine.
+Rak      (Jul  9) [ 3123] if "iron rations" is the name, how come we have to manipulate them as "ration"
+Rak      (Jul 10) [ 1444] if I have the gatekey for the elves, and sleep on the north side of their northern gate, (camp) it'll teleport me back to town later.. I think WITH the key too.. heh
+Vraah    (Jul 11) [ 4074] true seeing shows invisible people, but not invisible items.
+Rak      (Jul 11) [14316] the fire opal rings (from the housewife in town) say that they give + to dex but do not!
+Rak      (Jul 12) [ 3048] the ring of truth reports that it is a shield when it is worn, even though it is still on the finger.  =)
+Tihm     (Jul 17) [ 5197] I was 11th level, lost a level and suddenly all my spells were free to train.
+Tihm     (Jul 18) [14309] I used the spell "hide self" and then tried "hide".. and I *learned* the skill.. I now have hide as a skill.
+Tihm     (Jul 20) [ 3025] if I "minor paralysis" myself.. I can still "follow
+Tihm     (Jul 21) [14533] I am exausted and try a direction (improper dir).. it drops my vitality to -16, and then -32 when I do it again.
+Ganon    (Jul 21) [ 3084] When I try to cast curse on my nimbus chain it crashes the mud.
+Tihm     (Jul 23) [ 3003] please be aware that previously it would crash the game if I paralyze someone, and then later try to "ray of enfeeblement" that person.
+Ganon    (Jul 28) [ 3084] whenever I cast create water on my barrel the barrel still showes in my inv but when I try to drink from it it says I don't have it. problem corrects itself once I log off and ack on.
+Irri     (Jul 29) [ 3014] when my mentals stop following, all my followers stop following
+Neera    (Jul 29) [ 5102] a mob that died by fireshield was still attacking and could not be 'killed' even though it said he was lying there dead.
+Breena   (Jul 31) [ 1295] < leave this line >
