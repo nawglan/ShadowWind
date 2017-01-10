@@ -1,0 +1,6 @@
+lib/etc/board.*
+lib/etc/auction
+lib/etc/badsites
+lib/etc/plrmail
+lib/etc/qicdb
+lib/plr*
