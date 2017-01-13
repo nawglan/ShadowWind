@@ -298,6 +298,7 @@ int IS_DARK(int room);
 #define GET_TITLE(ch)   ((ch)->player.title)
 #define GET_LEVEL(ch)   ((ch)->player.level)
 #define GET_PASSWD(ch)  ((ch)->player.passwd)
+#define GET_ENCPASSWD(ch) ((ch)->player.enc_passwd)
 #define GET_BIRTH(ch)   ((ch)->player.time.birth)
 #define GET_PLAYED(ch)   ((ch)->player.time.played)
 #define GET_LOGON(ch)   ((ch)->player.time.logon)

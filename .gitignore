@@ -4,3 +4,5 @@ lib/etc/badsites
 lib/etc/plrmail
 lib/etc/qicdb
 lib/plr*
+src/*.o
+lib/misc/*.pid

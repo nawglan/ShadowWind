@@ -12,10 +12,10 @@
 #define EVENT_KNOCKEDOUT 5
 
 struct spell_info_type;
-typedef void event(void *causer, void *victim, long info, struct spell_info_type *sinfo, void *info2);
+typedef void event(void *causer, void *victim, long info, struct spell_info_type *sinfo, long info2);
 typedef void spell(struct spell_info_type *sinfo, int waitstate, struct char_data *ch, char *arg, int isobj);
 
-#define EVENT(name) void (name) (void *causer, void *victim, long info, struct spell_info_type *sinfo, void *info2)
+#define EVENT(name) void (name) (void *causer, void *victim, long info, struct spell_info_type *sinfo, long info2)
 /* for spells
  causer = caster,
  victim = vict,
@@ -93,7 +93,7 @@ struct event_info {
   void *causer;
   void *victim;
   void *info;
-  void *info2;
+  int info2;
   struct spell_info_type *sinfo;
   char *command;
   struct event_info *next;
@@ -101,7 +101,7 @@ struct event_info {
   int type;
 };
 
-void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo, char *command, void* info2);
+void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo, char *command, int info2);
 void run_events();
 bool clean_events(void *pointer, EVENT(*func));
 bool clean_causer_events(void *pointer, int type);

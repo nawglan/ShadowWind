@@ -228,7 +228,7 @@ void run_events()
       if (!temp->func) {
         stderr_log("SYSERR: Attempting to run a NULL event. Ignoring");
       } else {
-        (temp->func)(temp->causer, temp->victim, (int) temp->info, temp->sinfo, temp->info2);
+        (temp->func)(temp->causer, temp->victim, (long) temp->info, temp->sinfo, temp->info2);
       }
 
       /* remove the event from the list. */
@@ -268,7 +268,7 @@ void run_events()
   in_event_handler = 0;
 }
 
-void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo, char *command, void *info2)
+void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo, char *command, int info2)
 {
   struct event_info *new;
 
@@ -466,7 +466,7 @@ ACMD(do_camp)
     else {
       if (!check_events(ch, camp)) {
         SET_BIT(AFF_FLAGS(ch), AFF_CAMPING);
-        add_event(120, camp, EVENT_CAMP, ch, NULL, (void *) (int) ch->in_room, NULL, NULL, NULL);
+        add_event(120, camp, EVENT_CAMP, ch, NULL, (void *) (long) ch->in_room, NULL, NULL, 0);
         send_to_char("You start setting up your campsite.\r\n", ch);
       } else {
         send_to_char("You're camp preperations are not yet complete.\r\n", ch);
@@ -747,16 +747,16 @@ EVENT(spell_char_event)
         if (AFF2_FLAGGED(vict, AFF2_ICESHIELD)) {
           send_to_char("You cannot have both fire shield and ice shield active.\r\n", vict);
         } else {
-          mag_affect_char(sinfo, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
+          mag_affect_char(sinfo, 0, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
         }
       } else if (strcmp(sinfo->command, "ice shield") == 0) {
         if (AFF2_FLAGGED(vict, AFF2_FIRESHIELD)) {
           send_to_char("You cannot have both fire shield and ice shield active.\r\n", vict);
         } else {
-          mag_affect_char(sinfo, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
+          mag_affect_char(sinfo, 0, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
         }
       } else {
-        mag_affect_char(sinfo, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
+        mag_affect_char(sinfo, 0, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
       }
     }
 
@@ -1008,7 +1008,7 @@ EVENT(spell_area_event)
     if (sinfo->unaffect) {
       affect_from_char(vict, spells[find_spell_num(sinfo->unaffect)].spellindex);
     } else {
-      mag_affect_char(sinfo, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
+      mag_affect_char(sinfo, 0, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
     }
   }
 }
@@ -1644,21 +1644,21 @@ EVENT(spell_group_event)
     if (sinfo->unaffect) {
       affect_from_char(tch, spells[find_spell_num(sinfo->unaffect)].spellindex);
     } else {
-      mag_affect_char(sinfo, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+      mag_affect_char(sinfo, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
     }
   }
   if ((k != CAUSER_CH) && IS_AFFECTED(k, AFF_GROUP)) {
     if (sinfo->unaffect) {
       affect_from_char(k, spells[find_spell_num(sinfo->unaffect)].spellindex);
     } else {
-      mag_affect_char(sinfo, CAUSER_CH, k, GET_LEVEL(CAUSER_CH));
+      mag_affect_char(sinfo, 0, CAUSER_CH, k, GET_LEVEL(CAUSER_CH));
     }
   }
 
   if (sinfo->unaffect) {
     affect_from_char(CAUSER_CH, spells[find_spell_num(sinfo->unaffect)].spellindex);
   } else {
-    mag_affect_char(sinfo, CAUSER_CH, CAUSER_CH, GET_LEVEL(CAUSER_CH));
+    mag_affect_char(sinfo, 0, CAUSER_CH, CAUSER_CH, GET_LEVEL(CAUSER_CH));
   }
 
   if (sinfo->send_to_vict) {
@@ -1730,7 +1730,7 @@ EVENT(spell_obj_char_event)
     if (sinfo->unaffect) {
       affect_from_char(vict, spells[find_spell_num(sinfo->unaffect)].spellindex);
     } else {
-      mag_affect_char(sinfo, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
+      mag_affect_char(sinfo, 0, CAUSER_CH, vict, GET_LEVEL(CAUSER_CH));
     }
     if (sinfo->send_to_vict) {
       act(sinfo->send_to_vict, TRUE, CAUSER_CH, 0, vict, TO_VICT);
@@ -1755,7 +1755,6 @@ EVENT(spell_obj_char_event)
         }
       }
     }
-    info2 = object;
     object = NULL;
   }
   if (object) {
@@ -2419,7 +2418,7 @@ EVENT(scribe_event)
                 if (!GET_COND(CAUSER_CH, THIRST) || !GET_COND(CAUSER_CH, FULL)) {
                   time <<= 1;
                 }
-                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *) (int) (info - 1), NULL, NULL, (void*) page);
+                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *) (long) (info - 1), NULL, NULL, page);
               } else { /* lost your pen? */
                 REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_SCRIBING);
                 send_to_char("You seem to have missplaced your writing instrument.\r\n", CAUSER_CH);
@@ -2462,7 +2461,7 @@ EVENT(scribe_event)
                 if (!GET_COND(CAUSER_CH, THIRST) || !GET_COND(CAUSER_CH, FULL)) {
                   time *= 2;
                 }
-                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *) (int) (info - 1), NULL, NULL, (void*) page);
+                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *) (long) (info - 1), NULL, NULL, page);
               } else { /* lost your spellbook? */
                 REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_SCRIBING);
                 if (IS_PRI(CAUSER_CH)) {
@@ -2844,7 +2843,7 @@ EVENT(spell_prismatic_spray_event)
             act("You send a {BBLUE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
             act("$N is bathed in a {BBLUE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
             act("You are bathed in a {BBLUE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
             break;
           case 4:
             /* indigo */
@@ -2853,7 +2852,7 @@ EVENT(spell_prismatic_spray_event)
             act("You send a {bINDIGO{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
             act("$N is bathed in a {bINDIGO{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
             act("You are bathed in a {bINDIGO{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
             break;
           case 5:
             /* green */
@@ -2862,7 +2861,7 @@ EVENT(spell_prismatic_spray_event)
             act("You send a {GGREEN{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
             act("$N is bathed in a {GGREEN{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
             act("You are bathed in a {GGREEN{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
             break;
           case 6:
             /* violet */
@@ -2871,7 +2870,7 @@ EVENT(spell_prismatic_spray_event)
             act("You send a {MVIOLET{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
             act("$N is bathed in a {MVIOLET{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
             act("You are bathed in a {MVIOLET{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            spell_dispel_magic_event(CAUSER_CH, tch, info, sinfo2, (void*) 1);
+            spell_dispel_magic_event(CAUSER_CH, tch, info, sinfo2, 1);
             break;
           case 7:
             /* azure */
@@ -2880,7 +2879,7 @@ EVENT(spell_prismatic_spray_event)
             act("You send a {CAZURE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
             act("$N is bathed in a {CAZURE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
             act("You are bathed in a {CAZURE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
             break;
         }
         if (IS_NPC(tch) && tch->master != CAUSER_CH && sinfo->aggressive && number(0, 1)) {

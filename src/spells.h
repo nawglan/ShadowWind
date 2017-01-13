@@ -126,6 +126,6 @@ void mag_alter_objs(int level, struct char_data *ch, struct obj_data *obj, int s
 void mag_creations(int level, struct char_data *ch, int spellnum);
 
 void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument);
-int mag_affect_char(struct spell_info_type *sinfo, struct char_data *caster, struct char_data *vict, int value);
+int mag_affect_char(struct spell_info_type *sinfo, int affect_flag, struct char_data *caster, struct char_data *vict, int value);
 
 int find_spell_num(char *name);

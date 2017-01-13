@@ -10,6 +10,7 @@
 
 #define __COMM_C__
 
+#include <sodium.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -42,7 +43,7 @@
 #include "util/lookup_process.h"
 
 /* externs */
-extern int restrict;
+extern int restrict_game_lvl;
 extern int mini_mud;
 extern int no_rent_check;
 extern FILE *qic_fl;
@@ -180,7 +181,7 @@ int main(int argc, char **argv)
         stderr_log("Quick boot mode -- rent check supressed.");
         break;
       case 'r':
-        restrict = 1;
+        restrict_game_lvl = 1;
         stderr_log("Restricting game -- no new players allowed.");
         break;
       case 's':
@@ -276,6 +277,12 @@ void init_game(int port)
   /*  void my_srand(unsigned long initial_seed);
 
    my_srand(time(0)); */
+
+  stderr_log("Initializing sodium.");
+  if (sodium_init() == -1) {
+    stderr_log("Error initializing sodium.");
+    exit(1);
+  }
 
   stderr_log("Opening mother connection.");
   mother_desc = init_socket(port);
@@ -727,7 +734,7 @@ void perform_camp_check(void)
       for (event = pending_events; event; event = next_event) {
         next_event = event->next;
         if (event->func == camp) {
-          if (((struct char_data *) event->causer == d->character) && (d->character->in_room != (int) event->info)) {
+          if (((struct char_data *) event->causer == d->character) && (d->character->in_room != (long) event->info)) {
             send_to_char("So much for that camping effort.\r\n", d->character);
             clean_events(d->character, camp);
           }
@@ -1578,7 +1585,7 @@ void unrestrict_game(int x)
 
   mudlog("Received SIGUSR2 - completely unrestricting game (emergent)", 'S', COM_ADMIN, TRUE);
   ban_list = NULL;
-  restrict = 0;
+  restrict_game_lvl = 0;
   num_invalid = 0;
   num_declined = 0;
 }
@@ -1913,7 +1920,6 @@ void perform_act(char *orig, struct char_data * ch, struct obj_data * obj, void 
     SEND_TO_Q(lbuf, to->desc);
   if (ch && MOBTrigger)
     mprog_act_trigger(lbuf, to, ch, obj, vict_obj);
-
 }
 
 char *colorf(char type, struct char_data *ch)
@@ -2110,7 +2116,7 @@ void act(char *str, int hide_invisible, struct char_data * ch, struct obj_data *
   /* ASSUMPTION: at this point we know type must be TO_NOTVICT or TO_ROOM */
 
   if (type == TO_EXIT)
-    to = world[(int) vict_obj].people;
+    to = world[(long) vict_obj].people;
   else if (ch && ch->in_room != NOWHERE)
     to = world[ch->in_room].people;
   else if (obj && obj->in_room != NOWHERE)

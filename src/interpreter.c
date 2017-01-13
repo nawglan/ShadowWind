@@ -10,6 +10,7 @@
 
 #define __INTERPRETER_C__
 
+#include <sodium.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,7 +37,7 @@ extern char *imotd;
 extern char *background;
 extern char *START_MESSG;
 extern struct char_data *character_list;
-extern int restrict;
+extern int restrict_game_lvl;
 extern int max_players;
 extern struct index_data *mob_index;
 extern struct index_data *obj_index;
@@ -1199,7 +1200,7 @@ void nanny(struct descriptor_data * d, char *arg)
           STATE(d) = CON_CLOSE;
           return;
         }
-        if (restrict) {
+        if (restrict_game_lvl) {
           SEND_TO_Q("Sorry, new players can't be created at the moment.\r\n", d);
           sprintf(buf, "Request for new char %s denied from %s (wizlock)", GET_NAME(d->character), GET_HOST(d->character));
           mudlog(buf, 'C', COM_IMMORT, TRUE);
@@ -1225,7 +1226,7 @@ void nanny(struct descriptor_data * d, char *arg)
       /* turn echo back on */
       echo_on(d);
 
-      if (*GET_PASSWD(d->character) == '\0') {
+      if (*GET_ENCPASSWD(d->character) == '\0' && *GET_PASSWD(d->character) == '\0') {
         SEND_TO_Q("This char's password is INVALID! Mail swadmin@shadowwind.org\r\nwith your chars names, wanted password, and your chars levels.\r\n", d);
         STATE(d) = CON_CLOSE;
         break;
@@ -1233,7 +1234,17 @@ void nanny(struct descriptor_data * d, char *arg)
       if (!*arg)
         close_socket(d);
       else {
-        if (strncmp(arg, GET_PASSWD(d->character), MAX_PWD_LENGTH)) {
+        if (*GET_ENCPASSWD(d->character) == '\0' && *GET_PASSWD(d->character) != '\0') {
+          if (crypto_pwhash_str(GET_ENCPASSWD(d->character), GET_PASSWD(d->character), strlen(GET_PASSWD(d->character)), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
+            if (d->character->player.host[0] != '\0') {
+              sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+            } else {
+              sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+            }
+            mudlog(buf, 'P', COM_IMMORT, TRUE);
+          }
+        }
+        if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg)) != 0) {
           if (d->character->player.host[0] != '\0') {
             sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
           } else {
@@ -1265,7 +1276,7 @@ void nanny(struct descriptor_data * d, char *arg)
           mudlog(buf, 'C', COM_IMMORT, TRUE);
           return;
         }
-        if (GET_LEVEL(d->character) < restrict) {
+        if (GET_LEVEL(d->character) < restrict_game_lvl) {
           SEND_TO_Q("The game is temporarily restricted.. try again later.\r\n", d);
           STATE(d) = CON_CLOSE;
           sprintf(buf, "Request for login denied for %s [%s] (wizlock)", GET_NAME(d->character), GET_HOST(d->character));
@@ -1368,26 +1379,26 @@ void nanny(struct descriptor_data * d, char *arg)
     case CON_NEWPASSWD:
     case CON_CHPWD_GETNEW:
       d->idle_cnt = 0;
-      if (!*arg || strlen(arg) > MAX_PWD_LENGTH || strlen(arg) < 3 || !str_cmp(arg, GET_NAME(d->character))) {
+      if (!*arg || strlen(arg) < 3 || !str_cmp(arg, GET_NAME(d->character))) {
         SEND_TO_Q("\r\nIllegal password.\r\n", d);
         SEND_TO_Q("Password: ", d);
         return;
       }
-      strncpy(GET_PASSWD(d->character), arg, MAX_PWD_LENGTH);
-      *(GET_PASSWD(d->character) + MAX_PWD_LENGTH) = '\0';
-
-      SEND_TO_Q("\r\nPlease retype password: ", d);
-      if (STATE(d) == CON_NEWPASSWD)
-        STATE(d) = CON_CNFPASSWD;
-      else
-        STATE(d) = CON_CHPWD_VRFY;
+      if (crypto_pwhash_str(GET_ENCPASSWD(d->character), arg, strlen(arg), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
+        SEND_TO_Q("\r\nPlease retype password: ", d);
+        if (STATE(d) == CON_NEWPASSWD) {
+          STATE(d) = CON_CNFPASSWD;
+        } else {
+          STATE(d) = CON_CHPWD_VRFY;
+        }
+      }
 
       break;
 
     case CON_CNFPASSWD:
     case CON_CHPWD_VRFY:
       d->idle_cnt = 0;
-      if (strncmp(arg, GET_PASSWD(d->character), MAX_PWD_LENGTH)) {
+      if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg))) {
         SEND_TO_Q("\r\nPasswords don't match... start over.\r\n", d);
         SEND_TO_Q("Password: ", d);
         if (STATE(d) == CON_CNFPASSWD)
@@ -1796,7 +1807,7 @@ void nanny(struct descriptor_data * d, char *arg)
 
     case CON_CHPWD_GETOLD:
       d->idle_cnt = 0;
-      if (strncmp(arg, GET_PASSWD(d->character), MAX_PWD_LENGTH)) {
+      if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg))) {
         SEND_TO_Q("\r\nIncorrect password.\r\n", d);
         echo_on(d);
         SEND_TO_Q_COLOR(MENU, d);

@@ -1441,3 +1441,4 @@ struct obj_data *corpseloadobj(FILE *fromfile)
   }
   return NULL;
 }
+

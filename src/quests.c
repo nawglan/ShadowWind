@@ -326,20 +326,13 @@ int check_quest_completed(struct quest_data *quest, struct char_data *ch)
   return 0;
 }
 
-int give_quest_item(struct quest_data *quest, int type, void *object, struct char_data *ch, int worktogether)
+int give_quest_item(struct quest_data *quest, int type, struct obj_data* obj, int amount, struct char_data *ch, int worktogether)
 {
-  struct obj_data *obj = NULL;
   struct quest_participant_data *p;
-  int amount = 0;
   int i;
   int ok = 0;
   char tbuf[1024];
 
-  if (type == QUEST_MONEY) {
-    amount = (int) object;
-  } else {
-    obj = (struct obj_data*) object;
-  }
   for (i = 0; i < quest->maxneeds; i++) {
     if (quest->needs[i].type == type && (amount || (obj && quest->needs[i].vnum == GET_OBJ_VNUM(obj)))) {
       p = quest->needs[i].participants;
@@ -441,7 +434,7 @@ int quest_bribe_trigger(struct char_data *me, struct char_data *player, int amou
         } else {
           add_participant(player, (mob_quests + questnum), 0);
         }
-        if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, (void*) amount, player, FALSE)) != -1) {
+        if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, NULL, amount, player, FALSE)) != -1) {
           if (mob_quests[questnum].needs[i].destroy) {
             me->points.temp_gold -= amount;
             temp = me->points.temp_gold;
@@ -464,7 +457,7 @@ int quest_bribe_trigger(struct char_data *me, struct char_data *player, int amou
             }
           }
         }
-        if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, (void*) amount, player, FALSE)) != -1) {
+        if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, NULL, amount, player, FALSE)) != -1) {
           if (mob_quests[questnum].needs[i].destroy) {
             me->points.temp_gold -= amount;
             temp = me->points.temp_gold;
@@ -486,7 +479,7 @@ int quest_bribe_trigger(struct char_data *me, struct char_data *player, int amou
   } else if (IS_SET(QFLAGS(questnum), QUEST_SINGLEPLAYER) && IS_SET(QFLAGS(questnum), QUEST_MULTIPLAYER)) {
     /* multi player, each works alone */
     if (mob_quests[questnum].maxneeds) {
-      if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, (void*) amount, player, FALSE)) != -1) {
+      if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, NULL, amount, player, FALSE)) != -1) {
         if (mob_quests[questnum].needs[i].destroy) {
           me->points.temp_gold -= amount;
           temp = me->points.temp_gold;
@@ -507,7 +500,7 @@ int quest_bribe_trigger(struct char_data *me, struct char_data *player, int amou
   } else {
     /* multi player, working together */
     if (mob_quests[questnum].maxneeds) {
-      if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, (void*) amount, player, TRUE)) != -1) {
+      if ((i = give_quest_item((mob_quests + questnum), QUEST_MONEY, NULL, amount, player, TRUE)) != -1) {
         if (mob_quests[questnum].needs[i].destroy) {
           me->points.temp_gold -= amount;
           temp = me->points.temp_gold;
@@ -562,7 +555,7 @@ int quest_give_trigger(struct char_data *me, struct char_data *player, struct ob
         } else {
           add_participant(player, (mob_quests + questnum), 0);
         }
-        if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, (void*) obj, player, FALSE)) != -1) {
+        if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, obj, 0, player, FALSE)) != -1) {
           if (mob_quests[questnum].needs[i].destroy) {
             obj_from_char(obj);
             extract_obj(obj);
@@ -578,7 +571,7 @@ int quest_give_trigger(struct char_data *me, struct char_data *player, struct ob
             }
           }
         }
-        if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, (void*) obj, player, FALSE)) != -1) {
+        if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, obj, 0, player, FALSE)) != -1) {
           if (mob_quests[questnum].needs[i].destroy) {
             obj_from_char(obj);
             extract_obj(obj);
@@ -593,7 +586,7 @@ int quest_give_trigger(struct char_data *me, struct char_data *player, struct ob
   } else if (IS_SET(QFLAGS(questnum), QUEST_SINGLEPLAYER) && IS_SET(QFLAGS(questnum), QUEST_MULTIPLAYER)) {
     /* multi player, each works alone */
     if (mob_quests[questnum].maxneeds) {
-      if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, (void*) obj, player, FALSE)) != -1) {
+      if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, obj, 0, player, FALSE)) != -1) {
         if (mob_quests[questnum].needs[i].destroy) {
           obj_from_char(obj);
           extract_obj(obj);
@@ -607,7 +600,7 @@ int quest_give_trigger(struct char_data *me, struct char_data *player, struct ob
   } else {
     /* multi player, working together */
     if (mob_quests[questnum].maxneeds) {
-      if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, (void*) obj, player, TRUE)) != -1) {
+      if ((i = give_quest_item((mob_quests + questnum), QUEST_OBJECT, obj, 0, player, TRUE)) != -1) {
         if (mob_quests[questnum].needs[i].destroy) {
           obj_from_char(obj);
           extract_obj(obj);

@@ -203,7 +203,7 @@ ACMD(do_scribe)
                 time <<= 1;
               }
               SET_BIT(AFF2_FLAGS(ch), AFF2_SCRIBING);
-              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *) (numpages - 1), NULL, NULL, (void*) page);
+              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *) (long) (numpages - 1), NULL, NULL, page);
             } else { /* lost your pen? */
               send_to_char("You seem to have missplaced your writing instrument.\r\n", ch);
             }
@@ -286,7 +286,7 @@ ACMD(do_scribe)
                 time *= 2;
               }
               SET_BIT(AFF2_FLAGS(ch), AFF2_SCRIBING);
-              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *) (numpages - 1), NULL, NULL, (void*) page);
+              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *) (long) (numpages - 1), NULL, NULL, page);
             } else { /* lost your spellbook? */
               if (IS_PRI(ch)) {
                 send_to_char("You seem to have missplaced your religious symbol.\r\n", ch);
@@ -420,7 +420,7 @@ ACMD(do_memorize)
         act("$n grabs $e religeous symbol and resumes $e meditations.", TRUE, ch, 0, 0, TO_ROOM);
       }
       SET_BIT(AFF2_FLAGS(ch), AFF2_MEMMING);
-      add_event(time, memorize_event, EVENT_MEM, ch, NULL, NULL, NULL, NULL, NULL);
+      add_event(time, memorize_event, EVENT_MEM, ch, NULL, NULL, NULL, NULL, 0);
     }
   }
 }

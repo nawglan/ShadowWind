@@ -703,8 +703,8 @@ void string_add(struct descriptor_data *d, char *str)
       FREE(d->str);
       sprintf(buf, "%s finished writing mail message.", GET_NAME(d->character));
       mudlog(buf, 'G', COM_ADMIN, TRUE);
-    } else if ((int) d->mail_to >= BOARD_MAGIC) {
-      Board_save_board((int) d->mail_to - BOARD_MAGIC);
+    } else if ((long) d->mail_to >= BOARD_MAGIC) {
+      Board_save_board((long) d->mail_to - BOARD_MAGIC);
       SEND_TO_Q("Post not aborted, use REMOVE <post #>.\r\n", d);
       d->mail_to = 0;
       sprintf(buf, "%s finished writing message on board.", GET_NAME(d->character));
@@ -1207,7 +1207,7 @@ void show_string(struct descriptor_data *d, char *input)
   }
   /* Or if we have more to show.... */
   else {
-    strncpy(buffer, d->showstr_vector[d->showstr_page], diff = ((int) d->showstr_vector[d->showstr_page + 1]) - ((int) d->showstr_vector[d->showstr_page]));
+    strncpy(buffer, d->showstr_vector[d->showstr_page], diff = ((long) d->showstr_vector[d->showstr_page + 1]) - ((long) d->showstr_vector[d->showstr_page]));
     buffer[diff] = '\0';
     if (STATE(d) == CON_GET_NAME || STATE(d) == CON_NAME_CNFRM) {
       if (d->color)

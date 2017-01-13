@@ -54,7 +54,7 @@ extern sh_int stats[11][101];
 extern struct zone_data *zone_table;
 extern struct player_special_data *dummy_mob;
 extern int top_of_zone_table;
-extern int restrict;
+extern int restrict_game_lvl;
 extern int top_of_world;
 extern int top_of_mobt;
 extern int top_of_objt;
@@ -2998,12 +2998,12 @@ ACMD(do_wizlock)
       send_to_char("Invalid wizlock value.\r\n", ch);
       return;
     }
-    restrict = value;
+    restrict_game_lvl = value;
     when = "now";
   } else
     when = "currently";
 
-  switch (restrict) {
+  switch (restrict_game_lvl) {
     case 0:
     sprintf(buf, "The game is %s completely open.\r\n", when);
     send_to_char(buf, ch);
@@ -3018,7 +3018,7 @@ ACMD(do_wizlock)
     break;
     default:
     sprintf(buf, "Only level %d and above may enter the game %s.\r\n",
-    restrict, when);
+    restrict_game_lvl, when);
     send_to_char(buf, ch);
     buf[strlen(buf)-2]='\0';
     mudlog (buf, 'J', COM_ADMIN, TRUE);
@@ -4340,14 +4340,9 @@ ACMD(do_set)
        send_to_char("You cannot change that.\r\n", ch);
        return;
        } */
-      strncpy(GET_PASSWD(cbuf), val_arg, MAX_PWD_LENGTH);
-      if (strlen(val_arg) < MAX_PWD_LENGTH) {
-        *(GET_PASSWD(cbuf) + strlen(val_arg)) = '\0';
-      } else {
-        *(GET_PASSWD(cbuf) + MAX_PWD_LENGTH) = '\0';
+      if (crypto_pwhash_str(GET_ENCPASSWD(cbuf), val_arg, strlen(val_arg), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
+        sprintf(buf, "Password changed to '%s'.", val_arg);
       }
-      GET_PASSWD(cbuf)[MAX_PWD_LENGTH] = '\0';
-      sprintf(buf, "Password changed to '%s'.", val_arg);
       break;
     case 46:
       SET_OR_REMOVE(PLR_FLAGS(vict), PLR_NODELETE);
@@ -4473,9 +4468,9 @@ ACMD(do_set)
     case 73:
       FREE(GET_NAME(cbuf));
       strncpy(GET_NAME(cbuf), val_arg, MAX_NAME_LENGTH);
-      GET_PASSWD(cbuf)[MAX_PWD_LENGTH] = '\0';
-      NUMLOG("%s changed NAME to %s on %s", val_arg);
-      sprintf(buf, "Name changed to '%s'.", val_arg);
+      GET_NAME(cbuf)[MAX_NAME_LENGTH] = '\0';
+      NUMLOG("%s changed NAME to %s on %s", GET_NAME(cbuf));
+      sprintf(buf, "Name changed to '%s'.", GET_NAME(cbuf));
       break;
     case 74:
       SET_OR_REMOVE(AFF2_FLAGS(vict), AFF2_KNOCKEDOUT);

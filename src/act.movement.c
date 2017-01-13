@@ -420,10 +420,10 @@ ACMD(do_open)
             if (back->keyword) {
               sprintf(buf, "The %s is opened from the other side.", fname(back->keyword));
               /* send_to_room(buf, EXIT(ch, door)->to_room); */
-              act(buf, 0, ch, NULL, (void*) EXIT(ch, door)->to_room, TO_EXIT);
+              act(buf, 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
             } else {
               /* send_to_room("The door is opened from the other side.\r\n", EXIT(ch, door)->to_room); */
-              act("The door is opened from the other side.", 0, ch, NULL, (void*) EXIT(ch, door)->to_room, TO_EXIT);
+              act("The door is opened from the other side.", 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
             }
           }
         }
@@ -479,10 +479,10 @@ ACMD(do_close)
             if (back->keyword) {
               sprintf(buf, "The %s closes quietly.", fname(back->keyword));
               /* send_to_room(buf, EXIT(ch, door)->to_room); */
-              act(buf, 0, ch, NULL, (void*) EXIT(ch, door)->to_room, TO_EXIT);
+              act(buf, 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
             } else {
               /* send_to_room("The door closes quietly.\r\n", EXIT(ch, door)->to_room); */
-              act("The door closes quietly.", 0, ch, NULL, (void*) EXIT(ch, door)->to_room, TO_EXIT);
+              act("The door closes quietly.", 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
             }
           }
         }

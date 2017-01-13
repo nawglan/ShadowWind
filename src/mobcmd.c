@@ -1,6 +1,6 @@
 /***************************************************************************
- * MOBProgram ported for CircleMUD 3.0 by Mattias Larsson		   *
- * Traveller@AnotherWorld (ml@eniac.campus.luth.se 4000) 		   *
+ * MOBProgram ported for CircleMUD 3.0 by Mattias Larsson		           *
+ * Traveller@AnotherWorld (ml@eniac.campus.luth.se 4000) 		           *
  **************************************************************************/
 
 /***************************************************************************
@@ -350,7 +350,8 @@ ACMD(do_mphunt)
   }
 
   if (victim == ch) {
-    bug("Mphunt - Bad victim to hunt: vnum %d.", mob_index[ch->nr].virtual);
+    /* we don't care, just return. */
+    /*bug("Mphunt - Bad victim to hunt: vnum %d.", mob_index[ch->nr].virtual);*/
     return;
   }
   for (i = 0; i < 10; i++) {
@@ -392,7 +393,6 @@ ACMD(do_mphuntrm)
 
   HUNTING(ch) = 0;
   HUNTINGRM(ch) = location;
-
 }
 
 /* lets the mobile destroy an object in its inventory
@@ -548,7 +548,6 @@ ACMD(do_mpecho)
 
   act(p, FALSE, ch, NULL, NULL, TO_ROOM);
   return;
-
 }
 
 /* lets the mobile load an item or mobile.  All items
@@ -999,7 +998,8 @@ ACMD(do_mptransfer)
  -- immos and if a social class is created
  -- will not be able to be trained.
 
- */ACMD(do_mptrain)
+ */
+ACMD(do_mptrain)
 {
 
   /*   unsigned long    security; */
@@ -1060,9 +1060,7 @@ ACMD(do_mptransfer)
   }
 
   while (!foundskill) {
-
   }
-
 }
 
 /* lets the mobile force someone to do something.  must be mortal level
@@ -1120,3 +1118,4 @@ ACMD(do_mpforce)
 
   return;
 }
+

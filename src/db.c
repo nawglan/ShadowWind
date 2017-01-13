@@ -10,6 +10,7 @@
 
 #define __DB_C__
 
+#include <sodium.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -85,7 +86,7 @@ int no_mail = 0; /* mail disabled?     */
 int mini_mud = 0; /* mini-mud mode?     */
 int no_rent_check = 0; /* skip rent check on boot?   */
 time_t boot_time = 0; /* time of mud boot     */
-int restrict = 0; /* level of game restriction   */
+int restrict_game_lvl = 0; /* level of game restriction   */
 sh_int r_mortal_start_room; /* rnum of mortal start room   */
 sh_int r_immort_start_room; /* rnum of immort start room   */
 sh_int r_frozen_start_room; /* rnum of frozen start room   */
@@ -2602,21 +2603,21 @@ void add_innates(struct char_data *ch)
     case RACE_HALFELF:
     case RACE_OGRE:
     case RACE_TROLL:
-      mag_affect_char((struct spell_info_type*) AFF_INFRAVISION, ch, ch, -1);
+      mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
       break;
       /* infravision and sneak */
     case RACE_ELF:
-      mag_affect_char((struct spell_info_type*) AFF_INFRAVISION, ch, ch, -1);
-      mag_affect_char((struct spell_info_type*) AFF_SNEAK, ch, ch, -1);
+      mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
+      mag_affect_char(NULL, AFF_SNEAK, ch, ch, -1);
       break;
       /* infravision and detect align */
     case RACE_DWARF:
-      mag_affect_char((struct spell_info_type*) AFF_INFRAVISION, ch, ch, -1);
-      mag_affect_char((struct spell_info_type*) AFF_DETECT_ALIGN, ch, ch, -1);
+      mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
+      mag_affect_char(NULL, AFF_DETECT_ALIGN, ch, ch, -1);
       break;
       /* sneak alone */
     case RACE_HALFLING:
-      mag_affect_char((struct spell_info_type*) AFF_SNEAK, ch, ch, -1);
+      mag_affect_char(NULL, AFF_SNEAK, ch, ch, -1);
       break;
     default:
       break;
@@ -2640,17 +2641,20 @@ int load_char_text(char *name, struct char_data * char_element)
   struct affected_type affected[MAX_AFFECT];
   FILE *pfile;
 
-  if (char_element->player_specials)
+  if (char_element->player_specials) {
     FREE(char_element->player_specials);
+  }
   memset((struct char_data *) ctmp, 0, sizeof(struct char_data));
   memset((struct affected_type *) affected, 0, MAX_AFFECT * sizeof(struct affected_type));
   get_filename(name, filename, PTDAT_FILE);
 
-  if ((pfile = fopen(filename, "r")) == NULL)
+  if ((pfile = fopen(filename, "r")) == NULL) {
     return 0;
+  }
 
-  if (ctmp->player_specials == NULL)
+  if (ctmp->player_specials == NULL) {
     CREATE(ctmp->player_specials, struct player_special_data, 1);
+  }
 
   GET_DESC(ctmp) = strdup(" ");
   GET_TITLE(ctmp) = strdup(" ");
@@ -2788,6 +2792,8 @@ int load_char_text(char *name, struct char_data * char_element)
       case 'E':
         if (!strcmp(field, "exp")) {
           GET_EXP(ctmp) = numval;
+        } else if (!strcmp(field, "enc_password")) {
+          strcpy(GET_ENCPASSWD(ctmp), value);
         } else {
           sprintf(buf2, "Unknown field [%s]", field);
           stderr_log(buf2);
@@ -3131,6 +3137,7 @@ void save_char_text(struct char_data * ch, sh_int load_room)
   FILE *pfile;
   char tname[50];
   char filename[80];
+  char out[crypto_pwhash_STRBYTES];
   char descript[EXDSCR_LENGTH];
   char *p;
   struct affected_type affected[MAX_AFFECT];
@@ -3242,7 +3249,13 @@ void save_char_text(struct char_data * ch, sh_int load_room)
     fprintf(pfile, "-height- %d\n", GET_HEIGHT(ch));
   }
   if (GET_PASSWD(ch)) {
-    fprintf(pfile, "-password- %s\n", GET_PASSWD(ch));
+    /* fprintf(pfile, "-password- %s\n", GET_PASSWD(ch)); */
+    if (crypto_pwhash_str(out, GET_PASSWD(ch), strlen(GET_PASSWD(ch)), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) != -1) {
+      strcpy(GET_ENCPASSWD(ch), out);
+    }
+  }
+  if (GET_ENCPASSWD(ch)) {
+    fprintf(pfile, "-enc_password- %s\n", GET_ENCPASSWD(ch));
   }
   if (GET_SCREEN_HEIGHT(ch)) {
     fprintf(pfile, "-screen_height- %d\n", GET_SCREEN_HEIGHT(ch));

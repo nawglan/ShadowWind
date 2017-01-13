@@ -35,45 +35,43 @@ const char *pc_race_names[] = {"the Undefined", "the Human", "the Troll", "the O
 
 /* classes allowed to a given race */
 const int pc_racial_classes[NUM_RACES][NUM_CLASSES] = {
-/* war, rog, thi, sor, wiz, enc, con, nec, cle, pri,
- sha, mon, dru, ass, bar, ran, mer */
-{1, 0, 0, 0, 0, 0, 0, 0, 0, 0, /*RACE_UNDEFINED*/
-0, 0, 0, 0, 0, 0, 0}, {1, 1, 0, 1, 0, 1, 1, 1, 1, 0, /*RACE_HUMAN*/
-0, 1, 1, 1, 1, 1, 1}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, /*RACE_TROLL*/
-1, 0, 0, 0, 0, 0, 1}, {1, 0, 0, 0, 0, 0, 0, 0, 0, 0, /*RACE_OGRE*/
-1, 0, 0, 0, 0, 0, 1}, {1, 0, 1, 0, 0, 0, 1, 0, 1, 0, /*RACE_DWARF*/
-0, 0, 0, 0, 0, 0, 1}, {1, 1, 0, 0, 1, 1, 0, 0, 1, 0, /*RACE_ELF*/
-0, 0, 0, 0, 1, 1, 0}, {1, 1, 0, 1, 0, 1, 0, 0, 1, 0, /*RACE_HALFELF*/
-0, 1, 1, 1, 1, 1, 1}, {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, /*RACE_GNOME*/
-0, 0, 0, 0, 0, 0, 0}, {1, 0, 1, 0, 1, 0, 0, 0, 1, 0, /*RACE_HALFLING*/
-0, 0, 0, 1, 0, 0, 0}};
+/* war, rog, thi, sor, wiz, enc, con, nec, cle, pri, sha, mon, dru, ass, bar, ran, mer */
+{    1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},  /*RACE_UNDEFINED*/
+{    1,   1,   0,   1,   0,   1,   1,   1,   1,   1,   0,   1,   1,   1,   1,   1,   1},  /*RACE_HUMAN*/
+{    1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   0,   0,   0,   0,   0,   1},  /*RACE_TROLL*/
+{    1,   0,   0,   0,   0,   0,   0,   0,   0,   0,   1,   0,   0,   0,   0,   0,   1},  /*RACE_OGRE*/
+{    1,   0,   1,   0,   0,   0,   1,   0,   1,   1,   0,   0,   0,   0,   0,   0,   1},  /*RACE_DWARF*/
+{    1,   1,   0,   0,   1,   1,   0,   0,   1,   1,   0,   0,   0,   0,   1,   1,   0},  /*RACE_ELF*/
+{    1,   1,   0,   1,   0,   1,   0,   0,   1,   0,   0,   1,   1,   1,   1,   1,   1},  /*RACE_HALFELF*/
+{    1,   0,   1,   0,   1,   0,   1,   0,   1,   1,   0,   0,   0,   0,   0,   0,   0},  /*RACE_GNOME*/
+{    1,   0,   1,   0,   1,   0,   0,   0,   1,   0,   0,   0,   0,   1,   0,   0,   0}}; /*RACE_HALFLING*/
 
 /* minimum attributes for a given class */
 const int pc_class_attrib[NUM_CLASSES][8] = {
 /* STR, INT, WIS, DEX, CON, AGI */
-{55, 0, 0, 0, 40, 35}, /* Warrior  */
-{0, 0, 0, 60, 0, 55}, /* Rogue  */
-{0, 0, 0, 60, 0, 55}, /* Thief  */
-{0, 65, 0, 55, 0, 0}, /* Sorcerer  */
-{0, 65, 0, 55, 0, 0}, /* Wizard  */
-{0, 65, 0, 0, 45, 0}, /* Enchanter  */
-{0, 65, 0, 0, 45, 0}, /* Conjurer  */
-{910, 910, 910, 910, 910, 910}, /* Necromancer  was 0, 70, 60, 0, 40, 0*/
-{0, 45, 60, 0, 0, 0}, /* Cleric  */
-{910, 910, 910, 910, 910, 910}, /* Priest  was 0, 45, 60, 0, 0, 0*/
-{0, 40, 45, 0, 0, 0}, /* Shaman  */
-{0, 0, 0, 55, 40, 60}, /* Monk    was 0, 0, 0, 55,40, 70*/
-{0, 50, 60, 0, 20, 0}, /* Druid  */
-{0, 0, 0, 60, 30, 60}, /* Assassin  */
-{910, 910, 910, 910, 910, 910}, /* Bard            was 0, 65, 0, 60, 0, 0 */
-{910, 910, 910, 910, 910, 910}, /* Ranger  was 50, 45, 0, 40, 0, 35*/
-{50, 0, 0, 50, 40, 0} /* Mercenary  */
+{ 55,   0,   0,   0,  40,  35}, /* Warrior */
+{  0,   0,   0,  60,   0,  55}, /* Rogue */
+{  0,   0,   0,  60,   0,  55}, /* Thief */
+{  0,  65,   0,  55,   0,   0}, /* Sorcerer */
+{  0,  65,   0,  55,   0,   0}, /* Wizard */
+{  0,  65,   0,   0,  45,   0}, /* Enchanter */
+{  0,  65,   0,   0,  45,   0}, /* Conjurer */
+{910, 910, 910, 910, 910, 910}, /* Necromancer was 0, 70, 60, 0, 40, 0*/   /* set back to original when implemented */
+{  0,  45,  60,   0,   0,   0}, /* Cleric */
+{910, 910, 910, 910, 910, 910}, /* Priest was 0, 45, 60, 0, 0, 0*/
+{  0,  40,  45,   0,   0,   0}, /* Shaman  */
+{  0,   0,   0,  55,  40,  60}, /* Monk was 0, 0, 0, 55, 40, 70*/
+{  0,  50,  60,   0,  20,   0}, /* Druid */
+{  0,   0,   0,  60,  30,  60}, /* Assassin */
+{910, 910, 910, 910, 910, 910}, /* Bard was 0, 65, 0, 60, 0, 0 */
+{910, 910, 910, 910, 910, 910}, /* Ranger was 50, 45, 0, 40, 0, 35*/
+{ 50,   0,   0,  50,  40,   0}  /* Mercenary  */
 };
 
 /* The menu for choosing a race in interpreter.c: */
 const char *race_menu = "\r\n"
     "Select a race (allowed classes):\r\n"
-    "  [1] Human            Warrior, Rogue, Sorcerer\r\n"
+    "  [1] Human            Warrior, Rogue, Sorcerer,\r\n"
     "                       Cleric, Conjurer, Monk, Druid,\r\n"
     "                       Assassin, Mercenary, Enchanter\r\n"
     "  [2] Troll            Warrior, Shaman, Mercenary\r\n"
@@ -83,9 +81,9 @@ const char *race_menu = "\r\n"
     "  [5] Elf              Warrior, Rogue, Wizard, Enchanter,\r\n"
     "                       Cleric\r\n"
     "  [6] Half-Elf         Warrior, Rogue, Sorcerer, Enchanter,\r\n"
-    "                       Cleric, Monk, Druid, Assassin\r\n"
+    "                       Cleric, Monk, Druid, Assassin,\r\n"
     "                       Mercenary\r\n"
-    "  [7] Gnome            Warrior, Thief, Wizard, Conjurer,\r\n"
+    "  [7] Gnome            Warrior, Thief, Wizard, Conjurer\r\n"
     "  [8] Halfling         Warrior, Thief, Wizard, Assassin\r\n";
 
 bool check_class(struct char_data *ch, int class)
@@ -499,7 +497,7 @@ void roll_real_abils(struct char_data * ch)
 
   while (class == FALSE) {
 
-    /* okay, roll 6 5d10 + 25 dices, to generate from 30-75 stats */
+    /* okay, roll 6 5d15 + 25 dices, to generate from 30-75 stats */
 
     /* roll 6d15, dropping the lowest d15, then add them, 6 times */
     for (i = 0; i < 6; i++) {
@@ -507,6 +505,7 @@ void roll_real_abils(struct char_data * ch)
       for (k = 0; k < 6; k++) {
         r[k] = dice(1, 15);
       }
+      /* bubble sort */
       for (ctr1 = 0; ctr1 < 5; ctr1++) {
         for (ctr2 = (ctr1 + 1); ctr2 < 6; ctr2++) {
           if (r[ctr1] > r[ctr2]) {
@@ -516,10 +515,22 @@ void roll_real_abils(struct char_data * ch)
           }
         }
       }
+      /* add up the dice, skipping first one (add remaining 5)*/
       for (ctr1 = 1; ctr1 < 6; ctr1++) {
         table[i] += r[ctr1];
       }
       table[i] += 25;
+    }
+
+    /* bubble sort */
+    for (ctr1 = 0; ctr1 < 5; ctr1++) {
+      for (ctr2 = (ctr1 + 1); ctr2 < 6; ctr2++) {
+        if (table[ctr1] > table[ctr2]) {
+          tmpnum = table[ctr1];
+          table[ctr1] = table[ctr2];
+          table[ctr2] = tmpnum;
+        }
+      }
     }
 
     /* make sure the sorting table is all zeroes */
@@ -527,7 +538,7 @@ void roll_real_abils(struct char_data * ch)
       rolls[i] = 0;
     }
 
-    /* sort the values */
+    /* sort the values
     for (i = 0; i < 6; i++) {
       rolls[table[i]]++;
     }
@@ -539,19 +550,17 @@ void roll_real_abils(struct char_data * ch)
         rolls[i]--;
       }
     }
+    */
 
     /* okay, table has been sorted with the highest value first */
-
-    /* increment the highest value, and make it the primary stat */
-    for (i = 0; i < 6; i++) {
-      rolls[i] = 0;
-    }
+    /* make it the primary stat */
+    rolls[0] = table[0];
 
     /* distribute the rest of the stats randomly */
-    for (i = 0; i < 6; i++) {
-      j = number(0, 5);
+    for (i = 1; i < 6; i++) {
+      j = number(1, 5);
       while (rolls[j]) {
-        j = number(0, 5);
+        j = number(1, 5);
       }
       rolls[j] = table[i];
     }
@@ -585,14 +594,14 @@ void roll_real_abils(struct char_data * ch)
     GET_WEIGHT(ch) = ((dice(1, 20) + GET_STR(ch) + 20) * race_mod[GET_RACE(ch)][6]);
     GET_HEIGHT(ch) = ((20 + dice(1, 8)) * race_mod[GET_RACE(ch)][7]);
 
-    if (GET_RACE(ch) == RACE_ELF) {
-      GET_WEIGHT(ch) = GET_WEIGHT(ch) + 25;
+    if (GET_RACE(ch) == RACE_ELF && GET_WEIGHT(ch) > 25) {
+      GET_WEIGHT(ch) = GET_WEIGHT(ch) - 25;
     }
 
-    if ((GET_RACE(ch) == RACE_GNOME) || (GET_RACE(ch) == RACE_HALFLING)) {
+    if (GET_HEIGHT(ch) > 12 && ((GET_RACE(ch) == RACE_GNOME) || (GET_RACE(ch) == RACE_HALFLING))) {
       GET_HEIGHT(ch) -= 12;
     }
-    if (GET_SEX(ch) == SEX_FEMALE) {
+    if (GET_SEX(ch) == SEX_FEMALE && GET_RACE(ch) != RACE_OGRE) {
       GET_WEIGHT(ch) = ((GET_WEIGHT(ch) * 8) / 10);
       GET_HEIGHT(ch) = ((GET_HEIGHT(ch) * 9) / 10);
     }

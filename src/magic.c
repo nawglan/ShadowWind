@@ -171,7 +171,7 @@ int mag_materials(struct char_data * ch, int item0, int item1, int item2, int ex
   return (TRUE);
 }
 
-int mag_affect_char(struct spell_info_type *sinfo, struct char_data *caster, struct char_data *vict, int level)
+int mag_affect_char(struct spell_info_type *sinfo, int affect_flag, struct char_data *caster, struct char_data *vict, int level)
 {
   struct affected_type af;
   int i;
@@ -181,7 +181,7 @@ int mag_affect_char(struct spell_info_type *sinfo, struct char_data *caster, str
 
   /* innate */
   if (level == -1) {
-    SET_BIT(AFF_FLAGS(vict), (int) sinfo);
+    SET_BIT(AFF_FLAGS(vict), affect_flag);
     return 1;
   }
 

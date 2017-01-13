@@ -90,13 +90,13 @@ int check_ch_ability(struct char_data *ch, struct spell_info_type *sinfo, int is
   SET_BIT(AFF2_FLAGS(ch), AFF2_CASTING);
   if (!isobj && !(!IS_NPC(ch) && COM_FLAGGED(ch, COM_IMMORT)) && GET_CIRCLE_DIFF(ch, sinfo) == 0) {
     if ((GET_SKILL(ch, sinfo->realm) + bonus) > number(1, 175)) {
-      add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, (void *) isobj);
+      add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, isobj);
       return 1;
     } else {
-      add_event(1, fail_spell_event, EVENT_SPELL, ch, NULL, str_dup(target), NULL, NULL, NULL);
+      add_event(1, fail_spell_event, EVENT_SPELL, ch, NULL, str_dup(target), NULL, NULL, 0);
     }
   } else {
-    add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, (void *) isobj);
+    add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, isobj);
     return 1;
   }
 
@@ -108,14 +108,14 @@ int check_mob_ability(struct char_data *ch, struct spell_info_type *sinfo, int i
   SET_BIT(AFF2_FLAGS(ch), AFF2_CASTING);
   if (!isobj) {
     if (GET_LEVEL(ch) > number(1, 61)) {
-      add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, (void *) isobj);
+      add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, isobj);
       GET_MOB_WAIT(ch) = waitstate * 10;
       return 1;
     } else {
-      add_event(1, fail_spell_event, EVENT_SPELL, ch, NULL, str_dup(target), NULL, NULL, NULL);
+      add_event(1, fail_spell_event, EVENT_SPELL, ch, NULL, str_dup(target), NULL, NULL, 0);
     }
   } else {
-    add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, (void *) isobj);
+    add_event(waitstate, sinfo->event_pointer, EVENT_SPELL, ch, NULL, str_dup(target), sinfo, sinfo->command, isobj);
     GET_MOB_WAIT(ch) = waitstate * 10;
     return 1;
   }

@@ -1305,7 +1305,7 @@ SPECIAL(cityguard)
         if (!AFF2_FLAGGED(evil, AFF2_KNOCKEDOUT)) {
           SET_BIT(AFF2_FLAGS(evil), AFF2_KNOCKEDOUT);
         }
-        add_event(60, knockedout, EVENT_KNOCKEDOUT, evil, NULL, NULL, NULL, NULL, NULL);
+        add_event(60, knockedout, EVENT_KNOCKEDOUT, evil, NULL, NULL, NULL, NULL, 0);
       }
     }
     return (TRUE);

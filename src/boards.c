@@ -225,7 +225,7 @@ void Board_write_message(int board_type, struct char_data * ch, char *arg)
 
   ch->desc->str = &(msg_storage[NEW_MSG_INDEX(board_type).slot_num]);
   ch->desc->max_str = MAX_MESSAGE_LENGTH;
-  ch->desc->mail_to = (char*) board_type + BOARD_MAGIC;
+  ch->desc->mail_to = (char*) (long)(board_type + BOARD_MAGIC);
 
   num_of_msgs[board_type]++;
 }

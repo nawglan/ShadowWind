@@ -13,6 +13,7 @@ CC = gcc
 MYFLAGS = -g -Wall -DNOCRYPT
 #MYFLAGS =  -pg -g -m486 -Wall -DNOCRYPT
 #MYFLAGS =  -g -xF -Xa -v -xs -DNOCRYPT
+LIBS = -lsodium
 
 #flags for profiling (see hacker.doc for more information)
 PROFILE = 

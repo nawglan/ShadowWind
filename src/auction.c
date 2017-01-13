@@ -446,7 +446,7 @@ ACMD(do_auction)
     for (j = 0; j < 6; j++)
       obj->affected[j] = auction->affected[j];
 
-    spell_identify_event(ch, NULL, (long) obj->name, &spells[find_skill_num_def(spellnum)], (void*) 1);
+    spell_identify_event(ch, NULL, (long) obj->name, &spells[find_skill_num_def(spellnum)], 1);
     extract_obj_q(obj);
 
   } else {

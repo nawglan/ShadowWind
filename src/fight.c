@@ -2021,7 +2021,7 @@ void hit(struct char_data * ch, struct char_data * victim, int type)
 
   if (can_poison && number(1, 10) < 3) {
     REMOVE_BIT(GET_OBJ_EXTRA(wielded), ITEM_POISONED);
-    mag_affect_char((spells + find_spell_num("poison")), ch, victim, GET_LEVEL(ch));
+    mag_affect_char((spells + find_spell_num("poison")), 0, ch, victim, GET_LEVEL(ch));
     act("You've been poisoned by $n", FALSE, ch, NULL, victim, TO_VICT);
     act("You're weapon poisons $t", FALSE, ch, NULL, victim, TO_CHAR);
   } else if (can_poison && number(1, 10) >= 8) {
