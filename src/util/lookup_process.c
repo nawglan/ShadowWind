@@ -15,8 +15,6 @@
 #include "../ident.h"
 #include "lookup_process.h"
 
-#define PID_DIR "lib/misc/"
-
 extern pid_t getpid(void);
 
 static int dns_send_fifo;
@@ -26,7 +24,7 @@ static pid_t parent_pid;
 
 static int get_message(int type, void *buffer, int msgsz);
 static void clean_up(void);
-static void setup_pid_file(void);
+static void setup_pid_file(char* dir);
 static void setup_signals(void);
 
 void clean_up(void)
@@ -35,12 +33,14 @@ void clean_up(void)
   exit(1);
 }
 
-void setup_pid_file(void)
+void setup_pid_file(char* dir)
 {
   FILE *pid_file;
   char filename[MAX_STRING_LENGTH];
 
-  sprintf(filename, "%slookup_%s_process.pid", PID_DIR, my_name);
+  sprintf(filename, "%s/misc/lookup_%s_process.pid", dir, my_name);
+
+  fprintf(stderr, "lookup process PID file: %s\n", filename);
 
   if ((pid_file = fopen(filename, "r")) != NULL) {
     pid_t old_pid;
@@ -57,8 +57,11 @@ void setup_pid_file(void)
       }
     }
     fclose(pid_file);
+    unlink(filename);
   }
+
   if ((pid_file = fopen(filename, "w")) == NULL) {
+    fprintf(stderr, "Unable to open %s for writing\n", filename);
     raise(SIGABRT);
   }
   fprintf(pid_file, "%d\n", (int) getpid());
@@ -91,25 +94,48 @@ int get_message(int type, void *buffer, int msgsz)
   return 1;
 }
 
-int main(void)
+int main(int argc, char** argv)
 {
   struct host_answer ans_buf;
   struct host_request req_buf;
   struct hostent *from;
   int found = 0;
+  int pos = 1;
+  char *dir;
+  char tmppath[1024];
+
+  while ((pos < argc) && (*(argv[pos]) == '-')) {
+    switch (*(argv[pos] + 1)) {
+      case 'd':
+        if (*(argv[pos] + 2))
+          dir = argv[pos] + 2;
+        else if (++pos < argc)
+          dir = argv[pos];
+        else {
+          fprintf(stderr, "Directory arg expected after option -d.\n");
+          fflush(NULL);
+          exit(1);
+        }
+        break;
+    }
+  }
 
   my_name = "HOSTS";
 
-  setup_pid_file();
+  setup_pid_file(dir);
   sleep(1);
 
   setup_signals();
 
-  if ((dns_send_fifo = open("lib/misc/dns_send_fifo", O_RDONLY)) == -1) {
+  sprintf(tmppath, "%s/misc/dns_send_fifo", dir);
+  fprintf(stderr, "opening send fifo: %s\n", tmppath);
+  if ((dns_send_fifo = open(tmppath, O_RDONLY)) == -1) {
     perror("open fifo");
     exit(1);
   }
-  if ((dns_receive_fifo = open("lib/misc/dns_receive_fifo", O_WRONLY)) == -1) {
+  sprintf(tmppath, "%s/misc/dns_receive_fifo", dir);
+  fprintf(stderr, "opening receive fifo: %s\n", tmppath);
+  if ((dns_receive_fifo = open(tmppath, O_WRONLY)) == -1) {
     perror("open fifo");
     exit(1);
   }

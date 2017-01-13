@@ -1144,21 +1144,21 @@ struct time_data {
 
 /* general player-related info, usually PC's and NPC's */
 struct char_player_data {
-  char passwd[MAX_PWD_LENGTH + 1];         /* character's password              */
-  char enc_passwd[crypto_pwhash_STRBYTES]; /* character's encrypted password    */
-  char *name;                              /* PC / NPC s name (kill ...  )      */
-  char *short_descr;                       /* for NPC 'actions'                 */
-  char *long_descr;                        /* for 'look'                        */
-  char *description;                       /* Extra descriptions                */
-  char *title;                             /* PC / NPC's title                  */
-  byte sex;                                /* PC / NPC's sex                    */
-  byte class;                              /* PC / NPC's class                  */
-  byte level;                              /* PC / NPC's level                  */
-  int hometown;                            /* PC s Hometown (zone)              */
-  struct time_data time;                   /* PC's AGE in days                  */
-  int weight;                              /* PC / NPC's weight                 */
-  int height;                              /* PC / NPC's height                 */
-  char host[HOST_LENGTH + 1];              /* PC ip of host they connected with */
+  char passwd[MAX_PWD_LENGTH + 1];             /* character's password              */
+  char enc_passwd[crypto_pwhash_STRBYTES + 1]; /* character's encrypted password    */
+  char *name;                                  /* PC / NPC s name (kill ...  )      */
+  char *short_descr;                           /* for NPC 'actions'                 */
+  char *long_descr;                            /* for 'look'                        */
+  char *description;                           /* Extra descriptions                */
+  char *title;                                 /* PC / NPC's title                  */
+  byte sex;                                    /* PC / NPC's sex                    */
+  byte class;                                  /* PC / NPC's class                  */
+  byte level;                                  /* PC / NPC's level                  */
+  int hometown;                                /* PC s Hometown (zone)              */
+  struct time_data time;                       /* PC's AGE in days                  */
+  int weight;                                  /* PC / NPC's weight                 */
+  int height;                                  /* PC / NPC's height                 */
+  char host[HOST_LENGTH + 1];                  /* PC ip of host they connected with */
 };
 
 /* Char's abilities. */

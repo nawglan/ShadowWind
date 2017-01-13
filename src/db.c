@@ -2648,6 +2648,9 @@ int load_char_text(char *name, struct char_data * char_element)
   memset((struct affected_type *) affected, 0, MAX_AFFECT * sizeof(struct affected_type));
   get_filename(name, filename, PTDAT_FILE);
 
+  *GET_PASSWD(ctmp) = '\0';
+  *GET_ENCPASSWD(ctmp) = '\0';
+
   if ((pfile = fopen(filename, "r")) == NULL) {
     return 0;
   }
@@ -2793,7 +2796,7 @@ int load_char_text(char *name, struct char_data * char_element)
         if (!strcmp(field, "exp")) {
           GET_EXP(ctmp) = numval;
         } else if (!strcmp(field, "enc_password")) {
-          strcpy(GET_ENCPASSWD(ctmp), value);
+          strncpy(GET_ENCPASSWD(ctmp), value, strlen(value));
         } else {
           sprintf(buf2, "Unknown field [%s]", field);
           stderr_log(buf2);
@@ -3137,7 +3140,6 @@ void save_char_text(struct char_data * ch, sh_int load_room)
   FILE *pfile;
   char tname[50];
   char filename[80];
-  char out[crypto_pwhash_STRBYTES];
   char descript[EXDSCR_LENGTH];
   char *p;
   struct affected_type affected[MAX_AFFECT];
@@ -3248,13 +3250,13 @@ void save_char_text(struct char_data * ch, sh_int load_room)
   if (GET_HEIGHT(ch)) {
     fprintf(pfile, "-height- %d\n", GET_HEIGHT(ch));
   }
-  if (GET_PASSWD(ch)) {
-    /* fprintf(pfile, "-password- %s\n", GET_PASSWD(ch)); */
-    if (crypto_pwhash_str(out, GET_PASSWD(ch), strlen(GET_PASSWD(ch)), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) != -1) {
-      strcpy(GET_ENCPASSWD(ch), out);
+  /* don't print out the password, just update encrypted password instead */
+  if (*GET_PASSWD(ch) != '\0') {
+    if (crypto_pwhash_str(GET_ENCPASSWD(ch), GET_PASSWD(ch), strlen(GET_PASSWD(ch)), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
+        /* no op */
     }
   }
-  if (GET_ENCPASSWD(ch)) {
+  if (*GET_ENCPASSWD(ch) != '\0') {
     fprintf(pfile, "-enc_password- %s\n", GET_ENCPASSWD(ch));
   }
   if (GET_SCREEN_HEIGHT(ch)) {

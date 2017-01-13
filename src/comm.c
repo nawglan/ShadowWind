@@ -63,8 +63,8 @@ extern void run_events(void);
 char *strip_color(char *from, char *to, int length);
 
 /* local globals */
-#define DNS_RECEIVE_FIFO "lib/misc/dns_receive_fifo"
-#define DNS_SEND_FIFO    "lib/misc/dns_send_fifo"
+#define DNS_RECEIVE_FIFO "misc/dns_receive_fifo"
+#define DNS_SEND_FIFO    "misc/dns_send_fifo"
 int dns_receive_fifo;
 int dns_send_fifo;
 pid_t lookup_host_process;
@@ -133,8 +133,7 @@ void perform_mobprog_activity();
 void perform_mob_hunt();
 void mprog_pulse();
 
-#define SWLIBPIDFILE "lib/misc/shadowwind.pid"
-#define SWPIDFILE "misc/shadowwind.pid"
+#define SWPIDFILE "shadowwind.pid"
 
 /* *********************************************************************
  *  main game loop and related stuff                                    *
@@ -170,6 +169,8 @@ int main(int argc, char **argv)
           fflush(NULL);
           exit(1);
         }
+        sprintf(buf, "Directory set to: %s", dir);
+        stderr_log(buf);
         break;
       case 'm':
         mini_mud = 1;
@@ -207,7 +208,8 @@ int main(int argc, char **argv)
       exit(1);
     }
   }
-  if ((pid_file = fopen(SWLIBPIDFILE, "r")) != NULL) {
+  sprintf(buf, "%s/misc/%s", dir, SWPIDFILE);
+  if ((pid_file = fopen(buf, "r")) != NULL) {
     pid_t old_pid;
 
     if (fscanf(pid_file, "%d", (int*) &old_pid)) {
@@ -219,34 +221,37 @@ int main(int argc, char **argv)
     }
     fclose(pid_file);
   }
-  if ((pid_file = fopen(SWLIBPIDFILE, "w")) == NULL) {
+  if ((pid_file = fopen(buf, "w")) == NULL) {
     raise(SIGABRT);
   }
   fprintf(pid_file, "%d\n", (int) getpid());
   fclose(pid_file);
 
   /* dnslookup */
-  unlink(DNS_RECEIVE_FIFO);
-  unlink(DNS_SEND_FIFO);
-  if (mkfifo(DNS_RECEIVE_FIFO, S_IRUSR | S_IWUSR) == -1) {
+  sprintf(buf, "%s/%s", dir, DNS_RECEIVE_FIFO);
+  unlink(buf);
+  if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
     perror("mkfifo receive");
     exit(1);
   }
-  if (mkfifo(DNS_SEND_FIFO, S_IRUSR | S_IWUSR) == -1) {
-    perror("mkfifo send");
-    exit(1);
-  }
-  sleep(1);
-  if ((dns_send_fifo = open(DNS_SEND_FIFO, O_RDWR | O_NONBLOCK)) == -1) {
-    perror("Open send fifo");
-    exit(1);
-  }
-  if ((dns_receive_fifo = open(DNS_RECEIVE_FIFO, O_RDWR | O_NONBLOCK)) == -1) {
+  if ((dns_receive_fifo = open(buf, O_RDWR | O_NONBLOCK)) == -1) {
     perror("Open receive fifo");
     exit(1);
   }
+  sprintf(buf, "%s/%s", dir, DNS_SEND_FIFO);
+  unlink(buf);
+  if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
+    perror("mkfifo send");
+    exit(1);
+  }
+  if ((dns_send_fifo = open(buf, O_RDWR | O_NONBLOCK)) == -1) {
+    perror("Open send fifo");
+    exit(1);
+  }
   if (!(lookup_host_process = fork())) {
-    execl("bin/lookup_process", "lookup_process", NULL);
+    sprintf(buf, "%s/../bin/lookup_process", dir);
+    stderr_log(buf);
+    execl(buf, "lookup_process", "-d", dir, NULL);
   }
   /* end dnslookup */
 
@@ -263,7 +268,8 @@ int main(int argc, char **argv)
 
   init_game(port);
 
-  if (unlink(SWPIDFILE)) {
+  sprintf(buf, "%s/misc/%s", dir, SWPIDFILE);
+  if (unlink(buf)) {
     perror("unlink");
   }
   return 0;

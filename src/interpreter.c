@@ -952,7 +952,7 @@ void nanny(struct descriptor_data * d, char *arg)
   extern char *race_menu;
 
   /* local variables */
-  char buf[100];
+  char buf[MAX_STRING_LENGTH];
   int load_result = 0, playing = 0, tmp_num = 0;
   char tmp_name[MAX_INPUT_LENGTH];
   char tmp_policy[MAX_STRING_LENGTH];
@@ -1234,16 +1234,41 @@ void nanny(struct descriptor_data * d, char *arg)
       if (!*arg)
         close_socket(d);
       else {
+        /* we have plaintext password, check it and then convert to encoded version */
         if (*GET_ENCPASSWD(d->character) == '\0' && *GET_PASSWD(d->character) != '\0') {
-          if (crypto_pwhash_str(GET_ENCPASSWD(d->character), GET_PASSWD(d->character), strlen(GET_PASSWD(d->character)), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
+          if (strcmp(GET_PASSWD(d->character), arg) == 0) {
+            if (crypto_pwhash_str(GET_ENCPASSWD(d->character), GET_PASSWD(d->character), strlen(GET_PASSWD(d->character)), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
+              *GET_PASSWD(d->character) = '\0';
+              save_char_text(d->character, NOWHERE);
+              save_text(d->character);
+              if (d->character->player.host[0] != '\0') {
+                sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+              } else {
+                sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+              }
+              mudlog(buf, 'P', COM_IMMORT, TRUE);
+            }
+          } else {
             if (d->character->player.host[0] != '\0') {
-              sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+              sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
             } else {
-              sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+              sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
             }
             mudlog(buf, 'P', COM_IMMORT, TRUE);
+            GET_BAD_PWS(d->character)++;
+            save_char_text(d->character, NOWHERE);
+            save_text(d->character);
+            if (++(d->bad_pws) >= 3) { /* 3 strikes and you're out. */
+              SEND_TO_Q("Wrong password... disconnecting.\r\n", d);
+              STATE(d) = CON_CLOSE;
+            } else {
+              SEND_TO_Q("Wrong password.\r\nPassword: ", d);
+              echo_off(d);
+            }
+            return;
           }
         }
+        mudlog(buf, 'P', COM_IMMORT, TRUE);
         if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg)) != 0) {
           if (d->character->player.host[0] != '\0') {
             sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));

@@ -1,21 +1,25 @@
-#!/bin/csh
-
+#!/usr/bin/tcsh
 set PORT=9999
 
-set FLAGS=''
+set LOCKDIR='/tmp/shadowwind'
+set MUDDIR='/home/dez/sw'
+set FLAGS="-d $MUDDIR/lib"
 
-cd ~/sw
-sort lib/text/helpneeded -o lib/text/helpneeded -t : -k +1 -u
+mkdir $LOCKDIR >>& /dev/null
+if ($status != 0) then
+  exit
+endif
+
+sort $MUDDIR/lib/text/helpneeded -o $MUDDIR/lib/text/helpneeded -t : -k +1 -u
 
 while (1)
-
   set DATE = (`date`);
-  echo "autoscript starting game $DATE" >> syslog
+  echo "autoscript starting game $DATE" >> $MUDDIR/syslog
 
 # Echo to log, and mail to admin about game restarts. next 4 lines.
 # Add in seperation and netstat information
   #echo "mailing admin game restart notification .."
-  cd ~/sw/log
+#  cd ~/sw/log
   #tail -n 30 syslog.6 > tail.txt &
   #netstat -m > nets.m
   #cat sep >> tail.txt
@@ -27,7 +31,7 @@ while (1)
 # Echo to log, and mail to admin about gdb outputs on restarts.
 #cannot let this next line go to background mode... or it mail same thing 
 #over and over.
-  cd ~/sw
+#  cd ~/sw
   #gdb bin/shadowwind lib/shadowwind.core < lib/command.lst > log/sw.gdb
   #cd ~/sw/log
   #cat sep2 >> sw.gdb
@@ -39,8 +43,7 @@ while (1)
   #mv lib/shadowwind.core.1 lib/shadowwind.core.2
 
 # Change to base dir and start the mud.
-  #cd ~/shadowwind
-  bin/shadowwind $FLAGS $PORT >>& syslog
+  $MUDDIR/bin/shadowwind $FLAGS $PORT >>& $MUDDIR/syslog
   #mv ~/shadowwind/shadowwind.core lib
 
 #  fgrep "death trap" syslog >> log/dts
@@ -48,46 +51,45 @@ while (1)
 #  fgrep "equipment lost" syslog >> log/rentgone
 #  fgrep "usage" syslog >> log/usage
 
-  fgrep ":A:" syslog >> log/levels
-  fgrep ":G:" syslog >> log/godcmds
-  fgrep ":K:" syslog >> log/rip
-  fgrep ":L:" syslog >> log/loadlog
-  fgrep ":P:" syslog >> log/badpws
-  fgrep ":Q:" syslog >> log/quests
-  fgrep ":W:" syslog >> log/delete
-  fgrep ":X:" syslog >> log/cheatlog
-  fgrep ":Y:" syslog >> log/pkpt
+  fgrep ":A:" $MUDDIR/syslog >> $MUDDIR/log/levels
+  fgrep ":G:" $MUDDIR/syslog >> $MUDDIR/log/godcmds
+  fgrep ":K:" $MUDDIR/syslog >> $MUDDIR/log/rip
+  fgrep ":L:" $MUDDIR/syslog >> $MUDDIR/log/loadlog
+  fgrep ":P:" $MUDDIR/syslog >> $MUDDIR/log/badpws
+  fgrep ":Q:" $MUDDIR/syslog >> $MUDDIR/log/quests
+  fgrep ":W:" $MUDDIR/syslog >> $MUDDIR/log/delete
+  fgrep ":X:" $MUDDIR/syslog >> $MUDDIR/log/cheatlog
+  fgrep ":Y:" $MUDDIR/syslog >> $MUDDIR/log/pkpt
 
-  fgrep "new player" syslog >> log/newplayers
-  fgrep "SYSERR" syslog >> log/errors
+  fgrep "new player" $MUDDIR/syslog >> $MUDDIR/log/newplayers
+  fgrep "SYSERR" $MUDDIR/syslog >> $MUDDIR/log/errors
 
-  rm log/syslog.1
-  mv log/syslog.2 log/syslog.1
-  mv log/syslog.3 log/syslog.2
-  mv log/syslog.4 log/syslog.3
-  mv log/syslog.5 log/syslog.4
-  mv log/syslog.6 log/syslog.5
-  mv syslog       log/syslog.6
-  touch syslog
+  rm $MUDDIR/log/syslog.1
+  mv $MUDDIR/log/syslog.2 $MUDDIR/log/syslog.1
+  mv $MUDDIR/log/syslog.3 $MUDDIR/log/syslog.2
+  mv $MUDDIR/log/syslog.4 $MUDDIR/log/syslog.3
+  mv $MUDDIR/log/syslog.5 $MUDDIR/log/syslog.4
+  mv $MUDDIR/log/syslog.6 $MUDDIR/log/syslog.5
+  mv $MUDDIR/syslog       $MUDDIR/log/syslog.6
+  touch $MUDDIR/syslog
 
-  if (! -r .fastboot) then
+  if (! -r $MUDDIR/.fastboot) then
     sleep 5
   else
-    rm .fastboot
+    rm $MUDDIR/.fastboot
     sleep 5
   endif
 
-  if (-e .killscript) then
+  if (-e $MUDDIR/.killscript) then
     set DATE = (`date`);
-    echo "autoscript killed $DATE"  >> syslog
-    rm .killscript
+    echo "autoscript killed $DATE"  >> $MUDDIR/syslog
+    rm $MUDDIR/.killscript
+    rmdir $LOCKDIR
     exit
   endif 
 
-  while (-r pause) 
+  while (-r $MUDDIR/pause) 
     sleep 60
   end
-
 end
-
 
