@@ -22,8 +22,9 @@ struct actd_msg *get_actd(int vnum)
   actd = actd_list;
 
   while (actd) {
-    if (vnum == actd->actd_nr)
+    if (vnum == actd->actd_nr) {
       return actd;
+    }
     actd = actd->next;
   }
   return NULL;
@@ -46,8 +47,9 @@ void load_actd(void)
   }
 
   fgets(chk, 128, fl);
-  while (!feof(fl) && (*chk == '\n' || *chk == '*'))
+  while (!feof(fl) && (*chk == '\n' || *chk == '*')) {
     fgets(chk, 128, fl);
+  }
 
   while (*chk == 'A') {
     fgets(chk, 128, fl);
@@ -69,8 +71,9 @@ void load_actd(void)
     actd->others_object = fread_string(fl, buf2);
 
     fgets(chk, 128, fl);
-    while (!feof(fl) && (*chk == '\n' || *chk == '*'))
+    while (!feof(fl) && (*chk == '\n' || *chk == '*')) {
       fgets(chk, 128, fl);
+    }
   }
 
   fclose(fl);
@@ -96,11 +99,11 @@ ACMD(do_actd)
       send_to_char("\r\n", ch);
     }
   } else {
-
     j = atoi(argument);
     while (actd) {
-      if (j == actd->actd_nr)
+      if (j == actd->actd_nr) {
         break;
+      }
       actd = actd->next;
     }
 
@@ -131,3 +134,4 @@ ACMD(do_actd)
     send_to_char("\r\n", ch);
   }
 }
+

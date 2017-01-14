@@ -57,43 +57,50 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
    * Check for special routines (North is 1 in command list, but 0 here) Note
    * -- only check if following; this avoids 'double spec-proc' bug
    */
-  if (need_specials_check && special(ch, dir + 1, ""))
+  if (need_specials_check && special(ch, dir + 1, "")) {
     return 0;
+  }
 
   if (ROOM_FLAGGED(EXIT(ch, dir)->to_room, ROOM_PRIVATE)) {
-    if (world[EXIT(ch, dir)->to_room].people && world[EXIT(ch, dir)->to_room].people->next_in_room)
+    if (world[EXIT(ch, dir)->to_room].people && world[EXIT(ch, dir)->to_room].people->next_in_room) {
       if (!COM_FLAGGED(ch, COM_ADMIN)) {
         send_to_char("There is a private conversation in that room.\r\n", ch);
         return 0;
       }
+    }
   }
   if (ROOM_FLAGGED(EXIT(ch, dir)->to_room, ROOM_GODROOM)) {
-    for (ch_list = character_list; ch_list; ch_list = ch_list->next)
+    for (ch_list = character_list; ch_list; ch_list = ch_list->next) {
       if (IN_ROOM(ch_list) == EXIT(ch, dir)->to_room && !IS_NPC(ch_list)) {
         if (!COM_FLAGGED(ch, COM_ADMIN)) {
           send_to_char("That room is restricted.\r\n", ch);
           return 0;
         }
       }
+    }
   }
   if (!IS_NPC(ch) && ROOM_FLAGGED(EXIT(ch, dir)->to_room, ROOM_TUNNEL)) {
     /* check to see if another PC is in the room... */
-    for (ch_list = character_list; ch_list; ch_list = ch_list->next)
+    for (ch_list = character_list; ch_list; ch_list = ch_list->next) {
       if (IN_ROOM(ch_list) == EXIT(ch, dir)->to_room && !IS_NPC(ch_list)) {
         if (GET_LEVEL(ch) < LVL_IMMORT) {
           send_to_char("It is a little too crowded in that direction.\r\n", ch);
           return 0;
         }
       }
+    }
   }
   /* if this room or the one we're going to needs a boat, check for one */
 
   if ((world[ch->in_room].sector_type == SECT_WATER_NOSWIM) || (world[EXIT(ch, dir)->to_room].sector_type == SECT_WATER_NOSWIM)) {
-    if (AFF2_FLAGGED(ch, AFF2_WRAITHFORM))
+    if (AFF2_FLAGGED(ch, AFF2_WRAITHFORM)) {
       has_boat = TRUE;
-    for (obj = ch->carrying; obj; obj = obj->next_content)
-      if (GET_OBJ_TYPE(obj) == ITEM_BOAT)
+    }
+    for (obj = ch->carrying; obj; obj = obj->next_content) {
+      if (GET_OBJ_TYPE(obj) == ITEM_BOAT) {
         has_boat = TRUE;
+      }
+    }
     if (!IS_AFFECTED(ch,AFF_WATERWALK) && !has_boat && !IS_AFFECTED(ch,AFF_FLY) && (GET_LEVEL(ch) < LVL_IMMORT)) {
       send_to_char("You need a boat to go there.\r\n", ch);
       return 0;
@@ -104,10 +111,12 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   }
 
   need_movement = ((movement_loss[IN_SECTOR(IN_ROOM(ch))] + movement_loss[IN_SECTOR(EXIT(ch, dir)->to_room)]) >> 1) + EXIT(ch, dir)->add_move;
-  if (IS_AFFECTED(ch,AFF_FLY) || MOUNTING(ch))
+  if (IS_AFFECTED(ch,AFF_FLY) || MOUNTING(ch)) {
     need_movement >>= 1;
-  if (COM_FLAGGED(ch, COM_IMMORT))
+  }
+  if (COM_FLAGGED(ch, COM_IMMORT)) {
     need_movement = 0;
+  }
   if (GET_WINDSPEED(IN_ZONE(ch)) > 70 && GET_WINDDIR(IN_ZONE(ch)) == dir) {
     need_movement += GET_WINDSPEED(IN_ZONE(ch)) / 10;
     send_to_char("The wind requires great force to move against it.\r\n", ch);
@@ -115,18 +124,21 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   if (GET_WINDSPEED(IN_ZONE(ch)) > 70 && GET_WINDDIR(IN_ZONE(ch)) == rev_dir[dir]) {
     need_movement -= GET_WINDSPEED(IN_ZONE(ch)) / 10;
     send_to_char("The wind at your back eases your movement.\r\n", ch);
-    if (need_movement < 1)
+    if (need_movement < 1) {
       need_movement = 1;
+    }
   }
 
-  if (AFF2_FLAGGED(ch, AFF2_WRAITHFORM))
+  if (AFF2_FLAGGED(ch, AFF2_WRAITHFORM)) {
     need_movement = 0;
+  }
 
   if (GET_MOVE(ch) < need_movement && !IS_NPC(ch)) {
-    if (need_specials_check && ch->master)
+    if (need_specials_check && ch->master) {
       send_to_char("You are too exhausted to follow.\r\n", ch);
-    else
+    } else {
       send_to_char("You are too exhausted.\r\n", ch);
+    }
 
     return 0;
   }
@@ -178,14 +190,16 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
   }
 
-  if (PRF_FLAGGED(ch, PRF_BRIEF))
+  if (PRF_FLAGGED(ch, PRF_BRIEF)) {
     look_at_room(ch, 0);
-  else
+  } else {
     look_at_room(ch, 1);
+  }
   if (!AFF2_FLAGGED(ch, AFF2_WRAITHFORM) && ROOM_FLAGGED(ch->in_room, ROOM_UNAFFECT)) {
     if (ch->affected) {
-      while (ch->affected)
+      while (ch->affected) {
         affect_remove(ch, ch->affected);
+      }
       send_to_char("There is a brief flash of light\r\n"
           "You feel slightly different.\r\n", ch);
     }
@@ -206,16 +220,21 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
     for (fakech = world[ch->in_room].people; fakech; fakech = fakech->next_in_room) {
       if (IS_NPC(fakech) && MOB_FLAGGED(fakech, MOB_AGGRESSIVE | MOB_AGGR_TO_ALIGN) && AWAKE(fakech) && !FIGHTING(fakech) && !HUNTING(fakech)) {
         for (vict = world[fakech->in_room].people; vict && !found; vict = vict->next_in_room) {
-          if (!CAN_SEE(fakech, vict) || PRF_FLAGGED(vict, PRF_NOHASSLE))
+          if (!CAN_SEE(fakech, vict) || PRF_FLAGGED(vict, PRF_NOHASSLE)) {
             continue;
-          if (IS_AFFECTED(vict, AFF_CHARM) && IS_NPC(vict->master))
+          }
+          if (IS_AFFECTED(vict, AFF_CHARM) && IS_NPC(vict->master)) {
             continue;
-          if (IS_AFFECTED(vict, AFF_PROTECT_EVIL) && IS_EVIL(fakech))
+          }
+          if (IS_AFFECTED(vict, AFF_PROTECT_EVIL) && IS_EVIL(fakech)) {
             continue;
-          if (MOB_FLAGGED(fakech, MOB_WIMPY) && AWAKE(vict))
+          }
+          if (MOB_FLAGGED(fakech, MOB_WIMPY) && AWAKE(vict)) {
             continue;
-          if (IS_NPC(vict) && !IS_AFFECTED(vict, AFF_CHARM))
+          }
+          if (IS_NPC(vict) && !IS_AFFECTED(vict, AFF_CHARM)) {
             continue;
+          }
           if (!MOB_FLAGGED(fakech, MOB_AGGR_TO_ALIGN) || (MOB_FLAGGED(fakech, MOB_AGGR_EVIL) && IS_EVIL(vict)) || (MOB_FLAGGED(fakech, MOB_AGGR_NEUTRAL) && IS_NEUTRAL(vict)) || (MOB_FLAGGED(fakech, MOB_AGGR_GOOD) && IS_GOOD(vict))) {
             for (i = 0; (i < 10); i++) {
               if (vict->player_specials->hunters[i] == NULL && vict->player_specials->hunters[i] != fakech) {
@@ -243,9 +262,9 @@ int perform_move(struct char_data * ch, int dir, int need_specials_check)
   int was_in;
   struct follow_type *k, *next;
 
-  if (ch == NULL || dir < 0 || dir >= NUM_OF_DIRS)
+  if (ch == NULL || dir < 0 || dir >= NUM_OF_DIRS) {
     return 0;
-  else if (!EXIT(ch, dir) || EXIT(ch, dir)->to_room == NOWHERE || (!(AFF2_FLAGGED(ch, AFF2_WRAITHFORM) && !IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN)) && IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED))) {
+  } else if (!EXIT(ch, dir) || EXIT(ch, dir)->to_room == NOWHERE || (!(AFF2_FLAGGED(ch, AFF2_WRAITHFORM) && !IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN)) && IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED))) {
     switch (number(0, 6)) {
       case 0:
         send_to_char("Alas, you cannot go that way...\r\n", ch);
@@ -270,17 +289,18 @@ int perform_move(struct char_data * ch, int dir, int need_specials_check)
         break;
     }
   } else {
-
     if (!ch->followers && !MOUNTING(ch)) {
       return (do_simple_move(ch, dir, need_specials_check));
     }
 
     was_in = ch->in_room;
-    if (!do_simple_move(ch, dir, need_specials_check))
+    if (!do_simple_move(ch, dir, need_specials_check)) {
       return 0;
+    }
 
-    if (MOUNTING(ch))
+    if (MOUNTING(ch)) {
       perform_move(MOUNTING(ch), dir, 1);
+    }
 
     for (k = ch->followers; k; k = next) {
       next = k->next;
@@ -317,8 +337,9 @@ ACMD(do_move)
    * It cannot be done in perform_move because perform_move is called
    * by other functions which do not require the remapping.
    */
-  if (MOUNTED_BY(ch))
+  if (MOUNTED_BY(ch)) {
     return;
+  }
   if (GET_DRAGGING(ch)) {
     if (perform_move(ch, cmd - 1, 0)) {
       sprintf(buf, "%s drags $p along.", GET_NAME(ch));
@@ -331,10 +352,12 @@ ACMD(do_move)
       act(buf, FALSE, ch, GET_DRAGGING(ch), 0, TO_CHAR);
       sprintf(buf, "%s drags $p along with $m.", GET_NAME(ch));
       act(buf, TRUE, ch, GET_DRAGGING(ch), 0, TO_ROOM);
-    } else
+    } else {
       GET_MOVE(ch) -= ((GET_OBJ_WEIGHT(GET_DRAGGING(ch)) * 15) / CAN_CARRY_W(ch));
-  } else
+    }
+  } else {
     perform_move(ch, cmd - 1, 0);
+  }
 }
 
 int find_door(struct char_data * ch, char *type, char *dir)
@@ -346,22 +369,24 @@ int find_door(struct char_data * ch, char *type, char *dir)
       send_to_char("That's not a direction.\r\n", ch);
       return -1;
     }
-    if (EXIT(ch, door) && EXIT(ch, door)->keyword && isname(type, EXIT(ch, door)->keyword) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN))
+    if (EXIT(ch, door) && EXIT(ch, door)->keyword && isname(type, EXIT(ch, door)->keyword) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
       return door;
-    else if (EXIT(ch, door) && EXIT(ch, door)->keyword) {
+    } else if (EXIT(ch, door) && EXIT(ch, door)->keyword) {
       sprintf(buf2, "I see no %s there.\r\n", type);
       send_to_char(buf2, ch);
       return -1;
-    } else if (EXIT(ch, door) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN))
+    } else if (EXIT(ch, door) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
       return door;
-    else {
+    } else {
       send_to_char("I really don't see how you can close anything there.\r\n", ch);
       return -1;
     }
   } else { /* try to locate the keyword */
-    for (door = 0; door < NUM_OF_DIRS; door++)
-      if (EXIT(ch, door) && EXIT(ch, door)->keyword && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN) && isname(type, EXIT(ch, door)->keyword))
+    for (door = 0; door < NUM_OF_DIRS; door++) {
+      if (EXIT(ch, door) && EXIT(ch, door)->keyword && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN) && isname(type, EXIT(ch, door)->keyword)) {
         return door;
+      }
+    }
 
     sprintf(buf2, "There doesn't seem to be %s %s here.\r\n", AN(type), type);
     send_to_char(buf2, ch);
@@ -442,9 +467,9 @@ ACMD(do_close)
 
   two_arguments(argument, type, dir);
 
-  if (!*type)
+  if (!*type) {
     send_to_char("Close what?\r\n", ch);
-  else if (generic_find(argument, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &victim, &obj)) {
+  } else if (generic_find(argument, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &victim, &obj)) {
     /* this is an object */
     if (GET_OBJ_TYPE(obj) != ITEM_CONTAINER) {
       send_to_char("That's not a container.\r\n", ch);
@@ -495,13 +520,17 @@ int has_key(struct char_data * ch, int key)
 {
   struct obj_data *o;
 
-  for (o = ch->carrying; o; o = o->next_content)
-    if (GET_OBJ_VNUM(o) == key)
+  for (o = ch->carrying; o; o = o->next_content) {
+    if (GET_OBJ_VNUM(o) == key) {
       return 1;
+    }
+  }
 
-  if (ch->equipment[WEAR_HOLD])
-    if (GET_OBJ_VNUM(ch->equipment[WEAR_HOLD]) == key)
+  if (ch->equipment[WEAR_HOLD]) {
+    if (GET_OBJ_VNUM(ch->equipment[WEAR_HOLD]) == key) {
       return 1;
+    }
+  }
 
   return 0;
 }
@@ -654,11 +683,13 @@ ACMD(do_enter)
         }
         exists = TRUE;
       }
-      if (valid && exists)
+      if (valid && exists) {
         break;
+      }
     }
-    if (valid && exists)
+    if (valid && exists) {
       break;
+    }
   }
 
   if (!valid) {
@@ -880,33 +911,34 @@ ACMD(do_wake)
 
   one_argument(argument, arg);
   if (*arg) {
-    if (GET_POS(ch) == POS_SLEEPING)
+    if (GET_POS(ch) == POS_SLEEPING) {
       send_to_char("You can't wake people up if you're asleep yourself!\r\n", ch);
-    else if ((vict = get_char_room_vis(ch, arg)) == NULL)
+    } else if ((vict = get_char_room_vis(ch, arg)) == NULL) {
       send_to_char(NOPERSON, ch);
-    else if (vict == ch)
+    } else if (vict == ch) {
       self = 1;
-    else if (GET_POS(vict) > POS_SLEEPING)
+    } else if (GET_POS(vict) > POS_SLEEPING) {
       act("$E is already awake.", FALSE, ch, 0, vict, TO_CHAR);
-    else if (IS_AFFECTED(vict, AFF_SLEEP))
+    } else if (IS_AFFECTED(vict, AFF_SLEEP)) {
       act("You can't wake $M up!", FALSE, ch, 0, vict, TO_CHAR);
-    else if (AFF2_FLAGGED(vict, AFF2_KNOCKEDOUT))
+    } else if (AFF2_FLAGGED(vict, AFF2_KNOCKEDOUT)) {
       act("You can't wake $M up!", FALSE, ch, 0, vict, TO_CHAR);
-    else if (GET_POS(vict) < POS_SLEEPING)
+    } else if (GET_POS(vict) < POS_SLEEPING) {
       act("You can't wake $M up!", FALSE, ch, 0, vict, TO_CHAR);
-    else {
+    } else {
       act("You wake $M up.", FALSE, ch, 0, vict, TO_CHAR);
       act("You are awakened by $n.", FALSE, ch, 0, vict, TO_VICT | TO_SLEEP);
       GET_POS(vict) = POS_SITTING;
     }
-    if (!self)
+    if (!self) {
       return;
+    }
   }
-  if (IS_AFFECTED(ch, AFF_SLEEP))
+  if (IS_AFFECTED(ch, AFF_SLEEP)) {
     send_to_char("You can't wake up!\r\n", ch);
-  else if (GET_POS(ch) > POS_SLEEPING)
+  } else if (GET_POS(ch) > POS_SLEEPING) {
     send_to_char("You are already awake...\r\n", ch);
-  else {
+  } else {
     send_to_char("You awaken, and sit up.\r\n", ch);
     act("$n awakens.", TRUE, ch, 0, 0, TO_ROOM);
     GET_POS(ch) = POS_SITTING;
@@ -950,10 +982,12 @@ ACMD(do_follow)
         act("Sorry, but following in loops is not allowed.", FALSE, ch, 0, 0, TO_CHAR);
         return;
       }
-      if (ch->master)
+      if (ch->master) {
         stop_follower(ch);
+      }
       REMOVE_BIT(AFF_FLAGS(ch), AFF_GROUP);
       add_follower(ch, leader);
     }
   }
 }
+

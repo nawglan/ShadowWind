@@ -202,14 +202,18 @@ void get_check_money(struct char_data * ch, struct obj_data * obj)
     if (PRF_FLAGGED (ch, PRF_AUTOSPLIT) && IS_AFFECTED(ch, AFF_GROUP)) {
       tbuf[0] = ' ';
       tbuf[1] = '\0';
-      if (GET_OBJ_VAL(obj, 0))
+      if (GET_OBJ_VAL(obj, 0)) {
         sprintf(tbuf, "%s %d p", tbuf, GET_OBJ_VAL(obj, 0));
-      if (GET_OBJ_VAL(obj, 1))
+      }
+      if (GET_OBJ_VAL(obj, 1)) {
         sprintf(tbuf, "%s %d g", tbuf, GET_OBJ_VAL(obj, 1));
-      if (GET_OBJ_VAL(obj, 2))
+      }
+      if (GET_OBJ_VAL(obj, 2)) {
         sprintf(tbuf, "%s %d s", tbuf, GET_OBJ_VAL(obj, 2));
-      if (GET_OBJ_VAL(obj, 3))
+      }
+      if (GET_OBJ_VAL(obj, 3)) {
         sprintf(tbuf, "%s %d c", tbuf, GET_OBJ_VAL(obj, 3));
+      }
 
       do_split(ch, tbuf, 0, 0);
     }
@@ -448,9 +452,9 @@ void perform_drop_plat(struct char_data * ch, int amount, byte mode, sh_int RDR)
 
   if (amount <= 0) {
     send_to_char("Heh heh heh.. we are jolly funny today, eh?\r\n", ch);
-  } else if (GET_PLAT(ch) < amount)
+  } else if (GET_PLAT(ch) < amount) {
     send_to_char("You don't have that many coins!\r\n", ch);
-  else {
+  } else {
     if (mode != SCMD_JUNK) {
       WAIT_STATE(ch, PULSE_VIOLENCE);
       /* to prevent coin-bombing */
@@ -799,9 +803,9 @@ ACMD(do_drop)
    GET_GOLD(ch) += amount;
    }
    */
-  if (!IS_NPC(ch))
+  if (!IS_NPC(ch)) {
     Crash_save(ch, RENT_CRASH);
-
+  }
 }
 
 void perform_give(struct char_data * ch, struct char_data * vict, struct obj_data * obj)
@@ -873,8 +877,9 @@ void perform_give_plat(struct char_data * ch, struct char_data * vict, int amoun
   sprintf(buf, "$n gives %s to $N.", money_desc(amount * 1000));
   MOBTrigger = FALSE;
   act(buf, TRUE, ch, 0, vict, TO_NOTVICT);
-  if (IS_NPC(ch) || (!COM_FLAGGED(ch, COM_QUEST)))
+  if (IS_NPC(ch) || (!COM_FLAGGED(ch, COM_QUEST))) {
     GET_PLAT(ch) -= amount;
+  }
   GET_TEMP_GOLD(ch) -= amount * 1000;
   GET_PLAT(vict) += amount;
   GET_TEMP_GOLD(vict) += amount * 1000;
@@ -1097,8 +1102,9 @@ void weight_change_object(struct obj_data * obj, int weight)
     GET_OBJ_WEIGHT(obj) += weight;
     done = 1;
   }
-  if (!done)
+  if (!done) {
     stderr_log("SYSERR: Unknown attempt to subtract weight from an object.");
+  }
 }
 
 void name_from_drinkcon(struct obj_data * obj)
@@ -1107,8 +1113,9 @@ void name_from_drinkcon(struct obj_data * obj)
   char *new_name;
   extern struct obj_data *obj_proto;
 
-  for (i = 0; (*((obj->name) + i) != ' ') && (*((obj->name) + i) != '\0'); i++)
+  for (i = 0; (*((obj->name) + i) != ' ') && (*((obj->name) + i) != '\0'); i++) {
     ;
+  }
 
   if (*((obj->name) + i) == ' ') {
     new_name = strdup((obj->name) + i + 1);
@@ -1440,8 +1447,9 @@ ACMD(do_pour)
     act("You gently fill $p from $P.", FALSE, ch, to_obj, from_obj, TO_CHAR);
   }
   /* New alias */
-  if (GET_OBJ_VAL(to_obj, 1) == 0)
+  if (GET_OBJ_VAL(to_obj, 1) == 0) {
     name_to_drinkcon(to_obj, GET_OBJ_VAL(from_obj, 2));
+  }
 
   /* First same type liq. */GET_OBJ_VAL(to_obj, 2) = GET_OBJ_VAL(from_obj, 2);
 
@@ -1468,62 +1476,35 @@ ACMD(do_pour)
 
 void wear_message(struct char_data * ch, struct obj_data * obj, int where)
 {
-  char *wear_messages[][2] = { {"$n wears $p on $s chest.", "You wear $p on your chest."},
-
-  {"$n slides $p on to $s right ring finger.", "You slide $p on to your right ring finger."},
-
-  {"$n slides $p on to $s left ring finger.", "You slide $p on to your left ring finger."},
-
-  {"$n wears $p around $s neck.", "You wear $p around your neck."},
-
-  {"$n wears $p around $s neck.", "You wear $p around your neck."},
-
-  {"$n wears $p on $s body.", "You wear $p on your body.", },
-
-  {"$n wears $p on $s head.", "You wear $p on your head."},
-
-  {"$n puts $p on $s legs.", "You put $p on your legs."},
-
-  {"$n wears $p on $s feet.", "You wear $p on your feet."},
-
-  {"$n puts $p on $s hands.", "You put $p on your hands."},
-
-  {"$n wears $p on $s arms.", "You wear $p on your arms."},
-
-  {"$n straps $p around $s arm as a shield.", "You start to use $p as a shield."},
-
-  {"$n wears $p about $s body.", "You wear $p around your body."},
-
-  {"$n wears $p around $s waist.", "You wear $p around your waist."},
-
-  {"$n puts $p around $s right wrist.", "You put $p around your right wrist."},
-
-  {"$n puts $p around $s left wrist.", "You put $p around your left wrist."},
-
-  {"$n wields $p.", "You wield $p."},
-
-  {"$n grabs $p.", "You grab $p."},
-
-  {"$n puts $p on $s face.", "You put $p on your face."},
-
-  {"$n sticks $p in $s left ear.", "You stick $p in your left ear."},
-
-  {"$n sticks $p in $s right ear.", "You stick $p in your right ear."},
-
-  {"$n wears $p over $s eyes.", "You wear $p over your eyes."},
-
-  {"$n wears $p around $s left ankle.", "You wear $p around your left ankle."},
-
-  {"$n wears $p around $s right ankle.", "You wear $p around your right ankle."},
-
-  {"$n wields $p.", "You wield $p."},
-
-  {"$n grabs $p.", "You grab $p."},
-
-  {"$n wields $p.", "You wield $p."},
-
-  {"$n lights $p and holds it.", "You light $p and hold it."}
-
+  char *wear_messages[][2] = {
+      {"$n wears $p on $s chest.", "You wear $p on your chest."},
+      {"$n slides $p on to $s right ring finger.", "You slide $p on to your right ring finger."},
+      {"$n slides $p on to $s left ring finger.", "You slide $p on to your left ring finger."},
+      {"$n wears $p around $s neck.", "You wear $p around your neck."},
+      {"$n wears $p around $s neck.", "You wear $p around your neck."},
+      {"$n wears $p on $s body.", "You wear $p on your body.", },
+      {"$n wears $p on $s head.", "You wear $p on your head."},
+      {"$n puts $p on $s legs.", "You put $p on your legs."},
+      {"$n wears $p on $s feet.", "You wear $p on your feet."},
+      {"$n puts $p on $s hands.", "You put $p on your hands."},
+      {"$n wears $p on $s arms.", "You wear $p on your arms."},
+      {"$n straps $p around $s arm as a shield.", "You start to use $p as a shield."},
+      {"$n wears $p about $s body.", "You wear $p around your body."},
+      {"$n wears $p around $s waist.", "You wear $p around your waist."},
+      {"$n puts $p around $s right wrist.", "You put $p around your right wrist."},
+      {"$n puts $p around $s left wrist.", "You put $p around your left wrist."},
+      {"$n wields $p.", "You wield $p."},
+      {"$n grabs $p.", "You grab $p."},
+      {"$n puts $p on $s face.", "You put $p on your face."},
+      {"$n sticks $p in $s left ear.", "You stick $p in your left ear."},
+      {"$n sticks $p in $s right ear.", "You stick $p in your right ear."},
+      {"$n wears $p over $s eyes.", "You wear $p over your eyes."},
+      {"$n wears $p around $s left ankle.", "You wear $p around your left ankle."},
+      {"$n wears $p around $s right ankle.", "You wear $p around your right ankle."},
+      {"$n wields $p.", "You wield $p."},
+      {"$n grabs $p.", "You grab $p."},
+      {"$n wields $p.", "You wield $p."},
+      {"$n lights $p and holds it.", "You light $p and hold it."}
   };
 
   if (GET_OBJ_TYPE(obj) == ITEM_LIGHT) {
@@ -1539,9 +1520,65 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
 {
   int skillnum = spells[find_skill_num("dual wield")].spellindex;
 
-  int wear_bitvectors[] = {ITEM_WEAR_BADGE, ITEM_WEAR_FINGER, ITEM_WEAR_FINGER, ITEM_WEAR_NECK, ITEM_WEAR_NECK, ITEM_WEAR_BODY, ITEM_WEAR_HEAD, ITEM_WEAR_LEGS, ITEM_WEAR_FEET, ITEM_WEAR_HANDS, ITEM_WEAR_ARMS, ITEM_WEAR_SHIELD, ITEM_WEAR_ABOUT, ITEM_WEAR_WAIST, ITEM_WEAR_WRIST, ITEM_WEAR_WRIST, ITEM_WEAR_WIELD, ITEM_WEAR_TAKE, ITEM_WEAR_FACE, ITEM_WEAR_EAR, ITEM_WEAR_EAR, ITEM_WEAR_EYES, ITEM_WEAR_ANKLES, ITEM_WEAR_ANKLES, ITEM_WEAR_WIELD, ITEM_WEAR_HOLD, ITEM_WEAR_2HANDED};
+  int wear_bitvectors[] = {
+      ITEM_WEAR_BADGE,
+      ITEM_WEAR_FINGER,
+      ITEM_WEAR_FINGER,
+      ITEM_WEAR_NECK,
+      ITEM_WEAR_NECK,
+      ITEM_WEAR_BODY,
+      ITEM_WEAR_HEAD,
+      ITEM_WEAR_LEGS,
+      ITEM_WEAR_FEET,
+      ITEM_WEAR_HANDS,
+      ITEM_WEAR_ARMS,
+      ITEM_WEAR_SHIELD,
+      ITEM_WEAR_ABOUT,
+      ITEM_WEAR_WAIST,
+      ITEM_WEAR_WRIST,
+      ITEM_WEAR_WRIST,
+      ITEM_WEAR_WIELD,
+      ITEM_WEAR_TAKE,
+      ITEM_WEAR_FACE,
+      ITEM_WEAR_EAR,
+      ITEM_WEAR_EAR,
+      ITEM_WEAR_EYES,
+      ITEM_WEAR_ANKLES,
+      ITEM_WEAR_ANKLES,
+      ITEM_WEAR_WIELD,
+      ITEM_WEAR_HOLD,
+      ITEM_WEAR_2HANDED
+  };
 
-  char *already_wearing[] = {"You're already wearing a badge.\r\n", "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n", "You're already wearing something on both of your ring fingers.\r\n", "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n", "You can't wear anything else around your neck.\r\n", "You're already wearing something on your body.\r\n", "You're already wearing something on your head.\r\n", "You're already wearing something on your legs.\r\n", "You're already wearing something on your feet.\r\n", "You're already wearing something on your hands.\r\n", "You're already wearing something on your arms.\r\n", "You're already using a shield.\r\n", "You're already wearing something about your body.\r\n", "You already have something around your waist.\r\n", "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n", "You're already wearing something around both of your wrists.\r\n", "You're already wielding a weapon.\r\n", "You're already holding something.\r\n", "You're already wearing something on your face.\r\n", "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n", "You're already using earrings in both your ears.\r\n", "You're already wearing something on your eyes.\r\n", "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n", "You're already wearing something on both your ankles.\r\n", "Your hands are full.\r\n", "Your hands are full.\r\n", "You need both hands free to wield that.\r\n"};
+  char *already_wearing[] = {
+      "You're already wearing a badge.\r\n",
+      "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
+      "You're already wearing something on both of your ring fingers.\r\n",
+      "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
+      "You can't wear anything else around your neck.\r\n",
+      "You're already wearing something on your body.\r\n",
+      "You're already wearing something on your head.\r\n",
+      "You're already wearing something on your legs.\r\n",
+      "You're already wearing something on your feet.\r\n",
+      "You're already wearing something on your hands.\r\n",
+      "You're already wearing something on your arms.\r\n",
+      "You're already using a shield.\r\n",
+      "You're already wearing something about your body.\r\n",
+      "You already have something around your waist.\r\n",
+      "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
+      "You're already wearing something around both of your wrists.\r\n",
+      "You're already wielding a weapon.\r\n",
+      "You're already holding something.\r\n",
+      "You're already wearing something on your face.\r\n",
+      "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n",
+      "You're already using earrings in both your ears.\r\n",
+      "You're already wearing something on your eyes.\r\n",
+      "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n",
+      "You're already wearing something on both your ankles.\r\n",
+      "Your hands are full.\r\n",
+      "Your hands are full.\r\n",
+      "You need both hands free to wield that.\r\n"
+  };
 
   /* Pets can only use lights */
   if (IS_NPC(ch) && IS_AFFECTED(ch, AFF_CHARM) && (GET_OBJ_TYPE(obj) != ITEM_LIGHT)) {
@@ -1633,10 +1670,11 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
     return;
   }
 
-  if ((GET_OBJ_TYPE(obj) == ITEM_LIGHT) && (where == WEAR_HOLD_2))
+  if ((GET_OBJ_TYPE(obj) == ITEM_LIGHT) && (where == WEAR_HOLD_2)) {
     wear_message(ch, obj, where - 10);
-  else
+  } else {
     wear_message(ch, obj, where);
+  }
   obj_from_char(obj);
   equip_char(ch, obj, where);
 }
@@ -1648,40 +1686,57 @@ int find_eq_pos(struct char_data * ch, struct obj_data * obj, char *arg)
   static char *keywords[] = {"badge", "finger", "!RESERVED!", "neck", "!RESERVED!", "body", "head", "legs", "feet", "hands", "arms", "shield", "about", "waist", "wrist", "!RESERVED!", "!RESERVED!", "!RESERVED!", "!RESERVED!", "face", "ear", "eyes", "ankles", "\n"};
 
   if (!arg || !*arg) {
-    if (CAN_WEAR(obj, ITEM_WEAR_FINGER))
+    if (CAN_WEAR(obj, ITEM_WEAR_FINGER)) {
       where = WEAR_FINGER_R;
-    if (CAN_WEAR(obj, ITEM_WEAR_NECK))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_NECK)) {
       where = WEAR_NECK_1;
-    if (CAN_WEAR(obj, ITEM_WEAR_BODY))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_BODY)) {
       where = WEAR_BODY;
-    if (CAN_WEAR(obj, ITEM_WEAR_HEAD))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_HEAD)) {
       where = WEAR_HEAD;
-    if (CAN_WEAR(obj, ITEM_WEAR_LEGS))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_LEGS)) {
       where = WEAR_LEGS;
-    if (CAN_WEAR(obj, ITEM_WEAR_FEET))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_FEET)) {
       where = WEAR_FEET;
-    if (CAN_WEAR(obj, ITEM_WEAR_HANDS))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_HANDS)) {
       where = WEAR_HANDS;
-    if (CAN_WEAR(obj, ITEM_WEAR_ARMS))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_ARMS)) {
       where = WEAR_ARMS;
-    if (CAN_WEAR(obj, ITEM_WEAR_SHIELD))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_SHIELD)) {
       where = WEAR_SHIELD;
-    if (CAN_WEAR(obj, ITEM_WEAR_ABOUT))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_ABOUT)) {
       where = WEAR_ABOUT;
-    if (CAN_WEAR(obj, ITEM_WEAR_WAIST))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_WAIST)) {
       where = WEAR_WAIST;
-    if (CAN_WEAR(obj, ITEM_WEAR_WRIST))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_WRIST)) {
       where = WEAR_WRIST_R;
-    if (CAN_WEAR(obj, ITEM_WEAR_FACE))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_FACE)) {
       where = WEAR_FACE;
-    if (CAN_WEAR(obj, ITEM_WEAR_EAR))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_EAR)) {
       where = WEAR_EAR_R;
-    if (CAN_WEAR(obj, ITEM_WEAR_EYES))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_EYES)) {
       where = WEAR_EYES;
-    if (CAN_WEAR(obj, ITEM_WEAR_ANKLES))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_ANKLES)) {
       where = WEAR_ANKLE_R;
-    if (CAN_WEAR(obj, ITEM_WEAR_BADGE))
+    }
+    if (CAN_WEAR(obj, ITEM_WEAR_BADGE)) {
       where = WEAR_BADGE;
+    }
   } else {
     if ((where = search_block(arg, keywords, FALSE)) < 0) {
       sprintf(buf, "'%s'?  What part of your body is THAT?\r\n", arg);
@@ -1719,8 +1774,9 @@ ACMD(do_wear)
         perform_wear(ch, obj, where);
       }
     }
-    if (!items_worn)
+    if (!items_worn) {
       send_to_char("You don't seem to have anything wearable.\r\n", ch);
+    }
   } else if (dotmode == FIND_ALLDOT) {
     if (!*arg1) {
       send_to_char("Wear all of what?\r\n", ch);
@@ -1732,10 +1788,11 @@ ACMD(do_wear)
     } else
       while (obj) {
         next_obj = get_obj_in_list_vis(ch, arg1, obj->next_content);
-        if ((where = find_eq_pos(ch, obj, 0)) >= 0)
+        if ((where = find_eq_pos(ch, obj, 0)) >= 0) {
           perform_wear(ch, obj, where);
-        else
+        } else {
           act("You can't wear $p.", FALSE, ch, obj, 0, TO_CHAR);
+        }
         obj = next_obj;
       }
   } else {
@@ -1743,10 +1800,11 @@ ACMD(do_wear)
       sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg1), arg1);
       send_to_char(buf, ch);
     } else {
-      if ((where = find_eq_pos(ch, obj, arg2)) >= 0)
+      if ((where = find_eq_pos(ch, obj, arg2)) >= 0) {
         perform_wear(ch, obj, where);
-      else if (!*arg2)
+      } else if (!*arg2) {
         act("You can't wear $p.", FALSE, ch, obj, 0, TO_CHAR);
+      }
     }
   }
 }
@@ -1759,9 +1817,9 @@ ACMD(do_wield)
 
   one_argument(argument, arg);
 
-  if (!*arg)
+  if (!*arg) {
     send_to_char("Wield what?\r\n", ch);
-  else if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
+  } else if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
     sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
   } else {
@@ -1769,16 +1827,17 @@ ACMD(do_wield)
       memset(buf2, 0, 64);
       sprinttype(GET_OBJ_VAL(obj, 0), weapon_handed, buf2);
     }
-    if (!CAN_WEAR(obj, ITEM_WEAR_WIELD))
+    if (!CAN_WEAR(obj, ITEM_WEAR_WIELD)) {
       send_to_char("You can't wield that.\r\n", ch);
-    else if (GET_OBJ_WEIGHT(obj) > stats[STR_WWEIGHT][GET_STR(ch)])
+    } else if (GET_OBJ_WEIGHT(obj) > stats[STR_WWEIGHT][GET_STR(ch)]) {
       send_to_char("It's too heavy for you to use.\r\n", ch);
-    else if (!IS_NPC(ch) && (GET_LEVEL(ch) < spells[find_skill_num(buf2)].min_level[(int) GET_CLASS(ch)]))
+    } else if (!IS_NPC(ch) && (GET_LEVEL(ch) < spells[find_skill_num(buf2)].min_level[(int) GET_CLASS(ch)])) {
       send_to_char("You are not allowed to use that weapon.\r\n", ch);
-    else if ((GET_SKILL(ch, (spells[find_skill_num(buf2)].spellindex)) < 5) && !IS_NPC(ch))
+    } else if ((GET_SKILL(ch, (spells[find_skill_num(buf2)].spellindex)) < 5) && !IS_NPC(ch)) {
       send_to_char("You cant figure out how to use this weapon. Maybe you should learn?\r\n", ch);
-    else
+    } else {
       perform_wear(ch, obj, WEAR_WIELD);
+    }
   }
 }
 
@@ -1788,19 +1847,20 @@ ACMD(do_grab)
 
   one_argument(argument, arg);
 
-  if (!*arg)
+  if (!*arg) {
     send_to_char("Hold what?\r\n", ch);
-  else if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
+  } else if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
     sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
   } else {
-    if (GET_OBJ_TYPE(obj) == ITEM_BADGE)
+    if (GET_OBJ_TYPE(obj) == ITEM_BADGE) {
       perform_wear(ch, obj, WEAR_BADGE);
-    else {
-      if (!CAN_WEAR(obj, ITEM_WEAR_HOLD) && GET_OBJ_TYPE(obj) != ITEM_WAND && GET_OBJ_TYPE(obj) != ITEM_STAFF && GET_OBJ_TYPE(obj) != ITEM_SCROLL && GET_OBJ_TYPE(obj) != ITEM_POTION)
+    } else {
+      if (!CAN_WEAR(obj, ITEM_WEAR_HOLD) && GET_OBJ_TYPE(obj) != ITEM_WAND && GET_OBJ_TYPE(obj) != ITEM_STAFF && GET_OBJ_TYPE(obj) != ITEM_SCROLL && GET_OBJ_TYPE(obj) != ITEM_POTION) {
         send_to_char("You can't hold that.\r\n", ch);
-      else
+      } else {
         perform_wear(ch, obj, WEAR_HOLD);
+      }
     }
   }
 }
@@ -1813,9 +1873,9 @@ void perform_remove(struct char_data * ch, int pos)
     stderr_log("Error in perform_remove: bad pos passed.");
     return;
   }
-  if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch))
+  if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
     act("$p: you can't carry that many items!", FALSE, ch, obj, 0, TO_CHAR);
-  else {
+  } else {
     obj_to_char(unequip_char(ch, pos), ch);
     act("You stop using $p.", FALSE, ch, obj, 0, TO_CHAR);
     act("$n stops using $p.", TRUE, ch, obj, 0, TO_ROOM);
@@ -1885,3 +1945,4 @@ ACMD(do_remove)
     }
   }
 }
+

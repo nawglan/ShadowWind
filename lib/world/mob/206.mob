@@ -624,11 +624,11 @@ E 12 100 20653 -1
 >greet_prog   100~
  mpdelay 20
  if isfollow($n)
-  mpat 0 smile
+   mpat 0 smile
  else
-  smile $n
-  mpdelay 25
-  say Welcome, feel free to look around the place.
+   smile $n
+   mpdelay 25
+   say Welcome, feel free to look around the place.
  endif
 ~
 |

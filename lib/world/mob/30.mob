@@ -12,41 +12,43 @@ cdeuw k 100 X 0
 8 8 1 3 1 3
 T 50 8d5+10 7
 E -1 100 3030 -1
->speech_prog          deal~
-mpdelay 10
-say Well, maybe I shouldn't, the city's been cracking down on us travelling merchants.
-mpdelay 15
-say We just can't give the same good deals that we have in the past.
+>speech_prog deal~
+  mpdelay 10
+  say Well, maybe I shouldn't, the city's been cracking down on us travelling merchants.
+  mpdelay 15
+  say We just can't give the same good deals that we have in the past.
 ~
->all_greet_prog          100~
-if isgood ($n)
-shake $n
-mpdelay 10
-say Hello!  Nice to meet you, $n, you look like you're in a spending mood!
-mpdelay 5
-smile
-mpdelay 20
-say Come on, you look like you've got some extra coins.
-mpdelay 10
-say I'll tell you what.  You look like a good person, I'll give you a deal.
-endif
-~
->rand_prog                                                                                  11~
-  if rand (70)
-    mphuntrm 3147
+>all_greet_prog 100~
+  if isgood($n)
+    shake $n
+    mpdelay 10
+    say Hello!  Nice to meet you, $n, you look like you're in a spending mood!
+    mpdelay 5
+    smile
+    mpdelay 20
+    say Come on, you look like you've got some extra coins.
+    mpdelay 10
+    say I'll tell you what.  You look like a good person, I'll give you a deal.
   else
-    mphuntrm 3146
+    frown
   endif
 ~
->time_prog                                                                                  */*/*/*/*/20~
+>rand_prog 11~
   if rand(70)
     mphuntrm 3147
   else
     mphuntrm 3146
   endif
 ~
->rand_prog                                                                                  50~
-  if inroom ($i) == 3046
+>time_prog */*/*/*/*/20~
+  if rand(70)
+    mphuntrm 3147
+  else
+    mphuntrm 3146
+  endif
+~
+>rand_prog 50~
+  if inroom($i) == 3046
     if rand(30)
       rem key
       unlock crate
@@ -103,7 +105,7 @@ endif
     endif
   endif
 ~
->rand_prog                                                                                  70~
+>rand_prog 70~
   if inroom ($i) == 3047
     if rand(30)
       rem key
@@ -1193,12 +1195,11 @@ T 100 2d5+0 22
 >greet_prog         50~
 if isfollow($n)
   break
-   else
+else
   mpdelay 20
   emote howls in an extremely loud, low pitch.
   mpdelay 40
   bark $n
- endif
 endif
 ~
 >rand_prog  20~

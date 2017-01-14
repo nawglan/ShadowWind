@@ -116,7 +116,7 @@ void mprog_mppurge(char* morebuf, char* cmnd, struct char_data* mob, struct char
  */
 
 /* Used in mprog_process_if to determine the end of the if-block so that
- * other subsequent commands are not skipped in the event of and error or
+ * other subsequent commands are not skipped in the event of an error or
  * breaks in nested if statements. This will inprove the logical flow of
  * mob_prog processing to what it should be.
  */
@@ -151,11 +151,9 @@ char* find_endif(char* com_list, struct char_data* mob)
       if_scope++;
     if (!str_cmp(buf, "endif"))
       if_scope--;
-
   } /* while */
 
   return com_list;
-
 } /* find_endif */
 
 /* Used in mprog_process_if to determine the proper 'else' of the if-block so that
@@ -196,11 +194,9 @@ char* find_else(char* com_list, struct char_data *mob)
     if ((!str_cmp(buf, "else")) && (if_scope == 1)) {
       return cmnd;
     }
-
   } /* while */
 
   return cmnd;
-
 } /* find_else */
 
 /* Used to get sequential lines of a multi line string (separated by "\n\r")
@@ -238,7 +234,6 @@ char *mprog_next_command(char *clist)
   }
 
   return (pointer);
-
 }
 
 /* we need str_infix here because strstr is not case insensitive */

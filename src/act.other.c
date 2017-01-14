@@ -51,21 +51,26 @@ ACMD(do_search)
   int found = 0;
   struct room_direction_data *back;
 
-  for (door = 0; door < NUM_OF_DIRS; door++)
+  for (door = 0; door < NUM_OF_DIRS; door++) {
     if (EXIT(ch, door) && IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
       if (number(1, 101) <= GET_INT(ch)) {
         REMOVE_BIT(EXIT(ch, door)->exit_info, EX_HIDDEN);
-        if ((other_room = EXIT(ch, door)->to_room) != NOWHERE)
-          if ((back = world[other_room].dir_option[rev_dir[door]]))
-            if (back->to_room == ch->in_room)
+        if ((other_room = EXIT(ch, door)->to_room) != NOWHERE) {
+          if ((back = world[other_room].dir_option[rev_dir[door]])) {
+            if (back->to_room == ch->in_room) {
               REMOVE_BIT(back->exit_info, EX_HIDDEN);
+            }
+          }
+        }
         send_to_char("You find a secret exit!\r\n", ch);
         found = 1;
         break;
       }
     }
-  if (!found)
+  }
+  if (!found) {
     send_to_char("Your search avails nothing.\r\n", ch);
+  }
 }
 
 void give_consent(struct char_data *ch, struct char_data *to)
@@ -211,16 +216,17 @@ ACMD(do_quit)
   struct descriptor_data *d, *next_d;
   extern int free_rent;
 
-  if (IS_NPC(ch) || !ch->desc)
+  if (IS_NPC(ch) || !ch->desc) {
     return;
+  }
 
   one_argument(argument, arg);
 
-  if (subcmd == 0 && GET_LEVEL(ch) < LVL_IMMORT)
+  if (subcmd == 0 && GET_LEVEL(ch) < LVL_IMMORT) {
     send_to_char("You have to type quit - no less, to quit!\r\n", ch);
-  else if (GET_POS(ch) == POS_FIGHTING)
+  } else if (GET_POS(ch) == POS_FIGHTING) {
     send_to_char("No way!  You're fighting for your life!\r\n", ch);
-  else if (GET_POS(ch) < POS_STUNNED && (*arg == 'y' || *arg == 'Y')) {
+  } else if (GET_POS(ch) < POS_STUNNED && (*arg == 'y' || *arg == 'Y')) {
     send_to_char("You die before your time...\r\n", ch);
     sprintf(buf, "%s has quit the game in room #%d. (died)", GET_NAME(ch), world[IN_ROOM(ch)].number);
     mudlog(buf, 'C', COM_IMMORT, TRUE);
@@ -231,9 +237,9 @@ ACMD(do_quit)
     send_to_char("If you type quit, all your equipment will be dropped to the ground.\r\n"
         "If you really want to quit, type 'quit y', otherwise rent in the inn.\r\n", ch);
   } else {
-
-    if (!GET_INVIS_LEV(ch))
+    if (!GET_INVIS_LEV(ch)) {
       act("$n has left the game.", TRUE, ch, 0, 0, TO_ROOM);
+    }
     sprintf(buf, "%s has quit the game in room #%d.", GET_NAME(ch), world[IN_ROOM(ch)].number);
     mudlog(buf, 'C', COM_IMMORT, TRUE);
     plog(buf, ch, 0);
@@ -246,10 +252,12 @@ ACMD(do_quit)
      */
     for (d = descriptor_list; d; d = next_d) {
       next_d = d->next;
-      if (d == ch->desc)
+      if (d == ch->desc) {
         continue;
-      if (d->character && (GET_IDNUM(d->character) == GET_IDNUM(ch)))
+      }
+      if (d->character && (GET_IDNUM(d->character) == GET_IDNUM(ch))) {
         close_socket(d);
+      }
     }
 
     save_text(ch); /* save aliases etc */
@@ -257,15 +265,17 @@ ACMD(do_quit)
     if ((free_rent || (GET_LEVEL(ch) >= LVL_IMMORT)) && subcmd == SCMD_QUIT) {
       Crash_save(ch, RENT_RENTED);
       extract_char(ch, 0); /* Char is saved in extract char */
-    } else
+    } else {
       extract_char(ch, 1); /* Char is saved in extract char */
+    }
   }
 }
 
 ACMD(do_save)
 {
-  if (IS_NPC(ch) || !ch->desc)
+  if (IS_NPC(ch) || !ch->desc) {
     return;
+  }
 
   if (cmd) {
     send_to_char("Done.\r\n", ch);
@@ -280,7 +290,8 @@ ACMD(do_save)
 }
 
 /* generic function for commands which are normally overridden by
- special procedures - i.e., shop commands, mail commands, etc. */ACMD(do_not_here)
+ special procedures - i.e., shop commands, mail commands, etc. */
+ACMD(do_not_here)
 {
   send_to_char("Sorry, but you cannot do that here!\r\n", ch);
 }
@@ -306,11 +317,11 @@ ACMD(do_practice)
 
 ACMD(do_train)
 {
-
   one_argument(argument, arg);
 
-  if (*arg)
+  if (*arg) {
     send_to_char("You can only train combat techniques with your master.\r\n", ch);
+  }
 }
 
 ACMD(do_visible)
@@ -320,22 +331,27 @@ ACMD(do_visible)
   if (IS_AFFECTED(ch, AFF_INVISIBLE)) {
     appear(ch);
     send_to_char("You break the spell of invisibility.\r\n", ch);
-  } else
-  send_to_char("You are already visible.\r\n", ch);
+  } else {
+    send_to_char("You are already visible.\r\n", ch);
+  }
 }
 
 int perform_group(struct char_data *ch, struct char_data *vict)
 {
-  if (IS_AFFECTED(vict, AFF_GROUP) || !CAN_SEE(ch, vict) || IS_NPC(vict))
+  if (IS_AFFECTED(vict, AFF_GROUP) || !CAN_SEE(ch, vict) || IS_NPC(vict)) {
     return 0;
+  }
 
-  if (vict->in_room != ch->in_room)
+  if (vict->in_room != ch->in_room) {
     return 0;
+  }
   SET_BIT(AFF_FLAGS(vict), AFF_GROUP);
-  if (ch != vict)
+  if (ch != vict) {
     act("$N is now a member of your group.", FALSE, ch, 0, vict, TO_CHAR);
+  }
   act("You are now a member of $n's group.", FALSE, ch, 0, vict, TO_VICT);
   act("$N is now a member of $n's group.", FALSE, ch, 0, vict, TO_NOTVICT);
+
   return 1;
 }
 
@@ -344,9 +360,9 @@ void print_group(struct char_data *ch)
   struct char_data *k;
   struct follow_type *f;
 
-  if (!IS_AFFECTED(ch, AFF_GROUP))
+  if (!IS_AFFECTED(ch, AFF_GROUP)) {
     send_to_char("But you are not the member of a group!\r\n", ch);
-  else {
+  } else {
     send_to_char("{cYour group consists of{C:{x\r\n", ch);
 
     k = (ch->master ? ch->master : ch);
@@ -399,23 +415,26 @@ ACMD(do_group)
 
   if (!str_cmp(buf, "all")) {
     perform_group(ch, ch);
-    for (found = 0, f = ch->followers; f; f = f->next)
+    for (found = 0, f = ch->followers; f; f = f->next) {
       found += perform_group(ch, f->follower);
-    if (!found)
+    }
+    if (!found) {
       send_to_char("Everyone following you is already in your group.\r\n", ch);
+    }
     return;
   }
 
-  if (!(vict = get_char_room_vis(ch, buf)))
+  if (!(vict = get_char_room_vis(ch, buf))) {
     send_to_char(NOPERSON, ch);
-  else if ((vict->master != ch) && (vict != ch))
+  } else if ((vict->master != ch) && (vict != ch)) {
     act("$N must follow you to enter your group.", FALSE, ch, 0, vict, TO_CHAR);
-  else {
-    if (!IS_AFFECTED(vict, AFF_GROUP))
+  } else {
+    if (!IS_AFFECTED(vict, AFF_GROUP)) {
       perform_group(ch, vict);
-    else {
-      if (ch != vict)
+    } else {
+      if (ch != vict) {
         act("$N is no longer a member of your group.", FALSE, ch, 0, vict, TO_CHAR);
+      }
       act("You have been kicked out of $n's group!", FALSE, ch, 0, vict, TO_VICT);
       act("$N has been kicked out of $n's group!", FALSE, ch, 0, vict, TO_NOTVICT);
       REMOVE_BIT(AFF_FLAGS(vict), AFF_GROUP);
@@ -442,8 +461,9 @@ ACMD(do_ungroup)
       if (IS_AFFECTED(f->follower, AFF_GROUP)) {
         REMOVE_BIT(AFF_FLAGS(f->follower), AFF_GROUP);
         send_to_char(buf2, f->follower);
-        if (!IS_AFFECTED(f->follower, AFF_CHARM))
+        if (!IS_AFFECTED(f->follower, AFF_CHARM)) {
           stop_follower(f->follower);
+        }
       }
     }
 
@@ -471,8 +491,9 @@ ACMD(do_ungroup)
   act("You have been kicked out of $n's group!", FALSE, ch, 0, tch, TO_VICT);
   act("$N has been kicked out of $n's group!", FALSE, ch, 0, tch, TO_NOTVICT);
 
-  if (!IS_AFFECTED(tch, AFF_CHARM))
+  if (!IS_AFFECTED(tch, AFF_CHARM)) {
     stop_follower(tch);
+  }
 }
 
 ACMD(do_report)
@@ -511,8 +532,9 @@ ACMD(do_split)
   char *p;
   int is_plat = 0, is_gold = 0, is_silver = 0, is_copper = 0;
 
-  if (IS_NPC(ch))
+  if (IS_NPC(ch)) {
     return;
+  }
 
   p = two_arguments(argument, value, type);
 
@@ -562,18 +584,21 @@ ACMD(do_split)
     }
     k = (ch->master ? ch->master : ch);
 
-    if (IS_AFFECTED(k, AFF_GROUP) && (k->in_room == ch->in_room))
+    if (IS_AFFECTED(k, AFF_GROUP) && (k->in_room == ch->in_room)) {
       num = 1;
-    else
+    } else {
       num = 0;
+    }
 
-    for (f = k->followers; f; f = f->next)
-      if (IS_AFFECTED(f->follower, AFF_GROUP) && (!IS_NPC(f->follower)) && (f->follower->in_room == ch->in_room))
+    for (f = k->followers; f; f = f->next) {
+      if (IS_AFFECTED(f->follower, AFF_GROUP) && (!IS_NPC(f->follower)) && (f->follower->in_room == ch->in_room)) {
         num++;
+      }
+    }
 
-    if (num && IS_AFFECTED(ch, AFF_GROUP))
+    if (num && IS_AFFECTED(ch, AFF_GROUP)) {
       share = amount / num;
-    else {
+    } else {
       send_to_char("With whom do you wish to share your money?\r\n", ch);
       return;
     }
@@ -630,8 +655,9 @@ ACMD(do_split)
     }
     sprintf(buf, "{wYou split %s%d %s {wamong %d members -- %s%d %s {weach.{x\r\n", (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), amount, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))), num, (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), share, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))));
     send_to_char(buf, ch);
-    if (*p)
+    if (*p) {
       do_split(ch, p, 0, 0);
+    }
   } else {
     send_to_char("How many coins do you wish to split with your group?\r\n", ch);
     return;
@@ -641,17 +667,17 @@ ACMD(do_split)
 ACMD(do_afk)
 {
   if (!IS_NPC(ch)) {
-    if (PRF_FLAGGED(ch, PRF_AFK))
+    if (PRF_FLAGGED(ch, PRF_AFK)) {
       send_to_char("Okay, you are nolonger afk.\r\n", ch);
-    else
+    } else {
       send_to_char("Okay, you are now afk.\r\n", ch);
+    }
 
     TOGGLE_BIT(PRF_FLAGS(ch), PRF_AFK);
     TOGGLE_BIT(GET_PROMPT(ch), PRM_AFK);
   } else {
     send_to_char("Go away you ugly monster.\r\n", ch);
   }
-
 }
 
 ACMD(do_use)
@@ -765,13 +791,13 @@ ACMD(do_wimpy)
   }
   if (isdigit(*arg)) {
     if ((wimp_lev = atoi(arg))) {
-      if (wimp_lev < 0)
+      if (wimp_lev < 0) {
         send_to_char("Heh, heh, heh.. we are jolly funny today, eh?\r\n", ch);
-      else if (wimp_lev > GET_MAX_HIT(ch))
+      } else if (wimp_lev > GET_MAX_HIT(ch)) {
         send_to_char("That doesn't make much sense, now does it?\r\n", ch);
-      else if (wimp_lev > (GET_MAX_HIT(ch) >> 1))
+      } else if (wimp_lev > (GET_MAX_HIT(ch) >> 1)) {
         send_to_char("You can't set your wimp level above half your hit points.\r\n", ch);
-      else {
+      } else {
         sprintf(buf, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
         send_to_char(buf, ch);
         GET_WIMP_LEV(ch) = wimp_lev;
@@ -780,11 +806,11 @@ ACMD(do_wimpy)
       send_to_char("Okay, you'll now tough out fights to the bitter end.\r\n", ch);
       GET_WIMP_LEV(ch) = 0;
     }
-  } else
+  } else {
     send_to_char("Specify at how many hit points you want to wimp out at.  (0 to disable)\r\n", ch);
+  }
 
   return;
-
 }
 
 ACMD(do_display)
@@ -841,10 +867,11 @@ ACMD(do_gen_write)
     send_to_char("Ack! I'm afraid that is too much text!\r\n", ch);
     return;
   }
-  if (subcmd == SCMD_WHELPN)
+  if (subcmd == SCMD_WHELPN) {
     sprintf(buf, "%s wizhelp: %s", GET_NAME(ch), argument);
-  else
+  } else {
     sprintf(buf, "%s %s: %s", GET_NAME(ch), CMD_NAME, argument);
+  }
   mudlog(buf, 'M', COM_IMMORT, FALSE);
 
   if (stat(filename, &fbuf) < 0) {
@@ -904,10 +931,40 @@ ACMD(do_gen_tog)
   long result;
   extern int nameserver_is_slow;
 
-  char *tog_messages[][2] = { {"This was for summon protect... has been removed.\r\n", "This was for summon protect... has been removed.\r\n"}, {"Nohassle disabled.\r\n", "Nohassle enabled.\r\n"}, {"Brief mode level 1 off.\r\n", "Brief mode level 1 on.\r\n"}, {"Compact mode off.\r\n", "Compact mode on.\r\n"}, {"You can now hear tells.\r\n", "You are now deaf to tells.\r\n"}, {"You can now hear auctions.\r\n", "You are now deaf to auctions.\r\n"}, {"You can now hear shouts.\r\n", "You are now deaf to shouts.\r\n"}, {"You can now hear chat...\r\n{RThis channel is for Non-Mud Related Topics ONLY!{x\r\n", "You are now deaf to chat.\r\n"}, {"You can now hear the congratulation messages.\r\n", "You are now deaf to the congratulation messages.\r\n"}, {"You can now hear the Wiz-channel.\r\n", "You are now deaf to the Wiz-channel.\r\n"}, {"You are no longer part of the Quest.\r\n", "Okay, you are part of the Quest!\r\n"}, {"You will no longer see the room flags.\r\n", "You will now see the room flags.\r\n"}, {"You will now have your communication repeated.\r\n", "You will no longer have your communication repeated.\r\n"}, {"HolyLight mode off.\r\n", "HolyLight mode on.\r\n"}, {"Nameserver_is_slow changed to NO; IP addresses will now be resolved.\r\n", "Nameserver_is_slow changed to YES; sitenames will no longer be resolved.\r\n"}, {"Autoexits disabled.\r\n", "Autoexits enabled.\r\n"}, {"WHOIS information is no longer visible.\r\n", "WHOIS information is now visible.\r\n"}, {"The ticker has now been turned off.\r\n", "The ticker has now been turned on.\r\n"}, {"Your citizen status is now shown in the who list.\r\n", "Your citizen status is no longer shown in the who list.\r\n"}, {"You are no longer auto-looting.\r\n", "You are now auto-looting.\r\n"}, {"You are no longer auto-looting gold.\r\n", "You are now auto-looting gold.\r\n"}, {"You are no longer auto-splitting gold.\r\n", "You are now auto-splitting gold.\r\n"}, {"You are no longer anonymous.\r\n", "You are now anonymous.\r\n"}, {"IDENT set to NO, username lookups no longer attempted.\r\n", "IDENT set to YES, username lookups will be attempted.\r\n"}, {"You can now hear the immquest channel.\r\n", "You are now deaf to the immquest channel.\r\n"}, {"You can now hear mob shouts.\r\n", "You are now deaf to mob shouts.\r\n"}, {"Brief mode level 2 off.\r\n", "Brief mode level 2 on.\r\n"}, {"Color is now off.\r\n", "Color is now on.\r\n"}};
+  char *tog_messages[][2] = {
+      {"This was for summon protect... has been removed.\r\n", "This was for summon protect... has been removed.\r\n"},
+      {"Nohassle disabled.\r\n", "Nohassle enabled.\r\n"},
+      {"Brief mode level 1 off.\r\n", "Brief mode level 1 on.\r\n"},
+      {"Compact mode off.\r\n", "Compact mode on.\r\n"},
+      {"You can now hear tells.\r\n", "You are now deaf to tells.\r\n"},
+      {"You can now hear auctions.\r\n", "You are now deaf to auctions.\r\n"},
+      {"You can now hear shouts.\r\n", "You are now deaf to shouts.\r\n"},
+      {"You can now hear chat...\r\n{RThis channel is for Non-Mud Related Topics ONLY!{x\r\n", "You are now deaf to chat.\r\n"},
+      {"You can now hear the congratulation messages.\r\n", "You are now deaf to the congratulation messages.\r\n"},
+      {"You can now hear the Wiz-channel.\r\n", "You are now deaf to the Wiz-channel.\r\n"},
+      {"You are no longer part of the Quest.\r\n", "Okay, you are part of the Quest!\r\n"},
+      {"You will no longer see the room flags.\r\n", "You will now see the room flags.\r\n"},
+      {"You will now have your communication repeated.\r\n", "You will no longer have your communication repeated.\r\n"},
+      {"HolyLight mode off.\r\n", "HolyLight mode on.\r\n"},
+      {"Nameserver_is_slow changed to NO; IP addresses will now be resolved.\r\n", "Nameserver_is_slow changed to YES; sitenames will no longer be resolved.\r\n"},
+      {"Autoexits disabled.\r\n", "Autoexits enabled.\r\n"},
+      {"WHOIS information is no longer visible.\r\n", "WHOIS information is now visible.\r\n"},
+      {"The ticker has now been turned off.\r\n", "The ticker has now been turned on.\r\n"},
+      {"Your citizen status is now shown in the who list.\r\n", "Your citizen status is no longer shown in the who list.\r\n"},
+      {"You are no longer auto-looting.\r\n", "You are now auto-looting.\r\n"},
+      {"You are no longer auto-looting gold.\r\n", "You are now auto-looting gold.\r\n"},
+      {"You are no longer auto-splitting gold.\r\n", "You are now auto-splitting gold.\r\n"},
+      {"You are no longer anonymous.\r\n", "You are now anonymous.\r\n"},
+      {"IDENT set to NO, username lookups no longer attempted.\r\n", "IDENT set to YES, username lookups will be attempted.\r\n"},
+      {"You can now hear the immquest channel.\r\n", "You are now deaf to the immquest channel.\r\n"},
+      {"You can now hear mob shouts.\r\n", "You are now deaf to mob shouts.\r\n"},
+      {"Brief mode level 2 off.\r\n", "Brief mode level 2 on.\r\n"},
+      {"Color is now off.\r\n", "Color is now on.\r\n"}
+  };
 
-  if (IS_NPC(ch))
+  if (IS_NPC(ch)) {
     return;
+  }
 
   one_argument(argument, arg);
   switch (subcmd) {
@@ -915,9 +972,9 @@ ACMD(do_gen_tog)
       result = PRF_TOG_CHK(ch, PRF_NOHASSLE);
       break;
     case SCMD_BRIEF:
-      if (!*arg || *arg == '1')
+      if (!*arg || *arg == '1') {
         result = PRF_TOG_CHK(ch, PRF_BRIEF);
-      else {
+      } else {
         subcmd = SCMD_BRIEF2;
         result = PRF_TOG_CHK(ch, PRF_BRIEF2);
       }
@@ -996,10 +1053,12 @@ ACMD(do_gen_tog)
       return;
   }
 
-  if (result)
+  if (result) {
     send_to_char(tog_messages[subcmd][TOG_ON], ch);
-  else
+  } else {
     send_to_char(tog_messages[subcmd][TOG_OFF], ch);
+  }
 
   return;
 }
+

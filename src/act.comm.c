@@ -569,3 +569,4 @@ ACMD(do_gen_comm)
     mprog_shout_trigger(argument, ch);
   }
 }
+

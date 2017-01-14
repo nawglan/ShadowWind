@@ -432,11 +432,10 @@ A 15 8 The ferry master says, 'You will not get past me without paying 5 gold co
 A 10 8 The ferry master says, 'It will cost you 5 gold coins to cross the ferry!'
 >all_greet_prog                  100~
 if isfollow ($n)
-   break
+  break
 else
-   mpdelay 15
-   say Welcome travellers, it will cost you 5 gold coins to cross the ferry.
- endif
+  mpdelay 15
+  say Welcome travellers, it will cost you 5 gold coins to cross the ferry.
 endif
 ~
 >bribe_prog                  500~

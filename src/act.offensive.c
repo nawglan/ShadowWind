@@ -34,8 +34,9 @@ void raw_kill(struct char_data * ch, struct char_data * killer);
 
 int check_state(struct char_data * ch)
 {
-  if (ch->char_specials.fightwait > 0)
+  if (ch->char_specials.fightwait > 0) {
     return 1;
+  }
   return 0;
 }
 
@@ -49,32 +50,31 @@ ACMD(do_assist)
   struct char_data *helpee, *opponent;
 
   if (FIGHTING(ch)) {
-
     send_to_char("You're already fighting!  How can you assist someone else?\r\n", ch);
     return;
   }
   one_argument(argument, arg);
 
-  if (!*arg)
+  if (!*arg) {
     send_to_char("Whom do you wish to assist?\r\n", ch);
-  else if (!(helpee = get_char_room_vis(ch, arg)))
+  } else if (!(helpee = get_char_room_vis(ch, arg))) {
     send_to_char(NOPERSON, ch);
-  else if (helpee == ch)
+  } else if (helpee == ch) {
     send_to_char("You can't help yourself any more than this!\r\n", ch);
-  else {
+  } else {
     /*
      for (opponent = world[ch->in_room].people; opponent &&
      (FIGHTING(opponent) != helpee); opponent = opponent->next_in_room);
      */
     opponent = FIGHTING(helpee);
 
-    if (!opponent)
+    if (!opponent) {
       act("But nobody is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
-    else if (!CAN_SEE(ch, opponent))
+    } else if (!CAN_SEE(ch, opponent)) {
       act("You can't see who is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
-    else if (!pk_allowed && !IS_NPC(opponent)) /* prevent accidental pkill */
+    } else if (!pk_allowed && !IS_NPC(opponent)) { /* prevent accidental pkill */ 
       act("Use 'murder' if you really want to attack $N.", FALSE, ch, 0, opponent, TO_CHAR);
-    else {
+    } else {
       send_to_char("You join the fight!\r\n", ch);
       act("$N assists you!", 0, helpee, 0, ch, TO_CHAR);
       act("$n assists $N.", FALSE, ch, 0, helpee, TO_NOTVICT);
@@ -90,16 +90,16 @@ ACMD(do_hit)
   one_argument(argument, arg);
   vict = get_char_room_vis(ch, arg);
 
-  if (!*arg)
+  if (!*arg) {
     send_to_char("Hit who?\r\n", ch);
-  else if (!vict)
+  } else if (!vict) {
     send_to_char("They don't seem to be here.\r\n", ch);
-  else if (vict == ch) {
+  } else if (vict == ch) {
     send_to_char("You hit yourself...OUCH!.\r\n", ch);
     act("$n hits $mself, and says OUCH!", FALSE, ch, 0, vict, TO_ROOM);
-  } else if (IS_AFFECTED(ch, AFF_CHARM) && (ch->master == vict))
+  } else if (IS_AFFECTED(ch, AFF_CHARM) && (ch->master == vict)) {
     act("$N is just such a good friend, you simply can't hit $M.", FALSE, ch, 0, vict, TO_CHAR);
-  else {
+  } else {
     if (IS_NPC(vict) && MOB_FLAGGED(vict, MOB_NOKILL)) {
       send_to_char("That's not a good idea.\r\n", ch);
       return;
@@ -109,9 +109,9 @@ ACMD(do_hit)
         send_to_char("Use 'murder' to hit another player.\r\n", ch);
         return;
       }
-      if (IS_AFFECTED(ch, AFF_CHARM) && !IS_NPC(ch->master) && !IS_NPC(vict))
-        return; /* you can't order a charmed pet to attack a
-         * player */
+      if (IS_AFFECTED(ch, AFF_CHARM) && !IS_NPC(ch->master) && !IS_NPC(vict)) {
+        return; /* you can't order a charmed pet to attack a player */
+      }
     }
     if (ROOM_FLAGGED(ch->in_room, ROOM_PEACEFUL)) {
       send_to_char("You feel ashamed disturbing the tranquility of this place\r\n", ch);
@@ -120,8 +120,9 @@ ACMD(do_hit)
     if ((GET_POS(ch) == POS_STANDING) && (vict != FIGHTING(ch))) {
       hit(ch, vict, TYPE_UNDEFINED);
       WAIT_STATE(ch, 20);
-    } else
+    } else {
       send_to_char("You do the best you can!\r\n", ch);
+    }
   }
 }
 
@@ -143,11 +144,11 @@ ACMD(do_kill)
   if (!*arg) {
     send_to_char("Kill who?\r\n", ch);
   } else {
-    if (!(vict = get_char_room_vis(ch, arg)))
+    if (!(vict = get_char_room_vis(ch, arg))) {
       send_to_char("They arne't here.\r\n", ch);
-    else if (ch == vict)
+    } else if (ch == vict) {
       send_to_char("Your mother would be so sad.. :(\r\n", ch);
-    else {
+    } else {
       act("{DYou chop {w$M {Dto pieces!  Ah!  The {rblood{D!{x", FALSE, ch, 0, vict, TO_CHAR);
       act("\r\n{D$N {Dchops you to {rpieces{D.{x\r\n{DYou are dead. {rR{D.{rI{D.{rP{D.{x\r\n{x",
 
@@ -174,14 +175,13 @@ ACMD(do_order)
 
   half_chop(argument, name, message);
 
-  if (!*name || !*message)
+  if (!*name || !*message) {
     send_to_char("Order who to do what?\r\n", ch);
-  else if (!(vict = get_char_room_vis(ch, name)) && !is_abbrev(name, "followers"))
+  } else if (!(vict = get_char_room_vis(ch, name)) && !is_abbrev(name, "followers")) {
     send_to_char("That person isn't here.\r\n", ch);
-  else if (ch == vict)
+  } else if (ch == vict) {
     send_to_char("You obviously suffer from skitzofrenia.\r\n", ch);
-
-  else {
+  } else {
     if (IS_AFFECTED(ch, AFF_CHARM)) {
       send_to_char("Your superior would not aprove of you giving orders.\r\n", ch);
       return;
@@ -191,9 +191,9 @@ ACMD(do_order)
       act(buf, FALSE, vict, 0, ch, TO_CHAR);
       /* act("$n gives $N an order.", FALSE, ch, 0, vict, TO_ROOM);*/
 
-      if ((vict->master != ch) || !IS_AFFECTED(vict, AFF_CHARM))
+      if ((vict->master != ch) || !IS_AFFECTED(vict, AFF_CHARM)) {
         act("$n has an indifferent look.", FALSE, vict, 0, 0, TO_ROOM);
-      else {
+      } else {
         sprintf(buf, "You order $N to '%s'", message);
         act(buf, FALSE, ch, 0, vict, TO_CHAR);
         command_interpreter(vict, message);
@@ -204,16 +204,18 @@ ACMD(do_order)
       org_room = ch->in_room;
 
       for (k = ch->followers; k; k = k->next) {
-        if (org_room == k->follower->in_room)
+        if (org_room == k->follower->in_room) {
           if (IS_AFFECTED(k->follower, AFF_CHARM)) {
             found = TRUE;
             sprintf(buf, "You order your followers '%s'", message);
             act(buf, FALSE, ch, 0, vict, TO_CHAR);
             command_interpreter(k->follower, message);
           }
+        }
       }
-      if (!found)
+      if (!found) {
         send_to_char("Nobody here is a loyal subject of yours!\r\n", ch);
+      }
     }
   }
 }
@@ -250,9 +252,11 @@ ACMD(do_flee)
            gain_exp(FIGHTING(ch), loss);
            }
            */
-          for (tch = world[FIGHTING(ch)->in_room].people; tch; tch = tch->next_in_room)
-            if (FIGHTING(tch) == ch)
+          for (tch = world[FIGHTING(ch)->in_room].people; tch; tch = tch->next_in_room) {
+            if (FIGHTING(tch) == ch) {
               stop_fighting(tch);
+            }
+          }
           stop_fighting(ch);
         }
       } else {
@@ -275,6 +279,8 @@ ACMD(do_disengage)
     } else {
       WAIT_STATE(ch, 2*PULSE_VIOLENCE);
     }
-  } else
+  } else {
     send_to_char("You're not fighting!\r\n", ch);
+  }
 }
+

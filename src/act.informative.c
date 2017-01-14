@@ -1426,7 +1426,6 @@ ACMD(do_equipment)
   if (GET_LEVEL(ch) < LVL_IMMORT || !*arg) {
     pl = ch;
   } else { /* code to search for argument */
-
     if (!(pl = get_char_vis(ch, arg))) {
       send_to_char("No-one by that name in the game.\r\n", ch);
       return;
@@ -1524,7 +1523,60 @@ ACMD(do_time)
 ACMD(do_weather)
 {
   struct new_weather_data cond = GET_ZONE_COND(IN_ZONE(ch));
-  char *weather_msg[] = {"A violent scorching wind blows hard in the face of any poor travellers in the area.\r\n", "A hot wind gusts wildly through the area.\r\n", "A fierce wind cuts the air like a razor-sharp knife.\r\n", "A freezing gale blasts through the area.\r\n", "An icy wind drains the warmth from all in sight.\r\n", "A hot, dry breeze blows languidly around.\r\n", "A warm pocket of air is rolling through here.\r\n", "It's breezy.\r\n", "A cool breeze wafts by.\r\n", "A slight wind blows a chill into living tissue.\r\n", "A freezing wind blows gently, but firmly against all obstacles in the area.\r\n", "The wind isn't very strong here, but the cold makes it quite noticeable.\r\n", "It's hotter than anyone could imagine.\r\n", "It's really, really hot here. A slight breeze would really improve things.\r\n", "It's hot out here.\r\n", "It's nice and warm out.\r\n", "It's mild out today.\r\n", "It's cool out here.\r\n", "It's a bit nippy here.\r\n", "It's cold!\r\n", "It's really c-c-c-cold!!\r\n", "Better get inside - this is too cold for man or -most- beasts.\r\n", "There's a hurricane out here!\r\n", "The wind and the rain are nearly too much to handle.\r\n", "It's raining really hard right now.\r\n", "What a rainstorm!\r\n", "The wind is lashing this wild rain seemingly straight into your face.\r\n", "It's raining pretty hard.\r\n", "A respectable rain is being thrashed about by a vicious wind.\r\n", "It's rainy and windy but, altogether not too uncomfortable.\r\n", "Hey, it's raining...\r\n", "The light rain here is nearly unnoticeable compared to the horrendous wind.\r\n", "A light rain is being driven fiercely by the wind.\r\n", "It's raining lightly.\r\n", "A few drops of rain are falling admidst a fierce windstorm.\r\n", "The wind and a bit of rain hint at the possibility of a storm.\r\n", "A light drizzle is falling here.\r\n", "This must be the worst blizzard ever.\r\n", "There's a blizzard out here, making it quite difficult to see.\r\n", "It's snowing very hard.\r\n", "The heavily falling snow is being whipped up to a frenzy by a ferocious wind.\r\n", "A heavy snow is being blown randomly about by a brisk wind.\r\n", "Drifts in the snow are being formed by the wind.\r\n", "The snow's coming down pretty fast now.\r\n", "The snow wouldn't be too bad, except for the awful wind blowing it in every possible directon.\r\n", "There's a minor blizzard here, more wind than snow.\r\n", "Snow is being blown about by a stiff breeze.\r\n", "It is snowing here.\r\n", "A light snow is being tossed about by a fierce wind.\r\n", "A lightly falling snow is being driven by a strong wind.\r\n", "A light snow is falling admidst an unsettled wind.\r\n", "It is lightly snowing.\r\n"};
+  char *weather_msg[] = {
+      "A violent scorching wind blows hard in the face of any poor travellers in the area.\r\n",
+      "A hot wind gusts wildly through the area.\r\n",
+      "A fierce wind cuts the air like a razor-sharp knife.\r\n",
+      "A freezing gale blasts through the area.\r\n",
+      "An icy wind drains the warmth from all in sight.\r\n",
+      "A hot, dry breeze blows languidly around.\r\n",
+      "A warm pocket of air is rolling through here.\r\n",
+      "It's breezy.\r\n",
+      "A cool breeze wafts by.\r\n",
+      "A slight wind blows a chill into living tissue.\r\n",
+      "A freezing wind blows gently, but firmly against all obstacles in the area.\r\n",
+      "The wind isn't very strong here, but the cold makes it quite noticeable.\r\n",
+      "It's hotter than anyone could imagine.\r\n",
+      "It's really, really hot here. A slight breeze would really improve things.\r\n",
+      "It's hot out here.\r\n",
+      "It's nice and warm out.\r\n",
+      "It's mild out today.\r\n",
+      "It's cool out here.\r\n",
+      "It's a bit nippy here.\r\n",
+      "It's cold!\r\n",
+      "It's really c-c-c-cold!!\r\n",
+      "Better get inside - this is too cold for man or -most- beasts.\r\n",
+      "There's a hurricane out here!\r\n",
+      "The wind and the rain are nearly too much to handle.\r\n",
+      "It's raining really hard right now.\r\n",
+      "What a rainstorm!\r\n",
+      "The wind is lashing this wild rain seemingly straight into your face.\r\n",
+      "It's raining pretty hard.\r\n",
+      "A respectable rain is being thrashed about by a vicious wind.\r\n",
+      "It's rainy and windy but, altogether not too uncomfortable.\r\n",
+      "Hey, it's raining...\r\n",
+      "The light rain here is nearly unnoticeable compared to the horrendous wind.\r\n",
+      "A light rain is being driven fiercely by the wind.\r\n",
+      "It's raining lightly.\r\n",
+      "A few drops of rain are falling admidst a fierce windstorm.\r\n",
+      "The wind and a bit of rain hint at the possibility of a storm.\r\n",
+      "A light drizzle is falling here.\r\n",
+      "This must be the worst blizzard ever.\r\n",
+      "There's a blizzard out here, making it quite difficult to see.\r\n",
+      "It's snowing very hard.\r\n",
+      "The heavily falling snow is being whipped up to a frenzy by a ferocious wind.\r\n",
+      "A heavy snow is being blown randomly about by a brisk wind.\r\n",
+      "Drifts in the snow are being formed by the wind.\r\n",
+      "The snow's coming down pretty fast now.\r\n",
+      "The snow wouldn't be too bad, except for the awful wind blowing it in every possible directon.\r\n",
+      "There's a minor blizzard here, more wind than snow.\r\n",
+      "Snow is being blown about by a stiff breeze.\r\n",
+      "It is snowing here.\r\n",
+      "A light snow is being tossed about by a fierce wind.\r\n",
+      "A lightly falling snow is being driven by a strong wind.\r\n",
+      "A light snow is falling admidst an unsettled wind.\r\n",
+      "It is lightly snowing.\r\n"
+  };
 
   if (cond.precip_rate == 0) {
     if (cond.windspeed > 60) {
@@ -1663,8 +1715,33 @@ ACMD(do_who)
   int minlev = 0;
   int tmp;
   int maxlev = LVL_IMMORT;
-  int race = ((1 << RACE_HUMAN) + (1 << RACE_TROLL) + (1 << RACE_OGRE) + (1 << RACE_DWARF) + (1 << RACE_ELF) + (1 << RACE_HALFELF) + (1 << RACE_GNOME) + (1 << RACE_HALFLING));
-  int class = ((1 << CLASS_WARRIOR) + (1 << CLASS_ROGUE) + (1 << CLASS_THIEF) + (1 << CLASS_SORCERER) + (1 << CLASS_WIZARD) + (1 << CLASS_ENCHANTER) + (1 << CLASS_CONJURER) + (1 << CLASS_NECROMANCER) + (1 << CLASS_CLERIC) + (1 << CLASS_PRIEST) + (1 << CLASS_SHAMAN) + (1 << CLASS_MONK) + (1 << CLASS_DRUID) + (1 << CLASS_ASSASSIN) + (1 << CLASS_BARD) + (1 << CLASS_RANGER) + (1 << CLASS_MERCENARY));
+  int race = (
+          (1 << RACE_HUMAN) +
+          (1 << RACE_TROLL) +
+          (1 << RACE_OGRE) +
+          (1 << RACE_DWARF) +
+          (1 << RACE_ELF) +
+          (1 << RACE_HALFELF) +
+          (1 << RACE_GNOME) +
+          (1 << RACE_HALFLING));
+  int class = (
+          (1 << CLASS_WARRIOR) +
+          (1 << CLASS_ROGUE) +
+          (1 << CLASS_THIEF) +
+          (1 << CLASS_SORCERER) +
+          (1 << CLASS_WIZARD) +
+          (1 << CLASS_ENCHANTER) +
+          (1 << CLASS_CONJURER) +
+          (1 << CLASS_NECROMANCER) +
+          (1 << CLASS_CLERIC) +
+          (1 << CLASS_PRIEST) +
+          (1 << CLASS_SHAMAN) +
+          (1 << CLASS_MONK) +
+          (1 << CLASS_DRUID) +
+          (1 << CLASS_ASSASSIN) +
+          (1 << CLASS_BARD) +
+          (1 << CLASS_RANGER) +
+          (1 << CLASS_MERCENARY));
   char name[MAX_NAME_LENGTH + 1];
 
   skip_spaces(&argument);
@@ -2178,10 +2255,11 @@ void perform_immort_where(struct char_data * ch, char *arg)
       if (!d->connected) {
         i = (d->original ? d->original : d->character);
         if (i && CAN_SEE(ch, i) && (i->in_room != NOWHERE)) {
-          if (d->original)
+          if (d->original) {
             sprintf(abuff, "%s%-20s - [%5d] %s (in %s)\r\n", abuff, GET_NAME(i), world[d->character->in_room].number, world[d->character->in_room].name, GET_NAME(d->character));
-          else
+          } else {
             sprintf(abuff, "%s%-20s - [%5d] %s\r\n", abuff, GET_NAME(i), world[i->in_room].number, world[i->in_room].name);
+          }
         }
       }
     page_string(ch->desc, abuff, 1);
