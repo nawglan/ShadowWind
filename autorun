@@ -10,6 +10,43 @@ if ($status != 0) then
   exit
 endif
 
+# ensure that we have valid mud structure
+mkdir -p "$MUDDIR/lib/etc"
+mkdir -p "$MUDDIR/lib/house"
+mkdir -p "$MUDDIR/lib/misc"
+mkdir -p "$MUDDIR/lib/text"
+mkdir -p "$MUDDIR/lib/plrdata/A-E"
+mkdir -p "$MUDDIR/lib/plrdata/F-J"
+mkdir -p "$MUDDIR/lib/plrdata/K-O"
+mkdir -p "$MUDDIR/lib/plrdata/K-O"
+mkdir -p "$MUDDIR/lib/plrdata/U-Z"
+mkdir -p "$MUDDIR/lib/plrdata/ZZZ"
+mkdir -p "$MUDDIR/lib/plrlogs/A-E"
+mkdir -p "$MUDDIR/lib/plrlogs/F-J"
+mkdir -p "$MUDDIR/lib/plrlogs/K-O"
+mkdir -p "$MUDDIR/lib/plrlogs/K-O"
+mkdir -p "$MUDDIR/lib/plrlogs/U-Z"
+mkdir -p "$MUDDIR/lib/plrlogs/ZZZ"
+mkdir -p "$MUDDIR/lib/plrobjs/A-E"
+mkdir -p "$MUDDIR/lib/plrobjs/F-J"
+mkdir -p "$MUDDIR/lib/plrobjs/K-O"
+mkdir -p "$MUDDIR/lib/plrobjs/K-O"
+mkdir -p "$MUDDIR/lib/plrobjs/U-Z"
+mkdir -p "$MUDDIR/lib/plrobjs/ZZZ"
+mkdir -p "$MUDDIR/lib/plrtext/A-E"
+mkdir -p "$MUDDIR/lib/plrtext/F-J"
+mkdir -p "$MUDDIR/lib/plrtext/K-O"
+mkdir -p "$MUDDIR/lib/plrtext/K-O"
+mkdir -p "$MUDDIR/lib/plrtext/U-Z"
+mkdir -p "$MUDDIR/lib/plrtext/ZZZ"
+mkdir -p "$MUDDIR/lib/world/maz"
+mkdir -p "$MUDDIR/lib/world/mob"
+mkdir -p "$MUDDIR/lib/world/obj"
+mkdir -p "$MUDDIR/lib/world/qst"
+mkdir -p "$MUDDIR/lib/world/shp"
+mkdir -p "$MUDDIR/lib/world/wld"
+mkdir -p "$MUDDIR/lib/world/zon"
+
 sort $MUDDIR/lib/text/helpneeded -o $MUDDIR/lib/text/helpneeded -t : -k +1 -u
 
 while (1)
