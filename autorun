@@ -18,25 +18,25 @@ mkdir -p "$MUDDIR/lib/text"
 mkdir -p "$MUDDIR/lib/plrdata/A-E"
 mkdir -p "$MUDDIR/lib/plrdata/F-J"
 mkdir -p "$MUDDIR/lib/plrdata/K-O"
-mkdir -p "$MUDDIR/lib/plrdata/K-O"
+mkdir -p "$MUDDIR/lib/plrdata/P-T"
 mkdir -p "$MUDDIR/lib/plrdata/U-Z"
 mkdir -p "$MUDDIR/lib/plrdata/ZZZ"
 mkdir -p "$MUDDIR/lib/plrlogs/A-E"
 mkdir -p "$MUDDIR/lib/plrlogs/F-J"
 mkdir -p "$MUDDIR/lib/plrlogs/K-O"
-mkdir -p "$MUDDIR/lib/plrlogs/K-O"
+mkdir -p "$MUDDIR/lib/plrlogs/P-T"
 mkdir -p "$MUDDIR/lib/plrlogs/U-Z"
 mkdir -p "$MUDDIR/lib/plrlogs/ZZZ"
 mkdir -p "$MUDDIR/lib/plrobjs/A-E"
 mkdir -p "$MUDDIR/lib/plrobjs/F-J"
 mkdir -p "$MUDDIR/lib/plrobjs/K-O"
-mkdir -p "$MUDDIR/lib/plrobjs/K-O"
+mkdir -p "$MUDDIR/lib/plrobjs/P-T"
 mkdir -p "$MUDDIR/lib/plrobjs/U-Z"
 mkdir -p "$MUDDIR/lib/plrobjs/ZZZ"
 mkdir -p "$MUDDIR/lib/plrtext/A-E"
 mkdir -p "$MUDDIR/lib/plrtext/F-J"
 mkdir -p "$MUDDIR/lib/plrtext/K-O"
-mkdir -p "$MUDDIR/lib/plrtext/K-O"
+mkdir -p "$MUDDIR/lib/plrtext/P-T"
 mkdir -p "$MUDDIR/lib/plrtext/U-Z"
 mkdir -p "$MUDDIR/lib/plrtext/ZZZ"
 mkdir -p "$MUDDIR/lib/world/maz"
@@ -47,7 +47,9 @@ mkdir -p "$MUDDIR/lib/world/shp"
 mkdir -p "$MUDDIR/lib/world/wld"
 mkdir -p "$MUDDIR/lib/world/zon"
 
-sort $MUDDIR/lib/text/helpneeded -o $MUDDIR/lib/text/helpneeded -t : -k +1 -u
+if (-e $MUDDIR/lib/text/helpneeded) then
+  sort $MUDDIR/lib/text/helpneeded -o $MUDDIR/lib/text/helpneeded -t : -k +1 -u
+endif
 
 while (1)
   set DATE = (`date`);
