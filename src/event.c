@@ -2286,7 +2286,7 @@ EVENT(spell_identify_event)
       send_to_char("Item will give you following abilities:  ", CAUSER_CH);
       sprintbit(GET_OBJ_BITV(obj), affected_bits, buf);
       sprintbit(GET_OBJ_BITV2(obj), affected_bits2, buf2);
-      sprintf(buf, "%s %s\r\n", buf, buf2);
+      sprintf(buf + strlen(buf), " %s\r\n", buf2);
       send_to_char(buf, CAUSER_CH);
     }
     send_to_char("Item is: ", CAUSER_CH);
@@ -2303,27 +2303,27 @@ EVENT(spell_identify_event)
         sprintf(buf, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
 
         if (GET_OBJ_VAL(obj, 1) >= 1) {
-          sprintf(buf, "%s %s", buf, get_spell_name(GET_OBJ_VAL(obj, 1)));
+          sprintf(buf + strlen(buf), " %s", get_spell_name(GET_OBJ_VAL(obj, 1)));
         }
         if (GET_OBJ_VAL(obj, 2) >= 1) {
-          sprintf(buf, "%s %s", buf, get_spell_name(GET_OBJ_VAL(obj, 2)));
+          sprintf(buf + strlen(buf), " %s", get_spell_name(GET_OBJ_VAL(obj, 2)));
         }
         if (GET_OBJ_VAL(obj, 3) >= 1) {
-          sprintf(buf, "%s %s", buf, get_spell_name(GET_OBJ_VAL(obj, 3)));
+          sprintf(buf + strlen(buf), " %s", get_spell_name(GET_OBJ_VAL(obj, 3)));
         }
-        sprintf(buf, "%s\r\n", buf);
+        sprintf(buf + strlen(buf), "\r\n");
         send_to_char(buf, CAUSER_CH);
         break;
       case ITEM_WAND:
       case ITEM_STAFF:
         sprintf(buf, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
-        sprintf(buf, "%s %s\r\n", buf, get_spell_name(GET_OBJ_VAL(obj, 3)));
-        sprintf(buf, "%sIt has %d maximum charge%s and %d remaining.\r\n", buf, GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 1) == 1 ? "" : "s", GET_OBJ_VAL(obj, 2));
+        sprintf(buf + strlen(buf), " %s\r\n", get_spell_name(GET_OBJ_VAL(obj, 3)));
+        sprintf(buf + strlen(buf), "It has %d maximum charge%s and %d remaining.\r\n", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 1) == 1 ? "" : "s", GET_OBJ_VAL(obj, 2));
         send_to_char(buf, CAUSER_CH);
         break;
       case ITEM_WEAPON:
         sprintf(buf, "Damage Dice is '%dD%d'", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2));
-        sprintf(buf, "%s for an average per-round damage of %.1f.\r\n", buf, ((GET_OBJ_VAL(obj, 1) + (GET_OBJ_VAL(obj,1) * GET_OBJ_VAL(obj, 2))) / 2.0));
+        sprintf(buf + strlen(buf), " for an average per-round damage of %.1f.\r\n", ((GET_OBJ_VAL(obj, 1) + (GET_OBJ_VAL(obj,1) * GET_OBJ_VAL(obj, 2))) / 2.0));
         send_to_char(buf, CAUSER_CH);
         break;
       case ITEM_ARMOR:

@@ -689,7 +689,7 @@ ACMD(do_spells)
           break;
         }
         if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, i))) {
-          sprintf(buf2, "%s%2d: %-20s  Mana: %d\r\n", buf2, spells[i].min_level[(int) GET_CLASS(ch)], spells[i].command, mag_manacost(ch, i));
+          sprintf(buf2 + strlen(buf2), "%2d: %-20s  Mana: %d\r\n", spells[i].min_level[(int) GET_CLASS(ch)], spells[i].command, mag_manacost(ch, i));
         }
       }
     }
@@ -710,7 +710,7 @@ ACMD(do_spells)
           break;
         }
         if (spells[i].min_level[class] < LVL_IMMORT) {
-          sprintf(buf2, "%s%2d: %-30s\r\n", buf2, spells[i].min_level[class], spells[i].command);
+          sprintf(buf2 + strlen(buf2), "%2d: %-30s\r\n", spells[i].min_level[class], spells[i].command);
         }
       }
     }

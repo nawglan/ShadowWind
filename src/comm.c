@@ -937,52 +937,52 @@ void make_prompt(struct descriptor_data * d)
       sprintf(prompt, "%s[%s", CCBLU(d->character,C_SPR), CCNRM(d->character,C_SPR));
 
     if (GET_INVIS_LEV(d->character))
-      sprintf(prompt, "%si%d ", prompt, GET_INVIS_LEV(d->character));
+      sprintf(prompt + strlen(prompt), "i%d ", GET_INVIS_LEV(d->character));
 
     if (IS_SET(GET_PROMPT(d->character), PRM_HP))
-      sprintf(prompt, "%s%s%d%shp%s ", prompt, CBWHT(d->character,C_SPR), GET_HIT(d->character), CCWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      sprintf(prompt + strlen(prompt), "%s%d%shp%s ", CBWHT(d->character,C_SPR), GET_HIT(d->character), CCWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
 
     if ((IS_MAGE(d->character) || IS_PRI(d->character)) && IS_SET(GET_PROMPT(d->character), PRM_MANA))
-      sprintf(prompt, "%s%s%d%sm%s ", prompt, CBGRN(d->character,C_SPR), GET_MANA(d->character), CCGRN(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      sprintf(prompt + strlen(prompt), "%s%d%sm%s ", CBGRN(d->character,C_SPR), GET_MANA(d->character), CCGRN(d->character,C_SPR), CCNRM(d->character,C_SPR));
 
     if (IS_SET(GET_PROMPT(d->character), PRM_MOVE))
-      sprintf(prompt, "%s%s%d%sv%s ", prompt, CBBLU(d->character,C_SPR), GET_MOVE(d->character), CCBLU(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      sprintf(prompt + strlen(prompt), "%s%d%sv%s ", CBBLU(d->character,C_SPR), GET_MOVE(d->character), CCBLU(d->character,C_SPR), CCNRM(d->character,C_SPR));
     if (IS_SET(GET_PROMPT(d->character), PRM_TANKCOND | PRM_TANKNAME) && FIGHTING(d->character) && FIGHTING(FIGHTING(d->character))) {
-      sprintf(prompt, "%s T: ", prompt);
+      sprintf(prompt + strlen(prompt), " T: ");
       if (IS_SET(GET_PROMPT(d->character), PRM_TANKNAME) && FIGHTING(d->character) && FIGHTING(FIGHTING(d->character))) {
         char temp[256];
         char tempname[256];
         strcpy(temp, GET_PLR_NAME(FIGHTING(FIGHTING(d->character))));
         one_argument(temp, tempname);
-        sprintf(prompt, "%s%s%s%s ", prompt, CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
+        sprintf(prompt + strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
       }
       if (IS_SET(GET_PROMPT(d->character), PRM_TANKCOND) && FIGHTING(d->character) && FIGHTING(FIGHTING(d->character))) {
         sprintf(buf, "%s", char_health(FIGHTING(FIGHTING(d->character)), d->character));
-        sprintf(prompt, "%s%s(%s%s%s)%s ", prompt, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), buf, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
+        sprintf(prompt + strlen(prompt), "%s(%s%s%s)%s ", CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), buf, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
       }
     }
     if (IS_SET(GET_PROMPT(d->character), PRM_ENEMYCOND | PRM_ENEMYNAME) && FIGHTING(d->character)) {
-      sprintf(prompt, "%s E: ", prompt);
+      sprintf(prompt + strlen(prompt), " E: ");
       if (IS_SET(GET_PROMPT(d->character), PRM_ENEMYNAME) && FIGHTING(d->character)) {
         char temp[256];
         char tempname[256];
         strcpy(temp, GET_PLR_NAME(FIGHTING(d->character)));
         one_argument(temp, tempname);
-        sprintf(prompt, "%s%s%s%s ", prompt, CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
+        sprintf(prompt + strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
       }
       if (IS_SET(GET_PROMPT(d->character), PRM_ENEMYCOND) && FIGHTING(d->character)) {
         sprintf(buf, "%s", char_health(FIGHTING(d->character), d->character));
-        sprintf(prompt, "%s%s(%s%s%s)%s ", prompt, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), buf, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
+        sprintf(prompt + strlen(prompt), "%s(%s%s%s)%s ", CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), buf, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
       }
     }
     if (IS_SET(GET_PROMPT(d->character), PRM_AFK)) {
-      sprintf(prompt, "%s%s(%sAFK%s)%s ", prompt, CBWHT(d->character,C_SPR), CBRED(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      sprintf(prompt + strlen(prompt), "%s(%sAFK%s)%s ", CBWHT(d->character,C_SPR), CBRED(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
     }
     if (GET_PROMPT(d->character) == 0 || !IS_SET(GET_PROMPT(d->character), PRM_HP | PRM_MANA | PRM_MOVE | PRM_AFK))
-      sprintf(prompt, "%s> ", prompt);
+      sprintf(prompt + strlen(prompt), "> ");
     else {
       prompt[strlen(prompt) - 1] = '\0';
-      sprintf(prompt, "%s%s]%s>%s ", prompt, CCBLU(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      sprintf(prompt + strlen(prompt), "%s]%s>%s ", CCBLU(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
     }
 
     write_to_descriptor(d->descriptor, prompt);

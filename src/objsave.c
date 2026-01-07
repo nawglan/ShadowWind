@@ -544,7 +544,7 @@ void Crash_listrent(struct char_data * ch, char *name)
         if (strcasecmp(tag, "obj_number") == 0) {
           if (real_object(val) > -1) {
             obj = read_object_q(val, VIRTUAL);
-            sprintf(buf, "%s [%5d] %-20s\r\n", buf, val, obj->short_description);
+            sprintf(buf + strlen(buf), " [%5d] %-20s\r\n", val, obj->short_description);
             extract_obj_q(obj);
           }
         }
@@ -552,33 +552,33 @@ void Crash_listrent(struct char_data * ch, char *name)
       case 'r':
       case 'R':
         if (strcasecmp(tag, "rent_version") == 0) {
-          sprintf(buf, "%sVersion: %d\r\n", buf, val);
+          sprintf(buf + strlen(buf), "Version: %d\r\n", val);
         } else if (strcasecmp(tag, "rent_time") == 0) {
           rent_time = time(0) - val;
           d = rent_time / 86400;
           h = (rent_time / 3600) % 24;
           m = (rent_time / 60) % 60;
-          sprintf(buf, "%sRented %d day%s, %d hour%s, %d minute%s ago.\r\n", buf, d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
+          sprintf(buf + strlen(buf), "Rented %d day%s, %d hour%s, %d minute%s ago.\r\n", d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
         } else if (strcasecmp(tag, "rent_type") == 0)
           switch (val) {
             case RENT_RENTED:
-              sprintf(buf, "%sType: Rent\r\n", buf);
+              sprintf(buf + strlen(buf), "Type: Rent\r\n");
               break;
             case RENT_CRASH:
-              sprintf(buf, "%sType: Crash\r\n", buf);
+              sprintf(buf + strlen(buf), "Type: Crash\r\n");
               break;
             case RENT_CRYO:
-              sprintf(buf, "%sType: Cryo\r\n", buf);
+              sprintf(buf + strlen(buf), "Type: Cryo\r\n");
               break;
             case RENT_TIMEDOUT:
             case RENT_FORCED:
-              sprintf(buf, "%sType: TimedOut\r\n", buf);
+              sprintf(buf + strlen(buf), "Type: TimedOut\r\n");
               break;
             case RENT_CAMPED:
-              sprintf(buf, "%sType: Camped\r\n", buf);
+              sprintf(buf + strlen(buf), "Type: Camped\r\n");
               break;
             default:
-              sprintf(buf, "%sType: Undef\r\n", buf);
+              sprintf(buf + strlen(buf), "Type: Undef\r\n");
               break;
           }
         break;

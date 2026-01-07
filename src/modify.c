@@ -329,7 +329,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
       } else
         strcat(buf, t);
       /* this is kind of annoying.. will have to take a poll and see..
-       sprintf(buf, "%s\r\n%d line%sshown.\r\n", buf, total_len,
+       sprintf(buf + strlen(buf), "\r\n%d line%sshown.\r\n", total_len,
        ((total_len != 1)?"s ":" "));
        */
       page_string(d, buf, TRUE);
@@ -383,7 +383,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
           s++;
           temp = *s;
           *s = '\0';
-          sprintf(buf, "%s%4d: ", buf, (i - 1));
+          sprintf(buf + strlen(buf), "%4d: ", (i - 1));
           strcat(buf, t);
           *s = temp;
           t = s;
@@ -396,7 +396,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
       } else if (t)
         strcat(buf, t);
       /* this is kind of annoying .. seeing as the lines are #ed
-       sprintf(buf, "%s\r\n%d numbered line%slisted.\r\n", buf, total_len,
+       sprintf(buf + strlen(buf), "\r\n%d numbered line%slisted.\r\n", total_len,
        ((total_len != 1)?"s ":" "));
        */
       page_string(d, buf, TRUE);

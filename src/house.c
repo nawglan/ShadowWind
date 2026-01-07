@@ -224,7 +224,7 @@ void House_listrent(struct char_data * ch, int vnum)
       return;
     }
     if (!feof(fl) && (obj = Obj_from_store(object)) != NULL) {
-      sprintf(buf, "%s [%5d] (%5dau) %s\r\n", buf, GET_OBJ_VNUM(obj), GET_OBJ_RENT(obj), obj->short_description);
+      sprintf(buf + strlen(buf), " [%5d] (%5dau) %s\r\n", GET_OBJ_VNUM(obj), GET_OBJ_RENT(obj), obj->short_description);
       free_obj(obj);
     }
   }
@@ -356,7 +356,7 @@ void hcontrol_list_houses(struct char_data * ch)
 
     strcpy(own_name, house_control[i].owner);
 
-    sprintf(buf, "%s%7d %7d  %-10s    %2d    %-12s %s\r\n", buf, house_control[i].vnum, house_control[i].atrium, built_on, house_control[i].num_of_guests, CAP(own_name), last_pay);
+    sprintf(buf + strlen(buf), "%7d %7d  %-10s    %2d    %-12s %s\r\n", house_control[i].vnum, house_control[i].atrium, built_on, house_control[i].num_of_guests, CAP(own_name), last_pay);
 
     if (house_control[i].num_of_guests) {
       strcat(buf, "     Guests: ");

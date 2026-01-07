@@ -630,12 +630,12 @@ void display_stats(struct char_data *ch)
   char buf1[2046];
 
   sprintf(buf1, "\r\nYour stats are:\r\n\r\n");
-  sprintf(buf1, "%sSTR: %s       ", buf1, stat_msg(GET_STR(ch)));
-  sprintf(buf1, "%sCON: %s\r\n", buf1, stat_msg(GET_CON(ch)));
-  sprintf(buf1, "%sDEX: %s       ", buf1, stat_msg(GET_DEX(ch)));
-  sprintf(buf1, "%sWIS: %s\r\n", buf1, stat_msg(GET_WIS(ch)));
-  sprintf(buf1, "%sAGI: %s       ", buf1, stat_msg(GET_AGI(ch)));
-  sprintf(buf1, "%sINT: %s\r\n\r\n", buf1, stat_msg(GET_INT(ch)));
+  sprintf(buf1 + strlen(buf1), "STR: %s       ", stat_msg(GET_STR(ch)));
+  sprintf(buf1 + strlen(buf1), "CON: %s\r\n", stat_msg(GET_CON(ch)));
+  sprintf(buf1 + strlen(buf1), "DEX: %s       ", stat_msg(GET_DEX(ch)));
+  sprintf(buf1 + strlen(buf1), "WIS: %s\r\n", stat_msg(GET_WIS(ch)));
+  sprintf(buf1 + strlen(buf1), "AGI: %s       ", stat_msg(GET_AGI(ch)));
+  sprintf(buf1 + strlen(buf1), "INT: %s\r\n\r\n", stat_msg(GET_INT(ch)));
 
   send_to_char(buf1, ch);
 }

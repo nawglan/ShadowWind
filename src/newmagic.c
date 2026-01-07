@@ -357,9 +357,9 @@ ACMD(do_memorize)
         if (ch->spell_memory[i].circle == i) {
           if (!found_circle) {
             found_circle = 1;
-            sprintf(buf, "%s(%2d%s circle) %2d - %s\r\n", buf, i, i == 1 ? "st" : i == 2 ? "nd" : i == 3 ? "rd" : "th", ch->spell_memory[i].has_mem, spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
+            sprintf(buf + strlen(buf), "(%2d%s circle) %2d - %s\r\n", i, i == 1 ? "st" : i == 2 ? "nd" : i == 3 ? "rd" : "th", ch->spell_memory[i].has_mem, spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
           } else {
-            sprintf(buf, "%s               %2d - %s\r\n", buf, ch->spell_memory[i].has_mem, spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
+            sprintf(buf + strlen(buf), "               %2d - %s\r\n", ch->spell_memory[i].has_mem, spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
           }
         }
       }
@@ -379,7 +379,7 @@ ACMD(do_memorize)
         next_event = temp_event->next;
         if (temp_event->type == EVENT_MEM && temp_event->causer == (void*) ch) {
           circle = GET_SPELL_CIRCLE(ch, temp_event->sinfo);
-          sprintf(buf, "%s%5d seconds: (%2d%s) %s\r\n", buf, temp_event->ticks_to_go, circle, circle == 1 ? "st" : circle == 2 ? "nd" : circle == 3 ? "rd" : "th", temp_event->sinfo->command);
+          sprintf(buf + strlen(buf), "%5d seconds: (%2d%s) %s\r\n", temp_event->ticks_to_go, circle, circle == 1 ? "st" : circle == 2 ? "nd" : circle == 3 ? "rd" : "th", temp_event->sinfo->command);
         }
       }
     }
@@ -395,7 +395,7 @@ ACMD(do_memorize)
       count += ch->spell_memory[j].is_mem;
       if (count) {
         if (i) {
-          sprintf(buf, "%s, %s", buf, buf2);
+          sprintf(buf + strlen(buf), ", %s", buf2);
         }
         i++;
         sprintf(buf2, "%d %d%s", ch->can_mem[j] - count, j, j == 1 ? "st" : j == 2 ? "nd" : j == 3 ? "rd" : "th");
@@ -408,7 +408,7 @@ ACMD(do_memorize)
       if (i > 1) {
         strcat(buf, "and ");
       }
-      sprintf(buf, "%s %s circle spells(s).\r\n", buf, buf2);
+      sprintf(buf + strlen(buf), " %s circle spells(s).\r\n", buf2);
     }
     page_string(ch->desc, buf, 1);
     if (find_event(ch, EVENT_MEM) && !AFF2_FLAGGED(ch, AFF2_MEMMING) && GET_COND(ch, FULL) && GET_COND(ch, THIRST) && GET_POS(ch) >= POS_RESTING && GET_POS(ch) <= POS_SITTING) {

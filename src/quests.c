@@ -666,10 +666,10 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
                 if (!mob_quests[questnum].needs[i].complete) {
                   p = find_participant(ch, mob_quests + questnum, i);
                   if (!p) {
-                    sprintf(qbuf, "%s%s\r\n", qbuf, make_money_text(mob_quests[questnum].needs[i].amount));
+                    sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
                   } else {
                     if (!p->complete) {
-                      sprintf(qbuf, "%s%s\r\n", qbuf, make_money_text(mob_quests[questnum].needs[i].amount - p->given));
+                      sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - p->given));
                     }
                   }
                 }
@@ -678,10 +678,10 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
                 if (!mob_quests[questnum].needs[i].complete) {
                   p = find_participant(ch, mob_quests + questnum, i);
                   if (!p) {
-                    sprintf(qbuf, "%s(%d) %s\r\n", qbuf, mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                    sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                   } else {
                     if (!p->complete) {
-                      sprintf(qbuf, "%s(%d) %s\r\n", qbuf, mob_quests[questnum].needs[i].amount - p->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                      sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - p->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                     }
                   }
                 }
@@ -691,12 +691,12 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
             switch (mob_quests[questnum].needs[i].type) {
               case QUEST_MONEY:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf, "%s%s\r\n", qbuf, make_money_text(mob_quests[questnum].needs[i].amount));
+                  sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
                 }
                 break;
               case QUEST_OBJECT:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf, "%s(%d) %s\r\n", qbuf, mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                  sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                 }
                 break;
             }
@@ -718,12 +718,12 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
             switch (mob_quests[questnum].needs[i].type) {
               case QUEST_MONEY:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf, "%s%s\r\n", qbuf, make_money_text(mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given));
+                  sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given));
                 }
                 break;
               case QUEST_OBJECT:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf, "%s(%d) %s\r\n", qbuf, mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                  sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                 }
                 break;
             }
@@ -731,12 +731,12 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
             switch (mob_quests[questnum].needs[i].type) {
               case QUEST_MONEY:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf, "%s%s\r\n", qbuf, make_money_text(mob_quests[questnum].needs[i].amount));
+                  sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
                 }
                 break;
               case QUEST_OBJECT:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf, "%s(%d) %s\r\n", qbuf, mob_quests[questnum].needs[i].amount, OBJS((obj_proto +real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                  sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto +real_object(mob_quests[questnum].needs[i].vnum)), ch));
                 }
                 break;
             }

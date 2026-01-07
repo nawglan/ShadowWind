@@ -301,7 +301,7 @@ char *times_message(struct obj_data * obj, char *name, int num)
   }
 
   if (num > 1)
-    sprintf(buf, "%s (x %d)", buf, num);
+    sprintf(buf + strlen(buf), " (x %d)", num);
   return (buf);
 }
 
@@ -1157,7 +1157,7 @@ char *customer_string(int shop_nr, int detailed)
           strcat(buf, ", ");
         strcat(buf, trade_letters[index]);
       } else
-        sprintf(buf, "%s%c", buf, *trade_letters[index]);
+        sprintf(buf + strlen(buf), "%c", *trade_letters[index]);
     else if (!detailed)
       strcat(buf, "_");
 
@@ -1179,9 +1179,9 @@ void list_all_shops(struct char_data * ch)
       strcpy(buf1, "<NONE>");
     else
       sprintf(buf1, "%6d", mob_index[SHOP_KEEPER(shop_nr)].virtual);
-    sprintf(buf2, "%s%s   %3.2f   %3.2f    ", buf2, buf1, SHOP_SELLPROFIT(shop_nr), SHOP_BUYPROFIT(shop_nr));
+    sprintf(buf2 + strlen(buf2), "%s   %3.2f   %3.2f    ", buf1, SHOP_SELLPROFIT(shop_nr), SHOP_BUYPROFIT(shop_nr));
     strcat(buf2, customer_string(shop_nr, FALSE));
-    sprintf(buf, "%s%s\n\r", buf, buf2);
+    sprintf(buf + strlen(buf), "%s\n\r", buf2);
   }
 
   page_string(ch->desc, buf, 1);
@@ -1226,7 +1226,7 @@ void list_detailed_shop(struct char_data * ch, int shop_nr)
 
   strcpy(buf, "Shopkeeper: ");
   if (SHOP_KEEPER(shop_nr) >= 0) {
-    sprintf(buf, "%s%s (#%d), Special Function: %s\n\r", buf, GET_NAME(&mob_proto[SHOP_KEEPER(shop_nr)]), mob_index[SHOP_KEEPER(shop_nr)].virtual, YESNO(SHOP_FUNC(shop_nr)));
+    sprintf(buf + strlen(buf), "%s (#%d), Special Function: %s\n\r", GET_NAME(&mob_proto[SHOP_KEEPER(shop_nr)]), mob_index[SHOP_KEEPER(shop_nr)].virtual, YESNO(SHOP_FUNC(shop_nr)));
     if ((k = get_char_num(SHOP_KEEPER(shop_nr)))) {
       send_to_char(buf, ch);
       sprintf(buf, "Coins:      [%9d], Bank: [%9d] (Total: %d)\n\r", GET_GOLD(k), SHOP_BANK(shop_nr), GET_GOLD(k) + SHOP_BANK(shop_nr));

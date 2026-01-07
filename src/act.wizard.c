@@ -200,31 +200,31 @@ ACMD(do_config)
 
   if (!*field) {
     sprintf(abuf, "Config Options\r\n\r\n");
-    sprintf(abuf, "%sticsize (in secs)            :  %d\r\n", abuf, SECS_PER_MUD_HOUR);
-    sprintf(abuf, "%snum_months (per year)        :  %d\r\n", abuf, num_months);
-    sprintf(abuf, "%snum_days (per month)         :  %d\r\n", abuf, num_days);
-    sprintf(abuf, "%snum_hours (per day)          :  %d\r\n", abuf, num_hours);
-    sprintf(abuf, "%spk_allowed (yes no)          :  %s\r\n", abuf, YESNO(pk_allowed));
-    sprintf(abuf, "%spt_allowed (yes no)          :  %s\r\n", abuf, YESNO(pt_allowed));
-    sprintf(abuf, "%slevel_can_shout (0-51)       :  %d\r\n", abuf, level_can_shout);
-    sprintf(abuf, "%slevel_can_color (0-51)       :  %d\r\n", abuf, level_can_color);
-    sprintf(abuf, "%smax_exp_gain                 :  %d\r\n", abuf, max_exp_gain);
-    sprintf(abuf, "%smax_exp_loss                 :  %d\r\n", abuf, max_exp_loss);
-    sprintf(abuf, "%smax_npc_corpse_time (in tics):  %d\r\n", abuf, max_npc_corpse_time);
-    sprintf(abuf, "%smax_pc_corpse_time (in tics) :  %d\r\n", abuf, max_pc_corpse_time);
-    sprintf(abuf, "%smax_obj_time (in tics)       :  %d\r\n", abuf, max_obj_time);
-    sprintf(abuf, "%sfree_rent (yes no)           :  %s\r\n", abuf, YESNO(free_rent));
-    sprintf(abuf, "%smax_obj_save                 :  %d\r\n", abuf, max_obj_save);
-    sprintf(abuf, "%smin_rent_cost                :  %d\r\n", abuf, min_rent_cost);
-    sprintf(abuf, "%sauto_save (yes no)           :  %s\r\n", abuf, YESNO(auto_save));
-    sprintf(abuf, "%sautosave_time (in mins)      :  %d\r\n", abuf, autosave_time);
-    sprintf(abuf, "%scrash_file_timeout (in days) :  %d\r\n", abuf, crash_file_timeout);
-    sprintf(abuf, "%srent_file_timeout (in days)  :  %d\r\n", abuf, rent_file_timeout);
-    sprintf(abuf, "%smaxconnect                   :  %d\r\n", abuf, max_players);
-    sprintf(abuf, "%spracs_cost (yes no)          :  %s\r\n", abuf, YESNO(PRACS_COST));
-    sprintf(abuf, "%snodecay (yes no)             :  %s\r\n", abuf, YESNO(NODECAY));
+    sprintf(abuf + strlen(abuf), "ticsize (in secs)            :  %d\r\n", SECS_PER_MUD_HOUR);
+    sprintf(abuf + strlen(abuf), "num_months (per year)        :  %d\r\n", num_months);
+    sprintf(abuf + strlen(abuf), "num_days (per month)         :  %d\r\n", num_days);
+    sprintf(abuf + strlen(abuf), "num_hours (per day)          :  %d\r\n", num_hours);
+    sprintf(abuf + strlen(abuf), "pk_allowed (yes no)          :  %s\r\n", YESNO(pk_allowed));
+    sprintf(abuf + strlen(abuf), "pt_allowed (yes no)          :  %s\r\n", YESNO(pt_allowed));
+    sprintf(abuf + strlen(abuf), "level_can_shout (0-51)       :  %d\r\n", level_can_shout);
+    sprintf(abuf + strlen(abuf), "level_can_color (0-51)       :  %d\r\n", level_can_color);
+    sprintf(abuf + strlen(abuf), "max_exp_gain                 :  %d\r\n", max_exp_gain);
+    sprintf(abuf + strlen(abuf), "max_exp_loss                 :  %d\r\n", max_exp_loss);
+    sprintf(abuf + strlen(abuf), "max_npc_corpse_time (in tics):  %d\r\n", max_npc_corpse_time);
+    sprintf(abuf + strlen(abuf), "max_pc_corpse_time (in tics) :  %d\r\n", max_pc_corpse_time);
+    sprintf(abuf + strlen(abuf), "max_obj_time (in tics)       :  %d\r\n", max_obj_time);
+    sprintf(abuf + strlen(abuf), "free_rent (yes no)           :  %s\r\n", YESNO(free_rent));
+    sprintf(abuf + strlen(abuf), "max_obj_save                 :  %d\r\n", max_obj_save);
+    sprintf(abuf + strlen(abuf), "min_rent_cost                :  %d\r\n", min_rent_cost);
+    sprintf(abuf + strlen(abuf), "auto_save (yes no)           :  %s\r\n", YESNO(auto_save));
+    sprintf(abuf + strlen(abuf), "autosave_time (in mins)      :  %d\r\n", autosave_time);
+    sprintf(abuf + strlen(abuf), "crash_file_timeout (in days) :  %d\r\n", crash_file_timeout);
+    sprintf(abuf + strlen(abuf), "rent_file_timeout (in days)  :  %d\r\n", rent_file_timeout);
+    sprintf(abuf + strlen(abuf), "maxconnect                   :  %d\r\n", max_players);
+    sprintf(abuf + strlen(abuf), "pracs_cost (yes no)          :  %s\r\n", YESNO(PRACS_COST));
+    sprintf(abuf + strlen(abuf), "nodecay (yes no)             :  %s\r\n", YESNO(NODECAY));
 
-    sprintf(abuf, "%s\r\nUsage: config <field> <value>\r\n", abuf);
+    sprintf(abuf + strlen(abuf), "\r\nUsage: config <field> <value>\r\n");
     page_string(ch->desc, abuf, 1);
     return;
   }
@@ -1536,9 +1536,9 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
   if (j->ex_description) {
     sprintf(buf, "{BExtra descs:{c");
     for (desc = j->ex_description; desc; desc = desc->next) {
-      sprintf(buf, "%s %s", buf, (desc->keyword ? desc->keyword : "NONE"));
+      sprintf(buf + strlen(buf), " %s", (desc->keyword ? desc->keyword : "NONE"));
     }
-    sprintf(buf, "%s{x\r\n", buf);
+    sprintf(buf + strlen(buf), "{x\r\n");
     send_to_char(buf, ch);
   }
   send_to_char("{BCan be worn on:{c ", ch);
@@ -1563,19 +1563,19 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
 
   sprintf(buf, "{BWeight: {c%d{B, Value: {c%d{B, Timer: {c%d{B, Material:{c", GET_OBJ_WEIGHT(j), GET_OBJ_COST(j), GET_OBJ_TIMER(j));
   sprinttype(GET_OBJ_VAL(j, 4), material_types, buf2);
-  sprintf(buf, "%s %s\r\n", buf, buf2);
+  sprintf(buf + strlen(buf), " %s\r\n", buf2);
   send_to_char(buf, ch);
 
   strcpy(buf, "{BIn room:{c ");
   if (j->in_room == NOWHERE) {
     strcat(buf, "Nowhere");
   } else {
-    sprintf(buf, "%s%d", buf, world[j->in_room].number);
+    sprintf(buf + strlen(buf), "%d", world[j->in_room].number);
   }
-  sprintf(buf, "%s"
+  sprintf(buf + strlen(buf),
       "{B, In object:{c %s"
       "{B, Carried by:{c %s"
-      "{B, Worn by:{c %s\r\n", buf, (j->in_obj ? j->in_obj->short_description : "None"), (j->carried_by ? GET_NAME(j->carried_by) : "Nobody"), (j->worn_by ? GET_NAME(j->worn_by) : "Nobody"));
+      "{B, Worn by:{c %s\r\n", (j->in_obj ? j->in_obj->short_description : "None"), (j->carried_by ? GET_NAME(j->carried_by) : "Nobody"), (j->worn_by ? GET_NAME(j->worn_by) : "Nobody"));
   send_to_char(buf, ch);
   sprintf(buf, "{BItems in game: {c%d{B, Items in rent at boot: {c%d{B, Spec vals: [{c%d{B] [{c%d{B] [{c%d{B]{x\r\n", obj_index[GET_OBJ_RNUM(j)].number, obj_index[GET_OBJ_RNUM(j)].rent,
 
@@ -1591,9 +1591,9 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
       sprintf(buf, "{BSpells ({blvl-%d{B):", GET_OBJ_VAL(j, 0));
       for (i = 1; i < 4; i++) {
         if (GET_OBJ_VAL(j, i)) {
-          sprintf(buf, "%s\r\n   {c%s{x", buf, get_spell_name(GET_OBJ_VAL(j,i)));
+          sprintf(buf + strlen(buf), "\r\n   {c%s{x", get_spell_name(GET_OBJ_VAL(j,i)));
         } else {
-          sprintf(buf, "%s\r\n   {c<NONE>{x", buf);
+          sprintf(buf + strlen(buf), "\r\n   {c<NONE>{x");
         }
       }
       break;
@@ -1950,7 +1950,7 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
   for (i = 0, j = k->carrying; j; j = j->next_content, i++) {
     ;
   }
-  sprintf(buf, "%s{BItems in: inventory: {c%d{B, ", buf, i);
+  sprintf(buf + strlen(buf), "{BItems in: inventory: {c%d{B, ", i);
 
   for (i = 0, i2 = 0; i < NUM_WEARS; i++) {
     if (k->equipment[i]) {
@@ -2686,7 +2686,7 @@ ACMD(do_tedit)
     i = 1;
     for (l = 0; *fields[l].cmd != '\n'; l++) {
       if (COM_FLAGGED(ch, fields[l].level)) {
-        sprintf(buf, "%s%-11.11s", buf, fields[l].cmd);
+        sprintf(buf + strlen(buf), "%-11.11s", fields[l].cmd);
         if (!(i % 7)) {
           strcat(buf, "\r\n");
         }
@@ -3170,7 +3170,7 @@ ACMD(do_last)
         strcat(tempname, " (deleted)");
       }
       if (*buf != '\0') {
-        sprintf(buf, "%s{c%5d      %-20s%7d         %20s", buf, tmpLast->PlayerNum, tempname, tmpLast->NumberConnects, asctime(localtime((time_t*) &(tmpLast->Time))));
+        sprintf(buf + strlen(buf), "{c%5d      %-20s%7d         %20s", tmpLast->PlayerNum, tempname, tmpLast->NumberConnects, asctime(localtime((time_t*) &(tmpLast->Time))));
       } else {
         sprintf(buf, "{c%5d      %-20s%7d         %20s", tmpLast->PlayerNum, tempname, tmpLast->NumberConnects, asctime(localtime((time_t*) &(tmpLast->Time))));
       }
@@ -3182,7 +3182,7 @@ ACMD(do_last)
       }
       tmpLast = tmpLast->next;
     }
-    sprintf(buf, "%s{x", buf);
+    sprintf(buf + strlen(buf), "{x");
     page_string(ch->desc, buf, 1);
     free_char(chdata);
     return;
@@ -3344,13 +3344,13 @@ ACMD(do_wiznet)
             sprintf(buf1, "Gods online:\r\n");
             any = TRUE;
           }
-          sprintf(buf1, "%s  %s", buf1, GET_NAME(d->character));
+          sprintf(buf1 + strlen(buf1), "  %s", GET_NAME(d->character));
           if (PLR_FLAGGED(d->character, PLR_WRITING)) {
-            sprintf(buf1, "%s (Writing)\r\n", buf1);
+            sprintf(buf1 + strlen(buf1), " (Writing)\r\n");
           } else if (PLR_FLAGGED(d->character, PLR_MAILING)) {
-            sprintf(buf1, "%s (Writing mail)\r\n", buf1);
+            sprintf(buf1 + strlen(buf1), " (Writing mail)\r\n");
           } else {
-            sprintf(buf1, "%s\r\n", buf1);
+            sprintf(buf1 + strlen(buf1), "\r\n");
           }
         }
       }
@@ -3358,10 +3358,10 @@ ACMD(do_wiznet)
       for (d = descriptor_list; d; d = d->next) {
         if (!d->connected && GET_LEVEL(d->character) >= LVL_IMMORT && PRF_FLAGGED(d->character, PRF_NOWIZ) && CAN_SEE(ch, d->character)) {
           if (!any) {
-            sprintf(buf1, "%sGods offline:\r\n", buf1);
+            sprintf(buf1 + strlen(buf1), "Gods offline:\r\n");
             any = TRUE;
           }
-          sprintf(buf1, "%s  %s\r\n", buf1, GET_NAME(d->character));
+          sprintf(buf1 + strlen(buf1), "  %s\r\n", GET_NAME(d->character));
         }
       }
       send_to_char(buf1, ch);
@@ -3644,7 +3644,7 @@ ACMD(do_wizutil)
 
 void print_zone_to_buf(char *bufptr, int zone)
 {
-  sprintf(bufptr, "%s%3d %-30.30s Age: %3d; Reset: %3d (%1d); Top: %5d\r\n", bufptr, zone_table[zone].number, zone_table[zone].name, zone_table[zone].age, zone_table[zone].lifespan, zone_table[zone].reset_mode, zone_table[zone].top);
+  sprintf(bufptr + strlen(bufptr), "%3d %-30.30s Age: %3d; Reset: %3d (%1d); Top: %5d\r\n", zone_table[zone].number, zone_table[zone].name, zone_table[zone].age, zone_table[zone].lifespan, zone_table[zone].reset_mode, zone_table[zone].top);
 }
 
 char* get_spell_argument(spell* spell_pointer)
@@ -3742,33 +3742,33 @@ void show_spell_info(struct char_data *ch, char *spellname)
   sprintf(buf, "%d) %s is a %s\r\n", spells[spellnum].spellindex, spells[spellnum].command, (spells[spellnum].event_pointer ? "SPELL" : "SKILL"));
 
   if (spells[spellnum].event_pointer) {
-    sprintf(buf, "%s%s", buf, get_spell_argument(spells[spellnum].spell_pointer));
-    sprintf(buf, "%s%s", buf, get_event_type(spells[spellnum].event_pointer));
-    sprintf(buf, "%sYou must be in at least %s position to use this spell.\r\n", buf, position_types[spells[spellnum].min_position]);
-    sprintf(buf, "%sMaximum mana: %d\tMinimum mana: %d\t Amount change per level: %d\r\n", buf, spells[spellnum].mana_max, spells[spellnum].mana_min, spells[spellnum].mana_change);
-    sprintf(buf, "%sIt is a %s spell and is %s to learn.\r\n", buf, (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
-    sprintf(buf, "%sThis spell is in the %s.\r\n", buf, spells[find_skill_num_def(spells[spellnum].realm)].command);
+    sprintf(buf + strlen(buf), "%s", get_spell_argument(spells[spellnum].spell_pointer));
+    sprintf(buf + strlen(buf), "%s", get_event_type(spells[spellnum].event_pointer));
+    sprintf(buf + strlen(buf), "You must be in at least %s position to use this spell.\r\n", position_types[spells[spellnum].min_position]);
+    sprintf(buf + strlen(buf), "Maximum mana: %d\tMinimum mana: %d\t Amount change per level: %d\r\n", spells[spellnum].mana_max, spells[spellnum].mana_min, spells[spellnum].mana_change);
+    sprintf(buf + strlen(buf), "It is a %s spell and is %s to learn.\r\n", (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
+    sprintf(buf + strlen(buf), "This spell is in the %s.\r\n", spells[find_skill_num_def(spells[spellnum].realm)].command);
     if (spells[spellnum].unaffect) {
-      sprintf(buf, "%sThis spell removes %s.\r\n", buf, spells[spellnum].unaffect);
+      sprintf(buf + strlen(buf), "This spell removes %s.\r\n", spells[spellnum].unaffect);
     }
-    sprintf(buf, "%sInvisible: %s\r\n", buf, YESNO(spells[spellnum].invisible));
+    sprintf(buf + strlen(buf), "Invisible: %s\r\n", YESNO(spells[spellnum].invisible));
     if (spells[spellnum].num_dice || spells[spellnum].size_dice) {
-      sprintf(buf, "%sNum dice: %d, Size dice: %d, Avg dice %d\r\n", buf, spells[spellnum].num_dice, spells[spellnum].size_dice, ((spells[spellnum].num_dice + (spells[spellnum].size_dice * spells[spellnum].num_dice)) / 2));
+      sprintf(buf + strlen(buf), "Num dice: %d, Size dice: %d, Avg dice %d\r\n", spells[spellnum].num_dice, spells[spellnum].size_dice, ((spells[spellnum].num_dice + (spells[spellnum].size_dice * spells[spellnum].num_dice)) / 2));
     }
-    sprintf(buf, "%sResist: %s\r\n", buf, resist_short_name[spells[spellnum].resist_type - 1]);
-    sprintf(buf, "%sSaving Throw: %s\r\n", buf, saving_throws[spells[spellnum].saving_throw]);
+    sprintf(buf + strlen(buf), "Resist: %s\r\n", resist_short_name[spells[spellnum].resist_type - 1]);
+    sprintf(buf + strlen(buf), "Saving Throw: %s\r\n", saving_throws[spells[spellnum].saving_throw]);
   } else {
-    sprintf(buf, "%sYou must be in at least %s position to use this skill.\r\n", buf, position_types[spells[spellnum].min_position]);
-    sprintf(buf, "%sIt is a %s skill and is %s to learn.\r\n", buf, (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
+    sprintf(buf + strlen(buf), "You must be in at least %s position to use this skill.\r\n", position_types[spells[spellnum].min_position]);
+    sprintf(buf + strlen(buf), "It is a %s skill and is %s to learn.\r\n", (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
   }
-  sprintf(buf, "%s\r\nLevels assigned to each class:\r\n", buf);
+  sprintf(buf + strlen(buf), "\r\nLevels assigned to each class:\r\n");
   for (i = 0; i < NUM_CLASSES; i++) {
     if (i == 9) {
-      sprintf(buf, "%s %s:%2d\r\n", buf, class_abbrevs[i], spells[spellnum].min_level[i]);
+      sprintf(buf + strlen(buf), " %s:%2d\r\n", class_abbrevs[i], spells[spellnum].min_level[i]);
     } else if (i == 0 || i == 10) {
-      sprintf(buf, "%s%s:%2d", buf, class_abbrevs[i], spells[spellnum].min_level[i]);
+      sprintf(buf + strlen(buf), "%s:%2d", class_abbrevs[i], spells[spellnum].min_level[i]);
     } else {
-      sprintf(buf, "%s %s:%2d", buf, class_abbrevs[i], spells[spellnum].min_level[i]);
+      sprintf(buf + strlen(buf), " %s:%2d", class_abbrevs[i], spells[spellnum].min_level[i]);
     }
   }
   strcat(buf, "\r\n");
@@ -3824,7 +3824,7 @@ ACMD(do_show)
     strcpy(buf, "Show options:\r\n");
     for (j = 0, i = 0; fields[i].level; i++) {
       if (i < 2 || COM_FLAGGED(ch, fields[i].level)) {
-        sprintf(buf, "%s%-15s%s", buf, fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
+        sprintf(buf + strlen(buf), "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
       }
     }
     strcat(buf, "\r\n");
@@ -3884,14 +3884,14 @@ ACMD(do_show)
         k++;
       }
       sprintf(buf, "Current stats:\r\n");
-      sprintf(buf, "%s  %5d players in game  %5d connected\r\n", buf, i, con);
-      sprintf(buf, "%s  %5d registered\r\n", buf, top_of_p_table + 1);
-      sprintf(buf, "%s  %5d mobiles          %5d prototypes\r\n", buf, j, top_of_mobt + 1);
-      sprintf(buf, "%s  %5d objects          %5d prototypes\r\n", buf, k, top_of_objt + 1);
-      sprintf(buf, "%s  %5d rooms            %5d zones\r\n", buf, top_of_world + 1, top_of_zone_table + 1);
-      sprintf(buf, "%s  %5d large bufs\r\n", buf, buf_largecount);
-      sprintf(buf, "%s  %5d buf switches     %5d overflows\r\n", buf, buf_switches, buf_overflows);
-      sprintf(buf, "%s  %5d deaths\r\n", buf, death_count);
+      sprintf(buf + strlen(buf), "  %5d players in game  %5d connected\r\n", i, con);
+      sprintf(buf + strlen(buf), "  %5d registered\r\n", top_of_p_table + 1);
+      sprintf(buf + strlen(buf), "  %5d mobiles          %5d prototypes\r\n", j, top_of_mobt + 1);
+      sprintf(buf + strlen(buf), "  %5d objects          %5d prototypes\r\n", k, top_of_objt + 1);
+      sprintf(buf + strlen(buf), "  %5d rooms            %5d zones\r\n", top_of_world + 1, top_of_zone_table + 1);
+      sprintf(buf + strlen(buf), "  %5d large bufs\r\n", buf_largecount);
+      sprintf(buf + strlen(buf), "  %5d buf switches     %5d overflows\r\n", buf_switches, buf_overflows);
+      sprintf(buf + strlen(buf), "  %5d deaths\r\n", death_count);
       send_to_char(buf, ch);
       break;
     case 2: /* zone */
@@ -3928,9 +3928,9 @@ ACMD(do_show)
         return;
       }
       sprintf(buf, "Player: %-12s (%s) [%2d %s]\r\n", GET_NAME(vbuf), genders[(int) GET_SEX(vbuf)], GET_LEVEL(vbuf), class_abbrevs[(int) GET_CLASS(vbuf)]);
-      sprintf(buf, "%sAu: %-8d  Bal: %-8d  Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n", buf, GET_GOLD(vbuf), GET_BANK_GOLD(vbuf), GET_EXP(vbuf), GET_ALIGNMENT(vbuf), GET_PRACTICES(vbuf));
+      sprintf(buf + strlen(buf), "Au: %-8d  Bal: %-8d  Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n", GET_GOLD(vbuf), GET_BANK_GOLD(vbuf), GET_EXP(vbuf), GET_ALIGNMENT(vbuf), GET_PRACTICES(vbuf));
       strcpy(birth, (char*) ctime(&GET_BIRTH(vbuf)));
-      sprintf(buf, "%sStarted: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n", buf, birth, ctime(&GET_LOGON(vbuf)), (int) (GET_PLAYED(vbuf) / 3600), (int) ((GET_PLAYED(vbuf) / 60) % 60));
+      sprintf(buf + strlen(buf), "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n", birth, ctime(&GET_LOGON(vbuf)), (int) (GET_PLAYED(vbuf) / 3600), (int) ((GET_PLAYED(vbuf) / 60) % 60));
       free_char(vbuf);
       send_to_char(buf, ch);
       break;
@@ -3942,7 +3942,7 @@ ACMD(do_show)
       for (i = 0, k = 0; i <= top_of_world; i++) {
         for (j = 0; j < NUM_OF_DIRS; j++) {
           if (world[i].dir_option[j] && world[i].dir_option[j]->to_room == 0) {
-            sprintf(buf, "%s%2d: [%5d] %s\r\n", buf, ++k, world[i].number, world[i].name);
+            sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", ++k, world[i].number, world[i].name);
           }
         }
       }
@@ -3952,7 +3952,7 @@ ACMD(do_show)
       strcpy(buf, "Death Traps\r\n-----------\r\n");
       for (i = 0, j = 0; i <= top_of_world; i++) {
         if (IS_SET(ROOM_FLAGS(i), ROOM_DEATH)) {
-          sprintf(buf, "%s%2d: [%5d] %s\r\n", buf, ++j, world[i].number, world[i].name);
+          sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", ++j, world[i].number, world[i].name);
         }
       }
       send_to_char(buf, ch);
@@ -3962,7 +3962,7 @@ ACMD(do_show)
       strcpy(buf, "Godrooms\r\n--------------------------\r\n");
       for (i = 0, j = 0; i < top_of_world; i++) {
         if (world[i].zone == GOD_ROOMS_ZONE) {
-          sprintf(buf, "%s%2d: [%5d] %s\r\n", buf, j++, world[i].number, world[i].name);
+          sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", j++, world[i].number, world[i].name);
         }
       }
       send_to_char(buf, ch);
@@ -3994,7 +3994,7 @@ ACMD(do_show)
       strcpy(buf, "Fastheal Rooms\r\n-----------\r\n");
       for (i = 0, j = 0; i <= top_of_world; i++) {
         if (IS_SET(ROOM_FLAGS(i), ROOM_FASTHEAL)) {
-          sprintf(buf, "%s%2d: [%5d] %s\r\n", buf, ++j, world[i].number, world[i].name);
+          sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", ++j, world[i].number, world[i].name);
         }
       }
       send_to_char(buf, ch);
@@ -4012,7 +4012,7 @@ ACMD(do_show)
           if (zone_table[world[i].zone].number == j) {
             for (k = 0; k < NUM_OF_DIRS; k++) {
               if (world[i].dir_option[k] && world[i].dir_option[k]->to_room != NOWHERE && zone_table[world[world[i].dir_option[k]->to_room].zone].number != j) {
-                sprintf(buf, "%s%5d exit %s leads to %-5d.\r\n", buf, world[i].number, dirs[k], world[world[i].dir_option[k]->to_room].number);
+                sprintf(buf + strlen(buf), "%5d exit %s leads to %-5d.\r\n", world[i].number, dirs[k], world[world[i].dir_option[k]->to_room].number);
               }
             }
           }
@@ -4033,7 +4033,7 @@ ACMD(do_show)
             }
           }
           if (!counter) {
-            sprintf(buf, "%s%5d has no valid exits.\r\n", buf, world[i].number);
+            sprintf(buf + strlen(buf), "%5d has no valid exits.\r\n", world[i].number);
           }
         }
         page_string(ch->desc, buf, 1);

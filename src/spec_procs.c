@@ -137,9 +137,9 @@ void show_skills(struct char_data * ch, struct char_data *vict)
     }
     if ((GET_LEVEL(vict) >= spells[i].min_level[(int) GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
       if (!PRACS_COST || ch == vict) {
-        sprintf(buf2, "%s%-20s %s\r\n", buf2, spells[i].command, how_good(GET_SKILL(vict, spells[i].spellindex)));
+        sprintf(buf2 + strlen(buf2), "%-20s %s\r\n", spells[i].command, how_good(GET_SKILL(vict, spells[i].spellindex)));
       } else {
-        sprintf(buf2, "%s%-20s %s %s\r\n", buf2, spells[i].command, how_good(GET_SKILL(vict, spells[i].spellindex)), skill_prac_price_text(vict, (spells + i)));
+        sprintf(buf2 + strlen(buf2), "%-20s %s %s\r\n", spells[i].command, how_good(GET_SKILL(vict, spells[i].spellindex)), skill_prac_price_text(vict, (spells + i)));
       }
     }
   }
@@ -149,7 +149,7 @@ void show_skills(struct char_data * ch, struct char_data *vict)
     return;
   }
 
-  sprintf(buf2, "%s\r\n{cSpells{C: {m-------{x\r\n\r\n", buf2);
+  sprintf(buf2 + strlen(buf2), "\r\n{cSpells{C: {m-------{x\r\n\r\n");
 
   for (i = 1; spells[i].command[0] != '\n'; i++) {
     if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
@@ -158,14 +158,14 @@ void show_skills(struct char_data * ch, struct char_data *vict)
     }
     if (!PRACS_COST || ch == vict) {
       if ((GET_LEVEL(vict) >= spells[i].min_level[(int) GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) && spells[i].spell_pointer) {
-        sprintf(buf2, "%s%-20s %s\r\n", buf2, spells[i].command, (GET_SKILL(vict, spells[i].spellindex) ? " " : "(unlearned)"));
+        sprintf(buf2 + strlen(buf2), "%-20s %s\r\n", spells[i].command, (GET_SKILL(vict, spells[i].spellindex) ? " " : "(unlearned)"));
       }
     } else {
       if ((GET_LEVEL(vict) >= spells[i].min_level[(int) GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) && spells[i].spell_pointer) {
         if (GET_SKILL(ch, spells[i].spellindex))
-          sprintf(buf2, "%s%-20s\r\n", buf2, spells[i].command);
+          sprintf(buf2 + strlen(buf2), "%-20s\r\n", spells[i].command);
         else
-          sprintf(buf2, "%s%-20s (unlearned) %s\r\n", buf2, spells[i].command, skill_prac_price_text(ch, (spells + i)));
+          sprintf(buf2 + strlen(buf2), "%-20s (unlearned) %s\r\n", spells[i].command, skill_prac_price_text(ch, (spells + i)));
       }
     }
   }
@@ -187,7 +187,7 @@ void list_skills(struct char_data * ch)
       break;
     }
     if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
-      sprintf(buf2, "%s%-20s %s\r\n", buf2, spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)));
+      sprintf(buf2 + strlen(buf2), "%-20s %s\r\n", spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)));
     }
   }
 
@@ -196,7 +196,7 @@ void list_skills(struct char_data * ch)
     return;
   }
 
-  sprintf(buf2, "%s\r\n{cSpells{C: {m-------{x\r\n\r\n", buf2);
+  sprintf(buf2 + strlen(buf2), "\r\n{cSpells{C: {m-------{x\r\n\r\n");
 
   for (circle = 1; circle <= GET_PLR_CIRCLE(ch); circle++) {
     found = 0;
@@ -207,12 +207,12 @@ void list_skills(struct char_data * ch)
         break;
       }
       if ((((spells[i].min_level[(int) GET_CLASS(ch)] + 4) / 5) == circle) && (GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && spells[i].spell_pointer) {
-        sprintf(abuf, "%s\t%-20s %s\r\n", abuf, spells[i].command, (GET_SKILL(ch, spells[i].spellindex) ? "" : "(unlearned)"));
+        sprintf(abuf + strlen(abuf), "\t%-20s %s\r\n", spells[i].command, (GET_SKILL(ch, spells[i].spellindex) ? "" : "(unlearned)"));
         found = 1;
       }
     }
     if (found)
-      sprintf(buf2, "%s%s", buf2, abuf);
+      sprintf(buf2 + strlen(buf2), "%s", abuf);
   }
   page_string(ch->desc, buf2, 1);
 }
@@ -299,7 +299,7 @@ void list_skills_cost(struct char_data * ch)
       break;
     }
     if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
-      sprintf(buf2, "%s%-20s %s %s\r\n", buf2, spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)), skill_prac_price_text(ch, (spells + i)));
+      sprintf(buf2 + strlen(buf2), "%-20s %s %s\r\n", spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)), skill_prac_price_text(ch, (spells + i)));
     }
   }
 
@@ -308,7 +308,7 @@ void list_skills_cost(struct char_data * ch)
     return;
   }
 
-  sprintf(buf2, "%s\r\n{cSpells{C: {m-------{x\r\n\r\n", buf2);
+  sprintf(buf2 + strlen(buf2), "\r\n{cSpells{C: {m-------{x\r\n\r\n");
 
   for (circle = 1; circle <= GET_PLR_CIRCLE(ch); circle++) {
     found = 0;
@@ -320,14 +320,14 @@ void list_skills_cost(struct char_data * ch)
       }
       if ((((spells[i].min_level[(int) GET_CLASS(ch)] + 4) / 5) == circle) && (GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && spells[i].spell_pointer) {
         if (GET_SKILL(ch, spells[i].spellindex))
-          sprintf(abuf, "%s\t%-20s\r\n", abuf, spells[i].command);
+          sprintf(abuf + strlen(abuf), "\t%-20s\r\n", spells[i].command);
         else
-          sprintf(abuf, "%s\t%-20s (unlearned) %s\r\n", abuf, spells[i].command, skill_prac_price_text(ch, (spells + i)));
+          sprintf(abuf + strlen(abuf), "\t%-20s (unlearned) %s\r\n", spells[i].command, skill_prac_price_text(ch, (spells + i)));
         found = 1;
       }
     }
     if (found)
-      sprintf(buf2, "%s%s", buf2, abuf);
+      sprintf(buf2 + strlen(buf2), "%s", abuf);
   }
   page_string(ch->desc, buf2, 1);
 }

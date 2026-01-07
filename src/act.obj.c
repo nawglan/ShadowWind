@@ -203,16 +203,16 @@ void get_check_money(struct char_data * ch, struct obj_data * obj)
       tbuf[0] = ' ';
       tbuf[1] = '\0';
       if (GET_OBJ_VAL(obj, 0)) {
-        sprintf(tbuf, "%s %d p", tbuf, GET_OBJ_VAL(obj, 0));
+        sprintf(tbuf + strlen(tbuf), " %d p", GET_OBJ_VAL(obj, 0));
       }
       if (GET_OBJ_VAL(obj, 1)) {
-        sprintf(tbuf, "%s %d g", tbuf, GET_OBJ_VAL(obj, 1));
+        sprintf(tbuf + strlen(tbuf), " %d g", GET_OBJ_VAL(obj, 1));
       }
       if (GET_OBJ_VAL(obj, 2)) {
-        sprintf(tbuf, "%s %d s", tbuf, GET_OBJ_VAL(obj, 2));
+        sprintf(tbuf + strlen(tbuf), " %d s", GET_OBJ_VAL(obj, 2));
       }
       if (GET_OBJ_VAL(obj, 3)) {
-        sprintf(tbuf, "%s %d c", tbuf, GET_OBJ_VAL(obj, 3));
+        sprintf(tbuf + strlen(tbuf), " %d c", GET_OBJ_VAL(obj, 3));
       }
 
       do_split(ch, tbuf, 0, 0);
