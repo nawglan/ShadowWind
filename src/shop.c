@@ -755,7 +755,7 @@ char *list_object(struct obj_data * obj, int cnt, int index, int shop_nr)
 {
   int j;
   static char buf[256];
-  char buf2[300], buf3[300], buf4[50];
+  char buf2[300], buf3[300], buf4[80];
   char *p;
   char *p2;
   int temp;
@@ -787,7 +787,7 @@ char *list_object(struct obj_data * obj, int cnt, int index, int shop_nr)
   silver = temp / 10;
   temp -= silver * 10;
   copper = temp;
-  sprintf(buf4, " {c%d{Wp {c%d{Yg {c%d{ws {c%d{yc{x\n\r", plat, gold, silver, copper);
+  snprintf(buf4, sizeof(buf4), " {c%d{Wp {c%d{Yg {c%d{ws {c%d{yc{x\n\r", plat, gold, silver, copper);
 
   numspaces -= strlen(buf4);
   p = buf3;

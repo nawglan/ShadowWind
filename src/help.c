@@ -105,7 +105,7 @@ ACMD(do_wiz_help)
           break;
         buf[strlen(buf) - 1] = '\0'; /* cleave off the trailing \n */
         if (buf[0] != '@')
-          sprintf(buf2 + strlen(buf2), "%s\r\n", buf);
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s\r\n", buf);
       }
       page_string(ch->desc, buf2, 1);
       fclose(wiz_help_fl);
@@ -178,7 +178,7 @@ ACMD(do_help)
           break;
         buf[strlen(buf) - 1] = '\0'; /* cleave off the trailing \n */
         if (buf[0] != '@')
-          sprintf(buf2 + strlen(buf2), "%s\r\n", buf);
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s\r\n", buf);
       }
       page_string(ch->desc, buf2, 1);
       fclose(help_fl);

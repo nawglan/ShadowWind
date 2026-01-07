@@ -139,7 +139,7 @@ void update_pos(struct char_data *victim);
 
 #define ISNEWL(ch) ((ch) == '\n' || (ch) == '\r') 
 #define IF_STR(st) ((st) ? (st) : "\0")
-#define CAP(st)  (*(st) = UPPER(*(st)), st)
+#define CAP(st)  ({ *(st) = UPPER(*(st)); (st); })
 
 #define AN(string) (strchr("aeiouAEIOU", *string) ? "an" : "a")
 

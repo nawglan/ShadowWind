@@ -2130,7 +2130,7 @@ ACMD(do_users)
       sprintf(line, format, d->desc_num, "   -   ", "UNDEFINED", state, idletime, timeptr);
     }
 
-    if (d->character && GET_HOST(d->character) && *GET_HOST(d->character)) {
+    if (d->character && *GET_HOST(d->character)) {
       strncpy(hostname, GET_HOST(d->character), 23);
       if (strlen(GET_HOST(d->character)) < 23) {
         *(hostname + strlen(GET_HOST(d->character))) = '\0';

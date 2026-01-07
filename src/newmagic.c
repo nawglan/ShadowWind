@@ -408,7 +408,7 @@ ACMD(do_memorize)
       if (i > 1) {
         strcat(buf, "and ");
       }
-      sprintf(buf + strlen(buf), " %s circle spells(s).\r\n", buf2);
+      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s circle spells(s).\r\n", buf2);
     }
     page_string(ch->desc, buf, 1);
     if (find_event(ch, EVENT_MEM) && !AFF2_FLAGGED(ch, AFF2_MEMMING) && GET_COND(ch, FULL) && GET_COND(ch, THIRST) && GET_POS(ch) >= POS_RESTING && GET_POS(ch) <= POS_SITTING) {

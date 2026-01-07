@@ -178,7 +178,7 @@ void add_owner(int nr, char *name)
       return;
 
   for (i = 0; i < QIC_OWNERS; i++)
-    if (obj_index[nr].qic->owners[i] == NULL) {
+    if (obj_index[nr].qic->owners[i][0] == '\0') {
       strcpy(obj_index[nr].qic->owners[i], name);
       return;
     }

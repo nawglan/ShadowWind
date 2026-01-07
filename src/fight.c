@@ -292,10 +292,6 @@ int get_weapon_speed(struct char_data * ch, int type)
     return 100;
   }
 
-  if (!ch->equipment) {
-    return 100;
-  }
-
   wielded = ch->equipment[WEAR_WIELD];
   if (type == TYPE_DUAL_WIELD)
     wielded = ch->equipment[WEAR_WIELD_2];
