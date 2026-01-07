@@ -83,7 +83,7 @@ int socket(int domain, int type, int protocol);
 #include <sys/fcntl.h>
 #endif
 
-#if     defined(linux)
+#if 0 /* defined(linux) - disabled: modern glibc provides these declarations */
 /*int accept(int s, struct sockaddr * addr, int *addrlen);
  int bind(int s, struct sockaddr * name, int namelen);*/
 int close(int fd);

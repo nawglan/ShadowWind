@@ -24,7 +24,7 @@
 #include "spells.h"
 #include "screen.h"
 
-struct spell_info_type *spells;
+extern struct spell_info_type *spells;
 struct char_data *combat_list = NULL; /* head of l-list of fighting chars */
 struct char_data *next_combat_list = NULL;
 

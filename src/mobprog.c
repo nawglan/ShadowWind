@@ -42,7 +42,7 @@
 #include "handler.h"
 #include "db.h"
 
-char buf2[MAX_STRING_LENGTH];
+extern char buf2[MAX_STRING_LENGTH];
 
 struct number_list_type {
   int number;

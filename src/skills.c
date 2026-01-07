@@ -15,8 +15,8 @@ extern int rev_dir[];
 extern int pk_allowed;
 extern struct room_data *world;
 extern struct spell_info_type *spells;
-struct index_data *mob_index; /* index table for mobile file         */
-struct zone_data *zone_table; /* zone table                         */
+extern struct index_data *mob_index; /* index table for mobile file         */
+extern struct zone_data *zone_table; /* zone table                         */
 int find_skill_num_def(int define);
 void improve_skill(struct char_data *ch, int skill, int chance);
 int find_door(struct char_data * ch, char *type, char *dir);

@@ -36,7 +36,7 @@ extern struct index_data *obj_index;
 extern char *class_abbrevs[];
 extern void save_text(struct char_data * ch);
 extern struct actd_msg *get_actd(int vnum);
-char *todolist = NULL;
+extern char *todolist;
 EVENT(camp);
 ACMD(do_reboot);
 void Crash_save(struct char_data *ch, int type);
