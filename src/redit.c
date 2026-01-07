@@ -302,7 +302,7 @@ void redit_save_to_disk(int zone_num)
     return;
   }
 
-  snprintf(buf, MAX_STRING_LENGTH, "%s/%d.new", WLD_PREFIX, zone_table[zone_num].number);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.new", WLD_PREFIX, zone_table[zone_num].number);
   if (!(fp = fopen(buf, "w+"))) {
     mudlog("SYSERR: OLC: Cannot open room file!", 'G', COM_BUILDER, TRUE);
     return;
@@ -383,7 +383,7 @@ void redit_save_to_disk(int zone_num)
    */
   fprintf(fp, "$~\n");
   fclose(fp);
-  snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.wld", WLD_PREFIX, zone_table[zone_num].number);
+  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.wld", WLD_PREFIX, zone_table[zone_num].number);
   /*
    * We're fubar'd if we crash between the two lines below.
    */
@@ -440,7 +440,7 @@ void redit_disp_extradesc_menu(struct descriptor_data *d)
 {
   struct extra_descr_data *extra_desc = OLC_DESC(d);
 
-  snprintf(buf, MAX_STRING_LENGTH, "[H[J"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "[H[J"
       "%s1%s) Keyword: %s%s\r\n"
       "%s2%s) Description:\r\n%s%s\r\n"
       "%s3%s) Goto next description: ",
@@ -476,7 +476,7 @@ void redit_disp_exit_menu(struct descriptor_data *d)
     strcpy(buf2, "No door");
 
   get_char_cols(d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "[H[J"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "[H[J"
       "%s1%s) Exit to     : %s%d\r\n"
       "%s2%s) Description :-\r\n%s%s\r\n"
       "%s3%s) Door name   : %s%s\r\n"
@@ -498,7 +498,7 @@ void redit_disp_exit_menu(struct descriptor_data *d)
 void redit_disp_exit_flag_menu(struct descriptor_data *d)
 {
   get_char_cols(d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "%s0%s) No door\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s0%s) No door\r\n"
       "%s1%s) Closeable door\r\n"
       "%s2%s) Pickproof\r\n"
       "Enter choice : ", grn, nrm, grn, nrm, grn, nrm);
@@ -515,11 +515,11 @@ void redit_disp_flag_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_ROOM_FLAGS; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, room_bits[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, room_bits[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(OLC_ROOM(d)->room_flags, room_bits, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\nRoom flags: %s%s%s\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nRoom flags: %s%s%s\r\n"
       "Enter room flags, 0 to quit : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
   OLC_MODE(d) = REDIT_FLAGS;
@@ -534,7 +534,7 @@ void redit_disp_sector_menu(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_ROOM_SECTORS; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, sector_types[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, sector_types[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   send_to_char("\r\nEnter sector type : ", d->character);
@@ -553,7 +553,7 @@ void redit_disp_menu(struct descriptor_data *d)
 
   sprintbit((long) room->room_flags, room_bits, buf1);
   sprinttype(room->sector_type, sector_types, buf2);
-  snprintf(buf, MAX_STRING_LENGTH, "[H[J"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "[H[J"
       "-- Room number : [%s%d%s]  	Room zone: [%s%d%s]\r\n"
       "%s1%s) Name        : %s%s\r\n"
       "%s2%s) Description :\r\n%s%s"
@@ -589,7 +589,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
         case 'y':
         case 'Y':
           redit_save_internally(d);
-          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing room %d.", GET_NAME(d->character), OLC_NUM(d));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing room %d.", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           /*
            * Do NOT free strings! Just the room structure. 
@@ -602,7 +602,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
           /*
            * Free everything up, including strings, etc.
            */
-          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing room %d.", GET_NAME(d->character), OLC_NUM(d));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing room %d.", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           cleanup_olc(d, CLEANUP_ALL);
           break;
@@ -621,7 +621,7 @@ void redit_parse(struct descriptor_data *d, char *arg)
             OLC_MODE(d) = REDIT_CONFIRM_SAVESTRING;
           } else {
             send_to_char("No changes made.\r\n", d->character);
-            snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing room %d.", GET_NAME(d->character), OLC_NUM(d));
+            safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing room %d.", GET_NAME(d->character), OLC_NUM(d));
             mudlog(buf, 'G', COM_BUILDER, TRUE);
             cleanup_olc(d, CLEANUP_ALL);
           }

@@ -124,9 +124,9 @@ void show_skills(struct char_data * ch, struct char_data *vict)
   int i;
 
   if (ch == vict)
-    snprintf(buf, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
   else
-    snprintf(buf, MAX_STRING_LENGTH, "%s knows the following:\r\n\r\n{cSkills{C: {m-------{x\r\n", GET_NAME(vict));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s knows the following:\r\n\r\n{cSkills{C: {m-------{x\r\n", GET_NAME(vict));
 
   strcpy(buf2, buf);
 
@@ -179,7 +179,7 @@ void list_skills(struct char_data * ch)
   int circle;
   char abuf[8196];
 
-  snprintf(buf2, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
+  safe_snprintf(buf2, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
 
   for (i = 1; spells[i].command[0] != '\n'; i++) {
     if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
@@ -291,7 +291,7 @@ void list_skills_cost(struct char_data * ch)
   int circle;
   char abuf[8196];
 
-  snprintf(buf2, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
+  safe_snprintf(buf2, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
 
   for (i = 1; spells[i].command[0] != '\n'; i++) {
     if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
@@ -355,7 +355,7 @@ SPECIAL(weapon)
   skill_num = find_skill_num(argument);
 
   if (skill_num < 1 || GET_LEVEL(ch) < spells[skill_num].min_level[(int) GET_CLASS(ch)] || (skill_num < skillnum)) {
-    snprintf(buf, MAX_STRING_LENGTH, "What kind of combat technique is that?\r\n");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "What kind of combat technique is that?\r\n");
     send_to_char(buf, ch);
     return 1;
   }
@@ -480,19 +480,19 @@ SPECIAL(guild)
   skill_num = find_skill_num(argument);
 
   if (skill_num < 1 || GET_LEVEL(ch) < spells[skill_num].min_level[(int) GET_CLASS(ch)] || (skill_num >= MAX_SKILLS)) {
-    snprintf(buf, MAX_STRING_LENGTH, "You do not know of that %s.\r\n", SPLSKL(ch));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You do not know of that %s.\r\n", SPLSKL(ch));
     send_to_char(buf, ch);
     return 1;
   }
 
   if ((GET_SKILL(ch, spells[skill_num].spellindex) != 0) && spells[skill_num].spell_pointer) {
-    snprintf(buf, MAX_STRING_LENGTH, "You have no need to learn that %s again.\r\n", SPLSKL(ch));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You have no need to learn that %s again.\r\n", SPLSKL(ch));
     send_to_char(buf, ch);
     return 1;
   }
 
   if (spells[skill_num].quest_only) {
-    snprintf(buf, MAX_STRING_LENGTH, "I cannot teach you that %s.\r\n"
+    safe_snprintf(buf, MAX_STRING_LENGTH, "I cannot teach you that %s.\r\n"
         "Perhapse you should seek out %s.\r\n", SPLSKL(ch), GET_MOB_NAME(mob_proto + real_mobile(spells[skill_num].qvnum)));
     send_to_char(buf, ch);
     return 1;
@@ -502,7 +502,7 @@ SPECIAL(guild)
   prac_cost = skill_prac_price(ch, spells + skill_num);
 
   if (PRACS_COST && prac_cost > (temp_gold + temp_bank_gold)) {
-    snprintf(buf, MAX_STRING_LENGTH, "You cannot afford to practice that %s.\r\n", SPLSKL(ch));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You cannot afford to practice that %s.\r\n", SPLSKL(ch));
     send_to_char(buf, ch);
     return 1;
   }
@@ -523,7 +523,7 @@ SPECIAL(guild)
     if (max_lvl_skill[0][spells[skill_num].difficulty][(int) GET_LEVEL(ch)] < newpercent)
       newpercent = max_lvl_skill[0][spells[skill_num].difficulty][(int) GET_LEVEL(ch)];
     send_to_char("You practice for a while...\r\n", ch);
-    snprintf(buf2, MAX_STRING_LENGTH, "SKILLIMPROVE: %s practiced skill %s, int = %d, wis = %d, improved by = %d, now = %d\n", GET_NAME(ch), spells[skill_num].command, GET_INT(ch), GET_WIS(ch), newpercent - percent, MIN(LEARNED(ch), newpercent));
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "SKILLIMPROVE: %s practiced skill %s, int = %d, wis = %d, improved by = %d, now = %d\n", GET_NAME(ch), spells[skill_num].command, GET_INT(ch), GET_WIS(ch), newpercent - percent, MIN(LEARNED(ch), newpercent));
     mudlog(buf2, 'D', COM_IMMORT, TRUE);
     SET_SKILL(ch, spells[skill_num].spellindex, MIN(LEARNED(ch), newpercent));
     GET_PRACS(ch, spells[skill_num].spellindex)--;
@@ -794,7 +794,7 @@ void npc_steal(struct char_data * ch, struct char_data * victim)
           GET_PLAT(ch) += coins;
           GET_PLAT(victim) -= coins;
           GET_TEMP_GOLD(victim) -= coins * 1000;
-          snprintf(logbuffer, sizeof(logbuffer), "%s stole %d plat from %s", GET_NAME(ch), coins, GET_NAME(victim));
+          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d plat from %s", GET_NAME(ch), coins, GET_NAME(victim));
           mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
         }
         break;
@@ -804,7 +804,7 @@ void npc_steal(struct char_data * ch, struct char_data * victim)
           GET_GOLD(ch) += coins;
           GET_GOLD(victim) -= coins;
           GET_TEMP_GOLD(victim) -= coins * 100;
-          snprintf(logbuffer, sizeof(logbuffer), "%s stole %d gold from %s", GET_NAME(ch), coins, GET_NAME(victim));
+          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d gold from %s", GET_NAME(ch), coins, GET_NAME(victim));
           mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
         }
         break;
@@ -814,7 +814,7 @@ void npc_steal(struct char_data * ch, struct char_data * victim)
           GET_SILVER(ch) += coins;
           GET_SILVER(victim) -= coins;
           GET_TEMP_GOLD(victim) -= coins * 10;
-          snprintf(logbuffer, sizeof(logbuffer), "%s stole %d silver from %s", GET_NAME(ch), coins, GET_NAME(victim));
+          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d silver from %s", GET_NAME(ch), coins, GET_NAME(victim));
           mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
         }
         break;
@@ -824,7 +824,7 @@ void npc_steal(struct char_data * ch, struct char_data * victim)
           GET_COPPER(ch) += coins;
           GET_COPPER(victim) -= coins;
           GET_TEMP_GOLD(victim) -= coins;
-          snprintf(logbuffer, sizeof(logbuffer), "%s stole %d copper from %s", GET_NAME(ch), coins, GET_NAME(victim));
+          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d copper from %s", GET_NAME(ch), coins, GET_NAME(victim));
           mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
         }
         break;
@@ -972,7 +972,7 @@ SPECIAL(healer)
     buying = atoi(argument);
     if (buying >= 1 && buying <= numspells) {
       if (GET_GOLD(ch) >= healer_costs[buying]) {
-        snprintf(buf, MAX_STRING_LENGTH, "That will only cost you %d gold coins!\r\n", healer_costs[buying]);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "That will only cost you %d gold coins!\r\n", healer_costs[buying]);
         send_to_char(buf, ch);
         GET_GOLD(ch) -= healer_costs[buying];
         GET_TEMP_GOLD(ch) -= healer_costs[buying] * 100;
@@ -1149,31 +1149,31 @@ SPECIAL(cityguard)
     switch (number(0, 40)) {
       case 0:
         if (ch && tch) {
-          snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Stand arms guards, %s is a threat to the peace!!!'\r\n", GET_NAME(ch), GET_NAME(tch));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Stand arms guards, %s is a threat to the peace!!!'\r\n", GET_NAME(ch), GET_NAME(tch));
           zone_echo(ch, buf);
         }
         break;
       case 1:
         if (ch && tch) {
-          snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Come here %s, justice will be done!'\r\n", GET_NAME(ch), GET_NAME(tch));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Come here %s, justice will be done!'\r\n", GET_NAME(ch), GET_NAME(tch));
           zone_echo(ch, buf);
         }
         break;
       case 2:
         if (ch && tch) {
-          snprintf(buf, MAX_STRING_LENGTH, "%s yells 'You will be caught %s!!'\r\n", GET_NAME(ch), GET_NAME(tch));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'You will be caught %s!!'\r\n", GET_NAME(ch), GET_NAME(tch));
           zone_echo(ch, buf);
         }
         break;
       case 3:
         if (ch && tch) {
-          snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Where are you %s, you cannot run forever!'\r\n", GET_NAME(ch), GET_NAME(tch));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Where are you %s, you cannot run forever!'\r\n", GET_NAME(ch), GET_NAME(tch));
           zone_echo(ch, buf);
         }
         break;
       case 4:
         if (ch && tch) {
-          snprintf(buf, MAX_STRING_LENGTH, "%s yells '%s, you can run, but you can't hide!'\r\n", GET_NAME(ch), GET_NAME(tch));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells '%s, you can run, but you can't hide!'\r\n", GET_NAME(ch), GET_NAME(tch));
           zone_echo(ch, buf);
         }
         break;
@@ -1334,7 +1334,7 @@ SPECIAL(pet_shops)
   if (CMD_IS("list")) {
     send_to_char("Available pets are:\r\n", ch);
     for (pet = world[pet_room].people; pet; pet = pet->next_in_room) {
-      snprintf(buf, MAX_STRING_LENGTH, "%8d - %s\r\n", 3 * GET_EXP(pet), GET_NAME(pet));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%8d - %s\r\n", 3 * GET_EXP(pet), GET_NAME(pet));
       send_to_char(buf, ch);
     }
     return (TRUE);
@@ -1359,11 +1359,11 @@ SPECIAL(pet_shops)
     SET_BIT(AFF_FLAGS(pet), AFF_CHARM);
 
     if (*pet_name) {
-      snprintf(buf, MAX_STRING_LENGTH, "%s %s", pet->player.name, pet_name);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s %s", pet->player.name, pet_name);
       /* FREE(pet->player.name); don't free the prototype! */
       pet->player.name = strdup(buf);
 
-      snprintf(buf, MAX_STRING_LENGTH, "%sA small sign on a chain around the neck says 'My name is %s'\r\n", pet->player.description, pet_name);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%sA small sign on a chain around the neck says 'My name is %s'\r\n", pet->player.description, pet_name);
       /* FREE(pet->player.description); don't free the prototype! */
       pet->player.description = strdup(buf);
     }
@@ -1405,32 +1405,32 @@ SPECIAL(slot_machine)
       }
       GET_GOLD(ch) -= amount;
       GET_TEMP_GOLD(ch) -= amount * 100;
-      snprintf(buf, MAX_STRING_LENGTH, "You put the coins in the slot and pull the lever.\r\n");
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You put the coins in the slot and pull the lever.\r\n");
       send_to_char(buf, ch);
       act("$n pulls the lever on the slot-machine.", TRUE, ch, 0, FALSE, TO_ROOM);
       if ((lucky = number(0, 100)) <= 1) {
-        snprintf(buf, MAX_STRING_LENGTH, "You are a winner! You won %ld coins!\r\n", amount * 100);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You are a winner! You won %ld coins!\r\n", amount * 100);
         send_to_char(buf, ch);
         GET_GOLD(ch) += amount + amount * 100;
         GET_TEMP_GOLD(ch) += (amount + amount * 100) * 100;
         act("The lights on the slot-machine flash in brilliant patterns.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
       } else if (lucky > 1 && lucky <= 5) {
-        snprintf(buf, MAX_STRING_LENGTH, "You are a winner! You won %ld coins!\r\n", amount * 5);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You are a winner! You won %ld coins!\r\n", amount * 5);
         send_to_char(buf, ch);
         GET_GOLD(ch) += amount + amount * 5;
         GET_TEMP_GOLD(ch) += (amount + amount * 5) * 100;
         act("The lights on the slot-machine flash in brilliant patterns.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
       } else if (lucky > 5 && lucky <= 15) {
-        snprintf(buf, MAX_STRING_LENGTH, "You are a winner! You won %ld coins!\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You are a winner! You won %ld coins!\r\n", amount);
         send_to_char(buf, ch);
         GET_GOLD(ch) += amount;
         GET_TEMP_GOLD(ch) += amount * 100;
         act("The lights on the slot-machine flash in brilliant patterns.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
       } else if (lucky > 15) {
-        snprintf(buf, MAX_STRING_LENGTH, "You are a loser! You lost %ld coins!\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You are a loser! You lost %ld coins!\r\n", amount);
         send_to_char(buf, ch);
         act("The lights on the slot-machine flash in brilliant patterns.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1457,9 +1457,9 @@ SPECIAL(bank)
 
   if (CMD_IS("balance")) {
     if (has_money)
-      snprintf(buf, MAX_STRING_LENGTH, "Your current balance is {W%d platinum {Y%d gold {w%d silver {y%d copper{x.\r\n", GET_BANK_PLAT(ch), GET_BANK_GOLD(ch), GET_BANK_SILVER(ch), GET_BANK_COPPER(ch));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "Your current balance is {W%d platinum {Y%d gold {w%d silver {y%d copper{x.\r\n", GET_BANK_PLAT(ch), GET_BANK_GOLD(ch), GET_BANK_SILVER(ch), GET_BANK_COPPER(ch));
     else
-      snprintf(buf, MAX_STRING_LENGTH, "You currently have no money deposited.\r\n");
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You currently have no money deposited.\r\n");
     send_to_char(buf, ch);
     return 1;
   } else if (CMD_IS("deposit")) {
@@ -1482,7 +1482,7 @@ SPECIAL(bank)
         GET_PLAT(ch) -= amount;
         GET_TEMP_GOLD(ch) -= amount * 1000;
         GET_BANK_PLAT(ch) += amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You deposit {W%d platinum{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {W%d platinum{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1495,7 +1495,7 @@ SPECIAL(bank)
         GET_GOLD(ch) -= amount;
         GET_TEMP_GOLD(ch) -= amount * 100;
         GET_BANK_GOLD(ch) += amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You deposit {Y%d gold{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {Y%d gold{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1508,7 +1508,7 @@ SPECIAL(bank)
         GET_SILVER(ch) -= amount;
         GET_TEMP_GOLD(ch) -= amount * 10;
         GET_BANK_SILVER(ch) += amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You deposit {w%d silver{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {w%d silver{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1521,7 +1521,7 @@ SPECIAL(bank)
         GET_COPPER(ch) -= amount;
         GET_TEMP_GOLD(ch) -= amount;
         GET_BANK_COPPER(ch) += amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You deposit {y%d copper{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {y%d copper{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1546,7 +1546,7 @@ SPECIAL(bank)
         GET_PLAT(ch) += amount;
         GET_TEMP_GOLD(ch) += amount * 1000;
         GET_BANK_PLAT(ch) -= amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You withdraw {W%d platinum{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {W%d platinum{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1559,7 +1559,7 @@ SPECIAL(bank)
         GET_GOLD(ch) += amount;
         GET_TEMP_GOLD(ch) += amount * 100;
         GET_BANK_GOLD(ch) -= amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You withdraw {Y%d gold{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {Y%d gold{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1572,7 +1572,7 @@ SPECIAL(bank)
         GET_SILVER(ch) += amount;
         GET_TEMP_GOLD(ch) += amount * 10;
         GET_BANK_SILVER(ch) -= amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You withdraw {w%d silver{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {w%d silver{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1585,7 +1585,7 @@ SPECIAL(bank)
         GET_COPPER(ch) += amount;
         GET_TEMP_GOLD(ch) += amount;
         GET_BANK_COPPER(ch) -= amount;
-        snprintf(buf, MAX_STRING_LENGTH, "You withdraw {y%d copper{x.\r\n", amount);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {y%d copper{x.\r\n", amount);
         send_to_char(buf, ch);
         act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
         return 1;
@@ -1676,21 +1676,21 @@ SPECIAL(bank)
       case 'P':
       case 'p':
         if (is_gold && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {W%d platinum{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {W%d platinum{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
           send_to_char(buf, ch);
           GET_PLAT(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
           GET_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
           GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
           GET_TEMP_GOLD(ch) += (amount * 100) % (10 + GET_OBJ_SVAL(obj, 0));
         } else if (is_silver && (amount >= (100 + (GET_OBJ_SVAL(obj, 0) * 10)))) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {W%d platinum{x.\r\n", amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))), amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {W%d platinum{x.\r\n", amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))), amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
           send_to_char(buf, ch);
           GET_PLAT(ch) += amount / (100 + (10 * GET_OBJ_SVAL(obj, 0)));
           GET_SILVER(ch) += amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)));
           GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
           GET_TEMP_GOLD(ch) += (amount * 10) % (10 + GET_OBJ_SVAL(obj, 0));
         } else if (is_copper && (amount >= (1000 + (GET_OBJ_SVAL(obj, 0) * 100)))) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {W%d platinum{x.\r\n", amount - (amount % (1000 + (100 * GET_OBJ_SVAL(obj, 0)))), amount / (1000 + (100 * GET_OBJ_SVAL(obj, 0))));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {W%d platinum{x.\r\n", amount - (amount % (1000 + (100 * GET_OBJ_SVAL(obj, 0)))), amount / (1000 + (100 * GET_OBJ_SVAL(obj, 0))));
           send_to_char(buf, ch);
           GET_PLAT(ch) += amount / (1000 + (100 * GET_OBJ_SVAL(obj, 0)));
           GET_COPPER(ch) += amount % (1000 + (100 * GET_OBJ_SVAL(obj, 0)));
@@ -1701,19 +1701,19 @@ SPECIAL(bank)
       case 'G':
       case 'g':
         if (is_plat) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {Y%d gold{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {Y%d gold{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
           send_to_char(buf, ch);
           GET_GOLD(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
           GET_TEMP_GOLD(ch) += (amount * 1000) * (10 - GET_OBJ_SVAL(obj, 0) / 2);
         } else if (is_silver && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {Y%d gold{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {Y%d gold{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
           send_to_char(buf, ch);
           GET_GOLD(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
           GET_SILVER(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
           GET_TEMP_GOLD(ch) += (amount * 100) / (10 + GET_OBJ_SVAL(obj, 0));
           GET_TEMP_GOLD(ch) += (amount * 10) % (10 + GET_OBJ_SVAL(obj, 0));
         } else if (is_copper && (amount >= (100 + (GET_OBJ_SVAL(obj, 0) * 10)))) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {Y%d gold{x.\r\n", amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))), amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {Y%d gold{x.\r\n", amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))), amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
           send_to_char(buf, ch);
           GET_GOLD(ch) += amount / (100 + (10 * GET_OBJ_SVAL(obj, 0)));
           GET_COPPER(ch) += amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)));
@@ -1724,17 +1724,17 @@ SPECIAL(bank)
       case 'S':
       case 's':
         if (is_plat) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {w%d silver{x.\r\n", amount, amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {w%d silver{x.\r\n", amount, amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
           send_to_char(buf, ch);
           GET_SILVER(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
           GET_TEMP_GOLD(ch) += (amount * 10) * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
         } else if (is_gold) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {w%d silver{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {w%d silver{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
           send_to_char(buf, ch);
           GET_SILVER(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
           GET_TEMP_GOLD(ch) += (amount * 10) * (10 - GET_OBJ_SVAL(obj, 0) / 2);
         } else if (is_copper && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {w%d silver{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {w%d silver{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
           send_to_char(buf, ch);
           GET_SILVER(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
           GET_COPPER(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
@@ -1745,17 +1745,17 @@ SPECIAL(bank)
       case 'C':
       case 'c':
         if (is_plat) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {y%d copper{x.\r\n", amount, amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2)));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {y%d copper{x.\r\n", amount, amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2)));
           send_to_char(buf, ch);
           GET_COPPER(ch) += amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2));
           GET_TEMP_GOLD(ch) += amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2));
         } else if (is_gold) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {y%d copper{x.\r\n", amount, amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {y%d copper{x.\r\n", amount, amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
           send_to_char(buf, ch);
           GET_COPPER(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
           GET_TEMP_GOLD(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
         } else if (is_silver) {
-          snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {y%d copper{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {y%d copper{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
           send_to_char(buf, ch);
           GET_COPPER(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
           GET_TEMP_GOLD(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
@@ -2165,7 +2165,7 @@ SPECIAL(pentagram)
         if (!str_cmp("ring", arg) || !str_cmp("fire", arg)) {
           act("$n enters $p.", TRUE, ch, obj, 0, TO_ROOM);
           if (GET_DRAGGING(ch)) {
-            snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(ch));
+            safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(ch));
             act(buf, TRUE, 0, GET_DRAGGING(ch), 0, TO_ROOM);
           }
           char_from_room(ch);
@@ -2173,9 +2173,9 @@ SPECIAL(pentagram)
           if (GET_DRAGGING(ch)) {
             obj_from_room(GET_DRAGGING(ch));
             obj_to_room(GET_DRAGGING(ch), ch->in_room);
-            snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
+            safe_snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
             act(buf, FALSE, ch, GET_DRAGGING(ch), 0, TO_CHAR);
-            snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(ch));
+            safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(ch));
             act(buf, TRUE, ch, GET_DRAGGING(ch), 0, TO_ROOM);
           }
           look_at_room(ch, 0);
@@ -2252,7 +2252,7 @@ SPECIAL(master_sin)
       return FALSE;
     if (vict == master)
       return FALSE;
-    snprintf(buf, MAX_STRING_LENGTH, "%s shouts, '%s! You have what rightfully belongs to me!'\r\n", GET_NAME(master), GET_NAME(vict));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s shouts, '%s! You have what rightfully belongs to me!'\r\n", GET_NAME(master), GET_NAME(vict));
     global_echo(buf);
     char_from_room(vict);
     act("$N disappears in a cloud of dust.", TRUE, vict, 0, ch, TO_ROOM);
@@ -2327,7 +2327,7 @@ SPECIAL(vice_master)
     case 2:
       if (GET_POS(ch) != POS_FIGHTING) {
         act("The master looks at his minions and growls, 'get to work, bitches!'", FALSE, ch, 0, 0, TO_ROOM);
-        snprintf(buf, MAX_STRING_LENGTH, "followers bow master");
+        safe_snprintf(buf, MAX_STRING_LENGTH, "followers bow master");
         do_order(ch, buf, 0, 0);
         return (TRUE);
       }
@@ -2338,7 +2338,7 @@ SPECIAL(vice_master)
     case 6:
       if (GET_POS(ch) == POS_FIGHTING) {
         act("The master screams loudly, 'HELP ME, MY SLAVES!'", FALSE, ch, 0, 0, TO_ROOM);
-        snprintf(buf, MAX_STRING_LENGTH, "followers kill %s", GET_NAME(ch->char_specials.fighting));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "followers kill %s", GET_NAME(ch->char_specials.fighting));
         do_order(ch, buf, 0, 0);
         return (TRUE);
       }
@@ -2358,7 +2358,7 @@ SPECIAL(vice_slave)
   if (!AWAKE(ch))
     return FALSE;
 
-  snprintf(buf, MAX_STRING_LENGTH, "m1526");
+  safe_snprintf(buf, MAX_STRING_LENGTH, "m1526");
 
   if ((!cmd) && ((master = get_char_room_vis(ch, buf)))) {
     if (ch->master != master) {
@@ -2534,7 +2534,7 @@ SPECIAL(portal)
     if (strstr(argument, "portal") || strstr(argument, "moonwell")) {
       act("$n enters $a $o, and slowly fades from view.", FALSE, ch, me, 0, TO_ROOM);
       if (GET_DRAGGING(ch)) {
-        snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(ch));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(ch));
         act(buf, TRUE, 0, GET_DRAGGING(ch), 0, TO_ROOM);
       }
       char_from_room(ch);
@@ -2543,9 +2543,9 @@ SPECIAL(portal)
       if (GET_DRAGGING(ch)) {
         obj_from_room(GET_DRAGGING(ch));
         obj_to_room(GET_DRAGGING(ch), ch->in_room);
-        snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
         act(buf, FALSE, ch, GET_DRAGGING(ch), 0, TO_CHAR);
-        snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(ch));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(ch));
         act(buf, TRUE, ch, GET_DRAGGING(ch), 0, TO_ROOM);
       }
       act("$n emerges from $a $o, looking dazed.", FALSE, ch, me, 0, TO_ROOM);

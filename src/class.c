@@ -629,7 +629,7 @@ void display_stats(struct char_data *ch)
 {
   char buf1[2046];
 
-  snprintf(buf1, MAX_STRING_LENGTH, "\r\nYour stats are:\r\n\r\n");
+  safe_snprintf(buf1, MAX_STRING_LENGTH, "\r\nYour stats are:\r\n\r\n");
   sprintf(buf1 + strlen(buf1), "STR: %s       ", stat_msg(GET_STR(ch)));
   sprintf(buf1 + strlen(buf1), "CON: %s\r\n", stat_msg(GET_CON(ch)));
   sprintf(buf1 + strlen(buf1), "DEX: %s       ", stat_msg(GET_DEX(ch)));
@@ -836,7 +836,7 @@ void lose_level(struct char_data * ch)
     if (spells[i].min_level[(int) GET_CLASS(ch)] >= GET_LEVEL(ch))
       SET_SKILL(ch, spells[i].spellindex, 0);
   save_char_text(ch, NOWHERE);
-  snprintf(buf, MAX_STRING_LENGTH, "%s lost level %d", GET_NAME(ch), GET_LEVEL(ch));
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s lost level %d", GET_NAME(ch), GET_LEVEL(ch));
   mudlog(buf, 'A', COM_IMMORT, TRUE);
 }
 
@@ -930,7 +930,7 @@ void advance_level(struct char_data * ch)
     GET_AC(ch) = monk_stat[(sh_int) GET_LEVEL(ch)][2];
     for (i = 0; i < NUM_WEARS; i++) {
       if (GET_EQ(ch, i) && (GET_OBJ_WEIGHT(GET_EQ(ch, i)) > monk_stat[(int) GET_LEVEL(ch)][3])) {
-        snprintf(buf, MAX_STRING_LENGTH, "%s becomes too heavy for you to wear.\r\n", OBJN(GET_EQ(ch, i), ch));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s becomes too heavy for you to wear.\r\n", OBJN(GET_EQ(ch, i), ch));
         send_to_char(buf, ch);
         obj_to_char(unequip_char(ch, i), ch);
       }
@@ -957,9 +957,9 @@ void advance_level(struct char_data * ch)
 
   save_char_text(ch, NOWHERE);
 
-  snprintf(buf, MAX_STRING_LENGTH, "%s advanced to level %d", GET_NAME(ch), GET_LEVEL(ch));
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s advanced to level %d", GET_NAME(ch), GET_LEVEL(ch));
   mudlog(buf, 'A', COM_IMMORT, TRUE);
-  snprintf(buf, MAX_STRING_LENGTH, "LEVELGAIN:%s gained %d hp %d m %d v : int %d wis %d con %d", GET_NAME(ch), add_hp, add_mana, add_move, GET_INT(ch), GET_WIS(ch), GET_CON(ch));
+  safe_snprintf(buf, MAX_STRING_LENGTH, "LEVELGAIN:%s gained %d hp %d m %d v : int %d wis %d con %d", GET_NAME(ch), add_hp, add_mana, add_move, GET_INT(ch), GET_WIS(ch), GET_CON(ch));
 
   mudlog(buf, 'D', COM_IMMORT, TRUE);
 }

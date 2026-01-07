@@ -235,7 +235,7 @@ ACMD(do_track)
       send_to_char("You're already in the same room!!\r\n", ch);
       break;
     case BFS_NO_PATH:
-      snprintf(buf, MAX_STRING_LENGTH, "You can't sense a trail to %s from here.\r\n", HMHR(vict));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You can't sense a trail to %s from here.\r\n", HMHR(vict));
       send_to_char(buf, ch);
       break;
     default:
@@ -245,7 +245,7 @@ ACMD(do_track)
           dir = number(0, NUM_OF_DIRS - 1);
         } while (!CAN_GO(ch, dir));
       }
-      snprintf(buf, MAX_STRING_LENGTH, "You sense a trail %s from here!\r\n", dirs[dir]);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You sense a trail %s from here!\r\n", dirs[dir]);
       send_to_char(buf, ch);
       improve_skill(ch, skillnum, SKUSE_AVERAGE);
       break;
@@ -297,7 +297,7 @@ void hunt_victim(struct char_data * ch)
   }
 
   if (dir < 0) {
-    snprintf(buf, MAX_STRING_LENGTH, "$n says 'Damn!  Lost %s!'", HMHR(hunted_ch));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "$n says 'Damn!  Lost %s!'", HMHR(hunted_ch));
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
     /* don't forget vict until they die or I am dead
      HUNTING(ch) = 0;
@@ -306,7 +306,7 @@ void hunt_victim(struct char_data * ch)
   } else {
     if (IS_CLOSED(ch->in_room, dir)) {
       one_argument(EXIT(ch, dir)->keyword, doorname);
-      snprintf(abuf, sizeof(abuf), "%s %s", doorname, dirs[dir]);
+      safe_snprintf(abuf, sizeof(abuf), "%s %s", doorname, dirs[dir]);
       do_open(ch, abuf, 0, 0);
     }
     perform_move(ch, dir, 1);

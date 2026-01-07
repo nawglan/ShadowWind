@@ -156,7 +156,7 @@ ACMD(do_kill)
       act("\r\n{D$n {Dchops {w$N {Dto pieces!  Ah!  The {rblood{D!{x",
 
       FALSE, ch, 0, vict, TO_NOTVICT);
-      snprintf(buf, MAX_STRING_LENGTH, "%s rawkilled by %s", GET_NAME(vict), GET_NAME(ch));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s rawkilled by %s", GET_NAME(vict), GET_NAME(ch));
       mudlog(buf, 'X', COM_ADMIN, TRUE);
       plog(buf, ch, LVL_IMMORT);
       raw_kill(vict, ch);
@@ -187,14 +187,14 @@ ACMD(do_order)
       return;
     }
     if (vict) {
-      snprintf(buf, MAX_STRING_LENGTH, "$N orders you to '%s'", message);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "$N orders you to '%s'", message);
       act(buf, FALSE, vict, 0, ch, TO_CHAR);
       /* act("$n gives $N an order.", FALSE, ch, 0, vict, TO_ROOM);*/
 
       if ((vict->master != ch) || !IS_AFFECTED(vict, AFF_CHARM)) {
         act("$n has an indifferent look.", FALSE, vict, 0, 0, TO_ROOM);
       } else {
-        snprintf(buf, MAX_STRING_LENGTH, "You order $N to '%s'", message);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You order $N to '%s'", message);
         act(buf, FALSE, ch, 0, vict, TO_CHAR);
         command_interpreter(vict, message);
       }
@@ -207,7 +207,7 @@ ACMD(do_order)
         if (org_room == k->follower->in_room) {
           if (IS_AFFECTED(k->follower, AFF_CHARM)) {
             found = TRUE;
-            snprintf(buf, MAX_STRING_LENGTH, "You order your followers '%s'", message);
+            safe_snprintf(buf, MAX_STRING_LENGTH, "You order your followers '%s'", message);
             act(buf, FALSE, ch, 0, vict, TO_CHAR);
             command_interpreter(k->follower, message);
           }
@@ -239,7 +239,7 @@ ACMD(do_flee)
     if (CAN_GO(ch, attempt) && !IS_SET(ROOM_FLAGS(EXIT(ch, attempt)->to_room), ROOM_DEATH)) {
       act("$n panics, and attempts to flee!", TRUE, ch, 0, 0, TO_ROOM);
       if (do_simple_move(ch, attempt, TRUE)) {
-        snprintf(buf, MAX_STRING_LENGTH, "You flee head over heels, heading %s.\r\n", dirs[attempt]);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You flee head over heels, heading %s.\r\n", dirs[attempt]);
         send_to_char(buf, ch);
         if (FIGHTING(ch)) {
           /* Disabled by Novo....

@@ -431,10 +431,10 @@ EVENT(camp)
     if (unrentables) {
       return;
     }
-    snprintf(buf, MAX_STRING_LENGTH, "%s has camped in room #%d.", GET_NAME(CAUSER_CH), world[IN_ROOM(CAUSER_CH)].number);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s has camped in room #%d.", GET_NAME(CAUSER_CH), world[IN_ROOM(CAUSER_CH)].number);
     mudlog(buf, 'C', COM_IMMORT, TRUE);
     plog(buf, CAUSER_CH, 0);
-    snprintf(buf, MAX_STRING_LENGTH, "Goodbye, %s... Come back soon!\r\n", CAUSER_CH->player.name);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "Goodbye, %s... Come back soon!\r\n", CAUSER_CH->player.name);
     send_to_char(buf, CAUSER_CH);
     SET_BIT(PLR_FLAGS(CAUSER_CH), PLR_CAMP);
     SET_BIT(PLR_FLAGS(CAUSER_CH), PLR_LOADROOM);
@@ -1103,15 +1103,15 @@ EVENT(spell_locate_obj_event)
     }
 
     if (i->carried_by && IS_MOB(i->carried_by)) {
-      snprintf(buf, MAX_STRING_LENGTH, "%s is being carried by %s.\n\r", i->short_description, PERS(i->carried_by, CAUSER_CH));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is being carried by %s.\n\r", i->short_description, PERS(i->carried_by, CAUSER_CH));
     } else if (i->in_room != NOWHERE) {
-      snprintf(buf, MAX_STRING_LENGTH, "%s is in %s.\n\r", i->short_description, world[i->in_room].name);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is in %s.\n\r", i->short_description, world[i->in_room].name);
     } else if (i->in_obj) {
-      snprintf(buf, MAX_STRING_LENGTH, "%s is in %s.\n\r", i->short_description, i->in_obj->short_description);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is in %s.\n\r", i->short_description, i->in_obj->short_description);
     } else if (i->worn_by && IS_MOB(i->worn_by)) {
-      snprintf(buf, MAX_STRING_LENGTH, "%s is being worn by %s.\n\r", i->short_description, PERS(i->worn_by, CAUSER_CH));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is being worn by %s.\n\r", i->short_description, PERS(i->worn_by, CAUSER_CH));
     } else {
-      snprintf(buf, MAX_STRING_LENGTH, "%s's location is uncertain.\n\r", i->short_description);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s's location is uncertain.\n\r", i->short_description);
     }
 
     CAP(buf);
@@ -1424,12 +1424,12 @@ EVENT(spell_create_mob_event)
       case 6:
         mob = read_mobile(real_mobile(sinfo->vnum_list[0]), REAL | NOEQUIP);
         IS_ANIMATED(mob) = 1;
-        snprintf(buf, MAX_STRING_LENGTH, "The skeleton of %s stands here.", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "The skeleton of %s stands here.", corpsename);
         if (GET_ADESC(mob)) {
           FREE(GET_ADESC(mob));
         }
         GET_ADESC(mob) = strdup(buf);
-        snprintf(buf, MAX_STRING_LENGTH, "the skeleton of %s", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "the skeleton of %s", corpsename);
         break;
       case 7: /* zombie */
       case 8:
@@ -1438,12 +1438,12 @@ EVENT(spell_create_mob_event)
       case 11:
         mob = read_mobile(real_mobile(sinfo->vnum_list[1]), REAL | NOEQUIP);
         IS_ANIMATED(mob) = 1;
-        snprintf(buf, MAX_STRING_LENGTH, "The zombie of %s stands here.", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "The zombie of %s stands here.", corpsename);
         if (GET_ADESC(mob)) {
           FREE(GET_ADESC(mob));
         }
         GET_ADESC(mob) = strdup(buf);
-        snprintf(buf, MAX_STRING_LENGTH, "the zombie of %s", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "the zombie of %s", corpsename);
         break;
       case 12: /* spectre */
       case 13:
@@ -1451,35 +1451,35 @@ EVENT(spell_create_mob_event)
       case 15:
         mob = read_mobile(real_mobile(sinfo->vnum_list[2]), REAL | NOEQUIP);
         IS_ANIMATED(mob) = 1;
-        snprintf(buf, MAX_STRING_LENGTH, "The spectre of %s stands here.", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "The spectre of %s stands here.", corpsename);
         if (GET_ADESC(mob)) {
           FREE(GET_ADESC(mob));
         }
         GET_ADESC(mob) = strdup(buf);
-        snprintf(buf, MAX_STRING_LENGTH, "the spectre of %s", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "the spectre of %s", corpsename);
         break;
       case 16: /* vampire */
       case 17:
       case 18:
         mob = read_mobile(real_mobile(sinfo->vnum_list[3]), REAL | NOEQUIP);
         IS_ANIMATED(mob) = 1;
-        snprintf(buf, MAX_STRING_LENGTH, "The vampire of %s stands here.", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "The vampire of %s stands here.", corpsename);
         if (GET_ADESC(mob)) {
           FREE(GET_ADESC(mob));
         }
         GET_ADESC(mob) = strdup(buf);
-        snprintf(buf, MAX_STRING_LENGTH, "the vampire of %s", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "the vampire of %s", corpsename);
         break;
       case 19: /* wraith */
       case 20:
         mob = read_mobile(real_mobile(sinfo->vnum_list[4]), REAL | NOEQUIP);
         IS_ANIMATED(mob) = 1;
-        snprintf(buf, MAX_STRING_LENGTH, "The wraith of %s stands here.", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "The wraith of %s stands here.", corpsename);
         if (GET_ADESC(mob)) {
           FREE(GET_ADESC(mob));
         }
         GET_ADESC(mob) = strdup(buf);
-        snprintf(buf, MAX_STRING_LENGTH, "the wraith of %s", corpsename);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "the wraith of %s", corpsename);
         break;
     }
     GET_ANIMATED_MOB_NAME(mob) = strdup(buf);
@@ -2276,7 +2276,7 @@ EVENT(spell_identify_event)
       }
     }
     send_to_char("You feel informed:\r\n", CAUSER_CH);
-    snprintf(buf, MAX_STRING_LENGTH, "Object '%s', Item type: ", obj->short_description);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "Object '%s', Item type: ", obj->short_description);
     sprinttype(GET_OBJ_TYPE(obj), item_types, buf2);
     strcat(buf, buf2);
     strcat(buf, "\r\n");
@@ -2286,7 +2286,7 @@ EVENT(spell_identify_event)
       send_to_char("Item will give you following abilities:  ", CAUSER_CH);
       sprintbit(GET_OBJ_BITV(obj), affected_bits, buf);
       sprintbit(GET_OBJ_BITV2(obj), affected_bits2, buf2);
-      snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s\r\n", buf2);
+      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s\r\n", buf2);
       send_to_char(buf, CAUSER_CH);
     }
     send_to_char("Item is: ", CAUSER_CH);
@@ -2294,13 +2294,13 @@ EVENT(spell_identify_event)
     strcat(buf, "\r\n");
     send_to_char(buf, CAUSER_CH);
 
-    snprintf(buf, MAX_STRING_LENGTH, "Weight: %d, Value: %d\r\n", GET_OBJ_WEIGHT(obj), GET_OBJ_COST(obj));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "Weight: %d, Value: %d\r\n", GET_OBJ_WEIGHT(obj), GET_OBJ_COST(obj));
     send_to_char(buf, CAUSER_CH);
 
     switch (GET_OBJ_TYPE(obj)) {
       case ITEM_SCROLL:
       case ITEM_POTION:
-        snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
 
         if (GET_OBJ_VAL(obj, 1) >= 1) {
           sprintf(buf + strlen(buf), " %s", get_spell_name(GET_OBJ_VAL(obj, 1)));
@@ -2316,18 +2316,18 @@ EVENT(spell_identify_event)
         break;
       case ITEM_WAND:
       case ITEM_STAFF:
-        snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
         sprintf(buf + strlen(buf), " %s\r\n", get_spell_name(GET_OBJ_VAL(obj, 3)));
         sprintf(buf + strlen(buf), "It has %d maximum charge%s and %d remaining.\r\n", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 1) == 1 ? "" : "s", GET_OBJ_VAL(obj, 2));
         send_to_char(buf, CAUSER_CH);
         break;
       case ITEM_WEAPON:
-        snprintf(buf, MAX_STRING_LENGTH, "Damage Dice is '%dD%d'", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "Damage Dice is '%dD%d'", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2));
         sprintf(buf + strlen(buf), " for an average per-round damage of %.1f.\r\n", ((GET_OBJ_VAL(obj, 1) + (GET_OBJ_VAL(obj,1) * GET_OBJ_VAL(obj, 2))) / 2.0));
         send_to_char(buf, CAUSER_CH);
         break;
       case ITEM_ARMOR:
-        snprintf(buf, MAX_STRING_LENGTH, "AC-apply is %d\r\n", GET_OBJ_VAL(obj, 0));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "AC-apply is %d\r\n", GET_OBJ_VAL(obj, 0));
         send_to_char(buf, CAUSER_CH);
         break;
     }
@@ -2339,12 +2339,12 @@ EVENT(spell_identify_event)
           found = TRUE;
         }
         sprinttype(obj->affected[i].location, apply_types, buf2);
-        snprintf(buf, MAX_STRING_LENGTH, "   Affects: %s By %d\r\n", buf2, obj->affected[i].modifier);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "   Affects: %s By %d\r\n", buf2, obj->affected[i].modifier);
         send_to_char(buf, CAUSER_CH);
       }
     }
   } else {
-    snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char*) info);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char*) info);
     send_to_char(buf, CAUSER_CH);
   }
 }
@@ -2363,7 +2363,7 @@ EVENT(spell_create_water_event)
   }
 
   if (obj == NULL) {
-    snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char*) info);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char*) info);
     send_to_char(buf, CAUSER_CH);
     return;
   }

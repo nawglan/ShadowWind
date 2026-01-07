@@ -689,7 +689,7 @@ char get_season(struct zone_data *zone)
       break;
     default: /* Hmmm?!? */
       stderr_log("Bad Season spec in get_season!");
-      snprintf(buf, MAX_STRING_LENGTH, "--> %d in zone %s", zone->climate.season_pattern, zone->name);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "--> %d in zone %s", zone->climate.season_pattern, zone->name);
       stderr_log(buf);
       season_num = 0;
       break;

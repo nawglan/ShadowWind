@@ -779,7 +779,7 @@ ACMD(do_steal)
           obj_to_char(unequip_char(vict, eq_pos), ch);
           improve_skill(ch, skillnum, SKUSE_AVERAGE);
           if (logg) {
-            snprintf(logbuffer, sizeof(logbuffer), "%s stole %s from %s", GET_NAME(ch), obj->short_description, GET_NAME(vict));
+            safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %s from %s", GET_NAME(ch), obj->short_description, GET_NAME(vict));
             mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
             plog(logbuffer, ch, LVL_IMMORT);
           }
@@ -796,7 +796,7 @@ ACMD(do_steal)
         act("$n tries to steal something from $N.", TRUE, ch, 0, vict, TO_NOTVICT);
         improve_skill(ch, skillnum, SKUSE_AVERAGE);
         if (logg) {
-          snprintf(logbuffer, sizeof(logbuffer), "%s tried to steal %s from %s", GET_NAME(ch), obj->short_description, GET_NAME(vict));
+          safe_snprintf(logbuffer, sizeof(logbuffer), "%s tried to steal %s from %s", GET_NAME(ch), obj->short_description, GET_NAME(vict));
           mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
           plog(logbuffer, ch, LVL_IMMORT);
         }
@@ -808,7 +808,7 @@ ACMD(do_steal)
             send_to_char("Got it!\r\n", ch);
             improve_skill(ch, skillnum, SKUSE_AVERAGE);
             if (logg) {
-              snprintf(logbuffer, sizeof(logbuffer), "%s stole %s from %s", GET_NAME(ch), obj->short_description, GET_NAME(vict));
+              safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %s from %s", GET_NAME(ch), obj->short_description, GET_NAME(vict));
               mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
               plog(logbuffer, ch, LVL_IMMORT);
             }
@@ -826,7 +826,7 @@ ACMD(do_steal)
       act("$n tries to steal coins from $N.", TRUE, ch, 0, vict, TO_NOTVICT);
       improve_skill(ch, skillnum, SKUSE_AVERAGE);
       if (logg) {
-        snprintf(logbuffer, sizeof(logbuffer), "%s tried to steal coins from %s", GET_NAME(ch), GET_NAME(vict));
+        safe_snprintf(logbuffer, sizeof(logbuffer), "%s tried to steal coins from %s", GET_NAME(ch), GET_NAME(vict));
         mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
         plog(logbuffer, ch, LVL_IMMORT);
       }
@@ -845,11 +845,11 @@ ACMD(do_steal)
             if (!IS_NPC(vict)) {
               GET_TEMP_GOLD(vict) -= coins * 1000;
             }
-            snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d platinum coins.\r\n", coins);
+            safe_snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d platinum coins.\r\n", coins);
             send_to_char(buf, ch);
             improve_skill(ch, skillnum, SKUSE_AVERAGE);
             if (logg) {
-              snprintf(logbuffer, sizeof(logbuffer), "%s stole %d plat from %s", GET_NAME(ch), coins, GET_NAME(vict));
+              safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d plat from %s", GET_NAME(ch), coins, GET_NAME(vict));
               mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
               plog(logbuffer, ch, LVL_IMMORT);
             }
@@ -870,11 +870,11 @@ ACMD(do_steal)
             if (!IS_NPC(vict)) {
               GET_TEMP_GOLD(vict) -= coins * 100;
             }
-            snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d gold coins.\r\n", coins);
+            safe_snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d gold coins.\r\n", coins);
             send_to_char(buf, ch);
             improve_skill(ch, skillnum, SKUSE_AVERAGE);
             if (logg) {
-              snprintf(logbuffer, sizeof(logbuffer), "%s stole %d gold from %s", GET_NAME(ch), coins, GET_NAME(vict));
+              safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d gold from %s", GET_NAME(ch), coins, GET_NAME(vict));
               mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
               plog(logbuffer, ch, LVL_IMMORT);
             }
@@ -894,11 +894,11 @@ ACMD(do_steal)
             if (!IS_NPC(vict)) {
               GET_TEMP_GOLD(vict) -= coins * 10;
             }
-            snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d silver coins.\r\n", coins);
+            safe_snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d silver coins.\r\n", coins);
             send_to_char(buf, ch);
             improve_skill(ch, skillnum, SKUSE_AVERAGE);
             if (logg) {
-              snprintf(logbuffer, sizeof(logbuffer), "%s stole %d silver from %s", GET_NAME(ch), coins, GET_NAME(vict));
+              safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d silver from %s", GET_NAME(ch), coins, GET_NAME(vict));
               mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
               plog(logbuffer, ch, LVL_IMMORT);
             }
@@ -918,11 +918,11 @@ ACMD(do_steal)
             if (!IS_NPC(vict)) {
               GET_TEMP_GOLD(vict) -= coins;
             }
-            snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d copper coins.\r\n", coins);
+            safe_snprintf(buf, MAX_STRING_LENGTH, "Bingo!  You got %d copper coins.\r\n", coins);
             send_to_char(buf, ch);
             improve_skill(ch, skillnum, SKUSE_AVERAGE);
             if (logg) {
-              snprintf(logbuffer, sizeof(logbuffer), "%s stole %d copper from %s", GET_NAME(ch), coins, GET_NAME(vict));
+              safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d copper from %s", GET_NAME(ch), coins, GET_NAME(vict));
               mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
               plog(logbuffer, ch, LVL_IMMORT);
             }
@@ -960,7 +960,7 @@ ACMD(do_applypoison)
   if (!*arg)
     send_to_char("Apply poison to what?\r\n", ch);
   else if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-    snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
   } else {
     if (!CAN_WEAR(obj, ITEM_WEAR_WIELD))
@@ -969,11 +969,11 @@ ACMD(do_applypoison)
       send_to_char("You don't know how to apply poison to anything.\r\n", ch);
     else if (number(1, 101) < GET_SKILL(ch, skillnum)) {
       SET_BIT(GET_OBJ_EXTRA(obj), ITEM_POISONED);
-      snprintf(buf, MAX_STRING_LENGTH, "You smear poison all over %s %s.\r\n", AN(arg), arg);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You smear poison all over %s %s.\r\n", AN(arg), arg);
       send_to_char(buf, ch);
       improve_skill(ch, skillnum, SKUSE_AVERAGE);
     } else {
-      snprintf(buf, MAX_STRING_LENGTH, "Your attempt to poison %s %s failed.\r\n", AN(arg), arg);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "Your attempt to poison %s %s failed.\r\n", AN(arg), arg);
       send_to_char(buf, ch);
       improve_skill(ch, skillnum, SKUSE_AVERAGE);
     }
@@ -1097,14 +1097,14 @@ void list_scanned_chars(struct char_data * list, struct char_data * ch, int dist
     /* you may want to add other checks in here, perhaps something special
      for Rangers, maybe check terrain, whatever.. */
     if (!*buf)
-      snprintf(buf, MAX_STRING_LENGTH, "You see %s", GET_NAME(i));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You see %s", GET_NAME(i));
     if (i->next_in_room) {
       if (i->next_in_room->next_in_room)
-        snprintf(buf2, MAX_STRING_LENGTH, ", %s", GET_NAME(i->next_in_room));
+        safe_snprintf(buf2, MAX_STRING_LENGTH, ", %s", GET_NAME(i->next_in_room));
       else
-        snprintf(buf2, MAX_STRING_LENGTH, " and %s", GET_NAME(i->next_in_room));
+        safe_snprintf(buf2, MAX_STRING_LENGTH, " and %s", GET_NAME(i->next_in_room));
     } else
-      snprintf(buf2, MAX_STRING_LENGTH, " %s %s.\r\n", how_far[distance], dirs[door]);
+      safe_snprintf(buf2, MAX_STRING_LENGTH, " %s %s.\r\n", how_far[distance], dirs[door]);
     strcat(buf, buf2);
 
   }

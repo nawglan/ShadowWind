@@ -197,7 +197,7 @@ void zedit_new_zone(struct char_data *ch, int vzone_num)
   /*
    * Create the zone file.
    */
-  snprintf(buf, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, vzone_num);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new zone file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write zone file.\r\n", ch);
@@ -219,7 +219,7 @@ void zedit_new_zone(struct char_data *ch, int vzone_num)
   /*
    * Create the room file.
    */
-  snprintf(buf, MAX_STRING_LENGTH, "%s/%d.wld", WLD_PREFIX, vzone_num);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.wld", WLD_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new world file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write world file.\r\n", ch);
@@ -231,7 +231,7 @@ void zedit_new_zone(struct char_data *ch, int vzone_num)
   /*
    * Create the mobile file.
    */
-  snprintf(buf, MAX_STRING_LENGTH, "%s/%d.mob", MOB_PREFIX, vzone_num);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.mob", MOB_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new mob file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write mobile file.\r\n", ch);
@@ -243,7 +243,7 @@ void zedit_new_zone(struct char_data *ch, int vzone_num)
   /*
    * Create the object file.
    */
-  snprintf(buf, MAX_STRING_LENGTH, "%s/%d.obj", OBJ_PREFIX, vzone_num);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.obj", OBJ_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new obj file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write object file.\r\n", ch);
@@ -255,7 +255,7 @@ void zedit_new_zone(struct char_data *ch, int vzone_num)
   /*
    * Create the shop file.
    */
-  snprintf(buf, MAX_STRING_LENGTH, "%s/%d.shp", SHP_PREFIX, vzone_num);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.shp", SHP_PREFIX, vzone_num);
   if (!(fp = fopen(buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new shop file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write shop file.\r\n", ch);
@@ -345,7 +345,7 @@ void zedit_new_zone(struct char_data *ch, int vzone_num)
    * Previously, creating a new zone while invisible gave you away.
    * That quirk has been fixed with the MAX() statement.
    */
-  snprintf(buf, MAX_STRING_LENGTH, "OLC: %s creates new zone #%d", GET_NAME(ch), vzone_num);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s creates new zone #%d", GET_NAME(ch), vzone_num);
   mudlog(buf, 'G', COM_BUILDER, TRUE);
   send_to_char("Zone created successfully.\r\n", ch);
 
@@ -387,11 +387,11 @@ void zedit_create_index(int znum, char *type)
   sprintf(new_name, "%s/newindex", prefix);
 
   if (!(oldfile = fopen(old_name, "r"))) {
-    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", old_name);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", old_name);
     mudlog(buf, 'G', COM_BUILDER, TRUE);
     return;
   } else if (!(newfile = fopen(new_name, "w"))) {
-    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", new_name);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", new_name);
     mudlog(buf, 'G', COM_BUILDER, TRUE);
     return;
   }
@@ -400,7 +400,7 @@ void zedit_create_index(int znum, char *type)
    * Index contents must be in order: search through the old file for the
    * right place, insert the new file, then copy the rest over. 
    */
-  snprintf(buf1, MAX_STRING_LENGTH, "%d.%s", znum, type);
+  safe_snprintf(buf1, MAX_STRING_LENGTH, "%d.%s", znum, type);
   while (get_line(oldfile, buf)) {
     if (*buf == '$') {
       fprintf(newfile, "%s\n$\n", (!found ? buf1 : ""));
@@ -516,7 +516,7 @@ void zedit_save_to_disk(int zone_num)
 
   sprintf(fname, "%s/%d.new", ZON_PREFIX, zone_table[zone_num].number);
   if (!(zfile = fopen(fname, "w"))) {
-    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: zedit_save_to_disk:  Can't write zone %d.", zone_table[zone_num].number);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: zedit_save_to_disk:  Can't write zone %d.", zone_table[zone_num].number);
     mudlog(buf, 'G', COM_BUILDER, TRUE);
     return;
   }
@@ -631,7 +631,7 @@ void zedit_save_to_disk(int zone_num)
          */
         continue;
       default:
-        snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: z_save_to_disk(): Unknown cmd '%c' - NOT saving", ZCMD.command);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: z_save_to_disk(): Unknown cmd '%c' - NOT saving", ZCMD.command);
         mudlog(buf, 'G', COM_BUILDER, TRUE);
         continue;
     }
@@ -642,7 +642,7 @@ void zedit_save_to_disk(int zone_num)
   }
   fprintf(zfile, "S\n$\n");
   fclose(zfile);
-  snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, zone_table[zone_num].number);
+  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, zone_table[zone_num].number);
   /*
    * We're fubar'd if we crash between the two lines below.
    */
@@ -692,7 +692,7 @@ void add_cmd_to_list(struct reset_com **list, struct reset_com *newcmd, int pos)
   for (i = 0, l = 0; i <= count; i++) {
     newlist[i] = ((i == pos) ? *newcmd : (*list)[l++]);
 #if defined(DEBUG)
-    snprintf(buf, MAX_STRING_LENGTH, "add_cmd_to_list: added %c %d %d %d %d",
+    safe_snprintf(buf, MAX_STRING_LENGTH, "add_cmd_to_list: added %c %d %d %d %d",
         newlist[i].command, newlist[i].arg1, newlist[i].arg2,
         newlist[i].arg3, newlist[i].line);
     stderr_log(buf);
@@ -735,7 +735,7 @@ void remove_cmd_from_list(struct reset_com **list, int pos)
   for (i = 0, l = 0; i < count; i++) {
     if (i != pos) {
 #if defined(DEBUG)
-      snprintf(buf, MAX_STRING_LENGTH, "remove_cmd_from_list: kept %c %d %d %d %d",
+      safe_snprintf(buf, MAX_STRING_LENGTH, "remove_cmd_from_list: kept %c %d %d %d %d",
           (*list)[i].command, (*list)[i].arg1, (*list)[i].arg2,
           (*list)[i].arg3, (*list)[i].line);
 #endif
@@ -743,7 +743,7 @@ void remove_cmd_from_list(struct reset_com **list, int pos)
     }
 #if defined(DEBUG)
     else
-    snprintf(buf, MAX_STRING_LENGTH, "remove_cmd_from_list: deleted %c %d %d %d %d",
+    safe_snprintf(buf, MAX_STRING_LENGTH, "remove_cmd_from_list: deleted %c %d %d %d %d",
         (*list)[i].command, (*list)[i].arg1, (*list)[i].arg2,
         (*list)[i].arg3, (*list)[i].line);
     stderr_log(buf);
@@ -766,13 +766,13 @@ void zedit_disp_season_flags(struct descriptor_data * d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; *season_flags[i] != '\n'; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, season_flags[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, season_flags[i]);
     if (!(++columns % 2))
       strcat(buf, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "Current settings  : %s%s%s\r\n"
       "Enter zone setting (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
@@ -787,13 +787,13 @@ void zedit_disp_zone_extras(struct descriptor_data * d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; *zone_extras[i] != '\n'; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, zone_extras[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, zone_extras[i]);
     if (!(++columns % 2))
       strcat(buf, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(ZON_EXTRAS(OLC_ZONE(d)), zone_extras, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "Current settings  : %s%s%s\r\n"
       "Enter zone setting (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
@@ -809,7 +809,7 @@ void zedit_disp_climate_info(struct descriptor_data * d)
   sprintf(abuf, "1) Season Pattern: %s\r\n", season_patterns[ZON_CLIMATE(OLC_ZONE(d)).season_pattern - 1]);
   send_to_char(abuf, d->character);
   sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, buf1);
-  snprintf(abuf, sizeof(abuf), "2) Season Flags: %s\r\n"
+  safe_snprintf(abuf, sizeof(abuf), "2) Season Flags: %s\r\n"
       "3) Season Energy: %d\r\n", buf1, ZON_CLIMATE(OLC_ZONE(d)).energy_add);
   send_to_char(abuf, d->character);
   sprintf(abuf, "4) Season Winds: ");
@@ -945,7 +945,7 @@ void zedit_disp_menu(struct descriptor_data *d)
   /*
    * Menu header  
    */
-  snprintf(buf, MAX_STRING_LENGTH,
+  safe_snprintf(buf, MAX_STRING_LENGTH,
 #if defined(CLEAR_SCREEN)
       "[H[J"
 #endif
@@ -969,25 +969,25 @@ void zedit_disp_menu(struct descriptor_data *d)
      */
     switch (MYCMD.command) {
       case 'M':
-        snprintf(buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d", MYCMD.if_flag ? " then " : "", mob_proto[MYCMD.arg1].player.short_descr, cyn, mob_index[MYCMD.arg1].virtual, yel, MYCMD.arg2, MYCMD.arg4);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d", MYCMD.if_flag ? " then " : "", mob_proto[MYCMD.arg1].player.short_descr, cyn, mob_index[MYCMD.arg1].virtual, yel, MYCMD.arg2, MYCMD.arg4);
         break;
       case 'G':
-        snprintf(buf2, MAX_STRING_LENGTH, "%sGive it %s [%s%d%s], Max : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, MYCMD.arg2);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%sGive it %s [%s%d%s], Max : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, MYCMD.arg2);
         break;
       case 'O':
-        snprintf(buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, MYCMD.arg2, MYCMD.arg4);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, MYCMD.arg2, MYCMD.arg4);
         break;
       case 'E':
-        snprintf(buf2, MAX_STRING_LENGTH, "%sEquip with %s [%s%d%s], %s, Max : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, equipment_types[MYCMD.arg3], MYCMD.arg2);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%sEquip with %s [%s%d%s], %s, Max : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, equipment_types[MYCMD.arg3], MYCMD.arg2);
         break;
       case 'P':
-        snprintf(buf2, MAX_STRING_LENGTH, "%sPut %s [%s%d%s] in %s [%s%d%s], Max : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, obj_proto[MYCMD.arg3].short_description, cyn, obj_index[MYCMD.arg3].virtual, yel, MYCMD.arg2);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%sPut %s [%s%d%s] in %s [%s%d%s], Max : %d", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, obj_proto[MYCMD.arg3].short_description, cyn, obj_index[MYCMD.arg3].virtual, yel, MYCMD.arg2);
         break;
       case 'R':
-        snprintf(buf2, MAX_STRING_LENGTH, "%sRemove %s [%s%d%s] from room.", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg2].short_description, cyn, obj_index[MYCMD.arg2].virtual, yel);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%sRemove %s [%s%d%s] from room.", MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg2].short_description, cyn, obj_index[MYCMD.arg2].virtual, yel);
         break;
       case 'D':
-        snprintf(buf2, MAX_STRING_LENGTH, "%sSet door %s as %s.", MYCMD.if_flag ? " then " : "", dirs[MYCMD.arg2], MYCMD.arg3 ? ((MYCMD.arg3 == 1) ? "closed" : ((MYCMD.arg3 == 2) ? "locked" : ((MYCMD.arg3 == 3) ? "hidden and closed" : ((MYCMD.arg3 == 4) ? "locked and hidden" : "hidden only")))) : "open"
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%sSet door %s as %s.", MYCMD.if_flag ? " then " : "", dirs[MYCMD.arg2], MYCMD.arg3 ? ((MYCMD.arg3 == 1) ? "closed" : ((MYCMD.arg3 == 2) ? "locked" : ((MYCMD.arg3 == 3) ? "hidden and closed" : ((MYCMD.arg3 == 4) ? "locked and hidden" : "hidden only")))) : "open"
 
         );
         break;
@@ -998,14 +998,14 @@ void zedit_disp_menu(struct descriptor_data *d)
     /*
      * Build the display buffer for this command  
      */
-    snprintf(buf1, MAX_STRING_LENGTH, "%s%d - %s%s\r\n", nrm, counter++, yel, buf2);
+    safe_snprintf(buf1, MAX_STRING_LENGTH, "%s%d - %s%s\r\n", nrm, counter++, yel, buf2);
     strcat(buf, buf1);
     subcmd++;
   }
   /*
    * Finish off menu  
    */
-  snprintf(buf1, MAX_STRING_LENGTH, "%s%d - <END OF LIST>\r\n"
+  safe_snprintf(buf1, MAX_STRING_LENGTH, "%s%d - <END OF LIST>\r\n"
       "%sN%s) New command.\r\n"
       "%sE%s) Edit a command.\r\n"
       "%sD%s) Delete a command.\r\n"
@@ -1025,7 +1025,7 @@ void zedit_disp_menu(struct descriptor_data *d)
 void zedit_disp_comtype(struct descriptor_data *d)
 {
   get_char_cols(d->character);
-  snprintf(buf, MAX_STRING_LENGTH,
+  safe_snprintf(buf, MAX_STRING_LENGTH,
 #if defined(CLEAR_SCREEN)
       "[H[J"
 #endif
@@ -1097,7 +1097,7 @@ void zedit_disp_arg2(struct descriptor_data *d)
       break;
     case 'D':
       while (*dirs[i] != '\n') {
-        snprintf(buf, MAX_STRING_LENGTH, "%d) Exit %s.\r\n", i, dirs[i]);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Exit %s.\r\n", i, dirs[i]);
         send_to_char(buf, d->character);
         i++;
       }
@@ -1131,7 +1131,7 @@ void zedit_disp_arg3(struct descriptor_data *d)
   switch (OLC_CMD(d).command) {
     case 'E':
       while (*equipment_types[i] != '\n') {
-        snprintf(buf, MAX_STRING_LENGTH, "%2d) %26.26s %2d) %26.26s\r\n", i, equipment_types[i], i + 1, (*equipment_types[i + 1] != '\n') ? equipment_types[i + 1] : "");
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%2d) %26.26s %2d) %26.26s\r\n", i, equipment_types[i], i + 1, (*equipment_types[i + 1] != '\n') ? equipment_types[i + 1] : "");
         send_to_char(buf, d->character);
         if (*equipment_types[i + 1] != '\n')
           i += 2;
@@ -1210,7 +1210,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
           /* FALL THROUGH */
         case 'n':
         case 'N':
-          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.", GET_NAME(d->character), OLC_NUM(d));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           cleanup_olc(d, CLEANUP_ALL);
           break;
@@ -1232,7 +1232,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
             OLC_MODE(d) = ZEDIT_CONFIRM_SAVESTRING;
           } else {
             send_to_char("No changes made.\r\n", d->character);
-            snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.", GET_NAME(d->character), OLC_NUM(d));
+            safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.", GET_NAME(d->character), OLC_NUM(d));
             mudlog(buf, 'G', COM_BUILDER, TRUE);
             cleanup_olc(d, CLEANUP_ALL);
           }

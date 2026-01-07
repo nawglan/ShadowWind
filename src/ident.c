@@ -180,7 +180,7 @@ void ident_check(struct descriptor_data *d, int pulse)
     case CON_IDCONED:
       /* connected, write request */
 
-      snprintf(buf, MAX_STRING_LENGTH, "%d, %d\n\r", ntohs(d->peer_port), port);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%d, %d\n\r", ntohs(d->peer_port), port);
 
       len = strlen(buf);
 #ifdef CIRCLE_WINDOWS
@@ -241,7 +241,7 @@ void ident_check(struct descriptor_data *d, int pulse)
 
           /* check if error or malformed */
           if (sscanf(buf, "%u , %u : ERROR : %255s", &rmt_port, &our_port, user) == 3) {
-            snprintf(buf2, MAX_STRING_LENGTH, "Ident error from %s: \"%s\"", d->hostIP, user);
+            safe_snprintf(buf2, MAX_STRING_LENGTH, "Ident error from %s: \"%s\"", d->hostIP, user);
             stderr_log(buf2);
           } else {
             /* strip off trailing newline */
@@ -249,7 +249,7 @@ void ident_check(struct descriptor_data *d, int pulse)
               ;
             p[1] = '\0';
 
-            snprintf(buf2, MAX_STRING_LENGTH, "Malformed ident response from %s: \"%s\"", d->hostIP, buf);
+            safe_snprintf(buf2, MAX_STRING_LENGTH, "Malformed ident response from %s: \"%s\"", d->hostIP, buf);
             stderr_log(buf2);
           }
         } else {
@@ -282,9 +282,9 @@ void ident_check(struct descriptor_data *d, int pulse)
       /* extra ban check */
       if ((d->host[0] != '\0' && isbanned(d->host) == BAN_ALL) || isbanned(d->hostIP)) {
         if (d->host[0] != '\0') {
-          snprintf(buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->host);
+          safe_snprintf(buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->host);
         } else {
-          snprintf(buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->hostIP);
+          safe_snprintf(buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->hostIP);
         }
         mudlog(buf, 'S', COM_IMMORT, TRUE);
         close_socket(d);

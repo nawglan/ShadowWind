@@ -111,7 +111,7 @@ void log_death_trap(struct char_data * ch)
   char buf[150];
   extern struct room_data *world;
 
-  snprintf(buf, MAX_STRING_LENGTH, "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number, world[ch->in_room].name);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number, world[ch->in_room].name);
   mudlog(buf, 'K', COM_IMMORT, TRUE);
   plog(buf, ch, 0);
 }
@@ -164,9 +164,9 @@ void mudlog(char *str, char type, sbyte level, byte file)
   arg[0] = type;
   arg[1] = '\0';
 
-  snprintf(buf, MAX_STRING_LENGTH, ":%s: %s", arg, str);
+  safe_snprintf(buf, MAX_STRING_LENGTH, ":%s: %s", arg, str);
 
-  snprintf(temp, sizeof(temp), "%-19.19s :: %s\n", tmp, buf);
+  safe_snprintf(temp, sizeof(temp), "%-19.19s :: %s\n", tmp, buf);
   memset(newlog, 0, 1024);
   strip_color(temp, newlog, strlen(temp));
 
@@ -175,7 +175,7 @@ void mudlog(char *str, char type, sbyte level, byte file)
   if (level < 0)
     return;
 
-  snprintf(buf1, MAX_STRING_LENGTH, "[ %s ]\r\n", buf);
+  safe_snprintf(buf1, MAX_STRING_LENGTH, "[ %s ]\r\n", buf);
   arg[0] = LOWER(type);
 
   for (i = descriptor_list; i; i = next_i) {
@@ -192,6 +192,16 @@ void mudlog(char *str, char type, sbyte level, byte file)
 }
 
 /* End of Modification */
+
+/*
+ * Log when snprintf truncates output - helps find buffers that need enlarging
+ * Especially important when moving from 32-bit to 64-bit systems
+ */
+void log_snprintf_truncation(const char *file, int line, size_t bufsize, int needed)
+{
+  fprintf(stderr, "TRUNCATION: %s:%d - buffer %zu bytes, needed %d bytes\n",
+          file, line, bufsize, needed);
+}
 
 void sprintbit(unsigned long vektor, char *names[], char *result)
 {
@@ -704,7 +714,7 @@ void clean_log_file(char *name)
 
   if (!(fil = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
+      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
       perror(buf1);
       return;
     }
@@ -713,7 +723,7 @@ void clean_log_file(char *name)
 
   if (!(temp = fopen("temp.plog", "w"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
+      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
       perror(buf1);
       return;
     }
@@ -737,7 +747,7 @@ void clean_log_file(char *name)
 
   if (!(fil = fopen(fname, "w"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: WRITING PLOG FILE %s (5)", fname);
+      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: WRITING PLOG FILE %s (5)", fname);
       perror(buf1);
       return;
     }
@@ -746,7 +756,7 @@ void clean_log_file(char *name)
 
   if (!(temp = fopen("temp.plog", "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING TEMP.PLOG FILE (5)");
+      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING TEMP.PLOG FILE (5)");
       perror(buf1);
       return;
     }
@@ -801,7 +811,7 @@ char *make_money_text(int coins)
 
   buf[0] = 0;
   if (!coins) {
-    snprintf(buf, MAX_STRING_LENGTH, "free");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "free");
     return (buf);
   }
   p = coins / 1000;
@@ -812,7 +822,7 @@ char *make_money_text(int coins)
   coins -= s * 10;
 
   if (p) {
-    snprintf(buf, MAX_STRING_LENGTH, "{x%d {Wp{x", p);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{x%d {Wp{x", p);
   }
 
   if (g) {
@@ -855,7 +865,7 @@ char *make_money_text_nocolor(int coins)
   coins -= s * 10;
 
   if (p) {
-    snprintf(buf, MAX_STRING_LENGTH, "%d p", p);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%d p", p);
   }
 
   if (g) {

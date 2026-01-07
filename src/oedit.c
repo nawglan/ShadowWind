@@ -355,7 +355,7 @@ void oedit_save_to_disk(int zone_num)
   struct obj_data *obj;
   struct extra_descr_data *ex_desc;
 
-  snprintf(buf, MAX_STRING_LENGTH, "%s/%d.new", OBJ_PREFIX, zone_table[zone_num].number);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.new", OBJ_PREFIX, zone_table[zone_num].number);
   if (!(fp = fopen(buf, "w+"))) {
     mudlog("SYSERR: OLC: Cannot open objects file!", 'G', COM_BUILDER, TRUE);
     return;
@@ -449,7 +449,7 @@ void oedit_save_to_disk(int zone_num)
    */
   fprintf(fp, "$~\n");
   fclose(fp);
-  snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.obj", OBJ_PREFIX, zone_table[zone_num].number);
+  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.obj", OBJ_PREFIX, zone_table[zone_num].number);
   /*
    * We're fubar'd if we crash between the two lines below.
    */
@@ -468,13 +468,13 @@ void oedit_disp_aff_flags(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_AFF_FLAGS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits[i]);
     if (!(++columns % 2))
       strcat(buf, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(BITVECTOR(OLC_OBJ(d)), affected_bits, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "Current flags   : %s%s%s\r\n"
       "Enter aff flags (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
@@ -486,13 +486,13 @@ void oedit_disp_aff2_flags(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_AFF2_FLAGS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits2[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits2[i]);
     if (!(++columns % 2))
       strcat(buf, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(BITVECTOR2(OLC_OBJ(d)), affected_bits2, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "Current flags   : %s%s%s\r\n"
       "Enter aff2 flags (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
@@ -506,7 +506,7 @@ void oedit_disp_container_flags_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   sprintbit(GET_OBJ_VAL(OLC_OBJ(d), 1), container_bits, buf1);
   send_to_char("[H[J", d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "%s1%s) CLOSEABLE\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s1%s) CLOSEABLE\r\n"
       "%s2%s) PICKPROOF\r\n"
       "%s3%s) CLOSED\r\n"
       "%s4%s) LOCKED\r\n"
@@ -526,7 +526,7 @@ void oedit_disp_extradesc_menu(struct descriptor_data *d)
 
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "Extra desc menu\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "Extra desc menu\r\n"
       "%s1%s) Keyword: %s%s\r\n"
       "%s2%s) Description:\r\n%s%s\r\n"
       "%s3%s) Goto next description: %s\r\n"
@@ -550,10 +550,10 @@ void oedit_disp_prompt_apply_menu(struct descriptor_data *d)
   for (counter = 0; counter < MAX_OBJ_AFFECT; counter++) {
     if (OLC_OBJ(d)->affected[counter].modifier) {
       sprinttype(OLC_OBJ(d)->affected[counter].location, apply_types, buf2);
-      snprintf(buf, MAX_STRING_LENGTH, " %s%d%s) %+d to %s\r\n", grn, counter + 1, nrm, OLC_OBJ(d)->affected[counter].modifier, buf2);
+      safe_snprintf(buf, MAX_STRING_LENGTH, " %s%d%s) %+d to %s\r\n", grn, counter + 1, nrm, OLC_OBJ(d)->affected[counter].modifier, buf2);
       send_to_char(buf, d->character);
     } else {
-      snprintf(buf, MAX_STRING_LENGTH, " %s%d%s) None.\r\n", grn, counter + 1, nrm);
+      safe_snprintf(buf, MAX_STRING_LENGTH, " %s%d%s) None.\r\n", grn, counter + 1, nrm);
       send_to_char(buf, d->character);
     }
   }
@@ -571,10 +571,10 @@ void oedit_liquid_type(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_LIQ_TYPES; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, " %s%2d%s) %s%-20.20s %s", grn, counter, nrm, yel, drinks[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, " %s%2d%s) %s%-20.20s %s", grn, counter, nrm, yel, drinks[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
-  snprintf(buf, MAX_STRING_LENGTH, "\r\n%sEnter drink type : ", nrm);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n%sEnter drink type : ", nrm);
   send_to_char(buf, d->character);
   OLC_MODE(d) = OEDIT_VALUE_3;
 }
@@ -589,7 +589,7 @@ void oedit_disp_apply_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_APPLIES; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, apply_types[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, apply_types[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   send_to_char("\r\nEnter apply type (0 is no apply) : ", d->character);
@@ -606,7 +606,7 @@ void oedit_disp_weapon_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < WEAPON_MAX; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, weapon_types[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, weapon_types[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   send_to_char("\r\nEnter weapon type : ", d->character);
@@ -620,7 +620,7 @@ void oedit_disp_handed_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < WEAPON_HANDED; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter, nrm, weapon_handed[counter]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter, nrm, weapon_handed[counter]);
     if (!(++columns % 2))
       strcat(buf, "\r\n");
     send_to_char(buf, d->character);
@@ -636,7 +636,7 @@ void oedit_disp_resist_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 1; counter < NUM_RESISTS; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %6d\r\n", grn, counter, nrm, resists_names[counter], GET_OBJ_RESIST(OLC_OBJ(d), counter));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %6d\r\n", grn, counter, nrm, resists_names[counter], GET_OBJ_RESIST(OLC_OBJ(d), counter));
     send_to_char(buf, d->character);
   }
   send_to_char("\r\nEnter resist type [0 to exit]: ", d->character);
@@ -655,12 +655,12 @@ void oedit_disp_spells_menu(struct descriptor_data *d)
     if (spells[counter].spell_pointer)
       for (i = 0; i < NUM_CLASSES - 1; i++)
         if (spells[counter].min_level[i] <= GET_OBJ_VAL(OLC_OBJ(d), 0)) {
-          snprintf(buf, MAX_STRING_LENGTH, "%s%3d%s) %s%-20.20s %s", grn, spells[counter].spellindex, nrm, yel, spells[counter].command, !(++columns % 3) ? "\r\n" : "");
+          safe_snprintf(buf, MAX_STRING_LENGTH, "%s%3d%s) %s%-20.20s %s", grn, spells[counter].spellindex, nrm, yel, spells[counter].command, !(++columns % 3) ? "\r\n" : "");
           send_to_char(buf, d->character);
           break;
         }
   }
-  snprintf(buf, MAX_STRING_LENGTH, "\r\n%sEnter spell choice (0 for none) : ", nrm);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n%sEnter spell choice (0 for none) : ", nrm);
   send_to_char(buf, d->character);
 }
 
@@ -853,7 +853,7 @@ void oedit_disp_type_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_ITEM_TYPES; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, item_types[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter, nrm, item_types[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   send_to_char("\r\nEnter object type : ", d->character);
@@ -869,11 +869,11 @@ void oedit_disp_extra_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_ITEM_FLAGS; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, extra_bits[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, extra_bits[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(GET_OBJ_EXTRA(OLC_OBJ(d)), extra_bits, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\nObject flags: %s%s%s\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nObject flags: %s%s%s\r\n"
       "Enter object extra flag (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
 }
@@ -888,11 +888,11 @@ void oedit_disp_wear_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_ITEM_WEARS; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, wear_bits[counter], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s %s", grn, counter + 1, nrm, wear_bits[counter], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(GET_OBJ_WEAR(OLC_OBJ(d)), wear_bits, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\nWear flags: %s%s%s\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nWear flags: %s%s%s\r\n"
       "Enter wear flag, 0 to quit : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
 }
@@ -903,13 +903,13 @@ void oedit_disp_slots_menu(struct descriptor_data * d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_WEARS; counter++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter + 1, nrm, worn_bits[counter]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter + 1, nrm, worn_bits[counter]);
     if (!(++columns % 2))
       strcat(buf, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(GET_OBJ_SLOTS(OLC_OBJ(d)), worn_bits, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\nWear slots: %s%s%s\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nWear slots: %s%s%s\r\n"
       "Enter wear slots, 0 to quit : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
 }
@@ -925,11 +925,11 @@ void oedit_disp_material_menu(struct descriptor_data * d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_MATERIALS; counter += 2) {
-    snprintf(buf, MAX_STRING_LENGTH, "%2d) %20.20s %2d) %20.20s\r\n", counter, material_types[counter], counter + 1, counter < NUM_MATERIALS ? material_types[counter + 1] : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%2d) %20.20s %2d) %20.20s\r\n", counter, material_types[counter], counter + 1, counter < NUM_MATERIALS ? material_types[counter + 1] : "");
     send_to_char(buf, d->character);
   }
   sprinttype(GET_OBJ_VAL(obj, 4), material_types, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "Material: %s\r\n", buf1);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "Material: %s\r\n", buf1);
   send_to_char(buf, d->character);
   send_to_char("Enter material type: ", d->character);
 
@@ -956,7 +956,7 @@ void oedit_disp_menu(struct descriptor_data *d)
   /*
    * Build first half of menu.
    */
-  snprintf(buf, MAX_STRING_LENGTH, "[H[J"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "[H[J"
       "-- Item number : [%s%d%s]\r\n"
       "%s1%s) Namelist : %s%s\r\n"
       "%s2%s) S-Desc   : %s%s\r\n"
@@ -979,7 +979,7 @@ void oedit_disp_menu(struct descriptor_data *d)
   sprintbit(GET_OBJ_SLOTS(obj), worn_bits, buf3);
   sprintbit(BITVECTOR(obj), affected_bits, buf4);
   sprintbit(BITVECTOR2(obj), affected_bits2, buf5);
-  snprintf(buf, MAX_STRING_LENGTH, "%s7%s) Wear flags     : %s%s\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s7%s) Wear flags     : %s%s\r\n"
       "%s8%s) Weight         : %s%d\r\n"
       "%s9%s) Cost           : %s%d\r\n"
       "%sB%s) Timer          : %s%d\r\n"
@@ -1016,7 +1016,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
         case 'Y':
           send_to_char("Saving object to memory and to disk.\r\n", d->character);
           oedit_save_internally(d);
-          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing obj %d", GET_NAME(d->character), OLC_NUM(d));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing obj %d", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           cleanup_olc(d, CLEANUP_STRUCTS);
           return;
@@ -1025,7 +1025,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
           /*
            * Cleanup all.
            */
-          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing obj %d", GET_NAME(d->character), OLC_NUM(d));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing obj %d", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           cleanup_olc(d, CLEANUP_ALL);
           return;
@@ -1047,7 +1047,7 @@ void oedit_parse(struct descriptor_data *d, char *arg)
             OLC_MODE(d) = OEDIT_CONFIRM_SAVESTRING;
           } else {
             send_to_char("No changes made.\r\n", d->character);
-            snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing obj %d", GET_NAME(d->character), OLC_NUM(d));
+            safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing obj %d", GET_NAME(d->character), OLC_NUM(d));
             mudlog(buf, 'G', COM_BUILDER, TRUE);
             cleanup_olc(d, CLEANUP_ALL);
           }

@@ -562,7 +562,7 @@ void medit_save_to_disk(int zone_num)
     }
   }
   fclose(mob_file);
-  snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.mob", MOB_PREFIX, zone);
+  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.mob", MOB_PREFIX, zone);
   /*
    * We're fubar'd if we crash between the two lines below.
    */
@@ -583,7 +583,7 @@ void medit_disp_classes(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (i = 0; *npc_class_types[i] != '\n'; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, npc_class_types[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, npc_class_types[i]);
     send_to_char(buf, d->character);
   }
   send_to_char("Enter class : ", d->character);
@@ -599,7 +599,7 @@ void medit_disp_races(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (i = 0; *npc_race_names[i] != '\n'; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, npc_race_names[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, npc_race_names[i]);
     send_to_char(buf, d->character);
   }
   send_to_char("Enter mob race : ", d->character);
@@ -615,7 +615,7 @@ void medit_disp_sizes(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (i = 0; *size_names[i] != '\n'; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, size_names[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, size_names[i]);
     send_to_char(buf, d->character);
   }
   send_to_char("Enter mob size : ", d->character);
@@ -632,7 +632,7 @@ void medit_disp_positions(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (i = 0; *position_types[i] != '\n'; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, position_types[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, position_types[i]);
     send_to_char(buf, d->character);
   }
   send_to_char("Enter position number : ", d->character);
@@ -697,12 +697,12 @@ void medit_disp_mprog(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   while (mprog) {
-    snprintf(buf, MAX_STRING_LENGTH, "%d) %s %s\r\n", OLC_MTOTAL(d), medit_get_mprog_type(mprog), (mprog->arglist ? mprog->arglist : "NONE"));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%d) %s %s\r\n", OLC_MTOTAL(d), medit_get_mprog_type(mprog), (mprog->arglist ? mprog->arglist : "NONE"));
     send_to_char(buf, d->character);
     OLC_MTOTAL(d)++;
     mprog = mprog->next;
   }
-  snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Mob Prog\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Mob Prog\r\n"
       "%d) Purge Mob Prog\r\n"
       "Enter number to edit [0 to exit]:  ", OLC_MTOTAL(d), OLC_MTOTAL(d) + 1);
   send_to_char(buf, d->character);
@@ -717,7 +717,7 @@ void medit_disp_mprog(struct descriptor_data *d)
 void medit_change_mprog(struct descriptor_data *d)
 {
   send_to_char("[H[J", d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "1) Type: %s\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "1) Type: %s\r\n"
       "2) Args: %s\r\n"
       "3) Commands:\r\n%s\r\n\r\n"
       "Enter number to edit [0 to exit]: ", medit_get_mprog_type(OLC_MPROG(d)), (OLC_MPROG(d)->arglist ? OLC_MPROG(d)->arglist : "NONE"), (OLC_MPROG(d)->comlist ? OLC_MPROG(d)->comlist : "NONE"));
@@ -739,7 +739,7 @@ void medit_disp_mprog_types(struct descriptor_data *d)
   send_to_char("[H[J", d->character);
 
   for (i = 0; i < NUM_PROGS - 1; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, mobprog_types[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, mobprog_types[i]);
     send_to_char(buf, d->character);
   }
   send_to_char("Enter mob prog type : ", d->character);
@@ -753,32 +753,32 @@ void medit_disp_e_spec(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   if (GET_STR(OLC_MOB(d)) != 50) {
-    snprintf(buf, MAX_STRING_LENGTH, "1) Str:    %d\r\n", GET_STR(OLC_MOB(d)));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "1) Str:    %d\r\n", GET_STR(OLC_MOB(d)));
     send_to_char(buf, d->character);
   } else
     send_to_char("1) Str:    Not Set.\r\n", d->character);
   if (GET_DEX(OLC_MOB(d)) != 50) {
-    snprintf(buf, MAX_STRING_LENGTH, "2) Dex:    %d\r\n", GET_DEX(OLC_MOB(d)));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "2) Dex:    %d\r\n", GET_DEX(OLC_MOB(d)));
     send_to_char(buf, d->character);
   } else
     send_to_char("2) Dex:    Not Set.\r\n", d->character);
   if (GET_AGI(OLC_MOB(d)) != 50) {
-    snprintf(buf, MAX_STRING_LENGTH, "3) Agi:    %d\r\n", GET_AGI(OLC_MOB(d)));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "3) Agi:    %d\r\n", GET_AGI(OLC_MOB(d)));
     send_to_char(buf, d->character);
   } else
     send_to_char("3) Agi:    Not Set.\r\n", d->character);
   if (GET_INT(OLC_MOB(d)) != 50) {
-    snprintf(buf, MAX_STRING_LENGTH, "4) Int:    %d\r\n", GET_INT(OLC_MOB(d)));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "4) Int:    %d\r\n", GET_INT(OLC_MOB(d)));
     send_to_char(buf, d->character);
   } else
     send_to_char("4) Int:    Not Set.\r\n", d->character);
   if (GET_WIS(OLC_MOB(d)) != 50) {
-    snprintf(buf, MAX_STRING_LENGTH, "5) Wis:    %d\r\n", GET_WIS(OLC_MOB(d)));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "5) Wis:    %d\r\n", GET_WIS(OLC_MOB(d)));
     send_to_char(buf, d->character);
   } else
     send_to_char("5) Wis:    Not Set.\r\n", d->character);
   if (GET_CON(OLC_MOB(d)) != 50) {
-    snprintf(buf, MAX_STRING_LENGTH, "6) Con:    %d\r\n", GET_CON(OLC_MOB(d)));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "6) Con:    %d\r\n", GET_CON(OLC_MOB(d)));
     send_to_char(buf, d->character);
   } else
     send_to_char("6) Con:    Not Set.\r\n", d->character);
@@ -800,7 +800,7 @@ void medit_disp_sex(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_GENDERS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, genders[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, genders[i]);
     send_to_char(buf, d->character);
   }
   send_to_char("Enter gender number : ", d->character);
@@ -818,7 +818,7 @@ void medit_disp_attack_types(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_ATTACK_TYPES; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, attack_hit_text[i].singular);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i, nrm, attack_hit_text[i].singular);
     send_to_char(buf, d->character);
   }
   send_to_char("Enter attack type : ", d->character);
@@ -841,7 +841,7 @@ void medit_change_attack(struct descriptor_data* d)
   send_to_char("2) Damage\r\n", d->character);
   send_to_char("3) Type of Attack\r\n", d->character);
   if (attack) {
-    snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent Attack: T %d %dd%d+%d %s\r\n\r\n", attack->attacks, attack->nodice, attack->sizedice, attack->damroll, attack_hit_text[(int) attack->attack_type].singular);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent Attack: T %d %dd%d+%d %s\r\n\r\n", attack->attacks, attack->nodice, attack->sizedice, attack->damroll, attack_hit_text[(int) attack->attack_type].singular);
     send_to_char(buf, d->character);
   } else
     send_to_char("\r\nCurrent Attack: Not Set.\r\n\r\n", d->character);
@@ -859,14 +859,14 @@ void medit_disp_attack_menu(struct descriptor_data *d)
   d->edit_number2 = 1;
   send_to_char("[H[J", d->character);
   while (attack) {
-    snprintf(buf, MAX_STRING_LENGTH, "%d) T %d %dd%d+%d %s\r\n", d->edit_number2, attack->attacks, attack->nodice, attack->sizedice, attack->damroll, attack_hit_text[(int) attack->attack_type].singular);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%d) T %d %dd%d+%d %s\r\n", d->edit_number2, attack->attacks, attack->nodice, attack->sizedice, attack->damroll, attack_hit_text[(int) attack->attack_type].singular);
     send_to_char(buf, d->character);
     d->edit_number2++;
     attack = attack->next;
   }
-  snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Attack\r\n", d->edit_number2);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Attack\r\n", d->edit_number2);
   send_to_char(buf, d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "%d) Purge Attack\r\n", d->edit_number2 + 1);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Purge Attack\r\n", d->edit_number2 + 1);
   send_to_char(buf, d->character);
 
   send_to_char("Enter number to edit [0 to exit]:  ", d->character);
@@ -889,7 +889,7 @@ void medit_change_action(struct descriptor_data* d)
   send_to_char("2) Min Position\r\n", d->character);
   send_to_char("3) Action\r\n", d->character);
   if (action) {
-    snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent Action: A %d %d %s\r\n\r\n", action->chance, action->minpos, action->action);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent Action: A %d %d %s\r\n\r\n", action->chance, action->minpos, action->action);
     send_to_char(buf, d->character);
   } else
     send_to_char("\r\nCurrent Action: Not Set.\r\n\r\n", d->character);
@@ -907,14 +907,14 @@ void medit_disp_action_menu(struct descriptor_data *d)
   d->edit_number2 = 1;
   send_to_char("[H[J", d->character);
   while (action) {
-    snprintf(buf, MAX_STRING_LENGTH, "%d) A %d %d %s\r\n", d->edit_number2, action->chance, action->minpos, action->action);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%d) A %d %d %s\r\n", d->edit_number2, action->chance, action->minpos, action->action);
     send_to_char(buf, d->character);
     d->edit_number2++;
     action = action->next;
   }
-  snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Action\r\n", d->edit_number2);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Action\r\n", d->edit_number2);
   send_to_char(buf, d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "%d) Purge Action\r\n", d->edit_number2 + 1);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Purge Action\r\n", d->edit_number2 + 1);
   send_to_char(buf, d->character);
 
   send_to_char("Enter number to edit [0 to exit]:  ", d->character);
@@ -931,7 +931,7 @@ void medit_disp_equip_pos(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_WEARS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i, nrm, where[i]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i, nrm, where[i]);
     if (!(++columns % 2))
       strcat(buf, "\r\n");
     send_to_char(buf, d->character);
@@ -958,7 +958,7 @@ void medit_change_equip(struct descriptor_data* d)
   send_to_char("3) Object Virtual Num\r\n", d->character);
   send_to_char("4) Max Existing\r\n", d->character);
   if (equip) {
-    snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent Equipment: E %d %d %d %d\r\n\r\n", equip->pos, equip->chance, equip->vnum, equip->max);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent Equipment: E %d %d %d %d\r\n\r\n", equip->pos, equip->chance, equip->vnum, equip->max);
     send_to_char(buf, d->character);
   } else
     send_to_char("\r\nCurrent Equipment: Not Set.\r\n\r\n", d->character);
@@ -976,14 +976,14 @@ void medit_disp_equip_menu(struct descriptor_data *d)
   d->edit_number2 = 1;
   send_to_char("[H[J", d->character);
   while (equip) {
-    snprintf(buf, MAX_STRING_LENGTH, "%d) E %d %d %d %d\r\n", d->edit_number2, equip->pos, equip->chance, equip->vnum, equip->max);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%d) E %d %d %d %d\r\n", d->edit_number2, equip->pos, equip->chance, equip->vnum, equip->max);
     send_to_char(buf, d->character);
     d->edit_number2++;
     equip = equip->next;
   }
-  snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Equipment\r\n", d->edit_number2);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Create New Equipment\r\n", d->edit_number2);
   send_to_char(buf, d->character);
-  snprintf(buf, MAX_STRING_LENGTH, "%d) Purge Equipment\r\n", d->edit_number2 + 1);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Purge Equipment\r\n", d->edit_number2 + 1);
   send_to_char(buf, d->character);
 
   send_to_char("Enter number to edit [0 to exit]:  ", d->character);
@@ -1000,7 +1000,7 @@ void medit_disp_resist_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 1; i < NUM_RESISTS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %6d\r\n", grn, i, nrm, resists_names[i], GET_RESIST(OLC_MOB(d), i));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %6d\r\n", grn, i, nrm, resists_names[i], GET_RESIST(OLC_MOB(d), i));
     send_to_char(buf, d->character);
   }
   send_to_char("\r\nEnter resist type [0 to exit]: ", d->character);
@@ -1018,11 +1018,11 @@ void medit_disp_mob_flags(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_MOB_FLAGS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, action_bits[i], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, action_bits[i], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(MOB_FLAGS(OLC_MOB(d)), action_bits, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent flags : %s%s%s\r\nEnter mob flags (0 to quit) : ", cyn, buf1, nrm);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent flags : %s%s%s\r\nEnter mob flags (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
 }
 
@@ -1038,11 +1038,11 @@ void medit_disp_aff_flags(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_AFF_FLAGS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits[i], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits[i], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(AFF_FLAGS(OLC_MOB(d)), affected_bits, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ", cyn, buf1, nrm);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
 }
 
@@ -1053,11 +1053,11 @@ void medit_disp_aff2_flags(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_AFF2_FLAGS; i++) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits2[i], !(++columns % 2) ? "\r\n" : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  %s", grn, i + 1, nrm, affected_bits2[i], !(++columns % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(AFF2_FLAGS(OLC_MOB(d)), affected_bits2, buf1);
-  snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ", cyn, buf1, nrm);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent flags   : %s%s%s\r\nEnter aff flags (0 to quit) : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
 }
 
@@ -1073,7 +1073,7 @@ void medit_disp_menu(struct descriptor_data *d)
   mob = OLC_MOB(d);
   get_char_cols(d->character);
 
-  snprintf(buf, MAX_STRING_LENGTH, "[H[J"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "[H[J"
       "-- Mob Number:  [%s%d%s]\r\n"
       "%s0%s) Class: %s%s\r\n"
       "%s1%s) Sex: %s%-7.7s           %s2%s) Alias: %s%s\r\n"
@@ -1090,7 +1090,7 @@ void medit_disp_menu(struct descriptor_data *d)
   sprintbit(MOB_FLAGS(mob), action_bits, buf1);
   sprintbit(AFF_FLAGS(mob), affected_bits, buf2);
   sprintbit(AFF2_FLAGS(mob), affected_bits2, buf3);
-  snprintf(buf, MAX_STRING_LENGTH, "%sF%s) Position  : %s%s" "  %sG%s) Default   : %s%s\r\n"
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%sF%s) Position  : %s%s" "  %sG%s) Default   : %s%s\r\n"
       "%sH%s) Attacks   : %s%s" "  %sI%s) Actions   : %s%s\r\n"
       "%sJ%s) Equipment : %s%s\r\n"
       "%sK%s) NPC Flags : %s%s\r\n"
@@ -1137,14 +1137,14 @@ void medit_parse(struct descriptor_data *d, char *arg)
            */
           send_to_char("Saving mobile to memory and to disk.\r\n", d->character);
           medit_save_internally(d);
-          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing mob %d", GET_NAME(d->character), OLC_NUM(d));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing mob %d", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', MAX(COM_BUILDER, GET_INVIS_LEV(d->character)), TRUE);
           /* FALL THROUGH */
           cleanup_olc(d, CLEANUP_ALL);
           return;
         case 'n':
         case 'N':
-          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing mob %d", GET_NAME(d->character), OLC_NUM(d));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing mob %d", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           cleanup_olc(d, CLEANUP_ALL);
           return;
@@ -1164,7 +1164,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
             send_to_char("Do you wish to save the changes to the mobile? (y/n) : ", d->character);
             OLC_MODE(d) = MEDIT_CONFIRM_SAVESTRING;
           } else {
-            snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing mob %d", GET_NAME(d->character), OLC_NUM(d));
+            safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing mob %d", GET_NAME(d->character), OLC_NUM(d));
             mudlog(buf, 'G', COM_BUILDER, TRUE);
             cleanup_olc(d, CLEANUP_ALL);
           }

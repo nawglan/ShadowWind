@@ -188,14 +188,14 @@ void House_delete_file(int vnum)
     return;
   if (!(fl = fopen(fname, "rb"))) {
     if (errno != ENOENT) {
-      snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Error deleting house file #%d. (1)", vnum);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Error deleting house file #%d. (1)", vnum);
       perror(buf);
     }
     return;
   }
   fclose(fl);
   if (unlink(fname) < 0) {
-    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Error deleting house file #%d. (2)", vnum);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Error deleting house file #%d. (2)", vnum);
     perror(buf);
   }
 }
@@ -212,7 +212,7 @@ void House_listrent(struct char_data * ch, int vnum)
   if (!House_get_filename(vnum, fname))
     return;
   if (!(fl = fopen(fname, "rb"))) {
-    snprintf(buf, MAX_STRING_LENGTH, "No objects on file for house #%d.\r\n", vnum);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "No objects on file for house #%d.\r\n", vnum);
     send_to_char(buf, ch);
     return;
   }
@@ -361,7 +361,7 @@ void hcontrol_list_houses(struct char_data * ch)
     if (house_control[i].num_of_guests) {
       strcat(buf, "     Guests: ");
       for (j = 0; j < house_control[i].num_of_guests; j++) {
-        snprintf(buf2, MAX_STRING_LENGTH, "%s ", house_control[i].guests[j]);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%s ", house_control[i].guests[j]);
         strcat(buf, CAP(buf2));
       }
       strcat(buf, "\r\n");
@@ -404,12 +404,12 @@ void hcontrol_build_house(struct char_data * ch, char *arg)
     return;
   }
   if ((exit_num = search_block(arg1, dirs, FALSE)) < 0) {
-    snprintf(buf, MAX_STRING_LENGTH, "'%s' is not a valid direction.\r\n", arg1);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "'%s' is not a valid direction.\r\n", arg1);
     send_to_char(buf, ch);
     return;
   }
   if (TOROOM(real_house, exit_num) == NOWHERE) {
-    snprintf(buf, MAX_STRING_LENGTH, "There is no exit %s from room %d.\r\n", dirs[exit_num], virt_house);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "There is no exit %s from room %d.\r\n", dirs[exit_num], virt_house);
     send_to_char(buf, ch);
     return;
   }
@@ -429,7 +429,7 @@ void hcontrol_build_house(struct char_data * ch, char *arg)
     return;
   }
   if (get_id_by_name(arg1) < 0) {
-    snprintf(buf, MAX_STRING_LENGTH, "Unknown player '%s'.\r\n", arg1);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown player '%s'.\r\n", arg1);
     send_to_char(buf, ch);
     return;
   }
@@ -505,7 +505,7 @@ void hcontrol_pay_house(struct char_data * ch, char *arg)
   else if ((i = find_house(atoi(arg))) < 0)
     send_to_char("Unknown house.\r\n", ch);
   else {
-    snprintf(buf, MAX_STRING_LENGTH, "Payment for house %s collected by %s.", arg, GET_NAME(ch));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "Payment for house %s collected by %s.", arg, GET_NAME(ch));
     mudlog(buf, 'H', COM_IMMORT, TRUE);
 
     house_control[i].last_payment = time(0);

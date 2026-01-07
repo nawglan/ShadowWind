@@ -395,10 +395,10 @@ ACMD(do_memorize)
       count += ch->spell_memory[j].is_mem;
       if (count) {
         if (i) {
-          snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), ", %s", buf2);
+          safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), ", %s", buf2);
         }
         i++;
-        snprintf(buf2, MAX_STRING_LENGTH, "%d %d%s", ch->can_mem[j] - count, j, j == 1 ? "st" : j == 2 ? "nd" : j == 3 ? "rd" : "th");
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%d %d%s", ch->can_mem[j] - count, j, j == 1 ? "st" : j == 2 ? "nd" : j == 3 ? "rd" : "th");
       }
       count = 0;
     }

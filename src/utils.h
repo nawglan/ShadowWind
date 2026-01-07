@@ -53,6 +53,16 @@ int BOUNDED(int a, int b, int c);
 /* define an absolute value macro */
 #define ABS(x) (((x) > 0) ? (x) : -(x))
 
+/* safe snprintf with truncation logging */
+void log_snprintf_truncation(const char *file, int line, size_t bufsize, int needed);
+
+#define safe_snprintf(buf, size, fmt, ...) ({ \
+    int _snp_ret = snprintf(buf, size, fmt, ##__VA_ARGS__); \
+    if (_snp_ret >= (int)(size)) \
+        log_snprintf_truncation(__FILE__, __LINE__, (size), _snp_ret); \
+    _snp_ret; \
+})
+
 /* in magic.c */
 bool circle_follow(struct char_data *ch, struct char_data * victim);
 

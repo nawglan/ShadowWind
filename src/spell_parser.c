@@ -86,7 +86,7 @@ void say_spell(struct char_data * ch, int spellnum, struct char_data * tch, stru
       perform_act(buf2, ch, tobj, tch, i);
   }
   if (tch != NULL && tch != ch) {
-    snprintf(buf1, MAX_STRING_LENGTH, "$n stares at you and utters the words, '%s'.", GET_CLASS(ch) == GET_CLASS(tch) ? get_spell_name(spellnum) : buf);
+    safe_snprintf(buf1, MAX_STRING_LENGTH, "$n stares at you and utters the words, '%s'.", GET_CLASS(ch) == GET_CLASS(tch) ? get_spell_name(spellnum) : buf);
     act(buf1, FALSE, ch, NULL, tch, TO_VICT);
   }
 }
@@ -679,7 +679,7 @@ ACMD(do_spells)
 
   one_argument(argument, arg);
   if (!*arg) {
-    snprintf(buf, MAX_STRING_LENGTH, "You know of the following spells:\r\n");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You know of the following spells:\r\n");
     strcpy(buf2, buf);
 
     for (i = 1; spells[i].command[0] != '\n'; i++) {
@@ -701,7 +701,7 @@ ACMD(do_spells)
     }
 
     sprinttype(class, pc_class_types, buf);
-    snprintf(buf2, MAX_STRING_LENGTH, "%ss can use the following spells:\r\n", buf);
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "%ss can use the following spells:\r\n", buf);
 
     for (i = 1; spells[i].command[0] != '\n'; i++) {
       if (spells[i].spell_pointer) {

@@ -902,7 +902,7 @@ ACMD(do_mptransfer)
         stop_fighting(victim);
 
       if (GET_DRAGGING(victim)) {
-        snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(victim));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(victim));
         act(buf, TRUE, 0, GET_DRAGGING(victim), 0, TO_ROOM);
       }
       char_from_room(victim);
@@ -910,9 +910,9 @@ ACMD(do_mptransfer)
       if (GET_DRAGGING(victim)) {
         obj_from_room(GET_DRAGGING(victim));
         obj_to_room(GET_DRAGGING(victim), victim->in_room);
-        snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
         act(buf, FALSE, victim, GET_DRAGGING(victim), 0, TO_CHAR);
-        snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(victim));
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(victim));
         act(buf, TRUE, victim, GET_DRAGGING(victim), 0, TO_ROOM);
       }
 

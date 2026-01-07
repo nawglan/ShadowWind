@@ -267,7 +267,7 @@ void set_title(struct char_data * ch, char *title)
 {
 
   if (title != NULL) {
-    snprintf(buf, MAX_STRING_LENGTH, "%s", title);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s", title);
     if (strlen(title) > MAX_TITLE_LENGTH)
       title[MAX_TITLE_LENGTH] = '\0';
     if (GET_TITLE(ch) != NULL)
@@ -283,7 +283,7 @@ void check_autowiz(struct char_data * ch)
   extern int min_wizlist_lev;
 
   if (use_autowiz && GET_LEVEL(ch) >= LVL_IMMORT) {
-    snprintf(buf, MAX_STRING_LENGTH, "nice ../bin/autowiz %d %s %d %s %d &", min_wizlist_lev, WIZLIST_FILE, LVL_IMMORT, IMMLIST_FILE, (int) getpid());
+    safe_snprintf(buf, MAX_STRING_LENGTH, "nice ../bin/autowiz %d %s %d %s %d &", min_wizlist_lev, WIZLIST_FILE, LVL_IMMORT, IMMLIST_FILE, (int) getpid());
     mudlog("Initiating autowiz.", 'S', COM_ADMIN, FALSE);
     system(buf);
   }
@@ -444,7 +444,7 @@ void check_idling(struct char_data * ch)
       } else {
         Crash_save(ch, RENT_TIMEDOUT);
       }
-      snprintf(buf, MAX_STRING_LENGTH, "%s force-rented and extracted (idle).", GET_NAME(ch));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s force-rented and extracted (idle).", GET_NAME(ch));
       mudlog(buf, 'R', COM_IMMORT, TRUE);
       extract_char(ch, 0);
     }

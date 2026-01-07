@@ -171,7 +171,7 @@ ACMD(do_ban)
   ban_node->next = ban_list;
   ban_list = ban_node;
 
-  snprintf(buf, MAX_STRING_LENGTH, "%s has banned %s for %s players.", GET_NAME(ch), site, ban_types[ban_node->type]);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s has banned %s for %s players.", GET_NAME(ch), site, ban_types[ban_node->type]);
   mudlog(buf, 'G', COM_ADMIN, TRUE);
   send_to_char("Site banned.\r\n", ch);
   write_ban_list();
@@ -202,7 +202,7 @@ ACMD(do_unban)
   }
   REMOVE_FROM_LIST(ban_node, ban_list, next);
   send_to_char("Site unbanned.\r\n", ch);
-  snprintf(buf, MAX_STRING_LENGTH, "%s removed the %s-player ban on %s.", GET_NAME(ch), ban_types[ban_node->type], ban_node->site);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s removed the %s-player ban on %s.", GET_NAME(ch), ban_types[ban_node->type], ban_node->site);
   mudlog(buf, 'G', COM_ADMIN, TRUE);
 
   FREE(ban_node);
