@@ -1094,7 +1094,7 @@ void free_alias(struct alias * a)
       send_to_char(" None.\r\n", ch);
     else {
       while (a != NULL) {
-        sprintf(buf, "%-15s %s\r\n", a->alias, a->replacement);
+        snprintf(buf, MAX_STRING_LENGTH, "%-15s %s\r\n", a->alias, a->replacement);
         send_to_char(buf, ch);
         a = a->next;
       }
@@ -1732,7 +1732,7 @@ void nanny(struct descriptor_data * d, char *arg)
       strcpy(GET_HOST(d->character), d->host);
       if (*arg == 'y' || *arg == 'Y') {
         if (isbanned(GET_HOST(d->character)) >= BAN_NEW && isbanned(GET_HOST(d->character)) < BAN_OUTLAW) {
-          sprintf(buf, "Request for new char %s denied from [%s] (siteban)", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "Request for new char %s denied from [%s] (siteban)", GET_NAME(d->character), GET_HOST(d->character));
           mudlog(buf, 'C', COM_IMMORT, TRUE);
           SEND_TO_Q("Sorry, new characters are not allowed from your site!\r\n", d);
           STATE(d) = CON_CLOSE;
@@ -1740,13 +1740,13 @@ void nanny(struct descriptor_data * d, char *arg)
         }
         if (restrict_game_lvl) {
           SEND_TO_Q("Sorry, new players can't be created at the moment.\r\n", d);
-          sprintf(buf, "Request for new char %s denied from %s (wizlock)", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "Request for new char %s denied from %s (wizlock)", GET_NAME(d->character), GET_HOST(d->character));
           mudlog(buf, 'C', COM_IMMORT, TRUE);
           STATE(d) = CON_CLOSE;
           return;
         }
         SEND_TO_Q("New character.\r\n", d);
-        sprintf(buf, "Give me a password for %s: ", GET_NAME(d->character));
+        snprintf(buf, MAX_STRING_LENGTH, "Give me a password for %s: ", GET_NAME(d->character));
         SEND_TO_Q(buf, d);
         echo_off(d);
         STATE(d) = CON_NEWPASSWD;
@@ -1780,17 +1780,17 @@ void nanny(struct descriptor_data * d, char *arg)
               save_char_text(d->character, NOWHERE);
               save_text(d->character);
               if (d->character->player.host[0] != '\0') {
-                sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+                snprintf(buf, MAX_STRING_LENGTH, "Auto updated PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
               } else {
-                sprintf(buf, "Auto updated PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+                snprintf(buf, MAX_STRING_LENGTH, "Auto updated PW: %s [%s]", GET_NAME(d->character), d->hostIP);
               }
               mudlog(buf, 'P', COM_IMMORT, TRUE);
             }
           } else {
             if (d->character->player.host[0] != '\0') {
-              sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+              snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
             } else {
-              sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+              snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
             }
             mudlog(buf, 'P', COM_IMMORT, TRUE);
             GET_BAD_PWS(d->character)++;
@@ -1809,9 +1809,9 @@ void nanny(struct descriptor_data * d, char *arg)
         mudlog(buf, 'P', COM_IMMORT, TRUE);
         if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg)) != 0) {
           if (d->character->player.host[0] != '\0') {
-            sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+            snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
           } else {
-            sprintf(buf, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+            snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
           }
           mudlog(buf, 'P', COM_IMMORT, TRUE);
           GET_BAD_PWS(d->character)++;
@@ -1835,14 +1835,14 @@ void nanny(struct descriptor_data * d, char *arg)
         if (isbanned(GET_HOST(d->character)) == BAN_SELECT && !PLR_FLAGGED(d->character, PLR_SITEOK)) {
           SEND_TO_Q("Sorry, this char has not been cleared for login from your site!\r\nMail swadmin@shadowwind.org for clearance.\r\n\r\n", d);
           STATE(d) = CON_CLOSE;
-          sprintf(buf, "Connection attempt for %s denied from %s", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "Connection attempt for %s denied from %s", GET_NAME(d->character), GET_HOST(d->character));
           mudlog(buf, 'C', COM_IMMORT, TRUE);
           return;
         }
         if (GET_LEVEL(d->character) < restrict_game_lvl) {
           SEND_TO_Q("The game is temporarily restricted.. try again later.\r\n", d);
           STATE(d) = CON_CLOSE;
-          sprintf(buf, "Request for login denied for %s [%s] (wizlock)", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "Request for login denied for %s [%s] (wizlock)", GET_NAME(d->character), GET_HOST(d->character));
           mudlog(buf, 'C', COM_IMMORT, TRUE);
           return;
         }
@@ -1877,7 +1877,7 @@ void nanny(struct descriptor_data * d, char *arg)
             REMOVE_BIT(PLR_FLAGS(d->character), PLR_MAILING | PLR_WRITING | PLR_EDITING);
             REMOVE_BIT(AFF2_FLAGS(d->character), AFF2_SCRIBING | AFF2_CASTING | AFF2_MEMMING);
             STATE(d) = CON_PLAYING;
-            sprintf(buf, "%s [%s] has reconnected.", GET_NAME(d->character), GET_HOST(d->character));
+            snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has reconnected.", GET_NAME(d->character), GET_HOST(d->character));
             mudlog(buf, 'C', COM_IMMORT, TRUE);
             return;
           }
@@ -1889,10 +1889,10 @@ void nanny(struct descriptor_data * d, char *arg)
               SEND_TO_Q("Reconnecting.\r\n", d);
               act("$n has reconnected.", TRUE, tmp_ch, 0, 0, TO_ROOM);
 
-              sprintf(buf, "%s [%s] has reconnected.", GET_NAME(d->character), GET_HOST(d->character));
+              snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has reconnected.", GET_NAME(d->character), GET_HOST(d->character));
               mudlog(buf, 'C', COM_IMMORT, TRUE);
             } else {
-              sprintf(buf, "%s has re-logged in ... disconnecting old socket.", GET_NAME(tmp_ch));
+              snprintf(buf, MAX_STRING_LENGTH, "%s has re-logged in ... disconnecting old socket.", GET_NAME(tmp_ch));
               mudlog(buf, 'C', COM_IMMORT, TRUE);
               SEND_TO_Q("This body has been usurped!\r\n", tmp_ch->desc);
               flush_queues(tmp_ch->desc);
@@ -1923,14 +1923,14 @@ void nanny(struct descriptor_data * d, char *arg)
           SEND_TO_Q_COLOR(motd, d);
 
         if (d->character->player.host[0] != '\0') {
-          sprintf(buf, "%s [%s] has connected.", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has connected.", GET_NAME(d->character), GET_HOST(d->character));
         } else {
-          sprintf(buf, "%s [%s] has connected.", GET_NAME(d->character), d->hostIP);
+          snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has connected.", GET_NAME(d->character), d->hostIP);
         }
         mudlog(buf, 'C', COM_IMMORT, TRUE);
 
         if (load_result) {
-          sprintf(buf, "\r\n\r\n\007\007\007"
+          snprintf(buf, MAX_STRING_LENGTH, "\r\n\r\n\007\007\007"
               "%s%d LOGIN FAILURE%s SINCE LAST SUCCESSFUL LOGIN.%s\r\n", CCRED(d->character, C_SPR), load_result, (load_result > 1) ? "S" : "", CCNRM(d->character, C_SPR));
           SEND_TO_Q(buf, d);
         }
@@ -2072,12 +2072,12 @@ void nanny(struct descriptor_data * d, char *arg)
         GET_PROMPT(d->character) = 15; /* set prompt display all */
         if (isbanned(GET_HOST(d->character)) == BAN_OUTLAW) {
           result = PLR_TOG_CHK(d->character, PLR_OUTLAW);
-          sprintf(buf, "Outlaw ON for new char %s from [%s] (siteban)", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "Outlaw ON for new char %s from [%s] (siteban)", GET_NAME(d->character), GET_HOST(d->character));
           mudlog(buf, 'M', COM_IMMORT, TRUE);
         }
         if (isbanned(GET_HOST(d->character)) == BAN_FROZEN) {
           result = PLR_TOG_CHK(d->character, PLR_FROZEN);
-          sprintf(buf, "Frozen ON for new char %s from [%s] (siteban)", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "Frozen ON for new char %s from [%s] (siteban)", GET_NAME(d->character), GET_HOST(d->character));
           mudlog(buf, 'M', COM_IMMORT, TRUE);
         }
         if (GET_RACE(d->character) != RACE_TROLL && GET_CLASS(d->character) != CLASS_NECROMANCER && GET_CLASS(d->character) != CLASS_DRUID && GET_CLASS(d->character) != CLASS_RANGER && GET_RACE(d->character) != RACE_OGRE) {

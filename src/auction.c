@@ -131,9 +131,9 @@ ACMD(do_auclist)
   sprintf(string_buf, "Items/gold currently held by Auctioneer:\r\n");
 
   while (auc) {
-    sprintf(buf, "[%3d] Owner: %-25s Item: %s\r\n", i, auc->from, obj_proto[real_object(auc->item_number)].short_description);
+    snprintf(buf, MAX_STRING_LENGTH, "[%3d] Owner: %-25s Item: %s\r\n", i, auc->from, obj_proto[real_object(auc->item_number)].short_description);
     strcat(string_buf, buf);
-    sprintf(buf, "      Bid: %ld  Count: %d  Buyer: %s \r\n", auc->price, auc->sold, auc->to);
+    snprintf(buf, MAX_STRING_LENGTH, "      Bid: %ld  Count: %d  Buyer: %s \r\n", auc->price, auc->sold, auc->to);
     strcat(string_buf, buf);
 
     if (strlen(string_buf) > 39918)
@@ -240,7 +240,7 @@ void load_auction(void)
     fprintf(stderr, "WARNING:  AUCTIONFILE IS PROBABLY CORRUPT!\n");
   auction_recs = size / sizeof(struct auction_item);
   if (auction_recs) {
-    sprintf(buf, "   %d items in auction database.", auction_recs);
+    snprintf(buf, MAX_STRING_LENGTH, "   %d items in auction database.", auction_recs);
     stderr_log(buf);
   } else {
     fclose(auction_fl);
@@ -280,7 +280,7 @@ void load_auction(void)
       for (j = 0; j < 6; j++)
         auction->affected[j] = in.affected[j];
     } else {
-      sprintf(buf, "  Timing-out auc-record %ld", lp);
+      snprintf(buf, MAX_STRING_LENGTH, "  Timing-out auc-record %ld", lp);
       stderr_log(buf);
     }
   }
@@ -313,7 +313,7 @@ ACMD(do_aucecho)
   if (!*argument)
     send_to_char("Yes.. but what?\r\n", ch);
   else {
-    sprintf(buf, "[AUC] %s", argument);
+    snprintf(buf, MAX_STRING_LENGTH, "[AUC] %s", argument);
     auc_echo(buf, ch, NULL);
   }
 
@@ -387,9 +387,9 @@ ACMD(do_auction)
 
     /* Set new highest bid */
     obj = read_object_q(auction->item_number, VIRTUAL);
-    sprintf(buf, "[AUC] New bid on item #%ld: $p", theitem + 1);
+    snprintf(buf, MAX_STRING_LENGTH, "[AUC] New bid on item #%ld: $p", theitem + 1);
     auc_echo(buf, ch, obj);
-    sprintf(buf, "[AUC] Old bid: %ld, New bid: %ld", auction->price, thebid);
+    snprintf(buf, MAX_STRING_LENGTH, "[AUC] Old bid: %ld, New bid: %ld", auction->price, thebid);
     auc_echo(buf, ch, 0);
     auction->price = thebid;
     auction->counter = COUNT_COUNTER; /* once, twice, thrice counter */
@@ -404,7 +404,7 @@ ACMD(do_auction)
       if (auc_slots[j] != -1) {
         auction = auc_get_record(auc_slots[j]);
         obj = read_object_q(auction->item_number, VIRTUAL);
-        sprintf(buf, "#%d: $p, Curr bid: %ld, Min bid: %ld", j + 1, auction->price, auction->minbid);
+        snprintf(buf, MAX_STRING_LENGTH, "#%d: $p, Curr bid: %ld, Min bid: %ld", j + 1, auction->price, auction->minbid);
         act(buf, FALSE, ch, obj, 0, TO_CHAR);
         extract_obj_q(obj);
       }
@@ -553,9 +553,9 @@ SPECIAL(auctioneer)
     obj_from_char(obj); /* takes object from char */
     act("The Auctioneer receives $p from $n.", FALSE, ch, obj, 0, TO_ROOM);
     act("You give the Auctioneer $p.", FALSE, ch, obj, 0, TO_CHAR);
-    sprintf(buf, "Minimum bid is set to %d coins.\r\n", atoi(minbid));
+    snprintf(buf, MAX_STRING_LENGTH, "Minimum bid is set to %d coins.\r\n", atoi(minbid));
     send_to_char(buf, ch);
-    sprintf(buf, "%s auctioned %s for min %d coins", GET_NAME(ch), obj->short_description, atoi(minbid));
+    snprintf(buf, MAX_STRING_LENGTH, "%s auctioned %s for min %d coins", GET_NAME(ch), obj->short_description, atoi(minbid));
     mudlog(buf, 'U', COM_IMMORT, FALSE);
     plog(buf, ch, 0);
 
@@ -590,9 +590,9 @@ SPECIAL(auctioneer)
     auction->announce = 0; /* crash saved stuff */
     auction->counter = REPEAT_COUNTER;
 
-    sprintf(buf, "[AUC] New item in auction! #%d: $p", slot + 1);
+    snprintf(buf, MAX_STRING_LENGTH, "[AUC] New item in auction! #%d: $p", slot + 1);
     auc_echo(buf, ch, obj);
-    sprintf(buf, "[AUC] Minimum bid is set to %ld coins.", auction->minbid);
+    snprintf(buf, MAX_STRING_LENGTH, "[AUC] Minimum bid is set to %ld coins.", auction->minbid);
     auc_echo(buf, ch, 0);
     extract_obj_q(obj); /* remove object from database */
     return 1;
@@ -627,7 +627,7 @@ SPECIAL(auctioneer)
         /* This item has been retrieved and paid for by buyer, give money */
         GET_GOLD(ch) = GET_GOLD(ch) + auction->price;
         send_to_char("The Auctioneer tells you 'Here is the gold for your item that I sold earlier.'\r\n", ch);
-        sprintf(buf, "The Auctioneer gives you %ld coins.\r\n", auction->price);
+        snprintf(buf, MAX_STRING_LENGTH, "The Auctioneer gives you %ld coins.\r\n", auction->price);
         send_to_char(buf, ch);
         act("The Auctioneer gives $n some gold.", FALSE, ch, 0, 0, TO_ROOM);
         /* this record is free now, mark it as unused */
@@ -640,12 +640,12 @@ SPECIAL(auctioneer)
         /* This item was bought by the player, give it to him and take money */
         if (GET_GOLD(ch) < auction->price) {
           obj = read_object_q(auction->item_number, VIRTUAL);
-          sprintf(buf, "The Auctioneer tells you 'I have $p for you that you cant afford, you bought it for %ld coins.'\r\n", auction->price);
+          snprintf(buf, MAX_STRING_LENGTH, "The Auctioneer tells you 'I have $p for you that you cant afford, you bought it for %ld coins.'\r\n", auction->price);
           act(buf, FALSE, ch, obj, 0, TO_CHAR);
           extract_obj_q(obj);
         } else {
           GET_GOLD(ch) = GET_GOLD(ch) - auction->price;
-          sprintf(buf, "The Auctioneer tells you 'This item only costs you %ld coins!'\r\n", auction->price);
+          snprintf(buf, MAX_STRING_LENGTH, "The Auctioneer tells you 'This item only costs you %ld coins!'\r\n", auction->price);
           send_to_char(buf, ch);
           auction_give_char(ch, auction);
           /* Indicate that the item was retrieved */
@@ -679,7 +679,7 @@ SPECIAL(auctioneer)
       save_auction();
       Crash_save(ch, RENT_CRASH);
       send_to_char("The Auctioneer tells you 'That was all I had for you. Welcome back!'\r\n", ch);
-      sprintf(buf, "%s received items/cash from auction", GET_NAME(ch));
+      snprintf(buf, MAX_STRING_LENGTH, "%s received items/cash from auction", GET_NAME(ch));
       mudlog(buf, 'U', COM_IMMORT, FALSE);
       plog(buf, ch, 0);
       return 1;
@@ -701,17 +701,17 @@ SPECIAL(auctioneer)
        owner */
 
       if (auction->price == 0 && auction->counter == 0 && auction->announce == 1) {
-        sprintf(buf, "[AUC] No bids on item #%d: $p", j + 1);
+        snprintf(buf, MAX_STRING_LENGTH, "[AUC] No bids on item #%d: $p", j + 1);
         auc_echo(buf, ch, obj);
-        sprintf(buf, "[AUC] Removing it from list.");
+        snprintf(buf, MAX_STRING_LENGTH, "[AUC] Removing it from list.");
         auc_echo(buf, ch, 0);
         auc_slots[j] = -1;
         auction->announce = -1;
         return 0;
       } else if (auction->price == 0 && auction->counter == 0 && auction->announce == 0) {
-        sprintf(buf, "[AUC] New item in auction! #%d: $p", j + 1);
+        snprintf(buf, MAX_STRING_LENGTH, "[AUC] New item in auction! #%d: $p", j + 1);
         auc_echo(buf, ch, obj);
-        sprintf(buf, "[AUC] Minimum bid is set to %ld coins.", auction->minbid);
+        snprintf(buf, MAX_STRING_LENGTH, "[AUC] Minimum bid is set to %ld coins.", auction->minbid);
         auc_echo(buf, ch, 0);
         auction->announce++;
         auction->counter = REPEAT_COUNTER;
@@ -721,37 +721,37 @@ SPECIAL(auctioneer)
         auction->counter = COUNT_COUNTER; /* reset counter */
         switch (auction->sold) {
           case 0:
-            sprintf(buf, "[AUC] Item number %d: $p", j + 1);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Item number %d: $p", j + 1);
             auc_echo(buf, ch, obj);
-            sprintf(buf, "[AUC] Going once to %s for %ld coins.", auction->to, auction->price);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Going once to %s for %ld coins.", auction->to, auction->price);
             auc_echo(buf, ch, 0);
             auction->sold++;
             break;
           case 1:
-            sprintf(buf, "[AUC] Item number %d: $p", j + 1);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Item number %d: $p", j + 1);
             auc_echo(buf, ch, obj);
-            sprintf(buf, "[AUC] Going twice to %s for %ld coins.", auction->to, auction->price);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Going twice to %s for %ld coins.", auction->to, auction->price);
             auc_echo(buf, ch, 0);
             auction->sold++;
             break;
           case 2:
-            sprintf(buf, "[AUC] Item number %d: $p", j + 1);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Item number %d: $p", j + 1);
             auc_echo(buf, ch, obj);
-            sprintf(buf, "[AUC] Going thrice to %s for %ld coins.", auction->to, auction->price);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Going thrice to %s for %ld coins.", auction->to, auction->price);
             auc_echo(buf, ch, 0);
             auction->sold++;
             break;
           case 3:
-            sprintf(buf, "[AUC] Item number %d: $p", j + 1);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Item number %d: $p", j + 1);
             auc_echo(buf, ch, obj);
-            sprintf(buf, "[AUC] Sold to %s for %ld coins.", auction->to, auction->price);
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] Sold to %s for %ld coins.", auction->to, auction->price);
             auc_echo(buf, ch, 0);
             auction->sold++;
             auc_slots[j] = -1; /* remove if from auction */
             save_auction(); /* save auction database */
             break;
           default:
-            sprintf(buf, "[AUC] I should never auction this, please bug-report!");
+            snprintf(buf, MAX_STRING_LENGTH, "[AUC] I should never auction this, please bug-report!");
             auc_echo(buf, ch, 0);
         }
       }

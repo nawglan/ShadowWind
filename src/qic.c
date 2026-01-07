@@ -77,7 +77,7 @@ void load_qic(void)
     fprintf(stderr, "WARNING:  QIC DATABASE IS PROBABLY CORRUPT!\n");
   qic_items = size / sizeof(struct qic_data);
   if (qic_items) {
-    sprintf(buf, "   %d records in QIC database.", qic_items);
+    snprintf(buf, MAX_STRING_LENGTH, "   %d records in QIC database.", qic_items);
     stderr_log(buf);
   } else {
     qic_items = 0;
@@ -88,7 +88,7 @@ void load_qic(void)
     fread(&q, sizeof(struct qic_data), 1, qic_fl);
     if ((nr = real_object(q.vnum)) < 0) {
       i++;
-      sprintf(buf, "Invalid vnum [%5d] in QIC database!", q.vnum);
+      snprintf(buf, MAX_STRING_LENGTH, "Invalid vnum [%5d] in QIC database!", q.vnum);
       stderr_log(buf);
     } else {
       CREATE(obj_index[nr].qic, struct qic_data, 1);
@@ -200,7 +200,7 @@ void qic_scan_file(char * name, long id)
 
   if (!(fl = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      sprintf(buf1, "SYSERR: OPENING OBJECT FILE %s (4)", fname);
+      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: OPENING OBJECT FILE %s (4)", fname);
       perror(buf1);
     }
     return;
@@ -377,7 +377,7 @@ ACMD(do_qicinfo)
 
   for (i = 0; i < top_of_objt; i++) {
     if (obj_index[i].qic != NULL) {
-      sprintf(buf, "%s[%s%5d%s]%s %-50s %sIn:%s %2d%s, Lim: %s%2d%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].virtual, CBBLU(ch, C_CMP), CCCYN(ch, C_CMP), obj_proto[i].short_description, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->items, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->limit, CCNRM(ch, C_NRM));
+      snprintf(buf, MAX_STRING_LENGTH, "%s[%s%5d%s]%s %-50s %sIn:%s %2d%s, Lim: %s%2d%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].virtual, CBBLU(ch, C_CMP), CCCYN(ch, C_CMP), obj_proto[i].short_description, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->items, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->limit, CCNRM(ch, C_NRM));
       strcat(string_buf, buf);
     }
     if (strlen(string_buf) > 39918)
@@ -409,13 +409,13 @@ ACMD(do_qicinfo)
     return;
   }
 
-  sprintf(buf, "Registered owners at boot (item #%d - %s):\r\n", obj_index[i].virtual, obj_proto[i].short_description);
+  snprintf(buf, MAX_STRING_LENGTH, "Registered owners at boot (item #%d - %s):\r\n", obj_index[i].virtual, obj_proto[i].short_description);
   send_to_char(buf, ch);
 
   for (j = 0; j < QIC_OWNERS; j += 2) {
     if (obj_index[i].qic->owners[j][0] == '\0')
       break;
-    sprintf(buf, "%20.20s  %20.20s\r\n", obj_index[i].qic->owners[j], obj_index[i].qic->owners[j + 1] ? obj_index[i].qic->owners[j + 1] : "");
+    snprintf(buf, MAX_STRING_LENGTH, "%20.20s  %20.20s\r\n", obj_index[i].qic->owners[j], obj_index[i].qic->owners[j + 1] ? obj_index[i].qic->owners[j + 1] : "");
     send_to_char(buf, ch);
   }
   send_to_char("\r\n", ch);
@@ -452,7 +452,7 @@ ACMD(do_qload)
   act("$n makes a strange powerful gesture.", TRUE, ch, 0, 0, TO_ROOM);
   act("$n has created $p!", FALSE, ch, obj, 0, TO_ROOM);
   act("You create $p.", FALSE, ch, obj, 0, TO_CHAR);
-  sprintf(buf, "%s QIC created %s", GET_NAME(ch), obj->short_description);
+  snprintf(buf, MAX_STRING_LENGTH, "%s QIC created %s", GET_NAME(ch), obj->short_description);
   mudlog(buf, 'L', COM_ADMIN, FALSE);
   plog(buf, ch, LVL_IMMORT);
 }

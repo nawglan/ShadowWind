@@ -111,7 +111,7 @@ void log_death_trap(struct char_data * ch)
   char buf[150];
   extern struct room_data *world;
 
-  sprintf(buf, "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number, world[ch->in_room].name);
+  snprintf(buf, MAX_STRING_LENGTH, "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number, world[ch->in_room].name);
   mudlog(buf, 'K', COM_IMMORT, TRUE);
   plog(buf, ch, 0);
 }
@@ -164,9 +164,9 @@ void mudlog(char *str, char type, sbyte level, byte file)
   arg[0] = type;
   arg[1] = '\0';
 
-  sprintf(buf, ":%s: %s", arg, str);
+  snprintf(buf, MAX_STRING_LENGTH, ":%s: %s", arg, str);
 
-  sprintf(temp, "%-19.19s :: %s\n", tmp, buf);
+  snprintf(temp, sizeof(temp), "%-19.19s :: %s\n", tmp, buf);
   memset(newlog, 0, 1024);
   strip_color(temp, newlog, strlen(temp));
 
@@ -175,7 +175,7 @@ void mudlog(char *str, char type, sbyte level, byte file)
   if (level < 0)
     return;
 
-  sprintf(buf1, "[ %s ]\r\n", buf);
+  snprintf(buf1, MAX_STRING_LENGTH, "[ %s ]\r\n", buf);
   arg[0] = LOWER(type);
 
   for (i = descriptor_list; i; i = next_i) {
@@ -704,7 +704,7 @@ void clean_log_file(char *name)
 
   if (!(fil = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      sprintf(buf1, "SYSERR: READING PLOG FILE %s (5)", fname);
+      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
       perror(buf1);
       return;
     }
@@ -713,7 +713,7 @@ void clean_log_file(char *name)
 
   if (!(temp = fopen("temp.plog", "w"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      sprintf(buf1, "SYSERR: READING PLOG FILE %s (5)", fname);
+      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
       perror(buf1);
       return;
     }
@@ -737,7 +737,7 @@ void clean_log_file(char *name)
 
   if (!(fil = fopen(fname, "w"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      sprintf(buf1, "SYSERR: WRITING PLOG FILE %s (5)", fname);
+      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: WRITING PLOG FILE %s (5)", fname);
       perror(buf1);
       return;
     }
@@ -746,7 +746,7 @@ void clean_log_file(char *name)
 
   if (!(temp = fopen("temp.plog", "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      sprintf(buf1, "SYSERR: READING TEMP.PLOG FILE (5)");
+      snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING TEMP.PLOG FILE (5)");
       perror(buf1);
       return;
     }
@@ -801,7 +801,7 @@ char *make_money_text(int coins)
 
   buf[0] = 0;
   if (!coins) {
-    sprintf(buf, "free");
+    snprintf(buf, MAX_STRING_LENGTH, "free");
     return (buf);
   }
   p = coins / 1000;
@@ -812,7 +812,7 @@ char *make_money_text(int coins)
   coins -= s * 10;
 
   if (p) {
-    sprintf(buf, "{x%d {Wp{x", p);
+    snprintf(buf, MAX_STRING_LENGTH, "{x%d {Wp{x", p);
   }
 
   if (g) {
@@ -855,7 +855,7 @@ char *make_money_text_nocolor(int coins)
   coins -= s * 10;
 
   if (p) {
-    sprintf(buf, "%d p", p);
+    snprintf(buf, MAX_STRING_LENGTH, "%d p", p);
   }
 
   if (g) {

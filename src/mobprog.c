@@ -278,7 +278,7 @@ int mprog_seval(char *lhs, char *opr, char *rhs)
   if (!str_cmp(opr, "!/"))
     return (str_infix(rhs, lhs));
 
-  sprintf(buf, "Improper MOBprog operator: %s", opr);
+  snprintf(buf, MAX_STRING_LENGTH, "Improper MOBprog operator: %s", opr);
   stderr_log(buf);
   return '\0';
 
@@ -304,7 +304,7 @@ int mprog_veval(int lhs, char *opr, int rhs)
   if (!str_cmp(opr, "|"))
     return (lhs | rhs);
 
-  sprintf(buf, "Improper MOBprog operator: %s", opr);
+  snprintf(buf, MAX_STRING_LENGTH, "Improper MOBprog operator: %s", opr);
   stderr_log(buf);
   return 0;
 

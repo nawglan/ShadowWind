@@ -91,7 +91,7 @@ ACMD(do_olc)
       case SCMD_OLC_OEDIT:
       case SCMD_OLC_MEDIT:
       case SCMD_OLC_SEDIT:
-        sprintf(buf, "Specify a %s VNUM to edit.\r\n", olc_scmd_info[subcmd].text);
+        snprintf(buf, MAX_STRING_LENGTH, "Specify a %s VNUM to edit.\r\n", olc_scmd_info[subcmd].text);
         send_to_char(buf, ch);
         return;
     }
@@ -146,7 +146,7 @@ ACMD(do_olc)
         zone1 = OLC_NUM(d) - (OLC_NUM(d) % 100);
         zone2 = number - (number % 100);
         if (zone1 == zone2) {
-          sprintf(buf, "That %s is currently being edited by %s.\r\n", olc_scmd_info[subcmd].text, GET_NAME(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "That %s is currently being edited by %s.\r\n", olc_scmd_info[subcmd].text, GET_NAME(d->character));
           send_to_char(buf, ch);
           return;
         }
@@ -181,7 +181,7 @@ ACMD(do_olc)
         redit_setup_existing(d, real_num);
       else
         redit_setup_new(d);
-      sprintf(buf, "OLC: %s edits a room in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
+      snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a room in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
       mudlog(buf, 'G', COM_BUILDER, TRUE);
       STATE(d) = CON_REDIT;
       break;
@@ -193,7 +193,7 @@ ACMD(do_olc)
         return;
       }
       zedit_setup(d, real_num);
-      sprintf(buf, "OLC: %s edits zone info for zone %d", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
+      snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits zone info for zone %d", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
       mudlog(buf, 'G', COM_BUILDER, TRUE);
       STATE(d) = CON_ZEDIT;
       break;
@@ -208,7 +208,7 @@ ACMD(do_olc)
          */
       } else
         medit_setup_existing(d, real_num);
-      sprintf(buf, "OLC: %s edits a mob in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
+      snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a mob in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
       mudlog(buf, 'G', COM_BUILDER, TRUE);
       STATE(d) = CON_MEDIT;
       break;
@@ -224,7 +224,7 @@ ACMD(do_olc)
          return;
          */
       }
-      sprintf(buf, "OLC: %s edits a object in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
+      snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a object in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
       mudlog(buf, 'G', COM_BUILDER, TRUE);
       STATE(d) = CON_OEDIT;
       break;
@@ -234,7 +234,7 @@ ACMD(do_olc)
         sedit_setup_existing(d, real_num);
       else
         sedit_setup_new(d);
-      sprintf(buf, "OLC: %s edits a shop in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
+      snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a shop in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
       mudlog(buf, 'G', COM_BUILDER, TRUE);
       STATE(d) = CON_SEDIT;
       break;
@@ -256,7 +256,7 @@ void olc_saveinfo(struct char_data *ch)
     send_to_char("The database is up to date.\r\n", ch);
 
   for (entry = olc_save_list; entry; entry = entry->next) {
-    sprintf(buf, " - %s for zone %d.\r\n", save_info_msg[(int) entry->type], entry->zone);
+    snprintf(buf, MAX_STRING_LENGTH, " - %s for zone %d.\r\n", save_info_msg[(int) entry->type], entry->zone);
     send_to_char(buf, ch);
   }
 }

@@ -155,7 +155,7 @@ ACMD(do_whois)
     return;
   }
 
-  sprintf(buf, "%s is a ", GET_NAME(vict));
+  snprintf(buf, MAX_STRING_LENGTH, "%s is a ", GET_NAME(vict));
 
   switch (vict->player.sex) {
     case SEX_NEUTRAL:
@@ -185,7 +185,7 @@ ACMD(do_whois)
   send_to_char(buf, ch);
 
   if (IS_IMMO(ch)) {
-    sprintf(buf, "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n", ctime(&vict->player.time.birth), ctime(&vict->player.time.logon), (int) (vict->player.time.played / 3600), (int) (vict->player.time.played / 60 % 60));
+    snprintf(buf, MAX_STRING_LENGTH, "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n", ctime(&vict->player.time.birth), ctime(&vict->player.time.logon), (int) (vict->player.time.played / 3600), (int) (vict->player.time.played / 60 % 60));
     send_to_char(buf, ch);
   }
 }
@@ -206,7 +206,7 @@ ACMD(do_evaluate)
     return;
   }
   if (GET_OBJ_TYPE(found_obj) == ITEM_WEAPON) {
-    sprintf(buf, "$p seems to be a %s-like weapon.", weapon_types[GET_OBJ_VAL(found_obj,3)]);
+    snprintf(buf, MAX_STRING_LENGTH, "$p seems to be a %s-like weapon.", weapon_types[GET_OBJ_VAL(found_obj,3)]);
     act(buf, FALSE, ch, found_obj, 0, TO_CHAR);
   } else {
     act("$p is not a weapon.", FALSE, ch, found_obj, 0, TO_CHAR);
@@ -236,15 +236,15 @@ void show_obj_to_char(struct obj_data * object, struct char_data * ch, int mode)
         send_to_char("It appears to be written in a language you don't understand.\r\n", ch);
         return;
       }
-      sprintf(buf, "It appears to have the following spells written in it:\r\n");
+      snprintf(buf, MAX_STRING_LENGTH, "It appears to have the following spells written in it:\r\n");
       send_to_char(buf, ch);
       for (i = 0; i < GET_OBJ_VAL(object, 0); i++) {
         if (GET_OBJ_SPELLLISTNUM(object, i)) {
-          sprintf(buf, "%s\r\n", spells[find_skill_num_def(GET_OBJ_SPELLLISTNUM(object, i))].command);
+          snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", spells[find_skill_num_def(GET_OBJ_SPELLLISTNUM(object, i))].command);
           send_to_char(buf, ch);
         }
       }
-      sprintf(buf, "There are %d pages left in this spellbook.\r\n", GET_OBJ_VAL(object, 1));
+      snprintf(buf, MAX_STRING_LENGTH, "There are %d pages left in this spellbook.\r\n", GET_OBJ_VAL(object, 1));
       send_to_char(buf, ch);
       return;
     }
@@ -338,7 +338,7 @@ void list_obj_to_char(struct obj_data * list, struct char_data * ch, int mode, b
 
     if (CAN_SEE_OBJ(ch, i) && !((i->obj_flags.extra_flags & ITEM_NOT_OBV) && (i->carried_by == NULL))) {
       if (num != 1) {
-        sprintf(buf, "[%2i] ", num);
+        snprintf(buf, MAX_STRING_LENGTH, "[%2i] ", num);
         send_to_char(buf, ch);
       }
       show_obj_to_char(i, ch, mode);
@@ -469,7 +469,7 @@ void list_one_char(struct char_data * i, struct char_data * ch)
     *buf = '\0';
 
     if (IS_AFFECTED(i, AFF_INVISIBLE)) {
-      sprintf(buf, "*%s", pcolor);
+      snprintf(buf, MAX_STRING_LENGTH, "*%s", pcolor);
       if (IS_ANIMATED(i)) {
         sprintf(buf + strlen(buf), "%s", GET_ADESC(i));
       } else {
@@ -477,9 +477,9 @@ void list_one_char(struct char_data * i, struct char_data * ch)
       }
     } else {
       if (IS_ANIMATED(i)) {
-        sprintf(buf, "%s", GET_ADESC(i));
+        snprintf(buf, MAX_STRING_LENGTH, "%s", GET_ADESC(i));
       } else {
-        sprintf(buf, "%s", GET_LDESC(i));
+        snprintf(buf, MAX_STRING_LENGTH, "%s", GET_LDESC(i));
       }
     }
     j = strlen(buf);
@@ -528,23 +528,23 @@ void list_one_char(struct char_data * i, struct char_data * ch)
   } else {
     if (IS_AFFECTED(i, AFF_INVISIBLE)) {
       /*if (GET_LEVEL(i) < LVL_IMMORT && !IS_NPC(i)) {*/
-      sprintf(buf, "*%s", i->player.name);
+      snprintf(buf, MAX_STRING_LENGTH, "*%s", i->player.name);
       /*} else if (NAMECOLOR(i)) {
-       sprintf(buf, "*%s%s", NAMECOLOR(i), i->player.name);
+       snprintf(buf, MAX_STRING_LENGTH, "*%s%s", NAMECOLOR(i), i->player.name);
        } else {
-       sprintf(buf, "*{w%s", i->player.name);
+       snprintf(buf, MAX_STRING_LENGTH, "*{w%s", i->player.name);
        }*/
     } else {
       /*if (!IS_NPC(i) && GET_LEVEL(i) < LVL_IMMORT) {*/
-      sprintf(buf, "%s", i->player.name);
+      snprintf(buf, MAX_STRING_LENGTH, "%s", i->player.name);
       /*} else {
        if (!i->desc) {
-       sprintf(buf, "{w%s", i->player.name);
+       snprintf(buf, MAX_STRING_LENGTH, "{w%s", i->player.name);
        } else {
        if (NAMECOLOR(i)) {
-       sprintf(buf, "%s%s", NAMECOLOR(i), i->player.name);
+       snprintf(buf, MAX_STRING_LENGTH, "%s%s", NAMECOLOR(i), i->player.name);
        } else {
-       sprintf(buf, "{w%s", i->player.name);
+       snprintf(buf, MAX_STRING_LENGTH, "{w%s", i->player.name);
        }
        }
        }*/
@@ -704,7 +704,7 @@ void do_auto_exits(struct char_data * ch)
     }
   }
 
-  sprintf(buf2, "{B[{WExits:{R%s{B]{x\r\n", *buf ? buf : " None!");
+  snprintf(buf2, MAX_STRING_LENGTH, "{B[{WExits:{R%s{B]{x\r\n", *buf ? buf : " None!");
 
   send_to_char(buf2, ch);
 }
@@ -781,12 +781,12 @@ ACMD(do_stats)
   extern sh_int stats[11][101];
   extern sh_int monk_stat[LVL_IMMORT + 1][5];
 
-  sprintf(buf, "{c        Attribute information for: {y%s\r\n\r\n", GET_NAME(ch));
+  snprintf(buf, MAX_STRING_LENGTH, "{c        Attribute information for: {y%s\r\n\r\n", GET_NAME(ch));
   sprintf(buf + strlen(buf), "{cLevel: {w%2d      {cRace:{C %s    {cClass: {G%s\r\n", GET_LEVEL(ch), pc_race_types[(int) GET_RACE(ch)], pc_class_types[(int) GET_CLASS(ch)]);
   send_to_char(buf, ch);
 
   if (GET_LEVEL(ch) < 10) {
-    sprintf(buf, "{cSTR: {W%9s ", stats_msg(GET_STR(ch)));
+    snprintf(buf, MAX_STRING_LENGTH, "{cSTR: {W%9s ", stats_msg(GET_STR(ch)));
     sprintf(buf + strlen(buf), "{cINT: {W%9s ", stats_msg(GET_INT(ch)));
     sprintf(buf + strlen(buf), "{cWIS: {W%9s\r\n{x", stats_msg(GET_WIS(ch)));
     sprintf(buf + strlen(buf), "{cDEX: {W%9s ", stats_msg(GET_DEX(ch)));
@@ -794,7 +794,7 @@ ACMD(do_stats)
     sprintf(buf + strlen(buf), "{cAGI: {W%9s\r\n{x", stats_msg(GET_AGI(ch)));
     send_to_char(buf, ch);
   } else {
-    sprintf(buf, "{cSTR: {W%3d ", GET_STR(ch));
+    snprintf(buf, MAX_STRING_LENGTH, "{cSTR: {W%3d ", GET_STR(ch));
     sprintf(buf + strlen(buf), "{cINT: {W%3d ", GET_INT(ch));
     sprintf(buf + strlen(buf), "{cWIS: {W%3d\r\n{x", GET_WIS(ch));
     sprintf(buf + strlen(buf), "{cDEX: {W%3d ", GET_DEX(ch));
@@ -803,12 +803,12 @@ ACMD(do_stats)
     send_to_char(buf, ch);
   }
   if (GET_LEVEL(ch) >= 25) {
-    sprintf(buf, "{cArmor class: {y%d  {c(100 to -100)\r\n", GET_AC(ch));
+    snprintf(buf, MAX_STRING_LENGTH, "{cArmor class: {y%d  {c(100 to -100)\r\n", GET_AC(ch));
   } else {
     if (GET_AC(ch) <= 100 && GET_AC(ch) >= -100) {
-      sprintf(buf, "{cArmor class: {y%s\r\n", armor_class[(GET_AC(ch) / 10) + 10]);
+      snprintf(buf, MAX_STRING_LENGTH, "{cArmor class: {y%s\r\n", armor_class[(GET_AC(ch) / 10) + 10]);
     } else {
-      sprintf(buf, "{cArmor class: {yERROR: Contact an admin please.\r\n");
+      snprintf(buf, MAX_STRING_LENGTH, "{cArmor class: {yERROR: Contact an admin please.\r\n");
     }
   }
 
@@ -835,7 +835,7 @@ ACMD(do_stats)
 
   send_to_char(buf, ch);
 
-  sprintf(buf, "{cSaving Throws: "
+  snprintf(buf, MAX_STRING_LENGTH, "{cSaving Throws: "
       "{B[{CPAR{B] {W%d "
       "{B[{CROD{B] {W%d "
       "{B[{CPET{B] {W%d "
@@ -843,7 +843,7 @@ ACMD(do_stats)
       "{B[{CSPE{B] {W%d{x\r\n", GET_SAVE(ch, SAVING_PARA), GET_SAVE(ch, SAVING_ROD), GET_SAVE(ch, SAVING_PETRI), GET_SAVE(ch, SAVING_BREATH), GET_SAVE(ch, SAVING_SPELL));
   send_to_char(buf, ch);
   if (GET_CLASS(ch) == CLASS_MONK) {
-    sprintf(buf, "{cBarehand Damage: {W%d{wd{W%d{x\r\n", monk_stat[(int) GET_LEVEL(ch)][0], monk_stat[(int) GET_LEVEL(ch)][1]);
+    snprintf(buf, MAX_STRING_LENGTH, "{cBarehand Damage: {W%d{wd{W%d{x\r\n", monk_stat[(int) GET_LEVEL(ch)][0], monk_stat[(int) GET_LEVEL(ch)][1]);
     send_to_char(buf, ch);
   }
   if ((IS_MAGE(ch) || IS_PRI(ch)) && GET_LEVEL(ch) >= 21) {
@@ -892,9 +892,9 @@ ACMD(do_exits)
   for (door = 0; door < NUM_OF_DIRS; door++) {
     if (EXIT(ch, door) && EXIT(ch, door)->to_room != NOWHERE && !IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
       if (GET_LEVEL(ch) >= LVL_IMMORT) {
-        sprintf(buf2, "%-5s - [%5d] %s\r\n", dirs[door], world[EXIT(ch, door)->to_room].number, world[EXIT(ch, door)->to_room].name);
+        snprintf(buf2, MAX_STRING_LENGTH, "%-5s - [%5d] %s\r\n", dirs[door], world[EXIT(ch, door)->to_room].number, world[EXIT(ch, door)->to_room].name);
       } else {
-        sprintf(buf2, "%-5s - ", dirs[door]);
+        snprintf(buf2, MAX_STRING_LENGTH, "%-5s - ", dirs[door]);
         if (IS_DARK(EXIT(ch, door)->to_room) && !CAN_SEE_IN_DARK(ch) && !IS_SET(ROOM_FLAGS(EXIT(ch, door)->to_room), ROOM_DEATH)) {
           strcat(buf2, "Too dark to tell\r\n");
         } else {
@@ -918,17 +918,17 @@ void look_at_room(struct char_data * ch, int ignore_brief)
 {
   int skip = 0;
   if (IS_DARK(ch->in_room) && !CAN_SEE_IN_DARK(ch) && !AFF_FLAGGED(ch, AFF_INFRAVISION)) {
-    sprintf(buf, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
     send_to_char(buf, ch);
     return;
   } else if (IS_AFFECTED(ch, AFF_BLIND)) {
-    sprintf(buf, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    snprintf(buf, MAX_STRING_LENGTH, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
     send_to_char(buf, ch);
     return;
   }
   if (PRF_FLAGGED(ch, PRF_ROOMFLAGS)) {
     sprintbit((long) ROOM_FLAGS(ch->in_room), room_bits, buf);
-    sprintf(buf2, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[ch->in_room].name, world[ch->in_room].number, buf, sector_types[GET_SECT(ch->in_room)]);
+    snprintf(buf2, MAX_STRING_LENGTH, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[ch->in_room].name, world[ch->in_room].number, buf, sector_types[GET_SECT(ch->in_room)]);
     send_to_char(buf2, ch);
   } else {
     send_to_char("{Y", ch);
@@ -937,7 +937,7 @@ void look_at_room(struct char_data * ch, int ignore_brief)
   }
 
   if (!CAN_SEE_IN_DARK(ch) && AFF_FLAGGED(ch, AFF_INFRAVISION) && IS_DARK(ch->in_room)) {
-    sprintf(buf, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    snprintf(buf, MAX_STRING_LENGTH, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
     send_to_char(buf, ch);
     skip = 1;
   }
@@ -974,17 +974,17 @@ void farsee_into_room(struct char_data * ch, room_num roomnum)
   }
 
   if (IS_DARK(roomnum) && !CAN_SEE_IN_DARK(ch) && !AFF_FLAGGED(ch, AFF_INFRAVISION)) {
-    sprintf(buf, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
     send_to_char(buf, ch);
     return;
   } else if (IS_AFFECTED(ch, AFF_BLIND)) {
-    sprintf(buf, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    snprintf(buf, MAX_STRING_LENGTH, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
     send_to_char(buf, ch);
     return;
   }
   if (PRF_FLAGGED(ch, PRF_ROOMFLAGS)) {
     sprintbit((long) ROOM_FLAGS(roomnum), room_bits, buf);
-    sprintf(buf2, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[roomnum].name, world[roomnum].number, buf, sector_types[GET_SECT(roomnum)]);
+    snprintf(buf2, MAX_STRING_LENGTH, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[roomnum].name, world[roomnum].number, buf, sector_types[GET_SECT(roomnum)]);
     send_to_char(buf2, ch);
   } else {
     send_to_char("{Y", ch);
@@ -992,7 +992,7 @@ void farsee_into_room(struct char_data * ch, room_num roomnum)
     send_to_char("{x", ch);
   }
   if (!AFF_FLAGGED(ch, AFF_NIGHTVISION) && AFF_FLAGGED(ch, AFF_INFRAVISION) && IS_DARK(ch->in_room)) {
-    sprintf(buf, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    snprintf(buf, MAX_STRING_LENGTH, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
     send_to_char(buf, ch);
     skip = 1;
   }
@@ -1034,10 +1034,10 @@ void look_in_direction(struct char_data * ch, int dir)
     if (!IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN) && IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED)) {
       founddoor = 1;
       if (EXIT(ch, dir)->keyword) {
-        sprintf(buf, "The %s is closed.\r\n", fname(EXIT(ch, dir)->keyword));
+        snprintf(buf, MAX_STRING_LENGTH, "The %s is closed.\r\n", fname(EXIT(ch, dir)->keyword));
         send_to_char(buf, ch);
       } else {
-        sprintf(buf, "The door is closed.\r\n");
+        snprintf(buf, MAX_STRING_LENGTH, "The door is closed.\r\n");
         send_to_char(buf, ch);
       }
       if (!AFF2_FLAGGED(ch, AFF2_FARSEE)) {
@@ -1046,10 +1046,10 @@ void look_in_direction(struct char_data * ch, int dir)
     }
     if (!IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN) && IS_SET(EXIT(ch, dir)->exit_info, EX_ISDOOR) && !IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED)) {
       if (EXIT(ch, dir)->keyword) {
-        sprintf(buf, "The %s is open.\r\n", fname(EXIT(ch, dir)->keyword));
+        snprintf(buf, MAX_STRING_LENGTH, "The %s is open.\r\n", fname(EXIT(ch, dir)->keyword));
         send_to_char(buf, ch);
       } else {
-        sprintf(buf, "The door is open.\r\n");
+        snprintf(buf, MAX_STRING_LENGTH, "The door is open.\r\n");
         send_to_char(buf, ch);
       }
     }
@@ -1073,7 +1073,7 @@ void look_in_obj(struct char_data * ch, char *arg)
   if (!*arg) {
     send_to_char("Look in what?\r\n", ch);
   } else if (!(bits = generic_find(arg, FIND_OBJ_INV | FIND_OBJ_ROOM | FIND_OBJ_EQUIP, ch, &dummy, &obj))) {
-    sprintf(buf, "There doesn't seem to be %s %s here.\r\n", AN(arg), arg);
+    snprintf(buf, MAX_STRING_LENGTH, "There doesn't seem to be %s %s here.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
   } else if ((GET_OBJ_TYPE(obj) != ITEM_DRINKCON) && (GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN) && (GET_OBJ_TYPE(obj) != ITEM_CONTAINER) && (GET_OBJ_TYPE(obj) != ITEM_PCORPSE)) {
     send_to_char("There's nothing inside that!\r\n", ch);
@@ -1103,7 +1103,7 @@ void look_in_obj(struct char_data * ch, char *arg)
         send_to_char("It is empty.\r\n", ch);
       } else {
         amt = ((GET_OBJ_VAL(obj, 1) * 3) / GET_OBJ_VAL(obj, 0));
-        sprintf(buf, "It's %sfull of a %s liquid.\r\n", fullness[amt], color_liquid[GET_OBJ_VAL(obj, 2)]);
+        snprintf(buf, MAX_STRING_LENGTH, "It's %sfull of a %s liquid.\r\n", fullness[amt], color_liquid[GET_OBJ_VAL(obj, 2)]);
         send_to_char(buf, ch);
       }
     }
@@ -1213,7 +1213,7 @@ ACMD(do_look)
   } else if (IS_DARK(ch->in_room) && !CAN_SEE_IN_DARK(ch)) {
     /*
      if (!AFF_FLAGGED(ch, AFF_INFRAVISION)) {
-     sprintf(buf, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR),CBGRE(ch,C_SPR),CCNRM(ch,C_SPR));
+     snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR),CBGRE(ch,C_SPR),CCNRM(ch,C_SPR));
      }
      */
     look_at_room(ch, 1);
@@ -1287,7 +1287,7 @@ ACMD(do_score)
     }
   }
 
-  sprintf(buf, "\r\n{y                      Score information for: {c%s{x\r\n\r\n", GET_NAME(ch));
+  snprintf(buf, MAX_STRING_LENGTH, "\r\n{y                      Score information for: {c%s{x\r\n\r\n", GET_NAME(ch));
 
   sprintf(buf + strlen(buf), "{BRace: {c%s  {BClass: {c%s{B  Level: {c%d  {BAge: {c%d years old.\r\n", pc_race_types[(int) GET_RACE(pl)], pc_class_types[(int) GET_CLASS(pl)], GET_LEVEL(pl), GET_AGE(pl));
 
@@ -1361,11 +1361,11 @@ ACMD(do_score)
   /* Routine to show what spells a char is affected by */
   if (pl->affected) {
     for (aff = pl->affected; aff; aff = aff->next) {
-      sprintf(buf, "{cSpell: {W%-21s{x\r\n", get_spell_name(aff->type));
+      snprintf(buf, MAX_STRING_LENGTH, "{cSpell: {W%-21s{x\r\n", get_spell_name(aff->type));
       send_to_char(buf, pl);
     }
   }
-  sprintf(buf, "{WInnate Abilities: {c");
+  snprintf(buf, MAX_STRING_LENGTH, "{WInnate Abilities: {c");
   switch (GET_RACE(pl)) {
     case RACE_HALFELF:
     case RACE_OGRE:
@@ -1387,7 +1387,7 @@ ACMD(do_score)
       break;
   }
   if (GET_DRAGGING(pl)) {
-    sprintf(buf, "{xDragging: %s\r\n", OBJS(GET_DRAGGING(pl), pl));
+    snprintf(buf, MAX_STRING_LENGTH, "{xDragging: %s\r\n", OBJS(GET_DRAGGING(pl), pl));
     send_to_char(buf, pl);
   }
 }
@@ -1409,7 +1409,7 @@ ACMD(do_inventory)
     send_to_char("You are carrying:\r\n", ch);
     list_obj_to_char(ch->carrying, ch, 1, TRUE);
   } else {
-    sprintf(buf, "%s is carrying:\r\n", GET_NAME(pl));
+    snprintf(buf, MAX_STRING_LENGTH, "%s is carrying:\r\n", GET_NAME(pl));
     send_to_char(buf, ch);
     list_obj_to_char(pl->carrying, ch, 1, TRUE);
   }
@@ -1435,7 +1435,7 @@ ACMD(do_equipment)
   if (pl == ch) {
     send_to_char("You are using:\r\n", ch);
   } else {
-    sprintf(buf, "%s is using:\r\n", GET_NAME(pl));
+    snprintf(buf, MAX_STRING_LENGTH, "%s is using:\r\n", GET_NAME(pl));
     send_to_char(buf, ch);
   }
 
@@ -1469,7 +1469,7 @@ ACMD(do_time)
   int d, h, m;
   extern time_t boot_time;
 
-  sprintf(buf, "{CIt is {c%d %s{C, on{y ", ((time_info.hours % 12 == 0) ? 12 : ((time_info.hours) % 12)), ((time_info.hours >= 12) ? "pm" : "am"));
+  snprintf(buf, MAX_STRING_LENGTH, "{CIt is {c%d %s{C, on{y ", ((time_info.hours % 12 == 0) ? 12 : ((time_info.hours) % 12)), ((time_info.hours >= 12) ? "pm" : "am"));
 
   /* 35 days in a month */
   weekday = ((35 * time_info.month) + time_info.day + 1) % 7;
@@ -1498,7 +1498,7 @@ ACMD(do_time)
     suf = "th";
   }
 
-  sprintf(buf, "{CThe {c%d%s {CDay of the {y%s{C, Year {c%d{C.{x\r\n", day, suf, month_name[(int) time_info.month], time_info.year);
+  snprintf(buf, MAX_STRING_LENGTH, "{CThe {c%d%s {CDay of the {y%s{C, Year {c%d{C.{x\r\n", day, suf, month_name[(int) time_info.month], time_info.year);
 
   send_to_char(buf, ch);
 
@@ -1506,7 +1506,7 @@ ACMD(do_time)
 
   tmstr = (char*) asctime(localtime(&mytime));
   *(tmstr + strlen(tmstr) - 1) = '\0';
-  sprintf(buf, "\r\n{CCurrent machine time: {c%s{x\r\n", tmstr);
+  snprintf(buf, MAX_STRING_LENGTH, "\r\n{CCurrent machine time: {c%s{x\r\n", tmstr);
   send_to_char(buf, ch);
   mytime = boot_time;
   tmstr = (char*) asctime(localtime(&mytime));
@@ -1515,7 +1515,7 @@ ACMD(do_time)
   d = mytime / 86400;
   h = (mytime / 3600) % 24;
   m = (mytime / 60) % 60;
-  sprintf(buf, "{CUp since {c%s : %d {Cday%s, {c%d {Chour%s {c%d {Cminute%s{x\r\n", tmstr, d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
+  snprintf(buf, MAX_STRING_LENGTH, "{CUp since {c%s : %d {Cday%s, {c%d {Chour%s {c%d {Cminute%s{x\r\n", tmstr, d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
 
   send_to_char(buf, ch);
 }
@@ -1979,7 +1979,7 @@ void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, i
   if ((gods + morts) > max_players) {
     max_players = gods + morts;
   }
-  sprintf(buf, "{wTotal visible players: {W%d{x.\r\n", gods + morts);
+  snprintf(buf, MAX_STRING_LENGTH, "{wTotal visible players: {W%d{x.\r\n", gods + morts);
   sprintf(buf + strlen(buf), "{wMaximum number of players on this boot: {W%d{x.\r\n", max_players);
   send_to_char(buf, ch);
 }
@@ -2298,7 +2298,7 @@ void perform_immort_where(struct char_data * ch, char *arg)
       send_to_char("Couldn't find any such thing.\r\n", ch);
     } else {
       page_string(ch->desc, abuff, 1);
-      sprintf(logbuffer, "%s did a 'where %s'", GET_NAME(ch), arg);
+      snprintf(logbuffer, sizeof(logbuffer), "%s did a 'where %s'", GET_NAME(ch), arg);
       mudlog(logbuffer, 'X', COM_IMMORT, FALSE);
     }
   }
@@ -2406,10 +2406,10 @@ ACMD(do_toggle)
     if (GET_WIMP_LEV(ch) == 0) {
       strcpy(buf2, "OFF");
     } else {
-      sprintf(buf2, "%-3d", GET_WIMP_LEV(ch));
+      snprintf(buf2, MAX_STRING_LENGTH, "%-3d", GET_WIMP_LEV(ch));
     }
 
-    sprintf(buf, "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n"
+    snprintf(buf, MAX_STRING_LENGTH, "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n"
         "{c    Hit Display:{x %-3s    " "{c   Move Display:{x %-3s    " "{c   Mana Display:{x %-3s\r\n"
         "{c  Tankname disp:{x %-3s    " "{c  Tankcond disp:{x %-3s    " "{c Enemyname disp:{x %-3s\r\n"
         "{c Enemycond disp:{x %-3s    " "{c            AFK:{x %-3s    " "{c           Anon:{x %-3s\r\n"
@@ -2430,7 +2430,7 @@ ACMD(do_toggle)
 
     send_to_char(buf, ch);
     if (COM_FLAGGED(ch, COM_IMMORT)) {
-      sprintf(buf, "{c       Nohassle:{x %-3s    "
+      snprintf(buf, MAX_STRING_LENGTH, "{c       Nohassle:{x %-3s    "
           "{c    Wiz channel:{x %-3s    "
           "{c Iquest channel:{x %-3s\r\n"
 
@@ -2623,7 +2623,7 @@ ACMD(do_toggle)
 
       if (!*second_arg) {
         if (GET_WIMP_LEV(ch)) {
-          sprintf(buf, "Your current wimp level is %d hit points.\r\n", GET_WIMP_LEV(ch));
+          snprintf(buf, MAX_STRING_LENGTH, "Your current wimp level is %d hit points.\r\n", GET_WIMP_LEV(ch));
           send_to_char(buf, ch);
           return;
         } else {
@@ -2640,7 +2640,7 @@ ACMD(do_toggle)
           } else if (wimp_lev > (GET_MAX_HIT(ch) >> 1)) {
             send_to_char("You can't set your wimp level above half your hit points.\r\n", ch);
           } else {
-            sprintf(buf, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
+            snprintf(buf, MAX_STRING_LENGTH, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
             send_to_char(buf, ch);
             GET_WIMP_LEV(ch) = wimp_lev;
           }
@@ -2729,7 +2729,7 @@ ACMD(do_toggle)
 
       if (!*second_arg) {
         if (GET_SCREEN_HEIGHT(ch)) {
-          sprintf(buf, "Your current screen length is set at %d lines.\r\n", GET_SCREEN_HEIGHT(ch));
+          snprintf(buf, MAX_STRING_LENGTH, "Your current screen length is set at %d lines.\r\n", GET_SCREEN_HEIGHT(ch));
           send_to_char(buf, ch);
           return;
         }
@@ -2740,7 +2740,7 @@ ACMD(do_toggle)
             send_to_char("Heh, heh, heh.. we are jolly funny today, eh?\r\n", ch);
             return;
           } else {
-            sprintf(buf, "Okay, your screen length is now set at %d lines.\r\n", lines);
+            snprintf(buf, MAX_STRING_LENGTH, "Okay, your screen length is now set at %d lines.\r\n", lines);
             send_to_char(buf, ch);
             GET_SCREEN_HEIGHT(ch) = lines;
           }
@@ -2754,7 +2754,7 @@ ACMD(do_toggle)
 
        if (!*second_arg) {
        if (GET_SCREEN_WIDTH(ch)) {
-       sprintf(buf, "Your current screen width is set at %d columns.\r\n", GET_SCREEN_WIDTH(ch));
+       snprintf(buf, MAX_STRING_LENGTH, "Your current screen width is set at %d columns.\r\n", GET_SCREEN_WIDTH(ch));
        send_to_char(buf, ch);
        return;
        }
@@ -2765,7 +2765,7 @@ ACMD(do_toggle)
        send_to_char("Heh, heh, heh.. we are jolly funny today, eh?\r\n", ch);
        return;
        } else {
-       sprintf(buf, "Okay, your screen width is now set at %d columns.\r\n", columns);
+       snprintf(buf, MAX_STRING_LENGTH, "Okay, your screen width is now set at %d columns.\r\n", columns);
        send_to_char(buf, ch);
        GET_SCREEN_WIDTH(ch) = columns;
        }
@@ -2811,7 +2811,7 @@ ACMD(do_commands)
     socials = 1;
   }
 
-  sprintf(buf, "The following %s are available to %s:\r\n", socials ? "socials" : "commands", vict == ch ? "you" : GET_NAME(vict));
+  snprintf(buf, MAX_STRING_LENGTH, "The following %s are available to %s:\r\n", socials ? "socials" : "commands", vict == ch ? "you" : GET_NAME(vict));
 
   if (subcmd == SCMD_SOCIALS) { /* socials */
     for (no = 1, i = 1; cmd_info[i].command[0] != '\n'; i++) {

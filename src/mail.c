@@ -167,14 +167,14 @@ int scan_file(void)
 
   file_end_pos = ftell(mail_file);
   fclose(mail_file);
-  sprintf(buf, "   %ld bytes read.", file_end_pos);
+  snprintf(buf, MAX_STRING_LENGTH, "   %ld bytes read.", file_end_pos);
   stderr_log(buf);
   if (file_end_pos % BLOCK_SIZE) {
     stderr_log("SYSERR: Error booting mail system -- Mail file corrupt!");
     stderr_log("SYSERR: Mail disabled!");
     return 0;
   }
-  sprintf(buf, "   Mail file read -- %d messages.", total_messages);
+  snprintf(buf, MAX_STRING_LENGTH, "   Mail file read -- %d messages.", total_messages);
   stderr_log(buf);
   return 1;
 } /* end of scan_file */
@@ -341,7 +341,7 @@ char *read_delete(char *recipient)
   tmstr = asctime(localtime(&header.header_data.mail_time));
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
-  sprintf(buf, " * * * * Weirvane Mail System * * * *\r\n"
+  snprintf(buf, MAX_STRING_LENGTH, " * * * * Weirvane Mail System * * * *\r\n"
       "Date: %s\r\n"
       "  To: %s\r\n"
       "From: %s\r\n\r\n", tmstr, recipient, header.header_data.from);
@@ -413,7 +413,7 @@ void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int 
   char addressee[256];
 
   if (GET_LEVEL(ch) < MIN_MAIL_LEVEL) {
-    sprintf(buf, "$n tells you, 'Sorry, you have to be level %d to send mail!'", MIN_MAIL_LEVEL);
+    snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'Sorry, you have to be level %d to send mail!'", MIN_MAIL_LEVEL);
     act(buf, FALSE, mailman, 0, ch, TO_VICT);
     return;
   }
@@ -428,7 +428,7 @@ void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int 
       GET_GOLD(ch) += STAMP_PRICE;
       GET_BANK_GOLD(ch) -= STAMP_PRICE;
     } else {
-      sprintf(buf, "$n tells you, 'A stamp costs %d coins.'\r\n"
+      snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'A stamp costs %d coins.'\r\n"
           "$n tells you, '...which I see you can't afford.'", STAMP_PRICE);
       act(buf, FALSE, mailman, 0, ch, TO_VICT);
       return;
@@ -441,13 +441,13 @@ void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int 
   act("$n starts to write some mail.", TRUE, ch, 0, 0, TO_ROOM);
   if (GET_LEVEL(ch) < LVL_IMMORT) {
     GET_GOLD(ch) -= STAMP_PRICE;
-    sprintf(buf, "$n tells you, 'I'll take %d coins for the stamp.'\r\n"
+    snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'I'll take %d coins for the stamp.'\r\n"
         "$n tells you, 'Write your message. (/s saves /h for help)'", STAMP_PRICE);
   } else
-    sprintf(buf, "$n tells you, 'Write your message. (/s saves /h for help)'");
+    snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'Write your message. (/s saves /h for help)'");
   act(buf, FALSE, mailman, 0, ch, TO_VICT);
   SET_BIT(PLR_FLAGS(ch), PLR_MAILING | PLR_WRITING);
-  sprintf(buf, "%s begins writing a mail message.", GET_NAME(ch));
+  snprintf(buf, MAX_STRING_LENGTH, "%s begins writing a mail message.", GET_NAME(ch));
   mudlog(buf, 'G', COM_ADMIN, TRUE);
 
   ch->desc->mail_to = strdup(addressee);
@@ -461,9 +461,9 @@ void postmaster_check_mail(struct char_data * ch, struct char_data *mailman, int
   char buf[256];
 
   if (has_mail(GET_NAME(ch)))
-    sprintf(buf, "$n tells you, '{WYou have {Rmail {Wwaiting.{x'");
+    snprintf(buf, MAX_STRING_LENGTH, "$n tells you, '{WYou have {Rmail {Wwaiting.{x'");
   else
-    sprintf(buf, "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
+    snprintf(buf, MAX_STRING_LENGTH, "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
   act(buf, FALSE, mailman, 0, ch, TO_VICT);
 }
 
@@ -473,7 +473,7 @@ void postmaster_receive_mail(struct char_data * ch, struct char_data *mailman, i
   struct obj_data *obj;
 
   if (!has_mail(GET_NAME(ch))) {
-    sprintf(buf, "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
+    snprintf(buf, MAX_STRING_LENGTH, "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
     act(buf, FALSE, mailman, 0, ch, TO_VICT);
     return;
   }

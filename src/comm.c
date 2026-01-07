@@ -169,7 +169,7 @@ int main(int argc, char **argv)
           fflush(NULL);
           exit(1);
         }
-        sprintf(buf, "Directory set to: %s", dir);
+        snprintf(buf, MAX_STRING_LENGTH, "Directory set to: %s", dir);
         stderr_log(buf);
         break;
       case 'm':
@@ -190,7 +190,7 @@ int main(int argc, char **argv)
         stderr_log("Suppressing assignment of special routines.");
         break;
       default:
-        sprintf(buf, "SYSERR: Unknown option -%c in argument string.", *(argv[pos] + 1));
+        snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Unknown option -%c in argument string.", *(argv[pos] + 1));
         stderr_log(buf);
         break;
     }
@@ -208,7 +208,7 @@ int main(int argc, char **argv)
       exit(1);
     }
   }
-  sprintf(buf, "%s/misc/%s", dir, SWPIDFILE);
+  snprintf(buf, MAX_STRING_LENGTH, "%s/misc/%s", dir, SWPIDFILE);
   if ((pid_file = fopen(buf, "r")) != NULL) {
     pid_t old_pid;
 
@@ -228,7 +228,7 @@ int main(int argc, char **argv)
   fclose(pid_file);
 
   /* dnslookup */
-  sprintf(buf, "%s/%s", dir, DNS_RECEIVE_FIFO);
+  snprintf(buf, MAX_STRING_LENGTH, "%s/%s", dir, DNS_RECEIVE_FIFO);
   unlink(buf);
   if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
     perror("mkfifo receive");
@@ -238,7 +238,7 @@ int main(int argc, char **argv)
     perror("Open receive fifo");
     exit(1);
   }
-  sprintf(buf, "%s/%s", dir, DNS_SEND_FIFO);
+  snprintf(buf, MAX_STRING_LENGTH, "%s/%s", dir, DNS_SEND_FIFO);
   unlink(buf);
   if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
     perror("mkfifo send");
@@ -249,13 +249,13 @@ int main(int argc, char **argv)
     exit(1);
   }
   if (!(lookup_host_process = fork())) {
-    sprintf(buf, "%s/../bin/lookup_process", dir);
+    snprintf(buf, MAX_STRING_LENGTH, "%s/../bin/lookup_process", dir);
     stderr_log(buf);
     execl(buf, "lookup_process", "-d", dir, NULL);
   }
   /* end dnslookup */
 
-  sprintf(buf, "Running game on port %d.", port);
+  snprintf(buf, MAX_STRING_LENGTH, "Running game on port %d.", port);
   stderr_log(buf);
 
   if (chdir(dir) < 0) {
@@ -263,12 +263,12 @@ int main(int argc, char **argv)
     fflush(NULL);
     exit(1);
   }
-  sprintf(buf, "Using %s as data directory.", dir);
+  snprintf(buf, MAX_STRING_LENGTH, "Using %s as data directory.", dir);
   stderr_log(buf);
 
   init_game(port);
 
-  sprintf(buf, "%s/misc/%s", dir, SWPIDFILE);
+  snprintf(buf, MAX_STRING_LENGTH, "%s/misc/%s", dir, SWPIDFILE);
   if (unlink(buf)) {
     perror("unlink");
   }
@@ -434,7 +434,7 @@ int get_avail_descs(void)
     fflush(NULL);
     exit(1);
   }
-  sprintf(buf, "Setting player limit to %d.", max_descs);
+  snprintf(buf, MAX_STRING_LENGTH, "Setting player limit to %d.", max_descs);
   stderr_log(buf);
   return max_descs;
 }
@@ -445,7 +445,7 @@ void update_last_login(struct descriptor_data *d)
     if ((strlen(d->hostname) + strlen(d->username) + 1) > HOST_LENGTH) {
       d->hostname[HOST_LENGTH - strlen(d->username)] = '\0';
     }
-    sprintf(d->host, "%s@%s", d->username, d->hostname);
+    snprintf(d->host, sizeof(d->host), "%s@%s", d->username, d->hostname);
   } else {
     if (strlen(d->hostname) <= HOST_LENGTH) {
       strcpy(d->host, d->hostname);
@@ -687,7 +687,7 @@ void game_loop(int mother_desc)
     }
 
     if (!(pulse % (SECS_PER_MUD_HOUR * PASSES_PER_SEC))) {
-      sprintf(logbuffer, "*TICK* Gametime %dy %dm %dd %dh", time_info.year, time_info.month, time_info.day, time_info.hours);
+      snprintf(logbuffer, sizeof(logbuffer), "*TICK* Gametime %dy %dm %dd %dh", time_info.year, time_info.month, time_info.day, time_info.hours);
       mudlog(logbuffer, 'T', COM_IMMORT, FALSE);
       weather_and_time(1);
       point_update();
@@ -800,13 +800,13 @@ void perform_idle_check(void)
           SEND_TO_Q_COLOR(nmotd, d);
           SEND_TO_Q("\r\n\n*** PRESS RETURN: ", d);
           STATE(d) = CON_RMOTD;
-          sprintf(buf, "%s [%s] new player. (auto approved)", GET_NAME(d->character), GET_HOST(d->character));
+          snprintf(buf, MAX_STRING_LENGTH, "%s [%s] new player. (auto approved)", GET_NAME(d->character), GET_HOST(d->character));
           REMOVE_BIT(PRF_FLAGS(d->character), PRF_DELETED);
           mudlog(buf, 'C', COM_IMMORT, TRUE);
         } else {
           d->idle_cnt++;
           if (!(d->idle_cnt % 10) || (d->idle_cnt == 1)) {
-            sprintf(buf, "%s (%s %s %s) [%s]. (needs approval)", GET_NAME(d->character), genders[(int) GET_SEX(d->character)], pc_race_types[GET_RACE(d->character)], pc_class_types[(int) GET_CLASS(d->character)], GET_HOST(d->character));
+            snprintf(buf, MAX_STRING_LENGTH, "%s (%s %s %s) [%s]. (needs approval)", GET_NAME(d->character), genders[(int) GET_SEX(d->character)], pc_race_types[GET_RACE(d->character)], pc_class_types[(int) GET_CLASS(d->character)], GET_HOST(d->character));
             mudlog(buf, 'C', COM_IMMORT, TRUE);
           }
         }
@@ -844,7 +844,7 @@ void record_usage(void)
       sockets_playing++;
   }
 
-  sprintf(buf, "nusage: %-3d sockets connected, %-3d sockets playing", sockets_connected, sockets_playing);
+  snprintf(buf, MAX_STRING_LENGTH, "nusage: %-3d sockets connected, %-3d sockets playing", sockets_connected, sockets_playing);
   stderr_log(buf);
 
 #ifdef RUSAGE
@@ -852,7 +852,7 @@ void record_usage(void)
     struct rusage ru;
 
     getrusage(0, &ru);
-    sprintf(buf, "rusage: %d %d %d %d %d %d %d",
+    snprintf(buf, MAX_STRING_LENGTH, "rusage: %d %d %d %d %d %d %d",
         ru.ru_utime.tv_sec, ru.ru_stime.tv_sec, ru.ru_maxrss,
         ru.ru_ixrss, ru.ru_ismrss, ru.ru_idrss, ru.ru_isrss);
     stderr_log(buf);
@@ -915,7 +915,7 @@ void make_prompt(struct descriptor_data * d)
   /* reversed these top 2 if checks so that page_string() would work in */
   /* the editor */
   if (d->showstr_count) {
-    sprintf(prompt,
+    snprintf(prompt, sizeof(prompt),
 
     "\r[ Return to continue, (q)uit, (r)efresh,"
         " (b)ack, or page number (%d/%d) ]",
@@ -934,55 +934,53 @@ void make_prompt(struct descriptor_data * d)
     *prompt = '\0';
 
     if (GET_PROMPT(d->character) != 0)
-      sprintf(prompt, "%s[%s", CCBLU(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      snprintf(prompt, sizeof(prompt), "%s[%s", CCBLU(d->character,C_SPR), CCNRM(d->character,C_SPR));
 
     if (GET_INVIS_LEV(d->character))
-      sprintf(prompt + strlen(prompt), "i%d ", GET_INVIS_LEV(d->character));
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "i%d ", GET_INVIS_LEV(d->character));
 
     if (IS_SET(GET_PROMPT(d->character), PRM_HP))
-      sprintf(prompt + strlen(prompt), "%s%d%shp%s ", CBWHT(d->character,C_SPR), GET_HIT(d->character), CCWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s%d%shp%s ", CBWHT(d->character,C_SPR), GET_HIT(d->character), CCWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
 
     if ((IS_MAGE(d->character) || IS_PRI(d->character)) && IS_SET(GET_PROMPT(d->character), PRM_MANA))
-      sprintf(prompt + strlen(prompt), "%s%d%sm%s ", CBGRN(d->character,C_SPR), GET_MANA(d->character), CCGRN(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s%d%sm%s ", CBGRN(d->character,C_SPR), GET_MANA(d->character), CCGRN(d->character,C_SPR), CCNRM(d->character,C_SPR));
 
     if (IS_SET(GET_PROMPT(d->character), PRM_MOVE))
-      sprintf(prompt + strlen(prompt), "%s%d%sv%s ", CBBLU(d->character,C_SPR), GET_MOVE(d->character), CCBLU(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s%d%sv%s ", CBBLU(d->character,C_SPR), GET_MOVE(d->character), CCBLU(d->character,C_SPR), CCNRM(d->character,C_SPR));
     if (IS_SET(GET_PROMPT(d->character), PRM_TANKCOND | PRM_TANKNAME) && FIGHTING(d->character) && FIGHTING(FIGHTING(d->character))) {
-      sprintf(prompt + strlen(prompt), " T: ");
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), " T: ");
       if (IS_SET(GET_PROMPT(d->character), PRM_TANKNAME) && FIGHTING(d->character) && FIGHTING(FIGHTING(d->character))) {
         char temp[256];
         char tempname[256];
         strcpy(temp, GET_PLR_NAME(FIGHTING(FIGHTING(d->character))));
         one_argument(temp, tempname);
-        sprintf(prompt + strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
+        snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
       }
       if (IS_SET(GET_PROMPT(d->character), PRM_TANKCOND) && FIGHTING(d->character) && FIGHTING(FIGHTING(d->character))) {
-        sprintf(buf, "%s", char_health(FIGHTING(FIGHTING(d->character)), d->character));
-        sprintf(prompt + strlen(prompt), "%s(%s%s%s)%s ", CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), buf, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
+        snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s(%s%s%s)%s ", CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), char_health(FIGHTING(FIGHTING(d->character)), d->character), CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
       }
     }
     if (IS_SET(GET_PROMPT(d->character), PRM_ENEMYCOND | PRM_ENEMYNAME) && FIGHTING(d->character)) {
-      sprintf(prompt + strlen(prompt), " E: ");
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), " E: ");
       if (IS_SET(GET_PROMPT(d->character), PRM_ENEMYNAME) && FIGHTING(d->character)) {
         char temp[256];
         char tempname[256];
         strcpy(temp, GET_PLR_NAME(FIGHTING(d->character)));
         one_argument(temp, tempname);
-        sprintf(prompt + strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
+        snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
       }
       if (IS_SET(GET_PROMPT(d->character), PRM_ENEMYCOND) && FIGHTING(d->character)) {
-        sprintf(buf, "%s", char_health(FIGHTING(d->character), d->character));
-        sprintf(prompt + strlen(prompt), "%s(%s%s%s)%s ", CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), buf, CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
+        snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s(%s%s%s)%s ", CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR), char_health(FIGHTING(d->character), d->character), CCNRM(d->character,C_SPR), CCNRM(d->character,C_SPR));
       }
     }
     if (IS_SET(GET_PROMPT(d->character), PRM_AFK)) {
-      sprintf(prompt + strlen(prompt), "%s(%sAFK%s)%s ", CBWHT(d->character,C_SPR), CBRED(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s(%sAFK%s)%s ", CBWHT(d->character,C_SPR), CBRED(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
     }
     if (GET_PROMPT(d->character) == 0 || !IS_SET(GET_PROMPT(d->character), PRM_HP | PRM_MANA | PRM_MOVE | PRM_AFK))
-      sprintf(prompt + strlen(prompt), "> ");
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "> ");
     else {
       prompt[strlen(prompt) - 1] = '\0';
-      sprintf(prompt + strlen(prompt), "%s]%s>%s ", CCBLU(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
+      snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s]%s>%s ", CCBLU(d->character,C_SPR), CBWHT(d->character,C_SPR), CCNRM(d->character,C_SPR));
     }
 
     write_to_descriptor(d->descriptor, prompt);
@@ -1147,14 +1145,14 @@ int new_descriptor(int s)
   /* determine if the site is banned */
   if (isbanned(newd->hostIP) == BAN_ALL) {
     close(desc);
-    sprintf(buf2, "Connection attempt denied from [%s]", newd->hostIP);
+    snprintf(buf2, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", newd->hostIP);
     mudlog(buf2, 'S', COM_IMMORT, TRUE);
     FREE(newd);
     return 0;
   }
 
   /* Log new connections - probably unnecessary, but you may want it */
-  sprintf(buf2, "New connection from [%s]", newd->hostIP);
+  snprintf(buf2, MAX_STRING_LENGTH, "New connection from [%s]", newd->hostIP);
   mudlog(buf2, 'S', COM_ADMIN, FALSE);
 
   /* initialize descriptor data */
@@ -1506,12 +1504,12 @@ void close_socket(struct descriptor_data * d)
         save_text(d->character);
       }
       act("$n has lost $s link.", TRUE, d->character, 0, 0, TO_ROOM);
-      sprintf(buf, "Closing link to: %s.", GET_NAME(d->character));
+      snprintf(buf, MAX_STRING_LENGTH, "Closing link to: %s.", GET_NAME(d->character));
       mudlog(buf, 'C', COM_IMMORT, TRUE);
       plog(buf, d->character, 0);
       d->character->desc = NULL;
     } else {
-      sprintf(buf, "Losing player: %s (%s).", GET_NAME(d->character) ? GET_NAME(d->character) : "<null>", connected_types[STATE(d)]);
+      snprintf(buf, MAX_STRING_LENGTH, "Losing player: %s (%s).", GET_NAME(d->character) ? GET_NAME(d->character) : "<null>", connected_types[STATE(d)]);
       mudlog(buf, 'C', COM_IMMORT, TRUE);
       if (GET_NAME(d->character) != NULL && !PRF_FLAGGED(d->character, PRF_DELETED) && (STATE(d) == CON_MENU || STATE(d) == CON_CLOSE)) {
         plog(buf, d->character, 0);

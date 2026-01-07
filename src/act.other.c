@@ -103,7 +103,7 @@ void remove_consent(struct char_data *ch)
     if (consent && consent->name) {
       if (strcasecmp(consent->name, GET_NAME(ch)) == 0) {
         tch->consent = tch->consent->next;
-        sprintf(buf, "You no longer have %s's consent.\r\n", GET_NAME(ch));
+        snprintf(buf, MAX_STRING_LENGTH, "You no longer have %s's consent.\r\n", GET_NAME(ch));
         send_to_char(buf, tch);
         if (GET_DRAGGING(tch) && strcasecmp(GET_DRAGGING(tch)->owner, GET_NAME(ch)) == 0) {
           GET_DRAGGING(tch)->dragged_by = NULL;
@@ -119,7 +119,7 @@ void remove_consent(struct char_data *ch)
             if (consent->next) {
               consent->next->prev = consent->prev;
             }
-            sprintf(buf, "You no longer have %s's consent.\r\n", GET_NAME(ch));
+            snprintf(buf, MAX_STRING_LENGTH, "You no longer have %s's consent.\r\n", GET_NAME(ch));
             send_to_char(buf, tch);
             if (GET_DRAGGING(tch) && strcasecmp(GET_DRAGGING(tch)->owner, GET_NAME(ch)) == 0) {
               GET_DRAGGING(tch)->dragged_by = NULL;
@@ -180,9 +180,9 @@ ACMD(do_consent)
     send_to_char("Consent who?\r\n", ch);
     return;
   }
-  sprintf(buf, "%s has entrusted you with %s life!\r\n", GET_NAME(ch), gender);
+  snprintf(buf, MAX_STRING_LENGTH, "%s has entrusted you with %s life!\r\n", GET_NAME(ch), gender);
   send_to_char(buf, tch);
-  sprintf(buf, "You entrust %s with your life!\r\n", GET_NAME(tch));
+  snprintf(buf, MAX_STRING_LENGTH, "You entrust %s with your life!\r\n", GET_NAME(tch));
   send_to_char(buf, ch);
   give_consent(ch, tch);
 }
@@ -228,7 +228,7 @@ ACMD(do_quit)
     send_to_char("No way!  You're fighting for your life!\r\n", ch);
   } else if (GET_POS(ch) < POS_STUNNED && (*arg == 'y' || *arg == 'Y')) {
     send_to_char("You die before your time...\r\n", ch);
-    sprintf(buf, "%s has quit the game in room #%d. (died)", GET_NAME(ch), world[IN_ROOM(ch)].number);
+    snprintf(buf, MAX_STRING_LENGTH, "%s has quit the game in room #%d. (died)", GET_NAME(ch), world[IN_ROOM(ch)].number);
     mudlog(buf, 'C', COM_IMMORT, TRUE);
     plog(buf, ch, 0);
     clear_magic_memory(ch);
@@ -240,10 +240,10 @@ ACMD(do_quit)
     if (!GET_INVIS_LEV(ch)) {
       act("$n has left the game.", TRUE, ch, 0, 0, TO_ROOM);
     }
-    sprintf(buf, "%s has quit the game in room #%d.", GET_NAME(ch), world[IN_ROOM(ch)].number);
+    snprintf(buf, MAX_STRING_LENGTH, "%s has quit the game in room #%d.", GET_NAME(ch), world[IN_ROOM(ch)].number);
     mudlog(buf, 'C', COM_IMMORT, TRUE);
     plog(buf, ch, 0);
-    sprintf(buf, "Goodbye, %s... Come back soon!\r\n", ch->player.name);
+    snprintf(buf, MAX_STRING_LENGTH, "Goodbye, %s... Come back soon!\r\n", ch->player.name);
     send_to_char(buf, ch);
 
     /*
@@ -371,7 +371,7 @@ void print_group(struct char_data *ch)
       if (IN_ROOM(k) != IN_ROOM(ch)) {
         act("                                            $N {R({WHead of group{R){x", FALSE, ch, 0, k, TO_CHAR);
       } else {
-        sprintf(buf, "     {c[{W%3d{w/{W%3d{wH {G%3d{g/{G%3d{gM {B%3d{b/{B%3d{bV{c] {c[{W%2d %s{c]{x $N {R({WHead of group{R){x", GET_HIT(k), GET_MAX_HIT(k), GET_MANA(k), GET_MAX_MANA(k), GET_MOVE(k), GET_MAX_MOVE(k), GET_LEVEL(k), CLASS_ABBR(k));
+        snprintf(buf, MAX_STRING_LENGTH, "     {c[{W%3d{w/{W%3d{wH {G%3d{g/{G%3d{gM {B%3d{b/{B%3d{bV{c] {c[{W%2d %s{c]{x $N {R({WHead of group{R){x", GET_HIT(k), GET_MAX_HIT(k), GET_MANA(k), GET_MAX_MANA(k), GET_MOVE(k), GET_MAX_MOVE(k), GET_LEVEL(k), CLASS_ABBR(k));
         act(buf, FALSE, ch, 0, k, TO_CHAR);
       }
     }
@@ -383,7 +383,7 @@ void print_group(struct char_data *ch)
       if (IN_ROOM(f->follower) != IN_ROOM(ch)) {
         act("                                            {x $N", FALSE, ch, 0, f->follower, TO_CHAR);
       } else {
-        sprintf(buf, "     {c[{W%3d{w/{W%3d{wH {G%3d{g/{G%3d{gM {B%3d{b/{B%3d{bV{c] {c[{W%2d %s{c]{x $N", GET_HIT(f->follower), GET_MAX_HIT(f->follower), GET_MANA(f->follower), GET_MAX_MANA(f->follower), GET_MOVE(f->follower), GET_MAX_MOVE(f->follower), GET_LEVEL(f->follower), CLASS_ABBR(f->follower));
+        snprintf(buf, MAX_STRING_LENGTH, "     {c[{W%3d{w/{W%3d{wH {G%3d{g/{G%3d{gM {B%3d{b/{B%3d{bV{c] {c[{W%2d %s{c]{x $N", GET_HIT(f->follower), GET_MAX_HIT(f->follower), GET_MANA(f->follower), GET_MAX_MANA(f->follower), GET_MOVE(f->follower), GET_MAX_MOVE(f->follower), GET_LEVEL(f->follower), CLASS_ABBR(f->follower));
         act(buf, FALSE, ch, 0, f->follower, TO_CHAR);
       }
     }
@@ -455,7 +455,7 @@ ACMD(do_ungroup)
       send_to_char("But you lead no group!\r\n", ch);
       return;
     }
-    sprintf(buf2, "%s has disbanded the group.\r\n", GET_NAME(ch));
+    snprintf(buf2, MAX_STRING_LENGTH, "%s has disbanded the group.\r\n", GET_NAME(ch));
     for (f = ch->followers; f; f = next_fol) {
       next_fol = f->next;
       if (IS_AFFECTED(f->follower, AFF_GROUP)) {
@@ -499,14 +499,14 @@ ACMD(do_ungroup)
 ACMD(do_report)
 {
   char arg[80];
-  char buff[80];
-  char buff2[80];
+  char buff[128];
+  char buff2[256];
   ACMD(do_say);
   ACMD(do_gsay);
   ACMD(do_tell);
 
   one_argument(argument, arg);
-  sprintf(buff, "{wI have: {y%d{w/{y%dH{w, {y%d{w/{y%dM{w, {y%d{w/{y%dV{x", GET_HIT(ch), GET_MAX_HIT(ch), GET_MANA(ch), GET_MAX_MANA(ch), GET_MOVE(ch), GET_MAX_MOVE(ch));
+  snprintf(buff, sizeof(buff), "{wI have: {y%d{w/{y%dH{w, {y%d{w/{y%dM{w, {y%d{w/{y%dV{x", GET_HIT(ch), GET_MAX_HIT(ch), GET_MANA(ch), GET_MAX_MANA(ch), GET_MOVE(ch), GET_MAX_MOVE(ch));
 
   if (!*arg) {
     do_say(ch, buff, 0, 0);
@@ -518,7 +518,7 @@ ACMD(do_report)
     return;
   }
 
-  sprintf(buff2, "%s %s", arg, buff);
+  snprintf(buff2, sizeof(buff2), "%s %s", arg, buff);
   do_tell(ch, buff2, 0, 0);
 }
 
@@ -631,7 +631,7 @@ ACMD(do_split)
         GET_COPPER(k) += share;
         GET_TEMP_GOLD(k) += share;
       }
-      sprintf(buf, "{w%s splits %s%d{x %s, you receive %s%d{w.{x\r\n", GET_NAME(ch), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), amount, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), share);
+      snprintf(buf, MAX_STRING_LENGTH, "{w%s splits %s%d{x %s, you receive %s%d{w.{x\r\n", GET_NAME(ch), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), amount, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), share);
       send_to_char(buf, k);
     }
     for (f = k->followers; f; f = f->next) {
@@ -649,11 +649,11 @@ ACMD(do_split)
           GET_COPPER(f->follower) += share;
           GET_TEMP_GOLD(f->follower) += share;
         }
-        sprintf(buf, "{w%s splits %s%d{x %s, you receive %s%d{w.{x\r\n", GET_NAME(ch), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), amount, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), share);
+        snprintf(buf, MAX_STRING_LENGTH, "{w%s splits %s%d{x %s, you receive %s%d{w.{x\r\n", GET_NAME(ch), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), amount, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))), (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), share);
         send_to_char(buf, f->follower);
       }
     }
-    sprintf(buf, "{wYou split %s%d %s {wamong %d members -- %s%d %s {weach.{x\r\n", (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), amount, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))), num, (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), share, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))));
+    snprintf(buf, MAX_STRING_LENGTH, "{wYou split %s%d %s {wamong %d members -- %s%d %s {weach.{x\r\n", (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), amount, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))), num, (is_plat ? "{W" : (is_gold ? "{Y" : (is_silver ? "{w" : "{y"))), share, (is_plat ? "{Wplatinum {wcoins" : (is_gold ? "{Ygold {wcoins" : (is_silver ? "{wsilver coins" : "{ycopper {wcoins"))));
     send_to_char(buf, ch);
     if (*p) {
       do_split(ch, p, 0, 0);
@@ -689,7 +689,7 @@ ACMD(do_use)
 
   half_chop(argument, arg, buf);
   if (!*arg) {
-    sprintf(buf2, "What do you want to %s?\r\n", CMD_NAME);
+    snprintf(buf2, MAX_STRING_LENGTH, "What do you want to %s?\r\n", CMD_NAME);
     send_to_char(buf2, ch);
     return;
   }
@@ -707,13 +707,13 @@ ACMD(do_use)
         case SCMD_RECITE:
         case SCMD_QUAFF:
           if (!(mag_item = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-            sprintf(buf2, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+            snprintf(buf2, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
             send_to_char(buf2, ch);
             return;
           }
           break;
         case SCMD_USE:
-          sprintf(buf2, "You don't seem to be holding %s %s.\r\n", AN(arg), arg);
+          snprintf(buf2, MAX_STRING_LENGTH, "You don't seem to be holding %s %s.\r\n", AN(arg), arg);
           send_to_char(buf2, ch);
           return;
         default:
@@ -781,7 +781,7 @@ ACMD(do_wimpy)
 
   if (!*arg) {
     if (GET_WIMP_LEV(ch)) {
-      sprintf(buf, "Your current wimp level is %d hit points.\r\n", GET_WIMP_LEV(ch));
+      snprintf(buf, MAX_STRING_LENGTH, "Your current wimp level is %d hit points.\r\n", GET_WIMP_LEV(ch));
       send_to_char(buf, ch);
       return;
     } else {
@@ -798,7 +798,7 @@ ACMD(do_wimpy)
       } else if (wimp_lev > (GET_MAX_HIT(ch) >> 1)) {
         send_to_char("You can't set your wimp level above half your hit points.\r\n", ch);
       } else {
-        sprintf(buf, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
+        snprintf(buf, MAX_STRING_LENGTH, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
         send_to_char(buf, ch);
         GET_WIMP_LEV(ch) = wimp_lev;
       }
@@ -868,9 +868,9 @@ ACMD(do_gen_write)
     return;
   }
   if (subcmd == SCMD_WHELPN) {
-    sprintf(buf, "%s wizhelp: %s", GET_NAME(ch), argument);
+    snprintf(buf, MAX_STRING_LENGTH, "%s wizhelp: %s", GET_NAME(ch), argument);
   } else {
-    sprintf(buf, "%s %s: %s", GET_NAME(ch), CMD_NAME, argument);
+    snprintf(buf, MAX_STRING_LENGTH, "%s %s: %s", GET_NAME(ch), CMD_NAME, argument);
   }
   mudlog(buf, 'M', COM_IMMORT, FALSE);
 

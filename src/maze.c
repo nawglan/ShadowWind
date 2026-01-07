@@ -241,7 +241,7 @@ void create_rooms(maze * m, char log_filename[80])
 
   zone_number = atoi(log_filename);
 
-  sprintf(buf, "   Building maze #%d", zone_number);
+  snprintf(buf, MAX_STRING_LENGTH, "   Building maze #%d", zone_number);
   stderr_log(buf);
 
   for (i = 0; i <= top_of_zone_table; i++) {
@@ -252,7 +252,7 @@ void create_rooms(maze * m, char log_filename[80])
   }
 
   if (!found) {
-    sprintf(buf, "SYSERR: Could not find zone #%d", zone_number);
+    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Could not find zone #%d", zone_number);
     stderr_log(buf);
     fflush(NULL);
     exit(1);
@@ -265,7 +265,7 @@ void create_rooms(maze * m, char log_filename[80])
   }
 
   if (room_count < 3) {
-    sprintf(buf, "SYSERR: Maze %s only has %d rooms.", log_filename, room_count);
+    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Maze %s only has %d rooms.", log_filename, room_count);
     stderr_log(buf);
     fflush(NULL);
     exit(1);
@@ -615,8 +615,8 @@ int boot_mazes(void)
   FILE *index = NULL;
   FILE *f = NULL;
   char index_filename[80];
-  char log_filename[80];
-  char temp[80];
+  char log_filename[160];
+  char temp[160];
   maze m;
 
   sprintf(index_filename, "%s/%s", MAZE_PREFIX, INDEX_FILE);
@@ -638,11 +638,11 @@ int boot_mazes(void)
       return 0;
     }
     temp[strlen(temp) - 1] = '\0';
-    sprintf(log_filename, "%s/%s", MAZE_PREFIX, temp);
+    snprintf(log_filename, sizeof(log_filename), "%s/%s", MAZE_PREFIX, temp);
 
     f = fopen(log_filename, "w");
     if (f == NULL) {
-      sprintf(temp, "SYSERR: unable to create maze log %s.", log_filename);
+      snprintf(temp, sizeof(temp), "SYSERR: unable to create maze log %s.", log_filename);
       stderr_log(temp);
       fflush(NULL);
       exit(1);

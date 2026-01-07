@@ -32,7 +32,7 @@ ACMD(do_guildchat)
   skip_spaces(&argument);
 
   if (!*argument) {
-    sprintf(buf, "%s?  Yes, fine, %s we must, but WHAT??\r\n", CMD_NAME, CMD_NAME);
+    snprintf(buf, MAX_STRING_LENGTH, "%s?  Yes, fine, %s we must, but WHAT??\r\n", CMD_NAME, CMD_NAME);
     CAP(buf);
     send_to_char(buf, ch);
   } else {
@@ -40,14 +40,14 @@ ACMD(do_guildchat)
       send_to_char(OK, ch);
     else {
       if (subcmd == SCMD_QSAY)
-        sprintf(buf, "You quest-say, '%s'", argument);
+        snprintf(buf, MAX_STRING_LENGTH, "You quest-say, '%s'", argument);
       else
         strcpy(buf, argument);
       act(buf, FALSE, ch, 0, argument, TO_CHAR);
     }
 
     if (subcmd == SCMD_QSAY)
-      sprintf(buf, "$n quest-says, '%s'", argument);
+      snprintf(buf, MAX_STRING_LENGTH, "$n quest-says, '%s'", argument);
     else
       strcpy(buf, argument);
 

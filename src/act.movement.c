@@ -154,18 +154,18 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   }
 
   if (!IS_AFFECTED(ch, AFF_SNEAK) && !IS_AFFECTED(ch,AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
-    sprintf(buf2, "$n walks %s.", dirs[dir]);
+    snprintf(buf2, MAX_STRING_LENGTH, "$n walks %s.", dirs[dir]);
     act(buf2, TRUE, ch, 0, 0, TO_ROOM);
   }
 
   /* If player is flying, show different message */
   if (!IS_AFFECTED(ch, AFF_SNEAK) && IS_AFFECTED(ch,AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
-    sprintf(buf2, "$n flies %s.", dirs[dir]);
+    snprintf(buf2, MAX_STRING_LENGTH, "$n flies %s.", dirs[dir]);
     act(buf2, TRUE, ch, 0, 0, TO_ROOM);
   }
 
   if (MOUNTING(ch) && !IS_AFFECTED(MOUNTING(ch), AFF_SNEAK)) {
-    sprintf(buf2, "$n rides %s.", dirs[dir]);
+    snprintf(buf2, MAX_STRING_LENGTH, "$n rides %s.", dirs[dir]);
     act(buf2, TRUE, ch, 0, 0, TO_ROOM);
   }
 
@@ -174,17 +174,17 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   char_to_room(ch, world[was_in].dir_option[dir]->to_room);
 
   if (!IS_AFFECTED(ch, AFF_SNEAK) && !IS_AFFECTED(ch, AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
-    sprintf(buf, "$n walks in from ");
+    snprintf(buf, MAX_STRING_LENGTH, "$n walks in from ");
     sprinttype(dir, arrived_from, buf2);
     strcat(buf, buf2);
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
   } else if (!IS_AFFECTED(ch, AFF_SNEAK) && IS_AFFECTED(ch, AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
-    sprintf(buf, "$n flies in from ");
+    snprintf(buf, MAX_STRING_LENGTH, "$n flies in from ");
     sprinttype(dir, arrived_from, buf2);
     strcat(buf, buf2);
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
   } else if (MOUNTING(ch) && !IS_AFFECTED(MOUNTING(ch), AFF_SNEAK)) {
-    sprintf(buf, "$n rides in from ");
+    snprintf(buf, MAX_STRING_LENGTH, "$n rides in from ");
     sprinttype(dir, arrived_from, buf2);
     strcat(buf, buf2);
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
@@ -342,15 +342,15 @@ ACMD(do_move)
   }
   if (GET_DRAGGING(ch)) {
     if (perform_move(ch, cmd - 1, 0)) {
-      sprintf(buf, "%s drags $p along.", GET_NAME(ch));
+      snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(ch));
       act(buf, TRUE, 0, GET_DRAGGING(ch), 0, TO_ROOM);
 
       obj_from_room(GET_DRAGGING(ch));
       obj_to_room(GET_DRAGGING(ch), ch->in_room);
 
-      sprintf(buf, "You drag $p along with you.");
+      snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
       act(buf, FALSE, ch, GET_DRAGGING(ch), 0, TO_CHAR);
-      sprintf(buf, "%s drags $p along with $m.", GET_NAME(ch));
+      snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(ch));
       act(buf, TRUE, ch, GET_DRAGGING(ch), 0, TO_ROOM);
     } else {
       GET_MOVE(ch) -= ((GET_OBJ_WEIGHT(GET_DRAGGING(ch)) * 15) / CAN_CARRY_W(ch));
@@ -372,7 +372,7 @@ int find_door(struct char_data * ch, char *type, char *dir)
     if (EXIT(ch, door) && EXIT(ch, door)->keyword && isname(type, EXIT(ch, door)->keyword) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
       return door;
     } else if (EXIT(ch, door) && EXIT(ch, door)->keyword) {
-      sprintf(buf2, "I see no %s there.\r\n", type);
+      snprintf(buf2, MAX_STRING_LENGTH, "I see no %s there.\r\n", type);
       send_to_char(buf2, ch);
       return -1;
     } else if (EXIT(ch, door) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
@@ -388,7 +388,7 @@ int find_door(struct char_data * ch, char *type, char *dir)
       }
     }
 
-    sprintf(buf2, "There doesn't seem to be %s %s here.\r\n", AN(type), type);
+    snprintf(buf2, MAX_STRING_LENGTH, "There doesn't seem to be %s %s here.\r\n", AN(type), type);
     send_to_char(buf2, ch);
   }
   return -1;
@@ -443,7 +443,7 @@ ACMD(do_open)
           if (back->to_room == ch->in_room) {
             REMOVE_BIT(back->exit_info, EX_CLOSED);
             if (back->keyword) {
-              sprintf(buf, "The %s is opened from the other side.", fname(back->keyword));
+              snprintf(buf, MAX_STRING_LENGTH, "The %s is opened from the other side.", fname(back->keyword));
               /* send_to_room(buf, EXIT(ch, door)->to_room); */
               act(buf, 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
             } else {
@@ -502,7 +502,7 @@ ACMD(do_close)
           if (back->to_room == ch->in_room) {
             SET_BIT(back->exit_info, EX_CLOSED);
             if (back->keyword) {
-              sprintf(buf, "The %s closes quietly.", fname(back->keyword));
+              snprintf(buf, MAX_STRING_LENGTH, "The %s closes quietly.", fname(back->keyword));
               /* send_to_room(buf, EXIT(ch, door)->to_room); */
               act(buf, 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
             } else {
@@ -706,7 +706,7 @@ ACMD(do_enter)
   char_from_room(ch);
   send_to_char(transport_list[transport].enter_char_msg, ch);
   if (GET_DRAGGING(ch)) {
-    sprintf(buf, "%s drags $p along.", GET_NAME(ch));
+    snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(ch));
     act(buf, TRUE, 0, GET_DRAGGING(ch), 0, TO_ROOM);
   }
   char_to_room(ch, real_room(transport_list[transport].room_vnum));
@@ -715,9 +715,9 @@ ACMD(do_enter)
   if (GET_DRAGGING(ch)) {
     obj_from_room(GET_DRAGGING(ch));
     obj_to_room(GET_DRAGGING(ch), ch->in_room);
-    sprintf(buf, "You drag $p along with you.");
+    snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
     act(buf, FALSE, ch, GET_DRAGGING(ch), 0, TO_CHAR);
-    sprintf(buf, "%s drags $p along with $m.", GET_NAME(ch));
+    snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(ch));
     act(buf, TRUE, ch, GET_DRAGGING(ch), 0, TO_ROOM);
   }
 }
@@ -737,7 +737,7 @@ ACMD(do_leave)
     if (GET_DRAGGING(ch) && isname(arg, GET_DRAGGING(ch)->name)) {
       GET_DRAGGING(ch)->dragged_by = NULL;
       GET_DRAGGING(ch) = NULL;
-      sprintf(buf, "You leave %s behind.\r\n", arg);
+      snprintf(buf, MAX_STRING_LENGTH, "You leave %s behind.\r\n", arg);
       send_to_char(buf, ch);
     } else {
       send_to_char("Leave what behind?\r\n", ch);
@@ -772,18 +772,18 @@ ACMD(do_leave)
 
   act(transport_list[transport].enter_room_msg2, FALSE, ch, 0, 0, TO_ROOM);
   if (GET_DRAGGING(ch)) {
-    sprintf(buf, "%s drags $p along.", GET_NAME(ch));
+    snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(ch));
     act(buf, TRUE, 0, GET_DRAGGING(ch), 0, TO_ROOM);
   }
   char_from_room(ch);
   send_to_char(transport_list[transport].enter_char_msg2, ch);
   char_to_room(ch, obj->in_room);
   if (GET_DRAGGING(ch)) {
-    sprintf(buf, "You drag $p along with you.");
+    snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
     act(buf, FALSE, ch, GET_DRAGGING(ch), 0, TO_CHAR);
     obj_from_room(GET_DRAGGING(ch));
     obj_to_room(GET_DRAGGING(ch), ch->in_room);
-    sprintf(buf, "%s drags $p along with $m.", GET_NAME(ch));
+    snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(ch));
     act(buf, TRUE, ch, GET_DRAGGING(ch), 0, TO_ROOM);
   }
   act(transport_list[transport].dest_room_msg2, FALSE, ch, 0, 0, TO_ROOM);

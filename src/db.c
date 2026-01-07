@@ -402,7 +402,7 @@ void boot_db(void)
   update_log_file();
 
   for (i = 0; i <= top_of_zone_table; i++) {
-    sprintf(buf2, "Resetting %s (rooms %d-%d).", zone_table[i].name, (i ? (zone_table[i].bottom) : 0), zone_table[i].top);
+    snprintf(buf2, MAX_STRING_LENGTH, "Resetting %s (rooms %d-%d).", zone_table[i].name, (i ? (zone_table[i].bottom) : 0), zone_table[i].top);
     stderr_log(buf2);
     reset_zone(i);
   }
@@ -425,7 +425,7 @@ void reset_time(void)
 
   time_info = mud_time_passed(time(0), beginning_of_time);
 
-  sprintf(buf, "   Current Gametime: %dH %dD %dM %dY.", time_info.hours, time_info.day, time_info.month, time_info.year);
+  snprintf(buf, MAX_STRING_LENGTH, "   Current Gametime: %dH %dD %dM %dY.", time_info.hours, time_info.day, time_info.month, time_info.year);
   stderr_log(buf);
 }
 
@@ -479,10 +479,10 @@ void index_boot(int mode)
   else
     index_filename = INDEX_FILE;
 
-  sprintf(buf2, "%s/%s", prefix, index_filename);
+  snprintf(buf2, MAX_STRING_LENGTH, "%s/%s", prefix, index_filename);
 
   if (!(index = fopen(buf2, "r"))) {
-    sprintf(buf1, "Error opening index file '%s'", buf2);
+    snprintf(buf1, MAX_STRING_LENGTH, "Error opening index file '%s'", buf2);
     perror(buf1);
     fflush(NULL);
     exit(1);
@@ -490,7 +490,7 @@ void index_boot(int mode)
   /* first, count the number of records in the file so we can malloc */
   fscanf(index, "%s\n", buf1);
   while (*buf1 != '$') {
-    sprintf(buf2, "%s/%s", prefix, buf1);
+    snprintf(buf2, MAX_STRING_LENGTH, "%s/%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
       perror(buf2);
       fflush(NULL);
@@ -536,7 +536,7 @@ void index_boot(int mode)
   rewind(index);
   fscanf(index, "%s\n", buf1);
   while (*buf1 != '$') {
-    sprintf(buf2, "%s/%s", prefix, buf1);
+    snprintf(buf2, MAX_STRING_LENGTH, "%s/%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
       perror(buf2);
       fflush(NULL);
@@ -652,7 +652,7 @@ void parse_room(FILE * fl, int virtual_nr)
   char line[256], flags[128];
   struct extra_descr_data *new_descr;
 
-  sprintf(buf2, "room #%d", virtual_nr);
+  snprintf(buf2, MAX_STRING_LENGTH, "room #%d", virtual_nr);
 
   if (virtual_nr <= (zone ? zone_table[zone - 1].top : -1)) {
     fprintf(stderr, "Room #%d is below zone %d.\n", virtual_nr, zone);
@@ -691,7 +691,7 @@ void parse_room(FILE * fl, int virtual_nr)
 
   world[room_nr].ex_description = NULL;
 
-  sprintf(buf, "Format error in room #%d (expecting D/E/S)", virtual_nr);
+  snprintf(buf, MAX_STRING_LENGTH, "Format error in room #%d (expecting D/E/S)", virtual_nr);
 
   for (;;) {
     if (!get_line(fl, line)) {
@@ -733,7 +733,7 @@ void setup_dir(FILE * fl, int room, int dir)
   int t[5];
   char line[256];
 
-  sprintf(buf2, "room #%d, direction D%d", world[room].number, dir);
+  snprintf(buf2, MAX_STRING_LENGTH, "room #%d, direction D%d", world[room].number, dir);
 
   CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
   world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
@@ -1497,7 +1497,7 @@ void parse_mobile(FILE * mob_f, int nr)
 
   (mob_proto + i)->player_specials = &dummy_mob;
 
-  sprintf(buf2, "mob vnum %d", nr);
+  snprintf(buf2, MAX_STRING_LENGTH, "mob vnum %d", nr);
 
   /***** String data *** */
   mob_proto[i].player.name = fread_string(mob_f, buf2);
@@ -1576,7 +1576,7 @@ char *parse_object(FILE * obj_f, int nr)
   int t[10], j, temp, rtype, ramt;
   char *tmpptr;
   char f1[128], f2[128], f3[128];
-  char abuff[64];
+  char abuff[320];
   struct extra_descr_data *new_descr;
   int aspell = 0;
 
@@ -1779,7 +1779,7 @@ char *parse_object(FILE * obj_f, int nr)
         if ((GET_OBJ_TYPE(obj_proto + i) == ITEM_POTION) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_SCROLL)) {
           aspell = find_spell_num(line);
           if (aspell < 0) {
-            sprintf(abuff, "OBJ# %d: Invalid spell field (%s)", nr, line);
+            snprintf(abuff, sizeof(abuff), "OBJ# %d: Invalid spell field (%s)", nr, line);
             stderr_log(abuff);
             GET_OBJ_VAL(obj_proto + i, spellnum) = 0;
           } else {
@@ -1789,7 +1789,7 @@ char *parse_object(FILE * obj_f, int nr)
         if ((GET_OBJ_TYPE(obj_proto + i) == ITEM_WAND) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_STAFF)) {
           aspell = find_spell_num(line);
           if (aspell < 0) {
-            sprintf(abuff, "OBJ# %d: Invalid spell field (%s)", nr, line);
+            snprintf(abuff, sizeof(abuff), "OBJ# %d: Invalid spell field (%s)", nr, line);
             stderr_log(abuff);
             GET_OBJ_VAL(obj_proto + i, 3) = 0;
           } else {
@@ -1982,7 +1982,7 @@ int vnum_mobile(char *searchname, struct char_data * ch)
         }
       }
       if (oktosee && zonenum != 0) {
-        sprintf(buf, "%3d. [%5d] %s\r\n", ++found, mob_index[nr].virtual, mob_proto[nr].player.short_descr);
+        snprintf(buf, MAX_STRING_LENGTH, "%3d. [%5d] %s\r\n", ++found, mob_index[nr].virtual, mob_proto[nr].player.short_descr);
         strcat(mybuf, buf);
       }
     }
@@ -2017,7 +2017,7 @@ int vnum_object(char *searchname, struct char_data * ch)
         }
       }
       if (oktosee && zonenum != 0) {
-        sprintf(buf, "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
+        snprintf(buf, MAX_STRING_LENGTH, "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
         strcat(mybuf, buf);
       }
     }
@@ -2041,7 +2041,7 @@ int vnum_type(char *searchtype, struct char_data * ch)
 
   for (nr = 0; nr <= top_of_objt; nr++) {
     if (GET_OBJ_TYPE(obj_proto+nr) == type) {
-      sprintf(buf, "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
+      snprintf(buf, MAX_STRING_LENGTH, "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
       strcat(mybuf, buf);
     }
   }
@@ -2078,7 +2078,7 @@ struct char_data *read_mobile(int nr, int type)
 
   if (type == VIRTUAL) {
     if ((i = real_mobile(nr)) < 0) {
-      sprintf(buf, "Mobile (V) %d does not exist in database.", nr);
+      snprintf(buf, MAX_STRING_LENGTH, "Mobile (V) %d does not exist in database.", nr);
       return (0);
     }
   } else
@@ -2126,7 +2126,7 @@ struct char_data *read_mobile(int nr, int type)
                 obj_to_char(obj, mob);
             }
           } else {
-            sprintf(buf, "SYSERR: trying to equip mob with negative rnum (vnum=%d)!", mob_equip->vnum);
+            snprintf(buf, MAX_STRING_LENGTH, "SYSERR: trying to equip mob with negative rnum (vnum=%d)!", mob_equip->vnum);
             stderr_log(buf);
           }
         }
@@ -2169,7 +2169,7 @@ struct obj_data *read_object(int nr, int type)
   }
   if (type == VIRTUAL) {
     if ((i = real_object(nr)) < 0) {
-      sprintf(buf, "Object (V) %d does not exist in database.", nr);
+      snprintf(buf, MAX_STRING_LENGTH, "Object (V) %d does not exist in database.", nr);
       stderr_log(buf);
       return NULL;
     }
@@ -2199,7 +2199,7 @@ struct obj_data *read_object(int nr, int type)
   }
 
   if (obj_index[i].qic) {
-    sprintf(logbuffer, "%s created", obj->short_description);
+    snprintf(logbuffer, sizeof(logbuffer), "%s created", obj->short_description);
     mudlog(logbuffer, 'J', COM_QUEST, FALSE);
   }
 
@@ -2220,7 +2220,7 @@ struct obj_data *read_object_q(int nr, int type)
   }
   if (type == VIRTUAL) {
     if ((i = real_object(nr)) < 0) {
-      sprintf(buf, "Object (V) %d does not exist in database.", nr);
+      snprintf(buf, MAX_STRING_LENGTH, "Object (V) %d does not exist in database.", nr);
       return NULL;
     }
   } else
@@ -2300,7 +2300,7 @@ void zone_update(void)
   for (update_u = reset_q.head; update_u; update_u = update_u->next)
     if (zone_table[update_u->zone_to_reset].reset_mode == 2 || is_empty(update_u->zone_to_reset)) {
       reset_zone(update_u->zone_to_reset);
-      sprintf(buf, "Auto zone reset: %s", zone_table[update_u->zone_to_reset].name);
+      snprintf(buf, MAX_STRING_LENGTH, "Auto zone reset: %s", zone_table[update_u->zone_to_reset].name);
       mudlog(buf, 'Z', COM_QUEST, FALSE);
       /* dequeue */
       if (update_u == reset_q.head)
@@ -2324,12 +2324,12 @@ void log_zone_error(int zone, int cmd_no, char *message)
 {
   char buf[256];
 
-  sprintf(buf, "SYSERR: error in zone file: %s", message);
+  snprintf(buf, MAX_STRING_LENGTH, "SYSERR: error in zone file: %s", message);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
 
-  sprintf(buf, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d", ZCMD.command, zone_table[zone].number, ZCMD.line);
+  snprintf(buf, MAX_STRING_LENGTH, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d", ZCMD.command, zone_table[zone].number, ZCMD.line);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
-  sprintf(buf, "SYSERR: ...arg1: %5d arg2: %5d arg3: %5d", ZCMD.arg1, ZCMD.arg2, ZCMD.arg3);
+  snprintf(buf, MAX_STRING_LENGTH, "SYSERR: ...arg1: %5d arg2: %5d arg3: %5d", ZCMD.arg1, ZCMD.arg2, ZCMD.arg3);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
 }
 
@@ -2735,7 +2735,7 @@ int load_char_text(char *name, struct char_data * char_element)
             }
           }
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2753,7 +2753,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "bank_copper")) {
           GET_BANK_COPPER(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2768,7 +2768,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "con")) {
           GET_CON(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2788,7 +2788,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "dex")) {
           GET_DEX(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2798,7 +2798,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "enc_password")) {
           strncpy(GET_ENCPASSWD(ctmp), value, strlen(value));
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2806,7 +2806,7 @@ int load_char_text(char *name, struct char_data * char_element)
         if (!strcmp(field, "freeze_level")) {
           GET_FREEZE_LEV(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2815,7 +2815,7 @@ int load_char_text(char *name, struct char_data * char_element)
           GET_GOLD(ctmp) = numval;
           GET_TEMP_GOLD(ctmp) += numval * 100;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2833,7 +2833,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "hitroll")) {
           GET_HITROLL(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2845,19 +2845,19 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "int")) {
           GET_INT(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
       case 'J':
-        sprintf(buf2, "Unknown field [%s]", field);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
         break;
       case 'K':
         if (!strcmp(field, "kills")) {
           GET_KILLS(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2873,7 +2873,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "load_room")) {
           GET_LOADROOM(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2889,7 +2889,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "max_move")) {
           GET_MAX_MOVE(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2900,7 +2900,7 @@ int load_char_text(char *name, struct char_data * char_element)
           }
           GET_PLR_NAME(ctmp) = strdup(value);
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2914,7 +2914,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "olc_zone4")) {
           ctmp->olc_zones[3] = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2933,7 +2933,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "pk_count")) {
           GET_PKCOUNT(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2959,7 +2959,7 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "quest_complete9")) {
           ctmp->player_specials->saved.questcompleted[0] = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -2982,7 +2982,7 @@ int load_char_text(char *name, struct char_data * char_element)
             }
           }
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -3027,7 +3027,7 @@ int load_char_text(char *name, struct char_data * char_element)
             }
           }
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
@@ -3044,16 +3044,16 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "train_sess")) {
           GET_TRAINING(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
       case 'U':
-        sprintf(buf2, "Unknown field [%s]", field);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
         break;
       case 'V':
-        sprintf(buf2, "Unknown field [%s]", field);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
         break;
       case 'W':
@@ -3066,24 +3066,24 @@ int load_char_text(char *name, struct char_data * char_element)
         } else if (!strcmp(field, "wis")) {
           GET_WIS(ctmp) = numval;
         } else {
-          sprintf(buf2, "Unknown field [%s]", field);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
           stderr_log(buf2);
         }
         break;
       case 'X':
-        sprintf(buf2, "Unknown field [%s]", field);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
         break;
       case 'Y':
-        sprintf(buf2, "Unknown field [%s]", field);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
         break;
       case 'Z':
-        sprintf(buf2, "Unknown field [%s]", field);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
         break;
       default:
-        sprintf(buf2, "Unknown field [%s]", field);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
         break;
     }
@@ -4327,7 +4327,7 @@ MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
         exit(1);
         break;
       default:
-        sprintf(buf2, "Error in file %s", f);
+        snprintf(buf2, MAX_STRING_LENGTH, "Error in file %s", f);
         pMobIndex->progtypes = pMobIndex->progtypes | mprg2->type;
         mprg2->arglist = fread_string(progfile, buf2);
         mprg2->comlist = fread_string(progfile, buf2);
@@ -4402,7 +4402,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
         exit(1);
         break;
       case IN_FILE_PROG:
-        sprintf(buf2, "Mobprog for mob #%d", pMobIndex->virtual);
+        snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
         mprg = mprog_file_read(fread_word(fp), mprg, pMobIndex);
         fread_to_eol(fp); /* need to strip off that silly ~*/
         switch (letter = fread_letter(fp)) {
@@ -4425,7 +4425,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
         }
         break;
       default:
-        sprintf(buf2, "Mobprog for mob #%d", pMobIndex->virtual);
+        snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
         pMobIndex->progtypes = pMobIndex->progtypes | mprg->type;
         mprg->arglist = fread_string(fp, buf2);
         mprg->comlist = fread_string(fp, buf2);
@@ -4470,7 +4470,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "add_dam_event") == 0)
         return spell_add_dam_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4489,7 +4489,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "create_water") == 0)
         return spell_create_water_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4508,7 +4508,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "destroy_equipment") == 0)
         return spell_destroy_equipment_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4519,7 +4519,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "group_points") == 0)
         return spell_group_points_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4528,7 +4528,7 @@ event* get_spell_event(char *spell_event)
       if (strcasecmp(spell_event, "identify") == 0)
         return spell_identify_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4537,7 +4537,7 @@ event* get_spell_event(char *spell_event)
       if (strcasecmp(spell_event, "locate_obj") == 0)
         return spell_locate_obj_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4550,7 +4550,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "magical_unlock") == 0)
         return spell_magical_unlock_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4563,7 +4563,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "obj_room") == 0)
         return spell_obj_room_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4574,7 +4574,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "points") == 0)
         return spell_points_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4585,7 +4585,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "resurrection") == 0)
         return spell_resurrection_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4594,7 +4594,7 @@ event* get_spell_event(char *spell_event)
       if (strcasecmp(spell_event, "summon") == 0)
         return spell_summon_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4607,7 +4607,7 @@ event* get_spell_event(char *spell_event)
       else if (strcasecmp(spell_event, "telekinesis") == 0)
         return spell_telekinesis_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
@@ -4616,12 +4616,12 @@ event* get_spell_event(char *spell_event)
       if (strcasecmp(spell_event, "word_recall") == 0)
         return spell_word_recall_event;
       else {
-        sprintf(buf2, "Unknown event_type [%s]", spell_event);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
         stderr_log(buf2);
       }
       break;
     default:
-      sprintf(buf2, "Unknown event_type [%s]", spell_event);
+      snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
       break;
   }
@@ -4652,7 +4652,7 @@ spell* get_spell_type(char *spell_type)
   else if (strcasecmp(spell_type, "obj_room") == 0)
     return spell_obj_room;
   else {
-    sprintf(buf2, "Unknown spell_type [%s]", spell_type);
+    snprintf(buf2, MAX_STRING_LENGTH, "Unknown spell_type [%s]", spell_type);
     stderr_log(buf2);
   }
 
@@ -4687,7 +4687,7 @@ void load_spells(void)
   }
   rewind(f);
 
-  sprintf(buf, "   Found %d spells/skills.", numspells - 2);
+  snprintf(buf, MAX_STRING_LENGTH, "   Found %d spells/skills.", numspells - 2);
   stderr_log(buf);
   NumSpellsDefined = numspells - 2;
 
@@ -4715,7 +4715,7 @@ void load_spells(void)
         else if (strcasecmp(tag, "avg_duration") == 0)
           spells[spellnumber].avg_duration = val;
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4732,7 +4732,7 @@ void load_spells(void)
         } else if (strcasecmp(tag, "cost_multiplier") == 0) {
           spells[spellnumber].cost_multiplier = val;
         } else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4750,7 +4750,7 @@ void load_spells(void)
         else if (strcasecmp(tag, "delay") == 0) {
           spells[spellnumber].delay = val;
         } else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4758,7 +4758,7 @@ void load_spells(void)
         if (strcasecmp(tag, "invisible") == 0)
           spells[spellnumber].invisible = val;
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4772,7 +4772,7 @@ void load_spells(void)
         else if (strcasecmp(tag, "mana_chg") == 0)
           spells[spellnumber].mana_change = val;
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4786,7 +4786,7 @@ void load_spells(void)
         else if (strcasecmp(tag, "npc_offense_flags") == 0)
           spells[spellnumber].npc_offense_flags = asciiflag_conv(tag_arguments);
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4809,7 +4809,7 @@ void load_spells(void)
             p = NULL;
           }
         } else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4836,7 +4836,7 @@ void load_spells(void)
         } else if (strcasecmp(tag, "point_loc") == 0)
           spells[spellnumber].point_loc = val;
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4844,7 +4844,7 @@ void load_spells(void)
         if (strcasecmp(tag, "quest_only") == 0)
           spells[spellnumber].quest_only = val;
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4852,7 +4852,7 @@ void load_spells(void)
         if (strcasecmp(tag, "resist_type") == 0)
           spells[spellnumber].resist_type = val;
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4902,7 +4902,7 @@ void load_spells(void)
         else if (strcasecmp(tag, "send_to_room") == 0)
           spells[spellnumber].send_to_room = strdup(tag_arguments);
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4910,7 +4910,7 @@ void load_spells(void)
         if (strcasecmp(tag, "unaffect") == 0)
           spells[spellnumber].unaffect = strdup(tag_arguments);
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4924,7 +4924,7 @@ void load_spells(void)
             p = NULL;
           }
         } else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
@@ -4932,12 +4932,12 @@ void load_spells(void)
         if (strcasecmp(tag, "wear_off_msg") == 0)
           spells[spellnumber].wear_off = strdup(tag_arguments);
         else {
-          sprintf(buf2, "Unknown tag [%s]", tag);
+          snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
           stderr_log(buf2);
         }
         break;
       default:
-        sprintf(buf2, "Unknown tag [%s]", tag);
+        snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
         stderr_log(buf2);
         break;
     }

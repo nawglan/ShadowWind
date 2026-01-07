@@ -119,12 +119,12 @@ ACMD(do_put)
   } else if (cont_dotmode != FIND_INDIV) {
     send_to_char("You can only put things into one container at a time.\r\n", ch);
   } else if (!*arg2) {
-    sprintf(buf, "What do you want to put %s in?\r\n", ((obj_dotmode == FIND_INDIV) ? "it" : "them"));
+    snprintf(buf, MAX_STRING_LENGTH, "What do you want to put %s in?\r\n", ((obj_dotmode == FIND_INDIV) ? "it" : "them"));
     send_to_char(buf, ch);
   } else {
     generic_find(arg2, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &tmp_char, &cont);
     if (!cont) {
-      sprintf(buf, "You don't see %s %s here.\r\n", AN(arg2), arg2);
+      snprintf(buf, MAX_STRING_LENGTH, "You don't see %s %s here.\r\n", AN(arg2), arg2);
       send_to_char(buf, ch);
     } else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER && GET_OBJ_TYPE(cont) != ITEM_PCORPSE) {
       act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
@@ -133,7 +133,7 @@ ACMD(do_put)
     } else {
       if (obj_dotmode == FIND_INDIV) { /* put <obj> <container> */
         if (!(obj = get_obj_in_list_vis(ch, arg1, ch->carrying))) {
-          sprintf(buf, "You aren't carrying %s %s.\r\n", AN(arg1), arg1);
+          snprintf(buf, MAX_STRING_LENGTH, "You aren't carrying %s %s.\r\n", AN(arg1), arg1);
           send_to_char(buf, ch);
         } else if (obj == cont) {
           send_to_char("You attempt to fold it into itself, but fail.\r\n", ch);
@@ -152,7 +152,7 @@ ACMD(do_put)
           if (obj_dotmode == FIND_ALL) {
             send_to_char("You don't seem to have anything to put in it.\r\n", ch);
           } else {
-            sprintf(buf, "You don't seem to have any %ss.\r\n", arg1);
+            snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have any %ss.\r\n", arg1);
             send_to_char(buf, ch);
           }
         }
@@ -192,7 +192,7 @@ void get_check_money(struct char_data * ch, struct obj_data * obj)
   ACMD(do_split);
   if ((GET_OBJ_TYPE(obj) == ITEM_MONEY)) {
     obj_from_char(obj);
-    sprintf(buf, "There were {W%d p {Y%d g {w%d s {y%d c{x.\r\n", GET_OBJ_VAL(obj, 0), GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2), GET_OBJ_VAL(obj, 3));
+    snprintf(buf, MAX_STRING_LENGTH, "There were {W%d p {Y%d g {w%d s {y%d c{x.\r\n", GET_OBJ_VAL(obj, 0), GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2), GET_OBJ_VAL(obj, 3));
     send_to_char(buf, ch);
     GET_PLAT(ch) += GET_OBJ_VAL(obj, 0);
     GET_GOLD(ch) += GET_OBJ_VAL(obj, 1);
@@ -249,7 +249,7 @@ void get_from_container(struct char_data * ch, struct obj_data * cont, char *arg
     act("$p is closed.", FALSE, ch, cont, 0, TO_CHAR);
   } else if (obj_dotmode == FIND_INDIV) {
     if (!(obj = get_obj_in_list_vis(ch, arg, cont->contains))) {
-      sprintf(buf, "There doesn't seem to be %s %s in $p.", AN(arg), arg);
+      snprintf(buf, MAX_STRING_LENGTH, "There doesn't seem to be %s %s in $p.", AN(arg), arg);
       act(buf, FALSE, ch, cont, 0, TO_CHAR);
     } else {
       perform_get_from_container(ch, obj, cont, mode);
@@ -270,7 +270,7 @@ void get_from_container(struct char_data * ch, struct obj_data * cont, char *arg
       if (obj_dotmode == FIND_ALL) {
         act("$p seems to be empty.", FALSE, ch, cont, 0, TO_CHAR);
       } else {
-        sprintf(buf, "You can't seem to find any %ss in $p.", arg);
+        snprintf(buf, MAX_STRING_LENGTH, "You can't seem to find any %ss in $p.", arg);
         act(buf, FALSE, ch, cont, 0, TO_CHAR);
       }
     }
@@ -304,11 +304,11 @@ void get_from_room(struct char_data * ch, char *arg)
 
   if (dotmode == FIND_INDIV) {
     if (!(obj = get_obj_in_list_vis(ch, arg, world[ch->in_room].contents))) {
-      sprintf(buf, "You don't see %s %s here.\r\n", AN(arg), arg);
+      snprintf(buf, MAX_STRING_LENGTH, "You don't see %s %s here.\r\n", AN(arg), arg);
       send_to_char(buf, ch);
     } else {
       if ((GET_OBJ_TYPE(obj) == ITEM_PCORPSE) && !IS_IMMO(ch)) {
-        sprintf(buf, "You can't take %s's corpse!", obj->owner);
+        snprintf(buf, MAX_STRING_LENGTH, "You can't take %s's corpse!", obj->owner);
         send_to_char(buf, ch);
         return;
       }
@@ -330,7 +330,7 @@ void get_from_room(struct char_data * ch, char *arg)
       if (dotmode == FIND_ALL) {
         send_to_char("There doesn't seem to be anything here.\r\n", ch);
       } else {
-        sprintf(buf, "You don't see any %ss here.\r\n", arg);
+        snprintf(buf, MAX_STRING_LENGTH, "You don't see any %ss here.\r\n", arg);
         send_to_char(buf, ch);
       }
     }
@@ -359,7 +359,7 @@ ACMD(do_get)
     if (cont_dotmode == FIND_INDIV) {
       mode = generic_find(arg2, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &tmp_char, &cont);
       if (!cont) {
-        sprintf(buf, "You don't have %s %s.\r\n", AN(arg2), arg2);
+        snprintf(buf, MAX_STRING_LENGTH, "You don't have %s %s.\r\n", AN(arg2), arg2);
         send_to_char(buf, ch);
       } else if (GET_OBJ_TYPE(cont) != ITEM_CONTAINER && GET_OBJ_TYPE(cont) != ITEM_PCORPSE) {
         act("$p is not a container.", FALSE, ch, cont, 0, TO_CHAR);
@@ -397,7 +397,7 @@ ACMD(do_get)
         if (cont_dotmode == FIND_ALL) {
           send_to_char("You can't seem to find any containers.\r\n", ch);
         } else {
-          sprintf(buf, "You can't seem to find any %ss here.\r\n", arg2);
+          snprintf(buf, MAX_STRING_LENGTH, "You can't seem to find any %ss here.\r\n", arg2);
           send_to_char(buf, ch);
         }
       }
@@ -441,7 +441,7 @@ ACMD(do_drag)
 
   GET_DRAGGING(ch) = obj;
   obj->dragged_by = ch;
-  sprintf(buf, "You begin dragging %s.\r\n", OBJS(obj,ch));
+  snprintf(buf, MAX_STRING_LENGTH, "You begin dragging %s.\r\n", OBJS(obj,ch));
   send_to_char(buf, ch);
   return;
 }
@@ -466,12 +466,12 @@ void perform_drop_plat(struct char_data * ch, int amount, byte mode, sh_int RDR)
         act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
       } else {
         send_to_char("You drop some platinum.\r\n", ch);
-        sprintf(buf, "$n drops %s.", money_desc(amount * 1000));
+        snprintf(buf, MAX_STRING_LENGTH, "$n drops %s.", money_desc(amount * 1000));
         act(buf, FALSE, ch, 0, 0, TO_ROOM);
         obj_to_room(obj, ch->in_room);
       }
     } else {
-      sprintf(buf, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 1000));
+      snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 1000));
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
       send_to_char("You drop some platinum which disappears in a puff of smoke!\r\n", ch);
     }
@@ -500,12 +500,12 @@ void perform_drop_gold(struct char_data * ch, int amount, byte mode, sh_int RDR)
         act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
       } else {
         send_to_char("You drop some gold.\r\n", ch);
-        sprintf(buf, "$n drops %s.", money_desc(amount * 100));
+        snprintf(buf, MAX_STRING_LENGTH, "$n drops %s.", money_desc(amount * 100));
         act(buf, FALSE, ch, 0, 0, TO_ROOM);
         obj_to_room(obj, ch->in_room);
       }
     } else {
-      sprintf(buf, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 100));
+      snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 100));
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
       send_to_char("You drop some gold which disappears in a puff of smoke!\r\n", ch);
     }
@@ -534,12 +534,12 @@ void perform_drop_silver(struct char_data * ch, int amount, byte mode, sh_int RD
         act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
       } else {
         send_to_char("You drop some silver.\r\n", ch);
-        sprintf(buf, "$n drops %s.", money_desc(amount * 10));
+        snprintf(buf, MAX_STRING_LENGTH, "$n drops %s.", money_desc(amount * 10));
         act(buf, FALSE, ch, 0, 0, TO_ROOM);
         obj_to_room(obj, ch->in_room);
       }
     } else {
-      sprintf(buf, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 10));
+      snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 10));
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
       send_to_char("You drop some silver which disappears in a puff of smoke!\r\n", ch);
     }
@@ -568,12 +568,12 @@ void perform_drop_copper(struct char_data * ch, int amount, byte mode, sh_int RD
         act("$p suddenly appears in a puff of orange smoke!", 0, 0, obj, 0, TO_ROOM);
       } else {
         send_to_char("You drop some copper.\r\n", ch);
-        sprintf(buf, "$n drops %s.", money_desc(amount));
+        snprintf(buf, MAX_STRING_LENGTH, "$n drops %s.", money_desc(amount));
         act(buf, FALSE, ch, 0, 0, TO_ROOM);
         obj_to_room(obj, ch->in_room);
       }
     } else {
-      sprintf(buf, "$n drops %s which disappears in a puff of smoke!", money_desc(amount));
+      snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!", money_desc(amount));
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
       send_to_char("You drop some copper which disappears in a puff of smoke!\r\n", ch);
     }
@@ -590,7 +590,7 @@ int perform_drop(struct char_data * ch, struct obj_data * obj, byte mode, char *
   int value;
 
   if (IS_OBJ_STAT(obj, ITEM_NODROP)) {
-    sprintf(buf, "You can't %s $p, it must be CURSED!", sname);
+    snprintf(buf, MAX_STRING_LENGTH, "You can't %s $p, it must be CURSED!", sname);
     act(buf, FALSE, ch, obj, 0, TO_CHAR);
     return 0;
   }
@@ -609,9 +609,9 @@ int perform_drop(struct char_data * ch, struct obj_data * obj, byte mode, char *
         break;
     }
   } else {
-    sprintf(buf, "You %s $p.%s", sname, VANISH(mode));
+    snprintf(buf, MAX_STRING_LENGTH, "You %s $p.%s", sname, VANISH(mode));
     act(buf, FALSE, ch, obj, 0, TO_CHAR);
-    sprintf(buf, "$n %ss $p.%s", sname, VANISH(mode));
+    snprintf(buf, MAX_STRING_LENGTH, "$n %ss $p.%s", sname, VANISH(mode));
     act(buf, TRUE, ch, obj, 0, TO_ROOM);
     obj_from_char(obj);
   }
@@ -705,7 +705,7 @@ ACMD(do_drop)
   argument = one_argument(argument, arg);
 
   if (!*arg) {
-    sprintf(buf, "What do you want to %s?\r\n", sname);
+    snprintf(buf, MAX_STRING_LENGTH, "What do you want to %s?\r\n", sname);
     send_to_char(buf, ch);
     return;
   } else if (is_number(arg)) {
@@ -761,12 +761,12 @@ ACMD(do_drop)
       }
     } else if (dotmode == FIND_ALLDOT) {
       if (!*arg) {
-        sprintf(buf, "What do you want to %s all of?\r\n", sname);
+        snprintf(buf, MAX_STRING_LENGTH, "What do you want to %s all of?\r\n", sname);
         send_to_char(buf, ch);
         return;
       }
       if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-        sprintf(buf, "You don't seem to have any %ss.\r\n", arg);
+        snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have any %ss.\r\n", arg);
         send_to_char(buf, ch);
       }
       while (obj) {
@@ -782,7 +782,7 @@ ACMD(do_drop)
       }
     } else {
       if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-        sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+        snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
         send_to_char(buf, ch);
       } else {
         if (!IS_OBJ_STAT(obj, ITEM_DONATED) || SCMD_JUNK != subcmd) {
@@ -871,10 +871,10 @@ void perform_give_plat(struct char_data * ch, struct char_data * vict, int amoun
       mprog_bribe_trigger(vict, ch, amount * 1000);
     }
   }
-  sprintf(buf, "$n gives you %d {Wplatinum{x coins.", amount);
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives you %d {Wplatinum{x coins.", amount);
   MOBTrigger = FALSE;
   act(buf, FALSE, ch, 0, vict, TO_VICT);
-  sprintf(buf, "$n gives %s to $N.", money_desc(amount * 1000));
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives %s to $N.", money_desc(amount * 1000));
   MOBTrigger = FALSE;
   act(buf, TRUE, ch, 0, vict, TO_NOTVICT);
   if (IS_NPC(ch) || (!COM_FLAGGED(ch, COM_QUEST))) {
@@ -900,10 +900,10 @@ void perform_give_gold(struct char_data * ch, struct char_data * vict, int amoun
     mprog_bribe_trigger(vict, ch, amount * 100);
     quest_bribe_trigger(vict, ch, amount * 100);
   }
-  sprintf(buf, "$n gives you %d {Ygold{x coins.", amount);
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives you %d {Ygold{x coins.", amount);
   MOBTrigger = FALSE;
   act(buf, FALSE, ch, 0, vict, TO_VICT);
-  sprintf(buf, "$n gives %s to $N.", money_desc(amount * 100));
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives %s to $N.", money_desc(amount * 100));
   MOBTrigger = FALSE;
   act(buf, TRUE, ch, 0, vict, TO_NOTVICT);
   if (IS_NPC(ch) || (!COM_FLAGGED(ch, COM_QUEST))) {
@@ -929,10 +929,10 @@ void perform_give_silver(struct char_data * ch, struct char_data * vict, int amo
     mprog_bribe_trigger(vict, ch, amount * 10);
     quest_bribe_trigger(vict, ch, amount * 10);
   }
-  sprintf(buf, "$n gives you %d silver coins.", amount);
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives you %d silver coins.", amount);
   MOBTrigger = FALSE;
   act(buf, FALSE, ch, 0, vict, TO_VICT);
-  sprintf(buf, "$n gives %s to $N.", money_desc(amount * 10));
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives %s to $N.", money_desc(amount * 10));
   MOBTrigger = FALSE;
   act(buf, TRUE, ch, 0, vict, TO_NOTVICT);
   if (IS_NPC(ch) || (!COM_FLAGGED(ch, COM_QUEST))) {
@@ -958,10 +958,10 @@ void perform_give_copper(struct char_data * ch, struct char_data * vict, int amo
     mprog_bribe_trigger(vict, ch, amount);
     quest_bribe_trigger(vict, ch, amount);
   }
-  sprintf(buf, "$n gives you %d {ycopper{x coins.", amount);
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives you %d {ycopper{x coins.", amount);
   MOBTrigger = FALSE;
   act(buf, FALSE, ch, 0, vict, TO_VICT);
-  sprintf(buf, "$n gives %s to $N.", money_desc(amount));
+  snprintf(buf, MAX_STRING_LENGTH, "$n gives %s to $N.", money_desc(amount));
   MOBTrigger = FALSE;
   act(buf, TRUE, ch, 0, vict, TO_NOTVICT);
   if (IS_NPC(ch) || (!COM_FLAGGED(ch, COM_QUEST))) {
@@ -1036,12 +1036,12 @@ ACMD(do_give)
         }
       }
       if (!found) {
-        sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+        snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
         send_to_char(buf, ch);
         return;
       }
       if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-        sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+        snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
         send_to_char(buf, ch);
         return;
       } else {
@@ -1202,7 +1202,7 @@ ACMD(do_drink)
       act(actd->char_no_arg, FALSE, ch, temp, 0, TO_CHAR);
       act(actd->others_no_arg, TRUE, ch, temp, 0, TO_ROOM);
     } else {
-      sprintf(buf, "You drink the %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
+      snprintf(buf, MAX_STRING_LENGTH, "You drink the %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
       send_to_char(buf, ch);
     }
 
@@ -1212,7 +1212,7 @@ ACMD(do_drink)
       amount = number(3, 10);
     }
   } else {
-    sprintf(buf, "It tastes like %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
+    snprintf(buf, MAX_STRING_LENGTH, "It tastes like %s.\r\n", drinks[GET_OBJ_VAL(temp, 2)]);
     send_to_char(buf, ch);
     amount = 1;
   }
@@ -1274,7 +1274,7 @@ ACMD(do_eat)
     return;
   }
   if (!(food = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-    sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+    snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
     return;
   }
@@ -1388,7 +1388,7 @@ ACMD(do_pour)
       return;
     }
     if (!(from_obj = get_obj_in_list_vis(ch, arg2, world[ch->in_room].contents))) {
-      sprintf(buf, "There doesn't seem to be %s %s here.\r\n", AN(arg2), arg2);
+      snprintf(buf, MAX_STRING_LENGTH, "There doesn't seem to be %s %s here.\r\n", AN(arg2), arg2);
       send_to_char(buf, ch);
       return;
     }
@@ -1440,7 +1440,7 @@ ACMD(do_pour)
     return;
   }
   if (subcmd == SCMD_POUR) {
-    sprintf(buf, "You pour the %s into the %s.", drinks[GET_OBJ_VAL(from_obj, 2)], arg2);
+    snprintf(buf, MAX_STRING_LENGTH, "You pour the %s into the %s.", drinks[GET_OBJ_VAL(from_obj, 2)], arg2);
     send_to_char(buf, ch);
   }
   if (subcmd == SCMD_FILL) {
@@ -1739,7 +1739,7 @@ int find_eq_pos(struct char_data * ch, struct obj_data * obj, char *arg)
     }
   } else {
     if ((where = search_block(arg, keywords, FALSE)) < 0) {
-      sprintf(buf, "'%s'?  What part of your body is THAT?\r\n", arg);
+      snprintf(buf, MAX_STRING_LENGTH, "'%s'?  What part of your body is THAT?\r\n", arg);
       send_to_char(buf, ch);
     }
   }
@@ -1783,7 +1783,7 @@ ACMD(do_wear)
       return;
     }
     if (!(obj = get_obj_in_list_vis(ch, arg1, ch->carrying))) {
-      sprintf(buf, "You don't seem to have any %ss.\r\n", arg1);
+      snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have any %ss.\r\n", arg1);
       send_to_char(buf, ch);
     } else
       while (obj) {
@@ -1797,7 +1797,7 @@ ACMD(do_wear)
       }
   } else {
     if (!(obj = get_obj_in_list_vis(ch, arg1, ch->carrying))) {
-      sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg1), arg1);
+      snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg1), arg1);
       send_to_char(buf, ch);
     } else {
       if ((where = find_eq_pos(ch, obj, arg2)) >= 0) {
@@ -1820,7 +1820,7 @@ ACMD(do_wield)
   if (!*arg) {
     send_to_char("Wield what?\r\n", ch);
   } else if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-    sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+    snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
   } else {
     if (CAN_WEAR(obj, ITEM_WEAR_WIELD)) {
@@ -1850,7 +1850,7 @@ ACMD(do_grab)
   if (!*arg) {
     send_to_char("Hold what?\r\n", ch);
   } else if (!(obj = get_obj_in_list_vis(ch, arg, ch->carrying))) {
-    sprintf(buf, "You don't seem to have %s %s.\r\n", AN(arg), arg);
+    snprintf(buf, MAX_STRING_LENGTH, "You don't seem to have %s %s.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
   } else {
     if (GET_OBJ_TYPE(obj) == ITEM_BADGE) {
@@ -1927,13 +1927,13 @@ ACMD(do_remove)
         }
       }
       if (!found) {
-        sprintf(buf, "You don't seem to be using any %ss.\r\n", arg);
+        snprintf(buf, MAX_STRING_LENGTH, "You don't seem to be using any %ss.\r\n", arg);
         send_to_char(buf, ch);
       }
     }
   } else {
     if (!get_object_in_equip_vis(ch, arg, ch->equipment, &i)) {
-      sprintf(buf, "You don't seem to be using %s %s.\r\n", AN(arg), arg);
+      snprintf(buf, MAX_STRING_LENGTH, "You don't seem to be using %s %s.\r\n", AN(arg), arg);
       send_to_char(buf, ch);
     } else {
       if (i != WEAR_2HANDED || (i == WEAR_2HANDED && !AFF3_FLAGGED(ch, AFF3_WIELDINGSPIRITUALHAMMER) && !AFF3_FLAGGED(ch, AFF3_WIELDINGFLAMEBLADE))) {

@@ -133,7 +133,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
 
   switch (command) {
     case PARSE_HELP:
-      sprintf(buf, "Editor command formats: /<letter>\r\n\r\n"
+      snprintf(buf, MAX_STRING_LENGTH, "Editor command formats: /<letter>\r\n\r\n"
           "/a         -  aborts editor\r\n"
           "/c         -  clears buffer\r\n"
           "/d#        -  deletes a line #\r\n"
@@ -165,7 +165,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
         j++;
       }
       format_text(d->str, flags, d, d->max_str);
-      sprintf(buf, "Text formarted with%s indent.\r\n", (indent ? "" : "out"));
+      snprintf(buf, MAX_STRING_LENGTH, "Text formarted with%s indent.\r\n", (indent ? "" : "out"));
       SEND_TO_Q(buf, d);
       break;
     case PARSE_REPLACE:
@@ -204,10 +204,10 @@ void parse_action(int command, char *string, struct descriptor_data *d)
       total_len = ((strlen(t) - strlen(s)) + strlen(*d->str));
       if (total_len <= d->max_str) {
         if ((replaced = replace_str(d->str, s, t, rep_all, d->max_str)) > 0) {
-          sprintf(buf, "Replaced %d occurance%sof '%s' with '%s'.\r\n", replaced, ((replaced != 1) ? "s " : " "), s, t);
+          snprintf(buf, MAX_STRING_LENGTH, "Replaced %d occurance%sof '%s' with '%s'.\r\n", replaced, ((replaced != 1) ? "s " : " "), s, t);
           SEND_TO_Q(buf, d);
         } else if (replaced == 0) {
-          sprintf(buf, "String '%s' not found.\r\n", s);
+          snprintf(buf, MAX_STRING_LENGTH, "String '%s' not found.\r\n", s);
           SEND_TO_Q(buf, d);
         } else {
           SEND_TO_Q("ERROR: Replacement string causes buffer overflow, aborted replace.\r\n", d);
@@ -263,7 +263,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
           total_len--;
         *t = '\0';
         RECREATE(*d->str, char, strlen(*d->str) + 3);
-        sprintf(buf, "%d line%sdeleted.\r\n", total_len, ((total_len != 1) ? "s " : " "));
+        snprintf(buf, MAX_STRING_LENGTH, "%d line%sdeleted.\r\n", total_len, ((total_len != 1) ? "s " : " "));
         SEND_TO_Q(buf, d);
       } else {
         SEND_TO_Q("Invalid line numbers to delete must be higher than 0.\r\n", d);
@@ -299,7 +299,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
       }
       *buf = '\0';
       if ((line_high < 999999) || (line_low > 1)) {
-        sprintf(buf, "Current buffer range [%d - %d]:\r\n", line_low, line_high);
+        snprintf(buf, MAX_STRING_LENGTH, "Current buffer range [%d - %d]:\r\n", line_low, line_high);
       }
       i = 1;
       total_len = 0;
@@ -701,13 +701,13 @@ void string_add(struct descriptor_data *d, char *str)
       d->mail_to = 0;
       FREE(*d->str);
       FREE(d->str);
-      sprintf(buf, "%s finished writing mail message.", GET_NAME(d->character));
+      snprintf(buf, MAX_STRING_LENGTH, "%s finished writing mail message.", GET_NAME(d->character));
       mudlog(buf, 'G', COM_ADMIN, TRUE);
     } else if ((long) d->mail_to >= BOARD_MAGIC) {
       Board_save_board((long) d->mail_to - BOARD_MAGIC);
       SEND_TO_Q("Post not aborted, use REMOVE <post #>.\r\n", d);
       d->mail_to = 0;
-      sprintf(buf, "%s finished writing message on board.", GET_NAME(d->character));
+      snprintf(buf, MAX_STRING_LENGTH, "%s finished writing message on board.", GET_NAME(d->character));
       mudlog(buf, 'G', COM_BUILDER, TRUE);
     } else if (STATE(d) == CON_EXDESC) {
       if (terminator != 1)
@@ -723,7 +723,7 @@ void string_add(struct descriptor_data *d, char *str)
     } else if (STATE(d) == CON_TEXTED) {
       if (terminator == 1) {
         if (!(fl = fopen((char *) d->storage, "w"))) {
-          sprintf(buf, "SYSERR: Can't write file '%s'.", d->storage);
+          snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Can't write file '%s'.", d->storage);
           mudlog(buf, 'G', COM_BUILDER, TRUE);
         } else {
           if (*d->str) {
@@ -731,7 +731,7 @@ void string_add(struct descriptor_data *d, char *str)
             fputs(*d->str, fl);
           }
           fclose(fl);
-          sprintf(buf, "OLC: %s saves '%s'.", GET_NAME(d->character), d->storage);
+          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s saves '%s'.", GET_NAME(d->character), d->storage);
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           SEND_TO_Q("Saved.\r\n", d);
           act("$n stops editing some scrolls.", TRUE, d->character, 0, 0, TO_ROOM);
@@ -749,7 +749,7 @@ void string_add(struct descriptor_data *d, char *str)
         }
       } else {
         SEND_TO_Q("Edit aborted.\r\n", d);
-        sprintf(buf, "OLC: %s stops editing '%s'.", GET_NAME(d->character), d->storage);
+        snprintf(buf, MAX_STRING_LENGTH, "OLC: %s stops editing '%s'.", GET_NAME(d->character), d->storage);
         mudlog(buf, 'G', COM_BUILDER, TRUE);
         act("$n stops editing some scrolls.", TRUE, d->character, 0, 0, TO_ROOM);
         FREE(d->storage);
@@ -909,12 +909,12 @@ ACMD(do_skillset)
     }
     return;
   }
-  sprintf(buf2, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict), spells[skill].command, value);
+  snprintf(buf2, MAX_STRING_LENGTH, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict), spells[skill].command, value);
   mudlog(buf2, 'G', COM_BUILDER, TRUE);
 
   SET_SKILL(vict, spells[skill].spellindex, value);
 
-  sprintf(buf2, "You change %s's %s to %d.\n\r", GET_NAME(vict), spells[skill].command, value);
+  snprintf(buf2, MAX_STRING_LENGTH, "You change %s's %s to %d.\n\r", GET_NAME(vict), spells[skill].command, value);
   send_to_char(buf2, ch);
 
   save_char_text(vict, NOWHERE);

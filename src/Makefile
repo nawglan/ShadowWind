@@ -10,7 +10,7 @@
 CC = gcc
 #CC = cc
 #MYFLAGS =  -g -Wall -DNOCRYPT
-MYFLAGS = -g -Wall -DNOCRYPT
+MYFLAGS = -g -Wall -Wno-format-truncation -DNOCRYPT
 #MYFLAGS =  -pg -g -m486 -Wall -DNOCRYPT
 #MYFLAGS =  -g -xF -Xa -v -xs -DNOCRYPT
 LIBS = -lsodium

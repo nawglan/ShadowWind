@@ -117,7 +117,7 @@ void init_boards(void)
 
   for (i = 0; i < NUM_OF_BOARDS; i++) {
     if ((BOARD_RNUM(i) = real_object(BOARD_VNUM(i))) == -1) {
-      sprintf(buf, "SYSERR: Fatal board error: board vnum %d does not exist!", BOARD_VNUM(i));
+      snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Fatal board error: board vnum %d does not exist!", BOARD_VNUM(i));
       stderr_log(buf);
       fatal_error = 1;
     }
@@ -205,8 +205,8 @@ void Board_write_message(int board_type, struct char_data * ch, char *arg)
   tmstr = (char *) asctime(localtime(&ct));
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
-  sprintf(buf2, "(%s)", GET_NAME(ch));
-  sprintf(buf, "%6.10s %-12s :: %s", tmstr, buf2, arg);
+  snprintf(buf2, MAX_STRING_LENGTH, "(%s)", GET_NAME(ch));
+  snprintf(buf, MAX_STRING_LENGTH, "%6.10s %-12s :: %s", tmstr, buf2, arg);
   len = strlen(buf) + 1;
   if (!(NEW_MSG_INDEX(board_type).heading = (char *) malloc(sizeof(char) * len))) {
     send_to_char("The board is malfunctioning - sorry.\r\n", ch);
@@ -215,7 +215,7 @@ void Board_write_message(int board_type, struct char_data * ch, char *arg)
   strcpy(NEW_MSG_INDEX(board_type).heading, buf);
   NEW_MSG_INDEX(board_type).heading[len - 1] = '\0';
   NEW_MSG_INDEX(board_type).level = GET_LEVEL(ch);
-  sprintf(logbuffer, "%s writing new message (%s) on board in #%d", GET_NAME(ch), buf, world[ch->in_room].number);
+  snprintf(logbuffer, sizeof(logbuffer), "%s writing new message (%s) on board in #%d", GET_NAME(ch), buf, world[ch->in_room].number);
   mudlog(logbuffer, 'B', COM_ADMIN, FALSE);
   send_to_char("Write your message. (/s saves /h for help)\r\n\r\n", ch);
   act("$n starts to write a message.", TRUE, ch, 0, 0, TO_ROOM);
@@ -344,7 +344,7 @@ int Board_remove_msg(int board_type, struct char_data * ch, char *arg)
     send_to_char("That message appears to be screwed up.\r\n", ch);
     return 1;
   }
-  sprintf(buf, "(%s)", GET_NAME(ch));
+  snprintf(buf, MAX_STRING_LENGTH, "(%s)", GET_NAME(ch));
   if (REMOVE_LVL(board_type) != 0 && !COM_FLAGGED(ch, REMOVE_LVL(board_type)) && !(strstr(MSG_HEADING(board_type, ind), buf))) {
     send_to_char("You are not holy enough to remove other people's messages.\r\n", ch);
     return 1;
@@ -365,7 +365,7 @@ int Board_remove_msg(int board_type, struct char_data * ch, char *arg)
       return 1;
     }
 
-  sprintf(logbuffer, "%s removed message #%d (%s) from board #%d", GET_NAME(ch), msg, MSG_HEADING(board_type, ind), world[ch->in_room].number);
+  snprintf(logbuffer, sizeof(logbuffer), "%s removed message #%d (%s) from board #%d", GET_NAME(ch), msg, MSG_HEADING(board_type, ind), world[ch->in_room].number);
   mudlog(logbuffer, 'B', COM_ADMIN, FALSE);
 
   if (msg_storage[slot_num])
@@ -382,7 +382,7 @@ int Board_remove_msg(int board_type, struct char_data * ch, char *arg)
   }
   num_of_msgs[board_type]--;
   send_to_char("Message removed.\r\n", ch);
-  sprintf(buf, "$n just removed message %d.", msg);
+  snprintf(buf, MAX_STRING_LENGTH, "$n just removed message %d.", msg);
   act(buf, FALSE, ch, 0, 0, TO_ROOM);
   Board_save_board(board_type);
 

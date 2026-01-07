@@ -611,7 +611,7 @@ void sedit_save_to_disk(int zone_num)
   }
   fprintf(shop_file, "$~\n");
   fclose(shop_file);
-  sprintf(buf2, "%s/%d.shp", SHP_PREFIX, zone);
+  snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.shp", SHP_PREFIX, zone);
   /*
    * We're fubar'd if we crash between the two lines below.
    */
@@ -634,10 +634,10 @@ void sedit_products_menu(struct descriptor_data *d)
   send_to_char("[H[J", d->character);
   send_to_char("##     VNUM     Product\r\n", d->character);
   for (i = 0; S_PRODUCT(shop, i) != -1; i++) {
-    sprintf(buf, "%2d - [%s%5d%s] - %s%s%s\r\n", i, cyn, obj_index[S_PRODUCT(shop, i)].virtual, nrm, yel, obj_proto[S_PRODUCT(shop, i)].short_description, nrm);
+    snprintf(buf, MAX_STRING_LENGTH, "%2d - [%s%5d%s] - %s%s%s\r\n", i, cyn, obj_index[S_PRODUCT(shop, i)].virtual, nrm, yel, obj_proto[S_PRODUCT(shop, i)].short_description, nrm);
     send_to_char(buf, d->character);
   }
-  sprintf(buf, "\r\n"
+  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "%sA%s) Add a new product.\r\n"
       "%sD%s) Delete a product.\r\n"
       "%sQ%s) Quit\r\n"
@@ -659,10 +659,10 @@ void sedit_compact_rooms_menu(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (i = 0; S_ROOM(shop, i) != -1; i++) {
-    sprintf(buf, "%2d - [%s%5d%s]  | %s", i, cyn, S_ROOM(shop, i), nrm, !(++count % 5) ? "\r\n" : "");
+    snprintf(buf, MAX_STRING_LENGTH, "%2d - [%s%5d%s]  | %s", i, cyn, S_ROOM(shop, i), nrm, !(++count % 5) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
-  sprintf(buf, "\r\n"
+  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "%sA%s) Add a new room.\r\n"
       "%sD%s) Delete a room.\r\n"
       "%sL%s) Long display.\r\n"
@@ -686,10 +686,10 @@ void sedit_rooms_menu(struct descriptor_data *d)
   send_to_char("[H[J", d->character);
   send_to_char("##     VNUM     Room\r\n\r\n", d->character);
   for (i = 0; S_ROOM(shop, i) != -1; i++) {
-    sprintf(buf, "%2d - [%s%5d%s] - %s%s%s\r\n", i, cyn, S_ROOM(shop, i), nrm, yel, world[real_room(S_ROOM(shop, i))].name, nrm);
+    snprintf(buf, MAX_STRING_LENGTH, "%2d - [%s%5d%s] - %s%s%s\r\n", i, cyn, S_ROOM(shop, i), nrm, yel, world[real_room(S_ROOM(shop, i))].name, nrm);
     send_to_char(buf, d->character);
   }
-  sprintf(buf, "\r\n"
+  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "%sA%s) Add a new room.\r\n"
       "%sD%s) Delete a room.\r\n"
       "%sC%s) Compact Display.\r\n"
@@ -713,10 +713,10 @@ void sedit_namelist_menu(struct descriptor_data *d)
   send_to_char("[H[J", d->character);
   send_to_char("##              Type   Namelist\r\n\r\n", d->character);
   for (i = 0; S_BUYTYPE(shop, i) != -1; i++) {
-    sprintf(buf, "%2d - %s%15s%s - %s%s%s\r\n", i, cyn, item_types[S_BUYTYPE(shop, i)], nrm, yel, S_BUYWORD(shop, i) ? S_BUYWORD(shop, i) : "<None>", nrm);
+    snprintf(buf, MAX_STRING_LENGTH, "%2d - %s%15s%s - %s%s%s\r\n", i, cyn, item_types[S_BUYTYPE(shop, i)], nrm, yel, S_BUYWORD(shop, i) ? S_BUYWORD(shop, i) : "<None>", nrm);
     send_to_char(buf, d->character);
   }
-  sprintf(buf, "\r\n"
+  snprintf(buf, MAX_STRING_LENGTH, "\r\n"
       "%sA%s) Add a new entry.\r\n"
       "%sD%s) Delete an entry.\r\n"
       "%sQ%s) Quit\r\n"
@@ -734,11 +734,11 @@ void sedit_shop_flags_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_SHOP_FLAGS; i++) {
-    sprintf(buf, "%s%2d%s) %-20.20s   %s", grn, i + 1, nrm, shop_bits[i], !(++count % 2) ? "\r\n" : "");
+    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s   %s", grn, i + 1, nrm, shop_bits[i], !(++count % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(S_BITVECTOR(OLC_SHOP(d)), shop_bits, buf1);
-  sprintf(buf, "\r\nCurrent Shop Flags : %s%s%s\r\nEnter choice : ", cyn, buf1, nrm);
+  snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrent Shop Flags : %s%s%s\r\nEnter choice : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
   OLC_MODE(d) = SEDIT_SHOP_FLAGS;
 }
@@ -752,11 +752,11 @@ void sedit_no_trade_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_TRADERS; i++) {
-    sprintf(buf, "%s%2d%s) %-20.20s   %s", grn, i + 1, nrm, trade_letters[i], !(++count % 2) ? "\r\n" : "");
+    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s   %s", grn, i + 1, nrm, trade_letters[i], !(++count % 2) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
   sprintbit(S_NOTRADE(OLC_SHOP(d)), trade_letters, buf1);
-  sprintf(buf, "\r\nCurrently won't trade with: %s%s%s\r\n"
+  snprintf(buf, MAX_STRING_LENGTH, "\r\nCurrently won't trade with: %s%s%s\r\n"
       "Enter choice : ", cyn, buf1, nrm);
   send_to_char(buf, d->character);
   OLC_MODE(d) = SEDIT_NOTRADE;
@@ -772,10 +772,10 @@ void sedit_types_menu(struct descriptor_data *d)
 
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_ITEM_TYPES; i++) {
-    sprintf(buf, "%s%2d%s) %s%-20s%s  %s", grn, i, nrm, cyn, item_types[i], nrm, !(++count % 3) ? "\r\n" : "");
+    snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s%-20s%s  %s", grn, i, nrm, cyn, item_types[i], nrm, !(++count % 3) ? "\r\n" : "");
     send_to_char(buf, d->character);
   }
-  sprintf(buf, "%sEnter choice : ", nrm);
+  snprintf(buf, MAX_STRING_LENGTH, "%sEnter choice : ", nrm);
   send_to_char(buf, d->character);
   OLC_MODE(d) = SEDIT_TYPE_MENU;
 }
@@ -794,7 +794,7 @@ void sedit_disp_menu(struct descriptor_data *d)
 
   sprintbit(S_NOTRADE(shop), trade_letters, buf1);
   sprintbit(S_BITVECTOR(shop), shop_bits, buf2);
-  sprintf(buf, "[H[J"
+  snprintf(buf, MAX_STRING_LENGTH, "[H[J"
       "-- Shop Number : [%s%d%s]\r\n"
       "%s0%s) Keeper      : [%s%d%s] %s%s\r\n"
       "%s1%s) Open 1      : %s%4d%s          %s2%s) Close 1     : %s%4d\r\n"
@@ -843,13 +843,13 @@ void sedit_parse(struct descriptor_data *d, char *arg)
         case 'Y':
           send_to_char("Saving shop to memory and to disk.\r\n", d->character);
           sedit_save_internally(d);
-          sprintf(buf, "OLC: %s finished editing shop %d", GET_NAME(d->character), OLC_NUM(d));
+          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing shop %d", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           cleanup_olc(d, CLEANUP_STRUCTS);
           return;
         case 'n':
         case 'N':
-          sprintf(buf, "OLC: %s finished editing shop %d", GET_NAME(d->character), OLC_NUM(d));
+          snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing shop %d", GET_NAME(d->character), OLC_NUM(d));
           mudlog(buf, 'G', COM_BUILDER, TRUE);
           cleanup_olc(d, CLEANUP_ALL);
           return;
@@ -869,7 +869,7 @@ void sedit_parse(struct descriptor_data *d, char *arg)
             OLC_MODE(d) = SEDIT_CONFIRM_SAVESTRING;
           } else {
             cleanup_olc(d, CLEANUP_ALL);
-            sprintf(buf, "OLC: %s finished editing shop %d", GET_NAME(d->character), OLC_NUM(d));
+            snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing shop %d", GET_NAME(d->character), OLC_NUM(d));
             mudlog(buf, 'G', COM_BUILDER, TRUE);
           }
           return;

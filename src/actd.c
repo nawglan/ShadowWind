@@ -40,7 +40,7 @@ void load_actd(void)
   actd_list = NULL;
 
   if (!(fl = fopen(ACTD_FILE, "r"))) {
-    sprintf(buf2, "Error reading ACTD file %s", ACTD_FILE);
+    snprintf(buf2, MAX_STRING_LENGTH, "Error reading ACTD file %s", ACTD_FILE);
     perror(buf2);
     fflush(NULL);
     exit(1);
@@ -92,7 +92,7 @@ ACMD(do_actd)
       j = 0;
       while (actd && j < 20) {
         j++;
-        sprintf(buf, "%5d ", actd->actd_nr);
+        snprintf(buf, MAX_STRING_LENGTH, "%5d ", actd->actd_nr);
         send_to_char(buf, ch);
         actd = actd->next;
       }
@@ -108,7 +108,7 @@ ACMD(do_actd)
     }
 
     if (actd != NULL) {
-      sprintf(buf, "Definition of ACTD [%5d]:\r\n", actd->actd_nr);
+      snprintf(buf, MAX_STRING_LENGTH, "Definition of ACTD [%5d]:\r\n", actd->actd_nr);
       send_to_char(buf, ch);
       send_to_char("[CHAR] No argument - \r\n", ch);
       send_to_char(actd->char_no_arg, ch);

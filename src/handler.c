@@ -721,7 +721,7 @@ void obj_to_char(struct obj_data * object, struct char_data * ch)
     SET_BIT(PLR_FLAGS(ch), PLR_CRASH);
     if (GET_OBJ_RNUM(object) > -1) {
       if (obj_index[GET_OBJ_RNUM(object)].qic) {
-        sprintf(logbuffer, "%s to character %s", object->short_description, GET_NAME(ch));
+        snprintf(logbuffer, sizeof(logbuffer), "%s to character %s", object->short_description, GET_NAME(ch));
         mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
       }
     }
@@ -748,7 +748,7 @@ void obj_from_char(struct obj_data * object)
   SET_BIT(PLR_FLAGS(object->carried_by), PLR_CRASH);
   if (GET_OBJ_RNUM(object) > -1)
     if (obj_index[GET_OBJ_RNUM(object)].qic) {
-      sprintf(logbuffer, "%s from character %s", object->short_description, GET_NAME(object->carried_by));
+      snprintf(logbuffer, sizeof(logbuffer), "%s from character %s", object->short_description, GET_NAME(object->carried_by));
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
   IS_CARRYING_W(object->carried_by) -= GET_OBJ_WEIGHT(object);
@@ -794,13 +794,13 @@ void equip_char(struct char_data * ch, struct obj_data * obj, int pos)
   int invalid_class(struct char_data *ch, struct obj_data *obj);
 
   if (!(pos >= 0 && pos < NUM_WEARS)) {
-    sprintf(buf, "SYSERR: Invalid position (ch: %s, obj: %s, pos: %d)", GET_NAME(ch), obj->short_description, pos);
+    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Invalid position (ch: %s, obj: %s, pos: %d)", GET_NAME(ch), obj->short_description, pos);
     stderr_log(buf);
     return;
   }
 
   if (ch->equipment[pos]) {
-    sprintf(buf, "SYSERR: Char is already equipped: %s, %s", GET_NAME(ch), obj->short_description);
+    snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Char is already equipped: %s, %s", GET_NAME(ch), obj->short_description);
     stderr_log(buf);
     return;
   }
@@ -1042,7 +1042,7 @@ void obj_to_room(struct obj_data * object, int room)
       SET_BIT(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
     if (GET_OBJ_RNUM(object) > -1)
       if (obj_index[GET_OBJ_RNUM(object)].qic) {
-        sprintf(logbuffer, "%s to room %s", object->short_description, world[room].name);
+        snprintf(logbuffer, sizeof(logbuffer), "%s to room %s", object->short_description, world[room].name);
         mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
       }
 
@@ -1065,7 +1065,7 @@ void obj_from_room(struct obj_data * object)
 
   if (GET_OBJ_RNUM(object) > -1)
     if (obj_index[GET_OBJ_RNUM(object)].qic) {
-      sprintf(logbuffer, "%s from room %s", object->short_description, world[object->in_room].name);
+      snprintf(logbuffer, sizeof(logbuffer), "%s from room %s", object->short_description, world[object->in_room].name);
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
@@ -1082,7 +1082,7 @@ void obj_to_obj(struct obj_data * obj, struct obj_data * obj_to)
 
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      sprintf(logbuffer, "%s to obj %s", obj->short_description, obj_to->short_description);
+      snprintf(logbuffer, sizeof(logbuffer), "%s to obj %s", obj->short_description, obj_to->short_description);
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
@@ -1103,7 +1103,7 @@ void obj_to_obj2(struct obj_data * obj, struct obj_data * obj_to)
 {
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      sprintf(logbuffer, "%s to obj %s", obj->short_description, obj_to->short_description);
+      snprintf(logbuffer, sizeof(logbuffer), "%s to obj %s", obj->short_description, obj_to->short_description);
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
@@ -1127,7 +1127,7 @@ void obj_from_obj(struct obj_data * obj)
 
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      sprintf(logbuffer, "%s from obj %s", obj->short_description, obj_from->short_description);
+      snprintf(logbuffer, sizeof(logbuffer), "%s from obj %s", obj->short_description, obj_from->short_description);
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
@@ -1223,7 +1223,7 @@ void extract_obj(struct obj_data * obj)
     if (GET_OBJ_RNUM(tmpobj) > -1) {
       (obj_index[GET_OBJ_RNUM(tmpobj)].number)--;
       if (obj_index[GET_OBJ_RNUM(tmpobj)].qic) {
-        sprintf(logbuffer, "%s purged", tmpobj->short_description);
+        snprintf(logbuffer, sizeof(logbuffer), "%s purged", tmpobj->short_description);
         mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
       }
     }
@@ -1251,7 +1251,7 @@ void extract_obj(struct obj_data * obj)
   if (GET_OBJ_RNUM(obj) > -1) {
     (obj_index[GET_OBJ_RNUM(obj)].number)--;
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      sprintf(logbuffer, "%s purged", obj->short_description);
+      snprintf(logbuffer, sizeof(logbuffer), "%s purged", obj->short_description);
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
   }
@@ -1713,11 +1713,11 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper)
   } else {
     obj->name = strdup("coins");
     obj->short_description = strdup(money_desc(amount));
-    sprintf(buf, "%s is lying here.", money_desc(amount));
+    snprintf(buf, MAX_STRING_LENGTH, "%s is lying here.", money_desc(amount));
     obj->description = strdup(CAP(buf));
 
     new_descr->keyword = strdup("coins");
-    sprintf(buf, "You guess there are, maybe, %dp %dg %ds %dc.", 1000 * ((plat / 1000) + number(0, (plat / 1000))), 1000 * ((gold / 1000) + number(0, (gold / 1000))), 1000 * ((silver / 1000) + number(0, (silver / 1000))), 1000 * ((copper / 1000) + number(0, (copper / 1000))));
+    snprintf(buf, MAX_STRING_LENGTH, "You guess there are, maybe, %dp %dg %ds %dc.", 1000 * ((plat / 1000) + number(0, (plat / 1000))), 1000 * ((gold / 1000) + number(0, (gold / 1000))), 1000 * ((silver / 1000) + number(0, (silver / 1000))), 1000 * ((copper / 1000) + number(0, (copper / 1000))));
     new_descr->description = strdup(buf);
   }
 

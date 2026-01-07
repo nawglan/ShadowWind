@@ -139,7 +139,7 @@ ACMD(do_insult)
       send_to_char("Can't hear you!\r\n", ch);
     } else {
       if (victim != ch) {
-        sprintf(buf, "You insult %s.\r\n", GET_NAME(victim));
+        snprintf(buf, MAX_STRING_LENGTH, "You insult %s.\r\n", GET_NAME(victim));
         send_to_char(buf, ch);
 
         switch (number(0, 2)) {
@@ -206,7 +206,7 @@ void boot_social_messages(void)
 
   /* open social file */
   if (!(fl = fopen(SOCMESS_FILE, "r"))) {
-    sprintf(buf, "Can't open socials file '%s'", SOCMESS_FILE);
+    snprintf(buf, MAX_STRING_LENGTH, "Can't open socials file '%s'", SOCMESS_FILE);
     perror(buf);
     fflush(NULL);
     exit(1);
@@ -228,7 +228,7 @@ void boot_social_messages(void)
       break;
     }
     if ((nr = find_command(next_soc)) < 0) {
-      sprintf(buf, "Unknown social '%s' in social file", next_soc);
+      snprintf(buf, MAX_STRING_LENGTH, "Unknown social '%s' in social file", next_soc);
       stderr_log(buf);
     }
     if (fscanf(fl, " %d %d \n", &hide, &min_pos) != 2) {
