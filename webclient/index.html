@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShadowWind MUD</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/css/xterm.css">
+    <script src="https://cdn.jsdelivr.net/npm/pako@2.1.0/dist/pako.min.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #1a1a1a;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        #header {
+            background: #2d2d2d;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #444;
+        }
+        #header h1 {
+            color: #e0e0e0;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        #status {
+            color: #888;
+            font-size: 12px;
+            font-family: monospace;
+            cursor: pointer;
+        }
+        #status.connected { color: #4a4; }
+        #status.error { color: #a44; }
+        #terminal-container {
+            flex: 1;
+            padding: 4px;
+            overflow: hidden;
+        }
+        .xterm { height: 100%; }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>ShadowWind MUD</h1>
+        <div id="status">Connecting...</div>
+    </div>
+    <div id="terminal-container"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/lib/xterm.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.min.js"></script>
+    <script>
+        const term = new Terminal({
+            cursorBlink: true,
+            fontSize: 14,
+            fontFamily: '"Cascadia Code", "Fira Code", Menlo, Monaco, "Courier New", monospace',
+            theme: {
+                background: '#1a1a1a',
+                foreground: '#e0e0e0',
+                cursor: '#e0e0e0',
+                cursorAccent: '#1a1a1a',
+                black: '#1a1a1a',
+                red: '#ff6b6b',
+                green: '#69db7c',
+                yellow: '#ffd93d',
+                blue: '#74c0fc',
+                magenta: '#da77f2',
+                cyan: '#66d9e8',
+                white: '#e0e0e0',
+                brightBlack: '#666',
+                brightRed: '#ff8787',
+                brightGreen: '#8ce99a',
+                brightYellow: '#ffe066',
+                brightBlue: '#91d5ff',
+                brightMagenta: '#e599f7',
+                brightCyan: '#99e9f2',
+                brightWhite: '#fff'
+            },
+            scrollback: 10000,
+            convertEol: true
+        });
+
+        const fitAddon = new FitAddon.FitAddon();
+        term.loadAddon(fitAddon);
+        term.open(document.getElementById('terminal-container'));
+        fitAddon.fit();
+
+        const statusEl = document.getElementById('status');
+        let ws = null;
+        let reconnectTimer = null;
+
+        // Decode base64 to Uint8Array
+        function base64ToUint8Array(base64) {
+            const binaryString = atob(base64);
+            const bytes = new Uint8Array(binaryString.length);
+            for (let i = 0; i < binaryString.length; i++) {
+                bytes[i] = binaryString.charCodeAt(i);
+            }
+            return bytes;
+        }
+
+        // Decompress and decode data from server
+        function processServerData(data) {
+            try {
+                // Data is base64 encoded, possibly compressed
+                const compressed = base64ToUint8Array(data);
+
+                // Try to decompress with pako (deflateRaw)
+                try {
+                    const decompressed = pako.inflateRaw(compressed);
+                    return decompressed;
+                } catch (e) {
+                    // Not compressed, use as-is
+                    return compressed;
+                }
+            } catch (e) {
+                console.error('Error processing server data:', e);
+                return null;
+            }
+        }
+
+        function getWebSocketUrl() {
+            const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const basePath = location.pathname.replace(/\/$/, '').replace(/\/index\.html$/, '');
+            return proto + '//' + location.host + basePath + '/ws';
+        }
+
+        function connect() {
+            if (ws && ws.readyState === WebSocket.OPEN) return;
+            if (reconnectTimer) {
+                clearTimeout(reconnectTimer);
+                reconnectTimer = null;
+            }
+
+            const url = getWebSocketUrl();
+            console.log('Connecting to:', url);
+            statusEl.textContent = 'Connecting...';
+            statusEl.className = '';
+
+            ws = new WebSocket(url);
+
+            ws.onopen = function() {
+                console.log('WebSocket connected');
+                statusEl.textContent = 'Connected';
+                statusEl.className = 'connected';
+                term.focus();
+            };
+
+            ws.onmessage = function(e) {
+                // Check for JSON control messages
+                if (e.data.startsWith('{')) {
+                    try {
+                        const msg = JSON.parse(e.data);
+                        if (msg.echo !== undefined) {
+                            localEcho = msg.echo;
+                            console.log('Local echo:', localEcho ? 'enabled' : 'disabled');
+                        }
+                        return;
+                    } catch (err) {
+                        // Not JSON, treat as data
+                    }
+                }
+                // Server sends base64-encoded, compressed data
+                const data = processServerData(e.data);
+                if (data) {
+                    term.write(data);
+                }
+            };
+
+            ws.onclose = function(e) {
+                console.log('WebSocket closed:', e.code, e.reason);
+                statusEl.textContent = 'Disconnected - Click to reconnect';
+                statusEl.className = 'error';
+                ws = null;
+            };
+
+            ws.onerror = function(e) {
+                console.error('WebSocket error:', e);
+                statusEl.textContent = 'Connection error';
+                statusEl.className = 'error';
+            };
+        }
+
+        // Local echo state - enabled by default, disabled during password entry
+        let localEcho = true;
+
+        term.onData(function(data) {
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                // Local echo - display what we type
+                if (localEcho) {
+                    // Handle special characters
+                    if (data === '\r') {
+                        term.write('\r\n');
+                    } else if (data === '\x7f' || data === '\b') {
+                        // Backspace - move back, overwrite with space, move back
+                        term.write('\b \b');
+                    } else {
+                        term.write(data);
+                    }
+                }
+                // Send to server
+                ws.send(data);
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            fitAddon.fit();
+        });
+
+        statusEl.addEventListener('click', function() {
+            if (!ws || ws.readyState !== WebSocket.OPEN) {
+                term.clear();
+                connect();
+            }
+        });
+
+        connect();
+    </script>
+</body>
+</html>

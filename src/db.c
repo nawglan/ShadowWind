@@ -2535,8 +2535,13 @@ int get_idnum(void)
   FILE *idfile;
 
   if ((idfile = fopen(ID_FILE, "r")) == NULL) {
-    fclose(idfile);
+    /* File doesn't exist - create it */
     idfile = fopen(ID_FILE, "w");
+    if (idfile == NULL) {
+      perror("get_idnum: cannot create ID file");
+      top_of_p_table = 1;
+      return top_of_p_table;
+    }
     fprintf(idfile, "2");
     fclose(idfile);
     top_of_p_table = 1;

@@ -2,9 +2,10 @@
 
 REGISTRY := localhost:30500
 IMAGE := shadowwind
+WEBCLIENT_IMAGE := shadowwind-webclient
 TAG := latest
 
-.PHONY: all build clean docker-build docker-push k8s-deploy k8s-delete k8s-logs k8s-logs-websockify k8s-status k8s-port-forward deploy
+.PHONY: all build clean docker-build docker-push webclient-build webclient-push k8s-deploy k8s-delete k8s-logs k8s-logs-webclient k8s-status k8s-port-forward deploy
 
 # Default target - build the MUD binary
 all: build
@@ -25,8 +26,16 @@ docker-build:
 docker-push: docker-build
 	docker push $(REGISTRY)/$(IMAGE):$(TAG)
 
+# Build webclient Docker image
+webclient-build:
+	docker build -t $(REGISTRY)/$(WEBCLIENT_IMAGE):$(TAG) ./webclient
+
+# Push webclient Docker image to local registry
+webclient-push: webclient-build
+	docker push $(REGISTRY)/$(WEBCLIENT_IMAGE):$(TAG)
+
 # Deploy to k8s
-k8s-deploy: docker-push
+k8s-deploy: docker-push webclient-push
 	kubectl apply -f deploy/k8s/shadowwind.yaml
 	kubectl rollout restart deployment/shadowwind-mud -n shadowwind
 
@@ -38,9 +47,9 @@ k8s-delete:
 k8s-logs:
 	kubectl logs -f deployment/shadowwind-mud -c shadowwind -n shadowwind
 
-# View logs from websockify sidecar
-k8s-logs-websockify:
-	kubectl logs -f deployment/shadowwind-mud -c websockify -n shadowwind
+# View logs from webclient sidecar
+k8s-logs-webclient:
+	kubectl logs -f deployment/shadowwind-mud -c webclient -n shadowwind
 
 # Check deployment status
 k8s-status:
