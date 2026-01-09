@@ -1,0 +1,28 @@
+# Build artifacts
+bin/
+src/*.o
+src/*.d
+
+# Git
+.git/
+.gitignore
+
+# Editor files
+*.swp
+*.swo
+*~
+
+# Documentation
+*.md
+README*
+
+# Deploy configs (not needed in image)
+deploy/
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+*.log
+*.tmp

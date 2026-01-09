@@ -1,0 +1,313 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: shadowwind
+
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: shadowwind-webclient
+  namespace: shadowwind
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ShadowWind MUD</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/css/xterm.css">
+        <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body {
+                background: #1a1a1a;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                font-family: system-ui, -apple-system, sans-serif;
+            }
+            #header {
+                background: #2d2d2d;
+                padding: 8px 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 1px solid #444;
+            }
+            #header h1 {
+                color: #e0e0e0;
+                font-size: 16px;
+                font-weight: 500;
+            }
+            #status {
+                color: #888;
+                font-size: 12px;
+                font-family: monospace;
+            }
+            #status.connected { color: #4a4; }
+            #status.error { color: #a44; }
+            #terminal-container {
+                flex: 1;
+                padding: 4px;
+                overflow: hidden;
+            }
+            .xterm { height: 100%; }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <h1>ShadowWind MUD - Legacy Client</h1>
+            <div id="status">Connecting...</div>
+        </div>
+        <div id="terminal-container"></div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@xterm/xterm@5.5.0/lib/xterm.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@xterm/addon-fit@0.10.0/lib/addon-fit.min.js"></script>
+        <script>
+            const term = new Terminal({
+                cursorBlink: true,
+                fontSize: 14,
+                fontFamily: '"Cascadia Code", "Fira Code", Menlo, Monaco, "Courier New", monospace',
+                theme: {
+                    background: '#1a1a1a',
+                    foreground: '#e0e0e0',
+                    cursor: '#e0e0e0',
+                    cursorAccent: '#1a1a1a',
+                    black: '#1a1a1a',
+                    red: '#ff6b6b',
+                    green: '#69db7c',
+                    yellow: '#ffd93d',
+                    blue: '#74c0fc',
+                    magenta: '#da77f2',
+                    cyan: '#66d9e8',
+                    white: '#e0e0e0',
+                    brightBlack: '#666',
+                    brightRed: '#ff8787',
+                    brightGreen: '#8ce99a',
+                    brightYellow: '#ffe066',
+                    brightBlue: '#91d5ff',
+                    brightMagenta: '#e599f7',
+                    brightCyan: '#99e9f2',
+                    brightWhite: '#fff'
+                },
+                scrollback: 10000,
+                convertEol: true
+            });
+
+            const fitAddon = new FitAddon.FitAddon();
+            term.loadAddon(fitAddon);
+            term.open(document.getElementById('terminal-container'));
+            fitAddon.fit();
+
+            const statusEl = document.getElementById('status');
+            let ws = null;
+            let reconnectTimer = null;
+
+            function getWebSocketUrl() {
+                const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const path = location.pathname.replace(/\/$/, '');
+                return proto + '//' + location.host + path + '/websockify';
+            }
+
+            function connect() {
+                if (ws && ws.readyState === WebSocket.OPEN) return;
+
+                const url = getWebSocketUrl();
+                statusEl.textContent = 'Connecting...';
+                statusEl.className = '';
+
+                ws = new WebSocket(url);
+                ws.binaryType = 'arraybuffer';
+
+                ws.onopen = function() {
+                    statusEl.textContent = 'Connected';
+                    statusEl.className = 'connected';
+                    term.focus();
+                    if (reconnectTimer) {
+                        clearTimeout(reconnectTimer);
+                        reconnectTimer = null;
+                    }
+                };
+
+                ws.onmessage = function(e) {
+                    if (typeof e.data === 'string') {
+                        term.write(e.data);
+                    } else {
+                        term.write(new Uint8Array(e.data));
+                    }
+                };
+
+                ws.onclose = function() {
+                    statusEl.textContent = 'Disconnected - Reconnecting...';
+                    statusEl.className = 'error';
+                    term.write('\r\n\r\n*** Connection lost ***\r\n');
+                    reconnectTimer = setTimeout(connect, 3000);
+                };
+
+                ws.onerror = function() {
+                    statusEl.textContent = 'Connection error';
+                    statusEl.className = 'error';
+                };
+            }
+
+            term.onData(function(data) {
+                if (ws && ws.readyState === WebSocket.OPEN) {
+                    ws.send(data);
+                }
+            });
+
+            window.addEventListener('resize', function() {
+                fitAddon.fit();
+            });
+
+            statusEl.addEventListener('click', function() {
+                if (!ws || ws.readyState !== WebSocket.OPEN) {
+                    connect();
+                }
+            });
+
+            connect();
+        </script>
+    </body>
+    </html>
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: shadowwind-playerdata
+  namespace: shadowwind
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: local-path
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shadowwind-mud
+  namespace: shadowwind
+  labels:
+    app: shadowwind-mud
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate  # MUD can only have one instance due to file locks
+  selector:
+    matchLabels:
+      app: shadowwind-mud
+  template:
+    metadata:
+      labels:
+        app: shadowwind-mud
+    spec:
+      initContainers:
+        - name: init-dirs
+          image: busybox:1.36
+          command: ['sh', '-c', 'mkdir -p /data/plrdata/A-E /data/plrdata/F-J /data/plrdata/K-O /data/plrdata/P-T /data/plrdata/U-Z /data/plrdata/ZZZ /data/plrlogs/A-E /data/plrlogs/F-J /data/plrlogs/K-O /data/plrlogs/P-T /data/plrlogs/U-Z /data/plrlogs/ZZZ /data/plrobjs/A-E /data/plrobjs/F-J /data/plrobjs/K-O /data/plrobjs/P-T /data/plrobjs/U-Z /data/plrobjs/ZZZ /data/plrtext/A-E /data/plrtext/F-J /data/plrtext/K-O /data/plrtext/P-T /data/plrtext/U-Z /data/plrtext/ZZZ /data/etc /data/house']
+          volumeMounts:
+            - name: playerdata
+              mountPath: /data
+      containers:
+        - name: shadowwind
+          image: localhost:30500/shadowwind:latest
+          ports:
+            - containerPort: 9999
+              protocol: TCP
+          volumeMounts:
+            - name: playerdata
+              mountPath: /app/lib/plrdata
+              subPath: plrdata
+            - name: playerdata
+              mountPath: /app/lib/plrlogs
+              subPath: plrlogs
+            - name: playerdata
+              mountPath: /app/lib/plrobjs
+              subPath: plrobjs
+            - name: playerdata
+              mountPath: /app/lib/plrtext
+              subPath: plrtext
+            - name: playerdata
+              mountPath: /app/lib/etc
+              subPath: etc
+            - name: playerdata
+              mountPath: /app/lib/house
+              subPath: house
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          readinessProbe:
+            tcpSocket:
+              port: 9999
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            tcpSocket:
+              port: 9999
+            initialDelaySeconds: 10
+            periodSeconds: 30
+        - name: websockify
+          image: python:3.12-slim
+          command: ["sh", "-c"]
+          args:
+            - |
+              pip install --quiet websockify && \
+              websockify --web=/web 8080 localhost:9999
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+              name: websocket
+          volumeMounts:
+            - name: webclient
+              mountPath: /web
+          resources:
+            requests:
+              memory: "32Mi"
+              cpu: "25m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 10
+      volumes:
+        - name: playerdata
+          persistentVolumeClaim:
+            claimName: shadowwind-playerdata
+        - name: webclient
+          configMap:
+            name: shadowwind-webclient
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: shadowwind-mud
+  namespace: shadowwind
+  labels:
+    app: shadowwind-mud
+spec:
+  type: ClusterIP
+  ports:
+    - port: 9999
+      targetPort: 9999
+      protocol: TCP
+      name: telnet
+    - port: 8080
+      targetPort: 8080
+      protocol: TCP
+      name: websocket
+  selector:
+    app: shadowwind-mud
