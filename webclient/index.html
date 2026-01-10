@@ -187,6 +187,7 @@
 
         // Local echo state - enabled by default, disabled during password entry
         let localEcho = true;
+        let inputLength = 0;
 
         term.onData(function(data) {
             if (ws && ws.readyState === WebSocket.OPEN) {
@@ -195,15 +196,21 @@
                     // Handle special characters
                     if (data === '\r') {
                         term.write('\r\n');
+                        inputLength = 0;
                     } else if (data === '\x7f' || data === '\b') {
-                        // Backspace - move back, overwrite with space, move back
-                        term.write('\b \b');
+                        // Backspace - only if we have input to delete
+                        if (inputLength > 0) {
+                            term.write('\b \b');
+                            inputLength--;
+                        }
                     } else {
                         term.write(data);
+                        inputLength += data.length;
                     }
                 }
-                // Send to server
-                ws.send(data);
+                // Send to server - convert DEL (0x7F) to backspace (0x08) for MUD compatibility
+                const sendData = (data === '\x7f') ? '\b' : data;
+                ws.send(sendData);
             }
         });
 
