@@ -31,8 +31,6 @@ if ispc ($r)
      mpechoat $r A young ruffian bumps into you, suddenly jumping back in surprise.
      mpechoaround $r A young ruffian bumps into $r, suddenly jumping back in surprise.
      say oi sorry gov', was an accident ya know.
-  endif
- else
 endif
 ~
 >rand_prog    15~
@@ -110,8 +108,6 @@ E 1 15 3109 15
     mpdelay 5
     giggle
   endif
- else
-endif
 ~
 >rand_prog                                              		10~
   emot squeals in delight as she spies another must have purchase.
@@ -122,8 +118,6 @@ mpecho A shopper cries out, 'STOP STOP, leave me alone!'
 >fight_prog                                              		5~
 if ispc ($n)
   shout $n is trying to kill me! HELP
-  endif
- else
 endif
 ~
 |
@@ -310,21 +304,20 @@ E 6 70 3113 -1
 E 1 75 3112 -1
 >greet_prog                                        		100~
 if isnpc($n)
- break
+  break
 else
-if isfollow($n)
- break
-else
-   mpdelay 5
-   mpecho A housewife quickly turns around, startled at your entrance.
-   mpdelay 5
-   say get out of my house.
-   mpdelay 5
-   shout someone help me! $n is in my house!
-   mpdelay 40
-   say well? what are you waiting for? I said OUT!
+  if isfollow($n)
+    break
+  else
+    mpdelay 5
+    mpecho A housewife quickly turns around, startled at your entrance.
+    mpdelay 5
+    say get out of my house.
+    mpdelay 5
+    shout someone help me! $n is in my house!
+    mpdelay 40
+    say well? what are you waiting for? I said OUT!
   endif
- endif
 endif
 ~
 |

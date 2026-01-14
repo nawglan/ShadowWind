@@ -91,22 +91,20 @@ T 100 1d4+1 11
 >all_greet_prog 100~
 if isnpc($n)
   break
-    else
-      if level($n) >= 7
-      tell $n Hay this area is for newbies, beat it bub!
-      mpechoat $n An old fisherman pushes you off to the east.
-      mpechoaround $n An old fisherman pushes $n off to the east.
-      mptrans $n 3407
-      mpforce $n look
-      mpechoaround $n $n stumbles in from the west.
-    break
-      else
-        mpoload 1235
-        drop raft
-        smile
-        mpdelay 10
-        tell $n It's a lovely day for fishing!
-     endif  
+else
+  if level($n) >= 7
+    tell $n Hay this area is for newbies, beat it bub!
+    mpechoat $n An old fisherman pushes you off to the east.
+    mpechoaround $n An old fisherman pushes $n off to the east.
+    mptrans $n 3407
+    mpforce $n look
+    mpechoaround $n $n stumbles in from the west.
+  else
+    mpoload 1235
+    drop raft
+    smile
+    mpdelay 10
+    tell $n It's a lovely day for fishing!
   endif
 endif
 ~

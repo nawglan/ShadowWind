@@ -367,7 +367,6 @@ A 4 8 $n looks around, scanning quickly for a bargain.
 >rand_prog                                                                           30~
 if inroom ($i) == 3000
   drink fountain
-else
 endif
 ~
 |
@@ -947,7 +946,6 @@ Dex: 75
 if ispc ($n)
   shout Intruders in the merchant's warehouse!
   mpkill $n
-else
 endif
 ~
 |

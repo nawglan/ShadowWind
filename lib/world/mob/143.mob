@@ -28,7 +28,6 @@ A 5 8 $n says, 'If you wish to enter, all you must do is ask.'
 >ask_prog   key hi hello help enter~
 mpdelay 10
 tell $n You would like to enter? A key will cost you 5 gold coins.
-endif
 ~
 |
 #14302
@@ -251,6 +250,5 @@ say now be on your way, before I call the guards.
 >ask_prog   key hi hello help enter~
 mpdelay 10
 tell $n You would like to enter? A key will cost you 5 gold coins.
-endif
 ~
 |
