@@ -622,14 +622,13 @@ A 2 8 $n says, 'We have had much interest in this property.'
 E 8 100 20608 -1
 E 12 100 20653 -1
 >greet_prog   100~
- mpdelay 20
- if isfollow($n)
-   mpat 0 smile
- else
-   smile $n
-   mpdelay 25
-   say Welcome, feel free to look around the place.
- endif
+if isfollow($n)
+  break
+endif
+mpdelay 20
+smile $n
+mpdelay 25
+say Welcome, feel free to look around the place.
 ~
 |
 #20619

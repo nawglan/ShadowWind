@@ -1193,12 +1193,11 @@ T 100 2d5+0 22
 >greet_prog         50~
 if isfollow($n)
   break
-else
-  mpdelay 20
-  emote howls in an extremely loud, low pitch.
-  mpdelay 40
-  bark $n
 endif
+mpdelay 20
+emote howls in an extremely loud, low pitch.
+mpdelay 40
+bark $r
 ~
 >rand_prog  20~
 growl $r

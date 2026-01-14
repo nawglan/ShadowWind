@@ -513,12 +513,10 @@ bd 0 900 X 0
 T 100 2d7+0 0
 >greet_prog                                                                    100~
 if isimmort($n)
-  say Oh, its one of your kind. Let me interrupted the mayor immediately...
-  mpdelay 5
+  say Oh, its one of your kind. Let me interrupt the mayor immediately...
   emot hurries off.
   stand
   n
-  mpdelay 15
   s
   sit
 else
@@ -527,15 +525,11 @@ else
   else
     if ispc ($n)
       say Sorry, but the Mayor is extremely busy today.
-      mpdelay 10
       say Please sit down and have a seat in the meantime.
     else
       say Sorry $n, the Mayor can not see you today.
-      mpdelay 10
       say Please exit to your south.
-      mpdelay 10
       mpforce $n nod $i
-      mpdelay 10
       mpforce $n s
     endif
   endif
