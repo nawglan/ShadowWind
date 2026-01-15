@@ -1281,18 +1281,18 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
       break;
 
     case 'I':
-      strcpy(t, mob->player.short_descr);
+      safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", mob->player.short_descr);
       break;
 
     case 'n':
       if (actor) {
         if (CAN_SEE(mob, actor)) {
           if (!IS_NPC(actor)) {
-            strcpy(t, actor->player.name);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", actor->player.name);
           } else
             one_argument(actor->player.name, t);
         } else
-          strcpy(t, "Someone");
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "Someone");
       }
       break;
 
@@ -1300,14 +1300,12 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
       if (actor) {
         if (CAN_SEE(mob, actor)) {
           if (IS_NPC(actor)) {
-            strcpy(t, actor->player.short_descr);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", actor->player.short_descr);
           } else {
-            strcpy(t, actor->player.name);
-            strcat(t, " ");
-            strcat(t, actor->player.title);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s %s", actor->player.name, actor->player.title);
           }
         } else {
-          strcpy(t, "someone");
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "someone");
         }
       }
       break;
@@ -1316,12 +1314,12 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
       if (vict) {
         if (CAN_SEE(mob, vict)) {
           if (!IS_NPC(vict)) {
-            strcpy(t, vict->player.name);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", vict->player.name);
           } else {
             one_argument(vict->player.name, t);
           }
         } else {
-          strcpy(t, "Someone");
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "Someone");
         }
       }
       break;
@@ -1330,14 +1328,12 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
       if (vict) {
         if (CAN_SEE(mob, vict)) {
           if (IS_NPC(vict)) {
-            strcpy(t, vict->player.short_descr);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", vict->player.short_descr);
           } else {
-            strcpy(t, vict->player.name);
-            strcat(t, " ");
-            strcat(t, vict->player.title);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s %s", vict->player.name, vict->player.title);
           }
         } else {
-          strcpy(t, "someone");
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "someone");
         }
       }
       break;
@@ -1346,12 +1342,12 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
       if (rndm) {
         if (CAN_SEE(mob, rndm)) {
           if (!IS_NPC(rndm)) {
-            strcpy(t, rndm->player.name);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", rndm->player.name);
           } else {
             one_argument(rndm->player.name, t);
           }
         } else {
-          strcpy(t, "Someone");
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "Someone");
         }
       }
       break;
@@ -1360,105 +1356,109 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
       if (rndm) {
         if (CAN_SEE(mob, rndm)) {
           if (IS_NPC(rndm)) {
-            strcpy(t, rndm->player.short_descr);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", rndm->player.short_descr);
           } else {
-            strcpy(t, rndm->player.name);
-            strcat(t, " ");
-            strcat(t, rndm->player.title);
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s %s", rndm->player.name, rndm->player.title);
           }
         } else {
-          strcpy(t, "someone");
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "someone");
         }
       }
       break;
 
     case 'e':
       if (actor) {
-        CAN_SEE(mob, actor) ? strcpy(t, he_she[(int) actor->player.sex]) : strcpy(t, "someone");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, actor) ? he_she[(int) actor->player.sex] : "someone");
       }
       break;
 
     case 'm':
       if (actor) {
-        CAN_SEE(mob, actor) ? strcpy(t, him_her[(int) actor->player.sex]) : strcpy(t, "someone");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, actor) ? him_her[(int) actor->player.sex] : "someone");
       }
       break;
 
     case 's':
       if (actor) {
-        CAN_SEE(mob, actor) ? strcpy(t, his_her[(int) actor->player.sex]) : strcpy(t, "someone's");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, actor) ? his_her[(int) actor->player.sex] : "someone's");
       }
       break;
 
     case 'E':
       if (vict) {
-        CAN_SEE(mob, vict) ? strcpy(t, he_she[(int) vict->player.sex]) : strcpy(t, "someone");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, vict) ? he_she[(int) vict->player.sex] : "someone");
       }
       break;
 
     case 'M':
       if (vict) {
-        CAN_SEE(mob, vict) ? strcpy(t, him_her[(int) vict->player.sex]) : strcpy(t, "someone");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, vict) ? him_her[(int) vict->player.sex] : "someone");
       }
       break;
 
     case 'S':
       if (vict) {
-        CAN_SEE(mob, vict) ? strcpy(t, his_her[(int) vict->player.sex]) : strcpy(t, "someone's");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, vict) ? his_her[(int) vict->player.sex] : "someone's");
       }
       break;
 
     case 'j':
-      strcpy(t, he_she[(int) mob->player.sex]);
+      safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", he_she[(int) mob->player.sex]);
       break;
 
     case 'k':
-      strcpy(t, him_her[(int) mob->player.sex]);
+      safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", him_her[(int) mob->player.sex]);
       break;
 
     case 'l':
-      strcpy(t, his_her[(int) mob->player.sex]);
+      safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", his_her[(int) mob->player.sex]);
       break;
 
     case 'J':
       if (rndm) {
-        CAN_SEE(mob, rndm) ? strcpy(t, he_she[(int) rndm->player.sex]) : strcpy(t, "someone");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, rndm) ? he_she[(int) rndm->player.sex] : "someone");
       }
       break;
 
     case 'K':
       if (rndm) {
-        CAN_SEE(mob, rndm) ? strcpy(t, him_her[(int) rndm->player.sex]) : strcpy(t, "someone");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, rndm) ? him_her[(int) rndm->player.sex] : "someone");
       }
       break;
 
     case 'L':
       if (rndm) {
-        CAN_SEE(mob, rndm) ? strcpy(t, his_her[(int) rndm->player.sex]) : strcpy(t, "someone's");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE(mob, rndm) ? his_her[(int) rndm->player.sex] : "someone's");
       }
       break;
 
     case 'o':
       if (obj) {
-        CAN_SEE_OBJ(mob, obj) ? one_argument(obj->name, t) : strcpy(t, "something");
+        if (CAN_SEE_OBJ(mob, obj))
+          one_argument(obj->name, t);
+        else
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "something");
       }
       break;
 
     case 'O':
       if (obj) {
-        CAN_SEE_OBJ(mob, obj) ? strcpy(t, obj->short_description) : strcpy(t, "something");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE_OBJ(mob, obj) ? obj->short_description : "something");
       }
       break;
 
     case 'p':
       if (v_obj) {
-        CAN_SEE_OBJ(mob, v_obj) ? one_argument(v_obj->name, t) : strcpy(t, "something");
+        if (CAN_SEE_OBJ(mob, v_obj))
+          one_argument(v_obj->name, t);
+        else
+          safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "something");
       }
       break;
 
     case 'P':
       if (v_obj) {
-        CAN_SEE_OBJ(mob, v_obj) ? strcpy(t, v_obj->short_description) : strcpy(t, "something");
+        safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", CAN_SEE_OBJ(mob, v_obj) ? v_obj->short_description : "something");
       }
       break;
 
@@ -1470,10 +1470,10 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
           case 'i':
           case 'o':
           case 'u':
-            strcpy(t, "an");
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "an");
             break;
           default:
-            strcpy(t, "a");
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "a");
         }
       break;
 
@@ -1485,15 +1485,15 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
           case 'i':
           case 'o':
           case 'u':
-            strcpy(t, "an");
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "an");
             break;
           default:
-            strcpy(t, "a");
+            safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "a");
         }
       break;
 
     case '$':
-      strcpy(t, "$");
+      safe_snprintf(t, MAX_INPUT_LENGTH * 2, "%s", "$");
       break;
 
     default:
@@ -1727,13 +1727,13 @@ void mprog_wordlist_check(char *arg, struct char_data *mob, struct char_data *ac
 
   for (mprg = mob_index[mob->nr].mobprogs; mprg != NULL; mprg = mprg->next)
     if (mprg->type & type) {
-      strcpy(temp1, mprg->arglist);
+      safe_snprintf(temp1, sizeof(temp1), "%s", mprg->arglist);
       list = temp1;
       while (isspace(*list))
         list++;
       for (i = 0; i < strlen(list); i++)
         list[i] = LOWER(list[i]);
-      strcpy(temp2, arg);
+      safe_snprintf(temp2, sizeof(temp2), "%s", arg);
       dupl = temp2;
       for (i = 0; i < strlen(dupl); i++)
         dupl[i] = LOWER(dupl[i]);
@@ -2043,10 +2043,10 @@ void mprog_time_trigger(struct time_info_data time)
         pdaym = NULL;
         phour = NULL;
 
-        strcpy(buf, mprg->arglist);
+        safe_snprintf(buf, sizeof(buf), "%s", mprg->arglist);
         if ((mprg->type & TIME_PROG)) {
           if (scan_time(buf, &pyear, &pmonth, &pweek, &pdayw, &pdaym, &phour) == -2) {
-            sprintf(error, "time_prog error: bad time format in mob %d", mob_index[list->nr].virtual);
+            safe_snprintf(error, sizeof(error), "time_prog error: bad time format in mob %d", mob_index[list->nr].virtual);
             mudlog(error, 'E', COM_IMMORT, TRUE);
             continue;
           }
@@ -2715,7 +2715,7 @@ int istime(char* time_string)
   phour = NULL;
 
   if (scan_time(time_string, &pyear, &pmonth, &pweek, &pdayw, &pdaym, &phour) == -2) {
-    sprintf(error, "istime error: bad time format if check on %s", time_string);
+    safe_snprintf(error, sizeof(error), "istime error: bad time format if check on %s", time_string);
     mudlog(error, 'E', COM_IMMORT, TRUE);
     return 0;
   }
@@ -2793,7 +2793,7 @@ void handle_mpdelay(char* delay, char* cmnd, struct char_data* mob, struct char_
     temp->delay = 5;
   }
 
-  strcpy(temp->remaining_cmnds, cmnd);
+  memcpy(temp->remaining_cmnds, cmnd, strlen(cmnd) + 1);
 
 }
 

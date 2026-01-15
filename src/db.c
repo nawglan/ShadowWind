@@ -609,7 +609,7 @@ void discrete_load(FILE * fl, int mode)
             parse_quest(fl, nr);
             break;
           case DB_BOOT_OBJ:
-            strcpy(line, parse_object(fl, nr));
+            safe_snprintf(line, sizeof(line), "%s", parse_object(fl, nr));
             break;
         }
     } else {
@@ -1714,7 +1714,7 @@ char *parse_object(FILE * obj_f, int nr)
     obj_proto[i].resists[j] = 0;
   }
 
-  strcat(buf2, ", after numeric constants (expecting E/A/#xxx)");
+  safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s", ", after numeric constants (expecting E/A/#xxx)");
   j = 0;
 
   spellnum = 1;
@@ -1820,7 +1820,7 @@ void load_zones(FILE * fl, char *zonename)
   int cmd_no = 0, num_of_cmds = 0, line_num = 0, atmp, tmp, error, i;
   char *ptr, buf[256], zname[256], flags[128];
 
-  strcpy(zname, zonename);
+  safe_snprintf(zname, sizeof(zname), "%s", zonename);
 
   while (get_line(fl, buf))
     num_of_cmds++; /* this should be correct within 3 or so */
@@ -1982,8 +1982,7 @@ int vnum_mobile(char *searchname, struct char_data * ch)
         }
       }
       if (oktosee && zonenum != 0) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%3d. [%5d] %s\r\n", ++found, mob_index[nr].virtual, mob_proto[nr].player.short_descr);
-        strcat(mybuf, buf);
+        safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found, mob_index[nr].virtual, mob_proto[nr].player.short_descr);
       }
     }
   }
@@ -2017,8 +2016,7 @@ int vnum_object(char *searchname, struct char_data * ch)
         }
       }
       if (oktosee && zonenum != 0) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
-        strcat(mybuf, buf);
+        safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
       }
     }
   }
@@ -2041,8 +2039,7 @@ int vnum_type(char *searchtype, struct char_data * ch)
 
   for (nr = 0; nr <= top_of_objt; nr++) {
     if (GET_OBJ_TYPE(obj_proto+nr) == type) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
-      strcat(mybuf, buf);
+      safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
     }
   }
   page_string(ch->desc, mybuf, 1);
@@ -2826,7 +2823,7 @@ int load_char_text(char *name, struct char_data * char_element)
         break;
       case 'H':
         if (!strcmp(field, "host")) {
-          strcpy(GET_HOST(ctmp), value);
+          safe_snprintf(GET_HOST(ctmp), HOST_LENGTH + 1, "%s", value);
         } else if (!strcmp(field, "hometown")) {
           GET_HOME(ctmp) = numval;
         } else if (!strcmp(field, "height")) {
@@ -2927,7 +2924,7 @@ int load_char_text(char *name, struct char_data * char_element)
         if (!strcmp(field, "played")) {
           GET_PLAYED(ctmp) = numval;
         } else if (!strcmp(field, "password")) {
-          strcpy(GET_PASSWD(ctmp), value);
+          safe_snprintf(GET_PASSWD(ctmp), MAX_PWD_LENGTH + 1, "%s", value);
         } else if (!strcmp(field, "plat")) {
           GET_PLAT(ctmp) = numval;
           GET_TEMP_GOLD(ctmp) += numval * 1000;
@@ -3204,7 +3201,7 @@ void save_char_text(struct char_data * ch, sh_int load_room)
 
   if (GET_DESC(ch)) {
     memset(descript, 0, EXDSCR_LENGTH);
-    strcpy(descript, GET_DESC(ch));
+    safe_snprintf(descript, EXDSCR_LENGTH, "%s", GET_DESC(ch));
     strip_string(descript);
     while ((p = strchr(descript, '~')) != NULL) {
       *p = ' ';
@@ -3562,7 +3559,7 @@ char *fread_string(FILE * fl, char *error)
       fflush(NULL);
       exit(1);
     } else {
-      strcpy(buf + length, tmp);
+      memcpy(buf + length, tmp, templength + 1);
       length += templength;
     }
   } while (!done);
@@ -3570,7 +3567,7 @@ char *fread_string(FILE * fl, char *error)
   /* allocate space for the new string and copy it */
   if (length > 0) {
     CREATE(rslt, char, length + 1);
-    strcpy(rslt, buf);
+    memcpy(rslt, buf, length + 1);
     rslt[length] = '\0';
   } else
     rslt = NULL;
@@ -3897,15 +3894,19 @@ int file_to_string(char *name, char *buf)
   *buf = '\0';
 
   if (!(fl = fopen(name, "r"))) {
-    sprintf(tmp, "Error reading %s", name);
+    safe_snprintf(tmp, sizeof(tmp), "Error reading %s", name);
     perror(tmp);
     return (-1);
   }
   memset(tmp, 0, MAX_STRING_LENGTH + 1024);
   do {
     fgets(tmp, MAX_STRING_LENGTH, fl);
-    tmp[strlen(tmp) - 1] = '\0';/* take off the trailing \n */
-    strcat(tmp, "\r\n");
+    templength = strlen(tmp);
+    if (templength > 0) {
+      tmp[templength - 1] = '\0';/* take off the trailing \n */
+      templength--;
+    }
+    safe_snprintf(tmp + templength, sizeof(tmp) - templength, "\r\n");
     templength = strlen(tmp);
 
     if (!feof(fl)) {
@@ -3914,7 +3915,7 @@ int file_to_string(char *name, char *buf)
         *buf = '\0';
         return (-1);
       }
-      strcpy(buf + buflength, tmp);
+      memcpy(buf + buflength, tmp, templength + 1);
       buflength += templength;
     }
   } while (!feof(fl));
@@ -4292,11 +4293,11 @@ MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
   FILE *progfile;
   bool done = FALSE;
 
-  sprintf(MOBProgfile, "%s/%s", MOB_DIR, f);
+  safe_snprintf(MOBProgfile, sizeof(MOBProgfile), "%s/%s", MOB_DIR, f);
 
   progfile = fopen(MOBProgfile, "r");
   if (!progfile) {
-    sprintf(err_buf, "Mob: %d couldnt open mobprog file", pMobIndex->virtual);
+    safe_snprintf(err_buf, MAX_STRING_LENGTH, "Mob: %d couldnt open mobprog file", pMobIndex->virtual);
     stderr_log(err_buf);
     fflush(NULL);
     exit(1);
@@ -4351,7 +4352,7 @@ MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
             done = TRUE;
             break;
           default:
-            sprintf(err_buf, "in mobprog file %s syntax error.", f);
+            safe_snprintf(err_buf, MAX_STRING_LENGTH, "in mobprog file %s syntax error.", f);
             stderr_log(err_buf);
             fflush(NULL);
             exit(1);
@@ -4394,14 +4395,14 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
   bool done = FALSE;
 
   if ((letter = fread_letter(fp)) != '>') {
-    sprintf(err_buf, "Load_mobiles: vnum %d MOBPROG char", pMobIndex->virtual);
+    safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d MOBPROG char", pMobIndex->virtual);
     stderr_log(err_buf);
     fflush(NULL);
     exit(1);
   }
   pMobIndex->mobprogs = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
   if (pMobIndex->mobprogs == NULL) {
-    sprintf(err_buf, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
+    safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
     stderr_log(err_buf);
     fflush(NULL);
     exit(1);
@@ -4412,7 +4413,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
     mprg->type = mprog_name_to_type(fread_word(fp));
     switch (mprg->type) {
       case ERROR_PROG:
-        sprintf(err_buf, "Load_mobiles: vnum %d MOBPROG type.", pMobIndex->virtual);
+        safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d MOBPROG type.", pMobIndex->virtual);
         stderr_log(err_buf);
         fflush(NULL);
         exit(1);
@@ -4425,7 +4426,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
           case '>':
             mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
             if (mprg->next == NULL) {
-              sprintf(err_buf, "SYSERR: malloc failure in mprog_read_programs (IN_FILE_PROG) for vnum %d", pMobIndex->virtual);
+              safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs (IN_FILE_PROG) for vnum %d", pMobIndex->virtual);
               stderr_log(err_buf);
               fflush(NULL);
               exit(1);
@@ -4439,7 +4440,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
             done = TRUE;
             break;
           default:
-            sprintf(err_buf, "Load_mobiles: vnum %d bad MOBPROG.", pMobIndex->virtual);
+            safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d bad MOBPROG.", pMobIndex->virtual);
             stderr_log(err_buf);
             fflush(NULL);
             exit(1);
@@ -4455,7 +4456,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
           case '>':
             mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
             if (mprg->next == NULL) {
-              sprintf(err_buf, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
+              safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
               stderr_log(err_buf);
               fflush(NULL);
               exit(1);
@@ -4469,7 +4470,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
             done = TRUE;
             break;
           default:
-            sprintf(err_buf, "Load_mobiles: vnum %d bad MOBPROG (%c).", pMobIndex->virtual, letter);
+            safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d bad MOBPROG (%c).", pMobIndex->virtual, letter);
             stderr_log(err_buf);
             fflush(NULL);
             exit(1);

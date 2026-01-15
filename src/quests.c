@@ -224,7 +224,7 @@ int check_quest_status(struct char_data *me, struct char_data *player, struct qu
   }
 
   if (quest->maxlevel < GET_LEVEL(player)) {
-    sprintf(qbuf, "$n says, 'Aren't you a bit advanced for this quest?  You must be of level %d or less to participate.'", quest->maxlevel);
+    safe_snprintf(qbuf, sizeof(qbuf), "$n says, 'Aren't you a bit advanced for this quest?  You must be of level %d or less to participate.'", quest->maxlevel);
     act(qbuf, TRUE, me, 0, player, TO_VICT);
     return 0;
   }
@@ -368,9 +368,9 @@ int give_quest_item(struct quest_data *quest, int type, struct obj_data* obj, in
         } else {
           if (quest->needs[i].need_more_msg) {
             if (amount) {
-              sprintf(tbuf, quest->needs[i].need_more_msg, make_money_text(quest->needs[i].amount - p->given));
+              safe_snprintf(tbuf, sizeof(tbuf), quest->needs[i].need_more_msg, make_money_text(quest->needs[i].amount - p->given));
             } else {
-              sprintf(tbuf, quest->needs[i].need_more_msg, quest->needs[i].amount - p->given);
+              safe_snprintf(tbuf, sizeof(tbuf), quest->needs[i].need_more_msg, quest->needs[i].amount - p->given);
             }
             send_to_char(quest->needs[i].need_more_msg, ch);
           }
@@ -658,7 +658,7 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
             }
           }
         }
-        sprintf(qbuf, "%s says, 'I am in need of the following:'\r\n", CAP(GET_MOB_NAME(vict)));
+        safe_snprintf(qbuf, sizeof(qbuf), "%s says, 'I am in need of the following:'\r\n", CAP(GET_MOB_NAME(vict)));
         for (i = 0; i < mob_quests[questnum].maxneeds; i++) {
           if (mob_quests[questnum].needs[numneeds].participants) {
             switch (mob_quests[questnum].needs[i].type) {
@@ -666,10 +666,10 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
                 if (!mob_quests[questnum].needs[i].complete) {
                   p = find_participant(ch, mob_quests + questnum, i);
                   if (!p) {
-                    sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
+                    safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
                   } else {
                     if (!p->complete) {
-                      sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - p->given));
+                      safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - p->given));
                     }
                   }
                 }
@@ -678,10 +678,10 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
                 if (!mob_quests[questnum].needs[i].complete) {
                   p = find_participant(ch, mob_quests + questnum, i);
                   if (!p) {
-                    sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                    safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                   } else {
                     if (!p->complete) {
-                      sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - p->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                      safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - p->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                     }
                   }
                 }
@@ -691,12 +691,12 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
             switch (mob_quests[questnum].needs[i].type) {
               case QUEST_MONEY:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
                 }
                 break;
               case QUEST_OBJECT:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                 }
                 break;
             }
@@ -712,18 +712,18 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
     } else if (IS_SET(QFLAGS(questnum), QUEST_MULTIPLAYER)) {
       if (mob_quests[questnum].maxneeds) {
         /* just show what is needed at this time */
-        sprintf(qbuf, "%s says, 'I am in need of the following:'\r\n", CAP(GET_MOB_NAME(vict)));
+        safe_snprintf(qbuf, sizeof(qbuf), "%s says, 'I am in need of the following:'\r\n", CAP(GET_MOB_NAME(vict)));
         for (i = 0; i < mob_quests[questnum].maxneeds; i++) {
           if (mob_quests[questnum].needs[i].participants) {
             switch (mob_quests[questnum].needs[i].type) {
               case QUEST_MONEY:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given));
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given));
                 }
                 break;
               case QUEST_OBJECT:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                 }
                 break;
             }
@@ -731,12 +731,12 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
             switch (mob_quests[questnum].needs[i].type) {
               case QUEST_MONEY:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf + strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
                 }
                 break;
               case QUEST_OBJECT:
                 if (!mob_quests[questnum].needs[i].complete) {
-                  sprintf(qbuf + strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto +real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto +real_object(mob_quests[questnum].needs[i].vnum)), ch));
                 }
                 break;
             }

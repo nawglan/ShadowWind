@@ -48,7 +48,7 @@ int House_get_filename(int vnum, char *filename)
   if (vnum < 0)
     return 0;
 
-  sprintf(filename, "house/%d.house", vnum);
+  safe_snprintf(filename, MAX_STRING_LENGTH, "house/%d.house", vnum);
   return 1;
 }
 
@@ -224,7 +224,7 @@ void House_listrent(struct char_data * ch, int vnum)
       return;
     }
     if (!feof(fl) && (obj = Obj_from_store(object)) != NULL) {
-      sprintf(buf + strlen(buf), " [%5d] (%5dau) %s\r\n", GET_OBJ_VNUM(obj), GET_OBJ_RENT(obj), obj->short_description);
+      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " [%5d] (%5dau) %s\r\n", GET_OBJ_VNUM(obj), GET_OBJ_RENT(obj), obj->short_description);
       free_obj(obj);
     }
   }
@@ -336,35 +336,35 @@ void hcontrol_list_houses(struct char_data * ch)
     send_to_char("No houses have been defined.\r\n", ch);
     return;
   }
-  strcpy(buf, "Address  Atrium  Build Date  Guests  Owner        Last Paymt\r\n");
-  strcat(buf, "-------  ------  ----------  ------  ------------ ----------\r\n");
+  size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Address  Atrium  Build Date  Guests  Owner        Last Paymt\r\n");
+  len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "-------  ------  ----------  ------  ------------ ----------\r\n");
 
   for (i = 0; i < num_of_houses; i++) {
     if (house_control[i].built_on) {
       timestr = asctime(localtime(&(house_control[i].built_on)));
       *(timestr + 10) = 0;
-      strcpy(built_on, timestr);
+      safe_snprintf(built_on, sizeof(built_on), "%s", timestr);
     } else
-      strcpy(built_on, "Unknown");
+      safe_snprintf(built_on, sizeof(built_on), "Unknown");
 
     if (house_control[i].last_payment) {
       timestr = asctime(localtime(&(house_control[i].last_payment)));
       *(timestr + 10) = 0;
-      strcpy(last_pay, timestr);
+      safe_snprintf(last_pay, sizeof(last_pay), "%s", timestr);
     } else
-      strcpy(last_pay, "None");
+      safe_snprintf(last_pay, sizeof(last_pay), "None");
 
-    strcpy(own_name, house_control[i].owner);
+    safe_snprintf(own_name, sizeof(own_name), "%s", house_control[i].owner);
 
-    sprintf(buf + strlen(buf), "%7d %7d  %-10s    %2d    %-12s %s\r\n", house_control[i].vnum, house_control[i].atrium, built_on, house_control[i].num_of_guests, CAP(own_name), last_pay);
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%7d %7d  %-10s    %2d    %-12s %s\r\n", house_control[i].vnum, house_control[i].atrium, built_on, house_control[i].num_of_guests, CAP(own_name), last_pay);
 
     if (house_control[i].num_of_guests) {
-      strcat(buf, "     Guests: ");
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "     Guests: ");
       for (j = 0; j < house_control[i].num_of_guests; j++) {
         safe_snprintf(buf2, MAX_STRING_LENGTH, "%s ", house_control[i].guests[j]);
-        strcat(buf, CAP(buf2));
+        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s", CAP(buf2));
       }
-      strcat(buf, "\r\n");
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
     }
   }
   send_to_char(buf, ch);
@@ -440,7 +440,7 @@ void hcontrol_build_house(struct char_data * ch, char *arg)
   temp_house.exit_num = exit_num;
   temp_house.built_on = time(0);
   temp_house.last_payment = 0;
-  strcpy(temp_house.owner, arg1);
+  safe_snprintf(temp_house.owner, sizeof(temp_house.owner), "%s", arg1);
   temp_house.num_of_guests = 0;
 
   house_control[num_of_houses++] = temp_house;
@@ -550,8 +550,8 @@ void hcontrol_pay_house(struct char_data * ch, char *arg)
       send_to_char("  None.\r\n", ch);
     else
       for (j = 0; j < house_control[i].num_of_guests; j++) {
-        strcpy(buf, house_control[i].guests[j]);
-        send_to_char(strcat(CAP(buf), "\r\n"), ch);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", house_control[i].guests[j]);
+        send_to_char(CAP(buf), ch);
       }
   } else if (get_id_by_name(arg) < 0)
     send_to_char("No such player.\r\n", ch);
@@ -559,14 +559,14 @@ void hcontrol_pay_house(struct char_data * ch, char *arg)
     for (j = 0; j < house_control[i].num_of_guests; j++)
       if (!strcmp(house_control[i].guests[j], arg)) {
         for (; j < house_control[i].num_of_guests; j++)
-          strcpy(house_control[i].guests[j], house_control[i].guests[j + 1]);
+          safe_snprintf(house_control[i].guests[j], MAX_NAME_LENGTH, "%s", house_control[i].guests[j + 1]);
         house_control[i].num_of_guests--;
         House_save_control();
         send_to_char("Guest deleted.\r\n", ch);
         return;
       }
     j = house_control[i].num_of_guests++;
-    strcpy(house_control[i].guests[j], arg);
+    safe_snprintf(house_control[i].guests[j], MAX_NAME_LENGTH, "%s", arg);
     House_save_control();
     send_to_char("Guest added.\r\n", ch);
   }

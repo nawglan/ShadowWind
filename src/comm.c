@@ -947,7 +947,7 @@ void make_prompt(struct descriptor_data * d)
       if (IS_SET(GET_PROMPT(d->character), PRM_TANKNAME) && FIGHTING(d->character) && FIGHTING(FIGHTING(d->character))) {
         char temp[256];
         char tempname[256];
-        strcpy(temp, GET_PLR_NAME(FIGHTING(FIGHTING(d->character))));
+        safe_snprintf(temp, sizeof(temp), "%s", GET_PLR_NAME(FIGHTING(FIGHTING(d->character))));
         one_argument(temp, tempname);
         safe_snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
       }
@@ -960,7 +960,7 @@ void make_prompt(struct descriptor_data * d)
       if (IS_SET(GET_PROMPT(d->character), PRM_ENEMYNAME) && FIGHTING(d->character)) {
         char temp[256];
         char tempname[256];
-        strcpy(temp, GET_PLR_NAME(FIGHTING(d->character)));
+        safe_snprintf(temp, sizeof(temp), "%s", GET_PLR_NAME(FIGHTING(d->character)));
         one_argument(temp, tempname);
         safe_snprintf(prompt + strlen(prompt), sizeof(prompt) - strlen(prompt), "%s%s%s ", CCCYN(d->character,C_SPR), strip_color(CAP(tempname), temp, strlen(tempname)), CCNRM(d->character,C_SPR));
       }
@@ -989,9 +989,9 @@ void write_to_q(char *txt, struct txt_q * queue, int aliased)
   CREATE(new, struct txt_block, 1);
   CREATE(new->text, char, strlen(txt) + 1);
   if (txt)
-    strcpy(new->text, txt);
+    memcpy(new->text, txt, strlen(txt) + 1);
   else
-    strcpy(new->text, "\n");
+    memcpy(new->text, "\n", 2);
 
   new->aliased = aliased;
 
@@ -1051,7 +1051,7 @@ void write_to_output(const char *txt, struct descriptor_data * t)
 
   /* if we have enough space, just write to buffer and that's it! */
   if (t->bufspace >= size) {
-    strcpy(t->output + t->bufptr, txt);
+    memcpy(t->output + t->bufptr, txt, size + 1);
     t->bufspace -= size;
     t->bufptr += size;
   } else { /* otherwise, try switching to a lrg buffer */
@@ -1076,9 +1076,9 @@ void write_to_output(const char *txt, struct descriptor_data * t)
       buf_largecount++;
     }
 
-    strcpy(t->large_outbuf->text, t->output); /* copy to big buffer */
+    safe_snprintf(t->large_outbuf->text, LARGE_BUFSIZE, "%s", t->output); /* copy to big buffer */
     t->output = t->large_outbuf->text; /* make big buffer primary */
-    strcat(t->output, txt); /* now add new text */
+    safe_snprintf(t->output + strlen(t->output), LARGE_BUFSIZE - strlen(t->output), "%s", txt); /* now add new text */
 
     /* calculate how much space is left in the buffer */
     t->bufspace = LARGE_BUFSIZE - 1 - strlen(t->output);
@@ -1192,18 +1192,18 @@ int process_output(struct descriptor_data * t)
   static int result;
 
   /* we may need this \r\n for later -- see below */
-  strcpy(i, "\r\n");
+  memcpy(i, "\r\n", 3);
 
   /* now, append the 'real' output */
-  strcpy(i + 2, t->output);
+  safe_snprintf(i + 2, sizeof(i) - 2, "%s", t->output);
 
   /* if we're in the overflow state, notify the user */
   if (t->bufptr < 0)
-    strcat(i, "**OVERFLOW**");
+    safe_snprintf(i + strlen(i), sizeof(i) - strlen(i), "%s", "**OVERFLOW**");
 
   /* add the extra CRLF if the person isn't in compact mode */
   if (!t->connected && t->character && !PRF_FLAGGED(t->character, PRF_COMPACT))
-    strcat(i + 2, "\r\n");
+    safe_snprintf(i + strlen(i), sizeof(i) - strlen(i), "\r\n");
 
   /*
    * now, send the output.  If this is an 'interruption', use the prepended
@@ -1375,12 +1375,12 @@ return 0;
     failed_subst = 0;
 
     if (*tmp == '!')
-      strcpy(tmp, t->last_input);
+      safe_snprintf(tmp, sizeof(tmp), "%s", t->last_input);
     else if (*tmp == '^') {
       if (!(failed_subst = perform_subst(t, t->last_input, tmp)))
-        strcpy(t->last_input, tmp);
+        safe_snprintf(t->last_input, MAX_INPUT_LENGTH, "%s", tmp);
     } else
-      strcpy(t->last_input, tmp);
+      safe_snprintf(t->last_input, MAX_INPUT_LENGTH, "%s", tmp);
 
     if (!failed_subst)
       write_to_q(tmp, &t->input, 0);
@@ -1454,7 +1454,7 @@ int perform_subst(struct descriptor_data * t, char *orig, char *subst)
 
   /* terminate the string in case of an overflow from strncat */
   new[MAX_INPUT_LENGTH - 1] = '\0';
-  strcpy(subst, new);
+  safe_snprintf(subst, MAX_INPUT_LENGTH, "%s", new);
 
   return 0;
 }
@@ -1694,13 +1694,18 @@ void send_to_char(char *messg, struct char_data * ch)
       for (point = messg; point && *point; point++) {
         if (*point == '{') {
           point++;
-          strcpy(point2, colorf(*point, ch));
-          for (; *point2; point2++)
-            ;
+          size_t remaining = sizeof(buf) - (point2 - buf);
+          if (remaining > 1) {
+            safe_snprintf(point2, remaining, "%s", colorf(*point, ch));
+            for (; *point2; point2++)
+              ;
+          }
           continue;
         }
-        *point2 = *point;
-        *++point2 = '\0';
+        if (point2 - buf < (int)sizeof(buf) - 1) {
+          *point2 = *point;
+          *++point2 = '\0';
+        }
       }
       *point2 = '\0';
       SEND_TO_Q(buf, ch->desc);
@@ -1708,12 +1713,14 @@ void send_to_char(char *messg, struct char_data * ch)
       for (point = messg; *point; point++) {
         if (*point == '{') {
           point++;
-          if (*point == '{')
+          if (*point == '{' && point2 - buf < (int)sizeof(buf) - 1)
             *point2 = '{';
           continue;
         }
-        *point2 = *point;
-        *++point2 = '\0';
+        if (point2 - buf < (int)sizeof(buf) - 1) {
+          *point2 = *point;
+          *++point2 = '\0';
+        }
       }
       *point2 = '\0';
       SEND_TO_Q(buf, ch->desc);
@@ -1734,13 +1741,18 @@ void SEND_TO_Q_COLOR(char *messg, struct descriptor_data * d)
     for (point = messg; *point; point++) {
       if (*point == '{') {
         point++;
-        strcpy(point2, colorf_d(*point));
-        for (; *point2; point2++)
-          ;
+        size_t remaining = sizeof(buf) - (point2 - buf);
+        if (remaining > 1) {
+          safe_snprintf(point2, remaining, "%s", colorf_d(*point));
+          for (; *point2; point2++)
+            ;
+        }
         continue;
       }
-      *point2 = *point;
-      *++point2 = '\0';
+      if (point2 - buf < (int)sizeof(buf) - 1) {
+        *point2 = *point;
+        *++point2 = '\0';
+      }
     }
     *point2 = '\0';
     SEND_TO_Q(buf, d);
@@ -1874,8 +1886,7 @@ void perform_act(char *orig, struct char_data * ch, struct obj_data * obj, void 
           break;
         default:
           stderr_log("SYSERR: Illegal $-code to act():");
-          strcpy(buf1, "SYSERR: ");
-          strcat(buf1, orig);
+          safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: %s", orig);
           stderr_log(buf1);
           break;
       }
@@ -1977,58 +1988,58 @@ char *colorf_d(char type)
 
   switch (type) {
     default:
-      sprintf(code, CLEAR);
+      safe_snprintf(code, sizeof(code), "%s", CLEAR);
       break;
     case 'x':
-      sprintf(code, CLEAR);
+      safe_snprintf(code, sizeof(code), "%s", CLEAR);
       break;
     case 'b':
-      sprintf(code, C_BLUE);
+      safe_snprintf(code, sizeof(code), "%s", C_BLUE);
       break;
     case 'c':
-      sprintf(code, C_CYAN);
+      safe_snprintf(code, sizeof(code), "%s", C_CYAN);
       break;
     case 'g':
-      sprintf(code, C_GREEN);
+      safe_snprintf(code, sizeof(code), "%s", C_GREEN);
       break;
     case 'm':
-      sprintf(code, C_MAGENTA);
+      safe_snprintf(code, sizeof(code), "%s", C_MAGENTA);
       break;
     case 'r':
-      sprintf(code, C_RED);
+      safe_snprintf(code, sizeof(code), "%s", C_RED);
       break;
     case 'w':
-      sprintf(code, C_WHITE);
+      safe_snprintf(code, sizeof(code), "%s", C_WHITE);
       break;
     case 'y':
-      sprintf(code, C_YELLOW);
+      safe_snprintf(code, sizeof(code), "%s", C_YELLOW);
       break;
     case 'B':
-      sprintf(code, C_B_BLUE);
+      safe_snprintf(code, sizeof(code), "%s", C_B_BLUE);
       break;
     case 'C':
-      sprintf(code, C_B_CYAN);
+      safe_snprintf(code, sizeof(code), "%s", C_B_CYAN);
       break;
     case 'G':
-      sprintf(code, C_B_GREEN);
+      safe_snprintf(code, sizeof(code), "%s", C_B_GREEN);
       break;
     case 'M':
-      sprintf(code, C_B_MAGENTA);
+      safe_snprintf(code, sizeof(code), "%s", C_B_MAGENTA);
       break;
     case 'R':
-      sprintf(code, C_B_RED);
+      safe_snprintf(code, sizeof(code), "%s", C_B_RED);
       break;
     case 'W':
-      sprintf(code, C_B_WHITE);
+      safe_snprintf(code, sizeof(code), "%s", C_B_WHITE);
       break;
     case 'Y':
-      sprintf(code, C_B_YELLOW);
+      safe_snprintf(code, sizeof(code), "%s", C_B_YELLOW);
       break;
     case 'D':
-      sprintf(code, C_D_GREY);
+      safe_snprintf(code, sizeof(code), "%s", C_D_GREY);
       break;
     case '{':
-      sprintf(code, "%c", '{');
+      safe_snprintf(code, sizeof(code), "%c", '{');
       break;
   }
   return code;
