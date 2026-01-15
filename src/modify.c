@@ -383,7 +383,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
           s++;
           temp = *s;
           *s = '\0';
-          sprintf(buf + strlen(buf), "%4d: ", (i - 1));
+          safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%4d: ", (i - 1));
           strcat(buf, t);
           *s = temp;
           t = s;
@@ -799,11 +799,11 @@ ACMD(do_skillset)
 
   if (!*name) { /* no arguments. print an informative text */
     send_to_char("Syntax: skillset <name> '<skill>' <value>\r\n", ch);
-    strcpy(help, "Skill being one of the following:\n\r");
+    safe_snprintf(help, sizeof(help), "Skill being one of the following:\n\r");
     for (i = 1; spells[i].command[0] != '\n'; i++) {
-      sprintf(help + strlen(help), "%18s", spells[i].command);
+      safe_snprintf(help + strlen(help), sizeof(help) - strlen(help), "%18s", spells[i].command);
       if (i % 4 == 3) {
-        strcat(help, "\r\n");
+        safe_snprintf(help + strlen(help), sizeof(help) - strlen(help), "\r\n");
         send_to_char(help, ch);
         *help = '\0';
       }

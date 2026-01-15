@@ -66,16 +66,16 @@ void say_spell(struct char_data * ch, int spellnum, struct char_data * tch, stru
 
   if (tch != NULL && tch->in_room == ch->in_room) {
     if (tch == ch)
-      sprintf(lbuf, "$n closes $s eyes and utters the words, '%%s'.");
+      safe_snprintf(lbuf, sizeof(lbuf), "$n closes $s eyes and utters the words, '%%s'.");
     else
-      sprintf(lbuf, "$n stares at $N and utters the words, '%%s'.");
+      safe_snprintf(lbuf, sizeof(lbuf), "$n stares at $N and utters the words, '%%s'.");
   } else if (tobj != NULL && tobj->in_room == ch->in_room)
-    sprintf(lbuf, "$n stares at $p and utters the words, '%%s'.");
+    safe_snprintf(lbuf, sizeof(lbuf), "$n stares at $p and utters the words, '%%s'.");
   else
-    sprintf(lbuf, "$n utters the words, '%%s'.");
+    safe_snprintf(lbuf, sizeof(lbuf), "$n utters the words, '%%s'.");
 
-  sprintf(buf2, lbuf, buf);
-  sprintf(buf1, lbuf, get_spell_name(spellnum));
+  safe_snprintf(buf2, MAX_STRING_LENGTH, lbuf, buf);
+  safe_snprintf(buf1, MAX_STRING_LENGTH, lbuf, get_spell_name(spellnum));
 
   for (i = world[ch->in_room].people; i; i = i->next_in_room) {
     if (i == ch || i == tch || !i->desc || !AWAKE(i))
@@ -583,7 +583,7 @@ ACMD(do_cast)
   if (IS_NPC(ch)) {
     DO_SPELL(&spells[spellnum], spellnum, 26 - ((GET_INT(ch)/10) + (GET_WIS(ch)/10)), ch, t, NO);
   } else {
-    sprintf(abuf, "You start casting %s.\r\n", spells[spellnum].command);
+    safe_snprintf(abuf, sizeof(abuf), "You start casting %s.\r\n", spells[spellnum].command);
     send_to_char(abuf, ch);
     DO_SPELL(&spells[spellnum], spellnum, waitstate, ch, t, NO);
   }
@@ -650,7 +650,7 @@ ACMD(do_mpcast)
     return;
   }
 
-  sprintf(debugbuf, "MPCAST: %s casting '%s'", IS_NPC(ch) ? GET_MOB_NAME(ch) : GET_NAME(ch), spells[spellnum].command);
+  safe_snprintf(debugbuf, sizeof(debugbuf), "MPCAST: %s casting '%s'", IS_NPC(ch) ? GET_MOB_NAME(ch) : GET_NAME(ch), spells[spellnum].command);
 
   /* Find the target */
   if (t != NULL) {
@@ -685,11 +685,11 @@ ACMD(do_spells)
     for (i = 1; spells[i].command[0] != '\n'; i++) {
       if (spells[i].spell_pointer) {
         if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
-          strcat(buf2, "**OVERFLOW**\r\n");
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "**OVERFLOW**\r\n");
           break;
         }
         if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, i))) {
-          sprintf(buf2 + strlen(buf2), "%2d: %-20s  Mana: %d\r\n", spells[i].min_level[(int) GET_CLASS(ch)], spells[i].command, mag_manacost(ch, i));
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-20s  Mana: %d\r\n", spells[i].min_level[(int) GET_CLASS(ch)], spells[i].command, mag_manacost(ch, i));
         }
       }
     }
@@ -706,11 +706,11 @@ ACMD(do_spells)
     for (i = 1; spells[i].command[0] != '\n'; i++) {
       if (spells[i].spell_pointer) {
         if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
-          strcat(buf2, "**OVERFLOW**\r\n");
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "**OVERFLOW**\r\n");
           break;
         }
         if (spells[i].min_level[class] < LVL_IMMORT) {
-          sprintf(buf2 + strlen(buf2), "%2d: %-30s\r\n", spells[i].min_level[class], spells[i].command);
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-30s\r\n", spells[i].min_level[class], spells[i].command);
         }
       }
     }
