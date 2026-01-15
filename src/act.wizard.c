@@ -199,37 +199,38 @@ ACMD(do_config)
   half_chop(argument, field, buf);
 
   if (!*field) {
-    sprintf(abuf, "Config Options\r\n\r\n");
-    sprintf(abuf + strlen(abuf), "ticsize (in secs)            :  %d\r\n", SECS_PER_MUD_HOUR);
-    sprintf(abuf + strlen(abuf), "num_months (per year)        :  %d\r\n", num_months);
-    sprintf(abuf + strlen(abuf), "num_days (per month)         :  %d\r\n", num_days);
-    sprintf(abuf + strlen(abuf), "num_hours (per day)          :  %d\r\n", num_hours);
-    sprintf(abuf + strlen(abuf), "pk_allowed (yes no)          :  %s\r\n", YESNO(pk_allowed));
-    sprintf(abuf + strlen(abuf), "pt_allowed (yes no)          :  %s\r\n", YESNO(pt_allowed));
-    sprintf(abuf + strlen(abuf), "level_can_shout (0-51)       :  %d\r\n", level_can_shout);
-    sprintf(abuf + strlen(abuf), "level_can_color (0-51)       :  %d\r\n", level_can_color);
-    sprintf(abuf + strlen(abuf), "max_exp_gain                 :  %d\r\n", max_exp_gain);
-    sprintf(abuf + strlen(abuf), "max_exp_loss                 :  %d\r\n", max_exp_loss);
-    sprintf(abuf + strlen(abuf), "max_npc_corpse_time (in tics):  %d\r\n", max_npc_corpse_time);
-    sprintf(abuf + strlen(abuf), "max_pc_corpse_time (in tics) :  %d\r\n", max_pc_corpse_time);
-    sprintf(abuf + strlen(abuf), "max_obj_time (in tics)       :  %d\r\n", max_obj_time);
-    sprintf(abuf + strlen(abuf), "free_rent (yes no)           :  %s\r\n", YESNO(free_rent));
-    sprintf(abuf + strlen(abuf), "max_obj_save                 :  %d\r\n", max_obj_save);
-    sprintf(abuf + strlen(abuf), "min_rent_cost                :  %d\r\n", min_rent_cost);
-    sprintf(abuf + strlen(abuf), "auto_save (yes no)           :  %s\r\n", YESNO(auto_save));
-    sprintf(abuf + strlen(abuf), "autosave_time (in mins)      :  %d\r\n", autosave_time);
-    sprintf(abuf + strlen(abuf), "crash_file_timeout (in days) :  %d\r\n", crash_file_timeout);
-    sprintf(abuf + strlen(abuf), "rent_file_timeout (in days)  :  %d\r\n", rent_file_timeout);
-    sprintf(abuf + strlen(abuf), "maxconnect                   :  %d\r\n", max_players);
-    sprintf(abuf + strlen(abuf), "pracs_cost (yes no)          :  %s\r\n", YESNO(PRACS_COST));
-    sprintf(abuf + strlen(abuf), "nodecay (yes no)             :  %s\r\n", YESNO(NODECAY));
+    size_t len = 0;
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "Config Options\r\n\r\n");
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "ticsize (in secs)            :  %d\r\n", SECS_PER_MUD_HOUR);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "num_months (per year)        :  %d\r\n", num_months);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "num_days (per month)         :  %d\r\n", num_days);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "num_hours (per day)          :  %d\r\n", num_hours);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "pk_allowed (yes no)          :  %s\r\n", YESNO(pk_allowed));
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "pt_allowed (yes no)          :  %s\r\n", YESNO(pt_allowed));
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "level_can_shout (0-51)       :  %d\r\n", level_can_shout);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "level_can_color (0-51)       :  %d\r\n", level_can_color);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "max_exp_gain                 :  %d\r\n", max_exp_gain);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "max_exp_loss                 :  %d\r\n", max_exp_loss);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "max_npc_corpse_time (in tics):  %d\r\n", max_npc_corpse_time);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "max_pc_corpse_time (in tics) :  %d\r\n", max_pc_corpse_time);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "max_obj_time (in tics)       :  %d\r\n", max_obj_time);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "free_rent (yes no)           :  %s\r\n", YESNO(free_rent));
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "max_obj_save                 :  %d\r\n", max_obj_save);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "min_rent_cost                :  %d\r\n", min_rent_cost);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "auto_save (yes no)           :  %s\r\n", YESNO(auto_save));
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "autosave_time (in mins)      :  %d\r\n", autosave_time);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "crash_file_timeout (in days) :  %d\r\n", crash_file_timeout);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "rent_file_timeout (in days)  :  %d\r\n", rent_file_timeout);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "maxconnect                   :  %d\r\n", max_players);
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "pracs_cost (yes no)          :  %s\r\n", YESNO(PRACS_COST));
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, "nodecay (yes no)             :  %s\r\n", YESNO(NODECAY));
 
-    sprintf(abuf + strlen(abuf), "\r\nUsage: config <field> <value>\r\n");
+    safe_snprintf(abuf + len, sizeof(abuf) - len, "\r\nUsage: config <field> <value>\r\n");
     page_string(ch->desc, abuf, 1);
     return;
   }
 
-  strcpy(val_arg, buf);
+  safe_snprintf(val_arg, sizeof(val_arg), "%s", buf);
   if (!*val_arg) {
     send_to_char("Usage: config <field> <value>\r\n", ch);
     return;
@@ -380,7 +381,7 @@ ACMD (do_xname)
     perror("Cannot open declined file for update");
     return;
   }
-  strcpy(tempname, buf);
+  safe_snprintf(tempname, sizeof(tempname), "%s", buf);
   tempname[MAX_NAME_LENGTH] = '\0';
   achrp = strchr(tempname, '\n');
   if (achrp) {
@@ -460,6 +461,7 @@ ACMD(do_bootmaze)
 ACMD(do_vlist)
 {
   int i, j, k, oktosee;
+  size_t buflen;
 
   two_arguments(argument, arg, buf);
   if (!*arg) {
@@ -487,14 +489,16 @@ ACMD(do_vlist)
           return;
         }
       }
-      sprintf(string_buf, "Room vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
+      size_t buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Room vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_room(j)) > 0) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), world[k].number, CCCYN(ch, C_CMP), world[k].name, CCNRM(ch, C_NRM));
-          strcat(string_buf, buf);
-        }
-        if (strlen(string_buf) > 39918) {
-          break;
+          int addlen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), world[k].number, CCCYN(ch, C_CMP), world[k].name, CCNRM(ch, C_NRM));
+          if (buflen + addlen < MAX_STRING_LENGTH * 2 - 1) {
+            strcat(string_buf, buf);
+            buflen += addlen;
+          } else {
+            break;
+          }
         }
       }
       page_string(ch->desc, string_buf, 1);
@@ -518,14 +522,16 @@ ACMD(do_vlist)
           return;
         }
       }
-      sprintf(string_buf, "Mobile vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
+      buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Mobile vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_mobile(j)) > 0) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), mob_index[k].virtual, CCCYN(ch, C_CMP), mob_proto[k].player.short_descr, CCNRM(ch, C_NRM));
-          strcat(string_buf, buf);
-        }
-        if (strlen(string_buf) > 39918) {
-          break;
+          int addlen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), mob_index[k].virtual, CCCYN(ch, C_CMP), mob_proto[k].player.short_descr, CCNRM(ch, C_NRM));
+          if (buflen + addlen < MAX_STRING_LENGTH * 2 - 1) {
+            strcat(string_buf, buf);
+            buflen += addlen;
+          } else {
+            break;
+          }
         }
       }
       page_string(ch->desc, string_buf, 1);
@@ -549,14 +555,16 @@ ACMD(do_vlist)
           return;
         }
       }
-      sprintf(string_buf, "Object vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
+      buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Object vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_object(j)) > 0) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[k].virtual, CCCYN(ch, C_CMP), obj_proto[k].short_description, CCNRM(ch, C_NRM));
-          strcat(string_buf, buf);
-        }
-        if (strlen(string_buf) > 39918) {
-          break;
+          int addlen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[k].virtual, CCCYN(ch, C_CMP), obj_proto[k].short_description, CCNRM(ch, C_NRM));
+          if (buflen + addlen < MAX_STRING_LENGTH * 2 - 1) {
+            strcat(string_buf, buf);
+            buflen += addlen;
+          } else {
+            break;
+          }
         }
       }
       page_string(ch->desc, string_buf, 1);
@@ -932,7 +940,7 @@ ACMD(do_echo)
         safe_snprintf(buf, MAX_STRING_LENGTH, "$n %s", argument);
       }
     } else {
-      strcpy(buf, argument);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s", argument);
     }
     MOBTrigger = FALSE;
     act(buf, FALSE, ch, 0, 0, TO_ROOM);
@@ -4171,7 +4179,7 @@ ACMD(do_set)
     half_chop(buf, name, buf);
   }
   half_chop(buf, field, buf);
-  strcpy(val_arg, buf);
+  safe_snprintf(val_arg, sizeof(val_arg), "%s", buf);
 
   if (!*name || !*field) {
     send_to_char("Usage: set <victim> <field> <value>\r\n", ch);

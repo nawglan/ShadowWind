@@ -155,33 +155,31 @@ ACMD(do_whois)
     return;
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s is a ", GET_NAME(vict));
+  size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "%s is a ", GET_NAME(vict));
 
   switch (vict->player.sex) {
     case SEX_NEUTRAL:
-      strcat(buf, "neutral-sex");
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "neutral-sex");
       break;
     case SEX_MALE:
-      strcat(buf, "male");
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "male");
       break;
     case SEX_FEMALE:
-      strcat(buf, "female");
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "female");
       break;
     default:
-      strcat(buf, "ILLEGAL-SEX!!");
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "ILLEGAL-SEX!!");
       break;
   }
   if (PRF_FLAGGED(vict, PRF_ANONYMOUS) && !COM_FLAGGED(ch, COM_ADMIN)) {
-    sprintf(buf + strlen(buf), " level-ANON ");
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " level-ANON ");
   } else {
-    sprintf(buf + strlen(buf), " level-%d ", GET_LEVEL(vict));
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " level-%d ", GET_LEVEL(vict));
   }
   sprinttype(vict->player_specials->saved.race, pc_race_types, buf2);
-  strcat(buf, buf2);
-  sprintf(buf + strlen(buf), " ");
+  len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s ", buf2);
   sprinttype(vict->player.class, pc_class_types, buf2);
-  strcat(buf, buf2);
-  strcat(buf, ".\r\n");
+  len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s.\r\n", buf2);
   send_to_char(buf, ch);
 
   if (IS_IMMO(ch)) {
