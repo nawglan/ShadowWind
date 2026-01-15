@@ -64,25 +64,25 @@ void perform_mob_defense(void)
         case 1:
           mobdef = 1;
           if (!AFF2_FLAGGED(ch, AFF2_FIRESHIELD) && !AFF2_FLAGGED(ch, AFF2_ICESHIELD)) {
-            sprintf(mobdefbuf, "cast 'fire shield' me");
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'fire shield' me");
           }
           break;
         case 2:
           mobdef = 1;
           if (!AFF2_FLAGGED(ch, AFF2_ICESHIELD) && !AFF2_FLAGGED(ch, AFF2_FIRESHIELD)) {
-            sprintf(mobdefbuf, "cast 'ice shield' me");
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'ice shield' me");
           }
           break;
         case 3:
           mobdef = 1;
           if (!AFF2_FLAGGED(ch, AFF2_STONESKIN)) {
-            sprintf(mobdefbuf, "cast 'stoneskin' me");
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'stoneskin' me");
           }
           break;
         case 4:
           mobdef = 1;
           if (!AFF2_FLAGGED(ch, AFF2_VAMPTOUCH)) {
-            sprintf(mobdefbuf, "cast 'vampiric touch' me");
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'vampiric touch' me");
           }
           break;
       }
@@ -95,7 +95,7 @@ void perform_mob_defense(void)
       if (GET_HIT(ch) < GET_MAX_HIT(ch)) {
         if (FIGHTING(ch) && GET_HIT(ch) < (GET_MAX_HIT(ch) / 2)) {
           mobdef = 1;
-          sprintf(mobdefbuf, "cast 'full heal' me");
+          safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'full heal' me");
         }
       }
       if (!mobdef) {
@@ -103,43 +103,43 @@ void perform_mob_defense(void)
           case 1:
             mobdef = 1;
             if (!AFF_FLAGGED(ch, AFF_AID)) {
-              sprintf(mobdefbuf, "cast 'aid' me");
+              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'aid' me");
             }
             break;
           case 2:
             mobdef = 1;
             if (!AFF_FLAGGED(ch, AFF_BLESS)) {
-              sprintf(mobdefbuf, "cast 'bless' me");
+              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'bless' me");
             }
             break;
           case 3:
             mobdef = 1;
             if (!AFF2_FLAGGED(ch, AFF2_BARKSKIN)) {
-              sprintf(mobdefbuf, "cast 'barkskin' me");
+              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'barkskin' me");
             }
             break;
           case 4:
             mobdef = 1;
             if (!AFF2_FLAGGED(ch, AFF2_ARMOR)) {
-              sprintf(mobdefbuf, "cast 'armor' me");
+              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'armor' me");
             }
             break;
           case 5:
             mobdef = 1;
             if (AFF_FLAGGED(ch, AFF_POISON)) {
-              sprintf(mobdefbuf, "cast 'cure poison' me");
+              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure poison' me");
             }
             break;
           case 6:
             mobdef = 1;
             if (AFF_FLAGGED(ch, AFF_DISEASE)) {
-              sprintf(mobdefbuf, "cast 'cure disease' me");
+              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure disease' me");
             }
             break;
           case 7:
             mobdef = 1;
             if (AFF_FLAGGED(ch, AFF_BLIND)) {
-              sprintf(mobdefbuf, "cast 'cure blind' me");
+              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure blind' me");
             }
             break;
         }

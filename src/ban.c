@@ -284,8 +284,11 @@ void Read_Invalid_List(void)
   CREATE(invalid_list, namestring, num_invalid);
 
   for (i = 0; i < num_invalid; i++) {
-    fgets(invalid_list[i], MAX_NAME_LENGTH, fp); /* read word */
-    invalid_list[i][strlen(invalid_list[i]) - 1] = '\0'; /* cleave off \n */
+    if (fgets(invalid_list[i], MAX_NAME_LENGTH, fp) == NULL)
+      break;
+    size_t len = strlen(invalid_list[i]);
+    if (len > 0 && invalid_list[i][len - 1] == '\n')
+      invalid_list[i][len - 1] = '\0'; /* cleave off \n */
   }
 
   fclose(fp);
@@ -307,8 +310,11 @@ void Read_Invalid_List(void)
   CREATE(declined_list, namestring, num_declined);
 
   for (i = 0; i < num_declined; i++) {
-    fgets(declined_list[i], MAX_NAME_LENGTH, fp); /* read word */
-    declined_list[i][strlen(declined_list[i]) - 1] = '\0'; /* cleave off \n */
+    if (fgets(declined_list[i], MAX_NAME_LENGTH, fp) == NULL)
+      break;
+    size_t len = strlen(declined_list[i]);
+    if (len > 0 && declined_list[i][len - 1] == '\n')
+      declined_list[i][len - 1] = '\0'; /* cleave off \n */
   }
 
   fclose(fp);

@@ -984,28 +984,28 @@ void command_interpreter(struct char_data * ch, char * argument)
 */
   if (cmd_info[cmd].anti_aff && AFF_FLAGGED(ch, cmd_info[cmd].anti_aff)) {
     if (AFF_FLAGGED(ch, AFF_MAJOR_PARALIZED)) {
-      sprintf(astring, "You've been paralized! You cannot do that!\r\n");
+      safe_snprintf(astring, sizeof(astring), "You've been paralized! You cannot do that!\r\n");
     } else if (AFF_FLAGGED(ch, AFF_CAMPING)) {
-      sprintf(astring, "You cannot %s while camping.\r\n", cmd_info[cmd].command);
+      safe_snprintf(astring, sizeof(astring), "You cannot %s while camping.\r\n", cmd_info[cmd].command);
     } else {
-      sprintf(astring, "You are unable to %s at this time.\r\n", cmd_info[cmd].command);
+      safe_snprintf(astring, sizeof(astring), "You are unable to %s at this time.\r\n", cmd_info[cmd].command);
     }
     send_to_char(astring, ch);
   } else if (cmd_info[cmd].anti_aff2 && AFF2_FLAGGED(ch, cmd_info[cmd].anti_aff2)) {
     if (AFF2_FLAGGED(ch, AFF2_KNOCKEDOUT)) {
-      sprintf(astring, "You have been knocked out and cannot do that.\r\n");
+      safe_snprintf(astring, sizeof(astring), "You have been knocked out and cannot do that.\r\n");
     } else if (AFF2_FLAGGED(ch, AFF2_MINOR_PARALIZED)) {
-      sprintf(astring, "You've been paralized! You cannot do that!\r\n");
+      safe_snprintf(astring, sizeof(astring), "You've been paralized! You cannot do that!\r\n");
     } else if (AFF2_FLAGGED(ch, AFF2_CASTING)) {
-      sprintf(astring, "You're too busy casting!\r\n");
+      safe_snprintf(astring, sizeof(astring), "You're too busy casting!\r\n");
     } else if (AFF2_FLAGGED(ch, AFF2_SCRIBING)) {
-      sprintf(astring, "You're too busy scribing!\r\n");
+      safe_snprintf(astring, sizeof(astring), "You're too busy scribing!\r\n");
     } else {
-      sprintf(astring, "You are unable to %s at this time.\r\n", cmd_info[cmd].command);
+      safe_snprintf(astring, sizeof(astring), "You are unable to %s at this time.\r\n", cmd_info[cmd].command);
     }
     send_to_char(astring, ch);
   } else if (cmd_info[cmd].anti_aff3 && AFF3_FLAGGED(ch, cmd_info[cmd].anti_aff3)) {
-    sprintf(astring, "You are unable to %s at this time.\r\n", cmd_info[cmd].command);
+    safe_snprintf(astring, sizeof(astring), "You are unable to %s at this time.\r\n", cmd_info[cmd].command);
     send_to_char(astring, ch);
   } else if (PLR_FLAGGED(ch, PLR_FROZEN) && !COM_FLAGGED(ch, COM_ADMIN))
     send_to_char("You try, but the mind-numbing cold prevents you...\r\n", ch);
@@ -1141,10 +1141,13 @@ void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias *a)
 {
   struct txt_q temp_queue;
   char *tokens[NUM_TOKENS], *temp, *write_point;
+  char *buf_end = buf + MAX_STRING_LENGTH - 1;
   int num_of_tokens = 0, num;
+  size_t len;
 
   /* First, parse the original string */
-  temp = strtok(strcpy(buf2, orig), " ");
+  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", orig);
+  temp = strtok(buf2, " ");
   while (temp != NULL && num_of_tokens < NUM_TOKENS) {
     tokens[num_of_tokens++] = temp;
     temp = strtok(NULL, " ");
@@ -1163,14 +1166,22 @@ void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias *a)
     } else if (*temp == ALIAS_VAR_CHAR) {
       temp++;
       if ((num = *temp - '1') < num_of_tokens && num >= 0) {
-        strcpy(write_point, tokens[num]);
-        write_point += strlen(tokens[num]);
+        len = strlen(tokens[num]);
+        if (write_point + len < buf_end) {
+          memcpy(write_point, tokens[num], len);
+          write_point += len;
+        }
       } else if (*temp == ALIAS_GLOB_CHAR) {
-        strcpy(write_point, orig);
-        write_point += strlen(orig);
-      } else if ((*(write_point++) = *temp) == '$') /* redouble $ for act safety */
-        *(write_point++) = '$';
-    } else
+        len = strlen(orig);
+        if (write_point + len < buf_end) {
+          memcpy(write_point, orig, len);
+          write_point += len;
+        }
+      } else if (write_point < buf_end && (*(write_point++) = *temp) == '$') { /* redouble $ for act safety */
+        if (write_point < buf_end)
+          *(write_point++) = '$';
+      }
+    } else if (write_point < buf_end)
       *(write_point++) = *temp;
   }
 
@@ -1537,7 +1548,7 @@ void nanny(struct descriptor_data * d, char *arg)
       if (!*arg) {
         STATE(d) = CON_CLOSE;
         return;
-      } else if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH || fill_word(strcpy(buf, tmp_name)) || reserved_word(buf) || !Valid_Name(tmp_name) || load_char_text(tmp_name, tmp_store)) {
+      } else if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH || (safe_snprintf(buf, MAX_STRING_LENGTH, "%s", tmp_name), fill_word(buf)) || reserved_word(buf) || !Valid_Name(tmp_name) || load_char_text(tmp_name, tmp_store)) {
         SEND_TO_Q("Invalid name, please try another.\r\nName: ", d);
         *tmp_name = '\0';
         *arg = '\0';
@@ -1571,7 +1582,7 @@ void nanny(struct descriptor_data * d, char *arg)
           GET_HOME(d->character) = 1; /* Weirvane */
           break;
       }
-      sprintf(tmp_policy, "%s{x\r\n\r\nDo you accept these terms [y/n]?", policies);
+      safe_snprintf(tmp_policy, sizeof(tmp_policy), "%s{x\r\n\r\nDo you accept these terms [y/n]?", policies);
       page_string(d, tmp_policy, 1);
       STATE(d) = CON_POLICY;
       break;
@@ -1666,7 +1677,7 @@ void nanny(struct descriptor_data * d, char *arg)
       if (!*arg)
         close_socket(d);
       else {
-        if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH || fill_word(strcpy(buf, tmp_name)) || reserved_word(buf)) {
+        if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH || (safe_snprintf(buf, MAX_STRING_LENGTH, "%s", tmp_name), fill_word(buf)) || reserved_word(buf)) {
           SEND_TO_Q("Invalid name, please try another.\r\n"
           "Name: ", d);
           *tmp_name = '\0';
@@ -1715,7 +1726,7 @@ void nanny(struct descriptor_data * d, char *arg)
           strcpy(d->character->player.name, CAP(tmp_name));
           GET_TITLE(d->character) = strdup(" ");
           GET_IDNUM(d->character) = get_idnum();
-          sprintf(tmp_namepolicy, "%s{x\r\n\r\nDid I get that right, %s [y/n]?", namepol, tmp_name);
+          safe_snprintf(tmp_namepolicy, sizeof(tmp_namepolicy), "%s{x\r\n\r\nDid I get that right, %s [y/n]?", namepol, tmp_name);
           if (d->color)
             page_string(d, tmp_namepolicy, 1);
           /*SEND_TO_Q_COLOR(tmp_namepolicy, d); */
@@ -1729,7 +1740,7 @@ void nanny(struct descriptor_data * d, char *arg)
       break;
     case CON_NAME_CNFRM: /* wait for conf. of new name	 */
       d->idle_cnt = 0;
-      strcpy(GET_HOST(d->character), d->host);
+      safe_snprintf(GET_HOST(d->character), HOST_LENGTH + 1, "%s", d->host);
       if (*arg == 'y' || *arg == 'Y') {
         if (isbanned(GET_HOST(d->character)) >= BAN_NEW && isbanned(GET_HOST(d->character)) < BAN_OUTLAW) {
           safe_snprintf(buf, MAX_STRING_LENGTH, "Request for new char %s denied from [%s] (siteban)", GET_NAME(d->character), GET_HOST(d->character));
@@ -1828,7 +1839,7 @@ void nanny(struct descriptor_data * d, char *arg)
         }
         load_result = GET_BAD_PWS(d->character);
         GET_BAD_PWS(d->character) = 0;
-        strcpy(GET_HOST(d->character), d->host);
+        safe_snprintf(GET_HOST(d->character), HOST_LENGTH + 1, "%s", d->host);
         save_char_text(d->character, NOWHERE);
         save_text(d->character);
 

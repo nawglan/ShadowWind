@@ -100,10 +100,13 @@ ACMD(do_wiz_help)
       fseek(wiz_help_fl, wiz_help_index[mid].pos, SEEK_SET);
       *buf2 = '\0';
       for (;;) {
-        fgets(buf, 128, wiz_help_fl);
+        if (fgets(buf, 128, wiz_help_fl) == NULL)
+          break;
         if (*buf == '#')
           break;
-        buf[strlen(buf) - 1] = '\0'; /* cleave off the trailing \n */
+        size_t len = strlen(buf);
+        if (len > 0 && buf[len - 1] == '\n')
+          buf[len - 1] = '\0'; /* cleave off the trailing \n */
         if (buf[0] != '@')
           safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s\r\n", buf);
       }
@@ -173,10 +176,13 @@ ACMD(do_help)
       fseek(help_fl, help_index[mid].pos, SEEK_SET);
       *buf2 = '\0';
       for (;;) {
-        fgets(buf, 128, help_fl);
+        if (fgets(buf, 128, help_fl) == NULL)
+          break;
         if (*buf == '#')
           break;
-        buf[strlen(buf) - 1] = '\0'; /* cleave off the trailing \n */
+        size_t len = strlen(buf);
+        if (len > 0 && buf[len - 1] == '\n')
+          buf[len - 1] = '\0'; /* cleave off the trailing \n */
         if (buf[0] != '@')
           safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s\r\n", buf);
       }
@@ -208,10 +214,12 @@ int count_help_records(FILE * fl)
     if (*buf == '#') {
       if (buf[1] == '~')
         break;
-      fgets(buf, 128, fl);
+      if (fgets(buf, 128, fl) == NULL)
+        break;
       while (*buf == '@') {
         count++;
-        fgets(buf, 128, fl);
+        if (fgets(buf, 128, fl) == NULL)
+          break;
         if (buf[1] == '~')
           break;
       }
@@ -249,17 +257,22 @@ struct help_index_element *build_help_index(int *num, int type)
   CREATE(list, struct help_index_element, tablesize);
 
   for (;;) {
+    size_t len;
 
     /* skip the text */
-    do
-      fgets(buf, 128, fl);
-    while (*buf != '#');
+    do {
+      if (fgets(buf, 128, fl) == NULL)
+        goto done_parsing;
+    } while (*buf != '#');
     if (buf[1] == '~')
       break;
 
     pos = ftell(fl);
-    fgets(buf, 128, fl);
-    buf[strlen(buf) - 1] = '\0';
+    if (fgets(buf, 128, fl) == NULL)
+      break;
+    len = strlen(buf);
+    if (len > 0 && buf[len - 1] == '\n')
+      buf[len - 1] = '\0';
     for (;;) {
       /* extract the keywords */
 
@@ -275,10 +288,14 @@ struct help_index_element *build_help_index(int *num, int type)
       list[nr].pos = pos;
       CREATE(list[nr].keyword, char, strlen(scan));
       strcpy(list[nr].keyword, (scan + 1));
-      fgets(buf, 128, fl);
-      buf[strlen(buf) - 1] = '\0';
+      if (fgets(buf, 128, fl) == NULL)
+        break;
+      len = strlen(buf);
+      if (len > 0 && buf[len - 1] == '\n')
+        buf[len - 1] = '\0';
     }
   }
+done_parsing:
 
   /* we might as well sort the stuff */
   do {

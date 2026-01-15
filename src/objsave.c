@@ -1352,9 +1352,17 @@ struct obj_data *corpseloadobj(FILE *fromfile)
 
   obj = create_obj();
 
-  fscanf(fromfile, "%d %d %d\n", &(obj->objnum), &(obj->in_room), &(obj->inobj));
+  if (fscanf(fromfile, "%d %d %d\n", &(obj->objnum), &(obj->in_room), &(obj->inobj)) != 3) {
+    stderr_log("SYSERR: Format error reading object header from corpse file");
+    extract_obj(obj);
+    return NULL;
+  }
 
-  fscanf(fromfile, "%d\n", &i);
+  if (fscanf(fromfile, "%d\n", &i) != 1) {
+    stderr_log("SYSERR: Format error reading item number from corpse file");
+    extract_obj(obj);
+    return NULL;
+  }
   if (i > -1 && i <= obj_index[top_of_objt].virtual) {
     obj->item_number = (real_object(i));
   } else {
@@ -1378,7 +1386,11 @@ struct obj_data *corpseloadobj(FILE *fromfile)
   }
   obj->cshort_description = fread_string(fromfile, buf2);
 
-  fscanf(fromfile, "%d %d %d\n", &(obj->obj_flags.type_flag), &(obj->obj_flags.extra_flags), &(obj->obj_flags.wear_flags));
+  if (fscanf(fromfile, "%d %d %d\n", &(obj->obj_flags.type_flag), &(obj->obj_flags.extra_flags), &(obj->obj_flags.wear_flags)) != 3) {
+    stderr_log("SYSERR: Format error reading object flags from corpse file");
+    extract_obj(obj);
+    return NULL;
+  }
 
   get_line(fromfile, line);
 
@@ -1394,9 +1406,17 @@ struct obj_data *corpseloadobj(FILE *fromfile)
     obj->obj_flags.value[2] = t[2];
     obj->obj_flags.value[3] = t[3];
     obj->obj_flags.value[4] = t[4];
+  } else if (temp < 4) {
+    stderr_log("SYSERR: Format error reading object values from corpse file");
+    extract_obj(obj);
+    return NULL;
   }
 
-  fscanf(fromfile, "%d %d\n", &(obj->obj_flags.weight), &(obj->obj_flags.cost));
+  if (fscanf(fromfile, "%d %d\n", &(obj->obj_flags.weight), &(obj->obj_flags.cost)) != 2) {
+    stderr_log("SYSERR: Format error reading object weight/cost from corpse file");
+    extract_obj(obj);
+    return NULL;
+  }
 
   for (;;) {
     get_line(fromfile, line);

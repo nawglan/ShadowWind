@@ -447,12 +447,7 @@ void update_last_login(struct descriptor_data *d)
     }
     safe_snprintf(d->host, sizeof(d->host), "%s@%s", d->username, d->hostname);
   } else {
-    if (strlen(d->hostname) <= HOST_LENGTH) {
-      strcpy(d->host, d->hostname);
-    } else {
-      d->hostname[HOST_LENGTH] = '\0';
-      strcpy(d->host, d->hostname);
-    }
+    safe_snprintf(d->host, sizeof(d->host), "%s", d->hostname);
   }
 }
 
@@ -490,9 +485,9 @@ void game_loop(int mother_desc)
         next_d = d->next;
         if ((hostchk != -1) && (d->descriptor == host_ans_buf.desc) && !strncmp(host_ans_buf.addr, d->hostIP, strlen(d->hostIP))) {
           if (host_ans_buf.hostname[0]) {
-            strcpy(d->hostname, host_ans_buf.hostname);
+            safe_snprintf(d->hostname, sizeof(d->hostname), "%s", host_ans_buf.hostname);
           } else {
-            strcpy(d->hostname, d->hostIP);
+            safe_snprintf(d->hostname, sizeof(d->hostname), "%s", d->hostIP);
           }
           update_last_login(d);
           hostchk = -1;
@@ -1136,10 +1131,10 @@ int new_descriptor(int s)
   /* new code for hostlookups */
   if (getpeername(desc, (struct sockaddr*) &peer, &size) < 0) {
     perror("getpeername");
-    sprintf(newd->hostIP, "Unknown");
+    safe_snprintf(newd->hostIP, sizeof(newd->hostIP), "Unknown");
     found = TRUE;
   } else {
-    sprintf(newd->hostIP, "%d.%d.%d.%d", ((unsigned char*) &(peer.sin_addr))[0], ((unsigned char*) &(peer.sin_addr))[1], ((unsigned char*) &(peer.sin_addr))[2], ((unsigned char*) &(peer.sin_addr))[3]);
+    safe_snprintf(newd->hostIP, sizeof(newd->hostIP), "%d.%d.%d.%d", ((unsigned char*) &(peer.sin_addr))[0], ((unsigned char*) &(peer.sin_addr))[1], ((unsigned char*) &(peer.sin_addr))[2], ((unsigned char*) &(peer.sin_addr))[3]);
 
   }
   /* determine if the site is banned */
@@ -1180,7 +1175,7 @@ int new_descriptor(int s)
   if (!found) {
     hr_buf.mtype = MSG_HOST_REQ;
     hr_buf.desc = desc;
-    strcpy(hr_buf.addr, newd->hostIP);
+    safe_snprintf(hr_buf.addr, sizeof(hr_buf.addr), "%s", newd->hostIP);
     memcpy(&hr_buf.sock, &peer, sizeof(struct sockaddr_in));
 
     if (write(dns_send_fifo, (void *) &hr_buf, sizeof(struct host_request)) == -1) {
@@ -1368,7 +1363,7 @@ return 0;
     if ((space_left <= 0) && (ptr < nl_pos)) {
       char buffer[MAX_INPUT_LENGTH + 64];
 
-      sprintf(buffer, "Line too long.  Truncated to:\r\n%s\r\n", tmp);
+      safe_snprintf(buffer, sizeof(buffer), "Line too long.  Truncated to:\r\n%s\r\n", tmp);
       if (write_to_descriptor(t->descriptor, buffer) < 0)
         return -1;
     }
