@@ -242,7 +242,7 @@ void obj_affect_modify(struct char_data * ch, int loc, int mod, long bitv, long 
 
     default:
       stderr_log("SYSERR: Unknown apply adjust attempt (affect_modify).");
-      sprintf(abuf, "Name = %s, apply adjust = %d", GET_NAME(ch), loc);
+      safe_snprintf(abuf, sizeof(abuf), "Name = %s, apply adjust = %d", GET_NAME(ch), loc);
       stderr_log(abuf);
       break;
   } /* switch */
@@ -911,8 +911,8 @@ int get_number(char **name)
 
   if ((ppos = strchr(*name, '.'))) {
     *ppos++ = '\0';
-    strcpy(number, *name);
-    strcpy(*name, ppos);
+    safe_snprintf(number, sizeof(number), "%s", *name);
+    memmove(*name, ppos, strlen(ppos) + 1);
 
     for (i = 0; *(number + i); i++)
       if (!isdigit(*(number + i)))
@@ -967,7 +967,7 @@ struct char_data *get_char_room(char *name, int room)
   char tmpname[MAX_INPUT_LENGTH];
   char *tmp = tmpname;
 
-  strcpy(tmp, name);
+  safe_snprintf(tmp, MAX_INPUT_LENGTH, "%s", name);
   if (!(number = get_number(&tmp)))
     return NULL;
 
@@ -1537,7 +1537,7 @@ struct char_data *get_char_room_vis(struct char_data * ch, char *name)
   }
 
   /* 0.<name> means PC with name */
-  strcpy(tmp, name);
+  safe_snprintf(tmp, MAX_INPUT_LENGTH, "%s", name);
   if (!(number = get_number(&tmp)))
     return get_player_vis(ch, tmp, 1);
 
@@ -1565,7 +1565,7 @@ struct char_data *get_char_vis(struct char_data * ch, char *name)
   if ((i = get_char_room_vis(ch, name)) != NULL)
     return i;
 
-  strcpy(tmp, name);
+  safe_snprintf(tmp, MAX_INPUT_LENGTH, "%s", name);
   if (!(number = get_number(&tmp)))
     return get_player_vis(ch, tmp, 0);
 
@@ -1588,7 +1588,7 @@ struct obj_data *get_obj_in_list_vis(struct char_data * ch, char *name, struct o
   if (list == NULL || name == NULL || ch == NULL)
     return NULL;
 
-  strcpy(tmp, name);
+  safe_snprintf(tmp, MAX_INPUT_LENGTH, "%s", name);
   if (!(number = get_number(&tmp)))
     return NULL;
 
@@ -1623,7 +1623,7 @@ struct obj_data *get_obj_vis(struct char_data * ch, char *name)
   if ((i = get_obj_in_list_vis(ch, name, world[ch->in_room].contents)))
     return i;
 
-  strcpy(tmp, name);
+  safe_snprintf(tmp, MAX_INPUT_LENGTH, "%s", name);
   if (!(number = get_number(&tmp)))
     return NULL;
 
@@ -1807,7 +1807,7 @@ int find_all_dots(char *arg)
   if (!strcmp(arg, "all"))
     return FIND_ALL;
   else if (!strncmp(arg, "all.", 4)) {
-    strcpy(arg, arg + 4);
+    memmove(arg, arg + 4, strlen(arg + 4) + 1);
     return FIND_ALLDOT;
   } else
     return FIND_INDIV;

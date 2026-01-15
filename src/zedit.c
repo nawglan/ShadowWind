@@ -383,8 +383,8 @@ void zedit_create_index(int znum, char *type)
       return;
   }
 
-  sprintf(old_name, "%s/index", prefix);
-  sprintf(new_name, "%s/newindex", prefix);
+  safe_snprintf(old_name, sizeof(old_name), "%s/index", prefix);
+  safe_snprintf(new_name, sizeof(new_name), "%s/newindex", prefix);
 
   if (!(oldfile = fopen(old_name, "r"))) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", old_name);
@@ -514,7 +514,7 @@ void zedit_save_to_disk(int zone_num)
   FILE *zfile;
   int i;
 
-  sprintf(fname, "%s/%d.new", ZON_PREFIX, zone_table[zone_num].number);
+  safe_snprintf(fname, sizeof(fname), "%s/%d.new", ZON_PREFIX, zone_table[zone_num].number);
   if (!(zfile = fopen(fname, "w"))) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: zedit_save_to_disk:  Can't write zone %d.", zone_table[zone_num].number);
     mudlog(buf, 'G', COM_BUILDER, TRUE);
@@ -804,44 +804,45 @@ void zedit_disp_zone_extras(struct descriptor_data * d)
 void zedit_disp_climate_info(struct descriptor_data * d)
 {
   int i;
+  size_t len;
   char abuf[MAX_STRING_LENGTH];
   send_to_char("[H[J", d->character);
-  sprintf(abuf, "1) Season Pattern: %s\r\n", season_patterns[ZON_CLIMATE(OLC_ZONE(d)).season_pattern - 1]);
+  safe_snprintf(abuf, sizeof(abuf), "1) Season Pattern: %s\r\n", season_patterns[ZON_CLIMATE(OLC_ZONE(d)).season_pattern - 1]);
   send_to_char(abuf, d->character);
   sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, buf1);
   safe_snprintf(abuf, sizeof(abuf), "2) Season Flags: %s\r\n"
       "3) Season Energy: %d\r\n", buf1, ZON_CLIMATE(OLC_ZONE(d)).energy_add);
   send_to_char(abuf, d->character);
-  sprintf(abuf, "4) Season Winds: ");
+  len = safe_snprintf(abuf, sizeof(abuf), "4) Season Winds: ");
   for (i = 0; i < MAX_SEASONS; i++)
     if (ZON_CLIMATE(OLC_ZONE(d)).season_wind[i])
-      sprintf(abuf + strlen(abuf), " %s,", wind_types[ZON_CLIMATE(OLC_ZONE(d)).season_wind[i] - 1]);
+      len += safe_snprintf(abuf + len, sizeof(abuf) - len, " %s,", wind_types[ZON_CLIMATE(OLC_ZONE(d)).season_wind[i] - 1]);
     else
-      strcat(abuf, " NONE,");
-  strcat(abuf, "\r\n");
+      len += safe_snprintf(abuf + len, sizeof(abuf) - len, " NONE,");
+  safe_snprintf(abuf + len, sizeof(abuf) - len, "\r\n");
   send_to_char(abuf, d->character);
-  sprintf(abuf, "5) Season Variance: ");
+  len = safe_snprintf(abuf, sizeof(abuf), "5) Season Variance: ");
   for (i = 0; i < MAX_SEASONS; i++)
-    sprintf(abuf + strlen(abuf), " %s,", season_variance[ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[i]]);
-  strcat(abuf, "\r\n");
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, " %s,", season_variance[ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[i]]);
+  safe_snprintf(abuf + len, sizeof(abuf) - len, "\r\n");
   send_to_char(abuf, d->character);
-  sprintf(abuf, "6) Season Wind Direction: ");
+  len = safe_snprintf(abuf, sizeof(abuf), "6) Season Wind Direction: ");
   for (i = 0; i < MAX_SEASONS; i++)
-    sprintf(abuf + strlen(abuf), " %s,", dirs[ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[i]]);
-  strcat(abuf, "\r\n");
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, " %s,", dirs[ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[i]]);
+  safe_snprintf(abuf + len, sizeof(abuf) - len, "\r\n");
   send_to_char(abuf, d->character);
-  sprintf(abuf, "7) Season Precipitation: ");
+  len = safe_snprintf(abuf, sizeof(abuf), "7) Season Precipitation: ");
   for (i = 0; i < MAX_SEASONS; i++)
     if (ZON_CLIMATE(OLC_ZONE(d)).season_precip[i])
-      sprintf(abuf + strlen(abuf), " %s,", precip_types[ZON_CLIMATE(OLC_ZONE(d)).season_precip[i] - 1]);
+      len += safe_snprintf(abuf + len, sizeof(abuf) - len, " %s,", precip_types[ZON_CLIMATE(OLC_ZONE(d)).season_precip[i] - 1]);
     else
-      strcat(abuf, " NONE,");
-  strcat(abuf, "\r\n");
+      len += safe_snprintf(abuf + len, sizeof(abuf) - len, " NONE,");
+  safe_snprintf(abuf + len, sizeof(abuf) - len, "\r\n");
   send_to_char(abuf, d->character);
-  sprintf(abuf, "8) Season Temperature: ");
+  len = safe_snprintf(abuf, sizeof(abuf), "8) Season Temperature: ");
   for (i = 0; i < MAX_SEASONS; i++)
-    sprintf(abuf + strlen(abuf), " %s,", temp_types[ZON_CLIMATE(OLC_ZONE(d)).season_temp[i] - 1]);
-  strcat(abuf, "\r\n");
+    len += safe_snprintf(abuf + len, sizeof(abuf) - len, " %s,", temp_types[ZON_CLIMATE(OLC_ZONE(d)).season_temp[i] - 1]);
+  safe_snprintf(abuf + len, sizeof(abuf) - len, "\r\n");
   send_to_char(abuf, d->character);
   send_to_char("Enter number of option to edit [0 to exit]: ", d->character);
 }
@@ -1326,7 +1327,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
         case 1:
           *buf1 = '\0';
           for (i = 0; *season_patterns[i] != '\n'; i++)
-            sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, season_patterns[i]);
+            safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, season_patterns[i]);
           send_to_char(buf1, d->character);
           send_to_char("Enter new season pattern: ", d->character);
           OLC_VAL(d) = 1;
@@ -1345,7 +1346,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
         case 4:
           *buf1 = '\0';
           for (i = 0; i < MAX_SEASONS; i++)
-            sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, wind_types[ZON_CLIMATE(OLC_ZONE(d)).season_wind[i] - 1]);
+            safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, wind_types[ZON_CLIMATE(OLC_ZONE(d)).season_wind[i] - 1]);
           send_to_char(buf1, d->character);
           send_to_char("Enter number to change: ", d->character);
           OLC_MODE(d) = ZEDIT_ZONE_SEASON_WIND;
@@ -1354,7 +1355,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
         case 5:
           *buf1 = '\0';
           for (i = 0; i < MAX_SEASONS; i++)
-            sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, season_variance[ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[i]]);
+            safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, season_variance[ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[i]]);
           send_to_char(buf1, d->character);
           send_to_char("Enter number to change: ", d->character);
           OLC_MODE(d) = ZEDIT_ZONE_SEASON_VAR;
@@ -1363,7 +1364,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
         case 6:
           *buf1 = '\0';
           for (i = 0; i < MAX_SEASONS; i++)
-            sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, dirs[ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[i]]);
+            safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, dirs[ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[i]]);
           send_to_char(buf1, d->character);
           send_to_char("Enter number to change: ", d->character);
           OLC_MODE(d) = ZEDIT_ZONE_SEASON_WINDDIR;
@@ -1372,7 +1373,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
         case 7:
           *buf1 = '\0';
           for (i = 0; i < MAX_SEASONS; i++)
-            sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, precip_types[ZON_CLIMATE(OLC_ZONE(d)).season_precip[i] - 1]);
+            safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, precip_types[ZON_CLIMATE(OLC_ZONE(d)).season_precip[i] - 1]);
           send_to_char(buf1, d->character);
           send_to_char("Enter number to change: ", d->character);
           OLC_MODE(d) = ZEDIT_ZONE_SEASON_PRECIP;
@@ -1381,7 +1382,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
         case 8:
           *buf1 = '\0';
           for (i = 0; i < MAX_SEASONS; i++)
-            sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, temp_types[ZON_CLIMATE(OLC_ZONE(d)).season_temp[i] - 1]);
+            safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, temp_types[ZON_CLIMATE(OLC_ZONE(d)).season_temp[i] - 1]);
           send_to_char(buf1, d->character);
           send_to_char("Enter number to change: ", d->character);
           OLC_MODE(d) = ZEDIT_ZONE_SEASON_TEMP;
@@ -1667,7 +1668,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       if (pos < 1 || pos > 8) {
         *buf1 = '\0';
         for (i = 0; *season_patterns[i] != '\n'; i++)
-          sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, season_patterns[i]);
+          safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, season_patterns[i]);
         send_to_char(buf1, d->character);
         send_to_char("Enter new season pattern: ", d->character);
       } else {
@@ -1708,7 +1709,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       *buf1 = '\0';
       pos = atoi(arg);
       for (i = 0; *wind_types[i] != '\n'; i++)
-        sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, wind_types[i]);
+        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, wind_types[i]);
       send_to_char(buf1, d->character);
       send_to_char("Enter new wind type: ", d->character);
       switch (pos) {
@@ -1731,7 +1732,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       *buf1 = '\0';
       pos = atoi(arg);
       for (i = 0; *season_variance[i] != '\n'; i++)
-        sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i, season_variance[i]);
+        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i, season_variance[i]);
       send_to_char(buf1, d->character);
       send_to_char("Enter new variance type: ", d->character);
       switch (pos) {
@@ -1863,7 +1864,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       *buf1 = '\0';
       pos = atoi(arg);
       for (i = 0; *precip_types[i] != '\n'; i++)
-        sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, precip_types[i]);
+        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, precip_types[i]);
       send_to_char(buf1, d->character);
       send_to_char("Enter new precip type: ", d->character);
       switch (pos) {
@@ -1914,7 +1915,7 @@ void zedit_parse(struct descriptor_data *d, char *arg)
       *buf1 = '\0';
       pos = atoi(arg);
       for (i = 0; *temp_types[i] != '\n'; i++)
-        sprintf(buf1 + strlen(buf1), "%d) %s\r\n", i + 1, temp_types[i]);
+        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, temp_types[i]);
       send_to_char(buf1, d->character);
       send_to_char("Enter new temp type: ", d->character);
       switch (pos) {

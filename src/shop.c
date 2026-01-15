@@ -289,19 +289,20 @@ char *times_message(struct obj_data * obj, char *name, int num)
 {
   static char buf[256];
   char *ptr;
+  size_t len;
 
   if (obj)
-    strcpy(buf, obj->short_description);
+    len = safe_snprintf(buf, sizeof(buf), "%s", obj->short_description);
   else {
     if ((ptr = strchr(name, '.')) == NULL)
       ptr = name;
     else
       ptr++;
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s %s", AN(ptr), ptr);
+    len = safe_snprintf(buf, sizeof(buf), "%s %s", AN(ptr), ptr);
   }
 
   if (num > 1)
-    sprintf(buf + strlen(buf), " (x %d)", num);
+    safe_snprintf(buf + len, sizeof(buf) - len, " (x %d)", num);
   return (buf);
 }
 
@@ -312,7 +313,7 @@ struct obj_data *get_slide_obj_vis(struct char_data * ch, char *name, struct obj
   char tmpname[MAX_INPUT_LENGTH];
   char *tmp;
 
-  strcpy(tmpname, name);
+  safe_snprintf(tmpname, sizeof(tmpname), "%s", name);
   tmp = tmpname;
   if (!(number = get_number(&tmp)))
     return (0);
@@ -361,7 +362,7 @@ struct obj_data *get_purchase_obj(struct char_data * ch, char *arg, struct char_
       obj = get_slide_obj_vis(ch, name, keeper->carrying);
     if (!obj) {
       if (msg) {
-        sprintf(buf, shop_index[shop_nr].no_such_item1, GET_NAME(ch));
+        safe_snprintf(buf, MAX_STRING_LENGTH, shop_index[shop_nr].no_such_item1, GET_NAME(ch));
         do_tell(keeper, buf, cmd_tell, 0);
       }
       return (0);
@@ -412,7 +413,7 @@ void shopping_buy(char *arg, struct char_data * ch, struct char_data * keeper, i
   temp = buy_price(obj, shop_nr);
 
   if ((buy_price(obj, shop_nr) > GET_TEMP_GOLD(ch)) && !IS_GOD(ch)) {
-    sprintf(buf, shop_index[shop_nr].missing_cash2, GET_NAME(ch));
+    safe_snprintf(buf, MAX_STRING_LENGTH, shop_index[shop_nr].missing_cash2, GET_NAME(ch));
     do_tell(keeper, buf, cmd_tell, 0);
     return;
   }
@@ -544,7 +545,7 @@ void shopping_buy(char *arg, struct char_data * ch, struct char_data * keeper, i
     }
   }
 
-  sprintf(buf, shop_index[shop_nr].message_buy, GET_NAME(ch), make_money_text(goldamt));
+  safe_snprintf(buf, MAX_STRING_LENGTH, shop_index[shop_nr].message_buy, GET_NAME(ch), make_money_text(goldamt));
   do_tell(keeper, buf, cmd_tell, 0);
   safe_snprintf(buf, MAX_STRING_LENGTH, "You now have %s.\n\r", tempstr);
   send_to_char(buf, ch);
@@ -558,7 +559,7 @@ struct obj_data *get_selling_obj(struct char_data * ch, char *name, struct char_
 
   if (!(obj = get_obj_in_list_vis(ch, name, ch->carrying))) {
     if (msg) {
-      sprintf(buf, shop_index[shop_nr].no_such_item2, GET_NAME(ch));
+      safe_snprintf(buf, MAX_STRING_LENGTH, shop_index[shop_nr].no_such_item2, GET_NAME(ch));
       do_tell(keeper, buf, cmd_tell, 0);
     }
     return (0);
@@ -568,7 +569,7 @@ struct obj_data *get_selling_obj(struct char_data * ch, char *name, struct char_
 
   switch (result) {
     case OBJECT_NOTOK:
-      sprintf(buf, shop_index[shop_nr].do_not_buy, GET_NAME(ch));
+      safe_snprintf(buf, MAX_STRING_LENGTH, shop_index[shop_nr].do_not_buy, GET_NAME(ch));
       break;
     case OBJECT_DEAD:
       safe_snprintf(buf, MAX_STRING_LENGTH, "%s %s", GET_NAME(ch), MSG_NO_USED_WANDSTAFF);
@@ -714,11 +715,11 @@ void shopping_sell(char *arg, struct char_data * ch, struct char_data * keeper, 
   GET_TEMP_GOLD(ch) += silver * 10;
   GET_COPPER(ch) += copper;
   GET_TEMP_GOLD(ch) += copper;
-  strcpy(tempstr, times_message(0, name, sold));
+  safe_snprintf(tempstr, sizeof(tempstr), "%s", times_message(0, name, sold));
   safe_snprintf(buf, MAX_STRING_LENGTH, "$n sells %s.", tempstr);
   act(buf, FALSE, ch, obj, 0, TO_ROOM);
 
-  sprintf(buf, shop_index[shop_nr].message_sell, GET_NAME(ch), make_money_text(goldamt));
+  safe_snprintf(buf, MAX_STRING_LENGTH, shop_index[shop_nr].message_sell, GET_NAME(ch), make_money_text(goldamt));
   do_tell(keeper, buf, cmd_tell, 0);
   safe_snprintf(buf, MAX_STRING_LENGTH, "The shopkeeper now has %s.\n\r", tempstr);
   send_to_char(buf, ch);

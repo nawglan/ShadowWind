@@ -615,7 +615,7 @@ int get_filename(char *orig_name, char *filename, int mode)
   if (!orig_name || !*orig_name)
     return 0;
 
-  strcpy(name, orig_name);
+  safe_snprintf(name, sizeof(name), "%s", orig_name);
   for (ptr = name; *ptr; ptr++)
     *ptr = LOWER(*ptr);
 
@@ -661,7 +661,7 @@ int get_filename(char *orig_name, char *filename, int mode)
       break;
   }
 
-  sprintf(filename, "%s/%s/%s.%s", prefix, middle, name, suffix);
+  safe_snprintf(filename, MAX_INPUT_LENGTH, "%s/%s/%s.%s", prefix, middle, name, suffix);
   return 1;
 }
 
@@ -808,10 +808,11 @@ char *make_money_text(int coins)
 {
   int p, g, s;
   static char buf[MAX_INPUT_LENGTH];
+  size_t len = 0;
 
   buf[0] = 0;
   if (!coins) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "free");
+    safe_snprintf(buf, sizeof(buf), "free");
     return (buf);
   }
   p = coins / 1000;
@@ -822,29 +823,29 @@ char *make_money_text(int coins)
   coins -= s * 10;
 
   if (p) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{x%d {Wp{x", p);
+    len = safe_snprintf(buf, sizeof(buf), "{x%d {Wp{x", p);
   }
 
   if (g) {
     if (p && !s && !coins)
-      sprintf(buf + strlen(buf), ", and ");
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
     else if (p)
-      sprintf(buf + strlen(buf), ", ");
-    sprintf(buf + strlen(buf), "{x%d {Yg{x", g);
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
+    len += safe_snprintf(buf + len, sizeof(buf) - len, "{x%d {Yg{x", g);
   }
   if (s) {
     if ((p || g) && !coins)
-      sprintf(buf + strlen(buf), ", and ");
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
     else if (p || g)
-      sprintf(buf + strlen(buf), ", ");
-    sprintf(buf + strlen(buf), "{x%d s", s);
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
+    len += safe_snprintf(buf + len, sizeof(buf) - len, "{x%d s", s);
   }
   if (coins) {
     if (p || g || s)
-      sprintf(buf + strlen(buf), ", and ");
-    sprintf(buf + strlen(buf), "{x%d {yc{x", coins);
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
+    len += safe_snprintf(buf + len, sizeof(buf) - len, "{x%d {yc{x", coins);
   }
-  sprintf(buf + strlen(buf), " coin%s{x", ((p + g + s + coins) > 1) ? "s" : "");
+  safe_snprintf(buf + len, sizeof(buf) - len, " coin%s{x", ((p + g + s + coins) > 1) ? "s" : "");
 
   return buf;
 }
@@ -853,6 +854,7 @@ char *make_money_text_nocolor(int coins)
 {
   int p, g, s;
   static char buf[MAX_INPUT_LENGTH];
+  size_t len = 0;
 
   buf[0] = 0;
   if (!coins)
@@ -865,29 +867,29 @@ char *make_money_text_nocolor(int coins)
   coins -= s * 10;
 
   if (p) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%d p", p);
+    len = safe_snprintf(buf, sizeof(buf), "%d p", p);
   }
 
   if (g) {
     if (p && !s && !coins)
-      sprintf(buf + strlen(buf), ", and ");
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
     else if (p)
-      sprintf(buf + strlen(buf), ", ");
-    sprintf(buf + strlen(buf), "%d g", g);
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
+    len += safe_snprintf(buf + len, sizeof(buf) - len, "%d g", g);
   }
   if (s) {
     if ((p || g) && !coins)
-      sprintf(buf + strlen(buf), ", and ");
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
     else if (p || g)
-      sprintf(buf + strlen(buf), ", ");
-    sprintf(buf + strlen(buf), "%d s", s);
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
+    len += safe_snprintf(buf + len, sizeof(buf) - len, "%d s", s);
   }
   if (coins) {
     if (p || g || s)
-      sprintf(buf + strlen(buf), ", and ");
-    sprintf(buf + strlen(buf), "%d c", coins);
+      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
+    len += safe_snprintf(buf + len, sizeof(buf) - len, "%d c", coins);
   }
-  sprintf(buf + strlen(buf), " coin%s", ((p + g + s + coins) > 1) ? "s" : "");
+  safe_snprintf(buf + len, sizeof(buf) - len, " coin%s", ((p + g + s + coins) > 1) ? "s" : "");
 
   return buf;
 }

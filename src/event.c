@@ -203,16 +203,18 @@ void run_events()
       }
     }
     if (temp->command && (temp->ticks_to_go >> 1) > 0 && number(1, 5) > 2) {
-      sprintf(abuf, "casting %s: ", temp->command);
+      size_t alen = safe_snprintf(abuf, sizeof(abuf), "casting %s: ", temp->command);
       if (GET_SKILL(EVENT_CH, skillnum) >= number(0, 100)) {
         temp->ticks_to_go >>= 1;
         WAIT_STATE(EVENT_CH, temp->ticks_to_go * 10);
         improve_skill(EVENT_CH, skillnum, SKUSE_FREQUENT);
       }
-      for (i = 0; i < temp->ticks_to_go; i++) {
-        strcat(abuf, "*");
+      for (i = 0; i < temp->ticks_to_go && alen < sizeof(abuf) - 3; i++) {
+        abuf[alen++] = '*';
       }
-      strcat(abuf, "\r\n");
+      abuf[alen++] = '\r';
+      abuf[alen++] = '\n';
+      abuf[alen] = '\0';
       send_to_char(abuf, EVENT_CH);
       if (temp->causer && GET_POS(EVENT_CH) < POS_FIGHTING) {
         act("$n stops casting!", TRUE, EVENT_CH, 0, 0, TO_ROOM);
@@ -505,7 +507,7 @@ EVENT(spell_magic_missile_event)
   if ((char*) info) {
     vict = get_char_room_vis(CAUSER_CH, (char*) info);
     if (!vict) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -541,7 +543,7 @@ EVENT(spell_magic_missile_event)
     for (i = 0; i < amount; i++) {
       if (vict && GET_POS(vict) > POS_DEAD) {
         if (IS_MOB(CAUSER_CH)) {
-          sprintf(debugbuf, "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+          safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
           mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
         }
         if (CAUSER_CH != vict && sinfo->aggressive) {
@@ -618,7 +620,7 @@ EVENT(spell_dam_event)
   if ((char*) info) {
     vict = get_char_room_vis(CAUSER_CH, (char*) info);
     if (!vict) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -664,7 +666,7 @@ EVENT(spell_dam_event)
       say_spell(CAUSER_CH, sinfo->spellindex, vict, NULL);
     }
     if (IS_MOB(CAUSER_CH)) {
-      sprintf(debugbuf, "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+      safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
       mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
     }
     damage(CAUSER_CH, vict, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
@@ -686,7 +688,7 @@ EVENT(spell_char_event)
   if ((char*) info) {
     vict = get_char_room_vis(CAUSER_CH, (char*) info);
     if (!vict) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -794,7 +796,7 @@ EVENT(spell_points_event)
   if ((char*) info) {
     vict = get_char_room_vis(CAUSER_CH, (char*) info);
     if (!vict) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -870,7 +872,7 @@ EVENT(spell_obj_event)
       object = get_obj_in_list_vis(CAUSER_CH, (char*) info, world[CAUSER_CH->in_room].contents);
     }
     if (!object) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -917,7 +919,7 @@ EVENT(spell_obj_room_event)
       object = get_obj_in_list_vis(CAUSER_CH, (char*) info, world[CAUSER_CH->in_room].contents);
     }
     if (!object) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -1094,7 +1096,7 @@ EVENT(spell_locate_obj_event)
     return;
   }
 
-  strcpy(name, fname(obj->name));
+  safe_snprintf(name, sizeof(name), "%s", fname(obj->name));
   j = GET_LEVEL(CAUSER_CH) >> 1;
 
   for (i = object_list; i && (j > 0); i = i->next) {
@@ -1190,7 +1192,7 @@ EVENT(spell_create_obj_event)
     if ((char*) info) {
       vict = get_char_vis(CAUSER_CH, (char*) info);
       if (!vict || IS_MOB(vict) || IS_IMMO(vict)) {
-        sprintf(abuf, "You can not see %s.\r\n", (char*) info);
+        safe_snprintf(abuf, sizeof(abuf), "You can not see %s.\r\n", (char*) info);
         send_to_char(abuf, CAUSER_CH);
         return;
       }
@@ -1686,7 +1688,7 @@ EVENT(spell_obj_char_event)
       object = get_obj_in_list_vis(CAUSER_CH, (char*) info, world[CAUSER_CH->in_room].contents);
     }
     if (!vict && !object) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -1869,7 +1871,7 @@ EVENT(spell_area_dam_event)
         dam >>= 1;
       }
       if (IS_MOB(CAUSER_CH)) {
-        sprintf(debugbuf, "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(tch), dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(tch), dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
@@ -2021,7 +2023,7 @@ EVENT(spell_dispel_magic_event)
   } else if ((char*) info) {
     vict = get_char_room_vis(CAUSER_CH, (char*) info);
     if (!vict) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -2090,7 +2092,7 @@ EVENT(spell_telekinesis_event)
   for (obj = world[CAUSER_CH->in_room].contents; obj; obj = next_obj) {
     next_obj = obj->next_content;
     if (IS_OBJ_STAT(obj, ITEM_UNDERWATER)) {
-      sprintf(telebuf, "You are able to raise %s from the depths of water.\r\n", OBJS(obj, CAUSER_CH));
+      safe_snprintf(telebuf, sizeof(telebuf), "You are able to raise %s from the depths of water.\r\n", OBJS(obj, CAUSER_CH));
       send_to_char(telebuf, CAUSER_CH);
       act("$n raises $p from the murky depths.", TRUE, CAUSER_CH, obj, NULL, TO_ROOM);
       REMOVE_BIT(GET_OBJ_EXTRA(obj), ITEM_UNDERWATER);
@@ -2125,7 +2127,7 @@ EVENT(spell_disintegrate_event)
   } else if ((char*) info) {
     vict = get_char_room_vis(CAUSER_CH, (char*) info);
     if (!vict) {
-      sprintf(abuf, "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -2174,7 +2176,7 @@ EVENT(spell_disintegrate_event)
         if (number(0, 1)) {
           act("$p{Y disintegrates into a cloud of dust!{x", FALSE, vict, GET_EQ(vict, eq), NULL, TO_CHAR);
           if (!IS_NPC(vict)) {
-            sprintf(pbuf, "%s lost item %s (disintegrate)", GET_NAME(vict), GET_EQ(vict, eq)->short_description);
+            safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (disintegrate)", GET_NAME(vict), GET_EQ(vict, eq)->short_description);
             mudlog(pbuf, 'Q', COM_IMMORT, TRUE);
             plog(pbuf, vict, 0);
           }
@@ -2221,7 +2223,7 @@ EVENT(spell_turn_undead_event)
     if (prob < 50) {
       dam = GET_HIT(vict) + 30;
       if (IS_MOB(CAUSER_CH)) {
-        sprintf(debugbuf, "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, vict, dam, sinfo->spellindex, 0, DAM_MAGIC, TRUE, info2 ? 1 : 0);
@@ -2230,7 +2232,7 @@ EVENT(spell_turn_undead_event)
     }
   } else if ((GET_LEVEL(CAUSER_CH) - GET_LEVEL(vict)) > 4) {
     if (IS_MOB(CAUSER_CH)) {
-      sprintf(debugbuf, "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+      safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
       mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
     }
     damage(CAUSER_CH, vict, GET_LEVEL(CAUSER_CH), sinfo->spellindex, 0, DAM_MAGIC, TRUE, info2 ? 1 : 0);
@@ -2276,11 +2278,12 @@ EVENT(spell_identify_event)
       }
     }
     send_to_char("You feel informed:\r\n", CAUSER_CH);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Object '%s', Item type: ", obj->short_description);
-    sprinttype(GET_OBJ_TYPE(obj), item_types, buf2);
-    strcat(buf, buf2);
-    strcat(buf, "\r\n");
-    send_to_char(buf, CAUSER_CH);
+    {
+      size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Object '%s', Item type: ", obj->short_description);
+      sprinttype(GET_OBJ_TYPE(obj), item_types, buf2);
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s\r\n", buf2);
+      send_to_char(buf, CAUSER_CH);
+    }
 
     if (GET_OBJ_BITV(obj) || GET_OBJ_BITV2(obj)) {
       send_to_char("Item will give you following abilities:  ", CAUSER_CH);
@@ -2291,7 +2294,7 @@ EVENT(spell_identify_event)
     }
     send_to_char("Item is: ", CAUSER_CH);
     sprintbit(GET_OBJ_EXTRA(obj), extra_bits, buf);
-    strcat(buf, "\r\n");
+    safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
     send_to_char(buf, CAUSER_CH);
 
     safe_snprintf(buf, MAX_STRING_LENGTH, "Weight: %d, Value: %d\r\n", GET_OBJ_WEIGHT(obj), GET_OBJ_COST(obj));
@@ -2300,31 +2303,37 @@ EVENT(spell_identify_event)
     switch (GET_OBJ_TYPE(obj)) {
       case ITEM_SCROLL:
       case ITEM_POTION:
-        safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
+        {
+          size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
 
-        if (GET_OBJ_VAL(obj, 1) >= 1) {
-          sprintf(buf + strlen(buf), " %s", get_spell_name(GET_OBJ_VAL(obj, 1)));
+          if (GET_OBJ_VAL(obj, 1) >= 1) {
+            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 1)));
+          }
+          if (GET_OBJ_VAL(obj, 2) >= 1) {
+            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 2)));
+          }
+          if (GET_OBJ_VAL(obj, 3) >= 1) {
+            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 3)));
+          }
+          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
+          send_to_char(buf, CAUSER_CH);
         }
-        if (GET_OBJ_VAL(obj, 2) >= 1) {
-          sprintf(buf + strlen(buf), " %s", get_spell_name(GET_OBJ_VAL(obj, 2)));
-        }
-        if (GET_OBJ_VAL(obj, 3) >= 1) {
-          sprintf(buf + strlen(buf), " %s", get_spell_name(GET_OBJ_VAL(obj, 3)));
-        }
-        sprintf(buf + strlen(buf), "\r\n");
-        send_to_char(buf, CAUSER_CH);
         break;
       case ITEM_WAND:
       case ITEM_STAFF:
-        safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
-        sprintf(buf + strlen(buf), " %s\r\n", get_spell_name(GET_OBJ_VAL(obj, 3)));
-        sprintf(buf + strlen(buf), "It has %d maximum charge%s and %d remaining.\r\n", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 1) == 1 ? "" : "s", GET_OBJ_VAL(obj, 2));
-        send_to_char(buf, CAUSER_CH);
+        {
+          size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
+          len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s\r\n", get_spell_name(GET_OBJ_VAL(obj, 3)));
+          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "It has %d maximum charge%s and %d remaining.\r\n", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 1) == 1 ? "" : "s", GET_OBJ_VAL(obj, 2));
+          send_to_char(buf, CAUSER_CH);
+        }
         break;
       case ITEM_WEAPON:
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Damage Dice is '%dD%d'", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2));
-        sprintf(buf + strlen(buf), " for an average per-round damage of %.1f.\r\n", ((GET_OBJ_VAL(obj, 1) + (GET_OBJ_VAL(obj,1) * GET_OBJ_VAL(obj, 2))) / 2.0));
-        send_to_char(buf, CAUSER_CH);
+        {
+          size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Damage Dice is '%dD%d'", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2));
+          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " for an average per-round damage of %.1f.\r\n", ((GET_OBJ_VAL(obj, 1) + (GET_OBJ_VAL(obj,1) * GET_OBJ_VAL(obj, 2))) / 2.0));
+          send_to_char(buf, CAUSER_CH);
+        }
         break;
       case ITEM_ARMOR:
         safe_snprintf(buf, MAX_STRING_LENGTH, "AC-apply is %d\r\n", GET_OBJ_VAL(obj, 0));
@@ -2656,7 +2665,7 @@ EVENT(spell_destroy_inventory_event)
               } else {
                 act("$p{B shatters into tiny frozen shards!{x", FALSE, tch, obj, NULL, TO_CHAR);
               }
-              sprintf(pbuf, "%s lost item %s (dragonbreath)", GET_NAME(tch), obj->short_description);
+              safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (dragonbreath)", GET_NAME(tch), obj->short_description);
               mudlog(pbuf, 'Q', COM_IMMORT, TRUE);
               plog(pbuf, tch, 0);
               extract_obj(obj);
@@ -2665,7 +2674,7 @@ EVENT(spell_destroy_inventory_event)
         }
       }
       if (IS_MOB(CAUSER_CH)) {
-        sprintf(debugbuf, "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(tch), dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(tch), dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
@@ -2734,7 +2743,7 @@ EVENT(spell_destroy_equipment_event)
               if (strcmp(sinfo->command, "acid breath") == 0) {
                 act("$p{Y dissolves!{x", FALSE, tch, GET_EQ(tch, eq), NULL, TO_CHAR);
               }
-              sprintf(pbuf, "%s lost item %s (dragonbreath)", GET_NAME(tch), GET_EQ(tch, eq)->short_description);
+              safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (dragonbreath)", GET_NAME(tch), GET_EQ(tch, eq)->short_description);
               mudlog(pbuf, 'Q', COM_IMMORT, TRUE);
               plog(pbuf, tch, 0);
               extract_obj(unequip_char(tch, eq));
@@ -2743,7 +2752,7 @@ EVENT(spell_destroy_equipment_event)
         }
       }
       if (IS_MOB(CAUSER_CH)) {
-        sprintf(debugbuf, "MOB CAST: <%s '%s'> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s'> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
