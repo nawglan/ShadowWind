@@ -4339,6 +4339,11 @@ MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
         switch (fread_letter(progfile)) {
           case '>':
             mprg2->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
+            if (mprg2->next == NULL) {
+              stderr_log("SYSERR: malloc failure in mprog_file_read");
+              fflush(NULL);
+              exit(1);
+            }
             mprg2 = mprg2->next;
             mprg2->next = NULL;
             break;
@@ -4395,6 +4400,12 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
     exit(1);
   }
   pMobIndex->mobprogs = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
+  if (pMobIndex->mobprogs == NULL) {
+    sprintf(err_buf, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
+    stderr_log(err_buf);
+    fflush(NULL);
+    exit(1);
+  }
   mprg = pMobIndex->mobprogs;
 
   while (!done) {
@@ -4413,6 +4424,12 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
         switch (letter = fread_letter(fp)) {
           case '>':
             mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
+            if (mprg->next == NULL) {
+              sprintf(err_buf, "SYSERR: malloc failure in mprog_read_programs (IN_FILE_PROG) for vnum %d", pMobIndex->virtual);
+              stderr_log(err_buf);
+              fflush(NULL);
+              exit(1);
+            }
             mprg = mprg->next;
             mprg->next = NULL;
             break;
@@ -4437,6 +4454,12 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
         switch (letter = fread_letter(fp)) {
           case '>':
             mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
+            if (mprg->next == NULL) {
+              sprintf(err_buf, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
+              stderr_log(err_buf);
+              fflush(NULL);
+              exit(1);
+            }
             mprg = mprg->next;
             mprg->next = NULL;
             break;

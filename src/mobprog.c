@@ -60,7 +60,7 @@ extern bool str_prefix(const char *astr, const char *bstr);
 extern int number_percent(void);
 extern int number_range(int from, int to);
 
-#define bug(x, y) { sprintf(buf2, (x), (y)); stderr_log(buf2); }
+#define bug(x, y) { snprintf(buf2, MAX_STRING_LENGTH, (x), (y)); stderr_log(buf2); }
 
 /*
  * local file scope variables
@@ -1114,14 +1114,14 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
 
   char buf[MAX_INPUT_LENGTH*2];
   char buf2[MAX_INPUT_LENGTH*2];
-  char *morebuf = '\0';
-  char *cmnd = '\0';
+  char *morebuf = NULL;
+  char *cmnd = NULL;
   int loopdone = FALSE;
   int flag = FALSE;
   int legal;
 
-  char *end_list = '\0';
-  char *else_list = '\0';
+  char *end_list = NULL;
+  char *else_list = NULL;
 
   *null = '\0';
 
@@ -1177,8 +1177,7 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
       if ((!str_cmp(buf, "break")) || (!str_cmp(buf, "endif")) || (!str_cmp(buf, "else")))
         return end_list;
 
-      strcpy(buf2, cmnd);
-      strcat(buf2, com_list);
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s%s", cmnd, com_list);
       mprog_process_cmnd(buf2, mob, actor, obj, vo, rndm);
       if (!(*buf2))
         com_list[0] = '\0';
@@ -1238,8 +1237,7 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
       if ((!str_cmp(buf, "break")) || (!str_cmp(buf, "endif")))
         return end_list;
 
-      strcpy(buf2, cmnd);
-      strcat(buf2, com_list);
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s%s", cmnd, com_list);
       mprog_process_cmnd(buf2, mob, actor, obj, vo, rndm);
       if (!(*buf2))
         com_list[0] = '\0';
@@ -1635,7 +1633,7 @@ void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor
       }
   }
 
-  strcpy(tmpcmndlst, com_list);
+  safe_snprintf(tmpcmndlst, sizeof(tmpcmndlst), "%s", com_list);
   command_list = tmpcmndlst;
   cmnd = command_list;
   command_list = mprog_next_command(command_list);
@@ -1668,8 +1666,7 @@ void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor
        */
 
       /* this also needs to happen in mprog_process_if */
-      strcpy(buf2, cmnd);
-      strcat(buf2, command_list);
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s%s", cmnd, command_list);
       mprog_process_cmnd(buf2, mob, actor, obj, vo, rndm);
       if (!(*buf2))
         command_list[0] = '\0';
@@ -1794,6 +1791,10 @@ void mprog_act_trigger(char *buf, struct char_data *mob, struct char_data *ch, s
 
   if (IS_NPC(mob) && (mob_index[mob->nr].progtypes & ACT_PROG) && (mob->mob_specials.mp_toggle == FALSE) && (mob != ch)) {
     tmp_act = malloc(sizeof(MPROG_ACT_LIST));
+    if (tmp_act == NULL) {
+      stderr_log("SYSERR: malloc failure in mprog_act_trigger");
+      return;
+    }
     if (mob->mpactnum > 0)
       tmp_act->next = mob->mpact;
     else
@@ -2162,6 +2163,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
     }
 
     temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+    if (temp == NULL) {
+      return -2;
+    }
 
     temp->number = number;
     temp->next = *yearlist;
@@ -2179,6 +2183,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
 
       for (i = number + 1; i <= last; i++) {
         temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+        if (temp == NULL) {
+          return -2;
+        }
 
         temp->number = i;
         temp->next = *yearlist;
@@ -2244,6 +2251,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
     }
 
     temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+    if (temp == NULL) {
+      return -2;
+    }
 
     temp->number = number;
     temp->next = *monthlist;
@@ -2261,6 +2271,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
 
       for (i = number + 1; i <= last; i++) {
         temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+        if (temp == NULL) {
+          return -2;
+        }
 
         temp->number = i;
         temp->next = *monthlist;
@@ -2325,6 +2338,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
     }
 
     temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+    if (temp == NULL) {
+      return -2;
+    }
 
     temp->number = number;
     temp->next = *weeklist;
@@ -2342,6 +2358,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
 
       for (i = number + 1; i <= last; i++) {
         temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+        if (temp == NULL) {
+          return -2;
+        }
 
         temp->number = i;
         temp->next = *weeklist;
@@ -2407,6 +2426,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
     }
 
     temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+    if (temp == NULL) {
+      return -2;
+    }
 
     temp->number = number;
     temp->next = *daywlist;
@@ -2424,6 +2446,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
 
       for (i = number + 1; i <= last; i++) {
         temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+        if (temp == NULL) {
+          return -2;
+        }
 
         temp->number = i;
         temp->next = *daywlist;
@@ -2489,6 +2514,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
     }
 
     temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+    if (temp == NULL) {
+      return -2;
+    }
 
     temp->number = number;
     temp->next = *daymlist;
@@ -2506,6 +2534,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
 
       for (i = number + 1; i <= last; i++) {
         temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+        if (temp == NULL) {
+          return -2;
+        }
 
         temp->number = i;
         temp->next = *daymlist;
@@ -2568,6 +2599,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
     }
 
     temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+    if (temp == NULL) {
+      return -2;
+    }
 
     temp->number = number;
     temp->next = *hourlist;
@@ -2588,6 +2622,9 @@ int scan_time(char* data, struct number_list_type **yearlist, struct number_list
 
       for (i = number + 1; i <= last; i++) {
         temp = (struct number_list_type*) malloc(sizeof(struct number_list_type));
+        if (temp == NULL) {
+          return -2;
+        }
 
         temp->number = i;
         temp->next = *hourlist;

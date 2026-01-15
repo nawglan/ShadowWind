@@ -33,7 +33,7 @@ void Crash_save(struct char_data *ch, int type);
 FILE *auction_fl = NULL; /* File identification for auction file */
 struct auction_item *auction_list = NULL; /* linked list of auc items */
 int auction_recs; /* Number of items in auction file */
-long auc_slots[10] = {-1, -1, -1, -1, -1 - 1, -1, -1, -1, -1};
+long auc_slots[10] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 
 /* Creates new auction object */
 struct auction_item *create_auction(void)
@@ -128,16 +128,25 @@ ACMD(do_auclist)
   extern struct obj_data *obj_proto;
   auc = auction_list;
 
-  sprintf(string_buf, "Items/gold currently held by Auctioneer:\r\n");
+  safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Items/gold currently held by Auctioneer:\r\n");
+  size_t buflen = strlen(string_buf);
+  size_t bufmax = MAX_STRING_LENGTH * 2;
 
   while (auc) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "[%3d] Owner: %-25s Item: %s\r\n", i, auc->from, obj_proto[real_object(auc->item_number)].short_description);
-    strcat(string_buf, buf);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "      Bid: %ld  Count: %d  Buyer: %s \r\n", auc->price, auc->sold, auc->to);
-    strcat(string_buf, buf);
-
-    if (strlen(string_buf) > 39918)
+    size_t addlen = strlen(buf);
+    if (buflen + addlen >= bufmax - 1)
       break;
+    strcat(string_buf, buf);
+    buflen += addlen;
+
+    safe_snprintf(buf, MAX_STRING_LENGTH, "      Bid: %ld  Count: %d  Buyer: %s \r\n", auc->price, auc->sold, auc->to);
+    addlen = strlen(buf);
+    if (buflen + addlen >= bufmax - 1)
+      break;
+    strcat(string_buf, buf);
+    buflen += addlen;
+
     auc = auc->next;
     i++;
   }
