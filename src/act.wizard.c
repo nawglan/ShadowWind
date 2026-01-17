@@ -492,11 +492,8 @@ ACMD(do_vlist)
       size_t buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Room vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_room(j)) > 0) {
-          int addlen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), world[k].number, CCCYN(ch, C_CMP), world[k].name, CCNRM(ch, C_NRM));
-          if (buflen + addlen < MAX_STRING_LENGTH * 2 - 1) {
-            strcat(string_buf, buf);
-            buflen += addlen;
-          } else {
+          buflen += safe_snprintf(string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), world[k].number, CCCYN(ch, C_CMP), world[k].name, CCNRM(ch, C_NRM));
+          if (buflen >= MAX_STRING_LENGTH * 2 - 1) {
             break;
           }
         }
@@ -525,11 +522,8 @@ ACMD(do_vlist)
       buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Mobile vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_mobile(j)) > 0) {
-          int addlen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), mob_index[k].virtual, CCCYN(ch, C_CMP), mob_proto[k].player.short_descr, CCNRM(ch, C_NRM));
-          if (buflen + addlen < MAX_STRING_LENGTH * 2 - 1) {
-            strcat(string_buf, buf);
-            buflen += addlen;
-          } else {
+          buflen += safe_snprintf(string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), mob_index[k].virtual, CCCYN(ch, C_CMP), mob_proto[k].player.short_descr, CCNRM(ch, C_NRM));
+          if (buflen >= MAX_STRING_LENGTH * 2 - 1) {
             break;
           }
         }
@@ -558,11 +552,8 @@ ACMD(do_vlist)
       buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Object vnums in zone (#%d) %s:\r\n", zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_object(j)) > 0) {
-          int addlen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[k].virtual, CCCYN(ch, C_CMP), obj_proto[k].short_description, CCNRM(ch, C_NRM));
-          if (buflen + addlen < MAX_STRING_LENGTH * 2 - 1) {
-            strcat(string_buf, buf);
-            buflen += addlen;
-          } else {
+          buflen += safe_snprintf(string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[k].virtual, CCCYN(ch, C_CMP), obj_proto[k].short_description, CCNRM(ch, C_NRM));
+          if (buflen >= MAX_STRING_LENGTH * 2 - 1) {
             break;
           }
         }
@@ -632,7 +623,7 @@ ACMD(do_logcheck)
     fscanf(fil, "%d %d ", &lvl, &i);
     fgets(buf, MAX_INPUT_LENGTH, fil);
     if (GET_LEVEL(ch) >= lvl) {
-      strcat(string_buf, buf);
+      safe_snprintf(string_buf + strlen(string_buf), MAX_STRING_LENGTH * 2 - strlen(string_buf), "%s", buf);
     }
     if (strlen(string_buf) > 39500) {
       page_string(ch->desc, string_buf, 1);
@@ -1083,7 +1074,7 @@ ACMD(do_goto)
   if (POOFOUT(ch)) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "%s", POOFOUT(ch));
   } else {
-    strcpy(buf, "$n disappears in a puff of smoke.");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s", "$n disappears in a puff of smoke.");
   }
 
   act(buf, TRUE, ch, 0, 0, TO_ROOM);
@@ -1093,7 +1084,7 @@ ACMD(do_goto)
   if (POOFIN(ch)) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "%s", POOFIN(ch));
   } else {
-    strcpy(buf, "$n appears with an ear-splitting bang.");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s", "$n appears with an ear-splitting bang.");
   }
 
   act(buf, TRUE, ch, 0, 0, TO_ROOM);
@@ -1394,12 +1385,8 @@ void do_stat_room(struct char_data * ch)
   send_to_char(buf, ch);
 
   sprinttype(rm->sector_type, sector_types, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Zone: [%3d], VNum: [%s%5d%s], RNum: [%5d], Type: %s, Access: ", rm->zone, CCGRN(ch, C_NRM), rm->number, CCNRM(ch, C_NRM), ch->in_room, buf2);
-  if (IS_SET(zone_table[world[ch->in_room].zone].bits, ZONE_RESTRICTED)) {
-    strcat(buf, "DENIED\r\n");
-  } else {
-    strcat(buf, "FREE\r\n");
-  }
+  safe_snprintf(buf, MAX_STRING_LENGTH, "Zone: [%3d], VNum: [%s%5d%s], RNum: [%5d], Type: %s, Access: %s", rm->zone, CCGRN(ch, C_NRM), rm->number, CCNRM(ch, C_NRM), ch->in_room, buf2,
+               IS_SET(zone_table[world[ch->in_room].zone].bits, ZONE_RESTRICTED) ? "DENIED\r\n" : "FREE\r\n");
 
   send_to_char(buf, ch);
 
@@ -1417,61 +1404,66 @@ void do_stat_room(struct char_data * ch)
   }
 
   if (rm->ex_description) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Extra descs:%s", CCCYN(ch, C_NRM));
+    size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Extra descs:%s", CCCYN(ch, C_NRM));
     for (desc = rm->ex_description; desc; desc = desc->next) {
-      strcat(buf, " ");
-      strcat(buf, desc->keyword);
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", desc->keyword);
     }
-    strcat(buf, CCNRM(ch, C_NRM));
-    send_to_char(strcat(buf, "\r\n"), ch);
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s\r\n", CCNRM(ch, C_NRM));
+    send_to_char(buf, ch);
   }
 
   if (!COM_FLAGGED(ch, COM_QUEST)) { /* limit room stat for lowlevels */
     return;
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Chars present:%s", CCYEL(ch, C_NRM));
+  size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Chars present:%s", CCYEL(ch, C_NRM));
   for (found = 0, k = rm->people; k; k = k->next_in_room) {
     if (!CAN_SEE(ch, k)) {
       continue;
     }
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s %s(%s)", found++ ? "," : "", GET_NAME(k), (!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB")));
-    strcat(buf, buf2);
-    if (strlen(buf) >= 62) {
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s %s(%s)", found++ ? "," : "", GET_NAME(k), (!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB")));
+    if (len >= 62) {
       if (k->next_in_room) {
-        send_to_char(strcat(buf, ",\r\n"), ch);
+        safe_snprintf(buf + len, MAX_STRING_LENGTH - len, ",\r\n");
+        send_to_char(buf, ch);
       } else {
-        send_to_char(strcat(buf, "\r\n"), ch);
+        safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
+        send_to_char(buf, ch);
       }
       *buf = found = 0;
+      len = 0;
     }
   }
 
   if (*buf) {
-    send_to_char(strcat(buf, "\r\n"), ch);
+    safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
+    send_to_char(buf, ch);
   }
   send_to_char(CCNRM(ch, C_NRM), ch);
 
   if (rm->contents) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Contents:%s", CCGRN(ch, C_NRM));
+    len = safe_snprintf(buf, MAX_STRING_LENGTH, "Contents:%s", CCGRN(ch, C_NRM));
     for (found = 0, j = rm->contents; j; j = j->next_content) {
       if (!CAN_SEE_OBJ(ch, j)) {
         continue;
       }
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s %s", found++ ? "," : "", j->short_description);
-      strcat(buf, buf2);
-      if (strlen(buf) >= 62) {
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s %s", found++ ? "," : "", j->short_description);
+      if (len >= 62) {
         if (j->next_content) {
-          send_to_char(strcat(buf, ",\r\n"), ch);
+          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, ",\r\n");
+          send_to_char(buf, ch);
         } else {
-          send_to_char(strcat(buf, "\r\n"), ch);
+          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
+          send_to_char(buf, ch);
         }
         *buf = found = 0;
+        len = 0;
       }
     }
 
     if (*buf) {
-      send_to_char(strcat(buf, "\r\n"), ch);
+      safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
+      send_to_char(buf, ch);
     }
     send_to_char(CCNRM(ch, C_NRM), ch);
   }
@@ -1486,9 +1478,9 @@ void do_stat_room(struct char_data * ch)
       safe_snprintf(buf, MAX_STRING_LENGTH, "Exit %s%-5s%s:  To: [%s], Key: [%5d], Keywrd: %s, Type: %s\r\n ", CCCYN(ch, C_NRM), dirs[i], CCNRM(ch, C_NRM), buf1, rm->dir_option[i]->key, rm->dir_option[i]->keyword ? rm->dir_option[i]->keyword : "None", buf2);
       send_to_char(buf, ch);
       if (rm->dir_option[i]->general_description) {
-        strcpy(buf, rm->dir_option[i]->general_description);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", rm->dir_option[i]->general_description);
       } else {
-        strcpy(buf, "  No exit description.\r\n");
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", "  No exit description.\r\n");
       }
       send_to_char(buf, ch);
     }
@@ -1526,47 +1518,45 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
   send_to_char(buf, ch);
   sprinttype(GET_OBJ_TYPE(j), item_types, buf1);
   if (GET_OBJ_RNUM(j) >= 0) {
-    strcpy(buf2, (obj_index[GET_OBJ_RNUM(j)].func ? "Exists" : "None"));
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", (obj_index[GET_OBJ_RNUM(j)].func ? "Exists" : "None"));
   } else {
-    strcpy(buf2, "None");
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", "None");
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BVNum: [%s%5d%s{B], RNum: [{g%5d{B], Type: {g%s{B, SpecProc: {g%s", CCGRN(ch, C_NRM), virtual, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), buf1, buf2);
   if (GET_OBJ_RNUM(j) >= 0 && obj_index[GET_OBJ_RNUM(j)].qic != NULL && COM_FLAGGED(ch, COM_ADMIN)) {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, " {RQIC: {W%d({w%d){x\r\n", obj_index[GET_OBJ_RNUM(j)].qic->items, obj_index[GET_OBJ_RNUM(j)].qic->limit);
-    strcat(buf, buf2);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{BVNum: [%s%5d%s{B], RNum: [{g%5d{B], Type: {g%s{B, SpecProc: {g%s {RQIC: {W%d({w%d){x\r\n", CCGRN(ch, C_NRM), virtual, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), buf1, buf2, obj_index[GET_OBJ_RNUM(j)].qic->items, obj_index[GET_OBJ_RNUM(j)].qic->limit);
   } else {
-    strcat(buf, "\r\n");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{BVNum: [%s%5d%s{B], RNum: [{g%5d{B], Type: {g%s{B, SpecProc: {g%s\r\n", CCGRN(ch, C_NRM), virtual, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), buf1, buf2);
   }
   send_to_char(buf, ch);
   safe_snprintf(buf, MAX_STRING_LENGTH, "{BL-Des: {x%s\r\n", ((j->description) ? j->description : "None"));
   send_to_char(buf, ch);
 
   if (j->ex_description) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BExtra descs:{c");
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BExtra descs:{c");
     for (desc = j->ex_description; desc; desc = desc->next) {
-      sprintf(buf + strlen(buf), " %s", (desc->keyword ? desc->keyword : "NONE"));
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, " %s", (desc->keyword ? desc->keyword : "NONE"));
     }
-    sprintf(buf + strlen(buf), "{x\r\n");
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "{x\r\n");
     send_to_char(buf, ch);
   }
   send_to_char("{BCan be worn on:{c ", ch);
   sprintbit(GET_OBJ_WEAR(j), wear_bits, buf);
-  strcat(buf, "\r\n");
+  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
   send_to_char(buf, ch);
 
   send_to_char("{BSet char bits :{c ", ch);
   sprintbit(GET_OBJ_BITV(j), affected_bits, buf);
-  strcat(buf, "\r\n");
+  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
   send_to_char(buf, ch);
 
   send_to_char("{BSet char bits2 :{c ", ch);
   sprintbit(GET_OBJ_BITV2(j), affected_bits2, buf);
-  strcat(buf, "\r\n");
+  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
   send_to_char(buf, ch);
 
   send_to_char("{BExtra flags   :{c ", ch);
   sprintbit(GET_OBJ_EXTRA(j), extra_bits, buf);
-  strcat(buf, "\r\n");
+  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
   send_to_char(buf, ch);
 
   safe_snprintf(buf, MAX_STRING_LENGTH, "{BWeight: {c%d{B, Value: {c%d{B, Timer: {c%d{B, Material:{c", GET_OBJ_WEIGHT(j), GET_OBJ_COST(j), GET_OBJ_TIMER(j));
@@ -1574,16 +1564,18 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
   safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s\r\n", buf2);
   send_to_char(buf, ch);
 
-  strcpy(buf, "{BIn room:{c ");
   if (j->in_room == NOWHERE) {
-    strcat(buf, "Nowhere");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{BIn room:{c Nowhere{B, In object:{c %s{B, Carried by:{c %s{B, Worn by:{c %s\r\n",
+        (j->in_obj ? j->in_obj->short_description : "None"),
+        (j->carried_by ? GET_NAME(j->carried_by) : "Nobody"),
+        (j->worn_by ? GET_NAME(j->worn_by) : "Nobody"));
   } else {
-    sprintf(buf + strlen(buf), "%d", world[j->in_room].number);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{BIn room:{c %d{B, In object:{c %s{B, Carried by:{c %s{B, Worn by:{c %s\r\n",
+        world[j->in_room].number,
+        (j->in_obj ? j->in_obj->short_description : "None"),
+        (j->carried_by ? GET_NAME(j->carried_by) : "Nobody"),
+        (j->worn_by ? GET_NAME(j->worn_by) : "Nobody"));
   }
-  sprintf(buf + strlen(buf),
-      "{B, In object:{c %s"
-      "{B, Carried by:{c %s"
-      "{B, Worn by:{c %s\r\n", (j->in_obj ? j->in_obj->short_description : "None"), (j->carried_by ? GET_NAME(j->carried_by) : "Nobody"), (j->worn_by ? GET_NAME(j->worn_by) : "Nobody"));
   send_to_char(buf, ch);
   safe_snprintf(buf, MAX_STRING_LENGTH, "{BItems in game: {c%d{B, Items in rent at boot: {c%d{B, Spec vals: [{c%d{B] [{c%d{B] [{c%d{B]{x\r\n", obj_index[GET_OBJ_RNUM(j)].number, obj_index[GET_OBJ_RNUM(j)].rent,
 
