@@ -103,7 +103,7 @@ void log_death_trap(struct char_data *ch) {
   char buf[150];
   extern struct room_data *world;
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number,
+  safe_snprintf(buf, sizeof(buf), "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number,
                 world[ch->in_room].name);
   mudlog(buf, 'K', COM_IMMORT, TRUE);
   plog(buf, ch, 0);
@@ -706,8 +706,10 @@ void clean_log_file(char *name) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
       safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
       perror(buf1);
+      fclose(fil);
       return;
     }
+    fclose(fil);
     return;
   }
 

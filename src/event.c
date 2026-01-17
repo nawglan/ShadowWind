@@ -15,7 +15,7 @@ int in_event_handler = 0;
 struct event_info *pending_events = NULL;
 struct event_info *prev = NULL;
 extern struct room_data *world;
-extern sh_int stats[11][101];
+extern sh_int stats[12][101];
 extern struct spell_info_type *spells;
 extern int hometowns[][NUM_CLASSES];
 void stop_fighting(struct char_data *ch);

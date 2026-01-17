@@ -286,7 +286,7 @@ void check_autowiz(struct char_data *ch) {
   extern int min_wizlist_lev;
 
   if (use_autowiz && GET_LEVEL(ch) >= LVL_IMMORT) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "nice ../bin/autowiz %d %s %d %s %d &", min_wizlist_lev, WIZLIST_FILE,
+    safe_snprintf(buf, sizeof(buf), "nice ../bin/autowiz %d %s %d %s %d &", min_wizlist_lev, WIZLIST_FILE,
                   LVL_IMMORT, IMMLIST_FILE, (int)getpid());
     mudlog("Initiating autowiz.", 'S', COM_ADMIN, FALSE);
     system(buf);

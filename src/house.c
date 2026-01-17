@@ -181,14 +181,14 @@ void House_delete_file(int vnum) {
     return;
   if (!(fl = fopen(fname, "rb"))) {
     if (errno != ENOENT) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Error deleting house file #%d. (1)", vnum);
+      safe_snprintf(buf, sizeof(buf), "SYSERR: Error deleting house file #%d. (1)", vnum);
       perror(buf);
     }
     return;
   }
   fclose(fl);
   if (unlink(fname) < 0) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Error deleting house file #%d. (2)", vnum);
+    safe_snprintf(buf, sizeof(buf), "SYSERR: Error deleting house file #%d. (2)", vnum);
     perror(buf);
   }
 }

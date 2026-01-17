@@ -337,7 +337,7 @@ int perform_move(struct char_data *ch, int dir, int need_specials_check) {
 }
 
 ACMD(do_move) {
-  extern sh_int stats[11][101];
+  extern sh_int stats[12][101];
   /*
    * This is basically a mapping of cmd numbers to perform_move indexes.
    * It cannot be done in perform_move because perform_move is called

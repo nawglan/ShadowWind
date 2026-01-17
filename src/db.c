@@ -399,7 +399,7 @@ void boot_db(void) {
   update_log_file();
 
   for (i = 0; i <= top_of_zone_table; i++) {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "Resetting %s (rooms %d-%d).", zone_table[i].name,
+    safe_snprintf(buf2, sizeof(buf2), "Resetting %s (rooms %d-%d).", zone_table[i].name,
                   (i ? (zone_table[i].bottom) : 0), zone_table[i].top);
     stderr_log(buf2);
     reset_zone(i);
@@ -474,7 +474,7 @@ void index_boot(int mode) {
   else
     index_filename = INDEX_FILE;
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%s", prefix, index_filename);
+  safe_snprintf(buf2, sizeof(buf2), "%s/%s", prefix, index_filename);
 
   if (!(index = fopen(buf2, "r"))) {
     safe_snprintf(buf1, MAX_STRING_LENGTH, "Error opening index file '%s'", buf2);
@@ -485,7 +485,7 @@ void index_boot(int mode) {
   /* first, count the number of records in the file so we can malloc */
   fscanf(index, "%s\n", buf1);
   while (*buf1 != '$') {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%s", prefix, buf1);
+    safe_snprintf(buf2, sizeof(buf2), "%s/%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
       perror(buf2);
       fflush(NULL);
@@ -531,7 +531,7 @@ void index_boot(int mode) {
   rewind(index);
   fscanf(index, "%s\n", buf1);
   while (*buf1 != '$') {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%s", prefix, buf1);
+    safe_snprintf(buf2, sizeof(buf2), "%s/%s", prefix, buf1);
     if (!(db_file = fopen(buf2, "r"))) {
       perror(buf2);
       fflush(NULL);
@@ -643,7 +643,7 @@ void parse_room(FILE *fl, int virtual_nr) {
   char line[256], flags[128];
   struct extra_descr_data *new_descr;
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "room #%d", virtual_nr);
+  safe_snprintf(buf2, sizeof(buf2), "room #%d", virtual_nr);
 
   if (virtual_nr <= (zone ? zone_table[zone - 1].top : -1)) {
     fprintf(stderr, "Room #%d is below zone %d.\n", virtual_nr, zone);
@@ -723,7 +723,7 @@ void setup_dir(FILE *fl, int room, int dir) {
   int t[5];
   char line[256];
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "room #%d, direction D%d", world[room].number, dir);
+  safe_snprintf(buf2, sizeof(buf2), "room #%d, direction D%d", world[room].number, dir);
 
   CREATE(world[room].dir_option[dir], struct room_direction_data, 1);
   world[room].dir_option[dir]->general_description = fread_string(fl, buf2);
@@ -1477,7 +1477,7 @@ void parse_mobile(FILE *mob_f, int nr) {
 
   (mob_proto + i)->player_specials = &dummy_mob;
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "mob vnum %d", nr);
+  safe_snprintf(buf2, sizeof(buf2), "mob vnum %d", nr);
 
   /***** String data *** */
   mob_proto[i].player.name = fread_string(mob_f, buf2);
@@ -2280,7 +2280,7 @@ void zone_update(void) {
   for (update_u = reset_q.head; update_u; update_u = update_u->next)
     if (zone_table[update_u->zone_to_reset].reset_mode == 2 || is_empty(update_u->zone_to_reset)) {
       reset_zone(update_u->zone_to_reset);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Auto zone reset: %s", zone_table[update_u->zone_to_reset].name);
+      safe_snprintf(buf, sizeof(buf), "Auto zone reset: %s", zone_table[update_u->zone_to_reset].name);
       mudlog(buf, 'Z', COM_QUEST, FALSE);
       /* dequeue */
       if (update_u == reset_q.head)
@@ -2303,13 +2303,13 @@ void zone_update(void) {
 void log_zone_error(int zone, int cmd_no, char *message) {
   char buf[256];
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: error in zone file: %s", message);
+  safe_snprintf(buf, sizeof(buf), "SYSERR: error in zone file: %s", message);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d", ZCMD.command,
+  safe_snprintf(buf, sizeof(buf), "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d", ZCMD.command,
                 zone_table[zone].number, ZCMD.line);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: ...arg1: %5d arg2: %5d arg3: %5d", ZCMD.arg1, ZCMD.arg2, ZCMD.arg3);
+  safe_snprintf(buf, sizeof(buf), "SYSERR: ...arg1: %5d arg2: %5d arg3: %5d", ZCMD.arg1, ZCMD.arg2, ZCMD.arg3);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
 }
 
@@ -2716,7 +2716,7 @@ int load_char_text(char *name, struct char_data *char_element) {
           }
         }
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2734,7 +2734,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "bank_copper")) {
         GET_BANK_COPPER(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2749,7 +2749,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "con")) {
         GET_CON(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2769,7 +2769,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "dex")) {
         GET_DEX(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2779,7 +2779,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "enc_password")) {
         strncpy(GET_ENCPASSWD(ctmp), value, strlen(value));
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2787,7 +2787,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       if (!strcmp(field, "freeze_level")) {
         GET_FREEZE_LEV(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2796,7 +2796,7 @@ int load_char_text(char *name, struct char_data *char_element) {
         GET_GOLD(ctmp) = numval;
         GET_TEMP_GOLD(ctmp) += numval * 100;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2814,7 +2814,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "hitroll")) {
         GET_HITROLL(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2826,19 +2826,19 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "int")) {
         GET_INT(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
     case 'J':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
       stderr_log(buf2);
       break;
     case 'K':
       if (!strcmp(field, "kills")) {
         GET_KILLS(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2854,7 +2854,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "load_room")) {
         GET_LOADROOM(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2870,7 +2870,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "max_move")) {
         GET_MAX_MOVE(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2881,7 +2881,7 @@ int load_char_text(char *name, struct char_data *char_element) {
         }
         GET_PLR_NAME(ctmp) = strdup(value);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2895,7 +2895,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "olc_zone4")) {
         ctmp->olc_zones[3] = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2914,7 +2914,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "pk_count")) {
         GET_PKCOUNT(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2940,7 +2940,7 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "quest_complete9")) {
         ctmp->player_specials->saved.questcompleted[0] = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -2963,7 +2963,7 @@ int load_char_text(char *name, struct char_data *char_element) {
           }
         }
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -3008,7 +3008,7 @@ int load_char_text(char *name, struct char_data *char_element) {
           }
         }
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
@@ -3025,16 +3025,16 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "train_sess")) {
         GET_TRAINING(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
     case 'U':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
       stderr_log(buf2);
       break;
     case 'V':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
       stderr_log(buf2);
       break;
     case 'W':
@@ -3047,24 +3047,24 @@ int load_char_text(char *name, struct char_data *char_element) {
       } else if (!strcmp(field, "wis")) {
         GET_WIS(ctmp) = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
         stderr_log(buf2);
       }
       break;
     case 'X':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
       stderr_log(buf2);
       break;
     case 'Y':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
       stderr_log(buf2);
       break;
     case 'Z':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
       stderr_log(buf2);
       break;
     default:
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown field [%s]", field);
       stderr_log(buf2);
       break;
     }
@@ -4296,7 +4296,7 @@ MPROG_DATA *mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
       exit(1);
       break;
     default:
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Error in file %s", f);
+      safe_snprintf(buf2, sizeof(buf2), "Error in file %s", f);
       pMobIndex->progtypes = pMobIndex->progtypes | mprg2->type;
       mprg2->arglist = fread_string(progfile, buf2);
       mprg2->comlist = fread_string(progfile, buf2);
@@ -4380,7 +4380,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex) {
       exit(1);
       break;
     case IN_FILE_PROG:
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
+      safe_snprintf(buf2, sizeof(buf2), "Mobprog for mob #%d", pMobIndex->virtual);
       mprg = mprog_file_read(fread_word(fp), mprg, pMobIndex);
       fread_to_eol(fp); /* need to strip off that silly ~*/
       switch (letter = fread_letter(fp)) {
@@ -4410,7 +4410,7 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex) {
       }
       break;
     default:
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
+      safe_snprintf(buf2, sizeof(buf2), "Mobprog for mob #%d", pMobIndex->virtual);
       pMobIndex->progtypes = pMobIndex->progtypes | mprg->type;
       mprg->arglist = fread_string(fp, buf2);
       mprg->comlist = fread_string(fp, buf2);
@@ -4462,7 +4462,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "add_dam_event") == 0)
       return spell_add_dam_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4481,7 +4481,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "create_water") == 0)
       return spell_create_water_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4500,7 +4500,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "destroy_equipment") == 0)
       return spell_destroy_equipment_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4511,7 +4511,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "group_points") == 0)
       return spell_group_points_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4520,7 +4520,7 @@ event *get_spell_event(char *spell_event) {
     if (strcasecmp(spell_event, "identify") == 0)
       return spell_identify_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4529,7 +4529,7 @@ event *get_spell_event(char *spell_event) {
     if (strcasecmp(spell_event, "locate_obj") == 0)
       return spell_locate_obj_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4542,7 +4542,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "magical_unlock") == 0)
       return spell_magical_unlock_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4555,7 +4555,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "obj_room") == 0)
       return spell_obj_room_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4566,7 +4566,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "points") == 0)
       return spell_points_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4577,7 +4577,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "resurrection") == 0)
       return spell_resurrection_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4586,7 +4586,7 @@ event *get_spell_event(char *spell_event) {
     if (strcasecmp(spell_event, "summon") == 0)
       return spell_summon_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4599,7 +4599,7 @@ event *get_spell_event(char *spell_event) {
     else if (strcasecmp(spell_event, "telekinesis") == 0)
       return spell_telekinesis_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
@@ -4608,12 +4608,12 @@ event *get_spell_event(char *spell_event) {
     if (strcasecmp(spell_event, "word_recall") == 0)
       return spell_word_recall_event;
     else {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
     }
     break;
   default:
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+    safe_snprintf(buf2, sizeof(buf2), "Unknown event_type [%s]", spell_event);
     stderr_log(buf2);
     break;
   }
@@ -4643,7 +4643,7 @@ spell *get_spell_type(char *spell_type) {
   else if (strcasecmp(spell_type, "obj_room") == 0)
     return spell_obj_room;
   else {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown spell_type [%s]", spell_type);
+    safe_snprintf(buf2, sizeof(buf2), "Unknown spell_type [%s]", spell_type);
     stderr_log(buf2);
   }
 
@@ -4677,7 +4677,7 @@ void load_spells(void) {
   }
   rewind(f);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "   Found %d spells/skills.", numspells - 2);
+  safe_snprintf(buf, sizeof(buf), "   Found %d spells/skills.", numspells - 2);
   stderr_log(buf);
   NumSpellsDefined = numspells - 2;
 
@@ -4705,7 +4705,7 @@ void load_spells(void) {
       else if (strcasecmp(tag, "avg_duration") == 0)
         spells[spellnumber].avg_duration = val;
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4722,7 +4722,7 @@ void load_spells(void) {
       } else if (strcasecmp(tag, "cost_multiplier") == 0) {
         spells[spellnumber].cost_multiplier = val;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4740,7 +4740,7 @@ void load_spells(void) {
       else if (strcasecmp(tag, "delay") == 0) {
         spells[spellnumber].delay = val;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4748,7 +4748,7 @@ void load_spells(void) {
       if (strcasecmp(tag, "invisible") == 0)
         spells[spellnumber].invisible = val;
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4762,7 +4762,7 @@ void load_spells(void) {
       else if (strcasecmp(tag, "mana_chg") == 0)
         spells[spellnumber].mana_change = val;
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4776,7 +4776,7 @@ void load_spells(void) {
       else if (strcasecmp(tag, "npc_offense_flags") == 0)
         spells[spellnumber].npc_offense_flags = asciiflag_conv(tag_arguments);
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4799,7 +4799,7 @@ void load_spells(void) {
           p = NULL;
         }
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4826,7 +4826,7 @@ void load_spells(void) {
       } else if (strcasecmp(tag, "point_loc") == 0)
         spells[spellnumber].point_loc = val;
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4834,7 +4834,7 @@ void load_spells(void) {
       if (strcasecmp(tag, "quest_only") == 0)
         spells[spellnumber].quest_only = val;
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4842,7 +4842,7 @@ void load_spells(void) {
       if (strcasecmp(tag, "resist_type") == 0)
         spells[spellnumber].resist_type = val;
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4892,7 +4892,7 @@ void load_spells(void) {
       else if (strcasecmp(tag, "send_to_room") == 0)
         spells[spellnumber].send_to_room = strdup(tag_arguments);
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4900,7 +4900,7 @@ void load_spells(void) {
       if (strcasecmp(tag, "unaffect") == 0)
         spells[spellnumber].unaffect = strdup(tag_arguments);
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4914,7 +4914,7 @@ void load_spells(void) {
           p = NULL;
         }
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
@@ -4922,12 +4922,12 @@ void load_spells(void) {
       if (strcasecmp(tag, "wear_off_msg") == 0)
         spells[spellnumber].wear_off = strdup(tag_arguments);
       else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
         stderr_log(buf2);
       }
       break;
     default:
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+      safe_snprintf(buf2, sizeof(buf2), "Unknown tag [%s]", tag);
       stderr_log(buf2);
       break;
     }

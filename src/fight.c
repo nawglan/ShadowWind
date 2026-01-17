@@ -461,7 +461,7 @@ void check_killer(struct char_data *ch, struct char_data *vict) {
     char buf[256];
     if (!pk_allowed) {
       SET_BIT(PLR_FLAGS(ch), PLR_KILLER);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "PC Killer bit set on %s for initiating attack on %s at %s.", GET_NAME(ch),
+      safe_snprintf(buf, sizeof(buf), "PC Killer bit set on %s for initiating attack on %s at %s.", GET_NAME(ch),
                     GET_NAME(vict), world[vict->in_room].name);
       mudlog(buf, 'Y', COM_IMMORT, TRUE);
       plog(buf, ch, 0);
@@ -1957,7 +1957,7 @@ void hit(struct char_data *ch, struct char_data *victim, int type) {
   extern int thaco[NUM_CLASSES][2];
   extern byte backstab_mult[];
   extern byte backstab_asn[];
-  extern sh_int stats[11][101];
+  extern sh_int stats[12][101];
 
   if (ROOM_FLAGGED(ch->in_room, ROOM_PEACEFUL)) {
     return;

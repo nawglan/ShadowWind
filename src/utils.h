@@ -190,14 +190,17 @@ void update_pos(struct char_data *victim);
 #define RECREATE(result, type, number)                                                                           \
   {                                                                                                              \
     char sTemp[256];                                                                                             \
+    void *_recreate_tmp;                                                                                         \
     sprintf(sTemp, "MEM: Re-Allocating %d bytes in %s on line %d in %s.", sizeof(type) * (number), __FUNCTION__, \
             __LINE__, __FILE__);                                                                                 \
     log(sTemp);                                                                                                  \
     fflush(NULL);                                                                                                \
-    if (!((result) = (type *)realloc((result), sizeof(type) * (number)))) {                                      \
+    _recreate_tmp = realloc((result), sizeof(type) * (number));                                                  \
+    if (!_recreate_tmp) {                                                                                        \
       perror("realloc failure");                                                                                 \
       abort();                                                                                                   \
     }                                                                                                            \
+    (result) = (type *)_recreate_tmp;                                                                            \
   }
 
 #else
@@ -210,12 +213,14 @@ void update_pos(struct char_data *victim);
     }                                                           \
   }
 
-#define RECREATE(result, type, number)                                      \
-  {                                                                         \
-    if (!((result) = (type *)realloc((result), sizeof(type) * (number)))) { \
-      perror("realloc failure");                                            \
-      abort();                                                              \
-    }                                                                       \
+#define RECREATE(result, type, number)                           \
+  {                                                               \
+    void *_recreate_tmp = realloc((result), sizeof(type) * (number)); \
+    if (!_recreate_tmp) {                                         \
+      perror("realloc failure");                                  \
+      abort();                                                    \
+    }                                                             \
+    (result) = (type *)_recreate_tmp;                             \
   }
 
 #endif

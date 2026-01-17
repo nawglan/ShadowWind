@@ -820,7 +820,7 @@ void lose_level(struct char_data *ch) {
   void set_magic_memory(struct char_data * ch);
   int add_hp = 0, add_mana = 0, add_move = 0, i;
 
-  extern sh_int stats[11][101];
+  extern sh_int stats[12][101];
   extern const sh_int monk_stat[LVL_IMMORT + 1][5];
 
   add_hp = stats[CON_HITP][GET_CON(ch)];
@@ -901,7 +901,7 @@ void advance_level(struct char_data *ch) {
   struct obj_data *obj, *next_obj;
   int add_hp = 0, add_mana = 0, add_move = 0, index = 0, i;
 
-  extern sh_int stats[11][101];
+  extern sh_int stats[12][101];
   extern const sh_int monk_stat[LVL_IMMORT + 1][5];
 
   if (IS_MAGE(ch) || IS_PRI(ch))

@@ -1017,10 +1017,10 @@ int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, stru
     if (Crash_is_unrentable(obj)) {
       has_norents = 1;
       if (recep) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'You cannot store %s.'", OBJS(obj, ch));
+        safe_snprintf(buf, sizeof(buf), "$n tells you, 'You cannot store %s.'", OBJS(obj, ch));
         act(buf, FALSE, recep, 0, ch, TO_VICT);
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You cannot store %s\n", OBJS(obj, ch));
+        safe_snprintf(buf, sizeof(buf), "You cannot store %s\n", OBJS(obj, ch));
         send_to_char(buf, ch);
       }
     }

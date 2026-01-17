@@ -341,7 +341,7 @@ void list_skills_cost(struct char_data *ch) {
 SPECIAL(weapon) {
   int skill_num, percent;
 
-  extern sh_int stats[11][101];
+  extern sh_int stats[12][101];
   int skillnum = spells[find_skill_num("backstab")].spellindex;
 
   if (IS_NPC(ch) || !CMD_IS("train"))
@@ -402,7 +402,7 @@ SPECIAL(guild) {
   int temp_bank_gold;
   int prac_cost;
 
-  extern sh_int stats[11][101];
+  extern sh_int stats[12][101];
 
   if (IS_NPC(ch) || (!CMD_IS("train") && !CMD_IS("practice") && !CMD_IS("specialize")))
     return 0;

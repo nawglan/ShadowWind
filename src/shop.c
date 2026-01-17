@@ -64,7 +64,7 @@ int is_ok_char(struct char_data *keeper, struct char_data *ch, int shop_nr) {
 
   if ((IS_GOOD(ch) && NOTRADE_GOOD(shop_nr)) || (IS_EVIL(ch) && NOTRADE_EVIL(shop_nr)) ||
       (IS_NEUTRAL(ch) && NOTRADE_NEUTRAL(shop_nr))) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s %s", GET_NAME(ch), MSG_NO_SELL_ALIGN);
+    safe_snprintf(buf, sizeof(buf), "%s %s", GET_NAME(ch), MSG_NO_SELL_ALIGN);
     do_tell(keeper, buf, cmd_tell, 0);
     return (FALSE);
   }
@@ -73,7 +73,7 @@ int is_ok_char(struct char_data *keeper, struct char_data *ch, int shop_nr) {
 
   if ((IS_WIZARD(ch) && NOTRADE_WIZARD(shop_nr)) || (IS_CLERIC(ch) && NOTRADE_CLERIC(shop_nr)) ||
       (IS_THIEF(ch) && NOTRADE_THIEF(shop_nr)) || (IS_WARRIOR(ch) && NOTRADE_WARRIOR(shop_nr))) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s %s", GET_NAME(ch), MSG_NO_SELL_CLASS);
+    safe_snprintf(buf, sizeof(buf), "%s %s", GET_NAME(ch), MSG_NO_SELL_CLASS);
     do_tell(keeper, buf, cmd_tell, 0);
     return (FALSE);
   }
@@ -1029,13 +1029,13 @@ void boot_the_shops(FILE *shop_f, char *filename, int rec_count) {
   struct shop_buy_data list[MAX_SHOP_OBJ + 1];
   int done = 0;
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "beginning of shop file %s", filename);
+  safe_snprintf(buf2, sizeof(buf2), "beginning of shop file %s", filename);
 
   while (!done) {
     buf = fread_string(shop_f, buf2);
     if (*buf == '#') { /* New shop */
       sscanf(buf, "#%d\n", &temp);
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "shop #%d in shop file %s", temp, filename);
+      safe_snprintf(buf2, sizeof(buf2), "shop #%d in shop file %s", temp, filename);
       FREE(buf);
       /* Plug memory leak! */
       if (!top_shop)

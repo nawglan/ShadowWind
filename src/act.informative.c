@@ -338,7 +338,7 @@ void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, boo
 
     if (CAN_SEE_OBJ(ch, i) && !((i->obj_flags.extra_flags & ITEM_NOT_OBV) && (i->carried_by == NULL))) {
       if (num != 1) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "[%2i] ", num);
+        safe_snprintf(buf, sizeof(buf), "[%2i] ", num);
         send_to_char(buf, ch);
       }
       show_obj_to_char(i, ch, mode);
@@ -767,7 +767,7 @@ ACMD(do_stats) {
   int calc_thac0 = 0;
 
   extern int thaco[NUM_CLASSES][2];
-  extern sh_int stats[11][101];
+  extern sh_int stats[12][101];
   extern sh_int monk_stat[LVL_IMMORT + 1][5];
 
   size_t slen =

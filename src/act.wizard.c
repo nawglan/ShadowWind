@@ -50,7 +50,7 @@ extern struct index_data *mob_index;
 extern struct index_data *obj_index;
 extern struct char_data *mob_proto;
 extern struct obj_data *obj_proto;
-extern sh_int stats[11][101];
+extern sh_int stats[12][101];
 extern struct zone_data *zone_table;
 extern struct player_special_data *dummy_mob;
 extern int top_of_zone_table;

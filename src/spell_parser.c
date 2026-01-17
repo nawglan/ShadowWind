@@ -84,8 +84,8 @@ void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct
   else
     safe_snprintf(lbuf, sizeof(lbuf), "$n utters the words, '%%s'.");
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, lbuf, buf);
-  safe_snprintf(buf1, MAX_STRING_LENGTH, lbuf, get_spell_name(spellnum));
+  safe_snprintf(buf2, sizeof(buf2), lbuf, buf);
+  safe_snprintf(buf1, sizeof(buf1), lbuf, get_spell_name(spellnum));
 
   for (i = world[ch->in_room].people; i; i = i->next_in_room) {
     if (i == ch || i == tch || !i->desc || !AWAKE(i))
@@ -96,7 +96,7 @@ void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct
       perform_act(buf2, ch, tobj, tch, i);
   }
   if (tch != NULL && tch != ch) {
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "$n stares at you and utters the words, '%s'.",
+    safe_snprintf(buf1, sizeof(buf1), "$n stares at you and utters the words, '%s'.",
                   GET_CLASS(ch) == GET_CLASS(tch) ? get_spell_name(spellnum) : buf);
     act(buf1, FALSE, ch, NULL, tch, TO_VICT);
   }

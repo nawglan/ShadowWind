@@ -237,7 +237,7 @@ void create_rooms(maze *m, char log_filename[80]) {
 
   zone_number = atoi(log_filename);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "   Building maze #%d", zone_number);
+  safe_snprintf(buf, sizeof(buf), "   Building maze #%d", zone_number);
   stderr_log(buf);
 
   for (i = 0; i <= top_of_zone_table; i++) {
@@ -248,7 +248,7 @@ void create_rooms(maze *m, char log_filename[80]) {
   }
 
   if (!found) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Could not find zone #%d", zone_number);
+    safe_snprintf(buf, sizeof(buf), "SYSERR: Could not find zone #%d", zone_number);
     stderr_log(buf);
     fflush(NULL);
     exit(1);
@@ -261,7 +261,7 @@ void create_rooms(maze *m, char log_filename[80]) {
   }
 
   if (room_count < 3) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Maze %s only has %d rooms.", log_filename, room_count);
+    safe_snprintf(buf, sizeof(buf), "SYSERR: Maze %s only has %d rooms.", log_filename, room_count);
     stderr_log(buf);
     fflush(NULL);
     exit(1);
@@ -568,35 +568,38 @@ void print_maze(maze *m, FILE *f) {
     if (m->solve_path[i].x != 9 || m->solve_path[i].y != 9) {
       if (i == 0) {
         fprintf(f, "%d) Start\n", i);
-      }
-      if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y < m->solve_path[i - 1].y)) {
-        fprintf(f, "%d) North\n", i);
-      }
-      if ((m->solve_path[i].x > m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
-        fprintf(f, "%d) East\n", i);
-      }
-      if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y > m->solve_path[i - 1].y)) {
-        fprintf(f, "%d) South\n", i);
-      }
-      if ((m->solve_path[i].x < m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
-        fprintf(f, "%d) West\n", i);
+      } else {
+        if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y < m->solve_path[i - 1].y)) {
+          fprintf(f, "%d) North\n", i);
+        }
+        if ((m->solve_path[i].x > m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
+          fprintf(f, "%d) East\n", i);
+        }
+        if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y > m->solve_path[i - 1].y)) {
+          fprintf(f, "%d) South\n", i);
+        }
+        if ((m->solve_path[i].x < m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
+          fprintf(f, "%d) West\n", i);
+        }
       }
     } else {
       break;
     }
   }
 
-  if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y < m->solve_path[i - 1].y)) {
-    fprintf(f, "%d) North\n", i);
-  }
-  if ((m->solve_path[i].x > m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
-    fprintf(f, "%d) East\n", i);
-  }
-  if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y > m->solve_path[i - 1].y)) {
-    fprintf(f, "%d) South\n", i);
-  }
-  if ((m->solve_path[i].x < m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
-    fprintf(f, "%d) West\n", i);
+  if (i < 100 && i > 0) {
+    if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y < m->solve_path[i - 1].y)) {
+      fprintf(f, "%d) North\n", i);
+    }
+    if ((m->solve_path[i].x > m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
+      fprintf(f, "%d) East\n", i);
+    }
+    if ((m->solve_path[i].x == m->solve_path[i - 1].x) && (m->solve_path[i].y > m->solve_path[i - 1].y)) {
+      fprintf(f, "%d) South\n", i);
+    }
+    if ((m->solve_path[i].x < m->solve_path[i - 1].x) && (m->solve_path[i].y == m->solve_path[i - 1].y)) {
+      fprintf(f, "%d) West\n", i);
+    }
   }
   fprintf(f, "%d) Done\n", i + 1);
   fclose(f);

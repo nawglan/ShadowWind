@@ -1118,7 +1118,7 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
                        struct obj_data *obj, void *vo, struct char_data *rndm) {
 
   char buf[MAX_INPUT_LENGTH * 2];
-  char buf2[MAX_INPUT_LENGTH * 2];
+  char local_buf2[MAX_INPUT_LENGTH * 2];
   char *morebuf = NULL;
   char *cmnd = NULL;
   int loopdone = FALSE;
@@ -1182,9 +1182,9 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
       if ((!str_cmp(buf, "break")) || (!str_cmp(buf, "endif")) || (!str_cmp(buf, "else")))
         return end_list;
 
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s%s", cmnd, com_list);
-      mprog_process_cmnd(buf2, mob, actor, obj, vo, rndm);
-      if (!(*buf2))
+      safe_snprintf(local_buf2, sizeof(local_buf2), "%s%s", cmnd, com_list);
+      mprog_process_cmnd(local_buf2, mob, actor, obj, vo, rndm);
+      if (!(*local_buf2))
         com_list[0] = '\0';
       cmnd = com_list;
       com_list = mprog_next_command(com_list);
@@ -1242,9 +1242,9 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
       if ((!str_cmp(buf, "break")) || (!str_cmp(buf, "endif")))
         return end_list;
 
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s%s", cmnd, com_list);
-      mprog_process_cmnd(buf2, mob, actor, obj, vo, rndm);
-      if (!(*buf2))
+      safe_snprintf(local_buf2, sizeof(local_buf2), "%s%s", cmnd, com_list);
+      mprog_process_cmnd(local_buf2, mob, actor, obj, vo, rndm);
+      if (!(*local_buf2))
         com_list[0] = '\0';
       cmnd = com_list;
       com_list = mprog_next_command(com_list);
@@ -1615,7 +1615,7 @@ void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor
 
   char tmpcmndlst[MAX_STRING_LENGTH];
   char buf[MAX_INPUT_LENGTH * 2];
-  char buf2[MAX_INPUT_LENGTH * 2];
+  char local_buf2[MAX_INPUT_LENGTH * 2];
   char *morebuf;
   char *command_list;
   char *cmnd;
@@ -1669,9 +1669,9 @@ void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor
        */
 
       /* this also needs to happen in mprog_process_if */
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s%s", cmnd, command_list);
-      mprog_process_cmnd(buf2, mob, actor, obj, vo, rndm);
-      if (!(*buf2))
+      safe_snprintf(local_buf2, sizeof(local_buf2), "%s%s", cmnd, command_list);
+      mprog_process_cmnd(local_buf2, mob, actor, obj, vo, rndm);
+      if (!(*local_buf2))
         command_list[0] = '\0';
     }
     cmnd = command_list;

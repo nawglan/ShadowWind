@@ -73,4 +73,5 @@ format-check:
 # Static analysis with cppcheck
 lint:
 	cppcheck --enable=warning,style,performance --suppress=missingIncludeSystem \
+		--suppress=preprocessorErrorDirective:src/zedit.c \
 		--error-exitcode=1 src/

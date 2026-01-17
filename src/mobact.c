@@ -28,7 +28,7 @@ extern struct obj_data *object_list;
 extern struct index_data *mob_index;
 extern struct index_data *obj_index;
 extern struct room_data *world;
-extern sh_int stats[11][101];
+extern sh_int stats[12][101];
 extern struct spell_info_type *spells;
 
 int find_skill_num(char *name);

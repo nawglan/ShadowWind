@@ -168,7 +168,7 @@ int main(int argc, char **argv) {
         fflush(NULL);
         exit(1);
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Directory set to: %s", dir);
+      safe_snprintf(buf, sizeof(buf), "Directory set to: %s", dir);
       stderr_log(buf);
       break;
     case 'm':
@@ -189,7 +189,7 @@ int main(int argc, char **argv) {
       stderr_log("Suppressing assignment of special routines.");
       break;
     default:
-      safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Unknown option -%c in argument string.", *(argv[pos] + 1));
+      safe_snprintf(buf, sizeof(buf), "SYSERR: Unknown option -%c in argument string.", *(argv[pos] + 1));
       stderr_log(buf);
       break;
     }
@@ -207,7 +207,7 @@ int main(int argc, char **argv) {
       exit(1);
     }
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/misc/%s", dir, SWPIDFILE);
+  safe_snprintf(buf, sizeof(buf), "%s/misc/%s", dir, SWPIDFILE);
   if ((pid_file = fopen(buf, "r")) != NULL) {
     pid_t old_pid;
 
@@ -227,7 +227,7 @@ int main(int argc, char **argv) {
   fclose(pid_file);
 
   /* dnslookup */
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%s", dir, DNS_RECEIVE_FIFO);
+  safe_snprintf(buf, sizeof(buf), "%s/%s", dir, DNS_RECEIVE_FIFO);
   unlink(buf);
   if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
     perror("mkfifo receive");
@@ -237,7 +237,7 @@ int main(int argc, char **argv) {
     perror("Open receive fifo");
     exit(1);
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%s", dir, DNS_SEND_FIFO);
+  safe_snprintf(buf, sizeof(buf), "%s/%s", dir, DNS_SEND_FIFO);
   unlink(buf);
   if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
     perror("mkfifo send");
@@ -248,13 +248,13 @@ int main(int argc, char **argv) {
     exit(1);
   }
   if (!(lookup_host_process = fork())) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s/../bin/lookup_process", dir);
+    safe_snprintf(buf, sizeof(buf), "%s/../bin/lookup_process", dir);
     stderr_log(buf);
     execl(buf, "lookup_process", "-d", dir, NULL);
   }
   /* end dnslookup */
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Running game on port %d.", port);
+  safe_snprintf(buf, sizeof(buf), "Running game on port %d.", port);
   stderr_log(buf);
 
   if (chdir(dir) < 0) {
@@ -262,12 +262,12 @@ int main(int argc, char **argv) {
     fflush(NULL);
     exit(1);
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Using %s as data directory.", dir);
+  safe_snprintf(buf, sizeof(buf), "Using %s as data directory.", dir);
   stderr_log(buf);
 
   init_game(port);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/misc/%s", dir, SWPIDFILE);
+  safe_snprintf(buf, sizeof(buf), "%s/misc/%s", dir, SWPIDFILE);
   if (unlink(buf)) {
     perror("unlink");
   }
@@ -833,7 +833,7 @@ void record_usage(void) {
       sockets_playing++;
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "nusage: %-3d sockets connected, %-3d sockets playing", sockets_connected,
+  safe_snprintf(buf, sizeof(buf), "nusage: %-3d sockets connected, %-3d sockets playing", sockets_connected,
                 sockets_playing);
   stderr_log(buf);
 
@@ -842,7 +842,7 @@ void record_usage(void) {
     struct rusage ru;
 
     getrusage(0, &ru);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "rusage: %d %d %d %d %d %d %d", ru.ru_utime.tv_sec, ru.ru_stime.tv_sec,
+    safe_snprintf(buf, sizeof(buf), "rusage: %d %d %d %d %d %d %d", ru.ru_utime.tv_sec, ru.ru_stime.tv_sec,
                   ru.ru_maxrss, ru.ru_ixrss, ru.ru_ismrss, ru.ru_idrss, ru.ru_isrss);
     stderr_log(buf);
   }
@@ -1501,12 +1501,12 @@ void close_socket(struct descriptor_data *d) {
         save_text(d->character);
       }
       act("$n has lost $s link.", TRUE, d->character, 0, 0, TO_ROOM);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Closing link to: %s.", GET_NAME(d->character));
+      safe_snprintf(buf, sizeof(buf), "Closing link to: %s.", GET_NAME(d->character));
       mudlog(buf, 'C', COM_IMMORT, TRUE);
       plog(buf, d->character, 0);
       d->character->desc = NULL;
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Losing player: %s (%s).",
+      safe_snprintf(buf, sizeof(buf), "Losing player: %s (%s).",
                     GET_NAME(d->character) ? GET_NAME(d->character) : "<null>", connected_types[STATE(d)]);
       mudlog(buf, 'C', COM_IMMORT, TRUE);
       if (GET_NAME(d->character) != NULL && !PRF_FLAGGED(d->character, PRF_DELETED) &&

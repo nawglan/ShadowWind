@@ -1675,11 +1675,11 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper) {
   } else {
     obj->name = strdup("coins");
     obj->short_description = strdup(money_desc(amount));
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s is lying here.", money_desc(amount));
+    safe_snprintf(buf, sizeof(buf), "%s is lying here.", money_desc(amount));
     obj->description = strdup(CAP(buf));
 
     new_descr->keyword = strdup("coins");
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You guess there are, maybe, %dp %dg %ds %dc.",
+    safe_snprintf(buf, sizeof(buf), "You guess there are, maybe, %dp %dg %ds %dc.",
                   1000 * ((plat / 1000) + number(0, (plat / 1000))), 1000 * ((gold / 1000) + number(0, (gold / 1000))),
                   1000 * ((silver / 1000) + number(0, (silver / 1000))),
                   1000 * ((copper / 1000) + number(0, (copper / 1000))));

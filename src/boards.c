@@ -123,7 +123,7 @@ void init_boards(void) {
 
   for (i = 0; i < NUM_OF_BOARDS; i++) {
     if ((BOARD_RNUM(i) = real_object(BOARD_VNUM(i))) == -1) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Fatal board error: board vnum %d does not exist!", BOARD_VNUM(i));
+      safe_snprintf(buf, sizeof(buf), "SYSERR: Fatal board error: board vnum %d does not exist!", BOARD_VNUM(i));
       stderr_log(buf);
       fatal_error = 1;
     }
@@ -209,8 +209,8 @@ void Board_write_message(int board_type, struct char_data *ch, char *arg) {
   tmstr = (char *)asctime(localtime(&ct));
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "(%s)", GET_NAME(ch));
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%6.10s %-12s :: %s", tmstr, buf2, arg);
+  safe_snprintf(buf2, sizeof(buf2), "(%s)", GET_NAME(ch));
+  safe_snprintf(buf, sizeof(buf), "%6.10s %-12s :: %s", tmstr, buf2, arg);
   len = strlen(buf) + 1;
   if (!(NEW_MSG_INDEX(board_type).heading = (char *)malloc(sizeof(char) * len))) {
     send_to_char("The board is malfunctioning - sorry.\r\n", ch);
@@ -352,7 +352,7 @@ int Board_remove_msg(int board_type, struct char_data *ch, char *arg) {
     send_to_char("That message appears to be screwed up.\r\n", ch);
     return 1;
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "(%s)", GET_NAME(ch));
+  safe_snprintf(buf, sizeof(buf), "(%s)", GET_NAME(ch));
   if (REMOVE_LVL(board_type) != 0 && !COM_FLAGGED(ch, REMOVE_LVL(board_type)) &&
       !(strstr(MSG_HEADING(board_type, ind), buf))) {
     send_to_char("You are not holy enough to remove other people's messages.\r\n", ch);
@@ -392,7 +392,7 @@ int Board_remove_msg(int board_type, struct char_data *ch, char *arg) {
   }
   num_of_msgs[board_type]--;
   send_to_char("Message removed.\r\n", ch);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "$n just removed message %d.", msg);
+  safe_snprintf(buf, sizeof(buf), "$n just removed message %d.", msg);
   act(buf, FALSE, ch, 0, 0, TO_ROOM);
   Board_save_board(board_type);
 
@@ -449,6 +449,7 @@ void Board_load_board(int board_type) {
   if (num_of_msgs[board_type] < 1 || num_of_msgs[board_type] > MAX_BOARD_MESSAGES) {
     stderr_log("SYSERR: Board file corrupt.  Resetting.");
     Board_reset_board(board_type);
+    fclose(fl);
     return;
   }
   for (i = 0; i < num_of_msgs[board_type]; i++) {
@@ -456,6 +457,7 @@ void Board_load_board(int board_type) {
     if (!(len1 = msg_index[board_type][i].heading_len)) {
       stderr_log("SYSERR: Board file corrupt!  Resetting.");
       Board_reset_board(board_type);
+      fclose(fl);
       return;
     }
     if (!(tmp1 = (char *)malloc(sizeof(char) * len1))) {

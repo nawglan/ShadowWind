@@ -9,7 +9,7 @@
 #include <stdio.h>
 #include <string.h>
 
-extern sh_int stats[11][101];
+extern sh_int stats[12][101];
 extern char *dirs[];
 extern int rev_dir[];
 extern int pk_allowed;

@@ -250,7 +250,7 @@ struct help_index_element *build_help_index(int *num, int type) {
     }
   }
   tablesize = count_help_records(fl);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "   Num Help records: %d", tablesize);
+  safe_snprintf(buf, sizeof(buf), "   Num Help records: %d", tablesize);
   stderr_log(buf);
   rewind(fl);
   CREATE(list, struct help_index_element, tablesize);
