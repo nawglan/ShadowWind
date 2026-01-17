@@ -183,12 +183,12 @@ ACMD(do_track) {
     send_to_char("You have no idea how.\r\n", ch);
     return;
   }
-  one_argument(argument, arg);
-  if (!*arg) {
+  one_argument(argument, g_arg);
+  if (!*g_arg) {
     send_to_char("Whom are you trying to track?\r\n", ch);
     return;
   }
-  if (!(vict = get_char_vis(ch, arg))) {
+  if (!(vict = get_char_vis(ch, g_arg))) {
     send_to_char("No-one around by that name.\r\n", ch);
     return;
   }
@@ -225,8 +225,8 @@ ACMD(do_track) {
     send_to_char("You're already in the same room!!\r\n", ch);
     break;
   case BFS_NO_PATH:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You can't sense a trail to %s from here.\r\n", HMHR(vict));
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "You can't sense a trail to %s from here.\r\n", HMHR(vict));
+    send_to_char(g_buf, ch);
     break;
   default:
     num = number(0, 101); /* 101% is a complete failure */
@@ -235,8 +235,8 @@ ACMD(do_track) {
         dir = number(0, NUM_OF_DIRS - 1);
       } while (!CAN_GO(ch, dir));
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You sense a trail %s from here!\r\n", dirs[dir]);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "You sense a trail %s from here!\r\n", dirs[dir]);
+    send_to_char(g_buf, ch);
     improve_skill(ch, skillnum, SKUSE_AVERAGE);
     break;
   }
@@ -286,8 +286,8 @@ void hunt_victim(struct char_data *ch) {
   }
 
   if (dir < 0) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n says 'Damn!  Lost %s!'", HMHR(hunted_ch));
-    act(buf, TRUE, ch, 0, 0, TO_ROOM);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "$n says 'Damn!  Lost %s!'", HMHR(hunted_ch));
+    act(g_buf, TRUE, ch, 0, 0, TO_ROOM);
     /* don't forget vict until they die or I am dead
      HUNTING(ch) = 0;
      */

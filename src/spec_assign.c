@@ -27,8 +27,8 @@ void ASSIGNMOB(int mob, SPECIAL(fname), int type) {
     mob_index[real_mobile(mob)].func = fname;
     mob_index[real_mobile(mob)].spec_type = type;
   } else if (!mini_mud) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Attempt to assign spec to non-existant mob #%d", mob);
-    stderr_log(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: Attempt to assign spec to non-existant mob #%d", mob);
+    stderr_log(g_buf);
   }
 }
 
@@ -37,8 +37,8 @@ void ASSIGNOBJ(int obj, SPECIAL(fname), int type) {
     obj_index[real_object(obj)].func = fname;
     obj_index[real_object(obj)].spec_type = type;
   } else if (!mini_mud) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Attempt to assign spec to non-existant obj #%d", obj);
-    stderr_log(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: Attempt to assign spec to non-existant obj #%d", obj);
+    stderr_log(g_buf);
   }
 }
 
@@ -47,8 +47,8 @@ void ASSIGNROOM(int room, SPECIAL(fname), int type) {
     world[real_room(room)].func = fname;
     world[real_room(room)].spec_type = type;
   } else if (!mini_mud) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Attempt to assign spec to non-existant rm. #%d", room);
-    stderr_log(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: Attempt to assign spec to non-existant rm. #%d", room);
+    stderr_log(g_buf);
   }
 }
 

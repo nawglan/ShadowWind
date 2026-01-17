@@ -155,27 +155,27 @@ void disp_class_menu(struct descriptor_data *d) {
  * The code to interpret a class letter (used in interpreter.c when a
  * new character is selecting a class).
  */
-int parse_class_spec(char *arg) {
+int parse_class_spec(char *g_arg) {
   int a;
 
-  a = arg[0];
+  a = g_arg[0];
   a = LOWER(a);
 
   switch (a) {
   case 'c':
-    if (arg[1] == 'o' || arg[1] == 'O')
+    if (g_arg[1] == 'o' || g_arg[1] == 'O')
       return CLASS_CONJURER;
     else
       return CLASS_CLERIC;
   case 'w':
-    if (arg[1] == 'a' || arg[1] == 'A')
+    if (g_arg[1] == 'a' || g_arg[1] == 'A')
       return CLASS_WARRIOR;
     else
       return CLASS_WIZARD;
   case 't':
     return CLASS_THIEF;
   case 'r':
-    if (arg[1] == 'a' || arg[1] == 'A')
+    if (g_arg[1] == 'a' || g_arg[1] == 'A')
       return CLASS_RANGER;
     else
       return CLASS_ROGUE;
@@ -184,7 +184,7 @@ int parse_class_spec(char *arg) {
   case 'a':
     return CLASS_ASSASSIN;
   case 's':
-    if (arg[1] == 'h' || arg[1] == 'H')
+    if (g_arg[1] == 'h' || g_arg[1] == 'H')
       return CLASS_SHAMAN;
     else
       return CLASS_SORCERER;
@@ -197,7 +197,7 @@ int parse_class_spec(char *arg) {
   case 'p':
     return CLASS_PRIEST;
   case 'm':
-    if (arg[1] == 'o' || arg[1] == 'O')
+    if (g_arg[1] == 'o' || g_arg[1] == 'O')
       return CLASS_MONK;
     else
       return CLASS_MERCENARY;
@@ -206,10 +206,10 @@ int parse_class_spec(char *arg) {
   }
 }
 
-int parse_race_spec(char *arg) {
+int parse_race_spec(char *g_arg) {
   int a;
 
-  a = arg[0];
+  a = g_arg[0];
   a = LOWER(a);
 
   switch (a) {
@@ -220,9 +220,9 @@ int parse_race_spec(char *arg) {
   case 'g':
     return RACE_GNOME;
   case 'h':
-    if (arg[1] == 'u' || arg[1] == 'U')
+    if (g_arg[1] == 'u' || g_arg[1] == 'U')
       return RACE_HUMAN;
-    else if (arg[4] == 'l' || arg[4] == 'L')
+    else if (g_arg[4] == 'l' || g_arg[4] == 'L')
       return RACE_HALFLING;
     else
       return RACE_HALFELF;
@@ -235,63 +235,63 @@ int parse_race_spec(char *arg) {
   }
 }
 
-int is_class(char *arg) {
+int is_class(char *g_arg) {
 
-  if (strncasecmp(pc_class_types[CLASS_CONJURER], arg, strlen(arg)) == 0)
+  if (strncasecmp(pc_class_types[CLASS_CONJURER], g_arg, strlen(g_arg)) == 0)
     return CLASS_CONJURER;
-  else if (strncasecmp(pc_class_types[CLASS_CLERIC], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_CLERIC], g_arg, strlen(g_arg)) == 0)
     return CLASS_CLERIC;
-  else if (strncasecmp(pc_class_types[CLASS_WARRIOR], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_WARRIOR], g_arg, strlen(g_arg)) == 0)
     return CLASS_WARRIOR;
-  else if (strncasecmp(pc_class_types[CLASS_WIZARD], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_WIZARD], g_arg, strlen(g_arg)) == 0)
     return CLASS_WIZARD;
-  else if (strncasecmp(pc_class_types[CLASS_THIEF], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_THIEF], g_arg, strlen(g_arg)) == 0)
     return CLASS_THIEF;
-  else if (strncasecmp(pc_class_types[CLASS_RANGER], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_RANGER], g_arg, strlen(g_arg)) == 0)
     return CLASS_RANGER;
-  else if (strncasecmp(pc_class_types[CLASS_ROGUE], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_ROGUE], g_arg, strlen(g_arg)) == 0)
     return CLASS_ROGUE;
-  else if (strncasecmp(pc_class_types[CLASS_BARD], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_BARD], g_arg, strlen(g_arg)) == 0)
     return CLASS_BARD;
-  else if (strncasecmp(pc_class_types[CLASS_ASSASSIN], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_ASSASSIN], g_arg, strlen(g_arg)) == 0)
     return CLASS_ASSASSIN;
-  else if (strncasecmp(pc_class_types[CLASS_SHAMAN], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_SHAMAN], g_arg, strlen(g_arg)) == 0)
     return CLASS_SHAMAN;
-  else if (strncasecmp(pc_class_types[CLASS_SORCERER], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_SORCERER], g_arg, strlen(g_arg)) == 0)
     return CLASS_SORCERER;
-  else if (strncasecmp(pc_class_types[CLASS_NECROMANCER], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_NECROMANCER], g_arg, strlen(g_arg)) == 0)
     return CLASS_NECROMANCER;
-  else if (strncasecmp(pc_class_types[CLASS_ENCHANTER], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_ENCHANTER], g_arg, strlen(g_arg)) == 0)
     return CLASS_ENCHANTER;
-  else if (strncasecmp(pc_class_types[CLASS_DRUID], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_DRUID], g_arg, strlen(g_arg)) == 0)
     return CLASS_DRUID;
-  else if (strncasecmp(pc_class_types[CLASS_PRIEST], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_PRIEST], g_arg, strlen(g_arg)) == 0)
     return CLASS_PRIEST;
-  else if (strncasecmp(pc_class_types[CLASS_MONK], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_MONK], g_arg, strlen(g_arg)) == 0)
     return CLASS_MONK;
-  else if (strncasecmp(pc_class_types[CLASS_MERCENARY], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_class_types[CLASS_MERCENARY], g_arg, strlen(g_arg)) == 0)
     return CLASS_MERCENARY;
 
   return CLASS_UNDEFINED;
 }
 
-int is_race(char *arg) {
+int is_race(char *g_arg) {
 
-  if (strncasecmp(pc_race_types[RACE_HUMAN], arg, strlen(arg)) == 0)
+  if (strncasecmp(pc_race_types[RACE_HUMAN], g_arg, strlen(g_arg)) == 0)
     return RACE_HUMAN;
-  else if (strncasecmp(pc_race_types[RACE_TROLL], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_race_types[RACE_TROLL], g_arg, strlen(g_arg)) == 0)
     return RACE_TROLL;
-  else if (strncasecmp(pc_race_types[RACE_OGRE], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_race_types[RACE_OGRE], g_arg, strlen(g_arg)) == 0)
     return RACE_OGRE;
-  else if (strncasecmp(pc_race_types[RACE_DWARF], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_race_types[RACE_DWARF], g_arg, strlen(g_arg)) == 0)
     return RACE_DWARF;
-  else if (strncasecmp(pc_race_types[RACE_ELF], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_race_types[RACE_ELF], g_arg, strlen(g_arg)) == 0)
     return RACE_ELF;
-  else if (strncasecmp(pc_race_types[RACE_HALFELF], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_race_types[RACE_HALFELF], g_arg, strlen(g_arg)) == 0)
     return RACE_HALFELF;
-  else if (strncasecmp(pc_race_types[RACE_GNOME], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_race_types[RACE_GNOME], g_arg, strlen(g_arg)) == 0)
     return RACE_GNOME;
-  else if (strncasecmp(pc_race_types[RACE_HALFLING], arg, strlen(arg)) == 0)
+  else if (strncasecmp(pc_race_types[RACE_HALFLING], g_arg, strlen(g_arg)) == 0)
     return RACE_HALFLING;
 
   return RACE_UNDEFINED;
@@ -687,15 +687,15 @@ void display_stats(struct char_data *ch) {
   char buf1[2046];
   size_t buflen;
 
-  buflen = safe_snprintf(buf1, sizeof(buf1), "\r\nYour stats are:\r\n\r\n");
-  buflen += safe_snprintf(buf1 + buflen, sizeof(buf1) - buflen, "STR: %s       ", stat_msg(GET_STR(ch)));
-  buflen += safe_snprintf(buf1 + buflen, sizeof(buf1) - buflen, "CON: %s\r\n", stat_msg(GET_CON(ch)));
-  buflen += safe_snprintf(buf1 + buflen, sizeof(buf1) - buflen, "DEX: %s       ", stat_msg(GET_DEX(ch)));
-  buflen += safe_snprintf(buf1 + buflen, sizeof(buf1) - buflen, "WIS: %s\r\n", stat_msg(GET_WIS(ch)));
-  buflen += safe_snprintf(buf1 + buflen, sizeof(buf1) - buflen, "AGI: %s       ", stat_msg(GET_AGI(ch)));
-  safe_snprintf(buf1 + buflen, sizeof(buf1) - buflen, "INT: %s\r\n\r\n", stat_msg(GET_INT(ch)));
+  buflen = safe_snprintf(g_buf1, sizeof(g_buf1), "\r\nYour stats are:\r\n\r\n");
+  buflen += safe_snprintf(g_buf1 + buflen, sizeof(g_buf1) - buflen, "STR: %s       ", stat_msg(GET_STR(ch)));
+  buflen += safe_snprintf(g_buf1 + buflen, sizeof(g_buf1) - buflen, "CON: %s\r\n", stat_msg(GET_CON(ch)));
+  buflen += safe_snprintf(g_buf1 + buflen, sizeof(g_buf1) - buflen, "DEX: %s       ", stat_msg(GET_DEX(ch)));
+  buflen += safe_snprintf(g_buf1 + buflen, sizeof(g_buf1) - buflen, "WIS: %s\r\n", stat_msg(GET_WIS(ch)));
+  buflen += safe_snprintf(g_buf1 + buflen, sizeof(g_buf1) - buflen, "AGI: %s       ", stat_msg(GET_AGI(ch)));
+  safe_snprintf(g_buf1 + buflen, sizeof(g_buf1) - buflen, "INT: %s\r\n\r\n", stat_msg(GET_INT(ch)));
 
-  send_to_char(buf1, ch);
+  send_to_char(g_buf1, ch);
 }
 
 void init_resists(struct char_data *ch) {
@@ -891,8 +891,8 @@ void lose_level(struct char_data *ch) {
     if (spells[i].min_level[(int)GET_CLASS(ch)] >= GET_LEVEL(ch))
       SET_SKILL(ch, spells[i].spellindex, 0);
   save_char_text(ch, NOWHERE);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s lost level %d", GET_NAME(ch), GET_LEVEL(ch));
-  mudlog(buf, 'A', COM_IMMORT, TRUE);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s lost level %d", GET_NAME(ch), GET_LEVEL(ch));
+  mudlog(g_buf, 'A', COM_IMMORT, TRUE);
 }
 
 /* Gain maximum in various points */
@@ -984,8 +984,8 @@ void advance_level(struct char_data *ch) {
     GET_AC(ch) = monk_stat[(sh_int)GET_LEVEL(ch)][2];
     for (i = 0; i < NUM_WEARS; i++) {
       if (GET_EQ(ch, i) && (GET_OBJ_WEIGHT(GET_EQ(ch, i)) > monk_stat[(int)GET_LEVEL(ch)][3])) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s becomes too heavy for you to wear.\r\n", OBJN(GET_EQ(ch, i), ch));
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s becomes too heavy for you to wear.\r\n", OBJN(GET_EQ(ch, i), ch));
+        send_to_char(g_buf, ch);
         obj_to_char(unequip_char(ch, i), ch);
       }
     }
@@ -1011,12 +1011,12 @@ void advance_level(struct char_data *ch) {
 
   save_char_text(ch, NOWHERE);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s advanced to level %d", GET_NAME(ch), GET_LEVEL(ch));
-  mudlog(buf, 'A', COM_IMMORT, TRUE);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "LEVELGAIN:%s gained %d hp %d m %d v : int %d wis %d con %d", GET_NAME(ch),
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s advanced to level %d", GET_NAME(ch), GET_LEVEL(ch));
+  mudlog(g_buf, 'A', COM_IMMORT, TRUE);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "LEVELGAIN:%s gained %d hp %d m %d v : int %d wis %d con %d", GET_NAME(ch),
                 add_hp, add_mana, add_move, GET_INT(ch), GET_WIS(ch), GET_CON(ch));
 
-  mudlog(buf, 'D', COM_IMMORT, TRUE);
+  mudlog(g_buf, 'D', COM_IMMORT, TRUE);
 }
 
 /* exp required for each level */

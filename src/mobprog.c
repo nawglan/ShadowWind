@@ -42,7 +42,7 @@
 #include <string.h>
 #include <sys/types.h>
 
-extern char buf2[MAX_STRING_LENGTH];
+extern char g_buf2[MAX_STRING_LENGTH];
 
 struct number_list_type {
   int number;
@@ -60,10 +60,10 @@ extern bool str_prefix(const char *astr, const char *bstr);
 extern int number_percent(void);
 extern int number_range(int from, int to);
 
-#define bug(x, y)                                \
-  {                                              \
-    snprintf(buf2, MAX_STRING_LENGTH, (x), (y)); \
-    stderr_log(buf2);                            \
+#define bug(x, y)                                  \
+  {                                                \
+    snprintf(g_buf2, MAX_STRING_LENGTH, (x), (y)); \
+    stderr_log(g_buf2);                            \
   }
 
 /*
@@ -158,11 +158,11 @@ char *find_endif(char *com_list, struct char_data *mob) {
       return '\0';
     }
 
-    one_argument(cmnd, buf);
+    one_argument(cmnd, g_buf);
 
-    if (!str_cmp(buf, "if"))
+    if (!str_cmp(g_buf, "if"))
       if_scope++;
-    if (!str_cmp(buf, "endif"))
+    if (!str_cmp(g_buf, "endif"))
       if_scope--;
   } /* while */
 
@@ -197,13 +197,13 @@ char *find_else(char *com_list, struct char_data *mob) {
       return '\0';
     }
 
-    one_argument(cmnd, buf);
+    one_argument(cmnd, g_buf);
 
-    if (!str_cmp(buf, "if"))
+    if (!str_cmp(g_buf, "if"))
       if_scope++;
-    if (!str_cmp(buf, "endif"))
+    if (!str_cmp(g_buf, "endif"))
       if_scope--;
-    if ((!str_cmp(buf, "else")) && (if_scope == 1)) {
+    if ((!str_cmp(g_buf, "else")) && (if_scope == 1)) {
       return cmnd;
     }
   } /* while */
@@ -287,8 +287,8 @@ int mprog_seval(char *lhs, char *opr, char *rhs) {
   if (!str_cmp(opr, "!/"))
     return (str_infix(rhs, lhs));
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Improper MOBprog operator: %s", opr);
-  stderr_log(buf);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Improper MOBprog operator: %s", opr);
+  stderr_log(g_buf);
   return '\0';
 }
 
@@ -311,15 +311,15 @@ int mprog_veval(int lhs, char *opr, int rhs) {
   if (!str_cmp(opr, "|"))
     return (lhs | rhs);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Improper MOBprog operator: %s", opr);
-  stderr_log(buf);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Improper MOBprog operator: %s", opr);
+  stderr_log(g_buf);
   return 0;
 }
 
 /* This function performs the evaluation of the if checks.  It is
  * here that you can add any ifchecks which you so desire. Hopefully
  * it is clear from what follows how one would go about adding your
- * own. The syntax for an if check is: ifchck (arg) [opr val]
+ * own. The syntax for an if check is: ifchck (g_arg) [opr val]
  * where the parenthesis are required and the opr and val fields are
  * optional but if one is there then both must be. The spaces are all
  * optional. The evaluation of the opr expressions is farmed out
@@ -334,8 +334,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
   char val[MAX_INPUT_LENGTH];
   struct char_data *vict = (struct char_data *)vo;
   struct obj_data *v_obj = (struct obj_data *)vo;
-  char *bufpt = buf;
-  char *argpt = arg;
+  char *bufpt = g_buf;
+  char *argpt = g_arg;
   char *oprpt = opr;
   char *valpt = val;
   char *point = ifchck;
@@ -405,12 +405,12 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
 
     *valpt = '\0';
   }
-  bufpt = buf;
-  argpt = arg;
+  bufpt = g_buf;
+  argpt = g_arg;
   oprpt = opr;
   valpt = val;
 
-  /* Ok... now buf contains the ifchck, arg contains the inside of the
+  /* Ok... now g_buf contains the ifchck, g_arg contains the inside of the
    *  parentheses, opr contains an operator if one is present, and val
    *  has the value if an operator was present.
    *  So.. basically use if statements and run over all known ifchecks
@@ -418,16 +418,16 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
    *  send the lhs,opr,rhs off to be evaluated.
    */
 
-  if (!str_cmp(buf, "istime")) {
-    return istime(arg);
+  if (!str_cmp(g_buf, "istime")) {
+    return istime(g_arg);
   }
 
-  if (!str_cmp(buf, "rand")) {
-    return (number_percent() <= atoi(arg));
+  if (!str_cmp(g_buf, "rand")) {
+    return (number_percent() <= atoi(g_arg));
   }
 
-  if (!str_cmp(buf, "ispc")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "ispc")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return 0;
@@ -452,8 +452,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "isnpc")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "isnpc")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return 1;
@@ -478,8 +478,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "isgood")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "isgood")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return IS_GOOD(mob);
@@ -505,8 +505,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "isfight")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "isfight")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return (FIGHTING(mob)) ? 1 : 0;
@@ -531,8 +531,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "isimmort")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "isimmort")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return (GET_LEVEL(mob) > LVL_IMMORT);
@@ -557,8 +557,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "ischarmed")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "ischarmed")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return IS_AFFECTED(mob, AFF_CHARM);
@@ -583,8 +583,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "isfollow")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "isfollow")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return (mob->master != NULL && mob->master->in_room == mob->in_room);
@@ -609,8 +609,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "isaffected")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "isaffected")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = (1 << atoi(val));
@@ -639,8 +639,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "hitprcnt")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "hitprcnt")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = mob->points.hit / mob->points.max_hit;
@@ -673,8 +673,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "inroom")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "inroom")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = mob->in_room;
@@ -707,8 +707,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "sex")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "sex")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = mob->player.sex;
@@ -741,8 +741,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "position")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "position")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = mob->char_specials.position;
@@ -775,8 +775,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "level")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "level")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = GET_LEVEL(mob);
@@ -809,8 +809,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "class")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "class")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = mob->player.class;
@@ -843,8 +843,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "goldamt")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "goldamt")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = mob->points.gold;
@@ -877,8 +877,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "objtype")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "objtype")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'o':
       if (obj) {
@@ -900,8 +900,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "objval0")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "objval0")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'o':
       if (obj) {
@@ -923,8 +923,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "objval1")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "objval1")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'o':
       if (obj) {
@@ -946,8 +946,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "objval2")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "objval2")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'o':
       if (obj) {
@@ -969,8 +969,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "objval3")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "objval3")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'o':
       if (obj) {
@@ -992,8 +992,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "number")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "number")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       lhsvl = mob_index[mob->nr].virtual;
@@ -1057,8 +1057,8 @@ int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor
     }
   }
 
-  if (!str_cmp(buf, "name")) {
-    switch (arg[1]) /* arg should be "$*" so just get the letter */
+  if (!str_cmp(g_buf, "name")) {
+    switch (g_arg[1]) /* g_arg should be "$*" so just get the letter */
     {
     case 'i':
       return mprog_seval(mob->player.name, opr, val);
@@ -1157,8 +1157,8 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
       bug("Mob: %d no commands after IF/OR", mob_index[mob->nr].virtual);
       return null;
     }
-    morebuf = one_argument(cmnd, buf);
-    if (!str_cmp(buf, "or")) {
+    morebuf = one_argument(cmnd, g_buf);
+    if (!str_cmp(g_buf, "or")) {
       if ((legal = mprog_do_ifchck(morebuf, mob, actor, obj, vo, rndm)))
         flag = TRUE;
     } else
@@ -1168,7 +1168,7 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
   if (flag)
     for (;;) /*ifcheck was true, do commands but ignore else to endif*/
     {
-      if (!str_cmp(buf, "if")) {
+      if (!str_cmp(g_buf, "if")) {
         com_list = mprog_process_if(morebuf, com_list, mob, actor, obj, vo, rndm);
         while (*cmnd == ' ')
           cmnd++;
@@ -1176,10 +1176,10 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
           return null;
         cmnd = com_list;
         com_list = mprog_next_command(com_list);
-        morebuf = one_argument(cmnd, buf);
+        morebuf = one_argument(cmnd, g_buf);
         continue;
       }
-      if ((!str_cmp(buf, "break")) || (!str_cmp(buf, "endif")) || (!str_cmp(buf, "else")))
+      if ((!str_cmp(g_buf, "break")) || (!str_cmp(g_buf, "endif")) || (!str_cmp(g_buf, "else")))
         return end_list;
 
       safe_snprintf(local_buf2, sizeof(local_buf2), "%s%s", cmnd, com_list);
@@ -1194,7 +1194,7 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
         bug("Mob: %d missing else or endif", mob_index[mob->nr].virtual);
         return null;
       }
-      morebuf = one_argument(cmnd, buf);
+      morebuf = one_argument(cmnd, g_buf);
     }
   else /*false ifcheck, find else and do existing commands or quit at endif*/
   {
@@ -1202,10 +1202,10 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
     cmnd = com_list;
     com_list = mprog_next_command(com_list);
 
-    morebuf = one_argument(cmnd, buf);
+    morebuf = one_argument(cmnd, g_buf);
 
     /* found either an else or an endif.. act accordingly */
-    if (!str_cmp(buf, "endif")) {
+    if (!str_cmp(g_buf, "endif")) {
       return com_list;
     }
     cmnd = com_list;
@@ -1220,11 +1220,11 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
       bug("Mob: %d missing endif", mob_index[mob->nr].virtual);
       return null;
     }
-    morebuf = one_argument(cmnd, buf);
+    morebuf = one_argument(cmnd, g_buf);
 
     for (;;) /*process the post-else commands until an endif is found.*/
     {
-      if (!str_cmp(buf, "if")) {
+      if (!str_cmp(g_buf, "if")) {
         com_list = mprog_process_if(morebuf, com_list, mob, actor, obj, vo, rndm);
         while (*cmnd == ' ')
           cmnd++;
@@ -1232,14 +1232,14 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
           return null;
         cmnd = com_list;
         com_list = mprog_next_command(com_list);
-        morebuf = one_argument(cmnd, buf);
+        morebuf = one_argument(cmnd, g_buf);
         continue;
       }
-      if (!str_cmp(buf, "else")) {
+      if (!str_cmp(g_buf, "else")) {
         bug("Mob: %d found else in an else section", mob_index[mob->nr].virtual);
         return end_list;
       }
-      if ((!str_cmp(buf, "break")) || (!str_cmp(buf, "endif")))
+      if ((!str_cmp(g_buf, "break")) || (!str_cmp(g_buf, "endif")))
         return end_list;
 
       safe_snprintf(local_buf2, sizeof(local_buf2), "%s%s", cmnd, com_list);
@@ -1254,7 +1254,7 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
         bug("Mob:%d missing endif in else section", mob_index[mob->nr].virtual);
         return null;
       }
-      morebuf = one_argument(cmnd, buf);
+      morebuf = one_argument(cmnd, g_buf);
     }
   }
   return null;
@@ -1524,7 +1524,7 @@ void mprog_process_cmnd(char *cmnd, struct char_data *mob, struct char_data *act
   char *point;
   int j;
 
-  point = buf;
+  point = g_buf;
   str = cmnd;
   /* brr */
 
@@ -1544,22 +1544,22 @@ void mprog_process_cmnd(char *cmnd, struct char_data *mob, struct char_data *act
    */
   command_list = cmnd;
   command_list = mprog_next_command(command_list);
-  morebuf = one_argument(cmnd, buf);
+  morebuf = one_argument(cmnd, g_buf);
 
-  if (!str_cmp(buf, "mpdelay")) {
+  if (!str_cmp(g_buf, "mpdelay")) {
     handle_mpdelay(morebuf, command_list, mob, actor, obj, vo, rndm);
     cmnd[0] = '\0';
     return;
   }
 
-  if (!str_cmp(buf, "mpextract")) {
+  if (!str_cmp(g_buf, "mpextract")) {
     mudlog("Performing actual extraction now", 'Q', COM_QUEST, FALSE);
     mprog_mpextract(mob);
     cmnd[0] = '\0';
     return;
   }
 
-  if (!str_cmp(buf, "mppurge")) {
+  if (!str_cmp(g_buf, "mppurge")) {
     mprog_mppurge(morebuf, cmnd, mob, actor, obj, vo, rndm);
     cmnd[0] = '\0';
     return;
@@ -1584,7 +1584,7 @@ void mprog_process_cmnd(char *cmnd, struct char_data *mob, struct char_data *act
       ++point, ++i;
   }
   *point = '\0';
-  str = buf;
+  str = g_buf;
   j = 1;
   while (j < MAX_INPUT_LENGTH - 2) {
     if (str[j] == '\n') {
@@ -1600,7 +1600,7 @@ void mprog_process_cmnd(char *cmnd, struct char_data *mob, struct char_data *act
     j++;
   }
 
-  command_interpreter(mob, buf);
+  command_interpreter(mob, g_buf);
 
   return;
 }
@@ -1641,21 +1641,21 @@ void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor
   cmnd = command_list;
   command_list = mprog_next_command(command_list);
   while (*cmnd != '\0') {
-    morebuf = one_argument(cmnd, buf);
-    if (!str_cmp(buf, "if"))
+    morebuf = one_argument(cmnd, g_buf);
+    if (!str_cmp(g_buf, "if"))
       command_list = mprog_process_if(morebuf, command_list, mob, actor, obj, vo, rndm);
 
     /* The following two 'else if's ("else" and "endif") are
      * for re-entrant mob-progs. These will be needed for the
      * mpdelay function being added.
      */
-    else if (!str_cmp(buf, "else")) {
+    else if (!str_cmp(g_buf, "else")) {
       command_list = find_endif(command_list, mob);
       mprog_process_cmnd(command_list, mob, actor, obj, vo, rndm);
       /* we may have to do something else here, but I'm too tired to
        * trace it down now :) -- brr
        */
-    } else if (!str_cmp(buf, "endif")) {
+    } else if (!str_cmp(g_buf, "endif")) {
       /* really do nothing */
     }
 
@@ -1713,7 +1713,7 @@ void mprog_pulse() {
  *  on a certain percent, or trigger on a keyword or word phrase.
  *  To see how this works, look at the various trigger routines..
  */
-void mprog_wordlist_check(char *arg, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
+void mprog_wordlist_check(char *g_arg, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                           int type) {
 
   char temp1[MAX_STRING_LENGTH];
@@ -1734,7 +1734,7 @@ void mprog_wordlist_check(char *arg, struct char_data *mob, struct char_data *ac
         list++;
       for (i = 0; i < strlen(list); i++)
         list[i] = LOWER(list[i]);
-      safe_snprintf(temp2, sizeof(temp2), "%s", arg);
+      safe_snprintf(temp2, sizeof(temp2), "%s", g_arg);
       dupl = temp2;
       for (i = 0; i < strlen(dupl); i++)
         dupl[i] = LOWER(dupl[i]);
@@ -1784,7 +1784,7 @@ void mprog_percent_check(struct char_data *mob, struct char_data *actor, struct 
  * make sure you remember to modify the variable names to the ones in the
  * trigger calls.
  */
-void mprog_act_trigger(char *buf, struct char_data *mob, struct char_data *ch, struct obj_data *obj, void *vo) {
+void mprog_act_trigger(char *g_buf, struct char_data *mob, struct char_data *ch, struct obj_data *obj, void *vo) {
 
   MPROG_ACT_LIST *tmp_act;
 
@@ -1801,7 +1801,7 @@ void mprog_act_trigger(char *buf, struct char_data *mob, struct char_data *ch, s
       tmp_act->next = NULL;
 
     mob->mpact = tmp_act;
-    mob->mpact->buf = strdup(buf);
+    mob->mpact->buf = strdup(g_buf);
     mob->mpact->ch = ch;
     mob->mpact->obj = obj;
     mob->mpact->vo = vo;
@@ -1877,8 +1877,8 @@ void mprog_give_trigger(struct char_data *mob, struct char_data *ch, struct obj_
 
   if (IS_NPC(mob) && (mob->mob_specials.mp_toggle == FALSE) && (mob_index[mob->nr].progtypes & GIVE_PROG))
     for (mprg = mob_index[mob->nr].mobprogs; mprg != NULL; mprg = mprg->next) {
-      one_argument(mprg->arglist, buf);
-      if ((mprg->type & GIVE_PROG) && ((!str_infix(obj->name, mprg->arglist)) || (!str_cmp("all", buf)))) {
+      one_argument(mprg->arglist, g_buf);
+      if ((mprg->type & GIVE_PROG) && ((!str_infix(obj->name, mprg->arglist)) || (!str_cmp("all", g_buf)))) {
         mprog_driver(mprg->comlist, mob, ch, obj, NULL, NULL);
         break;
       }
@@ -2024,9 +2024,9 @@ void mprog_time_trigger(struct time_info_data time)
         pdaym = NULL;
         phour = NULL;
 
-        safe_snprintf(buf, sizeof(buf), "%s", mprg->arglist);
+        safe_snprintf(g_buf, sizeof(g_buf), "%s", mprg->arglist);
         if ((mprg->type & TIME_PROG)) {
-          if (scan_time(buf, &pyear, &pmonth, &pweek, &pdayw, &pdaym, &phour) == -2) {
+          if (scan_time(g_buf, &pyear, &pmonth, &pweek, &pdayw, &pdaym, &phour) == -2) {
             safe_snprintf(error, sizeof(error), "time_prog error: bad time format in mob %d",
                           mob_index[list->nr].virtual);
             mudlog(error, 'E', COM_IMMORT, TRUE);
@@ -2765,7 +2765,7 @@ void handle_mpdelay(char *delay, char *cmnd, struct char_data *mob, struct char_
 
   /* already know it's an mpdelay, move on to the argument */
 
-  if (*buf != '\0') {
+  if (*g_buf != '\0') {
     temp->delay = atoi(delay);
   } else {
     temp->delay = 5;

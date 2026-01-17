@@ -29,6 +29,9 @@ COPY --from=builder /build/bin/shadowwind ./bin/shadowwind
 COPY --from=builder /build/bin/lookup_process ./bin/lookup_process
 COPY --from=builder /build/lib ./lib
 
+# Create non-root user for security
+RUN groupadd -r shadowwind && useradd -r -g shadowwind shadowwind
+
 # Create runtime directories for player data
 RUN mkdir -p /app/lib/plrdata/A-E /app/lib/plrdata/F-J /app/lib/plrdata/K-O \
              /app/lib/plrdata/P-T /app/lib/plrdata/U-Z /app/lib/plrdata/ZZZ \
@@ -38,7 +41,10 @@ RUN mkdir -p /app/lib/plrdata/A-E /app/lib/plrdata/F-J /app/lib/plrdata/K-O \
                 /app/lib/plrobjs/P-T /app/lib/plrobjs/U-Z /app/lib/plrobjs/ZZZ \
     && mkdir -p /app/lib/plrtext/A-E /app/lib/plrtext/F-J /app/lib/plrtext/K-O \
                 /app/lib/plrtext/P-T /app/lib/plrtext/U-Z /app/lib/plrtext/ZZZ \
-    && mkdir -p /app/lib/etc /app/lib/house /tmp/shadowwind
+    && mkdir -p /app/lib/etc /app/lib/house /tmp/shadowwind \
+    && chown -R shadowwind:shadowwind /app /tmp/shadowwind
+
+USER shadowwind
 
 EXPOSE 9999
 

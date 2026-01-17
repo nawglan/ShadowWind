@@ -134,14 +134,14 @@ ASPELL(spell_dam) {
       act("You're already casting something.", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
-    if (arg && !get_char_room_vis(ch, arg)) {
+    if (g_arg && !get_char_room_vis(ch, g_arg)) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on who?", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
   }
-  if (arg)
-    target = strdup(arg);
+  if (g_arg)
+    target = strdup(g_arg);
   if (magic_ok(ch, sinfo->aggressive)) {
     if (!IS_NPC(ch))
       check_ch_ability(ch, sinfo, isobj, target, waitstate);
@@ -161,7 +161,7 @@ ASPELL(spell_char) {
       return;
     }
     tempevent = sinfo->event_pointer;
-    if (arg && !get_char_vis(ch, arg) && tempevent != spell_group_event) {
+    if (g_arg && !get_char_vis(ch, g_arg) && tempevent != spell_group_event) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on who?", TRUE, ch, 0, 0, TO_CHAR);
       return;
@@ -169,9 +169,9 @@ ASPELL(spell_char) {
   }
   if (magic_ok(ch, sinfo->aggressive)) {
     if (!IS_NPC(ch))
-      check_ch_ability(ch, sinfo, isobj, arg, waitstate);
+      check_ch_ability(ch, sinfo, isobj, g_arg, waitstate);
     else
-      check_mob_ability(ch, sinfo, isobj, arg, waitstate);
+      check_mob_ability(ch, sinfo, isobj, g_arg, waitstate);
     if (!IS_NPC(ch) && !isobj)
       improve_skill(ch, sinfo->realm, SKUSE_FREQUENT);
   }
@@ -187,9 +187,9 @@ ASPELL(spell_general) {
   }
   if (magic_ok(ch, sinfo->aggressive)) {
     if (!IS_NPC(ch))
-      check_ch_ability(ch, sinfo, isobj, arg, waitstate);
+      check_ch_ability(ch, sinfo, isobj, g_arg, waitstate);
     else
-      check_mob_ability(ch, sinfo, isobj, arg, waitstate);
+      check_mob_ability(ch, sinfo, isobj, g_arg, waitstate);
     if (!IS_NPC(ch) && !isobj)
       improve_skill(ch, sinfo->realm, SKUSE_FREQUENT);
   }
@@ -202,8 +202,8 @@ ASPELL(spell_obj_char) {
       act("You're already casting something.", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
-    if (!arg && (!get_char_room_vis(ch, arg) && !get_obj_in_list_vis(ch, arg, ch->carrying) &&
-                 !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents))) {
+    if (!g_arg && (!get_char_room_vis(ch, g_arg) && !get_obj_in_list_vis(ch, g_arg, ch->carrying) &&
+                   !get_obj_in_list_vis(ch, g_arg, world[ch->in_room].contents))) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on who or what?", TRUE, ch, 0, 0, TO_CHAR);
       return;
@@ -211,9 +211,9 @@ ASPELL(spell_obj_char) {
   }
   if (magic_ok(ch, sinfo->aggressive)) {
     if (!IS_NPC(ch))
-      check_ch_ability(ch, sinfo, isobj, arg, waitstate);
+      check_ch_ability(ch, sinfo, isobj, g_arg, waitstate);
     else
-      check_mob_ability(ch, sinfo, isobj, arg, waitstate);
+      check_mob_ability(ch, sinfo, isobj, g_arg, waitstate);
     if (!IS_NPC(ch) && !isobj)
       improve_skill(ch, sinfo->realm, SKUSE_FREQUENT);
   }
@@ -226,8 +226,8 @@ ASPELL(spell_obj) {
       act("You're already casting something.", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
-    if (!arg || (arg && (!get_obj_in_list_vis(ch, arg, ch->carrying) &&
-                         !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents)))) {
+    if (!g_arg || (g_arg && (!get_obj_in_list_vis(ch, g_arg, ch->carrying) &&
+                             !get_obj_in_list_vis(ch, g_arg, world[ch->in_room].contents)))) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on what?", TRUE, ch, 0, 0, TO_CHAR);
       return;
@@ -235,9 +235,9 @@ ASPELL(spell_obj) {
   }
   if (magic_ok(ch, sinfo->aggressive)) {
     if (!IS_NPC(ch))
-      check_ch_ability(ch, sinfo, isobj, arg, waitstate);
+      check_ch_ability(ch, sinfo, isobj, g_arg, waitstate);
     else
-      check_mob_ability(ch, sinfo, isobj, arg, waitstate);
+      check_mob_ability(ch, sinfo, isobj, g_arg, waitstate);
     if (!IS_NPC(ch) && !isobj)
       improve_skill(ch, sinfo->realm, SKUSE_FREQUENT);
   }
@@ -250,8 +250,8 @@ ASPELL(spell_obj_room) {
       act("You're already casting something.", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
-    if (arg &&
-        (!get_obj_in_list_vis(ch, arg, ch->carrying) && !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents))) {
+    if (g_arg && (!get_obj_in_list_vis(ch, g_arg, ch->carrying) &&
+                  !get_obj_in_list_vis(ch, g_arg, world[ch->in_room].contents))) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on what?", TRUE, ch, 0, 0, TO_CHAR);
       return;
@@ -259,9 +259,9 @@ ASPELL(spell_obj_room) {
   }
   if (magic_ok(ch, sinfo->aggressive)) {
     if (!IS_NPC(ch))
-      check_ch_ability(ch, sinfo, isobj, arg, waitstate);
+      check_ch_ability(ch, sinfo, isobj, g_arg, waitstate);
     else
-      check_mob_ability(ch, sinfo, isobj, arg, waitstate);
+      check_mob_ability(ch, sinfo, isobj, g_arg, waitstate);
     if (!IS_NPC(ch) && !isobj)
       improve_skill(ch, sinfo->realm, SKUSE_FREQUENT);
   }

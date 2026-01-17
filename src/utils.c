@@ -12,10 +12,12 @@
 #include <assert.h>
 #include <errno.h>
 #include <netinet/in.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <time.h>
 #include <unistd.h>
 
@@ -103,10 +105,10 @@ void log_death_trap(struct char_data *ch) {
   char buf[150];
   extern struct room_data *world;
 
-  safe_snprintf(buf, sizeof(buf), "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number,
+  safe_snprintf(g_buf, sizeof(g_buf), "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number,
                 world[ch->in_room].name);
-  mudlog(buf, 'K', COM_IMMORT, TRUE);
-  plog(buf, ch, 0);
+  mudlog(g_buf, 'K', COM_IMMORT, TRUE);
+  plog(g_buf, ch, 0);
 }
 
 /* writes a string to the log */
@@ -151,12 +153,12 @@ void mudlog(char *str, char type, sbyte level, byte file) {
 
   ct = time(0);
   tmp = asctime(localtime(&ct));
-  arg[0] = type;
-  arg[1] = '\0';
+  g_arg[0] = type;
+  g_arg[1] = '\0';
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, ":%s: %s", arg, str);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, ":%s: %s", g_arg, str);
 
-  safe_snprintf(temp, sizeof(temp), "%-19.19s :: %s\n", tmp, buf);
+  safe_snprintf(temp, sizeof(temp), "%-19.19s :: %s\n", tmp, g_buf);
   memset(newlog, 0, 1024);
   strip_color(temp, newlog, strlen(temp));
 
@@ -165,17 +167,17 @@ void mudlog(char *str, char type, sbyte level, byte file) {
   if (level < 0)
     return;
 
-  safe_snprintf(buf1, MAX_STRING_LENGTH, "[ %s ]\r\n", buf);
-  arg[0] = LOWER(type);
+  safe_snprintf(g_buf1, MAX_STRING_LENGTH, "[ %s ]\r\n", g_buf);
+  g_arg[0] = LOWER(type);
 
   for (i = descriptor_list; i; i = next_i) {
     next_i = i->next;
     if (!i->connected && !PLR_FLAGGED(i->character, PLR_WRITING) && !PLR_FLAGGED(i->character, PLR_EDITING)) {
 
       if ((COM_FLAGGED(i->character, level) && PRF_FLAGGED(i->character, PRF_LOG) &&
-           LOG_FLAGGED(i->character, asciiflag_conv(arg)))) {
+           LOG_FLAGGED(i->character, asciiflag_conv(g_arg)))) {
         send_to_char(CCGRN(i->character, C_NRM), i->character);
-        send_to_char(buf1, i->character);
+        send_to_char(g_buf1, i->character);
         send_to_char(CCNRM(i->character, C_NRM), i->character);
       }
     }
@@ -394,7 +396,7 @@ void add_follower(struct char_data *ch, struct char_data *leader) {
  *
  * Returns the number of lines advanced in the file.
  */
-int get_line(FILE *fl, char *buf) {
+int get_line(FILE *fl, char *g_buf) {
   char temp[256];
   int lines = 0;
 
@@ -409,7 +411,7 @@ int get_line(FILE *fl, char *buf) {
   if (feof(fl))
     return 0;
   else {
-    safe_snprintf(buf, 256, "%s", temp);
+    safe_snprintf(g_buf, 256, "%s", temp);
     return lines;
   }
 }
@@ -695,8 +697,8 @@ void clean_log_file(char *name) {
 
   if (!(fil = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
+      perror(g_buf1);
       return;
     }
     return;
@@ -704,8 +706,8 @@ void clean_log_file(char *name) {
 
   if (!(temp = fopen("temp.plog", "w"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
+      perror(g_buf1);
       fclose(fil);
       return;
     }
@@ -715,12 +717,12 @@ void clean_log_file(char *name) {
 
   ltime = time(0); /* current UNIX sys time */
   while (!feof(fil)) {
-    *buf = '\0';
+    *g_buf = '\0';
     i = 0;
     fscanf(fil, "%d %ld ", &lvl, &i);
-    fgets(buf, MAX_INPUT_LENGTH, fil);
-    if (i + (7 * 24 * 60 * 60) > ltime && *buf != '\0') /* record is not timed-out yet */
-      fprintf(temp, "%d %ld %s", lvl, i, buf);
+    fgets(g_buf, MAX_INPUT_LENGTH, fil);
+    if (i + (7 * 24 * 60 * 60) > ltime && *g_buf != '\0') /* record is not timed-out yet */
+      fprintf(temp, "%d %ld %s", lvl, i, g_buf);
   }
   fclose(fil);
   fclose(temp);
@@ -730,8 +732,8 @@ void clean_log_file(char *name) {
 
   if (!(fil = fopen(fname, "w"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: WRITING PLOG FILE %s (5)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: WRITING PLOG FILE %s (5)", fname);
+      perror(g_buf1);
       return;
     }
     return;
@@ -739,19 +741,19 @@ void clean_log_file(char *name) {
 
   if (!(temp = fopen("temp.plog", "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING TEMP.PLOG FILE (5)");
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: READING TEMP.PLOG FILE (5)");
+      perror(g_buf1);
       return;
     }
     return;
   }
 
   while (!feof(temp)) {
-    *buf = '\0';
+    *g_buf = '\0';
     fscanf(temp, "%d %ld ", &lvl, &i);
-    fgets(buf, MAX_INPUT_LENGTH, temp);
-    if (*buf != '\0')
-      fprintf(fil, "%d %ld %s", lvl, i, buf);
+    fgets(g_buf, MAX_INPUT_LENGTH, temp);
+    if (*g_buf != '\0')
+      fprintf(fil, "%d %ld %s", lvl, i, g_buf);
   }
   fclose(fil);
   fclose(temp);
@@ -786,13 +788,13 @@ char *strip_color(char *from, char *to, int length) {
 
 char *make_money_text(int coins) {
   int p, g, s;
-  static char buf[MAX_INPUT_LENGTH];
+  static char g_buf[MAX_INPUT_LENGTH];
   size_t len = 0;
 
-  buf[0] = 0;
+  g_buf[0] = 0;
   if (!coins) {
-    safe_snprintf(buf, sizeof(buf), "free");
-    return (buf);
+    safe_snprintf(g_buf, sizeof(g_buf), "free");
+    return (g_buf);
   }
   p = coins / 1000;
   coins -= p * 1000;
@@ -802,41 +804,41 @@ char *make_money_text(int coins) {
   coins -= s * 10;
 
   if (p) {
-    len = safe_snprintf(buf, sizeof(buf), "{x%d {Wp{x", p);
+    len = safe_snprintf(g_buf, sizeof(g_buf), "{x%d {Wp{x", p);
   }
 
   if (g) {
     if (p && !s && !coins)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", and ");
     else if (p)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
-    len += safe_snprintf(buf + len, sizeof(buf) - len, "{x%d {Yg{x", g);
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", ");
+    len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, "{x%d {Yg{x", g);
   }
   if (s) {
     if ((p || g) && !coins)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", and ");
     else if (p || g)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
-    len += safe_snprintf(buf + len, sizeof(buf) - len, "{x%d s", s);
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", ");
+    len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, "{x%d s", s);
   }
   if (coins) {
     if (p || g || s)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
-    len += safe_snprintf(buf + len, sizeof(buf) - len, "{x%d {yc{x", coins);
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", and ");
+    len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, "{x%d {yc{x", coins);
   }
-  safe_snprintf(buf + len, sizeof(buf) - len, " coin%s{x", ((p + g + s + coins) > 1) ? "s" : "");
+  safe_snprintf(g_buf + len, sizeof(g_buf) - len, " coin%s{x", ((p + g + s + coins) > 1) ? "s" : "");
 
-  return buf;
+  return g_buf;
 }
 
 char *make_money_text_nocolor(int coins) {
   int p, g, s;
-  static char buf[MAX_INPUT_LENGTH];
+  static char g_buf[MAX_INPUT_LENGTH];
   size_t len = 0;
 
-  buf[0] = 0;
+  g_buf[0] = 0;
   if (!coins)
-    return (buf);
+    return (g_buf);
   p = coins / 1000;
   coins -= p * 1000;
   g = coins / 100;
@@ -845,31 +847,31 @@ char *make_money_text_nocolor(int coins) {
   coins -= s * 10;
 
   if (p) {
-    len = safe_snprintf(buf, sizeof(buf), "%d p", p);
+    len = safe_snprintf(g_buf, sizeof(g_buf), "%d p", p);
   }
 
   if (g) {
     if (p && !s && !coins)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", and ");
     else if (p)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
-    len += safe_snprintf(buf + len, sizeof(buf) - len, "%d g", g);
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", ");
+    len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, "%d g", g);
   }
   if (s) {
     if ((p || g) && !coins)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", and ");
     else if (p || g)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", ");
-    len += safe_snprintf(buf + len, sizeof(buf) - len, "%d s", s);
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", ");
+    len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, "%d s", s);
   }
   if (coins) {
     if (p || g || s)
-      len += safe_snprintf(buf + len, sizeof(buf) - len, ", and ");
-    len += safe_snprintf(buf + len, sizeof(buf) - len, "%d c", coins);
+      len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, ", and ");
+    len += safe_snprintf(g_buf + len, sizeof(g_buf) - len, "%d c", coins);
   }
-  safe_snprintf(buf + len, sizeof(buf) - len, " coin%s", ((p + g + s + coins) > 1) ? "s" : "");
+  safe_snprintf(g_buf + len, sizeof(g_buf) - len, " coin%s", ((p + g + s + coins) > 1) ? "s" : "");
 
-  return buf;
+  return g_buf;
 }
 
 int IS_DARK(int room) {
@@ -1050,4 +1052,48 @@ int GET_SPELL_CIRCLE(struct char_data *ch, struct spell_info_type *sinfo) {
   }
 
   return retval;
+}
+
+/*
+ * Safely execute autowiz without using system()
+ * Uses fork/exec pattern to avoid shell injection risks.
+ * Runs in background (non-blocking) like the original system() calls with &.
+ */
+void safe_exec_autowiz(int min_lev, const char *wizlist_file, int imm_lev, const char *immlist_file, int use_nice) {
+  pid_t pid;
+  char min_lev_str[16];
+  char imm_lev_str[16];
+
+  snprintf(min_lev_str, sizeof(min_lev_str), "%d", min_lev);
+  snprintf(imm_lev_str, sizeof(imm_lev_str), "%d", imm_lev);
+
+  pid = fork();
+  if (pid < 0) {
+    perror("fork failed for autowiz");
+    return;
+  }
+
+  if (pid == 0) {
+    /* Child process */
+    /* Detach from parent's process group */
+    setsid();
+
+    /* Ignore SIGCHLD so we don't create zombies */
+    signal(SIGCHLD, SIG_IGN);
+
+    if (use_nice) {
+      /* Run with lower priority */
+      nice(10);
+    }
+
+    execl("../bin/autowiz", "autowiz", min_lev_str, wizlist_file, imm_lev_str, immlist_file, (char *)NULL);
+
+    /* If execl returns, it failed */
+    perror("execl failed for autowiz");
+    _exit(1);
+  }
+
+  /* Parent: don't wait - let child run in background */
+  /* Set up to reap zombie when child exits */
+  signal(SIGCHLD, SIG_IGN);
 }

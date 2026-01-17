@@ -710,8 +710,8 @@ void obj_to_char(struct obj_data *object, struct char_data *ch) {
     SET_BIT(PLR_FLAGS(ch), PLR_CRASH);
     if (GET_OBJ_RNUM(object) > -1) {
       if (obj_index[GET_OBJ_RNUM(object)].qic) {
-        safe_snprintf(logbuffer, sizeof(logbuffer), "%s to character %s", object->short_description, GET_NAME(ch));
-        mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+        safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s to character %s", object->short_description, GET_NAME(ch));
+        mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
       }
     }
   } else
@@ -736,9 +736,9 @@ void obj_from_char(struct obj_data *object) {
   SET_BIT(PLR_FLAGS(object->carried_by), PLR_CRASH);
   if (GET_OBJ_RNUM(object) > -1)
     if (obj_index[GET_OBJ_RNUM(object)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from character %s", object->short_description,
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s from character %s", object->short_description,
                     GET_NAME(object->carried_by));
-      mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+      mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
     }
   IS_CARRYING_W(object->carried_by) -= GET_OBJ_WEIGHT(object);
   IS_CARRYING_N(object->carried_by)--;
@@ -781,16 +781,16 @@ void equip_char(struct char_data *ch, struct obj_data *obj, int pos) {
   int invalid_class(struct char_data * ch, struct obj_data * obj);
 
   if (!(pos >= 0 && pos < NUM_WEARS)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Invalid position (ch: %s, obj: %s, pos: %d)", GET_NAME(ch),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: Invalid position (ch: %s, obj: %s, pos: %d)", GET_NAME(ch),
                   obj->short_description, pos);
-    stderr_log(buf);
+    stderr_log(g_buf);
     return;
   }
 
   if (ch->equipment[pos]) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Char is already equipped: %s, %s", GET_NAME(ch),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: Char is already equipped: %s, %s", GET_NAME(ch),
                   obj->short_description);
-    stderr_log(buf);
+    stderr_log(g_buf);
     return;
   }
   if (obj->carried_by != NULL) {
@@ -1026,8 +1026,8 @@ void obj_to_room(struct obj_data *object, int room) {
       SET_BIT(ROOM_FLAGS(room), ROOM_HOUSE_CRASH);
     if (GET_OBJ_RNUM(object) > -1)
       if (obj_index[GET_OBJ_RNUM(object)].qic) {
-        safe_snprintf(logbuffer, sizeof(logbuffer), "%s to room %s", object->short_description, world[room].name);
-        mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+        safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s to room %s", object->short_description, world[room].name);
+        mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
       }
   }
 }
@@ -1047,9 +1047,9 @@ void obj_from_room(struct obj_data *object) {
 
   if (GET_OBJ_RNUM(object) > -1)
     if (obj_index[GET_OBJ_RNUM(object)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from room %s", object->short_description,
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s from room %s", object->short_description,
                     world[object->in_room].name);
-      mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+      mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
   if (IS_OBJ_STAT(object, ITEM_ISLIGHT))
@@ -1064,8 +1064,9 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to) {
 
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s to obj %s", obj->short_description, obj_to->short_description);
-      mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s to obj %s", obj->short_description,
+                    obj_to->short_description);
+      mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
   obj->next_content = obj_to->contains;
@@ -1084,8 +1085,9 @@ void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to) {
 void obj_to_obj2(struct obj_data *obj, struct obj_data *obj_to) {
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s to obj %s", obj->short_description, obj_to->short_description);
-      mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s to obj %s", obj->short_description,
+                    obj_to->short_description);
+      mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
   obj->next_content = obj_to->contains;
@@ -1106,9 +1108,9 @@ void obj_from_obj(struct obj_data *obj) {
 
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from obj %s", obj->short_description,
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s from obj %s", obj->short_description,
                     obj_from->short_description);
-      mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+      mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
   /* Subtract weight from containers container */
@@ -1201,8 +1203,8 @@ void extract_obj(struct obj_data *obj) {
     if (GET_OBJ_RNUM(tmpobj) > -1) {
       (obj_index[GET_OBJ_RNUM(tmpobj)].number)--;
       if (obj_index[GET_OBJ_RNUM(tmpobj)].qic) {
-        safe_snprintf(logbuffer, sizeof(logbuffer), "%s purged", tmpobj->short_description);
-        mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+        safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s purged", tmpobj->short_description);
+        mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
       }
     }
     if (GET_OBJ_TYPE(tmpobj) == ITEM_PCORPSE)
@@ -1229,8 +1231,8 @@ void extract_obj(struct obj_data *obj) {
   if (GET_OBJ_RNUM(obj) > -1) {
     (obj_index[GET_OBJ_RNUM(obj)].number)--;
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s purged", obj->short_description);
-      mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s purged", obj->short_description);
+      mudlog(g_logbuffer, 'J', COM_ADMIN, FALSE);
     }
   }
   if (GET_OBJ_TYPE(obj) == ITEM_PCORPSE)
@@ -1606,11 +1608,11 @@ struct obj_data *get_obj_vis(struct char_data *ch, char *name) {
   return NULL;
 }
 
-struct obj_data *get_object_in_equip_vis(struct char_data *ch, char *arg, struct obj_data *equipment[], int *j) {
+struct obj_data *get_object_in_equip_vis(struct char_data *ch, char *g_arg, struct obj_data *equipment[], int *j) {
   for ((*j) = 0; (*j) < NUM_WEARS; (*j)++)
     if (equipment[(*j)])
       if (CAN_SEE_OBJ(ch, equipment[(*j)]))
-        if (isname(arg, equipment[(*j)]->name) || (equipment[(*j)]->cname && isname(arg, equipment[(*j)]->cname)))
+        if (isname(g_arg, equipment[(*j)]->name) || (equipment[(*j)]->cname && isname(g_arg, equipment[(*j)]->cname)))
           return (equipment[(*j)]);
 
   return NULL;
@@ -1675,15 +1677,15 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper) {
   } else {
     obj->name = strdup("coins");
     obj->short_description = strdup(money_desc(amount));
-    safe_snprintf(buf, sizeof(buf), "%s is lying here.", money_desc(amount));
-    obj->description = strdup(CAP(buf));
+    safe_snprintf(g_buf, sizeof(g_buf), "%s is lying here.", money_desc(amount));
+    obj->description = strdup(CAP(g_buf));
 
     new_descr->keyword = strdup("coins");
-    safe_snprintf(buf, sizeof(buf), "You guess there are, maybe, %dp %dg %ds %dc.",
+    safe_snprintf(g_buf, sizeof(g_buf), "You guess there are, maybe, %dp %dg %ds %dc.",
                   1000 * ((plat / 1000) + number(0, (plat / 1000))), 1000 * ((gold / 1000) + number(0, (gold / 1000))),
                   1000 * ((silver / 1000) + number(0, (silver / 1000))),
                   1000 * ((copper / 1000) + number(0, (copper / 1000))));
-    new_descr->description = strdup(buf);
+    new_descr->description = strdup(g_buf);
   }
 
   new_descr->next = NULL;
@@ -1703,7 +1705,7 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper) {
 
 /* Generic Find, designed to find any object/character                    */
 /* Calling :                                                              */
-/*  *arg     is the sting containing the string to be searched for.       */
+/*  *g_arg     is the sting containing the string to be searched for.       */
 /*           This string doesn't have to be a single word, the routine    */
 /*           extracts the next word itself.                               */
 /*  bitv..   All those bits that you want to "search through".            */
@@ -1712,14 +1714,15 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper) {
 /*  **tar_ch Will be NULL if no character was found, otherwise points     */
 /* **tar_obj Will be NULL if no object was found, otherwise points        */
 /*                                                                        */
-/* The routine returns a pointer to the next word in *arg (just like the  */
+/* The routine returns a pointer to the next word in *g_arg (just like the  */
 /* one_argument routine).                                                 */
 
-int generic_find(char *arg, int bitvector, struct char_data *ch, struct char_data **tar_ch, struct obj_data **tar_obj) {
+int generic_find(char *g_arg, int bitvector, struct char_data *ch, struct char_data **tar_ch,
+                 struct obj_data **tar_obj) {
   int i, found;
   char name[256];
 
-  one_argument(arg, name);
+  one_argument(g_arg, name);
 
   if (!*name)
     return (0);
@@ -1766,11 +1769,11 @@ int generic_find(char *arg, int bitvector, struct char_data *ch, struct char_dat
 }
 
 /* a function to scan for "all" or "all.x" */
-int find_all_dots(char *arg) {
-  if (!strcmp(arg, "all"))
+int find_all_dots(char *g_arg) {
+  if (!strcmp(g_arg, "all"))
     return FIND_ALL;
-  else if (!strncmp(arg, "all.", 4)) {
-    memmove(arg, arg + 4, strlen(arg + 4) + 1);
+  else if (!strncmp(g_arg, "all.", 4)) {
+    memmove(g_arg, g_arg + 4, strlen(g_arg + 4) + 1);
     return FIND_ALLDOT;
   } else
     return FIND_INDIV;

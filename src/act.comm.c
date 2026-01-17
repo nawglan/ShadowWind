@@ -37,18 +37,18 @@ extern int top_of_zone_table;
 ACMD(do_say) {
   skip_spaces(&argument);
 
-  buf[0] = '\0';
+  g_buf[0] = '\0';
   if (!*argument) {
     send_to_char("Yes, but WHAT do you want to say?\r\n", ch);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n says, '%s'", argument);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "$n says, '%s'", argument);
     MOBTrigger = FALSE;
-    act(buf, FALSE, ch, 0, 0, TO_ROOM);
+    act(g_buf, FALSE, ch, 0, 0, TO_ROOM);
     if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
       send_to_char(OK, ch);
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You say, '%s'", argument);
-      act(buf, FALSE, ch, 0, argument, TO_CHAR);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "You say, '%s'", argument);
+      act(g_buf, FALSE, ch, 0, argument, TO_CHAR);
     }
     mprog_speech_trigger(argument, ch);
   }
@@ -60,7 +60,7 @@ ACMD(do_gsay) {
 
   skip_spaces(&argument);
 
-  buf[0] = '\0';
+  g_buf[0] = '\0';
   if (!IS_AFFECTED(ch, AFF_GROUP)) {
     send_to_char("But you are not the member of a group!\r\n", ch);
     return;
@@ -74,22 +74,22 @@ ACMD(do_gsay) {
       k = ch;
     }
 
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{g$n tells the group, '{G%s{g'{x", argument);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{g$n tells the group, '{G%s{g'{x", argument);
 
     if (IS_AFFECTED(k, AFF_GROUP) && (k != ch)) {
-      act(buf, FALSE, ch, 0, k, TO_VICT | TO_SLEEP);
+      act(g_buf, FALSE, ch, 0, k, TO_VICT | TO_SLEEP);
     }
     for (f = k->followers; f; f = f->next) {
       if (IS_AFFECTED(f->follower, AFF_GROUP) && (f->follower != ch)) {
-        act(buf, FALSE, ch, 0, f->follower, TO_VICT | TO_SLEEP);
+        act(g_buf, FALSE, ch, 0, f->follower, TO_VICT | TO_SLEEP);
       }
     }
 
     if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
       send_to_char(OK, ch);
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{gYou tell the group, '{G%s{g'{x", argument);
-      act(buf, FALSE, ch, 0, 0, TO_CHAR | TO_SLEEP);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "{gYou tell the group, '{G%s{g'{x", argument);
+      act(g_buf, FALSE, ch, 0, 0, TO_CHAR | TO_SLEEP);
     }
   }
 }
@@ -97,13 +97,13 @@ ACMD(do_gsay) {
 void perform_tell(struct char_data *ch, struct char_data *vict, char *arg) {
   char **msg;
 
-  buf[0] = '\0';
+  g_buf[0] = '\0';
   if (IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{r%s's $n tells you, '{R%s{r'{x", GET_NAME(ch->master), arg);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{r%s's $n tells you, '{R%s{r'{x", GET_NAME(ch->master), arg);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{r$n tells you, '{R%s{r'{x", arg);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{r$n tells you, '{R%s{r'{x", arg);
   }
-  act(buf, FALSE, ch, 0, vict, TO_VICT | TO_SLEEP);
+  act(g_buf, FALSE, ch, 0, vict, TO_VICT | TO_SLEEP);
 
   if (!IS_NPC(vict)) {
     msg = &(GET_TELL(vict));
@@ -116,8 +116,8 @@ void perform_tell(struct char_data *ch, struct char_data *vict, char *arg) {
   if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
     send_to_char(OK, ch);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{rYou tell $N, '{R%s{r'{x", arg);
-    act(buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{rYou tell $N, '{R%s{r'{x", arg);
+    act(g_buf, FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
   }
 }
 
@@ -129,19 +129,19 @@ ACMD(do_tell) {
   struct char_data *vict;
   char tbuf[256];
 
-  buf[0] = '\0';
-  buf2[0] = '\0';
+  g_buf[0] = '\0';
+  g_buf2[0] = '\0';
   tbuf[0] = '\0';
-  half_chop(argument, buf, buf2);
+  half_chop(argument, g_buf, g_buf2);
 
-  if (!*buf || !*buf2) {
+  if (!*g_buf || !*g_buf2) {
     if (IS_NPC(ch) || GET_LAST_TELL(ch) == NULL) {
       send_to_char("Who do you wish to tell what??\r\n", ch);
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{r%s told you, '{R%s{r'{x", GET_LAST_TELL(ch), GET_TELL(ch));
-      act(buf, FALSE, ch, 0, 0, TO_CHAR);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "{r%s told you, '{R%s{r'{x", GET_LAST_TELL(ch), GET_TELL(ch));
+      act(g_buf, FALSE, ch, 0, 0, TO_CHAR);
     }
-  } else if (!(vict = get_char_vis(ch, buf)) || (IS_NPC(vict) && !IS_IMMO(ch) && !IS_NPC(ch))) {
+  } else if (!(vict = get_char_vis(ch, g_buf)) || (IS_NPC(vict) && !IS_IMMO(ch) && !IS_NPC(ch))) {
     send_to_char(NOPERSON, ch);
   } else if (ch == vict) {
     send_to_char("You try to tell yourself something.\r\n", ch);
@@ -171,12 +171,12 @@ ACMD(do_tell) {
     } else {
       GET_LAST_TELL(vict) = NULL;
     }
-    perform_tell(ch, vict, buf2);
+    perform_tell(ch, vict, g_buf2);
     if (PRF_FLAGGED(vict, PRF_AFK)) {
       act("$E is afk. Don't expect a response.", FALSE, ch, 0, vict, TO_CHAR | TO_SLEEP);
     }
     if (IS_NPC(vict)) {
-      mprog_tell_trigger(buf2, ch, vict);
+      mprog_tell_trigger(g_buf2, ch, vict);
     }
   }
 }
@@ -203,7 +203,7 @@ ACMD(do_spec_comm) {
   char *action_sing, *action_plur, *action_others;
   char buf2[8196];
 
-  buf[0] = '\0';
+  g_buf[0] = '\0';
   if (subcmd == SCMD_WHISPER) {
     action_sing = "whisper to";
     action_plur = "whispers to";
@@ -214,23 +214,23 @@ ACMD(do_spec_comm) {
     action_others = "$n asks $N a question.";
   }
 
-  half_chop(argument, buf, buf2);
+  half_chop(argument, g_buf, buf2);
 
-  if (!*buf || !*buf2) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Whom do you want to %s.. and what??\r\n", action_sing);
-    send_to_char(buf, ch);
-  } else if (!(vict = get_char_room_vis(ch, buf))) {
+  if (!*g_buf || !*buf2) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Whom do you want to %s.. and what??\r\n", action_sing);
+    send_to_char(g_buf, ch);
+  } else if (!(vict = get_char_room_vis(ch, g_buf))) {
     send_to_char(NOPERSON, ch);
   } else if (vict == ch) {
     send_to_char("You can't get your mouth close enough to your ear...\r\n", ch);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n %s you, '%s'", action_plur, buf2);
-    act(buf, FALSE, ch, 0, vict, TO_VICT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "$n %s you, '%s'", action_plur, buf2);
+    act(g_buf, FALSE, ch, 0, vict, TO_VICT);
     if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
       send_to_char(OK, ch);
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You %s %s, '%s'", action_sing, GET_NAME(vict), buf2);
-      act(buf, FALSE, ch, 0, 0, TO_CHAR);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "You %s %s, '%s'", action_sing, GET_NAME(vict), buf2);
+      act(g_buf, FALSE, ch, 0, 0, TO_CHAR);
     }
     act(action_others, FALSE, ch, 0, vict, TO_NOTVICT);
     if (IS_NPC(vict)) {
@@ -247,11 +247,11 @@ ACMD(do_write) {
   struct obj_data *paper = 0, *pen = 0;
   char *papername, *penname;
 
-  buf[0] = '\0';
-  buf1[0] = '\0';
-  buf2[0] = '\0';
-  papername = buf1;
-  penname = buf2;
+  g_buf[0] = '\0';
+  g_buf1[0] = '\0';
+  g_buf2[0] = '\0';
+  papername = g_buf1;
+  penname = g_buf2;
 
   two_arguments(argument, papername, penname);
 
@@ -265,19 +265,19 @@ ACMD(do_write) {
   }
   if (*penname) { /* there were two arguments */
     if (!(paper = get_obj_in_list_vis(ch, papername, ch->carrying))) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You have no %s.\r\n", papername);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "You have no %s.\r\n", papername);
+      send_to_char(g_buf, ch);
       return;
     }
     if (!(pen = get_obj_in_list_vis(ch, penname, ch->carrying))) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You have no %s.\r\n", papername);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "You have no %s.\r\n", papername);
+      send_to_char(g_buf, ch);
       return;
     }
   } else { /* there was one arg.. let's see what we can find */
     if (!(paper = get_obj_in_list_vis(ch, papername, ch->carrying))) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "There is no %s in your inventory.\r\n", papername);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "There is no %s in your inventory.\r\n", papername);
+      send_to_char(g_buf, ch);
       return;
     }
     if (GET_OBJ_TYPE(paper) == ITEM_PEN) { /* oops, a pen.. */
@@ -289,8 +289,8 @@ ACMD(do_write) {
     }
     /* One object was found.. now for the other one. */
     if (!ch->equipment[WEAR_HOLD]) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You can't write with %s %s alone.\r\n", AN(papername), papername);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "You can't write with %s %s alone.\r\n", AN(papername), papername);
+      send_to_char(g_buf, ch);
       return;
     }
     if (!CAN_SEE_OBJ(ch, ch->equipment[WEAR_HOLD])) {
@@ -340,19 +340,19 @@ ACMD(do_page) {
   struct descriptor_data *d;
   struct char_data *vict;
 
-  half_chop(argument, arg, buf2);
+  half_chop(argument, g_arg, g_buf2);
 
   if (IS_NPC(ch)) {
     send_to_char("Monsters can't page.. go away.\r\n", ch);
-  } else if (!*arg) {
+  } else if (!*g_arg) {
     send_to_char("Whom do you wish to page?\r\n", ch);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "\007\007*%s* %s\r\n", GET_NAME(ch), buf2);
-    if (!str_cmp(arg, "all")) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "\007\007*%s* %s\r\n", GET_NAME(ch), g_buf2);
+    if (!str_cmp(g_arg, "all")) {
       if (COM_FLAGGED(ch, COM_BUILDER)) {
         for (d = descriptor_list; d; d = d->next) {
           if (!d->connected && d->character) {
-            act(buf, FALSE, ch, 0, d->character, TO_VICT);
+            act(g_buf, FALSE, ch, 0, d->character, TO_VICT);
           }
         }
       } else {
@@ -360,12 +360,12 @@ ACMD(do_page) {
         return;
       }
     }
-    if ((vict = get_char_vis(ch, arg)) != NULL) {
-      act(buf, FALSE, ch, 0, vict, TO_VICT);
+    if ((vict = get_char_vis(ch, g_arg)) != NULL) {
+      act(g_buf, FALSE, ch, 0, vict, TO_VICT);
       if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
         send_to_char(OK, ch);
       } else {
-        act(buf, FALSE, ch, 0, vict, TO_CHAR);
+        act(g_buf, FALSE, ch, 0, vict, TO_CHAR);
       }
       return;
     } else {
@@ -404,9 +404,9 @@ ACMD(do_gen_comm) {
       {"You cannot congratulate!\r\n", "congrat", "You aren't even on the channel!\r\n", "{G"},
       {"You cannot petition!!\r\n", "petition", "", "{C"}};
 
-  buf[0] = '\0';
-  buf1[0] = '\0';
-  buf2[0] = '\0';
+  g_buf[0] = '\0';
+  g_buf1[0] = '\0';
+  g_buf2[0] = '\0';
   /* to keep pets, etc from being ordered to shout */
   /*
    if (!ch->desc) {
@@ -433,9 +433,9 @@ ACMD(do_gen_comm) {
   }
   /* level_can_shout defined in config.c */
   if (GET_LEVEL(ch) < level_can_shout) {
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "You must be at least level %d before you can %s.\r\n", level_can_shout,
+    safe_snprintf(g_buf1, MAX_STRING_LENGTH, "You must be at least level %d before you can %s.\r\n", level_can_shout,
                   com_msgs[subcmd][1]);
-    send_to_char(buf1, ch);
+    send_to_char(g_buf1, ch);
     return;
   }
   /* make sure the char is on the channel */
@@ -448,17 +448,17 @@ ACMD(do_gen_comm) {
 
   /* make sure that there is something there to say! */
   if (!*argument) {
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "Yes, %s, fine, %s we must, but WHAT???\r\n", com_msgs[subcmd][1],
+    safe_snprintf(g_buf1, MAX_STRING_LENGTH, "Yes, %s, fine, %s we must, but WHAT???\r\n", com_msgs[subcmd][1],
                   com_msgs[subcmd][1]);
-    send_to_char(buf1, ch);
+    send_to_char(g_buf1, ch);
     return;
   }
   if ((subcmd == SCMD_SHOUT) && (IS_IMMO(ch))) {
     if (*argument == '#') {
-      one_argument(argument + 1, buf2);
-      if (is_number(buf2)) {
-        half_chop(argument + 1, buf2, argument);
-        j = atoi(buf2);
+      one_argument(argument + 1, g_buf2);
+      if (is_number(g_buf2)) {
+        half_chop(argument + 1, g_buf2, argument);
+        j = atoi(g_buf2);
         for (i = 0; i <= top_of_zone_table; i++) {
           if (zone_table[i].number == j) {
             break;
@@ -487,10 +487,10 @@ ACMD(do_gen_comm) {
 
   if (subcmd == SCMD_PRAY || subcmd == SCMD_PETI) {
     if (IS_IMMO(ch)) {
-      half_chop(argument, arg, buf2);
-      if ((tochar = get_char_vis(ch, arg)) != NULL) {
-        safe_snprintf(buf1, MAX_STRING_LENGTH, "{r$n speaks to you, '{W%s{r'{x", buf2);
-        act(buf1, FALSE, ch, 0, tochar, TO_VICT | TO_SLEEP);
+      half_chop(argument, g_arg, g_buf2);
+      if ((tochar = get_char_vis(ch, g_arg)) != NULL) {
+        safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{r$n speaks to you, '{W%s{r'{x", g_buf2);
+        act(g_buf1, FALSE, ch, 0, tochar, TO_VICT | TO_SLEEP);
       } else {
         send_to_char("That person is not here.\r\n", ch);
         return;
@@ -505,21 +505,21 @@ ACMD(do_gen_comm) {
     send_to_char(OK, ch);
   } else {
     if ((subcmd == SCMD_SHOUT) && IS_IMMO(ch)) {
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "{WYou %s, '%s{W' to zone %d.{x", com_msgs[subcmd][1], argument,
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{WYou %s, '%s{W' to zone %d.{x", com_msgs[subcmd][1], argument,
                     zone_table[tozone].number);
     } else if ((subcmd == SCMD_CHAT) && IS_NPC(ch)) {
       send_to_char("You don't need to chat, your a NPC!\r\n", ch);
     } else if ((subcmd == SCMD_PRAY) && !IS_IMMO(ch)) {
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "{rYou pray, '{W%s{r'{x", argument);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{rYou pray, '{W%s{r'{x", argument);
     } else if ((subcmd == SCMD_PETI) && !IS_IMMO(ch)) {
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "{rYou petition, '{W%s{r'{x", argument);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{rYou petition, '{W%s{r'{x", argument);
       subcmd = SCMD_PRAY;
     } else if ((subcmd == SCMD_PRAY || subcmd == SCMD_PETI) && IS_IMMO(ch)) {
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "{rYou speak, '{W%s{r' to {c%s{r.{x", buf2, GET_NAME(tochar));
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{rYou speak, '{W%s{r' to {c%s{r.{x", g_buf2, GET_NAME(tochar));
     } else {
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "%sYou %s, '%s%s'{x", color_on, com_msgs[subcmd][1], argument, color_on);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%sYou %s, '%s%s'{x", color_on, com_msgs[subcmd][1], argument, color_on);
     }
-    act(buf1, FALSE, ch, 0, 0, TO_CHAR | TO_SLEEP);
+    act(g_buf1, FALSE, ch, 0, 0, TO_CHAR | TO_SLEEP);
     /*  removed warning for using chat channel.
      if (subcmd == SCMD_CHAT && GET_LEVEL(ch) < LVL_IMMORT) {
      send_to_char("{RWARNING!{Y This channel is for non-mud related topics only.{x\r\n", ch);
@@ -552,22 +552,22 @@ ACMD(do_gen_comm) {
         continue;
       }
       if ((subcmd == SCMD_PRAY || subcmd == SCMD_PETI) && IS_IMMO(c) && IS_IMMO(ch) && (c != tochar)) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "{r$n speaks, '{W%s{r' to {c%s{r.{x", buf2, GET_NAME(tochar));
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "{r$n speaks, '{W%s{r' to {c%s{r.{x", g_buf2, GET_NAME(tochar));
       } else if ((subcmd == SCMD_PRAY || subcmd == SCMD_PETI) && IS_IMMO(c) && !IS_IMMO(ch)) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "{r$n prays, '{W%s{r'{x", argument);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "{r$n prays, '{W%s{r'{x", argument);
       } else if ((subcmd == SCMD_SHOUT) && (IS_IMMO(c))) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "{W$n %ss, '%s{W' to zone %d{x", com_msgs[subcmd][1], argument,
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "{W$n %ss, '%s{W' to zone %d{x", com_msgs[subcmd][1], argument,
                       zone_table[tozone].number);
       } else {
         if (IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s%s's $n %s%ss, '%s%s'{x", color_on, GET_NAME(ch->master), color_on,
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s%s's $n %s%ss, '%s%s'{x", color_on, GET_NAME(ch->master), color_on,
                         com_msgs[subcmd][1], argument, color_on);
         } else {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s$n %s%ss, '%s%s'{x", color_on, color_on, com_msgs[subcmd][1],
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s$n %s%ss, '%s%s'{x", color_on, color_on, com_msgs[subcmd][1],
                         argument, color_on);
         }
       }
-      act(buf, FALSE, ch, 0, c, TO_VICT | TO_SLEEP);
+      act(g_buf, FALSE, ch, 0, c, TO_VICT | TO_SLEEP);
     }
   }
   if (subcmd == SCMD_SHOUT) {

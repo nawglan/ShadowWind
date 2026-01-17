@@ -64,6 +64,9 @@ void log_snprintf_truncation(const char *file, int line, size_t bufsize, int nee
     _snp_ret;                                                        \
   })
 
+/* safe exec for autowiz (replaces system() calls) */
+void safe_exec_autowiz(int min_lev, const char *wizlist_file, int imm_lev, const char *immlist_file, int use_nice);
+
 /* in magic.c */
 bool circle_follow(struct char_data *ch, struct char_data *victim);
 
@@ -213,14 +216,14 @@ void update_pos(struct char_data *victim);
     }                                                           \
   }
 
-#define RECREATE(result, type, number)                           \
-  {                                                               \
+#define RECREATE(result, type, number)                                \
+  {                                                                   \
     void *_recreate_tmp = realloc((result), sizeof(type) * (number)); \
-    if (!_recreate_tmp) {                                         \
-      perror("realloc failure");                                  \
-      abort();                                                    \
-    }                                                             \
-    (result) = (type *)_recreate_tmp;                             \
+    if (!_recreate_tmp) {                                             \
+      perror("realloc failure");                                      \
+      abort();                                                        \
+    }                                                                 \
+    (result) = (type *)_recreate_tmp;                                 \
   }
 
 #endif

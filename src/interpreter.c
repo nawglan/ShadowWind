@@ -56,14 +56,14 @@ void roll_real_abils(struct char_data *ch);
 void init_char(struct char_data *ch);
 int get_idnum();
 int result;
-int special(struct char_data *ch, int cmd, char *arg);
+int special(struct char_data *ch, int cmd, char *g_arg);
 int isbanned(char *hostname);
 int Valid_Name(char *newname);
-extern void oedit_parse(struct descriptor_data *d, char *arg);
-extern void redit_parse(struct descriptor_data *d, char *arg);
-extern void zedit_parse(struct descriptor_data *d, char *arg);
-extern void medit_parse(struct descriptor_data *d, char *arg);
-extern void sedit_parse(struct descriptor_data *d, char *arg);
+extern void oedit_parse(struct descriptor_data *d, char *g_arg);
+extern void redit_parse(struct descriptor_data *d, char *g_arg);
+extern void zedit_parse(struct descriptor_data *d, char *g_arg);
+extern void medit_parse(struct descriptor_data *d, char *g_arg);
+extern void sedit_parse(struct descriptor_data *d, char *g_arg);
 void flush_queues(struct descriptor_data *d);
 int process_output(struct descriptor_data *t);
 
@@ -1027,21 +1027,21 @@ void command_interpreter(struct char_data *ch, char *argument) {
     FREE(tmpbuf3);
   }
 
-  line = any_one_arg(argument, arg);
+  line = any_one_arg(argument, g_arg);
 
   /* just drop to next line for hitting CR */
-  if (!*arg) {
+  if (!*g_arg) {
     return;
   }
 
   /* otherwise, find the command */
-  for (length = strlen(arg), cmd = 0; *cmd_info[cmd].command != '\n'; cmd++) {
+  for (length = strlen(g_arg), cmd = 0; *cmd_info[cmd].command != '\n'; cmd++) {
     if (strcmp(cmd_info[cmd].command, "say") == 0) {
       if ((GET_LEVEL(ch) >= cmd_info[cmd].minimum_level || (COM_FLAGS(ch) & cmd_info[cmd].flag))) {
         say_cmd = cmd;
       }
     }
-    if (strncmp(cmd_info[cmd].command, arg, length) == 0) {
+    if (strncmp(cmd_info[cmd].command, g_arg, length) == 0) {
       if ((GET_LEVEL(ch) >= cmd_info[cmd].minimum_level || (COM_FLAGS(ch) & cmd_info[cmd].flag))) {
         break;
       }
@@ -1178,21 +1178,21 @@ void free_alias(struct alias *a) {
   if (IS_NPC(ch))
     return;
 
-  repl = any_one_arg(argument, arg);
+  repl = any_one_arg(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Currently defined aliases:\r\n", ch);
     if ((a = GET_ALIASES(ch)) == NULL)
       send_to_char(" None.\r\n", ch);
     else {
       while (a != NULL) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%-15s %s\r\n", a->alias, a->replacement);
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%-15s %s\r\n", a->alias, a->replacement);
+        send_to_char(g_buf, ch);
         a = a->next;
       }
     }
   } else {
-    if ((a = find_alias(GET_ALIASES(ch), arg)) != NULL) {
+    if ((a = find_alias(GET_ALIASES(ch), g_arg)) != NULL) {
       REMOVE_FROM_LIST(a, GET_ALIASES(ch), next);
       free_alias(a);
     }
@@ -1202,12 +1202,12 @@ void free_alias(struct alias *a) {
       else
         send_to_char("Alias deleted.\r\n", ch);
     } else {
-      if (!str_cmp(arg, "alias")) {
+      if (!str_cmp(g_arg, "alias")) {
         send_to_char("You can't alias 'alias'.\r\n", ch);
         return;
       }
       CREATE(a, struct alias, 1);
-      a->alias = strdup(arg);
+      a->alias = strdup(g_arg);
       delete_doubledollar(repl);
       a->replacement = strdup(repl);
       if (strchr(repl, ALIAS_SEP_CHAR) || strchr(repl, ALIAS_VAR_CHAR))
@@ -1232,28 +1232,28 @@ void free_alias(struct alias *a) {
 void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias *a) {
   struct txt_q temp_queue;
   char *tokens[NUM_TOKENS], *temp, *write_point;
-  char *buf_end = buf + MAX_STRING_LENGTH - 1;
+  char *buf_end = g_buf + MAX_STRING_LENGTH - 1;
   int num_of_tokens = 0, num;
   size_t len;
 
   /* First, parse the original string */
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", orig);
-  temp = strtok(buf2, " ");
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s", orig);
+  temp = strtok(g_buf2, " ");
   while (temp != NULL && num_of_tokens < NUM_TOKENS) {
     tokens[num_of_tokens++] = temp;
     temp = strtok(NULL, " ");
   }
 
   /* initialize */
-  write_point = buf;
+  write_point = g_buf;
   temp_queue.head = temp_queue.tail = NULL;
 
   /* now parse the alias */
   for (temp = a->replacement; *temp; temp++) {
     if (*temp == ALIAS_SEP_CHAR) {
       *write_point = '\0';
-      write_to_q(buf, &temp_queue, 1);
-      write_point = buf;
+      write_to_q(g_buf, &temp_queue, 1);
+      write_point = g_buf;
     } else if (*temp == ALIAS_VAR_CHAR) {
       temp++;
       if ((num = *temp - '1') < num_of_tokens && num >= 0) {
@@ -1277,7 +1277,7 @@ void perform_complex_alias(struct txt_q *input_q, char *orig, struct alias *a) {
   }
 
   *write_point = '\0';
-  write_to_q(buf, &temp_queue, 1);
+  write_to_q(g_buf, &temp_queue, 1);
 
   /* push our temp_queue on to the _front_ of the input queue */
   if (input_q->head == NULL)
@@ -1311,7 +1311,7 @@ int perform_alias(struct descriptor_data *d, char *orig) {
   if (!*first_arg)
     return 0;
 
-  /* if the first arg is not an alias, return without doing anything */
+  /* if the first g_arg is not an alias, return without doing anything */
   if ((a = find_alias(tmp, first_arg)) == NULL)
     return 0;
 
@@ -1334,23 +1334,23 @@ int perform_alias(struct descriptor_data *d, char *orig) {
  * it to be returned.  Returns -1 if not found; 0..n otherwise.  Array
  * must be terminated with a '\n' so it knows to stop searching.
  */
-int search_block(char *arg, char **list, bool exact) {
+int search_block(char *g_arg, char **list, bool exact) {
   register int i, l;
 
   /* Make into lower case, and get length of string */
-  for (l = 0; *(arg + l); l++)
-    *(arg + l) = LOWER(*(arg + l));
+  for (l = 0; *(g_arg + l); l++)
+    *(g_arg + l) = LOWER(*(g_arg + l));
 
   if (exact) {
     for (i = 0; **(list + i) != '\n'; i++)
-      if (!strcmp(arg, *(list + i)))
+      if (!strcmp(g_arg, *(list + i)))
         return (i);
   } else {
     if (!l)
       l = 1; /* Avoid "" to match the first available
               * string */
     for (i = 0; **(list + i) != '\n'; i++)
-      if (!strncmp(arg, *(list + i), l))
+      if (!strncmp(g_arg, *(list + i), l))
         return (i);
   }
 
@@ -1487,7 +1487,7 @@ int find_command(char *command) {
   return -1;
 }
 
-int special(struct char_data *ch, int cmd, char *arg) {
+int special(struct char_data *ch, int cmd, char *g_arg) {
   register struct obj_data *i;
   register struct char_data *k;
   int j;
@@ -1495,7 +1495,7 @@ int special(struct char_data *ch, int cmd, char *arg) {
   /* special in room? */
   if (GET_ROOM_SPEC(ch->in_room) != NULL &&
       (IS_SET(SPEC_ROOM_TYPE(ch->in_room), SPEC_COMMAND) || IS_SET(SPEC_ROOM_TYPE(ch->in_room), SPEC_STANDARD)))
-    if (GET_ROOM_SPEC(ch->in_room)(ch, world + ch->in_room, cmd, arg, SPEC_COMMAND))
+    if (GET_ROOM_SPEC(ch->in_room)(ch, world + ch->in_room, cmd, g_arg, SPEC_COMMAND))
       return 1;
 
   /* special in equipment list? */
@@ -1503,26 +1503,26 @@ int special(struct char_data *ch, int cmd, char *arg) {
     if (ch->equipment[j] && GET_OBJ_SPEC(ch->equipment[j]) != NULL &&
         (IS_SET(SPEC_OBJ_TYPE(ch->equipment[j]), SPEC_COMMAND) ||
          IS_SET(SPEC_OBJ_TYPE(ch->equipment[j]), SPEC_STANDARD)))
-      if (GET_OBJ_SPEC(ch->equipment[j])(ch, ch->equipment[j], cmd, arg, SPEC_COMMAND))
+      if (GET_OBJ_SPEC(ch->equipment[j])(ch, ch->equipment[j], cmd, g_arg, SPEC_COMMAND))
         return 1;
 
   /* special in inventory? */
   for (i = ch->carrying; i; i = i->next_content)
     if (GET_OBJ_SPEC(i) != NULL && (IS_SET(SPEC_OBJ_TYPE(i), SPEC_COMMAND) || IS_SET(SPEC_OBJ_TYPE(i), SPEC_STANDARD)))
-      if (GET_OBJ_SPEC(i)(ch, i, cmd, arg, SPEC_COMMAND))
+      if (GET_OBJ_SPEC(i)(ch, i, cmd, g_arg, SPEC_COMMAND))
         return 1;
 
   /* special in mobile present? */
   for (k = world[ch->in_room].people; k; k = k->next_in_room)
     if (IS_NPC(k) && GET_MOB_SPEC(k) != NULL &&
         (IS_SET(SPEC_MOB_TYPE(k), SPEC_COMMAND) || IS_SET(SPEC_MOB_TYPE(k), SPEC_STANDARD)))
-      if (GET_MOB_SPEC(k)(ch, k, cmd, arg, SPEC_COMMAND))
+      if (GET_MOB_SPEC(k)(ch, k, cmd, g_arg, SPEC_COMMAND))
         return 1;
 
   /* special in object present? */
   for (i = world[ch->in_room].contents; i; i = i->next_content)
     if (GET_OBJ_SPEC(i) != NULL && (IS_SET(SPEC_OBJ_TYPE(i), SPEC_COMMAND) || IS_SET(SPEC_OBJ_TYPE(i), SPEC_STANDARD)))
-      if (GET_OBJ_SPEC(i)(ch, i, cmd, arg, SPEC_COMMAND))
+      if (GET_OBJ_SPEC(i)(ch, i, cmd, g_arg, SPEC_COMMAND))
         return 1;
 
   return 0;
@@ -1532,21 +1532,21 @@ int special(struct char_data *ch, int cmd, char *arg) {
  *  Stuff for controlling the non-playing sockets (get name, pwd etc)       *
  ************************************************************************* */
 
-int _parse_name(char *arg, char *name) {
+int _parse_name(char *g_arg, char *name) {
   int i;
 
   /* skip whitespaces */
-  for (; isspace(*arg); arg++)
+  for (; isspace(*g_arg); g_arg++)
     ;
 
-  if (strlen(arg) < 3)
+  if (strlen(g_arg) < 3)
     return 1;
 
-  for (i = 1; arg[i] != '\0'; i++)
-    arg[i] = tolower(arg[i]);
+  for (i = 1; g_arg[i] != '\0'; i++)
+    g_arg[i] = tolower(g_arg[i]);
 
-  for (; (*name = *arg); arg++, name++)
-    if (!isalpha(*arg))
+  for (; (*name = *g_arg); g_arg++, name++)
+    if (!isalpha(*g_arg))
       return 1;
 
   if (!i)
@@ -1556,10 +1556,10 @@ int _parse_name(char *arg, char *name) {
 }
 
 /* deal with newcomers and other non-playing sockets */
-void nanny(struct descriptor_data *d, char *arg) {
+void nanny(struct descriptor_data *d, char *g_arg) {
   /* extern functions */
   int load_char_text(char *name, struct char_data *char_element);
-  int parse_class_spec(char *arg);
+  int parse_class_spec(char *g_arg);
   void disp_class_menu(struct descriptor_data * d);
   struct descriptor_data *temp2 = NULL;
   bool check_class(struct char_data * ch, int class);
@@ -1612,11 +1612,11 @@ void nanny(struct descriptor_data *d, char *arg) {
   int found = 0;
   struct obj_data *obj = NULL;
 
-  skip_spaces(&arg);
+  skip_spaces(&g_arg);
   memset(tmp_name, 0, sizeof(tmp_name));
   memset(tmp_policy, 0, sizeof(tmp_policy));
   memset(tmp_namepolicy, 0, sizeof(tmp_namepolicy));
-  memset(buf, 0, sizeof(buf));
+  memset(g_buf, 0, sizeof(g_buf));
 
   switch (STATE(d)) {
   case CON_NEWNAME: {
@@ -1624,24 +1624,24 @@ void nanny(struct descriptor_data *d, char *arg) {
 
     CREATE(tmp_store, struct char_data, 1);
 
-    if (!*arg) {
+    if (!*g_arg) {
       STATE(d) = CON_CLOSE;
       return;
-    } else if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH ||
-               (safe_snprintf(buf, MAX_STRING_LENGTH, "%s", tmp_name), fill_word(buf)) || reserved_word(buf) ||
+    } else if ((_parse_name(g_arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH ||
+               (safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", tmp_name), fill_word(g_buf)) || reserved_word(g_buf) ||
                !Valid_Name(tmp_name) || load_char_text(tmp_name, tmp_store)) {
       SEND_TO_Q("Invalid name, please try another.\r\nName: ", d);
       *tmp_name = '\0';
-      *arg = '\0';
-      *buf = '\0';
+      *g_arg = '\0';
+      *g_buf = '\0';
       free_char(tmp_store);
       tmp_store = NULL;
       return;
     }
     free_char(tmp_store);
     FREE(d->character->player.name);
-    CREATE(d->character->player.name, char, strlen(arg) + 1);
-    memcpy(d->character->player.name, CAP(arg), strlen(arg) + 1);
+    CREATE(d->character->player.name, char, strlen(g_arg) + 1);
+    memcpy(d->character->player.name, CAP(g_arg), strlen(g_arg) + 1);
     REMOVE_BIT(PLR_FLAGS(d->character), PLR_DENIED);
     SEND_TO_Q("\r\n"
               "Character approval - This process can take up to 2 minutes, auto approval\r\n"
@@ -1658,7 +1658,7 @@ void nanny(struct descriptor_data *d, char *arg) {
     break;
   case CON_HOMETOWN:
     d->idle_cnt = 0;
-    switch (*arg) {
+    switch (*g_arg) {
     case 'W':
     case 'w':
       GET_HOME(d->character) = 1; /* Weirvane */
@@ -1670,7 +1670,7 @@ void nanny(struct descriptor_data *d, char *arg) {
     break;
   case CON_POLICY:
     d->idle_cnt = 0;
-    switch (*arg) {
+    switch (*g_arg) {
     case 'Y':
     case 'y':
       SEND_TO_Q("\r\n"
@@ -1694,7 +1694,7 @@ void nanny(struct descriptor_data *d, char *arg) {
     break;
   case CON_ALIGNMENT:
     d->idle_cnt = 0;
-    switch (*arg) {
+    switch (*g_arg) {
     case 'G':
     case 'g':
       if (GET_CLASS(d->character) == CLASS_ASSASSIN || GET_CLASS(d->character) == CLASS_THIEF ||
@@ -1723,24 +1723,24 @@ void nanny(struct descriptor_data *d, char *arg) {
     STATE(d) = CON_HOMETOWN;
     break;
   case CON_MEDIT:
-    medit_parse(d, arg);
+    medit_parse(d, g_arg);
     break;
   case CON_REDIT:
-    redit_parse(d, arg);
+    redit_parse(d, g_arg);
     break;
   case CON_OEDIT:
     /* return control to oedit_parse */
-    oedit_parse(d, arg);
+    oedit_parse(d, g_arg);
     break;
   case CON_ZEDIT:
-    zedit_parse(d, arg);
+    zedit_parse(d, g_arg);
     break;
   case CON_SEDIT:
-    sedit_parse(d, arg);
+    sedit_parse(d, g_arg);
     break;
   case CON_GET_TERMTYPE:
     d->idle_cnt = 0;
-    if (!*arg || *arg == 'y' || *arg == 'Y') {
+    if (!*g_arg || *g_arg == 'y' || *g_arg == 'Y') {
       d->color = 1;
       SEND_TO_Q_COLOR(GREET1, d);
       SEND_TO_Q("\x1B[2K\r\nBy what name do you wish to be known? ", d);
@@ -1758,17 +1758,17 @@ void nanny(struct descriptor_data *d, char *arg) {
       clear_char(d->character);
       d->character->desc = d;
     }
-    if (!*arg)
+    if (!*g_arg)
       close_socket(d);
     else {
-      if ((_parse_name(arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH ||
-          (safe_snprintf(buf, MAX_STRING_LENGTH, "%s", tmp_name), fill_word(buf)) || reserved_word(buf)) {
+      if ((_parse_name(g_arg, tmp_name)) || strlen(tmp_name) < 2 || strlen(tmp_name) > MAX_NAME_LENGTH ||
+          (safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", tmp_name), fill_word(g_buf)) || reserved_word(g_buf)) {
         SEND_TO_Q("Invalid name, please try another.\r\n"
                   "Name: ",
                   d);
         *tmp_name = '\0';
-        *arg = '\0';
-        *buf = '\0';
+        *g_arg = '\0';
+        *g_buf = '\0';
         return;
       }
 
@@ -1830,29 +1830,29 @@ void nanny(struct descriptor_data *d, char *arg) {
   case CON_NAME_CNFRM: /* wait for conf. of new name	 */
     d->idle_cnt = 0;
     safe_snprintf(GET_HOST(d->character), HOST_LENGTH + 1, "%s", d->host);
-    if (*arg == 'y' || *arg == 'Y') {
+    if (*g_arg == 'y' || *g_arg == 'Y') {
       if (isbanned(GET_HOST(d->character)) >= BAN_NEW && isbanned(GET_HOST(d->character)) < BAN_OUTLAW) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Request for new char %s denied from [%s] (siteban)",
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Request for new char %s denied from [%s] (siteban)",
                       GET_NAME(d->character), GET_HOST(d->character));
-        mudlog(buf, 'C', COM_IMMORT, TRUE);
+        mudlog(g_buf, 'C', COM_IMMORT, TRUE);
         SEND_TO_Q("Sorry, new characters are not allowed from your site!\r\n", d);
         STATE(d) = CON_CLOSE;
         return;
       }
       if (restrict_game_lvl) {
         SEND_TO_Q("Sorry, new players can't be created at the moment.\r\n", d);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Request for new char %s denied from %s (wizlock)",
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Request for new char %s denied from %s (wizlock)",
                       GET_NAME(d->character), GET_HOST(d->character));
-        mudlog(buf, 'C', COM_IMMORT, TRUE);
+        mudlog(g_buf, 'C', COM_IMMORT, TRUE);
         STATE(d) = CON_CLOSE;
         return;
       }
       SEND_TO_Q("New character.\r\n", d);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Give me a password for %s: ", GET_NAME(d->character));
-      SEND_TO_Q(buf, d);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Give me a password for %s: ", GET_NAME(d->character));
+      SEND_TO_Q(g_buf, d);
       echo_off(d);
       STATE(d) = CON_NEWPASSWD;
-    } else if (*arg == 'n' || *arg == 'N') {
+    } else if (*g_arg == 'n' || *g_arg == 'N') {
       SEND_TO_Q("Okay, what IS it, then? ", d);
       FREE(d->character->player.name);
       d->character->player.name = NULL;
@@ -1873,32 +1873,32 @@ void nanny(struct descriptor_data *d, char *arg) {
       STATE(d) = CON_CLOSE;
       break;
     }
-    if (!*arg)
+    if (!*g_arg)
       close_socket(d);
     else {
       /* we have plaintext password, check it and then convert to encoded version */
       if (*GET_ENCPASSWD(d->character) == '\0' && *GET_PASSWD(d->character) != '\0') {
-        if (strcmp(GET_PASSWD(d->character), arg) == 0) {
+        if (strcmp(GET_PASSWD(d->character), g_arg) == 0) {
           if (crypto_pwhash_str(GET_ENCPASSWD(d->character), GET_PASSWD(d->character), strlen(GET_PASSWD(d->character)),
                                 crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
             *GET_PASSWD(d->character) = '\0';
             save_char_text(d->character, NOWHERE);
             save_text(d->character);
             if (d->character->player.host[0] != '\0') {
-              safe_snprintf(buf, MAX_STRING_LENGTH, "Auto updated PW: %s [%s]", GET_NAME(d->character),
+              safe_snprintf(g_buf, MAX_STRING_LENGTH, "Auto updated PW: %s [%s]", GET_NAME(d->character),
                             GET_HOST(d->character));
             } else {
-              safe_snprintf(buf, MAX_STRING_LENGTH, "Auto updated PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+              safe_snprintf(g_buf, MAX_STRING_LENGTH, "Auto updated PW: %s [%s]", GET_NAME(d->character), d->hostIP);
             }
-            mudlog(buf, 'P', COM_IMMORT, TRUE);
+            mudlog(g_buf, 'P', COM_IMMORT, TRUE);
           }
         } else {
           if (d->character->player.host[0] != '\0') {
-            safe_snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+            safe_snprintf(g_buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
           } else {
-            safe_snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+            safe_snprintf(g_buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
           }
-          mudlog(buf, 'P', COM_IMMORT, TRUE);
+          mudlog(g_buf, 'P', COM_IMMORT, TRUE);
           GET_BAD_PWS(d->character)++;
           save_char_text(d->character, NOWHERE);
           save_text(d->character);
@@ -1912,14 +1912,14 @@ void nanny(struct descriptor_data *d, char *arg) {
           return;
         }
       }
-      mudlog(buf, 'P', COM_IMMORT, TRUE);
-      if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg)) != 0) {
+      mudlog(g_buf, 'P', COM_IMMORT, TRUE);
+      if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), g_arg, strlen(g_arg)) != 0) {
         if (d->character->player.host[0] != '\0') {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), GET_HOST(d->character));
         } else {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "Bad PW: %s [%s]", GET_NAME(d->character), d->hostIP);
         }
-        mudlog(buf, 'P', COM_IMMORT, TRUE);
+        mudlog(g_buf, 'P', COM_IMMORT, TRUE);
         GET_BAD_PWS(d->character)++;
         save_char_text(d->character, NOWHERE);
         save_text(d->character);
@@ -1943,17 +1943,17 @@ void nanny(struct descriptor_data *d, char *arg) {
                   "clearance.\r\n\r\n",
                   d);
         STATE(d) = CON_CLOSE;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Connection attempt for %s denied from %s", GET_NAME(d->character),
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Connection attempt for %s denied from %s", GET_NAME(d->character),
                       GET_HOST(d->character));
-        mudlog(buf, 'C', COM_IMMORT, TRUE);
+        mudlog(g_buf, 'C', COM_IMMORT, TRUE);
         return;
       }
       if (GET_LEVEL(d->character) < restrict_game_lvl) {
         SEND_TO_Q("The game is temporarily restricted.. try again later.\r\n", d);
         STATE(d) = CON_CLOSE;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Request for login denied for %s [%s] (wizlock)", GET_NAME(d->character),
-                      GET_HOST(d->character));
-        mudlog(buf, 'C', COM_IMMORT, TRUE);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Request for login denied for %s [%s] (wizlock)",
+                      GET_NAME(d->character), GET_HOST(d->character));
+        mudlog(g_buf, 'C', COM_IMMORT, TRUE);
         return;
       }
 
@@ -1988,9 +1988,9 @@ void nanny(struct descriptor_data *d, char *arg) {
           REMOVE_BIT(PLR_FLAGS(d->character), PLR_MAILING | PLR_WRITING | PLR_EDITING);
           REMOVE_BIT(AFF2_FLAGS(d->character), AFF2_SCRIBING | AFF2_CASTING | AFF2_MEMMING);
           STATE(d) = CON_PLAYING;
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has reconnected.", GET_NAME(d->character),
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s [%s] has reconnected.", GET_NAME(d->character),
                         GET_HOST(d->character));
-          mudlog(buf, 'C', COM_IMMORT, TRUE);
+          mudlog(g_buf, 'C', COM_IMMORT, TRUE);
           return;
         }
       /* now check for linkless and usurpable */
@@ -2001,13 +2001,13 @@ void nanny(struct descriptor_data *d, char *arg) {
             SEND_TO_Q("Reconnecting.\r\n", d);
             act("$n has reconnected.", TRUE, tmp_ch, 0, 0, TO_ROOM);
 
-            safe_snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has reconnected.", GET_NAME(d->character),
+            safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s [%s] has reconnected.", GET_NAME(d->character),
                           GET_HOST(d->character));
-            mudlog(buf, 'C', COM_IMMORT, TRUE);
+            mudlog(g_buf, 'C', COM_IMMORT, TRUE);
           } else {
-            safe_snprintf(buf, MAX_STRING_LENGTH, "%s has re-logged in ... disconnecting old socket.",
+            safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has re-logged in ... disconnecting old socket.",
                           GET_NAME(tmp_ch));
-            mudlog(buf, 'C', COM_IMMORT, TRUE);
+            mudlog(g_buf, 'C', COM_IMMORT, TRUE);
             SEND_TO_Q("This body has been usurped!\r\n", tmp_ch->desc);
             flush_queues(tmp_ch->desc);
             STATE(tmp_ch->desc) = CON_CLOSE;
@@ -2038,19 +2038,20 @@ void nanny(struct descriptor_data *d, char *arg) {
         SEND_TO_Q_COLOR(motd, d);
 
       if (d->character->player.host[0] != '\0') {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has connected.", GET_NAME(d->character), GET_HOST(d->character));
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s [%s] has connected.", GET_NAME(d->character),
+                      GET_HOST(d->character));
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s [%s] has connected.", GET_NAME(d->character), d->hostIP);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s [%s] has connected.", GET_NAME(d->character), d->hostIP);
       }
-      mudlog(buf, 'C', COM_IMMORT, TRUE);
+      mudlog(g_buf, 'C', COM_IMMORT, TRUE);
 
       if (load_result) {
-        safe_snprintf(buf, MAX_STRING_LENGTH,
+        safe_snprintf(g_buf, MAX_STRING_LENGTH,
                       "\r\n\r\n\007\007\007"
                       "%s%d LOGIN FAILURE%s SINCE LAST SUCCESSFUL LOGIN.%s\r\n",
                       CCRED(d->character, C_SPR), load_result, (load_result > 1) ? "S" : "",
                       CCNRM(d->character, C_SPR));
-        SEND_TO_Q(buf, d);
+        SEND_TO_Q(g_buf, d);
       }
       SEND_TO_Q("\r\n\n*** PRESS RETURN: ", d);
       STATE(d) = CON_RMOTD;
@@ -2060,12 +2061,12 @@ void nanny(struct descriptor_data *d, char *arg) {
   case CON_NEWPASSWD:
   case CON_CHPWD_GETNEW:
     d->idle_cnt = 0;
-    if (!*arg || strlen(arg) < 3 || !str_cmp(arg, GET_NAME(d->character))) {
+    if (!*g_arg || strlen(g_arg) < 3 || !str_cmp(g_arg, GET_NAME(d->character))) {
       SEND_TO_Q("\r\nIllegal password.\r\n", d);
       SEND_TO_Q("Password: ", d);
       return;
     }
-    if (crypto_pwhash_str(GET_ENCPASSWD(d->character), arg, strlen(arg), crypto_pwhash_OPSLIMIT_INTERACTIVE,
+    if (crypto_pwhash_str(GET_ENCPASSWD(d->character), g_arg, strlen(g_arg), crypto_pwhash_OPSLIMIT_INTERACTIVE,
                           crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
       SEND_TO_Q("\r\nPlease retype password: ", d);
       if (STATE(d) == CON_NEWPASSWD) {
@@ -2080,7 +2081,7 @@ void nanny(struct descriptor_data *d, char *arg) {
   case CON_CNFPASSWD:
   case CON_CHPWD_VRFY:
     d->idle_cnt = 0;
-    if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg))) {
+    if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), g_arg, strlen(g_arg))) {
       SEND_TO_Q("\r\nPasswords don't match... start over.\r\n", d);
       SEND_TO_Q("Password: ", d);
       if (STATE(d) == CON_CNFPASSWD)
@@ -2108,7 +2109,7 @@ void nanny(struct descriptor_data *d, char *arg) {
 
   case CON_QSEX: /* query sex of new user	 */
     d->idle_cnt = 0;
-    switch (*arg) {
+    switch (*g_arg) {
     case 'm':
     case 'M':
       d->character->player.sex = SEX_MALE;
@@ -2131,7 +2132,7 @@ void nanny(struct descriptor_data *d, char *arg) {
 
   case CON_QRACE: /* query race of character */
     d->idle_cnt = 0;
-    switch (*arg) {
+    switch (*g_arg) {
     case '1':
       d->character->player_specials->saved.race = RACE_HUMAN;
       break;
@@ -2171,18 +2172,18 @@ void nanny(struct descriptor_data *d, char *arg) {
     break;
   case CON_QCLASS:
     d->idle_cnt = 0;
-    if (*arg == '\0') {
+    if (*g_arg == '\0') {
       roll_real_abils(d->character);
       display_stats(d->character);
       disp_class_menu(d);
       SEND_TO_Q("\r\nChoose a class, or hit enter to reroll: ", d);
       STATE(d) = CON_QCLASS;
     } else {
-      if ((GET_CLASS(d->character) = parse_class_spec(arg)) == CLASS_UNDEFINED) {
+      if ((GET_CLASS(d->character) = parse_class_spec(g_arg)) == CLASS_UNDEFINED) {
         SEND_TO_Q("\r\nThat's not a class.\r\nChoose a class, or hit enter to reroll: ", d);
         return;
       }
-      if (!check_class(d->character, parse_class_spec(arg))) {
+      if (!check_class(d->character, parse_class_spec(g_arg))) {
         SEND_TO_Q("\r\nThat class is not available to you.\r\nChoose a class, or hit enter to reroll: ", d);
         return;
       }
@@ -2193,15 +2194,15 @@ void nanny(struct descriptor_data *d, char *arg) {
       GET_PROMPT(d->character) = 15; /* set prompt display all */
       if (isbanned(GET_HOST(d->character)) == BAN_OUTLAW) {
         result = PLR_TOG_CHK(d->character, PLR_OUTLAW);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Outlaw ON for new char %s from [%s] (siteban)", GET_NAME(d->character),
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Outlaw ON for new char %s from [%s] (siteban)", GET_NAME(d->character),
                       GET_HOST(d->character));
-        mudlog(buf, 'M', COM_IMMORT, TRUE);
+        mudlog(g_buf, 'M', COM_IMMORT, TRUE);
       }
       if (isbanned(GET_HOST(d->character)) == BAN_FROZEN) {
         result = PLR_TOG_CHK(d->character, PLR_FROZEN);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Frozen ON for new char %s from [%s] (siteban)", GET_NAME(d->character),
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Frozen ON for new char %s from [%s] (siteban)", GET_NAME(d->character),
                       GET_HOST(d->character));
-        mudlog(buf, 'M', COM_IMMORT, TRUE);
+        mudlog(g_buf, 'M', COM_IMMORT, TRUE);
       }
       if (GET_RACE(d->character) != RACE_TROLL && GET_CLASS(d->character) != CLASS_NECROMANCER &&
           GET_CLASS(d->character) != CLASS_DRUID && GET_CLASS(d->character) != CLASS_RANGER &&
@@ -2250,22 +2251,22 @@ void nanny(struct descriptor_data *d, char *arg) {
     int i = 0;
 
     d->idle_cnt = 0;
-    if (!*arg) {
+    if (!*g_arg) {
       SEND_TO_Q("\r\n\n*** PRESS RETURN: ", d);
       STATE(d) = CON_RMOTD;
       break;
     }
 
-    while (arg[i]) {
+    while (g_arg[i]) {
       if (i == 0)
-        arg[i] = UPPER(arg[i]);
+        g_arg[i] = UPPER(g_arg[i]);
       else
-        arg[i] = LOWER(arg[i]);
+        g_arg[i] = LOWER(g_arg[i]);
       i++;
     }
 
     for (dl = descriptor_list; dl; dl = dl->next)
-      if (dl->character && strcmp(arg, GET_NAME(dl->character)) == 0)
+      if (dl->character && strcmp(g_arg, GET_NAME(dl->character)) == 0)
         if (STATE(dl) > CON_PLAYING && STATE(dl) <= CON_MEDIT)
           found = 1;
 
@@ -2284,7 +2285,7 @@ void nanny(struct descriptor_data *d, char *arg) {
 
   case CON_MENU: /* get selection from main menu	 */
     d->idle_cnt = 0;
-    switch (*arg) {
+    switch (*g_arg) {
     case '0':
       SEND_TO_Q_COLOR(signoff, d);
       process_output(d);
@@ -2498,7 +2499,7 @@ void nanny(struct descriptor_data *d, char *arg) {
 
   case CON_CHPWD_GETOLD:
     d->idle_cnt = 0;
-    if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), arg, strlen(arg))) {
+    if (crypto_pwhash_str_verify(GET_ENCPASSWD(d->character), g_arg, strlen(g_arg))) {
       SEND_TO_Q("\r\nIncorrect password.\r\n", d);
       echo_on(d);
       SEND_TO_Q_COLOR(MENU, d);

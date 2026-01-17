@@ -38,8 +38,8 @@ void load_actd(void) {
   actd_list = NULL;
 
   if (!(fl = fopen(ACTD_FILE, "r"))) {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "Error reading ACTD file %s", ACTD_FILE);
-    perror(buf2);
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Error reading ACTD file %s", ACTD_FILE);
+    perror(g_buf2);
     fflush(NULL);
     exit(1);
   }
@@ -57,16 +57,16 @@ void load_actd(void) {
     actd->next = actd_list;
     actd_list = actd;
 
-    actd->char_no_arg = fread_string(fl, buf2);
-    actd->others_no_arg = fread_string(fl, buf2);
-    actd->char_found = fread_string(fl, buf2);
-    actd->others_found = fread_string(fl, buf2);
-    actd->vict_found = fread_string(fl, buf2);
-    actd->not_found = fread_string(fl, buf2);
-    actd->char_auto = fread_string(fl, buf2);
-    actd->others_auto = fread_string(fl, buf2);
-    actd->char_object = fread_string(fl, buf2);
-    actd->others_object = fread_string(fl, buf2);
+    actd->char_no_arg = fread_string(fl, g_buf2);
+    actd->others_no_arg = fread_string(fl, g_buf2);
+    actd->char_found = fread_string(fl, g_buf2);
+    actd->others_found = fread_string(fl, g_buf2);
+    actd->vict_found = fread_string(fl, g_buf2);
+    actd->not_found = fread_string(fl, g_buf2);
+    actd->char_auto = fread_string(fl, g_buf2);
+    actd->others_auto = fread_string(fl, g_buf2);
+    actd->char_object = fread_string(fl, g_buf2);
+    actd->others_object = fread_string(fl, g_buf2);
 
     fgets(chk, 128, fl);
     while (!feof(fl) && (*chk == '\n' || *chk == '*')) {
@@ -89,8 +89,8 @@ ACMD(do_actd) {
       j = 0;
       while (actd && j < 20) {
         j++;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%5d ", actd->actd_nr);
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%5d ", actd->actd_nr);
+        send_to_char(g_buf, ch);
         actd = actd->next;
       }
       send_to_char("\r\n", ch);
@@ -105,8 +105,8 @@ ACMD(do_actd) {
     }
 
     if (actd != NULL) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Definition of ACTD [%5d]:\r\n", actd->actd_nr);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Definition of ACTD [%5d]:\r\n", actd->actd_nr);
+      send_to_char(g_buf, ch);
       send_to_char("[CHAR] No argument - \r\n", ch);
       send_to_char(actd->char_no_arg, ch);
       send_to_char("\r\n[OTHERS] No argument - \r\n", ch);

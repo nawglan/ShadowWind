@@ -131,7 +131,7 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
 
   switch (command) {
   case PARSE_HELP:
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "Editor command formats: /<letter>\r\n\r\n"
                   "/a         -  aborts editor\r\n"
                   "/c         -  clears buffer\r\n"
@@ -147,7 +147,7 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
                   "/ra 'a' 'b'-  replace all occurances of text <a> within buffer with text <b>\r\n"
                   "              usage: /r[a] 'pattern' 'replacement'\r\n"
                   "/s         -  saves text\r\n");
-    SEND_TO_Q(buf, d);
+    SEND_TO_Q(g_buf, d);
     break;
   case PARSE_FORMAT:
     while (isalpha(string[j]) && j < 2) {
@@ -164,8 +164,8 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
       j++;
     }
     format_text(d->str, flags, d, d->max_str);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Text formarted with%s indent.\r\n", (indent ? "" : "out"));
-    SEND_TO_Q(buf, d);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Text formarted with%s indent.\r\n", (indent ? "" : "out"));
+    SEND_TO_Q(g_buf, d);
     break;
   case PARSE_REPLACE:
     while (isalpha(string[j]) && j < 2) {
@@ -203,12 +203,12 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
     total_len = ((strlen(t) - strlen(s)) + strlen(*d->str));
     if (total_len <= d->max_str) {
       if ((replaced = replace_str(d->str, s, t, rep_all, d->max_str)) > 0) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Replaced %d occurance%sof '%s' with '%s'.\r\n", replaced,
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Replaced %d occurance%sof '%s' with '%s'.\r\n", replaced,
                       ((replaced != 1) ? "s " : " "), s, t);
-        SEND_TO_Q(buf, d);
+        SEND_TO_Q(g_buf, d);
       } else if (replaced == 0) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "String '%s' not found.\r\n", s);
-        SEND_TO_Q(buf, d);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "String '%s' not found.\r\n", s);
+        SEND_TO_Q(g_buf, d);
       } else {
         SEND_TO_Q("ERROR: Replacement string causes buffer overflow, aborted replace.\r\n", d);
       }
@@ -263,17 +263,17 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
         total_len--;
       *t = '\0';
       RECREATE(*d->str, char, strlen(*d->str) + 3);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%d line%sdeleted.\r\n", total_len, ((total_len != 1) ? "s " : " "));
-      SEND_TO_Q(buf, d);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%d line%sdeleted.\r\n", total_len, ((total_len != 1) ? "s " : " "));
+      SEND_TO_Q(g_buf, d);
     } else {
       SEND_TO_Q("Invalid line numbers to delete must be higher than 0.\r\n", d);
       return;
     }
     break;
   case PARSE_LIST_NORM:
-    /* note: my buf,buf1,buf2 vars are defined at 32k sizes so they
+    /* note: my g_buf,g_buf1,g_buf2 vars are defined at 32k sizes so they
      * are prolly ok fer what i want to do here. */
-    *buf = '\0';
+    *g_buf = '\0';
     if (*string != '\0')
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
       case 0:
@@ -297,9 +297,9 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
       SEND_TO_Q("That range is invalid.\r\n", d);
       return;
     }
-    *buf = '\0';
+    *g_buf = '\0';
     if ((line_high < 999999) || (line_low > 1)) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Current buffer range [%d - %d]:\r\n", line_low, line_high);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Current buffer range [%d - %d]:\r\n", line_low, line_high);
     }
     i = 1;
     total_len = 0;
@@ -324,20 +324,20 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
     if (s) {
       temp = *s;
       *s = '\0';
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "%s", t);
       *s = temp;
     } else
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "%s", t);
     /* this is kind of annoying.. will have to take a poll and see..
-     safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n%d line%sshown.\r\n", total_len,
+     safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n%d line%sshown.\r\n", total_len,
      ((total_len != 1)?"s ":" "));
      */
-    page_string(d, buf, TRUE);
+    page_string(d, g_buf, TRUE);
     break;
   case PARSE_LIST_NUM:
-    /* note: my buf,buf1,buf2 vars are defined at 32k sizes so they
+    /* note: my g_buf,g_buf1,g_buf2 vars are defined at 32k sizes so they
      * are prolly ok fer what i want to do here. */
-    *buf = '\0';
+    *g_buf = '\0';
     if (*string != '\0')
       switch (sscanf(string, " %d - %d ", &line_low, &line_high)) {
       case 0:
@@ -361,7 +361,7 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
       SEND_TO_Q("That range is invalid.\r\n", d);
       return;
     }
-    *buf = '\0';
+    *g_buf = '\0';
     i = 1;
     total_len = 0;
     s = *d->str;
@@ -383,37 +383,38 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
         s++;
         temp = *s;
         *s = '\0';
-        size_t blen = strlen(buf);
-        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%4d: ", (i - 1));
-        safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", t);
+        size_t blen = strlen(g_buf);
+        blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%4d: ", (i - 1));
+        safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", t);
         *s = temp;
         t = s;
       }
     if (s && t) {
       temp = *s;
       *s = '\0';
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "%s", t);
       *s = temp;
     } else if (t)
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "%s", t);
     /* this is kind of annoying .. seeing as the lines are #ed
-     safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n%d numbered line%slisted.\r\n", total_len,
+     safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n%d numbered line%slisted.\r\n",
+     total_len,
      ((total_len != 1)?"s ":" "));
      */
-    page_string(d, buf, TRUE);
+    page_string(d, g_buf, TRUE);
     break;
 
   case PARSE_INSERT:
-    half_chop(string, buf, buf2);
-    if (*buf == '\0') {
+    half_chop(string, g_buf, g_buf2);
+    if (*g_buf == '\0') {
       SEND_TO_Q("You must specify a line number before which to insert text.\r\n", d);
       return;
     }
-    line_low = atoi(buf);
-    safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "\r\n");
+    line_low = atoi(g_buf);
+    safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "\r\n");
 
     i = 1;
-    *buf = '\0';
+    *g_buf = '\0';
     if ((s = *d->str) == NULL) {
       SEND_TO_Q("Buffer is empty, nowhere to insert.\r\n", d);
       return;
@@ -430,20 +431,20 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
       }
       temp = *s;
       *s = '\0';
-      if ((strlen(*d->str) + strlen(buf2) + strlen(s + 1) + 3) > d->max_str) {
+      if ((strlen(*d->str) + strlen(g_buf2) + strlen(s + 1) + 3) > d->max_str) {
         *s = temp;
         SEND_TO_Q("Insert text pushes buffer over maximum size, insert aborted.\r\n", d);
         return;
       }
       size_t blen = 0;
       if (*d->str && (**d->str != '\0'))
-        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", *d->str);
+        blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", *d->str);
       *s = temp;
-      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", buf2);
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", g_buf2);
       if (s && (*s != '\0'))
-        safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", s);
-      RECREATE(*d->str, char, strlen(buf) + 3);
-      safe_snprintf(*d->str, strlen(buf) + 3, "%s", buf);
+        safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", s);
+      RECREATE(*d->str, char, strlen(g_buf) + 3);
+      safe_snprintf(*d->str, strlen(g_buf) + 3, "%s", g_buf);
       SEND_TO_Q("Line inserted.\r\n", d);
     } else {
       SEND_TO_Q("Line number must be higher than 0.\r\n", d);
@@ -452,16 +453,16 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
     break;
 
   case PARSE_EDIT:
-    half_chop(string, buf, buf2);
-    if (*buf == '\0') {
+    half_chop(string, g_buf, g_buf2);
+    if (*g_buf == '\0') {
       SEND_TO_Q("You must specify a line number at which to change text.\r\n", d);
       return;
     }
-    line_low = atoi(buf);
-    safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "\r\n");
+    line_low = atoi(g_buf);
+    safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "\r\n");
 
     i = 1;
-    *buf = '\0';
+    *g_buf = '\0';
     if ((s = *d->str) == NULL) {
       SEND_TO_Q("Buffer is empty, nothing to change.\r\n", d);
       return;
@@ -482,31 +483,31 @@ void parse_action(int command, char *string, struct descriptor_data *d) {
       /* if s is the same as *d->str that means im at the beginning of the
        * message text and i dont need to put that into the changed buffer */
       if (s != *d->str) {
-        /* first things first .. we get this part into buf. */
+        /* first things first .. we get this part into g_buf. */
         temp = *s;
         *s = '\0';
         /* put the first 'good' half of the text into storage */
-        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", *d->str);
+        blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", *d->str);
         *s = temp;
       }
       /* put the new 'good' line into place. */
-      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", buf2);
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", g_buf2);
       if ((s = strchr(s, '\n')) != NULL) {
         /* this means that we are at the END of the line we want outta there. */
         /* BUT we want s to point to the beginning of the line AFTER
          * the line we want edited */
         s++;
         /* now put the last 'good' half of buffer into storage */
-        safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", s);
+        safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", s);
       }
       /* check for buffer overflow */
-      if (strlen(buf) > d->max_str) {
+      if (strlen(g_buf) > d->max_str) {
         SEND_TO_Q("Change causes new length to exceed buffer maximum size, aborted.\r\n", d);
         return;
       }
       /* change the size of the REAL buffer to fit the new text */
-      RECREATE(*d->str, char, strlen(buf) + 3);
-      safe_snprintf(*d->str, strlen(buf) + 3, "%s", buf);
+      RECREATE(*d->str, char, strlen(g_buf) + 3);
+      safe_snprintf(*d->str, strlen(g_buf) + 3, "%s", g_buf);
       SEND_TO_Q("Line changed.\r\n", d);
     } else {
       SEND_TO_Q("Line number must be higher than 0.\r\n", d);
@@ -707,14 +708,14 @@ void string_add(struct descriptor_data *d, char *str) {
       d->mail_to = 0;
       FREE(*d->str);
       FREE(d->str);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s finished writing mail message.", GET_NAME(d->character));
-      mudlog(buf, 'G', COM_ADMIN, TRUE);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s finished writing mail message.", GET_NAME(d->character));
+      mudlog(g_buf, 'G', COM_ADMIN, TRUE);
     } else if ((long)d->mail_to >= BOARD_MAGIC) {
       Board_save_board((long)d->mail_to - BOARD_MAGIC);
       SEND_TO_Q("Post not aborted, use REMOVE <post #>.\r\n", d);
       d->mail_to = 0;
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s finished writing message on board.", GET_NAME(d->character));
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s finished writing message on board.", GET_NAME(d->character));
+      mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     } else if (STATE(d) == CON_EXDESC) {
       if (terminator != 1)
         SEND_TO_Q("Description aborted.\r\n", d);
@@ -729,16 +730,16 @@ void string_add(struct descriptor_data *d, char *str) {
     } else if (STATE(d) == CON_TEXTED) {
       if (terminator == 1) {
         if (!(fl = fopen((char *)d->storage, "w"))) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Can't write file '%s'.", d->storage);
-          mudlog(buf, 'G', COM_BUILDER, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: Can't write file '%s'.", d->storage);
+          mudlog(g_buf, 'G', COM_BUILDER, TRUE);
         } else {
           if (*d->str) {
             strip_string(*d->str);
             fputs(*d->str, fl);
           }
           fclose(fl);
-          safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s saves '%s'.", GET_NAME(d->character), d->storage);
-          mudlog(buf, 'G', COM_BUILDER, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s saves '%s'.", GET_NAME(d->character), d->storage);
+          mudlog(g_buf, 'G', COM_BUILDER, TRUE);
           SEND_TO_Q("Saved.\r\n", d);
           act("$n stops editing some scrolls.", TRUE, d->character, 0, 0, TO_ROOM);
           if (d->character && !IS_NPC(d->character))
@@ -755,8 +756,8 @@ void string_add(struct descriptor_data *d, char *str) {
         }
       } else {
         SEND_TO_Q("Edit aborted.\r\n", d);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s stops editing '%s'.", GET_NAME(d->character), d->storage);
-        mudlog(buf, 'G', COM_BUILDER, TRUE);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s stops editing '%s'.", GET_NAME(d->character), d->storage);
+        mudlog(g_buf, 'G', COM_BUILDER, TRUE);
         act("$n stops editing some scrolls.", TRUE, d->character, 0, 0, TO_ROOM);
         FREE(d->storage);
         d->storage = NULL;
@@ -802,7 +803,7 @@ ACMD(do_skillset) {
   extern struct spell_info_type *spells;
   struct char_data *vict;
   struct char_data *victim = 0;
-  char name[100], buf2[100], buf[100], help[MAX_STRING_LENGTH];
+  char name[100], g_buf2[100], g_buf[100], help[MAX_STRING_LENGTH];
   int skill, value, i, qend;
 
   argument = one_argument(argument, name);
@@ -884,9 +885,9 @@ ACMD(do_skillset) {
     return;
   }
   argument += qend + 1; /* skip to next parameter */
-  argument = one_argument(argument, buf);
+  argument = one_argument(argument, g_buf);
 
-  if (!*buf) {
+  if (!*g_buf) {
     send_to_char("Learned value expected.\n\r", ch);
     if (victim) {
       vict = NULL;
@@ -894,7 +895,7 @@ ACMD(do_skillset) {
     }
     return;
   }
-  value = atoi(buf);
+  value = atoi(g_buf);
   if (value < 0) {
     send_to_char("Minimum value for learned is 0.\n\r", ch);
     if (victim) {
@@ -919,14 +920,15 @@ ACMD(do_skillset) {
     }
     return;
   }
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict),
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s changed %s's %s to %d.", GET_NAME(ch), GET_NAME(vict),
                 spells[skill].command, value);
-  mudlog(buf2, 'G', COM_BUILDER, TRUE);
+  mudlog(g_buf2, 'G', COM_BUILDER, TRUE);
 
   SET_SKILL(vict, spells[skill].spellindex, value);
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "You change %s's %s to %d.\n\r", GET_NAME(vict), spells[skill].command, value);
-  send_to_char(buf2, ch);
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "You change %s's %s to %d.\n\r", GET_NAME(vict), spells[skill].command,
+                value);
+  send_to_char(g_buf2, ch);
 
   save_char_text(vict, NOWHERE);
   if (victim) {
@@ -1020,8 +1022,8 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
    char *tmpstr;
    */
 
-  buf[0] = '\0';
-  point2 = buf;
+  g_buf[0] = '\0';
+  point2 = g_buf;
 
   if (!d)
     return;
@@ -1039,7 +1041,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
     for (point = str; *point; point++) {
       if (*point == '{') {
         point++;
-        size_t remaining = sizeof(buf) - (point2 - buf);
+        size_t remaining = sizeof(g_buf) - (point2 - g_buf);
         const char *color = colorf(*point, d->character);
         size_t clen = strlen(color);
         if (clen < remaining) {
@@ -1052,7 +1054,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
       *++point2 = '\0';
     }
     *point2 = '\0';
-    str = buf;
+    str = g_buf;
   } else {
     for (point = str; *point; point++) {
       if (*point == '{') {
@@ -1063,7 +1065,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
       *++point2 = '\0';
     }
     *point2 = '\0';
-    str = buf;
+    str = g_buf;
   }
 
   /*convert_linefeed(str);*/
@@ -1100,8 +1102,8 @@ void page_string_no_color(struct descriptor_data *d, char *str, int keep_interna
    char *tmpstr;
    */
 
-  buf[0] = '\0';
-  point2 = buf;
+  g_buf[0] = '\0';
+  point2 = g_buf;
 
   if (!d)
     return;
@@ -1124,7 +1126,7 @@ void page_string_no_color(struct descriptor_data *d, char *str, int keep_interna
     *++point2 = '\0';
   }
   *point2 = '\0';
-  str = buf;
+  str = g_buf;
   /*convert_linefeed(str);*/
   /* use with wordwrap
    CREATE(d->showstr_vector, char *, d->showstr_count = count_pages(tmpstr, d->character));
@@ -1154,10 +1156,10 @@ void show_string(struct descriptor_data *d, char *input) {
   char buffer[MAX_STRING_LENGTH];
   int diff;
 
-  one_argument(input, buf);
+  one_argument(input, g_buf);
 
   /* Q is for quit. :) */
-  if (STATE(d) != CON_NAME_CNFRM && STATE(d) != CON_GET_NAME && STATE(d) != CON_POLICY && LOWER(*buf) == 'q') {
+  if (STATE(d) != CON_NAME_CNFRM && STATE(d) != CON_GET_NAME && STATE(d) != CON_POLICY && LOWER(*g_buf) == 'q') {
     FREE(d->showstr_vector);
     d->showstr_count = 0;
     if (d->showstr_head) {
@@ -1169,22 +1171,22 @@ void show_string(struct descriptor_data *d, char *input) {
   /* R is for refresh, so back up one page internally so we can display
    * it again.
    */
-  else if (LOWER(*buf) == 'r')
+  else if (LOWER(*g_buf) == 'r')
     d->showstr_page = MAX(0, d->showstr_page - 1);
 
   /* B is for back, so back up two pages internally so we can display the
    * correct page here.
    */
-  else if (LOWER(*buf) == 'b')
+  else if (LOWER(*g_buf) == 'b')
     d->showstr_page = MAX(0, d->showstr_page - 2);
 
   /* Feature to 'goto' a page.  Just type the number of the page and you
    * are there!
    */
-  else if (STATE(d) != CON_NAME_CNFRM && STATE(d) != CON_GET_NAME && STATE(d) != CON_POLICY && isdigit(*buf))
-    d->showstr_page = BOUNDED(0, atoi(buf) - 1, d->showstr_count - 1);
+  else if (STATE(d) != CON_NAME_CNFRM && STATE(d) != CON_GET_NAME && STATE(d) != CON_POLICY && isdigit(*g_buf))
+    d->showstr_page = BOUNDED(0, atoi(g_buf) - 1, d->showstr_count - 1);
 
-  else if (*buf) {
+  else if (*g_buf) {
     send_to_char("Valid commands while paging are RETURN, Q, R, B, or a numeric value.\r\n", d->character);
     return;
   }

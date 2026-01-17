@@ -75,8 +75,8 @@ void load_qic(void) {
     fprintf(stderr, "WARNING:  QIC DATABASE IS PROBABLY CORRUPT!\n");
   qic_items = size / sizeof(struct qic_data);
   if (qic_items) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "   %d records in QIC database.", qic_items);
-    stderr_log(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "   %d records in QIC database.", qic_items);
+    stderr_log(g_buf);
   } else {
     qic_items = 0;
     return;
@@ -86,8 +86,8 @@ void load_qic(void) {
     fread(&q, sizeof(struct qic_data), 1, qic_fl);
     if ((nr = real_object(q.vnum)) < 0) {
       i++;
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Invalid vnum [%5d] in QIC database!", q.vnum);
-      stderr_log(buf);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Invalid vnum [%5d] in QIC database!", q.vnum);
+      stderr_log(g_buf);
     } else {
       CREATE(obj_index[nr].qic, struct qic_data, 1);
       qic_vnums[i] = q.vnum;
@@ -191,8 +191,8 @@ void qic_scan_file(char *name, long id) {
 
   if (!(fl = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: OPENING OBJECT FILE %s (4)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: OPENING OBJECT FILE %s (4)", fname);
+      perror(g_buf1);
     }
     return;
   }
@@ -237,65 +237,65 @@ void qic_scan_rent(void) {
 
   rp = opendir("plrobjs/A-E");
   while ((dirp = readdir(rp)) != NULL) {
-    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
-    if (strstr(buf, "objs")) {
-      cp = strrchr(buf, '.');
+    safe_snprintf(g_buf, sizeof(g_buf), "%s", dirp->d_name);
+    if (strstr(g_buf, "objs")) {
+      cp = strrchr(g_buf, '.');
       if (cp) {
         *cp = '\0';
-        qic_scan_file(buf, 0);
+        qic_scan_file(g_buf, 0);
       }
     }
   }
   closedir(rp);
   rp = opendir("plrobjs/F-J");
   while ((dirp = readdir(rp)) != NULL) {
-    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
-    if (strstr(buf, "objs")) {
-      cp = strrchr(buf, '.');
+    safe_snprintf(g_buf, sizeof(g_buf), "%s", dirp->d_name);
+    if (strstr(g_buf, "objs")) {
+      cp = strrchr(g_buf, '.');
       if (cp) {
         *cp = '\0';
-        qic_scan_file(buf, 0);
+        qic_scan_file(g_buf, 0);
       }
     }
   }
   closedir(rp);
   rp = opendir("plrobjs/K-O");
   while ((dirp = readdir(rp)) != NULL) {
-    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
-    if (strstr(buf, "objs")) {
-      cp = strrchr(buf, '.');
+    safe_snprintf(g_buf, sizeof(g_buf), "%s", dirp->d_name);
+    if (strstr(g_buf, "objs")) {
+      cp = strrchr(g_buf, '.');
       if (cp) {
         *cp = '\0';
-        qic_scan_file(buf, 0);
+        qic_scan_file(g_buf, 0);
       }
     }
   }
   closedir(rp);
   rp = opendir("plrobjs/P-T");
   while ((dirp = readdir(rp)) != NULL) {
-    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
-    if (strstr(buf, "objs")) {
-      cp = strrchr(buf, '.');
+    safe_snprintf(g_buf, sizeof(g_buf), "%s", dirp->d_name);
+    if (strstr(g_buf, "objs")) {
+      cp = strrchr(g_buf, '.');
       if (cp) {
         *cp = '\0';
-        qic_scan_file(buf, 0);
+        qic_scan_file(g_buf, 0);
       }
     }
   }
   closedir(rp);
   rp = opendir("plrobjs/U-Z");
   while ((dirp = readdir(rp)) != NULL) {
-    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
+    safe_snprintf(g_buf, sizeof(g_buf), "%s", dirp->d_name);
   }
   closedir(rp);
   rp = opendir("plrobjs/ZZZ");
   while ((dirp = readdir(rp)) != NULL) {
-    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
-    if (strstr(buf, "objs")) {
-      cp = strrchr(buf, '.');
+    safe_snprintf(g_buf, sizeof(g_buf), "%s", dirp->d_name);
+    if (strstr(g_buf, "objs")) {
+      cp = strrchr(g_buf, '.');
       if (cp) {
         *cp = '\0';
-        qic_scan_file(buf, 0);
+        qic_scan_file(g_buf, 0);
       }
     }
   }
@@ -313,14 +313,14 @@ ACMD(do_setqic) {
     return;
   }
 
-  two_arguments(argument, buf, arg);
+  two_arguments(argument, g_buf, g_arg);
 
-  if ((i = real_object(atoi(buf))) < 0) {
+  if ((i = real_object(atoi(g_buf))) < 0) {
     send_to_char("There is no object with that vnum.\r\n", ch);
     return;
   }
 
-  if ((j = atoi(arg)) == 0) { /* remove QIC */
+  if ((j = atoi(g_arg)) == 0) { /* remove QIC */
     if (obj_index[i].qic == NULL) {
       send_to_char("No QIC record to remove.\r\n", ch);
       return;
@@ -360,11 +360,11 @@ ACMD(do_qicinfo) {
   int i;
   size_t sblen;
 
-  sblen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Currently defined QICs:\r\n");
+  sblen = safe_snprintf(g_string_buf, MAX_STRING_LENGTH * 2, "Currently defined QICs:\r\n");
 
   for (i = 0; i < top_of_objt; i++) {
     if (obj_index[i].qic != NULL) {
-      sblen += safe_snprintf(string_buf + sblen, MAX_STRING_LENGTH * 2 - sblen,
+      sblen += safe_snprintf(g_string_buf + sblen, MAX_STRING_LENGTH * 2 - sblen,
                              "%s[%s%5d%s]%s %-50s %sIn:%s %2d%s, Lim: %s%2d%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP),
                              obj_index[i].virtual, CBBLU(ch, C_CMP), CCCYN(ch, C_CMP), obj_proto[i].short_description,
                              CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->items, CBBLU(ch, C_CMP),
@@ -374,20 +374,20 @@ ACMD(do_qicinfo) {
       break;
   }
 
-  page_string(ch->desc, string_buf, 0);
+  page_string(ch->desc, g_string_buf, 0);
 }
 
 /* List owners of a QIC item */ ACMD(do_owners) {
   int i, j;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Usage: owners <vnum>\r\n", ch);
     return;
   }
 
-  if ((i = real_object(atoi(arg))) < 0) {
+  if ((i = real_object(atoi(g_arg))) < 0) {
     send_to_char("There is no object with that vnum.\r\n", ch);
     return;
   }
@@ -397,16 +397,16 @@ ACMD(do_qicinfo) {
     return;
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Registered owners at boot (item #%d - %s):\r\n", obj_index[i].virtual,
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Registered owners at boot (item #%d - %s):\r\n", obj_index[i].virtual,
                 obj_proto[i].short_description);
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
   for (j = 0; j < QIC_OWNERS; j += 2) {
     if (obj_index[i].qic->owners[j][0] == '\0')
       break;
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%20.20s  %20.20s\r\n", obj_index[i].qic->owners[j],
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%20.20s  %20.20s\r\n", obj_index[i].qic->owners[j],
                   obj_index[i].qic->owners[j + 1] ? obj_index[i].qic->owners[j + 1] : "");
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
   }
   send_to_char("\r\n", ch);
 }
@@ -415,13 +415,13 @@ ACMD(do_qload) {
   struct obj_data *obj;
   int number, r_num;
 
-  one_argument(argument, buf);
+  one_argument(argument, g_buf);
 
-  if (!*buf || !isdigit(*buf)) {
+  if (!*g_buf || !isdigit(*g_buf)) {
     send_to_char("Usage: qload <virt num>\r\n", ch);
     return;
   }
-  if ((number = atoi(buf)) < 0) {
+  if ((number = atoi(g_buf)) < 0) {
     send_to_char("A NEGATIVE number??\r\n", ch);
     return;
   }
@@ -440,7 +440,7 @@ ACMD(do_qload) {
   act("$n makes a strange powerful gesture.", TRUE, ch, 0, 0, TO_ROOM);
   act("$n has created $p!", FALSE, ch, obj, 0, TO_ROOM);
   act("You create $p.", FALSE, ch, obj, 0, TO_CHAR);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s QIC created %s", GET_NAME(ch), obj->short_description);
-  mudlog(buf, 'L', COM_ADMIN, FALSE);
-  plog(buf, ch, LVL_IMMORT);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s QIC created %s", GET_NAME(ch), obj->short_description);
+  mudlog(g_buf, 'L', COM_ADMIN, FALSE);
+  plog(g_buf, ch, LVL_IMMORT);
 }

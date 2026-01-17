@@ -349,8 +349,8 @@ void load_messages(void) {
   char *cp;
 
   if (!(fl = fopen(MESS_FILE, "r"))) {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "Error reading combat message file %s", MESS_FILE);
-    perror(buf2);
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Error reading combat message file %s", MESS_FILE);
+    perror(g_buf2);
     fflush(NULL);
     exit(1);
   }
@@ -381,8 +381,8 @@ void load_messages(void) {
       }
     }
     if (type < 0) {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Bad combat message: %s", cp);
-      perror(buf2);
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Bad combat message: %s", cp);
+      perror(g_buf2);
       fgets(chk, 128, fl);
       while (!feof(fl) && (*chk != 'M')) {
         fgets(chk, 128, fl);
@@ -441,17 +441,17 @@ void update_pos(struct char_data *victim) {
 
 void check_killer(struct char_data *ch, struct char_data *vict) {
   if (!IS_NPC(ch) && GET_LEVEL(ch) >= LVL_IMMORT && FIGHTING(ch) != vict) {
-    safe_snprintf(logbuffer, sizeof(logbuffer), "IMMORT %s attacked %s", GET_NAME(ch), GET_NAME(vict));
-    mudlog(logbuffer, 'N', COM_IMMORT, TRUE);
-    plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "IMMORT %s attacked %s", GET_NAME(ch), GET_NAME(vict));
+    mudlog(g_logbuffer, 'N', COM_IMMORT, TRUE);
+    plog(g_logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   }
 
   if (ch->desc) {
     if (ch->desc->original) {
       if (GET_LEVEL(ch->desc->original) >= LVL_IMMORT && FIGHTING(ch) != vict) {
-        safe_snprintf(logbuffer, sizeof(logbuffer), "IMMORT %s attacked %s", GET_NAME(ch), GET_NAME(vict));
-        mudlog(logbuffer, 'N', COM_IMMORT, TRUE);
-        plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch->desc->original)));
+        safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "IMMORT %s attacked %s", GET_NAME(ch), GET_NAME(vict));
+        mudlog(g_logbuffer, 'N', COM_IMMORT, TRUE);
+        plog(g_logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch->desc->original)));
       }
     }
   }
@@ -461,19 +461,19 @@ void check_killer(struct char_data *ch, struct char_data *vict) {
     char buf[256];
     if (!pk_allowed) {
       SET_BIT(PLR_FLAGS(ch), PLR_KILLER);
-      safe_snprintf(buf, sizeof(buf), "PC Killer bit set on %s for initiating attack on %s at %s.", GET_NAME(ch),
+      safe_snprintf(g_buf, sizeof(g_buf), "PC Killer bit set on %s for initiating attack on %s at %s.", GET_NAME(ch),
                     GET_NAME(vict), world[vict->in_room].name);
-      mudlog(buf, 'Y', COM_IMMORT, TRUE);
-      plog(buf, ch, 0);
-      plog(buf, vict, 0);
+      mudlog(g_buf, 'Y', COM_IMMORT, TRUE);
+      plog(g_buf, ch, 0);
+      plog(g_buf, vict, 0);
       GET_PKCOUNT(ch)++;
       send_to_char("If you want to be a PLAYER KILLER, so be it...\r\n", ch);
     } else if (!FIGHTING(ch) || !FIGHTING(vict)) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "PC %s attacked PC %s at %s", GET_NAME(ch), GET_NAME(vict),
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "PC %s attacked PC %s at %s", GET_NAME(ch), GET_NAME(vict),
                     world[vict->in_room].name);
-      mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
-      plog(buf, ch, 0);
-      plog(buf, vict, 0);
+      mudlog(g_logbuffer, 'Y', COM_IMMORT, TRUE);
+      plog(g_buf, ch, 0);
+      plog(g_buf, vict, 0);
     }
   }
 }
@@ -654,11 +654,11 @@ void make_corpse(struct char_data *ch) {
     corpse->cname = strdup("corpse");
   }
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "The corpse of %s is lying here.", GET_NAME(ch));
-  corpse->cdescription = strdup(buf2);
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "The corpse of %s is lying here.", GET_NAME(ch));
+  corpse->cdescription = strdup(g_buf2);
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "the corpse of %s", GET_NAME(ch));
-  corpse->cshort_description = strdup(buf2);
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "the corpse of %s", GET_NAME(ch));
+  corpse->cshort_description = strdup(g_buf2);
 
   GET_OBJ_TYPE(corpse) = ITEM_CONTAINER;
   GET_OBJ_EXTRA(corpse) = ITEM_NODONATE;
@@ -807,23 +807,23 @@ void die(struct char_data *ch, struct char_data *killer) {
   }
 
   if (!(!IS_NPC(killer) && !IS_NPC(ch))) {
-    safe_snprintf(logbuffer, sizeof(logbuffer), "%s killed by %s", GET_NAME(ch), GET_NAME(killer));
-    mudlog(logbuffer, 'O', COM_IMMORT, FALSE);
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s killed by %s", GET_NAME(ch), GET_NAME(killer));
+    mudlog(g_logbuffer, 'O', COM_IMMORT, FALSE);
   } else if ((!IS_NPC(killer) && GET_LEVEL(killer) == LVL_IMMORT)) {
-    safe_snprintf(logbuffer, sizeof(logbuffer), "IMMORT %s killed MOBILE %s", GET_NAME(killer), GET_NAME(ch));
-    mudlog(logbuffer, 'N', COM_ADMIN, TRUE);
-    plog(logbuffer, killer, MAX(LVL_IMMORT, GET_LEVEL(killer)));
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "IMMORT %s killed MOBILE %s", GET_NAME(killer), GET_NAME(ch));
+    mudlog(g_logbuffer, 'N', COM_ADMIN, TRUE);
+    plog(g_logbuffer, killer, MAX(LVL_IMMORT, GET_LEVEL(killer)));
   } else if (killer->desc) {
     if (killer->desc->original) {
       if (!IS_NPC(killer->desc->original) && GET_LEVEL(killer->desc->original) == LVL_IMMORT) {
-        safe_snprintf(logbuffer, sizeof(logbuffer), "IMMORT %s killed MOBILE %s", GET_NAME(killer), GET_NAME(ch));
-        mudlog(logbuffer, 'N', COM_IMMORT, TRUE);
-        plog(logbuffer, killer, MAX(LVL_IMMORT, GET_LEVEL(killer)));
+        safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "IMMORT %s killed MOBILE %s", GET_NAME(killer), GET_NAME(ch));
+        mudlog(g_logbuffer, 'N', COM_IMMORT, TRUE);
+        plog(g_logbuffer, killer, MAX(LVL_IMMORT, GET_LEVEL(killer)));
       }
     }
   } else {
-    safe_snprintf(logbuffer, sizeof(logbuffer), "PC %s killed by PC %s", GET_NAME(ch), GET_NAME(killer));
-    mudlog(logbuffer, 'Y', COM_IMMORT, FALSE);
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "PC %s killed by PC %s", GET_NAME(ch), GET_NAME(killer));
+    mudlog(g_logbuffer, 'Y', COM_IMMORT, FALSE);
   }
 
   if (!IS_NPC(ch)) {
@@ -1072,10 +1072,10 @@ void group_gain(struct char_data *ch, struct char_data *victim) {
 }
 
 char *replace_string(char *str, char *weapon_singular, char *weapon_plural) {
-  static char buf[256];
+  static char g_buf[256];
   char *cp;
 
-  cp = buf;
+  cp = g_buf;
 
   for (; *str; str++) {
     if (*str == '#') {
@@ -1099,12 +1099,12 @@ char *replace_string(char *str, char *weapon_singular, char *weapon_plural) {
     *cp = 0;
   } /* For */
 
-  return (buf);
+  return (g_buf);
 }
 
 /* message for doing damage with a weapon */
 void dam_message(int dam, struct char_data *ch, struct char_data *victim, int w_type, int damorig) {
-  char *buf;
+  char *g_buf;
   int msgnum, weapmin, weapmax, dampercent;
   struct obj_data *weap;
 
@@ -1253,34 +1253,34 @@ void dam_message(int dam, struct char_data *ch, struct char_data *victim, int w_
 
   /* damage message to onlookers */
   if (IS_NPC(ch)) {
-    buf = replace_string(npc_dam_weapons[msgnum].to_room, attack_hit_text[w_type].singular,
-                         attack_hit_text[w_type].plural);
+    g_buf = replace_string(npc_dam_weapons[msgnum].to_room, attack_hit_text[w_type].singular,
+                           attack_hit_text[w_type].plural);
   } else {
-    buf = replace_string(dam_weapons[msgnum][number(0, 3)].to_room, attack_hit_text[w_type].singular,
-                         attack_hit_text[w_type].plural);
+    g_buf = replace_string(dam_weapons[msgnum][number(0, 3)].to_room, attack_hit_text[w_type].singular,
+                           attack_hit_text[w_type].plural);
   }
-  act(buf, FALSE, ch, NULL, victim, TO_NOTVICT);
+  act(g_buf, FALSE, ch, NULL, victim, TO_NOTVICT);
 
   /* damage message to damager */
   if (IS_NPC(ch)) {
-    buf = replace_string(npc_dam_weapons[msgnum].to_char, attack_hit_text[w_type].singular,
-                         attack_hit_text[w_type].plural);
+    g_buf = replace_string(npc_dam_weapons[msgnum].to_char, attack_hit_text[w_type].singular,
+                           attack_hit_text[w_type].plural);
   } else {
-    buf = replace_string(dam_weapons[msgnum][number(0, 3)].to_char, attack_hit_text[w_type].singular,
-                         attack_hit_text[w_type].plural);
+    g_buf = replace_string(dam_weapons[msgnum][number(0, 3)].to_char, attack_hit_text[w_type].singular,
+                           attack_hit_text[w_type].plural);
   }
-  act(CAP(buf), FALSE, ch, NULL, victim, TO_CHAR);
+  act(CAP(g_buf), FALSE, ch, NULL, victim, TO_CHAR);
   send_to_char(CCNRM(ch, C_CMP), ch);
 
   /* damage message to damagee */
   if (IS_NPC(ch)) {
-    buf = replace_string(npc_dam_weapons[msgnum].to_victim, attack_hit_text[w_type].singular,
-                         attack_hit_text[w_type].plural);
+    g_buf = replace_string(npc_dam_weapons[msgnum].to_victim, attack_hit_text[w_type].singular,
+                           attack_hit_text[w_type].plural);
   } else {
-    buf = replace_string(dam_weapons[msgnum][number(0, 3)].to_victim, attack_hit_text[w_type].singular,
-                         attack_hit_text[w_type].plural);
+    g_buf = replace_string(dam_weapons[msgnum][number(0, 3)].to_victim, attack_hit_text[w_type].singular,
+                           attack_hit_text[w_type].plural);
   }
-  act(CAP(buf), FALSE, ch, NULL, victim, TO_VICT | TO_SLEEP);
+  act(CAP(g_buf), FALSE, ch, NULL, victim, TO_VICT | TO_SLEEP);
   send_to_char(CCNRM(victim, C_CMP), victim);
 }
 
@@ -1509,11 +1509,11 @@ void damage(struct char_data *ch, struct char_data *victim, int dam, int attackt
           group_gain(victim, ch);
         }
         if (!IS_NPC(ch)) {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
+          safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
                         world[ch->in_room].name);
-          mudlog(buf2, 'K', COM_IMMORT, TRUE);
-          plog(buf2, victim, 0);
-          plog(buf2, ch, 0);
+          mudlog(g_buf2, 'K', COM_IMMORT, TRUE);
+          plog(g_buf2, victim, 0);
+          plog(g_buf2, ch, 0);
 
           if (IS_NPC(victim)) {
             if (MOB_FLAGGED(victim, MOB_MEMORY)) {
@@ -1563,11 +1563,11 @@ void damage(struct char_data *ch, struct char_data *victim, int dam, int attackt
           group_gain(victim, ch);
         }
         if (!IS_NPC(ch)) {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
+          safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
                         world[ch->in_room].name);
-          mudlog(buf2, 'K', COM_IMMORT, TRUE);
-          plog(buf2, victim, 0);
-          plog(buf2, ch, 0);
+          mudlog(g_buf2, 'K', COM_IMMORT, TRUE);
+          plog(g_buf2, victim, 0);
+          plog(g_buf2, ch, 0);
 
           if (IS_NPC(victim)) {
             if (MOB_FLAGGED(victim, MOB_MEMORY)) {
@@ -1625,11 +1625,11 @@ void damage(struct char_data *ch, struct char_data *victim, int dam, int attackt
           group_gain(victim, ch);
         }
         if (!IS_NPC(ch)) {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
+          safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
                         world[ch->in_room].name);
-          mudlog(buf2, 'K', COM_IMMORT, TRUE);
-          plog(buf2, victim, 0);
-          plog(buf2, ch, 0);
+          mudlog(g_buf2, 'K', COM_IMMORT, TRUE);
+          plog(g_buf2, victim, 0);
+          plog(g_buf2, ch, 0);
 
           if (IS_NPC(victim)) {
             if (MOB_FLAGGED(victim, MOB_MEMORY)) {
@@ -1678,11 +1678,11 @@ void damage(struct char_data *ch, struct char_data *victim, int dam, int attackt
           group_gain(victim, ch);
         }
         if (!IS_NPC(ch)) {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
+          safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(ch), GET_NAME(victim),
                         world[ch->in_room].name);
-          mudlog(buf2, 'K', COM_IMMORT, TRUE);
-          plog(buf2, victim, 0);
-          plog(buf2, ch, 0);
+          mudlog(g_buf2, 'K', COM_IMMORT, TRUE);
+          plog(g_buf2, victim, 0);
+          plog(g_buf2, ch, 0);
 
           if (IS_NPC(victim)) {
             if (MOB_FLAGGED(victim, MOB_MEMORY)) {
@@ -1874,10 +1874,10 @@ void damage(struct char_data *ch, struct char_data *victim, int dam, int attackt
       act("{RThat really did {FHURT!{x", FALSE, victim, 0, 0, TO_CHAR);
     }
     if (GET_HIT(victim) < (GET_MAX_HIT(victim) >> 2)) {
-      safe_snprintf(buf2, MAX_STRING_LENGTH,
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH,
                     "{DYou wish that your wounds"
                     " would stop {R{FBLEEDING{x {Dso much!{x\r\n");
-      send_to_char(buf2, victim);
+      send_to_char(g_buf2, victim);
       if (MOB_FLAGGED(victim, MOB_WIMPY)) {
         do_flee(victim, "", 0, 0);
       }
@@ -1911,11 +1911,11 @@ void damage(struct char_data *ch, struct char_data *victim, int dam, int attackt
       group_gain(ch, victim);
     }
     if (!IS_NPC(victim)) {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(victim), GET_NAME(ch),
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s killed by %s at %s", GET_NAME(victim), GET_NAME(ch),
                     world[victim->in_room].name);
-      mudlog(buf2, 'K', COM_IMMORT, TRUE);
-      plog(buf2, ch, 0);
-      plog(buf2, victim, 0);
+      mudlog(g_buf2, 'K', COM_IMMORT, TRUE);
+      plog(g_buf2, ch, 0);
+      plog(g_buf2, victim, 0);
 
       if (MOB_FLAGGED(ch, MOB_MEMORY)) {
         forget(ch, victim);

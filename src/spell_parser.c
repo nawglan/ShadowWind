@@ -47,7 +47,7 @@ int mag_manacost(struct char_data *ch, int spellnum) {
              SINFO.mana_min);
 }
 
-/* say_spell erodes buf, buf1, buf2 */
+/* say_spell erodes g_buf, g_buf1, g_buf2 */
 void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct obj_data *tobj) {
   char buf[256];
   char buf1[256];
@@ -59,14 +59,14 @@ void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct
 
   struct char_data *i;
 
-  buf[0] = '\0';
+  g_buf[0] = '\0';
   size_t buflen = 0;
 
   safe_snprintf(lbuf, sizeof(lbuf), "%s", get_spell_name(spellnum));
   for (pName = lbuf; *pName != '\0'; pName += length) {
     for (x = 0; (length = strlen(syls[x].org)) > 0; x++) {
       if (!strncmp(syls[x].org, pName, length)) {
-        buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "%s", syls[x].new);
+        buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "%s", syls[x].new);
         break;
       }
     }
@@ -84,21 +84,21 @@ void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct
   else
     safe_snprintf(lbuf, sizeof(lbuf), "$n utters the words, '%%s'.");
 
-  safe_snprintf(buf2, sizeof(buf2), lbuf, buf);
-  safe_snprintf(buf1, sizeof(buf1), lbuf, get_spell_name(spellnum));
+  safe_snprintf(g_buf2, sizeof(g_buf2), lbuf, g_buf);
+  safe_snprintf(g_buf1, sizeof(g_buf1), lbuf, get_spell_name(spellnum));
 
   for (i = world[ch->in_room].people; i; i = i->next_in_room) {
     if (i == ch || i == tch || !i->desc || !AWAKE(i))
       continue;
     if (GET_CLASS(ch) == GET_CLASS(i))
-      perform_act(buf1, ch, tobj, tch, i);
+      perform_act(g_buf1, ch, tobj, tch, i);
     else
-      perform_act(buf2, ch, tobj, tch, i);
+      perform_act(g_buf2, ch, tobj, tch, i);
   }
   if (tch != NULL && tch != ch) {
-    safe_snprintf(buf1, sizeof(buf1), "$n stares at you and utters the words, '%s'.",
-                  GET_CLASS(ch) == GET_CLASS(tch) ? get_spell_name(spellnum) : buf);
-    act(buf1, FALSE, ch, NULL, tch, TO_VICT);
+    safe_snprintf(g_buf1, sizeof(g_buf1), "$n stares at you and utters the words, '%s'.",
+                  GET_CLASS(ch) == GET_CLASS(tch) ? get_spell_name(spellnum) : g_buf);
+    act(g_buf1, FALSE, ch, NULL, tch, TO_VICT);
   }
 }
 
@@ -195,13 +195,13 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
   struct obj_data *tobj = NULL;
   int spellnum;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
   actd = get_actd(GET_OBJ_VNUM(obj)); /* get actd message */
 
-  k = generic_find(arg, FIND_CHAR_ROOM | FIND_OBJ_INV | FIND_OBJ_ROOM | FIND_OBJ_EQUIP, ch, &tch, &tobj);
+  k = generic_find(g_arg, FIND_CHAR_ROOM | FIND_OBJ_INV | FIND_OBJ_ROOM | FIND_OBJ_EQUIP, ch, &tch, &tobj);
   if (actd) {
-    if (!*arg) { /* No argument */
+    if (!*g_arg) { /* No argument */
       act(actd->char_no_arg, FALSE, ch, obj, 0, TO_CHAR);
       act(actd->others_no_arg, TRUE, ch, obj, 0, TO_ROOM);
     } else if (tch == NULL) { /* Target not found */
@@ -279,7 +279,7 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
     DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
     break;
   case ITEM_SCROLL:
-    if (*arg) {
+    if (*g_arg) {
       if (!k && actd == NULL) {
         act("There is nothing to here to affect with $p.", FALSE, ch, obj, NULL, TO_CHAR);
         return;
@@ -301,8 +301,8 @@ void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument)
     for (i = 1; i < 4; i++) {
       if (GET_OBJ_VAL(obj, i)) {
         spellnum = find_skill_num_def(GET_OBJ_VAL(obj, i));
-        if (*arg) {
-          DO_SPELL(&spells[spellnum], spellnum, 1, ch, arg, YES);
+        if (*g_arg) {
+          DO_SPELL(&spells[spellnum], spellnum, 1, ch, g_arg, YES);
         } else {
           DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
         }
@@ -418,8 +418,8 @@ ACMD(do_cast) {
 
   /* Find the target */
   if (t != NULL) {
-    safe_snprintf(arg, MAX_STRING_LENGTH, "%s", t);
-    one_argument(arg, t);
+    safe_snprintf(g_arg, MAX_STRING_LENGTH, "%s", t);
+    one_argument(g_arg, t);
     skip_spaces(&t);
   }
   if (!IS_NPC(ch)) {
@@ -670,8 +670,8 @@ ACMD(do_mpcast) {
 
   /* Find the target */
   if (t != NULL) {
-    safe_snprintf(arg, MAX_STRING_LENGTH, "%s", t);
-    one_argument(arg, t);
+    safe_snprintf(g_arg, MAX_STRING_LENGTH, "%s", t);
+    one_argument(g_arg, t);
     skip_spaces(&t);
   }
 
@@ -680,7 +680,7 @@ ACMD(do_mpcast) {
 
 ACMD(do_spells) {
   ACMD(do_practice);
-  extern int parse_class_spec(char *arg);
+  extern int parse_class_spec(char *g_arg);
   int i, class;
 
   if (IS_NPC(ch)) {
@@ -693,47 +693,47 @@ ACMD(do_spells) {
     return;
   }
 
-  one_argument(argument, arg);
-  if (!*arg) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You know of the following spells:\r\n");
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", buf);
+  one_argument(argument, g_arg);
+  if (!*g_arg) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "You know of the following spells:\r\n");
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s", g_buf);
 
     for (i = 1; spells[i].command[0] != '\n'; i++) {
       if (spells[i].spell_pointer) {
-        if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "**OVERFLOW**\r\n");
+        if (strlen(g_buf2) >= MAX_STRING_LENGTH - 32) {
+          safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "**OVERFLOW**\r\n");
           break;
         }
         if ((GET_LEVEL(ch) >= spells[i].min_level[(int)GET_CLASS(ch)] || GET_SKILL(ch, i))) {
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-20s  Mana: %d\r\n",
+          safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "%2d: %-20s  Mana: %d\r\n",
                         spells[i].min_level[(int)GET_CLASS(ch)], spells[i].command, mag_manacost(ch, i));
         }
       }
     }
   } else {
-    class = parse_class_spec(arg);
+    class = parse_class_spec(g_arg);
     if (class == CLASS_UNDEFINED) {
       send_to_char("I have never heard of that class.\r\n", ch);
       return;
     }
 
-    sprinttype(class, pc_class_types, buf);
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%ss can use the following spells:\r\n", buf);
+    sprinttype(class, pc_class_types, g_buf);
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%ss can use the following spells:\r\n", g_buf);
 
     for (i = 1; spells[i].command[0] != '\n'; i++) {
       if (spells[i].spell_pointer) {
-        if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "**OVERFLOW**\r\n");
+        if (strlen(g_buf2) >= MAX_STRING_LENGTH - 32) {
+          safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "**OVERFLOW**\r\n");
           break;
         }
         if (spells[i].min_level[class] < LVL_IMMORT) {
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-30s\r\n",
+          safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "%2d: %-30s\r\n",
                         spells[i].min_level[class], spells[i].command);
         }
       }
     }
   }
-  page_string(ch->desc, buf2, 1);
+  page_string(ch->desc, g_buf2, 1);
 }
 
 char *get_spell_name(int spellnum) {

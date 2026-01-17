@@ -72,7 +72,7 @@ struct descriptor_data *descriptor_list = NULL; /* master desc list */
 struct txt_block *bufpool = 0;                  /* pool of large output buffers */
 int buf_largecount = 0;                         /* # of large buffers which exist */
 int buf_overflows = 0;                          /* # of overflows of output */
-int buf_switches = 0;                           /* # of switches from small to large buf */
+int buf_switches = 0;                           /* # of switches from small to large g_buf */
 int circle_shutdown = 0;                        /* clean shutdown */
 int circle_reboot = 0;                          /* reboot the game after a shutdown */
 int no_specials = 0;                            /* Suppress ass. of special routines */
@@ -127,7 +127,7 @@ void perform_violence(void);
 void show_string(struct descriptor_data *d, char *input);
 int isbanned(char *hostname);
 void weather_and_time(int mode);
-void mprog_act_trigger(char *buf, struct char_data *mob, struct char_data *ch, struct obj_data *obj, void *vo);
+void mprog_act_trigger(char *g_buf, struct char_data *mob, struct char_data *ch, struct obj_data *obj, void *vo);
 void mprog_time_trigger(struct time_info_data time);
 void perform_mobprog_activity();
 void perform_mob_hunt();
@@ -164,12 +164,12 @@ int main(int argc, char **argv) {
       else if (++pos < argc)
         dir = argv[pos];
       else {
-        stderr_log("Directory arg expected after option -d.");
+        stderr_log("Directory g_arg expected after option -d.");
         fflush(NULL);
         exit(1);
       }
-      safe_snprintf(buf, sizeof(buf), "Directory set to: %s", dir);
-      stderr_log(buf);
+      safe_snprintf(g_buf, sizeof(g_buf), "Directory set to: %s", dir);
+      stderr_log(g_buf);
       break;
     case 'm':
       mini_mud = 1;
@@ -189,8 +189,8 @@ int main(int argc, char **argv) {
       stderr_log("Suppressing assignment of special routines.");
       break;
     default:
-      safe_snprintf(buf, sizeof(buf), "SYSERR: Unknown option -%c in argument string.", *(argv[pos] + 1));
-      stderr_log(buf);
+      safe_snprintf(g_buf, sizeof(g_buf), "SYSERR: Unknown option -%c in argument string.", *(argv[pos] + 1));
+      stderr_log(g_buf);
       break;
     }
     pos++;
@@ -207,8 +207,8 @@ int main(int argc, char **argv) {
       exit(1);
     }
   }
-  safe_snprintf(buf, sizeof(buf), "%s/misc/%s", dir, SWPIDFILE);
-  if ((pid_file = fopen(buf, "r")) != NULL) {
+  safe_snprintf(g_buf, sizeof(g_buf), "%s/misc/%s", dir, SWPIDFILE);
+  if ((pid_file = fopen(g_buf, "r")) != NULL) {
     pid_t old_pid;
 
     if (fscanf(pid_file, "%d", (int *)&old_pid)) {
@@ -220,55 +220,55 @@ int main(int argc, char **argv) {
     }
     fclose(pid_file);
   }
-  if ((pid_file = fopen(buf, "w")) == NULL) {
+  if ((pid_file = fopen(g_buf, "w")) == NULL) {
     raise(SIGABRT);
   }
   fprintf(pid_file, "%d\n", (int)getpid());
   fclose(pid_file);
 
   /* dnslookup */
-  safe_snprintf(buf, sizeof(buf), "%s/%s", dir, DNS_RECEIVE_FIFO);
-  unlink(buf);
-  if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
+  safe_snprintf(g_buf, sizeof(g_buf), "%s/%s", dir, DNS_RECEIVE_FIFO);
+  unlink(g_buf);
+  if (mkfifo(g_buf, S_IRUSR | S_IWUSR) == -1) {
     perror("mkfifo receive");
     exit(1);
   }
-  if ((dns_receive_fifo = open(buf, O_RDWR | O_NONBLOCK)) == -1) {
+  if ((dns_receive_fifo = open(g_buf, O_RDWR | O_NONBLOCK)) == -1) {
     perror("Open receive fifo");
     exit(1);
   }
-  safe_snprintf(buf, sizeof(buf), "%s/%s", dir, DNS_SEND_FIFO);
-  unlink(buf);
-  if (mkfifo(buf, S_IRUSR | S_IWUSR) == -1) {
+  safe_snprintf(g_buf, sizeof(g_buf), "%s/%s", dir, DNS_SEND_FIFO);
+  unlink(g_buf);
+  if (mkfifo(g_buf, S_IRUSR | S_IWUSR) == -1) {
     perror("mkfifo send");
     exit(1);
   }
-  if ((dns_send_fifo = open(buf, O_RDWR | O_NONBLOCK)) == -1) {
+  if ((dns_send_fifo = open(g_buf, O_RDWR | O_NONBLOCK)) == -1) {
     perror("Open send fifo");
     exit(1);
   }
   if (!(lookup_host_process = fork())) {
-    safe_snprintf(buf, sizeof(buf), "%s/../bin/lookup_process", dir);
-    stderr_log(buf);
-    execl(buf, "lookup_process", "-d", dir, NULL);
+    safe_snprintf(g_buf, sizeof(g_buf), "%s/../bin/lookup_process", dir);
+    stderr_log(g_buf);
+    execl(g_buf, "lookup_process", "-d", dir, NULL);
   }
   /* end dnslookup */
 
-  safe_snprintf(buf, sizeof(buf), "Running game on port %d.", port);
-  stderr_log(buf);
+  safe_snprintf(g_buf, sizeof(g_buf), "Running game on port %d.", port);
+  stderr_log(g_buf);
 
   if (chdir(dir) < 0) {
     perror("Fatal error changing to data directory");
     fflush(NULL);
     exit(1);
   }
-  safe_snprintf(buf, sizeof(buf), "Using %s as data directory.", dir);
-  stderr_log(buf);
+  safe_snprintf(g_buf, sizeof(g_buf), "Using %s as data directory.", dir);
+  stderr_log(g_buf);
 
   init_game(port);
 
-  safe_snprintf(buf, sizeof(buf), "%s/misc/%s", dir, SWPIDFILE);
-  if (unlink(buf)) {
+  safe_snprintf(g_buf, sizeof(g_buf), "%s/misc/%s", dir, SWPIDFILE);
+  if (unlink(g_buf)) {
     perror("unlink");
   }
   return 0;
@@ -428,8 +428,8 @@ int get_avail_descs(void) {
     fflush(NULL);
     exit(1);
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Setting player limit to %d.", max_descs);
-  stderr_log(buf);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Setting player limit to %d.", max_descs);
+  stderr_log(g_buf);
   return max_descs;
 }
 
@@ -675,9 +675,9 @@ void game_loop(int mother_desc) {
     }
 
     if (!(pulse % (SECS_PER_MUD_HOUR * PASSES_PER_SEC))) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "*TICK* Gametime %dy %dm %dd %dh", time_info.year, time_info.month,
-                    time_info.day, time_info.hours);
-      mudlog(logbuffer, 'T', COM_IMMORT, FALSE);
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "*TICK* Gametime %dy %dm %dd %dh", time_info.year,
+                    time_info.month, time_info.day, time_info.hours);
+      mudlog(g_logbuffer, 'T', COM_IMMORT, FALSE);
       weather_and_time(1);
       point_update();
       mprog_time_trigger(time_info);
@@ -788,17 +788,17 @@ void perform_idle_check(void) {
         SEND_TO_Q_COLOR(nmotd, d);
         SEND_TO_Q("\r\n\n*** PRESS RETURN: ", d);
         STATE(d) = CON_RMOTD;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s [%s] new player. (auto approved)", GET_NAME(d->character),
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s [%s] new player. (auto approved)", GET_NAME(d->character),
                       GET_HOST(d->character));
         REMOVE_BIT(PRF_FLAGS(d->character), PRF_DELETED);
-        mudlog(buf, 'C', COM_IMMORT, TRUE);
+        mudlog(g_buf, 'C', COM_IMMORT, TRUE);
       } else {
         d->idle_cnt++;
         if (!(d->idle_cnt % 10) || (d->idle_cnt == 1)) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s (%s %s %s) [%s]. (needs approval)", GET_NAME(d->character),
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s (%s %s %s) [%s]. (needs approval)", GET_NAME(d->character),
                         genders[(int)GET_SEX(d->character)], pc_race_types[GET_RACE(d->character)],
                         pc_class_types[(int)GET_CLASS(d->character)], GET_HOST(d->character));
-          mudlog(buf, 'C', COM_IMMORT, TRUE);
+          mudlog(g_buf, 'C', COM_IMMORT, TRUE);
         }
       }
       break;
@@ -833,18 +833,18 @@ void record_usage(void) {
       sockets_playing++;
   }
 
-  safe_snprintf(buf, sizeof(buf), "nusage: %-3d sockets connected, %-3d sockets playing", sockets_connected,
+  safe_snprintf(g_buf, sizeof(g_buf), "nusage: %-3d sockets connected, %-3d sockets playing", sockets_connected,
                 sockets_playing);
-  stderr_log(buf);
+  stderr_log(g_buf);
 
 #ifdef RUSAGE
   {
     struct rusage ru;
 
     getrusage(0, &ru);
-    safe_snprintf(buf, sizeof(buf), "rusage: %d %d %d %d %d %d %d", ru.ru_utime.tv_sec, ru.ru_stime.tv_sec,
+    safe_snprintf(g_buf, sizeof(g_buf), "rusage: %d %d %d %d %d %d %d", ru.ru_utime.tv_sec, ru.ru_stime.tv_sec,
                   ru.ru_maxrss, ru.ru_ixrss, ru.ru_ismrss, ru.ru_idrss, ru.ru_isrss);
-    stderr_log(buf);
+    stderr_log(g_buf);
   }
 #endif
 }
@@ -1042,7 +1042,7 @@ void flush_queues(struct descriptor_data *d) {
     d->large_outbuf->next = bufpool;
     bufpool = d->large_outbuf;
   }
-  while (get_from_q(&d->input, buf2, &dummy))
+  while (get_from_q(&d->input, g_buf2, &dummy))
     ;
 }
 
@@ -1146,15 +1146,15 @@ int new_descriptor(int s) {
   /* determine if the site is banned */
   if (isbanned(newd->hostIP) == BAN_ALL) {
     close(desc);
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", newd->hostIP);
-    mudlog(buf2, 'S', COM_IMMORT, TRUE);
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", newd->hostIP);
+    mudlog(g_buf2, 'S', COM_IMMORT, TRUE);
     FREE(newd);
     return 0;
   }
 
   /* Log new connections - probably unnecessary, but you may want it */
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "New connection from [%s]", newd->hostIP);
-  mudlog(buf2, 'S', COM_ADMIN, FALSE);
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "New connection from [%s]", newd->hostIP);
+  mudlog(g_buf2, 'S', COM_ADMIN, FALSE);
 
   /* initialize descriptor data */
   newd->descriptor = desc;
@@ -1501,17 +1501,17 @@ void close_socket(struct descriptor_data *d) {
         save_text(d->character);
       }
       act("$n has lost $s link.", TRUE, d->character, 0, 0, TO_ROOM);
-      safe_snprintf(buf, sizeof(buf), "Closing link to: %s.", GET_NAME(d->character));
-      mudlog(buf, 'C', COM_IMMORT, TRUE);
-      plog(buf, d->character, 0);
+      safe_snprintf(g_buf, sizeof(g_buf), "Closing link to: %s.", GET_NAME(d->character));
+      mudlog(g_buf, 'C', COM_IMMORT, TRUE);
+      plog(g_buf, d->character, 0);
       d->character->desc = NULL;
     } else {
-      safe_snprintf(buf, sizeof(buf), "Losing player: %s (%s).",
+      safe_snprintf(g_buf, sizeof(g_buf), "Losing player: %s (%s).",
                     GET_NAME(d->character) ? GET_NAME(d->character) : "<null>", connected_types[STATE(d)]);
-      mudlog(buf, 'C', COM_IMMORT, TRUE);
+      mudlog(g_buf, 'C', COM_IMMORT, TRUE);
       if (GET_NAME(d->character) != NULL && !PRF_FLAGGED(d->character, PRF_DELETED) &&
           (STATE(d) == CON_MENU || STATE(d) == CON_CLOSE)) {
-        plog(buf, d->character, 0);
+        plog(g_buf, d->character, 0);
         if (!PLR_FLAGGED(d->character, PLR_RENT) && !PLR_FLAGGED(d->character, PLR_CRYO) &&
             !PLR_FLAGGED(d->character, PLR_CAMP))
           save_char_text(d->character, NOWHERE);
@@ -1682,14 +1682,14 @@ void send_to_char(char *messg, struct char_data *ch) {
     return;
   }
 
-  buf[0] = '\0';
-  point2 = buf;
+  g_buf[0] = '\0';
+  point2 = g_buf;
   if (messg && ch->desc) {
     if (PRF_FLAGGED(ch, PRF_COLOR_2)) {
       for (point = messg; point && *point; point++) {
         if (*point == '{') {
           point++;
-          size_t remaining = sizeof(buf) - (point2 - buf);
+          size_t remaining = sizeof(g_buf) - (point2 - g_buf);
           if (remaining > 1) {
             safe_snprintf(point2, remaining, "%s", colorf(*point, ch));
             for (; *point2; point2++)
@@ -1697,28 +1697,28 @@ void send_to_char(char *messg, struct char_data *ch) {
           }
           continue;
         }
-        if (point2 - buf < (int)sizeof(buf) - 1) {
+        if (point2 - g_buf < (int)sizeof(g_buf) - 1) {
           *point2 = *point;
           *++point2 = '\0';
         }
       }
       *point2 = '\0';
-      SEND_TO_Q(buf, ch->desc);
+      SEND_TO_Q(g_buf, ch->desc);
     } else {
       for (point = messg; *point; point++) {
         if (*point == '{') {
           point++;
-          if (*point == '{' && point2 - buf < (int)sizeof(buf) - 1)
+          if (*point == '{' && point2 - g_buf < (int)sizeof(g_buf) - 1)
             *point2 = '{';
           continue;
         }
-        if (point2 - buf < (int)sizeof(buf) - 1) {
+        if (point2 - g_buf < (int)sizeof(g_buf) - 1) {
           *point2 = *point;
           *++point2 = '\0';
         }
       }
       *point2 = '\0';
-      SEND_TO_Q(buf, ch->desc);
+      SEND_TO_Q(g_buf, ch->desc);
     }
   }
   return;
@@ -1729,13 +1729,13 @@ void SEND_TO_Q_COLOR(char *messg, struct descriptor_data *d) {
   char *point2;
   char buf[MAX_STRING_LENGTH * 4];
 
-  buf[0] = '\0';
-  point2 = buf;
+  g_buf[0] = '\0';
+  point2 = g_buf;
   if (d->color) {
     for (point = messg; *point; point++) {
       if (*point == '{') {
         point++;
-        size_t remaining = sizeof(buf) - (point2 - buf);
+        size_t remaining = sizeof(g_buf) - (point2 - g_buf);
         if (remaining > 1) {
           safe_snprintf(point2, remaining, "%s", colorf_d(*point));
           for (; *point2; point2++)
@@ -1743,13 +1743,13 @@ void SEND_TO_Q_COLOR(char *messg, struct descriptor_data *d) {
         }
         continue;
       }
-      if (point2 - buf < (int)sizeof(buf) - 1) {
+      if (point2 - g_buf < (int)sizeof(g_buf) - 1) {
         *point2 = *point;
         *++point2 = '\0';
       }
     }
     *point2 = '\0';
-    SEND_TO_Q(buf, d);
+    SEND_TO_Q(g_buf, d);
   } else {
     for (point = messg; *point; point++) {
       if (*point == '{') {
@@ -1762,7 +1762,7 @@ void SEND_TO_Q_COLOR(char *messg, struct descriptor_data *d) {
       *++point2 = '\0';
     }
     *point2 = '\0';
-    SEND_TO_Q(buf, d);
+    SEND_TO_Q(g_buf, d);
   }
   return;
 }
@@ -1809,11 +1809,11 @@ char *ACTNULL = "<NULL>";
 
 /* higher-level communication: the act() function */
 void perform_act(char *orig, struct char_data *ch, struct obj_data *obj, void *vict_obj, struct char_data *to) {
-  register char *i = NULL, *buf, *tmpbuf, *lbuf2;
+  register char *i = NULL, *g_buf, *tmpbuf, *lbuf2;
   static char lbuf[MAX_STRING_LENGTH];
   static char lbuf3[MAX_STRING_LENGTH];
 
-  buf = lbuf;
+  g_buf = lbuf;
   lbuf2 = lbuf3;
   tmpbuf = lbuf3;
 
@@ -1882,8 +1882,8 @@ void perform_act(char *orig, struct char_data *ch, struct obj_data *obj, void *v
         break;
       default:
         stderr_log("SYSERR: Illegal $-code to act():");
-        safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: %s", orig);
-        stderr_log(buf1);
+        safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: %s", orig);
+        stderr_log(g_buf1);
         break;
       }
       while ((i != NULL) && (*tmpbuf = *(i++)))
@@ -1910,16 +1910,16 @@ void perform_act(char *orig, struct char_data *ch, struct obj_data *obj, void *v
       if (PRF_FLAGGED(to, PRF_COLOR_2)) {
         i = colorf(*lbuf2, to);
       }
-      while ((i != NULL) && (*buf = *(i++)))
-        buf++;
+      while ((i != NULL) && (*g_buf = *(i++)))
+        g_buf++;
       lbuf2++;
-    } else if (!(*(buf++) = *(lbuf2++)))
+    } else if (!(*(g_buf++) = *(lbuf2++)))
       break;
   }
 
-  *(--buf) = '\r';
-  *(++buf) = '\n';
-  *(++buf) = '\0';
+  *(--g_buf) = '\r';
+  *(++g_buf) = '\n';
+  *(++g_buf) = '\0';
   if (to->desc)
     SEND_TO_Q(lbuf, to->desc);
   if (ch && MOBTrigger)

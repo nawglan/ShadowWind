@@ -97,18 +97,18 @@ ACMD(do_action) {
   action = &soc_mess_list[act_nr];
 
   if (action->char_found) {
-    one_argument(argument, buf);
+    one_argument(argument, g_buf);
   } else {
-    *buf = '\0';
+    *g_buf = '\0';
   }
 
-  if (!*buf) {
+  if (!*g_buf) {
     send_to_char(action->char_no_arg, ch);
     send_to_char("\r\n", ch);
     act(action->others_no_arg, action->hide, ch, 0, 0, TO_ROOM);
     return;
   }
-  if (!(vict = get_char_room_vis(ch, buf))) {
+  if (!(vict = get_char_room_vis(ch, g_buf))) {
     send_to_char(action->not_found, ch);
     send_to_char("\r\n", ch);
   } else if (vict == ch) {
@@ -129,15 +129,15 @@ ACMD(do_action) {
 ACMD(do_insult) {
   struct char_data *victim;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (*arg) {
-    if (!(victim = get_char_room_vis(ch, arg))) {
+  if (*g_arg) {
+    if (!(victim = get_char_room_vis(ch, g_arg))) {
       send_to_char("Can't hear you!\r\n", ch);
     } else {
       if (victim != ch) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You insult %s.\r\n", GET_NAME(victim));
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "You insult %s.\r\n", GET_NAME(victim));
+        send_to_char(g_buf, ch);
 
         switch (number(0, 2)) {
         case 0:
@@ -176,18 +176,18 @@ ACMD(do_insult) {
 char *fread_action(FILE *fl, int nr) {
   char buf[MAX_STRING_LENGTH], *rslt;
 
-  fgets(buf, MAX_STRING_LENGTH, fl);
+  fgets(g_buf, MAX_STRING_LENGTH, fl);
   if (feof(fl)) {
     fprintf(stderr, "fread_action - unexpected EOF near action #%d", nr);
     fflush(NULL);
     exit(1);
   }
-  if (*buf == '#') {
+  if (*g_buf == '#') {
     return (NULL);
   } else {
-    *(buf + strlen(buf) - 1) = '\0';
-    CREATE(rslt, char, strlen(buf) + 1);
-    memcpy(rslt, buf, strlen(buf) + 1);
+    *(g_buf + strlen(g_buf) - 1) = '\0';
+    CREATE(rslt, char, strlen(g_buf) + 1);
+    memcpy(rslt, g_buf, strlen(g_buf) + 1);
     return (rslt);
   }
 }
@@ -201,8 +201,8 @@ void boot_social_messages(void) {
 
   /* open social file */
   if (!(fl = fopen(SOCMESS_FILE, "r"))) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Can't open socials file '%s'", SOCMESS_FILE);
-    perror(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Can't open socials file '%s'", SOCMESS_FILE);
+    perror(g_buf);
     fflush(NULL);
     exit(1);
   }
@@ -223,8 +223,8 @@ void boot_social_messages(void) {
       break;
     }
     if ((nr = find_command(next_soc)) < 0) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown social '%s' in social file", next_soc);
-      stderr_log(buf);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown social '%s' in social file", next_soc);
+      stderr_log(g_buf);
     }
     if (fscanf(fl, " %d %d \n", &hide, &min_pos) != 2) {
       fprintf(stderr, "Format error in social file near social '%s'\n", next_soc);

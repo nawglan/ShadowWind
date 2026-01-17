@@ -195,8 +195,8 @@ void zedit_new_zone(struct char_data *ch, int vzone_num) {
   /*
    * Create the zone file.
    */
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, vzone_num);
-  if (!(fp = fopen(buf, "w"))) {
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, vzone_num);
+  if (!(fp = fopen(g_buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new zone file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write zone file.\r\n", ch);
     return;
@@ -219,8 +219,8 @@ void zedit_new_zone(struct char_data *ch, int vzone_num) {
   /*
    * Create the room file.
    */
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.wld", WLD_PREFIX, vzone_num);
-  if (!(fp = fopen(buf, "w"))) {
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s/%d.wld", WLD_PREFIX, vzone_num);
+  if (!(fp = fopen(g_buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new world file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write world file.\r\n", ch);
     return;
@@ -231,8 +231,8 @@ void zedit_new_zone(struct char_data *ch, int vzone_num) {
   /*
    * Create the mobile file.
    */
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.mob", MOB_PREFIX, vzone_num);
-  if (!(fp = fopen(buf, "w"))) {
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s/%d.mob", MOB_PREFIX, vzone_num);
+  if (!(fp = fopen(g_buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new mob file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write mobile file.\r\n", ch);
     return;
@@ -243,8 +243,8 @@ void zedit_new_zone(struct char_data *ch, int vzone_num) {
   /*
    * Create the object file.
    */
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.obj", OBJ_PREFIX, vzone_num);
-  if (!(fp = fopen(buf, "w"))) {
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s/%d.obj", OBJ_PREFIX, vzone_num);
+  if (!(fp = fopen(g_buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new obj file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write object file.\r\n", ch);
     return;
@@ -255,8 +255,8 @@ void zedit_new_zone(struct char_data *ch, int vzone_num) {
   /*
    * Create the shop file.
    */
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s/%d.shp", SHP_PREFIX, vzone_num);
-  if (!(fp = fopen(buf, "w"))) {
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s/%d.shp", SHP_PREFIX, vzone_num);
+  if (!(fp = fopen(g_buf, "w"))) {
     mudlog("SYSERR: OLC: Can't write new shop file", 'G', COM_BUILDER, TRUE);
     send_to_char("Could not write shop file.\r\n", ch);
     return;
@@ -345,8 +345,8 @@ void zedit_new_zone(struct char_data *ch, int vzone_num) {
    * Previously, creating a new zone while invisible gave you away.
    * That quirk has been fixed with the MAX() statement.
    */
-  safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s creates new zone #%d", GET_NAME(ch), vzone_num);
-  mudlog(buf, 'G', COM_BUILDER, TRUE);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s creates new zone #%d", GET_NAME(ch), vzone_num);
+  mudlog(g_buf, 'G', COM_BUILDER, TRUE);
   send_to_char("Zone created successfully.\r\n", ch);
 
   return;
@@ -386,12 +386,12 @@ void zedit_create_index(int znum, char *type) {
   safe_snprintf(new_name, sizeof(new_name), "%s/newindex", prefix);
 
   if (!(oldfile = fopen(old_name, "r"))) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", old_name);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", old_name);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     return;
   } else if (!(newfile = fopen(new_name, "w"))) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", new_name);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: OLC: Failed to open %s", new_name);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     return;
   }
 
@@ -399,19 +399,19 @@ void zedit_create_index(int znum, char *type) {
    * Index contents must be in order: search through the old file for the
    * right place, insert the new file, then copy the rest over.
    */
-  safe_snprintf(buf1, MAX_STRING_LENGTH, "%d.%s", znum, type);
-  while (get_line(oldfile, buf)) {
-    if (*buf == '$') {
-      fprintf(newfile, "%s\n$\n", (!found ? buf1 : ""));
+  safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%d.%s", znum, type);
+  while (get_line(oldfile, g_buf)) {
+    if (*g_buf == '$') {
+      fprintf(newfile, "%s\n$\n", (!found ? g_buf1 : ""));
       break;
     } else if (!found) {
-      sscanf(buf, "%d", &num);
+      sscanf(g_buf, "%d", &num);
       if (num > znum) {
         found = TRUE;
-        fprintf(newfile, "%s\n", buf1);
+        fprintf(newfile, "%s\n", g_buf1);
       }
     }
-    fprintf(newfile, "%s\n", buf);
+    fprintf(newfile, "%s\n", g_buf);
   }
 
   fclose(newfile);
@@ -513,9 +513,9 @@ void zedit_save_to_disk(int zone_num) {
 
   safe_snprintf(fname, sizeof(fname), "%s/%d.new", ZON_PREFIX, zone_table[zone_num].number);
   if (!(zfile = fopen(fname, "w"))) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: zedit_save_to_disk:  Can't write zone %d.",
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: OLC: zedit_save_to_disk:  Can't write zone %d.",
                   zone_table[zone_num].number);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     return;
   }
 
@@ -635,9 +635,9 @@ void zedit_save_to_disk(int zone_num) {
        */
       continue;
     default:
-      safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: OLC: z_save_to_disk(): Unknown cmd '%c' - NOT saving",
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "SYSERR: OLC: z_save_to_disk(): Unknown cmd '%c' - NOT saving",
                     ZCMD.command);
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
+      mudlog(g_buf, 'G', COM_BUILDER, TRUE);
       continue;
     }
     if (arg4)
@@ -647,12 +647,12 @@ void zedit_save_to_disk(int zone_num) {
   }
   fprintf(zfile, "S\n$\n");
   fclose(zfile);
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, zone_table[zone_num].number);
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s/%d.zon", ZON_PREFIX, zone_table[zone_num].number);
   /*
    * We're fubar'd if we crash between the two lines below.
    */
-  remove(buf2);
-  rename(fname, buf2);
+  remove(g_buf2);
+  rename(fname, g_buf2);
 }
 
 /*-------------------------------------------------------------------*/
@@ -695,9 +695,9 @@ void add_cmd_to_list(struct reset_com **list, struct reset_com *newcmd, int pos)
   for (i = 0, l = 0; i <= count; i++) {
     newlist[i] = ((i == pos) ? *newcmd : (*list)[l++]);
 #if defined(DEBUG)
-    safe_snprintf(buf, MAX_STRING_LENGTH, "add_cmd_to_list: added %c %d %d %d %d", newlist[i].command, newlist[i].arg1,
-                  newlist[i].arg2, newlist[i].arg3, newlist[i].line);
-    stderr_log(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "add_cmd_to_list: added %c %d %d %d %d", newlist[i].command,
+                  newlist[i].arg1, newlist[i].arg2, newlist[i].arg3, newlist[i].line);
+    stderr_log(g_buf);
 #endif
   }
 
@@ -736,16 +736,16 @@ void remove_cmd_from_list(struct reset_com **list, int pos) {
   for (i = 0, l = 0; i < count; i++) {
     if (i != pos) {
 #if defined(DEBUG)
-      safe_snprintf(buf, MAX_STRING_LENGTH, "remove_cmd_from_list: kept %c %d %d %d %d", (*list)[i].command,
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "remove_cmd_from_list: kept %c %d %d %d %d", (*list)[i].command,
                     (*list)[i].arg1, (*list)[i].arg2, (*list)[i].arg3, (*list)[i].line);
 #endif
       newlist[l++] = (*list)[i];
     }
 #if defined(DEBUG)
     else
-      safe_snprintf(buf, MAX_STRING_LENGTH, "remove_cmd_from_list: deleted %c %d %d %d %d", (*list)[i].command,
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "remove_cmd_from_list: deleted %c %d %d %d %d", (*list)[i].command,
                     (*list)[i].arg1, (*list)[i].arg2, (*list)[i].arg3, (*list)[i].line);
-    stderr_log(buf);
+    stderr_log(g_buf);
 #endif
   }
   /*
@@ -764,18 +764,18 @@ void zedit_disp_season_flags(struct descriptor_data *d) {
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; *season_flags[i] != '\n'; i++) {
-    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, season_flags[i]);
+    size_t blen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, season_flags[i]);
     if (!(++columns % 2))
-      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
-    send_to_char(buf, d->character);
+      safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
+    send_to_char(g_buf, d->character);
   }
-  sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, buf1);
-  safe_snprintf(buf, MAX_STRING_LENGTH,
+  sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, g_buf1);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH,
                 "\r\n"
                 "Current settings  : %s%s%s\r\n"
                 "Enter zone setting (0 to quit) : ",
-                cyn, buf1, nrm);
-  send_to_char(buf, d->character);
+                cyn, g_buf1, nrm);
+  send_to_char(g_buf, d->character);
 }
 
 /*-------------------------------------------------------------------*/
@@ -786,18 +786,18 @@ void zedit_disp_zone_extras(struct descriptor_data *d) {
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; *zone_extras[i] != '\n'; i++) {
-    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, zone_extras[i]);
+    size_t blen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, zone_extras[i]);
     if (!(++columns % 2))
-      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
-    send_to_char(buf, d->character);
+      safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
+    send_to_char(g_buf, d->character);
   }
-  sprintbit(ZON_EXTRAS(OLC_ZONE(d)), zone_extras, buf1);
-  safe_snprintf(buf, MAX_STRING_LENGTH,
+  sprintbit(ZON_EXTRAS(OLC_ZONE(d)), zone_extras, g_buf1);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH,
                 "\r\n"
                 "Current settings  : %s%s%s\r\n"
                 "Enter zone setting (0 to quit) : ",
-                cyn, buf1, nrm);
-  send_to_char(buf, d->character);
+                cyn, g_buf1, nrm);
+  send_to_char(g_buf, d->character);
 }
 
 /*-------------------------------------------------------------------*/
@@ -810,11 +810,11 @@ void zedit_disp_climate_info(struct descriptor_data *d) {
   safe_snprintf(abuf, sizeof(abuf), "1) Season Pattern: %s\r\n",
                 season_patterns[ZON_CLIMATE(OLC_ZONE(d)).season_pattern - 1]);
   send_to_char(abuf, d->character);
-  sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, buf1);
+  sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, g_buf1);
   safe_snprintf(abuf, sizeof(abuf),
                 "2) Season Flags: %s\r\n"
                 "3) Season Energy: %d\r\n",
-                buf1, ZON_CLIMATE(OLC_ZONE(d)).energy_add);
+                g_buf1, ZON_CLIMATE(OLC_ZONE(d)).energy_add);
   send_to_char(abuf, d->character);
   len = safe_snprintf(abuf, sizeof(abuf), "4) Season Winds: ");
   for (i = 0; i < MAX_SEASONS; i++)
@@ -946,12 +946,12 @@ void zedit_disp_menu(struct descriptor_data *d) {
   size_t buflen;
 
   get_char_cols(d->character);
-  sprintbit(ZON_EXTRAS(OLC_ZONE(d)), zone_extras, buf1);
+  sprintbit(ZON_EXTRAS(OLC_ZONE(d)), zone_extras, g_buf1);
 
   /*
    * Menu header
    */
-  buflen = safe_snprintf(buf, MAX_STRING_LENGTH,
+  buflen = safe_snprintf(g_buf, MAX_STRING_LENGTH,
 #if defined(CLEAR_SCREEN)
                          "[H[J"
 #endif
@@ -970,7 +970,7 @@ void zedit_disp_menu(struct descriptor_data *d) {
                          OLC_ZONE(d)->reset_mode
                              ? ((OLC_ZONE(d)->reset_mode == 1) ? "Reset when no players are in zone." : "Normal reset.")
                              : "Never reset",
-                         nrm, grn, nrm, yel, buf1, nrm, grn, nrm);
+                         nrm, grn, nrm, yel, g_buf1, nrm, grn, nrm);
 
   /*
    * Print the commands for this room into display buffer.
@@ -981,37 +981,37 @@ void zedit_disp_menu(struct descriptor_data *d) {
      */
     switch (MYCMD.command) {
     case 'M':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d", MYCMD.if_flag ? " then " : "",
-                    mob_proto[MYCMD.arg1].player.short_descr, cyn, mob_index[MYCMD.arg1].virtual, yel, MYCMD.arg2,
-                    MYCMD.arg4);
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d",
+                    MYCMD.if_flag ? " then " : "", mob_proto[MYCMD.arg1].player.short_descr, cyn,
+                    mob_index[MYCMD.arg1].virtual, yel, MYCMD.arg2, MYCMD.arg4);
       break;
     case 'G':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%sGive it %s [%s%d%s], Max : %d", MYCMD.if_flag ? " then " : "",
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%sGive it %s [%s%d%s], Max : %d", MYCMD.if_flag ? " then " : "",
                     obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, MYCMD.arg2);
       break;
     case 'O':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d", MYCMD.if_flag ? " then " : "",
-                    obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel, MYCMD.arg2,
-                    MYCMD.arg4);
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%sLoad %s [%s%d%s], Max : %d, %%load : %d",
+                    MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn,
+                    obj_index[MYCMD.arg1].virtual, yel, MYCMD.arg2, MYCMD.arg4);
       break;
     case 'E':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%sEquip with %s [%s%d%s], %s, Max : %d", MYCMD.if_flag ? " then " : "",
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%sEquip with %s [%s%d%s], %s, Max : %d", MYCMD.if_flag ? " then " : "",
                     obj_proto[MYCMD.arg1].short_description, cyn, obj_index[MYCMD.arg1].virtual, yel,
                     equipment_types[MYCMD.arg3], MYCMD.arg2);
       break;
     case 'P':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%sPut %s [%s%d%s] in %s [%s%d%s], Max : %d",
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%sPut %s [%s%d%s] in %s [%s%d%s], Max : %d",
                     MYCMD.if_flag ? " then " : "", obj_proto[MYCMD.arg1].short_description, cyn,
                     obj_index[MYCMD.arg1].virtual, yel, obj_proto[MYCMD.arg3].short_description, cyn,
                     obj_index[MYCMD.arg3].virtual, yel, MYCMD.arg2);
       break;
     case 'R':
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%sRemove %s [%s%d%s] from room.", MYCMD.if_flag ? " then " : "",
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%sRemove %s [%s%d%s] from room.", MYCMD.if_flag ? " then " : "",
                     obj_proto[MYCMD.arg2].short_description, cyn, obj_index[MYCMD.arg2].virtual, yel);
       break;
     case 'D':
       safe_snprintf(
-          buf2, MAX_STRING_LENGTH, "%sSet door %s as %s.", MYCMD.if_flag ? " then " : "", dirs[MYCMD.arg2],
+          g_buf2, MAX_STRING_LENGTH, "%sSet door %s as %s.", MYCMD.if_flag ? " then " : "", dirs[MYCMD.arg2],
           MYCMD.arg3 ? ((MYCMD.arg3 == 1)
                             ? "closed"
                             : ((MYCMD.arg3 == 2)
@@ -1023,27 +1023,27 @@ void zedit_disp_menu(struct descriptor_data *d) {
       );
       break;
     default:
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "<Unknown Command>");
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "<Unknown Command>");
       break;
     }
     /*
      * Build the display buffer for this command
      */
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "%s%d - %s%s\r\n", nrm, counter++, yel, buf2);
-    buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s", buf1);
+    safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%s%d - %s%s\r\n", nrm, counter++, yel, g_buf2);
+    buflen += safe_snprintf(g_buf + buflen, MAX_STRING_LENGTH - buflen, "%s", g_buf1);
     subcmd++;
   }
   /*
    * Finish off menu
    */
-  safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen,
+  safe_snprintf(g_buf + buflen, MAX_STRING_LENGTH - buflen,
                 "%s%d - <END OF LIST>\r\n"
                 "%sN%s) New command.\r\n"
                 "%sE%s) Edit a command.\r\n"
                 "%sD%s) Delete a command.\r\n"
                 "%sQ%s) Quit\r\nEnter your choice : ",
                 nrm, counter, grn, nrm, grn, nrm, grn, nrm, grn, nrm);
-  send_to_char(buf, d->character);
+  send_to_char(g_buf, d->character);
 
   OLC_MODE(d) = ZEDIT_MAIN_MENU;
 }
@@ -1055,7 +1055,7 @@ void zedit_disp_menu(struct descriptor_data *d) {
  */
 void zedit_disp_comtype(struct descriptor_data *d) {
   get_char_cols(d->character);
-  safe_snprintf(buf, MAX_STRING_LENGTH,
+  safe_snprintf(g_buf, MAX_STRING_LENGTH,
 #if defined(CLEAR_SCREEN)
                 "[H[J"
 #endif
@@ -1065,7 +1065,7 @@ void zedit_disp_comtype(struct descriptor_data *d) {
                 "%sR%s) Remove an object from the room\r\n"
                 "What sort of command will this be? : ",
                 grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm, grn, nrm);
-  send_to_char(buf, d->character);
+  send_to_char(g_buf, d->character);
   OLC_MODE(d) = ZEDIT_COMMAND_TYPE;
 }
 
@@ -1126,8 +1126,8 @@ void zedit_disp_arg2(struct descriptor_data *d) {
     break;
   case 'D':
     while (*dirs[i] != '\n') {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%d) Exit %s.\r\n", i, dirs[i]);
-      send_to_char(buf, d->character);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%d) Exit %s.\r\n", i, dirs[i]);
+      send_to_char(g_buf, d->character);
       i++;
     }
     send_to_char("Enter exit number for door : ", d->character);
@@ -1159,9 +1159,9 @@ void zedit_disp_arg3(struct descriptor_data *d) {
   switch (OLC_CMD(d).command) {
   case 'E':
     while (*equipment_types[i] != '\n') {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%2d) %26.26s %2d) %26.26s\r\n", i, equipment_types[i], i + 1,
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%2d) %26.26s %2d) %26.26s\r\n", i, equipment_types[i], i + 1,
                     (*equipment_types[i + 1] != '\n') ? equipment_types[i + 1] : "");
-      send_to_char(buf, d->character);
+      send_to_char(g_buf, d->character);
       if (*equipment_types[i + 1] != '\n')
         i += 2;
       else
@@ -1221,13 +1221,13 @@ void zedit_disp_arg4(struct descriptor_data *d) {
  The GARGANTAUN event handler
  **************************************************************************/
 
-void zedit_parse(struct descriptor_data *d, char *arg) {
+void zedit_parse(struct descriptor_data *d, char *g_arg) {
   int pos, i = 0;
 
   switch (OLC_MODE(d)) {
   /*-------------------------------------------------------------------*/
   case ZEDIT_CONFIRM_SAVESTRING:
-    switch (*arg) {
+    switch (*g_arg) {
     case 'y':
     case 'Y':
       /*
@@ -1238,9 +1238,9 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
       /* FALL THROUGH */
     case 'n':
     case 'N':
-      safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.", GET_NAME(d->character),
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.", GET_NAME(d->character),
                     OLC_NUM(d));
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
+      mudlog(g_buf, 'G', COM_BUILDER, TRUE);
       cleanup_olc(d, CLEANUP_ALL);
       break;
     default:
@@ -1253,7 +1253,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
 
     /*-------------------------------------------------------------------*/
   case ZEDIT_MAIN_MENU:
-    switch (*arg) {
+    switch (*g_arg) {
     case 'q':
     case 'Q':
       if (OLC_ZONE(d)->age || OLC_ZONE(d)->number || OLC_VAL(d)) {
@@ -1261,9 +1261,9 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
         OLC_MODE(d) = ZEDIT_CONFIRM_SAVESTRING;
       } else {
         send_to_char("No changes made.\r\n", d->character);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.", GET_NAME(d->character),
-                      OLC_NUM(d));
-        mudlog(buf, 'G', COM_BUILDER, TRUE);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s finished editing zone info for room %d.",
+                      GET_NAME(d->character), OLC_NUM(d));
+        mudlog(g_buf, 'G', COM_BUILDER, TRUE);
         cleanup_olc(d, CLEANUP_ALL);
       }
       break;
@@ -1352,13 +1352,14 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
 
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_CLIMATE:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     switch (pos) {
     case 1:
-      *buf1 = '\0';
+      *g_buf1 = '\0';
       for (i = 0; *season_patterns[i] != '\n'; i++)
-        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, season_patterns[i]);
-      send_to_char(buf1, d->character);
+        safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1,
+                      season_patterns[i]);
+      send_to_char(g_buf1, d->character);
       send_to_char("Enter new season pattern: ", d->character);
       OLC_VAL(d) = 1;
       OLC_MODE(d) = ZEDIT_ZONE_SEASON_PATTERN;
@@ -1374,51 +1375,51 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
       OLC_VAL(d) = 1;
       break;
     case 4:
-      *buf1 = '\0';
+      *g_buf1 = '\0';
       for (i = 0; i < MAX_SEASONS; i++)
-        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1,
+        safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1,
                       wind_types[ZON_CLIMATE(OLC_ZONE(d)).season_wind[i] - 1]);
-      send_to_char(buf1, d->character);
+      send_to_char(g_buf1, d->character);
       send_to_char("Enter number to change: ", d->character);
       OLC_MODE(d) = ZEDIT_ZONE_SEASON_WIND;
       OLC_VAL(d) = 1;
       break;
     case 5:
-      *buf1 = '\0';
+      *g_buf1 = '\0';
       for (i = 0; i < MAX_SEASONS; i++)
-        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1,
+        safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1,
                       season_variance[ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[i]]);
-      send_to_char(buf1, d->character);
+      send_to_char(g_buf1, d->character);
       send_to_char("Enter number to change: ", d->character);
       OLC_MODE(d) = ZEDIT_ZONE_SEASON_VAR;
       OLC_VAL(d) = 1;
       break;
     case 6:
-      *buf1 = '\0';
+      *g_buf1 = '\0';
       for (i = 0; i < MAX_SEASONS; i++)
-        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1,
+        safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1,
                       dirs[ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[i]]);
-      send_to_char(buf1, d->character);
+      send_to_char(g_buf1, d->character);
       send_to_char("Enter number to change: ", d->character);
       OLC_MODE(d) = ZEDIT_ZONE_SEASON_WINDDIR;
       OLC_VAL(d) = 1;
       break;
     case 7:
-      *buf1 = '\0';
+      *g_buf1 = '\0';
       for (i = 0; i < MAX_SEASONS; i++)
-        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1,
+        safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1,
                       precip_types[ZON_CLIMATE(OLC_ZONE(d)).season_precip[i] - 1]);
-      send_to_char(buf1, d->character);
+      send_to_char(g_buf1, d->character);
       send_to_char("Enter number to change: ", d->character);
       OLC_MODE(d) = ZEDIT_ZONE_SEASON_PRECIP;
       OLC_VAL(d) = 1;
       break;
     case 8:
-      *buf1 = '\0';
+      *g_buf1 = '\0';
       for (i = 0; i < MAX_SEASONS; i++)
-        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1,
+        safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1,
                       temp_types[ZON_CLIMATE(OLC_ZONE(d)).season_temp[i] - 1]);
-      send_to_char(buf1, d->character);
+      send_to_char(g_buf1, d->character);
       send_to_char("Enter number to change: ", d->character);
       OLC_MODE(d) = ZEDIT_ZONE_SEASON_TEMP;
       OLC_VAL(d) = 1;
@@ -1433,8 +1434,8 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Get the line number and insert the new line.
      */
-    pos = atoi(arg);
-    if (isdigit(*arg) && new_command(d, pos)) {
+    pos = atoi(g_arg);
+    if (isdigit(*g_arg) && new_command(d, pos)) {
       if (start_change_command(d, pos)) {
         zedit_disp_comtype(d);
         OLC_ZONE(d)->age = 1;
@@ -1448,8 +1449,8 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Get the line number and delete the line.
      */
-    pos = atoi(arg);
-    if (isdigit(*arg)) {
+    pos = atoi(g_arg);
+    if (isdigit(*g_arg)) {
       delete_command(d, pos);
       OLC_ZONE(d)->age = 1;
     }
@@ -1461,8 +1462,8 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Parse the input for which line to edit, and goto next quiz.
      */
-    pos = atoi(arg);
-    if (isdigit(*arg) && start_change_command(d, pos)) {
+    pos = atoi(g_arg);
+    if (isdigit(*g_arg) && start_change_command(d, pos)) {
       zedit_disp_comtype(d);
       OLC_ZONE(d)->age = 1;
     } else
@@ -1475,7 +1476,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
      * Parse the input for which type of command this is, and goto next
      * quiz.
      */
-    OLC_CMD(d).command = toupper(*arg);
+    OLC_CMD(d).command = toupper(*g_arg);
     if (!OLC_CMD(d).command || (strchr("MOPEDGR", OLC_CMD(d).command) == NULL)) {
       send_to_char("Invalid choice, try again : ", d->character);
     } else {
@@ -1494,7 +1495,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Parse the input for the if flag, and goto next quiz.
      */
-    switch (*arg) {
+    switch (*g_arg) {
     case 'y':
     case 'Y':
       OLC_CMD(d).if_flag = 1;
@@ -1515,13 +1516,13 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Parse the input for arg1, and goto next quiz.
      */
-    if (!isdigit(*arg)) {
+    if (!isdigit(*g_arg)) {
       send_to_char("Must be a numeric value, try again : ", d->character);
       return;
     }
     switch (OLC_CMD(d).command) {
     case 'M':
-      if ((pos = real_mobile(atoi(arg))) >= 0) {
+      if ((pos = real_mobile(atoi(g_arg))) >= 0) {
         OLC_CMD(d).arg1 = pos;
         zedit_disp_arg2(d);
       } else
@@ -1531,7 +1532,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     case 'P':
     case 'E':
     case 'G':
-      if ((pos = real_object(atoi(arg))) >= 0) {
+      if ((pos = real_object(atoi(g_arg))) >= 0) {
         OLC_CMD(d).arg1 = pos;
         zedit_disp_arg2(d);
       } else
@@ -1555,28 +1556,28 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Parse the input for arg2, and goto next quiz.
      */
-    if (!isdigit(*arg)) {
+    if (!isdigit(*g_arg)) {
       send_to_char("Must be a numeric value, try again : ", d->character);
       return;
     }
     switch (OLC_CMD(d).command) {
     case 'M':
     case 'O':
-      OLC_CMD(d).arg2 = atoi(arg);
+      OLC_CMD(d).arg2 = atoi(g_arg);
       OLC_CMD(d).arg3 = real_room(OLC_NUM(d));
       zedit_disp_arg4(d);
       break;
     case 'G':
-      OLC_CMD(d).arg2 = atoi(arg);
+      OLC_CMD(d).arg2 = atoi(g_arg);
       zedit_disp_menu(d);
       break;
     case 'P':
     case 'E':
-      OLC_CMD(d).arg2 = atoi(arg);
+      OLC_CMD(d).arg2 = atoi(g_arg);
       zedit_disp_arg3(d);
       break;
     case 'D':
-      pos = atoi(arg);
+      pos = atoi(g_arg);
       /*
        * Count directions.
        */
@@ -1590,7 +1591,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
       }
       break;
     case 'R':
-      if ((pos = real_object(atoi(arg))) >= 0) {
+      if ((pos = real_object(atoi(g_arg))) >= 0) {
         OLC_CMD(d).arg2 = pos;
         zedit_disp_menu(d);
       } else
@@ -1612,13 +1613,13 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Parse the input for arg3, and go back to main menu.
      */
-    if (!isdigit(*arg)) {
+    if (!isdigit(*g_arg)) {
       send_to_char("Must be a numeric value, try again : ", d->character);
       return;
     }
     switch (OLC_CMD(d).command) {
     case 'E':
-      pos = atoi(arg);
+      pos = atoi(g_arg);
       /*
        * Count number of wear positions.  We could use NUM_WEARS, this is
        * more reliable.
@@ -1633,14 +1634,14 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
       }
       break;
     case 'P':
-      if ((pos = real_object(atoi(arg))) >= 0) {
+      if ((pos = real_object(atoi(g_arg))) >= 0) {
         OLC_CMD(d).arg3 = pos;
         zedit_disp_menu(d);
       } else
         send_to_char("That object does not exist, try again : ", d->character);
       break;
     case 'D':
-      pos = atoi(arg);
+      pos = atoi(g_arg);
       if ((pos < 0) || (pos > 5))
         send_to_char("Try again : ", d->character);
       else {
@@ -1666,14 +1667,14 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*-------------------------------------------------------------------*/
   case ZEDIT_ARG4:
     /*. Parse the input for arg4, and goto next quiz .*/
-    if (!isdigit(*arg) || atoi(arg) < 0 || atoi(arg) > 100) {
+    if (!isdigit(*g_arg) || atoi(g_arg) < 0 || atoi(g_arg) > 100) {
       send_to_char("Must be a numeric value, try again : ", d->character);
       return;
     }
     switch (OLC_CMD(d).command) {
     case 'M':
     case 'O':
-      OLC_CMD(d).arg4 = atoi(arg);
+      OLC_CMD(d).arg4 = atoi(g_arg);
       zedit_disp_menu(d);
       break;
     default:
@@ -1693,18 +1694,19 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     } else {
       stderr_log("SYSERR: OLC: ZEDIT_ZONE_NAME: no name to free!");
     }
-    OLC_ZONE(d)->name = strdup(arg);
+    OLC_ZONE(d)->name = strdup(g_arg);
     OLC_ZONE(d)->number = 1;
     zedit_disp_menu(d);
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_PATTERN:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     if (pos < 1 || pos > 8) {
-      *buf1 = '\0';
+      *g_buf1 = '\0';
       for (i = 0; *season_patterns[i] != '\n'; i++)
-        safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, season_patterns[i]);
-      send_to_char(buf1, d->character);
+        safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1,
+                      season_patterns[i]);
+      send_to_char(g_buf1, d->character);
       send_to_char("Enter new season pattern: ", d->character);
     } else {
       ZON_CLIMATE(OLC_ZONE(d)).season_pattern = pos;
@@ -1714,7 +1716,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_FLAGS:
-    i = atoi(arg);
+    i = atoi(g_arg);
     if (i == 0) {
       zedit_disp_climate_info(d);
       OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
@@ -1732,7 +1734,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     return;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_ENERGY:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     if (pos < 0)
       pos = 0;
     ZON_CLIMATE(OLC_ZONE(d)).energy_add = pos;
@@ -1741,11 +1743,11 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WIND:
-    *buf1 = '\0';
-    pos = atoi(arg);
+    *g_buf1 = '\0';
+    pos = atoi(g_arg);
     for (i = 0; *wind_types[i] != '\n'; i++)
-      safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, wind_types[i]);
-    send_to_char(buf1, d->character);
+      safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1, wind_types[i]);
+    send_to_char(g_buf1, d->character);
     send_to_char("Enter new wind type: ", d->character);
     switch (pos) {
     case 1:
@@ -1764,11 +1766,11 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_VAR:
-    *buf1 = '\0';
-    pos = atoi(arg);
+    *g_buf1 = '\0';
+    pos = atoi(g_arg);
     for (i = 0; *season_variance[i] != '\n'; i++)
-      safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i, season_variance[i]);
-    send_to_char(buf1, d->character);
+      safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i, season_variance[i]);
+    send_to_char(g_buf1, d->character);
     send_to_char("Enter new variance type: ", d->character);
     switch (pos) {
     case 1:
@@ -1787,63 +1789,63 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_VAR1:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[0] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_VAR2:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[1] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_VAR3:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[2] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_VAR4:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_variance[3] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WIND1:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind[0] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WIND2:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind[1] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WIND3:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind[2] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WIND4:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind[3] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WINDDIR:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     send_to_char("0) North\r\n"
                  "1) East\r\n"
                  "2) South\r\n"
@@ -1869,39 +1871,39 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WINDDIR1:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[0] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WINDDIR2:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[1] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WINDDIR3:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[2] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_WINDDIR4:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_wind_dir[3] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_PRECIP:
-    *buf1 = '\0';
-    pos = atoi(arg);
+    *g_buf1 = '\0';
+    pos = atoi(g_arg);
     for (i = 0; *precip_types[i] != '\n'; i++)
-      safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, precip_types[i]);
-    send_to_char(buf1, d->character);
+      safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1, precip_types[i]);
+    send_to_char(g_buf1, d->character);
     send_to_char("Enter new precip type: ", d->character);
     switch (pos) {
     case 1:
@@ -1920,39 +1922,39 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_PRECIP1:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_precip[0] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_PRECIP2:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_precip[1] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_PRECIP3:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_precip[2] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_PRECIP4:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_precip[3] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_TEMP:
-    *buf1 = '\0';
-    pos = atoi(arg);
+    *g_buf1 = '\0';
+    pos = atoi(g_arg);
     for (i = 0; *temp_types[i] != '\n'; i++)
-      safe_snprintf(buf1 + strlen(buf1), MAX_STRING_LENGTH - strlen(buf1), "%d) %s\r\n", i + 1, temp_types[i]);
-    send_to_char(buf1, d->character);
+      safe_snprintf(g_buf1 + strlen(g_buf1), MAX_STRING_LENGTH - strlen(g_buf1), "%d) %s\r\n", i + 1, temp_types[i]);
+    send_to_char(g_buf1, d->character);
     send_to_char("Enter new temp type: ", d->character);
     switch (pos) {
     case 1:
@@ -1971,28 +1973,28 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_TEMP1:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_temp[0] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_TEMP2:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_temp[1] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_TEMP3:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_temp[2] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
     break;
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_SEASON_TEMP4:
-    pos = atoi(arg);
+    pos = atoi(g_arg);
     ZON_CLIMATE(OLC_ZONE(d)).season_temp[3] = pos;
     zedit_disp_climate_info(d);
     OLC_MODE(d) = ZEDIT_ZONE_CLIMATE;
@@ -2003,8 +2005,8 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Parse and add new reset_mode and return to main menu.
      */
-    pos = atoi(arg);
-    if (!isdigit(*arg) || (pos < 0) || (pos > 2))
+    pos = atoi(g_arg);
+    if (!isdigit(*g_arg) || (pos < 0) || (pos > 2))
       send_to_char("Try again (0-2) : ", d->character);
     else {
       OLC_ZONE(d)->reset_mode = pos;
@@ -2015,7 +2017,7 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
 
     /*-------------------------------------------------------------------*/
   case ZEDIT_ZONE_EXTRAS:
-    i = atoi(arg);
+    i = atoi(g_arg);
 
     if (i == 0) {
       zedit_disp_menu(d);
@@ -2037,8 +2039,8 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
     /*
      * Parse and add new lifespan and return to main menu.
      */
-    pos = atoi(arg);
-    if (!isdigit(*arg) || (pos < 0) || (pos > 240))
+    pos = atoi(g_arg);
+    if (!isdigit(*g_arg) || (pos < 0) || (pos > 240))
       send_to_char("Try again (0-240) : ", d->character);
     else {
       OLC_ZONE(d)->lifespan = pos;
@@ -2053,9 +2055,9 @@ void zedit_parse(struct descriptor_data *d, char *arg) {
      * Parse and add new top room in zone and return to main menu.
      */
     if (OLC_ZNUM(d) == top_of_zone_table)
-      OLC_ZONE(d)->top = BOUNDED(OLC_ZNUM(d) * 100, atoi(arg), 99900);
+      OLC_ZONE(d)->top = BOUNDED(OLC_ZNUM(d) * 100, atoi(g_arg), 99900);
     else
-      OLC_ZONE(d)->top = BOUNDED(OLC_ZNUM(d) * 100, atoi(arg), zone_table[OLC_ZNUM(d) + 1].number * 100);
+      OLC_ZONE(d)->top = BOUNDED(OLC_ZNUM(d) * 100, atoi(g_arg), zone_table[OLC_ZNUM(d) + 1].number * 100);
     zedit_disp_menu(d);
     break;
 

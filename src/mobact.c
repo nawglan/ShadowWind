@@ -33,7 +33,7 @@ extern struct spell_info_type *spells;
 
 int find_skill_num(char *name);
 void mprog_random_trigger(struct char_data *mob);
-void mprog_wordlist_check(char *arg, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
+void mprog_wordlist_check(char *g_arg, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                           int type);
 extern int is_empty(int zone_nr);
 extern void raw_kill(struct char_data *ch, struct char_data *killer);

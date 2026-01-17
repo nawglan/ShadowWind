@@ -50,11 +50,11 @@ ACMD(do_assist) {
     send_to_char("You're already fighting!  How can you assist someone else?\r\n", ch);
     return;
   }
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Whom do you wish to assist?\r\n", ch);
-  } else if (!(helpee = get_char_room_vis(ch, arg))) {
+  } else if (!(helpee = get_char_room_vis(ch, g_arg))) {
     send_to_char(NOPERSON, ch);
   } else if (helpee == ch) {
     send_to_char("You can't help yourself any more than this!\r\n", ch);
@@ -83,10 +83,10 @@ ACMD(do_assist) {
 ACMD(do_hit) {
   struct char_data *vict;
 
-  one_argument(argument, arg);
-  vict = get_char_room_vis(ch, arg);
+  one_argument(argument, g_arg);
+  vict = get_char_room_vis(ch, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Hit who?\r\n", ch);
   } else if (!vict) {
     send_to_char("They don't seem to be here.\r\n", ch);
@@ -134,12 +134,12 @@ ACMD(do_kill) {
     do_hit(ch, argument, cmd, subcmd);
     return;
   }
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Kill who?\r\n", ch);
   } else {
-    if (!(vict = get_char_room_vis(ch, arg))) {
+    if (!(vict = get_char_room_vis(ch, g_arg))) {
       send_to_char("They arne't here.\r\n", ch);
     } else if (ch == vict) {
       send_to_char("Your mother would be so sad.. :(\r\n", ch);
@@ -151,9 +151,9 @@ ACMD(do_kill) {
       act("\r\n{D$n {Dchops {w$N {Dto pieces!  Ah!  The {rblood{D!{x",
 
           FALSE, ch, 0, vict, TO_NOTVICT);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s rawkilled by %s", GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'X', COM_ADMIN, TRUE);
-      plog(buf, ch, LVL_IMMORT);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s rawkilled by %s", GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'X', COM_ADMIN, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
       raw_kill(vict, ch);
     }
   }
@@ -181,15 +181,15 @@ ACMD(do_order) {
       return;
     }
     if (vict) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "$N orders you to '%s'", message);
-      act(buf, FALSE, vict, 0, ch, TO_CHAR);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "$N orders you to '%s'", message);
+      act(g_buf, FALSE, vict, 0, ch, TO_CHAR);
       /* act("$n gives $N an order.", FALSE, ch, 0, vict, TO_ROOM);*/
 
       if ((vict->master != ch) || !IS_AFFECTED(vict, AFF_CHARM)) {
         act("$n has an indifferent look.", FALSE, vict, 0, 0, TO_ROOM);
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You order $N to '%s'", message);
-        act(buf, FALSE, ch, 0, vict, TO_CHAR);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "You order $N to '%s'", message);
+        act(g_buf, FALSE, ch, 0, vict, TO_CHAR);
         command_interpreter(vict, message);
       }
     } else { /* This is order "followers" */
@@ -201,8 +201,8 @@ ACMD(do_order) {
         if (org_room == k->follower->in_room) {
           if (IS_AFFECTED(k->follower, AFF_CHARM)) {
             found = TRUE;
-            safe_snprintf(buf, MAX_STRING_LENGTH, "You order your followers '%s'", message);
-            act(buf, FALSE, ch, 0, vict, TO_CHAR);
+            safe_snprintf(g_buf, MAX_STRING_LENGTH, "You order your followers '%s'", message);
+            act(g_buf, FALSE, ch, 0, vict, TO_CHAR);
             command_interpreter(k->follower, message);
           }
         }
@@ -232,8 +232,8 @@ ACMD(do_flee) {
     if (CAN_GO(ch, attempt) && !IS_SET(ROOM_FLAGS(EXIT(ch, attempt)->to_room), ROOM_DEATH)) {
       act("$n panics, and attempts to flee!", TRUE, ch, 0, 0, TO_ROOM);
       if (do_simple_move(ch, attempt, TRUE)) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You flee head over heels, heading %s.\r\n", dirs[attempt]);
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "You flee head over heels, heading %s.\r\n", dirs[attempt]);
+        send_to_char(g_buf, ch);
         if (FIGHTING(ch)) {
           /* Disabled by Novo....
            if (!IS_NPC(ch)) {

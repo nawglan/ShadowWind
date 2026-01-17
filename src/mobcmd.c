@@ -65,10 +65,10 @@ extern sh_int find_target_room(struct char_data *ch, char *rawroomstr);
 extern void handle_mpdelay(char *delay, char *cmnd, struct char_data *mob, struct char_data *actor,
                            struct obj_data *obj, void *vo, struct char_data *rndm);
 
-#define bug(x, y)                                     \
-  {                                                   \
-    safe_snprintf(buf2, MAX_STRING_LENGTH, (x), (y)); \
-    stderr_log(buf2);                                 \
+#define bug(x, y)                                       \
+  {                                                     \
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, (x), (y)); \
+    stderr_log(g_buf2);                                 \
   }
 
 /*
@@ -245,14 +245,14 @@ ACMD(do_mprawkill) {
     return;
   }
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (arg[0] == '\0') {
+  if (g_arg[0] == '\0') {
     bug("MprawKill - no argument: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if ((victim = get_char_room_vis(ch, arg)) == NULL) {
+  if ((victim = get_char_room_vis(ch, g_arg)) == NULL) {
     bug("MprawKill - Victim not in room: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -289,14 +289,14 @@ ACMD(do_mpkill) {
     return;
   }
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (arg[0] == '\0') {
+  if (g_arg[0] == '\0') {
     bug("MpKill - no argument: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if ((victim = get_char_room_vis(ch, arg)) == NULL) {
+  if ((victim = get_char_room_vis(ch, g_arg)) == NULL) {
     bug("MpKill - Victim not in room: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -334,14 +334,14 @@ ACMD(do_mphunt) {
     return;
   }
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (arg[0] == '\0') {
+  if (g_arg[0] == '\0') {
     bug("Mphunt - no argument: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if ((victim = get_char_vis(ch, arg)) == NULL) {
+  if ((victim = get_char_vis(ch, g_arg)) == NULL) {
     bug("Mphunt - Victim not found/not visible: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -376,13 +376,13 @@ ACMD(do_mphuntrm) {
     return;
   }
 
-  one_argument(argument, arg);
-  if (arg[0] == '\0') {
+  one_argument(argument, g_arg);
+  if (g_arg[0] == '\0') {
     bug("Mphuntrm - No argument: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if ((location = find_target_room(ch, arg)) < 0) {
+  if ((location = find_target_room(ch, g_arg)) < 0) {
     bug("Mphunt - No such location: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -411,30 +411,30 @@ ACMD(do_mpjunk) {
     return;
   }
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (arg[0] == '\0') {
+  if (g_arg[0] == '\0') {
     bug("Mpjunk - No argument: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if (str_cmp(arg, "all") && str_prefix("all.", arg)) {
-    if ((obj = get_object_in_equip_vis(ch, arg, ch->equipment, &pos)) != NULL) {
+  if (str_cmp(g_arg, "all") && str_prefix("all.", g_arg)) {
+    if ((obj = get_object_in_equip_vis(ch, g_arg, ch->equipment, &pos)) != NULL) {
       unequip_char(ch, pos);
       extract_obj(obj);
       return;
     }
-    if ((obj = get_obj_in_list_vis(ch, arg, ch->carrying)) != NULL)
+    if ((obj = get_obj_in_list_vis(ch, g_arg, ch->carrying)) != NULL)
       extract_obj(obj);
     return;
   } else {
     for (obj = ch->carrying; obj != NULL; obj = obj_next) {
       obj_next = obj->next_content;
-      if (arg[3] == '\0' || isname(arg + 4, obj->name)) {
+      if (g_arg[3] == '\0' || isname(g_arg + 4, obj->name)) {
         extract_obj(obj);
       }
     }
-    while ((obj = get_object_in_equip_vis(ch, arg, ch->equipment, &pos)) != NULL) {
+    while ((obj = get_object_in_equip_vis(ch, g_arg, ch->equipment, &pos)) != NULL) {
       unequip_char(ch, pos);
       extract_obj(obj);
     }
@@ -459,16 +459,16 @@ ACMD(do_mpechoaround) {
     return;
   }
 
-  p = one_argument(argument, arg);
+  p = one_argument(argument, g_arg);
   while (isspace(*p))
     p++; /* skip over leading space */
 
-  if (arg[0] == '\0') {
+  if (g_arg[0] == '\0') {
     bug("Mpechoaround - No argument:  vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if (!(victim = get_char_room_vis(ch, arg))) {
+  if (!(victim = get_char_room_vis(ch, g_arg))) {
     bug("Mpechoaround - victim does not exist: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -495,16 +495,16 @@ ACMD(do_mpechoat) {
     return;
   }
 
-  p = one_argument(argument, arg);
+  p = one_argument(argument, g_arg);
   while (isspace(*p))
     p++; /* skip over leading space */
 
-  if (arg[0] == '\0') {
+  if (g_arg[0] == '\0') {
     bug("Mpechoat - No argument:  vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if (!(victim = get_char_room_vis(ch, arg))) {
+  if (!(victim = get_char_room_vis(ch, g_arg))) {
     bug("Mpechoat - victim does not exist: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -560,19 +560,19 @@ ACMD(do_mpmload) {
     return;
   }
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (arg[0] == '\0' || !is_number(arg)) {
-    bug("Mpmload - Bad vnum as arg: vnum %d.", mob_index[ch->nr].virtual);
+  if (g_arg[0] == '\0' || !is_number(g_arg)) {
+    bug("Mpmload - Bad vnum as g_arg: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if (get_mob_index(atoi(arg)) == NULL) {
+  if (get_mob_index(atoi(g_arg)) == NULL) {
     bug("Mpmload - Bad mob vnum: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  victim = read_mobile(atoi(arg), VIRTUAL);
+  victim = read_mobile(atoi(g_arg), VIRTUAL);
   GET_IDNUM(victim) = mob_idnum;
   mob_idnum--;
   char_to_room(victim, ch->in_room);
@@ -601,7 +601,7 @@ ACMD(do_mpoload) {
   }
 
   if (get_obj_index(atoi(arg1)) == NULL) {
-    bug("Mpoload - Bad vnum arg: vnum %d.", mob_index[ch->nr].virtual);
+    bug("Mpoload - Bad vnum g_arg: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
@@ -633,16 +633,16 @@ ACMD(do_mppurge) {
   if ((!IS_NPC(ch) && !COM_FLAGGED(ch, COM_MOB)) || IS_AFFECTED(ch, AFF_CHARM))
     return;
 
-  one_argument(argument, buf);
+  one_argument(argument, g_buf);
 
-  if (*buf) { /* argument supplied. destroy single object
-               * or char */
-    if ((vict = get_char_room_vis(ch, buf))) {
+  if (*g_buf) { /* argument supplied. destroy single object
+                 * or char */
+    if ((vict = get_char_room_vis(ch, g_buf))) {
       if (!IS_NPC(vict) || (vict == ch)) {
         return;
       }
       extract_char(vict, 1);
-    } else if ((obj = get_obj_in_list_vis(ch, buf, world[ch->in_room].contents))) {
+    } else if ((obj = get_obj_in_list_vis(ch, g_buf, world[ch->in_room].contents))) {
       extract_obj(obj);
     } else {
       send_to_char("Nothing here by that name.\r\n", ch);
@@ -690,9 +690,9 @@ void mprog_mppurge(char *argument, char *cmnd, struct char_data *ch, struct char
     return;
   }
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (arg[0] == '\0') {
+  if (g_arg[0] == '\0') {
     /* 'purge' */
     struct char_data *vnext;
     struct obj_data *obj_next;
@@ -711,8 +711,8 @@ void mprog_mppurge(char *argument, char *cmnd, struct char_data *ch, struct char
     return;
   }
 
-  if (!(victim = get_char_room_vis(ch, arg))) {
-    if ((obj = get_obj_vis(ch, arg))) {
+  if (!(victim = get_char_room_vis(ch, g_arg))) {
+    if ((obj = get_obj_vis(ch, g_arg))) {
       extract_obj(obj);
     } else {
       bug("Mppurge - Bad argument: vnum %d.", mob_index[ch->nr].virtual);
@@ -757,13 +757,13 @@ ACMD(do_mpgoto) {
     return;
   }
 
-  one_argument(argument, arg);
-  if (arg[0] == '\0') {
+  one_argument(argument, g_arg);
+  if (g_arg[0] == '\0') {
     bug("Mpgoto - No argument: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if ((location = find_target_room(ch, arg)) < 0) {
+  if ((location = find_target_room(ch, g_arg)) < 0) {
     bug("Mpgoto - No such location: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -795,14 +795,14 @@ ACMD(do_mpat) {
     return;
   }
 
-  argument = one_argument(argument, arg);
+  argument = one_argument(argument, g_arg);
 
-  if (arg[0] == '\0' || argument[0] == '\0') {
+  if (g_arg[0] == '\0' || argument[0] == '\0') {
     bug("Mpat - Bad argument: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if ((location = find_target_room(ch, arg)) < 0) {
+  if ((location = find_target_room(ch, g_arg)) < 0) {
     bug("Mpat - No such location: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
@@ -887,18 +887,18 @@ ACMD(do_mptransfer) {
         stop_fighting(victim);
 
       if (GET_DRAGGING(victim)) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(victim));
-        act(buf, TRUE, 0, GET_DRAGGING(victim), 0, TO_ROOM);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s drags $p along.", GET_NAME(victim));
+        act(g_buf, TRUE, 0, GET_DRAGGING(victim), 0, TO_ROOM);
       }
       char_from_room(victim);
       char_to_room(victim, location);
       if (GET_DRAGGING(victim)) {
         obj_from_room(GET_DRAGGING(victim));
         obj_to_room(GET_DRAGGING(victim), victim->in_room);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You drag $p along with you.");
-        act(buf, FALSE, victim, GET_DRAGGING(victim), 0, TO_CHAR);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(victim));
-        act(buf, TRUE, victim, GET_DRAGGING(victim), 0, TO_ROOM);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "You drag $p along with you.");
+        act(g_buf, FALSE, victim, GET_DRAGGING(victim), 0, TO_CHAR);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(victim));
+        act(g_buf, TRUE, victim, GET_DRAGGING(victim), 0, TO_ROOM);
       }
     }
     return;
@@ -989,16 +989,16 @@ ACMD(do_mptrain) {
   /*   int              max_skill_level,
    min_skill_level,
    min_char_level; */
-  char *arg;
+  char *g_arg;
   int runner;
   int foundskill;
 
-  arg = argument;
+  g_arg = argument;
 
-  while (isspace(*arg))
-    arg++;
+  while (isspace(*g_arg))
+    g_arg++;
 
-  if (*arg != '\'') {
+  if (*g_arg != '\'') {
     bug("Mptrain - bad syntax: skill not enclosed in single quote - mob: %d", mob_index[ch->nr].virtual);
     return;
   }
@@ -1007,8 +1007,8 @@ ACMD(do_mptrain) {
    * do_skillset function, so include the single quote (')
    */
 
-  for (runner = 1; arg[runner] != '\''; runner++) {
-    if (arg[runner] == '\0') {
+  for (runner = 1; g_arg[runner] != '\''; runner++) {
+    if (g_arg[runner] == '\0') {
       bug("Mptrain - bad syntax: no ending quote on skill - mob: %d", mob_index[ch->nr].virtual);
       return;
     }
@@ -1017,25 +1017,25 @@ ACMD(do_mptrain) {
   runner++;
   runner++;
 
-  /* put arg at the beginning of the class list */
-  while (isspace(arg[runner]))
+  /* put g_arg at the beginning of the class list */
+  while (isspace(g_arg[runner]))
     runner++;
-  arg = &(arg[runner]);
+  g_arg = &(g_arg[runner]);
 
   /* check to see if the character is of the appropriate class */
 
   runner = 1;
   foundskill = 0;
 
-  if (*arg != '\'') {
+  if (*g_arg != '\'') {
     bug("Mptrain - bad syntax: classes not enclosed in single quote - mob: %d", mob_index[ch->nr].virtual);
     return;
   }
 
-  arg++;
+  g_arg++;
 
-  for (runner = 1; arg[runner] |= '\''; runner++) {
-    if (arg[runner] == '\0') {
+  for (runner = 1; g_arg[runner] |= '\''; runner++) {
+    if (g_arg[runner] == '\0') {
       bug("Mptrain - bad syntax: no ending quote on skill - mob: %d", mob_index[ch->nr].virtual);
       return;
     }
@@ -1060,14 +1060,14 @@ ACMD(do_mpforce) {
     return;
   }
 
-  argument = one_argument(argument, arg);
+  argument = one_argument(argument, g_arg);
 
-  if (arg[0] == '\0' || argument[0] == '\0') {
+  if (g_arg[0] == '\0' || argument[0] == '\0') {
     bug("Mpforce - Bad syntax: vnum %d.", mob_index[ch->nr].virtual);
     return;
   }
 
-  if (!str_cmp(arg, "room") || !str_cmp(arg, "all")) {
+  if (!str_cmp(g_arg, "room") || !str_cmp(g_arg, "all")) {
     struct descriptor_data *i;
     struct char_data *vch;
 
@@ -1082,7 +1082,7 @@ ACMD(do_mpforce) {
   } else {
     struct char_data *victim;
 
-    if ((victim = get_char_vis(ch, arg)) == NULL) {
+    if ((victim = get_char_vis(ch, g_arg)) == NULL) {
       bug("Mpforce - No such victim: vnum %d.", mob_index[ch->nr].virtual);
       return;
     }

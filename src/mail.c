@@ -29,9 +29,9 @@
 #include "structs.h"
 #include "utils.h"
 
-void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
-void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
-void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
+void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg);
+void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg);
+void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg);
 
 extern struct room_data *world;
 extern struct index_data *mob_index;
@@ -77,7 +77,7 @@ mail_index_type *find_char_in_index(char *searchee) {
   return tmp;
 }
 
-void write_to_file(void *buf, int size, long filepos) {
+void write_to_file(void *g_buf, int size, long filepos) {
   FILE *mail_file;
 
   mail_file = fopen(MAIL_FILE, "r+b");
@@ -90,7 +90,7 @@ void write_to_file(void *buf, int size, long filepos) {
     return;
   }
   fseek(mail_file, filepos, SEEK_SET);
-  fwrite(buf, size, 1, mail_file);
+  fwrite(g_buf, size, 1, mail_file);
 
   /* find end of file */
   fseek(mail_file, 0L, SEEK_END);
@@ -99,7 +99,7 @@ void write_to_file(void *buf, int size, long filepos) {
   return;
 }
 
-void read_from_file(void *buf, int size, long filepos) {
+void read_from_file(void *g_buf, int size, long filepos) {
   FILE *mail_file;
 
   mail_file = fopen(MAIL_FILE, "r+b");
@@ -112,7 +112,7 @@ void read_from_file(void *buf, int size, long filepos) {
     return;
   }
   fseek(mail_file, filepos, SEEK_SET);
-  fread(buf, size, 1, mail_file);
+  fread(g_buf, size, 1, mail_file);
   fclose(mail_file);
   return;
 }
@@ -164,15 +164,15 @@ int scan_file(void) {
 
   file_end_pos = ftell(mail_file);
   fclose(mail_file);
-  safe_snprintf(buf, sizeof(buf), "   %ld bytes read.", file_end_pos);
-  stderr_log(buf);
+  safe_snprintf(g_buf, sizeof(g_buf), "   %ld bytes read.", file_end_pos);
+  stderr_log(g_buf);
   if (file_end_pos % BLOCK_SIZE) {
     stderr_log("SYSERR: Error booting mail system -- Mail file corrupt!");
     stderr_log("SYSERR: Mail disabled!");
     return 0;
   }
-  safe_snprintf(buf, sizeof(buf), "   Mail file read -- %d messages.", total_messages);
-  stderr_log(buf);
+  safe_snprintf(g_buf, sizeof(g_buf), "   Mail file read -- %d messages.", total_messages);
+  stderr_log(g_buf);
   return 1;
 } /* end of scan_file */
 
@@ -285,7 +285,7 @@ char *read_delete(char *recipient)
   mail_index_type *mail_pointer, *prev_mail;
   position_list_type *position_pointer;
   long mail_address, following_block;
-  char *message, *tmstr, buf[200];
+  char *message, *tmstr, g_buf[200];
   size_t string_size;
 
   if (recipient < (char *)NULL) {
@@ -336,16 +336,16 @@ char *read_delete(char *recipient)
   tmstr = asctime(localtime(&header.header_data.mail_time));
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
-  safe_snprintf(buf, sizeof(buf),
+  safe_snprintf(g_buf, sizeof(g_buf),
                 " * * * * Weirvane Mail System * * * *\r\n"
                 "Date: %s\r\n"
                 "  To: %s\r\n"
                 "From: %s\r\n\r\n",
                 tmstr, recipient, header.header_data.from);
 
-  string_size = (sizeof(char) * (strlen(buf) + strlen(header.txt) + 1));
+  string_size = (sizeof(char) * (strlen(g_buf) + strlen(header.txt) + 1));
   CREATE(message, char, string_size);
-  safe_snprintf(message, string_size, "%s%s", buf, header.txt);
+  safe_snprintf(message, string_size, "%s%s", g_buf, header.txt);
   following_block = header.header_data.next_block;
 
   /* mark the block as deleted */
@@ -402,17 +402,16 @@ SPECIAL(postmaster) {
     return 0;
 }
 
-void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg) {
+void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg) {
   char buf[256];
   char addressee[256];
 
   if (GET_LEVEL(ch) < MIN_MAIL_LEVEL) {
-    safe_snprintf(buf, sizeof(buf), "$n tells you, 'Sorry, you have to be level %d to send mail!'",
-                  MIN_MAIL_LEVEL);
-    act(buf, FALSE, mailman, 0, ch, TO_VICT);
+    safe_snprintf(g_buf, sizeof(g_buf), "$n tells you, 'Sorry, you have to be level %d to send mail!'", MIN_MAIL_LEVEL);
+    act(g_buf, FALSE, mailman, 0, ch, TO_VICT);
     return;
   }
-  one_argument(arg, addressee);
+  one_argument(g_arg, addressee);
 
   if (!*addressee) { /* you'll get no argument from me! */
     act("$n tells you, 'You need to specify an addressee!'", FALSE, mailman, 0, ch, TO_VICT);
@@ -423,11 +422,11 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int c
       GET_GOLD(ch) += STAMP_PRICE;
       GET_BANK_GOLD(ch) -= STAMP_PRICE;
     } else {
-      safe_snprintf(buf, sizeof(buf),
+      safe_snprintf(g_buf, sizeof(g_buf),
                     "$n tells you, 'A stamp costs %d coins.'\r\n"
                     "$n tells you, '...which I see you can't afford.'",
                     STAMP_PRICE);
-      act(buf, FALSE, mailman, 0, ch, TO_VICT);
+      act(g_buf, FALSE, mailman, 0, ch, TO_VICT);
       return;
     }
   }
@@ -438,16 +437,16 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int c
   act("$n starts to write some mail.", TRUE, ch, 0, 0, TO_ROOM);
   if (GET_LEVEL(ch) < LVL_IMMORT) {
     GET_GOLD(ch) -= STAMP_PRICE;
-    safe_snprintf(buf, sizeof(buf),
+    safe_snprintf(g_buf, sizeof(g_buf),
                   "$n tells you, 'I'll take %d coins for the stamp.'\r\n"
                   "$n tells you, 'Write your message. (/s saves /h for help)'",
                   STAMP_PRICE);
   } else
-    safe_snprintf(buf, sizeof(buf), "$n tells you, 'Write your message. (/s saves /h for help)'");
-  act(buf, FALSE, mailman, 0, ch, TO_VICT);
+    safe_snprintf(g_buf, sizeof(g_buf), "$n tells you, 'Write your message. (/s saves /h for help)'");
+  act(g_buf, FALSE, mailman, 0, ch, TO_VICT);
   SET_BIT(PLR_FLAGS(ch), PLR_MAILING | PLR_WRITING);
-  safe_snprintf(buf, sizeof(buf), "%s begins writing a mail message.", GET_NAME(ch));
-  mudlog(buf, 'G', COM_ADMIN, TRUE);
+  safe_snprintf(g_buf, sizeof(g_buf), "%s begins writing a mail message.", GET_NAME(ch));
+  mudlog(g_buf, 'G', COM_ADMIN, TRUE);
 
   ch->desc->mail_to = strdup(addressee);
   ch->desc->str = (char **)malloc(sizeof(char *));
@@ -455,23 +454,23 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int c
   ch->desc->max_str = MAX_MAIL_SIZE;
 }
 
-void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg) {
+void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg) {
   char buf[256];
 
   if (has_mail(GET_NAME(ch)))
-    safe_snprintf(buf, sizeof(buf), "$n tells you, '{WYou have {Rmail {Wwaiting.{x'");
+    safe_snprintf(g_buf, sizeof(g_buf), "$n tells you, '{WYou have {Rmail {Wwaiting.{x'");
   else
-    safe_snprintf(buf, sizeof(buf), "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
-  act(buf, FALSE, mailman, 0, ch, TO_VICT);
+    safe_snprintf(g_buf, sizeof(g_buf), "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
+  act(g_buf, FALSE, mailman, 0, ch, TO_VICT);
 }
 
-void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg) {
+void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg) {
   char buf[256];
   struct obj_data *obj;
 
   if (!has_mail(GET_NAME(ch))) {
-    safe_snprintf(buf, sizeof(buf), "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
-    act(buf, FALSE, mailman, 0, ch, TO_VICT);
+    safe_snprintf(g_buf, sizeof(g_buf), "$n tells you, '{WSorry, you don't have any mail waiting.{x'");
+    act(g_buf, FALSE, mailman, 0, ch, TO_VICT);
     return;
   }
   while (has_mail(GET_NAME(ch))) {

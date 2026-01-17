@@ -154,24 +154,24 @@ struct ban_list_element {
   struct ban_list_element *next;
 };
 
-/* global buffering system */
+/* global buffering system (g_ prefix to avoid shadowing local variables) */
 
 #ifdef __DB_C__
-char buf[MAX_STRING_LENGTH];
-char buf1[MAX_STRING_LENGTH];
-char buf2[MAX_STRING_LENGTH];
-char buf3[MAX_STRING_LENGTH];
-char arg[MAX_STRING_LENGTH];
-char string_buf[MAX_STRING_LENGTH * 2];
-char logbuffer[256];
+char g_buf[MAX_STRING_LENGTH];
+char g_buf1[MAX_STRING_LENGTH];
+char g_buf2[MAX_STRING_LENGTH];
+char g_buf3[MAX_STRING_LENGTH];
+char g_arg[MAX_STRING_LENGTH];
+char g_string_buf[MAX_STRING_LENGTH * 2];
+char g_logbuffer[256];
 #else
-extern char string_buf[MAX_STRING_LENGTH * 2];
-extern char buf[MAX_STRING_LENGTH];
-extern char buf1[MAX_STRING_LENGTH];
-extern char buf2[MAX_STRING_LENGTH];
-extern char buf3[MAX_STRING_LENGTH];
-extern char arg[MAX_STRING_LENGTH];
-extern char logbuffer[256];
+extern char g_string_buf[MAX_STRING_LENGTH * 2];
+extern char g_buf[MAX_STRING_LENGTH];
+extern char g_buf1[MAX_STRING_LENGTH];
+extern char g_buf2[MAX_STRING_LENGTH];
+extern char g_buf3[MAX_STRING_LENGTH];
+extern char g_arg[MAX_STRING_LENGTH];
+extern char g_logbuffer[256];
 #endif
 
 #ifndef __CONFIG_C__

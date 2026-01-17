@@ -22,8 +22,8 @@ void obj_from_char(struct obj_data *object);
 void parse_pline(char *line, char *field, char *value);
 void obj_to_char(struct obj_data *object, struct char_data *ch);
 long asciiflag_conv(char *flag);
-int search_block(char *arg, char **list, bool exact);
-int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict);
+int search_block(char *g_arg, char **list, bool exact);
+int quest_ask_trigger(char *g_buf2, struct char_data *ch, struct char_data *vict);
 
 char *goal_list[] = {"knowledge", "object", "experience", "skill", "\n"};
 char *needs_list[] = {"money", "object", "\n"};
@@ -65,16 +65,16 @@ void parse_quest(FILE *quest_file, int vnum) {
         numneeds++;
         (mob_quests + i)->maxneeds = numneeds;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'C':
       if (strcmp(field, "classlist") == 0) {
         (mob_quests + i)->classlist = asciiflag_conv(value);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'D':
@@ -83,24 +83,24 @@ void parse_quest(FILE *quest_file, int vnum) {
           (mob_quests + i)->needs[numneeds].destroy = 0;
         }
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'F':
       if (strcmp(field, "flags") == 0) {
         (mob_quests + i)->flags = asciiflag_conv(value);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'G':
       if (strcmp(field, "goal") == 0) {
         (mob_quests + i)->goal = search_block(value, goal_list, FALSE);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'K':
@@ -111,8 +111,8 @@ void parse_quest(FILE *quest_file, int vnum) {
         line[0] = '\0';
         (mob_quests + i)->knowledge = fread_string(quest_file, line);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'M':
@@ -124,8 +124,8 @@ void parse_quest(FILE *quest_file, int vnum) {
         nummsgs++;
         (mob_quests + i)->maxmsgs = nummsgs;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'N':
@@ -144,24 +144,24 @@ void parse_quest(FILE *quest_file, int vnum) {
         line[0] = '\0';
         (mob_quests + i)->needs[numneeds].needs_complete_msg = fread_string(quest_file, line);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'R':
       if (strcmp(field, "racelist") == 0) {
         (mob_quests + i)->racelist = asciiflag_conv(value);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'S':
       if (strcmp(field, "skillname") == 0) {
         (mob_quests + i)->skillname = strdup(value);
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     case 'V':
@@ -170,13 +170,13 @@ void parse_quest(FILE *quest_file, int vnum) {
       } else if (strcmp(field, "vnum") == 0) {
         (mob_quests + i)->needs[numneeds].vnum = numval;
       } else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-        stderr_log(buf2);
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(g_buf2);
       }
       break;
     default:
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-      stderr_log(buf2);
+      safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+      stderr_log(g_buf2);
       break;
     }
   }
@@ -294,21 +294,21 @@ int check_quest_completed(struct quest_data *quest, struct char_data *ch) {
       if (quest->value) {
         obj = read_object(quest->value, VIRTUAL);
         if (obj) {
-          safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %s (%d) as reward.",
+          safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s completed quest #%d, received %s (%d) as reward.",
                         GET_NAME(ch), quest->qnum,
                         (obj->cshort_description ? obj->cshort_description
                                                  : (obj->short_description ? obj->short_description : "something")),
                         quest->value);
-          mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
+          mudlog(g_logbuffer, 'Q', COM_IMMORT, TRUE);
           obj_to_char(obj, ch);
         }
       }
       break;
     case GOAL_EXPERIENCE:
       if (quest->value) {
-        safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %d exp as reward.", GET_NAME(ch),
-                      quest->qnum, quest->value);
-        mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
+        safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s completed quest #%d, received %d exp as reward.",
+                      GET_NAME(ch), quest->qnum, quest->value);
+        mudlog(g_logbuffer, 'Q', COM_IMMORT, TRUE);
         gain_exp(ch, quest->value);
       }
       break;
@@ -318,9 +318,9 @@ int check_quest_completed(struct quest_data *quest, struct char_data *ch) {
         skillnum = find_spell_num(quest->skillname);
       }
       if (skillnum >= 0) {
-        safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %s skill as reward.",
+        safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s completed quest #%d, received %s skill as reward.",
                       GET_NAME(ch), quest->qnum, quest->skillname);
-        mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
+        mudlog(g_logbuffer, 'Q', COM_IMMORT, TRUE);
         SET_SKILL(ch, spells[skillnum].spellindex, 15);
       }
       break;
@@ -619,8 +619,8 @@ int quest_give_trigger(struct char_data *me, struct char_data *player, struct ob
   return flag;
 }
 
-/* buf2 is the question, ch is asker, vict is mob */
-int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict) {
+/* g_buf2 is the question, ch is asker, vict is mob */
+int quest_ask_trigger(char *g_buf2, struct char_data *ch, struct char_data *vict) {
   int nummsgs = 0;
   int numneeds = 0;
   int questnum = 0;
@@ -643,7 +643,7 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict) 
     return 0;
   }
 
-  if (strcasecmp(buf2, "status") == 0 || strcasecmp(buf2, "quest") == 0) {
+  if (strcasecmp(g_buf2, "status") == 0 || strcasecmp(g_buf2, "quest") == 0) {
     /* only happens if quest is once per boot */
     if (IS_SET(QFLAGS(questnum), QUEST_COMPLETED)) {
       act("$n says, 'The quest is closed.'", TRUE, vict, 0, ch, TO_VICT);
@@ -770,7 +770,7 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict) 
   }
 
   for (nummsgs = 0; nummsgs < mob_quests[questnum].maxmsgs; nummsgs++) {
-    if (strstr(mob_quests[questnum].messages[nummsgs].keywords, buf2)) {
+    if (strstr(mob_quests[questnum].messages[nummsgs].keywords, g_buf2)) {
       break;
     }
   }

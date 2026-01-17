@@ -10,7 +10,7 @@
 CC = gcc
 #CC = cc
 #MYFLAGS =  -g -Wall -DNOCRYPT
-MYFLAGS = -g -Wall -Wno-format-truncation -DNOCRYPT
+MYFLAGS = -g -Wall -Wextra -Wshadow -fstack-protector-strong -D_FORTIFY_SOURCE=2 -DNOCRYPT
 #MYFLAGS =  -pg -g -m486 -Wall -DNOCRYPT
 #MYFLAGS =  -g -xF -Xa -v -xs -DNOCRYPT
 LIBS = -lsodium
@@ -47,24 +47,16 @@ zedit.o
 
 ../bin/shadowwind : $(OBJFILES)
 
+# Working utilities (built by default)
 utils:
-#	$(MAKE) ../bin/autowiz
-#	$(MAKE) ../bin/delobjs
-#	$(MAKE) ../bin/hasmail
-#	$(MAKE) ../bin/listrent
-#	$(MAKE) ../bin/mailindex
-#	$(MAKE) ../bin/mudpasswd
-#	$(MAKE) ../bin/purgeplay
-#	$(MAKE) ../bin/readmail
-#	$(MAKE) ../bin/showplay
-#	$(MAKE) ../bin/sign
-#	$(MAKE) ../bin/split
-#	$(MAKE) ../bin/syntax_check
-#	$(MAKE) ../bin/cleanall
-#	$(MAKE) ../bin/nukegold
-#	$(MAKE) ../bin/fixmobs
-#	$(MAKE) ../bin/nukeold
+	$(MAKE) ../bin/autowiz
+	$(MAKE) ../bin/sign
 	$(MAKE) ../bin/lookup_process
+
+# Legacy utilities (need fixes before building):
+#   delobjs, purgeplay - struct char_file_u issues
+#   cleanall, nukegold - missing includes
+#   fixmobs, nukeold - sprintf overflow warnings
 
 all:
 	$(MAKE) ../bin/shadowwind
@@ -74,72 +66,15 @@ circle:
 	$(MAKE) ../bin/shadowwind
 autowiz:
 	$(MAKE) ../bin/autowiz
-delobjs:
-	$(MAKE) ../bin/delobjs
-# hasmail:
-# 	$(MAKE) ../bin/hasmail
-#listrent:
-#	$(MAKE) ../bin/listrent
-#mailindex:
-#	$(MAKE) ../bin/mailindex
-#mudpasswd:
-#	$(MAKE) ../bin/mudpasswd
-purgeplay:
-	$(MAKE) ../bin/purgeplay
-#readmail:
-#	$(MAKE) ../bin/readmail
-#showplay:
-#	$(MAKE) ../bin/showplay
 sign:
 	$(MAKE) ../bin/sign
-#split:
-#	$(MAKE) ../bin/split
-#syntax_check:
-#	$(MAKE) ../bin/syntax_check
-cleanall:
-	$(MAKE) ../bin/cleanall
-nukegold:
-	$(MAKE) ../bin/nukegold
-fixmobs:
-	$(MAKE) ../bin/fixmobs
-nukeold:
-	$(MAKE) ../bin/nukeold
 lookup_process:
 	$(MAKE) ../bin/lookup_process
 
 ../bin/autowiz : util/autowiz.c structs.h db.h utils.h
 	$(CC) $(CFLAGS) -o ../bin/autowiz util/autowiz.c
-../bin/delobjs : util/delobjs.c structs.h
-	$(CC) $(CFLAGS) -o ../bin/delobjs util/delobjs.c
-#../bin/hasmail : util/hasmail.c mail.h
-#	$(CC) $(CFLAGS) -o ../bin/hasmail util/hasmail.c
-#../bin/listrent : util/listrent.c structs.h
-#	$(CC) $(CFLAGS) -o ../bin/listrent util/listrent.c
-#../bin/mailindex : util/mailindex.c mail.h
-#	$(CC) $(CFLAGS) -o ../bin/mailindex util/mailindex.c
-#../bin/mudpasswd   : util/mudpasswd.c structs.h
-#	$(CC) $(CFLAGS) -o ../bin/mudpasswd util/mudpasswd.c
-../bin/purgeplay : util/purgeplay.c structs.h
-	$(CC) $(CFLAGS) -o ../bin/purgeplay util/purgeplay.c
-#../bin/readmail : util/readmail.c mail.h
-#	$(CC) $(CFLAGS) -o ../bin/readmail util/readmail.c
-#../bin/showplay : util/showplay.c structs.h
-#	$(CC) $(CFLAGS) -o ../bin/showplay util/showplay.c
 ../bin/sign: util/sign.c
 	$(CC) $(CFLAGS) $(LIBS) -o ../bin/sign $(COMMFLAGS) util/sign.c
-#../bin/split: util/split.c
-#	$(CC) $(CFLAGS) -o ../bin/split util/split.c
-#../bin/syntax_check: util/syntax_check.c structs.h utils.h db.h comm.h \
-#	handler.h
-#	$(CC) $(CFLAGS) -o ../bin/syntax_check util/syntax_check.c
-../bin/cleanall: util/cleanall.c
-	$(CC) $(CFLAGS) -o ../bin/cleanall $(COMMFLAGS) util/cleanall.c
-../bin/nukegold: util/nukegold.c
-	$(CC) $(CFLAGS) -o ../bin/nukegold $(COMMFLAGS) util/nukegold.c
-../bin/fixmobs: util/fixmobs.c structs.h db.h utils.h
-	$(CC) $(CFLAGS) -o ../bin/fixmobs $(COMMFLAGS) util/fixmobs.c
-../bin/nukeold: util/nukeold.c structs.h db.h utils.h
-	$(CC) $(CFLAGS) -o ../bin/nukeold $(COMMFLAGS) util/nukeold.c
 ../bin/lookup_process: util/lookup_process.c util/lookup_process.h ident.h
 	$(CC) $(CFLAGS) -o ../bin/lookup_process util/lookup_process.c $(LIBS)
 

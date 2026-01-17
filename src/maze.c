@@ -237,8 +237,8 @@ void create_rooms(maze *m, char log_filename[80]) {
 
   zone_number = atoi(log_filename);
 
-  safe_snprintf(buf, sizeof(buf), "   Building maze #%d", zone_number);
-  stderr_log(buf);
+  safe_snprintf(g_buf, sizeof(g_buf), "   Building maze #%d", zone_number);
+  stderr_log(g_buf);
 
   for (i = 0; i <= top_of_zone_table; i++) {
     if (((zone_table[i].top - (zone_table[i].top % 100)) / 100) == zone_number) {
@@ -248,8 +248,8 @@ void create_rooms(maze *m, char log_filename[80]) {
   }
 
   if (!found) {
-    safe_snprintf(buf, sizeof(buf), "SYSERR: Could not find zone #%d", zone_number);
-    stderr_log(buf);
+    safe_snprintf(g_buf, sizeof(g_buf), "SYSERR: Could not find zone #%d", zone_number);
+    stderr_log(g_buf);
     fflush(NULL);
     exit(1);
   }
@@ -261,8 +261,8 @@ void create_rooms(maze *m, char log_filename[80]) {
   }
 
   if (room_count < 3) {
-    safe_snprintf(buf, sizeof(buf), "SYSERR: Maze %s only has %d rooms.", log_filename, room_count);
-    stderr_log(buf);
+    safe_snprintf(g_buf, sizeof(g_buf), "SYSERR: Maze %s only has %d rooms.", log_filename, room_count);
+    stderr_log(g_buf);
     fflush(NULL);
     exit(1);
   }

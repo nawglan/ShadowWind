@@ -81,8 +81,8 @@ ACMD(do_olc) {
   }
 
   /*. Parse any arguments .*/
-  two_arguments(argument, buf1, buf2);
-  if (!*buf1) { /* No argument given .*/
+  two_arguments(argument, g_buf1, g_buf2);
+  if (!*g_buf1) { /* No argument given .*/
     switch (subcmd) {
     case SCMD_OLC_ZEDIT:
     case SCMD_OLC_REDIT:
@@ -91,22 +91,22 @@ ACMD(do_olc) {
     case SCMD_OLC_OEDIT:
     case SCMD_OLC_MEDIT:
     case SCMD_OLC_SEDIT:
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Specify a %s VNUM to edit.\r\n", olc_scmd_info[subcmd].text);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Specify a %s VNUM to edit.\r\n", olc_scmd_info[subcmd].text);
+      send_to_char(g_buf, ch);
       return;
     }
-  } else if (!isdigit(*buf1)) {
-    if (strncmp("save", buf1, 4) == 0) {
-      if (!*buf2) {
+  } else if (!isdigit(*g_buf1)) {
+    if (strncmp("save", g_buf1, 4) == 0) {
+      if (!*g_buf2) {
         send_to_char("Save which zone?\r\n", ch);
         return;
       } else {
         save = 1;
-        number = atoi(buf2) * 100;
+        number = atoi(g_buf2) * 100;
       }
     } else if (subcmd == SCMD_OLC_ZEDIT && COM_FLAGGED(ch, COM_ADMIN)) {
-      if ((strncmp("new", buf1, 3) == 0) && *buf2)
-        zedit_new_zone(ch, atoi(buf2));
+      if ((strncmp("new", g_buf1, 3) == 0) && *g_buf2)
+        zedit_new_zone(ch, atoi(g_buf2));
       else
         send_to_char("Specify a new zone number.\r\n", ch);
       return;
@@ -118,7 +118,7 @@ ACMD(do_olc) {
 
   /*. If a numeric argument was given, get it .*/
   if (number == -1) {
-    number = atoi(buf1);
+    number = atoi(g_buf1);
   }
 
   oktoedit = 0;
@@ -146,9 +146,9 @@ ACMD(do_olc) {
         zone1 = OLC_NUM(d) - (OLC_NUM(d) % 100);
         zone2 = number - (number % 100);
         if (zone1 == zone2) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "That %s is currently being edited by %s.\r\n",
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "That %s is currently being edited by %s.\r\n",
                         olc_scmd_info[subcmd].text, GET_NAME(d->character));
-          send_to_char(buf, ch);
+          send_to_char(g_buf, ch);
           return;
         }
       }
@@ -182,9 +182,9 @@ ACMD(do_olc) {
       redit_setup_existing(d, real_num);
     else
       redit_setup_new(d);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a room in zone %d (%d)", GET_NAME(ch),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s edits a room in zone %d (%d)", GET_NAME(ch),
                   zone_table[OLC_ZNUM(d)].number, number);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     STATE(d) = CON_REDIT;
     break;
   case SCMD_OLC_ZEDIT:
@@ -195,9 +195,9 @@ ACMD(do_olc) {
       return;
     }
     zedit_setup(d, real_num);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits zone info for zone %d", GET_NAME(ch),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s edits zone info for zone %d", GET_NAME(ch),
                   zone_table[OLC_ZNUM(d)].number);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     STATE(d) = CON_ZEDIT;
     break;
   case SCMD_OLC_MEDIT:
@@ -211,9 +211,9 @@ ACMD(do_olc) {
        */
     } else
       medit_setup_existing(d, real_num);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a mob in zone %d (%d)", GET_NAME(ch),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s edits a mob in zone %d (%d)", GET_NAME(ch),
                   zone_table[OLC_ZNUM(d)].number, number);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     STATE(d) = CON_MEDIT;
     break;
   case SCMD_OLC_OEDIT:
@@ -228,9 +228,9 @@ ACMD(do_olc) {
        return;
        */
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a object in zone %d (%d)", GET_NAME(ch),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s edits a object in zone %d (%d)", GET_NAME(ch),
                   zone_table[OLC_ZNUM(d)].number, number);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     STATE(d) = CON_OEDIT;
     break;
   case SCMD_OLC_SEDIT:
@@ -239,9 +239,9 @@ ACMD(do_olc) {
       sedit_setup_existing(d, real_num);
     else
       sedit_setup_new(d);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a shop in zone %d (%d)", GET_NAME(ch),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s edits a shop in zone %d (%d)", GET_NAME(ch),
                   zone_table[OLC_ZNUM(d)].number, number);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
     STATE(d) = CON_SEDIT;
     break;
   }
@@ -261,8 +261,8 @@ void olc_saveinfo(struct char_data *ch) {
     send_to_char("The database is up to date.\r\n", ch);
 
   for (entry = olc_save_list; entry; entry = entry->next) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, " - %s for zone %d.\r\n", save_info_msg[(int)entry->type], entry->zone);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, " - %s for zone %d.\r\n", save_info_msg[(int)entry->type], entry->zone);
+    send_to_char(g_buf, ch);
   }
 }
 
@@ -425,26 +425,26 @@ void olc_print_bitvectors(FILE *f, long bitvector, long max) {
 
 ACMD(do_assign) {
   char tbuf[256];
-  char *buf2;
+  char *g_buf2;
   struct char_data *vict;
   int found;
   int znum[4];
   int i;
 
-  buf[0] = '\0';
+  g_buf[0] = '\0';
   if (!COM_FLAGGED(ch, COM_ADMIN)) {
     send_to_char("You are not authorized to assign zones to another player.\r\n", ch);
   }
 
-  buf2 = one_argument(argument, buf);
+  g_buf2 = one_argument(argument, g_buf);
 
-  if (!*buf) {
+  if (!*g_buf) {
     send_to_char("Usage: assign <player> [zone num]\r\n", ch);
     return;
   }
 
-  if (!*buf2) {
-    if ((vict = get_char_vis(ch, buf)) == NULL) {
+  if (!*g_buf2) {
+    if ((vict = get_char_vis(ch, g_buf)) == NULL) {
       send_to_char("That player isn't online.\r\n", ch);
       return;
     }
@@ -452,11 +452,11 @@ ACMD(do_assign) {
                   vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
     send_to_char(tbuf, ch);
   } else {
-    if ((vict = get_char_vis(ch, buf)) == NULL) {
+    if ((vict = get_char_vis(ch, g_buf)) == NULL) {
       send_to_char("That player isn't online.\r\n", ch);
       return;
     }
-    found = sscanf(buf2, "%d %d %d %d", &znum[0], &znum[1], &znum[2], &znum[3]);
+    found = sscanf(g_buf2, "%d %d %d %d", &znum[0], &znum[1], &znum[2], &znum[3]);
     for (i = 0; i < found; i++) {
       vict->olc_zones[i] = znum[i];
     }

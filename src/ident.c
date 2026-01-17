@@ -176,13 +176,13 @@ void ident_check(struct descriptor_data *d, int pulse) {
   case CON_IDCONED:
     /* connected, write request */
 
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%d, %d\n\r", ntohs(d->peer_port), port);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%d, %d\n\r", ntohs(d->peer_port), port);
 
-    len = strlen(buf);
+    len = strlen(g_buf);
 #ifdef CIRCLE_WINDOWS
-    if (send(d->ident_sock, buf, len, 0) < 0) {
+    if (send(d->ident_sock, g_buf, len, 0) < 0) {
 #else
-    if (write(d->ident_sock, buf, len) != len) {
+    if (write(d->ident_sock, g_buf, len) != len) {
       if (errno != EPIPE) /* read end closed (no remote identd) */
 #endif
       logerror("ident check write (conned)");
@@ -225,37 +225,37 @@ void ident_check(struct descriptor_data *d, int pulse) {
     /* read ready, get the info */
 
 #ifdef CIRCLE_WINDOWS
-    if ((len = recv(d->ident_sock, buf, sizeof(buf) - 1, 0)) < 0)
+    if ((len = recv(d->ident_sock, g_buf, sizeof(g_buf) - 1, 0)) < 0)
 #else
-    if ((len = read(d->ident_sock, buf, sizeof(buf) - 1)) < 0)
+    if ((len = read(d->ident_sock, g_buf, sizeof(g_buf) - 1)) < 0)
 #endif
       logerror("ident check read (read)");
 
     else {
-      buf[len] = '\0';
-      if (sscanf(buf, "%u , %u : USERID :%*[^:]:%255s", &rmt_port, &our_port, user) != 3) {
+      g_buf[len] = '\0';
+      if (sscanf(g_buf, "%u , %u : USERID :%*[^:]:%255s", &rmt_port, &our_port, user) != 3) {
 
         /* check if error or malformed */
-        if (sscanf(buf, "%u , %u : ERROR : %255s", &rmt_port, &our_port, user) == 3) {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Ident error from %s: \"%s\"", d->hostIP, user);
-          stderr_log(buf2);
+        if (sscanf(g_buf, "%u , %u : ERROR : %255s", &rmt_port, &our_port, user) == 3) {
+          safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Ident error from %s: \"%s\"", d->hostIP, user);
+          stderr_log(g_buf2);
         } else {
           /* strip off trailing newline */
-          for (p = buf + len - 1; p > buf && ISNEWL(*p); p--)
+          for (p = g_buf + len - 1; p > g_buf && ISNEWL(*p); p--)
             ;
           p[1] = '\0';
 
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Malformed ident response from %s: \"%s\"", d->hostIP, buf);
-          stderr_log(buf2);
+          safe_snprintf(g_buf2, MAX_STRING_LENGTH, "Malformed ident response from %s: \"%s\"", d->hostIP, g_buf);
+          stderr_log(g_buf2);
         }
       } else {
 
         len = HOST_LENGTH - strlen(d->hostIP);
 
         if (len > 0) {
-          strncpy(buf2, user, len - 1);
-          buf2[len - 1] = '\0';
-          safe_snprintf(d->username, sizeof(d->username), "%s", buf2);
+          strncpy(g_buf2, user, len - 1);
+          g_buf2[len - 1] = '\0';
+          safe_snprintf(d->username, sizeof(d->username), "%s", g_buf2);
         }
 
         /* if len <= 0, no space for username */
@@ -278,11 +278,11 @@ void ident_check(struct descriptor_data *d, int pulse) {
     /* extra ban check */
     if ((d->host[0] != '\0' && isbanned(d->host) == BAN_ALL) || isbanned(d->hostIP)) {
       if (d->host[0] != '\0') {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->host);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->host);
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->hostIP);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Connection attempt denied from [%s]", d->hostIP);
       }
-      mudlog(buf, 'S', COM_IMMORT, TRUE);
+      mudlog(g_buf, 'S', COM_IMMORT, TRUE);
       close_socket(d);
       return;
     }

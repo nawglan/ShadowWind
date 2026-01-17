@@ -57,19 +57,19 @@ ACMD(do_wiz_help) {
 
   if (!*argument) {
     size_t buflen = 0;
-    buf[0] = '\0';
+    g_buf[0] = '\0';
     for (no = 1, i = 1; cmd_info[i].command[0] != '\n'; i++) {
       if (((GET_LEVEL(ch) >= cmd_info[i].minimum_level) || COM_FLAGGED(ch, cmd_info[i].flag)) &&
           (cmd_info[i].minimum_level >= LVL_IMMORT)) {
-        buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s[%s%s%s] %s%s%-10s%s", CCCYN(ch, C_SPR),
+        buflen += safe_snprintf(g_buf + buflen, MAX_STRING_LENGTH - buflen, "%s[%s%s%s] %s%s%-10s%s", CCCYN(ch, C_SPR),
                                 CBWHT(ch, C_SPR), command_level(cmd_info[i].minimum_level), CCCYN(ch, C_SPR),
                                 CCNRM(ch, C_SPR), CBBLU(ch, C_SPR), cmd_info[i].command, CCNRM(ch, C_SPR));
         if (!(no % 5))
-          buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "\r\n");
+          buflen += safe_snprintf(g_buf + buflen, MAX_STRING_LENGTH - buflen, "\r\n");
         no++;
       }
     }
-    page_string(ch->desc, buf, 1);
+    page_string(ch->desc, g_buf, 1);
     fclose(wiz_help_fl);
     return;
   }
@@ -100,19 +100,19 @@ ACMD(do_wiz_help) {
       while ((mid > 0) && (!(chk = strncasecmp(argument, wiz_help_index[mid - 1].keyword, minlen))))
         mid--;
       fseek(wiz_help_fl, wiz_help_index[mid].pos, SEEK_SET);
-      *buf2 = '\0';
+      *g_buf2 = '\0';
       for (;;) {
-        if (fgets(buf, 128, wiz_help_fl) == NULL)
+        if (fgets(g_buf, 128, wiz_help_fl) == NULL)
           break;
-        if (*buf == '#')
+        if (*g_buf == '#')
           break;
-        size_t len = strlen(buf);
-        if (len > 0 && buf[len - 1] == '\n')
-          buf[len - 1] = '\0'; /* cleave off the trailing \n */
-        if (buf[0] != '@')
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s\r\n", buf);
+        size_t len = strlen(g_buf);
+        if (len > 0 && g_buf[len - 1] == '\n')
+          g_buf[len - 1] = '\0'; /* cleave off the trailing \n */
+        if (g_buf[0] != '@')
+          safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "%s\r\n", g_buf);
       }
-      page_string(ch->desc, buf2, 1);
+      page_string(ch->desc, g_buf2, 1);
       fclose(wiz_help_fl);
       return;
     } else if (bot >= top) {
@@ -175,19 +175,19 @@ ACMD(do_help) {
       while ((mid > 0) && (!(chk = strncasecmp(argument, help_index[mid - 1].keyword, minlen))))
         mid--;
       fseek(help_fl, help_index[mid].pos, SEEK_SET);
-      *buf2 = '\0';
+      *g_buf2 = '\0';
       for (;;) {
-        if (fgets(buf, 128, help_fl) == NULL)
+        if (fgets(g_buf, 128, help_fl) == NULL)
           break;
-        if (*buf == '#')
+        if (*g_buf == '#')
           break;
-        size_t len = strlen(buf);
-        if (len > 0 && buf[len - 1] == '\n')
-          buf[len - 1] = '\0'; /* cleave off the trailing \n */
-        if (buf[0] != '@')
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s\r\n", buf);
+        size_t len = strlen(g_buf);
+        if (len > 0 && g_buf[len - 1] == '\n')
+          g_buf[len - 1] = '\0'; /* cleave off the trailing \n */
+        if (g_buf[0] != '@')
+          safe_snprintf(g_buf2 + strlen(g_buf2), MAX_STRING_LENGTH - strlen(g_buf2), "%s\r\n", g_buf);
       }
-      page_string(ch->desc, buf2, 1);
+      page_string(ch->desc, g_buf2, 1);
       fclose(help_fl);
       return;
     } else if (bot >= top) {
@@ -210,17 +210,17 @@ int count_help_records(FILE *fl) {
   char buf[128];
   int count = 0;
 
-  while (fgets(buf, 128, fl))
-    if (*buf == '#') {
-      if (buf[1] == '~')
+  while (fgets(g_buf, 128, fl))
+    if (*g_buf == '#') {
+      if (g_buf[1] == '~')
         break;
-      if (fgets(buf, 128, fl) == NULL)
+      if (fgets(g_buf, 128, fl) == NULL)
         break;
-      while (*buf == '@') {
+      while (*g_buf == '@') {
         count++;
-        if (fgets(buf, 128, fl) == NULL)
+        if (fgets(g_buf, 128, fl) == NULL)
           break;
-        if (buf[1] == '~')
+        if (g_buf[1] == '~')
           break;
       }
     }
@@ -250,8 +250,8 @@ struct help_index_element *build_help_index(int *num, int type) {
     }
   }
   tablesize = count_help_records(fl);
-  safe_snprintf(buf, sizeof(buf), "   Num Help records: %d", tablesize);
-  stderr_log(buf);
+  safe_snprintf(g_buf, sizeof(g_buf), "   Num Help records: %d", tablesize);
+  stderr_log(g_buf);
   rewind(fl);
   CREATE(list, struct help_index_element, tablesize);
 
@@ -260,22 +260,22 @@ struct help_index_element *build_help_index(int *num, int type) {
 
     /* skip the text */
     do {
-      if (fgets(buf, 128, fl) == NULL)
+      if (fgets(g_buf, 128, fl) == NULL)
         goto done_parsing;
-    } while (*buf != '#');
-    if (buf[1] == '~')
+    } while (*g_buf != '#');
+    if (g_buf[1] == '~')
       break;
 
     pos = ftell(fl);
-    if (fgets(buf, 128, fl) == NULL)
+    if (fgets(g_buf, 128, fl) == NULL)
       break;
-    len = strlen(buf);
-    if (len > 0 && buf[len - 1] == '\n')
-      buf[len - 1] = '\0';
+    len = strlen(g_buf);
+    if (len > 0 && g_buf[len - 1] == '\n')
+      g_buf[len - 1] = '\0';
     for (;;) {
       /* extract the keywords */
 
-      scan = buf;
+      scan = g_buf;
       if (scan[1] == '~')
         break;
 
@@ -287,11 +287,11 @@ struct help_index_element *build_help_index(int *num, int type) {
       list[nr].pos = pos;
       CREATE(list[nr].keyword, char, strlen(scan));
       memcpy(list[nr].keyword, scan + 1, strlen(scan));
-      if (fgets(buf, 128, fl) == NULL)
+      if (fgets(g_buf, 128, fl) == NULL)
         break;
-      len = strlen(buf);
-      if (len > 0 && buf[len - 1] == '\n')
-        buf[len - 1] = '\0';
+      len = strlen(g_buf);
+      if (len > 0 && g_buf[len - 1] == '\n')
+        g_buf[len - 1] = '\0';
     }
   }
 done_parsing:

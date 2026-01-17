@@ -71,8 +71,8 @@ void load_text(struct char_data *ch) {
 
   if (!(fil = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING TEXT FILE %s (5)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: READING TEXT FILE %s (5)", fname);
+      perror(g_buf1);
       send_to_char("\r\n***** NOTICE - THERE WAS A PROBLEM READING YOUR ALIAS FILE *****\r\n", ch);
       return;
     }
@@ -89,12 +89,12 @@ void load_text(struct char_data *ch) {
   while (i != -1 && cnt != 0) {
     CREATE(al, struct alias, 1);
     al->type = i;
-    fgets(buf, MAX_INPUT_LENGTH, fil);
-    buf[strlen(buf) - 1] = '\0';
-    al->alias = strdup(buf);
-    fgets(buf, MAX_INPUT_LENGTH, fil);
-    buf[strlen(buf) - 1] = '\0';
-    al->replacement = strdup(buf);
+    fgets(g_buf, MAX_INPUT_LENGTH, fil);
+    g_buf[strlen(g_buf) - 1] = '\0';
+    al->alias = strdup(g_buf);
+    fgets(g_buf, MAX_INPUT_LENGTH, fil);
+    g_buf[strlen(g_buf) - 1] = '\0';
+    al->replacement = strdup(g_buf);
     al->next = ch->player_specials->aliases;
     ch->player_specials->aliases = al;
     fscanf(fil, "%d\n", &i);
@@ -117,38 +117,38 @@ void load_text(struct char_data *ch) {
     FREE(NAMECOLOR(ch));
   }
 
-  fgets(buf, MAX_INPUT_LENGTH, fil);
-  buf[strlen(buf) - 1] = '\0';
-  if (str_cmp("!UNUSED!", buf)) {
-    WHOSPEC(ch) = strdup(buf);
+  fgets(g_buf, MAX_INPUT_LENGTH, fil);
+  g_buf[strlen(g_buf) - 1] = '\0';
+  if (str_cmp("!UNUSED!", g_buf)) {
+    WHOSPEC(ch) = strdup(g_buf);
   }
-  fgets(buf, SMALL_BUFSIZE, fil);
-  buf[strlen(buf) - 1] = '\0';
-  if (str_cmp("!UNUSED!", buf)) {
-    POOFIN(ch) = strdup(buf);
+  fgets(g_buf, SMALL_BUFSIZE, fil);
+  g_buf[strlen(g_buf) - 1] = '\0';
+  if (str_cmp("!UNUSED!", g_buf)) {
+    POOFIN(ch) = strdup(g_buf);
   }
-  fgets(buf, SMALL_BUFSIZE, fil);
-  buf[strlen(buf) - 1] = '\0';
-  if (str_cmp("!UNUSED!", buf)) {
-    POOFOUT(ch) = strdup(buf);
+  fgets(g_buf, SMALL_BUFSIZE, fil);
+  g_buf[strlen(g_buf) - 1] = '\0';
+  if (str_cmp("!UNUSED!", g_buf)) {
+    POOFOUT(ch) = strdup(g_buf);
   }
-  fgets(buf, MAX_INPUT_LENGTH, fil);
-  buf[strlen(buf) - 1] = '\0';
-  if (str_cmp("!UNUSED!", buf)) {
-    WHOSTR(ch) = strdup(buf);
+  fgets(g_buf, MAX_INPUT_LENGTH, fil);
+  g_buf[strlen(g_buf) - 1] = '\0';
+  if (str_cmp("!UNUSED!", g_buf)) {
+    WHOSTR(ch) = strdup(g_buf);
   }
-  if (fgets(buf, SMALL_BUFSIZE, fil) > (char *)NULL) {
-    buf[strlen(buf) - 1] = '\0';
-    if (str_cmp("!UNUSED!", buf)) {
-      NAMECOLOR(ch) = strdup(buf);
+  if (fgets(g_buf, SMALL_BUFSIZE, fil) > (char *)NULL) {
+    g_buf[strlen(g_buf) - 1] = '\0';
+    if (str_cmp("!UNUSED!", g_buf)) {
+      NAMECOLOR(ch) = strdup(g_buf);
     }
   }
 
   if (cnt == 0) {
     send_to_char("Undetermined error when reading your alias file ...\r\n", ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "ERROR when reading %s's alias file.", GET_NAME(ch));
-    mudlog(buf, 'W', COM_IMMORT, TRUE);
-    plog(buf, ch, 0);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "ERROR when reading %s's alias file.", GET_NAME(ch));
+    mudlog(g_buf, 'W', COM_IMMORT, TRUE);
+    plog(g_buf, ch, 0);
   }
   fclose(fil);
   return;
@@ -296,8 +296,8 @@ int Crash_delete_text(char *name) {
   }
   if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT) { /* if it fails but NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: deleting text file %s (1)", filename);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: deleting text file %s (1)", filename);
+      perror(g_buf1);
     }
     return 0;
   }
@@ -305,8 +305,8 @@ int Crash_delete_text(char *name) {
 
   if (unlink(filename) < 0) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: deleting text file %s (2)", filename);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: deleting text file %s (2)", filename);
+      perror(g_buf1);
     }
   }
   return (1);
@@ -321,8 +321,8 @@ int Crash_delete_file(char *name) {
   }
   if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT) { /* if it fails but NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (1)", filename);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (1)", filename);
+      perror(g_buf1);
     }
     return 0;
   }
@@ -330,8 +330,8 @@ int Crash_delete_file(char *name) {
 
   if (unlink(filename) < 0) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (2)", filename);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (2)", filename);
+      perror(g_buf1);
     }
   }
   return (1);
@@ -346,8 +346,8 @@ int Delete_file(char *name, int mode) {
   }
   if (!(fl = fopen(filename, "r"))) {
     if (errno != ENOENT) { /* if it fails but NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (1)", filename);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (1)", filename);
+      perror(g_buf1);
     }
     return 0;
   }
@@ -355,8 +355,8 @@ int Delete_file(char *name, int mode) {
 
   if (unlink(filename) < 0) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (2)", filename);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: deleting crash file %s (2)", filename);
+      perror(g_buf1);
     }
   }
   return (1);
@@ -376,8 +376,8 @@ int Crash_delete_crashfile(struct char_data *ch) {
   }
   if (!(fl = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: checking for crash file %s (3)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: checking for crash file %s (3)", fname);
+      perror(g_buf1);
     }
     return 0;
   }
@@ -421,8 +421,8 @@ int Crash_clean_file(char *name) {
   }
   if (!(fl = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: OPENING OBJECT FILE %s (4)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: OPENING OBJECT FILE %s (4)", fname);
+      perror(g_buf1);
     }
     return 0;
   }
@@ -449,16 +449,16 @@ int Crash_clean_file(char *name) {
             Crash_delete_file(name);
             switch (val) {
             case RENT_CRASH:
-              safe_snprintf(buf, MAX_STRING_LENGTH, "    Deleting %s's crash file.", name);
+              safe_snprintf(g_buf, MAX_STRING_LENGTH, "    Deleting %s's crash file.", name);
               break;
             case RENT_FORCED:
-              safe_snprintf(buf, MAX_STRING_LENGTH, "    Deleting %s's forced rent file.", name);
+              safe_snprintf(g_buf, MAX_STRING_LENGTH, "    Deleting %s's forced rent file.", name);
               break;
             case RENT_TIMEDOUT:
-              safe_snprintf(buf, MAX_STRING_LENGTH, "    Deleting %s's idlesave file.", name);
+              safe_snprintf(g_buf, MAX_STRING_LENGTH, "    Deleting %s's idlesave file.", name);
               break;
             }
-            stderr_log(buf);
+            stderr_log(g_buf);
             return 1;
           }
           break;
@@ -468,13 +468,13 @@ int Crash_clean_file(char *name) {
             Crash_delete_file(name);
             switch (val) {
             case RENT_RENTED:
-              safe_snprintf(buf, MAX_STRING_LENGTH, "    Deleting %s's rent file.", name);
+              safe_snprintf(g_buf, MAX_STRING_LENGTH, "    Deleting %s's rent file.", name);
               break;
             case RENT_CAMPED:
-              safe_snprintf(buf, MAX_STRING_LENGTH, "    Deleting %s's camp file.", name);
+              safe_snprintf(g_buf, MAX_STRING_LENGTH, "    Deleting %s's camp file.", name);
               break;
             }
-            stderr_log(buf);
+            stderr_log(g_buf);
             return 1;
           }
         }
@@ -516,12 +516,12 @@ void Crash_listrent(struct char_data *ch, char *name) {
     return;
   }
   if (!(fl = fopen(fname, "r"))) {
-    safe_snprintf(buf, sizeof(buf), "%s has no rent file.\r\n", name);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, sizeof(g_buf), "%s has no rent file.\r\n", name);
+    send_to_char(g_buf, ch);
     return;
   }
 
-  buflen = safe_snprintf(buf, sizeof(buf), "%s\r\n", fname);
+  buflen = safe_snprintf(g_buf, sizeof(g_buf), "%s\r\n", fname);
   while (get_line(fl, input)) {
     parse_pline(input, tag, tag_arguments);
     while ((p = strrchr(tag_arguments, '\n')) != NULL) {
@@ -535,7 +535,8 @@ void Crash_listrent(struct char_data *ch, char *name) {
       if (strcasecmp(tag, "obj_number") == 0) {
         if (real_object(val) > -1) {
           obj = read_object_q(val, VIRTUAL);
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, " [%5d] %-20s\r\n", val, obj->short_description);
+          buflen +=
+              safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, " [%5d] %-20s\r\n", val, obj->short_description);
           extract_obj_q(obj);
         }
       }
@@ -543,40 +544,41 @@ void Crash_listrent(struct char_data *ch, char *name) {
     case 'r':
     case 'R':
       if (strcasecmp(tag, "rent_version") == 0) {
-        buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Version: %d\r\n", val);
+        buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Version: %d\r\n", val);
       } else if (strcasecmp(tag, "rent_time") == 0) {
         rent_time = time(0) - val;
         d = rent_time / 86400;
         h = (rent_time / 3600) % 24;
         m = (rent_time / 60) % 60;
-        buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Rented %d day%s, %d hour%s, %d minute%s ago.\r\n",
-                                d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
+        buflen +=
+            safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Rented %d day%s, %d hour%s, %d minute%s ago.\r\n", d,
+                          ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
       } else if (strcasecmp(tag, "rent_type") == 0)
         switch (val) {
         case RENT_RENTED:
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Rent\r\n");
+          buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Type: Rent\r\n");
           break;
         case RENT_CRASH:
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Crash\r\n");
+          buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Type: Crash\r\n");
           break;
         case RENT_CRYO:
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Cryo\r\n");
+          buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Type: Cryo\r\n");
           break;
         case RENT_TIMEDOUT:
         case RENT_FORCED:
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: TimedOut\r\n");
+          buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Type: TimedOut\r\n");
           break;
         case RENT_CAMPED:
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Camped\r\n");
+          buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Type: Camped\r\n");
           break;
         default:
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Undef\r\n");
+          buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "Type: Undef\r\n");
           break;
         }
       break;
     }
   }
-  page_string(ch->desc, buf, 1);
+  page_string(ch->desc, g_buf, 1);
   fclose(fl);
 }
 
@@ -614,16 +616,16 @@ int Crash_load(struct char_data *ch) {
   }
   if (!(fl = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING OBJECT FILE %s (5)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: READING OBJECT FILE %s (5)", fname);
+      perror(g_buf1);
       send_to_char("\r\n********************* NOTICE *********************\r\n"
                    "There was a problem loading your objects from disk.\r\n"
                    "Contact a God for assistance.\r\n",
                    ch);
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s entering game with no equipment.", GET_NAME(ch));
-    mudlog(buf, 'R', COM_IMMORT, TRUE);
-    plog(buf, ch, 0);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s entering game with no equipment.", GET_NAME(ch));
+    mudlog(g_buf, 'R', COM_IMMORT, TRUE);
+    plog(g_buf, ch, 0);
     return 1;
   }
 
@@ -643,8 +645,8 @@ int Crash_load(struct char_data *ch) {
         tmpobj->affected[affect_counter].modifier = val;
         affect_counter++;
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 'b':
@@ -663,8 +665,8 @@ int Crash_load(struct char_data *ch) {
       } else if (strcasecmp(tag, "obj_bitvector2") == 0) {
         GET_OBJ_BITV2(tmpobj) = asciiflag_conv(tag_arguments);
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 'e':
@@ -726,8 +728,8 @@ int Crash_load(struct char_data *ch) {
           ovnum = 0;
         }
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 'n':
@@ -739,8 +741,8 @@ int Crash_load(struct char_data *ch) {
           tmpobj = create_obj();
         }
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 'p':
@@ -748,8 +750,8 @@ int Crash_load(struct char_data *ch) {
       if (strcasecmp(tag, "obj_pos") == 0) {
         tmpobj->inobj = val;
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 's':
@@ -768,8 +770,8 @@ int Crash_load(struct char_data *ch) {
       } else if (strcasecmp(tag, "obj_spell3") == 0) {
         GET_OBJ_VAL(tmpobj, 3) = spells[find_spell_num(tag_arguments)].spellindex;
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 't':
@@ -779,8 +781,8 @@ int Crash_load(struct char_data *ch) {
       } else if (strcasecmp(tag, "obj_timer") == 0) {
         GET_OBJ_TIMER(tmpobj) = val;
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 'v':
@@ -802,8 +804,8 @@ int Crash_load(struct char_data *ch) {
       } else if (strcasecmp(tag, "obj_value4") == 0) {
         GET_OBJ_VAL(tmpobj, 4) = val;
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case 'w':
@@ -811,43 +813,43 @@ int Crash_load(struct char_data *ch) {
       if (strcasecmp(tag, "obj_weight") == 0) {
         GET_OBJ_WEIGHT(tmpobj) = val;
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     case '_':
       if (strcasecmp(tag, "rent_type") == 0) {
         switch (val) {
         case RENT_RENTED:
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s un-renting and entering game.", GET_NAME(ch));
-          mudlog(buf, 'R', COM_IMMORT, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s un-renting and entering game.", GET_NAME(ch));
+          mudlog(g_buf, 'R', COM_IMMORT, TRUE);
           break;
         case RENT_CRASH:
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s retrieving crash-saved items and entering game.", GET_NAME(ch));
-          mudlog(buf, 'R', COM_IMMORT, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s retrieving crash-saved items and entering game.", GET_NAME(ch));
+          mudlog(g_buf, 'R', COM_IMMORT, TRUE);
           break;
         case RENT_CRYO:
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s un-cryo'ing and entering game.", GET_NAME(ch));
-          mudlog(buf, 'R', COM_IMMORT, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s un-cryo'ing and entering game.", GET_NAME(ch));
+          mudlog(g_buf, 'R', COM_IMMORT, TRUE);
           break;
         case RENT_CAMPED:
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s un-camping and entering game.", GET_NAME(ch));
-          mudlog(buf, 'R', COM_IMMORT, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s un-camping and entering game.", GET_NAME(ch));
+          mudlog(g_buf, 'R', COM_IMMORT, TRUE);
           break;
         case RENT_FORCED:
         case RENT_TIMEDOUT:
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s retrieving force-saved items and entering game.", GET_NAME(ch));
-          mudlog(buf, 'R', COM_IMMORT, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s retrieving force-saved items and entering game.", GET_NAME(ch));
+          mudlog(g_buf, 'R', COM_IMMORT, TRUE);
           break;
         default:
-          safe_snprintf(buf, MAX_STRING_LENGTH, "WARNING: %s entering game with undefined rent code.", GET_NAME(ch));
-          mudlog(buf, 'W', COM_IMMORT, TRUE);
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "WARNING: %s entering game with undefined rent code.", GET_NAME(ch));
+          mudlog(g_buf, 'W', COM_IMMORT, TRUE);
           break;
         }
-        plog(buf, ch, 0);
+        plog(g_buf, ch, 0);
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
-        stderr_log(buf);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Unknown Rent-File Tag: %s", tag);
+        stderr_log(g_buf);
       }
       break;
     }
@@ -901,10 +903,10 @@ void Crash_save(struct char_data *ch, int type) {
     return;
   }
 
-  if (!get_filename(GET_NAME(ch), buf, CRASH_FILE)) {
+  if (!get_filename(GET_NAME(ch), g_buf, CRASH_FILE)) {
     return;
   }
-  if (!(fp = fopen(buf, "w"))) {
+  if (!(fp = fopen(g_buf, "w"))) {
     return;
   }
 
@@ -1017,11 +1019,11 @@ int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, stru
     if (Crash_is_unrentable(obj)) {
       has_norents = 1;
       if (recep) {
-        safe_snprintf(buf, sizeof(buf), "$n tells you, 'You cannot store %s.'", OBJS(obj, ch));
-        act(buf, FALSE, recep, 0, ch, TO_VICT);
+        safe_snprintf(g_buf, sizeof(g_buf), "$n tells you, 'You cannot store %s.'", OBJS(obj, ch));
+        act(g_buf, FALSE, recep, 0, ch, TO_VICT);
       } else {
-        safe_snprintf(buf, sizeof(buf), "You cannot store %s\n", OBJS(obj, ch));
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf, sizeof(g_buf), "You cannot store %s\n", OBJS(obj, ch));
+        send_to_char(g_buf, ch);
       }
     }
     has_norents += Crash_report_unrentables(ch, recep, obj->contains);
@@ -1030,7 +1032,7 @@ int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, stru
   return (has_norents);
 }
 
-int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd, char *arg, int mode) {
+int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd, char *g_arg, int mode) {
   int i;
   sh_int save_room;
   int unrentables = 0;
@@ -1065,15 +1067,15 @@ int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd, cha
     if (unrentables) {
       return TRUE;
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{r$n tells you, '{REnjoy your stay.{r'{x");
-    act(buf, FALSE, recep, 0, ch, TO_VICT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{r$n tells you, '{REnjoy your stay.{r'{x");
+    act(g_buf, FALSE, recep, 0, ch, TO_VICT);
 
     if (mode == RENT_FACTOR) {
       act("{W$n stores your belongings and helps you into your private chamber.{x", FALSE, recep, 0, ch, TO_VICT);
       Crash_save(ch, RENT_RENTED);
       SET_BIT(PLR_FLAGS(ch), PLR_RENT);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s has rented in room #%d", GET_NAME(ch), world[IN_ROOM(ch)].number);
-      mudlog(buf, 'R', COM_IMMORT, TRUE);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has rented in room #%d", GET_NAME(ch), world[IN_ROOM(ch)].number);
+      mudlog(g_buf, 'R', COM_IMMORT, TRUE);
     } else { /* cryo */
       act("$n stores your belongings and helps you into your private chamber.\r\n"
           "A white mist appears in the room, chilling you to the bone...\r\n"
@@ -1081,8 +1083,9 @@ int gen_receptionist(struct char_data *ch, struct char_data *recep, int cmd, cha
           FALSE, recep, 0, ch, TO_VICT);
       Crash_save(ch, RENT_CRYO);
       SET_BIT(PLR_FLAGS(ch), PLR_CRYO);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s has cryo-rented in room #%d.", GET_NAME(ch), world[IN_ROOM(ch)].number);
-      mudlog(buf, 'R', COM_IMMORT, TRUE);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has cryo-rented in room #%d.", GET_NAME(ch),
+                    world[IN_ROOM(ch)].number);
+      mudlog(g_buf, 'R', COM_IMMORT, TRUE);
     }
 
     act("$n helps $N into $S private chamber.", FALSE, recep, 0, ch, TO_NOTVICT);
@@ -1353,22 +1356,22 @@ struct obj_data *corpseloadobj(FILE *fromfile) {
     obj->item_number = -1;
   }
 
-  obj->name = fread_string(fromfile, buf2);
-  obj->description = fread_string(fromfile, buf2);
-  obj->short_description = fread_string(fromfile, buf2);
-  obj->action_description = fread_string(fromfile, buf2);
+  obj->name = fread_string(fromfile, g_buf2);
+  obj->description = fread_string(fromfile, g_buf2);
+  obj->short_description = fread_string(fromfile, g_buf2);
+  obj->action_description = fread_string(fromfile, g_buf2);
   if (obj->cname) {
     FREE(obj->cname);
   }
-  obj->cname = fread_string(fromfile, buf2);
+  obj->cname = fread_string(fromfile, g_buf2);
   if (obj->cdescription) {
     FREE(obj->cdescription);
   }
-  obj->cdescription = fread_string(fromfile, buf2);
+  obj->cdescription = fread_string(fromfile, g_buf2);
   if (obj->cshort_description) {
     FREE(obj->cshort_description);
   }
-  obj->cshort_description = fread_string(fromfile, buf2);
+  obj->cshort_description = fread_string(fromfile, g_buf2);
 
   if (fscanf(fromfile, "%d %d %d\n", &(obj->obj_flags.type_flag), &(obj->obj_flags.extra_flags),
              &(obj->obj_flags.wear_flags)) != 3) {
@@ -1417,8 +1420,8 @@ struct obj_data *corpseloadobj(FILE *fromfile) {
       break;
     case 'E':
       CREATE(new_descr, struct extra_descr_data, 1);
-      new_descr->keyword = fread_string(fromfile, buf2);
-      new_descr->description = fread_string(fromfile, buf2);
+      new_descr->keyword = fread_string(fromfile, g_buf2);
+      new_descr->description = fread_string(fromfile, g_buf2);
       new_descr->next = obj->ex_description;
       obj->ex_description = new_descr;
       break;
@@ -1430,7 +1433,7 @@ struct obj_data *corpseloadobj(FILE *fromfile) {
       break;
     case 'P':
       fscanf(fromfile, "%d\n", &(obj->obj_flags.timer));
-      obj->owner = fread_string(fromfile, buf2);
+      obj->owner = fread_string(fromfile, g_buf2);
       break;
     case '$':
       doneload = TRUE;

@@ -345,14 +345,14 @@ ACMD(do_memorize) {
   }
 
   if (!argument || *argument == '\0') {
-    size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "You have memorized the following spells:\r\n");
+    size_t len = safe_snprintf(g_buf, MAX_STRING_LENGTH, "You have memorized the following spells:\r\n");
     for (i = GET_PLR_CIRCLE(ch); i > 0; i--) {
       found_circle = 0;
       for (i = 0; i < 65; i++) {
         if (ch->spell_memory[i].circle == i) {
           if (!found_circle) {
             found_circle = 1;
-            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "(%2d%s circle) %2d - %s\r\n", i,
+            len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "(%2d%s circle) %2d - %s\r\n", i,
                                  i == 1   ? "st"
                                  : i == 2 ? "nd"
                                  : i == 3 ? "rd"
@@ -360,7 +360,7 @@ ACMD(do_memorize) {
                                  ch->spell_memory[i].has_mem,
                                  spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
           } else {
-            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "               %2d - %s\r\n",
+            len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "               %2d - %s\r\n",
                                  ch->spell_memory[i].has_mem,
                                  spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
           }
@@ -368,21 +368,23 @@ ACMD(do_memorize) {
       }
     }
     if (AFF2_FLAGGED(ch, AFF2_MEMMING)) {
-      if (*buf) {
-        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\nAnd you ");
+      if (*g_buf) {
+        len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "\r\nAnd you ");
       } else {
-        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "You ");
+        len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "You ");
       }
       if (IS_MAGE(ch)) {
-        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "are currently memorizing the following spells:\r\n");
+        len +=
+            safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "are currently memorizing the following spells:\r\n");
       } else {
-        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "are currently praying for the following spells:\r\n");
+        len +=
+            safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "are currently praying for the following spells:\r\n");
       }
       for (temp_event = pending_events; temp_event; temp_event = next_event) {
         next_event = temp_event->next;
         if (temp_event->type == EVENT_MEM && temp_event->causer == (void *)ch) {
           circle = GET_SPELL_CIRCLE(ch, temp_event->sinfo);
-          len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%5d seconds: (%2d%s) %s\r\n",
+          len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "%5d seconds: (%2d%s) %s\r\n",
                                temp_event->ticks_to_go, circle,
                                circle == 1   ? "st"
                                : circle == 2 ? "nd"
@@ -393,9 +395,9 @@ ACMD(do_memorize) {
       }
     }
     if (IS_MAGE(ch)) {
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\nYou can memorize ");
+      len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "\r\nYou can memorize ");
     } else {
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\nYou can pray ");
+      len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "\r\nYou can pray ");
     }
     i = 0;
     count = 0;
@@ -404,10 +406,10 @@ ACMD(do_memorize) {
       count += ch->spell_memory[j].is_mem;
       if (count) {
         if (i) {
-          safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), ", %s", buf2);
+          safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), ", %s", g_buf2);
         }
         i++;
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "%d %d%s", ch->can_mem[j] - count, j,
+        safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%d %d%s", ch->can_mem[j] - count, j,
                       j == 1   ? "st"
                       : j == 2 ? "nd"
                       : j == 3 ? "rd"
@@ -416,14 +418,14 @@ ACMD(do_memorize) {
       count = 0;
     }
     if (!i) {
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "no more spells.\r\n");
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "no more spells.\r\n");
     } else {
       if (i > 1) {
-        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "and ");
+        safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "and ");
       }
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s circle spells(s).\r\n", buf2);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), " %s circle spells(s).\r\n", g_buf2);
     }
-    page_string(ch->desc, buf, 1);
+    page_string(ch->desc, g_buf, 1);
     if (find_event(ch, EVENT_MEM) && !AFF2_FLAGGED(ch, AFF2_MEMMING) && GET_COND(ch, FULL) && GET_COND(ch, THIRST) &&
         GET_POS(ch) >= POS_RESTING && GET_POS(ch) <= POS_SITTING) {
       if (IS_MAGE(ch)) {

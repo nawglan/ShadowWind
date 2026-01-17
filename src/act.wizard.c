@@ -40,7 +40,7 @@
 
 /*   external vars  */
 extern int mob_idnum; /* mobs have a negative idnum */
-extern int file_to_string_alloc(char *name, char **buf);
+extern int file_to_string_alloc(char *name, char **g_buf);
 extern struct room_data *world;
 extern struct char_data *character_list;
 extern struct obj_data *object_list;
@@ -192,7 +192,7 @@ ACMD(do_config) {
                 {"nodecay", COM_ADMIN, BINARY},             /* 22 */
                 {"\n", 0, MISC}};
 
-  half_chop(argument, field, buf);
+  half_chop(argument, field, g_buf);
 
   if (!*field) {
     size_t len = 0;
@@ -226,7 +226,7 @@ ACMD(do_config) {
     return;
   }
 
-  safe_snprintf(val_arg, sizeof(val_arg), "%s", buf);
+  safe_snprintf(val_arg, sizeof(val_arg), "%s", g_buf);
   if (!*val_arg) {
     send_to_char("Usage: config <field> <value>\r\n", ch);
     return;
@@ -358,17 +358,17 @@ ACMD(do_xname) {
   char *achrp = NULL;
   int i = 0;
   FILE *fp = NULL;
-  *buf = '\0';
-  *buf1 = '\0';
+  *g_buf = '\0';
+  *g_buf1 = '\0';
 
   if (!COM_FLAGGED(ch, COM_ADMIN)) {
     send_to_char("Go Away.\r\n", ch);
     return;
   }
 
-  one_argument(argument, buf);
+  one_argument(argument, g_buf);
 
-  if (!*buf) {
+  if (!*g_buf) {
     send_to_char("Xname who?\r\n", ch);
   }
 
@@ -376,7 +376,7 @@ ACMD(do_xname) {
     perror("Cannot open declined file for update");
     return;
   }
-  safe_snprintf(tempname, sizeof(tempname), "%s", buf);
+  safe_snprintf(tempname, sizeof(tempname), "%s", g_buf);
   tempname[MAX_NAME_LENGTH] = '\0';
   achrp = strchr(tempname, '\n');
   if (achrp) {
@@ -387,10 +387,10 @@ ACMD(do_xname) {
   }
   fprintf(fp, "%s\n", tempname);
   fclose(fp);
-  safe_snprintf(buf1, MAX_STRING_LENGTH, "%s has been xnamed!", tempname);
-  mudlog(buf1, 'G', COM_ADMIN, TRUE);
-  safe_snprintf(buf1, MAX_STRING_LENGTH, "%s has been xnamed!\n", tempname);
-  send_to_char(buf1, ch);
+  safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%s has been xnamed!", tempname);
+  mudlog(g_buf1, 'G', COM_ADMIN, TRUE);
+  safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%s has been xnamed!\n", tempname);
+  send_to_char(g_buf1, ch);
   Read_Invalid_List();
 }
 
@@ -403,48 +403,48 @@ ACMD(do_bootmaze) {
   int found = 0;
   int zone_num = 0;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("You must specify a zone number!\r\n", ch);
     return;
   }
 
-  zone_num = atoi(arg);
+  zone_num = atoi(g_arg);
 
-  safe_snprintf(log_file, sizeof(log_file), "%s/%s.maz", MAZE_PREFIX, arg);
+  safe_snprintf(log_file, sizeof(log_file), "%s/%s.maz", MAZE_PREFIX, g_arg);
   safe_snprintf(index_file, sizeof(index_file), "%s/%s", MAZE_PREFIX, INDEX_FILE);
   index = fopen(index_file, "r");
   if (index == NULL) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Could not open %s.\r\n", index_file);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Could not open %s.\r\n", index_file);
+    send_to_char(g_buf, ch);
     return;
   }
 
-  fgets(buf, 80, index);
+  fgets(g_buf, 80, index);
   while (!feof(index)) {
-    buf[strlen(buf) - 1] = '\0';
-    if (strcmp(buf, log_file + strlen(MAZE_PREFIX) + 1) == 0)
+    g_buf[strlen(g_buf) - 1] = '\0';
+    if (strcmp(g_buf, log_file + strlen(MAZE_PREFIX) + 1) == 0)
       found = 1;
-    fgets(buf, 80, index);
+    fgets(g_buf, 80, index);
   }
 
   fclose(index);
   if (!found) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Sorry, but zone %s is not a maze.\r\n", arg);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Sorry, but zone %s is not a maze.\r\n", g_arg);
+    send_to_char(g_buf, ch);
     return;
   }
 
   f = fopen(log_file, "w");
   if (f == NULL) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Could not open %s.\r\n", log_file);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Could not open %s.\r\n", log_file);
+    send_to_char(g_buf, ch);
     return;
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s has rebuilt maze #%s.", GET_NAME(ch), arg);
-  mudlog(buf, 'G', COM_QUEST, TRUE);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has rebuilt maze #%s.", GET_NAME(ch), g_arg);
+  mudlog(g_buf, 'G', COM_QUEST, TRUE);
 
   create_maze(&m);
   print_maze(&m, f);
@@ -456,18 +456,18 @@ ACMD(do_vlist) {
   int i, j, k, oktosee;
   size_t buflen;
 
-  two_arguments(argument, arg, buf);
-  if (!*arg) {
+  two_arguments(argument, g_arg, g_buf);
+  if (!*g_arg) {
     send_to_char("Usage: vlist <o | m | r> <zone>\r\n", ch);
     return;
   }
-  if (!*buf) {
+  if (!*g_buf) {
     send_to_char("You have to supply a zone number.\r\n", ch);
     return;
   }
 
-  if (is_abbrev(arg, "room")) {
-    for (j = atoi(buf), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
+  if (is_abbrev(g_arg, "room")) {
+    for (j = atoi(g_buf), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
       ;
     }
     if (i <= top_of_zone_table) {
@@ -483,11 +483,11 @@ ACMD(do_vlist) {
           return;
         }
       }
-      size_t buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Room vnums in zone (#%d) %s:\r\n",
+      size_t buflen = safe_snprintf(g_string_buf, MAX_STRING_LENGTH * 2, "Room vnums in zone (#%d) %s:\r\n",
                                     zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_room(j)) > 0) {
-          buflen += safe_snprintf(string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n",
+          buflen += safe_snprintf(g_string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n",
                                   CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), world[k].number, CCCYN(ch, C_CMP), world[k].name,
                                   CCNRM(ch, C_NRM));
           if (buflen >= MAX_STRING_LENGTH * 2 - 1) {
@@ -495,13 +495,13 @@ ACMD(do_vlist) {
           }
         }
       }
-      page_string(ch->desc, string_buf, 1);
+      page_string(ch->desc, g_string_buf, 1);
     } else {
       send_to_char("That is not a valid zone.\r\n", ch);
       return;
     }
-  } else if (is_abbrev(arg, "mobile")) {
-    for (j = atoi(buf), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
+  } else if (is_abbrev(g_arg, "mobile")) {
+    for (j = atoi(g_buf), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
       ;
     }
     if (i <= top_of_zone_table) {
@@ -517,11 +517,11 @@ ACMD(do_vlist) {
           return;
         }
       }
-      buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Mobile vnums in zone (#%d) %s:\r\n",
+      buflen = safe_snprintf(g_string_buf, MAX_STRING_LENGTH * 2, "Mobile vnums in zone (#%d) %s:\r\n",
                              zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_mobile(j)) > 0) {
-          buflen += safe_snprintf(string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n",
+          buflen += safe_snprintf(g_string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n",
                                   CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), mob_index[k].virtual, CCCYN(ch, C_CMP),
                                   mob_proto[k].player.short_descr, CCNRM(ch, C_NRM));
           if (buflen >= MAX_STRING_LENGTH * 2 - 1) {
@@ -529,13 +529,13 @@ ACMD(do_vlist) {
           }
         }
       }
-      page_string(ch->desc, string_buf, 1);
+      page_string(ch->desc, g_string_buf, 1);
     } else {
       send_to_char("That is not a valid zone.\r\n", ch);
       return;
     }
-  } else if (is_abbrev(arg, "object")) {
-    for (j = atoi(buf), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
+  } else if (is_abbrev(g_arg, "object")) {
+    for (j = atoi(g_buf), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
       ;
     }
     if (i <= top_of_zone_table) {
@@ -551,11 +551,11 @@ ACMD(do_vlist) {
           return;
         }
       }
-      buflen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Object vnums in zone (#%d) %s:\r\n",
+      buflen = safe_snprintf(g_string_buf, MAX_STRING_LENGTH * 2, "Object vnums in zone (#%d) %s:\r\n",
                              zone_table[i].number, zone_table[i].name);
       for (j = (i ? zone_table[i - 1].top : -1) + 1; j < zone_table[i].top + 1; j++) {
         if ((k = real_object(j)) > 0) {
-          buflen += safe_snprintf(string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n",
+          buflen += safe_snprintf(g_string_buf + buflen, MAX_STRING_LENGTH * 2 - buflen, "%s#%s%d%s: %s%s\r\n",
                                   CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[k].virtual, CCCYN(ch, C_CMP),
                                   obj_proto[k].short_description, CCNRM(ch, C_NRM));
           if (buflen >= MAX_STRING_LENGTH * 2 - 1) {
@@ -563,7 +563,7 @@ ACMD(do_vlist) {
           }
         }
       }
-      page_string(ch->desc, string_buf, 1);
+      page_string(ch->desc, g_string_buf, 1);
     } else {
       send_to_char("That is not a valid zone.\r\n", ch);
       return;
@@ -580,11 +580,10 @@ ACMD(do_objtochar) {
 
 ACMD(do_wizupdate) {
   char buf[100];
-  safe_snprintf(buf, MAX_STRING_LENGTH, "../bin/autowiz %d text/wizlist %d text/immlist 1 &", LVL_IMMORT, LVL_IMMORT);
-  system(buf);
+  safe_exec_autowiz(LVL_IMMORT, "text/wizlist", LVL_IMMORT, "text/immlist", 0);
   reread_wizlists();
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s initiated autowiz", GET_NAME(ch));
-  mudlog(buf, 'M', COM_ADMIN, FALSE);
+  safe_snprintf(g_buf, sizeof(g_buf), "%s initiated autowiz", GET_NAME(ch));
+  mudlog(g_buf, 'M', COM_ADMIN, FALSE);
 }
 
 ACMD(do_logcheck) {
@@ -592,69 +591,69 @@ ACMD(do_logcheck) {
   char fname[MAX_INPUT_LENGTH];
   int lvl, i;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Usage: plog <player>\r\n", ch);
     return;
   }
 
-  if (!get_filename(arg, fname, PLOG_FILE)) {
+  if (!get_filename(g_arg, fname, PLOG_FILE)) {
     return;
   }
 
   if (!(fil = fopen(fname, "r"))) {
     if (errno != ENOENT) { /* if it fails, NOT because of no file */
-      safe_snprintf(buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
-      perror(buf1);
+      safe_snprintf(g_buf1, MAX_STRING_LENGTH, "SYSERR: READING PLOG FILE %s (5)", fname);
+      perror(g_buf1);
       return;
     }
     send_to_char("There is no such logfile.\r\n", ch);
     return;
   }
 
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s logchecked %s", GET_NAME(ch), arg);
-  mudlog(logbuffer, 'G', COM_QUEST, FALSE);
-  plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s logchecked %s", GET_NAME(ch), g_arg);
+  mudlog(g_logbuffer, 'G', COM_QUEST, FALSE);
+  plog(g_logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
 
-  *string_buf = '\0';
+  *g_string_buf = '\0';
   while (!feof(fil)) {
-    *buf = '\0';
+    *g_buf = '\0';
     fscanf(fil, "%d %d ", &lvl, &i);
-    fgets(buf, MAX_INPUT_LENGTH, fil);
+    fgets(g_buf, MAX_INPUT_LENGTH, fil);
     if (GET_LEVEL(ch) >= lvl) {
-      safe_snprintf(string_buf + strlen(string_buf), MAX_STRING_LENGTH * 2 - strlen(string_buf), "%s", buf);
+      safe_snprintf(g_string_buf + strlen(g_string_buf), MAX_STRING_LENGTH * 2 - strlen(g_string_buf), "%s", g_buf);
     }
-    if (strlen(string_buf) > 39500) {
-      page_string(ch->desc, string_buf, 1);
-      string_buf[0] = '\0';
+    if (strlen(g_string_buf) > 39500) {
+      page_string(ch->desc, g_string_buf, 1);
+      g_string_buf[0] = '\0';
     }
   }
   fclose(fil);
-  page_string(ch->desc, string_buf, 1);
+  page_string(ch->desc, g_string_buf, 1);
 }
 
 ACMD(do_fpurge) {
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Purge what files??\r\n", ch);
     return;
   }
 
   switch (subcmd) {
   case SCMD_PRENT:
-    Crash_delete_file(arg);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s purged %s's rentfile.", GET_NAME(ch), arg);
-    mudlog(buf, 'G', COM_ADMIN, TRUE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    Crash_delete_file(g_arg);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s purged %s's rentfile.", GET_NAME(ch), g_arg);
+    mudlog(g_buf, 'G', COM_ADMIN, TRUE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
     send_to_char("Rentfile purged.\r\n", ch);
     break;
   case SCMD_PTEXT:
-    Crash_delete_text(arg);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s purged %s's textfile.", GET_NAME(ch), arg);
-    mudlog(buf, 'G', COM_ADMIN, TRUE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    Crash_delete_text(g_arg);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s purged %s's textfile.", GET_NAME(ch), g_arg);
+    mudlog(g_buf, 'G', COM_ADMIN, TRUE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
     send_to_char("Textfile purged.\r\n", ch);
     break;
   default:
@@ -665,10 +664,10 @@ ACMD(do_fpurge) {
 ACMD(do_strings) /* shows some basic strings for immos */
 {
   struct char_data *tch;
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (*arg) {
-    tch = get_char_vis(ch, arg);
+  if (*g_arg) {
+    tch = get_char_vis(ch, g_arg);
     if (!tch || IS_NPC(tch)) {
       send_to_char("Show strings of who?\r\n", ch);
       return;
@@ -676,7 +675,7 @@ ACMD(do_strings) /* shows some basic strings for immos */
   } else {
     tch = ch;
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH,
+  safe_snprintf(g_buf, MAX_STRING_LENGTH,
                 "Who setting: %s\r\n"
                 "Poof-in    : %s\r\n"
                 "Poof-out   : %s\r\n"
@@ -685,21 +684,21 @@ ACMD(do_strings) /* shows some basic strings for immos */
                 WHOSPEC(tch) ? WHOSPEC(tch) : "NONE", POOFIN(tch) ? POOFIN(tch) : "NONE",
                 POOFOUT(tch) ? POOFOUT(tch) : "NONE", GET_TITLE(tch) ? GET_TITLE(tch) : "NONE",
                 GET_DESC(tch) ? GET_DESC(tch) : "NONE");
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 }
 
 ACMD(do_frent) /* force a player to rent, for use with animate */
 {
   struct char_data *vict;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Force-rent who??\r\n", ch);
     return;
   }
 
-  if (!(vict = get_char_vis(ch, arg)) || GET_MOB_RNUM(vict) != -1) {
+  if (!(vict = get_char_vis(ch, g_arg)) || GET_MOB_RNUM(vict) != -1) {
     send_to_char("Who is that?\r\n", ch);
     return;
   }
@@ -707,9 +706,9 @@ ACMD(do_frent) /* force a player to rent, for use with animate */
   if (!GET_INVIS_LEV(vict)) {
     act("$n has left the game.", TRUE, vict, 0, 0, TO_ROOM);
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s was force-rented by %s.", GET_NAME(vict), GET_NAME(ch));
-  mudlog(buf, 'R', COM_ADMIN, TRUE);
-  plog(buf, vict, 0);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s was force-rented by %s.", GET_NAME(vict), GET_NAME(ch));
+  mudlog(g_buf, 'R', COM_ADMIN, TRUE);
+  plog(g_buf, vict, 0);
   Crash_save(vict, RENT_FORCED);
   extract_char(vict, 0); /* Char is saved in extract char */
 }
@@ -718,15 +717,15 @@ ACMD(do_animate) {
 
   struct char_data *vict;
 
-  one_argument(argument, arg);
-  if (!*arg) {
+  one_argument(argument, g_arg);
+  if (!*g_arg) {
     send_to_char("Which player do you want to animate?\r\n", ch);
     return;
   }
 
   CREATE(vict, struct char_data, 1);
   clear_char(vict);
-  if (load_char_text(arg, vict) > 0) { /* load player */
+  if (load_char_text(g_arg, vict) > 0) { /* load player */
     vict->desc = NULL;
     GET_MOB_RNUM(vict) = -1; /* this is not a regular NPC */
     reset_char(vict);
@@ -740,10 +739,10 @@ ACMD(do_animate) {
     char_to_room(vict, ch->in_room);
     act("$n gestures and a ghost of $N appears.", TRUE, ch, 0, vict, TO_ROOM);
     act("You have created a ghost of $N.", FALSE, ch, 0, vict, TO_CHAR);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s animated %s", GET_NAME(ch), GET_NAME(vict));
-    mudlog(buf, 'G', COM_ADMIN, TRUE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
-    plog(buf, vict, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s animated %s", GET_NAME(ch), GET_NAME(vict));
+    mudlog(g_buf, 'G', COM_ADMIN, TRUE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    plog(g_buf, vict, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   } else { /* no such player */
     send_to_char("Cannot find that player in the database.\r\n", ch);
     FREE(vict);
@@ -758,20 +757,20 @@ ACMD(do_animate) {
  struct char_data *mob;
  struct obj_data *obj;
 
- two_arguments(argument, buf, arg);
+ two_arguments(argument, g_buf, g_arg);
 
- if (!*arg) {
+ if (!*g_arg) {
  send_to_char("Usage: clone { obj | mob } <name>\r\n", ch);
  return; }
 
- if (!*buf) {
+ if (!*g_buf) {
  send_to_char("What do you want to clone?\r\n", ch);
  return; }
 
- generic_find(arg, FIND_OBJ_WORLD | FIND_OBJ_ROOM | FIND_OBJ_INV | FIND_OBJ_EQUIP | FIND_CHAR_ROOM | FIND_CHAR_WORLD,
+ generic_find(g_arg, FIND_OBJ_WORLD | FIND_OBJ_ROOM | FIND_OBJ_INV | FIND_OBJ_EQUIP | FIND_CHAR_ROOM | FIND_CHAR_WORLD,
  ch, &vict, &item);
 
- if (is_abbrev(buf, "mob")) {
+ if (is_abbrev(g_buf, "mob")) {
  if (vict == NULL) {
  send_to_char("No mobiles by that name.\r\n", ch);
  return; }
@@ -803,13 +802,13 @@ ACMD(do_animate) {
  0, 0, TO_ROOM);
  act("$n has cloned $N!", FALSE, ch, 0, mob, TO_ROOM);
  act("You clone $N.", FALSE, ch, 0, mob, TO_CHAR);
- safe_snprintf(buf, MAX_STRING_LENGTH, "%s cloned %s at %s", GET_NAME(ch), GET_NAME(mob), world[ch->in_room].name);
- mudlog(buf, 'L', COM_QUEST, FALSE);
- plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+ safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s cloned %s at %s", GET_NAME(ch), GET_NAME(mob), world[ch->in_room].name);
+ mudlog(g_buf, 'L', COM_QUEST, FALSE);
+ plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
  return;
  }
 
- if (is_abbrev(buf, "obj")) {
+ if (is_abbrev(g_buf, "obj")) {
  if (item == NULL) {
  send_to_char("No objects by that name.\r\n", ch);
  return; }
@@ -836,8 +835,9 @@ ACMD(do_animate) {
  act("$n makes a strange, fascinating gesture.", TRUE, ch, 0, 0, TO_ROOM);
  act("$n has cloned $p!", FALSE, ch, obj, 0, TO_ROOM);
  act("You cloned $p.", FALSE, ch, obj, 0, TO_CHAR);
- safe_snprintf(buf, MAX_STRING_LENGTH, "%s cloned %s at %s", GET_NAME(ch), obj->short_description,
- world[ch->in_room].name); mudlog(buf, 'L', COM_QUEST, FALSE); plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch))); return;
+ safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s cloned %s at %s", GET_NAME(ch), obj->short_description,
+ world[ch->in_room].name); mudlog(g_buf, 'L', COM_QUEST, FALSE); plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+ return;
  }
 
  send_to_char("You have to chose either 'obj' or 'mob'.\r\n", ch);
@@ -873,14 +873,14 @@ ACMD(do_kit) {
   struct char_data *vict;
   struct obj_data *obj;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Give a newbie kit to who?\r\n", ch);
     return;
   }
 
-  if (!(vict = get_char_vis(ch, arg)) || IS_NPC(vict)) {
+  if (!(vict = get_char_vis(ch, g_arg)) || IS_NPC(vict)) {
     send_to_char("Who is that?\r\n", ch);
     return;
   }
@@ -907,9 +907,9 @@ ACMD(do_kit) {
   act("You give $N a newbie kit.", FALSE, ch, 0, vict, TO_CHAR);
   act("$n gives you a newbie kit.", TRUE, ch, 0, vict, TO_VICT);
   act("$N gives $n a newbie kit.", TRUE, vict, 0, ch, TO_NOTVICT);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s gave a newbie kit to %s", GET_NAME(ch), GET_NAME(vict));
-  mudlog(buf, 'G', COM_IMMORT, FALSE);
-  plog(buf, ch, LVL_IMMORT);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s gave a newbie kit to %s", GET_NAME(ch), GET_NAME(vict));
+  mudlog(g_buf, 'G', COM_IMMORT, FALSE);
+  plog(g_buf, ch, LVL_IMMORT);
 }
 
 ACMD(do_echo) {
@@ -927,18 +927,18 @@ ACMD(do_echo) {
         send_to_char("That's too long... Try something shorter.\r\n", ch);
         return;
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "$n %s", argument);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "$n %s", argument);
       }
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s", argument);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", argument);
     }
     MOBTrigger = FALSE;
-    act(buf, FALSE, ch, 0, 0, TO_ROOM);
+    act(g_buf, FALSE, ch, 0, 0, TO_ROOM);
     if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
       send_to_char(OK, ch);
     } else {
       MOBTrigger = FALSE;
-      act(buf, FALSE, ch, 0, 0, TO_CHAR);
+      act(g_buf, FALSE, ch, 0, 0, TO_CHAR);
     }
   }
 }
@@ -946,23 +946,23 @@ ACMD(do_echo) {
 ACMD(do_send) {
   struct char_data *vict;
 
-  half_chop(argument, arg, buf);
+  half_chop(argument, g_arg, g_buf);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Send what to who?\r\n", ch);
     return;
   }
-  if (!(vict = get_char_vis(ch, arg))) {
+  if (!(vict = get_char_vis(ch, g_arg))) {
     send_to_char(NOPERSON, ch);
     return;
   }
-  send_to_char(buf, vict);
+  send_to_char(g_buf, vict);
   send_to_char("\r\n", vict);
   if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
     send_to_char("Sent.\r\n", ch);
   } else {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "You send '%s' to %s.\r\n", buf, GET_NAME(vict));
-    send_to_char(buf2, ch);
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "You send '%s' to %s.\r\n", g_buf, GET_NAME(vict));
+    send_to_char(g_buf2, ch);
   }
 }
 
@@ -1018,8 +1018,8 @@ ACMD(do_at) {
   char command[MAX_INPUT_LENGTH];
   int location, original_loc;
 
-  half_chop(argument, buf, command);
-  if (!*buf) {
+  half_chop(argument, g_buf, command);
+  if (!*g_buf) {
     send_to_char("You must supply a room number or a name.\r\n", ch);
     return;
   }
@@ -1029,7 +1029,7 @@ ACMD(do_at) {
     return;
   }
 
-  if ((location = find_target_room(ch, buf)) < 0) {
+  if ((location = find_target_room(ch, g_buf)) < 0) {
     return;
   }
 
@@ -1054,10 +1054,10 @@ ACMD(do_at) {
 ACMD(do_goto) {
   sh_int location;
 
-  one_argument(argument, arg);
-  if (PLR_FLAGGED(ch, PLR_LOADROOM) && strcasecmp(arg, "home") == 0) {
+  one_argument(argument, g_arg);
+  if (PLR_FLAGGED(ch, PLR_LOADROOM) && strcasecmp(g_arg, "home") == 0) {
     location = real_room(GET_LOADROOM(ch));
-  } else if ((location = find_target_room(ch, arg)) < 0) {
+  } else if ((location = find_target_room(ch, g_arg)) < 0) {
     return;
   }
 
@@ -1067,22 +1067,22 @@ ACMD(do_goto) {
   }
 
   if (POOFOUT(ch)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s", POOFOUT(ch));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", POOFOUT(ch));
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s", "$n disappears in a puff of smoke.");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", "$n disappears in a puff of smoke.");
   }
 
-  act(buf, TRUE, ch, 0, 0, TO_ROOM);
+  act(g_buf, TRUE, ch, 0, 0, TO_ROOM);
   char_from_room(ch);
   char_to_room(ch, location);
 
   if (POOFIN(ch)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s", POOFIN(ch));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", POOFIN(ch));
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s", "$n appears with an ear-splitting bang.");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", "$n appears with an ear-splitting bang.");
   }
 
-  act(buf, TRUE, ch, 0, 0, TO_ROOM);
+  act(g_buf, TRUE, ch, 0, 0, TO_ROOM);
   look_at_room(ch, 0);
 }
 
@@ -1093,23 +1093,23 @@ ACMD(do_trans) {
   struct char_data *member2;
   struct follow_type *ftype;
   struct follow_type *ftype2;
-  char *buf2;
-  char *buf;
+  char *g_buf2;
+  char *g_buf;
 
-  buf = argument;
-  buf2 = one_argument(argument, buf);
-  if (!*buf) {
+  g_buf = argument;
+  g_buf2 = one_argument(argument, g_buf);
+  if (!*g_buf) {
     send_to_char("Whom do you wish to transfer?\r\n", ch);
-  } else if (*buf == '-') {
-    buf++;
-    switch (*buf) {
+  } else if (*g_buf == '-') {
+    g_buf++;
+    switch (*g_buf) {
     case 'g':
-      if (!*buf2) {
+      if (!*g_buf2) {
         send_to_char("You must specify a group leader or member or a mob with followers.\r\n", ch);
         return;
       }
-      buf2++;
-      if (!(victim = get_char_vis(ch, buf2))) {
+      g_buf2++;
+      if (!(victim = get_char_vis(ch, g_buf2))) {
         send_to_char(NOPERSON, ch);
         return;
       }
@@ -1152,10 +1152,10 @@ ACMD(do_trans) {
             act("$n appears in a puff of smoke.", FALSE, member, 0, 0, TO_ROOM);
           }
         }
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s transferred %s and followers to %s", GET_NAME(ch), GET_NAME(victim),
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s transferred %s and followers to %s", GET_NAME(ch), GET_NAME(victim),
                       world[ch->in_room].name);
-        mudlog(buf, 'G', COM_QUEST, FALSE);
-        plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+        mudlog(g_buf, 'G', COM_QUEST, FALSE);
+        plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
         return;
       }
       if (IS_IMMO(victim)) {
@@ -1202,10 +1202,10 @@ ACMD(do_trans) {
             }
           }
         }
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s transferred %s and their group to %s", GET_NAME(ch), GET_NAME(victim),
-                      world[ch->in_room].name);
-        mudlog(buf, 'G', COM_QUEST, FALSE);
-        plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s transferred %s and their group to %s", GET_NAME(ch),
+                      GET_NAME(victim), world[ch->in_room].name);
+        mudlog(g_buf, 'G', COM_QUEST, FALSE);
+        plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
       } else {
         send_to_char("That person is not grouped and has no followers.\r\n", ch);
       }
@@ -1215,8 +1215,8 @@ ACMD(do_trans) {
       send_to_char("Unknown option.\r\n", ch);
       return;
     }
-  } else if (str_cmp("all", buf)) {
-    if (!(victim = get_char_vis(ch, buf))) {
+  } else if (str_cmp("all", g_buf)) {
+    if (!(victim = get_char_vis(ch, g_buf))) {
       send_to_char(NOPERSON, ch);
     } else if (victim == ch) {
       send_to_char("That doesn't make much sense, does it?\r\n", ch);
@@ -1248,10 +1248,10 @@ ACMD(do_trans) {
       char_to_room(victim, ch->in_room);
       act("$n arrives from a puff of smoke.", FALSE, victim, 0, 0, TO_ROOM);
       act("$n has transferred you!", FALSE, ch, 0, victim, TO_VICT);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s transferred %s to %s", GET_NAME(ch), GET_NAME(victim),
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s transferred %s to %s", GET_NAME(ch), GET_NAME(victim),
                     world[ch->in_room].name);
-      mudlog(buf, 'G', COM_QUEST, FALSE);
-      plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+      mudlog(g_buf, 'G', COM_QUEST, FALSE);
+      plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
       look_at_room(victim, 0);
     }
   } else { /* Trans All */
@@ -1259,9 +1259,9 @@ ACMD(do_trans) {
       send_to_char("I think not.\r\n", ch);
       return;
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s transferred all to %s", GET_NAME(ch), world[ch->in_room].name);
-    mudlog(buf, 'G', COM_QUEST, FALSE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s transferred all to %s", GET_NAME(ch), world[ch->in_room].name);
+    mudlog(g_buf, 'G', COM_QUEST, FALSE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
     for (i = descriptor_list; i; i = i->next)
       if (!i->connected && i->character && i->character != ch) {
         victim = i->character;
@@ -1283,19 +1283,19 @@ ACMD(do_teleport) {
   struct char_data *victim;
   sh_int target;
 
-  two_arguments(argument, buf, buf2);
+  two_arguments(argument, g_buf, g_buf2);
 
-  if (!*buf) {
+  if (!*g_buf) {
     send_to_char("Whom do you wish to teleport?\r\n", ch);
-  } else if (!(victim = get_char_vis(ch, buf))) {
+  } else if (!(victim = get_char_vis(ch, g_buf))) {
     send_to_char(NOPERSON, ch);
   } else if (victim == ch) {
     send_to_char("Use 'goto' to teleport yourself.\r\n", ch);
   } else if ((GET_LEVEL(victim) >= GET_LEVEL(ch)) && !COM_FLAGGED(ch, COM_ADMIN) && !IS_NPC(victim)) {
     send_to_char("Maybe you shouldn't do that.\r\n", ch);
-  } else if (!*buf2) {
+  } else if (!*g_buf2) {
     send_to_char("Where do you wish to send this person?\r\n", ch);
-  } else if ((target = find_target_room(ch, buf2)) >= 0) {
+  } else if ((target = find_target_room(ch, g_buf2)) >= 0) {
     if (!check_access(ch, target)) {
       send_to_char("You are not allowed to teleport people into restricted zones.\r\n", ch);
       return;
@@ -1307,47 +1307,47 @@ ACMD(do_teleport) {
     act("$n arrives from a puff of smoke.", FALSE, victim, 0, 0, TO_ROOM);
     act("$n has teleported you!", FALSE, ch, 0, (char *)victim, TO_VICT);
     look_at_room(victim, 0);
-    safe_snprintf(logbuffer, sizeof(logbuffer), "%s teleported %s to %s", GET_NAME(ch), GET_NAME(victim),
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s teleported %s to %s", GET_NAME(ch), GET_NAME(victim),
                   world[victim->in_room].name);
-    mudlog(logbuffer, 'G', COM_QUEST, TRUE);
+    mudlog(g_logbuffer, 'G', COM_QUEST, TRUE);
   }
 }
 
 ACMD(do_vnum) {
-  two_arguments(argument, buf, buf2);
+  two_arguments(argument, g_buf, g_buf2);
 
-  if (!*buf || !*buf2 || (!is_abbrev(buf, "type") && (!is_abbrev(buf, "mob") && !is_abbrev(buf, "obj")))) {
+  if (!*g_buf || !*g_buf2 || (!is_abbrev(g_buf, "type") && (!is_abbrev(g_buf, "mob") && !is_abbrev(g_buf, "obj")))) {
     send_to_char("Usage: vnum {{ obj | mob } <name>\r\n", ch);
     return;
   }
-  if (is_abbrev(buf, "mob")) {
-    if (!vnum_mobile(buf2, ch)) {
+  if (is_abbrev(g_buf, "mob")) {
+    if (!vnum_mobile(g_buf2, ch)) {
       send_to_char("No mobiles by that name.\r\n", ch);
     } else {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s did a 'vnum m %s'", GET_NAME(ch), buf2);
-      mudlog(logbuffer, 'X', COM_QUEST, FALSE);
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s did a 'vnum m %s'", GET_NAME(ch), g_buf2);
+      mudlog(g_logbuffer, 'X', COM_QUEST, FALSE);
     }
   }
 
-  if (is_abbrev(buf, "obj")) {
-    if (!vnum_object(buf2, ch)) {
+  if (is_abbrev(g_buf, "obj")) {
+    if (!vnum_object(g_buf2, ch)) {
       send_to_char("No objects by that name.\r\n", ch);
     } else {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s did a 'vnum o %s'", GET_NAME(ch), buf2);
-      mudlog(logbuffer, 'X', COM_QUEST, FALSE);
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s did a 'vnum o %s'", GET_NAME(ch), g_buf2);
+      mudlog(g_logbuffer, 'X', COM_QUEST, FALSE);
     }
   }
 
-  if (is_abbrev(buf, "type")) {
+  if (is_abbrev(g_buf, "type")) {
     if (!COM_FLAGGED(ch, COM_ADMIN)) {
       send_to_char("Usage: vnum { obj | mob } <name>\r\n", ch);
       return;
     }
-    if (!vnum_type(buf2, ch)) {
+    if (!vnum_type(g_buf2, ch)) {
       send_to_char("No objects by that type.\r\n", ch);
     } else {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s did a 'vnum t %s'", GET_NAME(ch), buf2);
-      mudlog(logbuffer, 'X', COM_QUEST, FALSE);
+      safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s did a 'vnum t %s'", GET_NAME(ch), g_buf2);
+      mudlog(g_logbuffer, 'X', COM_QUEST, FALSE);
     }
   }
 }
@@ -1373,25 +1373,26 @@ void do_stat_room(struct char_data *ch) {
       return;
     }
   }
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s did a 'stat room' on #%d (%s)", GET_NAME(ch),
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s did a 'stat room' on #%d (%s)", GET_NAME(ch),
                 world[ch->in_room].number, world[ch->in_room].name);
-  mudlog(logbuffer, 'X', COM_QUEST, FALSE);
+  mudlog(g_logbuffer, 'X', COM_QUEST, FALSE);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Room name: %s%s%s\r\n", CCCYN(ch, C_NRM), rm->name, CCNRM(ch, C_NRM));
-  send_to_char(buf, ch);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Room name: %s%s%s\r\n", CCCYN(ch, C_NRM), rm->name, CCNRM(ch, C_NRM));
+  send_to_char(g_buf, ch);
 
-  sprinttype(rm->sector_type, sector_types, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Zone: [%3d], VNum: [%s%5d%s], RNum: [%5d], Type: %s, Access: %s", rm->zone,
-                CCGRN(ch, C_NRM), rm->number, CCNRM(ch, C_NRM), ch->in_room, buf2,
+  sprinttype(rm->sector_type, sector_types, g_buf2);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Zone: [%3d], VNum: [%s%5d%s], RNum: [%5d], Type: %s, Access: %s", rm->zone,
+                CCGRN(ch, C_NRM), rm->number, CCNRM(ch, C_NRM), ch->in_room, g_buf2,
                 IS_SET(zone_table[world[ch->in_room].zone].bits, ZONE_RESTRICTED) ? "DENIED\r\n" : "FREE\r\n");
 
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
-  sprintbit((long)rm->room_flags, room_bits, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "SpecProc: %s, Flags: %s\r\n", (rm->func == NULL) ? "None" : "Exists", buf2);
-  send_to_char(buf, ch);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Light: %d, Ambient Light: %d\r\n", rm->light, GET_ZONE_LIGHT(rm->zone));
-  send_to_char(buf, ch);
+  sprintbit((long)rm->room_flags, room_bits, g_buf2);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "SpecProc: %s, Flags: %s\r\n", (rm->func == NULL) ? "None" : "Exists",
+                g_buf2);
+  send_to_char(g_buf, ch);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Light: %d, Ambient Light: %d\r\n", rm->light, GET_ZONE_LIGHT(rm->zone));
+  send_to_char(g_buf, ch);
 
   send_to_char("Description:\r\n", ch);
   if (rm->description) {
@@ -1401,89 +1402,89 @@ void do_stat_room(struct char_data *ch) {
   }
 
   if (rm->ex_description) {
-    size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Extra descs:%s", CCCYN(ch, C_NRM));
+    size_t len = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Extra descs:%s", CCCYN(ch, C_NRM));
     for (desc = rm->ex_description; desc; desc = desc->next) {
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", desc->keyword);
+      len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, " %s", desc->keyword);
     }
-    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s\r\n", CCNRM(ch, C_NRM));
-    send_to_char(buf, ch);
+    len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "%s\r\n", CCNRM(ch, C_NRM));
+    send_to_char(g_buf, ch);
   }
 
   if (!COM_FLAGGED(ch, COM_QUEST)) { /* limit room stat for lowlevels */
     return;
   }
 
-  size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Chars present:%s", CCYEL(ch, C_NRM));
+  size_t len = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Chars present:%s", CCYEL(ch, C_NRM));
   for (found = 0, k = rm->people; k; k = k->next_in_room) {
     if (!CAN_SEE(ch, k)) {
       continue;
     }
-    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
+    len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "%s %s(%s)", found++ ? "," : "", GET_NAME(k),
                          (!IS_NPC(k) ? "PC" : (!IS_MOB(k) ? "NPC" : "MOB")));
     if (len >= 62) {
       if (k->next_in_room) {
-        safe_snprintf(buf + len, MAX_STRING_LENGTH - len, ",\r\n");
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, ",\r\n");
+        send_to_char(g_buf, ch);
       } else {
-        safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "\r\n");
+        send_to_char(g_buf, ch);
       }
-      *buf = found = 0;
+      *g_buf = found = 0;
       len = 0;
     }
   }
 
-  if (*buf) {
-    safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
-    send_to_char(buf, ch);
+  if (*g_buf) {
+    safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "\r\n");
+    send_to_char(g_buf, ch);
   }
   send_to_char(CCNRM(ch, C_NRM), ch);
 
   if (rm->contents) {
-    len = safe_snprintf(buf, MAX_STRING_LENGTH, "Contents:%s", CCGRN(ch, C_NRM));
+    len = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Contents:%s", CCGRN(ch, C_NRM));
     for (found = 0, j = rm->contents; j; j = j->next_content) {
       if (!CAN_SEE_OBJ(ch, j)) {
         continue;
       }
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%s %s", found++ ? "," : "", j->short_description);
+      len += safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "%s %s", found++ ? "," : "", j->short_description);
       if (len >= 62) {
         if (j->next_content) {
-          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, ",\r\n");
-          send_to_char(buf, ch);
+          safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, ",\r\n");
+          send_to_char(g_buf, ch);
         } else {
-          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
-          send_to_char(buf, ch);
+          safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "\r\n");
+          send_to_char(g_buf, ch);
         }
-        *buf = found = 0;
+        *g_buf = found = 0;
         len = 0;
       }
     }
 
-    if (*buf) {
-      safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
-      send_to_char(buf, ch);
+    if (*g_buf) {
+      safe_snprintf(g_buf + len, MAX_STRING_LENGTH - len, "\r\n");
+      send_to_char(g_buf, ch);
     }
     send_to_char(CCNRM(ch, C_NRM), ch);
   }
   for (i = 0; i < NUM_OF_DIRS; i++) {
     if (rm->dir_option[i]) {
       if (rm->dir_option[i]->to_room == NOWHERE) {
-        safe_snprintf(buf1, MAX_STRING_LENGTH, " %sNONE%s", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
+        safe_snprintf(g_buf1, MAX_STRING_LENGTH, " %sNONE%s", CCCYN(ch, C_NRM), CCNRM(ch, C_NRM));
       } else {
-        safe_snprintf(buf1, MAX_STRING_LENGTH, "%s%5d%s", CCCYN(ch, C_NRM), world[rm->dir_option[i]->to_room].number,
+        safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%s%5d%s", CCCYN(ch, C_NRM), world[rm->dir_option[i]->to_room].number,
                       CCNRM(ch, C_NRM));
       }
-      sprintbit(rm->dir_option[i]->exit_info, exit_bits, buf2);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Exit %s%-5s%s:  To: [%s], Key: [%5d], Keywrd: %s, Type: %s\r\n ",
-                    CCCYN(ch, C_NRM), dirs[i], CCNRM(ch, C_NRM), buf1, rm->dir_option[i]->key,
-                    rm->dir_option[i]->keyword ? rm->dir_option[i]->keyword : "None", buf2);
-      send_to_char(buf, ch);
+      sprintbit(rm->dir_option[i]->exit_info, exit_bits, g_buf2);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Exit %s%-5s%s:  To: [%s], Key: [%5d], Keywrd: %s, Type: %s\r\n ",
+                    CCCYN(ch, C_NRM), dirs[i], CCNRM(ch, C_NRM), g_buf1, rm->dir_option[i]->key,
+                    rm->dir_option[i]->keyword ? rm->dir_option[i]->keyword : "None", g_buf2);
+      send_to_char(g_buf, ch);
       if (rm->dir_option[i]->general_description) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", rm->dir_option[i]->general_description);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", rm->dir_option[i]->general_description);
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", "  No exit description.\r\n");
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", "  No exit description.\r\n");
       }
-      send_to_char(buf, ch);
+      send_to_char(g_buf, ch);
     }
   }
 }
@@ -1511,201 +1512,204 @@ void do_stat_object(struct char_data *ch, struct obj_data *j) {
     }
   }
 
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s did a 'stat' on object #%d (%s)", GET_NAME(ch), virtual,
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s did a 'stat' on object #%d (%s)", GET_NAME(ch), virtual,
                 (j->cshort_description ? j->cshort_description : j->short_description));
-  mudlog(logbuffer, 'X', COM_QUEST, FALSE);
+  mudlog(g_logbuffer, 'X', COM_QUEST, FALSE);
 
   safe_snprintf(
-      buf, MAX_STRING_LENGTH, "{BName: '%s%s%s'{B, Aliases: %s\r\n{x", CCYEL(ch, C_NRM),
+      g_buf, MAX_STRING_LENGTH, "{BName: '%s%s%s'{B, Aliases: %s\r\n{x", CCYEL(ch, C_NRM),
       (j->cshort_description ? j->short_description : ((j->short_description) ? j->short_description : "<None>")),
       CCNRM(ch, C_NRM), j->name);
-  send_to_char(buf, ch);
-  sprinttype(GET_OBJ_TYPE(j), item_types, buf1);
+  send_to_char(g_buf, ch);
+  sprinttype(GET_OBJ_TYPE(j), item_types, g_buf1);
   if (GET_OBJ_RNUM(j) >= 0) {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", (obj_index[GET_OBJ_RNUM(j)].func ? "Exists" : "None"));
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s", (obj_index[GET_OBJ_RNUM(j)].func ? "Exists" : "None"));
   } else {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", "None");
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s", "None");
   }
   if (GET_OBJ_RNUM(j) >= 0 && obj_index[GET_OBJ_RNUM(j)].qic != NULL && COM_FLAGGED(ch, COM_ADMIN)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "{BVNum: [%s%5d%s{B], RNum: [{g%5d{B], Type: {g%s{B, SpecProc: {g%s {RQIC: {W%d({w%d){x\r\n",
-                  CCGRN(ch, C_NRM), virtual, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), buf1, buf2,
+                  CCGRN(ch, C_NRM), virtual, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), g_buf1, g_buf2,
                   obj_index[GET_OBJ_RNUM(j)].qic->items, obj_index[GET_OBJ_RNUM(j)].qic->limit);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BVNum: [%s%5d%s{B], RNum: [{g%5d{B], Type: {g%s{B, SpecProc: {g%s\r\n",
-                  CCGRN(ch, C_NRM), virtual, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), buf1, buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BVNum: [%s%5d%s{B], RNum: [{g%5d{B], Type: {g%s{B, SpecProc: {g%s\r\n",
+                  CCGRN(ch, C_NRM), virtual, CCNRM(ch, C_NRM), GET_OBJ_RNUM(j), g_buf1, g_buf2);
   }
-  send_to_char(buf, ch);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BL-Des: {x%s\r\n", ((j->description) ? j->description : "None"));
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BL-Des: {x%s\r\n", ((j->description) ? j->description : "None"));
+  send_to_char(g_buf, ch);
 
   if (j->ex_description) {
-    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BExtra descs:{c");
+    size_t blen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BExtra descs:{c");
     for (desc = j->ex_description; desc; desc = desc->next) {
-      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, " %s", (desc->keyword ? desc->keyword : "NONE"));
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, " %s", (desc->keyword ? desc->keyword : "NONE"));
     }
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "{x\r\n");
-    send_to_char(buf, ch);
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "{x\r\n");
+    send_to_char(g_buf, ch);
   }
   send_to_char("{BCan be worn on:{c ", ch);
-  sprintbit(GET_OBJ_WEAR(j), wear_bits, buf);
-  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-  send_to_char(buf, ch);
+  sprintbit(GET_OBJ_WEAR(j), wear_bits, g_buf);
+  safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+  send_to_char(g_buf, ch);
 
   send_to_char("{BSet char bits :{c ", ch);
-  sprintbit(GET_OBJ_BITV(j), affected_bits, buf);
-  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-  send_to_char(buf, ch);
+  sprintbit(GET_OBJ_BITV(j), affected_bits, g_buf);
+  safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+  send_to_char(g_buf, ch);
 
   send_to_char("{BSet char bits2 :{c ", ch);
-  sprintbit(GET_OBJ_BITV2(j), affected_bits2, buf);
-  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-  send_to_char(buf, ch);
+  sprintbit(GET_OBJ_BITV2(j), affected_bits2, g_buf);
+  safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+  send_to_char(g_buf, ch);
 
   send_to_char("{BExtra flags   :{c ", ch);
-  sprintbit(GET_OBJ_EXTRA(j), extra_bits, buf);
-  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-  send_to_char(buf, ch);
+  sprintbit(GET_OBJ_EXTRA(j), extra_bits, g_buf);
+  safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+  send_to_char(g_buf, ch);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BWeight: {c%d{B, Value: {c%d{B, Timer: {c%d{B, Material:{c",
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BWeight: {c%d{B, Value: {c%d{B, Timer: {c%d{B, Material:{c",
                 GET_OBJ_WEIGHT(j), GET_OBJ_COST(j), GET_OBJ_TIMER(j));
-  sprinttype(GET_OBJ_VAL(j, 4), material_types, buf2);
-  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s\r\n", buf2);
-  send_to_char(buf, ch);
+  sprinttype(GET_OBJ_VAL(j, 4), material_types, g_buf2);
+  safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), " %s\r\n", g_buf2);
+  send_to_char(g_buf, ch);
 
   if (j->in_room == NOWHERE) {
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "{BIn room:{c Nowhere{B, In object:{c %s{B, Carried by:{c %s{B, Worn by:{c %s\r\n",
                   (j->in_obj ? j->in_obj->short_description : "None"),
                   (j->carried_by ? GET_NAME(j->carried_by) : "Nobody"), (j->worn_by ? GET_NAME(j->worn_by) : "Nobody"));
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BIn room:{c %d{B, In object:{c %s{B, Carried by:{c %s{B, Worn by:{c %s\r\n",
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
+                  "{BIn room:{c %d{B, In object:{c %s{B, Carried by:{c %s{B, Worn by:{c %s\r\n",
                   world[j->in_room].number, (j->in_obj ? j->in_obj->short_description : "None"),
                   (j->carried_by ? GET_NAME(j->carried_by) : "Nobody"), (j->worn_by ? GET_NAME(j->worn_by) : "Nobody"));
   }
-  send_to_char(buf, ch);
-  safe_snprintf(buf, MAX_STRING_LENGTH,
+  send_to_char(g_buf, ch);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH,
                 "{BItems in game: {c%d{B, Items in rent at boot: {c%d{B, Spec vals: [{c%d{B] [{c%d{B] [{c%d{B]{x\r\n",
                 obj_index[GET_OBJ_RNUM(j)].number, obj_index[GET_OBJ_RNUM(j)].rent,
 
                 j->spec_vars[0], j->spec_vars[1], j->spec_vars[2]);
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
   switch (GET_OBJ_TYPE(j)) {
   case ITEM_LIGHT:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BColor: [{c%d{B], Type: [{c%d{B], Hours: [{c%d{B]{x", GET_OBJ_VAL(j, 0),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BColor: [{c%d{B], Type: [{c%d{B], Hours: [{c%d{B]{x", GET_OBJ_VAL(j, 0),
                   GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 2));
     break;
   case ITEM_SCROLL:
   case ITEM_POTION: {
-    size_t slen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BSpells ({blvl-%d{B):", GET_OBJ_VAL(j, 0));
+    size_t slen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BSpells ({blvl-%d{B):", GET_OBJ_VAL(j, 0));
     for (i = 1; i < 4; i++) {
       if (GET_OBJ_VAL(j, i)) {
-        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n   {c%s{x", get_spell_name(GET_OBJ_VAL(j, i)));
+        slen +=
+            safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "\r\n   {c%s{x", get_spell_name(GET_OBJ_VAL(j, i)));
       } else {
-        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n   {c<NONE>{x");
+        slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "\r\n   {c<NONE>{x");
       }
     }
   } break;
   case ITEM_WAND:
   case ITEM_STAFF:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BSpell: {c%s{B, Charges: {c%d{B({C%d{B){x",
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BSpell: {c%s{B, Charges: {c%d{B({C%d{B){x",
                   get_spell_name(GET_OBJ_VAL(j, 3)), GET_OBJ_VAL(j, 2), GET_OBJ_VAL(j, 1));
     break;
   case ITEM_FIREWEAPON:
   case ITEM_WEAPON: {
-    sprinttype(GET_OBJ_VAL(j, 0), weapon_handed, buf2);
+    sprinttype(GET_OBJ_VAL(j, 0), weapon_handed, g_buf2);
     char wtype[256];
     sprinttype(GET_OBJ_VAL(j, 3), weapon_types, wtype);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BSkill: {c%s{B, Todam: {R%d{Wd{R%d{B, Type:{c %s", buf2, GET_OBJ_VAL(j, 1),
-                  GET_OBJ_VAL(j, 2), wtype);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BSkill: {c%s{B, Todam: {R%d{Wd{R%d{B, Type:{c %s", g_buf2,
+                  GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 2), wtype);
   } break;
   case ITEM_MISSILE:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BTohit: {c%d{B, Todam: {c%d{B, Type: {c%d", GET_OBJ_VAL(j, 0),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BTohit: {c%d{B, Todam: {c%d{B, Type: {c%d", GET_OBJ_VAL(j, 0),
                   GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 3));
     break;
   case ITEM_ARMOR:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BAC-apply: [{c%d{B]{x", GET_OBJ_VAL(j, 0));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BAC-apply: [{c%d{B]{x", GET_OBJ_VAL(j, 0));
     break;
   case ITEM_TRAP:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BSpell: {c%s{B, - Hitpoints: {c%d{x", get_spell_name(GET_OBJ_VAL(j, 0)),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BSpell: {c%s{B, - Hitpoints: {c%d{x", get_spell_name(GET_OBJ_VAL(j, 0)),
                   GET_OBJ_VAL(j, 1));
     break;
   case ITEM_CONTAINER:
   case ITEM_PCORPSE:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BMax-contains: {c%d{B, Locktype: {c%d{B, Corpse: {c%s{x", GET_OBJ_VAL(j, 0),
-                  GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 3) ? "Yes" : "No");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BMax-contains: {c%d{B, Locktype: {c%d{B, Corpse: {c%s{x",
+                  GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 3) ? "Yes" : "No");
     break;
   case ITEM_DRINKCON:
   case ITEM_FOUNTAIN:
-    sprinttype(GET_OBJ_VAL(j, 2), drinks, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BMax-contains: {c%d{B, Contains: {c%d{B, Poisoned: {c%s{B, Liquid: {c%s{x",
-                  GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 3) ? "Yes" : "No", buf2);
+    sprinttype(GET_OBJ_VAL(j, 2), drinks, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
+                  "{BMax-contains: {c%d{B, Contains: {c%d{B, Poisoned: {c%s{B, Liquid: {c%s{x", GET_OBJ_VAL(j, 0),
+                  GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 3) ? "Yes" : "No", g_buf2);
     break;
   case ITEM_NOTE:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BTongue: {c%d{x", GET_OBJ_VAL(j, 0));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BTongue: {c%d{x", GET_OBJ_VAL(j, 0));
     break;
   case ITEM_KEY:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BKeytype: {c%d{x", GET_OBJ_VAL(j, 0));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BKeytype: {c%d{x", GET_OBJ_VAL(j, 0));
     break;
   case ITEM_FOOD:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BMakes full: {c%d{B, Poisoned: {R%d{x", GET_OBJ_VAL(j, 0),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BMakes full: {c%d{B, Poisoned: {R%d{x", GET_OBJ_VAL(j, 0),
                   GET_OBJ_VAL(j, 3));
     break;
   default:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BValues 0-4: [{c%d{B] [{c%d{B] [{c%d{B] [{c%d{B] [{c%d{B]{x",
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BValues 0-4: [{c%d{B] [{c%d{B] [{c%d{B] [{c%d{B] [{c%d{B]{x",
                   GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 2), GET_OBJ_VAL(j, 3), GET_OBJ_VAL(j, 4));
     break;
   }
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
   if (GET_OBJ_SLOTS(j)) {
-    buf2[0] = '\0';
-    sprintbit(GET_OBJ_SLOTS(j), worn_bits, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n{BEquipment Slots:{c %s{x\r\n", buf2);
+    g_buf2[0] = '\0';
+    sprintbit(GET_OBJ_SLOTS(j), worn_bits, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "\r\n{BEquipment Slots:{c %s{x\r\n", g_buf2);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n{BEquipment Slots:{c UNDEFINED{x\r\n");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "\r\n{BEquipment Slots:{c UNDEFINED{x\r\n");
   }
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
-  size_t elen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BEquipment Status:{c ");
+  size_t elen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BEquipment Status:{c ");
   if (!j->carried_by) {
-    elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "None");
+    elen += safe_snprintf(g_buf + elen, MAX_STRING_LENGTH - elen, "None");
   } else {
     found = FALSE;
     for (i = 0; i < NUM_WEARS; i++) {
       if (j->carried_by->equipment[i] == j) {
-        sprinttype(i, equipment_types, buf2);
-        elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "%s", buf2);
+        sprinttype(i, equipment_types, g_buf2);
+        elen += safe_snprintf(g_buf + elen, MAX_STRING_LENGTH - elen, "%s", g_buf2);
         found = TRUE;
       }
     }
     if (!found) {
-      elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "Inventory");
+      elen += safe_snprintf(g_buf + elen, MAX_STRING_LENGTH - elen, "Inventory");
     }
   }
-  safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "\r\n");
-  send_to_char(buf, ch);
+  safe_snprintf(g_buf + elen, MAX_STRING_LENGTH - elen, "\r\n");
+  send_to_char(g_buf, ch);
 
   if (j->contains) {
-    size_t clen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BContents:{x%s", CCGRN(ch, C_NRM));
+    size_t clen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BContents:{x%s", CCGRN(ch, C_NRM));
     for (found = 0, j2 = j->contains; j2; j2 = j2->next_content) {
-      clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "%s %s", found++ ? "," : "", j2->short_description);
+      clen += safe_snprintf(g_buf + clen, MAX_STRING_LENGTH - clen, "%s %s", found++ ? "," : "", j2->short_description);
       if (clen >= 62) {
         if (j2->next_content) {
-          safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, ",\r\n");
-          send_to_char(buf, ch);
+          safe_snprintf(g_buf + clen, MAX_STRING_LENGTH - clen, ",\r\n");
+          send_to_char(g_buf, ch);
         } else {
-          safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "\r\n");
-          send_to_char(buf, ch);
+          safe_snprintf(g_buf + clen, MAX_STRING_LENGTH - clen, "\r\n");
+          send_to_char(g_buf, ch);
         }
-        *buf = found = 0;
+        *g_buf = found = 0;
         clen = 0;
       }
     }
 
-    if (*buf) {
-      safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "\r\n");
-      send_to_char(buf, ch);
+    if (*g_buf) {
+      safe_snprintf(g_buf + clen, MAX_STRING_LENGTH - clen, "\r\n");
+      send_to_char(g_buf, ch);
     }
     send_to_char(CCNRM(ch, C_NRM), ch);
   }
@@ -1713,9 +1717,9 @@ void do_stat_object(struct char_data *ch, struct obj_data *j) {
   send_to_char("{BAffections:{x", ch);
   for (i = 0; i < MAX_OBJ_AFFECT; i++) {
     if (j->affected[i].modifier && j->affected[i].location) {
-      sprinttype(j->affected[i].location, apply_types, buf2);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s %+d to %s", found++ ? "," : "", j->affected[i].modifier, buf2);
-      send_to_char(buf, ch);
+      sprinttype(j->affected[i].location, apply_types, g_buf2);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s %+d to %s", found++ ? "," : "", j->affected[i].modifier, g_buf2);
+      send_to_char(g_buf, ch);
     }
   }
   if (!found) {
@@ -1729,12 +1733,12 @@ void do_stat_object(struct char_data *ch, struct obj_data *j) {
     if (j->resists[i] && !found) {
       found = 1;
       sprinttype(i, resists_names, tname);
-      safe_snprintf(buf, MAX_STRING_LENGTH, " {c%s  {w%d\r\n", tname, j->resists[i]);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, " {c%s  {w%d\r\n", tname, j->resists[i]);
+      send_to_char(g_buf, ch);
     } else if (j->resists[i] && found) {
       sprinttype(i, resists_names, tname);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "              {c%s  {W%d\r\n", tname, j->resists[i]);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "              {c%s  {W%d\r\n", tname, j->resists[i]);
+      send_to_char(g_buf, ch);
     }
   }
   if (!found) {
@@ -1773,173 +1777,175 @@ void do_stat_character(struct char_data *ch, struct char_data *k) {
     }
   }
 
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s did a 'stat' on %s #%ld (%s)", GET_NAME(ch),
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s did a 'stat' on %s #%ld (%s)", GET_NAME(ch),
                 IS_NPC(k) ? "mob" : "player", IS_NPC(k) ? GET_MOB_VNUM(k) : GET_IDNUM(k), GET_NAME(k));
-  mudlog(logbuffer, 'X', COM_IMMORT, FALSE);
+  mudlog(g_logbuffer, 'X', COM_IMMORT, FALSE);
 
   switch (k->player.sex) {
   case SEX_NEUTRAL:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{cNEUTRAL-SEX{x");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{cNEUTRAL-SEX{x");
     break;
   case SEX_MALE:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{cMALE{x");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{cMALE{x");
     break;
   case SEX_FEMALE:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{cFEMALE{x");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{cFEMALE{x");
     break;
   default:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{RILLEGAL-SEX!!{x");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{RILLEGAL-SEX!!{x");
     break;
   }
 
-  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf),
+  safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf),
                 " %s '%s'  {BIDNum: [{c%5ld{B], In room [{c%5d{B]{x\r\n",
                 (!IS_NPC(k) ? "{CPC{x" : (!IS_MOB(k) ? "{RNPC{x" : "{RMOB{x")), GET_NAME(k), GET_IDNUM(k),
                 world[k->in_room].number);
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
   if (IS_MOB(k)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BAlias: {c%s{B, VNum: [{c%5d{B], RNum: [{c%5d{B]{x\r\n", k->player.name,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BAlias: {c%s{B, VNum: [{c%5d{B], RNum: [{c%5d{B]{x\r\n", k->player.name,
                   GET_MOB_VNUM(k), GET_MOB_RNUM(k));
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BTitle:{x %s\r\n", (k->player.title ? k->player.title : "<None>"));
-  send_to_char(buf, ch);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BTitle:{x %s\r\n", (k->player.title ? k->player.title : "<None>"));
+  send_to_char(g_buf, ch);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BL-Des: {c%s{x",
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BL-Des: {c%s{x",
                 (k->player.long_descr ? k->player.long_descr : "<None>\r\n"));
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
   if (!IS_NPC(k)) {
-    sprinttype(GET_RACE(k), pc_race_types, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BRace:{c %s", buf2);
-    send_to_char(buf, ch);
+    sprinttype(GET_RACE(k), pc_race_types, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BRace:{c %s", g_buf2);
+    send_to_char(g_buf, ch);
   } else {
-    sprinttype(GET_MOB_RACE(k), npc_race_names, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BRace:{c %s", buf2);
-    send_to_char(buf, ch);
+    sprinttype(GET_MOB_RACE(k), npc_race_names, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BRace:{c %s", g_buf2);
+    send_to_char(g_buf, ch);
   }
 
   if (IS_NPC(k)) {
-    sprinttype(k->player.class, npc_class_types, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{B, {BMonster Class: {c%s\r\n", buf2);
+    sprinttype(k->player.class, npc_class_types, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{B, {BMonster Class: {c%s\r\n", g_buf2);
   } else {
-    sprinttype(k->player.class, pc_class_types, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{B, {BClass: {y%s\r\n", buf2);
+    sprinttype(k->player.class, pc_class_types, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{B, {BClass: {y%s\r\n", g_buf2);
   }
 
-  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf),
+  safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf),
                 "{BLev: [{y%s%2d%s{B], XP: [{y%s%7d%s{B], XPNeed: [{y%7d{B], Align: [{y%4d{B]{x\r\n", CCYEL(ch, C_NRM),
                 GET_LEVEL(k), CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), GET_EXP(k), CCNRM(ch, C_NRM),
                 (!IS_NPC(k) ? MaxExperience[(int)(GET_LEVEL(k) + 1)] : 0), GET_ALIGNMENT(k));
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
   if (!IS_NPC(k)) {
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.birth))));
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.logon))));
-    buf1[10] = buf2[10] = '\0';
+    safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.birth))));
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.logon))));
+    g_buf1[10] = g_buf2[10] = '\0';
 
-    safe_snprintf(buf, MAX_STRING_LENGTH,
-                  "{BCreated: [{c%s{B], Last Logon: [{c%s{B], Played [{c%dh %dm{B], Age [{c%d{B]{x\r\n", buf1, buf2,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
+                  "{BCreated: [{c%s{B], Last Logon: [{c%s{B], Played [{c%dh %dm{B], Age [{c%d{B]{x\r\n", g_buf1, g_buf2,
                   k->player.time.played / 3600, ((k->player.time.played / 3600) % 60), age(k).year);
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
 
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "{BHometown: [{c%d{B], (STL[{c%d{B]/per[{c%d{B]/NSTL[{c%d{B]), Race: [{c%d{B], WS[{c%d{B]{x\r\n",
                   k->player.hometown, GET_PRACTICES(k), stats[INT_LEARN][GET_INT(k)], stats[WIS_PRAC][GET_WIS(k)],
                   k->player_specials->saved.race, GET_TRAINING(ch));
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
   }
 
   if (COM_FLAGGED(ch, COM_QUEST)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "{BStr: [%s%d%s{B]  Int: [%s%d%s{B]  Wis: [%s%d%s{B]  "
                   "{BDex: [%s%d%s{B]  Con: [%s%d%s{B]  Agi: [%s%d%s{B]{x\r\n",
                   CCCYN(ch, C_NRM), GET_STR(k), CCNRM(ch, C_NRM), CCCYN(ch, C_NRM), GET_INT(k), CCNRM(ch, C_NRM),
                   CCCYN(ch, C_NRM), GET_WIS(k), CCNRM(ch, C_NRM), CCCYN(ch, C_NRM), GET_DEX(k), CCNRM(ch, C_NRM),
                   CCCYN(ch, C_NRM), GET_CON(k), CCNRM(ch, C_NRM), CCCYN(ch, C_NRM), GET_AGI(k), CCNRM(ch, C_NRM));
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
 
     if (!IS_NPC(ch)) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{BWeight: [{c%d{B] Height: [{c%d{B]{x\r\n", GET_WEIGHT(k), GET_HEIGHT(k));
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BWeight: [{c%d{B] Height: [{c%d{B]{x\r\n", GET_WEIGHT(k),
+                    GET_HEIGHT(k));
+      send_to_char(g_buf, ch);
     }
 
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "{BHit p.:[%s%d/%d+%d%s{B]  Mana p.:[%s%d/%d+%d%s{B]  Move p.:[%s%d/%d+%d%s{B]{x\r\n",
                   CCGRN(ch, C_NRM), GET_HIT(k), GET_MAX_HIT(k), hit_gain(k, 0), CCNRM(ch, C_NRM), CCGRN(ch, C_NRM),
                   GET_MANA(k), GET_MAX_MANA(k), mana_gain(k, 0), CCNRM(ch, C_NRM), CCGRN(ch, C_NRM), GET_MOVE(k),
                   GET_MAX_MOVE(k), move_gain(k, 0), CCNRM(ch, C_NRM));
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
 
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "{BCoins: [{c%d{Wp {c%d{Yg {c%d{ws {c%d{yc{B], Bank: [{c%d{Wp {c%d{Yg {c%d{ws {c%d{yc{B] (Total: "
                   "{c%d{Wp {c%d{Yg {c%d{ws {c%d{yc{B){x\r\n",
                   GET_PLAT(k), GET_GOLD(k), GET_SILVER(k), GET_COPPER(k), GET_BANK_PLAT(k), GET_BANK_GOLD(k),
                   GET_BANK_SILVER(k), GET_BANK_COPPER(k), GET_PLAT(k) + GET_BANK_PLAT(k),
                   GET_GOLD(k) + GET_BANK_GOLD(k), GET_SILVER(k) + GET_BANK_SILVER(k),
                   GET_COPPER(k) + GET_BANK_COPPER(k));
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
 
     if (IS_NPC(k)) {
-      safe_snprintf(buf, MAX_STRING_LENGTH,
+      safe_snprintf(g_buf, MAX_STRING_LENGTH,
                     "{BAC: [{c%d/10{B], Thac0: [{c%2d{B], Damroll: [{c%2d{B], Saving throws: "
                     "[{c%d{B/{c%d{B/{c%d{B/{c%d{B/{c%d{B]{x\r\n",
                     GET_AC(k), k->points.hitroll, k->points.damroll, GET_SAVE(k, 0), GET_SAVE(k, 1), GET_SAVE(k, 2),
                     GET_SAVE(k, 3), GET_SAVE(k, 4));
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH,
+      safe_snprintf(g_buf, MAX_STRING_LENGTH,
                     "{BAC: [{c%d/10{B], Hitroll: [{c%2d{B], Damroll: [{c%2d{B], Saving throws: "
                     "[{c%d{B/{c%d{B/{c%d{B/{c%d{B/{c%d{B]{x\r\n",
                     GET_AC(k), k->points.hitroll, k->points.damroll, GET_SAVE(k, 0), GET_SAVE(k, 1), GET_SAVE(k, 2),
                     GET_SAVE(k, 3), GET_SAVE(k, 4));
     }
-    send_to_char(buf, ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BDeaths: [{c%3d{B], Pk's [{c%3d{B]{x\r\n", GET_DEATHCOUNT(k),
+    send_to_char(g_buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BDeaths: [{c%3d{B], Pk's [{c%3d{B]{x\r\n", GET_DEATHCOUNT(k),
                   GET_PKCOUNT(k));
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
   }
 
-  sprinttype(GET_POS(k), position_types, buf2);
-  size_t plen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BPos: {c%s{B, Fighting: {c%s", buf2,
+  sprinttype(GET_POS(k), position_types, g_buf2);
+  size_t plen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BPos: {c%s{B, Fighting: {c%s", g_buf2,
                               (FIGHTING(k) ? GET_NAME(FIGHTING(k)) : "Nobody"));
 
   if (IS_NPC(k)) {
-    sprinttype(k->mob_specials.size, size_names, buf2);
-    plen += safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, ", {BMob size: {c%s", buf2);
+    sprinttype(k->mob_specials.size, size_names, g_buf2);
+    plen += safe_snprintf(g_buf + plen, MAX_STRING_LENGTH - plen, ", {BMob size: {c%s", g_buf2);
   }
   if (k->desc) {
-    sprinttype(k->desc->connected, connected_types, buf2);
-    plen += safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, ", {BConnected: {c%s", buf2);
+    sprinttype(k->desc->connected, connected_types, g_buf2);
+    plen += safe_snprintf(g_buf + plen, MAX_STRING_LENGTH - plen, ", {BConnected: {c%s", g_buf2);
   }
-  safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, "\r\n");
-  send_to_char(buf, ch);
+  safe_snprintf(g_buf + plen, MAX_STRING_LENGTH - plen, "\r\n");
+  send_to_char(g_buf, ch);
 
   if (COM_FLAGGED(ch, COM_QUEST)) {
     if (IS_NPC(k) && k->mob_specials.mob_attacks) {
       send_to_char("{BMob attacks:{x\r\n", ch);
       for (this = k->mob_specials.mob_attacks; this; this = next_one) {
         next_one = this->next;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "  {R%d{Wd{R%d{W+{R%d{W, {Wspeed: {R%d%%{W, type: {R%s\r\n", this->nodice,
-                      this->sizedice, this->damroll, this->attacks, attack_hit_text[(int)this->attack_type].singular);
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "  {R%d{Wd{R%d{W+{R%d{W, {Wspeed: {R%d%%{W, type: {R%s\r\n",
+                      this->nodice, this->sizedice, this->damroll, this->attacks,
+                      attack_hit_text[(int)this->attack_type].singular);
+        send_to_char(g_buf, ch);
       }
       send_to_char("{x\r\n", ch);
     }
   }
 
-  sprinttype((k->mob_specials.default_pos), position_types, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BDefault position: {c%s{B, Idle Timer (in tics) [{c%d{B]{x\r\n", buf2,
+  sprinttype((k->mob_specials.default_pos), position_types, g_buf2);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BDefault position: {c%s{B, Idle Timer (in tics) [{c%d{B]{x\r\n", g_buf2,
                 k->char_specials.timer);
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
   if (COM_FLAGGED(ch, COM_BUILDER)) {
     if (IS_NPC(k)) {
       if (mob_index[k->nr].progtypes) {
         send_to_char("{BMobile programs:{x\r\n", ch);
         for (mprg = mob_index[k->nr].mobprogs; mprg != NULL; mprg = mprg->next) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, ">%s %s\n\r%s\n\r", mprog_type_to_name(mprg->type), mprg->arglist,
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, ">%s %s\n\r%s\n\r", mprog_type_to_name(mprg->type), mprg->arglist,
                         mprg->comlist);
-          send_to_char(buf, ch);
+          send_to_char(g_buf, ch);
         }
       }
     }
@@ -1948,156 +1954,156 @@ void do_stat_character(struct char_data *ch, struct char_data *k) {
   }
 
   if (IS_NPC(k)) {
-    sprintbit(MOB_FLAGS(k), action_bits, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BNPC flags:{x %s%s%s\r\n", CCYEL(ch, C_NRM), buf2, CCNRM(ch, C_NRM));
-    send_to_char(buf, ch);
+    sprintbit(MOB_FLAGS(k), action_bits, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BNPC flags:{x %s%s%s\r\n", CCYEL(ch, C_NRM), g_buf2, CCNRM(ch, C_NRM));
+    send_to_char(g_buf, ch);
   } else if (COM_FLAGGED(ch, COM_QUEST)) {
-    sprintbit(PLR_FLAGS(k), player_bits, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BPLR:{x %s%s%s\r\n", CCCYN(ch, C_NRM), buf2, CCNRM(ch, C_NRM));
-    send_to_char(buf, ch);
-    sprintbit(PRF_FLAGS(k), preference_bits, buf2);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BPRF:{x %s%s%s\r\n", CCGRN(ch, C_NRM), buf2, CCNRM(ch, C_NRM));
-    send_to_char(buf, ch);
+    sprintbit(PLR_FLAGS(k), player_bits, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BPLR:{x %s%s%s\r\n", CCCYN(ch, C_NRM), g_buf2, CCNRM(ch, C_NRM));
+    send_to_char(g_buf, ch);
+    sprintbit(PRF_FLAGS(k), preference_bits, g_buf2);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BPRF:{x %s%s%s\r\n", CCGRN(ch, C_NRM), g_buf2, CCNRM(ch, C_NRM));
+    send_to_char(g_buf, ch);
     if (COM_FLAGGED(ch, COM_BUILDER)) {
-      sprintbit(COM_FLAGS(k), com_bits, buf2);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{BCOM:{x %s%s%s\r\n", CCGRN(ch, C_NRM), buf2, CCNRM(ch, C_NRM));
-      send_to_char(buf, ch);
+      sprintbit(COM_FLAGS(k), com_bits, g_buf2);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BCOM:{x %s%s%s\r\n", CCGRN(ch, C_NRM), g_buf2, CCNRM(ch, C_NRM));
+      send_to_char(g_buf, ch);
     }
   }
 
-  size_t rlen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BRES:{x ");
+  size_t rlen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BRES:{x ");
   for (i = 0; i < MAX_DAM_TYPE; i++) {
     if (GET_RESIST(k, i) && !found) {
       found = 1;
       sprinttype(i, resists_names, rtype);
-      rlen += safe_snprintf(buf + rlen, MAX_STRING_LENGTH - rlen, "{C%s  {W%d\r\n", rtype, GET_RESIST(k, i));
+      rlen += safe_snprintf(g_buf + rlen, MAX_STRING_LENGTH - rlen, "{C%s  {W%d\r\n", rtype, GET_RESIST(k, i));
     } else if (GET_RESIST(k, i) && found) {
       sprinttype(i, resists_names, rtype);
-      rlen += safe_snprintf(buf + rlen, MAX_STRING_LENGTH - rlen, "     {C%s  {W%d\r\n", rtype, GET_RESIST(k, i));
+      rlen += safe_snprintf(g_buf + rlen, MAX_STRING_LENGTH - rlen, "     {C%s  {W%d\r\n", rtype, GET_RESIST(k, i));
     }
   }
   if (!found) {
-    safe_snprintf(buf + rlen, MAX_STRING_LENGTH - rlen, "{c<none>{x\r\n");
+    safe_snprintf(g_buf + rlen, MAX_STRING_LENGTH - rlen, "{c<none>{x\r\n");
   }
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
   found = 0;
 
   if (IS_MOB(k)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BMob Spec-Proc: {c%s{x\r\n",
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BMob Spec-Proc: {c%s{x\r\n",
                   (mob_index[GET_MOB_RNUM(k)].func ? "Exists" : "None"));
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
   }
-  size_t clen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BCarried: weight: {c%d{B, items: {c%d{B; ", IS_CARRYING_W(k),
+  size_t clen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BCarried: weight: {c%d{B, items: {c%d{B; ", IS_CARRYING_W(k),
                               IS_CARRYING_N(k));
 
   for (i = 0, j = k->carrying; j; j = j->next_content, i++) {
     ;
   }
-  clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "{BItems in: inventory: {c%d{B, ", i);
+  clen += safe_snprintf(g_buf + clen, MAX_STRING_LENGTH - clen, "{BItems in: inventory: {c%d{B, ", i);
 
   for (i = 0, i2 = 0; i < NUM_WEARS; i++) {
     if (k->equipment[i]) {
       i2++;
     }
   }
-  safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "{Beq: {c%d{x\r\n", i2);
-  send_to_char(buf, ch);
+  safe_snprintf(g_buf + clen, MAX_STRING_LENGTH - clen, "{Beq: {c%d{x\r\n", i2);
+  send_to_char(g_buf, ch);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BHunger: {c%d{B, Thirst: {c%d{B, Drunk: {c%d{x\r\n", GET_COND(k, FULL),
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BHunger: {c%d{B, Thirst: {c%d{B, Drunk: {c%d{x\r\n", GET_COND(k, FULL),
                 GET_COND(k, THIRST), GET_COND(k, DRUNK));
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 
   if (IS_MOB(k)) {
     if (HUNTINGRM(k) == -1) { /* not hunting a room */
       safe_snprintf(
-          buf, MAX_STRING_LENGTH, "{MHunting: {W%s{M, Hunting Room: {W<none>{x\r\n",
+          g_buf, MAX_STRING_LENGTH, "{MHunting: {W%s{M, Hunting Room: {W<none>{x\r\n",
           ((HUNTING(k)) ? ((find_hunted_name(HUNTING(k))) ? find_hunted_name(HUNTING(k)) : "<unknown>") : "<none>"));
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{MHunting: {W<none>{M, Hunting Room: {W%d{x\r\n", HUNTINGRM(k));
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "{MHunting: {W<none>{M, Hunting Room: {W%d{x\r\n", HUNTINGRM(k));
     }
 
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
   }
 
-  size_t flen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BMaster is: {c%s{B, Followers are:{c",
+  size_t flen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BMaster is: {c%s{B, Followers are:{c",
                               ((k->master) ? GET_NAME(k->master) : "<none>"));
 
   for (fol = k->followers; fol; fol = fol->next) {
-    flen += safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "%s %s", found++ ? "," : "", PERS(fol->follower, ch));
+    flen += safe_snprintf(g_buf + flen, MAX_STRING_LENGTH - flen, "%s %s", found++ ? "," : "", PERS(fol->follower, ch));
     if (flen >= 62) {
       if (fol->next) {
-        safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, ",{x\r\n");
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf + flen, MAX_STRING_LENGTH - flen, ",{x\r\n");
+        send_to_char(g_buf, ch);
       } else {
-        safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "\r\n");
-        send_to_char(buf, ch);
+        safe_snprintf(g_buf + flen, MAX_STRING_LENGTH - flen, "\r\n");
+        send_to_char(g_buf, ch);
       }
-      *buf = found = 0;
+      *g_buf = found = 0;
       flen = 0;
     }
   }
 
-  if (*buf) {
-    safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "\r\n");
-    send_to_char(buf, ch);
+  if (*g_buf) {
+    safe_snprintf(g_buf + flen, MAX_STRING_LENGTH - flen, "\r\n");
+    send_to_char(g_buf, ch);
   }
 
   /* Showing the bitvector */
-  sprintbit(AFF_FLAGS(k), affected_bits, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BAFF:{x %s%s%s\r\n", CCYEL(ch, C_NRM), buf2, CCNRM(ch, C_NRM));
-  send_to_char(buf, ch);
-  sprintbit(AFF2_FLAGS(k), affected_bits2, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BAFF2:{x %s%s%s\r\n", CCYEL(ch, C_NRM), buf2, CCNRM(ch, C_NRM));
-  send_to_char(buf, ch);
-  sprintbit(AFF3_FLAGS(k), affected_bits3, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BAFF3:{x %s%s%s\r\n", CCYEL(ch, C_NRM), buf2, CCNRM(ch, C_NRM));
-  send_to_char(buf, ch);
+  sprintbit(AFF_FLAGS(k), affected_bits, g_buf2);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BAFF:{x %s%s%s\r\n", CCYEL(ch, C_NRM), g_buf2, CCNRM(ch, C_NRM));
+  send_to_char(g_buf, ch);
+  sprintbit(AFF2_FLAGS(k), affected_bits2, g_buf2);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BAFF2:{x %s%s%s\r\n", CCYEL(ch, C_NRM), g_buf2, CCNRM(ch, C_NRM));
+  send_to_char(g_buf, ch);
+  sprintbit(AFF3_FLAGS(k), affected_bits3, g_buf2);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BAFF3:{x %s%s%s\r\n", CCYEL(ch, C_NRM), g_buf2, CCNRM(ch, C_NRM));
+  send_to_char(g_buf, ch);
 
   /* Routine to show what spells a char is affected by */
   if (k->affected) {
     for (aff = k->affected; aff; aff = aff->next) {
       int has_bitvector = 0;
       count = 0;
-      size_t slen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BSPL: ({c%3dsec{B){x %s%-21s%s\r\n", aff->duration + 1,
+      size_t slen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "{BSPL: ({c%3dsec{B){x %s%-21s%s\r\n", aff->duration + 1,
                                   CCCYN(ch, C_NRM), get_spell_name(aff->type), CCNRM(ch, C_NRM));
       for (i = 0; i < NUM_MODIFY; i++) {
         if (aff->modifier[i] && aff->location[i]) {
-          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "    %+3d to %s\r\n", aff->modifier[i],
+          slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "    %+3d to %s\r\n", aff->modifier[i],
                                 apply_types[aff->location[i]]);
           count++;
         }
       }
       if (aff->bitvector) {
         if (has_bitvector) {
-          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
+          slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
         } else {
-          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
+          slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
         }
-        sprintbit(aff->bitvector, affected_bits, buf2);
-        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%s", buf2);
+        sprintbit(aff->bitvector, affected_bits, g_buf2);
+        slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "%s", g_buf2);
         has_bitvector = 1;
       }
       if (aff->bitvector2) {
         if (has_bitvector) {
-          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
+          slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
         } else {
-          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
+          slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
         }
-        sprintbit(aff->bitvector2, affected_bits2, buf2);
-        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%s", buf2);
+        sprintbit(aff->bitvector2, affected_bits2, g_buf2);
+        slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "%s", g_buf2);
         has_bitvector = 1;
       }
       if (aff->bitvector3) {
         if (has_bitvector) {
-          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
+          slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
         } else {
-          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
+          slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
         }
-        sprintbit(aff->bitvector3, affected_bits3, buf2);
-        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%s", buf2);
+        sprintbit(aff->bitvector3, affected_bits3, g_buf2);
+        slen += safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "%s", g_buf2);
       }
-      safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n");
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "\r\n");
+      send_to_char(g_buf, ch);
     }
   }
 }
@@ -2107,33 +2113,33 @@ ACMD(do_stat) {
   struct obj_data *object = 0;
   int tmp;
 
-  half_chop(argument, buf1, buf2);
+  half_chop(argument, g_buf1, g_buf2);
 
-  if (!*buf1) {
+  if (!*g_buf1) {
     send_to_char("Stats on who or what?\r\n", ch);
     return;
-  } else if (is_abbrev(buf1, "room")) {
+  } else if (is_abbrev(g_buf1, "room")) {
     do_stat_room(ch);
-  } else if (is_abbrev(buf1, "mob")) {
-    if (!*buf2) {
+  } else if (is_abbrev(g_buf1, "mob")) {
+    if (!*g_buf2) {
       send_to_char("Stats on which mobile?\r\n", ch);
     } else {
-      if ((victim = get_char_vis(ch, buf2))) {
+      if ((victim = get_char_vis(ch, g_buf2))) {
         do_stat_character(ch, victim);
       } else {
         send_to_char("No such mobile around.\r\n", ch);
       }
     }
-  } else if (is_abbrev(buf1, "player")) {
-    if (!*buf2) {
+  } else if (is_abbrev(g_buf1, "player")) {
+    if (!*g_buf2) {
       send_to_char("Stats on which player?\r\n", ch);
     } else {
-      if ((victim = get_player_vis(ch, buf2, 0))) {
+      if ((victim = get_player_vis(ch, g_buf2, 0))) {
         do_stat_character(ch, victim);
       } else {
         CREATE(victim, struct char_data, 1);
         clear_char(victim);
-        if (load_char_text(buf2, victim) > 0) {
+        if (load_char_text(g_buf2, victim) > 0) {
           do_stat_character(ch, victim);
           free_char(victim);
         } else {
@@ -2142,13 +2148,13 @@ ACMD(do_stat) {
         }
       }
     }
-  } else if (is_abbrev(buf1, "file")) {
-    if (!*buf2) {
+  } else if (is_abbrev(g_buf1, "file")) {
+    if (!*g_buf2) {
       send_to_char("Stats on which player?\r\n", ch);
     } else {
       CREATE(victim, struct char_data, 1);
       clear_char(victim);
-      if (load_char_text(buf2, victim) > 0) {
+      if (load_char_text(g_buf2, victim) > 0) {
         do_stat_character(ch, victim);
         free_char(victim);
       } else {
@@ -2156,33 +2162,33 @@ ACMD(do_stat) {
         FREE(victim);
       }
     }
-  } else if (is_abbrev(buf1, "object")) {
-    if (!*buf2) {
+  } else if (is_abbrev(g_buf1, "object")) {
+    if (!*g_buf2) {
       send_to_char("Stats on which object?\r\n", ch);
     } else {
-      if ((object = get_obj_vis(ch, buf2))) {
+      if ((object = get_obj_vis(ch, g_buf2))) {
         do_stat_object(ch, object);
       } else {
         send_to_char("No such object around.\r\n", ch);
       }
     }
   } else {
-    if ((object = get_object_in_equip_vis(ch, buf1, ch->equipment, &tmp))) {
+    if ((object = get_object_in_equip_vis(ch, g_buf1, ch->equipment, &tmp))) {
       do_stat_object(ch, object);
-    } else if ((object = get_obj_in_list_vis(ch, buf1, ch->carrying))) {
+    } else if ((object = get_obj_in_list_vis(ch, g_buf1, ch->carrying))) {
       do_stat_object(ch, object);
-    } else if ((victim = get_char_room_vis(ch, buf1))) {
+    } else if ((victim = get_char_room_vis(ch, g_buf1))) {
       do_stat_character(ch, victim);
-    } else if ((object = get_obj_in_list_vis(ch, buf1, world[ch->in_room].contents))) {
+    } else if ((object = get_obj_in_list_vis(ch, g_buf1, world[ch->in_room].contents))) {
       do_stat_object(ch, object);
-    } else if ((victim = get_char_vis(ch, buf1))) {
+    } else if ((victim = get_char_vis(ch, g_buf1))) {
       do_stat_character(ch, victim);
-    } else if ((object = get_obj_vis(ch, buf1))) {
+    } else if ((object = get_obj_vis(ch, g_buf1))) {
       do_stat_object(ch, object);
     } else {
       CREATE(victim, struct char_data, 1);
       clear_char(victim);
-      if (load_char_text(buf1, victim) > 0) {
+      if (load_char_text(g_buf1, victim) > 0) {
         do_stat_character(ch, victim);
         free_char(victim);
       } else {
@@ -2200,38 +2206,38 @@ ACMD(do_shutdown) {
     send_to_char("Quit bothering me!!\r\n", ch);
     return;
   }
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "(GC) Shutdown by %s.", GET_NAME(ch));
-    stderr_log(buf);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\nOh, lets hope %s didnt have a wittle typo..", GET_NAME(ch));
-    send_to_all(buf);
+  if (!*g_arg) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "(GC) Shutdown by %s.", GET_NAME(ch));
+    stderr_log(g_buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "\r\nOh, lets hope %s didnt have a wittle typo..", GET_NAME(ch));
+    send_to_all(g_buf);
     circle_shutdown = 1;
-  } else if (!str_cmp(arg, "reboot")) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "(GC) Reboot by %s.", GET_NAME(ch));
-    stderr_log(buf);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Reboot by %s.. come back in 10-20 seconds...\r\n", GET_NAME(ch));
-    send_to_all(buf);
+  } else if (!str_cmp(g_arg, "reboot")) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "(GC) Reboot by %s.", GET_NAME(ch));
+    stderr_log(g_buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Reboot by %s.. come back in 10-20 seconds...\r\n", GET_NAME(ch));
+    send_to_all(g_buf);
     touch("../.fastboot");
     circle_shutdown = circle_reboot = 1;
-  } else if (!str_cmp(arg, "die")) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "(GC) Shutdown by %s.", GET_NAME(ch));
-    stderr_log(buf);
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+  } else if (!str_cmp(g_arg, "die")) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "(GC) Shutdown by %s.", GET_NAME(ch));
+    stderr_log(g_buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "\r\nWith one final blow to the skull %s has killed ShadowWind...\r\nShadowWind is DEAD.  R.I.P. ",
                   GET_NAME(ch));
-    send_to_all(buf);
+    send_to_all(g_buf);
     touch("../.killscript");
     circle_shutdown = 1;
-  } else if (!str_cmp(arg, "pause")) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "(GC) Shutdown by %s.", GET_NAME(ch));
-    stderr_log(buf);
-    safe_snprintf(buf, MAX_STRING_LENGTH,
+  } else if (!str_cmp(g_arg, "pause")) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "(GC) Shutdown by %s.", GET_NAME(ch));
+    stderr_log(g_buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "\r\n%s steps through a rift and with a sudden jesture all time is frozen\r\nReturning into the vast "
                   "nothingness of time, the world colapses and ends.",
                   GET_NAME(ch));
-    send_to_all(buf);
+    send_to_all(g_buf);
     touch("../pause");
     circle_shutdown = 1;
   } else {
@@ -2243,9 +2249,9 @@ void stop_snooping(struct char_data *ch) {
   if (!ch->desc->snooping) {
     send_to_char("You aren't snooping anyone.\r\n", ch);
   } else {
-    safe_snprintf(logbuffer, sizeof(logbuffer), "%s stopped snooping %s", GET_NAME(ch),
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s stopped snooping %s", GET_NAME(ch),
                   GET_NAME(ch->desc->snooping->character));
-    mudlog(logbuffer, 'X', COM_ADMIN, TRUE);
+    mudlog(g_logbuffer, 'X', COM_ADMIN, TRUE);
     send_to_char("You stop snooping.\r\n", ch);
     ch->desc->snooping->snoop_by = NULL;
     ch->desc->snooping = NULL;
@@ -2259,11 +2265,11 @@ ACMD(do_snoop) {
     return;
   }
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     stop_snooping(ch);
-  } else if (!(victim = get_char_vis(ch, arg))) {
+  } else if (!(victim = get_char_vis(ch, g_arg))) {
     send_to_char("No such person around.\r\n", ch);
   } else if (!victim->desc) {
     send_to_char("There's no link.. nothing to snoop.\r\n", ch);
@@ -2284,9 +2290,9 @@ ACMD(do_snoop) {
     }
     send_to_char(OK, ch);
 
-    safe_snprintf(logbuffer, sizeof(logbuffer), "%s snooping %s", GET_NAME(ch), GET_NAME(victim));
-    mudlog(logbuffer, 'X', COM_ADMIN, TRUE);
-    plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s snooping %s", GET_NAME(ch), GET_NAME(victim));
+    mudlog(g_logbuffer, 'X', COM_ADMIN, TRUE);
+    plog(g_logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
 
     if (ch->desc->snooping) {
       ch->desc->snooping->snoop_by = NULL;
@@ -2301,19 +2307,19 @@ ACMD(do_switch) {
   struct char_data *victim;
   sh_int location;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
   if (ch->desc->original) {
     send_to_char("You're already switched.\r\n", ch);
-  } else if (!*arg) {
+  } else if (!*g_arg) {
     send_to_char("Switch with who?\r\n", ch);
-  } else if (!(victim = get_char_vis(ch, arg))) {
+  } else if (!(victim = get_char_vis(ch, g_arg))) {
     send_to_char("No such character.\r\n", ch);
   } else if (ch == victim) {
     send_to_char("Hee hee... we are jolly funny today, eh?\r\n", ch);
   } else if (victim->desc) {
     send_to_char("You can't do that, the body is already in use!\r\n", ch);
-  } else if ((location = find_target_room(ch, arg)) < 0) {
+  } else if ((location = find_target_room(ch, g_arg)) < 0) {
     return;
   } else if ((!COM_FLAGGED(ch, COM_ADMIN)) && !IS_NPC(victim)) {
     send_to_char("You aren't holy enough to use a mortal's body.\r\n", ch);
@@ -2321,10 +2327,10 @@ ACMD(do_switch) {
     send_to_char("That is a restricted zone, stay out!\r\n", ch);
   } else {
     act("Okay, you are now $N.", TRUE, ch, 0, victim, TO_CHAR);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s switched to %s at %s", GET_NAME(ch), GET_NAME(victim),
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s switched to %s at %s", GET_NAME(ch), GET_NAME(victim),
                   world[victim->in_room].name);
-    mudlog(buf, 'Q', COM_QUEST, FALSE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    mudlog(g_buf, 'Q', COM_QUEST, FALSE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
     ch->desc->character = victim;
     ch->desc->original = ch;
 
@@ -2337,9 +2343,9 @@ ACMD(do_return) {
   if (ch->desc && ch->desc->original) {
     send_to_char("You return to your original body.\r\n", ch);
 
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s returned to the original body.", GET_NAME(ch->desc->original));
-    mudlog(buf, 'Q', COM_QUEST, FALSE);
-    plog(buf, ch->desc->original, MAX(LVL_IMMORT, GET_LEVEL(ch->desc->original)));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s returned to the original body.", GET_NAME(ch->desc->original));
+    mudlog(g_buf, 'Q', COM_QUEST, FALSE);
+    plog(g_buf, ch->desc->original, MAX(LVL_IMMORT, GET_LEVEL(ch->desc->original)));
     ch->desc->character = ch->desc->original;
     ch->desc->original = NULL;
 
@@ -2353,17 +2359,17 @@ ACMD(do_load) {
   struct obj_data *obj;
   int number, r_num;
 
-  two_arguments(argument, buf, buf2);
+  two_arguments(argument, g_buf, g_buf2);
 
-  if (!*buf || !*buf2 || !isdigit(*buf2)) {
+  if (!*g_buf || !*g_buf2 || !isdigit(*g_buf2)) {
     send_to_char("Usage: load [ obj | mob ] <virt num>\r\n", ch);
     return;
   }
-  if ((number = atoi(buf2)) < 0) {
+  if ((number = atoi(g_buf2)) < 0) {
     send_to_char("A NEGATIVE number??\r\n", ch);
     return;
   }
-  if (is_abbrev(buf, "mob")) {
+  if (is_abbrev(g_buf, "mob")) {
     int oktosee = 0;
     int zonenum = 0;
     int n;
@@ -2393,10 +2399,11 @@ ACMD(do_load) {
     act("$n makes a quaint, magical gesture with one hand.", TRUE, ch, 0, 0, TO_ROOM);
     act("$n has created $N!", FALSE, ch, 0, mob, TO_ROOM);
     act("You create $N.", FALSE, ch, 0, mob, TO_CHAR);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s created %s at %s", GET_NAME(ch), GET_NAME(mob), world[ch->in_room].name);
-    mudlog(buf, 'L', COM_QUEST, FALSE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
-  } else if (is_abbrev(buf, "obj")) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s created %s at %s", GET_NAME(ch), GET_NAME(mob),
+                  world[ch->in_room].name);
+    mudlog(g_buf, 'L', COM_QUEST, FALSE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+  } else if (is_abbrev(g_buf, "obj")) {
     int oktosee = 0;
     int zonenum = 0;
     int i;
@@ -2435,10 +2442,10 @@ ACMD(do_load) {
     act("$n makes a strange magical gesture.", TRUE, ch, 0, 0, TO_ROOM);
     act("$n has created $p!", FALSE, ch, obj, 0, TO_ROOM);
     act("You create $p.", FALSE, ch, obj, 0, TO_CHAR);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s created %s at %s", GET_NAME(ch), obj->short_description,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s created %s at %s", GET_NAME(ch), obj->short_description,
                   world[ch->in_room].name);
-    mudlog(buf, 'L', COM_QUEST, FALSE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    mudlog(g_buf, 'L', COM_QUEST, FALSE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   } else {
     send_to_char("That'll have to be either 'obj' or 'mob'.\r\n", ch);
   }
@@ -2449,17 +2456,17 @@ ACMD(do_rload) {
   struct obj_data *obj;
   int number;
 
-  two_arguments(argument, buf, buf2);
+  two_arguments(argument, g_buf, g_buf2);
 
-  if (!*buf || !*buf2 || !isdigit(*buf2)) {
+  if (!*g_buf || !*g_buf2 || !isdigit(*g_buf2)) {
     send_to_char("Usage: rload { obj | mob } <real num>\r\n", ch);
     return;
   }
-  if ((number = atoi(buf2)) < 0) {
+  if ((number = atoi(g_buf2)) < 0) {
     send_to_char("A NEGATIVE number??\r\n", ch);
     return;
   }
-  if (is_abbrev(buf, "mob")) {
+  if (is_abbrev(g_buf, "mob")) {
     if (number < 0 || number > new_top_mobt) {
       send_to_char("There is no monster with that number.\r\n", ch);
       return;
@@ -2470,10 +2477,10 @@ ACMD(do_rload) {
     act("$n makes a quaint, magical gesture with one hand.", TRUE, ch, 0, 0, TO_ROOM);
     act("$n has created $N!", FALSE, ch, 0, mob, TO_ROOM);
     act("You create $N.", FALSE, ch, 0, mob, TO_CHAR);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s created %s", GET_NAME(ch), GET_NAME(mob));
-    mudlog(buf, 'L', COM_QUEST, FALSE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
-  } else if (is_abbrev(buf, "obj")) {
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s created %s", GET_NAME(ch), GET_NAME(mob));
+    mudlog(g_buf, 'L', COM_QUEST, FALSE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+  } else if (is_abbrev(g_buf, "obj")) {
     if (number < 0 || number > new_top_objt) {
       send_to_char("There is no object with that number.\r\n", ch);
       return;
@@ -2491,9 +2498,9 @@ ACMD(do_rload) {
     act("$n makes a strange magical gesture.", TRUE, ch, 0, 0, TO_ROOM);
     act("$n has created $p!", FALSE, ch, obj, 0, TO_ROOM);
     act("You create $p.", FALSE, ch, obj, 0, TO_CHAR);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s created %s", GET_NAME(ch), obj->short_description);
-    mudlog(buf, 'L', COM_QUEST, FALSE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s created %s", GET_NAME(ch), obj->short_description);
+    mudlog(g_buf, 'L', COM_QUEST, FALSE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   } else {
     send_to_char("That'll have to be either 'obj' or 'mob'.\r\n", ch);
   }
@@ -2504,17 +2511,17 @@ ACMD(do_vstat) {
   struct obj_data *obj;
   int number, r_num;
 
-  two_arguments(argument, buf, buf2);
+  two_arguments(argument, g_buf, g_buf2);
 
-  if (!*buf || !*buf2 || !isdigit(*buf2)) {
+  if (!*g_buf || !*g_buf2 || !isdigit(*g_buf2)) {
     send_to_char("Usage: vstat [ obj | mob ] <number>\r\n", ch);
     return;
   }
-  if ((number = atoi(buf2)) < 0) {
+  if ((number = atoi(g_buf2)) < 0) {
     send_to_char("A NEGATIVE number??\r\n", ch);
     return;
   }
-  if (is_abbrev(buf, "mob")) {
+  if (is_abbrev(g_buf, "mob")) {
     if ((r_num = real_mobile(number)) < 0) {
       send_to_char("There is no monster with that number.\r\n", ch);
       return;
@@ -2523,7 +2530,7 @@ ACMD(do_vstat) {
     char_to_room(mob, 0);
     do_stat_character(ch, mob);
     extract_char(mob, 0);
-  } else if (is_abbrev(buf, "obj")) {
+  } else if (is_abbrev(g_buf, "obj")) {
     if ((r_num = real_object(number)) < 0) {
       send_to_char("There is no object with that number.\r\n", ch);
       return;
@@ -2547,10 +2554,10 @@ ACMD(do_purge) {
   struct char_data *vict, *next_v;
   struct obj_data *obj, *next_o;
 
-  one_argument(argument, buf);
+  one_argument(argument, g_buf);
 
-  if (*buf) { /* argument supplied. destroy single object or char */
-    if ((vict = get_char_room_vis(ch, buf))) {
+  if (*g_buf) { /* argument supplied. destroy single object or char */
+    if ((vict = get_char_room_vis(ch, g_buf))) {
       if (!IS_NPC(vict) && (GET_LEVEL(ch) < GET_LEVEL(vict))) {
         send_to_char("Fuuuuuuuuu!\r\n", ch);
         return;
@@ -2562,16 +2569,16 @@ ACMD(do_purge) {
       act("$n disintegrates $N.", FALSE, ch, 0, vict, TO_NOTVICT);
 
       if (!IS_NPC(vict)) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s has purged %s.", GET_NAME(ch), GET_NAME(vict));
-        mudlog(buf, 'G', COM_BUILDER, TRUE);
-        plog(buf, ch, LVL_IMMORT);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has purged %s.", GET_NAME(ch), GET_NAME(vict));
+        mudlog(g_buf, 'G', COM_BUILDER, TRUE);
+        plog(g_buf, ch, LVL_IMMORT);
         if (vict->desc) {
           close_socket(vict->desc);
           vict->desc = NULL;
         }
       }
       extract_char(vict, 1);
-    } else if ((obj = get_obj_in_list_vis(ch, buf, world[ch->in_room].contents))) {
+    } else if ((obj = get_obj_in_list_vis(ch, g_buf, world[ch->in_room].contents))) {
       act("$n destroys $p.", FALSE, ch, obj, 0, TO_ROOM);
       extract_obj(obj);
     } else {
@@ -2629,8 +2636,8 @@ ACMD(do_advance) {
     return;
   }
   if (newlevel > LVL_IMMORT) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%d is the highest possible level.\r\n", LVL_IMMORT);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%d is the highest possible level.\r\n", LVL_IMMORT);
+    send_to_char(g_buf, ch);
     return;
   }
   if (newlevel > GET_LEVEL(ch)) {
@@ -2658,10 +2665,10 @@ ACMD(do_advance) {
 
   send_to_char(OK, ch);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s has advanced %s to level %d (from %d)", GET_NAME(ch), GET_NAME(victim),
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has advanced %s to level %d (from %d)", GET_NAME(ch), GET_NAME(victim),
                 newlevel, GET_LEVEL(victim));
-  mudlog(buf, 'A', COM_ADMIN, TRUE);
-  plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+  mudlog(g_buf, 'A', COM_ADMIN, TRUE);
+  plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   gain_exp_regardless(victim, (MaxExperience[newlevel]) - GET_EXP(victim));
   save_char_text(victim, NOWHERE);
 }
@@ -2728,27 +2735,27 @@ ACMD(do_tedit) {
     return;
   }
 
-  half_chop(argument, field, buf);
+  half_chop(argument, field, g_buf);
 
   if (!*field) {
-    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "Files available to be edited:\r\n");
+    size_t blen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Files available to be edited:\r\n");
     i = 1;
     for (l = 0; *fields[l].cmd != '\n'; l++) {
       if (COM_FLAGGED(ch, fields[l].level)) {
-        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%-11.11s", fields[l].cmd);
+        blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%-11.11s", fields[l].cmd);
         if (!(i % 7)) {
-          blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
+          blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
         }
         i++;
       }
     }
     if (--i % 7) {
-      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     }
     if (i == 0) {
-      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "None.\r\n");
+      safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "None.\r\n");
     }
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     return;
   }
   for (l = 0; *(fields[l].cmd) != '\n'; l++) {
@@ -2848,8 +2855,8 @@ ACMD(do_tedit) {
   ch->desc->mail_to = 0;
   ch->desc->storage = strdup(fields[l].filename);
   SET_BIT(PLR_FLAGS(ch), PLR_WRITING);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s begins editing %s", GET_NAME(ch), fields[l].filename);
-  mudlog(buf, 'G', COM_BUILDER, TRUE);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "OLC: %s begins editing %s", GET_NAME(ch), fields[l].filename);
+  mudlog(g_buf, 'G', COM_BUILDER, TRUE);
   act("$n begins editing a scroll.", TRUE, ch, 0, 0, TO_ROOM);
   STATE(ch->desc) = CON_TEXTED;
 }
@@ -2860,17 +2867,17 @@ ACMD(do_restore) {
   struct char_data *vict;
   int i;
 
-  one_argument(argument, buf);
+  one_argument(argument, g_buf);
 
-  if (!*buf) {
+  if (!*g_buf) {
     send_to_char("Whom do you wish to restore?\r\n", ch);
-  } else if (!(vict = get_char_vis(ch, buf)) && (str_cmp("all", buf))) {
+  } else if (!(vict = get_char_vis(ch, g_buf)) && (str_cmp("all", g_buf))) {
     send_to_char(NOPERSON, ch);
-  } else if (!str_cmp("all", buf) && COM_FLAGGED(ch, COM_BUILDER)) {
+  } else if (!str_cmp("all", g_buf) && COM_FLAGGED(ch, COM_BUILDER)) {
     send_to_char(OK, ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s has restored all", GET_NAME(ch));
-    mudlog(buf, 'G', COM_IMMORT, TRUE);
-    plog(buf, ch, LVL_IMMORT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has restored all", GET_NAME(ch));
+    mudlog(g_buf, 'G', COM_IMMORT, TRUE);
+    plog(g_buf, ch, LVL_IMMORT);
 
     for (in = descriptor_list; in; in = next_desc) {
       next_desc = in->next;
@@ -2889,7 +2896,7 @@ ACMD(do_restore) {
           FALSE, vict, 0, ch, TO_CHAR);
       update_pos(vict);
     }
-  } else if (str_cmp("all", buf)) {
+  } else if (str_cmp("all", g_buf)) {
     GET_HIT(vict) = GET_MAX_HIT(vict);
     GET_MANA(vict) = GET_MAX_MANA(vict);
     GET_MOVE(vict) = GET_MAX_MOVE(vict);
@@ -2914,9 +2921,9 @@ ACMD(do_restore) {
     act("{DA {r*HUGE* {Dhand reaches down from the {Cheavens {Dseemingly to crush the very life\r\n{Dfrom you, leaving "
         "as quickly as it came, you feel fully healed.{x",
         FALSE, vict, 0, ch, TO_CHAR);
-    safe_snprintf(logbuffer, sizeof(logbuffer), "%s restored %s", GET_NAME(ch), GET_NAME(vict));
-    mudlog(logbuffer, 'G', COM_IMMORT, TRUE);
-    plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s restored %s", GET_NAME(ch), GET_NAME(vict));
+    mudlog(g_logbuffer, 'G', COM_IMMORT, TRUE);
+    plog(g_logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   } else {
     send_to_char("You are not godly enough to do that.\r\n", ch);
   }
@@ -2925,51 +2932,51 @@ ACMD(do_restore) {
 ACMD(do_invis) {
   int level = 0;
 
-  one_argument(argument, arg);
-  if (!*arg) {
+  one_argument(argument, g_arg);
+  if (!*g_arg) {
     if (GET_INVIS_LEV(ch) > 0) {
       if (IS_NPC(ch)) {
         GET_MOB_INVIS_LEV(ch) = 0;
       } else {
         GET_PLR_INVIS_LEV(ch) = 0;
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You are now fully visible.\r\n");
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "You are now fully visible.\r\n");
     } else {
       if (IS_NPC(ch)) {
         GET_MOB_INVIS_LEV(ch) = GET_LEVEL(ch);
       } else {
         GET_PLR_INVIS_LEV(ch) = GET_LEVEL(ch);
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Your invisibility level is %d.\r\n", GET_LEVEL(ch));
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Your invisibility level is %d.\r\n", GET_LEVEL(ch));
     }
   } else {
-    if (!strcmp(arg, "admin") && COM_FLAGGED(ch, COM_ADMIN)) {
+    if (!strcmp(g_arg, "admin") && COM_FLAGGED(ch, COM_ADMIN)) {
       if (IS_NPC(ch)) {
         GET_MOB_INVIS_LEV(ch) = 52;
       } else {
         GET_PLR_INVIS_LEV(ch) = 52;
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You are now invisible to all but admins.\r\n");
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "You are now invisible to all but admins.\r\n");
     } else {
       if (IS_NPC(ch)) {
         GET_MOB_INVIS_LEV(ch) = 0;
       } else {
         GET_PLR_INVIS_LEV(ch) = 0;
       }
-      level = atoi(arg);
+      level = atoi(g_arg);
       if (level > GET_LEVEL(ch)) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You are not high enough level.\r\n");
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "You are not high enough level.\r\n");
       } else {
         if (IS_NPC(ch)) {
           GET_MOB_INVIS_LEV(ch) = level;
         } else {
           GET_PLR_INVIS_LEV(ch) = level;
         }
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Your invisibility level is %d.\r\n", GET_INVIS_LEV(ch));
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Your invisibility level is %d.\r\n", GET_INVIS_LEV(ch));
       }
     }
   }
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 }
 
 ACMD(do_gecho) {
@@ -2980,20 +2987,20 @@ ACMD(do_gecho) {
   if (!*argument) {
     send_to_char("That must be a mistake...\r\n", ch);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", argument);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s\r\n", argument);
     for (pt = descriptor_list; pt; pt = pt->next) {
       if (!pt->connected && pt->character && pt->character != ch) {
-        send_to_char(buf, pt->character);
+        send_to_char(g_buf, pt->character);
       }
     }
     if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
       send_to_char(OK, ch);
     } else {
-      send_to_char(buf, ch);
+      send_to_char(g_buf, ch);
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s gechoed '%s'", GET_NAME(ch), argument);
-    mudlog(buf, 'G', COM_QUEST, FALSE);
-    plog(buf, ch, LVL_IMMORT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s gechoed '%s'", GET_NAME(ch), argument);
+    mudlog(g_buf, 'G', COM_QUEST, FALSE);
+    plog(g_buf, ch, LVL_IMMORT);
   }
 }
 
@@ -3005,21 +3012,21 @@ ACMD(do_zecho) {
   if (!*argument) {
     send_to_char("That must be a mistake...\r\n", ch);
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", argument);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s\r\n", argument);
     for (pt = descriptor_list; pt; pt = pt->next) {
       if (!pt->connected && pt->character && pt->character != ch &&
           world[pt->character->in_room].zone == world[ch->in_room].zone) {
-        send_to_char(buf, pt->character);
+        send_to_char(g_buf, pt->character);
       }
     }
     if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {
       send_to_char(OK, ch);
     } else {
-      send_to_char(buf, ch);
+      send_to_char(g_buf, ch);
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s zechoed '%s'", GET_NAME(ch), argument);
-    mudlog(buf, 'G', COM_QUEST, FALSE);
-    plog(buf, ch, LVL_IMMORT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s zechoed '%s'", GET_NAME(ch), argument);
+    mudlog(g_buf, 'G', COM_QUEST, FALSE);
+    plog(g_buf, ch, LVL_IMMORT);
   }
 }
 
@@ -3084,13 +3091,13 @@ ACMD(do_dc) {
   struct descriptor_data *d;
   int num_to_dc;
 
-  one_argument(argument, arg);
-  if (!(num_to_dc = atoi(arg)) && str_cmp("*", arg)) {
+  one_argument(argument, g_arg);
+  if (!(num_to_dc = atoi(g_arg)) && str_cmp("*", g_arg)) {
     send_to_char("Usage: DC <connection number> (type USERS for a list)\r\n", ch);
     return;
   }
 
-  if (str_cmp("*", arg)) {
+  if (str_cmp("*", g_arg)) {
     for (d = descriptor_list; d && d->desc_num != num_to_dc; d = d->next) {
       ;
     }
@@ -3104,11 +3111,11 @@ ACMD(do_dc) {
       return;
     }
     close_socket(d);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Connection #%d closed.\r\n", num_to_dc);
-    send_to_char(buf, ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Connection closed by %s.", GET_NAME(ch));
-    mudlog(buf, 'J', COM_BUILDER, TRUE);
-    stderr_log(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Connection #%d closed.\r\n", num_to_dc);
+    send_to_char(g_buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Connection closed by %s.", GET_NAME(ch));
+    mudlog(g_buf, 'J', COM_BUILDER, TRUE);
+    stderr_log(g_buf);
   } else { /* Cut all undefined sessions */
     for (d = descriptor_list; d; d = d->next) {
       if (d->connected != CON_PLAYING && d->connected != CON_REDIT && d->connected != CON_OEDIT &&
@@ -3118,9 +3125,9 @@ ACMD(do_dc) {
       }
     }
     send_to_char("All undefined connections have been closed.\r\n", ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s closed all undefined connections.", GET_NAME(ch));
-    mudlog(buf, 'J', COM_BUILDER, FALSE);
-    plog(buf, ch, LVL_IMMORT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s closed all undefined connections.", GET_NAME(ch));
+    mudlog(g_buf, 'J', COM_BUILDER, FALSE);
+    plog(g_buf, ch, LVL_IMMORT);
   }
 }
 
@@ -3128,9 +3135,9 @@ ACMD(do_wizlock) {
   int value;
   char *when;
 
-  one_argument(argument, arg);
-  if (*arg) {
-    value = atoi(arg);
+  one_argument(argument, g_arg);
+  if (*g_arg) {
+    value = atoi(g_arg);
     if (value < 0 || value > GET_LEVEL(ch)) {
       send_to_char("Invalid wizlock value.\r\n", ch);
       return;
@@ -3143,23 +3150,23 @@ ACMD(do_wizlock) {
 
   switch (restrict_game_lvl) {
   case 0:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "The game is %s completely open.\r\n", when);
-    send_to_char(buf, ch);
-    buf[strlen(buf) - 2] = '\0';
-    mudlog(buf, 'J', COM_ADMIN, TRUE);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "The game is %s completely open.\r\n", when);
+    send_to_char(g_buf, ch);
+    g_buf[strlen(g_buf) - 2] = '\0';
+    mudlog(g_buf, 'J', COM_ADMIN, TRUE);
     break;
   case 1:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "The game is %s closed to new players.\r\n", when);
-    send_to_char(buf, ch);
-    buf[strlen(buf) - 2] = '\0';
-    mudlog(buf, 'J', COM_ADMIN, TRUE);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "The game is %s closed to new players.\r\n", when);
+    send_to_char(g_buf, ch);
+    g_buf[strlen(g_buf) - 2] = '\0';
+    mudlog(g_buf, 'J', COM_ADMIN, TRUE);
     break;
   default:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Only level %d and above may enter the game %s.\r\n", restrict_game_lvl,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Only level %d and above may enter the game %s.\r\n", restrict_game_lvl,
                   when);
-    send_to_char(buf, ch);
-    buf[strlen(buf) - 2] = '\0';
-    mudlog(buf, 'J', COM_ADMIN, TRUE);
+    send_to_char(g_buf, ch);
+    g_buf[strlen(g_buf) - 2] = '\0';
+    mudlog(g_buf, 'J', COM_ADMIN, TRUE);
     break;
   }
 }
@@ -3180,17 +3187,18 @@ ACMD(do_date) {
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
   if (subcmd == SCMD_DATE) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Current machine time: %s\r\n", tmstr);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Current machine time: %s\r\n", tmstr);
   } else {
     mytime = time(0) - boot_time;
     d = mytime / 86400;
     h = (mytime / 3600) % 24;
     m = (mytime / 60) % 60;
 
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Up since %s: %d day%s, %d:%02d\r\n", tmstr, d, ((d == 1) ? "" : "s"), h, m);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Up since %s: %d day%s, %d:%02d\r\n", tmstr, d, ((d == 1) ? "" : "s"), h,
+                  m);
   }
 
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
 }
 
 ACMD(do_last) {
@@ -3201,12 +3209,12 @@ ACMD(do_last) {
   char tempname[MAX_INPUT_LENGTH];
   char *tmpc;
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
   CREATE(chdata, struct char_data, 1);
 
-  if (!*arg) {
+  if (!*g_arg) {
     size_t blen = 0;
-    *buf = '\0';
+    *g_buf = '\0';
     tmpLast = LastInfo;
     send_to_char("{CPlr Num    Plr Name            Num Connects    Last On{x\r\n", ch);
     while (tmpLast) {
@@ -3217,24 +3225,24 @@ ACMD(do_last) {
         safe_snprintf(tempname, sizeof(tempname), "%s", tmpLast->Name);
       }
       blen +=
-          safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "{c%5d      %-20s%7d         %20s", tmpLast->PlayerNum,
+          safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "{c%5d      %-20s%7d         %20s", tmpLast->PlayerNum,
                         tempname, tmpLast->NumberConnects, asctime(localtime((time_t *)&(tmpLast->Time))));
-      tmpc = strrchr(buf, '\n');
+      tmpc = strrchr(g_buf, '\n');
       if (tmpc) {
-        safe_snprintf(tmpc, (buf + MAX_STRING_LENGTH) - tmpc, "\r\n");
-        blen = strlen(buf);
+        safe_snprintf(tmpc, (g_buf + MAX_STRING_LENGTH) - tmpc, "\r\n");
+        blen = strlen(g_buf);
       } else {
-        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
+        blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
       }
       tmpLast = tmpLast->next;
     }
-    safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "{x");
-    page_string(ch->desc, buf, 1);
+    safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "{x");
+    page_string(ch->desc, g_buf, 1);
     free_char(chdata);
     return;
   }
 
-  if (load_char_text(arg, chdata) < 1) {
+  if (load_char_text(g_arg, chdata) < 1) {
     free_char(chdata);
     send_to_char("There is no such player.\r\n", ch);
     return;
@@ -3250,10 +3258,10 @@ ACMD(do_last) {
     free_char(chdata);
     return;
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{B[{W%5ld{B] [{W%2d %s{B] {c%-12s {w: {c%-18s {w: {c%-20s{x\r\n",
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "{B[{W%5ld{B] [{W%2d %s{B] {c%-12s {w: {c%-18s {w: {c%-20s{x\r\n",
                 GET_IDNUM(chdata), (int)GET_LEVEL(chdata), class_abbrevs[(int)GET_CLASS(chdata)], GET_NAME(chdata),
                 GET_HOST(chdata), ctime(&(GET_LOGON(chdata))));
-  send_to_char(buf, ch);
+  send_to_char(g_buf, ch);
   free_char(chdata);
 }
 
@@ -3263,14 +3271,14 @@ ACMD(do_force) {
   char to_force[MAX_INPUT_LENGTH + 2];
   char buf1[256];
 
-  half_chop(argument, arg, to_force);
+  half_chop(argument, g_arg, to_force);
 
-  safe_snprintf(buf1, MAX_STRING_LENGTH, "$n has forced you to '%s'.", to_force);
+  safe_snprintf(g_buf1, MAX_STRING_LENGTH, "$n has forced you to '%s'.", to_force);
 
-  if (!*arg || !*to_force) {
+  if (!*g_arg || !*to_force) {
     send_to_char("Whom do you wish to force do what?\r\n", ch);
-  } else if ((COM_FLAGGED(ch, COM_QUEST)) && (str_cmp("all", arg) && str_cmp("room", arg))) {
-    if (!(vict = get_char_vis(ch, arg))) {
+  } else if ((COM_FLAGGED(ch, COM_QUEST)) && (str_cmp("all", g_arg) && str_cmp("room", g_arg))) {
+    if (!(vict = get_char_vis(ch, g_arg))) {
       send_to_char(NOPERSON, ch);
     } else if (GET_LEVEL(ch) < GET_LEVEL(vict) && !IS_NPC(vict)) {
       send_to_char("No, no, no!\r\n", ch);
@@ -3278,8 +3286,8 @@ ACMD(do_force) {
       send_to_char("No, no, no!\r\n", ch);
     } else if (!COM_FLAGGED(ch, COM_ADMIN) && COM_FLAGGED(vict, COM_ADMIN)) {
       send_to_char("You are not able to force an admin.\r\n", ch);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{Y%s attempted to force you to, '%s'{x\r\n", GET_NAME(ch), to_force);
-      send_to_char(buf, vict);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "{Y%s attempted to force you to, '%s'{x\r\n", GET_NAME(ch), to_force);
+      send_to_char(g_buf, vict);
     } else {
       int oktosee = 0;
       int zonenum = 0;
@@ -3303,38 +3311,39 @@ ACMD(do_force) {
         send_to_char("No, no, no! You are only allowed to force mobs!\r\n", ch);
       } else {
         send_to_char(OK, ch);
-        act(buf1, TRUE, ch, NULL, vict, TO_VICT);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s forced %s to %s", GET_NAME(ch), GET_NAME(vict), to_force);
-        mudlog(buf, 'G', COM_QUEST, TRUE);
-        plog(buf, ch, LVL_IMMORT);
+        act(g_buf1, TRUE, ch, NULL, vict, TO_VICT);
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s forced %s to %s", GET_NAME(ch), GET_NAME(vict), to_force);
+        mudlog(g_buf, 'G', COM_QUEST, TRUE);
+        plog(g_buf, ch, LVL_IMMORT);
         command_interpreter(vict, to_force);
       }
     }
-  } else if ((!str_cmp("room", arg)) && COM_FLAGGED(ch, COM_BUILDER)) {
+  } else if ((!str_cmp("room", g_arg)) && COM_FLAGGED(ch, COM_BUILDER)) {
     send_to_char(OK, ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s forced room %d to %s", GET_NAME(ch), world[ch->in_room].number, to_force);
-    mudlog(buf, 'G', COM_QUEST, TRUE);
-    plog(buf, ch, LVL_IMMORT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s forced room %d to %s", GET_NAME(ch), world[ch->in_room].number,
+                  to_force);
+    mudlog(g_buf, 'G', COM_QUEST, TRUE);
+    plog(g_buf, ch, LVL_IMMORT);
     for (vict = world[ch->in_room].people; vict; vict = next_force) {
       next_force = vict->next_in_room;
       if (GET_LEVEL(vict) > GET_LEVEL(ch)) {
         continue;
       }
-      act(buf1, TRUE, ch, NULL, vict, TO_VICT);
+      act(g_buf1, TRUE, ch, NULL, vict, TO_VICT);
       command_interpreter(vict, to_force);
     }
-  } else if ((!str_cmp("all", arg)) && COM_FLAGGED(ch, COM_ADMIN)) {
+  } else if ((!str_cmp("all", g_arg)) && COM_FLAGGED(ch, COM_ADMIN)) {
     send_to_char(OK, ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s forced all to %s", GET_NAME(ch), to_force);
-    mudlog(buf, 'G', COM_QUEST, TRUE);
-    plog(buf, ch, LVL_IMMORT);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s forced all to %s", GET_NAME(ch), to_force);
+    mudlog(g_buf, 'G', COM_QUEST, TRUE);
+    plog(g_buf, ch, LVL_IMMORT);
     for (i = descriptor_list; i; i = next_desc) {
       next_desc = i->next;
 
       if (i->connected || !(vict = i->character) || GET_LEVEL(vict) > GET_LEVEL(ch)) {
         continue;
       }
-      act(buf1, TRUE, ch, NULL, vict, TO_VICT);
+      act(g_buf1, TRUE, ch, NULL, vict, TO_VICT);
       command_interpreter(vict, to_force);
     }
   }
@@ -3361,17 +3370,17 @@ ACMD(do_wiznet) {
   /*  case '*':
    emote = TRUE; */
   case '#':
-    one_argument(argument + 1, buf1);
-    if (*buf1) {
-      half_chop(argument + 1, buf1, argument);
+    one_argument(argument + 1, g_buf1);
+    if (*g_buf1) {
+      half_chop(argument + 1, g_buf1, argument);
 
-      if (!strcmp(buf1, "im")) {
+      if (!strcmp(g_buf1, "im")) {
         level = COM_IMMORT;
-      } else if (!strcmp(buf1, "qu")) {
+      } else if (!strcmp(g_buf1, "qu")) {
         level = COM_QUEST;
-      } else if (!strcmp(buf1, "bu")) {
+      } else if (!strcmp(g_buf1, "bu")) {
         level = COM_BUILDER;
-      } else if (!strcmp(buf1, "ad")) {
+      } else if (!strcmp(g_buf1, "ad")) {
         level = COM_ADMIN;
       }
 
@@ -3389,16 +3398,17 @@ ACMD(do_wiznet) {
       if (!d->connected && GET_LEVEL(d->character) >= LVL_IMMORT && !PRF_FLAGGED(d->character, PRF_NOWIZ) &&
           (CAN_SEE(ch, d->character) || COM_FLAGGED(ch, COM_ADMIN))) {
         if (!any) {
-          b1len = safe_snprintf(buf1, MAX_STRING_LENGTH, "Gods online:\r\n");
+          b1len = safe_snprintf(g_buf1, MAX_STRING_LENGTH, "Gods online:\r\n");
           any = TRUE;
         }
         if (PLR_FLAGGED(d->character, PLR_WRITING)) {
-          b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s (Writing)\r\n", GET_NAME(d->character));
-        } else if (PLR_FLAGGED(d->character, PLR_MAILING)) {
           b1len +=
-              safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s (Writing mail)\r\n", GET_NAME(d->character));
+              safe_snprintf(g_buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s (Writing)\r\n", GET_NAME(d->character));
+        } else if (PLR_FLAGGED(d->character, PLR_MAILING)) {
+          b1len += safe_snprintf(g_buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s (Writing mail)\r\n",
+                                 GET_NAME(d->character));
         } else {
-          b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s\r\n", GET_NAME(d->character));
+          b1len += safe_snprintf(g_buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s\r\n", GET_NAME(d->character));
         }
       }
     }
@@ -3407,13 +3417,13 @@ ACMD(do_wiznet) {
       if (!d->connected && GET_LEVEL(d->character) >= LVL_IMMORT && PRF_FLAGGED(d->character, PRF_NOWIZ) &&
           CAN_SEE(ch, d->character)) {
         if (!any) {
-          b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "Gods offline:\r\n");
+          b1len += safe_snprintf(g_buf1 + b1len, MAX_STRING_LENGTH - b1len, "Gods offline:\r\n");
           any = TRUE;
         }
-        b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s\r\n", GET_NAME(d->character));
+        b1len += safe_snprintf(g_buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s\r\n", GET_NAME(d->character));
       }
     }
-    send_to_char(buf1, ch);
+    send_to_char(g_buf1, ch);
     return;
   }
   case '\\':
@@ -3435,14 +3445,14 @@ ACMD(do_wiznet) {
   if (level > COM_IMMORT) {
     char channel[5];
 
-    safe_snprintf(channel, sizeof(channel), "%s", buf1);
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "{W::{C%s{W:: <{C%s{W> {c%s%s{x\r\n", GET_NAME(ch), channel,
+    safe_snprintf(channel, sizeof(channel), "%s", g_buf1);
+    safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{W::{C%s{W:: <{C%s{W> {c%s%s{x\r\n", GET_NAME(ch), channel,
                   emote ? "<--- " : "", argument);
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "{W::{CSomeone{W:: <{C%s{W> {c%s%s{x\r\n", channel, emote ? "<--- " : "",
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "{W::{CSomeone{W:: <{C%s{W> {c%s%s{x\r\n", channel, emote ? "<--- " : "",
                   argument);
   } else {
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "{W::{C%s{W:: {c%s%s{x\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "{W::{CSomeone{W:: {c%s%s{x\r\n", emote ? "<--- " : "", argument);
+    safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{W::{C%s{W:: {c%s%s{x\r\n", GET_NAME(ch), emote ? "<--- " : "", argument);
+    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "{W::{CSomeone{W:: {c%s%s{x\r\n", emote ? "<--- " : "", argument);
   }
 
   for (d = descriptor_list; d; d = d->next) {
@@ -3451,9 +3461,9 @@ ACMD(do_wiznet) {
         (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
       send_to_char(CCCYN(d->character, C_NRM), d->character);
       if (CAN_SEE(d->character, ch)) {
-        send_to_char(buf1, d->character);
+        send_to_char(g_buf1, d->character);
       } else {
-        send_to_char(buf2, d->character);
+        send_to_char(g_buf2, d->character);
       }
       send_to_char(CCNRM(d->character, C_NRM), d->character);
     }
@@ -3486,8 +3496,8 @@ ACMD(do_iquest) {
     return;
   }
 
-  safe_snprintf(buf1, MAX_STRING_LENGTH, "{m<<{W%s{m>> {W%s{x\r\n", GET_NAME(ch), argument);
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "{m<<{WSomeone{m>> {W%s{x\r\n", argument);
+  safe_snprintf(g_buf1, MAX_STRING_LENGTH, "{m<<{W%s{m>> {W%s{x\r\n", GET_NAME(ch), argument);
+  safe_snprintf(g_buf2, MAX_STRING_LENGTH, "{m<<{WSomeone{m>> {W%s{x\r\n", argument);
 
   for (d = descriptor_list; d; d = d->next) {
     if ((!d->connected) && (COM_FLAGGED(d->character, COM_QUEST)) && (!PRF_FLAGGED(d->character, PRF_NOWIZ)) &&
@@ -3495,9 +3505,9 @@ ACMD(do_iquest) {
         (d != ch->desc || !(PRF_FLAGGED(d->character, PRF_NOREPEAT)))) {
       send_to_char(CBYEL(d->character, C_NRM), d->character);
       if (CAN_SEE(d->character, ch)) {
-        send_to_char(buf1, d->character);
+        send_to_char(g_buf1, d->character);
       } else {
-        send_to_char(buf2, d->character);
+        send_to_char(g_buf2, d->character);
       }
       send_to_char(CCNRM(d->character, C_NRM), d->character);
     }
@@ -3512,21 +3522,21 @@ ACMD(do_zreset) {
   void reset_zone(int zone);
   int i, j;
 
-  one_argument(argument, arg);
-  if (!*arg) {
+  one_argument(argument, g_arg);
+  if (!*g_arg) {
     send_to_char("You must specify a zone.\r\n", ch);
     return;
   }
-  if (*arg == '*') {
+  if (*g_arg == '*') {
     for (i = 0; i <= top_of_zone_table; i++) {
       reset_zone(i);
     }
     send_to_char("Reset world.\r\n", ch);
     return;
-  } else if (*arg == '.') {
+  } else if (*g_arg == '.') {
     i = world[ch->in_room].zone;
   } else {
-    j = atoi(arg);
+    j = atoi(g_arg);
     for (i = 0; i <= top_of_zone_table; i++) {
       if (zone_table[i].number == j) {
         break;
@@ -3535,12 +3545,13 @@ ACMD(do_zreset) {
   }
   if (i >= 0 && i <= top_of_zone_table) {
     reset_zone(i);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Reset zone %d (#%d): %s.\r\n", i, zone_table[i].number, zone_table[i].name);
-    send_to_char(buf, ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s reset zone #%d (%s)", GET_NAME(ch), zone_table[i].number,
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Reset zone %d (#%d): %s.\r\n", i, zone_table[i].number,
                   zone_table[i].name);
-    mudlog(buf, 'G', COM_BUILDER, TRUE);
-    plog(buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+    send_to_char(g_buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s reset zone #%d (%s)", GET_NAME(ch), zone_table[i].number,
+                  zone_table[i].name);
+    mudlog(g_buf, 'G', COM_BUILDER, TRUE);
+    plog(g_buf, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   } else {
     send_to_char("Invalid zone number.\r\n", ch);
   }
@@ -3555,11 +3566,11 @@ ACMD(do_wizutil) {
   long result;
   void roll_real_abils(struct char_data * ch);
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("Yes, but for whom?!?\r\n", ch);
-  } else if (!(vict = get_char_vis(ch, arg))) {
+  } else if (!(vict = get_char_vis(ch, g_arg))) {
     send_to_char("There is no such player.\r\n", ch);
   } else if (IS_NPC(vict)) {
     send_to_char("You can't do that to a mob!\r\n", ch);
@@ -3570,13 +3581,14 @@ ACMD(do_wizutil) {
     case SCMD_REROLL:
       send_to_char("Rerolled...\r\n", ch);
       roll_real_abils(vict);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s has rerolled %s.", GET_NAME(ch), GET_NAME(vict));
-      mudlog(buf, 'X', COM_ADMIN, TRUE);
-      stderr_log(buf);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Stats: Str %d, Int %d, Wis %d, Dex %d, Con %d, Agi %d, Wgt %d, Hgt %d\r\n",
-                    GET_STR(vict), GET_INT(vict), GET_WIS(vict), GET_DEX(vict), GET_CON(vict), GET_AGI(vict),
-                    GET_WEIGHT(vict), GET_HEIGHT(vict));
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s has rerolled %s.", GET_NAME(ch), GET_NAME(vict));
+      mudlog(g_buf, 'X', COM_ADMIN, TRUE);
+      stderr_log(g_buf);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH,
+                    "Stats: Str %d, Int %d, Wis %d, Dex %d, Con %d, Agi %d, Wgt %d, Hgt %d\r\n", GET_STR(vict),
+                    GET_INT(vict), GET_WIS(vict), GET_DEX(vict), GET_CON(vict), GET_AGI(vict), GET_WEIGHT(vict),
+                    GET_HEIGHT(vict));
+      send_to_char(g_buf, ch);
       break;
     case SCMD_PARDON:
       if (!PLR_FLAGGED(vict, PLR_THIEF | PLR_KILLER)) {
@@ -3586,45 +3598,45 @@ ACMD(do_wizutil) {
       REMOVE_BIT(PLR_FLAGS(vict), PLR_THIEF | PLR_KILLER);
       send_to_char("Pardoned.\r\n", ch);
       send_to_char("You have been pardoned by the Gods!\r\n", vict);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s pardoned by %s", GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_IMMORT, TRUE);
-      plog(buf, ch, LVL_IMMORT);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s pardoned by %s", GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_IMMORT, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
       break;
     case SCMD_NOTITLE:
       result = PLR_TOG_CHK(vict, PLR_NOTITLE);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Notitle %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      plog(buf, vict, LVL_IMMORT);
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Notitle %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_BUILDER, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      plog(g_buf, vict, LVL_IMMORT);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+      send_to_char(g_buf, ch);
       break;
     case SCMD_NOEMOTE:
       result = PLR_TOG_CHK(vict, PLR_NOEMOTE);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Noemote %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_QUEST, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      plog(buf, vict, LVL_IMMORT);
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Noemote %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_QUEST, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      plog(g_buf, vict, LVL_IMMORT);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+      send_to_char(g_buf, ch);
       break;
     case SCMD_NOSOCIAL:
       result = PLR_TOG_CHK(vict, PLR_NOSOCIAL);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Nosocial %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_QUEST, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      plog(buf, vict, LVL_IMMORT);
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Nosocial %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_QUEST, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      plog(g_buf, vict, LVL_IMMORT);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+      send_to_char(g_buf, ch);
       break;
     case SCMD_SQUELCH:
       result = PLR_TOG_CHK(vict, PLR_NOSHOUT);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Mute %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_QUEST, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      plog(buf, vict, LVL_IMMORT);
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Mute %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_QUEST, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      plog(g_buf, vict, LVL_IMMORT);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+      send_to_char(g_buf, ch);
       break;
     case SCMD_FREEZE:
       if (ch == vict) {
@@ -3641,10 +3653,10 @@ ACMD(do_wizutil) {
                    vict);
       send_to_char("Frozen.\r\n", ch);
       act("A sudden cold wind conjured from nowhere freezes $n!", FALSE, vict, 0, 0, TO_ROOM);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s frozen by %s.", GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      plog(buf, vict, LVL_IMMORT);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s frozen by %s.", GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_BUILDER, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      plog(g_buf, vict, LVL_IMMORT);
       break;
     case SCMD_THAW:
       if (!PLR_FLAGGED(vict, PLR_FROZEN)) {
@@ -3652,15 +3664,15 @@ ACMD(do_wizutil) {
         return;
       }
       if (GET_FREEZE_LEV(vict) > GET_LEVEL(ch)) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Sorry, a level %d God froze %s... you can't unfreeze %s.\r\n",
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Sorry, a level %d God froze %s... you can't unfreeze %s.\r\n",
                       GET_FREEZE_LEV(vict), GET_NAME(vict), HMHR(vict));
-        send_to_char(buf, ch);
+        send_to_char(g_buf, ch);
         return;
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s un-frozen by %s.", GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      plog(buf, vict, LVL_IMMORT);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s un-frozen by %s.", GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_BUILDER, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      plog(g_buf, vict, LVL_IMMORT);
       REMOVE_BIT(PLR_FLAGS(vict), PLR_FROZEN);
       send_to_char("A fireball suddenly explodes in front of you, melting the ice!\r\nYou feel thawed.\r\n", vict);
       send_to_char("Thawed.\r\n", ch);
@@ -3678,17 +3690,17 @@ ACMD(do_wizutil) {
         send_to_char("Your victim does not have any affections!\r\n", ch);
         return;
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s's affections removed by %s", GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_QUEST, TRUE);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s's affections removed by %s", GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_QUEST, TRUE);
       break;
     case SCMD_OUTLAW:
       result = PLR_TOG_CHK(vict, PLR_OUTLAW);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Outlaw %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
-      mudlog(buf, 'G', COM_ADMIN, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      plog(buf, vict, LVL_IMMORT);
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Outlaw %s for %s by %s.", ONOFF(result), GET_NAME(vict), GET_NAME(ch));
+      mudlog(g_buf, 'G', COM_ADMIN, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      plog(g_buf, vict, LVL_IMMORT);
+      safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
+      send_to_char(g_buf, ch);
       break;
     default:
       stderr_log("SYSERR: Unknown subcmd passed to do_wizutil (act.wizard.c)");
@@ -3796,62 +3808,63 @@ void show_spell_info(struct char_data *ch, char *spellname) {
     }
   }
 
-  size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%d) %s is a %s\r\n", spells[spellnum].spellindex,
+  size_t blen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "%d) %s is a %s\r\n", spells[spellnum].spellindex,
                               spells[spellnum].command, (spells[spellnum].event_pointer ? "SPELL" : "SKILL"));
 
   if (spells[spellnum].event_pointer) {
     blen +=
-        safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", get_spell_argument(spells[spellnum].spell_pointer));
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", get_event_type(spells[spellnum].event_pointer));
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen,
+        safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", get_spell_argument(spells[spellnum].spell_pointer));
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s", get_event_type(spells[spellnum].event_pointer));
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen,
                           "You must be in at least %s position to use this spell.\r\n",
                           position_types[spells[spellnum].min_position]);
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen,
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen,
                           "Maximum mana: %d\tMinimum mana: %d\t Amount change per level: %d\r\n",
                           spells[spellnum].mana_max, spells[spellnum].mana_min, spells[spellnum].mana_change);
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "It is a %s spell and is %s to learn.\r\n",
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "It is a %s spell and is %s to learn.\r\n",
                           (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"),
                           difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "This spell is in the %s.\r\n",
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "This spell is in the %s.\r\n",
                           spells[find_skill_num_def(spells[spellnum].realm)].command);
     if (spells[spellnum].unaffect) {
-      blen +=
-          safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "This spell removes %s.\r\n", spells[spellnum].unaffect);
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "This spell removes %s.\r\n",
+                            spells[spellnum].unaffect);
     }
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Invisible: %s\r\n", YESNO(spells[spellnum].invisible));
+    blen +=
+        safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "Invisible: %s\r\n", YESNO(spells[spellnum].invisible));
     if (spells[spellnum].num_dice || spells[spellnum].size_dice) {
       blen +=
-          safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Num dice: %d, Size dice: %d, Avg dice %d\r\n",
+          safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "Num dice: %d, Size dice: %d, Avg dice %d\r\n",
                         spells[spellnum].num_dice, spells[spellnum].size_dice,
                         ((spells[spellnum].num_dice + (spells[spellnum].size_dice * spells[spellnum].num_dice)) / 2));
     }
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Resist: %s\r\n",
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "Resist: %s\r\n",
                           resist_short_name[spells[spellnum].resist_type - 1]);
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Saving Throw: %s\r\n",
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "Saving Throw: %s\r\n",
                           saving_throws[spells[spellnum].saving_throw]);
   } else {
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen,
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen,
                           "You must be in at least %s position to use this skill.\r\n",
                           position_types[spells[spellnum].min_position]);
-    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "It is a %s skill and is %s to learn.\r\n",
+    blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "It is a %s skill and is %s to learn.\r\n",
                           (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"),
                           difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
   }
-  blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\nLevels assigned to each class:\r\n");
+  blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "\r\nLevels assigned to each class:\r\n");
   for (i = 0; i < NUM_CLASSES; i++) {
     if (i == 9) {
-      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, " %s:%2d\r\n", class_abbrevs[i],
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, " %s:%2d\r\n", class_abbrevs[i],
                             spells[spellnum].min_level[i]);
     } else if (i == 0 || i == 10) {
-      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s:%2d", class_abbrevs[i],
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "%s:%2d", class_abbrevs[i],
                             spells[spellnum].min_level[i]);
     } else {
-      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, " %s:%2d", class_abbrevs[i],
+      blen += safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, " %s:%2d", class_abbrevs[i],
                             spells[spellnum].min_level[i]);
     }
   }
-  safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
-  page_string(ch->desc, buf, 1);
+  safe_snprintf(g_buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
+  page_string(ch->desc, g_buf, 1);
 }
 
 ACMD(do_show) {
@@ -3899,23 +3912,23 @@ ACMD(do_show) {
   skip_spaces(&argument);
 
   if (!*argument) {
-    size_t slen = safe_snprintf(buf, MAX_STRING_LENGTH, "Show options:\r\n");
+    size_t slen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Show options:\r\n");
     for (j = 0, i = 0; fields[i].level; i++) {
       if (i < 2 || COM_FLAGGED(ch, fields[i].level)) {
         slen +=
-            safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
+            safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
       }
     }
-    safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n");
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf + slen, MAX_STRING_LENGTH - slen, "\r\n");
+    send_to_char(g_buf, ch);
     return;
   }
 
-  safe_snprintf(arg, MAX_INPUT_LENGTH, "%s", two_arguments(argument, field, value));
+  safe_snprintf(g_arg, MAX_INPUT_LENGTH, "%s", two_arguments(argument, field, value));
 
   if (!strcmp(field, "sinfo")) {
-    if (*arg) {
-      safe_snprintf(spell, sizeof(spell), "%s%s", value, arg);
+    if (*g_arg) {
+      safe_snprintf(spell, sizeof(spell), "%s%s", value, g_arg);
     } else {
       safe_snprintf(spell, sizeof(spell), "%s", value);
     }
@@ -3939,7 +3952,7 @@ ACMD(do_show) {
   if (!strcmp(value, ".")) {
     self = 1;
   }
-  buf[0] = '\0';
+  g_buf[0] = '\0';
   switch (l) {
   case 0:
     send_to_char("You see what you expected... nothing.\r\n", ch);
@@ -3963,43 +3976,43 @@ ACMD(do_show) {
       k++;
     }
     {
-      size_t stlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Current stats:\r\n");
+      size_t stlen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Current stats:\r\n");
       stlen +=
-          safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d players in game  %5d connected\r\n", i, con);
-      stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d registered\r\n", top_of_p_table + 1);
-      stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d mobiles          %5d prototypes\r\n", j,
+          safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d players in game  %5d connected\r\n", i, con);
+      stlen += safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d registered\r\n", top_of_p_table + 1);
+      stlen += safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d mobiles          %5d prototypes\r\n", j,
                              top_of_mobt + 1);
-      stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d objects          %5d prototypes\r\n", k,
+      stlen += safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d objects          %5d prototypes\r\n", k,
                              top_of_objt + 1);
-      stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d rooms            %5d zones\r\n",
+      stlen += safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d rooms            %5d zones\r\n",
                              top_of_world + 1, top_of_zone_table + 1);
-      stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d large bufs\r\n", buf_largecount);
-      stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d buf switches     %5d overflows\r\n",
+      stlen += safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d large bufs\r\n", buf_largecount);
+      stlen += safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d g_buf switches     %5d overflows\r\n",
                              buf_switches, buf_overflows);
-      safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d deaths\r\n", death_count);
-      send_to_char(buf, ch);
+      safe_snprintf(g_buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d deaths\r\n", death_count);
+      send_to_char(g_buf, ch);
       break;
     }
   case 2: /* zone */
     /* tightened up by JE 4/6/93 */
     if (self) {
-      print_zone_to_buf(buf, MAX_STRING_LENGTH, world[ch->in_room].zone);
+      print_zone_to_buf(g_buf, MAX_STRING_LENGTH, world[ch->in_room].zone);
     } else if (*value && is_number(value)) {
       for (j = atoi(value), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
         ;
       }
       if (i <= top_of_zone_table) {
-        print_zone_to_buf(buf, MAX_STRING_LENGTH, i);
+        print_zone_to_buf(g_buf, MAX_STRING_LENGTH, i);
       } else {
         send_to_char("That is not a valid zone.\r\n", ch);
         return;
       }
     } else {
       for (i = 0; i <= top_of_zone_table; i++) {
-        print_zone_to_buf(buf, MAX_STRING_LENGTH, i);
+        print_zone_to_buf(g_buf, MAX_STRING_LENGTH, i);
       }
     }
-    page_string(ch->desc, buf, 1);
+    page_string(ch->desc, g_buf, 1);
     break;
   case 3: /* player */
     if (!*value) {
@@ -4014,57 +4027,57 @@ ACMD(do_show) {
       return;
     }
     {
-      size_t plen = safe_snprintf(buf, MAX_STRING_LENGTH, "Player: %-12s (%s) [%2d %s]\r\n", GET_NAME(vbuf),
+      size_t plen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Player: %-12s (%s) [%2d %s]\r\n", GET_NAME(vbuf),
                                   genders[(int)GET_SEX(vbuf)], GET_LEVEL(vbuf), class_abbrevs[(int)GET_CLASS(vbuf)]);
-      plen += safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen,
+      plen += safe_snprintf(g_buf + plen, MAX_STRING_LENGTH - plen,
                             "Au: %-8d  Bal: %-8d  Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n", GET_GOLD(vbuf),
                             GET_BANK_GOLD(vbuf), GET_EXP(vbuf), GET_ALIGNMENT(vbuf), GET_PRACTICES(vbuf));
       safe_snprintf(birth, sizeof(birth), "%s", ctime(&GET_BIRTH(vbuf)));
-      safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n",
+      safe_snprintf(g_buf + plen, MAX_STRING_LENGTH - plen, "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n",
                     birth, ctime(&GET_LOGON(vbuf)), (int)(GET_PLAYED(vbuf) / 3600),
                     (int)((GET_PLAYED(vbuf) / 60) % 60));
       free_char(vbuf);
-      send_to_char(buf, ch);
+      send_to_char(g_buf, ch);
       break;
     }
   case 4:
     Crash_listrent(ch, value);
     break;
   case 5: {
-    size_t elen = safe_snprintf(buf, MAX_STRING_LENGTH, "Errant Rooms\r\n------------\r\n");
+    size_t elen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Errant Rooms\r\n------------\r\n");
     for (i = 0, k = 0; i <= top_of_world; i++) {
       for (j = 0; j < NUM_OF_DIRS; j++) {
         if (world[i].dir_option[j] && world[i].dir_option[j]->to_room == 0) {
-          elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "%2d: [%5d] %s\r\n", ++k, world[i].number,
+          elen += safe_snprintf(g_buf + elen, MAX_STRING_LENGTH - elen, "%2d: [%5d] %s\r\n", ++k, world[i].number,
                                 world[i].name);
         }
       }
     }
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     break;
   }
   case 6: {
-    size_t dlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Death Traps\r\n-----------\r\n");
+    size_t dlen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Death Traps\r\n-----------\r\n");
     for (i = 0, j = 0; i <= top_of_world; i++) {
       if (IS_SET(ROOM_FLAGS(i), ROOM_DEATH)) {
-        dlen += safe_snprintf(buf + dlen, MAX_STRING_LENGTH - dlen, "%2d: [%5d] %s\r\n", ++j, world[i].number,
+        dlen += safe_snprintf(g_buf + dlen, MAX_STRING_LENGTH - dlen, "%2d: [%5d] %s\r\n", ++j, world[i].number,
                               world[i].name);
       }
     }
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     break;
   }
   case 7:
 #define GOD_ROOMS_ZONE 1
   {
-    size_t glen = safe_snprintf(buf, MAX_STRING_LENGTH, "Godrooms\r\n--------------------------\r\n");
+    size_t glen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Godrooms\r\n--------------------------\r\n");
     for (i = 0, j = 0; i < top_of_world; i++) {
       if (world[i].zone == GOD_ROOMS_ZONE) {
-        glen += safe_snprintf(buf + glen, MAX_STRING_LENGTH - glen, "%2d: [%5d] %s\r\n", j++, world[i].number,
+        glen += safe_snprintf(g_buf + glen, MAX_STRING_LENGTH - glen, "%2d: [%5d] %s\r\n", j++, world[i].number,
                               world[i].name);
       }
     }
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     break;
   }
   case 8:
@@ -4091,14 +4104,14 @@ ACMD(do_show) {
     }
     break;
   case 13: {
-    size_t flen = safe_snprintf(buf, MAX_STRING_LENGTH, "Fastheal Rooms\r\n-----------\r\n");
+    size_t flen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Fastheal Rooms\r\n-----------\r\n");
     for (i = 0, j = 0; i <= top_of_world; i++) {
       if (IS_SET(ROOM_FLAGS(i), ROOM_FASTHEAL)) {
-        flen += safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "%2d: [%5d] %s\r\n", ++j, world[i].number,
+        flen += safe_snprintf(g_buf + flen, MAX_STRING_LENGTH - flen, "%2d: [%5d] %s\r\n", ++j, world[i].number,
                               world[i].name);
       }
     }
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     break;
   }
   case 14:
@@ -4107,27 +4120,29 @@ ACMD(do_show) {
       ;
     }
     if (i > top_of_zone_table) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "That is not a valid zone.\r\n");
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "That is not a valid zone.\r\n");
     } else {
-      size_t zlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Connections in zone %d.\r\n========================\r\n", j);
+      size_t zlen =
+          safe_snprintf(g_buf, MAX_STRING_LENGTH, "Connections in zone %d.\r\n========================\r\n", j);
       for (i = 0; i <= top_of_world; i++) {
         if (zone_table[world[i].zone].number == j) {
           for (k = 0; k < NUM_OF_DIRS; k++) {
             if (world[i].dir_option[k] && world[i].dir_option[k]->to_room != NOWHERE &&
                 zone_table[world[world[i].dir_option[k]->to_room].zone].number != j) {
-              zlen += safe_snprintf(buf + zlen, MAX_STRING_LENGTH - zlen, "%5d exit %s leads to %-5d.\r\n",
+              zlen += safe_snprintf(g_buf + zlen, MAX_STRING_LENGTH - zlen, "%5d exit %s leads to %-5d.\r\n",
                                     world[i].number, dirs[k], world[world[i].dir_option[k]->to_room].number);
             }
           }
         }
       }
     }
-    page_string(ch->desc, buf, 1);
+    page_string(ch->desc, g_buf, 1);
     break;
   case 15: {
     int counter;
 
-    size_t nlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Rooms with no valid exits.\r\n==========================\r\n");
+    size_t nlen =
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "Rooms with no valid exits.\r\n==========================\r\n");
     for (i = 0; i <= top_of_world; i++) {
       for (k = 0, counter = 0; k < NUM_OF_DIRS; k++) {
         if (world[i].dir_option[k] && world[i].dir_option[k]->to_room != i &&
@@ -4136,10 +4151,10 @@ ACMD(do_show) {
         }
       }
       if (!counter) {
-        nlen += safe_snprintf(buf + nlen, MAX_STRING_LENGTH - nlen, "%5d has no valid exits.\r\n", world[i].number);
+        nlen += safe_snprintf(g_buf + nlen, MAX_STRING_LENGTH - nlen, "%5d has no valid exits.\r\n", world[i].number);
       }
     }
-    page_string(ch->desc, buf, 1);
+    page_string(ch->desc, g_buf, 1);
   } break;
   case 16:
     show_spell_info(ch, spell);
@@ -4167,23 +4182,23 @@ ACMD(do_show) {
 
 ACMD(do_set) {
 
-#define NUMLOG(str, num)                                                               \
-  safe_snprintf(logbuffer, sizeof(logbuffer), str, GET_NAME(ch), num, GET_NAME(vict)); \
-  mudlog(logbuffer, 'G', COM_BUILDER, TRUE);                                           \
-  plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
-#define FLAGLOG(str)                                                                                    \
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s set flag %s %s for %s", GET_NAME(ch), str, ONOFF(on), \
-                GET_NAME(vict));                                                                        \
-  mudlog(logbuffer, 'F', COM_ADMIN, TRUE);                                                              \
-  plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+#define NUMLOG(str, num)                                                                   \
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), str, GET_NAME(ch), num, GET_NAME(vict)); \
+  mudlog(g_logbuffer, 'G', COM_BUILDER, TRUE);                                             \
+  plog(g_logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+#define FLAGLOG(str)                                                                                        \
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s set flag %s %s for %s", GET_NAME(ch), str, ONOFF(on), \
+                GET_NAME(vict));                                                                            \
+  mudlog(g_logbuffer, 'F', COM_ADMIN, TRUE);                                                                \
+  plog(g_logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   int i, l, j;
   struct char_data *vict;
   struct char_data *cbuf;
   char field[MAX_INPUT_LENGTH], name[MAX_INPUT_LENGTH], val_arg[MAX_INPUT_LENGTH];
   int on = 0, off = 0, value = 0;
   char is_file = 0, is_player = 0;
-  int parse_class_spec(char *arg);
-  int parse_race_spec(char *arg);
+  int parse_class_spec(char *g_arg);
+  int parse_race_spec(char *g_arg);
 
   struct set_struct {
     char *cmd;
@@ -4270,37 +4285,37 @@ ACMD(do_set) {
   vict = NULL;
   cbuf = NULL;
 
-  half_chop(argument, name, buf);
+  half_chop(argument, name, g_buf);
   if (!strcmp(name, "file")) {
     is_file = 1;
-    half_chop(buf, name, buf);
+    half_chop(g_buf, name, g_buf);
   } else if (!str_cmp(name, "player")) {
     is_player = 1;
-    half_chop(buf, name, buf);
+    half_chop(g_buf, name, g_buf);
   } else if (!str_cmp(name, "mob")) {
-    half_chop(buf, name, buf);
+    half_chop(g_buf, name, g_buf);
   }
-  half_chop(buf, field, buf);
-  safe_snprintf(val_arg, sizeof(val_arg), "%s", buf);
+  half_chop(g_buf, field, g_buf);
+  safe_snprintf(val_arg, sizeof(val_arg), "%s", g_buf);
 
   if (!*name || !*field) {
     send_to_char("Usage: set <victim> <field> <value>\r\n", ch);
-    size_t setlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Possible fields for you are:\r\n");
+    size_t setlen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "Possible fields for you are:\r\n");
     l = 0;
     for (j = 0; *(fields[j].cmd) != '\n'; j++) {
       if (COM_FLAGGED(ch, fields[j].level)) {
         if (++l == 5) {
           l = 0;
-          setlen += safe_snprintf(buf + setlen, MAX_STRING_LENGTH - setlen, "%-13s\r\n", fields[j].cmd);
+          setlen += safe_snprintf(g_buf + setlen, MAX_STRING_LENGTH - setlen, "%-13s\r\n", fields[j].cmd);
         } else {
-          setlen += safe_snprintf(buf + setlen, MAX_STRING_LENGTH - setlen, "%-13s", fields[j].cmd);
+          setlen += safe_snprintf(g_buf + setlen, MAX_STRING_LENGTH - setlen, "%-13s", fields[j].cmd);
         }
       }
     }
     if (l) {
-      safe_snprintf(buf + setlen, MAX_STRING_LENGTH - setlen, "\r\n");
+      safe_snprintf(g_buf + setlen, MAX_STRING_LENGTH - setlen, "\r\n");
     }
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     return;
   }
 
@@ -4394,7 +4409,7 @@ ACMD(do_set) {
   } else if (fields[l].type == NUMBER) {
     value = atoi(val_arg);
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Okay.");
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Okay.");
   switch (l) {
   case 0:
     SET_OR_REMOVE(PRF_FLAGS(vict), PRF_BRIEF);
@@ -4406,7 +4421,7 @@ ACMD(do_set) {
     break;
   case 2:
     set_title(vict, val_arg);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s's title is now: %s", GET_NAME(vict), GET_TITLE(vict));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s's title is now: %s", GET_NAME(vict), GET_TITLE(vict));
     break;
   case 3:
     break;
@@ -4555,12 +4570,12 @@ ACMD(do_set) {
   case 31:
     if (!str_cmp(val_arg, "off")) {
       GET_COND(vict, (l - 29)) = (char)-1;
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s's %s now off.", GET_NAME(vict), fields[l].cmd);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s's %s now off.", GET_NAME(vict), fields[l].cmd);
     } else if (is_number(val_arg)) {
       value = atoi(val_arg);
       RANGE(0, 24);
       GET_COND(vict, (l - 29)) = (char)value;
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s's %s set to %d.", GET_NAME(vict), fields[l].cmd, value);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s's %s set to %d.", GET_NAME(vict), fields[l].cmd, value);
     } else {
       send_to_char("Must be 'off' or a value from 0 to 24.\r\n", ch);
       return;
@@ -4629,9 +4644,9 @@ ACMD(do_set) {
     } else {
       if (real_room(i = atoi(val_arg)) > -1) {
         GET_LOADROOM(vict) = i;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "%s will enter at %d.", GET_NAME(vict), GET_LOADROOM(vict));
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s will enter at %d.", GET_NAME(vict), GET_LOADROOM(vict));
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "That room does not exist!");
+        safe_snprintf(g_buf, MAX_STRING_LENGTH, "That room does not exist!");
       }
     }
     break;
@@ -4655,7 +4670,7 @@ ACMD(do_set) {
      } */
     if (crypto_pwhash_str(GET_ENCPASSWD(cbuf), val_arg, strlen(val_arg), crypto_pwhash_OPSLIMIT_INTERACTIVE,
                           crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Password changed to '%s'.", val_arg);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Password changed to '%s'.", val_arg);
     }
     break;
   case 46:
@@ -4784,26 +4799,26 @@ ACMD(do_set) {
     strncpy(GET_NAME(cbuf), val_arg, MAX_NAME_LENGTH);
     GET_NAME(cbuf)[MAX_NAME_LENGTH] = '\0';
     NUMLOG("%s changed NAME to %s on %s", GET_NAME(cbuf));
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Name changed to '%s'.", GET_NAME(cbuf));
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Name changed to '%s'.", GET_NAME(cbuf));
     break;
   case 74:
     SET_OR_REMOVE(AFF2_FLAGS(vict), AFF2_KNOCKEDOUT);
     FLAGLOG("AFF2_KNOCKEDOUT");
     break;
   default:
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Can't set that!");
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Can't set that!");
     break;
   }
 
   if (fields[l].type == BINARY) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s %s for %s.\r\n", fields[l].cmd, ONOFF(on), GET_NAME(vict));
-    CAP(buf);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s %s for %s.\r\n", fields[l].cmd, ONOFF(on), GET_NAME(vict));
+    CAP(g_buf);
   } else if (fields[l].type == NUMBER) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s's %s set to %d.\r\n", GET_NAME(vict), fields[l].cmd, value);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s's %s set to %d.\r\n", GET_NAME(vict), fields[l].cmd, value);
   } else {
-    safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
+    safe_snprintf(g_buf + strlen(g_buf), MAX_STRING_LENGTH - strlen(g_buf), "\r\n");
   }
-  send_to_char(CAP(buf), ch);
+  send_to_char(CAP(g_buf), ch);
 
   if (!is_file && !IS_NPC(vict)) {
     save_char_text(vict, NOWHERE);
@@ -4849,30 +4864,30 @@ ACMD(do_syslog) {
       "\n",
   };
 
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     TOGGLE_BIT(PRF_FLAGS(ch), PRF_LOG);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Your syslog is now %s.\r\n", PRF_FLAGGED(ch, PRF_LOG) ? "ON" : "OFF");
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Your syslog is now %s.\r\n", PRF_FLAGGED(ch, PRF_LOG) ? "ON" : "OFF");
+    send_to_char(g_buf, ch);
     return;
   }
 
-  if (*arg == '+') {
+  if (*g_arg == '+') {
     tp = TRUE;
-  } else if (*arg == '-') {
+  } else if (*g_arg == '-') {
     tp = FALSE;
-  } else if (*arg == 'l') { /* list */
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Current syslog(%s) flag settings:\r\n",
+  } else if (*g_arg == 'l') { /* list */
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "Current syslog(%s) flag settings:\r\n",
                   PRF_FLAGGED(ch, PRF_LOG) ? "ON" : "OFF");
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     size_t llen = 0;
-    *buf = '\0';
+    *g_buf = '\0';
     vektor = LOG_FLAGS(ch);
     for (nr = 0; vektor; vektor >>= 1) {
       if (IS_SET(1, vektor)) {
         if (*log_text[nr] != '\n' && *log_text[nr] != '\0') {
-          llen += safe_snprintf(buf + llen, MAX_STRING_LENGTH - llen, "%s\r\n", log_text[nr]);
+          llen += safe_snprintf(g_buf + llen, MAX_STRING_LENGTH - llen, "%s\r\n", log_text[nr]);
         }
       }
       if (*log_text[nr] != '\n') {
@@ -4882,7 +4897,7 @@ ACMD(do_syslog) {
         break;
       }
     }
-    send_to_char(buf, ch);
+    send_to_char(g_buf, ch);
     return;
   } else {
     send_to_char("Usage: syslog [+/-][flags] (example +acz)\r\n"
@@ -4891,9 +4906,9 @@ ACMD(do_syslog) {
                  ch);
     return;
   }
-  *arg = ' ';
+  *g_arg = ' ';
 
-  if (arg[1] == '*') {
+  if (g_arg[1] == '*') {
     if (tp) {
       LOG_FLAGS(ch) = 268435455;
     } else {
@@ -4901,9 +4916,9 @@ ACMD(do_syslog) {
     }
   } else {
     if (tp) {
-      SET_BIT(LOG_FLAGS(ch), asciiflag_conv(arg));
+      SET_BIT(LOG_FLAGS(ch), asciiflag_conv(g_arg));
     } else {
-      REMOVE_BIT(LOG_FLAGS(ch), asciiflag_conv(arg));
+      REMOVE_BIT(LOG_FLAGS(ch), asciiflag_conv(g_arg));
     }
   }
 
@@ -4918,19 +4933,19 @@ ACMD(do_copyto) {
   char buf[80];
   int iroom = 0, rroom = 0;
 
-  one_argument(argument, buf2);
-  /* buf2 is room to copy to */
+  one_argument(argument, g_buf2);
+  /* g_buf2 is room to copy to */
 
-  iroom = atoi(buf2);
-  rroom = real_room(atoi(buf2));
+  iroom = atoi(g_buf2);
+  rroom = real_room(atoi(g_buf2));
 
-  if (!*buf2) {
+  if (!*g_buf2) {
     send_to_char("Format: copyto <room number>\r\n", ch);
     return;
   }
   if (rroom <= 0) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "There is no room with the number %d.\r\n", iroom);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "There is no room with the number %d.\r\n", iroom);
+    send_to_char(g_buf, ch);
     return;
   }
 
@@ -4948,8 +4963,8 @@ ACMD(do_copyto) {
     redit_save_to_disk(OLC_ZNUM(ch->desc));
     FREE(ch->desc->olc);
 
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You copy the description to room %d.\r\n", iroom);
-    send_to_char(buf, ch);
+    safe_snprintf(g_buf, MAX_STRING_LENGTH, "You copy the description to room %d.\r\n", iroom);
+    send_to_char(g_buf, ch);
   } else {
     send_to_char("This room has no description!\r\n", ch);
   }
@@ -4970,19 +4985,19 @@ ACMD(do_dig) {
   int new = 0;
   /*  struct room_data *room; */
 
-  two_arguments(argument, buf2, buf3);
-  /* buf2 is the direction, buf3 is the room */
+  two_arguments(argument, g_buf2, g_buf3);
+  /* g_buf2 is the direction, g_buf3 is the room */
 
-  iroom = atoi(buf3);
+  iroom = atoi(g_buf3);
   rroom = real_room(iroom);
 
-  if (!*buf2) {
+  if (!*g_buf2) {
     send_to_char("Format: dig <dir> <room number>\r\n", ch);
     return;
-  } else if (!*buf3) {
+  } else if (!*g_buf3) {
     send_to_char("Format: dig <dir> <room number>\r\n", ch);
     return;
-  } else if (!isdigit(*buf3)) {
+  } else if (!isdigit(*g_buf3)) {
     send_to_char("Format: dig <dir> <room number>\r\n", ch);
     return;
   }
@@ -5003,7 +5018,7 @@ ACMD(do_dig) {
   }
 
   /* Main stuff */
-  switch (*buf2) {
+  switch (*g_buf2) {
   case 'n':
   case 'N':
     dir = NORTH;
@@ -5076,36 +5091,36 @@ ACMD(do_dig) {
 
   FREE(OLC_ROOM(ch->desc));
   FREE(ch->desc->olc);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "You make an exit %s to room %d.\r\n", buf2, iroom);
-  send_to_char(buf, ch);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "You make an exit %s to room %d.\r\n", g_buf2, iroom);
+  send_to_char(g_buf, ch);
 }
 
 ACMD(do_nuke) {
   struct descriptor_data *d;
   struct descriptor_data *next_d;
-  one_argument(argument, arg);
-  if (!strcasecmp(arg, GET_NAME(ch))) {
+  one_argument(argument, g_arg);
+  if (!strcasecmp(g_arg, GET_NAME(ch))) {
     send_to_char("Just do that from the menu stupid.\r\n", ch);
     return;
   }
   for (d = descriptor_list; d; d = next_d) {
     next_d = d->next;
-    if (d->character && !strcasecmp(GET_NAME(d->character), arg)) {
+    if (d->character && !strcasecmp(GET_NAME(d->character), g_arg)) {
       SET_BIT(PRF_FLAGS(d->character), PRF_DELETED);
       extract_char(d->character, 0);
       STATE(d) = CON_CLOSE;
     }
   }
-  Delete_file(arg, PTDAT_FILE);
-  Delete_file(arg, CRASH_FILE);
-  Delete_file(arg, ETEXT_FILE);
-  Delete_file(arg, PLOG_FILE);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Character '%s' deleted!\r\n", arg);
-  send_to_char(buf, ch);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Character '%s' deleted by %s", arg, GET_NAME(ch));
-  mudlog(buf, 'X', COM_ADMIN, TRUE);
-  plog(buf, ch, LVL_IMMORT);
-  stderr_log(buf);
+  Delete_file(g_arg, PTDAT_FILE);
+  Delete_file(g_arg, CRASH_FILE);
+  Delete_file(g_arg, ETEXT_FILE);
+  Delete_file(g_arg, PLOG_FILE);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Character '%s' deleted!\r\n", g_arg);
+  send_to_char(g_buf, ch);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Character '%s' deleted by %s", g_arg, GET_NAME(ch));
+  mudlog(g_buf, 'X', COM_ADMIN, TRUE);
+  plog(g_buf, ch, LVL_IMMORT);
+  stderr_log(g_buf);
 }
 
 ACMD(do_approve) {
@@ -5113,10 +5128,11 @@ ACMD(do_approve) {
   struct descriptor_data *next_d = NULL;
   extern char *nmotd;
   int found = 0;
-  one_argument(argument, arg);
+  one_argument(argument, g_arg);
   for (d = descriptor_list; d; d = next_d) {
     next_d = d->next;
-    if (d->character && GET_NAME(d->character) && !strcasecmp(GET_NAME(d->character), arg) && STATE(d) == CON_ACCEPT) {
+    if (d->character && GET_NAME(d->character) && !strcasecmp(GET_NAME(d->character), g_arg) &&
+        STATE(d) == CON_ACCEPT) {
       found = 1;
       REMOVE_BIT(PRF_FLAGS(d->character), PRF_DELETED);
       SET_BIT(PRF_FLAGS(d->character), PRF_ACCEPTED);
@@ -5125,9 +5141,9 @@ ACMD(do_approve) {
       SEND_TO_Q("\r\n\n*** PRESS RETURN: ", d);
       STATE(d) = CON_RMOTD;
       d->idle_cnt = 0;
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s [%s] new player. (approved by %s)", GET_NAME(d->character),
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s [%s] new player. (approved by %s)", GET_NAME(d->character),
                     GET_HOST(d->character), GET_NAME(ch));
-      mudlog(buf, 'C', COM_IMMORT, TRUE);
+      mudlog(g_buf, 'C', COM_IMMORT, TRUE);
     }
   }
   if (!found) {
@@ -5272,9 +5288,9 @@ ACMD(do_decline) {
       SEND_TO_Q("Name: ", d);
       d->idle_cnt = 0;
       STATE(d) = CON_NEWNAME;
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s [%s] new player. (declined by %s reason %s)", GET_NAME(d->character),
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s [%s] new player. (declined by %s reason %s)", GET_NAME(d->character),
                     GET_HOST(d->character), GET_NAME(ch), reason);
-      mudlog(buf, 'C', COM_IMMORT, TRUE);
+      mudlog(g_buf, 'C', COM_IMMORT, TRUE);
       do_xname(ch, argument, 0, 0);
     }
   }
@@ -5303,12 +5319,12 @@ ACMD(do_rename) {
       Delete_file(orig_name, CRASH_FILE);
       Delete_file(orig_name, ETEXT_FILE);
       Delete_file(orig_name, PLOG_FILE);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Character '%s' renamed to %s!\r\n", orig_name, new_name);
-      send_to_char(buf, ch);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Character '%s' renamed to %s by %s", orig_name, new_name, GET_NAME(ch));
-      mudlog(buf, 'X', COM_ADMIN, TRUE);
-      plog(buf, ch, LVL_IMMORT);
-      stderr_log(buf);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Character '%s' renamed to %s!\r\n", orig_name, new_name);
+      send_to_char(g_buf, ch);
+      safe_snprintf(g_buf, MAX_STRING_LENGTH, "Character '%s' renamed to %s by %s", orig_name, new_name, GET_NAME(ch));
+      mudlog(g_buf, 'X', COM_ADMIN, TRUE);
+      plog(g_buf, ch, LVL_IMMORT);
+      stderr_log(g_buf);
     }
   }
 }
@@ -5327,10 +5343,10 @@ ACMD(do_copyover) {
       Crash_save(d->character, RENT_CAMPED);
     }
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "(GC) Copyover by %s.", GET_NAME(ch));
-  stderr_log(buf);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Copyover by %s.. come back in 10-20 seconds...\r\n", GET_NAME(ch));
-  send_to_all(buf);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "(GC) Copyover by %s.", GET_NAME(ch));
+  stderr_log(g_buf);
+  safe_snprintf(g_buf, MAX_STRING_LENGTH, "Copyover by %s.. come back in 10-20 seconds...\r\n", GET_NAME(ch));
+  send_to_all(g_buf);
   touch("../.fastboot");
   circle_shutdown = circle_reboot = 2;
 }

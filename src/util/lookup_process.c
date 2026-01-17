@@ -23,20 +23,20 @@ static const char *my_name;
 static pid_t parent_pid;
 
 static int get_message(int type, void *buffer, int msgsz);
-static void clean_up(void);
+static void clean_up(int sig);
 static void setup_pid_file(char *dir);
 static void setup_signals(void);
 
-void clean_up(void) {
-  raise(SIGKILL);
-  exit(1);
+void clean_up(int sig) {
+  (void)sig; /* unused parameter */
+  _exit(1);
 }
 
 void setup_pid_file(char *dir) {
   FILE *pid_file;
   char filename[MAX_STRING_LENGTH];
 
-  sprintf(filename, "%s/misc/lookup_%s_process.pid", dir, my_name);
+  snprintf(filename, sizeof(filename), "%s/misc/lookup_%s_process.pid", dir, my_name);
 
   fprintf(stderr, "lookup process PID file: %s\n", filename);
 
@@ -67,14 +67,21 @@ void setup_pid_file(char *dir) {
 }
 
 void setup_signals(void) {
-  signal(SIGINT, (void *)clean_up);  /* keyboard interrupt */
-  signal(SIGQUIT, (void *)clean_up); /* quit from keyboard */
-  signal(SIGABRT, (void *)clean_up); /* abort */
-  signal(SIGFPE, (void *)clean_up);  /* floating point exception */
-  signal(SIGKILL, (void *)clean_up); /* termination signal */
-  signal(SIGSEGV, (void *)clean_up); /* segmentation fault */
-  signal(SIGALRM, (void *)clean_up); /* alarm */
-  signal(SIGTERM, (void *)clean_up); /* termination signal */
+  struct sigaction sa;
+
+  memset(&sa, 0, sizeof(sa));
+  sa.sa_handler = clean_up;
+  sigemptyset(&sa.sa_mask);
+  sa.sa_flags = 0;
+
+  sigaction(SIGINT, &sa, NULL);  /* keyboard interrupt */
+  sigaction(SIGQUIT, &sa, NULL); /* quit from keyboard */
+  sigaction(SIGABRT, &sa, NULL); /* abort */
+  sigaction(SIGFPE, &sa, NULL);  /* floating point exception */
+  /* Note: SIGKILL cannot be caught - removed */
+  sigaction(SIGSEGV, &sa, NULL); /* segmentation fault */
+  sigaction(SIGALRM, &sa, NULL); /* alarm */
+  sigaction(SIGTERM, &sa, NULL); /* termination signal */
 }
 
 int get_message(int type, void *buffer, int msgsz) {
@@ -122,13 +129,13 @@ int main(int argc, char **argv) {
 
   setup_signals();
 
-  sprintf(tmppath, "%s/misc/dns_send_fifo", dir);
+  snprintf(tmppath, sizeof(tmppath), "%s/misc/dns_send_fifo", dir);
   fprintf(stderr, "opening send fifo: %s\n", tmppath);
   if ((dns_send_fifo = open(tmppath, O_RDONLY)) == -1) {
     perror("open fifo");
     exit(1);
   }
-  sprintf(tmppath, "%s/misc/dns_receive_fifo", dir);
+  snprintf(tmppath, sizeof(tmppath), "%s/misc/dns_receive_fifo", dir);
   fprintf(stderr, "opening receive fifo: %s\n", tmppath);
   if ((dns_receive_fifo = open(tmppath, O_WRONLY)) == -1) {
     perror("open fifo");
@@ -166,7 +173,7 @@ int main(int argc, char **argv) {
       /* send the answer back... */
       if (write(dns_receive_fifo, (void *)&ans_buf, sizeof(struct host_answer)) == -1) {
         perror("write");
-        clean_up();
+        clean_up(0);
         break;
       }
     } else {

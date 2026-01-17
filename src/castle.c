@@ -75,7 +75,7 @@ static struct char_data *find_guard(struct char_data *chAtChar);
 static struct char_data *get_victim(struct char_data *chAtChar);
 static int banzaii(struct char_data *ch);
 static int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim);
-static int block_way(struct char_data *ch, int cmd, char *arg, int iIn_room, int dir);
+static int block_way(struct char_data *ch, int cmd, char *g_arg, int iIn_room, int dir);
 static int is_trash(struct obj_data *obj);
 static void fry_victim(struct char_data *ch);
 
@@ -245,7 +245,7 @@ int do_npc_rescue(struct char_data *ch_hero, struct char_data *ch_victim) {
 
 /* Procedure to block a person trying to enter a room. */
 /* Used by Tim/Tom at Kings bedroom and Dick/David at treasury */
-int block_way(struct char_data *ch, int cmd, char *arg, int iIn_room, int iProhibited_direction) {
+int block_way(struct char_data *ch, int cmd, char *g_arg, int iIn_room, int iProhibited_direction) {
 
   if (cmd != ++iProhibited_direction || (ch->player.short_descr && !strncmp(ch->player.short_descr, "King Welmar", 11)))
     return FALSE;
@@ -528,7 +528,7 @@ SPECIAL(tom) {
   if (!cmd && GET_POS(ch) != POS_FIGHTING)
     banzaii(ch);
 
-  return block_way(ch, cmd, arg, CASTLE_ITEM(49), 1);
+  return block_way(ch, cmd, g_arg, CASTLE_ITEM(49), 1);
 }
 
 SPECIAL(tim) {
@@ -554,7 +554,7 @@ SPECIAL(tim) {
   if (!cmd && GET_POS(ch) != POS_FIGHTING)
     banzaii(ch);
 
-  return block_way(ch, cmd, arg, CASTLE_ITEM(49), 1);
+  return block_way(ch, cmd, g_arg, CASTLE_ITEM(49), 1);
 }
 
 /* Routine for James the Butler */
@@ -614,7 +614,7 @@ SPECIAL(tim) {
   if (!cmd && GET_POS(ch) != POS_FIGHTING)
     banzaii(ch);
 
-  return (block_way(ch, cmd, arg, CASTLE_ITEM(36), 1));
+  return (block_way(ch, cmd, g_arg, CASTLE_ITEM(36), 1));
 }
 
 /* Routine peter */

@@ -59,13 +59,13 @@
 extern struct room_data *world;
 extern struct descriptor_data *descriptor_list;
 
-int Board_display_msg(int board_type, struct char_data *ch, char *arg);
-int Board_show_board(int board_type, struct char_data *ch, char *arg);
-int Board_remove_msg(int board_type, struct char_data *ch, char *arg);
+int Board_display_msg(int board_type, struct char_data *ch, char *g_arg);
+int Board_show_board(int board_type, struct char_data *ch, char *g_arg);
+int Board_remove_msg(int board_type, struct char_data *ch, char *g_arg);
 void Board_save_board(int board_type);
 void Board_load_board(int board_type);
 void Board_reset_board(int board_num);
-void Board_write_message(int board_type, struct char_data *ch, char *arg);
+void Board_write_message(int board_type, struct char_data *ch, char *g_arg);
 
 /*
  format:	vnum, read lvl, write lvl, remove lvl, filename, 0 at end
@@ -123,8 +123,8 @@ void init_boards(void) {
 
   for (i = 0; i < NUM_OF_BOARDS; i++) {
     if ((BOARD_RNUM(i) = real_object(BOARD_VNUM(i))) == -1) {
-      safe_snprintf(buf, sizeof(buf), "SYSERR: Fatal board error: board vnum %d does not exist!", BOARD_VNUM(i));
-      stderr_log(buf);
+      safe_snprintf(g_buf, sizeof(g_buf), "SYSERR: Fatal board error: board vnum %d does not exist!", BOARD_VNUM(i));
+      stderr_log(g_buf);
       fatal_error = 1;
     }
     num_of_msgs[i] = 0;
@@ -178,7 +178,7 @@ SPECIAL(gen_board) {
     return 0;
 }
 
-void Board_write_message(int board_type, struct char_data *ch, char *arg) {
+void Board_write_message(int board_type, struct char_data *ch, char *g_arg) {
   char *tmstr;
   int len;
   time_t ct;
@@ -198,10 +198,10 @@ void Board_write_message(int board_type, struct char_data *ch, char *arg) {
     return;
   }
   /* skip blanks */
-  skip_spaces(&arg);
-  delete_doubledollar(arg);
+  skip_spaces(&g_arg);
+  delete_doubledollar(g_arg);
 
-  if (!*arg) {
+  if (!*g_arg) {
     send_to_char("We must have a headline!\r\n", ch);
     return;
   }
@@ -209,19 +209,19 @@ void Board_write_message(int board_type, struct char_data *ch, char *arg) {
   tmstr = (char *)asctime(localtime(&ct));
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
-  safe_snprintf(buf2, sizeof(buf2), "(%s)", GET_NAME(ch));
-  safe_snprintf(buf, sizeof(buf), "%6.10s %-12s :: %s", tmstr, buf2, arg);
-  len = strlen(buf) + 1;
+  safe_snprintf(g_buf2, sizeof(g_buf2), "(%s)", GET_NAME(ch));
+  safe_snprintf(g_buf, sizeof(g_buf), "%6.10s %-12s :: %s", tmstr, g_buf2, g_arg);
+  len = strlen(g_buf) + 1;
   if (!(NEW_MSG_INDEX(board_type).heading = (char *)malloc(sizeof(char) * len))) {
     send_to_char("The board is malfunctioning - sorry.\r\n", ch);
     return;
   }
-  safe_snprintf(NEW_MSG_INDEX(board_type).heading, len, "%s", buf);
+  safe_snprintf(NEW_MSG_INDEX(board_type).heading, len, "%s", g_buf);
   NEW_MSG_INDEX(board_type).heading[len - 1] = '\0';
   NEW_MSG_INDEX(board_type).level = GET_LEVEL(ch);
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s writing new message (%s) on board in #%d", GET_NAME(ch), buf,
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s writing new message (%s) on board in #%d", GET_NAME(ch), g_buf,
                 world[ch->in_room].number);
-  mudlog(logbuffer, 'B', COM_ADMIN, FALSE);
+  mudlog(g_logbuffer, 'B', COM_ADMIN, FALSE);
   send_to_char("Write your message. (/s saves /h for help)\r\n\r\n", ch);
   act("$n starts to write a message.", TRUE, ch, 0, 0, TO_ROOM);
 
@@ -235,14 +235,14 @@ void Board_write_message(int board_type, struct char_data *ch, char *arg) {
   num_of_msgs[board_type]++;
 }
 
-int Board_show_board(int board_type, struct char_data *ch, char *arg) {
+int Board_show_board(int board_type, struct char_data *ch, char *g_arg) {
   int i;
-  char tmp[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
+  char tmp[MAX_STRING_LENGTH], g_buf[MAX_STRING_LENGTH];
 
   if (!ch->desc)
     return 0;
 
-  one_argument(arg, tmp);
+  one_argument(g_arg, tmp);
 
   if (!*tmp || !isname(tmp, "board bulletin"))
     return 0;
@@ -254,20 +254,20 @@ int Board_show_board(int board_type, struct char_data *ch, char *arg) {
   act("$n studies the board.", TRUE, ch, 0, 0, TO_ROOM);
 
   {
-    size_t buflen = safe_snprintf(buf, sizeof(buf),
+    size_t buflen = safe_snprintf(g_buf, sizeof(g_buf),
                                   "This is a bulletin board.  Usage: READ/REMOVE <messg #>, WRITE <header>.\r\n"
                                   "You will need to look at the board to save your message.\r\n");
     if (!num_of_msgs[board_type])
-      buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "The board is empty.\r\n");
+      buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "The board is empty.\r\n");
     else {
-      buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "There are %d messages on the board.\r\n",
+      buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "There are %d messages on the board.\r\n",
                               num_of_msgs[board_type]);
       /* uncomment below if want most recent message at bottom */
       /* for (i = 0; i < num_of_msgs[board_type]; i++) { */
       for (i = num_of_msgs[board_type] - 1; i >= 0; i--) {
         if (MSG_HEADING(board_type, i))
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "%s%-2d%s : %s%s\r\n", CBWHT(ch, C_NRM), i + 1,
-                                  CCCYN(ch, C_NRM), MSG_HEADING(board_type, i), CCNRM(ch, C_NRM));
+          buflen += safe_snprintf(g_buf + buflen, sizeof(g_buf) - buflen, "%s%-2d%s : %s%s\r\n", CBWHT(ch, C_NRM),
+                                  i + 1, CCCYN(ch, C_NRM), MSG_HEADING(board_type, i), CCNRM(ch, C_NRM));
         else {
           stderr_log("SYSERR: The board is fubar'd.");
           send_to_char("Sorry, the board isn't working.\r\n", ch);
@@ -276,20 +276,20 @@ int Board_show_board(int board_type, struct char_data *ch, char *arg) {
       }
     }
   }
-  page_string(ch->desc, buf, 1);
+  page_string(ch->desc, g_buf, 1);
 
   return 1;
 }
 
-int Board_display_msg(int board_type, struct char_data *ch, char *arg) {
+int Board_display_msg(int board_type, struct char_data *ch, char *g_arg) {
   char number[MAX_STRING_LENGTH], buffer[MAX_STRING_LENGTH];
   int msg, ind;
 
-  one_argument(arg, number);
+  one_argument(g_arg, number);
   if (!*number)
     return 0;
   if (isname(number, "board bulletin")) /* so "read board" works */
-    return (Board_show_board(board_type, ch, arg));
+    return (Board_show_board(board_type, ch, g_arg));
   if (!isdigit(*number) || (!(msg = atoi(number))))
     return 0;
 
@@ -327,12 +327,12 @@ int Board_display_msg(int board_type, struct char_data *ch, char *arg) {
   return 1;
 }
 
-int Board_remove_msg(int board_type, struct char_data *ch, char *arg) {
+int Board_remove_msg(int board_type, struct char_data *ch, char *g_arg) {
   int ind, msg, slot_num;
-  char number[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
+  char number[MAX_INPUT_LENGTH], g_buf[MAX_INPUT_LENGTH];
   struct descriptor_data *d;
 
-  one_argument(arg, number);
+  one_argument(g_arg, number);
 
   if (!*number || !isdigit(*number))
     return 0;
@@ -352,9 +352,9 @@ int Board_remove_msg(int board_type, struct char_data *ch, char *arg) {
     send_to_char("That message appears to be screwed up.\r\n", ch);
     return 1;
   }
-  safe_snprintf(buf, sizeof(buf), "(%s)", GET_NAME(ch));
+  safe_snprintf(g_buf, sizeof(g_buf), "(%s)", GET_NAME(ch));
   if (REMOVE_LVL(board_type) != 0 && !COM_FLAGGED(ch, REMOVE_LVL(board_type)) &&
-      !(strstr(MSG_HEADING(board_type, ind), buf))) {
+      !(strstr(MSG_HEADING(board_type, ind), g_buf))) {
     send_to_char("You are not holy enough to remove other people's messages.\r\n", ch);
     return 1;
   }
@@ -374,9 +374,9 @@ int Board_remove_msg(int board_type, struct char_data *ch, char *arg) {
       return 1;
     }
 
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s removed message #%d (%s) from board #%d", GET_NAME(ch), msg,
+  safe_snprintf(g_logbuffer, sizeof(g_logbuffer), "%s removed message #%d (%s) from board #%d", GET_NAME(ch), msg,
                 MSG_HEADING(board_type, ind), world[ch->in_room].number);
-  mudlog(logbuffer, 'B', COM_ADMIN, FALSE);
+  mudlog(g_logbuffer, 'B', COM_ADMIN, FALSE);
 
   if (msg_storage[slot_num])
     FREE(msg_storage[slot_num]);
@@ -392,8 +392,8 @@ int Board_remove_msg(int board_type, struct char_data *ch, char *arg) {
   }
   num_of_msgs[board_type]--;
   send_to_char("Message removed.\r\n", ch);
-  safe_snprintf(buf, sizeof(buf), "$n just removed message %d.", msg);
-  act(buf, FALSE, ch, 0, 0, TO_ROOM);
+  safe_snprintf(g_buf, sizeof(g_buf), "$n just removed message %d.", msg);
+  act(g_buf, FALSE, ch, 0, 0, TO_ROOM);
   Board_save_board(board_type);
 
   return 1;
