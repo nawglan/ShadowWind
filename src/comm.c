@@ -1012,7 +1012,7 @@ int get_from_q(struct txt_q * queue, char *dest, int *aliased)
 
   if (queue && queue->head && queue->head->text && dest) {
     tmp = queue->head->next;
-    strcpy(dest, queue->head->text);
+    safe_snprintf(dest, MAX_INPUT_LENGTH, "%s", queue->head->text);
   } else
     return 0;
 

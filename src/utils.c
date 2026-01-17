@@ -206,23 +206,23 @@ void log_snprintf_truncation(const char *file, int line, size_t bufsize, int nee
 void sprintbit(unsigned long vektor, char *names[], char *result)
 {
   long nr;
+  size_t rlen = 0;
 
   *result = '\0';
 
   for (nr = 0; vektor; vektor >>= 1) {
     if (IS_SET(1, vektor)) {
       if (*names[nr] != '\n') {
-        strcat(result, names[nr]);
-        strcat(result, " ");
+        rlen += safe_snprintf(result + rlen, MAX_STRING_LENGTH - rlen, "%s ", names[nr]);
       } else
-        strcat(result, "UNDEFINED ");
+        rlen += safe_snprintf(result + rlen, MAX_STRING_LENGTH - rlen, "UNDEFINED ");
     }
     if (*names[nr] != '\n')
       nr++;
   }
 
   if (!*result)
-    strcat(result, "NOBITS ");
+    safe_snprintf(result, MAX_STRING_LENGTH, "NOBITS ");
 }
 
 void sprinttype(int type, char *names[], char *result)
@@ -232,9 +232,9 @@ void sprinttype(int type, char *names[], char *result)
   for (nr = 0; (*names[nr] != '\n'); nr++)
     ;
   if (type < nr)
-    strcpy(result, names[type]);
+    safe_snprintf(result, MAX_STRING_LENGTH, "%s", names[type]);
   else
-    strcpy(result, "UNDEFINED");
+    safe_snprintf(result, MAX_STRING_LENGTH, "UNDEFINED");
 }
 
 /* Calculate the REAL time passed over the last t2-t1 centuries (secs) */
@@ -425,7 +425,7 @@ int get_line(FILE * fl, char *buf)
   if (feof(fl))
     return 0;
   else {
-    strcpy(buf, temp);
+    safe_snprintf(buf, 256, "%s", temp);
     return lines;
   }
 }
@@ -453,8 +453,9 @@ int replace_str(char **string, char *pattern, char *replacement, int rep_all, in
   char *replace_buffer = NULL;
   char *flow, *jetsam, temp;
   int len, i;
+  size_t rblen = 0;
 
-  if ((strlen(*string) - strlen(pattern)) + strlen(replacement) > max_size)
+  if ((strlen(*string) - strlen(pattern)) + strlen(replacement) > (size_t)max_size)
     return -1;
 
   CREATE(replace_buffer, char, max_size);
@@ -467,33 +468,34 @@ int replace_str(char **string, char *pattern, char *replacement, int rep_all, in
       i++;
       temp = *flow;
       *flow = '\0';
-      if ((strlen(replace_buffer) + strlen(jetsam) + strlen(replacement)) > max_size) {
+      if ((rblen + strlen(jetsam) + strlen(replacement)) > (size_t)max_size) {
         i = -1;
         break;
       }
-      strcat(replace_buffer, jetsam);
-      strcat(replace_buffer, replacement);
+      rblen += safe_snprintf(replace_buffer + rblen, max_size - rblen, "%s", jetsam);
+      rblen += safe_snprintf(replace_buffer + rblen, max_size - rblen, "%s", replacement);
       *flow = temp;
       flow += strlen(pattern);
       jetsam = flow;
     }
-    strcat(replace_buffer, jetsam);
+    safe_snprintf(replace_buffer + rblen, max_size - rblen, "%s", jetsam);
   } else {
     if ((flow = (char *) strstr(*string, pattern)) != NULL) {
       i++;
       flow += strlen(pattern);
       len = ((char *) flow - (char *) *string) - strlen(pattern);
 
-      strncpy(replace_buffer, *string, len);
-      strcat(replace_buffer, replacement);
-      strcat(replace_buffer, flow);
+      rblen = safe_snprintf(replace_buffer, max_size, "%.*s", len, *string);
+      rblen += safe_snprintf(replace_buffer + rblen, max_size - rblen, "%s", replacement);
+      safe_snprintf(replace_buffer + rblen, max_size - rblen, "%s", flow);
     }
   }
   if (i == 0)
     return 0;
   if (i > 0) {
-    RECREATE(*string, char, strlen(replace_buffer) + 3);
-    strcpy(*string, replace_buffer);
+    size_t newlen = strlen(replace_buffer) + 3;
+    RECREATE(*string, char, newlen);
+    safe_snprintf(*string, newlen, "%s", replace_buffer);
   }
   FREE(replace_buffer);
   return i;
@@ -507,13 +509,14 @@ void format_text(char **ptr_string, int mode, struct descriptor_data *d, int max
   char *flow, *start = NULL, temp;
   /* warning: do not edit messages with max_str's of over this value */
   char formated[MAX_STRING_LENGTH];
+  size_t flen = 0;
 
   flow = *ptr_string;
   if (!flow)
     return;
 
   if (IS_SET(mode, FORMAT_INDENT)) {
-    strcpy(formated, "   ");
+    flen = safe_snprintf(formated, sizeof(formated), "   ");
     total_chars = 3;
   } else {
     *formated = '\0';
@@ -545,13 +548,13 @@ void format_text(char **ptr_string, int mode, struct descriptor_data *d, int max
       *flow = '\0';
 
       if ((total_chars + strlen(start) + 1) > 76) {
-        strcat(formated, "\r\n");
+        flen += safe_snprintf(formated + flen, sizeof(formated) - flen, "\r\n");
         total_chars = 0;
       }
 
       if (!cap_next) {
         if (total_chars > 0) {
-          strcat(formated, " ");
+          flen += safe_snprintf(formated + flen, sizeof(formated) - flen, " ");
           total_chars++;
         }
       } else {
@@ -560,27 +563,27 @@ void format_text(char **ptr_string, int mode, struct descriptor_data *d, int max
       }
 
       total_chars += strlen(start);
-      strcat(formated, start);
+      flen += safe_snprintf(formated + flen, sizeof(formated) - flen, "%s", start);
 
       *flow = temp;
     }
 
     if (cap_next_next) {
       if ((total_chars + 3) > 76) {
-        strcat(formated, "\r\n");
+        flen += safe_snprintf(formated + flen, sizeof(formated) - flen, "\r\n");
         total_chars = 0;
       } else {
-        strcat(formated, " ");
+        flen += safe_snprintf(formated + flen, sizeof(formated) - flen, " ");
         total_chars += 1;
       }
     }
   }
-  strcat(formated, "\r\n");
+  flen += safe_snprintf(formated + flen, sizeof(formated) - flen, "\r\n");
 
-  if (strlen(formated) > maxlen)
+  if (flen > maxlen)
     formated[maxlen] = '\0';
-  RECREATE(*ptr_string, char, MIN(maxlen, strlen(formated)+3));
-  strcpy(*ptr_string, formated);
+  RECREATE(*ptr_string, char, MIN(maxlen, flen + 3));
+  safe_snprintf(*ptr_string, flen + 1, "%s", formated);
 }
 
 int get_filename(char *orig_name, char *filename, int mode)

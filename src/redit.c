@@ -314,7 +314,7 @@ void redit_save_to_disk(int zone_num)
       /*
        * Remove the '\r\n' sequences from description.
        */
-      strcpy(buf1, room->description ? room->description : "Empty");
+      safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", room->description ? room->description : "Empty");
       strip_string(buf1);
 
       /*
@@ -335,7 +335,7 @@ void redit_save_to_disk(int zone_num)
            * Again, strip out the garbage.
            */
           if (room->dir_option[counter2]->general_description) {
-            strcpy(buf1, room->dir_option[counter2]->general_description);
+            safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", room->dir_option[counter2]->general_description);
             strip_string(buf1);
           } else
             *buf1 = 0;
@@ -355,7 +355,7 @@ void redit_save_to_disk(int zone_num)
            * Check for keywords.
            */
           if (room->dir_option[counter2]->keyword)
-            strcpy(buf2, room->dir_option[counter2]->keyword);
+            safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", room->dir_option[counter2]->keyword);
           else
             *buf2 = '\0';
 
@@ -370,7 +370,7 @@ void redit_save_to_disk(int zone_num)
        */
       if (room->ex_description) {
         for (ex_desc = room->ex_description; ex_desc; ex_desc = ex_desc->next) {
-          strcpy(buf1, ex_desc->description);
+          safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", ex_desc->description);
           strip_string(buf1);
           fprintf(fp, "E\n%s~\n%s~\n", ex_desc->keyword, buf1);
         }
@@ -447,8 +447,11 @@ void redit_disp_extradesc_menu(struct descriptor_data *d)
 
   grn, nrm, nrm, extra_desc->keyword ? extra_desc->keyword : "<NONE>", grn, nrm, nrm, extra_desc->description ? extra_desc->description : "<NONE>", grn, nrm);
 
-  strcat(buf, !extra_desc->next ? "<NOT SET>\r\n" : "Set.\r\n");
-  strcat(buf, "Enter choice (0 to quit) : ");
+  {
+    size_t buflen = strlen(buf);
+    buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s", !extra_desc->next ? "<NOT SET>\r\n" : "Set.\r\n");
+    safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "Enter choice (0 to quit) : ");
+  }
   send_to_char(buf, d->character);
   OLC_MODE(d) = REDIT_EXTRADESC_MENU;
 }
@@ -465,15 +468,15 @@ void redit_disp_exit_menu(struct descriptor_data *d)
     CREATE(OLC_EXIT(d), struct room_direction_data, 1);
 
   /*
-   * Weird door handling! 
+   * Weird door handling!
    */
   if (IS_SET(OLC_EXIT(d)->exit_info, EX_ISDOOR)) {
     if (IS_SET(OLC_EXIT(d)->exit_info, EX_PICKPROOF))
-      strcpy(buf2, "Pickproof");
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Pickproof");
     else
-      strcpy(buf2, "Is a door");
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Is a door");
   } else
-    strcpy(buf2, "No door");
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "No door");
 
   get_char_cols(d->character);
   safe_snprintf(buf, MAX_STRING_LENGTH, "[H[J"

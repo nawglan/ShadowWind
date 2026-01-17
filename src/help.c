@@ -58,12 +58,13 @@ ACMD(do_wiz_help)
   skip_spaces(&argument);
 
   if (!*argument) {
+    size_t buflen = 0;
     buf[0] = '\0';
     for (no = 1, i = 1; cmd_info[i].command[0] != '\n'; i++) {
       if (((GET_LEVEL(ch) >= cmd_info[i].minimum_level) || COM_FLAGGED(ch, cmd_info[i].flag)) && (cmd_info[i].minimum_level >= LVL_IMMORT)) {
-        sprintf(buf + strlen(buf), "%s[%s%s%s] %s%s%-10s%s", CCCYN(ch, C_SPR), CBWHT(ch, C_SPR), command_level(cmd_info[i].minimum_level), CCCYN(ch, C_SPR), CCNRM(ch, C_SPR), CBBLU(ch, C_SPR), cmd_info[i].command, CCNRM(ch, C_SPR));
+        buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s[%s%s%s] %s%s%-10s%s", CCCYN(ch, C_SPR), CBWHT(ch, C_SPR), command_level(cmd_info[i].minimum_level), CCCYN(ch, C_SPR), CCNRM(ch, C_SPR), CBBLU(ch, C_SPR), cmd_info[i].command, CCNRM(ch, C_SPR));
         if (!(no % 5))
-          strcat(buf, "\r\n");
+          buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "\r\n");
         no++;
       }
     }
@@ -115,7 +116,7 @@ ACMD(do_wiz_help)
       return;
     } else if (bot >= top) {
       send_to_char("{YThere is currently no help on that subject. Request Logged.{x\r\n", ch);
-      sprintf(nohelpbug, "Wizhelp needed on: %s", argument);
+      safe_snprintf(nohelpbug, sizeof(nohelpbug), "Wizhelp needed on: %s", argument);
       for (bug_cmd = 0; strcmp(cmd_info[bug_cmd].command, "helpn"); bug_cmd++)
         ;
       do_gen_write(ch, nohelpbug, bug_cmd, SCMD_WHELPN);
@@ -191,7 +192,7 @@ ACMD(do_help)
       return;
     } else if (bot >= top) {
       send_to_char("{YThere is currently no help on that subject. Request Logged.{x\r\n", ch);
-      sprintf(nohelpbug, "Help needed on: %s", argument);
+      safe_snprintf(nohelpbug, sizeof(nohelpbug), "Help needed on: %s", argument);
       for (bug_cmd = 0; strcmp(cmd_info[bug_cmd].command, "helpn"); bug_cmd++)
         ;
       do_gen_write(ch, nohelpbug, bug_cmd, SCMD_HELPN);
@@ -287,7 +288,7 @@ struct help_index_element *build_help_index(int *num, int type)
 
       list[nr].pos = pos;
       CREATE(list[nr].keyword, char, strlen(scan));
-      strcpy(list[nr].keyword, (scan + 1));
+      memcpy(list[nr].keyword, scan + 1, strlen(scan));
       if (fgets(buf, 128, fl) == NULL)
         break;
       len = strlen(buf);

@@ -366,7 +366,7 @@ void oedit_save_to_disk(int zone_num)
   for (counter = zone_table[zone_num].number * 100; counter <= zone_table[zone_num].top; counter++) {
     if ((realcounter = real_object(counter)) >= 0) {
       if ((obj = (obj_proto + realcounter))->action_description) {
-        strcpy(buf1, obj->action_description);
+        safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", obj->action_description);
         strip_string(buf1);
       } else
         *buf1 = '\0';
@@ -409,7 +409,7 @@ void oedit_save_to_disk(int zone_num)
             mudlog("SYSERR: OLC: oedit_save_to_disk: Corrupt ex_desc!", 'G', COM_BUILDER, TRUE);
             continue;
           }
-          strcpy(buf1, ex_desc->description);
+          safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", ex_desc->description);
           strip_string(buf1);
           fprintf(fp, "E\n"
               "%s~\n"
@@ -468,9 +468,9 @@ void oedit_disp_aff_flags(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_AFF_FLAGS; i++) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits[i]);
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits[i]);
     if (!(++columns % 2))
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(BITVECTOR(OLC_OBJ(d)), affected_bits, buf1);
@@ -486,9 +486,9 @@ void oedit_disp_aff2_flags(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_AFF2_FLAGS; i++) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits2[i]);
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i + 1, nrm, affected_bits2[i]);
     if (!(++columns % 2))
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(BITVECTOR2(OLC_OBJ(d)), affected_bits2, buf1);
@@ -522,7 +522,7 @@ void oedit_disp_extradesc_menu(struct descriptor_data *d)
 {
   struct extra_descr_data *extra_desc = OLC_DESC(d);
 
-  strcpy(buf1, !extra_desc->next ? "<Not set>\r\n" : "Set.");
+  safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", !extra_desc->next ? "<Not set>\r\n" : "Set.");
 
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
@@ -620,9 +620,9 @@ void oedit_disp_handed_menu(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < WEAPON_HANDED; counter++) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter, nrm, weapon_handed[counter]);
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter, nrm, weapon_handed[counter]);
     if (!(++columns % 2))
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     send_to_char(buf, d->character);
   }
   send_to_char("\r\nEnter weapon handedness : ", d->character);
@@ -903,9 +903,9 @@ void oedit_disp_slots_menu(struct descriptor_data * d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (counter = 0; counter < NUM_WEARS; counter++) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter + 1, nrm, worn_bits[counter]);
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s ", grn, counter + 1, nrm, worn_bits[counter]);
     if (!(++columns % 2))
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(GET_OBJ_SLOTS(OLC_OBJ(d)), worn_bits, buf1);

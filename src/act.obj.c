@@ -200,19 +200,21 @@ void get_check_money(struct char_data * ch, struct obj_data * obj)
     GET_COPPER(ch) += GET_OBJ_VAL(obj, 3);
     GET_TEMP_GOLD(ch) += GET_OBJ_VAL(obj, 0) * 1000 + GET_OBJ_VAL(obj, 1) * 100 + GET_OBJ_VAL(obj, 2) * 10 + GET_OBJ_VAL(obj, 3);
     if (PRF_FLAGGED (ch, PRF_AUTOSPLIT) && IS_AFFECTED(ch, AFF_GROUP)) {
+      size_t tlen = 0;
       tbuf[0] = ' ';
       tbuf[1] = '\0';
+      tlen = 1;
       if (GET_OBJ_VAL(obj, 0)) {
-        sprintf(tbuf + strlen(tbuf), " %d p", GET_OBJ_VAL(obj, 0));
+        tlen += safe_snprintf(tbuf + tlen, sizeof(tbuf) - tlen, " %d p", GET_OBJ_VAL(obj, 0));
       }
       if (GET_OBJ_VAL(obj, 1)) {
-        sprintf(tbuf + strlen(tbuf), " %d g", GET_OBJ_VAL(obj, 1));
+        tlen += safe_snprintf(tbuf + tlen, sizeof(tbuf) - tlen, " %d g", GET_OBJ_VAL(obj, 1));
       }
       if (GET_OBJ_VAL(obj, 2)) {
-        sprintf(tbuf + strlen(tbuf), " %d s", GET_OBJ_VAL(obj, 2));
+        tlen += safe_snprintf(tbuf + tlen, sizeof(tbuf) - tlen, " %d s", GET_OBJ_VAL(obj, 2));
       }
       if (GET_OBJ_VAL(obj, 3)) {
-        sprintf(tbuf + strlen(tbuf), " %d c", GET_OBJ_VAL(obj, 3));
+        tlen += safe_snprintf(tbuf + tlen, sizeof(tbuf) - tlen, " %d c", GET_OBJ_VAL(obj, 3));
       }
 
       do_split(ch, tbuf, 0, 0);
@@ -1133,7 +1135,7 @@ void name_to_drinkcon(struct obj_data * obj, int type)
   extern char *drinknames[];
 
   CREATE(new_name, char, strlen(obj->name) + strlen(drinknames[type]) + 2);
-  sprintf(new_name, "%s %s", drinknames[type], obj->name);
+  safe_snprintf(new_name, strlen(obj->name) + strlen(drinknames[type]) + 2, "%s %s", drinknames[type], obj->name);
   if (GET_OBJ_RNUM(obj) < 0 || obj->name != obj_proto[GET_OBJ_RNUM(obj)].name) {
     FREE(obj->name);
   }

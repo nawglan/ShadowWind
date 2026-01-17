@@ -766,9 +766,9 @@ void zedit_disp_season_flags(struct descriptor_data * d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; *season_flags[i] != '\n'; i++) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, season_flags[i]);
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, season_flags[i]);
     if (!(++columns % 2))
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(ZON_CLIMATE(OLC_ZONE(d)).flags, season_flags, buf1);
@@ -787,9 +787,9 @@ void zedit_disp_zone_extras(struct descriptor_data * d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; *zone_extras[i] != '\n'; i++) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, zone_extras[i]);
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %s\r\n", grn, i + 1, nrm, zone_extras[i]);
     if (!(++columns % 2))
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     send_to_char(buf, d->character);
   }
   sprintbit(ZON_EXTRAS(OLC_ZONE(d)), zone_extras, buf1);
@@ -939,14 +939,15 @@ int start_change_command(struct descriptor_data *d, int pos)
 void zedit_disp_menu(struct descriptor_data *d)
 {
   int subcmd = 0, counter = 0;
+  size_t buflen;
 
   get_char_cols(d->character);
   sprintbit(ZON_EXTRAS(OLC_ZONE(d)), zone_extras, buf1);
 
   /*
-   * Menu header  
+   * Menu header
    */
-  safe_snprintf(buf, MAX_STRING_LENGTH,
+  buflen = safe_snprintf(buf, MAX_STRING_LENGTH,
 #if defined(CLEAR_SCREEN)
       "[H[J"
 #endif
@@ -993,26 +994,24 @@ void zedit_disp_menu(struct descriptor_data *d)
         );
         break;
       default:
-        strcpy(buf2, "<Unknown Command>");
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "<Unknown Command>");
         break;
     }
     /*
-     * Build the display buffer for this command  
+     * Build the display buffer for this command
      */
     safe_snprintf(buf1, MAX_STRING_LENGTH, "%s%d - %s%s\r\n", nrm, counter++, yel, buf2);
-    strcat(buf, buf1);
+    buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s", buf1);
     subcmd++;
   }
   /*
-   * Finish off menu  
+   * Finish off menu
    */
-  safe_snprintf(buf1, MAX_STRING_LENGTH, "%s%d - <END OF LIST>\r\n"
+  safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s%d - <END OF LIST>\r\n"
       "%sN%s) New command.\r\n"
       "%sE%s) Edit a command.\r\n"
       "%sD%s) Delete a command.\r\n"
       "%sQ%s) Quit\r\nEnter your choice : ", nrm, counter, grn, nrm, grn, nrm, grn, nrm, grn, nrm);
-
-  strcat(buf, buf1);
   send_to_char(buf, d->character);
 
   OLC_MODE(d) = ZEDIT_MAIN_MENU;

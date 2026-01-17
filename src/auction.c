@@ -137,15 +137,13 @@ ACMD(do_auclist)
     size_t addlen = strlen(buf);
     if (buflen + addlen >= bufmax - 1)
       break;
-    strcat(string_buf, buf);
-    buflen += addlen;
+    buflen += safe_snprintf(string_buf + buflen, bufmax - buflen, "%s", buf);
 
     safe_snprintf(buf, MAX_STRING_LENGTH, "      Bid: %ld  Count: %d  Buyer: %s \r\n", auc->price, auc->sold, auc->to);
     addlen = strlen(buf);
     if (buflen + addlen >= bufmax - 1)
       break;
-    strcat(string_buf, buf);
-    buflen += addlen;
+    buflen += safe_snprintf(string_buf + buflen, bufmax - buflen, "%s", buf);
 
     auc = auc->next;
     i++;

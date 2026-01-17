@@ -126,7 +126,7 @@ void index_mail(char *name_to_index, long pos)
   if (!(new_index = find_char_in_index(name_to_index))) {
     /* name not already in index.. add it */
     CREATE(new_index, mail_index_type, 1);
-    strcpy(new_index->recipient, name_to_index);
+    safe_snprintf(new_index->recipient, sizeof(new_index->recipient), "%s", name_to_index);
     new_index->list_start = NULL;
 
     /* add to front of list */
@@ -209,8 +209,8 @@ void store_mail(char *to, char *from, char *message_pointer)
   memset((char *) &header, 0, sizeof(header)); /* clear the record */
   header.block_type = HEADER_BLOCK;
   header.header_data.next_block = LAST_BLOCK;
-  strcpy(header.header_data.from, from);
-  strcpy(header.header_data.to, to);
+  safe_snprintf(header.header_data.from, sizeof(header.header_data.from), "%s", from);
+  safe_snprintf(header.header_data.to, sizeof(header.header_data.to), "%s", to);
   header.header_data.mail_time = time(0);
   strncpy(header.txt, msg_txt, HEADER_BLOCK_DATASIZE);
   header.txt[HEADER_BLOCK_DATASIZE] = '\0';
@@ -348,10 +348,7 @@ char *read_delete(char *recipient)
 
   string_size = (sizeof(char) * (strlen(buf) + strlen(header.txt) + 1));
   CREATE(message, char, string_size);
-  strcpy(message, buf);
-  message[strlen(buf)] = '\0';
-  strcat(message, header.txt);
-  message[string_size - 1] = '\0';
+  safe_snprintf(message, string_size, "%s%s", buf, header.txt);
   following_block = header.header_data.next_block;
 
   /* mark the block as deleted */
@@ -363,9 +360,11 @@ char *read_delete(char *recipient)
     read_from_file(&data, BLOCK_SIZE, following_block);
 
     string_size = (sizeof(char) * (strlen(message) + strlen(data.txt) + 1));
-    RECREATE(message, char, string_size);
-    strcat(message, data.txt);
-    message[string_size - 1] = '\0';
+    {
+      size_t msglen = strlen(message);
+      RECREATE(message, char, string_size);
+      safe_snprintf(message + msglen, string_size - msglen, "%s", data.txt);
+    }
     mail_address = following_block;
     following_block = data.block_type;
     data.block_type = DELETED_BLOCK;

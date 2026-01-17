@@ -99,15 +99,16 @@ char *reformat_string(char *buffer, struct char_data *ch)
         ch->wordp = strrchr(ch->temp, ' ');
         if (ch->wordp) {
           ch->wordp++;
-          strcpy(ch->wordwrap, ch->wordp);
+          safe_snprintf(ch->wordwrap, sizeof(ch->wordwrap), "%s", ch->wordp);
           ch->wordp--;
           *ch->wordp = '\r';
           ch->wordp++;
           *ch->wordp = '\n';
           ch->temp = ch->wordp;
-          strcpy(ch->temp, ch->wordwrap);
-          ch->temp += strlen(ch->wordwrap);
-          ch->charnum += strlen(ch->wordwrap);
+          size_t wraplen = strlen(ch->wordwrap);
+          memmove(ch->temp, ch->wordwrap, wraplen + 1);
+          ch->temp += wraplen;
+          ch->charnum += wraplen;
         }
       }
     }
@@ -324,12 +325,12 @@ void parse_action(int command, char *string, struct descriptor_data *d)
       if (s) {
         temp = *s;
         *s = '\0';
-        strcat(buf, t);
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
         *s = temp;
       } else
-        strcat(buf, t);
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
       /* this is kind of annoying.. will have to take a poll and see..
-       sprintf(buf + strlen(buf), "\r\n%d line%sshown.\r\n", total_len,
+       safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n%d line%sshown.\r\n", total_len,
        ((total_len != 1)?"s ":" "));
        */
       page_string(d, buf, TRUE);
@@ -383,20 +384,21 @@ void parse_action(int command, char *string, struct descriptor_data *d)
           s++;
           temp = *s;
           *s = '\0';
-          safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%4d: ", (i - 1));
-          strcat(buf, t);
+          size_t blen = strlen(buf);
+          blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%4d: ", (i - 1));
+          safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", t);
           *s = temp;
           t = s;
         }
       if (s && t) {
         temp = *s;
         *s = '\0';
-        strcat(buf, t);
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
         *s = temp;
       } else if (t)
-        strcat(buf, t);
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%s", t);
       /* this is kind of annoying .. seeing as the lines are #ed
-       sprintf(buf + strlen(buf), "\r\n%d numbered line%slisted.\r\n", total_len,
+       safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n%d numbered line%slisted.\r\n", total_len,
        ((total_len != 1)?"s ":" "));
        */
       page_string(d, buf, TRUE);
@@ -409,7 +411,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
         return;
       }
       line_low = atoi(buf);
-      strcat(buf2, "\r\n");
+      safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "\r\n");
 
       i = 1;
       *buf = '\0';
@@ -434,14 +436,15 @@ void parse_action(int command, char *string, struct descriptor_data *d)
           SEND_TO_Q("Insert text pushes buffer over maximum size, insert aborted.\r\n", d);
           return;
         }
+        size_t blen = 0;
         if (*d->str && (**d->str != '\0'))
-          strcat(buf, *d->str);
+          blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", *d->str);
         *s = temp;
-        strcat(buf, buf2);
+        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", buf2);
         if (s && (*s != '\0'))
-          strcat(buf, s);
+          safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", s);
         RECREATE(*d->str, char, strlen(buf) + 3);
-        strcpy(*d->str, buf);
+        safe_snprintf(*d->str, strlen(buf) + 3, "%s", buf);
         SEND_TO_Q("Line inserted.\r\n", d);
       } else {
         SEND_TO_Q("Line number must be higher than 0.\r\n", d);
@@ -456,7 +459,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
         return;
       }
       line_low = atoi(buf);
-      strcat(buf2, "\r\n");
+      safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "\r\n");
 
       i = 1;
       *buf = '\0';
@@ -465,6 +468,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
         return;
       }
       if (line_low > 0) {
+        size_t blen = 0;
         /* loop through the text counting /n chars till we get to the line */
         while (s && (i < line_low))
           if ((s = strchr(s, '\n')) != NULL) {
@@ -483,18 +487,18 @@ void parse_action(int command, char *string, struct descriptor_data *d)
           temp = *s;
           *s = '\0';
           /* put the first 'good' half of the text into storage */
-          strcat(buf, *d->str);
+          blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", *d->str);
           *s = temp;
         }
         /* put the new 'good' line into place. */
-        strcat(buf, buf2);
+        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", buf2);
         if ((s = strchr(s, '\n')) != NULL) {
           /* this means that we are at the END of the line we want outta there. */
           /* BUT we want s to point to the beginning of the line AFTER
            * the line we want edited */
           s++;
           /* now put the last 'good' half of buffer into storage */
-          strcat(buf, s);
+          safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", s);
         }
         /* check for buffer overflow */
         if (strlen(buf) > d->max_str) {
@@ -503,7 +507,7 @@ void parse_action(int command, char *string, struct descriptor_data *d)
         }
         /* change the size of the REAL buffer to fit the new text */
         RECREATE(*d->str, char, strlen(buf) + 3);
-        strcpy(*d->str, buf);
+        safe_snprintf(*d->str, strlen(buf) + 3, "%s", buf);
         SEND_TO_Q("Line changed.\r\n", d);
       } else {
         SEND_TO_Q("Line number must be higher than 0.\r\n", d);
@@ -614,19 +618,22 @@ void string_add(struct descriptor_data *d, char *str)
       /* changed this to NOT abort out.. just give warning. */
       /* terminator = 1; */
     }
-    CREATE(*d->str, char, strlen(str) + 3);
-    strcpy(*d->str, str);
+    size_t slen = strlen(str);
+    CREATE(*d->str, char, slen + 3);
+    safe_snprintf(*d->str, slen + 3, "%s", str);
   } else {
     if (strlen(str) + strlen(*d->str) > d->max_str) {
       send_to_char("String too long, limit reached on message.  Last line ignored.\r\n", d->character);
       /* terminator = 1; */
     } else {
-      if (!(*d->str = (char *) realloc(*d->str, strlen(*d->str) + strlen(str) + 3))) {
+      size_t oldlen = strlen(*d->str);
+      size_t newlen = oldlen + strlen(str) + 3;
+      if (!(*d->str = (char *) realloc(*d->str, newlen))) {
         perror("string_add");
         fflush(NULL);
         exit(1);
       }
-      strcat(*d->str, str);
+      safe_snprintf(*d->str + oldlen, newlen - oldlen, "%s", str);
     }
   }
 
@@ -779,8 +786,13 @@ void string_add(struct descriptor_data *d, char *str)
       FREE(d->backstr);
     d->backstr = NULL;
     d->str = NULL;
-  } else if (!action)
-    strcat(*d->str, "\r\n");
+  } else if (!action) {
+    size_t slen = strlen(*d->str);
+    size_t newsize = slen + 3;
+    *d->str = (char *) realloc(*d->str, newsize);
+    if (*d->str)
+      safe_snprintf(*d->str + slen, newsize - slen, "\r\n");
+  }
 }
 
 /* **********************************************************************
@@ -863,7 +875,7 @@ ACMD(do_skillset)
     }
     return;
   }
-  strcpy(help, (argument + 1));
+  safe_snprintf(help, sizeof(help), "%s", (argument + 1));
   help[qend - 1] = '\0';
   if ((skill = find_skill_num(help)) <= 0) {
     send_to_char("Unrecognized skill.\n\r", ch);
@@ -1033,9 +1045,13 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal)
     for (point = str; *point; point++) {
       if (*point == '{') {
         point++;
-        strcpy(point2, colorf(*point, d->character));
-        for (; *point2; point2++)
-          ;
+        size_t remaining = sizeof(buf) - (point2 - buf);
+        const char *color = colorf(*point, d->character);
+        size_t clen = strlen(color);
+        if (clen < remaining) {
+          memcpy(point2, color, clen + 1);
+          point2 += clen;
+        }
         continue;
       }
       *point2 = *point;

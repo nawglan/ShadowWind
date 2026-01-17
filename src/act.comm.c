@@ -165,7 +165,7 @@ ACMD(do_tell)
     FREE(GET_LAST_TELL(vict));
     if (CAN_SEE(vict, ch)) {
       if (IS_NPC(ch) && AFF_FLAGGED(ch, AFF_CHARM) && ch->master) {
-        sprintf(tbuf, "%s's %s", GET_NAME(ch->master), CAP(PERS(ch, vict)));
+        safe_snprintf(tbuf, sizeof(tbuf), "%s's %s", GET_NAME(ch->master), CAP(PERS(ch, vict)));
         GET_LAST_TELL(vict) = strdup(tbuf);
       } else {
         GET_LAST_TELL(vict) = strdup(CAP(PERS(ch, vict)));
@@ -193,8 +193,9 @@ ACMD(do_reply)
   } else if (!*argument) {
     send_to_char("What is your reply?\r\n", ch);
   } else {
-    newtell = (char*) malloc(strlen(GET_LAST_TELL(ch)) + strlen(argument) + 32);
-    sprintf(newtell, "%s %s", GET_LAST_TELL(ch), argument);
+    size_t newtell_size = strlen(GET_LAST_TELL(ch)) + strlen(argument) + 32;
+    newtell = (char*) malloc(newtell_size);
+    safe_snprintf(newtell, newtell_size, "%s %s", GET_LAST_TELL(ch), argument);
     do_tell(ch, newtell, 0, 0);
     FREE(newtell);
   }
@@ -502,7 +503,7 @@ ACMD(do_gen_comm)
     }
   }
   /* set up the color on code */
-  strcpy(color_on, com_msgs[subcmd][3]);
+  safe_snprintf(color_on, sizeof(color_on), "%s", com_msgs[subcmd][3]);
 
   /* first, set up strings to be given to the communicator */
   if (PRF_FLAGGED(ch, PRF_NOREPEAT)) {

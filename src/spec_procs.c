@@ -78,30 +78,26 @@ void zone_echo(struct char_data *ch, char *string)
 
 char *how_good(int percent)
 {
-  static char buf[256];
-
   if (percent == 0)
-    strcpy(buf, " {c({Ynot learned{c){x");
+    return " {c({Ynot learned{c){x";
   else if (percent <= 10)
-    strcpy(buf, " {c({rawful{c){x");
+    return " {c({rawful{c){x";
   else if (percent <= 20)
-    strcpy(buf, " {c({Rbad{c){x");
+    return " {c({Rbad{c){x";
   else if (percent <= 40)
-    strcpy(buf, " {c({wbelow average{c){x");
+    return " {c({wbelow average{c){x";
   else if (percent <= 55)
-    strcpy(buf, " {c({Baverage{c){x");
+    return " {c({Baverage{c){x";
   else if (percent <= 70)
-    strcpy(buf, " {c({gabove average{c){x");
+    return " {c({gabove average{c){x";
   else if (percent <= 80)
-    strcpy(buf, " {c({Ggood{c){x");
+    return " {c({Ggood{c){x";
   else if (percent <= 85)
-    strcpy(buf, " {c({wreally good{c){x");
+    return " {c({wreally good{c){x";
   else if (percent <= 99)
-    strcpy(buf, " {c({Csuperb{c){x");
+    return " {c({Csuperb{c){x";
   else
-    strcpy(buf, " {c({Wmaster{c){x");
-
-  return (buf);
+    return " {c({Wmaster{c){x";
 }
 
 char *prac_types[] = {"spell", "skill"};
@@ -290,16 +286,17 @@ void list_skills_cost(struct char_data * ch)
   int found = 0;
   int circle;
   char abuf[8196];
+  size_t buf2len, abuflen;
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
+  buf2len = safe_snprintf(buf2, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
 
   for (i = 1; spells[i].command[0] != '\n'; i++) {
-    if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
-      strcat(buf2, "**OVERFLOW**\r\n");
+    if (buf2len >= MAX_STRING_LENGTH - 32) {
+      buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "**OVERFLOW**\r\n");
       break;
     }
     if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
-      sprintf(buf2 + strlen(buf2), "%-20s %s %s\r\n", spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)), skill_prac_price_text(ch, (spells + i)));
+      buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "%-20s %s %s\r\n", spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)), skill_prac_price_text(ch, (spells + i)));
     }
   }
 
@@ -308,26 +305,26 @@ void list_skills_cost(struct char_data * ch)
     return;
   }
 
-  sprintf(buf2 + strlen(buf2), "\r\n{cSpells{C: {m-------{x\r\n\r\n");
+  buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "\r\n{cSpells{C: {m-------{x\r\n\r\n");
 
   for (circle = 1; circle <= GET_PLR_CIRCLE(ch); circle++) {
     found = 0;
-    sprintf(abuf, "{gCircle {G%d{x\r\n", circle);
+    abuflen = safe_snprintf(abuf, sizeof(abuf), "{gCircle {G%d{x\r\n", circle);
     for (i = 1; spells[i].command[0] != '\n'; i++) {
-      if (strlen(buf2) >= MAX_STRING_LENGTH - 32) {
-        strcat(buf2, "**OVERFLOW**\r\n");
+      if (buf2len >= MAX_STRING_LENGTH - 32) {
+        buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "**OVERFLOW**\r\n");
         break;
       }
       if ((((spells[i].min_level[(int) GET_CLASS(ch)] + 4) / 5) == circle) && (GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && spells[i].spell_pointer) {
         if (GET_SKILL(ch, spells[i].spellindex))
-          sprintf(abuf + strlen(abuf), "\t%-20s\r\n", spells[i].command);
+          abuflen += safe_snprintf(abuf + abuflen, sizeof(abuf) - abuflen, "\t%-20s\r\n", spells[i].command);
         else
-          sprintf(abuf + strlen(abuf), "\t%-20s (unlearned) %s\r\n", spells[i].command, skill_prac_price_text(ch, (spells + i)));
+          abuflen += safe_snprintf(abuf + abuflen, sizeof(abuf) - abuflen, "\t%-20s (unlearned) %s\r\n", spells[i].command, skill_prac_price_text(ch, (spells + i)));
         found = 1;
       }
     }
     if (found)
-      sprintf(buf2 + strlen(buf2), "%s", abuf);
+      buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "%s", abuf);
   }
   page_string(ch->desc, buf2, 1);
 }
@@ -1313,9 +1310,9 @@ SPECIAL(cityguard)
   } else {
     if (evil && FIGHTING(evil) && IS_MOB(FIGHTING(evil)) && GET_MOB_RACE(FIGHTING(evil)) == GET_MOB_RACE(ch)) {
       act("$n screams 'Fighting $N is the same as fighting me!'", FALSE, ch, 0, FIGHTING(evil), TO_ROOM);
-      sprintf(tempbuf, "rescue %s", GET_MOB_NAME(FIGHTING(evil)));
+      safe_snprintf(tempbuf, sizeof(tempbuf), "rescue %s", GET_MOB_NAME(FIGHTING(evil)));
       command_interpreter(ch, tempbuf);
-      sprintf(tempbuf, "hit %s", GET_NAME(evil));
+      safe_snprintf(tempbuf, sizeof(tempbuf), "hit %s", GET_NAME(evil));
       command_interpreter(ch, tempbuf);
       return TRUE;
     }

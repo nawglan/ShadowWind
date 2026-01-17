@@ -64,7 +64,7 @@ extern sh_int find_target_room(struct char_data * ch, char *rawroomstr);
 
 extern void handle_mpdelay(char* delay, char* cmnd, struct char_data* mob, struct char_data* actor, struct obj_data* obj, void* vo, struct char_data* rndm);
 
-#define bug(x, y) { sprintf(buf2, (x), (y)); stderr_log(buf2); }
+#define bug(x, y) { safe_snprintf(buf2, MAX_STRING_LENGTH, (x), (y)); stderr_log(buf2); }
 
 /*
  * Local functions.
@@ -740,7 +740,7 @@ void mprog_mppurge(char* argument, char* cmnd, struct char_data* ch, struct char
   if (victim == ch) {
     mudlog("Extracting mob with mppurge self", 'Q', COM_QUEST, FALSE);
 
-    strcpy(cmnd, "mpextract\n");
+    safe_snprintf(cmnd, MAX_INPUT_LENGTH, "mpextract\n");
 
     handle_mpdelay("20", cmnd, ch, actor, object, vo, rndm);
 

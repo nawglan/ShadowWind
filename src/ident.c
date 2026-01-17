@@ -259,7 +259,7 @@ void ident_check(struct descriptor_data *d, int pulse)
           if (len > 0) {
             strncpy(buf2, user, len - 1);
             buf2[len - 1] = '\0';
-            strcpy(d->username, buf2);
+            safe_snprintf(d->username, sizeof(d->username), "%s", buf2);
           }
 
           /* if len <= 0, no space for username */

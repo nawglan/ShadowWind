@@ -191,7 +191,7 @@ char *fread_action(FILE * fl, int nr)
   } else {
     *(buf + strlen(buf) - 1) = '\0';
     CREATE(rslt, char, strlen(buf) + 1);
-    strcpy(rslt, buf);
+    memcpy(rslt, buf, strlen(buf) + 1);
     return (rslt);
   }
 }

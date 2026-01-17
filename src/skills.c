@@ -45,9 +45,9 @@ void improve_skill(struct char_data *ch, int skill, int chance)
   percent = MIN(percent, max);
   SET_SKILL(ch, skill, percent);
   if (newpercent) {
-    sprintf(mybuf, "SKILLIMPROVE: %s improved skill %s, int = %d, wis = %d, improved by = %d, now = %d", GET_NAME(ch), spells[find_skill_num_def(skill)].command, GET_INT(ch), GET_WIS(ch), newpercent, percent);
+    safe_snprintf(mybuf, sizeof(mybuf), "SKILLIMPROVE: %s improved skill %s, int = %d, wis = %d, improved by = %d, now = %d", GET_NAME(ch), spells[find_skill_num_def(skill)].command, GET_INT(ch), GET_WIS(ch), newpercent, percent);
     mudlog(mybuf, 'D', COM_IMMORT, TRUE);
-    sprintf(skillbuf, "{RYou feel your skill in {W%s {Rimproving.{x\r\n", spells[find_skill_num_def(skill)].command);
+    safe_snprintf(skillbuf, sizeof(skillbuf), "{RYou feel your skill in {W%s {Rimproving.{x\r\n", spells[find_skill_num_def(skill)].command);
     send_to_char(skillbuf, ch);
   }
 }
@@ -1105,7 +1105,10 @@ void list_scanned_chars(struct char_data * list, struct char_data * ch, int dist
         safe_snprintf(buf2, MAX_STRING_LENGTH, " and %s", GET_NAME(i->next_in_room));
     } else
       safe_snprintf(buf2, MAX_STRING_LENGTH, " %s %s.\r\n", how_far[distance], dirs[door]);
-    strcat(buf, buf2);
+    {
+      size_t buflen = strlen(buf);
+      safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s", buf2);
+    }
 
   }
   send_to_char(buf, ch);

@@ -42,14 +42,14 @@ ACMD(do_guildchat)
       if (subcmd == SCMD_QSAY)
         safe_snprintf(buf, MAX_STRING_LENGTH, "You quest-say, '%s'", argument);
       else
-        strcpy(buf, argument);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", argument);
       act(buf, FALSE, ch, 0, argument, TO_CHAR);
     }
 
     if (subcmd == SCMD_QSAY)
       safe_snprintf(buf, MAX_STRING_LENGTH, "$n quest-says, '%s'", argument);
     else
-      strcpy(buf, argument);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s", argument);
 
     for (i = descriptor_list; i; i = i->next)
       if (!i->connected && i != ch->desc && PRF_FLAGGED(i->character, PRF_GCHAT))

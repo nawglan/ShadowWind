@@ -1650,44 +1650,40 @@ struct obj_data *get_object_in_equip_vis(struct char_data * ch, char *arg, struc
 
 char *money_desc(int amount)
 {
-  static char buf[128];
-
   if (amount <= 0) {
     stderr_log("SYSERR: Try to create negative or 0 money.");
     return NULL;
   }
   if (amount == 1)
-    strcpy(buf, "a coin");
+    return "a coin";
   else if (amount <= 10)
-    strcpy(buf, "a tiny pile of coins");
+    return "a tiny pile of coins";
   else if (amount <= 20)
-    strcpy(buf, "a handful of coins");
+    return "a handful of coins";
   else if (amount <= 75)
-    strcpy(buf, "a little pile of coins");
+    return "a little pile of coins";
   else if (amount <= 200)
-    strcpy(buf, "a small pile of coins");
+    return "a small pile of coins";
   else if (amount <= 1000)
-    strcpy(buf, "a pile of coins");
+    return "a pile of coins";
   else if (amount <= 5000)
-    strcpy(buf, "a big pile of coins");
+    return "a big pile of coins";
   else if (amount <= 10000)
-    strcpy(buf, "a large heap of coins");
+    return "a large heap of coins";
   else if (amount <= 20000)
-    strcpy(buf, "a huge mound of coins");
+    return "a huge mound of coins";
   else if (amount <= 75000)
-    strcpy(buf, "an enormous mound of coins");
+    return "an enormous mound of coins";
   else if (amount <= 150000)
-    strcpy(buf, "a small mountain of coins");
+    return "a small mountain of coins";
   else if (amount <= 250000)
-    strcpy(buf, "a mountain of coins");
+    return "a mountain of coins";
   else if (amount <= 500000)
-    strcpy(buf, "a huge mountain of coins");
+    return "a huge mountain of coins";
   else if (amount <= 1000000)
-    strcpy(buf, "an enormous mountain of coins");
+    return "an enormous mountain of coins";
   else
-    strcpy(buf, "an absolutely colossal mountain of coins");
-
-  return buf;
+    return "an absolutely colossal mountain of coins";
 }
 
 struct obj_data *create_money(int plat, int gold, int silver, int copper)

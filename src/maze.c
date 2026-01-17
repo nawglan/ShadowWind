@@ -619,7 +619,7 @@ int boot_mazes(void)
   char temp[160];
   maze m;
 
-  sprintf(index_filename, "%s/%s", MAZE_PREFIX, INDEX_FILE);
+  safe_snprintf(index_filename, sizeof(index_filename), "%s/%s", MAZE_PREFIX, INDEX_FILE);
 
   index = fopen(index_filename, "r");
   if (index == NULL) {

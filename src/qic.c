@@ -179,7 +179,7 @@ void add_owner(int nr, char *name)
 
   for (i = 0; i < QIC_OWNERS; i++)
     if (obj_index[nr].qic->owners[i][0] == '\0') {
-      strcpy(obj_index[nr].qic->owners[i], name);
+      safe_snprintf(obj_index[nr].qic->owners[i], sizeof(obj_index[nr].qic->owners[i]), "%s", name);
       return;
     }
 
@@ -247,7 +247,7 @@ void qic_scan_rent(void)
 
   rp = opendir("plrobjs/A-E");
   while ((dirp = readdir(rp)) != NULL) {
-    strcpy(buf, dirp->d_name);
+    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
     if (strstr(buf, "objs")) {
       cp = strrchr(buf, '.');
       if (cp) {
@@ -259,7 +259,7 @@ void qic_scan_rent(void)
   closedir(rp);
   rp = opendir("plrobjs/F-J");
   while ((dirp = readdir(rp)) != NULL) {
-    strcpy(buf, dirp->d_name);
+    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
     if (strstr(buf, "objs")) {
       cp = strrchr(buf, '.');
       if (cp) {
@@ -271,7 +271,7 @@ void qic_scan_rent(void)
   closedir(rp);
   rp = opendir("plrobjs/K-O");
   while ((dirp = readdir(rp)) != NULL) {
-    strcpy(buf, dirp->d_name);
+    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
     if (strstr(buf, "objs")) {
       cp = strrchr(buf, '.');
       if (cp) {
@@ -283,7 +283,7 @@ void qic_scan_rent(void)
   closedir(rp);
   rp = opendir("plrobjs/P-T");
   while ((dirp = readdir(rp)) != NULL) {
-    strcpy(buf, dirp->d_name);
+    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
     if (strstr(buf, "objs")) {
       cp = strrchr(buf, '.');
       if (cp) {
@@ -295,12 +295,12 @@ void qic_scan_rent(void)
   closedir(rp);
   rp = opendir("plrobjs/U-Z");
   while ((dirp = readdir(rp)) != NULL) {
-    strcpy(buf, dirp->d_name);
+    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
   }
   closedir(rp);
   rp = opendir("plrobjs/ZZZ");
   while ((dirp = readdir(rp)) != NULL) {
-    strcpy(buf, dirp->d_name);
+    safe_snprintf(buf, sizeof(buf), "%s", dirp->d_name);
     if (strstr(buf, "objs")) {
       cp = strrchr(buf, '.');
       if (cp) {
@@ -372,15 +372,15 @@ ACMD(do_qicsave)
 ACMD(do_qicinfo)
 {
   int i;
+  size_t sblen;
 
-  sprintf(string_buf, "Currently defined QICs:\r\n");
+  sblen = safe_snprintf(string_buf, MAX_STRING_LENGTH * 2, "Currently defined QICs:\r\n");
 
   for (i = 0; i < top_of_objt; i++) {
     if (obj_index[i].qic != NULL) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s[%s%5d%s]%s %-50s %sIn:%s %2d%s, Lim: %s%2d%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].virtual, CBBLU(ch, C_CMP), CCCYN(ch, C_CMP), obj_proto[i].short_description, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->items, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->limit, CCNRM(ch, C_NRM));
-      strcat(string_buf, buf);
+      sblen += safe_snprintf(string_buf + sblen, MAX_STRING_LENGTH * 2 - sblen, "%s[%s%5d%s]%s %-50s %sIn:%s %2d%s, Lim: %s%2d%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].virtual, CBBLU(ch, C_CMP), CCCYN(ch, C_CMP), obj_proto[i].short_description, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->items, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->limit, CCNRM(ch, C_NRM));
     }
-    if (strlen(string_buf) > 39918)
+    if (sblen > MAX_STRING_LENGTH * 2 - 256)
       break;
   }
 

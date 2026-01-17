@@ -126,7 +126,7 @@ ACMD(do_olc)
   if (!COM_FLAGGED(ch, COM_ADMIN)) {
     zone1 = (number - (number % 100)) / 100;
     for (i = 0; i < 4; i++) {
-      sprintf(tbuf, "Checking %d <==> %d", zone1, ch->olc_zones[i]);
+      safe_snprintf(tbuf, sizeof(tbuf), "Checking %d <==> %d", zone1, ch->olc_zones[i]);
       mudlog(tbuf, 'D', COM_BUILDER, TRUE);
       if (ch->olc_zones[i] == zone1) {
         oktoedit = 1;
@@ -332,7 +332,7 @@ void strip_string(char *buffer)
   pointer = buffer;
   while ((pointer = strchr(pointer, '\r')))
     /*. Hardly elegant, but it does the job .*/
-    strcpy(pointer, pointer + 1);
+    memmove(pointer, pointer + 1, strlen(pointer));
 }
 
 /*. This procdure frees up the strings and/or the structures
@@ -451,7 +451,7 @@ ACMD(do_assign)
       send_to_char("That player isn't online.\r\n", ch);
       return;
     }
-    sprintf(tbuf, "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict), vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
+    safe_snprintf(tbuf, sizeof(tbuf), "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict), vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
     send_to_char(tbuf, ch);
   } else {
     if ((vict = get_char_vis(ch, buf)) == NULL) {
@@ -465,7 +465,7 @@ ACMD(do_assign)
     for (i = found; i < 4; i++) {
       vict->olc_zones[i] = 0;
     }
-    sprintf(tbuf, "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict), vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
+    safe_snprintf(tbuf, sizeof(tbuf), "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict), vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
     send_to_char(tbuf, ch);
   }
 }

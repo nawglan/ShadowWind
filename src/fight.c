@@ -648,7 +648,7 @@ void make_corpse(struct char_data * ch)
 
   corpse->in_room = NOWHERE;
   if (!IS_NPC(ch)) {
-    sprintf(temp, "%s pcorpse", GET_NAME(ch));
+    safe_snprintf(temp, sizeof(temp), "%s pcorpse", GET_NAME(ch));
     corpse->cname = strdup(temp);
     corpse->owner = strdup(GET_NAME(ch));
   } else {
@@ -1411,7 +1411,7 @@ void damage(struct char_data * ch, struct char_data * victim, int dam, int attac
     return;
   }
   if (damtype == DAM_FIRE && is_spell && IS_NPC(victim) && !strncmp("elemental ", GET_MOB_NAME(victim), MIN(10, strlen(GET_MOB_NAME(victim))))) {
-    sprintf(debuglog, "%s's elemental didn't absorb spell Resist = %d, Damtype = %d", GET_NAME(ch), GET_RESIST(victim, damtype), damtype);
+    safe_snprintf(debuglog, sizeof(debuglog), "%s's elemental didn't absorb spell Resist = %d, Damtype = %d", GET_NAME(ch), GET_RESIST(victim, damtype), damtype);
     mudlog(debuglog, 'D', COM_IMMORT, TRUE);
   }
   if (AFF2_FLAGGED(ch, AFF2_VAMPTOUCH) && !is_spell) {
@@ -1959,7 +1959,7 @@ void hit(struct char_data * ch, struct char_data * victim, int type)
       damsize = GET_OBJ_VAL(wielded, 2);
       if (!good_swing && (wieldpos == WEAR_WIELD || wieldpos == WEAR_WIELD_2 || wieldpos == WEAR_2HANDED)) {
         if (GET_EQ(ch, wieldpos) && GET_DEX(ch) < number(1, 101) && GET_SKILL(ch, (spells[wielded_type+1].spellindex)) < number(1, 101) && !number(0, 1)) {
-          sprintf(fumblemsg, "{YYou swing very badly, sending your %s{Y flying!{x\r\n", OBJS(wielded, ch));
+          safe_snprintf(fumblemsg, sizeof(fumblemsg), "{YYou swing very badly, sending your %s{Y flying!{x\r\n", OBJS(wielded, ch));
           send_to_char(fumblemsg, ch);
           obj_to_room(unequip_char(ch, wieldpos), ch->in_room);
           GET_EQ(ch, wieldpos) = NULL;
@@ -2196,19 +2196,19 @@ void perform_mob_defense_fight(struct char_data *ch)
     switch (attacktype) {
       case 1:
         if (number(!0, 2) && (GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_WIELD_2))) {
-          sprintf(argument, "circle %s", GET_NAME(target));
+          safe_snprintf(argument, sizeof(argument), "circle %s", GET_NAME(target));
           command_interpreter(ch, argument);
         } else if (!number(0, 3)) {
-          sprintf(argument, "kick %s", GET_NAME(target));
+          safe_snprintf(argument, sizeof(argument), "kick %s", GET_NAME(target));
           command_interpreter(ch, argument);
         }
         break;
       case 2:
         if (!number(0, 2)) {
-          sprintf(argument, "bash %s", GET_NAME(target));
+          safe_snprintf(argument, sizeof(argument), "bash %s", GET_NAME(target));
           command_interpreter(ch, argument);
         } else if (!number(0, 3)) {
-          sprintf(argument, "kick %s", GET_NAME(target));
+          safe_snprintf(argument, sizeof(argument), "kick %s", GET_NAME(target));
           command_interpreter(ch, argument);
         }
         break;

@@ -212,7 +212,7 @@ void Board_write_message(int board_type, struct char_data * ch, char *arg)
     send_to_char("The board is malfunctioning - sorry.\r\n", ch);
     return;
   }
-  strcpy(NEW_MSG_INDEX(board_type).heading, buf);
+  safe_snprintf(NEW_MSG_INDEX(board_type).heading, len, "%s", buf);
   NEW_MSG_INDEX(board_type).heading[len - 1] = '\0';
   NEW_MSG_INDEX(board_type).level = GET_LEVEL(ch);
   safe_snprintf(logbuffer, sizeof(logbuffer), "%s writing new message (%s) on board in #%d", GET_NAME(ch), buf, world[ch->in_room].number);
@@ -249,23 +249,25 @@ int Board_show_board(int board_type, struct char_data * ch, char *arg)
   }
   act("$n studies the board.", TRUE, ch, 0, 0, TO_ROOM);
 
-  strcpy(buf, "This is a bulletin board.  Usage: READ/REMOVE <messg #>, WRITE <header>.\r\n"
-      "You will need to look at the board to save your message.\r\n");
-  if (!num_of_msgs[board_type])
-    strcat(buf, "The board is empty.\r\n");
-  else {
-    sprintf(buf + strlen(buf), "There are %d messages on the board.\r\n", num_of_msgs[board_type]);
-    /* uncomment below if want most recent message at bottom */
-    /* for (i = 0; i < num_of_msgs[board_type]; i++) { */
-    for (i = num_of_msgs[board_type] - 1; i >= 0; i--) {
-      if (MSG_HEADING(board_type, i))
-        sprintf(buf + strlen(buf), "%s%-2d%s : %s%s\r\n", CBWHT(ch, C_NRM), i + 1, CCCYN(ch, C_NRM), MSG_HEADING(board_type, i), CCNRM(ch, C_NRM));
+  {
+    size_t buflen = safe_snprintf(buf, sizeof(buf), "This is a bulletin board.  Usage: READ/REMOVE <messg #>, WRITE <header>.\r\n"
+        "You will need to look at the board to save your message.\r\n");
+    if (!num_of_msgs[board_type])
+      buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "The board is empty.\r\n");
+    else {
+      buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "There are %d messages on the board.\r\n", num_of_msgs[board_type]);
+      /* uncomment below if want most recent message at bottom */
+      /* for (i = 0; i < num_of_msgs[board_type]; i++) { */
+      for (i = num_of_msgs[board_type] - 1; i >= 0; i--) {
+        if (MSG_HEADING(board_type, i))
+          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "%s%-2d%s : %s%s\r\n", CBWHT(ch, C_NRM), i + 1, CCCYN(ch, C_NRM), MSG_HEADING(board_type, i), CCNRM(ch, C_NRM));
       else {
         stderr_log("SYSERR: The board is fubar'd.");
         send_to_char("Sorry, the board isn't working.\r\n", ch);
         return 1;
       }
     }
+  }
   }
   page_string(ch->desc, buf, 1);
 
@@ -311,7 +313,7 @@ int Board_display_msg(int board_type, struct char_data * ch, char *arg)
     send_to_char("That message seems to be empty.\r\n", ch);
     return 1;
   }
-  sprintf(buffer, "Message %d : %s\r\n\r\n%s\r\n", msg, MSG_HEADING(board_type, ind), msg_storage[MSG_SLOTNUM(board_type, ind)]);
+  safe_snprintf(buffer, sizeof(buffer), "Message %d : %s\r\n\r\n%s\r\n", msg, MSG_HEADING(board_type, ind), msg_storage[MSG_SLOTNUM(board_type, ind)]);
 
   page_string(ch->desc, buffer, 1);
 

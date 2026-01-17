@@ -174,19 +174,19 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   char_to_room(ch, world[was_in].dir_option[dir]->to_room);
 
   if (!IS_AFFECTED(ch, AFF_SNEAK) && !IS_AFFECTED(ch, AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n walks in from ");
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "$n walks in from ");
     sprinttype(dir, arrived_from, buf2);
-    strcat(buf, buf2);
+    safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", buf2);
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
   } else if (!IS_AFFECTED(ch, AFF_SNEAK) && IS_AFFECTED(ch, AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n flies in from ");
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "$n flies in from ");
     sprinttype(dir, arrived_from, buf2);
-    strcat(buf, buf2);
+    safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", buf2);
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
   } else if (MOUNTING(ch) && !IS_AFFECTED(MOUNTING(ch), AFF_SNEAK)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n rides in from ");
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "$n rides in from ");
     sprinttype(dir, arrived_from, buf2);
-    strcat(buf, buf2);
+    safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", buf2);
     act(buf, TRUE, ch, 0, 0, TO_ROOM);
   }
 

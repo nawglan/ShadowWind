@@ -1226,7 +1226,7 @@ int perform_alias(struct descriptor_data * d, char *orig)
     return 0;
 
   if (a->type == ALIAS_SIMPLE) {
-    strcpy(orig, a->replacement);
+    safe_snprintf(orig, MAX_INPUT_LENGTH, "%s", a->replacement);
     return 0;
   } else {
     perform_complex_alias(&d->input, ptr, a);
@@ -1395,7 +1395,7 @@ void half_chop(char *string, char *arg1, char *arg2)
 
   temp = any_one_arg(string, arg1);
   skip_spaces(&temp);
-  strcpy(arg2, temp);
+  safe_snprintf(arg2, MAX_INPUT_LENGTH, "%s", temp);
 }
 
 /* Used in specprocs, mostly.  (Exactly) matches "command" to cmd number */
@@ -1560,7 +1560,7 @@ void nanny(struct descriptor_data * d, char *arg)
       free_char(tmp_store);
       FREE(d->character->player.name);
       CREATE(d->character->player.name, char, strlen(arg) + 1);
-      strcpy(d->character->player.name, CAP(arg));
+      memcpy(d->character->player.name, CAP(arg), strlen(arg) + 1);
       REMOVE_BIT(PLR_FLAGS(d->character), PLR_DENIED);
       SEND_TO_Q("\r\n"
       "Character approval - This process can take up to 2 minutes, auto approval\r\n"
@@ -1723,7 +1723,7 @@ void nanny(struct descriptor_data * d, char *arg)
           }
 
           CREATE(d->character->player.name, char, strlen(tmp_name) + 1);
-          strcpy(d->character->player.name, CAP(tmp_name));
+          memcpy(d->character->player.name, CAP(tmp_name), strlen(tmp_name) + 1);
           GET_TITLE(d->character) = strdup(" ");
           GET_IDNUM(d->character) = get_idnum();
           safe_snprintf(tmp_namepolicy, sizeof(tmp_namepolicy), "%s{x\r\n\r\nDid I get that right, %s [y/n]?", namepol, tmp_name);
@@ -2188,7 +2188,7 @@ void nanny(struct descriptor_data * d, char *arg)
             LastInfo->PlayerNum = GET_IDNUM(d->character);
             LastInfo->NumberConnects = 1;
             LastInfo->Time = GET_LOGON(d->character);
-            strcpy(LastInfo->Name, GET_NAME(d->character));
+            safe_snprintf(LastInfo->Name, sizeof(LastInfo->Name), "%s", GET_NAME(d->character));
           } else {
             tmpLast = LastInfo;
             found = 0;
@@ -2213,7 +2213,7 @@ void nanny(struct descriptor_data * d, char *arg)
               newLast->PlayerNum = GET_IDNUM(d->character);
               newLast->NumberConnects = 1;
               newLast->Time = GET_LOGON(d->character);
-              strcpy(newLast->Name, GET_NAME(d->character));
+              safe_snprintf(newLast->Name, sizeof(newLast->Name), "%s", GET_NAME(d->character));
             }
           }
           /* this code is to prevent people from multiply logging in */

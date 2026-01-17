@@ -520,17 +520,18 @@ void Crash_listrent(struct char_data * ch, char *name)
   int d;
   int h;
   int m;
+  size_t buflen;
 
   if (!get_filename(name, fname, CRASH_FILE)) {
     return;
   }
   if (!(fl = fopen(fname, "r"))) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s has no rent file.\r\n", name);
+    safe_snprintf(buf, sizeof(buf), "%s has no rent file.\r\n", name);
     send_to_char(buf, ch);
     return;
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", fname);
+  buflen = safe_snprintf(buf, sizeof(buf), "%s\r\n", fname);
   while (get_line(fl, input)) {
     parse_pline(input, tag, tag_arguments);
     while ((p = strrchr(tag_arguments, '\n')) != NULL) {
@@ -544,7 +545,7 @@ void Crash_listrent(struct char_data * ch, char *name)
         if (strcasecmp(tag, "obj_number") == 0) {
           if (real_object(val) > -1) {
             obj = read_object_q(val, VIRTUAL);
-            sprintf(buf + strlen(buf), " [%5d] %-20s\r\n", val, obj->short_description);
+            buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, " [%5d] %-20s\r\n", val, obj->short_description);
             extract_obj_q(obj);
           }
         }
@@ -552,33 +553,33 @@ void Crash_listrent(struct char_data * ch, char *name)
       case 'r':
       case 'R':
         if (strcasecmp(tag, "rent_version") == 0) {
-          sprintf(buf + strlen(buf), "Version: %d\r\n", val);
+          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Version: %d\r\n", val);
         } else if (strcasecmp(tag, "rent_time") == 0) {
           rent_time = time(0) - val;
           d = rent_time / 86400;
           h = (rent_time / 3600) % 24;
           m = (rent_time / 60) % 60;
-          sprintf(buf + strlen(buf), "Rented %d day%s, %d hour%s, %d minute%s ago.\r\n", d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
+          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Rented %d day%s, %d hour%s, %d minute%s ago.\r\n", d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
         } else if (strcasecmp(tag, "rent_type") == 0)
           switch (val) {
             case RENT_RENTED:
-              sprintf(buf + strlen(buf), "Type: Rent\r\n");
+              buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Rent\r\n");
               break;
             case RENT_CRASH:
-              sprintf(buf + strlen(buf), "Type: Crash\r\n");
+              buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Crash\r\n");
               break;
             case RENT_CRYO:
-              sprintf(buf + strlen(buf), "Type: Cryo\r\n");
+              buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Cryo\r\n");
               break;
             case RENT_TIMEDOUT:
             case RENT_FORCED:
-              sprintf(buf + strlen(buf), "Type: TimedOut\r\n");
+              buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: TimedOut\r\n");
               break;
             case RENT_CAMPED:
-              sprintf(buf + strlen(buf), "Type: Camped\r\n");
+              buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Camped\r\n");
               break;
             default:
-              sprintf(buf + strlen(buf), "Type: Undef\r\n");
+              buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "Type: Undef\r\n");
               break;
           }
         break;

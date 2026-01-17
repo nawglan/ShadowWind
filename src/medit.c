@@ -462,7 +462,7 @@ void medit_save_to_disk(int zone_num)
   zone = zone_table[zone_num].number;
   top = zone_table[zone_num].top;
 
-  sprintf(fname, "%s/%d.new", MOB_PREFIX, zone);
+  safe_snprintf(fname, sizeof(fname), "%s/%d.new", MOB_PREFIX, zone);
   if (!(mob_file = fopen(fname, "w"))) {
     mudlog("SYSERR: OLC: Cannot open mob file!", 'G', COM_BUILDER, TRUE);
     return;
@@ -486,9 +486,9 @@ void medit_save_to_disk(int zone_num)
       /*
        * Clean up strings.
        */
-      strcpy(buf1, (GET_LDESC(mob) && *GET_LDESC(mob)) ? GET_LDESC(mob) : "undefined");
+      safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", (GET_LDESC(mob) && *GET_LDESC(mob)) ? GET_LDESC(mob) : "undefined");
       strip_string(buf1);
-      strcpy(buf2, (GET_DDESC(mob) && *GET_DDESC(mob)) ? GET_DDESC(mob) : "undefined");
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", (GET_DDESC(mob) && *GET_DDESC(mob)) ? GET_DDESC(mob) : "undefined");
       strip_string(buf2);
 
       fprintf(mob_file, "%s~\n"
@@ -551,9 +551,9 @@ void medit_save_to_disk(int zone_num)
        */
       mob_prog = GET_MPROG(mob);
       while (mob_prog) {
-        strcpy(buf1, mob_prog->arglist);
+        safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", mob_prog->arglist);
         strip_string(buf1);
-        strcpy(buf2, mob_prog->comlist);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", mob_prog->comlist);
         strip_string(buf2);
         fprintf(mob_file, "%s %s~\n%s", medit_get_mprog_type(mob_prog), buf1, buf2);
         mob_prog = mob_prog->next;
@@ -931,9 +931,9 @@ void medit_disp_equip_pos(struct descriptor_data *d)
   get_char_cols(d->character);
   send_to_char("[H[J", d->character);
   for (i = 0; i < NUM_WEARS; i++) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i, nrm, where[i]);
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s%2d%s) %-20.20s  ", grn, i, nrm, where[i]);
     if (!(++columns % 2))
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     send_to_char(buf, d->character);
   }
 
@@ -1337,8 +1337,7 @@ void medit_parse(struct descriptor_data *d, char *arg)
       if (GET_LDESC(OLC_MOB(d)))
         FREE(GET_LDESC(OLC_MOB(d)));
       if (arg && *arg) {
-        strcpy(buf, arg);
-        strcat(buf, "\r\n");
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", arg);
         GET_LDESC(OLC_MOB(d)) = strdup(buf);
       } else
         GET_LDESC(OLC_MOB(d)) = strdup("undefined");

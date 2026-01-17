@@ -51,12 +51,13 @@ void say_spell(struct char_data * ch, int spellnum, struct char_data * tch, stru
   struct char_data *i;
 
   buf[0] = '\0';
+  size_t buflen = 0;
 
-  strcpy(lbuf, get_spell_name(spellnum));
+  safe_snprintf(lbuf, sizeof(lbuf), "%s", get_spell_name(spellnum));
   for (pName = lbuf; *pName != '\0'; pName += length) {
     for (x = 0; (length = strlen(syls[x].org)) > 0; x++) {
       if (!strncmp(syls[x].org, pName, length)) {
-        strcat(buf, syls[x].new);
+        buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "%s", syls[x].new);
         break;
       }
     }
@@ -380,7 +381,10 @@ ACMD(do_cast)
   }
 
   /* get: blank, spell name, target name */
-  strcat(argument, " ");
+  {
+    size_t arglen = strlen(argument);
+    safe_snprintf(argument + arglen, MAX_INPUT_LENGTH - arglen, " ");
+  }
   s = strtok(argument, "'");
   if (s == NULL) {
     send_to_char("Cast what where?\r\n", ch);
@@ -409,7 +413,8 @@ ACMD(do_cast)
 
   /* Find the target */
   if (t != NULL) {
-    one_argument(strcpy(arg, t), t);
+    safe_snprintf(arg, MAX_STRING_LENGTH, "%s", t);
+    one_argument(arg, t);
     skip_spaces(&t);
   }
   if (!IS_NPC(ch)) {
@@ -654,7 +659,8 @@ ACMD(do_mpcast)
 
   /* Find the target */
   if (t != NULL) {
-    one_argument(strcpy(arg, t), t);
+    safe_snprintf(arg, MAX_STRING_LENGTH, "%s", t);
+    one_argument(arg, t);
     skip_spaces(&t);
   }
 
@@ -680,7 +686,7 @@ ACMD(do_spells)
   one_argument(argument, arg);
   if (!*arg) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "You know of the following spells:\r\n");
-    strcpy(buf2, buf);
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", buf);
 
     for (i = 1; spells[i].command[0] != '\n'; i++) {
       if (spells[i].spell_pointer) {

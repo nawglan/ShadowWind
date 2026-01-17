@@ -481,8 +481,7 @@ void sedit_modify_string(char **str, char *new)
    * Check the '%s' is present, if not, add it.
    */
   if (*new != '%') {
-    strcpy(buf, "%s ");
-    strcat(buf, new);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%%s %s", new);
     pointer = buf;
   } else
     pointer = new;
@@ -550,7 +549,7 @@ void sedit_save_to_disk(int zone_num)
   zone = zone_table[zone_num].number;
   top = zone_table[zone_num].top;
 
-  sprintf(fname, "%s/%d.new", SHP_PREFIX, zone);
+  safe_snprintf(fname, sizeof(fname), "%s/%d.new", SHP_PREFIX, zone);
   if (!(shop_file = fopen(fname, "w"))) {
     mudlog("SYSERR: OLC: Cannot open shop file!", 'G', COM_BUILDER, TRUE);
     return;

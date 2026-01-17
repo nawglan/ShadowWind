@@ -1588,12 +1588,14 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
       break;
     case ITEM_SCROLL:
     case ITEM_POTION:
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{BSpells ({blvl-%d{B):", GET_OBJ_VAL(j, 0));
-      for (i = 1; i < 4; i++) {
-        if (GET_OBJ_VAL(j, i)) {
-          sprintf(buf + strlen(buf), "\r\n   {c%s{x", get_spell_name(GET_OBJ_VAL(j,i)));
-        } else {
-          sprintf(buf + strlen(buf), "\r\n   {c<NONE>{x");
+      {
+        size_t slen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BSpells ({blvl-%d{B):", GET_OBJ_VAL(j, 0));
+        for (i = 1; i < 4; i++) {
+          if (GET_OBJ_VAL(j, i)) {
+            slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n   {c%s{x", get_spell_name(GET_OBJ_VAL(j,i)));
+          } else {
+            slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n   {c<NONE>{x");
+          }
         }
       }
       break;
@@ -1603,13 +1605,12 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
       break;
     case ITEM_FIREWEAPON:
     case ITEM_WEAPON:
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{BSkill: {c");
-      sprinttype(GET_OBJ_VAL(j, 0), weapon_handed, buf2);
-      strcat(buf, buf2);
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "{B, Todam: {R%d{Wd{R%d{B, Type:{c ", GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 2));
-      strcat(buf, buf2);
-      sprinttype(GET_OBJ_VAL(j, 3), weapon_types, buf2);
-      strcat(buf, buf2);
+      {
+        sprinttype(GET_OBJ_VAL(j, 0), weapon_handed, buf2);
+        char wtype[256];
+        sprinttype(GET_OBJ_VAL(j, 3), weapon_types, wtype);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "{BSkill: {c%s{B, Todam: {R%d{Wd{R%d{B, Type:{c %s", buf2, GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 2), wtype);
+      }
       break;
     case ITEM_MISSILE:
       safe_snprintf(buf, MAX_STRING_LENGTH, "{BTohit: {c%d{B, Todam: {c%d{B, Type: {c%d", GET_OBJ_VAL(j, 0), GET_OBJ_VAL(j, 1), GET_OBJ_VAL(j, 3));
@@ -1652,44 +1653,44 @@ void do_stat_object(struct char_data * ch, struct obj_data * j)
   }
   send_to_char(buf, ch);
 
-  strcpy(buf, "{BEquipment Status:{c ");
+  size_t elen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BEquipment Status:{c ");
   if (!j->carried_by) {
-    strcat(buf, "None");
+    elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "None");
   } else {
     found = FALSE;
     for (i = 0; i < NUM_WEARS; i++) {
       if (j->carried_by->equipment[i] == j) {
         sprinttype(i, equipment_types, buf2);
-        strcat(buf, buf2);
+        elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "%s", buf2);
         found = TRUE;
       }
     }
     if (!found) {
-      strcat(buf, "Inventory");
+      elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "Inventory");
     }
   }
-  strcat(buf, "\r\n");
+  safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "\r\n");
   send_to_char(buf, ch);
 
   if (j->contains) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{BContents:{x%s", CCGRN(ch, C_NRM));
+    size_t clen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BContents:{x%s", CCGRN(ch, C_NRM));
     for (found = 0, j2 = j->contains; j2; j2 = j2->next_content) {
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "%s %s", found++ ? "," : "", j2->short_description);
-      strcat(buf, buf2);
-      if (strlen(buf) >= 62) {
+      clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "%s %s", found++ ? "," : "", j2->short_description);
+      if (clen >= 62) {
         if (j2->next_content) {
-          strcat(buf, ",\r\n");
+          safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, ",\r\n");
           send_to_char(buf, ch);
         } else {
-          strcat(buf, "\r\n");
+          safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "\r\n");
           send_to_char(buf, ch);
         }
         *buf = found = 0;
+        clen = 0;
       }
     }
 
     if (*buf) {
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "\r\n");
       send_to_char(buf, ch);
     }
     send_to_char(CCNRM(ch, C_NRM), ch);
@@ -1764,21 +1765,21 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
 
   switch (k->player.sex) {
     case SEX_NEUTRAL:
-      strcpy(buf, "{cNEUTRAL-SEX{x");
+      safe_snprintf(buf, MAX_STRING_LENGTH, "{cNEUTRAL-SEX{x");
       break;
     case SEX_MALE:
-      strcpy(buf, "{cMALE{x");
+      safe_snprintf(buf, MAX_STRING_LENGTH, "{cMALE{x");
       break;
     case SEX_FEMALE:
-      strcpy(buf, "{cFEMALE{x");
+      safe_snprintf(buf, MAX_STRING_LENGTH, "{cFEMALE{x");
       break;
     default:
-      strcpy(buf, "{RILLEGAL-SEX!!{x");
+      safe_snprintf(buf, MAX_STRING_LENGTH, "{RILLEGAL-SEX!!{x");
       break;
   }
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, " %s '%s'  {BIDNum: [{c%5ld{B], In room [{c%5d{B]{x\r\n", (!IS_NPC(k) ? "{CPC{x" : (!IS_MOB(k) ? "{RNPC{x" : "{RMOB{x")), GET_NAME(k), GET_IDNUM(k), world[k->in_room].number);
-  send_to_char(strcat(buf, buf2), ch);
+  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s '%s'  {BIDNum: [{c%5ld{B], In room [{c%5d{B]{x\r\n", (!IS_NPC(k) ? "{CPC{x" : (!IS_MOB(k) ? "{RNPC{x" : "{RMOB{x")), GET_NAME(k), GET_IDNUM(k), world[k->in_room].number);
+  send_to_char(buf, ch);
   if (IS_MOB(k)) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "{BAlias: {c%s{B, VNum: [{c%5d{B], RNum: [{c%5d{B]{x\r\n", k->player.name, GET_MOB_VNUM(k), GET_MOB_RNUM(k));
     send_to_char(buf, ch);
@@ -1790,34 +1791,29 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
   send_to_char(buf, ch);
 
   if (!IS_NPC(k)) {
-    strcpy(buf, "{BRace:{c ");
     sprinttype(GET_RACE(k), pc_race_types, buf2);
-    strcat(buf, buf2);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{BRace:{c %s", buf2);
     send_to_char(buf, ch);
   } else {
-    strcpy(buf, "{BRace:{c ");
     sprinttype(GET_MOB_RACE(k), npc_race_names, buf2);
-    strcat(buf, buf2);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{BRace:{c %s", buf2);
     send_to_char(buf, ch);
   }
 
   if (IS_NPC(k)) {
-    strcpy(buf, "{B, {BMonster Class: {c");
     sprinttype(k->player.class, npc_class_types, buf2);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{B, {BMonster Class: {c%s\r\n", buf2);
   } else {
-    strcpy(buf, "{B, {BClass: {y");
     sprinttype(k->player.class, pc_class_types, buf2);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{B, {BClass: {y%s\r\n", buf2);
   }
-  strcat(buf2, "\r\n");
-  strcat(buf, buf2);
 
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "{BLev: [{y%s%2d%s{B], XP: [{y%s%7d%s{B], XPNeed: [{y%7d{B], Align: [{y%4d{B]{x\r\n", CCYEL(ch, C_NRM), GET_LEVEL(k), CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), GET_EXP(k), CCNRM(ch, C_NRM), (!IS_NPC(k) ? MaxExperience[(int) (GET_LEVEL(k) + 1)] : 0), GET_ALIGNMENT(k));
-  strcat(buf, buf2);
+  safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "{BLev: [{y%s%2d%s{B], XP: [{y%s%7d%s{B], XPNeed: [{y%7d{B], Align: [{y%4d{B]{x\r\n", CCYEL(ch, C_NRM), GET_LEVEL(k), CCNRM(ch, C_NRM), CCYEL(ch, C_NRM), GET_EXP(k), CCNRM(ch, C_NRM), (!IS_NPC(k) ? MaxExperience[(int) (GET_LEVEL(k) + 1)] : 0), GET_ALIGNMENT(k));
   send_to_char(buf, ch);
 
   if (!IS_NPC(k)) {
-    strcpy(buf1, (char *) asctime(localtime(&(k->player.time.birth))));
-    strcpy(buf2, (char *) asctime(localtime(&(k->player.time.logon))));
+    safe_snprintf(buf1, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.birth))));
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.logon))));
     buf1[10] = buf2[10] = '\0';
 
     safe_snprintf(buf, MAX_STRING_LENGTH, "{BCreated: [{c%s{B], Last Logon: [{c%s{B], Played [{c%dh %dm{B], Age [{c%d{B]{x\r\n", buf1, buf2, k->player.time.played / 3600, ((k->player.time.played / 3600) % 60), age(k).year);
@@ -1855,39 +1851,33 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
   }
 
   sprinttype(GET_POS(k), position_types, buf2);
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BPos: {c%s{B, Fighting: {c%s", buf2, (FIGHTING(k) ? GET_NAME(FIGHTING(k)) : "Nobody"));
+  size_t plen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BPos: {c%s{B, Fighting: {c%s", buf2, (FIGHTING(k) ? GET_NAME(FIGHTING(k)) : "Nobody"));
 
   if (IS_NPC(k)) {
-    strcat(buf, ", {BMob size: {c");
     sprinttype(k->mob_specials.size, size_names, buf2);
-    strcat(buf, buf2);
+    plen += safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, ", {BMob size: {c%s", buf2);
   }
   if (k->desc) {
     sprinttype(k->desc->connected, connected_types, buf2);
-    strcat(buf, ", {BConnected: {c");
-    strcat(buf, buf2);
+    plen += safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, ", {BConnected: {c%s", buf2);
   }
-  send_to_char(strcat(buf, "\r\n"), ch);
+  safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, "\r\n");
+  send_to_char(buf, ch);
 
   if (COM_FLAGGED(ch, COM_QUEST)) {
     if (IS_NPC(k) && k->mob_specials.mob_attacks) {
       send_to_char("{BMob attacks:{x\r\n", ch);
       for (this = k->mob_specials.mob_attacks; this; this = next_one) {
         next_one = this->next;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "  {R%d{Wd{R%d{W+{R%d{W, {Wspeed: {R%d%%{W, type: {R", this->nodice, this->sizedice, this->damroll, this->attacks);
-        strcat(buf, attack_hit_text[(int) this->attack_type].singular);
-        send_to_char(strcat(buf, "\r\n"), ch);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "  {R%d{Wd{R%d{W+{R%d{W, {Wspeed: {R%d%%{W, type: {R%s\r\n", this->nodice, this->sizedice, this->damroll, this->attacks, attack_hit_text[(int) this->attack_type].singular);
+        send_to_char(buf, ch);
       }
       send_to_char("{x\r\n", ch);
     }
   }
 
-  strcpy(buf, "{BDefault position: {c");
   sprinttype((k->mob_specials.default_pos), position_types, buf2);
-  strcat(buf, buf2);
-
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "{B, Idle Timer (in tics) [{c%d{B]{x\r\n", k->char_specials.timer);
-  strcat(buf, buf2);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "{BDefault position: {c%s{B, Idle Timer (in tics) [{c%d{B]{x\r\n", buf2, k->char_specials.timer);
   send_to_char(buf, ch);
 
   if (COM_FLAGGED(ch, COM_BUILDER)) {
@@ -1922,21 +1912,19 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
     }
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BRES:{x ");
+  size_t rlen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BRES:{x ");
   for (i = 0; i < MAX_DAM_TYPE; i++) {
     if (GET_RESIST(k, i) && !found) {
       found = 1;
       sprinttype(i, resists_names, rtype);
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "{C%s  {W%d\r\n", rtype, GET_RESIST(k, i));
-      strcat(buf, buf2);
+      rlen += safe_snprintf(buf + rlen, MAX_STRING_LENGTH - rlen, "{C%s  {W%d\r\n", rtype, GET_RESIST(k, i));
     } else if (GET_RESIST(k, i) && found) {
       sprinttype(i, resists_names, rtype);
-      safe_snprintf(buf2, MAX_STRING_LENGTH, "     {C%s  {W%d\r\n", rtype, GET_RESIST(k,i));
-      strcat(buf, buf2);
+      rlen += safe_snprintf(buf + rlen, MAX_STRING_LENGTH - rlen, "     {C%s  {W%d\r\n", rtype, GET_RESIST(k,i));
     }
   }
   if (!found) {
-    strcat(buf, "{c<none>{x\r\n");
+    safe_snprintf(buf + rlen, MAX_STRING_LENGTH - rlen, "{c<none>{x\r\n");
   }
   send_to_char(buf, ch);
   found = 0;
@@ -1945,20 +1933,19 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
     safe_snprintf(buf, MAX_STRING_LENGTH, "{BMob Spec-Proc: {c%s{x\r\n", (mob_index[GET_MOB_RNUM(k)].func ? "Exists" : "None"));
     send_to_char(buf, ch);
   }
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BCarried: weight: {c%d{B, items: {c%d{B; ", IS_CARRYING_W(k), IS_CARRYING_N(k));
+  size_t clen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BCarried: weight: {c%d{B, items: {c%d{B; ", IS_CARRYING_W(k), IS_CARRYING_N(k));
 
   for (i = 0, j = k->carrying; j; j = j->next_content, i++) {
     ;
   }
-  sprintf(buf + strlen(buf), "{BItems in: inventory: {c%d{B, ", i);
+  clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "{BItems in: inventory: {c%d{B, ", i);
 
   for (i = 0, i2 = 0; i < NUM_WEARS; i++) {
     if (k->equipment[i]) {
       i2++;
     }
   }
-  safe_snprintf(buf2, MAX_STRING_LENGTH, "{Beq: {c%d{x\r\n", i2);
-  strcat(buf, buf2);
+  safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "{Beq: {c%d{x\r\n", i2);
   send_to_char(buf, ch);
 
   safe_snprintf(buf, MAX_STRING_LENGTH, "{BHunger: {c%d{B, Thirst: {c%d{B, Drunk: {c%d{x\r\n", GET_COND(k, FULL), GET_COND(k, THIRST), GET_COND(k, DRUNK));
@@ -1966,31 +1953,34 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
 
   if (IS_MOB(k)) {
     if (HUNTINGRM(k) == -1) { /* not hunting a room */
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{MHunting: {W%s{M, Hunting Room: {W<none>{x", ((HUNTING(k)) ? ((find_hunted_name(HUNTING(k))) ? find_hunted_name(HUNTING(k)) : "<unknown>") : "<none>"));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "{MHunting: {W%s{M, Hunting Room: {W<none>{x\r\n", ((HUNTING(k)) ? ((find_hunted_name(HUNTING(k))) ? find_hunted_name(HUNTING(k)) : "<unknown>") : "<none>"));
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{MHunting: {W<none>{M, Hunting Room: {W%d{x", HUNTINGRM(k));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "{MHunting: {W<none>{M, Hunting Room: {W%d{x\r\n", HUNTINGRM(k));
     }
 
-    send_to_char(strcat(buf, "\r\n"), ch);
+    send_to_char(buf, ch);
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{BMaster is: {c%s{B, Followers are:{c", ((k->master) ? GET_NAME(k->master) : "<none>"));
+  size_t flen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BMaster is: {c%s{B, Followers are:{c", ((k->master) ? GET_NAME(k->master) : "<none>"));
 
   for (fol = k->followers; fol; fol = fol->next) {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "%s %s", found++ ? "," : "", PERS(fol->follower, ch));
-    strcat(buf, buf2);
-    if (strlen(buf) >= 62) {
+    flen += safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "%s %s", found++ ? "," : "", PERS(fol->follower, ch));
+    if (flen >= 62) {
       if (fol->next) {
-        send_to_char(strcat(buf, ",{x\r\n"), ch);
+        safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, ",{x\r\n");
+        send_to_char(buf, ch);
       } else {
-        send_to_char(strcat(buf, "\r\n"), ch);
+        safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "\r\n");
+        send_to_char(buf, ch);
       }
       *buf = found = 0;
+      flen = 0;
     }
   }
 
   if (*buf) {
-    send_to_char(strcat(buf, "\r\n"), ch);
+    safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "\r\n");
+    send_to_char(buf, ch);
   }
 
   /* Showing the bitvector */
@@ -2007,44 +1997,46 @@ void do_stat_character(struct char_data * ch, struct char_data * k)
   /* Routine to show what spells a char is affected by */
   if (k->affected) {
     for (aff = k->affected; aff; aff = aff->next) {
-      *buf2 = '\0';
+      int has_bitvector = 0;
       count = 0;
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{BSPL: ({c%3dsec{B){x %s%-21s%s\r\n", aff->duration + 1, CCCYN(ch, C_NRM), get_spell_name(aff->type), CCNRM(ch, C_NRM));
+      size_t slen = safe_snprintf(buf, MAX_STRING_LENGTH, "{BSPL: ({c%3dsec{B){x %s%-21s%s\r\n", aff->duration + 1, CCCYN(ch, C_NRM), get_spell_name(aff->type), CCNRM(ch, C_NRM));
       for (i = 0; i < NUM_MODIFY; i++) {
         if (aff->modifier[i] && aff->location[i]) {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "    %+3d to %s\r\n", aff->modifier[i], apply_types[aff->location[i]]);
+          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "    %+3d to %s\r\n", aff->modifier[i], apply_types[aff->location[i]]);
           count++;
-          strcat(buf, buf2);
         }
       }
       if (aff->bitvector) {
-        if (*buf2) {
-          strcat(buf, ", {Bsets{x ");
+        if (has_bitvector) {
+          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
         } else {
-          strcat(buf, "{Bsets{x ");
+          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
         }
         sprintbit(aff->bitvector, affected_bits, buf2);
-        strcat(buf, buf2);
+        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%s", buf2);
+        has_bitvector = 1;
       }
       if (aff->bitvector2) {
-        if (*buf2) {
-          strcat(buf, ", {Bsets{x ");
+        if (has_bitvector) {
+          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
         } else {
-          strcat(buf, "{Bsets{x ");
+          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
         }
         sprintbit(aff->bitvector2, affected_bits2, buf2);
-        strcat(buf, buf2);
+        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%s", buf2);
+        has_bitvector = 1;
       }
       if (aff->bitvector3) {
-        if (*buf2) {
-          strcat(buf, ", {Bsets{x ");
+        if (has_bitvector) {
+          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, ", {Bsets{x ");
         } else {
-          strcat(buf, "{Bsets{x ");
+          slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{Bsets{x ");
         }
         sprintbit(aff->bitvector3, affected_bits3, buf2);
-        strcat(buf, buf2);
+        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%s", buf2);
       }
-      send_to_char(strcat(buf, "\r\n"), ch);
+      safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n");
+      send_to_char(buf, ch);
     }
   }
 }
@@ -2682,22 +2674,22 @@ ACMD(do_tedit)
   half_chop(argument, field, buf);
 
   if (!*field) {
-    strcpy(buf, "Files available to be edited:\r\n");
+    size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "Files available to be edited:\r\n");
     i = 1;
     for (l = 0; *fields[l].cmd != '\n'; l++) {
       if (COM_FLAGGED(ch, fields[l].level)) {
-        sprintf(buf + strlen(buf), "%-11.11s", fields[l].cmd);
+        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%-11.11s", fields[l].cmd);
         if (!(i % 7)) {
-          strcat(buf, "\r\n");
+          blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
         }
         i++;
       }
     }
     if (--i % 7) {
-      strcat(buf, "\r\n");
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
     }
     if (i == 0) {
-      strcat(buf, "None.\r\n");
+      safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "None.\r\n");
     }
     send_to_char(buf, ch);
     return;
@@ -3160,29 +3152,28 @@ ACMD(do_last)
   CREATE(chdata, struct char_data, 1);
 
   if (!*arg) {
+    size_t blen = 0;
     *buf = '\0';
     tmpLast = LastInfo;
     send_to_char("{CPlr Num    Plr Name            Num Connects    Last On{x\r\n", ch);
     while (tmpLast) {
       memset(tempname, 0, MAX_INPUT_LENGTH);
-      sprintf(tempname, "%s", tmpLast->Name);
       if (!load_char_text(tmpLast->Name, chdata)) {
-        strcat(tempname, " (deleted)");
-      }
-      if (*buf != '\0') {
-        sprintf(buf + strlen(buf), "{c%5d      %-20s%7d         %20s", tmpLast->PlayerNum, tempname, tmpLast->NumberConnects, asctime(localtime((time_t*) &(tmpLast->Time))));
+        safe_snprintf(tempname, sizeof(tempname), "%s (deleted)", tmpLast->Name);
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "{c%5d      %-20s%7d         %20s", tmpLast->PlayerNum, tempname, tmpLast->NumberConnects, asctime(localtime((time_t*) &(tmpLast->Time))));
+        safe_snprintf(tempname, sizeof(tempname), "%s", tmpLast->Name);
       }
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "{c%5d      %-20s%7d         %20s", tmpLast->PlayerNum, tempname, tmpLast->NumberConnects, asctime(localtime((time_t*) &(tmpLast->Time))));
       tmpc = strrchr(buf, '\n');
       if (tmpc) {
-        sprintf(tmpc, "\r\n");
+        safe_snprintf(tmpc, (buf + MAX_STRING_LENGTH) - tmpc, "\r\n");
+        blen = strlen(buf);
       } else {
-        strcat(buf, "\r\n");
+        blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
       }
       tmpLast = tmpLast->next;
     }
-    sprintf(buf + strlen(buf), "{x");
+    safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "{x");
     page_string(ch->desc, buf, 1);
     free_char(chdata);
     return;
@@ -3338,34 +3329,36 @@ ACMD(do_wiznet)
       }
       break;
     case '@':
-      for (d = descriptor_list; d; d = d->next) {
-        if (!d->connected && GET_LEVEL(d->character) >= LVL_IMMORT && !PRF_FLAGGED(d->character, PRF_NOWIZ) && (CAN_SEE(ch, d->character) || COM_FLAGGED(ch, COM_ADMIN))) {
-          if (!any) {
-            safe_snprintf(buf1, MAX_STRING_LENGTH, "Gods online:\r\n");
-            any = TRUE;
-          }
-          sprintf(buf1 + strlen(buf1), "  %s", GET_NAME(d->character));
-          if (PLR_FLAGGED(d->character, PLR_WRITING)) {
-            sprintf(buf1 + strlen(buf1), " (Writing)\r\n");
-          } else if (PLR_FLAGGED(d->character, PLR_MAILING)) {
-            sprintf(buf1 + strlen(buf1), " (Writing mail)\r\n");
-          } else {
-            sprintf(buf1 + strlen(buf1), "\r\n");
+      {
+        size_t b1len = 0;
+        for (d = descriptor_list; d; d = d->next) {
+          if (!d->connected && GET_LEVEL(d->character) >= LVL_IMMORT && !PRF_FLAGGED(d->character, PRF_NOWIZ) && (CAN_SEE(ch, d->character) || COM_FLAGGED(ch, COM_ADMIN))) {
+            if (!any) {
+              b1len = safe_snprintf(buf1, MAX_STRING_LENGTH, "Gods online:\r\n");
+              any = TRUE;
+            }
+            if (PLR_FLAGGED(d->character, PLR_WRITING)) {
+              b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s (Writing)\r\n", GET_NAME(d->character));
+            } else if (PLR_FLAGGED(d->character, PLR_MAILING)) {
+              b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s (Writing mail)\r\n", GET_NAME(d->character));
+            } else {
+              b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s\r\n", GET_NAME(d->character));
+            }
           }
         }
-      }
-      any = FALSE;
-      for (d = descriptor_list; d; d = d->next) {
-        if (!d->connected && GET_LEVEL(d->character) >= LVL_IMMORT && PRF_FLAGGED(d->character, PRF_NOWIZ) && CAN_SEE(ch, d->character)) {
-          if (!any) {
-            sprintf(buf1 + strlen(buf1), "Gods offline:\r\n");
-            any = TRUE;
+        any = FALSE;
+        for (d = descriptor_list; d; d = d->next) {
+          if (!d->connected && GET_LEVEL(d->character) >= LVL_IMMORT && PRF_FLAGGED(d->character, PRF_NOWIZ) && CAN_SEE(ch, d->character)) {
+            if (!any) {
+              b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "Gods offline:\r\n");
+              any = TRUE;
+            }
+            b1len += safe_snprintf(buf1 + b1len, MAX_STRING_LENGTH - b1len, "  %s\r\n", GET_NAME(d->character));
           }
-          sprintf(buf1 + strlen(buf1), "  %s\r\n", GET_NAME(d->character));
         }
+        send_to_char(buf1, ch);
+        return;
       }
-      send_to_char(buf1, ch);
-      return;
     case '\\':
       ++argument;
       break;
@@ -3385,7 +3378,7 @@ ACMD(do_wiznet)
   if (level > COM_IMMORT) {
     char channel[5];
 
-    strcpy(channel, buf1);
+    safe_snprintf(channel, sizeof(channel), "%s", buf1);
     safe_snprintf(buf1, MAX_STRING_LENGTH, "{W::{C%s{W:: <{C%s{W> {c%s%s{x\r\n", GET_NAME(ch), channel, emote ? "<--- " : "", argument);
     safe_snprintf(buf2, MAX_STRING_LENGTH, "{W::{CSomeone{W:: <{C%s{W> {c%s%s{x\r\n", channel, emote ? "<--- " : "", argument);
   } else {
@@ -3540,7 +3533,7 @@ ACMD(do_wizutil)
         mudlog(buf, 'G', COM_BUILDER, TRUE);
         plog(buf, ch, LVL_IMMORT);
         plog(buf, vict, LVL_IMMORT);
-        strcat(buf, "\r\n");
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
         send_to_char(buf, ch);
         break;
       case SCMD_NOEMOTE:
@@ -3549,7 +3542,7 @@ ACMD(do_wizutil)
         mudlog(buf, 'G', COM_QUEST, TRUE);
         plog(buf, ch, LVL_IMMORT);
         plog(buf, vict, LVL_IMMORT);
-        strcat(buf, "\r\n");
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
         send_to_char(buf, ch);
         break;
       case SCMD_NOSOCIAL:
@@ -3558,7 +3551,7 @@ ACMD(do_wizutil)
         mudlog(buf, 'G', COM_QUEST, TRUE);
         plog(buf, ch, LVL_IMMORT);
         plog(buf, vict, LVL_IMMORT);
-        strcat(buf, "\r\n");
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
         send_to_char(buf, ch);
         break;
       case SCMD_SQUELCH:
@@ -3567,7 +3560,7 @@ ACMD(do_wizutil)
         mudlog(buf, 'G', COM_QUEST, TRUE);
         plog(buf, ch, LVL_IMMORT);
         plog(buf, vict, LVL_IMMORT);
-        strcat(buf, "\r\n");
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
         send_to_char(buf, ch);
         break;
       case SCMD_FREEZE:
@@ -3628,7 +3621,7 @@ ACMD(do_wizutil)
         mudlog(buf, 'G', COM_ADMIN, TRUE);
         plog(buf, ch, LVL_IMMORT);
         plog(buf, vict, LVL_IMMORT);
-        strcat(buf, "\r\n");
+        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
         send_to_char(buf, ch);
         break;
       default:
@@ -3642,9 +3635,9 @@ ACMD(do_wizutil)
 /* single zone printing fn used by "show zone" so it's not repeated in the
  code 3 times ... -je, 4/6/93 */
 
-void print_zone_to_buf(char *bufptr, int zone)
+void print_zone_to_buf(char *bufptr, size_t bufsize, int zone)
 {
-  sprintf(bufptr + strlen(bufptr), "%3d %-30.30s Age: %3d; Reset: %3d (%1d); Top: %5d\r\n", zone_table[zone].number, zone_table[zone].name, zone_table[zone].age, zone_table[zone].lifespan, zone_table[zone].reset_mode, zone_table[zone].top);
+  safe_snprintf(bufptr + strlen(bufptr), bufsize - strlen(bufptr), "%3d %-30.30s Age: %3d; Reset: %3d (%1d); Top: %5d\r\n", zone_table[zone].number, zone_table[zone].name, zone_table[zone].age, zone_table[zone].lifespan, zone_table[zone].reset_mode, zone_table[zone].top);
 }
 
 char* get_spell_argument(spell* spell_pointer)
@@ -3739,39 +3732,39 @@ void show_spell_info(struct char_data *ch, char *spellname)
     }
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%d) %s is a %s\r\n", spells[spellnum].spellindex, spells[spellnum].command, (spells[spellnum].event_pointer ? "SPELL" : "SKILL"));
+  size_t blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%d) %s is a %s\r\n", spells[spellnum].spellindex, spells[spellnum].command, (spells[spellnum].event_pointer ? "SPELL" : "SKILL"));
 
   if (spells[spellnum].event_pointer) {
-    sprintf(buf + strlen(buf), "%s", get_spell_argument(spells[spellnum].spell_pointer));
-    sprintf(buf + strlen(buf), "%s", get_event_type(spells[spellnum].event_pointer));
-    sprintf(buf + strlen(buf), "You must be in at least %s position to use this spell.\r\n", position_types[spells[spellnum].min_position]);
-    sprintf(buf + strlen(buf), "Maximum mana: %d\tMinimum mana: %d\t Amount change per level: %d\r\n", spells[spellnum].mana_max, spells[spellnum].mana_min, spells[spellnum].mana_change);
-    sprintf(buf + strlen(buf), "It is a %s spell and is %s to learn.\r\n", (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
-    sprintf(buf + strlen(buf), "This spell is in the %s.\r\n", spells[find_skill_num_def(spells[spellnum].realm)].command);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", get_spell_argument(spells[spellnum].spell_pointer));
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s", get_event_type(spells[spellnum].event_pointer));
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "You must be in at least %s position to use this spell.\r\n", position_types[spells[spellnum].min_position]);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Maximum mana: %d\tMinimum mana: %d\t Amount change per level: %d\r\n", spells[spellnum].mana_max, spells[spellnum].mana_min, spells[spellnum].mana_change);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "It is a %s spell and is %s to learn.\r\n", (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "This spell is in the %s.\r\n", spells[find_skill_num_def(spells[spellnum].realm)].command);
     if (spells[spellnum].unaffect) {
-      sprintf(buf + strlen(buf), "This spell removes %s.\r\n", spells[spellnum].unaffect);
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "This spell removes %s.\r\n", spells[spellnum].unaffect);
     }
-    sprintf(buf + strlen(buf), "Invisible: %s\r\n", YESNO(spells[spellnum].invisible));
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Invisible: %s\r\n", YESNO(spells[spellnum].invisible));
     if (spells[spellnum].num_dice || spells[spellnum].size_dice) {
-      sprintf(buf + strlen(buf), "Num dice: %d, Size dice: %d, Avg dice %d\r\n", spells[spellnum].num_dice, spells[spellnum].size_dice, ((spells[spellnum].num_dice + (spells[spellnum].size_dice * spells[spellnum].num_dice)) / 2));
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Num dice: %d, Size dice: %d, Avg dice %d\r\n", spells[spellnum].num_dice, spells[spellnum].size_dice, ((spells[spellnum].num_dice + (spells[spellnum].size_dice * spells[spellnum].num_dice)) / 2));
     }
-    sprintf(buf + strlen(buf), "Resist: %s\r\n", resist_short_name[spells[spellnum].resist_type - 1]);
-    sprintf(buf + strlen(buf), "Saving Throw: %s\r\n", saving_throws[spells[spellnum].saving_throw]);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Resist: %s\r\n", resist_short_name[spells[spellnum].resist_type - 1]);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "Saving Throw: %s\r\n", saving_throws[spells[spellnum].saving_throw]);
   } else {
-    sprintf(buf + strlen(buf), "You must be in at least %s position to use this skill.\r\n", position_types[spells[spellnum].min_position]);
-    sprintf(buf + strlen(buf), "It is a %s skill and is %s to learn.\r\n", (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "You must be in at least %s position to use this skill.\r\n", position_types[spells[spellnum].min_position]);
+    blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "It is a %s skill and is %s to learn.\r\n", (spells[spellnum].aggressive ? "aggressive" : "non-aggressive"), difficulty[spells[find_skill_num_def(spells[spellnum].realm)].difficulty]);
   }
-  sprintf(buf + strlen(buf), "\r\nLevels assigned to each class:\r\n");
+  blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\nLevels assigned to each class:\r\n");
   for (i = 0; i < NUM_CLASSES; i++) {
     if (i == 9) {
-      sprintf(buf + strlen(buf), " %s:%2d\r\n", class_abbrevs[i], spells[spellnum].min_level[i]);
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, " %s:%2d\r\n", class_abbrevs[i], spells[spellnum].min_level[i]);
     } else if (i == 0 || i == 10) {
-      sprintf(buf + strlen(buf), "%s:%2d", class_abbrevs[i], spells[spellnum].min_level[i]);
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "%s:%2d", class_abbrevs[i], spells[spellnum].min_level[i]);
     } else {
-      sprintf(buf + strlen(buf), " %s:%2d", class_abbrevs[i], spells[spellnum].min_level[i]);
+      blen += safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, " %s:%2d", class_abbrevs[i], spells[spellnum].min_level[i]);
     }
   }
-  strcat(buf, "\r\n");
+  safe_snprintf(buf + blen, MAX_STRING_LENGTH - blen, "\r\n");
   page_string(ch->desc, buf, 1);
 }
 
@@ -3821,24 +3814,24 @@ ACMD(do_show)
   skip_spaces(&argument);
 
   if (!*argument) {
-    strcpy(buf, "Show options:\r\n");
+    size_t slen = safe_snprintf(buf, MAX_STRING_LENGTH, "Show options:\r\n");
     for (j = 0, i = 0; fields[i].level; i++) {
       if (i < 2 || COM_FLAGGED(ch, fields[i].level)) {
-        safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
+        slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "%-15s%s", fields[i].cmd, (!(++j % 5) ? "\r\n" : ""));
       }
     }
-    strcat(buf, "\r\n");
+    safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "\r\n");
     send_to_char(buf, ch);
     return;
   }
 
-  strcpy(arg, two_arguments(argument, field, value));
+  safe_snprintf(arg, MAX_INPUT_LENGTH, "%s", two_arguments(argument, field, value));
 
   if (!strcmp(field, "sinfo")) {
     if (*arg) {
       safe_snprintf(spell, sizeof(spell), "%s%s", value, arg);
     } else {
-      strcpy(spell, value);
+      safe_snprintf(spell, sizeof(spell), "%s", value);
     }
   }
 
@@ -3883,34 +3876,36 @@ ACMD(do_show)
       for (obj = object_list; obj; obj = obj->next) {
         k++;
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Current stats:\r\n");
-      sprintf(buf + strlen(buf), "  %5d players in game  %5d connected\r\n", i, con);
-      sprintf(buf + strlen(buf), "  %5d registered\r\n", top_of_p_table + 1);
-      sprintf(buf + strlen(buf), "  %5d mobiles          %5d prototypes\r\n", j, top_of_mobt + 1);
-      sprintf(buf + strlen(buf), "  %5d objects          %5d prototypes\r\n", k, top_of_objt + 1);
-      sprintf(buf + strlen(buf), "  %5d rooms            %5d zones\r\n", top_of_world + 1, top_of_zone_table + 1);
-      sprintf(buf + strlen(buf), "  %5d large bufs\r\n", buf_largecount);
-      sprintf(buf + strlen(buf), "  %5d buf switches     %5d overflows\r\n", buf_switches, buf_overflows);
-      sprintf(buf + strlen(buf), "  %5d deaths\r\n", death_count);
-      send_to_char(buf, ch);
-      break;
+      {
+        size_t stlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Current stats:\r\n");
+        stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d players in game  %5d connected\r\n", i, con);
+        stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d registered\r\n", top_of_p_table + 1);
+        stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d mobiles          %5d prototypes\r\n", j, top_of_mobt + 1);
+        stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d objects          %5d prototypes\r\n", k, top_of_objt + 1);
+        stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d rooms            %5d zones\r\n", top_of_world + 1, top_of_zone_table + 1);
+        stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d large bufs\r\n", buf_largecount);
+        stlen += safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d buf switches     %5d overflows\r\n", buf_switches, buf_overflows);
+        safe_snprintf(buf + stlen, MAX_STRING_LENGTH - stlen, "  %5d deaths\r\n", death_count);
+        send_to_char(buf, ch);
+        break;
+      }
     case 2: /* zone */
       /* tightened up by JE 4/6/93 */
       if (self) {
-        print_zone_to_buf(buf, world[ch->in_room].zone);
+        print_zone_to_buf(buf, MAX_STRING_LENGTH, world[ch->in_room].zone);
       } else if (*value && is_number(value)) {
         for (j = atoi(value), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
           ;
         }
         if (i <= top_of_zone_table) {
-          print_zone_to_buf(buf, i);
+          print_zone_to_buf(buf, MAX_STRING_LENGTH, i);
         } else {
           send_to_char("That is not a valid zone.\r\n", ch);
           return;
         }
       } else {
         for (i = 0; i <= top_of_zone_table; i++) {
-          print_zone_to_buf(buf, i);
+          print_zone_to_buf(buf, MAX_STRING_LENGTH, i);
         }
       }
       page_string(ch->desc, buf, 1);
@@ -3927,46 +3922,54 @@ ACMD(do_show)
         free_char(vbuf);
         return;
       }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Player: %-12s (%s) [%2d %s]\r\n", GET_NAME(vbuf), genders[(int) GET_SEX(vbuf)], GET_LEVEL(vbuf), class_abbrevs[(int) GET_CLASS(vbuf)]);
-      sprintf(buf + strlen(buf), "Au: %-8d  Bal: %-8d  Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n", GET_GOLD(vbuf), GET_BANK_GOLD(vbuf), GET_EXP(vbuf), GET_ALIGNMENT(vbuf), GET_PRACTICES(vbuf));
-      strcpy(birth, (char*) ctime(&GET_BIRTH(vbuf)));
-      sprintf(buf + strlen(buf), "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n", birth, ctime(&GET_LOGON(vbuf)), (int) (GET_PLAYED(vbuf) / 3600), (int) ((GET_PLAYED(vbuf) / 60) % 60));
-      free_char(vbuf);
-      send_to_char(buf, ch);
-      break;
+      {
+        size_t plen = safe_snprintf(buf, MAX_STRING_LENGTH, "Player: %-12s (%s) [%2d %s]\r\n", GET_NAME(vbuf), genders[(int) GET_SEX(vbuf)], GET_LEVEL(vbuf), class_abbrevs[(int) GET_CLASS(vbuf)]);
+        plen += safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, "Au: %-8d  Bal: %-8d  Exp: %-8d  Align: %-5d  Lessons: %-3d\r\n", GET_GOLD(vbuf), GET_BANK_GOLD(vbuf), GET_EXP(vbuf), GET_ALIGNMENT(vbuf), GET_PRACTICES(vbuf));
+        safe_snprintf(birth, sizeof(birth), "%s", ctime(&GET_BIRTH(vbuf)));
+        safe_snprintf(buf + plen, MAX_STRING_LENGTH - plen, "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n", birth, ctime(&GET_LOGON(vbuf)), (int) (GET_PLAYED(vbuf) / 3600), (int) ((GET_PLAYED(vbuf) / 60) % 60));
+        free_char(vbuf);
+        send_to_char(buf, ch);
+        break;
+      }
     case 4:
       Crash_listrent(ch, value);
       break;
     case 5:
-      strcpy(buf, "Errant Rooms\r\n------------\r\n");
-      for (i = 0, k = 0; i <= top_of_world; i++) {
-        for (j = 0; j < NUM_OF_DIRS; j++) {
-          if (world[i].dir_option[j] && world[i].dir_option[j]->to_room == 0) {
-            sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", ++k, world[i].number, world[i].name);
+      {
+        size_t elen = safe_snprintf(buf, MAX_STRING_LENGTH, "Errant Rooms\r\n------------\r\n");
+        for (i = 0, k = 0; i <= top_of_world; i++) {
+          for (j = 0; j < NUM_OF_DIRS; j++) {
+            if (world[i].dir_option[j] && world[i].dir_option[j]->to_room == 0) {
+              elen += safe_snprintf(buf + elen, MAX_STRING_LENGTH - elen, "%2d: [%5d] %s\r\n", ++k, world[i].number, world[i].name);
+            }
           }
         }
+        send_to_char(buf, ch);
+        break;
       }
-      send_to_char(buf, ch);
-      break;
     case 6:
-      strcpy(buf, "Death Traps\r\n-----------\r\n");
-      for (i = 0, j = 0; i <= top_of_world; i++) {
-        if (IS_SET(ROOM_FLAGS(i), ROOM_DEATH)) {
-          sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", ++j, world[i].number, world[i].name);
+      {
+        size_t dlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Death Traps\r\n-----------\r\n");
+        for (i = 0, j = 0; i <= top_of_world; i++) {
+          if (IS_SET(ROOM_FLAGS(i), ROOM_DEATH)) {
+            dlen += safe_snprintf(buf + dlen, MAX_STRING_LENGTH - dlen, "%2d: [%5d] %s\r\n", ++j, world[i].number, world[i].name);
+          }
         }
+        send_to_char(buf, ch);
+        break;
       }
-      send_to_char(buf, ch);
-      break;
     case 7:
 #define GOD_ROOMS_ZONE 1
-      strcpy(buf, "Godrooms\r\n--------------------------\r\n");
-      for (i = 0, j = 0; i < top_of_world; i++) {
-        if (world[i].zone == GOD_ROOMS_ZONE) {
-          sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", j++, world[i].number, world[i].name);
+      {
+        size_t glen = safe_snprintf(buf, MAX_STRING_LENGTH, "Godrooms\r\n--------------------------\r\n");
+        for (i = 0, j = 0; i < top_of_world; i++) {
+          if (world[i].zone == GOD_ROOMS_ZONE) {
+            glen += safe_snprintf(buf + glen, MAX_STRING_LENGTH - glen, "%2d: [%5d] %s\r\n", j++, world[i].number, world[i].name);
+          }
         }
+        send_to_char(buf, ch);
+        break;
       }
-      send_to_char(buf, ch);
-      break;
     case 8:
       show_shops(ch, value);
       break;
@@ -3991,14 +3994,16 @@ ACMD(do_show)
       }
       break;
     case 13:
-      strcpy(buf, "Fastheal Rooms\r\n-----------\r\n");
-      for (i = 0, j = 0; i <= top_of_world; i++) {
-        if (IS_SET(ROOM_FLAGS(i), ROOM_FASTHEAL)) {
-          sprintf(buf + strlen(buf), "%2d: [%5d] %s\r\n", ++j, world[i].number, world[i].name);
+      {
+        size_t flen = safe_snprintf(buf, MAX_STRING_LENGTH, "Fastheal Rooms\r\n-----------\r\n");
+        for (i = 0, j = 0; i <= top_of_world; i++) {
+          if (IS_SET(ROOM_FLAGS(i), ROOM_FASTHEAL)) {
+            flen += safe_snprintf(buf + flen, MAX_STRING_LENGTH - flen, "%2d: [%5d] %s\r\n", ++j, world[i].number, world[i].name);
+          }
         }
+        send_to_char(buf, ch);
+        break;
       }
-      send_to_char(buf, ch);
-      break;
     case 14:
       for (j = (self ? zone_table[world[ch->in_room].zone].number : atoi(value)), i = 0; zone_table[i].number != j && i <= top_of_zone_table; i++) {
         ;
@@ -4006,13 +4011,12 @@ ACMD(do_show)
       if (i > top_of_zone_table) {
         safe_snprintf(buf, MAX_STRING_LENGTH, "That is not a valid zone.\r\n");
       } else {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Connections in zone %d.\r\n", j);
-        strcat(buf, "========================\r\n");
+        size_t zlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Connections in zone %d.\r\n========================\r\n", j);
         for (i = 0; i <= top_of_world; i++) {
           if (zone_table[world[i].zone].number == j) {
             for (k = 0; k < NUM_OF_DIRS; k++) {
               if (world[i].dir_option[k] && world[i].dir_option[k]->to_room != NOWHERE && zone_table[world[world[i].dir_option[k]->to_room].zone].number != j) {
-                sprintf(buf + strlen(buf), "%5d exit %s leads to %-5d.\r\n", world[i].number, dirs[k], world[world[i].dir_option[k]->to_room].number);
+                zlen += safe_snprintf(buf + zlen, MAX_STRING_LENGTH - zlen, "%5d exit %s leads to %-5d.\r\n", world[i].number, dirs[k], world[world[i].dir_option[k]->to_room].number);
               }
             }
           }
@@ -4024,8 +4028,7 @@ ACMD(do_show)
       {
         int counter;
 
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Rooms with no valid exits.\r\n");
-        strcat(buf, "==========================\r\n");
+        size_t nlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Rooms with no valid exits.\r\n==========================\r\n");
         for (i = 0; i <= top_of_world; i++) {
           for (k = 0, counter = 0; k < NUM_OF_DIRS; k++) {
             if (world[i].dir_option[k] && world[i].dir_option[k]->to_room != i && world[i].dir_option[k]->to_room != NOWHERE) {
@@ -4033,7 +4036,7 @@ ACMD(do_show)
             }
           }
           if (!counter) {
-            sprintf(buf + strlen(buf), "%5d has no valid exits.\r\n", world[i].number);
+            nlen += safe_snprintf(buf + nlen, MAX_STRING_LENGTH - nlen, "%5d has no valid exits.\r\n", world[i].number);
           }
         }
         page_string(ch->desc, buf, 1);
@@ -4062,7 +4065,7 @@ ACMD(do_show)
 ACMD(do_set)
 {
 
-#define NUMLOG(str, num) sprintf(logbuffer, str, GET_NAME(ch), num, GET_NAME(vict)); mudlog(logbuffer, 'G', COM_BUILDER, TRUE); plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
+#define NUMLOG(str, num) safe_snprintf(logbuffer, sizeof(logbuffer), str, GET_NAME(ch), num, GET_NAME(vict)); mudlog(logbuffer, 'G', COM_BUILDER, TRUE); plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
 #define FLAGLOG(str) safe_snprintf(logbuffer, sizeof(logbuffer), "%s set flag %s %s for %s", GET_NAME(ch), str, ONOFF(on), GET_NAME(vict)); mudlog(logbuffer, 'F', COM_ADMIN, TRUE); plog(logbuffer, ch, MAX(LVL_IMMORT, GET_LEVEL(ch)));
   int i, l, j;
   struct char_data *vict;
@@ -4175,21 +4178,20 @@ ACMD(do_set)
 
   if (!*name || !*field) {
     send_to_char("Usage: set <victim> <field> <value>\r\n", ch);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Possible fields for you are:\r\n");
+    size_t setlen = safe_snprintf(buf, MAX_STRING_LENGTH, "Possible fields for you are:\r\n");
     l = 0;
     for (j = 0; *(fields[j].cmd) != '\n'; j++) {
       if (COM_FLAGGED(ch, fields[j].level)) {
-        memset(buf2, 0, MAX_STRING_LENGTH);
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "%-13s", fields[j].cmd);
         if (++l == 5) {
           l = 0;
-          strcat(buf2, "\r\n");
+          setlen += safe_snprintf(buf + setlen, MAX_STRING_LENGTH - setlen, "%-13s\r\n", fields[j].cmd);
+        } else {
+          setlen += safe_snprintf(buf + setlen, MAX_STRING_LENGTH - setlen, "%-13s", fields[j].cmd);
         }
-        strcat(buf, buf2);
       }
     }
     if (l) {
-      strcat(buf, "\r\n");
+      safe_snprintf(buf + setlen, MAX_STRING_LENGTH - setlen, "\r\n");
     }
     send_to_char(buf, ch);
     return;
@@ -4284,7 +4286,7 @@ ACMD(do_set)
   } else if (fields[l].type == NUMBER) {
     value = atoi(val_arg);
   }
-  strcpy(buf, "Okay.");
+  safe_snprintf(buf, MAX_STRING_LENGTH, "Okay.");
   switch (l) {
     case 0:
       SET_OR_REMOVE(PRF_FLAGS(vict), PRF_BRIEF);
@@ -4690,7 +4692,7 @@ ACMD(do_set)
   } else if (fields[l].type == NUMBER) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "%s's %s set to %d.\r\n", GET_NAME(vict), fields[l].cmd, value);
   } else {
-    strcat(buf, "\r\n");
+    safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), "\r\n");
   }
   send_to_char(CAP(buf), ch);
 
@@ -4727,13 +4729,13 @@ ACMD(do_syslog)
   } else if (*arg == 'l') { /* list */
     safe_snprintf(buf, MAX_STRING_LENGTH, "Current syslog(%s) flag settings:\r\n", PRF_FLAGGED(ch, PRF_LOG) ? "ON" : "OFF");
     send_to_char(buf, ch);
+    size_t llen = 0;
     *buf = '\0';
     vektor = LOG_FLAGS(ch);
     for (nr = 0; vektor; vektor >>= 1) {
       if (IS_SET(1, vektor)) {
         if (*log_text[nr] != '\n' && *log_text[nr] != '\0') {
-          strcat(buf, log_text[nr]);
-          strcat(buf, "\r\n");
+          llen += safe_snprintf(buf + llen, MAX_STRING_LENGTH - llen, "%s\r\n", log_text[nr]);
         }
       }
       if (*log_text[nr] != '\n') {
@@ -5134,12 +5136,12 @@ ACMD(do_rename)
 {
   struct descriptor_data *d;
   struct descriptor_data *next_d;
-  char to_force[5];
+  char to_force[8];
   char orig_name[64];
   char new_name[64];
 
   two_arguments(argument, orig_name, new_name);
-  strcpy(to_force, "save");
+  safe_snprintf(to_force, sizeof(to_force), "save");
 
   for (d = descriptor_list; d; d = next_d) {
     next_d = d->next;

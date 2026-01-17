@@ -49,10 +49,8 @@ void load_banned(void)
     name[MAX_NAME_LENGTH] = '\0';
     site_name[BANNED_SITE_LENGTH] = '\0';
     CREATE(next_node, struct ban_list_element, 1);
-    strcpy(next_node->site, site_name);
-    next_node->site[BANNED_SITE_LENGTH] = '\0';
-    strcpy(next_node->name, name);
-    next_node->name[MAX_NAME_LENGTH] = '\0';
+    safe_snprintf(next_node->site, sizeof(next_node->site), "%s", site_name);
+    safe_snprintf(next_node->name, sizeof(next_node->name), "%s", name);
     next_node->date = date;
 
     for (i = BAN_NOT; i <= BAN_FROZEN; i++)
@@ -120,20 +118,20 @@ ACMD(do_ban)
       send_to_char("No sites are banned.\r\n", ch);
       return;
     }
-    strcpy(format, "%-25.25s  %-8.8s  %-10.10s  %-16.16s\r\n");
-    sprintf(buf, format, "Banned Site Name", "Ban Type", "Banned On", "Banned By");
+    safe_snprintf(format, sizeof(format), "%s", "%-25.25s  %-8.8s  %-10.10s  %-16.16s\r\n");
+    safe_snprintf(buf, MAX_STRING_LENGTH, format, "Banned Site Name", "Ban Type", "Banned On", "Banned By");
     send_to_char(buf, ch);
-    sprintf(buf, format, "---------------------------------", "---------------------------------", "---------------------------------", "---------------------------------");
+    safe_snprintf(buf, MAX_STRING_LENGTH, format, "---------------------------------", "---------------------------------", "---------------------------------", "---------------------------------");
     send_to_char(buf, ch);
 
     for (ban_node = ban_list; ban_node; ban_node = ban_node->next) {
       if (ban_node->date) {
         timestr = asctime(localtime(&(ban_node->date)));
         *(timestr + 10) = 0;
-        strcpy(site, timestr);
+        safe_snprintf(site, sizeof(site), "%s", timestr);
       } else
-        strcpy(site, "Unknown");
-      sprintf(buf, format, ban_node->site, ban_types[ban_node->type], site, ban_node->name);
+        safe_snprintf(site, sizeof(site), "Unknown");
+      safe_snprintf(buf, MAX_STRING_LENGTH, format, ban_node->site, ban_types[ban_node->type], site, ban_node->name);
       send_to_char(buf, ch);
     }
     return;
@@ -156,12 +154,10 @@ ACMD(do_ban)
 
   CREATE(ban_node, struct ban_list_element, 1);
   site[BANNED_SITE_LENGTH] = '\0';
-  strcpy(ban_node->site, site);
+  safe_snprintf(ban_node->site, sizeof(ban_node->site), "%s", site);
   for (nextchar = ban_node->site; *nextchar; nextchar++)
     *nextchar = LOWER(*nextchar);
-  ban_node->site[BANNED_SITE_LENGTH] = '\0';
-  strcpy(ban_node->name, GET_NAME(ch));
-  ban_node->name[MAX_NAME_LENGTH] = '\0';
+  safe_snprintf(ban_node->name, sizeof(ban_node->name), "%s", GET_NAME(ch));
   ban_node->date = time(0);
 
   for (i = BAN_NEW; i <= BAN_FROZEN; i++)
@@ -232,7 +228,7 @@ int Valid_Name(char *newname)
     return 1;
 
   /* change to lowercase */
-  strcpy(tempname, newname);
+  safe_snprintf(tempname, sizeof(tempname), "%s", newname);
   for (i = 0; tempname[i]; i++)
     tempname[i] = LOWER(tempname[i]);
 

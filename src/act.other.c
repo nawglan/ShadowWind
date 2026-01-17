@@ -171,9 +171,9 @@ ACMD(do_consent)
   }
 
   if (GET_SEX(ch) == SEX_MALE) {
-    strcpy(gender, "his");
+    safe_snprintf(gender, sizeof(gender), "his");
   } else if (GET_SEX(ch) == SEX_FEMALE) {
-    strcpy(gender, "her");
+    safe_snprintf(gender, sizeof(gender), "her");
   }
   tch = get_char_vis(ch, arg);
   if (!tch) {
