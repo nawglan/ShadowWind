@@ -8,6 +8,12 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#ifndef _BOARDS_H_
+#define _BOARDS_H_
+
+/* Forward declarations */
+struct char_data;
+
 #define NUM_OF_BOARDS      9    /* change if needed! */
 #define MAX_BOARD_MESSAGES 80   /* arbitrary -- change if needed */
 #define MAX_MESSAGE_LENGTH 4096 /* arbitrary -- change if needed */
@@ -52,3 +58,5 @@ void Board_save_board(int board_type);
 void Board_load_board(int board_type);
 void Board_reset_board(int board_num);
 void Board_write_message(int board_type, struct char_data *ch, char *arg);
+
+#endif /* _BOARDS_H_ */

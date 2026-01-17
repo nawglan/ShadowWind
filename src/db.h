@@ -8,6 +8,11 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#ifndef _DB_H_
+#define _DB_H_
+
+#include "structs.h"
+
 /* arbitrary constants used by index_boot() (must be unique) */
 #define DB_BOOT_WLD 0
 #define DB_BOOT_MOB 1
@@ -173,3 +178,5 @@ extern char logbuffer[256];
 extern char *OK;
 extern char *NOPERSON;
 #endif
+
+#endif /* _DB_H_ */

@@ -8,6 +8,9 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#ifndef _STRUCTS_H_
+#define _STRUCTS_H_
+
 /* preamble *************************************************************/
 
 #include <sodium.h>
@@ -1865,3 +1868,5 @@ struct quest_data {
   int maxmsgs;
   int maxneeds;
 };
+
+#endif /* _STRUCTS_H_ */

@@ -5,6 +5,14 @@
  *    				                                          *
  *  Copyright 1996 Harvey Gilpin.                                          *
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#ifndef _OLC_H_
+#define _OLC_H_
+
+#include <stddef.h>
+
+#include "structs.h"
+
 /*. Macros, defines, structs and globals for the OLC suite .*/
 
 /*. Utils exported from olc.c .*/
@@ -291,3 +299,5 @@ extern struct olc_save_info *olc_save_list;
 #define MAX_EXTRA_DESC 512
 #define MAX_MOB_DESC   512
 #define MAX_OBJ_DESC   512
+
+#endif /* _OLC_H_ */

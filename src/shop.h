@@ -1,3 +1,8 @@
+#ifndef _SHOP_H_
+#define _SHOP_H_
+
+#include "structs.h"
+
 struct shop_buy_data {
   int type;
   char *keywords;
@@ -137,3 +142,5 @@ char *shop_bits[] = {"WILL_FIGHT", "USES_BANK", "\n"};
 #define MSG_NO_SELL_CLASS     "We don't serve your kind here!"
 #define MSG_NO_USED_WANDSTAFF "I don't buy used up wands or staves!"
 #define MSG_CANT_KILL_KEEPER  "Get out of here before I call the guards!"
+
+#endif /* _SHOP_H_ */

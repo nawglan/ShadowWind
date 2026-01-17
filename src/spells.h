@@ -8,6 +8,14 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#ifndef _SPELLS_H_
+#define _SPELLS_H_
+
+#include "structs.h"
+
+/* Forward declarations */
+struct spell_info_type;
+
 #define DEFAULT_STAFF_LVL 12
 #define DEFAULT_WAND_LVL  12
 
@@ -132,3 +140,5 @@ int mag_affect_char(struct spell_info_type *sinfo, int affect_flag, struct char_
                     int value);
 
 int find_spell_num(char *name);
+
+#endif /* _SPELLS_H_ */

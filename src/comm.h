@@ -8,6 +8,15 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#ifndef _COMM_H_
+#define _COMM_H_
+
+/* Forward declarations */
+struct char_data;
+struct descriptor_data;
+struct obj_data;
+struct txt_q;
+
 #define NUM_RESERVED_DESCS 8
 
 /* comm.c */
@@ -173,3 +182,5 @@ int socket(int domain, int type, int protocol);
 #endif
 
 #endif /* #ifdef __COMM_C__ */
+
+#endif /* _COMM_H_ */

@@ -1,5 +1,10 @@
 /* Header file for Auction system, written by Mattias Larsson (ml@algonet.se) */
 
+#ifndef _AUCTION_H_
+#define _AUCTION_H_
+
+#include "structs.h"
+
 #define AUCTION_PROFIT     0.02  /* How many percent the auctioneer wants */
 #define AUCTION_MAX_PROFIT 10000 /* Maximum profit */
 #define REPEAT_COUNTER                    \
@@ -28,3 +33,5 @@ struct auction_item {
   struct obj_affected_type affected[6]; /* Affections  */
   struct auction_item *next;            /* Pointer to next structure (if any)   */
 };
+
+#endif /* _AUCTION_H_ */

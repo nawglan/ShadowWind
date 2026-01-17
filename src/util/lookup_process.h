@@ -1,7 +1,10 @@
 #ifndef __LOOKUP_PROCESS_H
 #define __LOOKUP_PROCESS_H
 
+#include <netinet/in.h>
 #include <sys/types.h>
+
+#include "../structs.h"
 
 #define MSG_HOST_REQ 1
 #define MSG_HOST_ANS 2
