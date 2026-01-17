@@ -13,11 +13,11 @@
  usage: switch into an obj directory; type: delobjs <plrfile> <obj wildcard>
  */
 
-#include <stdio.h>
+#include "../structs.h"
 #include <ctype.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../structs.h"
 
 struct name_element {
   char name[20];
@@ -26,8 +26,7 @@ struct name_element {
 
 struct name_element *name_list = 0;
 
-void do_purge(int argc, char **argv)
-{
+void do_purge(int argc, char **argv) {
   int x;
   struct name_element *tmp;
   char name[30], buf[100];
@@ -48,13 +47,12 @@ void do_purge(int argc, char **argv)
   }
 }
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
   char *ptr;
   struct char_file_u player;
   int okay;
   struct name_element *tmp;
-  FILE * fl;
+  FILE *fl;
 
   if (argc < 3) {
     printf("Usage: %s <playerfile-name> <file1> <file2> ... <filen>\n", argv[0]);
@@ -91,4 +89,3 @@ int main(int argc, char **argv)
     }
   }
 }
-

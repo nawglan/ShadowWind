@@ -8,18 +8,18 @@
 
 #define _RV_OLC_
 
-#include <ctype.h>
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include "structs.h"
-#include "comm.h"
-#include "utils.h"
-#include "interpreter.h"
-#include "db.h"
 #include "olc.h"
-#include "screen.h"
+#include "comm.h"
+#include "db.h"
 #include "handler.h"
+#include "interpreter.h"
+#include "screen.h"
+#include "structs.h"
+#include "utils.h"
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*. External data structures .*/
 extern struct room_data *world;
@@ -53,7 +53,8 @@ struct olc_scmd_data {
   int con_type;
 };
 
-struct olc_scmd_data olc_scmd_info[5] = { {"room", CON_REDIT}, {"object", CON_OEDIT}, {"room", CON_ZEDIT}, {"mobile", CON_MEDIT}, {"shop", CON_SEDIT}};
+struct olc_scmd_data olc_scmd_info[5] = {
+    {"room", CON_REDIT}, {"object", CON_OEDIT}, {"room", CON_ZEDIT}, {"mobile", CON_MEDIT}, {"shop", CON_SEDIT}};
 
 /*------------------------------------------------------------*\
  Eported ACMD do_olc function
@@ -62,8 +63,7 @@ struct olc_scmd_data olc_scmd_info[5] = { {"room", CON_REDIT}, {"object", CON_OE
  generic OLC stuff, then passes control to the sub-olc sections.
  \*------------------------------------------------------------*/
 
-ACMD(do_olc)
-{
+ACMD(do_olc) {
   int number = -1, save = 0, real_num;
   struct descriptor_data *d;
   int zone1, zone2;
@@ -84,18 +84,18 @@ ACMD(do_olc)
   two_arguments(argument, buf1, buf2);
   if (!*buf1) { /* No argument given .*/
     switch (subcmd) {
-      case SCMD_OLC_ZEDIT:
-      case SCMD_OLC_REDIT:
-        number = world[IN_ROOM(ch)].number;
-        break;
-      case SCMD_OLC_OEDIT:
-      case SCMD_OLC_MEDIT:
-      case SCMD_OLC_SEDIT:
-        safe_snprintf(buf, MAX_STRING_LENGTH, "Specify a %s VNUM to edit.\r\n", olc_scmd_info[subcmd].text);
-        send_to_char(buf, ch);
-        return;
+    case SCMD_OLC_ZEDIT:
+    case SCMD_OLC_REDIT:
+      number = world[IN_ROOM(ch)].number;
+      break;
+    case SCMD_OLC_OEDIT:
+    case SCMD_OLC_MEDIT:
+    case SCMD_OLC_SEDIT:
+      safe_snprintf(buf, MAX_STRING_LENGTH, "Specify a %s VNUM to edit.\r\n", olc_scmd_info[subcmd].text);
+      send_to_char(buf, ch);
+      return;
     }
-  } else if (!isdigit (*buf1)) {
+  } else if (!isdigit(*buf1)) {
     if (strncmp("save", buf1, 4) == 0) {
       if (!*buf2) {
         send_to_char("Save which zone?\r\n", ch);
@@ -146,7 +146,8 @@ ACMD(do_olc)
         zone1 = OLC_NUM(d) - (OLC_NUM(d) % 100);
         zone2 = number - (number % 100);
         if (zone1 == zone2) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "That %s is currently being edited by %s.\r\n", olc_scmd_info[subcmd].text, GET_NAME(d->character));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "That %s is currently being edited by %s.\r\n",
+                        olc_scmd_info[subcmd].text, GET_NAME(d->character));
           send_to_char(buf, ch);
           return;
         }
@@ -159,7 +160,7 @@ ACMD(do_olc)
   /*. Give descriptor an OLC struct .*/
   CREATE(d->olc, struct olc_data, 1);
 
-  /*. Find the zone .*/OLC_ZNUM(d) = real_zone(number);
+  /*. Find the zone .*/ OLC_ZNUM(d) = real_zone(number);
   if (OLC_ZNUM(d) == -1) {
     send_to_char("Sorry, there is no zone for that number!\r\n", ch);
     FREE(d->olc);
@@ -171,73 +172,78 @@ ACMD(do_olc)
   }
 
   OLC_NUM(d) = number;
-  SET_BIT(PLR_FLAGS (ch), PLR_EDITING);
+  SET_BIT(PLR_FLAGS(ch), PLR_EDITING);
 
   /*. Steal players descriptor start up subcommands .*/
   switch (subcmd) {
-    case SCMD_OLC_REDIT:
-      real_num = real_room(number);
-      if (real_num >= 0)
-        redit_setup_existing(d, real_num);
-      else
-        redit_setup_new(d);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a room in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      STATE(d) = CON_REDIT;
-      break;
-    case SCMD_OLC_ZEDIT:
-      real_num = real_room(number);
-      if (real_num < 0) {
-        send_to_char("That room does not exist.\r\n", ch);
-        FREE(d->olc);
-        return;
-      }
-      zedit_setup(d, real_num);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits zone info for zone %d", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number);
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      STATE(d) = CON_ZEDIT;
-      break;
-    case SCMD_OLC_MEDIT:
-      real_num = real_mobile(number);
-      if (real_num < 0) {
-        medit_setup_new(d);
-        /*
-         REMOVE_BIT(PLR_FLAGS (ch), PLR_EDITING);
-         send_to_char("Medit for new mobs is temporarily disabled.\r\n", ch);
-         return;
-         */
-      } else
-        medit_setup_existing(d, real_num);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a mob in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      STATE(d) = CON_MEDIT;
-      break;
-    case SCMD_OLC_OEDIT:
-      real_num = real_object(number);
-      if (real_num >= 0)
-        oedit_setup_existing(d, real_num);
-      else {
-        oedit_setup_new(d);
-        /*
-         REMOVE_BIT(PLR_FLAGS (ch), PLR_EDITING);
-         send_to_char("Oedit for new objects is temporarily disabled.\r\n", ch);
-         return;
-         */
-      }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a object in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      STATE(d) = CON_OEDIT;
-      break;
-    case SCMD_OLC_SEDIT:
-      real_num = real_shop(number);
-      if (real_num >= 0)
-        sedit_setup_existing(d, real_num);
-      else
-        sedit_setup_new(d);
-      safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a shop in zone %d (%d)", GET_NAME(ch), zone_table[OLC_ZNUM(d)].number, number);
-      mudlog(buf, 'G', COM_BUILDER, TRUE);
-      STATE(d) = CON_SEDIT;
-      break;
+  case SCMD_OLC_REDIT:
+    real_num = real_room(number);
+    if (real_num >= 0)
+      redit_setup_existing(d, real_num);
+    else
+      redit_setup_new(d);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a room in zone %d (%d)", GET_NAME(ch),
+                  zone_table[OLC_ZNUM(d)].number, number);
+    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    STATE(d) = CON_REDIT;
+    break;
+  case SCMD_OLC_ZEDIT:
+    real_num = real_room(number);
+    if (real_num < 0) {
+      send_to_char("That room does not exist.\r\n", ch);
+      FREE(d->olc);
+      return;
+    }
+    zedit_setup(d, real_num);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits zone info for zone %d", GET_NAME(ch),
+                  zone_table[OLC_ZNUM(d)].number);
+    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    STATE(d) = CON_ZEDIT;
+    break;
+  case SCMD_OLC_MEDIT:
+    real_num = real_mobile(number);
+    if (real_num < 0) {
+      medit_setup_new(d);
+      /*
+       REMOVE_BIT(PLR_FLAGS (ch), PLR_EDITING);
+       send_to_char("Medit for new mobs is temporarily disabled.\r\n", ch);
+       return;
+       */
+    } else
+      medit_setup_existing(d, real_num);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a mob in zone %d (%d)", GET_NAME(ch),
+                  zone_table[OLC_ZNUM(d)].number, number);
+    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    STATE(d) = CON_MEDIT;
+    break;
+  case SCMD_OLC_OEDIT:
+    real_num = real_object(number);
+    if (real_num >= 0)
+      oedit_setup_existing(d, real_num);
+    else {
+      oedit_setup_new(d);
+      /*
+       REMOVE_BIT(PLR_FLAGS (ch), PLR_EDITING);
+       send_to_char("Oedit for new objects is temporarily disabled.\r\n", ch);
+       return;
+       */
+    }
+    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a object in zone %d (%d)", GET_NAME(ch),
+                  zone_table[OLC_ZNUM(d)].number, number);
+    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    STATE(d) = CON_OEDIT;
+    break;
+  case SCMD_OLC_SEDIT:
+    real_num = real_shop(number);
+    if (real_num >= 0)
+      sedit_setup_existing(d, real_num);
+    else
+      sedit_setup_new(d);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "OLC: %s edits a shop in zone %d (%d)", GET_NAME(ch),
+                  zone_table[OLC_ZNUM(d)].number, number);
+    mudlog(buf, 'G', COM_BUILDER, TRUE);
+    STATE(d) = CON_SEDIT;
+    break;
   }
   act("$n starts using OLC.", TRUE, d->character, 0, 0, TO_ROOM);
 }
@@ -245,8 +251,7 @@ ACMD(do_olc)
  Internal utlities
  \*------------------------------------------------------------*/
 
-void olc_saveinfo(struct char_data *ch)
-{
+void olc_saveinfo(struct char_data *ch) {
   struct olc_save_info *entry;
   static char *save_info_msg[5] = {"Rooms", "Objects", "Zone info", "Mobiles", "Shops"};
 
@@ -256,13 +261,12 @@ void olc_saveinfo(struct char_data *ch)
     send_to_char("The database is up to date.\r\n", ch);
 
   for (entry = olc_save_list; entry; entry = entry->next) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, " - %s for zone %d.\r\n", save_info_msg[(int) entry->type], entry->zone);
+    safe_snprintf(buf, MAX_STRING_LENGTH, " - %s for zone %d.\r\n", save_info_msg[(int)entry->type], entry->zone);
     send_to_char(buf, ch);
   }
 }
 
-int real_zone(int number)
-{
+int real_zone(int number) {
   int counter;
   for (counter = 0; counter <= top_of_zone_table; counter++)
     if ((number >= (zone_table[counter].number * 100)) && (number <= (zone_table[counter].top)))
@@ -277,8 +281,7 @@ int real_zone(int number)
 
 /*. Add an entry to the 'to be saved' list .*/
 
-void olc_add_to_save_list(int zone, byte type)
-{
+void olc_add_to_save_list(int zone, byte type) {
   struct olc_save_info *new;
 
   /*. Return if it's already in the list .*/
@@ -295,8 +298,7 @@ void olc_add_to_save_list(int zone, byte type)
 
 /*. Remove an entry from the 'to be saved' list .*/
 
-void olc_remove_from_save_list(int zone, byte type)
-{
+void olc_remove_from_save_list(int zone, byte type) {
   struct olc_save_info **entry;
   struct olc_save_info *temp;
 
@@ -313,8 +315,7 @@ void olc_remove_from_save_list(int zone, byte type)
  see at color level NRM.  Changing the entries here will change
  the colour scheme throught the OLC.*/
 
-void get_char_cols(struct char_data *ch)
-{
+void get_char_cols(struct char_data *ch) {
   nrm = CCNRM(ch, C_NRM);
   grn = CCGRN(ch, C_NRM);
   cyn = CCCYN(ch, C_NRM);
@@ -325,8 +326,7 @@ void get_char_cols(struct char_data *ch)
  saved to a file.  Use it only on buffers, not on the oringinal
  strings.*/
 
-void strip_string(char *buffer)
-{
+void strip_string(char *buffer) {
   char *pointer;
 
   pointer = buffer;
@@ -339,22 +339,21 @@ void strip_string(char *buffer)
  attatched to a descriptor, sets all flags back to how they
  should be .*/
 
-void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
-{
+void cleanup_olc(struct descriptor_data *d, byte cleanup_type) {
   if (d->olc) {
     /*. Check for room .*/
     if (OLC_ROOM(d)) { /*. free_room performs no sanity checks, must be carefull here .*/
       switch (cleanup_type) {
-        case CLEANUP_ALL:
-          free_room(OLC_ROOM(d));
-          FREE(OLC_ROOM(d));
-          break;
-        case CLEANUP_STRUCTS:
-          FREE(OLC_ROOM(d));
-          break;
-        default:
-          /*. Caller has screwed up .*/
-          break;
+      case CLEANUP_ALL:
+        free_room(OLC_ROOM(d));
+        FREE(OLC_ROOM(d));
+        break;
+      case CLEANUP_STRUCTS:
+        FREE(OLC_ROOM(d));
+        break;
+      default:
+        /*. Caller has screwed up .*/
+        break;
       }
     }
 
@@ -384,15 +383,15 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
     /*. Check for shop .*/
     if (OLC_SHOP(d)) { /*. free_shop performs no sanity checks, must be carefull here .*/
       switch (cleanup_type) {
-        case CLEANUP_ALL:
-          free_shop(OLC_SHOP(d));
-          break;
-        case CLEANUP_STRUCTS:
-          FREE(OLC_SHOP(d));
-          break;
-        default:
-          /*. Caller has screwed up .*/
-          break;
+      case CLEANUP_ALL:
+        free_shop(OLC_SHOP(d));
+        break;
+      case CLEANUP_STRUCTS:
+        FREE(OLC_SHOP(d));
+        break;
+      default:
+        /*. Caller has screwed up .*/
+        break;
       }
     }
 
@@ -406,8 +405,7 @@ void cleanup_olc(struct descriptor_data *d, byte cleanup_type)
   }
 }
 
-void olc_print_bitvectors(FILE* f, long bitvector, long max)
-{
+void olc_print_bitvectors(FILE *f, long bitvector, long max) {
   int i;
   int counter = 0;
 
@@ -425,8 +423,7 @@ void olc_print_bitvectors(FILE* f, long bitvector, long max)
     fprintf(f, " ");
 }
 
-ACMD(do_assign)
-{
+ACMD(do_assign) {
   char tbuf[256];
   char *buf2;
   struct char_data *vict;
@@ -451,7 +448,8 @@ ACMD(do_assign)
       send_to_char("That player isn't online.\r\n", ch);
       return;
     }
-    safe_snprintf(tbuf, sizeof(tbuf), "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict), vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
+    safe_snprintf(tbuf, sizeof(tbuf), "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict),
+                  vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
     send_to_char(tbuf, ch);
   } else {
     if ((vict = get_char_vis(ch, buf)) == NULL) {
@@ -465,7 +463,8 @@ ACMD(do_assign)
     for (i = found; i < 4; i++) {
       vict->olc_zones[i] = 0;
     }
-    safe_snprintf(tbuf, sizeof(tbuf), "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict), vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
+    safe_snprintf(tbuf, sizeof(tbuf), "%s has been assigned these zones: %d %d %d %d\r\n", GET_NAME(vict),
+                  vict->olc_zones[0], vict->olc_zones[1], vict->olc_zones[2], vict->olc_zones[3]);
     send_to_char(tbuf, ch);
   }
 }

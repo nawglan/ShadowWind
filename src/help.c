@@ -1,14 +1,14 @@
+#include "comm.h"
+#include "db.h"
+#include "interpreter.h"
+#include "screen.h"
+#include "structs.h"
+#include "utils.h"
+#include <ctype.h>
+#include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 #include <string.h>
-#include <ctype.h>
-#include "structs.h"
-#include "comm.h"
-#include "interpreter.h"
-#include "utils.h"
-#include "db.h"
-#include "screen.h"
 
 int count_help_records(FILE *fl);
 struct help_index_element *build_help_index(int *num, int type);
@@ -18,25 +18,23 @@ ACMD(do_help);
 ACMD(do_wiz_help);
 ACMD(do_gen_write);
 
-char *command_level(int level)
-{
+char *command_level(int level) {
   switch (level) {
-    case 51:
-    case 52:
-      return "IM";
-    case 53:
-      return "QU";
-    case 54:
-      return "BU";
-    case 55:
-      return "AD";
-    default:
-      return "";
+  case 51:
+  case 52:
+    return "IM";
+  case 53:
+    return "QU";
+  case 54:
+    return "BU";
+  case 55:
+    return "AD";
+  default:
+    return "";
   }
 }
 
-ACMD(do_wiz_help)
-{
+ACMD(do_wiz_help) {
   extern int top_of_wiz_helpt;
   extern struct help_index_element *wiz_help_index;
   FILE *wiz_help_fl;
@@ -61,8 +59,11 @@ ACMD(do_wiz_help)
     size_t buflen = 0;
     buf[0] = '\0';
     for (no = 1, i = 1; cmd_info[i].command[0] != '\n'; i++) {
-      if (((GET_LEVEL(ch) >= cmd_info[i].minimum_level) || COM_FLAGGED(ch, cmd_info[i].flag)) && (cmd_info[i].minimum_level >= LVL_IMMORT)) {
-        buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s[%s%s%s] %s%s%-10s%s", CCCYN(ch, C_SPR), CBWHT(ch, C_SPR), command_level(cmd_info[i].minimum_level), CCCYN(ch, C_SPR), CCNRM(ch, C_SPR), CBBLU(ch, C_SPR), cmd_info[i].command, CCNRM(ch, C_SPR));
+      if (((GET_LEVEL(ch) >= cmd_info[i].minimum_level) || COM_FLAGGED(ch, cmd_info[i].flag)) &&
+          (cmd_info[i].minimum_level >= LVL_IMMORT)) {
+        buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "%s[%s%s%s] %s%s%-10s%s", CCCYN(ch, C_SPR),
+                                CBWHT(ch, C_SPR), command_level(cmd_info[i].minimum_level), CCCYN(ch, C_SPR),
+                                CCNRM(ch, C_SPR), CBBLU(ch, C_SPR), cmd_info[i].command, CCNRM(ch, C_SPR));
         if (!(no % 5))
           buflen += safe_snprintf(buf + buflen, MAX_STRING_LENGTH - buflen, "\r\n");
         no++;
@@ -129,8 +130,7 @@ ACMD(do_wiz_help)
   }
 }
 
-ACMD(do_help)
-{
+ACMD(do_help) {
   extern int top_of_helpt;
   extern struct help_index_element *help_index;
   FILE *help_fl;
@@ -206,8 +206,7 @@ ACMD(do_help)
 }
 
 /* function to count how many hash-mark delimited records exist in a file */
-int count_help_records(FILE * fl)
-{
+int count_help_records(FILE *fl) {
   char buf[128];
   int count = 0;
 
@@ -229,8 +228,7 @@ int count_help_records(FILE * fl)
   return count;
 }
 
-struct help_index_element *build_help_index(int *num, int type)
-{
+struct help_index_element *build_help_index(int *num, int type) {
   int nr = -1, issorted, i;
   struct help_index_element *list = 0, mem;
   char buf[128], *scan;
@@ -281,7 +279,7 @@ struct help_index_element *build_help_index(int *num, int type)
       if (scan[1] == '~')
         break;
 
-      for (i = 0; i < (int) strlen(scan); i++)
+      for (i = 0; i < (int)strlen(scan); i++)
         scan[i] = tolower(scan[i]);
 
       nr++;

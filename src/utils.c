@@ -8,25 +8,25 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#include <arpa/telnet.h>
+#include <assert.h>
+#include <errno.h>
+#include <netinet/in.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
-#include <assert.h>
-#include <time.h>
-#include <errno.h>
 #include <sys/types.h>
-#include <arpa/telnet.h>
-#include <netinet/in.h>
+#include <time.h>
+#include <unistd.h>
 
+#include "comm.h"
+#include "db.h"
+#include "event.h"
+#include "handler.h"
+#include "screen.h"
+#include "spells.h"
 #include "structs.h"
 #include "utils.h"
-#include "comm.h"
-#include "screen.h"
-#include "event.h"
-#include "spells.h"
-#include "db.h"
-#include "handler.h"
 
 extern struct spell_info_type *spells;
 extern struct zone_data *zone_table;
@@ -42,39 +42,34 @@ extern int SECS_PER_MUD_YEAR;
 int find_spell_num(char *name);
 char *strip_color(char *from, char *to, int length);
 
-int MIN(int a, int b)
-{
+int MIN(int a, int b) {
   return ((a < b) ? a : b);
 }
 
-int MAX(int a, int b)
-{
+int MAX(int a, int b) {
   return ((a > b) ? a : b);
 }
 
-int BOUNDED(int a, int b, int c)
-{
+int BOUNDED(int a, int b, int c) {
   return (MAX(a, MIN(b, c)));
 }
 
 /* creates a random number in interval [from;to] */
-int number(int from, int to)
-{
+int number(int from, int to) {
   return (number_range(from, to));
 }
 
 /* simulates dice roll */
-int dice(int number, int size)
-{
+int dice(int number, int size) {
   /* changed to use the mitchell-moore algorith. */
   int idice;
   int sum;
 
   switch (size) {
-    case 0:
-      return 0;
-    case 1:
-      return number;
+  case 0:
+    return 0;
+  case 1:
+    return number;
   }
 
   for (idice = 0, sum = 0; idice < number; idice++)
@@ -83,8 +78,7 @@ int dice(int number, int size)
   return sum;
 }
 
-char *str_dup(char *arg1)
-{
+char *str_dup(char *arg1) {
   if (arg1 == NULL)
     return NULL;
   else
@@ -93,8 +87,7 @@ char *str_dup(char *arg1)
 
 /* returns: 0 if equal, 1 if arg1 > arg2, -1 if arg1 < arg2  */
 /* scan 'till found different or end of both                 */
-int str_cmp(char *arg1, char *arg2)
-{
+int str_cmp(char *arg1, char *arg2) {
   static int retval;
   if (arg1 == NULL || arg2 == NULL) {
     mudlog("NULL argument in str_cmp", 'E', COM_IMMORT, TRUE);
@@ -106,19 +99,18 @@ int str_cmp(char *arg1, char *arg2)
 }
 
 /* log a death trap hit */
-void log_death_trap(struct char_data * ch)
-{
+void log_death_trap(struct char_data *ch) {
   char buf[150];
   extern struct room_data *world;
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number, world[ch->in_room].name);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number,
+                world[ch->in_room].name);
   mudlog(buf, 'K', COM_IMMORT, TRUE);
   plog(buf, ch, 0);
 }
 
 /* writes a string to the log */
-void stderr_log(char *str)
-{
+void stderr_log(char *str) {
   time_t ct;
   char newlog[MAX_STRING_LENGTH];
   char *tmstr = NULL;
@@ -133,8 +125,7 @@ void stderr_log(char *str)
 }
 
 /* the "touch" command, essentially. */
-int touch(char *path)
-{
+int touch(char *path) {
   FILE *fl;
 
   if (!(fl = fopen(path, "a"))) {
@@ -147,8 +138,7 @@ int touch(char *path)
 }
 
 /* New PROC: syslog by Fen Jul 3, 1992 */
-void mudlog(char *str, char type, sbyte level, byte file)
-{
+void mudlog(char *str, char type, sbyte level, byte file) {
   char buf[8 * MAX_STRING_LENGTH], buf1[8 * MAX_STRING_LENGTH + 6];
   char temp[8 * MAX_STRING_LENGTH];
   char newlog[8 * MAX_STRING_LENGTH];
@@ -182,7 +172,8 @@ void mudlog(char *str, char type, sbyte level, byte file)
     next_i = i->next;
     if (!i->connected && !PLR_FLAGGED(i->character, PLR_WRITING) && !PLR_FLAGGED(i->character, PLR_EDITING)) {
 
-      if ((COM_FLAGGED(i->character, level) && PRF_FLAGGED(i->character, PRF_LOG) && LOG_FLAGGED(i->character, asciiflag_conv(arg)))) {
+      if ((COM_FLAGGED(i->character, level) && PRF_FLAGGED(i->character, PRF_LOG) &&
+           LOG_FLAGGED(i->character, asciiflag_conv(arg)))) {
         send_to_char(CCGRN(i->character, C_NRM), i->character);
         send_to_char(buf1, i->character);
         send_to_char(CCNRM(i->character, C_NRM), i->character);
@@ -197,14 +188,11 @@ void mudlog(char *str, char type, sbyte level, byte file)
  * Log when snprintf truncates output - helps find buffers that need enlarging
  * Especially important when moving from 32-bit to 64-bit systems
  */
-void log_snprintf_truncation(const char *file, int line, size_t bufsize, int needed)
-{
-  fprintf(stderr, "TRUNCATION: %s:%d - buffer %zu bytes, needed %d bytes\n",
-          file, line, bufsize, needed);
+void log_snprintf_truncation(const char *file, int line, size_t bufsize, int needed) {
+  fprintf(stderr, "TRUNCATION: %s:%d - buffer %zu bytes, needed %d bytes\n", file, line, bufsize, needed);
 }
 
-void sprintbit(unsigned long vektor, char *names[], char *result)
-{
+void sprintbit(unsigned long vektor, char *names[], char *result) {
   long nr;
   size_t rlen = 0;
 
@@ -225,8 +213,7 @@ void sprintbit(unsigned long vektor, char *names[], char *result)
     safe_snprintf(result, MAX_STRING_LENGTH, "NOBITS ");
 }
 
-void sprinttype(int type, char *names[], char *result)
-{
+void sprinttype(int type, char *names[], char *result) {
   int nr;
 
   for (nr = 0; (*names[nr] != '\n'); nr++)
@@ -238,12 +225,11 @@ void sprinttype(int type, char *names[], char *result)
 }
 
 /* Calculate the REAL time passed over the last t2-t1 centuries (secs) */
-struct time_info_data real_time_passed(time_t t2, time_t t1)
-{
+struct time_info_data real_time_passed(time_t t2, time_t t1) {
   long secs;
   struct time_info_data now;
 
-  secs = (long) (t2 - t1);
+  secs = (long)(t2 - t1);
 
   now.hours = (secs / SECS_PER_REAL_HOUR) % 24; /* 0..23 hours */
   secs -= SECS_PER_REAL_HOUR * now.hours;
@@ -258,12 +244,11 @@ struct time_info_data real_time_passed(time_t t2, time_t t1)
 }
 
 /* Calculate the MUD time passed over the last t2-t1 centuries (secs) */
-struct time_info_data mud_time_passed(time_t t2, time_t t1)
-{
+struct time_info_data mud_time_passed(time_t t2, time_t t1) {
   long secs;
   static struct time_info_data now;
 
-  secs = (long) (t2 - t1);
+  secs = (long)(t2 - t1);
 
   now.hours = (secs / SECS_PER_MUD_HOUR) % 24; /* 0..23 hours */
   secs -= SECS_PER_MUD_HOUR * now.hours;
@@ -279,8 +264,7 @@ struct time_info_data mud_time_passed(time_t t2, time_t t1)
   return now;
 }
 
-struct time_info_data age(struct char_data * ch)
-{
+struct time_info_data age(struct char_data *ch) {
   struct time_info_data player_age;
 
   player_age = mud_time_passed(time(0), ch->player.time.birth);
@@ -293,9 +277,13 @@ struct time_info_data age(struct char_data * ch)
 /*
  * Turn off echoing (specific to telnet client)
  */
-void echo_off(struct descriptor_data *d)
-{
-  char off_string[] = {(char) IAC, (char) WILL, (char) TELOPT_ECHO, (char) 0, };
+void echo_off(struct descriptor_data *d) {
+  char off_string[] = {
+      (char)IAC,
+      (char)WILL,
+      (char)TELOPT_ECHO,
+      (char)0,
+  };
 
   SEND_TO_Q(off_string, d);
 }
@@ -303,17 +291,17 @@ void echo_off(struct descriptor_data *d)
 /*
  * Turn on echoing (specific to telnet client)
  */
-void echo_on(struct descriptor_data *d)
-{
-  char on_string[] = {(char) IAC, (char) WONT, (char) TELOPT_ECHO, (char) TELOPT_NAOFFD, (char) TELOPT_NAOCRD, (char) 0, };
+void echo_on(struct descriptor_data *d) {
+  char on_string[] = {
+      (char)IAC, (char)WONT, (char)TELOPT_ECHO, (char)TELOPT_NAOFFD, (char)TELOPT_NAOCRD, (char)0,
+  };
 
   SEND_TO_Q(on_string, d);
 }
 
 /* Check if making CH follow VICTIM will create an illegal */
 /* Follow "Loop/circle"                                    */
-bool circle_follow(struct char_data * ch, struct char_data * victim)
-{
+bool circle_follow(struct char_data *ch, struct char_data *victim) {
   struct char_data *k;
 
   for (k = victim; k; k = k->master) {
@@ -326,8 +314,7 @@ bool circle_follow(struct char_data * ch, struct char_data * victim)
 
 /* Called when stop following persons, or stopping charm */
 /* This will NOT do if a character quits/dies!!          */
-void stop_follower(struct char_data * ch)
-{
+void stop_follower(struct char_data *ch) {
   struct follow_type *j, *k;
   int temp = find_spell_num("charm");
   int spellnum = 0;
@@ -368,8 +355,7 @@ void stop_follower(struct char_data * ch)
 }
 
 /* Called when a character that follows/is followed dies */
-void die_follower(struct char_data * ch)
-{
+void die_follower(struct char_data *ch) {
   struct follow_type *j, *k;
 
   if (ch->master)
@@ -383,8 +369,7 @@ void die_follower(struct char_data * ch)
 
 /* Do NOT call this before having checked if a circle of followers */
 /* will arise. CH will follow leader                               */
-void add_follower(struct char_data * ch, struct char_data * leader)
-{
+void add_follower(struct char_data *ch, struct char_data *leader) {
   struct follow_type *k;
 
   assert(!ch->master);
@@ -409,8 +394,7 @@ void add_follower(struct char_data * ch, struct char_data * leader)
  *
  * Returns the number of lines advanced in the file.
  */
-int get_line(FILE * fl, char *buf)
-{
+int get_line(FILE *fl, char *buf) {
   char temp[256];
   int lines = 0;
 
@@ -434,13 +418,11 @@ int get_line(FILE * fl, char *buf)
  * unget_line rewinds one line in the file
  */
 
-void unget_line(FILE * fl)
-{
+void unget_line(FILE *fl) {
 
   do {
     fseek(fl, -2, SEEK_CUR);
   } while (fgetc(fl) != '\n');
-
 }
 
 /* string manipulation fucntion originally by Darren Wilson */
@@ -448,8 +430,7 @@ void unget_line(FILE * fl)
 /* completely re-written again by M. Scott 10/15/96 (scottm@workcommn.net), */
 /* substitute appearances of 'pattern' with 'replacement' in string */
 /* and return the # of replacements */
-int replace_str(char **string, char *pattern, char *replacement, int rep_all, int max_size)
-{
+int replace_str(char **string, char *pattern, char *replacement, int rep_all, int max_size) {
   char *replace_buffer = NULL;
   char *flow, *jetsam, temp;
   int len, i;
@@ -464,7 +445,7 @@ int replace_str(char **string, char *pattern, char *replacement, int rep_all, in
   flow = *string;
   *replace_buffer = '\0';
   if (rep_all) {
-    while ((flow = (char *) strstr(flow, pattern)) != NULL) {
+    while ((flow = (char *)strstr(flow, pattern)) != NULL) {
       i++;
       temp = *flow;
       *flow = '\0';
@@ -480,10 +461,10 @@ int replace_str(char **string, char *pattern, char *replacement, int rep_all, in
     }
     safe_snprintf(replace_buffer + rblen, max_size - rblen, "%s", jetsam);
   } else {
-    if ((flow = (char *) strstr(*string, pattern)) != NULL) {
+    if ((flow = (char *)strstr(*string, pattern)) != NULL) {
       i++;
       flow += strlen(pattern);
-      len = ((char *) flow - (char *) *string) - strlen(pattern);
+      len = ((char *)flow - (char *)*string) - strlen(pattern);
 
       rblen = safe_snprintf(replace_buffer, max_size, "%.*s", len, *string);
       rblen += safe_snprintf(replace_buffer + rblen, max_size - rblen, "%s", replacement);
@@ -503,8 +484,7 @@ int replace_str(char **string, char *pattern, char *replacement, int rep_all, in
 
 /* re-formats message type formatted char * */
 /* (for strings edited with d->str) (mostly olc and mail)     */
-void format_text(char **ptr_string, int mode, struct descriptor_data *d, int maxlen)
-{
+void format_text(char **ptr_string, int mode, struct descriptor_data *d, int maxlen) {
   int total_chars, cap_next = TRUE, cap_next_next = FALSE;
   char *flow, *start = NULL, temp;
   /* warning: do not edit messages with max_str's of over this value */
@@ -524,13 +504,15 @@ void format_text(char **ptr_string, int mode, struct descriptor_data *d, int max
   }
 
   while (*flow != '\0') {
-    while ((*flow == '\n') || (*flow == '\r') || (*flow == '\f') || (*flow == '\t') || (*flow == '\v') || (*flow == ' '))
+    while ((*flow == '\n') || (*flow == '\r') || (*flow == '\f') || (*flow == '\t') || (*flow == '\v') ||
+           (*flow == ' '))
       flow++;
 
     if (*flow != '\0') {
 
       start = flow++;
-      while ((*flow != '\0') && (*flow != '\n') && (*flow != '\r') && (*flow != '\f') && (*flow != '\t') && (*flow != '\v') && (*flow != ' ') && (*flow != '.') && (*flow != '?') && (*flow != '!'))
+      while ((*flow != '\0') && (*flow != '\n') && (*flow != '\r') && (*flow != '\f') && (*flow != '\t') &&
+             (*flow != '\v') && (*flow != ' ') && (*flow != '.') && (*flow != '?') && (*flow != '!'))
         flow++;
 
       if (cap_next_next) {
@@ -586,33 +568,32 @@ void format_text(char **ptr_string, int mode, struct descriptor_data *d, int max
   safe_snprintf(*ptr_string, flen + 1, "%s", formated);
 }
 
-int get_filename(char *orig_name, char *filename, int mode)
-{
+int get_filename(char *orig_name, char *filename, int mode) {
   char *prefix, *middle, *suffix, *ptr, name[64];
 
   switch (mode) {
-    case CRASH_FILE:
-      prefix = "plrobjs";
-      suffix = "objs";
-      break;
-    case ETEXT_FILE:
-      prefix = "plrtext";
-      suffix = "text";
-      break;
-    case PLOG_FILE:
-      prefix = "plrlogs";
-      suffix = "log";
-      break;
-    case PDAT_FILE:
-      prefix = "plrdata";
-      suffix = "dat";
-      break;
-    case PTDAT_FILE:
-      prefix = "plrdata";
-      suffix = "tdat";
-      break;
-    default:
-      return 0;
+  case CRASH_FILE:
+    prefix = "plrobjs";
+    suffix = "objs";
+    break;
+  case ETEXT_FILE:
+    prefix = "plrtext";
+    suffix = "text";
+    break;
+  case PLOG_FILE:
+    prefix = "plrlogs";
+    suffix = "log";
+    break;
+  case PDAT_FILE:
+    prefix = "plrdata";
+    suffix = "dat";
+    break;
+  case PTDAT_FILE:
+    prefix = "plrdata";
+    suffix = "tdat";
+    break;
+  default:
+    return 0;
   }
 
   if (!orig_name || !*orig_name)
@@ -623,53 +604,52 @@ int get_filename(char *orig_name, char *filename, int mode)
     *ptr = LOWER(*ptr);
 
   switch (LOWER(*name)) {
-    case 'a':
-    case 'b':
-    case 'c':
-    case 'd':
-    case 'e':
-      middle = "A-E";
-      break;
-    case 'f':
-    case 'g':
-    case 'h':
-    case 'i':
-    case 'j':
-      middle = "F-J";
-      break;
-    case 'k':
-    case 'l':
-    case 'm':
-    case 'n':
-    case 'o':
-      middle = "K-O";
-      break;
-    case 'p':
-    case 'q':
-    case 'r':
-    case 's':
-    case 't':
-      middle = "P-T";
-      break;
-    case 'u':
-    case 'v':
-    case 'w':
-    case 'x':
-    case 'y':
-    case 'z':
-      middle = "U-Z";
-      break;
-    default:
-      middle = "ZZZ";
-      break;
+  case 'a':
+  case 'b':
+  case 'c':
+  case 'd':
+  case 'e':
+    middle = "A-E";
+    break;
+  case 'f':
+  case 'g':
+  case 'h':
+  case 'i':
+  case 'j':
+    middle = "F-J";
+    break;
+  case 'k':
+  case 'l':
+  case 'm':
+  case 'n':
+  case 'o':
+    middle = "K-O";
+    break;
+  case 'p':
+  case 'q':
+  case 'r':
+  case 's':
+  case 't':
+    middle = "P-T";
+    break;
+  case 'u':
+  case 'v':
+  case 'w':
+  case 'x':
+  case 'y':
+  case 'z':
+    middle = "U-Z";
+    break;
+  default:
+    middle = "ZZZ";
+    break;
   }
 
   safe_snprintf(filename, MAX_INPUT_LENGTH, "%s/%s/%s.%s", prefix, middle, name, suffix);
   return 1;
 }
 
-void plog(char *logtext, struct char_data * ch, int level)
-{
+void plog(char *logtext, struct char_data *ch, int level) {
   time_t ltime;
   FILE *fil = NULL;
   char *tmstr;
@@ -698,13 +678,11 @@ void plog(char *logtext, struct char_data * ch, int level)
 
   fclose(fil);
   return;
-
 }
 
 /* clean a plog file, remove old records */
 
-void clean_log_file(char *name)
-{
+void clean_log_file(char *name) {
   time_t ltime;
   FILE *fil = NULL;
   FILE *temp = NULL;
@@ -775,12 +753,10 @@ void clean_log_file(char *name)
   }
   fclose(fil);
   fclose(temp);
-
 }
 
 /* Scan through the plog files and delete timed-out entries */
-void update_log_file(void)
-{
+void update_log_file(void) {
   extern struct char_data *character_list;
   struct char_data *ch = character_list;
 
@@ -789,8 +765,7 @@ void update_log_file(void)
   return;
 }
 
-char *strip_color(char *from, char *to, int length)
-{
+char *strip_color(char *from, char *to, int length) {
   char *tmp = NULL;
   char *origto = to;
   int i;
@@ -807,8 +782,7 @@ char *strip_color(char *from, char *to, int length)
   return origto;
 }
 
-char *make_money_text(int coins)
-{
+char *make_money_text(int coins) {
   int p, g, s;
   static char buf[MAX_INPUT_LENGTH];
   size_t len = 0;
@@ -853,8 +827,7 @@ char *make_money_text(int coins)
   return buf;
 }
 
-char *make_money_text_nocolor(int coins)
-{
+char *make_money_text_nocolor(int coins) {
   int p, g, s;
   static char buf[MAX_INPUT_LENGTH];
   size_t len = 0;
@@ -897,8 +870,7 @@ char *make_money_text_nocolor(int coins)
   return buf;
 }
 
-int IS_DARK(int room)
-{
+int IS_DARK(int room) {
   int retval = 0;
 
   if (!IS_SET(world[room].room_flags, ROOM_LIGHT)) {
@@ -924,8 +896,7 @@ int IS_DARK(int room)
   return retval;
 }
 
-int CAN_SEE_IN_DARK(struct char_data *ch)
-{
+int CAN_SEE_IN_DARK(struct char_data *ch) {
   int retval = 0;
 
   if (IS_NPC(ch)) {
@@ -948,8 +919,7 @@ int CAN_SEE_IN_DARK(struct char_data *ch)
   return retval;
 }
 
-int LIGHT_OK(struct char_data *ch)
-{
+int LIGHT_OK(struct char_data *ch) {
   int retval = 1;
 
   if (IS_DARK(ch->in_room) && !CAN_SEE_IN_DARK(ch)) {
@@ -961,8 +931,7 @@ int LIGHT_OK(struct char_data *ch)
   return retval;
 }
 
-int INVIS_OK(struct char_data *ch, struct char_data *vict)
-{
+int INVIS_OK(struct char_data *ch, struct char_data *vict) {
   int retval = 1;
 
   if (IS_AFFECTED(vict, AFF_INVISIBLE) && !AFF_FLAGGED(ch, AFF_DETECT_INVIS | AFF_SEEING)) {
@@ -978,8 +947,7 @@ int INVIS_OK(struct char_data *ch, struct char_data *vict)
   return retval;
 }
 
-int CAN_SEE(struct char_data *ch, struct char_data *vict)
-{
+int CAN_SEE(struct char_data *ch, struct char_data *vict) {
   int retval = 0;
 
   if (ch == vict) {
@@ -997,11 +965,10 @@ int CAN_SEE(struct char_data *ch, struct char_data *vict)
   return retval;
 }
 
-#define MAGE 0
+#define MAGE   0
 #define CLERIC 1
 
-int best_class(int type, struct spell_info_type *sinfo)
-{
+int best_class(int type, struct spell_info_type *sinfo) {
   int retval = 0;
 
   if (type == MAGE) {
@@ -1033,8 +1000,7 @@ int best_class(int type, struct spell_info_type *sinfo)
   return retval;
 }
 
-int GET_CIRCLE_DIFF(struct char_data *ch, struct spell_info_type *sinfo)
-{
+int GET_CIRCLE_DIFF(struct char_data *ch, struct spell_info_type *sinfo) {
   int retval = 0;
 
   if (IS_MOB(ch)) {
@@ -1053,14 +1019,13 @@ int GET_CIRCLE_DIFF(struct char_data *ch, struct spell_info_type *sinfo)
       }
     }
   } else {
-    retval = (((GET_LEVEL(ch) + 4) / 5) - ((sinfo->min_level[(int) GET_CLASS(ch)] + 4) / 5));
+    retval = (((GET_LEVEL(ch) + 4) / 5) - ((sinfo->min_level[(int)GET_CLASS(ch)] + 4) / 5));
   }
 
   return retval;
 }
 
-int GET_SPELL_CIRCLE(struct char_data *ch, struct spell_info_type *sinfo)
-{
+int GET_SPELL_CIRCLE(struct char_data *ch, struct spell_info_type *sinfo) {
   int retval = 0;
 
   if (IS_MOB(ch)) {
@@ -1079,7 +1044,7 @@ int GET_SPELL_CIRCLE(struct char_data *ch, struct spell_info_type *sinfo)
       }
     }
   } else {
-    retval = (sinfo->min_level[(int) GET_CLASS(ch)] + 4) / 5;
+    retval = (sinfo->min_level[(int)GET_CLASS(ch)] + 4) / 5;
   }
 
   return retval;

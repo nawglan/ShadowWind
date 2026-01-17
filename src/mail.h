@@ -60,15 +60,14 @@ char *read_delete(char *recipient);
  */
 
 struct header_data_type {
-  long next_block; /* if header block, link to next block	*/
+  long next_block;            /* if header block, link to next block	*/
   char from[MAX_NAME_LENGTH]; /* name of the mail's sender		*/
-  char to[MAX_NAME_LENGTH]; /* name of mail's recipient		*/
-  time_t mail_time; /* when was the letter mailed?		*/
+  char to[MAX_NAME_LENGTH];   /* name of mail's recipient		*/
+  time_t mail_time;           /* when was the letter mailed?		*/
 };
 
 /* size of the data part of a header block */
-#define HEADER_BLOCK_DATASIZE \
-	(BLOCK_SIZE - sizeof(long) - sizeof(struct header_data_type) - 1)
+#define HEADER_BLOCK_DATASIZE (BLOCK_SIZE - sizeof(long) - sizeof(struct header_data_type) - 1)
 
 /* size of the data part of a data block */
 #define DATA_BLOCK_DATASIZE (BLOCK_SIZE - sizeof(long) - 1)
@@ -77,14 +76,14 @@ struct header_data_type {
  terminating null character.  */
 
 struct header_block_type_d {
-  long block_type; /* is this a header or data block?	*/
+  long block_type;                     /* is this a header or data block?	*/
   struct header_data_type header_data; /* other header data		*/
   char txt[HEADER_BLOCK_DATASIZE + 1]; /* actual text plus 1 for null	*/
 };
 
 struct data_block_type_d {
-  long block_type; /* -1 if header block, -2 if last data block
-   in mail, otherwise a link to the next */
+  long block_type;                   /* -1 if header block, -2 if last data block
+                     in mail, otherwise a link to the next */
   char txt[DATA_BLOCK_DATASIZE + 1]; /* actual text plus 1 for null	*/
 };
 
@@ -100,8 +99,8 @@ typedef struct position_list_type_d position_list_type;
 
 struct mail_index_type_d {
   char recipient[MAX_NAME_LENGTH]; /* who is this mail for?	*/
-  position_list_type *list_start; /* list of mail positions	*/
-  struct mail_index_type_d *next; /* link to next one		*/
+  position_list_type *list_start;  /* list of mail positions	*/
+  struct mail_index_type_d *next;  /* link to next one		*/
 };
 
 typedef struct mail_index_type_d mail_index_type;

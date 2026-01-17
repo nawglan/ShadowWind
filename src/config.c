@@ -12,10 +12,10 @@
 
 #include "structs.h"
 
-#define TRUE	1
-#define YES	1
-#define FALSE	0
-#define NO	0
+#define TRUE  1
+#define YES   1
+#define FALSE 0
+#define NO    0
 
 /*
  * Below are several constants which you can change to alter certain aspects
@@ -62,7 +62,7 @@ int level_can_color = 51;
 int holler_move_cost = 100;
 
 /* exp change limits */
-int max_exp_gain = 151200; /* max gainable per kill */
+int max_exp_gain = 151200;  /* max gainable per kill */
 int max_exp_loss = 2500000; /* max losable per death */
 
 /* number of tics (usually 75 seconds) before PC/NPC corpses decompose */
@@ -174,8 +174,8 @@ int max_filesize = 50000;
 int nameserver_is_slow = NO;
 
 char *START_MESSG = "\r\n{WWelcome to ShadowWind, this is your new character! You can now earn gold,{x\r\n"
-    "{Wgain experience, find weapons and equipment, and much more -- while{x\r\n"
-    "{Wmeeting people from around the world!{x\r\n\r\n";
+                    "{Wgain experience, find weapons and equipment, and much more -- while{x\r\n"
+                    "{Wmeeting people from around the world!{x\r\n\r\n";
 
 /****************************************************************************/
 /****************************************************************************/

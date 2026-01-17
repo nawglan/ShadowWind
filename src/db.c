@@ -10,28 +10,28 @@
 
 #define __DB_C__
 
+#include <ctype.h>
+#include <errno.h>
 #include <sodium.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include <time.h>
-#include <errno.h>
 
+#include "comm.h"
+#include "db.h"
+#include "event.h"
+#include "handler.h"
+#include "interpreter.h"
+#include "mail.h"
+#include "spells.h"
 #include "structs.h"
 #include "utils.h"
-#include "db.h"
-#include "comm.h"
-#include "handler.h"
-#include "event.h"
-#include "spells.h"
-#include "mail.h"
-#include "interpreter.h"
 
 void file_list_skills(struct char_data *ch, FILE *f);
-void mprog_read_programs(FILE * fp, struct index_data * pMobIndex);
+void mprog_read_programs(FILE *fp, struct index_data *pMobIndex);
 void init_mm(void);
-extern void parse_quest(FILE* f, int vnum);
+extern void parse_quest(FILE *f, int vnum);
 extern int load_qic_check(int rnum);
 extern void qic_scan_rent(void);
 extern void purge_qic(int rnum);
@@ -45,7 +45,7 @@ extern char *resists_names[];
 void strip_string(char *string);
 void skip_spaces(char **string);
 char *get_spell_name(int spellnum);
-int spell_comp(const void* element1, const void* element2);
+int spell_comp(const void *element1, const void *element2);
 int find_spell_num(char *name);
 extern const sh_int monk_stat[LVL_IMMORT + 1][5];
 
@@ -56,88 +56,88 @@ char err_buf[MAX_STRING_LENGTH];
  ************************************************************************ */
 
 struct room_data *world = NULL; /* array of rooms     */
-int top_of_world = 0; /* ref to top element of world   */
+int top_of_world = 0;           /* ref to top element of world   */
 
 struct char_data *character_list = NULL; /* global linked list of
- * chars   */
-struct index_data *mob_index; /* index table for mobile file   */
-struct char_data *mob_proto; /* prototypes for mobs     */
-int top_of_mobt = 0; /* top of mobile index table   */
-int new_top_mobt = 0; /* new top, used for OLC   */
-int mob_idnum = -1; /* mobs have a negative idnum    */
+                                          * chars   */
+struct index_data *mob_index;            /* index table for mobile file   */
+struct char_data *mob_proto;             /* prototypes for mobs     */
+int top_of_mobt = 0;                     /* top of mobile index table   */
+int new_top_mobt = 0;                    /* new top, used for OLC   */
+int mob_idnum = -1;                      /* mobs have a negative idnum    */
 /* Mob Quests */
 struct quest_data *mob_quests;
 
 struct obj_data *object_list = NULL; /* global linked list of objs   */
-struct index_data *obj_index; /* index table for object file   */
-struct obj_data *obj_proto; /* prototypes for objs     */
-int top_of_objt = 0; /* top of object index table   */
-int new_top_objt = 0; /* New top, used for OLC   */
+struct index_data *obj_index;        /* index table for object file   */
+struct obj_data *obj_proto;          /* prototypes for objs     */
+int top_of_objt = 0;                 /* top of object index table   */
+int new_top_objt = 0;                /* New top, used for OLC   */
 
-struct zone_data *zone_table; /* zone table       */
-int top_of_zone_table = 0; /* top element of zone tab   */
+struct zone_data *zone_table;                     /* zone table       */
+int top_of_zone_table = 0;                        /* top element of zone tab   */
 struct message_list fight_messages[MAX_MESSAGES]; /* fighting messages   */
 
 int top_of_p_table = 0; /* ref to top of table     */
-int top_of_p_file = 0; /* ref of size of p file   */
-long top_idnum = 0; /* highest idnum in use     */
+int top_of_p_file = 0;  /* ref of size of p file   */
+long top_idnum = 0;     /* highest idnum in use     */
 
-int no_mail = 0; /* mail disabled?     */
-int mini_mud = 0; /* mini-mud mode?     */
-int no_rent_check = 0; /* skip rent check on boot?   */
-time_t boot_time = 0; /* time of mud boot     */
-int restrict_game_lvl = 0; /* level of game restriction   */
+int no_mail = 0;            /* mail disabled?     */
+int mini_mud = 0;           /* mini-mud mode?     */
+int no_rent_check = 0;      /* skip rent check on boot?   */
+time_t boot_time = 0;       /* time of mud boot     */
+int restrict_game_lvl = 0;  /* level of game restriction   */
 sh_int r_mortal_start_room; /* rnum of mortal start room   */
 sh_int r_immort_start_room; /* rnum of immort start room   */
 sh_int r_frozen_start_room; /* rnum of frozen start room   */
-char *credits = NULL; /* game credits       */
-char *news = NULL; /* mud news       */
-char *motd = NULL; /* message of the day - mortals */
-char *nmotd = NULL; /* message of the day - newbie */
-char *MENU = NULL; /* menu */
-char *GREET1 = NULL; /* splash screen color */
-char *GREET2 = NULL; /* splash screen no-color */
+char *credits = NULL;       /* game credits       */
+char *news = NULL;          /* mud news       */
+char *motd = NULL;          /* message of the day - mortals */
+char *nmotd = NULL;         /* message of the day - newbie */
+char *MENU = NULL;          /* menu */
+char *GREET1 = NULL;        /* splash screen color */
+char *GREET2 = NULL;        /* splash screen no-color */
 char *todolist;
 char *helplist;
 char *buglist;
 char *idealist;
 char *typolist;
-char *imotd = NULL; /* message of the day - immorts */
-char *help = NULL; /* help screen       */
-char *info = NULL; /* info page       */
-char *wizlist = NULL; /* list of higher gods     */
-char *immlist = NULL; /* list of peon gods     */
+char *imotd = NULL;      /* message of the day - immorts */
+char *help = NULL;       /* help screen       */
+char *info = NULL;       /* info page       */
+char *wizlist = NULL;    /* list of higher gods     */
+char *immlist = NULL;    /* list of peon gods     */
 char *background = NULL; /* background story     */
-char *handbook = NULL; /* handbook for new immortals   */
+char *handbook = NULL;   /* handbook for new immortals   */
 char *policies = NULL;
 char *namepol = NULL; /* policies page     */
 char *signoff = NULL; /* signoff message     */
-char *quest = NULL; /* quest runners     */
+char *quest = NULL;   /* quest runners     */
 
-struct help_index_element *help_index = 0; /* the help table*/
+struct help_index_element *help_index = 0;     /* the help table*/
 struct help_index_element *wiz_help_index = 0; /* the help table*/
-int top_of_helpt; /* top of help index table   */
-int top_of_wiz_helpt; /* top of wiz_help index table   */
-int max_players = 0; /* max players so far     */
-int numspells = 0; /* holds the number of spells read */
-int NumSpellsDefined = 0; /* number of spells/skills in spells file */
+int top_of_helpt;                              /* top of help index table   */
+int top_of_wiz_helpt;                          /* top of wiz_help index table   */
+int max_players = 0;                           /* max players so far     */
+int numspells = 0;                             /* holds the number of spells read */
+int NumSpellsDefined = 0;                      /* number of spells/skills in spells file */
 
 int death_count = 0;
 
-struct time_info_data time_info;/* the infomation about the time    */
-struct reset_q_type reset_q; /* queue of zones to be reset   */
+struct time_info_data time_info; /* the infomation about the time    */
+struct reset_q_type reset_q;     /* queue of zones to be reset   */
 struct player_special_data dummy_mob;
 struct spell_info_type *spells;
 
 /* local functions */
 void load_spells(void);
-void setup_dir(FILE * fl, int room, int dir);
+void setup_dir(FILE *fl, int room, int dir);
 void index_boot(int mode);
-void discrete_load(FILE * fl, int mode);
-void parse_room(FILE * fl, int virtual_nr);
-void parse_mobile(FILE * mob_f, int nr);
-char *parse_object(FILE * obj_f, int nr);
-void load_zones(FILE * fl, char *zonename);
+void discrete_load(FILE *fl, int mode);
+void parse_room(FILE *fl, int virtual_nr);
+void parse_mobile(FILE *mob_f, int nr);
+char *parse_object(FILE *obj_f, int nr);
+void load_zones(FILE *fl, char *zonename);
 void assign_mobiles(void);
 void assign_objects(void);
 void assign_rooms(void);
@@ -152,7 +152,7 @@ void renum_world(void);
 void renum_zone_table(void);
 void log_zone_error(int zone, int cmd_no, char *message);
 void reset_time(void);
-void clear_char(struct char_data * ch);
+void clear_char(struct char_data *ch);
 void parse_pline(char *line, char *field, char *value);
 
 /* external functions */
@@ -161,11 +161,11 @@ void load_messages(void);
 void weather_and_time(int mode);
 void boot_social_messages(void);
 void update_obj_file(void); /* In objsave.c */
-void load_auction(void); /* In auction.c */
-void load_qic(void); /* In qic.c */
+void load_auction(void);    /* In auction.c */
+void load_qic(void);        /* In qic.c */
 void load_banned(void);
 void Read_Invalid_List(void);
-void boot_the_shops(FILE * shop_f, char *filename, int rec_count);
+void boot_the_shops(FILE *shop_f, char *filename, int rec_count);
 struct help_index_element *build_help_index(int *num, int type);
 
 /*************************************************************************
@@ -173,14 +173,12 @@ struct help_index_element *build_help_index(int *num, int type);
  *********************************************************************** */
 
 /* this is necessary for the autowiz system */
-void reboot_wizlists(void)
-{
+void reboot_wizlists(void) {
   file_to_string_alloc(WIZLIST_FILE, &wizlist);
   file_to_string_alloc(IMMLIST_FILE, &immlist);
 }
 
-ACMD(do_reboot)
-{
+ACMD(do_reboot) {
   int i;
   one_argument(argument, arg);
 
@@ -274,8 +272,7 @@ ACMD(do_reboot)
 }
 
 /* body of the booting system */
-void boot_db(void)
-{
+void boot_db(void) {
   int i;
   extern int no_specials;
 
@@ -402,7 +399,8 @@ void boot_db(void)
   update_log_file();
 
   for (i = 0; i <= top_of_zone_table; i++) {
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "Resetting %s (rooms %d-%d).", zone_table[i].name, (i ? (zone_table[i].bottom) : 0), zone_table[i].top);
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "Resetting %s (rooms %d-%d).", zone_table[i].name,
+                  (i ? (zone_table[i].bottom) : 0), zone_table[i].top);
     stderr_log(buf2);
     reset_zone(i);
   }
@@ -414,24 +412,22 @@ void boot_db(void)
   MOBTrigger = TRUE;
 
   stderr_log("Boot db -- DONE.");
-
 }
 
 /* reset the time in the game from file */
-void reset_time(void)
-{
+void reset_time(void) {
   long beginning_of_time = 650336715;
   struct time_info_data mud_time_passed(time_t t2, time_t t1);
 
   time_info = mud_time_passed(time(0), beginning_of_time);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "   Current Gametime: %dH %dD %dM %dY.", time_info.hours, time_info.day, time_info.month, time_info.year);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "   Current Gametime: %dH %dD %dM %dY.", time_info.hours, time_info.day,
+                time_info.month, time_info.year);
   stderr_log(buf);
 }
 
 /* function to count how many hash-mark delimited records exist in a file */
-int count_hash_records(FILE * fl)
-{
+int count_hash_records(FILE *fl) {
   char buf[128];
   int count = 0;
 
@@ -442,36 +438,35 @@ int count_hash_records(FILE * fl)
   return count;
 }
 
-void index_boot(int mode)
-{
+void index_boot(int mode) {
   char *index_filename, *prefix;
   FILE *index, *db_file;
   int rec_count = 0;
 
   switch (mode) {
-    case DB_BOOT_WLD:
-      prefix = WLD_PREFIX;
-      break;
-    case DB_BOOT_MOB:
-      prefix = MOB_PREFIX;
-      break;
-    case DB_BOOT_OBJ:
-      prefix = OBJ_PREFIX;
-      break;
-    case DB_BOOT_ZON:
-      prefix = ZON_PREFIX;
-      break;
-    case DB_BOOT_SHP:
-      prefix = SHP_PREFIX;
-      break;
-    case DB_BOOT_QST:
-      prefix = QST_PREFIX;
-      break;
-    default:
-      stderr_log("SYSERR: Unknown subcommand to index_boot!");
-      fflush(NULL);
-      exit(1);
-      break;
+  case DB_BOOT_WLD:
+    prefix = WLD_PREFIX;
+    break;
+  case DB_BOOT_MOB:
+    prefix = MOB_PREFIX;
+    break;
+  case DB_BOOT_OBJ:
+    prefix = OBJ_PREFIX;
+    break;
+  case DB_BOOT_ZON:
+    prefix = ZON_PREFIX;
+    break;
+  case DB_BOOT_SHP:
+    prefix = SHP_PREFIX;
+    break;
+  case DB_BOOT_QST:
+    prefix = QST_PREFIX;
+    break;
+  default:
+    stderr_log("SYSERR: Unknown subcommand to index_boot!");
+    fflush(NULL);
+    exit(1);
+    break;
   }
 
   if (mini_mud)
@@ -514,23 +509,23 @@ void index_boot(int mode)
   rec_count++;
 
   switch (mode) {
-    case DB_BOOT_WLD:
-      CREATE(world, struct room_data, rec_count);
-      break;
-    case DB_BOOT_MOB:
-      CREATE(mob_proto, struct char_data, rec_count);
-      CREATE(mob_index, struct index_data, rec_count);
-      break;
-    case DB_BOOT_OBJ:
-      CREATE(obj_proto, struct obj_data, rec_count);
-      CREATE(obj_index, struct index_data, rec_count);
-      break;
-    case DB_BOOT_ZON:
-      CREATE(zone_table, struct zone_data, rec_count);
-      break;
-    case DB_BOOT_QST:
-      CREATE(mob_quests, struct quest_data, rec_count + 1);
-      break;
+  case DB_BOOT_WLD:
+    CREATE(world, struct room_data, rec_count);
+    break;
+  case DB_BOOT_MOB:
+    CREATE(mob_proto, struct char_data, rec_count);
+    CREATE(mob_index, struct index_data, rec_count);
+    break;
+  case DB_BOOT_OBJ:
+    CREATE(obj_proto, struct obj_data, rec_count);
+    CREATE(obj_index, struct index_data, rec_count);
+    break;
+  case DB_BOOT_ZON:
+    CREATE(zone_table, struct zone_data, rec_count);
+    break;
+  case DB_BOOT_QST:
+    CREATE(mob_quests, struct quest_data, rec_count + 1);
+    break;
   }
 
   rewind(index);
@@ -543,18 +538,18 @@ void index_boot(int mode)
       exit(1);
     }
     switch (mode) {
-      case DB_BOOT_WLD:
-      case DB_BOOT_OBJ:
-      case DB_BOOT_MOB:
-      case DB_BOOT_QST:
-        discrete_load(db_file, mode);
-        break;
-      case DB_BOOT_ZON:
-        load_zones(db_file, buf2);
-        break;
-      case DB_BOOT_SHP:
-        boot_the_shops(db_file, buf2, rec_count);
-        break;
+    case DB_BOOT_WLD:
+    case DB_BOOT_OBJ:
+    case DB_BOOT_MOB:
+    case DB_BOOT_QST:
+      discrete_load(db_file, mode);
+      break;
+    case DB_BOOT_ZON:
+      load_zones(db_file, buf2);
+      break;
+    case DB_BOOT_SHP:
+      boot_the_shops(db_file, buf2, rec_count);
+      break;
     }
 
     fclose(db_file);
@@ -564,11 +559,9 @@ void index_boot(int mode)
   new_top_objt = top_of_objt;
   new_top_mobt = top_of_mobt;
   fclose(index);
-
 }
 
-void discrete_load(FILE * fl, int mode)
-{
+void discrete_load(FILE *fl, int mode) {
   int nr = -1, last = 0;
   char line[256];
 
@@ -599,18 +592,18 @@ void discrete_load(FILE * fl, int mode)
         return;
       else
         switch (mode) {
-          case DB_BOOT_WLD:
-            parse_room(fl, nr);
-            break;
-          case DB_BOOT_MOB:
-            parse_mobile(fl, nr);
-            break;
-          case DB_BOOT_QST:
-            parse_quest(fl, nr);
-            break;
-          case DB_BOOT_OBJ:
-            safe_snprintf(line, sizeof(line), "%s", parse_object(fl, nr));
-            break;
+        case DB_BOOT_WLD:
+          parse_room(fl, nr);
+          break;
+        case DB_BOOT_MOB:
+          parse_mobile(fl, nr);
+          break;
+        case DB_BOOT_QST:
+          parse_quest(fl, nr);
+          break;
+        case DB_BOOT_OBJ:
+          safe_snprintf(line, sizeof(line), "%s", parse_object(fl, nr));
+          break;
         }
     } else {
       /*      fprintf(stderr, "Format error in %s file near %s #%d\n",
@@ -622,8 +615,7 @@ void discrete_load(FILE * fl, int mode)
   }
 }
 
-long asciiflag_conv(char *flag)
-{
+long asciiflag_conv(char *flag) {
   long flags = 0;
   int is_number = 1;
   register char *p;
@@ -645,8 +637,7 @@ long asciiflag_conv(char *flag)
 }
 
 /* load the rooms */
-void parse_room(FILE * fl, int virtual_nr)
-{
+void parse_room(FILE *fl, int virtual_nr) {
   static int room_nr = 0, zone = 0;
   int t[10], i;
   char line[256], flags[128];
@@ -700,35 +691,34 @@ void parse_room(FILE * fl, int virtual_nr)
       exit(1);
     }
     switch (*line) {
-      case 'D':
-        setup_dir(fl, room_nr, atoi(line + 1));
-        break;
-      case 'E':
-        CREATE(new_descr, struct extra_descr_data, 1);
-        new_descr->keyword = fread_string(fl, buf2);
-        new_descr->description = fread_string(fl, buf2);
-        new_descr->next = world[room_nr].ex_description;
-        world[room_nr].ex_description = new_descr;
-        break;
-      case 'S': /* end of room */
-        top_of_world = room_nr++;
-        return;
-      case '#':
-        top_of_world = room_nr++;
-        unget_line(fl);
-        return;
-      default:
-        fprintf(stderr, "%s\n", buf);
-        fflush(NULL);
-        exit(1);
-        break;
+    case 'D':
+      setup_dir(fl, room_nr, atoi(line + 1));
+      break;
+    case 'E':
+      CREATE(new_descr, struct extra_descr_data, 1);
+      new_descr->keyword = fread_string(fl, buf2);
+      new_descr->description = fread_string(fl, buf2);
+      new_descr->next = world[room_nr].ex_description;
+      world[room_nr].ex_description = new_descr;
+      break;
+    case 'S': /* end of room */
+      top_of_world = room_nr++;
+      return;
+    case '#':
+      top_of_world = room_nr++;
+      unget_line(fl);
+      return;
+    default:
+      fprintf(stderr, "%s\n", buf);
+      fflush(NULL);
+      exit(1);
+      break;
     }
   }
 }
 
 /* read direction data */
-void setup_dir(FILE * fl, int room, int dir)
-{
+void setup_dir(FILE *fl, int room, int dir) {
   int ctr;
   int t[5];
   char line[256];
@@ -765,8 +755,7 @@ void setup_dir(FILE * fl, int room, int dir)
 }
 
 /* make sure the start rooms exist & resolve their vnums to rnums */
-void check_start_rooms(void)
-{
+void check_start_rooms(void) {
   extern sh_int mortal_start_room;
   extern sh_int immort_start_room;
   extern sh_int frozen_start_room;
@@ -789,8 +778,7 @@ void check_start_rooms(void)
 }
 
 /* resolve all vnums into rnums in the world */
-void renum_world(void)
-{
+void renum_world(void) {
   register int room, door;
 
   /* before renumbering the exits, copy them to to_room_vnum */
@@ -807,40 +795,39 @@ void renum_world(void)
 #define ZCMD zone_table[zone].cmd[cmd_no]
 
 /* resulve vnums into rnums in the zone reset tables */
-void renum_zone_table(void)
-{
+void renum_zone_table(void) {
   int zone, cmd_no, a, b;
 
   for (zone = 0; zone <= top_of_zone_table; zone++) {
     for (cmd_no = 0; ZCMD.command != 'S'; cmd_no++) {
       a = b = 0;
       switch (ZCMD.command) {
-        case 'M':
-          a = ZCMD.arg1 = real_mobile(ZCMD.arg1);
+      case 'M':
+        a = ZCMD.arg1 = real_mobile(ZCMD.arg1);
+        b = ZCMD.arg3 = real_room(ZCMD.arg3);
+        break;
+      case 'O':
+        a = ZCMD.arg1 = real_object(ZCMD.arg1);
+        if (ZCMD.arg3 != NOWHERE)
           b = ZCMD.arg3 = real_room(ZCMD.arg3);
-          break;
-        case 'O':
-          a = ZCMD.arg1 = real_object(ZCMD.arg1);
-          if (ZCMD.arg3 != NOWHERE)
-            b = ZCMD.arg3 = real_room(ZCMD.arg3);
-          break;
-        case 'G':
-          a = ZCMD.arg1 = real_object(ZCMD.arg1);
-          break;
-        case 'E':
-          a = ZCMD.arg1 = real_object(ZCMD.arg1);
-          break;
-        case 'P':
-          a = ZCMD.arg1 = real_object(ZCMD.arg1);
-          b = ZCMD.arg3 = real_object(ZCMD.arg3);
-          break;
-        case 'R': /* rem obj from room */
-          a = ZCMD.arg1 = real_room(ZCMD.arg1);
-          b = ZCMD.arg2 = real_object(ZCMD.arg2);
-          break;
-        case 'D':
-          a = ZCMD.arg1 = real_room(ZCMD.arg1);
-          break;
+        break;
+      case 'G':
+        a = ZCMD.arg1 = real_object(ZCMD.arg1);
+        break;
+      case 'E':
+        a = ZCMD.arg1 = real_object(ZCMD.arg1);
+        break;
+      case 'P':
+        a = ZCMD.arg1 = real_object(ZCMD.arg1);
+        b = ZCMD.arg3 = real_object(ZCMD.arg3);
+        break;
+      case 'R': /* rem obj from room */
+        a = ZCMD.arg1 = real_room(ZCMD.arg1);
+        b = ZCMD.arg2 = real_object(ZCMD.arg2);
+        break;
+      case 'D':
+        a = ZCMD.arg1 = real_room(ZCMD.arg1);
+        break;
       }
 
       if (a < 0 || b < 0) {
@@ -856,8 +843,7 @@ void renum_zone_table(void)
   }
 }
 
-char fread_letter(FILE *fp)
-{
+char fread_letter(FILE *fp) {
   char c;
   do {
     c = getc(fp);
@@ -865,8 +851,7 @@ char fread_letter(FILE *fp)
   return c;
 }
 
-void parse_simple_mob(FILE *mob_f, int i, int nr)
-{
+void parse_simple_mob(FILE *mob_f, int i, int nr) {
   int t[10], j;
   char line[256];
   struct mob_attacks_data *new_attack;
@@ -880,8 +865,10 @@ void parse_simple_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %dd%d+%d %dd%d+%d ", t, t + 1, t + 2, t + 3, t + 4, t + 5, t + 6, t + 7, t + 8) != 9) {
-    fprintf(stderr, "Format error in mob #%d, first line after S flag\n"
-        "...expecting line of form '# # # #d#+# #d#+#'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after S flag\n"
+            "...expecting line of form '# # # #d#+# #d#+#'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -941,11 +928,9 @@ void parse_simple_mob(FILE *mob_f, int i, int nr)
    */
   for (j = 0; j < 5; j++)
     GET_SAVE(mob_proto + i, j) = 0;
-
 }
 
-void parse_another_mob(FILE * mob_f, int i, int nr)
-{
+void parse_another_mob(FILE *mob_f, int i, int nr) {
   int j, t[10], tmp;
   char line[256], letter;
   struct mob_attacks_data *new_attack;
@@ -959,8 +944,10 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %dd%d+%d %dd%d+%d ", t, t + 1, t + 2, t + 3, t + 4, t + 5, t + 6, t + 7, t + 8) != 9) {
-    fprintf(stderr, "Format error in mob #%d, first line after A flag\n"
-        "...expecting line of form '# # # #d#+# #d#+#'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after A flag\n"
+            "...expecting line of form '# # # #d#+# #d#+#'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -1037,7 +1024,6 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
     new_attack->attack_type = t[4];
     new_attack->next = mob_proto[i].mob_specials.mob_attacks;
     mob_proto[i].mob_specials.mob_attacks = new_attack;
-
   };
 
   mob_proto[i].player.weight = 200;
@@ -1052,7 +1038,6 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
    */
   for (j = 0; j < 5; j++)
     GET_SAVE(mob_proto + i, j) = 0;
-
 }
 
 /*
@@ -1062,11 +1047,10 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
  * function!  No other changes need to be made anywhere in the code.
  */
 
-#define CASE(test) if (!matched && !str_cmp(keyword, test) && (matched = 1))
+#define CASE(test)       if (!matched && !str_cmp(keyword, test) && (matched = 1))
 #define RANGE(low, high) (num_arg = BOUNDED((low), (num_arg), (high)))
 
-void interpret_espec(char *keyword, char *value, int i, int nr)
-{
+void interpret_espec(char *keyword, char *value, int i, int nr) {
   int num_arg, matched = 0;
 
   num_arg = atoi(value);
@@ -1109,7 +1093,6 @@ void interpret_espec(char *keyword, char *value, int i, int nr)
   CASE("Gold") {
     RANGE(0, 10000000);
     GET_TEMP_GOLD(mob_proto + i) = num_arg;
-
   }
 
   CASE("Exp") {
@@ -1205,8 +1188,7 @@ void interpret_espec(char *keyword, char *value, int i, int nr)
 #undef CASE
 #undef RANGE
 
-void parse_espec(char *buf, int i, int nr)
-{
+void parse_espec(char *buf, int i, int nr) {
   char *ptr;
 
   if ((ptr = strchr(buf, ':')) != NULL) {
@@ -1219,8 +1201,7 @@ void parse_espec(char *buf, int i, int nr)
   interpret_espec(buf, ptr, i, nr);
 }
 
-void parse_enhanced_mob(FILE *mob_f, int i, int nr)
-{
+void parse_enhanced_mob(FILE *mob_f, int i, int nr) {
   char line[256];
 
   parse_simple_mob(mob_f, i, nr);
@@ -1241,8 +1222,7 @@ void parse_enhanced_mob(FILE *mob_f, int i, int nr)
   exit(1);
 }
 
-void parse_extensions(FILE *mob_f, int i, int nr)
-{
+void parse_extensions(FILE *mob_f, int i, int nr) {
   struct mob_attacks_data *new_attack;
   struct mob_equipment_data *new_equip;
   struct mob_action_data *new_action;
@@ -1252,7 +1232,7 @@ void parse_extensions(FILE *mob_f, int i, int nr)
 
   while (get_line(mob_f, line)) {
     if (*line == '#' || *line == '>') { /* end of extension fields */
-      unget_line(mob_f); /* unget the line.. arhem? */
+      unget_line(mob_f);                /* unget the line.. arhem? */
       return;
     }
     if (line[0] == 'T' && line[1] == ' ') { /* parse attacks field */
@@ -1317,11 +1297,9 @@ void parse_extensions(FILE *mob_f, int i, int nr)
       parse_espec(line, i, nr);
   }
   return; /* end of file */
-
 }
 
-void parse_balanced_mob(FILE *mob_f, int i, int nr)
-{
+void parse_balanced_mob(FILE *mob_f, int i, int nr) {
   int t[10], j;
   char line[256];
   struct mob_attacks_data *new_attack;
@@ -1335,8 +1313,10 @@ void parse_balanced_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %d ", t, t + 1, t + 2, t + 3) != 4) {
-    fprintf(stderr, "Format error in mob #%d, first line after B flag\n"
-        "...expecting line of form '# # # #'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after B flag\n"
+            "...expecting line of form '# # # #'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -1386,11 +1366,9 @@ void parse_balanced_mob(FILE *mob_f, int i, int nr)
 
   for (j = 0; j < 5; j++)
     GET_SAVE(mob_proto + i, j) = 0;
-
 }
 
-void parse_extended_mob(FILE *mob_f, int i, int nr)
-{
+void parse_extended_mob(FILE *mob_f, int i, int nr) {
   int t[10], j;
   char line[256];
   struct mob_attacks_data *new_attack;
@@ -1404,8 +1382,10 @@ void parse_extended_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %dd%d+%d", t, t + 1, t + 2, t + 3, t + 4, t + 5) != 6) {
-    fprintf(stderr, "Format error in mob #%d, first line after X flag\n"
-        "...expecting line of form '# # # #d#+#'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after X flag\n"
+            "...expecting line of form '# # # #d#+#'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -1440,8 +1420,10 @@ void parse_extended_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %d %d %d ", t, t + 1, t + 2, t + 3, t + 4, t + 5) != 6) {
-    fprintf(stderr, "Format error in mob #%d, third line after X flag\n"
-        "...expecting line of form '# # # # # #'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, third line after X flag\n"
+            "...expecting line of form '# # # # # #'\n",
+            nr);
   }
 
   mob_proto[i].char_specials.position = t[0];
@@ -1473,17 +1455,15 @@ void parse_extended_mob(FILE *mob_f, int i, int nr)
     /* new combat system */
     new_attack->next = mob_proto[i].mob_specials.mob_attacks;
     mob_proto[i].mob_specials.mob_attacks = new_attack;
-    new_attack->nodice = balance_table[(int) GET_LEVEL(mob_proto + i)].dam_dicenum;
-    new_attack->sizedice = balance_table[(int) GET_LEVEL(mob_proto + i)].dam_dicesize;
-    new_attack->damroll = balance_table[(int) GET_LEVEL(mob_proto + i)].dam_add;
+    new_attack->nodice = balance_table[(int)GET_LEVEL(mob_proto + i)].dam_dicenum;
+    new_attack->sizedice = balance_table[(int)GET_LEVEL(mob_proto + i)].dam_dicesize;
+    new_attack->damroll = balance_table[(int)GET_LEVEL(mob_proto + i)].dam_add;
     new_attack->attack_type = 0;
     new_attack->attacks = 100;
   }
-
 }
 
-void parse_mobile(FILE * mob_f, int nr)
-{
+void parse_mobile(FILE *mob_f, int nr) {
   static int i = 0;
   int g, j, t[10];
   char line[256], *tmpptr, letter;
@@ -1527,26 +1507,26 @@ void parse_mobile(FILE * mob_f, int nr)
     GET_MOB_INVIS_LEV(mob_proto + i) = 51;
 
   switch (letter) {
-    case 'S': /* Simple monsters */
-      parse_simple_mob(mob_f, i, nr);
-      break;
-    case 'A': /* ShadowWind monsters */
-      parse_another_mob(mob_f, i, nr);
-      break;
-    case 'E': /* CircleMUD 3.00 E-Spec monsters */
-      parse_enhanced_mob(mob_f, i, nr);
-      break;
-    case 'B': /* Balanced ShadowWind extended monsters */
-      parse_balanced_mob(mob_f, i, nr);
-      break;
-    case 'X': /* Standard ShadowWind extended monsters */
-      parse_extended_mob(mob_f, i, nr);
-      break;
-    default:
-      fprintf(stderr, "Unsupported mob type %c in mob #%d\n", letter, nr);
-      fflush(NULL);
-      exit(1);
-      break;
+  case 'S': /* Simple monsters */
+    parse_simple_mob(mob_f, i, nr);
+    break;
+  case 'A': /* ShadowWind monsters */
+    parse_another_mob(mob_f, i, nr);
+    break;
+  case 'E': /* CircleMUD 3.00 E-Spec monsters */
+    parse_enhanced_mob(mob_f, i, nr);
+    break;
+  case 'B': /* Balanced ShadowWind extended monsters */
+    parse_balanced_mob(mob_f, i, nr);
+    break;
+  case 'X': /* Standard ShadowWind extended monsters */
+    parse_extended_mob(mob_f, i, nr);
+    break;
+  default:
+    fprintf(stderr, "Unsupported mob type %c in mob #%d\n", letter, nr);
+    fflush(NULL);
+    exit(1);
+    break;
   }
 
   mob_proto[i].aff_abils = mob_proto[i].real_abils;
@@ -1560,7 +1540,7 @@ void parse_mobile(FILE * mob_f, int nr)
   letter = fread_letter(mob_f);
   if (letter == '>') {
     ungetc(letter, mob_f);
-    (void) mprog_read_programs(mob_f, &mob_index[i]);
+    (void)mprog_read_programs(mob_f, &mob_index[i]);
   } else
     ungetc(letter, mob_f);
 
@@ -1568,8 +1548,7 @@ void parse_mobile(FILE * mob_f, int nr)
 }
 
 /* read all objects from obj file; generate index and prototypes */
-char *parse_object(FILE * obj_f, int nr)
-{
+char *parse_object(FILE *obj_f, int nr) {
   static int i = 0;
   int spellnum = 1;
   static char line[256];
@@ -1623,46 +1602,46 @@ char *parse_object(FILE * obj_f, int nr)
   obj_proto[i].obj_flags.wear_slots = asciiflag_conv(f3);
 
   if (temp == 3) {
-    GET_OBJ_SLOTS(obj_proto +i) = 0;
+    GET_OBJ_SLOTS(obj_proto + i) = 0;
     temp = GET_OBJ_WEAR(obj_proto + i);
     REMOVE_BIT(temp, ITEM_WEAR_TAKE);
     switch (temp) {
-      case ITEM_WEAR_BADGE:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_BADGE;
-        break;
-      case ITEM_WEAR_BODY:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_BODY;
-        break;
-      case ITEM_WEAR_HEAD:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_HEAD;
-        break;
-      case ITEM_WEAR_LEGS:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_LEGS;
-        break;
-      case ITEM_WEAR_FEET:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_FEET;
-        break;
-      case ITEM_WEAR_HANDS:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_HANDS;
-        break;
-      case ITEM_WEAR_ARMS:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_ARMS;
-        break;
-      case ITEM_WEAR_SHIELD:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_SHIELD;
-        break;
-      case ITEM_WEAR_ABOUT:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_ABOUT;
-        break;
-      case ITEM_WEAR_FACE:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_FACE;
-        break;
-      case ITEM_WEAR_EYES:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_EYES;
-        break;
-      case ITEM_WEAR_2HANDED:
-        GET_OBJ_SLOTS(obj_proto + i) = WORN_2HANDED | WORN_WIELD | WORN_WIELD_2 | WORN_HOLD | WORN_HOLD_2 | WORN_SHIELD;
-        break;
+    case ITEM_WEAR_BADGE:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_BADGE;
+      break;
+    case ITEM_WEAR_BODY:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_BODY;
+      break;
+    case ITEM_WEAR_HEAD:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_HEAD;
+      break;
+    case ITEM_WEAR_LEGS:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_LEGS;
+      break;
+    case ITEM_WEAR_FEET:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_FEET;
+      break;
+    case ITEM_WEAR_HANDS:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_HANDS;
+      break;
+    case ITEM_WEAR_ARMS:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_ARMS;
+      break;
+    case ITEM_WEAR_SHIELD:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_SHIELD;
+      break;
+    case ITEM_WEAR_ABOUT:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_ABOUT;
+      break;
+    case ITEM_WEAR_FACE:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_FACE;
+      break;
+    case ITEM_WEAR_EYES:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_EYES;
+      break;
+    case ITEM_WEAR_2HANDED:
+      GET_OBJ_SLOTS(obj_proto + i) = WORN_2HANDED | WORN_WIELD | WORN_WIELD_2 | WORN_HOLD | WORN_HOLD_2 | WORN_SHIELD;
+      break;
     }
   }
   if (!get_line(obj_f, line)) {
@@ -1714,7 +1693,8 @@ char *parse_object(FILE * obj_f, int nr)
     obj_proto[i].resists[j] = 0;
   }
 
-  safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s", ", after numeric constants (expecting E/A/#xxx)");
+  safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%s",
+                ", after numeric constants (expecting E/A/#xxx)");
   j = 0;
 
   spellnum = 1;
@@ -1724,98 +1704,98 @@ char *parse_object(FILE * obj_f, int nr)
       return line;
     }
     switch (*line) {
-      case 'B':
-        get_line(obj_f, line);
-        sscanf(line, "%s", f1);
-        obj_proto[i].obj_flags.bitvector = asciiflag_conv(f1); /*sets AFF flags*/
-        break;
-      case 'C':
-        get_line(obj_f, line);
-        sscanf(line, "%s", f1);
-        obj_proto[i].obj_flags.bitvector2 = asciiflag_conv(f1); /*sets AFF2 flags*/
-        break;
-      case 'S':
-        get_line(obj_f, line);
-        sscanf(line, " %d %d %d ", t, t + 1, t + 2);
-        obj_proto[i].spec_vars[0] = t[0];
-        obj_proto[i].spec_vars[1] = t[1];
-        obj_proto[i].spec_vars[2] = t[2];
-        break;
-      case 'E':
-        CREATE(new_descr, struct extra_descr_data, 1);
-        new_descr->keyword = fread_string(obj_f, buf2);
-        new_descr->description = fread_string(obj_f, buf2);
-        new_descr->next = obj_proto[i].ex_description;
-        obj_proto[i].ex_description = new_descr;
-        break;
-      case 'A':
-        if (j >= MAX_OBJ_AFFECT) {
-          fprintf(stderr, "Too many A fields: %d max, %s\n", MAX_OBJ_AFFECT, buf2);
-          fflush(NULL);
-          exit(1);
-        }
-        get_line(obj_f, line);
-        sscanf(line, " %d %d ", t, t + 1);
-        obj_proto[i].affected[j].location = t[0];
-        obj_proto[i].affected[j].modifier = t[1];
-        j++;
-        break;
-      case 'R':
-        get_line(obj_f, line);
-        sscanf(line, " %d %d ", &rtype, &ramt);
-        if (rtype <= 0 || rtype > MAX_DAM_TYPE) {
-          fprintf(stderr, "Invalid resist field (%d max type), %s\n", MAX_DAM_TYPE, buf2);
-          fflush(NULL);
-          exit(1);
-        }
-        obj_proto[i].resists[rtype] = ramt;
-        break;
-      case 'P':
-        get_line(obj_f, line);
-        if (((GET_OBJ_TYPE(obj_proto + i) == ITEM_POTION) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_SCROLL)) && spellnum > 3)
-          break;
-        if (((GET_OBJ_TYPE(obj_proto + i) == ITEM_WAND) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_STAFF)) && spellnum > 1)
-          break;
-        if ((GET_OBJ_TYPE(obj_proto + i) == ITEM_POTION) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_SCROLL)) {
-          aspell = find_spell_num(line);
-          if (aspell < 0) {
-            safe_snprintf(abuff, sizeof(abuff), "OBJ# %d: Invalid spell field (%s)", nr, line);
-            stderr_log(abuff);
-            GET_OBJ_VAL(obj_proto + i, spellnum) = 0;
-          } else {
-            GET_OBJ_VAL(obj_proto + i, spellnum) = spells[aspell].spellindex;
-          }
-        }
-        if ((GET_OBJ_TYPE(obj_proto + i) == ITEM_WAND) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_STAFF)) {
-          aspell = find_spell_num(line);
-          if (aspell < 0) {
-            safe_snprintf(abuff, sizeof(abuff), "OBJ# %d: Invalid spell field (%s)", nr, line);
-            stderr_log(abuff);
-            GET_OBJ_VAL(obj_proto + i, 3) = 0;
-          } else {
-            GET_OBJ_VAL(obj_proto + i, 3) = spells[aspell].spellindex;
-          }
-        }
-        spellnum++;
-        break;
-      case '$':
-      case '#':
-        top_of_objt = i++;
-        return line;
-      default:
-        fprintf(stderr, "Format error in %s\n", buf2);
+    case 'B':
+      get_line(obj_f, line);
+      sscanf(line, "%s", f1);
+      obj_proto[i].obj_flags.bitvector = asciiflag_conv(f1); /*sets AFF flags*/
+      break;
+    case 'C':
+      get_line(obj_f, line);
+      sscanf(line, "%s", f1);
+      obj_proto[i].obj_flags.bitvector2 = asciiflag_conv(f1); /*sets AFF2 flags*/
+      break;
+    case 'S':
+      get_line(obj_f, line);
+      sscanf(line, " %d %d %d ", t, t + 1, t + 2);
+      obj_proto[i].spec_vars[0] = t[0];
+      obj_proto[i].spec_vars[1] = t[1];
+      obj_proto[i].spec_vars[2] = t[2];
+      break;
+    case 'E':
+      CREATE(new_descr, struct extra_descr_data, 1);
+      new_descr->keyword = fread_string(obj_f, buf2);
+      new_descr->description = fread_string(obj_f, buf2);
+      new_descr->next = obj_proto[i].ex_description;
+      obj_proto[i].ex_description = new_descr;
+      break;
+    case 'A':
+      if (j >= MAX_OBJ_AFFECT) {
+        fprintf(stderr, "Too many A fields: %d max, %s\n", MAX_OBJ_AFFECT, buf2);
         fflush(NULL);
         exit(1);
+      }
+      get_line(obj_f, line);
+      sscanf(line, " %d %d ", t, t + 1);
+      obj_proto[i].affected[j].location = t[0];
+      obj_proto[i].affected[j].modifier = t[1];
+      j++;
+      break;
+    case 'R':
+      get_line(obj_f, line);
+      sscanf(line, " %d %d ", &rtype, &ramt);
+      if (rtype <= 0 || rtype > MAX_DAM_TYPE) {
+        fprintf(stderr, "Invalid resist field (%d max type), %s\n", MAX_DAM_TYPE, buf2);
+        fflush(NULL);
+        exit(1);
+      }
+      obj_proto[i].resists[rtype] = ramt;
+      break;
+    case 'P':
+      get_line(obj_f, line);
+      if (((GET_OBJ_TYPE(obj_proto + i) == ITEM_POTION) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_SCROLL)) &&
+          spellnum > 3)
         break;
+      if (((GET_OBJ_TYPE(obj_proto + i) == ITEM_WAND) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_STAFF)) && spellnum > 1)
+        break;
+      if ((GET_OBJ_TYPE(obj_proto + i) == ITEM_POTION) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_SCROLL)) {
+        aspell = find_spell_num(line);
+        if (aspell < 0) {
+          safe_snprintf(abuff, sizeof(abuff), "OBJ# %d: Invalid spell field (%s)", nr, line);
+          stderr_log(abuff);
+          GET_OBJ_VAL(obj_proto + i, spellnum) = 0;
+        } else {
+          GET_OBJ_VAL(obj_proto + i, spellnum) = spells[aspell].spellindex;
+        }
+      }
+      if ((GET_OBJ_TYPE(obj_proto + i) == ITEM_WAND) || (GET_OBJ_TYPE(obj_proto + i) == ITEM_STAFF)) {
+        aspell = find_spell_num(line);
+        if (aspell < 0) {
+          safe_snprintf(abuff, sizeof(abuff), "OBJ# %d: Invalid spell field (%s)", nr, line);
+          stderr_log(abuff);
+          GET_OBJ_VAL(obj_proto + i, 3) = 0;
+        } else {
+          GET_OBJ_VAL(obj_proto + i, 3) = spells[aspell].spellindex;
+        }
+      }
+      spellnum++;
+      break;
+    case '$':
+    case '#':
+      top_of_objt = i++;
+      return line;
+    default:
+      fprintf(stderr, "Format error in %s\n", buf2);
+      fflush(NULL);
+      exit(1);
+      break;
     }
   }
 }
 
-#define Z  zone_table[zone]
+#define Z zone_table[zone]
 
 /* load the zone table and command tables */
-void load_zones(FILE * fl, char *zonename)
-{
+void load_zones(FILE *fl, char *zonename) {
   static int zone = 0;
   int cmd_no = 0, num_of_cmds = 0, line_num = 0, atmp, tmp, error, i;
   char *ptr, buf[256], zname[256], flags[128];
@@ -1868,35 +1848,40 @@ void load_zones(FILE * fl, char *zonename)
   }
   Z.climate.flags = asciiflag_conv(flags);
   line_num += get_line(fl, buf);
-  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_wind[0]), &(Z.climate.season_wind[1]), &(Z.climate.season_wind[2]), &(Z.climate.season_wind[3]));
+  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_wind[0]), &(Z.climate.season_wind[1]),
+             &(Z.climate.season_wind[2]), &(Z.climate.season_wind[3]));
   if (i != 4) {
     fprintf(stderr, "Format error in wind constant line - %s", zname);
     fflush(NULL);
     exit(0);
   }
   line_num += get_line(fl, buf);
-  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_wind_dir[0]), &(Z.climate.season_wind_dir[1]), &(Z.climate.season_wind_dir[2]), &(Z.climate.season_wind_dir[3]));
+  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_wind_dir[0]), &(Z.climate.season_wind_dir[1]),
+             &(Z.climate.season_wind_dir[2]), &(Z.climate.season_wind_dir[3]));
   if (i != 4) {
     fprintf(stderr, "Format error in wind_dir constant line - %s", zname);
     fflush(NULL);
     exit(0);
   }
   line_num += get_line(fl, buf);
-  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_wind_variance[0]), &(Z.climate.season_wind_variance[1]), &(Z.climate.season_wind_variance[2]), &(Z.climate.season_wind_variance[3]));
+  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_wind_variance[0]), &(Z.climate.season_wind_variance[1]),
+             &(Z.climate.season_wind_variance[2]), &(Z.climate.season_wind_variance[3]));
   if (i != 4) {
     fprintf(stderr, "Format error in wind_variance constant line - %s", zname);
     fflush(NULL);
     exit(0);
   }
   line_num += get_line(fl, buf);
-  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_precip[0]), &(Z.climate.season_precip[1]), &(Z.climate.season_precip[2]), &(Z.climate.season_precip[3]));
+  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_precip[0]), &(Z.climate.season_precip[1]),
+             &(Z.climate.season_precip[2]), &(Z.climate.season_precip[3]));
   if (i != 4) {
     fprintf(stderr, "Format error in precip constant line - %s", zname);
     fflush(NULL);
     exit(0);
   }
   line_num += get_line(fl, buf);
-  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_temp[0]), &(Z.climate.season_temp[1]), &(Z.climate.season_temp[2]), &(Z.climate.season_temp[3]));
+  i = sscanf(buf, " %d %d %d %d ", &(Z.climate.season_temp[0]), &(Z.climate.season_temp[1]),
+             &(Z.climate.season_temp[2]), &(Z.climate.season_temp[3]));
   if (i != 4) {
     fprintf(stderr, "Format error in temp constant line - %s", zname);
     fflush(NULL);
@@ -1956,8 +1941,7 @@ void load_zones(FILE * fl, char *zonename)
  *  procedures for resetting, both play-time and boot-time      *
  *********************************************************************** */
 
-int vnum_mobile(char *searchname, struct char_data * ch)
-{
+int vnum_mobile(char *searchname, struct char_data *ch) {
   int nr, found = 0;
   char mybuf[LARGE_BUFSIZE];
 
@@ -1982,7 +1966,8 @@ int vnum_mobile(char *searchname, struct char_data * ch)
         }
       }
       if (oktosee && zonenum != 0) {
-        safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found, mob_index[nr].virtual, mob_proto[nr].player.short_descr);
+        safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found,
+                      mob_index[nr].virtual, mob_proto[nr].player.short_descr);
       }
     }
   }
@@ -1990,8 +1975,7 @@ int vnum_mobile(char *searchname, struct char_data * ch)
   return (found);
 }
 
-int vnum_object(char *searchname, struct char_data * ch)
-{
+int vnum_object(char *searchname, struct char_data *ch) {
   int nr, found = 0;
   char mybuf[LARGE_BUFSIZE];
 
@@ -2016,7 +2000,8 @@ int vnum_object(char *searchname, struct char_data * ch)
         }
       }
       if (oktosee && zonenum != 0) {
-        safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
+        safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found,
+                      obj_index[nr].virtual, obj_proto[nr].short_description);
       }
     }
   }
@@ -2024,12 +2009,14 @@ int vnum_object(char *searchname, struct char_data * ch)
   return (found);
 }
 
-int vnum_type(char *searchtype, struct char_data * ch)
-{
+int vnum_type(char *searchtype, struct char_data *ch) {
   int nr, found = 0;
   int type;
   char mybuf[LARGE_BUFSIZE];
-  char *types[] = {"!RESERVED!", "light", "scroll", "wand", "staff", "weapon", "fireweapon", "missile", "treasure", "armor", "potion", "worn", "other", "trash", "trap", "container", "note", "drinkcontainer", "key", "food", "money", "pen", "boat", "fountain", "instrument", "badge", "\n"};
+  char *types[] = {"!RESERVED!", "light",     "scroll",   "wand",           "staff", "weapon", "fireweapon",
+                   "missile",    "treasure",  "armor",    "potion",         "worn",  "other",  "trash",
+                   "trap",       "container", "note",     "drinkcontainer", "key",   "food",   "money",
+                   "pen",        "boat",      "fountain", "instrument",     "badge", "\n"};
 
   mybuf[0] = '\0';
 
@@ -2038,8 +2025,9 @@ int vnum_type(char *searchtype, struct char_data * ch)
       break;
 
   for (nr = 0; nr <= top_of_objt; nr++) {
-    if (GET_OBJ_TYPE(obj_proto+nr) == type) {
-      safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found, obj_index[nr].virtual, obj_proto[nr].short_description);
+    if (GET_OBJ_TYPE(obj_proto + nr) == type) {
+      safe_snprintf(mybuf + strlen(mybuf), LARGE_BUFSIZE - strlen(mybuf), "%3d. [%5d] %s\r\n", ++found,
+                    obj_index[nr].virtual, obj_proto[nr].short_description);
     }
   }
   page_string(ch->desc, mybuf, 1);
@@ -2047,8 +2035,7 @@ int vnum_type(char *searchtype, struct char_data * ch)
 }
 
 /* create a character, and add it to the char list */
-struct char_data *create_char(void)
-{
+struct char_data *create_char(void) {
   struct char_data *ch;
 
   CREATE(ch, struct char_data, 1);
@@ -2060,8 +2047,7 @@ struct char_data *create_char(void)
 }
 
 /* create a new mobile from a prototype */
-struct char_data *read_mobile(int nr, int type)
-{
+struct char_data *read_mobile(int nr, int type) {
   int i, j;
   struct obj_data *obj;
   struct char_data *mob;
@@ -2117,19 +2103,20 @@ struct char_data *read_mobile(int nr, int type)
       if (mob_equip->pos < 0) {
         if (number(1, 99) <= mob_equip->chance) {
           if (mob_equip->rnum >= 0) {
-            if (obj_index[(int) mob_equip->rnum].number < mob_equip->max || mob_equip->max < 0) {
+            if (obj_index[(int)mob_equip->rnum].number < mob_equip->max || mob_equip->max < 0) {
               obj = read_object(mob_equip->rnum, REAL);
               if (obj)
                 obj_to_char(obj, mob);
             }
           } else {
-            safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: trying to equip mob with negative rnum (vnum=%d)!", mob_equip->vnum);
+            safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: trying to equip mob with negative rnum (vnum=%d)!",
+                          mob_equip->vnum);
             stderr_log(buf);
           }
         }
-      } else if (!mob->equipment[(int) mob_equip->pos]) {
+      } else if (!mob->equipment[(int)mob_equip->pos]) {
         if (number(1, 99) <= mob_equip->chance) {
-          if (obj_index[(int) mob_equip->rnum].number < mob_equip->max || mob_equip->max < 0) {
+          if (obj_index[(int)mob_equip->rnum].number < mob_equip->max || mob_equip->max < 0) {
             obj = read_object(mob_equip->rnum, REAL);
             if (obj)
               equip_char(mob, obj, mob_equip->pos);
@@ -2142,8 +2129,7 @@ struct char_data *read_mobile(int nr, int type)
 }
 
 /* create an object, and add it to the object list */
-struct obj_data *create_obj(void)
-{
+struct obj_data *create_obj(void) {
   struct obj_data *obj;
 
   CREATE(obj, struct obj_data, 1);
@@ -2155,8 +2141,7 @@ struct obj_data *create_obj(void)
 }
 
 /* create a new object from a prototype */
-struct obj_data *read_object(int nr, int type)
-{
+struct obj_data *read_object(int nr, int type) {
   struct obj_data *obj;
   int i;
 
@@ -2206,8 +2191,7 @@ struct obj_data *read_object(int nr, int type)
 }
 
 /* create a new object from a prototype (without QIC check) */
-struct obj_data *read_object_q(int nr, int type)
-{
+struct obj_data *read_object_q(int nr, int type) {
   struct obj_data *obj;
   int i;
 
@@ -2248,11 +2232,10 @@ struct obj_data *read_object_q(int nr, int type)
   return obj;
 }
 
-#define ZO_DEAD  999
+#define ZO_DEAD 999
 
 /* update zone ages, queue for reset if necessary, and dequeue when possible */
-void zone_update(void)
-{
+void zone_update(void) {
   int i;
   struct reset_q_element *update_u, *temp;
   static int timer = 0;
@@ -2317,25 +2300,27 @@ void zone_update(void)
     }
 }
 
-void log_zone_error(int zone, int cmd_no, char *message)
-{
+void log_zone_error(int zone, int cmd_no, char *message) {
   char buf[256];
 
   safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: error in zone file: %s", message);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d", ZCMD.command, zone_table[zone].number, ZCMD.line);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: ...offending cmd: '%c' cmd in zone #%d, line %d", ZCMD.command,
+                zone_table[zone].number, ZCMD.line);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
   safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: ...arg1: %5d arg2: %5d arg3: %5d", ZCMD.arg1, ZCMD.arg2, ZCMD.arg3);
   mudlog(buf, 'E', COM_IMMORT, TRUE);
 }
 
-#define ZONE_ERROR(message) \
-  { log_zone_error(zone, cmd_no, message); last_cmd = 0; }
+#define ZONE_ERROR(message)                \
+  {                                        \
+    log_zone_error(zone, cmd_no, message); \
+    last_cmd = 0;                          \
+  }
 
 /* execute the reset command table of a given zone */
-void reset_zone(int zone)
-{
+void reset_zone(int zone) {
   int cmd_no, last_cmd = 0, percent = 0;
   struct char_data *mob = NULL;
   struct obj_data *obj, *obj_to;
@@ -2347,163 +2332,163 @@ void reset_zone(int zone)
       continue;
 
     switch (ZCMD.command) {
-      case '*': /* ignore command */
-        last_cmd = 0;
-        break;
+    case '*': /* ignore command */
+      last_cmd = 0;
+      break;
 
-      case 'M': /* read a mobile */
-        percent = number(1, 100);
-        if (ZCMD.arg4 >= percent) {
-          if (mob_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
-            mob = read_mobile(ZCMD.arg1, REAL);
-            GET_IDNUM(mob) = mob_idnum;
-            mob_idnum--;
-            if (GET_TEMP_GOLD(mob)) {
-              temp_gold = GET_TEMP_GOLD(mob) / 10;
-              temp_gold = (GET_TEMP_GOLD(mob) - temp_gold) + number(0, temp_gold * 2);
-              if (number(0, 1)) {
-                GET_PLAT(mob) = (temp_gold / 1000);
-                temp_gold -= (GET_PLAT(mob) * 1000);
-              }
-              if (number(0, 2)) {
-                GET_GOLD(mob) = (temp_gold / 100);
-                temp_gold -= (GET_GOLD(mob) * 100);
-              }
-              if (number(0, 3)) {
-                GET_SILVER(mob) = (temp_gold / 10);
-                temp_gold -= (GET_SILVER(mob) * 10);
-              }
-              GET_COPPER(mob) = temp_gold;
+    case 'M': /* read a mobile */
+      percent = number(1, 100);
+      if (ZCMD.arg4 >= percent) {
+        if (mob_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
+          mob = read_mobile(ZCMD.arg1, REAL);
+          GET_IDNUM(mob) = mob_idnum;
+          mob_idnum--;
+          if (GET_TEMP_GOLD(mob)) {
+            temp_gold = GET_TEMP_GOLD(mob) / 10;
+            temp_gold = (GET_TEMP_GOLD(mob) - temp_gold) + number(0, temp_gold * 2);
+            if (number(0, 1)) {
+              GET_PLAT(mob) = (temp_gold / 1000);
+              temp_gold -= (GET_PLAT(mob) * 1000);
             }
-            char_to_room(mob, ZCMD.arg3);
-            mob->loadin = ZCMD.arg3;
-            last_cmd = 1;
-          } else
-            last_cmd = 0;
+            if (number(0, 2)) {
+              GET_GOLD(mob) = (temp_gold / 100);
+              temp_gold -= (GET_GOLD(mob) * 100);
+            }
+            if (number(0, 3)) {
+              GET_SILVER(mob) = (temp_gold / 10);
+              temp_gold -= (GET_SILVER(mob) * 10);
+            }
+            GET_COPPER(mob) = temp_gold;
+          }
+          char_to_room(mob, ZCMD.arg3);
+          mob->loadin = ZCMD.arg3;
+          last_cmd = 1;
         } else
           last_cmd = 0;
-        break;
+      } else
+        last_cmd = 0;
+      break;
 
-      case 'O': /* read an object */
-        percent = number(1, 100);
-        if (ZCMD.arg4 >= percent) {
-          if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0)
-            if (ZCMD.arg3 >= 0) {
-              if (!get_obj_in_list_num(ZCMD.arg1, world[ZCMD.arg3].contents)) {
-                obj = read_object(ZCMD.arg1, REAL);
-                if (obj)
-                  obj_to_room(obj, ZCMD.arg3);
-                last_cmd = 1;
-              } else
-                last_cmd = 0;
-            } else {
+    case 'O': /* read an object */
+      percent = number(1, 100);
+      if (ZCMD.arg4 >= percent) {
+        if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0)
+          if (ZCMD.arg3 >= 0) {
+            if (!get_obj_in_list_num(ZCMD.arg1, world[ZCMD.arg3].contents)) {
               obj = read_object(ZCMD.arg1, REAL);
               if (obj)
-                obj->in_room = NOWHERE;
+                obj_to_room(obj, ZCMD.arg3);
               last_cmd = 1;
-            }
-          else
-            last_cmd = 0;
-        } else
-          last_cmd = 0;
-        break;
-
-      case 'P': /* object to object */
-        if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
-          obj = read_object(ZCMD.arg1, REAL);
-          if (!(obj_to = get_obj_num(ZCMD.arg3))) {
-            ZONE_ERROR("target obj not found");
-            break;
-          }
-          if (obj)
-            obj_to_obj(obj, obj_to);
-          last_cmd = 1;
-        } else
-          last_cmd = 0;
-        break;
-
-      case 'G': /* obj_to_char */
-        if (!mob) {
-          ZONE_ERROR("attempt to give obj to non-existant mob");
-          break;
-        }
-        if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
-          obj = read_object(ZCMD.arg1, REAL);
-          if (obj)
-            obj_to_char(obj, mob);
-          last_cmd = 1;
-        } else
-          last_cmd = 0;
-        break;
-
-      case 'E': /* object to equipment list */
-        if (!mob) {
-          ZONE_ERROR("trying to equip non-existant mob");
-          break;
-        }
-        if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
-          if (ZCMD.arg3 < 0 || ZCMD.arg3 >= NUM_WEARS) {
-            ZONE_ERROR("invalid equipment pos number");
+            } else
+              last_cmd = 0;
           } else {
             obj = read_object(ZCMD.arg1, REAL);
             if (obj)
-              equip_char(mob, obj, ZCMD.arg3);
+              obj->in_room = NOWHERE;
             last_cmd = 1;
           }
-        } else
+        else
           last_cmd = 0;
-        break;
+      } else
+        last_cmd = 0;
+      break;
 
-      case 'R': /* rem obj from room */
-        if ((obj = get_obj_in_list_num(ZCMD.arg2, world[ZCMD.arg1].contents)) != NULL) {
-          obj_from_room(obj);
-          extract_obj(obj);
+    case 'P': /* object to object */
+      if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
+        obj = read_object(ZCMD.arg1, REAL);
+        if (!(obj_to = get_obj_num(ZCMD.arg3))) {
+          ZONE_ERROR("target obj not found");
+          break;
         }
+        if (obj)
+          obj_to_obj(obj, obj_to);
         last_cmd = 1;
-        break;
+      } else
+        last_cmd = 0;
+      break;
 
-      case 'D': /* set state of door */
-        if (ZCMD.arg2 < 0 || ZCMD.arg2 >= NUM_OF_DIRS || (world[ZCMD.arg1].dir_option[ZCMD.arg2] == NULL)) {
-          ZONE_ERROR("door does not exist");
-        } else
-          switch (ZCMD.arg3) {
-            case 0:
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
-              break;
-            case 1:
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
-              break;
-            case 2:
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
-              break;
-            case 3:
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
-              break;
-            case 4:
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
-              break;
-            case 5:
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
-              REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
-              SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
-              break;
-          }
+    case 'G': /* obj_to_char */
+      if (!mob) {
+        ZONE_ERROR("attempt to give obj to non-existant mob");
+        break;
+      }
+      if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
+        obj = read_object(ZCMD.arg1, REAL);
+        if (obj)
+          obj_to_char(obj, mob);
         last_cmd = 1;
-        break;
+      } else
+        last_cmd = 0;
+      break;
 
-      default:
-        ZONE_ERROR("unknown cmd in reset table!");
+    case 'E': /* object to equipment list */
+      if (!mob) {
+        ZONE_ERROR("trying to equip non-existant mob");
         break;
+      }
+      if (obj_index[ZCMD.arg1].number < ZCMD.arg2 || ZCMD.arg2 == 0) {
+        if (ZCMD.arg3 < 0 || ZCMD.arg3 >= NUM_WEARS) {
+          ZONE_ERROR("invalid equipment pos number");
+        } else {
+          obj = read_object(ZCMD.arg1, REAL);
+          if (obj)
+            equip_char(mob, obj, ZCMD.arg3);
+          last_cmd = 1;
+        }
+      } else
+        last_cmd = 0;
+      break;
+
+    case 'R': /* rem obj from room */
+      if ((obj = get_obj_in_list_num(ZCMD.arg2, world[ZCMD.arg1].contents)) != NULL) {
+        obj_from_room(obj);
+        extract_obj(obj);
+      }
+      last_cmd = 1;
+      break;
+
+    case 'D': /* set state of door */
+      if (ZCMD.arg2 < 0 || ZCMD.arg2 >= NUM_OF_DIRS || (world[ZCMD.arg1].dir_option[ZCMD.arg2] == NULL)) {
+        ZONE_ERROR("door does not exist");
+      } else
+        switch (ZCMD.arg3) {
+        case 0:
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
+          break;
+        case 1:
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
+          break;
+        case 2:
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
+          break;
+        case 3:
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
+          break;
+        case 4:
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
+          break;
+        case 5:
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_LOCKED);
+          REMOVE_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_CLOSED);
+          SET_BIT(world[ZCMD.arg1].dir_option[ZCMD.arg2]->exit_info, EX_HIDDEN);
+          break;
+        }
+      last_cmd = 1;
+      break;
+
+    default:
+      ZONE_ERROR("unknown cmd in reset table!");
+      break;
     }
   }
 
@@ -2511,8 +2496,7 @@ void reset_zone(int zone)
 }
 
 /* for use in reset_zone; return TRUE if zone 'nr' is free of PC's  */
-int is_empty(int zone_nr)
-{
+int is_empty(int zone_nr) {
   struct descriptor_data *i;
 
   for (i = descriptor_list; i; i = i->next)
@@ -2527,8 +2511,7 @@ int is_empty(int zone_nr)
  *  stuff related to the save/load player system         *
  *********************************************************************** */
 
-int get_idnum(void)
-{
+int get_idnum(void) {
   FILE *idfile;
 
   if ((idfile = fopen(ID_FILE, "r")) == NULL) {
@@ -2554,8 +2537,7 @@ int get_idnum(void)
   return top_of_p_table;
 }
 
-long get_id_by_name(char *name)
-{
+long get_id_by_name(char *name) {
   char filename[80];
   char abuf[MAX_INPUT_LENGTH * 8];
   char field[MAX_INPUT_LENGTH * 8];
@@ -2579,8 +2561,7 @@ long get_id_by_name(char *name)
 
 /* Load a char, TRUE if loaded, FALSE if not */
 
-void parse_pline(char *line, char *field, char *value)
-{
+void parse_pline(char *line, char *field, char *value) {
   char *linetmp = (line + 1);
   char *fieldtmp = field;
   char *valuetmp = value;
@@ -2598,37 +2579,35 @@ void parse_pline(char *line, char *field, char *value)
   *valuetmp = '\0';
 }
 
-void add_innates(struct char_data *ch)
-{
+void add_innates(struct char_data *ch) {
   switch (GET_RACE(ch)) {
-    /* infravision alone*/
-    case RACE_HALFELF:
-    case RACE_OGRE:
-    case RACE_TROLL:
-      mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
-      break;
-      /* infravision and sneak */
-    case RACE_ELF:
-      mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
-      mag_affect_char(NULL, AFF_SNEAK, ch, ch, -1);
-      break;
-      /* infravision and detect align */
-    case RACE_DWARF:
-      mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
-      mag_affect_char(NULL, AFF_DETECT_ALIGN, ch, ch, -1);
-      break;
-      /* sneak alone */
-    case RACE_HALFLING:
-      mag_affect_char(NULL, AFF_SNEAK, ch, ch, -1);
-      break;
-    default:
-      break;
+  /* infravision alone*/
+  case RACE_HALFELF:
+  case RACE_OGRE:
+  case RACE_TROLL:
+    mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
+    break;
+    /* infravision and sneak */
+  case RACE_ELF:
+    mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
+    mag_affect_char(NULL, AFF_SNEAK, ch, ch, -1);
+    break;
+    /* infravision and detect align */
+  case RACE_DWARF:
+    mag_affect_char(NULL, AFF_INFRAVISION, ch, ch, -1);
+    mag_affect_char(NULL, AFF_DETECT_ALIGN, ch, ch, -1);
+    break;
+    /* sneak alone */
+  case RACE_HALFLING:
+    mag_affect_char(NULL, AFF_SNEAK, ch, ch, -1);
+    break;
+  default:
+    break;
   };
 }
 
 /* Load a char, TRUE if loaded, FALSE if not */
-int load_char_text(char *name, struct char_data * char_element)
-{
+int load_char_text(char *name, struct char_data *char_element) {
   int numval = 0, i = 0, j = 0, affnum = 0, num1 = 0, num2 = 0;
   char field[40];
   char resname[30];
@@ -2646,8 +2625,8 @@ int load_char_text(char *name, struct char_data * char_element)
   if (char_element->player_specials) {
     FREE(char_element->player_specials);
   }
-  memset((struct char_data *) ctmp, 0, sizeof(struct char_data));
-  memset((struct affected_type *) affected, 0, MAX_AFFECT * sizeof(struct affected_type));
+  memset((struct char_data *)ctmp, 0, sizeof(struct char_data));
+  memset((struct affected_type *)affected, 0, MAX_AFFECT * sizeof(struct affected_type));
   get_filename(name, filename, PTDAT_FILE);
 
   *GET_PASSWD(ctmp) = '\0';
@@ -2678,416 +2657,416 @@ int load_char_text(char *name, struct char_data * char_element)
     numval = atoi(value);
 
     switch (UPPER(*field)) {
-      case 'A':
-        if (!strcmp(field, "alignment")) {
-          GET_ALIGNMENT(ctmp) = numval;
-        } else if (!strcmp(field, "act")) {
-          PLR_FLAGS(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "affby1")) {
-          AFF_FLAGS(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "affby2")) {
-          AFF2_FLAGS(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "affby3")) {
-          AFF3_FLAGS(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "armor")) {
-          GET_AC(ctmp) = numval;
-        } else if (!strcmp(field, "agi")) {
-          GET_AGI(ctmp) = numval;
-        } else if (!strcmp(field, "Affected")) {
-          for (;;) {
-            get_line(pfile, line);
-            parse_pline(line, field, value);
-            numval = atoi(value);
-            if (!strcmp(field, "EndAffected")) {
-              break;
-            }
-            if (!strcmp(field, "affname")) {
-              affected[affnum].type = spells[find_skill_num(value)].spellindex;
-              for (i = 0; i < 4; i++) {
-                get_line(pfile, line);
-                parse_pline(line, field, value);
-                numval = atoi(value);
-                if (!strcmp(field, "duration")) {
-                  affected[affnum].duration = numval;
-                } else if (!strcmp(field, "modifier")) {
-                  p = value;
-                  j = 0;
-                  while ((cp = strtok(p, " ")) != NULL) {
-                    affected[affnum].modifier[j] = atoi(cp);
-                    p = NULL;
-                    j++;
-                  }
-                } else if (!strcmp(field, "location")) {
-                  p = value;
-                  j = 0;
-                  while ((cp = strtok(p, " ")) != NULL) {
-                    affected[affnum].location[j] = atoi(cp);
-                    p = NULL;
-                    j++;
-                  }
-                } else if (!strcmp(field, "bitvector")) {
-                  affected[affnum].bitvector = numval;
-                } else if (!strcmp(field, "bitvector2")) {
-                  affected[affnum].bitvector2 = numval;
-                } else if (!strcmp(field, "bitvector3")) {
-                  affected[affnum].bitvector3 = numval;
+    case 'A':
+      if (!strcmp(field, "alignment")) {
+        GET_ALIGNMENT(ctmp) = numval;
+      } else if (!strcmp(field, "act")) {
+        PLR_FLAGS(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "affby1")) {
+        AFF_FLAGS(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "affby2")) {
+        AFF2_FLAGS(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "affby3")) {
+        AFF3_FLAGS(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "armor")) {
+        GET_AC(ctmp) = numval;
+      } else if (!strcmp(field, "agi")) {
+        GET_AGI(ctmp) = numval;
+      } else if (!strcmp(field, "Affected")) {
+        for (;;) {
+          get_line(pfile, line);
+          parse_pline(line, field, value);
+          numval = atoi(value);
+          if (!strcmp(field, "EndAffected")) {
+            break;
+          }
+          if (!strcmp(field, "affname")) {
+            affected[affnum].type = spells[find_skill_num(value)].spellindex;
+            for (i = 0; i < 4; i++) {
+              get_line(pfile, line);
+              parse_pline(line, field, value);
+              numval = atoi(value);
+              if (!strcmp(field, "duration")) {
+                affected[affnum].duration = numval;
+              } else if (!strcmp(field, "modifier")) {
+                p = value;
+                j = 0;
+                while ((cp = strtok(p, " ")) != NULL) {
+                  affected[affnum].modifier[j] = atoi(cp);
+                  p = NULL;
+                  j++;
                 }
-              }
-              affnum++;
-            }
-          }
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'B':
-        if (!strcmp(field, "birth")) {
-          GET_BIRTH(ctmp) = numval;
-        } else if (!strcmp(field, "bad_pw")) {
-          GET_BAD_PWS(ctmp) = numval;
-        } else if (!strcmp(field, "bank_plat")) {
-          GET_BANK_PLAT(ctmp) = numval;
-        } else if (!strcmp(field, "bank_gold")) {
-          GET_BANK_GOLD(ctmp) = numval;
-        } else if (!strcmp(field, "bank_silver")) {
-          GET_BANK_SILVER(ctmp) = numval;
-        } else if (!strcmp(field, "bank_copper")) {
-          GET_BANK_COPPER(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'C':
-        if (!strcmp(field, "class")) {
-          GET_CLASS(ctmp) = numval;
-        } else if (!strcmp(field, "commands")) {
-          COM_FLAGS(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "copper")) {
-          GET_COPPER(ctmp) = numval;
-          GET_TEMP_GOLD(ctmp) += numval;
-        } else if (!strcmp(field, "con")) {
-          GET_CON(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'D':
-        if (!strcmp(field, "description")) {
-          *line2 = '\0';
-          if (GET_DESC(ctmp)) {
-            FREE(GET_DESC(ctmp));
-          }
-          GET_DESC(ctmp) = fread_string(pfile, line2);
-        } else if (!strcmp(field, "drunk")) {
-          GET_COND(ctmp, 2) = numval;
-        } else if (!strcmp(field, "death_count")) {
-          GET_DEATHCOUNT(ctmp) = numval;
-        } else if (!strcmp(field, "damroll")) {
-          GET_DAMROLL(ctmp) = numval;
-        } else if (!strcmp(field, "dex")) {
-          GET_DEX(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'E':
-        if (!strcmp(field, "exp")) {
-          GET_EXP(ctmp) = numval;
-        } else if (!strcmp(field, "enc_password")) {
-          strncpy(GET_ENCPASSWD(ctmp), value, strlen(value));
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'F':
-        if (!strcmp(field, "freeze_level")) {
-          GET_FREEZE_LEV(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'G':
-        if (!strcmp(field, "gold")) {
-          GET_GOLD(ctmp) = numval;
-          GET_TEMP_GOLD(ctmp) += numval * 100;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'H':
-        if (!strcmp(field, "host")) {
-          safe_snprintf(GET_HOST(ctmp), HOST_LENGTH + 1, "%s", value);
-        } else if (!strcmp(field, "hometown")) {
-          GET_HOME(ctmp) = numval;
-        } else if (!strcmp(field, "height")) {
-          GET_HEIGHT(ctmp) = numval;
-        } else if (!strcmp(field, "hungry")) {
-          GET_COND(ctmp, 0) = numval;
-        } else if (!strcmp(field, "hit")) {
-          GET_HIT(ctmp) = numval;
-        } else if (!strcmp(field, "hitroll")) {
-          GET_HITROLL(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'I':
-        if (!strcmp(field, "idnum")) {
-          GET_IDNUM(ctmp) = numval;
-        } else if (!strcmp(field, "invis_level")) {
-          GET_PLR_INVIS_LEV(ctmp) = numval;
-        } else if (!strcmp(field, "int")) {
-          GET_INT(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'J':
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-        stderr_log(buf2);
-        break;
-      case 'K':
-        if (!strcmp(field, "kills")) {
-          GET_KILLS(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'L':
-        if (!strcmp(field, "last_logon")) {
-          GET_LOGON(ctmp) = numval;
-        } else if (!strcmp(field, "level")) {
-          GET_LEVEL(ctmp) = numval;
-        } else if (!strcmp(field, "log")) {
-          LOG_FLAGS(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "lessons")) {
-          GET_PRACTICES(ctmp) = numval;
-        } else if (!strcmp(field, "load_room")) {
-          GET_LOADROOM(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'M':
-        if (!strcmp(field, "mana")) {
-          GET_MANA(ctmp) = numval;
-        } else if (!strcmp(field, "max_mana")) {
-          GET_MAX_MANA(ctmp) = numval;
-        } else if (!strcmp(field, "max_hit")) {
-          GET_MAX_HIT(ctmp) = numval;
-        } else if (!strcmp(field, "move")) {
-          GET_MOVE(ctmp) = numval;
-        } else if (!strcmp(field, "max_move")) {
-          GET_MAX_MOVE(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'N':
-        if (!strcmp(field, "name")) {
-          if (GET_PLR_NAME(ctmp)) {
-            FREE(GET_PLR_NAME(ctmp));
-          }
-          GET_PLR_NAME(ctmp) = strdup(value);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'O':
-        if (!strcmp(field, "olc_zone1")) {
-          ctmp->olc_zones[0] = numval;
-        } else if (!strcmp(field, "olc_zone2")) {
-          ctmp->olc_zones[1] = numval;
-        } else if (!strcmp(field, "olc_zone3")) {
-          ctmp->olc_zones[2] = numval;
-        } else if (!strcmp(field, "olc_zone4")) {
-          ctmp->olc_zones[3] = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'P':
-        if (!strcmp(field, "played")) {
-          GET_PLAYED(ctmp) = numval;
-        } else if (!strcmp(field, "password")) {
-          safe_snprintf(GET_PASSWD(ctmp), MAX_PWD_LENGTH + 1, "%s", value);
-        } else if (!strcmp(field, "plat")) {
-          GET_PLAT(ctmp) = numval;
-          GET_TEMP_GOLD(ctmp) += numval * 1000;
-        } else if (!strcmp(field, "prompt")) {
-          GET_PROMPT(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "pref")) {
-          PRF_FLAGS(ctmp) = asciiflag_conv(value);
-        } else if (!strcmp(field, "pk_count")) {
-          GET_PKCOUNT(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'Q':
-        if (!strcmp(field, "quest_complete0")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete1")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete2")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete3")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete4")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete5")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete6")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete7")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete8")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else if (!strcmp(field, "quest_complete9")) {
-          ctmp->player_specials->saved.questcompleted[0] = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'R':
-        if (!strcmp(field, "race")) {
-          GET_RACE(ctmp) = numval;
-        } else if (!strcmp(field, "Resists")) {
-          for (;;) {
-            get_line(pfile, line);
-            parse_pline(line, field, value);
-            numval = atoi(value);
-            if (!strcmp(field, "EndResists")) {
-              break;
-            }
-            for (j = 0; j < MAX_DAM_TYPE; j++) {
-              sprinttype(j, resists_names, resname);
-              if (!strcmp(field, resname)) {
-                GET_RESIST(ctmp, j) = numval;
+              } else if (!strcmp(field, "location")) {
+                p = value;
+                j = 0;
+                while ((cp = strtok(p, " ")) != NULL) {
+                  affected[affnum].location[j] = atoi(cp);
+                  p = NULL;
+                  j++;
+                }
+              } else if (!strcmp(field, "bitvector")) {
+                affected[affnum].bitvector = numval;
+              } else if (!strcmp(field, "bitvector2")) {
+                affected[affnum].bitvector2 = numval;
+              } else if (!strcmp(field, "bitvector3")) {
+                affected[affnum].bitvector3 = numval;
               }
             }
+            affnum++;
           }
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
         }
-        break;
-      case 'S':
-        if (!strcmp(field, "sex")) {
-          GET_SEX(ctmp) = numval;
-        } else if (!strcmp(field, "specialized")) {
-          GET_SPECIALIZED(ctmp) = numval;
-        } else if (!strcmp(field, "save_para")) {
-          GET_SAVE(ctmp, 0) = numval;
-        } else if (!strcmp(field, "save_rod")) {
-          GET_SAVE(ctmp, 1) = numval;
-        } else if (!strcmp(field, "save_petri")) {
-          GET_SAVE(ctmp, 2) = numval;
-        } else if (!strcmp(field, "save_breath")) {
-          GET_SAVE(ctmp, 3) = numval;
-        } else if (!strcmp(field, "save_spell")) {
-          GET_SAVE(ctmp, 4) = numval;
-        } else if (!strcmp(field, "screen_height")) {
-          GET_SCREEN_HEIGHT(ctmp) = numval;
-        } else if (!strcmp(field, "screen_width")) {
-          GET_SCREEN_WIDTH(ctmp) = numval;
-        } else if (!strcmp(field, "silver")) {
-          GET_SILVER(ctmp) = numval;
-          GET_TEMP_GOLD(ctmp) += numval * 10;
-        } else if (!strcmp(field, "str")) {
-          GET_STR(ctmp) = numval;
-        } else if (!strcmp(field, "Skills")) {
-          for (;;) {
-            get_line(pfile, line);
-            parse_pline(line, field, value);
-            numval = atoi(value);
-            if (!strcmp(field, "EndSkills")) {
-              break;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'B':
+      if (!strcmp(field, "birth")) {
+        GET_BIRTH(ctmp) = numval;
+      } else if (!strcmp(field, "bad_pw")) {
+        GET_BAD_PWS(ctmp) = numval;
+      } else if (!strcmp(field, "bank_plat")) {
+        GET_BANK_PLAT(ctmp) = numval;
+      } else if (!strcmp(field, "bank_gold")) {
+        GET_BANK_GOLD(ctmp) = numval;
+      } else if (!strcmp(field, "bank_silver")) {
+        GET_BANK_SILVER(ctmp) = numval;
+      } else if (!strcmp(field, "bank_copper")) {
+        GET_BANK_COPPER(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'C':
+      if (!strcmp(field, "class")) {
+        GET_CLASS(ctmp) = numval;
+      } else if (!strcmp(field, "commands")) {
+        COM_FLAGS(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "copper")) {
+        GET_COPPER(ctmp) = numval;
+        GET_TEMP_GOLD(ctmp) += numval;
+      } else if (!strcmp(field, "con")) {
+        GET_CON(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'D':
+      if (!strcmp(field, "description")) {
+        *line2 = '\0';
+        if (GET_DESC(ctmp)) {
+          FREE(GET_DESC(ctmp));
+        }
+        GET_DESC(ctmp) = fread_string(pfile, line2);
+      } else if (!strcmp(field, "drunk")) {
+        GET_COND(ctmp, 2) = numval;
+      } else if (!strcmp(field, "death_count")) {
+        GET_DEATHCOUNT(ctmp) = numval;
+      } else if (!strcmp(field, "damroll")) {
+        GET_DAMROLL(ctmp) = numval;
+      } else if (!strcmp(field, "dex")) {
+        GET_DEX(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'E':
+      if (!strcmp(field, "exp")) {
+        GET_EXP(ctmp) = numval;
+      } else if (!strcmp(field, "enc_password")) {
+        strncpy(GET_ENCPASSWD(ctmp), value, strlen(value));
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'F':
+      if (!strcmp(field, "freeze_level")) {
+        GET_FREEZE_LEV(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'G':
+      if (!strcmp(field, "gold")) {
+        GET_GOLD(ctmp) = numval;
+        GET_TEMP_GOLD(ctmp) += numval * 100;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'H':
+      if (!strcmp(field, "host")) {
+        safe_snprintf(GET_HOST(ctmp), HOST_LENGTH + 1, "%s", value);
+      } else if (!strcmp(field, "hometown")) {
+        GET_HOME(ctmp) = numval;
+      } else if (!strcmp(field, "height")) {
+        GET_HEIGHT(ctmp) = numval;
+      } else if (!strcmp(field, "hungry")) {
+        GET_COND(ctmp, 0) = numval;
+      } else if (!strcmp(field, "hit")) {
+        GET_HIT(ctmp) = numval;
+      } else if (!strcmp(field, "hitroll")) {
+        GET_HITROLL(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'I':
+      if (!strcmp(field, "idnum")) {
+        GET_IDNUM(ctmp) = numval;
+      } else if (!strcmp(field, "invis_level")) {
+        GET_PLR_INVIS_LEV(ctmp) = numval;
+      } else if (!strcmp(field, "int")) {
+        GET_INT(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'J':
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      stderr_log(buf2);
+      break;
+    case 'K':
+      if (!strcmp(field, "kills")) {
+        GET_KILLS(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'L':
+      if (!strcmp(field, "last_logon")) {
+        GET_LOGON(ctmp) = numval;
+      } else if (!strcmp(field, "level")) {
+        GET_LEVEL(ctmp) = numval;
+      } else if (!strcmp(field, "log")) {
+        LOG_FLAGS(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "lessons")) {
+        GET_PRACTICES(ctmp) = numval;
+      } else if (!strcmp(field, "load_room")) {
+        GET_LOADROOM(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'M':
+      if (!strcmp(field, "mana")) {
+        GET_MANA(ctmp) = numval;
+      } else if (!strcmp(field, "max_mana")) {
+        GET_MAX_MANA(ctmp) = numval;
+      } else if (!strcmp(field, "max_hit")) {
+        GET_MAX_HIT(ctmp) = numval;
+      } else if (!strcmp(field, "move")) {
+        GET_MOVE(ctmp) = numval;
+      } else if (!strcmp(field, "max_move")) {
+        GET_MAX_MOVE(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'N':
+      if (!strcmp(field, "name")) {
+        if (GET_PLR_NAME(ctmp)) {
+          FREE(GET_PLR_NAME(ctmp));
+        }
+        GET_PLR_NAME(ctmp) = strdup(value);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'O':
+      if (!strcmp(field, "olc_zone1")) {
+        ctmp->olc_zones[0] = numval;
+      } else if (!strcmp(field, "olc_zone2")) {
+        ctmp->olc_zones[1] = numval;
+      } else if (!strcmp(field, "olc_zone3")) {
+        ctmp->olc_zones[2] = numval;
+      } else if (!strcmp(field, "olc_zone4")) {
+        ctmp->olc_zones[3] = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'P':
+      if (!strcmp(field, "played")) {
+        GET_PLAYED(ctmp) = numval;
+      } else if (!strcmp(field, "password")) {
+        safe_snprintf(GET_PASSWD(ctmp), MAX_PWD_LENGTH + 1, "%s", value);
+      } else if (!strcmp(field, "plat")) {
+        GET_PLAT(ctmp) = numval;
+        GET_TEMP_GOLD(ctmp) += numval * 1000;
+      } else if (!strcmp(field, "prompt")) {
+        GET_PROMPT(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "pref")) {
+        PRF_FLAGS(ctmp) = asciiflag_conv(value);
+      } else if (!strcmp(field, "pk_count")) {
+        GET_PKCOUNT(ctmp) = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'Q':
+      if (!strcmp(field, "quest_complete0")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete1")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete2")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete3")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete4")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete5")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete6")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete7")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete8")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else if (!strcmp(field, "quest_complete9")) {
+        ctmp->player_specials->saved.questcompleted[0] = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'R':
+      if (!strcmp(field, "race")) {
+        GET_RACE(ctmp) = numval;
+      } else if (!strcmp(field, "Resists")) {
+        for (;;) {
+          get_line(pfile, line);
+          parse_pline(line, field, value);
+          numval = atoi(value);
+          if (!strcmp(field, "EndResists")) {
+            break;
+          }
+          for (j = 0; j < MAX_DAM_TYPE; j++) {
+            sprinttype(j, resists_names, resname);
+            if (!strcmp(field, resname)) {
+              GET_RESIST(ctmp, j) = numval;
             }
-            for (j = 1; spells[j].command[0] != '\n'; j++) {
-              if (!strcmp(field, spells[j].command)) {
-                sscanf(value, "%d %d", &num1, &num2);
-                GET_SKILL(ctmp, spells[j].spellindex) = num1;
-                GET_PRACS(ctmp, spells[j].spellindex) = num2;
-              }
+          }
+        }
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'S':
+      if (!strcmp(field, "sex")) {
+        GET_SEX(ctmp) = numval;
+      } else if (!strcmp(field, "specialized")) {
+        GET_SPECIALIZED(ctmp) = numval;
+      } else if (!strcmp(field, "save_para")) {
+        GET_SAVE(ctmp, 0) = numval;
+      } else if (!strcmp(field, "save_rod")) {
+        GET_SAVE(ctmp, 1) = numval;
+      } else if (!strcmp(field, "save_petri")) {
+        GET_SAVE(ctmp, 2) = numval;
+      } else if (!strcmp(field, "save_breath")) {
+        GET_SAVE(ctmp, 3) = numval;
+      } else if (!strcmp(field, "save_spell")) {
+        GET_SAVE(ctmp, 4) = numval;
+      } else if (!strcmp(field, "screen_height")) {
+        GET_SCREEN_HEIGHT(ctmp) = numval;
+      } else if (!strcmp(field, "screen_width")) {
+        GET_SCREEN_WIDTH(ctmp) = numval;
+      } else if (!strcmp(field, "silver")) {
+        GET_SILVER(ctmp) = numval;
+        GET_TEMP_GOLD(ctmp) += numval * 10;
+      } else if (!strcmp(field, "str")) {
+        GET_STR(ctmp) = numval;
+      } else if (!strcmp(field, "Skills")) {
+        for (;;) {
+          get_line(pfile, line);
+          parse_pline(line, field, value);
+          numval = atoi(value);
+          if (!strcmp(field, "EndSkills")) {
+            break;
+          }
+          for (j = 1; spells[j].command[0] != '\n'; j++) {
+            if (!strcmp(field, spells[j].command)) {
+              sscanf(value, "%d %d", &num1, &num2);
+              GET_SKILL(ctmp, spells[j].spellindex) = num1;
+              GET_PRACS(ctmp, spells[j].spellindex) = num2;
             }
           }
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
         }
-        break;
-      case 'T':
-        if (!strcmp(field, "title")) {
-          if (GET_TITLE(ctmp)) {
-            FREE(GET_TITLE(ctmp));
-          }
-          GET_TITLE(ctmp) = strdup(value);
-        } else if (!strcmp(field, "thirsty")) {
-          GET_COND(ctmp, 1) = numval;
-        } else if (!strcmp(field, "timer")) {
-          GET_TIMER(ctmp) = numval;
-        } else if (!strcmp(field, "train_sess")) {
-          GET_TRAINING(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'T':
+      if (!strcmp(field, "title")) {
+        if (GET_TITLE(ctmp)) {
+          FREE(GET_TITLE(ctmp));
         }
-        break;
-      case 'U':
+        GET_TITLE(ctmp) = strdup(value);
+      } else if (!strcmp(field, "thirsty")) {
+        GET_COND(ctmp, 1) = numval;
+      } else if (!strcmp(field, "timer")) {
+        GET_TIMER(ctmp) = numval;
+      } else if (!strcmp(field, "train_sess")) {
+        GET_TRAINING(ctmp) = numval;
+      } else {
         safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
-        break;
-      case 'V':
+      }
+      break;
+    case 'U':
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      stderr_log(buf2);
+      break;
+    case 'V':
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      stderr_log(buf2);
+      break;
+    case 'W':
+      if (!strcmp(field, "weapontimer")) {
+        ctmp->player_specials->saved.weapontimer = numval;
+      } else if (!strcmp(field, "weight")) {
+        GET_WEIGHT(ctmp) = numval;
+      } else if (!strcmp(field, "wimp_level")) {
+        GET_WIMP_LEV(ctmp) = numval;
+      } else if (!strcmp(field, "wis")) {
+        GET_WIS(ctmp) = numval;
+      } else {
         safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
         stderr_log(buf2);
-        break;
-      case 'W':
-        if (!strcmp(field, "weapontimer")) {
-          ctmp->player_specials->saved.weapontimer = numval;
-        } else if (!strcmp(field, "weight")) {
-          GET_WEIGHT(ctmp) = numval;
-        } else if (!strcmp(field, "wimp_level")) {
-          GET_WIMP_LEV(ctmp) = numval;
-        } else if (!strcmp(field, "wis")) {
-          GET_WIS(ctmp) = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'X':
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-        stderr_log(buf2);
-        break;
-      case 'Y':
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-        stderr_log(buf2);
-        break;
-      case 'Z':
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-        stderr_log(buf2);
-        break;
-      default:
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
-        stderr_log(buf2);
-        break;
+      }
+      break;
+    case 'X':
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      stderr_log(buf2);
+      break;
+    case 'Y':
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      stderr_log(buf2);
+      break;
+    case 'Z':
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      stderr_log(buf2);
+      break;
+    default:
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown field [%s]", field);
+      stderr_log(buf2);
+      break;
     }
   }
 
@@ -3118,7 +3097,7 @@ int load_char_text(char *name, struct char_data * char_element)
   ctmp->in_room = real_room(GET_LOADROOM(ctmp));
   GET_WAS_IN(ctmp) = NOWHERE;
 
-  if (!IS_AFFECTED(ctmp, AFF_POISON) && (((long) (time(0) - GET_LOGON(ctmp))) >= SECS_PER_REAL_HOUR)) {
+  if (!IS_AFFECTED(ctmp, AFF_POISON) && (((long)(time(0) - GET_LOGON(ctmp))) >= SECS_PER_REAL_HOUR)) {
     GET_HIT(ctmp) = GET_MAX_HIT(ctmp);
     GET_MOVE(ctmp) = GET_MAX_MOVE(ctmp);
     GET_MANA(ctmp) = GET_MAX_MANA(ctmp);
@@ -3134,9 +3113,8 @@ int load_char_text(char *name, struct char_data * char_element)
 }
 
 /* write the vital data of a player to the player file */
-void save_char_text(struct char_data * ch, sh_int load_room)
-{
-  extern void olc_print_bitvectors(FILE *f, long bitvector, long max);
+void save_char_text(struct char_data *ch, sh_int load_room) {
+  extern void olc_print_bitvectors(FILE * f, long bitvector, long max);
 
   int i, j;
   FILE *pfile;
@@ -3192,7 +3170,7 @@ void save_char_text(struct char_data * ch, sh_int load_room)
 
   ch->aff_abils = ch->real_abils;
 
-  GET_PLAYED(ch) += (long) (time(0) - ch->player.time.logon);
+  GET_PLAYED(ch) += (long)(time(0) - ch->player.time.logon);
   GET_LOGON(ch) = time(0);
 
   get_filename(GET_NAME(ch), filename, PTDAT_FILE);
@@ -3235,13 +3213,13 @@ void save_char_text(struct char_data * ch, sh_int load_room)
     fprintf(pfile, "-hometown- %d\n", GET_HOME(ch));
   }
   if (GET_BIRTH(ch)) {
-    fprintf(pfile, "-birth- %d\n", (int) GET_BIRTH(ch));
+    fprintf(pfile, "-birth- %d\n", (int)GET_BIRTH(ch));
   }
   if (GET_PLAYED(ch)) {
     fprintf(pfile, "-played- %d\n", GET_PLAYED(ch));
   }
   if (GET_LOGON(ch)) {
-    fprintf(pfile, "-last_logon- %d\n", (int) GET_LOGON(ch));
+    fprintf(pfile, "-last_logon- %d\n", (int)GET_LOGON(ch));
   }
   if (GET_HOST(ch)) {
     fprintf(pfile, "-host- %s\n", GET_HOST(ch));
@@ -3254,8 +3232,9 @@ void save_char_text(struct char_data * ch, sh_int load_room)
   }
   /* don't print out the password, just update encrypted password instead */
   if (*GET_PASSWD(ch) != '\0') {
-    if (crypto_pwhash_str(GET_ENCPASSWD(ch), GET_PASSWD(ch), strlen(GET_PASSWD(ch)), crypto_pwhash_OPSLIMIT_INTERACTIVE, crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
-        /* no op */
+    if (crypto_pwhash_str(GET_ENCPASSWD(ch), GET_PASSWD(ch), strlen(GET_PASSWD(ch)), crypto_pwhash_OPSLIMIT_INTERACTIVE,
+                          crypto_pwhash_MEMLIMIT_INTERACTIVE) == 0) {
+      /* no op */
     }
   }
   if (*GET_ENCPASSWD(ch) != '\0') {
@@ -3484,11 +3463,14 @@ void save_char_text(struct char_data * ch, sh_int load_room)
   fprintf(pfile, "-Affected-\n");
   for (i = 0; i < MAX_AFFECT; i++) {
     if (affected[i].type) {
-      fprintf(pfile, "-name- %s\n"
-          "-duration- %d\n"
-          "-bitvector- %ld\n"
-          "-bitvector2- %ld\n"
-          "-bitvector3- %ld\n", get_spell_name(affected[i].type), affected[i].duration, affected[i].bitvector, affected[i].bitvector2, affected[i].bitvector3);
+      fprintf(pfile,
+              "-name- %s\n"
+              "-duration- %d\n"
+              "-bitvector- %ld\n"
+              "-bitvector2- %ld\n"
+              "-bitvector3- %ld\n",
+              get_spell_name(affected[i].type), affected[i].duration, affected[i].bitvector, affected[i].bitvector2,
+              affected[i].bitvector3);
       fprintf(pfile, "-location- ");
       for (j = 0; j < NUM_MODIFY; j++) {
         fprintf(pfile, "%d ", affected[i].location[j]);
@@ -3523,8 +3505,7 @@ void save_char_text(struct char_data * ch, sh_int load_room)
  ********************************************************************** */
 
 /* read and allocate space for a '~'-terminated string from a given file */
-char *fread_string(FILE * fl, char *error)
-{
+char *fread_string(FILE *fl, char *error) {
   char buf[MAX_STRING_LENGTH], tmp[512], *rslt;
   register char *point;
   int done = 0, length = 0, templength = 0;
@@ -3576,8 +3557,7 @@ char *fread_string(FILE * fl, char *error)
 }
 
 /* release memory allocated for a char struct */
-void free_char(struct char_data * ch)
-{
+void free_char(struct char_data *ch) {
   int i;
   struct alias *a;
   struct mob_attacks_data *this, *next_one;
@@ -3695,8 +3675,7 @@ void free_char(struct char_data * ch)
 }
 
 /* release memory allocated for an obj struct */
-void free_obj(struct obj_data * obj)
-{
+void free_obj(struct obj_data *obj) {
   int nr;
   struct extra_descr_data *this, *next_one;
 
@@ -3790,8 +3769,7 @@ void free_obj(struct obj_data * obj)
 }
 
 /* release memory allocated for an obj struct */
-void free_obj_q(struct obj_data * obj)
-{
+void free_obj_q(struct obj_data *obj) {
   int nr;
   struct extra_descr_data *this, *next_one;
 
@@ -3867,8 +3845,7 @@ void free_obj_q(struct obj_data * obj)
 }
 
 /* read contets of a text file, alloc space, point buf to it */
-int file_to_string_alloc(char *name, char **buf)
-{
+int file_to_string_alloc(char *name, char **buf) {
   char temp[2 * MAX_STRING_LENGTH];
 
   memset(temp, 0, 2 * MAX_STRING_LENGTH);
@@ -3885,8 +3862,7 @@ int file_to_string_alloc(char *name, char **buf)
 }
 
 /* read contents of a text file, and place in buf */
-int file_to_string(char *name, char *buf)
-{
+int file_to_string(char *name, char *buf) {
   FILE *fl;
   char tmp[MAX_STRING_LENGTH + 1024];
   int buflength = 0, templength = 0;
@@ -3903,7 +3879,7 @@ int file_to_string(char *name, char *buf)
     fgets(tmp, MAX_STRING_LENGTH, fl);
     templength = strlen(tmp);
     if (templength > 0) {
-      tmp[templength - 1] = '\0';/* take off the trailing \n */
+      tmp[templength - 1] = '\0'; /* take off the trailing \n */
       templength--;
     }
     safe_snprintf(tmp + templength, sizeof(tmp) - templength, "\r\n");
@@ -3926,8 +3902,7 @@ int file_to_string(char *name, char *buf)
 }
 
 /* clear some of the the working variables of a char */
-void reset_char(struct char_data * ch)
-{
+void reset_char(struct char_data *ch) {
   int i;
   struct consent_data *consent;
   struct consent_data *consent_next;
@@ -3967,9 +3942,8 @@ void reset_char(struct char_data * ch)
 }
 
 /* clear ALL the working variables of a char; do NOT free any space alloc'ed */
-void clear_char(struct char_data * ch)
-{
-  memset((char *) ch, 0, sizeof(struct char_data));
+void clear_char(struct char_data *ch) {
+  memset((char *)ch, 0, sizeof(struct char_data));
 
   GET_DRAGGING(ch) = NULL;
   ch->in_room = NOWHERE;
@@ -3985,9 +3959,8 @@ void clear_char(struct char_data * ch)
   GET_SCREEN_HEIGHT(ch) = 22;
 }
 
-void clear_object(struct obj_data * obj)
-{
-  memset((char *) obj, 0, sizeof(struct obj_data));
+void clear_object(struct obj_data *obj) {
+  memset((char *)obj, 0, sizeof(struct obj_data));
 
   obj->item_number = NOTHING;
   obj->in_room = NOWHERE;
@@ -3996,12 +3969,10 @@ void clear_object(struct obj_data * obj)
   obj->contains = NULL;
   obj->next_content = NULL;
   obj->in_obj = NULL;
-
 }
 
 /* initialize a new character only if class is set */
-void init_char(struct char_data * ch)
-{
+void init_char(struct char_data *ch) {
   int i;
 
   /* create a player_special structure */
@@ -4060,8 +4031,7 @@ void init_char(struct char_data * ch)
 }
 
 /* returns the real number of the room with given virtual number */
-int real_room(int virtual)
-{
+int real_room(int virtual) {
   int bot, top, mid;
 
   bot = 0;
@@ -4083,8 +4053,7 @@ int real_room(int virtual)
 }
 
 /* returns the real number of the monster with given virtual number */
-int real_mobile(int virtual)
-{
+int real_mobile(int virtual) {
   int bot, top, mid;
 
   bot = 0;
@@ -4106,8 +4075,7 @@ int real_mobile(int virtual)
 }
 
 /* returns the real number of the object with given virtual number */
-int real_object(int virtual)
-{
+int real_object(int virtual) {
   int bot, top, mid;
 
   bot = 0;
@@ -4142,8 +4110,7 @@ int real_object(int virtual)
  *  mob/script files.
  */
 
-int mprog_name_to_type(char *name)
-{
+int mprog_name_to_type(char *name) {
   if (!str_cmp(name, "in_file_prog"))
     return IN_FILE_PROG;
   if (!str_cmp(name, "act_prog"))
@@ -4185,8 +4152,7 @@ int mprog_name_to_type(char *name)
 /*
  * Read a number from a file.
  */
-int fread_number(FILE *fp)
-{
+int fread_number(FILE *fp) {
   int number;
   bool sign;
   char c;
@@ -4230,8 +4196,7 @@ int fread_number(FILE *fp)
 /*
  * Read to end of line (for comments).
  */
-void fread_to_eol(FILE *fp)
-{
+void fread_to_eol(FILE *fp) {
   char c;
 
   do {
@@ -4249,8 +4214,7 @@ void fread_to_eol(FILE *fp)
 /*
  * Read one word (into static buffer).
  */
-char *fread_word(FILE *fp)
-{
+char *fread_word(FILE *fp) {
   static char word[MAX_INPUT_LENGTH];
   char *pword;
   char cEnd;
@@ -4285,8 +4249,7 @@ char *fread_word(FILE *fp)
 
 /* This routine reads in scripts of MOBprograms from a file */
 
-MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIndex)
-{
+MPROG_DATA *mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIndex) {
 
   char MOBProgfile[MAX_INPUT_LENGTH];
   MPROG_DATA *mprg2;
@@ -4305,68 +4268,67 @@ MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
 
   mprg2 = mprg;
   switch (fread_letter(progfile)) {
-    case '>':
-      break;
-    case '|':
-      stderr_log("empty mobprog file.");
-      fflush(NULL);
-      exit(1);
-      break;
-    default:
-      stderr_log("in mobprog file syntax error.");
-      fflush(NULL);
-      exit(1);
-      break;
+  case '>':
+    break;
+  case '|':
+    stderr_log("empty mobprog file.");
+    fflush(NULL);
+    exit(1);
+    break;
+  default:
+    stderr_log("in mobprog file syntax error.");
+    fflush(NULL);
+    exit(1);
+    break;
   }
 
   while (!done) {
     mprg2->type = mprog_name_to_type(fread_word(progfile));
     switch (mprg2->type) {
-      case ERROR_PROG:
-        stderr_log("mobprog file type error");
-        fflush(NULL);
-        exit(1);
+    case ERROR_PROG:
+      stderr_log("mobprog file type error");
+      fflush(NULL);
+      exit(1);
+      break;
+    case IN_FILE_PROG:
+      stderr_log("mprog file contains a call to file.");
+      fflush(NULL);
+      exit(1);
+      break;
+    default:
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Error in file %s", f);
+      pMobIndex->progtypes = pMobIndex->progtypes | mprg2->type;
+      mprg2->arglist = fread_string(progfile, buf2);
+      mprg2->comlist = fread_string(progfile, buf2);
+      switch (fread_letter(progfile)) {
+      case '>':
+        mprg2->next = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
+        if (mprg2->next == NULL) {
+          stderr_log("SYSERR: malloc failure in mprog_file_read");
+          fflush(NULL);
+          exit(1);
+        }
+        mprg2 = mprg2->next;
+        mprg2->next = NULL;
         break;
-      case IN_FILE_PROG:
-        stderr_log("mprog file contains a call to file.");
-        fflush(NULL);
-        exit(1);
+      case '|':
+        done = TRUE;
         break;
       default:
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Error in file %s", f);
-        pMobIndex->progtypes = pMobIndex->progtypes | mprg2->type;
-        mprg2->arglist = fread_string(progfile, buf2);
-        mprg2->comlist = fread_string(progfile, buf2);
-        switch (fread_letter(progfile)) {
-          case '>':
-            mprg2->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
-            if (mprg2->next == NULL) {
-              stderr_log("SYSERR: malloc failure in mprog_file_read");
-              fflush(NULL);
-              exit(1);
-            }
-            mprg2 = mprg2->next;
-            mprg2->next = NULL;
-            break;
-          case '|':
-            done = TRUE;
-            break;
-          default:
-            safe_snprintf(err_buf, MAX_STRING_LENGTH, "in mobprog file %s syntax error.", f);
-            stderr_log(err_buf);
-            fflush(NULL);
-            exit(1);
-            break;
-        }
+        safe_snprintf(err_buf, MAX_STRING_LENGTH, "in mobprog file %s syntax error.", f);
+        stderr_log(err_buf);
+        fflush(NULL);
+        exit(1);
         break;
+      }
+      break;
     }
   }
   fclose(progfile);
   return mprg2;
 }
 
-struct index_data *get_obj_index(int vnum)
-{
+struct index_data *get_obj_index(int vnum) {
   int nr;
   for (nr = 0; nr <= top_of_objt; nr++) {
     if (obj_index[nr].virtual == vnum)
@@ -4375,8 +4337,7 @@ struct index_data *get_obj_index(int vnum)
   return NULL;
 }
 
-struct index_data *get_mob_index(int vnum)
-{
+struct index_data *get_mob_index(int vnum) {
   int nr;
   for (nr = 0; nr <= top_of_mobt; nr++) {
     if (mob_index[nr].virtual == vnum)
@@ -4388,8 +4349,7 @@ struct index_data *get_mob_index(int vnum)
 /* This procedure is responsible for reading any in_file MOBprograms.
  */
 
-void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
-{
+void mprog_read_programs(FILE *fp, struct index_data *pMobIndex) {
   MPROG_DATA *mprg;
   char letter;
   bool done = FALSE;
@@ -4400,9 +4360,10 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
     fflush(NULL);
     exit(1);
   }
-  pMobIndex->mobprogs = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
+  pMobIndex->mobprogs = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
   if (pMobIndex->mobprogs == NULL) {
-    safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
+    safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs for vnum %d",
+                  pMobIndex->virtual);
     stderr_log(err_buf);
     fflush(NULL);
     exit(1);
@@ -4412,254 +4373,255 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
   while (!done) {
     mprg->type = mprog_name_to_type(fread_word(fp));
     switch (mprg->type) {
-      case ERROR_PROG:
-        safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d MOBPROG type.", pMobIndex->virtual);
+    case ERROR_PROG:
+      safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d MOBPROG type.", pMobIndex->virtual);
+      stderr_log(err_buf);
+      fflush(NULL);
+      exit(1);
+      break;
+    case IN_FILE_PROG:
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
+      mprg = mprog_file_read(fread_word(fp), mprg, pMobIndex);
+      fread_to_eol(fp); /* need to strip off that silly ~*/
+      switch (letter = fread_letter(fp)) {
+      case '>':
+        mprg->next = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
+        if (mprg->next == NULL) {
+          safe_snprintf(err_buf, MAX_STRING_LENGTH,
+                        "SYSERR: malloc failure in mprog_read_programs (IN_FILE_PROG) for vnum %d", pMobIndex->virtual);
+          stderr_log(err_buf);
+          fflush(NULL);
+          exit(1);
+        }
+        mprg = mprg->next;
+        mprg->next = NULL;
+        break;
+      case '|':
+        mprg->next = NULL;
+        fread_to_eol(fp);
+        done = TRUE;
+        break;
+      default:
+        safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d bad MOBPROG.", pMobIndex->virtual);
         stderr_log(err_buf);
         fflush(NULL);
         exit(1);
         break;
-      case IN_FILE_PROG:
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
-        mprg = mprog_file_read(fread_word(fp), mprg, pMobIndex);
-        fread_to_eol(fp); /* need to strip off that silly ~*/
-        switch (letter = fread_letter(fp)) {
-          case '>':
-            mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
-            if (mprg->next == NULL) {
-              safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs (IN_FILE_PROG) for vnum %d", pMobIndex->virtual);
-              stderr_log(err_buf);
-              fflush(NULL);
-              exit(1);
-            }
-            mprg = mprg->next;
-            mprg->next = NULL;
-            break;
-          case '|':
-            mprg->next = NULL;
-            fread_to_eol(fp);
-            done = TRUE;
-            break;
-          default:
-            safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d bad MOBPROG.", pMobIndex->virtual);
-            stderr_log(err_buf);
-            fflush(NULL);
-            exit(1);
-            break;
+      }
+      break;
+    default:
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
+      pMobIndex->progtypes = pMobIndex->progtypes | mprg->type;
+      mprg->arglist = fread_string(fp, buf2);
+      mprg->comlist = fread_string(fp, buf2);
+      switch (letter = fread_letter(fp)) {
+      case '>':
+        mprg->next = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
+        if (mprg->next == NULL) {
+          safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs for vnum %d",
+                        pMobIndex->virtual);
+          stderr_log(err_buf);
+          fflush(NULL);
+          exit(1);
         }
+        mprg = mprg->next;
+        mprg->next = NULL;
+        break;
+      case '|':
+        mprg->next = NULL;
+        fread_to_eol(fp);
+        done = TRUE;
         break;
       default:
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Mobprog for mob #%d", pMobIndex->virtual);
-        pMobIndex->progtypes = pMobIndex->progtypes | mprg->type;
-        mprg->arglist = fread_string(fp, buf2);
-        mprg->comlist = fread_string(fp, buf2);
-        switch (letter = fread_letter(fp)) {
-          case '>':
-            mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
-            if (mprg->next == NULL) {
-              safe_snprintf(err_buf, MAX_STRING_LENGTH, "SYSERR: malloc failure in mprog_read_programs for vnum %d", pMobIndex->virtual);
-              stderr_log(err_buf);
-              fflush(NULL);
-              exit(1);
-            }
-            mprg = mprg->next;
-            mprg->next = NULL;
-            break;
-          case '|':
-            mprg->next = NULL;
-            fread_to_eol(fp);
-            done = TRUE;
-            break;
-          default:
-            safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d bad MOBPROG (%c).", pMobIndex->virtual, letter);
-            stderr_log(err_buf);
-            fflush(NULL);
-            exit(1);
-            break;
-        }
+        safe_snprintf(err_buf, MAX_STRING_LENGTH, "Load_mobiles: vnum %d bad MOBPROG (%c).", pMobIndex->virtual,
+                      letter);
+        stderr_log(err_buf);
+        fflush(NULL);
+        exit(1);
         break;
+      }
+      break;
     }
   }
 
   return;
 }
 
-event* get_spell_event(char *spell_event)
-{
+event *get_spell_event(char *spell_event) {
   char buf2[80];
 
   switch (spell_event[0]) {
-    case 'A':
-    case 'a':
-      if (strcasecmp(spell_event, "area_dam") == 0)
-        return spell_area_dam_event;
-      else if (strcasecmp(spell_event, "area") == 0)
-        return spell_area_event;
-      else if (strcasecmp(spell_event, "area_points") == 0)
-        return spell_area_points_event;
-      else if (strcasecmp(spell_event, "add_dam_event") == 0)
-        return spell_add_dam_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'C':
-    case 'c':
-      if (strcasecmp(spell_event, "charm") == 0)
-        return spell_charm_event;
-      else if (strcasecmp(spell_event, "char") == 0)
-        return spell_char_event;
-      else if (strcasecmp(spell_event, "confusion") == 0)
-        return spell_confusion_event;
-      else if (strcasecmp(spell_event, "create_obj") == 0)
-        return spell_create_obj_event;
-      else if (strcasecmp(spell_event, "create_mob") == 0)
-        return spell_create_mob_event;
-      else if (strcasecmp(spell_event, "create_water") == 0)
-        return spell_create_water_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'D':
-    case 'd':
-      if (strcasecmp(spell_event, "dam") == 0)
-        return spell_dam_event;
-      else if (strcasecmp(spell_event, "dimdoor") == 0)
-        return spell_dimdoor_event;
-      else if (strcasecmp(spell_event, "disintegrate") == 0)
-        return spell_disintegrate_event;
-      else if (strcasecmp(spell_event, "dispel_magic") == 0)
-        return spell_dispel_magic_event;
-      else if (strcasecmp(spell_event, "destroy_inventory") == 0)
-        return spell_destroy_inventory_event;
-      else if (strcasecmp(spell_event, "destroy_equipment") == 0)
-        return spell_destroy_equipment_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'G':
-    case 'g':
-      if (strcasecmp(spell_event, "group") == 0)
-        return spell_group_event;
-      else if (strcasecmp(spell_event, "group_points") == 0)
-        return spell_group_points_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'I':
-    case 'i':
-      if (strcasecmp(spell_event, "identify") == 0)
-        return spell_identify_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'L':
-    case 'l':
-      if (strcasecmp(spell_event, "locate_obj") == 0)
-        return spell_locate_obj_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'M':
-    case 'm':
-      if (strcasecmp(spell_event, "magic_missile") == 0)
-        return spell_magic_missile_event;
-      else if (strcasecmp(spell_event, "magical_lock") == 0)
-        return spell_magical_lock_event;
-      else if (strcasecmp(spell_event, "magical_unlock") == 0)
-        return spell_magical_unlock_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'O':
-    case 'o':
-      if (strcasecmp(spell_event, "obj_char") == 0)
-        return spell_obj_char_event;
-      else if (strcasecmp(spell_event, "obj") == 0)
-        return spell_obj_event;
-      else if (strcasecmp(spell_event, "obj_room") == 0)
-        return spell_obj_room_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'P':
-    case 'p':
-      if (strcasecmp(spell_event, "prismatic_spray") == 0)
-        return spell_prismatic_spray_event;
-      else if (strcasecmp(spell_event, "points") == 0)
-        return spell_points_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'R':
-    case 'r':
-      if (strcasecmp(spell_event, "room") == 0)
-        return spell_room_event;
-      else if (strcasecmp(spell_event, "resurrection") == 0)
-        return spell_resurrection_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'S':
-    case 's':
-      if (strcasecmp(spell_event, "summon") == 0)
-        return spell_summon_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'T':
-    case 't':
-      if (strcasecmp(spell_event, "teleport") == 0)
-        return spell_teleport_event;
-      else if (strcasecmp(spell_event, "turn_undead") == 0)
-        return spell_turn_undead_event;
-      else if (strcasecmp(spell_event, "telekinesis") == 0)
-        return spell_telekinesis_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    case 'W':
-    case 'w':
-      if (strcasecmp(spell_event, "word_recall") == 0)
-        return spell_word_recall_event;
-      else {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
-        stderr_log(buf2);
-      }
-      break;
-    default:
+  case 'A':
+  case 'a':
+    if (strcasecmp(spell_event, "area_dam") == 0)
+      return spell_area_dam_event;
+    else if (strcasecmp(spell_event, "area") == 0)
+      return spell_area_event;
+    else if (strcasecmp(spell_event, "area_points") == 0)
+      return spell_area_points_event;
+    else if (strcasecmp(spell_event, "add_dam_event") == 0)
+      return spell_add_dam_event;
+    else {
       safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
       stderr_log(buf2);
-      break;
+    }
+    break;
+  case 'C':
+  case 'c':
+    if (strcasecmp(spell_event, "charm") == 0)
+      return spell_charm_event;
+    else if (strcasecmp(spell_event, "char") == 0)
+      return spell_char_event;
+    else if (strcasecmp(spell_event, "confusion") == 0)
+      return spell_confusion_event;
+    else if (strcasecmp(spell_event, "create_obj") == 0)
+      return spell_create_obj_event;
+    else if (strcasecmp(spell_event, "create_mob") == 0)
+      return spell_create_mob_event;
+    else if (strcasecmp(spell_event, "create_water") == 0)
+      return spell_create_water_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'D':
+  case 'd':
+    if (strcasecmp(spell_event, "dam") == 0)
+      return spell_dam_event;
+    else if (strcasecmp(spell_event, "dimdoor") == 0)
+      return spell_dimdoor_event;
+    else if (strcasecmp(spell_event, "disintegrate") == 0)
+      return spell_disintegrate_event;
+    else if (strcasecmp(spell_event, "dispel_magic") == 0)
+      return spell_dispel_magic_event;
+    else if (strcasecmp(spell_event, "destroy_inventory") == 0)
+      return spell_destroy_inventory_event;
+    else if (strcasecmp(spell_event, "destroy_equipment") == 0)
+      return spell_destroy_equipment_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'G':
+  case 'g':
+    if (strcasecmp(spell_event, "group") == 0)
+      return spell_group_event;
+    else if (strcasecmp(spell_event, "group_points") == 0)
+      return spell_group_points_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'I':
+  case 'i':
+    if (strcasecmp(spell_event, "identify") == 0)
+      return spell_identify_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'L':
+  case 'l':
+    if (strcasecmp(spell_event, "locate_obj") == 0)
+      return spell_locate_obj_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'M':
+  case 'm':
+    if (strcasecmp(spell_event, "magic_missile") == 0)
+      return spell_magic_missile_event;
+    else if (strcasecmp(spell_event, "magical_lock") == 0)
+      return spell_magical_lock_event;
+    else if (strcasecmp(spell_event, "magical_unlock") == 0)
+      return spell_magical_unlock_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'O':
+  case 'o':
+    if (strcasecmp(spell_event, "obj_char") == 0)
+      return spell_obj_char_event;
+    else if (strcasecmp(spell_event, "obj") == 0)
+      return spell_obj_event;
+    else if (strcasecmp(spell_event, "obj_room") == 0)
+      return spell_obj_room_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'P':
+  case 'p':
+    if (strcasecmp(spell_event, "prismatic_spray") == 0)
+      return spell_prismatic_spray_event;
+    else if (strcasecmp(spell_event, "points") == 0)
+      return spell_points_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'R':
+  case 'r':
+    if (strcasecmp(spell_event, "room") == 0)
+      return spell_room_event;
+    else if (strcasecmp(spell_event, "resurrection") == 0)
+      return spell_resurrection_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'S':
+  case 's':
+    if (strcasecmp(spell_event, "summon") == 0)
+      return spell_summon_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'T':
+  case 't':
+    if (strcasecmp(spell_event, "teleport") == 0)
+      return spell_teleport_event;
+    else if (strcasecmp(spell_event, "turn_undead") == 0)
+      return spell_turn_undead_event;
+    else if (strcasecmp(spell_event, "telekinesis") == 0)
+      return spell_telekinesis_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  case 'W':
+  case 'w':
+    if (strcasecmp(spell_event, "word_recall") == 0)
+      return spell_word_recall_event;
+    else {
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+      stderr_log(buf2);
+    }
+    break;
+  default:
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown event_type [%s]", spell_event);
+    stderr_log(buf2);
+    break;
   }
 
   return NULL;
 }
 
-spell* get_spell_type(char *spell_type)
-{
+spell *get_spell_type(char *spell_type) {
   char buf2[80];
   ASPELL(spell_general);
   ASPELL(spell_char);
@@ -4688,8 +4650,7 @@ spell* get_spell_type(char *spell_type)
   return NULL;
 }
 
-void load_spells(void)
-{
+void load_spells(void) {
   FILE *f = fopen(SPELL_FILE, "r");
   char buf[256];
   char buf2[256];
@@ -4732,286 +4693,285 @@ void load_spells(void)
 
     val = atoi(tag_arguments);
     switch (tag[0]) {
-      case 'a':
-        if (strcasecmp(tag, "aggressive") == 0)
-          spells[spellnumber].aggressive = val;
-        else if (strcasecmp(tag, "accum_affect") == 0)
-          spells[spellnumber].accum_affect = val;
-        else if (strcasecmp(tag, "avg_affect") == 0)
-          spells[spellnumber].avg_affect = val;
-        else if (strcasecmp(tag, "accum_duration") == 0)
-          spells[spellnumber].accum_duration = val;
-        else if (strcasecmp(tag, "avg_duration") == 0)
-          spells[spellnumber].avg_duration = val;
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'c':
-        if (strcasecmp(tag, "class_lvl_list") == 0) {
-          p = tag_arguments;
-          i = 0;
-          while ((cp = strtok(p, " ")) != NULL) {
-            val = atoi(cp);
-            spells[spellnumber].min_level[i] = val ? val : 51;
-            i++;
-            p = NULL;
-          }
-        } else if (strcasecmp(tag, "cost_multiplier") == 0) {
-          spells[spellnumber].cost_multiplier = val;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'd':
-        if (strcasecmp(tag, "dice_add") == 0)
-          spells[spellnumber].dice_add = val;
-        else if (strcasecmp(tag, "dice_add2") == 0)
-          spells[spellnumber].dice_add2 = val;
-        else if (strcasecmp(tag, "dice_limit") == 0)
-          spells[spellnumber].dice_limit = val;
-        else if (strcasecmp(tag, "dice_limit2") == 0)
-          spells[spellnumber].dice_limit2 = val;
-        else if (strcasecmp(tag, "difficulty") == 0)
-          spells[spellnumber].difficulty = val;
-        else if (strcasecmp(tag, "delay") == 0) {
-          spells[spellnumber].delay = val;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'i':
-        if (strcasecmp(tag, "invisible") == 0)
-          spells[spellnumber].invisible = val;
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'm':
-        if (strcasecmp(tag, "min_position") == 0)
-          spells[spellnumber].min_position = val;
-        else if (strcasecmp(tag, "max_mana") == 0)
-          spells[spellnumber].mana_max = val;
-        else if (strcasecmp(tag, "min_mana") == 0)
-          spells[spellnumber].mana_min = val;
-        else if (strcasecmp(tag, "mana_chg") == 0)
-          spells[spellnumber].mana_change = val;
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'n':
-        if (strcasecmp(tag, "num_dice") == 0)
-          spells[spellnumber].num_dice = val;
-        else if (strcasecmp(tag, "num_dice2") == 0)
-          spells[spellnumber].num_dice2 = val;
-        else if (strcasecmp(tag, "npc_defense_flags") == 0)
-          spells[spellnumber].npc_defense_flags = asciiflag_conv(tag_arguments);
-        else if (strcasecmp(tag, "npc_offense_flags") == 0)
-          spells[spellnumber].npc_offense_flags = asciiflag_conv(tag_arguments);
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'o':
-        if (strcasecmp(tag, "obj_affs_loc") == 0) {
-          p = tag_arguments;
-          i = 0;
-          while ((cp = strtok(p, " ")) != NULL) {
-            spells[spellnumber].obj_aff[i].location = atoi(cp);
-            i++;
-            spells[spellnumber].num_obj_aff = i;
-            p = NULL;
-          }
-        } else if (strcasecmp(tag, "obj_affs_mod") == 0) {
-          p = tag_arguments;
-          i = 0;
-          while ((cp = strtok(p, " ")) != NULL) {
-            spells[spellnumber].obj_aff[i].modifier = atoi(cp);
-            i++;
-            p = NULL;
-          }
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'p':
-        if (strcasecmp(tag, "prime_stat") == 0) {
-          spells[spellnumber].prime_stat = val;
-        } else if (strcasecmp(tag, "plr_affs_loc") == 0) {
-          p = tag_arguments;
-          i = 0;
-          while ((cp = strtok(p, " ")) != NULL) {
-            spells[spellnumber].plr_aff[i].location = atoi(cp);
-            i++;
-            spells[spellnumber].num_plr_aff = i;
-            p = NULL;
-          }
-        } else if (strcasecmp(tag, "plr_affs_mod") == 0) {
-          p = tag_arguments;
-          i = 0;
-          while ((cp = strtok(p, " ")) != NULL) {
-            spells[spellnumber].plr_aff[i].modifier = atoi(cp);
-            i++;
-            p = NULL;
-          }
-        } else if (strcasecmp(tag, "point_loc") == 0)
-          spells[spellnumber].point_loc = val;
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'q':
-        if (strcasecmp(tag, "quest_only") == 0)
-          spells[spellnumber].quest_only = val;
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'r':
-        if (strcasecmp(tag, "resist_type") == 0)
-          spells[spellnumber].resist_type = val;
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 's':
-        if (strcasecmp(tag, "second_stat") == 0) {
-          spells[spellnumber].second_stat = val;
-        } else if (strcasecmp(tag, "spell_begin") == 0) {
-          spellnumber++;
-          spells[spellnumber].spellindex = spellnumber;
-        } else if (strcasecmp(tag, "spell_name") == 0) {
-          if (strcasecmp(tag_arguments, "<RETURN>") == 0)
-            spells[spellnumber].command = strdup("\n");
-          else
-            spells[spellnumber].command = strdup(tag_arguments);
-        } else if (strcasecmp(tag, "spell_type") == 0)
-          spells[spellnumber].spell_pointer = get_spell_type(tag_arguments);
-        else if (strcasecmp(tag, "spell_event") == 0)
-          spells[spellnumber].event_pointer = get_spell_event(tag_arguments);
-        else if (strcasecmp(tag, "spell_realm") == 0)
-          spells[spellnumber].realm = val;
-        else if (strcasecmp(tag, "size_dice") == 0)
-          spells[spellnumber].size_dice = val;
-        else if (strcasecmp(tag, "size_dice2") == 0)
-          spells[spellnumber].size_dice2 = val;
-        else if (strcasecmp(tag, "size_limit") == 0)
-          spells[spellnumber].size_limit = val;
-        else if (strcasecmp(tag, "size_limit2") == 0)
-          spells[spellnumber].size_limit2 = val;
-        else if (strcasecmp(tag, "spell_duration") == 0)
-          spells[spellnumber].spell_duration = val;
-        else if (strcasecmp(tag, "saving_throw") == 0)
-          spells[spellnumber].saving_throw = val;
-        else if (strcasecmp(tag, "spell_obj_bit") == 0)
-          spells[spellnumber].spell_obj_bit = asciiflag_conv(tag_arguments);
-        else if (strcasecmp(tag, "spell_plr_bit") == 0)
-          spells[spellnumber].spell_plr_bit = asciiflag_conv(tag_arguments);
-        else if (strcasecmp(tag, "spell_plr_bit2") == 0)
-          spells[spellnumber].spell_plr_bit2 = asciiflag_conv(tag_arguments);
-        else if (strcasecmp(tag, "spell_plr_bit3") == 0)
-          spells[spellnumber].spell_plr_bit3 = asciiflag_conv(tag_arguments);
-        else if (strcasecmp(tag, "spell_room_bit") == 0)
-          spells[spellnumber].spell_room_bit = asciiflag_conv(tag_arguments);
-        else if (strcasecmp(tag, "send_to_char") == 0)
-          spells[spellnumber].send_to_char = strdup(tag_arguments);
-        else if (strcasecmp(tag, "send_to_vict") == 0)
-          spells[spellnumber].send_to_vict = strdup(tag_arguments);
-        else if (strcasecmp(tag, "send_to_room") == 0)
-          spells[spellnumber].send_to_room = strdup(tag_arguments);
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'u':
-        if (strcasecmp(tag, "unaffect") == 0)
-          spells[spellnumber].unaffect = strdup(tag_arguments);
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'v':
-        if (strcasecmp(tag, "vnum_list") == 0) {
-          p = tag_arguments;
-          i = 0;
-          while ((cp = strtok(p, " ")) != NULL) {
-            spells[spellnumber].vnum_list[i] = atoi(cp);
-            i++;
-            p = NULL;
-          }
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      case 'w':
-        if (strcasecmp(tag, "wear_off_msg") == 0)
-          spells[spellnumber].wear_off = strdup(tag_arguments);
-        else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
-          stderr_log(buf2);
-        }
-        break;
-      default:
+    case 'a':
+      if (strcasecmp(tag, "aggressive") == 0)
+        spells[spellnumber].aggressive = val;
+      else if (strcasecmp(tag, "accum_affect") == 0)
+        spells[spellnumber].accum_affect = val;
+      else if (strcasecmp(tag, "avg_affect") == 0)
+        spells[spellnumber].avg_affect = val;
+      else if (strcasecmp(tag, "accum_duration") == 0)
+        spells[spellnumber].accum_duration = val;
+      else if (strcasecmp(tag, "avg_duration") == 0)
+        spells[spellnumber].avg_duration = val;
+      else {
         safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
         stderr_log(buf2);
-        break;
+      }
+      break;
+    case 'c':
+      if (strcasecmp(tag, "class_lvl_list") == 0) {
+        p = tag_arguments;
+        i = 0;
+        while ((cp = strtok(p, " ")) != NULL) {
+          val = atoi(cp);
+          spells[spellnumber].min_level[i] = val ? val : 51;
+          i++;
+          p = NULL;
+        }
+      } else if (strcasecmp(tag, "cost_multiplier") == 0) {
+        spells[spellnumber].cost_multiplier = val;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'd':
+      if (strcasecmp(tag, "dice_add") == 0)
+        spells[spellnumber].dice_add = val;
+      else if (strcasecmp(tag, "dice_add2") == 0)
+        spells[spellnumber].dice_add2 = val;
+      else if (strcasecmp(tag, "dice_limit") == 0)
+        spells[spellnumber].dice_limit = val;
+      else if (strcasecmp(tag, "dice_limit2") == 0)
+        spells[spellnumber].dice_limit2 = val;
+      else if (strcasecmp(tag, "difficulty") == 0)
+        spells[spellnumber].difficulty = val;
+      else if (strcasecmp(tag, "delay") == 0) {
+        spells[spellnumber].delay = val;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'i':
+      if (strcasecmp(tag, "invisible") == 0)
+        spells[spellnumber].invisible = val;
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'm':
+      if (strcasecmp(tag, "min_position") == 0)
+        spells[spellnumber].min_position = val;
+      else if (strcasecmp(tag, "max_mana") == 0)
+        spells[spellnumber].mana_max = val;
+      else if (strcasecmp(tag, "min_mana") == 0)
+        spells[spellnumber].mana_min = val;
+      else if (strcasecmp(tag, "mana_chg") == 0)
+        spells[spellnumber].mana_change = val;
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'n':
+      if (strcasecmp(tag, "num_dice") == 0)
+        spells[spellnumber].num_dice = val;
+      else if (strcasecmp(tag, "num_dice2") == 0)
+        spells[spellnumber].num_dice2 = val;
+      else if (strcasecmp(tag, "npc_defense_flags") == 0)
+        spells[spellnumber].npc_defense_flags = asciiflag_conv(tag_arguments);
+      else if (strcasecmp(tag, "npc_offense_flags") == 0)
+        spells[spellnumber].npc_offense_flags = asciiflag_conv(tag_arguments);
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'o':
+      if (strcasecmp(tag, "obj_affs_loc") == 0) {
+        p = tag_arguments;
+        i = 0;
+        while ((cp = strtok(p, " ")) != NULL) {
+          spells[spellnumber].obj_aff[i].location = atoi(cp);
+          i++;
+          spells[spellnumber].num_obj_aff = i;
+          p = NULL;
+        }
+      } else if (strcasecmp(tag, "obj_affs_mod") == 0) {
+        p = tag_arguments;
+        i = 0;
+        while ((cp = strtok(p, " ")) != NULL) {
+          spells[spellnumber].obj_aff[i].modifier = atoi(cp);
+          i++;
+          p = NULL;
+        }
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'p':
+      if (strcasecmp(tag, "prime_stat") == 0) {
+        spells[spellnumber].prime_stat = val;
+      } else if (strcasecmp(tag, "plr_affs_loc") == 0) {
+        p = tag_arguments;
+        i = 0;
+        while ((cp = strtok(p, " ")) != NULL) {
+          spells[spellnumber].plr_aff[i].location = atoi(cp);
+          i++;
+          spells[spellnumber].num_plr_aff = i;
+          p = NULL;
+        }
+      } else if (strcasecmp(tag, "plr_affs_mod") == 0) {
+        p = tag_arguments;
+        i = 0;
+        while ((cp = strtok(p, " ")) != NULL) {
+          spells[spellnumber].plr_aff[i].modifier = atoi(cp);
+          i++;
+          p = NULL;
+        }
+      } else if (strcasecmp(tag, "point_loc") == 0)
+        spells[spellnumber].point_loc = val;
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'q':
+      if (strcasecmp(tag, "quest_only") == 0)
+        spells[spellnumber].quest_only = val;
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'r':
+      if (strcasecmp(tag, "resist_type") == 0)
+        spells[spellnumber].resist_type = val;
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 's':
+      if (strcasecmp(tag, "second_stat") == 0) {
+        spells[spellnumber].second_stat = val;
+      } else if (strcasecmp(tag, "spell_begin") == 0) {
+        spellnumber++;
+        spells[spellnumber].spellindex = spellnumber;
+      } else if (strcasecmp(tag, "spell_name") == 0) {
+        if (strcasecmp(tag_arguments, "<RETURN>") == 0)
+          spells[spellnumber].command = strdup("\n");
+        else
+          spells[spellnumber].command = strdup(tag_arguments);
+      } else if (strcasecmp(tag, "spell_type") == 0)
+        spells[spellnumber].spell_pointer = get_spell_type(tag_arguments);
+      else if (strcasecmp(tag, "spell_event") == 0)
+        spells[spellnumber].event_pointer = get_spell_event(tag_arguments);
+      else if (strcasecmp(tag, "spell_realm") == 0)
+        spells[spellnumber].realm = val;
+      else if (strcasecmp(tag, "size_dice") == 0)
+        spells[spellnumber].size_dice = val;
+      else if (strcasecmp(tag, "size_dice2") == 0)
+        spells[spellnumber].size_dice2 = val;
+      else if (strcasecmp(tag, "size_limit") == 0)
+        spells[spellnumber].size_limit = val;
+      else if (strcasecmp(tag, "size_limit2") == 0)
+        spells[spellnumber].size_limit2 = val;
+      else if (strcasecmp(tag, "spell_duration") == 0)
+        spells[spellnumber].spell_duration = val;
+      else if (strcasecmp(tag, "saving_throw") == 0)
+        spells[spellnumber].saving_throw = val;
+      else if (strcasecmp(tag, "spell_obj_bit") == 0)
+        spells[spellnumber].spell_obj_bit = asciiflag_conv(tag_arguments);
+      else if (strcasecmp(tag, "spell_plr_bit") == 0)
+        spells[spellnumber].spell_plr_bit = asciiflag_conv(tag_arguments);
+      else if (strcasecmp(tag, "spell_plr_bit2") == 0)
+        spells[spellnumber].spell_plr_bit2 = asciiflag_conv(tag_arguments);
+      else if (strcasecmp(tag, "spell_plr_bit3") == 0)
+        spells[spellnumber].spell_plr_bit3 = asciiflag_conv(tag_arguments);
+      else if (strcasecmp(tag, "spell_room_bit") == 0)
+        spells[spellnumber].spell_room_bit = asciiflag_conv(tag_arguments);
+      else if (strcasecmp(tag, "send_to_char") == 0)
+        spells[spellnumber].send_to_char = strdup(tag_arguments);
+      else if (strcasecmp(tag, "send_to_vict") == 0)
+        spells[spellnumber].send_to_vict = strdup(tag_arguments);
+      else if (strcasecmp(tag, "send_to_room") == 0)
+        spells[spellnumber].send_to_room = strdup(tag_arguments);
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'u':
+      if (strcasecmp(tag, "unaffect") == 0)
+        spells[spellnumber].unaffect = strdup(tag_arguments);
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'v':
+      if (strcasecmp(tag, "vnum_list") == 0) {
+        p = tag_arguments;
+        i = 0;
+        while ((cp = strtok(p, " ")) != NULL) {
+          spells[spellnumber].vnum_list[i] = atoi(cp);
+          i++;
+          p = NULL;
+        }
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    case 'w':
+      if (strcasecmp(tag, "wear_off_msg") == 0)
+        spells[spellnumber].wear_off = strdup(tag_arguments);
+      else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+        stderr_log(buf2);
+      }
+      break;
+    default:
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown tag [%s]", tag);
+      stderr_log(buf2);
+      break;
     }
   }
 
   fclose(f);
-  qsort(((struct spell_info_type *) spells + 1), numspells - 2, sizeof(struct spell_info_type), spell_comp);
+  qsort(((struct spell_info_type *)spells + 1), numspells - 2, sizeof(struct spell_info_type), spell_comp);
   for (i = 0;; i++) {
     if (spells[i].command[0] != '\n') {
       /* convert values for spell realms */
       switch (spells[i].realm) {
-        case 0:
-          spells[i].realm = spells[find_skill_num("general realm")].spellindex;
-          break;
-        case 1:
-          spells[i].realm = spells[find_skill_num("elemental realm")].spellindex;
-          break;
-        case 2:
-          spells[i].realm = spells[find_skill_num("summoning realm")].spellindex;
-          break;
-        case 3:
-          spells[i].realm = spells[find_skill_num("healing realm")].spellindex;
-          break;
-        case 4:
-          spells[i].realm = spells[find_skill_num("divination realm")].spellindex;
-          break;
-        case 5:
-          spells[i].realm = spells[find_skill_num("protection realm")].spellindex;
-          break;
-        case 6:
-          spells[i].realm = spells[find_skill_num("creation realm")].spellindex;
-          break;
-        case 7:
-          spells[i].realm = spells[find_skill_num("enchantment realm")].spellindex;
-          break;
-        default:
-          spells[i].realm = spells[find_skill_num("general realm")].spellindex;
-          break;
+      case 0:
+        spells[i].realm = spells[find_skill_num("general realm")].spellindex;
+        break;
+      case 1:
+        spells[i].realm = spells[find_skill_num("elemental realm")].spellindex;
+        break;
+      case 2:
+        spells[i].realm = spells[find_skill_num("summoning realm")].spellindex;
+        break;
+      case 3:
+        spells[i].realm = spells[find_skill_num("healing realm")].spellindex;
+        break;
+      case 4:
+        spells[i].realm = spells[find_skill_num("divination realm")].spellindex;
+        break;
+      case 5:
+        spells[i].realm = spells[find_skill_num("protection realm")].spellindex;
+        break;
+      case 6:
+        spells[i].realm = spells[find_skill_num("creation realm")].spellindex;
+        break;
+      case 7:
+        spells[i].realm = spells[find_skill_num("enchantment realm")].spellindex;
+        break;
+      default:
+        spells[i].realm = spells[find_skill_num("general realm")].spellindex;
+        break;
       }
     } else
       break;
   }
 }
 
-int spell_comp(const void* element1, const void* element2)
-{
-  return strcasecmp(((struct spell_info_type *) element1)->command, ((struct spell_info_type *) element2)->command);
+int spell_comp(const void *element1, const void *element2) {
+  return strcasecmp(((struct spell_info_type *)element1)->command, ((struct spell_info_type *)element2)->command);
 }

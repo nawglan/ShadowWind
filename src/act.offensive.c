@@ -11,14 +11,14 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "event.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 /* extern variables */
 extern struct zone_data *zone_table;
@@ -30,23 +30,20 @@ extern struct spell_info_type *spells;
 extern int MaxExperience[LVL_IMMORT + 2];
 
 /* extern functions */
-void raw_kill(struct char_data * ch, struct char_data * killer);
+void raw_kill(struct char_data *ch, struct char_data *killer);
 
-int check_state(struct char_data * ch)
-{
+int check_state(struct char_data *ch) {
   if (ch->char_specials.fightwait > 0) {
     return 1;
   }
   return 0;
 }
 
-void fight_wait(struct char_data * ch, int waittime)
-{
+void fight_wait(struct char_data *ch, int waittime) {
   ch->char_specials.fight_timer = waittime;
 }
 
-ACMD(do_assist)
-{
+ACMD(do_assist) {
   struct char_data *helpee, *opponent;
 
   if (FIGHTING(ch)) {
@@ -72,7 +69,7 @@ ACMD(do_assist)
       act("But nobody is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
     } else if (!CAN_SEE(ch, opponent)) {
       act("You can't see who is fighting $M!", FALSE, ch, 0, helpee, TO_CHAR);
-    } else if (!pk_allowed && !IS_NPC(opponent)) { /* prevent accidental pkill */ 
+    } else if (!pk_allowed && !IS_NPC(opponent)) { /* prevent accidental pkill */
       act("Use 'murder' if you really want to attack $N.", FALSE, ch, 0, opponent, TO_CHAR);
     } else {
       send_to_char("You join the fight!\r\n", ch);
@@ -83,8 +80,7 @@ ACMD(do_assist)
   }
 }
 
-ACMD(do_hit)
-{
+ACMD(do_hit) {
   struct char_data *vict;
 
   one_argument(argument, arg);
@@ -126,8 +122,7 @@ ACMD(do_hit)
   }
 }
 
-ACMD(do_kill)
-{
+ACMD(do_kill) {
   struct char_data *vict;
   struct mob_attacks_data *this;
 
@@ -152,10 +147,10 @@ ACMD(do_kill)
       act("{DYou chop {w$M {Dto pieces!  Ah!  The {rblood{D!{x", FALSE, ch, 0, vict, TO_CHAR);
       act("\r\n{D$N {Dchops you to {rpieces{D.{x\r\n{DYou are dead. {rR{D.{rI{D.{rP{D.{x\r\n{x",
 
-      FALSE, vict, 0, ch, TO_CHAR);
+          FALSE, vict, 0, ch, TO_CHAR);
       act("\r\n{D$n {Dchops {w$N {Dto pieces!  Ah!  The {rblood{D!{x",
 
-      FALSE, ch, 0, vict, TO_NOTVICT);
+          FALSE, ch, 0, vict, TO_NOTVICT);
       safe_snprintf(buf, MAX_STRING_LENGTH, "%s rawkilled by %s", GET_NAME(vict), GET_NAME(ch));
       mudlog(buf, 'X', COM_ADMIN, TRUE);
       plog(buf, ch, LVL_IMMORT);
@@ -164,8 +159,7 @@ ACMD(do_kill)
   }
 }
 
-ACMD(do_order)
-{
+ACMD(do_order) {
   char name[100], message[256];
   char buf[256];
   bool found = FALSE;
@@ -220,8 +214,7 @@ ACMD(do_order)
   }
 }
 
-ACMD(do_flee)
-{
+ACMD(do_flee) {
   int i, attempt;
   /* not needed.
    int loss;
@@ -268,8 +261,7 @@ ACMD(do_flee)
   send_to_char("PANIC!  You couldn't escape!\r\n", ch);
 }
 
-ACMD(do_disengage)
-{
+ACMD(do_disengage) {
   if (FIGHTING(ch)) {
     send_to_char("You stop fighting.\r\n", ch);
     act("$n stops fighting.", TRUE, ch, 0, 0, TO_ROOM);
@@ -277,10 +269,9 @@ ACMD(do_disengage)
     if (IS_NPC(ch)) {
       GET_MOB_WAIT(ch) = 2;
     } else {
-      WAIT_STATE(ch, 2*PULSE_VIOLENCE);
+      WAIT_STATE(ch, 2 * PULSE_VIOLENCE);
     }
   } else {
     send_to_char("You're not fighting!\r\n", ch);
   }
 }
-

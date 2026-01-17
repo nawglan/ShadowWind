@@ -7,14 +7,14 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "structs.h"
-#include "utils.h"
-#include "interpreter.h"
-#include "event.h"
-#include "spells.h"
-#include "handler.h"
 #include "comm.h"
 #include "db.h"
+#include "event.h"
+#include "handler.h"
+#include "interpreter.h"
+#include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 #define SINFO spells[spellnum]
 
@@ -30,16 +30,25 @@ struct syllable {
   char *new;
 };
 
-struct syllable syls[] = { {" ", " "}, {"ar", "abra"}, {"ate", "i"}, {"cau", "kada"}, {"blind", "nose"}, {"bur", "mosa"}, {"cu", "judi"}, {"de", "oculo"}, {"dis", "mar"}, {"ect", "kamina"}, {"en", "uns"}, {"gro", "cra"}, {"light", "dies"}, {"lo", "hi"}, {"magi", "kari"}, {"mon", "bar"}, {"mor", "zak"}, {"move", "sido"}, {"ness", "lacri"}, {"ning", "illa"}, {"per", "duda"}, {"ra", "gru"}, {"re", "candus"}, {"son", "sabru"}, {"tect", "infra"}, {"tri", "cula"}, {"ven", "nofo"}, {"word of", "inset"}, {"a", "i"}, {"b", "v"}, {"c", "q"}, {"d", "m"}, {"e", "o"}, {"f", "y"}, {"g", "t"}, {"h", "p"}, {"i", "u"}, {"j", "y"}, {"k", "t"}, {"l", "r"}, {"m", "w"}, {"n", "b"}, {"o", "a"}, {"p", "s"}, {"q", "d"}, {"r", "f"}, {"s", "g"}, {"t", "h"}, {"u", "e"}, {"v", "z"}, {"w", "x"}, {"x", "n"}, {"y", "l"}, {"z", "k"}, {"", ""}};
+struct syllable syls[] = {{" ", " "},      {"ar", "abra"},  {"ate", "i"},         {"cau", "kada"},   {"blind", "nose"},
+                          {"bur", "mosa"}, {"cu", "judi"},  {"de", "oculo"},      {"dis", "mar"},    {"ect", "kamina"},
+                          {"en", "uns"},   {"gro", "cra"},  {"light", "dies"},    {"lo", "hi"},      {"magi", "kari"},
+                          {"mon", "bar"},  {"mor", "zak"},  {"move", "sido"},     {"ness", "lacri"}, {"ning", "illa"},
+                          {"per", "duda"}, {"ra", "gru"},   {"re", "candus"},     {"son", "sabru"},  {"tect", "infra"},
+                          {"tri", "cula"}, {"ven", "nofo"}, {"word of", "inset"}, {"a", "i"},        {"b", "v"},
+                          {"c", "q"},      {"d", "m"},      {"e", "o"},           {"f", "y"},        {"g", "t"},
+                          {"h", "p"},      {"i", "u"},      {"j", "y"},           {"k", "t"},        {"l", "r"},
+                          {"m", "w"},      {"n", "b"},      {"o", "a"},           {"p", "s"},        {"q", "d"},
+                          {"r", "f"},      {"s", "g"},      {"t", "h"},           {"u", "e"},        {"v", "z"},
+                          {"w", "x"},      {"x", "n"},      {"y", "l"},           {"z", "k"},        {"", ""}};
 
-int mag_manacost(struct char_data * ch, int spellnum)
-{
-  return MAX(SINFO.mana_max - (SINFO.mana_change * (GET_LEVEL(ch) - SINFO.min_level[(int) GET_CLASS(ch)])), SINFO.mana_min);
+int mag_manacost(struct char_data *ch, int spellnum) {
+  return MAX(SINFO.mana_max - (SINFO.mana_change * (GET_LEVEL(ch) - SINFO.min_level[(int)GET_CLASS(ch)])),
+             SINFO.mana_min);
 }
 
 /* say_spell erodes buf, buf1, buf2 */
-void say_spell(struct char_data * ch, int spellnum, struct char_data * tch, struct obj_data * tobj)
-{
+void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct obj_data *tobj) {
   char buf[256];
   char buf1[256];
   char buf2[256];
@@ -87,13 +96,13 @@ void say_spell(struct char_data * ch, int spellnum, struct char_data * tch, stru
       perform_act(buf2, ch, tobj, tch, i);
   }
   if (tch != NULL && tch != ch) {
-    safe_snprintf(buf1, MAX_STRING_LENGTH, "$n stares at you and utters the words, '%s'.", GET_CLASS(ch) == GET_CLASS(tch) ? get_spell_name(spellnum) : buf);
+    safe_snprintf(buf1, MAX_STRING_LENGTH, "$n stares at you and utters the words, '%s'.",
+                  GET_CLASS(ch) == GET_CLASS(tch) ? get_spell_name(spellnum) : buf);
     act(buf1, FALSE, ch, NULL, tch, TO_VICT);
   }
 }
 
-int find_spell_num(char *name)
-{
+int find_spell_num(char *name) {
   int index = 0;
   /* not needed, see comment below.
    int ok;
@@ -126,8 +135,7 @@ int find_spell_num(char *name)
   return -1;
 }
 
-int find_skill_num(char *name)
-{
+int find_skill_num(char *name) {
   int index = 0;
   /* not needed, see comment below.
    int ok;
@@ -158,8 +166,7 @@ int find_skill_num(char *name)
   return -1;
 }
 
-int find_skill_num_def(int define)
-{
+int find_skill_num_def(int define) {
   int index = 0;
 
   while (spells[++index].command[0] != '\n') {
@@ -181,8 +188,7 @@ int find_skill_num_def(int define)
  * Staves and wands will default to level 14 if the level is not specified.
  */
 
-void mag_objectmagic(struct char_data * ch, struct obj_data * obj, char *argument)
-{
+void mag_objectmagic(struct char_data *ch, struct obj_data *obj, char *argument) {
   int i, k;
   struct actd_msg *actd;
   struct char_data *tch = NULL, *next_tch;
@@ -211,126 +217,126 @@ void mag_objectmagic(struct char_data * ch, struct obj_data * obj, char *argumen
   }
 
   switch (GET_OBJ_TYPE(obj)) {
-    case ITEM_STAFF:
-      if (actd == NULL) {
-        act("You tap $p three times on the ground.", FALSE, ch, obj, 0, TO_CHAR);
-        if (obj->action_description) {
-          act(obj->action_description, FALSE, ch, obj, 0, TO_ROOM);
-        } else {
-          act("$n taps $p three times on the ground.", FALSE, ch, obj, 0, TO_ROOM);
-        }
-      }
-
-      if (GET_OBJ_VAL(obj, 2) <= 0) {
-        act("It seems powerless.", FALSE, ch, obj, 0, TO_CHAR);
-        act("Nothing seems to happen.", FALSE, ch, obj, 0, TO_ROOM);
+  case ITEM_STAFF:
+    if (actd == NULL) {
+      act("You tap $p three times on the ground.", FALSE, ch, obj, 0, TO_CHAR);
+      if (obj->action_description) {
+        act(obj->action_description, FALSE, ch, obj, 0, TO_ROOM);
       } else {
-        GET_OBJ_VAL(obj, 2)--;
-        WAIT_STATE(ch, PULSE_VIOLENCE);
-        for (tch = world[ch->in_room].people; tch; tch = next_tch) {
-          next_tch = tch->next_in_room;
-          if (ch == tch) {
-            continue;
-          }
-          spellnum = find_skill_num_def(GET_OBJ_VAL(obj, 3));
-          DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
-        }
+        act("$n taps $p three times on the ground.", FALSE, ch, obj, 0, TO_ROOM);
       }
-      break;
-    case ITEM_WAND:
-      if (actd == NULL) {
-        if (k == FIND_CHAR_ROOM) {
-          if (tch == ch) {
-            act("You point $p at yourself.", FALSE, ch, obj, 0, TO_CHAR);
-            act("$n points $p at $mself.", FALSE, ch, obj, 0, TO_ROOM);
-          } else {
-            act("You point $p at $N.", FALSE, ch, obj, tch, TO_CHAR);
-            if (obj->action_description != NULL) {
-              act(obj->action_description, FALSE, ch, obj, tch, TO_ROOM);
-            } else {
-              act("$n points $p at $N.", TRUE, ch, obj, tch, TO_ROOM);
-            }
-          }
-        } else if (tobj != NULL) {
-          act("You point $p at $P.", FALSE, ch, obj, tobj, TO_CHAR);
-          if (obj->action_description != NULL) {
-            act(obj->action_description, FALSE, ch, obj, tobj, TO_ROOM);
-          } else {
-            act("$n points $p at $P.", TRUE, ch, obj, tobj, TO_ROOM);
-          }
-        } else {
-          act("At what should $p be pointed?", FALSE, ch, obj, NULL, TO_CHAR);
-          return;
-        }
-      }
-      if (GET_OBJ_VAL(obj, 2) <= 0) {
-        act("It seems powerless.", FALSE, ch, obj, 0, TO_CHAR);
-        return;
-      }
+    }
+
+    if (GET_OBJ_VAL(obj, 2) <= 0) {
+      act("It seems powerless.", FALSE, ch, obj, 0, TO_CHAR);
+      act("Nothing seems to happen.", FALSE, ch, obj, 0, TO_ROOM);
+    } else {
       GET_OBJ_VAL(obj, 2)--;
       WAIT_STATE(ch, PULSE_VIOLENCE);
-      spellnum = find_skill_num_def(GET_OBJ_VAL(obj, 3));
-      DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
-      break;
-    case ITEM_SCROLL:
-      if (*arg) {
-        if (!k && actd == NULL) {
-          act("There is nothing to here to affect with $p.", FALSE, ch, obj, NULL, TO_CHAR);
-          return;
+      for (tch = world[ch->in_room].people; tch; tch = next_tch) {
+        next_tch = tch->next_in_room;
+        if (ch == tch) {
+          continue;
         }
-      } else {
-        tch = ch;
+        spellnum = find_skill_num_def(GET_OBJ_VAL(obj, 3));
+        DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
       }
-
-      if (actd == NULL) {
-        act("You recite $p which dissolves.", TRUE, ch, obj, 0, TO_CHAR);
-        if (obj->action_description) {
-          act(obj->action_description, FALSE, ch, obj, NULL, TO_ROOM);
+    }
+    break;
+  case ITEM_WAND:
+    if (actd == NULL) {
+      if (k == FIND_CHAR_ROOM) {
+        if (tch == ch) {
+          act("You point $p at yourself.", FALSE, ch, obj, 0, TO_CHAR);
+          act("$n points $p at $mself.", FALSE, ch, obj, 0, TO_ROOM);
         } else {
-          act("$n recites $p.", FALSE, ch, obj, NULL, TO_ROOM);
-        }
-      }
-
-      WAIT_STATE(ch, PULSE_VIOLENCE);
-      for (i = 1; i < 4; i++) {
-        if (GET_OBJ_VAL(obj, i)) {
-          spellnum = find_skill_num_def(GET_OBJ_VAL(obj, i));
-          if (*arg) {
-            DO_SPELL(&spells[spellnum], spellnum, 1, ch, arg, YES);
+          act("You point $p at $N.", FALSE, ch, obj, tch, TO_CHAR);
+          if (obj->action_description != NULL) {
+            act(obj->action_description, FALSE, ch, obj, tch, TO_ROOM);
           } else {
-            DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
+            act("$n points $p at $N.", TRUE, ch, obj, tch, TO_ROOM);
           }
         }
-      }
-
-      if (obj != NULL) {
-        extract_obj(obj);
-      }
-      break;
-    case ITEM_POTION:
-      tch = ch;
-      if (actd == NULL) {
-        act("As you quaff $p, it disappears in a flash of light!", FALSE, ch, obj, NULL, TO_CHAR);
-        if (obj->action_description) {
-          act(obj->action_description, FALSE, ch, obj, NULL, TO_ROOM);
+      } else if (tobj != NULL) {
+        act("You point $p at $P.", FALSE, ch, obj, tobj, TO_CHAR);
+        if (obj->action_description != NULL) {
+          act(obj->action_description, FALSE, ch, obj, tobj, TO_ROOM);
         } else {
-          act("$n quaffs $p.", TRUE, ch, obj, NULL, TO_ROOM);
+          act("$n points $p at $P.", TRUE, ch, obj, tobj, TO_ROOM);
         }
+      } else {
+        act("At what should $p be pointed?", FALSE, ch, obj, NULL, TO_CHAR);
+        return;
       }
+    }
+    if (GET_OBJ_VAL(obj, 2) <= 0) {
+      act("It seems powerless.", FALSE, ch, obj, 0, TO_CHAR);
+      return;
+    }
+    GET_OBJ_VAL(obj, 2)--;
+    WAIT_STATE(ch, PULSE_VIOLENCE);
+    spellnum = find_skill_num_def(GET_OBJ_VAL(obj, 3));
+    DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
+    break;
+  case ITEM_SCROLL:
+    if (*arg) {
+      if (!k && actd == NULL) {
+        act("There is nothing to here to affect with $p.", FALSE, ch, obj, NULL, TO_CHAR);
+        return;
+      }
+    } else {
+      tch = ch;
+    }
 
-      WAIT_STATE(ch, PULSE_VIOLENCE);
-      for (i = 1; i < 4; i++)
-        if (GET_OBJ_VAL(obj, i)) {
-          spellnum = find_skill_num_def(GET_OBJ_VAL(obj, i));
+    if (actd == NULL) {
+      act("You recite $p which dissolves.", TRUE, ch, obj, 0, TO_CHAR);
+      if (obj->action_description) {
+        act(obj->action_description, FALSE, ch, obj, NULL, TO_ROOM);
+      } else {
+        act("$n recites $p.", FALSE, ch, obj, NULL, TO_ROOM);
+      }
+    }
+
+    WAIT_STATE(ch, PULSE_VIOLENCE);
+    for (i = 1; i < 4; i++) {
+      if (GET_OBJ_VAL(obj, i)) {
+        spellnum = find_skill_num_def(GET_OBJ_VAL(obj, i));
+        if (*arg) {
+          DO_SPELL(&spells[spellnum], spellnum, 1, ch, arg, YES);
+        } else {
           DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
         }
+      }
+    }
 
-      if (obj != NULL)
-        extract_obj(obj);
-      break;
-    default:
-      stderr_log("SYSERR: Unknown object_type in mag_objectmagic");
-      break;
+    if (obj != NULL) {
+      extract_obj(obj);
+    }
+    break;
+  case ITEM_POTION:
+    tch = ch;
+    if (actd == NULL) {
+      act("As you quaff $p, it disappears in a flash of light!", FALSE, ch, obj, NULL, TO_CHAR);
+      if (obj->action_description) {
+        act(obj->action_description, FALSE, ch, obj, NULL, TO_ROOM);
+      } else {
+        act("$n quaffs $p.", TRUE, ch, obj, NULL, TO_ROOM);
+      }
+    }
+
+    WAIT_STATE(ch, PULSE_VIOLENCE);
+    for (i = 1; i < 4; i++)
+      if (GET_OBJ_VAL(obj, i)) {
+        spellnum = find_skill_num_def(GET_OBJ_VAL(obj, i));
+        DO_SPELL(&spells[spellnum], spellnum, 1, ch, GET_NAME(tch), YES);
+      }
+
+    if (obj != NULL)
+      extract_obj(obj);
+    break;
+  default:
+    stderr_log("SYSERR: Unknown object_type in mag_objectmagic");
+    break;
   }
 }
 
@@ -341,8 +347,7 @@ void mag_objectmagic(struct char_data * ch, struct obj_data * obj, char *argumen
  * passes control to cast_spell().
  */
 
-ACMD(do_cast)
-{
+ACMD(do_cast) {
   char *s, *t;
   int mana = 0, spellnum, waitstate = 1;
   struct obj_data *instr = ch->equipment[WEAR_HOLD];
@@ -445,19 +450,19 @@ ACMD(do_cast)
           vobj = get_obj_in_list_vis(ch, t, world[ch->in_room].contents);
         }
       } else if (tempevent == spell_locate_obj_event) {
-        vobj = (struct obj_data*) 1;
+        vobj = (struct obj_data *)1;
       } else if (tempevent == spell_create_obj_event) {
         if (strcmp(spells[spellnum].command, "minor creation") == 0) {
           if (search_block(t, items, FALSE) == -1) {
             send_to_char("Options are: torch, ration, raft, barrel\r\n", ch);
             return;
           } else {
-            vobj = (struct obj_data*) 1;
+            vobj = (struct obj_data *)1;
           }
         } else if (strcmp(spells[spellnum].command, "moonwell") == 0) {
           vict = get_char_vis(ch, t);
         } else if (strcmp(spells[spellnum].command, "create food") == 0) {
-          vobj = (struct obj_data*) 1;
+          vobj = (struct obj_data *)1;
         } else if (strcmp(spells[spellnum].command, "create water") == 0) {
           vobj = get_obj_in_list_vis(ch, t, ch->carrying);
           if (!vobj) {
@@ -465,14 +470,14 @@ ACMD(do_cast)
           }
         } else if (strcmp(spells[spellnum].command, "create spring") == 0) {
           switch (GET_SECT(IN_ROOM(ch))) {
-            case SECT_INSIDE:
-            case SECT_CITY:
-            case SECT_WATER_SWIM:
-            case SECT_WATER_NOSWIM:
-            case SECT_UNDERWATER:
-            case SECT_FLYING:
-              send_to_char("You cannot create springs here!\r\n", ch);
-              return;
+          case SECT_INSIDE:
+          case SECT_CITY:
+          case SECT_WATER_SWIM:
+          case SECT_WATER_NOSWIM:
+          case SECT_UNDERWATER:
+          case SECT_FLYING:
+            send_to_char("You cannot create springs here!\r\n", ch);
+            return;
           }
         } else {
           vict = get_char_vis(ch, t);
@@ -483,7 +488,8 @@ ACMD(do_cast)
         } else if (vict && IS_NPC(vict) && MOB_FLAGGED(vict, MOB_NOKILL) && spells[spellnum].aggressive) {
           send_to_char("That's not a good idea.\r\n", ch);
           return;
-        } else if (vict && IS_NPC(vict) && spells[spellnum].aggressive && GET_LEVEL(vict) >= GET_LEVEL(ch) && number(0, 100) < 10) {
+        } else if (vict && IS_NPC(vict) && spells[spellnum].aggressive && GET_LEVEL(vict) >= GET_LEVEL(ch) &&
+                   number(0, 100) < 10) {
           if (FIGHTING(vict)) {
             stop_fighting(vict);
             if (GET_POS(ch) >= POS_DEAD) {
@@ -498,42 +504,42 @@ ACMD(do_cast)
         if (strcmp(spells[spellnum].command, "sea storm") == 0 || strcmp(spells[spellnum].command, "tidal wave") == 0) {
           if (GET_SECT(IN_ROOM(ch)) != SECT_WATER_SWIM && GET_SECT(IN_ROOM(ch)) != SECT_WATER_NOSWIM) {
             switch (GET_SECT(IN_ROOM(ch))) {
-              case SECT_INSIDE:
-                send_to_char("You cannot cause tidal waves inside.\r\n", ch);
-                break;
-              case SECT_CITY:
-                send_to_char("You cannot cause tidal waves in the city.\r\n", ch);
-                break;
-              case SECT_UNDERWATER:
-                send_to_char("You cannot cause tidal waves while underwater.\r\n", ch);
-                break;
-              case SECT_FLYING:
-                send_to_char("You cannot cause tidal waves while flying.\r\n", ch);
-                break;
-              default:
-                send_to_char("You cannot cause tidal waves on land.\r\n", ch);
-                break;
+            case SECT_INSIDE:
+              send_to_char("You cannot cause tidal waves inside.\r\n", ch);
+              break;
+            case SECT_CITY:
+              send_to_char("You cannot cause tidal waves in the city.\r\n", ch);
+              break;
+            case SECT_UNDERWATER:
+              send_to_char("You cannot cause tidal waves while underwater.\r\n", ch);
+              break;
+            case SECT_FLYING:
+              send_to_char("You cannot cause tidal waves while flying.\r\n", ch);
+              break;
+            default:
+              send_to_char("You cannot cause tidal waves on land.\r\n", ch);
+              break;
             }
             return;
           }
         } else if (strcmp(spells[spellnum].command, "earthquake") == 0) {
           switch (GET_SECT(IN_ROOM(ch))) {
-            case SECT_INSIDE:
-              send_to_char("You cannot cause tidal waves inside.\r\n", ch);
-              return;
-            case SECT_CITY:
-              send_to_char("You cannot cause tidal waves in the city.\r\n", ch);
-              return;
-            case SECT_UNDERWATER:
-              send_to_char("You cannot cause earthquakes while underwater.\r\n", ch);
-              return;
-            case SECT_FLYING:
-              send_to_char("You cannot cause earthquakes while flying.\r\n", ch);
-              return;
-            case SECT_WATER_SWIM:
-            case SECT_WATER_NOSWIM:
-              send_to_char("You cannot cause earthquakes on water.\r\n", ch);
-              return;
+          case SECT_INSIDE:
+            send_to_char("You cannot cause tidal waves inside.\r\n", ch);
+            return;
+          case SECT_CITY:
+            send_to_char("You cannot cause tidal waves in the city.\r\n", ch);
+            return;
+          case SECT_UNDERWATER:
+            send_to_char("You cannot cause earthquakes while underwater.\r\n", ch);
+            return;
+          case SECT_FLYING:
+            send_to_char("You cannot cause earthquakes while flying.\r\n", ch);
+            return;
+          case SECT_WATER_SWIM:
+          case SECT_WATER_NOSWIM:
+            send_to_char("You cannot cause earthquakes on water.\r\n", ch);
+            return;
           }
         }
       }
@@ -571,7 +577,12 @@ ACMD(do_cast)
       }
     }
     if (!vict && !vobj) {
-      if (find_spell_num("locate object") != spellnum && find_spell_num("moonwell") != spellnum && find_spell_num("minor creation") != spellnum && find_spell_num("conjure elemental") != spellnum && find_spell_num("word of recall") != spellnum && find_spell_num("create food") != spellnum && find_spell_num("create spring") != spellnum && tempevent != spell_area_event && tempevent != spell_area_dam_event && tempevent != spell_room_event && tempevent != spell_group_event && tempevent != spell_teleport_event) {
+      if (find_spell_num("locate object") != spellnum && find_spell_num("moonwell") != spellnum &&
+          find_spell_num("minor creation") != spellnum && find_spell_num("conjure elemental") != spellnum &&
+          find_spell_num("word of recall") != spellnum && find_spell_num("create food") != spellnum &&
+          find_spell_num("create spring") != spellnum && tempevent != spell_area_event &&
+          tempevent != spell_area_dam_event && tempevent != spell_room_event && tempevent != spell_group_event &&
+          tempevent != spell_teleport_event) {
         send_to_char("You can't find your target to cast this spell.\r\n", ch);
         return;
       }
@@ -586,7 +597,7 @@ ACMD(do_cast)
     act("$n starts casting a spell.", TRUE, ch, 0, 0, TO_ROOM);
   }
   if (IS_NPC(ch)) {
-    DO_SPELL(&spells[spellnum], spellnum, 26 - ((GET_INT(ch)/10) + (GET_WIS(ch)/10)), ch, t, NO);
+    DO_SPELL(&spells[spellnum], spellnum, 26 - ((GET_INT(ch) / 10) + (GET_WIS(ch) / 10)), ch, t, NO);
   } else {
     safe_snprintf(abuf, sizeof(abuf), "You start casting %s.\r\n", spells[spellnum].command);
     send_to_char(abuf, ch);
@@ -597,8 +608,7 @@ ACMD(do_cast)
   }
 }
 
-ACMD(do_mpcast)
-{
+ACMD(do_mpcast) {
   char *s, *t;
   int spellnum;
   struct obj_data *instr = ch->equipment[WEAR_HOLD];
@@ -655,7 +665,8 @@ ACMD(do_mpcast)
     return;
   }
 
-  safe_snprintf(debugbuf, sizeof(debugbuf), "MPCAST: %s casting '%s'", IS_NPC(ch) ? GET_MOB_NAME(ch) : GET_NAME(ch), spells[spellnum].command);
+  safe_snprintf(debugbuf, sizeof(debugbuf), "MPCAST: %s casting '%s'", IS_NPC(ch) ? GET_MOB_NAME(ch) : GET_NAME(ch),
+                spells[spellnum].command);
 
   /* Find the target */
   if (t != NULL) {
@@ -667,8 +678,7 @@ ACMD(do_mpcast)
   DO_SPELL(&spells[spellnum], spellnum, 1, ch, t, MPCAST);
 }
 
-ACMD(do_spells)
-{
+ACMD(do_spells) {
   ACMD(do_practice);
   extern int parse_class_spec(char *arg);
   int i, class;
@@ -694,8 +704,9 @@ ACMD(do_spells)
           safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "**OVERFLOW**\r\n");
           break;
         }
-        if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, i))) {
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-20s  Mana: %d\r\n", spells[i].min_level[(int) GET_CLASS(ch)], spells[i].command, mag_manacost(ch, i));
+        if ((GET_LEVEL(ch) >= spells[i].min_level[(int)GET_CLASS(ch)] || GET_SKILL(ch, i))) {
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-20s  Mana: %d\r\n",
+                        spells[i].min_level[(int)GET_CLASS(ch)], spells[i].command, mag_manacost(ch, i));
         }
       }
     }
@@ -716,7 +727,8 @@ ACMD(do_spells)
           break;
         }
         if (spells[i].min_level[class] < LVL_IMMORT) {
-          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-30s\r\n", spells[i].min_level[class], spells[i].command);
+          safe_snprintf(buf2 + strlen(buf2), MAX_STRING_LENGTH - strlen(buf2), "%2d: %-30s\r\n",
+                        spells[i].min_level[class], spells[i].command);
         }
       }
     }
@@ -724,8 +736,7 @@ ACMD(do_spells)
   page_string(ch->desc, buf2, 1);
 }
 
-char *get_spell_name(int spellnum)
-{
+char *get_spell_name(int spellnum) {
   int i;
   for (i = 1; spells[i].command[0] != '\n'; i++)
     if (spellnum == spells[i].spellindex)

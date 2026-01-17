@@ -8,7 +8,7 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
-#define TRACK_THROUGH_DOORS 
+#define TRACK_THROUGH_DOORS
 
 /* You can define or not define TRACK_THOUGH_DOORS, above, depending on
  whether or not you want track to find paths which lead through closed
@@ -18,14 +18,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "event.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 /* Externals */
 extern int top_of_world;
@@ -46,29 +46,24 @@ struct bfs_queue_struct {
 static struct bfs_queue_struct *queue_head = 0, *queue_tail = 0;
 
 /* Utility macros */
-#define MARK(room) (SET_BIT(ROOM_FLAGS(room), ROOM_BFS_MARK))
-#define UNMARK(room) (REMOVE_BIT(ROOM_FLAGS(room), ROOM_BFS_MARK))
+#define MARK(room)      (SET_BIT(ROOM_FLAGS(room), ROOM_BFS_MARK))
+#define UNMARK(room)    (REMOVE_BIT(ROOM_FLAGS(room), ROOM_BFS_MARK))
 #define IS_MARKED(room) (IS_SET(ROOM_FLAGS(room), ROOM_BFS_MARK))
-#define TOROOM(x, y) (world[(x)].dir_option[(y)]->to_room)
+#define TOROOM(x, y)    (world[(x)].dir_option[(y)]->to_room)
 #define IS_CLOSED(x, y) (IS_SET(world[(x)].dir_option[(y)]->exit_info, EX_CLOSED))
 
 #ifdef TRACK_THROUGH_DOORS
-#define VALID_EDGE(x, y) (world[(x)].dir_option[(y)] && \
-        (TOROOM(x, y) != NOWHERE) &&  \
-        (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOTRACK)) && \
-        (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOMOB)) && \
-        (!IS_MARKED(TOROOM(x, y))))
+#define VALID_EDGE(x, y)                                                                                     \
+  (world[(x)].dir_option[(y)] && (TOROOM(x, y) != NOWHERE) && (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOTRACK)) && \
+   (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOMOB)) && (!IS_MARKED(TOROOM(x, y))))
 #else
-#define VALID_EDGE(x, y) (world[(x)].dir_option[(y)] && \
-        (TOROOM(x, y) != NOWHERE) &&  \
-        (!IS_CLOSED(x, y)) &&    \
-        (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOTRACK)) && \
-        (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOMOB)) && \
-        (!IS_MARKED(TOROOM(x, y))))
+#define VALID_EDGE(x, y)                                                                       \
+  (world[(x)].dir_option[(y)] && (TOROOM(x, y) != NOWHERE) && (!IS_CLOSED(x, y)) &&            \
+   (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOTRACK)) && (!ROOM_FLAGGED(TOROOM(x, y), ROOM_NOMOB)) && \
+   (!IS_MARKED(TOROOM(x, y))))
 #endif
 
-struct char_data *find_hunted_char(int idnum)
-{
+struct char_data *find_hunted_char(int idnum) {
   struct char_data *tmp;
   struct char_data *tmp_next;
   for (tmp = character_list; tmp; tmp = tmp_next) {
@@ -78,8 +73,7 @@ struct char_data *find_hunted_char(int idnum)
   }
   return NULL;
 }
-void bfs_enqueue(sh_int room, char dir)
-{
+void bfs_enqueue(sh_int room, char dir) {
   struct bfs_queue_struct *curr;
 
   CREATE(curr, struct bfs_queue_struct, 1);
@@ -94,8 +88,7 @@ void bfs_enqueue(sh_int room, char dir)
     queue_head = queue_tail = curr;
 }
 
-void bfs_dequeue(void)
-{
+void bfs_dequeue(void) {
   struct bfs_queue_struct *curr;
 
   curr = queue_head;
@@ -106,8 +99,7 @@ void bfs_dequeue(void)
   free(curr);
 }
 
-void bfs_clear_queue(void)
-{
+void bfs_clear_queue(void) {
   while (queue_head) {
     bfs_dequeue();
   }
@@ -120,8 +112,7 @@ void bfs_clear_queue(void)
  tracking another mob or a PC.  Or, a 'track' skill for PCs.
  */
 
-int find_first_step(sh_int src, sh_int target, int stay_zone)
-{
+int find_first_step(sh_int src, sh_int target, int stay_zone) {
   int curr_dir;
   sh_int curr_room;
   int src_zone = ((src - (src % 100)) / 100);
@@ -183,8 +174,7 @@ int find_first_step(sh_int src, sh_int target, int stay_zone)
  *  Functions and Commands which use the above fns            *
  ************************************************************************/
 
-ACMD(do_track)
-{
+ACMD(do_track) {
   struct char_data *vict;
   int dir, num;
   int skillnum = spells[find_skill_num("track")].spellindex;
@@ -228,32 +218,31 @@ ACMD(do_track)
   }
 
   switch (dir) {
-    case BFS_ERROR:
-      send_to_char("Hmm.. something seems to be wrong.\r\n", ch);
-      break;
-    case BFS_ALREADY_THERE:
-      send_to_char("You're already in the same room!!\r\n", ch);
-      break;
-    case BFS_NO_PATH:
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You can't sense a trail to %s from here.\r\n", HMHR(vict));
-      send_to_char(buf, ch);
-      break;
-    default:
-      num = number(0, 101); /* 101% is a complete failure */
-      if (GET_SKILL(ch, skillnum) < num) {
-        do {
-          dir = number(0, NUM_OF_DIRS - 1);
-        } while (!CAN_GO(ch, dir));
-      }
-      safe_snprintf(buf, MAX_STRING_LENGTH, "You sense a trail %s from here!\r\n", dirs[dir]);
-      send_to_char(buf, ch);
-      improve_skill(ch, skillnum, SKUSE_AVERAGE);
-      break;
+  case BFS_ERROR:
+    send_to_char("Hmm.. something seems to be wrong.\r\n", ch);
+    break;
+  case BFS_ALREADY_THERE:
+    send_to_char("You're already in the same room!!\r\n", ch);
+    break;
+  case BFS_NO_PATH:
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You can't sense a trail to %s from here.\r\n", HMHR(vict));
+    send_to_char(buf, ch);
+    break;
+  default:
+    num = number(0, 101); /* 101% is a complete failure */
+    if (GET_SKILL(ch, skillnum) < num) {
+      do {
+        dir = number(0, NUM_OF_DIRS - 1);
+      } while (!CAN_GO(ch, dir));
+    }
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You sense a trail %s from here!\r\n", dirs[dir]);
+    send_to_char(buf, ch);
+    improve_skill(ch, skillnum, SKUSE_AVERAGE);
+    break;
   }
 }
 
-void hunt_victim(struct char_data * ch)
-{
+void hunt_victim(struct char_data *ch) {
   extern struct char_data *character_list;
   ACMD(do_open);
 
@@ -319,8 +308,7 @@ void hunt_victim(struct char_data * ch)
   }
 }
 
-void hunt_room(struct char_data * ch)
-{
+void hunt_room(struct char_data *ch) {
   int dir = -1;
 
   if (!ch) {
@@ -355,8 +343,7 @@ void hunt_room(struct char_data * ch)
   }
 }
 
-void hunt_aggro(struct char_data * ch)
-{
+void hunt_aggro(struct char_data *ch) {
   int dir;
   int skillnum = spells[find_skill_num("aggressive")].spellindex;
   struct char_data *hunted_ch;

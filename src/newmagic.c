@@ -1,14 +1,14 @@
+#include "comm.h"
+#include "db.h"
+#include "event.h"
+#include "interpreter.h"
+#include "spells.h"
+#include "structs.h"
+#include "utils.h"
 #include <stdio.h>
 #include <string.h>
-#include "structs.h"
-#include "db.h"
-#include "comm.h"
-#include "interpreter.h"
-#include "utils.h"
-#include "event.h"
-#include "spells.h"
 
-#define NUM_NPC_SPELLS     4    /* Number of npc spells per circle */
+#define NUM_NPC_SPELLS 4 /* Number of npc spells per circle */
 
 extern struct spell_info_type *spells;
 extern struct room_data *world;
@@ -22,8 +22,7 @@ int find_skill_num_def(int spellindex);
 int NPC_mage_spells[65];
 int NPC_cleric_spells[65];
 
-void clear_magic_memory(struct char_data *ch)
-{
+void clear_magic_memory(struct char_data *ch) {
   int i;
 
   for (i = 0; i < 65; i++) {
@@ -35,8 +34,7 @@ void clear_magic_memory(struct char_data *ch)
   }
 }
 
-void set_magic_memory(struct char_data *ch)
-{
+void set_magic_memory(struct char_data *ch) {
   int i;
   int j;
 
@@ -60,8 +58,7 @@ void set_magic_memory(struct char_data *ch)
   }
 }
 
-ACMD(do_meditate)
-{
+ACMD(do_meditate) {
   if ((!IS_MAGE(ch) && !IS_PRI(ch)) || IS_NPC(ch)) {
     send_to_char("You have no need to meditate.\r\n", ch);
     return;
@@ -76,8 +73,7 @@ ACMD(do_meditate)
   SET_BIT(AFF_FLAGS(ch), AFF_MEDITATING);
 }
 
-ACMD(do_scribe)
-{
+ACMD(do_scribe) {
   SPECIAL(guild);
   int time;
   int page;
@@ -140,7 +136,8 @@ ACMD(do_scribe)
 
   numpages = GET_SPELL_CIRCLE(ch, GET_SCRIBING(ch));
 
-  if ((IS_MAGE(ch) && GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_HOLD_2)) || ((GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2)) && IS_PRI(ch))) {
+  if ((IS_MAGE(ch) && GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_HOLD_2)) ||
+      ((GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2)) && IS_PRI(ch))) {
     if (GET_OBJ_TYPE(GET_EQ(ch, WEAR_HOLD)) == ITEM_SPELLBOOK) {
       if (IS_PRI(ch) || GET_OBJ_TYPE(GET_EQ(ch, WEAR_HOLD_2)) == ITEM_PEN) {
         if (LIGHT_OK(ch)) {
@@ -203,7 +200,7 @@ ACMD(do_scribe)
                 time <<= 1;
               }
               SET_BIT(AFF2_FLAGS(ch), AFF2_SCRIBING);
-              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *) (long) (numpages - 1), NULL, NULL, page);
+              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *)(long)(numpages - 1), NULL, NULL, page);
             } else { /* lost your pen? */
               send_to_char("You seem to have missplaced your writing instrument.\r\n", ch);
             }
@@ -286,7 +283,7 @@ ACMD(do_scribe)
                 time *= 2;
               }
               SET_BIT(AFF2_FLAGS(ch), AFF2_SCRIBING);
-              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *) (long) (numpages - 1), NULL, NULL, page);
+              add_event(time, scribe_event, EVENT_SCRIBE, ch, NULL, (void *)(long)(numpages - 1), NULL, NULL, page);
             } else { /* lost your spellbook? */
               if (IS_PRI(ch)) {
                 send_to_char("You seem to have missplaced your religious symbol.\r\n", ch);
@@ -323,8 +320,7 @@ ACMD(do_scribe)
   }
 }
 
-ACMD(do_memorize)
-{
+ACMD(do_memorize) {
   int i;
   int j;
   int time = 0;
@@ -356,9 +352,17 @@ ACMD(do_memorize)
         if (ch->spell_memory[i].circle == i) {
           if (!found_circle) {
             found_circle = 1;
-            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "(%2d%s circle) %2d - %s\r\n", i, i == 1 ? "st" : i == 2 ? "nd" : i == 3 ? "rd" : "th", ch->spell_memory[i].has_mem, spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
+            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "(%2d%s circle) %2d - %s\r\n", i,
+                                 i == 1   ? "st"
+                                 : i == 2 ? "nd"
+                                 : i == 3 ? "rd"
+                                          : "th",
+                                 ch->spell_memory[i].has_mem,
+                                 spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
           } else {
-            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "               %2d - %s\r\n", ch->spell_memory[i].has_mem, spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
+            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "               %2d - %s\r\n",
+                                 ch->spell_memory[i].has_mem,
+                                 spells[find_skill_num_def(ch->spell_memory[i].spellindex)].command);
           }
         }
       }
@@ -376,9 +380,15 @@ ACMD(do_memorize)
       }
       for (temp_event = pending_events; temp_event; temp_event = next_event) {
         next_event = temp_event->next;
-        if (temp_event->type == EVENT_MEM && temp_event->causer == (void*) ch) {
+        if (temp_event->type == EVENT_MEM && temp_event->causer == (void *)ch) {
           circle = GET_SPELL_CIRCLE(ch, temp_event->sinfo);
-          len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%5d seconds: (%2d%s) %s\r\n", temp_event->ticks_to_go, circle, circle == 1 ? "st" : circle == 2 ? "nd" : circle == 3 ? "rd" : "th", temp_event->sinfo->command);
+          len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%5d seconds: (%2d%s) %s\r\n",
+                               temp_event->ticks_to_go, circle,
+                               circle == 1   ? "st"
+                               : circle == 2 ? "nd"
+                               : circle == 3 ? "rd"
+                                             : "th",
+                               temp_event->sinfo->command);
         }
       }
     }
@@ -397,7 +407,11 @@ ACMD(do_memorize)
           safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), ", %s", buf2);
         }
         i++;
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "%d %d%s", ch->can_mem[j] - count, j, j == 1 ? "st" : j == 2 ? "nd" : j == 3 ? "rd" : "th");
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%d %d%s", ch->can_mem[j] - count, j,
+                      j == 1   ? "st"
+                      : j == 2 ? "nd"
+                      : j == 3 ? "rd"
+                               : "th");
       }
       count = 0;
     }
@@ -410,7 +424,8 @@ ACMD(do_memorize)
       safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " %s circle spells(s).\r\n", buf2);
     }
     page_string(ch->desc, buf, 1);
-    if (find_event(ch, EVENT_MEM) && !AFF2_FLAGGED(ch, AFF2_MEMMING) && GET_COND(ch, FULL) && GET_COND(ch, THIRST) && GET_POS(ch) >= POS_RESTING && GET_POS(ch) <= POS_SITTING) {
+    if (find_event(ch, EVENT_MEM) && !AFF2_FLAGGED(ch, AFF2_MEMMING) && GET_COND(ch, FULL) && GET_COND(ch, THIRST) &&
+        GET_POS(ch) >= POS_RESTING && GET_POS(ch) <= POS_SITTING) {
       if (IS_MAGE(ch)) {
         send_to_char("You continue your studies.\r\n", ch);
         act("$n opens $e spellbook and resumes $e studies.", TRUE, ch, 0, 0, TO_ROOM);
@@ -424,8 +439,7 @@ ACMD(do_memorize)
   }
 }
 
-ACMD(do_abort)
-{
+ACMD(do_abort) {
   if (!IS_CASTING(ch)) {
     send_to_char("You aren't casting anything.\r\n", ch);
     return;
@@ -436,8 +450,7 @@ ACMD(do_abort)
   clean_causer_events(ch, EVENT_SPELL);
 }
 
-void set_npc_spells(void)
-{
+void set_npc_spells(void) {
   /* MAGE */
   /* first circle */
   NPC_mage_spells[0] = spells[find_spell_num("acid arrow")].spellindex;
@@ -586,8 +599,7 @@ void set_npc_spells(void)
   NPC_cleric_spells[53] = -1;
 }
 
-void give_npc_spells(void)
-{
+void give_npc_spells(void) {
   struct char_data *temp_ch;
   struct char_data *next_ch;
   int circ;
@@ -621,10 +633,8 @@ void give_npc_spells(void)
 }
 
 /* NPC spells during combat */
-void do_mage_spell(struct char_data *ch)
-{
+void do_mage_spell(struct char_data *ch) {
 }
 
-void do_cleric_spell(struct char_data *ch)
-{
+void do_cleric_spell(struct char_data *ch) {
 }

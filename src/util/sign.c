@@ -12,28 +12,27 @@
  * This program comes with no warranty of any kind, expressed or implied.
  */
 
-#define MAX_FILESIZE	8192
-#define LINEBUF_SIZE	128
+#define MAX_FILESIZE 8192
+#define LINEBUF_SIZE 128
 
+#include <ctype.h>
+#include <netinet/in.h>
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <sys/wait.h>
-#include <sys/time.h>
-#include <sys/resource.h>
 #include <string.h>
+#include <sys/resource.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/types.h>
+#include <sys/wait.h>
 #include <unistd.h>
-#include <signal.h>
-#include <netinet/in.h>
 
 /*
  * init_socket sets up the mother descriptor - creates the socket, sets
  * its options up, binds it, and listens.
  */
-int init_socket(int port)
-{
+int init_socket(int port) {
   int s, opt;
   struct sockaddr_in sa;
 
@@ -55,7 +54,7 @@ int init_socket(int port)
 
 #if defined(SO_REUSEADDR)
   opt = 1;
-  if (setsockopt(s, SOL_SOCKET, SO_REUSEADDR, (char *) &opt, sizeof(opt)) < 0) {
+  if (setsockopt(s, SOL_SOCKET, SO_REUSEADDR, (char *)&opt, sizeof(opt)) < 0) {
     perror("setsockopt REUSEADDR");
     exit(1);
   }
@@ -63,7 +62,7 @@ int init_socket(int port)
 
 #if defined(SO_REUSEPORT)
   opt = 1;
-  if (setsockopt(s, SOL_SOCKET, SO_REUSEPORT, (char *) &opt, sizeof(opt)) < 0) {
+  if (setsockopt(s, SOL_SOCKET, SO_REUSEPORT, (char *)&opt, sizeof(opt)) < 0) {
     perror("setsockopt REUSEPORT");
     exit(1);
   }
@@ -86,7 +85,7 @@ int init_socket(int port)
   sa.sin_port = htons(port);
   sa.sin_addr.s_addr = htonl(INADDR_ANY);
 
-  if (bind(s, (struct sockaddr *) &sa, sizeof(sa)) < 0) {
+  if (bind(s, (struct sockaddr *)&sa, sizeof(sa)) < 0) {
     perror("bind");
     close(s);
     exit(1);
@@ -95,8 +94,7 @@ int init_socket(int port)
   return s;
 }
 
-char *get_text(char *fname)
-{
+char *get_text(char *fname) {
   static char t[MAX_FILESIZE];
   char tmp[LINEBUF_SIZE + 2];
   FILE *fl = NULL;
@@ -127,16 +125,14 @@ char *get_text(char *fname)
 }
 
 /* clean up our zombie kids to avoid defunct processes */
-void reap()
-{
+void reap() {
   while (waitpid(-1, NULL, WNOHANG) > 0)
     ;
 
   signal(SIGCHLD, reap);
 }
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
   char *txt;
   int desc, remaining, bytes_written, len, s, port, child;
 
@@ -156,7 +152,7 @@ int main(int argc, char *argv[])
   signal(SIGCHLD, reap);
 
   for (;;) {
-    if ((desc = accept(s, (struct sockaddr *) NULL, 0)) < 0)
+    if ((desc = accept(s, (struct sockaddr *)NULL, 0)) < 0)
       continue;
 
     if (fork() == 0) {

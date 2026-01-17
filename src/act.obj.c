@@ -12,14 +12,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "event.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 /* extern variables */
 extern int RaceFull[NUM_RACES];
@@ -34,20 +34,19 @@ extern int max_obj_time;
 extern struct spell_info_type *spells;
 extern const sh_int monk_stat[LVL_IMMORT + 1][5];
 
-int check_consent(struct char_data *ch, char* name);
+int check_consent(struct char_data *ch, char *name);
 int find_skill_num(char *name);
 int find_spell_num(char *name);
-void mprog_give_trigger(struct char_data * mob, struct char_data * ch, struct obj_data * obj);
-void mprog_bribe_trigger(struct char_data * mob, struct char_data * ch, int amount);
-int quest_give_trigger(struct char_data * mob, struct char_data * ch, struct obj_data * obj);
-int quest_bribe_trigger(struct char_data * mob, struct char_data * ch, int amount);
+void mprog_give_trigger(struct char_data *mob, struct char_data *ch, struct obj_data *obj);
+void mprog_bribe_trigger(struct char_data *mob, struct char_data *ch, int amount);
+int quest_give_trigger(struct char_data *mob, struct char_data *ch, struct obj_data *obj);
+int quest_bribe_trigger(struct char_data *mob, struct char_data *ch, int amount);
 void Crash_save(struct char_data *ch, int type);
 
 /* Sacrifice corpse command, empties the corpse, puts all the stuff on
  the ground, remove the corpse */
 
-ACMD(do_sac)
-{
+ACMD(do_sac) {
   char arg[MAX_INPUT_LENGTH];
   struct obj_data *sac_obj, *temp, *next_obj;
 
@@ -58,7 +57,8 @@ ACMD(do_sac)
     return;
   }
 
-  if (((GET_OBJ_TYPE(sac_obj) == ITEM_PCORPSE) || (GET_OBJ_TYPE(sac_obj) == ITEM_CONTAINER)) && GET_OBJ_VAL(sac_obj, 3)) {
+  if (((GET_OBJ_TYPE(sac_obj) == ITEM_PCORPSE) || (GET_OBJ_TYPE(sac_obj) == ITEM_CONTAINER)) &&
+      GET_OBJ_VAL(sac_obj, 3)) {
     if (GET_OBJ_TYPE(sac_obj) == ITEM_PCORPSE) {
       send_to_char("Player's corpses cannot be sacrificed!\r\n", ch);
       return;
@@ -78,8 +78,7 @@ ACMD(do_sac)
   return;
 }
 
-void perform_put(struct char_data * ch, struct obj_data * obj, struct obj_data * cont)
-{
+void perform_put(struct char_data *ch, struct obj_data *obj, struct obj_data *cont) {
   if (GET_OBJ_WEIGHT(cont) + GET_OBJ_WEIGHT(obj) > GET_OBJ_VAL(cont, 0)) {
     act("$p won't fit in $P.", FALSE, ch, obj, cont, TO_CHAR);
   } else {
@@ -100,8 +99,7 @@ void perform_put(struct char_data * ch, struct obj_data * obj, struct obj_data *
  all objects to be put into container must be in inventory.
  */
 
-ACMD(do_put)
-{
+ACMD(do_put) {
   char arg1[MAX_INPUT_LENGTH];
   char arg2[MAX_INPUT_LENGTH];
   struct obj_data *obj, *next_obj, *cont;
@@ -119,7 +117,8 @@ ACMD(do_put)
   } else if (cont_dotmode != FIND_INDIV) {
     send_to_char("You can only put things into one container at a time.\r\n", ch);
   } else if (!*arg2) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "What do you want to put %s in?\r\n", ((obj_dotmode == FIND_INDIV) ? "it" : "them"));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "What do you want to put %s in?\r\n",
+                  ((obj_dotmode == FIND_INDIV) ? "it" : "them"));
     send_to_char(buf, ch);
   } else {
     generic_find(arg2, FIND_OBJ_INV | FIND_OBJ_ROOM, ch, &tmp_char, &cont);
@@ -161,8 +160,7 @@ ACMD(do_put)
   }
 }
 
-int can_take_obj(struct char_data * ch, struct obj_data * obj)
-{
+int can_take_obj(struct char_data *ch, struct obj_data *obj) {
 
   if (!COM_FLAGGED(ch, COM_ADMIN) && IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
     act("$p: you can't carry that many items.", FALSE, ch, obj, 0, TO_CHAR);
@@ -174,7 +172,8 @@ int can_take_obj(struct char_data * ch, struct obj_data * obj)
     act("$p: you can't take that!", FALSE, ch, obj, 0, TO_CHAR);
     return 0;
   } else if (obj->in_obj) {
-    if ((GET_OBJ_TYPE(obj->in_obj) == ITEM_PCORPSE) && !strstr(obj->in_obj->owner, GET_NAME(ch)) && !check_consent(ch, obj->in_obj->owner) && !IS_IMMO(ch)) {
+    if ((GET_OBJ_TYPE(obj->in_obj) == ITEM_PCORPSE) && !strstr(obj->in_obj->owner, GET_NAME(ch)) &&
+        !check_consent(ch, obj->in_obj->owner) && !IS_IMMO(ch)) {
       act("$p: you do not have permission to get that!", FALSE, ch, obj, 0, TO_CHAR);
       return 0;
     }
@@ -185,21 +184,22 @@ int can_take_obj(struct char_data * ch, struct obj_data * obj)
   return 1;
 }
 
-void get_check_money(struct char_data * ch, struct obj_data * obj)
-{
+void get_check_money(struct char_data *ch, struct obj_data *obj) {
   char tbuf[512];
 
   ACMD(do_split);
   if ((GET_OBJ_TYPE(obj) == ITEM_MONEY)) {
     obj_from_char(obj);
-    safe_snprintf(buf, MAX_STRING_LENGTH, "There were {W%d p {Y%d g {w%d s {y%d c{x.\r\n", GET_OBJ_VAL(obj, 0), GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2), GET_OBJ_VAL(obj, 3));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "There were {W%d p {Y%d g {w%d s {y%d c{x.\r\n", GET_OBJ_VAL(obj, 0),
+                  GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2), GET_OBJ_VAL(obj, 3));
     send_to_char(buf, ch);
     GET_PLAT(ch) += GET_OBJ_VAL(obj, 0);
     GET_GOLD(ch) += GET_OBJ_VAL(obj, 1);
     GET_SILVER(ch) += GET_OBJ_VAL(obj, 2);
     GET_COPPER(ch) += GET_OBJ_VAL(obj, 3);
-    GET_TEMP_GOLD(ch) += GET_OBJ_VAL(obj, 0) * 1000 + GET_OBJ_VAL(obj, 1) * 100 + GET_OBJ_VAL(obj, 2) * 10 + GET_OBJ_VAL(obj, 3);
-    if (PRF_FLAGGED (ch, PRF_AUTOSPLIT) && IS_AFFECTED(ch, AFF_GROUP)) {
+    GET_TEMP_GOLD(ch) +=
+        GET_OBJ_VAL(obj, 0) * 1000 + GET_OBJ_VAL(obj, 1) * 100 + GET_OBJ_VAL(obj, 2) * 10 + GET_OBJ_VAL(obj, 3);
+    if (PRF_FLAGGED(ch, PRF_AUTOSPLIT) && IS_AFFECTED(ch, AFF_GROUP)) {
       size_t tlen = 0;
       tbuf[0] = ' ';
       tbuf[1] = '\0';
@@ -223,15 +223,14 @@ void get_check_money(struct char_data * ch, struct obj_data * obj)
   }
 }
 
-void perform_get_from_container(struct char_data * ch, struct obj_data * obj, struct obj_data * cont, int mode)
-{
+void perform_get_from_container(struct char_data *ch, struct obj_data *obj, struct obj_data *cont, int mode) {
   if (mode == FIND_OBJ_INV || can_take_obj(ch, obj)) {
     if (IS_CARRYING_N(ch) >= CAN_CARRY_N(ch)) {
       act("$p: you can't hold any more items.", FALSE, ch, obj, 0, TO_CHAR);
     } else {
       obj_from_obj(obj);
       SET_BIT(GET_OBJ_EXTRA(obj), ITEM_CARRIED);
-      /* item is in circulation, enable timer */GET_OBJ_TIMER(obj) = max_obj_time;
+      /* item is in circulation, enable timer */ GET_OBJ_TIMER(obj) = max_obj_time;
       obj_to_char(obj, ch);
       act("You get $p from $P.", FALSE, ch, obj, cont, TO_CHAR);
       act("$n gets $p from $P.", TRUE, ch, obj, cont, TO_ROOM);
@@ -240,8 +239,7 @@ void perform_get_from_container(struct char_data * ch, struct obj_data * obj, st
   }
 }
 
-void get_from_container(struct char_data * ch, struct obj_data * cont, char *arg, int mode)
-{
+void get_from_container(struct char_data *ch, struct obj_data *cont, char *arg, int mode) {
   struct obj_data *obj, *next_obj;
   int obj_dotmode, found = 0;
 
@@ -282,12 +280,11 @@ void get_from_container(struct char_data * ch, struct obj_data * cont, char *arg
   }
 }
 
-int perform_get_from_room(struct char_data * ch, struct obj_data * obj)
-{
+int perform_get_from_room(struct char_data *ch, struct obj_data *obj) {
   if (can_take_obj(ch, obj)) {
     obj_from_room(obj);
     SET_BIT(GET_OBJ_EXTRA(obj), ITEM_CARRIED);
-    /* item is in circulation, enable timer */GET_OBJ_TIMER(obj) = max_obj_time;
+    /* item is in circulation, enable timer */ GET_OBJ_TIMER(obj) = max_obj_time;
     obj_to_char(obj, ch);
     act("You get $p.", FALSE, ch, obj, 0, TO_CHAR);
     act("$n gets $p.", TRUE, ch, obj, 0, TO_ROOM);
@@ -297,8 +294,7 @@ int perform_get_from_room(struct char_data * ch, struct obj_data * obj)
   return 0;
 }
 
-void get_from_room(struct char_data * ch, char *arg)
-{
+void get_from_room(struct char_data *ch, char *arg) {
   struct obj_data *obj, *next_obj;
   int dotmode, found = 0;
 
@@ -323,7 +319,8 @@ void get_from_room(struct char_data * ch, char *arg)
     }
     for (obj = world[ch->in_room].contents; obj; obj = next_obj) {
       next_obj = obj->next_content;
-      if (CAN_SEE_OBJ(ch, obj) && (GET_OBJ_TYPE(obj) != ITEM_PCORPSE) && (dotmode == FIND_ALL || isname(arg, obj->name))) {
+      if (CAN_SEE_OBJ(ch, obj) && (GET_OBJ_TYPE(obj) != ITEM_PCORPSE) &&
+          (dotmode == FIND_ALL || isname(arg, obj->name))) {
         found = 1;
         perform_get_from_room(ch, obj);
       }
@@ -339,8 +336,7 @@ void get_from_room(struct char_data * ch, char *arg)
   }
 }
 
-ACMD(do_get)
-{
+ACMD(do_get) {
   char arg1[MAX_INPUT_LENGTH];
   char arg2[MAX_INPUT_LENGTH];
 
@@ -410,8 +406,7 @@ ACMD(do_get)
   }
 }
 
-ACMD(do_drag)
-{
+ACMD(do_drag) {
   char arg1[MAX_INPUT_LENGTH];
   struct obj_data *obj;
 
@@ -431,7 +426,8 @@ ACMD(do_drag)
     return;
   }
 
-  if ((GET_OBJ_TYPE(obj) == ITEM_PCORPSE) && !strstr(obj->owner, GET_NAME(ch)) && !check_consent(ch, obj->owner) && !IS_IMMO(ch)) {
+  if ((GET_OBJ_TYPE(obj) == ITEM_PCORPSE) && !strstr(obj->owner, GET_NAME(ch)) && !check_consent(ch, obj->owner) &&
+      !IS_IMMO(ch)) {
     send_to_char("You don't have permission to move that.\r\n", ch);
     return;
   }
@@ -443,13 +439,12 @@ ACMD(do_drag)
 
   GET_DRAGGING(ch) = obj;
   obj->dragged_by = ch;
-  safe_snprintf(buf, MAX_STRING_LENGTH, "You begin dragging %s.\r\n", OBJS(obj,ch));
+  safe_snprintf(buf, MAX_STRING_LENGTH, "You begin dragging %s.\r\n", OBJS(obj, ch));
   send_to_char(buf, ch);
   return;
 }
 
-void perform_drop_plat(struct char_data * ch, int amount, byte mode, sh_int RDR)
-{
+void perform_drop_plat(struct char_data *ch, int amount, byte mode, sh_int RDR) {
   struct obj_data *obj;
 
   if (amount <= 0) {
@@ -473,7 +468,8 @@ void perform_drop_plat(struct char_data * ch, int amount, byte mode, sh_int RDR)
         obj_to_room(obj, ch->in_room);
       }
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 1000));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!",
+                    money_desc(amount * 1000));
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
       send_to_char("You drop some platinum which disappears in a puff of smoke!\r\n", ch);
     }
@@ -482,8 +478,7 @@ void perform_drop_plat(struct char_data * ch, int amount, byte mode, sh_int RDR)
   }
 }
 
-void perform_drop_gold(struct char_data * ch, int amount, byte mode, sh_int RDR)
-{
+void perform_drop_gold(struct char_data *ch, int amount, byte mode, sh_int RDR) {
   struct obj_data *obj;
 
   if (amount <= 0) {
@@ -507,7 +502,8 @@ void perform_drop_gold(struct char_data * ch, int amount, byte mode, sh_int RDR)
         obj_to_room(obj, ch->in_room);
       }
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 100));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!",
+                    money_desc(amount * 100));
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
       send_to_char("You drop some gold which disappears in a puff of smoke!\r\n", ch);
     }
@@ -516,8 +512,7 @@ void perform_drop_gold(struct char_data * ch, int amount, byte mode, sh_int RDR)
   }
 }
 
-void perform_drop_silver(struct char_data * ch, int amount, byte mode, sh_int RDR)
-{
+void perform_drop_silver(struct char_data *ch, int amount, byte mode, sh_int RDR) {
   struct obj_data *obj;
 
   if (amount <= 0) {
@@ -541,7 +536,8 @@ void perform_drop_silver(struct char_data * ch, int amount, byte mode, sh_int RD
         obj_to_room(obj, ch->in_room);
       }
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!", money_desc(amount * 10));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "$n drops %s which disappears in a puff of smoke!",
+                    money_desc(amount * 10));
       act(buf, FALSE, ch, 0, 0, TO_ROOM);
       send_to_char("You drop some silver which disappears in a puff of smoke!\r\n", ch);
     }
@@ -550,8 +546,7 @@ void perform_drop_silver(struct char_data * ch, int amount, byte mode, sh_int RD
   }
 }
 
-void perform_drop_copper(struct char_data * ch, int amount, byte mode, sh_int RDR)
-{
+void perform_drop_copper(struct char_data *ch, int amount, byte mode, sh_int RDR) {
   struct obj_data *obj;
 
   if (amount <= 0) {
@@ -584,11 +579,9 @@ void perform_drop_copper(struct char_data * ch, int amount, byte mode, sh_int RD
   }
 }
 
-#define VANISH(mode) ((mode == SCMD_DONATE || mode == SCMD_JUNK) ? \
-                      "  It vanishes in a puff of smoke!" : "")
+#define VANISH(mode) ((mode == SCMD_DONATE || mode == SCMD_JUNK) ? "  It vanishes in a puff of smoke!" : "")
 
-int perform_drop(struct char_data * ch, struct obj_data * obj, byte mode, char *sname, sh_int RDR)
-{
+int perform_drop(struct char_data *ch, struct obj_data *obj, byte mode, char *sname, sh_int RDR) {
   int value;
 
   if (IS_OBJ_STAT(obj, ITEM_NODROP)) {
@@ -605,10 +598,10 @@ int perform_drop(struct char_data * ch, struct obj_data * obj, byte mode, char *
   }
   if (mode == SCMD_JUNK) {
     switch (GET_OBJ_TYPE(obj)) {
-      default:
-        act("As you toss $p into the air, a corrosive gas consumes it.", FALSE, ch, obj, 0, TO_CHAR);
-        act("A corrosive gas consumes $p as $n tosses it into the air.", TRUE, ch, obj, 0, TO_ROOM);
-        break;
+    default:
+      act("As you toss $p into the air, a corrosive gas consumes it.", FALSE, ch, obj, 0, TO_CHAR);
+      act("A corrosive gas consumes $p as $n tosses it into the air.", TRUE, ch, obj, 0, TO_ROOM);
+      break;
     }
   } else {
     safe_snprintf(buf, MAX_STRING_LENGTH, "You %s $p.%s", sname, VANISH(mode));
@@ -623,35 +616,34 @@ int perform_drop(struct char_data * ch, struct obj_data * obj, byte mode, char *
   }
 
   switch (mode) {
-    case SCMD_DROP:
-      if (GET_OBJ_TYPE(obj) == ITEM_NOTE || GET_OBJ_TYPE(obj) == ITEM_KEY) {
-        act("As you drop $p it crumbles into dust.", FALSE, ch, obj, 0, TO_CHAR);
-        act("$p crumbles into dust.", TRUE, 0, obj, 0, TO_ROOM);
-        extract_obj(obj);
-      } else {
-        obj_to_room(obj, ch->in_room);
-      }
-      return 0;
-    case SCMD_DONATE:
-      obj_to_room(obj, RDR);
-      SET_BIT(GET_OBJ_EXTRA(obj), ITEM_DONATED);
-      /* you cant sell donated stuff */
-      act("$p suddenly appears in a puff a smoke!", FALSE, 0, obj, 0, TO_ROOM);
-      return 0;
-    case SCMD_JUNK:
-      value = BOUNDED(1, 200, GET_OBJ_COST(obj) >> 4);
+  case SCMD_DROP:
+    if (GET_OBJ_TYPE(obj) == ITEM_NOTE || GET_OBJ_TYPE(obj) == ITEM_KEY) {
+      act("As you drop $p it crumbles into dust.", FALSE, ch, obj, 0, TO_CHAR);
+      act("$p crumbles into dust.", TRUE, 0, obj, 0, TO_ROOM);
       extract_obj(obj);
-      return value;
-    default:
-      stderr_log("SYSERR: Incorrect argument passed to perform_drop");
-      break;
+    } else {
+      obj_to_room(obj, ch->in_room);
+    }
+    return 0;
+  case SCMD_DONATE:
+    obj_to_room(obj, RDR);
+    SET_BIT(GET_OBJ_EXTRA(obj), ITEM_DONATED);
+    /* you cant sell donated stuff */
+    act("$p suddenly appears in a puff a smoke!", FALSE, 0, obj, 0, TO_ROOM);
+    return 0;
+  case SCMD_JUNK:
+    value = BOUNDED(1, 200, GET_OBJ_COST(obj) >> 4);
+    extract_obj(obj);
+    return value;
+  default:
+    stderr_log("SYSERR: Incorrect argument passed to perform_drop");
+    break;
   }
 
   return 0;
 }
 
-ACMD(do_drop)
-{
+ACMD(do_drop) {
   extern sh_int donation_room_1;
 #if 0
   extern sh_int donation_room_2; /* uncomment if needed! */
@@ -669,39 +661,39 @@ ACMD(do_drop)
   }
 
   switch (subcmd) {
-    case SCMD_JUNK:
-      /* taking junk out of the game to help promote selling to shops.
-       sname = "junk";
-       mode = SCMD_JUNK;
+  case SCMD_JUNK:
+    /* taking junk out of the game to help promote selling to shops.
+     sname = "junk";
+     mode = SCMD_JUNK;
+     break;
+     */
+    send_to_char("Junk has been disabled.  Please sell the item to a shop or just leave it on the ground.\r\n", ch);
+    return;
+  case SCMD_DONATE:
+    sname = "donate";
+    mode = SCMD_DONATE;
+    switch (number(0, 2)) {
+    case 0:
+      /*      mode = SCMD_JUNK;
        break;
        */
-      send_to_char("Junk has been disabled.  Please sell the item to a shop or just leave it on the ground.\r\n", ch);
+    case 1:
+    case 2:
+      RDR = real_room(donation_room_1);
+      break;
+      /*
+       case 3: RDR = real_room(donation_room_2); break;
+       case 4: RDR = real_room(donation_room_3); break;
+       */
+    }
+    if (RDR == NOWHERE) {
+      send_to_char("Sorry, you can't donate anything right now.\r\n", ch);
       return;
-    case SCMD_DONATE:
-      sname = "donate";
-      mode = SCMD_DONATE;
-      switch (number(0, 2)) {
-        case 0:
-          /*      mode = SCMD_JUNK;
-           break;
-           */
-        case 1:
-        case 2:
-          RDR = real_room(donation_room_1);
-          break;
-          /*
-           case 3: RDR = real_room(donation_room_2); break;
-           case 4: RDR = real_room(donation_room_3); break;
-           */
-      }
-      if (RDR == NOWHERE) {
-        send_to_char("Sorry, you can't donate anything right now.\r\n", ch);
-        return;
-      }
-      break;
-    default:
-      sname = "drop";
-      break;
+    }
+    break;
+  default:
+    sname = "drop";
+    break;
   }
 
   argument = one_argument(argument, arg);
@@ -810,8 +802,7 @@ ACMD(do_drop)
   }
 }
 
-void perform_give(struct char_data * ch, struct char_data * vict, struct obj_data * obj)
-{
+void perform_give(struct char_data *ch, struct char_data *vict, struct obj_data *obj) {
   if (IS_OBJ_STAT(obj, ITEM_NODROP)) {
     act("You can't let go of $p!!  Yeech!", FALSE, ch, obj, 0, TO_CHAR);
     return;
@@ -840,8 +831,7 @@ void perform_give(struct char_data * ch, struct char_data * vict, struct obj_dat
 }
 
 /* utility function for give */
-struct char_data *give_find_vict(struct char_data * ch, char *arg)
-{
+struct char_data *give_find_vict(struct char_data *ch, char *arg) {
   struct char_data *vict;
 
   if (!*arg) {
@@ -857,8 +847,7 @@ struct char_data *give_find_vict(struct char_data * ch, char *arg)
     return vict;
 }
 
-void perform_give_plat(struct char_data * ch, struct char_data * vict, int amount)
-{
+void perform_give_plat(struct char_data *ch, struct char_data *vict, int amount) {
   if (amount <= 0) {
     send_to_char("Heh heh heh ... we are jolly funny today, eh?\r\n", ch);
     return;
@@ -887,8 +876,7 @@ void perform_give_plat(struct char_data * ch, struct char_data * vict, int amoun
   GET_TEMP_GOLD(vict) += amount * 1000;
 }
 
-void perform_give_gold(struct char_data * ch, struct char_data * vict, int amount)
-{
+void perform_give_gold(struct char_data *ch, struct char_data *vict, int amount) {
   if (amount <= 0) {
     send_to_char("Heh heh heh ... we are jolly funny today, eh?\r\n", ch);
     return;
@@ -916,8 +904,7 @@ void perform_give_gold(struct char_data * ch, struct char_data * vict, int amoun
   GET_TEMP_GOLD(vict) += amount * 100;
 }
 
-void perform_give_silver(struct char_data * ch, struct char_data * vict, int amount)
-{
+void perform_give_silver(struct char_data *ch, struct char_data *vict, int amount) {
   if (amount <= 0) {
     send_to_char("Heh heh heh ... we are jolly funny today, eh?\r\n", ch);
     return;
@@ -945,8 +932,7 @@ void perform_give_silver(struct char_data * ch, struct char_data * vict, int amo
   GET_TEMP_GOLD(vict) += amount * 10;
 }
 
-void perform_give_copper(struct char_data * ch, struct char_data * vict, int amount)
-{
+void perform_give_copper(struct char_data *ch, struct char_data *vict, int amount) {
   if (amount <= 0) {
     send_to_char("Heh heh heh ... we are jolly funny today, eh?\r\n", ch);
     return;
@@ -974,8 +960,7 @@ void perform_give_copper(struct char_data * ch, struct char_data * vict, int amo
   GET_TEMP_GOLD(vict) += amount;
 }
 
-ACMD(do_give)
-{
+ACMD(do_give) {
   int amount, dotmode;
   struct char_data *vict = NULL;
   struct obj_data *obj, *next_obj;
@@ -1020,7 +1005,7 @@ ACMD(do_give)
     }
   } else {
     int found = 0;
-    struct obj_data* temp;
+    struct obj_data *temp;
 
     one_argument(argument, buf1);
     if (!(vict = give_find_vict(ch, buf1))) {
@@ -1081,8 +1066,7 @@ ACMD(do_give)
 
 /* Everything from here down is what was formerly act.obj2.c */
 
-void weight_change_object(struct obj_data * obj, int weight)
-{
+void weight_change_object(struct obj_data *obj, int weight) {
   struct obj_data *tmp_obj;
   struct char_data *tmp_ch;
   int done = 0;
@@ -1109,8 +1093,7 @@ void weight_change_object(struct obj_data * obj, int weight)
   }
 }
 
-void name_from_drinkcon(struct obj_data * obj)
-{
+void name_from_drinkcon(struct obj_data *obj) {
   int i;
   char *new_name;
   extern struct obj_data *obj_proto;
@@ -1128,8 +1111,7 @@ void name_from_drinkcon(struct obj_data * obj)
   }
 }
 
-void name_to_drinkcon(struct obj_data * obj, int type)
-{
+void name_to_drinkcon(struct obj_data *obj, int type) {
   char *new_name;
   extern struct obj_data *obj_proto;
   extern char *drinknames[];
@@ -1142,8 +1124,7 @@ void name_to_drinkcon(struct obj_data * obj, int type)
   obj->name = new_name;
 }
 
-ACMD(do_drink)
-{
+ACMD(do_drink) {
   struct obj_data *temp;
   struct affected_type af;
   struct actd_msg *actd;
@@ -1226,9 +1207,9 @@ ACMD(do_drink)
     weight_change_object(temp, -weight); /* Subtract amount */
   }
 
-  gain_condition(ch, DRUNK, (int) (drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK] * amount));
+  gain_condition(ch, DRUNK, (int)(drink_aff[GET_OBJ_VAL(temp, 2)][DRUNK] * amount));
 
-  gain_condition(ch, THIRST, (int) (drink_aff[GET_OBJ_VAL(temp, 2)][THIRST] * amount));
+  gain_condition(ch, THIRST, (int)(drink_aff[GET_OBJ_VAL(temp, 2)][THIRST] * amount));
 
   if (GET_COND(ch, DRUNK) > 10) {
     send_to_char("You feel drunk.\r\n", ch);
@@ -1261,8 +1242,7 @@ ACMD(do_drink)
   }
 }
 
-ACMD(do_eat)
-{
+ACMD(do_eat) {
   struct obj_data *food;
   struct affected_type af;
   struct actd_msg *actd;
@@ -1294,7 +1274,7 @@ ACMD(do_eat)
       return;
     }
   } else {
-    if (GET_COND(ch, FULL) > 20) {/* Stomach full */
+    if (GET_COND(ch, FULL) > 20) { /* Stomach full */
       act("You are too full to eat more!", FALSE, ch, 0, 0, TO_CHAR);
       return;
     }
@@ -1345,8 +1325,7 @@ ACMD(do_eat)
   }
 }
 
-ACMD(do_pour)
-{
+ACMD(do_pour) {
   char arg1[MAX_INPUT_LENGTH];
   char arg2[MAX_INPUT_LENGTH];
   struct obj_data *from_obj;
@@ -1411,7 +1390,7 @@ ACMD(do_pour)
     if (!str_cmp(arg2, "out")) {
       act("You empty $p.", FALSE, ch, from_obj, 0, TO_CHAR);
 
-      weight_change_object(from_obj, -GET_OBJ_VAL(from_obj, 1));/* Empty */
+      weight_change_object(from_obj, -GET_OBJ_VAL(from_obj, 1)); /* Empty */
 
       GET_OBJ_VAL(from_obj, 1) = 0;
       GET_OBJ_VAL(from_obj, 2) = 0;
@@ -1453,9 +1432,9 @@ ACMD(do_pour)
     name_to_drinkcon(to_obj, GET_OBJ_VAL(from_obj, 2));
   }
 
-  /* First same type liq. */GET_OBJ_VAL(to_obj, 2) = GET_OBJ_VAL(from_obj, 2);
+  /* First same type liq. */ GET_OBJ_VAL(to_obj, 2) = GET_OBJ_VAL(from_obj, 2);
 
-  /* Then how much to pour */GET_OBJ_VAL(from_obj, 1) -= (amount = (GET_OBJ_VAL(to_obj, 0) - GET_OBJ_VAL(to_obj, 1)));
+  /* Then how much to pour */ GET_OBJ_VAL(from_obj, 1) -= (amount = (GET_OBJ_VAL(to_obj, 0) - GET_OBJ_VAL(to_obj, 1)));
 
   GET_OBJ_VAL(to_obj, 1) = GET_OBJ_VAL(to_obj, 0);
 
@@ -1467,7 +1446,7 @@ ACMD(do_pour)
     GET_OBJ_VAL(from_obj, 3) = 0;
     name_from_drinkcon(from_obj);
   }
-  /* Then the poison boogie */GET_OBJ_VAL(to_obj, 3) = (GET_OBJ_VAL(to_obj, 3) || GET_OBJ_VAL(from_obj, 3));
+  /* Then the poison boogie */ GET_OBJ_VAL(to_obj, 3) = (GET_OBJ_VAL(to_obj, 3) || GET_OBJ_VAL(from_obj, 3));
 
   /* And the weight boogie */
   weight_change_object(from_obj, -amount);
@@ -1476,15 +1455,17 @@ ACMD(do_pour)
   return;
 }
 
-void wear_message(struct char_data * ch, struct obj_data * obj, int where)
-{
+void wear_message(struct char_data *ch, struct obj_data *obj, int where) {
   char *wear_messages[][2] = {
       {"$n wears $p on $s chest.", "You wear $p on your chest."},
       {"$n slides $p on to $s right ring finger.", "You slide $p on to your right ring finger."},
       {"$n slides $p on to $s left ring finger.", "You slide $p on to your left ring finger."},
       {"$n wears $p around $s neck.", "You wear $p around your neck."},
       {"$n wears $p around $s neck.", "You wear $p around your neck."},
-      {"$n wears $p on $s body.", "You wear $p on your body.", },
+      {
+          "$n wears $p on $s body.",
+          "You wear $p on your body.",
+      },
       {"$n wears $p on $s head.", "You wear $p on your head."},
       {"$n puts $p on $s legs.", "You put $p on your legs."},
       {"$n wears $p on $s feet.", "You wear $p on your feet."},
@@ -1506,8 +1487,7 @@ void wear_message(struct char_data * ch, struct obj_data * obj, int where)
       {"$n wields $p.", "You wield $p."},
       {"$n grabs $p.", "You grab $p."},
       {"$n wields $p.", "You wield $p."},
-      {"$n lights $p and holds it.", "You light $p and hold it."}
-  };
+      {"$n lights $p and holds it.", "You light $p and hold it."}};
 
   if (GET_OBJ_TYPE(obj) == ITEM_LIGHT) {
     act(wear_messages[where + 10][0], TRUE, ch, obj, 0, TO_ROOM);
@@ -1518,69 +1498,43 @@ void wear_message(struct char_data * ch, struct obj_data * obj, int where)
   }
 }
 
-void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
-{
+void perform_wear(struct char_data *ch, struct obj_data *obj, int where) {
   int skillnum = spells[find_skill_num("dual wield")].spellindex;
 
-  int wear_bitvectors[] = {
-      ITEM_WEAR_BADGE,
-      ITEM_WEAR_FINGER,
-      ITEM_WEAR_FINGER,
-      ITEM_WEAR_NECK,
-      ITEM_WEAR_NECK,
-      ITEM_WEAR_BODY,
-      ITEM_WEAR_HEAD,
-      ITEM_WEAR_LEGS,
-      ITEM_WEAR_FEET,
-      ITEM_WEAR_HANDS,
-      ITEM_WEAR_ARMS,
-      ITEM_WEAR_SHIELD,
-      ITEM_WEAR_ABOUT,
-      ITEM_WEAR_WAIST,
-      ITEM_WEAR_WRIST,
-      ITEM_WEAR_WRIST,
-      ITEM_WEAR_WIELD,
-      ITEM_WEAR_TAKE,
-      ITEM_WEAR_FACE,
-      ITEM_WEAR_EAR,
-      ITEM_WEAR_EAR,
-      ITEM_WEAR_EYES,
-      ITEM_WEAR_ANKLES,
-      ITEM_WEAR_ANKLES,
-      ITEM_WEAR_WIELD,
-      ITEM_WEAR_HOLD,
-      ITEM_WEAR_2HANDED
-  };
+  int wear_bitvectors[] = {ITEM_WEAR_BADGE, ITEM_WEAR_FINGER, ITEM_WEAR_FINGER, ITEM_WEAR_NECK,   ITEM_WEAR_NECK,
+                           ITEM_WEAR_BODY,  ITEM_WEAR_HEAD,   ITEM_WEAR_LEGS,   ITEM_WEAR_FEET,   ITEM_WEAR_HANDS,
+                           ITEM_WEAR_ARMS,  ITEM_WEAR_SHIELD, ITEM_WEAR_ABOUT,  ITEM_WEAR_WAIST,  ITEM_WEAR_WRIST,
+                           ITEM_WEAR_WRIST, ITEM_WEAR_WIELD,  ITEM_WEAR_TAKE,   ITEM_WEAR_FACE,   ITEM_WEAR_EAR,
+                           ITEM_WEAR_EAR,   ITEM_WEAR_EYES,   ITEM_WEAR_ANKLES, ITEM_WEAR_ANKLES, ITEM_WEAR_WIELD,
+                           ITEM_WEAR_HOLD,  ITEM_WEAR_2HANDED};
 
-  char *already_wearing[] = {
-      "You're already wearing a badge.\r\n",
-      "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
-      "You're already wearing something on both of your ring fingers.\r\n",
-      "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
-      "You can't wear anything else around your neck.\r\n",
-      "You're already wearing something on your body.\r\n",
-      "You're already wearing something on your head.\r\n",
-      "You're already wearing something on your legs.\r\n",
-      "You're already wearing something on your feet.\r\n",
-      "You're already wearing something on your hands.\r\n",
-      "You're already wearing something on your arms.\r\n",
-      "You're already using a shield.\r\n",
-      "You're already wearing something about your body.\r\n",
-      "You already have something around your waist.\r\n",
-      "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
-      "You're already wearing something around both of your wrists.\r\n",
-      "You're already wielding a weapon.\r\n",
-      "You're already holding something.\r\n",
-      "You're already wearing something on your face.\r\n",
-      "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n",
-      "You're already using earrings in both your ears.\r\n",
-      "You're already wearing something on your eyes.\r\n",
-      "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n",
-      "You're already wearing something on both your ankles.\r\n",
-      "Your hands are full.\r\n",
-      "Your hands are full.\r\n",
-      "You need both hands free to wield that.\r\n"
-  };
+  char *already_wearing[] = {"You're already wearing a badge.\r\n",
+                             "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
+                             "You're already wearing something on both of your ring fingers.\r\n",
+                             "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
+                             "You can't wear anything else around your neck.\r\n",
+                             "You're already wearing something on your body.\r\n",
+                             "You're already wearing something on your head.\r\n",
+                             "You're already wearing something on your legs.\r\n",
+                             "You're already wearing something on your feet.\r\n",
+                             "You're already wearing something on your hands.\r\n",
+                             "You're already wearing something on your arms.\r\n",
+                             "You're already using a shield.\r\n",
+                             "You're already wearing something about your body.\r\n",
+                             "You already have something around your waist.\r\n",
+                             "YOU SHOULD NEVER SEE THIS MESSAGE.  PLEASE REPORT.\r\n",
+                             "You're already wearing something around both of your wrists.\r\n",
+                             "You're already wielding a weapon.\r\n",
+                             "You're already holding something.\r\n",
+                             "You're already wearing something on your face.\r\n",
+                             "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n",
+                             "You're already using earrings in both your ears.\r\n",
+                             "You're already wearing something on your eyes.\r\n",
+                             "YOU SHOULD NEVER SEE THIS MESSAGE. PLEASE REPORT.\r\n",
+                             "You're already wearing something on both your ankles.\r\n",
+                             "Your hands are full.\r\n",
+                             "Your hands are full.\r\n",
+                             "You need both hands free to wield that.\r\n"};
 
   /* Pets can only use lights */
   if (IS_NPC(ch) && IS_AFFECTED(ch, AFF_CHARM) && (GET_OBJ_TYPE(obj) != ITEM_LIGHT)) {
@@ -1601,7 +1555,8 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
       return;
     }
   /* for neck, finger, and wrist, try pos 2 if pos 1 is already full */
-  if ((where == WEAR_FINGER_R) || (where == WEAR_NECK_1) || (where == WEAR_WRIST_R) || (where == WEAR_EAR_R) || (where == WEAR_ANKLE_R))
+  if ((where == WEAR_FINGER_R) || (where == WEAR_NECK_1) || (where == WEAR_WRIST_R) || (where == WEAR_EAR_R) ||
+      (where == WEAR_ANKLE_R))
     if (GET_EQ(ch, where))
       where++;
 
@@ -1613,7 +1568,10 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
    where = WEAR_WIELD_2;
    */
 
-  if ((where == WEAR_WIELD || where == WEAR_WIELD_2) && (GET_OBJ_TYPE(obj) == ITEM_WEAPON) && (GET_OBJ_VAL(obj, 0) > 3) && (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_SHIELD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD_2) || GET_EQ(ch, WEAR_2HANDED))) {
+  if ((where == WEAR_WIELD || where == WEAR_WIELD_2) && (GET_OBJ_TYPE(obj) == ITEM_WEAPON) &&
+      (GET_OBJ_VAL(obj, 0) > 3) &&
+      (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_SHIELD) || GET_EQ(ch, WEAR_HOLD_2) ||
+       GET_EQ(ch, WEAR_WIELD_2) || GET_EQ(ch, WEAR_2HANDED))) {
     send_to_char(already_wearing[where + 10], ch);
     return;
   }
@@ -1621,13 +1579,17 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
     where = WEAR_2HANDED;
 
   if (where == WEAR_HOLD || ((where == WEAR_WIELD || where == WEAR_WIELD_2) && !GET_SKILL(ch, skillnum))) {
-    if (GET_EQ(ch, WEAR_HOLD) && (GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_SHIELD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
+    if (GET_EQ(ch, WEAR_HOLD) && (GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_SHIELD) || GET_EQ(ch, WEAR_HOLD_2) ||
+                                  GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
       send_to_char(already_wearing[where + 8], ch);
       return;
-    } else if (GET_EQ(ch, WEAR_SHIELD) && (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
+    } else if (GET_EQ(ch, WEAR_SHIELD) && (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD) ||
+                                           GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
       send_to_char(already_wearing[where + 8], ch);
       return;
-    } else if (GET_EQ(ch, WEAR_WIELD) && (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD_2) || GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_SHIELD))) {
+    } else if (GET_EQ(ch, WEAR_WIELD) &&
+               (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD_2) ||
+                GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_SHIELD))) {
       send_to_char(already_wearing[where + 8], ch);
       return;
     } else if (GET_EQ(ch, WEAR_2HANDED)) {
@@ -1641,13 +1603,17 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
   }
 
   if (GET_SKILL(ch, skillnum) && (where == WEAR_WIELD || where == WEAR_WIELD_2)) {
-    if (GET_EQ(ch, WEAR_HOLD) && (GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_SHIELD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
+    if (GET_EQ(ch, WEAR_HOLD) && (GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_SHIELD) || GET_EQ(ch, WEAR_HOLD_2) ||
+                                  GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
       send_to_char(already_wearing[where], ch);
       return;
-    } else if (GET_EQ(ch, WEAR_SHIELD) && (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD) || GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
+    } else if (GET_EQ(ch, WEAR_SHIELD) && (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD) ||
+                                           GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_WIELD_2))) {
       send_to_char(already_wearing[where], ch);
       return;
-    } else if (GET_EQ(ch, WEAR_WIELD) && (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD_2) || GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_SHIELD))) {
+    } else if (GET_EQ(ch, WEAR_WIELD) &&
+               (GET_EQ(ch, WEAR_HOLD) || GET_EQ(ch, WEAR_HOLD_2) || GET_EQ(ch, WEAR_WIELD_2) ||
+                GET_EQ(ch, WEAR_2HANDED) || GET_EQ(ch, WEAR_SHIELD))) {
       send_to_char(already_wearing[where], ch);
       return;
     } else if (GET_EQ(ch, WEAR_2HANDED)) {
@@ -1657,7 +1623,9 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
   }
 
   if (where == WEAR_SHIELD)
-    if (GET_EQ(ch, WEAR_2HANDED) || (GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_WIELD)) || (GET_EQ(ch, WEAR_WIELD) && GET_EQ(ch, WEAR_WIELD_2)) || (GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_WIELD_2)) || (GET_EQ(ch, WEAR_HOLD_2) && GET_EQ(ch, WEAR_WIELD)) || (GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_HOLD_2))) {
+    if (GET_EQ(ch, WEAR_2HANDED) || (GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_WIELD)) ||
+        (GET_EQ(ch, WEAR_WIELD) && GET_EQ(ch, WEAR_WIELD_2)) || (GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_WIELD_2)) ||
+        (GET_EQ(ch, WEAR_HOLD_2) && GET_EQ(ch, WEAR_WIELD)) || (GET_EQ(ch, WEAR_HOLD) && GET_EQ(ch, WEAR_HOLD_2))) {
       send_to_char(already_wearing[where + 13], ch);
       return;
     }
@@ -1667,7 +1635,7 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
     return;
   }
 
-  if (IS_MONK(ch) && (GET_OBJ_WEIGHT(obj) > monk_stat[(sh_int) GET_LEVEL(ch)][3])) {
+  if (IS_MONK(ch) && (GET_OBJ_WEIGHT(obj) > monk_stat[(sh_int)GET_LEVEL(ch)][3])) {
     send_to_char("That much weight would make your skills useless.\r\n", ch);
     return;
   }
@@ -1681,11 +1649,13 @@ void perform_wear(struct char_data * ch, struct obj_data * obj, int where)
   equip_char(ch, obj, where);
 }
 
-int find_eq_pos(struct char_data * ch, struct obj_data * obj, char *arg)
-{
+int find_eq_pos(struct char_data *ch, struct obj_data *obj, char *arg) {
   int where = -1;
 
-  static char *keywords[] = {"badge", "finger", "!RESERVED!", "neck", "!RESERVED!", "body", "head", "legs", "feet", "hands", "arms", "shield", "about", "waist", "wrist", "!RESERVED!", "!RESERVED!", "!RESERVED!", "!RESERVED!", "face", "ear", "eyes", "ankles", "\n"};
+  static char *keywords[] = {"badge",      "finger", "!RESERVED!", "neck",       "!RESERVED!", "body",
+                             "head",       "legs",   "feet",       "hands",      "arms",       "shield",
+                             "about",      "waist",  "wrist",      "!RESERVED!", "!RESERVED!", "!RESERVED!",
+                             "!RESERVED!", "face",   "ear",        "eyes",       "ankles",     "\n"};
 
   if (!arg || !*arg) {
     if (CAN_WEAR(obj, ITEM_WEAR_FINGER)) {
@@ -1749,8 +1719,7 @@ int find_eq_pos(struct char_data * ch, struct obj_data * obj, char *arg)
   return where;
 }
 
-ACMD(do_wear)
-{
+ACMD(do_wear) {
   char arg1[MAX_INPUT_LENGTH];
   char arg2[MAX_INPUT_LENGTH];
   struct obj_data *obj, *next_obj;
@@ -1811,8 +1780,7 @@ ACMD(do_wear)
   }
 }
 
-ACMD(do_wield)
-{
+ACMD(do_wield) {
   struct obj_data *obj;
   extern struct spell_info_type *spells;
   char buf2[64];
@@ -1833,7 +1801,7 @@ ACMD(do_wield)
       send_to_char("You can't wield that.\r\n", ch);
     } else if (GET_OBJ_WEIGHT(obj) > stats[STR_WWEIGHT][GET_STR(ch)]) {
       send_to_char("It's too heavy for you to use.\r\n", ch);
-    } else if (!IS_NPC(ch) && (GET_LEVEL(ch) < spells[find_skill_num(buf2)].min_level[(int) GET_CLASS(ch)])) {
+    } else if (!IS_NPC(ch) && (GET_LEVEL(ch) < spells[find_skill_num(buf2)].min_level[(int)GET_CLASS(ch)])) {
       send_to_char("You are not allowed to use that weapon.\r\n", ch);
     } else if ((GET_SKILL(ch, (spells[find_skill_num(buf2)].spellindex)) < 5) && !IS_NPC(ch)) {
       send_to_char("You cant figure out how to use this weapon. Maybe you should learn?\r\n", ch);
@@ -1843,8 +1811,7 @@ ACMD(do_wield)
   }
 }
 
-ACMD(do_grab)
-{
+ACMD(do_grab) {
   struct obj_data *obj;
 
   one_argument(argument, arg);
@@ -1858,7 +1825,8 @@ ACMD(do_grab)
     if (GET_OBJ_TYPE(obj) == ITEM_BADGE) {
       perform_wear(ch, obj, WEAR_BADGE);
     } else {
-      if (!CAN_WEAR(obj, ITEM_WEAR_HOLD) && GET_OBJ_TYPE(obj) != ITEM_WAND && GET_OBJ_TYPE(obj) != ITEM_STAFF && GET_OBJ_TYPE(obj) != ITEM_SCROLL && GET_OBJ_TYPE(obj) != ITEM_POTION) {
+      if (!CAN_WEAR(obj, ITEM_WEAR_HOLD) && GET_OBJ_TYPE(obj) != ITEM_WAND && GET_OBJ_TYPE(obj) != ITEM_STAFF &&
+          GET_OBJ_TYPE(obj) != ITEM_SCROLL && GET_OBJ_TYPE(obj) != ITEM_POTION) {
         send_to_char("You can't hold that.\r\n", ch);
       } else {
         perform_wear(ch, obj, WEAR_HOLD);
@@ -1867,8 +1835,7 @@ ACMD(do_grab)
   }
 }
 
-void perform_remove(struct char_data * ch, int pos)
-{
+void perform_remove(struct char_data *ch, int pos) {
   struct obj_data *obj;
 
   if (!(obj = ch->equipment[pos])) {
@@ -1884,8 +1851,7 @@ void perform_remove(struct char_data * ch, int pos)
   }
 }
 
-ACMD(do_remove)
-{
+ACMD(do_remove) {
   int i, dotmode, found;
 
   one_argument(argument, arg);
@@ -1900,7 +1866,8 @@ ACMD(do_remove)
     found = 0;
     for (i = 0; i < NUM_WEARS; i++) {
       if (ch->equipment[i]) {
-        if (i != WEAR_2HANDED || (i == WEAR_2HANDED && !AFF3_FLAGGED(ch, AFF3_WIELDINGSPIRITUALHAMMER) && !AFF3_FLAGGED(ch, AFF3_WIELDINGFLAMEBLADE))) {
+        if (i != WEAR_2HANDED || (i == WEAR_2HANDED && !AFF3_FLAGGED(ch, AFF3_WIELDINGSPIRITUALHAMMER) &&
+                                  !AFF3_FLAGGED(ch, AFF3_WIELDINGFLAMEBLADE))) {
           REMOVE_BIT(CHAR_WEARING(ch), GET_OBJ_SLOTS(ch->equipment[i]));
           perform_remove(ch, i);
           found = 1;
@@ -1919,7 +1886,8 @@ ACMD(do_remove)
       found = 0;
       for (i = 0; i < NUM_WEARS; i++) {
         if (ch->equipment[i] && CAN_SEE_OBJ(ch, ch->equipment[i]) && isname(arg, ch->equipment[i]->name)) {
-          if (i != WEAR_2HANDED || (i == WEAR_2HANDED && !AFF3_FLAGGED(ch, AFF3_WIELDINGSPIRITUALHAMMER) && !AFF3_FLAGGED(ch, AFF3_WIELDINGFLAMEBLADE))) {
+          if (i != WEAR_2HANDED || (i == WEAR_2HANDED && !AFF3_FLAGGED(ch, AFF3_WIELDINGSPIRITUALHAMMER) &&
+                                    !AFF3_FLAGGED(ch, AFF3_WIELDINGFLAMEBLADE))) {
             REMOVE_BIT(CHAR_WEARING(ch), GET_OBJ_SLOTS(ch->equipment[i]));
             perform_remove(ch, i);
             found = 1;
@@ -1938,7 +1906,8 @@ ACMD(do_remove)
       safe_snprintf(buf, MAX_STRING_LENGTH, "You don't seem to be using %s %s.\r\n", AN(arg), arg);
       send_to_char(buf, ch);
     } else {
-      if (i != WEAR_2HANDED || (i == WEAR_2HANDED && !AFF3_FLAGGED(ch, AFF3_WIELDINGSPIRITUALHAMMER) && !AFF3_FLAGGED(ch, AFF3_WIELDINGFLAMEBLADE))) {
+      if (i != WEAR_2HANDED || (i == WEAR_2HANDED && !AFF3_FLAGGED(ch, AFF3_WIELDINGSPIRITUALHAMMER) &&
+                                !AFF3_FLAGGED(ch, AFF3_WIELDINGFLAMEBLADE))) {
         REMOVE_BIT(CHAR_WEARING(ch), GET_OBJ_SLOTS(ch->equipment[i]));
         perform_remove(ch, i);
       } else {
@@ -1947,4 +1916,3 @@ ACMD(do_remove)
     }
   }
 }
-

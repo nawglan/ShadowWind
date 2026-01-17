@@ -1,21 +1,20 @@
 /* ************************************************************************
- *  file: purgeplay.c                                    Part of CircleMUD * 
+ *  file: purgeplay.c                                    Part of CircleMUD *
  *  Usage: purge useless chars from playerfile                             *
  *  All Rights Reserved                                                    *
  *  Copyright (C) 1992, 1993 The Trustees of The Johns Hopkins University  *
  ************************************************************************* */
 
-#include <stdio.h>
-#include <ctype.h>
-#include <time.h>
-#include <string.h>
 #include "../structs.h"
 #include "../utils.h"
+#include <ctype.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
 
-void purge(char *filename)
-{
-  FILE * fl;
-  FILE * outfile;
+void purge(char *filename) {
+  FILE *fl;
+  FILE *outfile;
   struct char_file_u player;
   int okay, num = 0;
   long timeout = 0;
@@ -80,7 +79,8 @@ void purge(char *filename)
 
       if ((time(0) - player.last_logon) > timeout) {
         okay = 0;
-        sprintf(reason, "Level %2d idle for %3ld days", player.level, ((time(0) - player.last_logon) / SECS_PER_REAL_DAY));
+        sprintf(reason, "Level %2d idle for %3ld days", player.level,
+                ((time(0) - player.last_logon) / SECS_PER_REAL_DAY));
       }
     }
 
@@ -104,11 +104,9 @@ void purge(char *filename)
   }
 }
 
-void main(int argc, char *argv[])
-{
+void main(int argc, char *argv[]) {
   if (argc != 2)
     printf("Usage: %s playerfile-name\n", argv[0]);
   else
     purge(argv[1]);
 }
-

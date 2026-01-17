@@ -8,23 +8,23 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#include <ctype.h>
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
-#include <time.h>
-#include <errno.h>
 #include <sys/time.h>
+#include <time.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "event.h"
-#include "spells.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "screen.h"
+#include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 /* extern variables */
 extern struct zone_data *zone_table; /* zone table       */
@@ -75,8 +75,7 @@ extern int equip_order[NUM_WEARS];
 
 void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, int race, char *name);
 
-ACMD(do_exp)
-{
+ACMD(do_exp) {
   float exp_percent;
 
   if (GET_LEVEL(ch) == LVL_IMMORT) {
@@ -84,8 +83,8 @@ ACMD(do_exp)
     return;
   }
 
-  exp_percent = (GET_EXP(ch) - MaxExperience[(int) GET_LEVEL(ch)]);
-  exp_percent /= (MaxExperience[(int) GET_LEVEL(ch) + 1] - MaxExperience[(int) GET_LEVEL(ch)]);
+  exp_percent = (GET_EXP(ch) - MaxExperience[(int)GET_LEVEL(ch)]);
+  exp_percent /= (MaxExperience[(int)GET_LEVEL(ch) + 1] - MaxExperience[(int)GET_LEVEL(ch)]);
 
   exp_percent *= 100;
 
@@ -134,8 +133,7 @@ ACMD(do_exp)
   }
 }
 
-ACMD(do_whois)
-{
+ACMD(do_whois) {
 
   struct char_data *vict;
 
@@ -158,18 +156,18 @@ ACMD(do_whois)
   size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "%s is a ", GET_NAME(vict));
 
   switch (vict->player.sex) {
-    case SEX_NEUTRAL:
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "neutral-sex");
-      break;
-    case SEX_MALE:
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "male");
-      break;
-    case SEX_FEMALE:
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "female");
-      break;
-    default:
-      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "ILLEGAL-SEX!!");
-      break;
+  case SEX_NEUTRAL:
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "neutral-sex");
+    break;
+  case SEX_MALE:
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "male");
+    break;
+  case SEX_FEMALE:
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "female");
+    break;
+  default:
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "ILLEGAL-SEX!!");
+    break;
   }
   if (PRF_FLAGGED(vict, PRF_ANONYMOUS) && !COM_FLAGGED(ch, COM_ADMIN)) {
     len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " level-ANON ");
@@ -183,13 +181,14 @@ ACMD(do_whois)
   send_to_char(buf, ch);
 
   if (IS_IMMO(ch)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n", ctime(&vict->player.time.birth), ctime(&vict->player.time.logon), (int) (vict->player.time.played / 3600), (int) (vict->player.time.played / 60 % 60));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "Started: %-20.16s  Last: %-20.16s  Played: %3dh %2dm\r\n",
+                  ctime(&vict->player.time.birth), ctime(&vict->player.time.logon),
+                  (int)(vict->player.time.played / 3600), (int)(vict->player.time.played / 60 % 60));
     send_to_char(buf, ch);
   }
 }
 
-ACMD(do_evaluate)
-{
+ACMD(do_evaluate) {
   struct char_data *found_char = NULL;
   struct obj_data *found_obj = NULL;
 
@@ -204,15 +203,14 @@ ACMD(do_evaluate)
     return;
   }
   if (GET_OBJ_TYPE(found_obj) == ITEM_WEAPON) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$p seems to be a %s-like weapon.", weapon_types[GET_OBJ_VAL(found_obj,3)]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "$p seems to be a %s-like weapon.", weapon_types[GET_OBJ_VAL(found_obj, 3)]);
     act(buf, FALSE, ch, found_obj, 0, TO_CHAR);
   } else {
     act("$p is not a weapon.", FALSE, ch, found_obj, 0, TO_CHAR);
   }
 }
 
-void show_obj_to_char(struct obj_data * object, struct char_data * ch, int mode)
-{
+void show_obj_to_char(struct obj_data *object, struct char_data *ch, int mode) {
   int i;
   size_t blen = 0;
 
@@ -223,7 +221,8 @@ void show_obj_to_char(struct obj_data * object, struct char_data * ch, int mode)
     } else {
       blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s", object->description);
     }
-  } else if ((object->cshort_description || object->short_description) && ((mode == 1) || (mode == 2) || (mode == 3) || (mode == 4))) {
+  } else if ((object->cshort_description || object->short_description) &&
+             ((mode == 1) || (mode == 2) || (mode == 3) || (mode == 4))) {
     if (object->cshort_description) {
       blen = safe_snprintf(buf, MAX_STRING_LENGTH, "%s", object->cshort_description);
     } else {
@@ -239,7 +238,8 @@ void show_obj_to_char(struct obj_data * object, struct char_data * ch, int mode)
       send_to_char(buf, ch);
       for (i = 0; i < GET_OBJ_VAL(object, 0); i++) {
         if (GET_OBJ_SPELLLISTNUM(object, i)) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", spells[find_skill_num_def(GET_OBJ_SPELLLISTNUM(object, i))].command);
+          safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n",
+                        spells[find_skill_num_def(GET_OBJ_SPELLLISTNUM(object, i))].command);
           send_to_char(buf, ch);
         }
       }
@@ -249,7 +249,8 @@ void show_obj_to_char(struct obj_data * object, struct char_data * ch, int mode)
     }
     if (GET_OBJ_TYPE(object) == ITEM_NOTE) {
       if (object->action_description) {
-        safe_snprintf(buf, MAX_STRING_LENGTH, "There is something written upon it:\r\n\r\n%s", object->action_description);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "There is something written upon it:\r\n\r\n%s",
+                      object->action_description);
         page_string(ch->desc, buf, 1);
       } else {
         act("It's blank.", FALSE, ch, 0, 0, TO_CHAR);
@@ -287,8 +288,7 @@ void show_obj_to_char(struct obj_data * object, struct char_data * ch, int mode)
   page_string(ch->desc, buf, 1);
 }
 
-void list_obj_to_char(struct obj_data * list, struct char_data * ch, int mode, bool show)
-{
+void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, bool show) {
   struct obj_data *i, *j;
   char buf[10];
   bool found;
@@ -304,7 +304,8 @@ void list_obj_to_char(struct obj_data * list, struct char_data * ch, int mode, b
         }
       } else {
         if (j->item_number == i->item_number) {
-          if (j->cshort_description && i->cshort_description && strcmp(j->cshort_description, i->cshort_description) == 0) {
+          if (j->cshort_description && i->cshort_description &&
+              strcmp(j->cshort_description, i->cshort_description) == 0) {
             break;
           }
           if (!j->cshort_description && !i->cshort_description) {
@@ -323,7 +324,8 @@ void list_obj_to_char(struct obj_data * list, struct char_data * ch, int mode, b
         }
       } else {
         if (j->item_number == i->item_number) {
-          if (j->cshort_description && i->cshort_description && strcmp(j->cshort_description, i->cshort_description) == 0) {
+          if (j->cshort_description && i->cshort_description &&
+              strcmp(j->cshort_description, i->cshort_description) == 0) {
             num++;
           } else {
             if (!j->cshort_description && !i->cshort_description) {
@@ -348,8 +350,7 @@ void list_obj_to_char(struct obj_data * list, struct char_data * ch, int mode, b
   }
 }
 
-void diag_char_to_char(struct char_data * i, struct char_data * ch)
-{
+void diag_char_to_char(struct char_data *i, struct char_data *ch) {
   int percent;
 
   if (GET_MAX_HIT(i) > 0) {
@@ -395,8 +396,7 @@ void diag_char_to_char(struct char_data * i, struct char_data * ch)
   }
 }
 
-void look_at_char(struct char_data * i, struct char_data * ch)
-{
+void look_at_char(struct char_data *i, struct char_data *ch) {
   int j, found;
   struct obj_data *tmp_obj;
 
@@ -424,7 +424,8 @@ void look_at_char(struct char_data * i, struct char_data * ch)
       }
     }
   }
-  if (ch != i && GET_LEVEL(i) <= GET_LEVEL(ch) && (GET_CLASS(ch) == CLASS_THIEF || GET_LEVEL(ch) >= LVL_IMMORT || GET_CLASS(ch) == CLASS_ROGUE)) {
+  if (ch != i && GET_LEVEL(i) <= GET_LEVEL(ch) &&
+      (GET_CLASS(ch) == CLASS_THIEF || GET_LEVEL(ch) >= LVL_IMMORT || GET_CLASS(ch) == CLASS_ROGUE)) {
     found = FALSE;
     act("\r\nYou attempt to peek at $s inventory:", FALSE, i, 0, ch, TO_VICT);
     for (tmp_obj = i->carrying; tmp_obj; tmp_obj = tmp_obj->next_content) {
@@ -440,19 +441,16 @@ void look_at_char(struct char_data * i, struct char_data * ch)
   }
 }
 
-void list_one_char(struct char_data * i, struct char_data * ch)
-{
-  char *positions[] = {
-      " is lying here, dead.{x",
-      " is lying here, mortally wounded.{x",
-      " is lying here, incapacitated.{x",
-      " is lying here, stunned.{x",
-      " is sleeping{x",
-      " is resting{x",
-      " is sitting{x",
-      " is standing{x", /*fighting stance*/
-      " is standing{x"
-  };
+void list_one_char(struct char_data *i, struct char_data *ch) {
+  char *positions[] = {" is lying here, dead.{x",
+                       " is lying here, mortally wounded.{x",
+                       " is lying here, incapacitated.{x",
+                       " is lying here, stunned.{x",
+                       " is sleeping{x",
+                       " is resting{x",
+                       " is sitting{x",
+                       " is standing{x", /*fighting stance*/
+                       " is standing{x"};
   char pcolor[5];
   size_t clen = 0;
 
@@ -596,7 +594,7 @@ void list_one_char(struct char_data * i, struct char_data * ch)
   }
   if (!FIGHTING(i)) {
     if (!IS_NPC(i)) {
-      clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "%s", positions[(int) GET_POS(i)]);
+      clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "%s", positions[(int)GET_POS(i)]);
       if (IS_AFFECTED(i, AFF_FLY)) {
         clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, " in mid-air here.");
       } else if (IS_AFFECTED2(i, AFF2_LEVITATE)) {
@@ -626,7 +624,7 @@ void list_one_char(struct char_data * i, struct char_data * ch)
      */
   } else {
     if (FIGHTING(i)) {
-      clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "%s here, fighting ", positions[(int) GET_POS(i)]);
+      clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "%s here, fighting ", positions[(int)GET_POS(i)]);
       if (FIGHTING(i) == ch) {
         clen += safe_snprintf(buf + clen, MAX_STRING_LENGTH - clen, "{YYOU!{x");
       } else {
@@ -668,8 +666,7 @@ void list_one_char(struct char_data * i, struct char_data * ch)
   send_to_char(CCNRM(ch, C_SPR), ch);
 }
 
-void list_char_to_char(struct char_data * list, struct char_data * ch)
-{
+void list_char_to_char(struct char_data *list, struct char_data *ch) {
   struct char_data *i;
 
   for (i = list; i; i = i->next_in_room) {
@@ -683,8 +680,7 @@ void list_char_to_char(struct char_data * list, struct char_data * ch)
   }
 }
 
-void do_auto_exits(struct char_data * ch)
-{
+void do_auto_exits(struct char_data *ch) {
   int door;
   size_t elen = 0;
 
@@ -706,31 +702,30 @@ void do_auto_exits(struct char_data * ch)
 }
 
 const char *armor_class[] = {
-    "{rYour armor is equivalent to that of an ancient dragon.{x",/* -100+ */
-    "You are ready to kick some ass!.", /* -90 - -100 */
-    "You are ready to tank.", /* -80 - -90 */
-    "You are almost ready to tank.", /* -70 - -80 */
-    "Your armor class is better than good.", /* -60 - -70 */
-    "Your armor class is good.", /* -50 - -60 */
-    "Your armor class is below good.", /* -40 - -50 */
-    "Your armor class is well above average.", /* -30 - -40 */
-    "Your armor class is above average.", /* -20 - -30 */
-    "Your armor class is slightly above average.",/* -10 - -20 */
-    "Your armor class is average.", /* 0 - -10 */
-    "Your armor class is slightly below average.",/* 10-0 */
-    "Your armor class is below average.", /* 20-10 */
-    "Your armor class is well above awful.", /* 30-20 */
-    "Your armor class is above awful.", /* 40-30 */
-    "Your armor class is slightly above awful.", /* 50-40 */
-    "Your armor class is awful.", /* 60-50 */
-    "Your armor class is slightly below awful.", /* 70-60 */
-    "Your armor class is below awful.", /* 80-70 */
-    "Your armor class is horrible.", /* 90-80 */
-    "What armor class, your NAKED!?!", /* 100-90 */
+    "{rYour armor is equivalent to that of an ancient dragon.{x", /* -100+ */
+    "You are ready to kick some ass!.",                           /* -90 - -100 */
+    "You are ready to tank.",                                     /* -80 - -90 */
+    "You are almost ready to tank.",                              /* -70 - -80 */
+    "Your armor class is better than good.",                      /* -60 - -70 */
+    "Your armor class is good.",                                  /* -50 - -60 */
+    "Your armor class is below good.",                            /* -40 - -50 */
+    "Your armor class is well above average.",                    /* -30 - -40 */
+    "Your armor class is above average.",                         /* -20 - -30 */
+    "Your armor class is slightly above average.",                /* -10 - -20 */
+    "Your armor class is average.",                               /* 0 - -10 */
+    "Your armor class is slightly below average.",                /* 10-0 */
+    "Your armor class is below average.",                         /* 20-10 */
+    "Your armor class is well above awful.",                      /* 30-20 */
+    "Your armor class is above awful.",                           /* 40-30 */
+    "Your armor class is slightly above awful.",                  /* 50-40 */
+    "Your armor class is awful.",                                 /* 60-50 */
+    "Your armor class is slightly below awful.",                  /* 70-60 */
+    "Your armor class is below awful.",                           /* 80-70 */
+    "Your armor class is horrible.",                              /* 90-80 */
+    "What armor class, your NAKED!?!",                            /* 100-90 */
 };
 
-char *stats_msg(int stat)
-{
+char *stats_msg(int stat) {
   if (stat <= 30) {
     return "bad    ";
   }
@@ -746,8 +741,7 @@ char *stats_msg(int stat)
   return "excellent";
 }
 
-char *align_msg(int stat)
-{
+char *align_msg(int stat) {
   if (stat <= -900) {
     return "extremely evil";
   }
@@ -769,16 +763,17 @@ char *align_msg(int stat)
   return "extremely good";
 }
 
-ACMD(do_stats)
-{
+ACMD(do_stats) {
   int calc_thac0 = 0;
 
   extern int thaco[NUM_CLASSES][2];
   extern sh_int stats[11][101];
   extern sh_int monk_stat[LVL_IMMORT + 1][5];
 
-  size_t slen = safe_snprintf(buf, MAX_STRING_LENGTH, "{c        Attribute information for: {y%s\r\n\r\n", GET_NAME(ch));
-  safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{cLevel: {w%2d      {cRace:{C %s    {cClass: {G%s\r\n", GET_LEVEL(ch), pc_race_types[(int) GET_RACE(ch)], pc_class_types[(int) GET_CLASS(ch)]);
+  size_t slen =
+      safe_snprintf(buf, MAX_STRING_LENGTH, "{c        Attribute information for: {y%s\r\n\r\n", GET_NAME(ch));
+  safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{cLevel: {w%2d      {cRace:{C %s    {cClass: {G%s\r\n",
+                GET_LEVEL(ch), pc_race_types[(int)GET_RACE(ch)], pc_class_types[(int)GET_CLASS(ch)]);
   send_to_char(buf, ch);
 
   if (GET_LEVEL(ch) < 10) {
@@ -809,8 +804,8 @@ ACMD(do_stats)
   }
 
   if (GET_LEVEL(ch) > 20) {
-    calc_thac0 = thaco[(int) GET_CLASS(ch)][0];
-    calc_thac0 -= ((int) GET_LEVEL(ch) / thaco[(int) GET_CLASS(ch)][1]);
+    calc_thac0 = thaco[(int)GET_CLASS(ch)][0];
+    calc_thac0 -= ((int)GET_LEVEL(ch) / thaco[(int)GET_CLASS(ch)][1]);
     calc_thac0 -= stats[STR_TOHIT][GET_STR(ch)];
     calc_thac0 -= GET_HITROLL(ch);
     if (calc_thac0 < 1) {
@@ -820,63 +815,69 @@ ACMD(do_stats)
       calc_thac0 = 20;
     }
 
-    slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{cDamroll: {W%d{c, Hitroll: {W%d{c, THAC0: {W%d\r\n", GET_DAMROLL(ch), GET_HITROLL(ch), calc_thac0);
+    slen += safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{cDamroll: {W%d{c, Hitroll: {W%d{c, THAC0: {W%d\r\n",
+                          GET_DAMROLL(ch), GET_HITROLL(ch), calc_thac0);
   }
 
   if (GET_LEVEL(ch) < 25) {
-    safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{cAlignment: {W%s{c     (extremely good to extremely evil)\r\n", align_msg(GET_ALIGNMENT(ch)));
+    safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen,
+                  "{cAlignment: {W%s{c     (extremely good to extremely evil)\r\n", align_msg(GET_ALIGNMENT(ch)));
   } else {
-    safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{cYour alignment is {W%d{c  (1000 to -1000)\r\n", GET_ALIGNMENT(ch));
+    safe_snprintf(buf + slen, MAX_STRING_LENGTH - slen, "{cYour alignment is {W%d{c  (1000 to -1000)\r\n",
+                  GET_ALIGNMENT(ch));
   }
 
   send_to_char(buf, ch);
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{cSaving Throws: "
-      "{B[{CPAR{B] {W%d "
-      "{B[{CROD{B] {W%d "
-      "{B[{CPET{B] {W%d "
-      "{B[{CBRE{B] {W%d "
-      "{B[{CSPE{B] {W%d{x\r\n", GET_SAVE(ch, SAVING_PARA), GET_SAVE(ch, SAVING_ROD), GET_SAVE(ch, SAVING_PETRI), GET_SAVE(ch, SAVING_BREATH), GET_SAVE(ch, SAVING_SPELL));
+  safe_snprintf(buf, MAX_STRING_LENGTH,
+                "{cSaving Throws: "
+                "{B[{CPAR{B] {W%d "
+                "{B[{CROD{B] {W%d "
+                "{B[{CPET{B] {W%d "
+                "{B[{CBRE{B] {W%d "
+                "{B[{CSPE{B] {W%d{x\r\n",
+                GET_SAVE(ch, SAVING_PARA), GET_SAVE(ch, SAVING_ROD), GET_SAVE(ch, SAVING_PETRI),
+                GET_SAVE(ch, SAVING_BREATH), GET_SAVE(ch, SAVING_SPELL));
   send_to_char(buf, ch);
   if (GET_CLASS(ch) == CLASS_MONK) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{cBarehand Damage: {W%d{wd{W%d{x\r\n", monk_stat[(int) GET_LEVEL(ch)][0], monk_stat[(int) GET_LEVEL(ch)][1]);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "{cBarehand Damage: {W%d{wd{W%d{x\r\n", monk_stat[(int)GET_LEVEL(ch)][0],
+                  monk_stat[(int)GET_LEVEL(ch)][1]);
     send_to_char(buf, ch);
   }
   if ((IS_MAGE(ch) || IS_PRI(ch)) && GET_LEVEL(ch) >= 21) {
     switch (GET_SPECIALIZED(ch)) {
-      case (1 << 0):
-        send_to_char("{cYou are specialized in the general realm.{x\r\n", ch);
-        break;
-      case (1 << 1):
-        send_to_char("{cYou are specialized in the creation realm.{x\r\n", ch);
-        break;
-      case (1 << 2):
-        send_to_char("{cYou are specialized in the divination realm.{x\r\n", ch);
-        break;
-      case (1 << 3):
-        send_to_char("{cYou are specialized in the elemental realm.{x\r\n", ch);
-        break;
-      case (1 << 4):
-        send_to_char("{cYou are specialized in the healing realm.{x\r\n", ch);
-        break;
-      case (1 << 5):
-        send_to_char("{cYou are specialized in the protection realm.{x\r\n", ch);
-        break;
-      case (1 << 6):
-        send_to_char("{cYou are specialized in the summoning realm.{x\r\n", ch);
-        break;
-      case (1 << 7):
-        send_to_char("{cYou are specialized in the enchantment realm.{x\r\n", ch);
-        break;
-      default:
-        send_to_char("{cYou havn't specialized in a realm of magic yet!{x\r\n", ch);
-        break;
+    case (1 << 0):
+      send_to_char("{cYou are specialized in the general realm.{x\r\n", ch);
+      break;
+    case (1 << 1):
+      send_to_char("{cYou are specialized in the creation realm.{x\r\n", ch);
+      break;
+    case (1 << 2):
+      send_to_char("{cYou are specialized in the divination realm.{x\r\n", ch);
+      break;
+    case (1 << 3):
+      send_to_char("{cYou are specialized in the elemental realm.{x\r\n", ch);
+      break;
+    case (1 << 4):
+      send_to_char("{cYou are specialized in the healing realm.{x\r\n", ch);
+      break;
+    case (1 << 5):
+      send_to_char("{cYou are specialized in the protection realm.{x\r\n", ch);
+      break;
+    case (1 << 6):
+      send_to_char("{cYou are specialized in the summoning realm.{x\r\n", ch);
+      break;
+    case (1 << 7):
+      send_to_char("{cYou are specialized in the enchantment realm.{x\r\n", ch);
+      break;
+    default:
+      send_to_char("{cYou havn't specialized in a realm of magic yet!{x\r\n", ch);
+      break;
     }
   }
 }
 
-ACMD(do_exits)
-{
+ACMD(do_exits) {
   int door;
 
   *buf = '\0';
@@ -886,12 +887,15 @@ ACMD(do_exits)
     return;
   }
   for (door = 0; door < NUM_OF_DIRS; door++) {
-    if (EXIT(ch, door) && EXIT(ch, door)->to_room != NOWHERE && !IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
+    if (EXIT(ch, door) && EXIT(ch, door)->to_room != NOWHERE && !IS_SET(EXIT(ch, door)->exit_info, EX_CLOSED) &&
+        !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
       if (GET_LEVEL(ch) >= LVL_IMMORT) {
-        safe_snprintf(buf2, MAX_STRING_LENGTH, "%-5s - [%5d] %s\r\n", dirs[door], world[EXIT(ch, door)->to_room].number, world[EXIT(ch, door)->to_room].name);
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "%-5s - [%5d] %s\r\n", dirs[door], world[EXIT(ch, door)->to_room].number,
+                      world[EXIT(ch, door)->to_room].name);
       } else {
         size_t b2len = safe_snprintf(buf2, MAX_STRING_LENGTH, "%-5s - ", dirs[door]);
-        if (IS_DARK(EXIT(ch, door)->to_room) && !CAN_SEE_IN_DARK(ch) && !IS_SET(ROOM_FLAGS(EXIT(ch, door)->to_room), ROOM_DEATH)) {
+        if (IS_DARK(EXIT(ch, door)->to_room) && !CAN_SEE_IN_DARK(ch) &&
+            !IS_SET(ROOM_FLAGS(EXIT(ch, door)->to_room), ROOM_DEATH)) {
           safe_snprintf(buf2 + b2len, MAX_STRING_LENGTH - b2len, "Too dark to tell\r\n");
         } else {
           safe_snprintf(buf2 + b2len, MAX_STRING_LENGTH - b2len, "%s\r\n", world[EXIT(ch, door)->to_room].name);
@@ -909,21 +913,23 @@ ACMD(do_exits)
   }
 }
 
-void look_at_room(struct char_data * ch, int ignore_brief)
-{
+void look_at_room(struct char_data *ch, int ignore_brief) {
   int skip = 0;
   if (IS_DARK(ch->in_room) && !CAN_SEE_IN_DARK(ch) && !AFF_FLAGGED(ch, AFF_INFRAVISION)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch, C_SPR), CBGRE(ch, C_SPR),
+                  CCNRM(ch, C_SPR));
     send_to_char(buf, ch);
     return;
   } else if (IS_AFFECTED(ch, AFF_BLIND)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n",
+                  CBGRE(ch, C_SPR), CBGRE(ch, C_SPR), CCNRM(ch, C_SPR));
     send_to_char(buf, ch);
     return;
   }
   if (PRF_FLAGGED(ch, PRF_ROOMFLAGS)) {
-    sprintbit((long) ROOM_FLAGS(ch->in_room), room_bits, buf);
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[ch->in_room].name, world[ch->in_room].number, buf, sector_types[GET_SECT(ch->in_room)]);
+    sprintbit((long)ROOM_FLAGS(ch->in_room), room_bits, buf);
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[ch->in_room].name,
+                  world[ch->in_room].number, buf, sector_types[GET_SECT(ch->in_room)]);
     send_to_char(buf2, ch);
   } else {
     send_to_char("{Y", ch);
@@ -932,14 +938,16 @@ void look_at_room(struct char_data * ch, int ignore_brief)
   }
 
   if (!CAN_SEE_IN_DARK(ch) && AFF_FLAGGED(ch, AFF_INFRAVISION) && IS_DARK(ch->in_room)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch, C_SPR), CBGRE(ch, C_SPR),
+                  CCNRM(ch, C_SPR));
     send_to_char(buf, ch);
     skip = 1;
   }
   send_to_char("\r\n{c", ch);
 
   if (!skip) {
-    if (!IS_NPC(ch) && (ignore_brief != 2) && (!PRF_FLAGGED(ch, PRF_BRIEF) || ignore_brief || ROOM_FLAGGED(ch->in_room, ROOM_DEATH))) {
+    if (!IS_NPC(ch) && (ignore_brief != 2) &&
+        (!PRF_FLAGGED(ch, PRF_BRIEF) || ignore_brief || ROOM_FLAGGED(ch->in_room, ROOM_DEATH))) {
       send_to_char(world[ch->in_room].description, ch);
     }
 
@@ -959,8 +967,7 @@ void look_at_room(struct char_data * ch, int ignore_brief)
   send_to_char(CCNRM(ch, C_SPR), ch);
 }
 
-void farsee_into_room(struct char_data * ch, room_num roomnum)
-{
+void farsee_into_room(struct char_data *ch, room_num roomnum) {
   int oldroomnum = ch->in_room;
   int skip = 0;
 
@@ -969,17 +976,20 @@ void farsee_into_room(struct char_data * ch, room_num roomnum)
   }
 
   if (IS_DARK(roomnum) && !CAN_SEE_IN_DARK(ch) && !AFF_FLAGGED(ch, AFF_INFRAVISION)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch, C_SPR), CBGRE(ch, C_SPR),
+                  CCNRM(ch, C_SPR));
     send_to_char(buf, ch);
     return;
   } else if (IS_AFFECTED(ch, AFF_BLIND)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%sYou see nothing but infinite darkness... %sYou are BLIND!%s\r\n",
+                  CBGRE(ch, C_SPR), CBGRE(ch, C_SPR), CCNRM(ch, C_SPR));
     send_to_char(buf, ch);
     return;
   }
   if (PRF_FLAGGED(ch, PRF_ROOMFLAGS)) {
-    sprintbit((long) ROOM_FLAGS(roomnum), room_bits, buf);
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[roomnum].name, world[roomnum].number, buf, sector_types[GET_SECT(roomnum)]);
+    sprintbit((long)ROOM_FLAGS(roomnum), room_bits, buf);
+    safe_snprintf(buf2, MAX_STRING_LENGTH, "{Y%s {W[{B%5d{W]\r\n[{B%s{W]\r\n[{B%s{W]{x", world[roomnum].name,
+                  world[roomnum].number, buf, sector_types[GET_SECT(roomnum)]);
     send_to_char(buf2, ch);
   } else {
     send_to_char("{Y", ch);
@@ -987,7 +997,8 @@ void farsee_into_room(struct char_data * ch, room_num roomnum)
     send_to_char("{x", ch);
   }
   if (!AFF_FLAGGED(ch, AFF_NIGHTVISION) && AFF_FLAGGED(ch, AFF_INFRAVISION) && IS_DARK(ch->in_room)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR), CBGRE(ch,C_SPR), CCNRM(ch,C_SPR));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n%sIt is pitch black %s...%s\r\n", CBGRE(ch, C_SPR), CBGRE(ch, C_SPR),
+                  CCNRM(ch, C_SPR));
     send_to_char(buf, ch);
     skip = 1;
   }
@@ -1015,8 +1026,7 @@ void farsee_into_room(struct char_data * ch, room_num roomnum)
   }
 }
 
-void look_in_direction(struct char_data * ch, int dir)
-{
+void look_in_direction(struct char_data *ch, int dir) {
   int founddoor = 0;
 
   if (EXIT(ch, dir)) {
@@ -1039,7 +1049,8 @@ void look_in_direction(struct char_data * ch, int dir)
         return;
       }
     }
-    if (!IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN) && IS_SET(EXIT(ch, dir)->exit_info, EX_ISDOOR) && !IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED)) {
+    if (!IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN) && IS_SET(EXIT(ch, dir)->exit_info, EX_ISDOOR) &&
+        !IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED)) {
       if (EXIT(ch, dir)->keyword) {
         safe_snprintf(buf, MAX_STRING_LENGTH, "The %s is open.\r\n", fname(EXIT(ch, dir)->keyword));
         send_to_char(buf, ch);
@@ -1059,8 +1070,7 @@ void look_in_direction(struct char_data * ch, int dir)
   }
 }
 
-void look_in_obj(struct char_data * ch, char *arg)
-{
+void look_in_obj(struct char_data *ch, char *arg) {
   struct obj_data *obj = NULL;
   struct char_data *dummy = NULL;
   int amt, bits;
@@ -1070,7 +1080,8 @@ void look_in_obj(struct char_data * ch, char *arg)
   } else if (!(bits = generic_find(arg, FIND_OBJ_INV | FIND_OBJ_ROOM | FIND_OBJ_EQUIP, ch, &dummy, &obj))) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "There doesn't seem to be %s %s here.\r\n", AN(arg), arg);
     send_to_char(buf, ch);
-  } else if ((GET_OBJ_TYPE(obj) != ITEM_DRINKCON) && (GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN) && (GET_OBJ_TYPE(obj) != ITEM_CONTAINER) && (GET_OBJ_TYPE(obj) != ITEM_PCORPSE)) {
+  } else if ((GET_OBJ_TYPE(obj) != ITEM_DRINKCON) && (GET_OBJ_TYPE(obj) != ITEM_FOUNTAIN) &&
+             (GET_OBJ_TYPE(obj) != ITEM_CONTAINER) && (GET_OBJ_TYPE(obj) != ITEM_PCORPSE)) {
     send_to_char("There's nothing inside that!\r\n", ch);
   } else {
     if (GET_OBJ_TYPE(obj) == ITEM_CONTAINER || GET_OBJ_TYPE(obj) == ITEM_PCORPSE) {
@@ -1080,15 +1091,15 @@ void look_in_obj(struct char_data * ch, char *arg)
         act("$n looks inside $p.", TRUE, ch, obj, 0, TO_ROOM);
         send_to_char((obj->cname ? fname(obj->cname) : fname(obj->name)), ch);
         switch (bits) {
-          case FIND_OBJ_INV:
-            send_to_char(" (carried): \r\n", ch);
-            break;
-          case FIND_OBJ_ROOM:
-            send_to_char(" (here): \r\n", ch);
-            break;
-          case FIND_OBJ_EQUIP:
-            send_to_char(" (used): \r\n", ch);
-            break;
+        case FIND_OBJ_INV:
+          send_to_char(" (carried): \r\n", ch);
+          break;
+        case FIND_OBJ_ROOM:
+          send_to_char(" (here): \r\n", ch);
+          break;
+        case FIND_OBJ_EQUIP:
+          send_to_char(" (used): \r\n", ch);
+          break;
         }
 
         list_obj_to_char(obj->contains, ch, 2, TRUE);
@@ -1098,15 +1109,15 @@ void look_in_obj(struct char_data * ch, char *arg)
         send_to_char("It is empty.\r\n", ch);
       } else {
         amt = ((GET_OBJ_VAL(obj, 1) * 3) / GET_OBJ_VAL(obj, 0));
-        safe_snprintf(buf, MAX_STRING_LENGTH, "It's %sfull of a %s liquid.\r\n", fullness[amt], color_liquid[GET_OBJ_VAL(obj, 2)]);
+        safe_snprintf(buf, MAX_STRING_LENGTH, "It's %sfull of a %s liquid.\r\n", fullness[amt],
+                      color_liquid[GET_OBJ_VAL(obj, 2)]);
         send_to_char(buf, ch);
       }
     }
   }
 }
 
-char *find_exdesc(char *word, struct extra_descr_data * list)
-{
+char *find_exdesc(char *word, struct extra_descr_data *list) {
   struct extra_descr_data *i;
 
   for (i = list; i; i = i->next) {
@@ -1123,8 +1134,7 @@ char *find_exdesc(char *word, struct extra_descr_data * list)
  * matches the target.  First, see if there is another char in the room
  * with the name.  Then check local objs for exdescs.
  */
-void look_at_target(struct char_data * ch, char *arg)
-{
+void look_at_target(struct char_data *ch, char *arg) {
   int bits, found = 0, j;
   struct char_data *found_char = NULL;
   struct obj_data *obj = NULL, *found_obj = NULL;
@@ -1192,8 +1202,7 @@ void look_at_target(struct char_data * ch, char *arg)
   }
 }
 
-ACMD(do_look)
-{
+ACMD(do_look) {
   static char arg2[MAX_INPUT_LENGTH];
   int look_type;
 
@@ -1208,7 +1217,8 @@ ACMD(do_look)
   } else if (IS_DARK(ch->in_room) && !CAN_SEE_IN_DARK(ch)) {
     /*
      if (!AFF_FLAGGED(ch, AFF_INFRAVISION)) {
-     safe_snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n", CBGRE(ch,C_SPR),CBGRE(ch,C_SPR),CCNRM(ch,C_SPR));
+     safe_snprintf(buf, MAX_STRING_LENGTH, "%sIt is pitch black %s...%s\r\n",
+     CBGRE(ch,C_SPR),CBGRE(ch,C_SPR),CCNRM(ch,C_SPR));
      }
      */
     look_at_room(ch, 1);
@@ -1242,8 +1252,7 @@ ACMD(do_look)
   }
 }
 
-ACMD(do_examine)
-{
+ACMD(do_examine) {
   struct char_data *tmp_char;
   struct obj_data *tmp_object;
 
@@ -1258,15 +1267,15 @@ ACMD(do_examine)
   generic_find(arg, FIND_OBJ_INV | FIND_OBJ_ROOM | FIND_CHAR_ROOM | FIND_OBJ_EQUIP, ch, &tmp_char, &tmp_object);
 
   if (tmp_object) {
-    if ((GET_OBJ_TYPE(tmp_object) == ITEM_DRINKCON) || (GET_OBJ_TYPE(tmp_object) == ITEM_FOUNTAIN) || (GET_OBJ_TYPE(tmp_object) == ITEM_CONTAINER) || (GET_OBJ_TYPE(tmp_object) == ITEM_PCORPSE)) {
+    if ((GET_OBJ_TYPE(tmp_object) == ITEM_DRINKCON) || (GET_OBJ_TYPE(tmp_object) == ITEM_FOUNTAIN) ||
+        (GET_OBJ_TYPE(tmp_object) == ITEM_CONTAINER) || (GET_OBJ_TYPE(tmp_object) == ITEM_PCORPSE)) {
       send_to_char("When you look inside, you see:\r\n", ch);
       look_in_obj(ch, arg);
     }
   }
 }
 
-ACMD(do_score)
-{
+ACMD(do_score) {
   struct affected_type *aff;
   struct time_info_data playing_time;
   struct time_info_data real_time_passed(time_t t2, time_t t1);
@@ -1282,63 +1291,76 @@ ACMD(do_score)
     }
   }
 
-  size_t sclen = safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n{y                      Score information for: {c%s{x\r\n\r\n", GET_NAME(ch));
+  size_t sclen = safe_snprintf(buf, MAX_STRING_LENGTH,
+                               "\r\n{y                      Score information for: {c%s{x\r\n\r\n", GET_NAME(ch));
 
-  sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{BRace: {c%s  {BClass: {c%s{B  Level: {c%d  {BAge: {c%d years old.\r\n", pc_race_types[(int) GET_RACE(pl)], pc_class_types[(int) GET_CLASS(pl)], GET_LEVEL(pl), GET_AGE(pl));
+  sclen += safe_snprintf(
+      buf + sclen, MAX_STRING_LENGTH - sclen, "{BRace: {c%s  {BClass: {c%s{B  Level: {c%d  {BAge: {c%d years old.\r\n",
+      pc_race_types[(int)GET_RACE(pl)], pc_class_types[(int)GET_CLASS(pl)], GET_LEVEL(pl), GET_AGE(pl));
 
-  sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{BHits: {y%d(%d)    {BMana: {y%d(%d){B    Movement: {y%d(%d){x\r\n", GET_HIT(pl), GET_MAX_HIT(pl), GET_MANA(pl), GET_MAX_MANA(pl), GET_MOVE(pl), GET_MAX_MOVE(pl));
+  sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen,
+                         "{BHits: {y%d(%d)    {BMana: {y%d(%d){B    Movement: {y%d(%d){x\r\n", GET_HIT(pl),
+                         GET_MAX_HIT(pl), GET_MANA(pl), GET_MAX_MANA(pl), GET_MOVE(pl), GET_MAX_MOVE(pl));
 
   if (!IS_NPC(pl))
-    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{BCoins carried:  {W%dp {Y%dg {w%ds {y%dc {B   Coins in bank:  {W%dp {Y%dg {w%ds {y%dc\r\n", GET_PLAT(pl), GET_GOLD(pl), GET_SILVER(pl), GET_COPPER(pl), GET_BANK_PLAT(pl), GET_BANK_GOLD(pl), GET_BANK_SILVER(pl), GET_BANK_COPPER(pl));
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen,
+                           "{BCoins carried:  {W%dp {Y%dg {w%ds {y%dc {B   Coins in bank:  {W%dp {Y%dg {w%ds {y%dc\r\n",
+                           GET_PLAT(pl), GET_GOLD(pl), GET_SILVER(pl), GET_COPPER(pl), GET_BANK_PLAT(pl),
+                           GET_BANK_GOLD(pl), GET_BANK_SILVER(pl), GET_BANK_COPPER(pl));
 
-  sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{BYou weigh {c%d{B pounds and stand {c%d{B inches high.{x\r\n", GET_WEIGHT(pl), GET_HEIGHT(pl));
+  sclen +=
+      safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen,
+                    "{BYou weigh {c%d{B pounds and stand {c%d{B inches high.{x\r\n", GET_WEIGHT(pl), GET_HEIGHT(pl));
 
   if (!IS_NPC(pl)) {
     playing_time = real_time_passed((time(0) - pl->player.time.logon) + pl->player.time.played, 0);
-    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{BYou have been playing for {c%d {Bdays and {c%d {Bhours.\r\n", playing_time.day, playing_time.hours);
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen,
+                           "{BYou have been playing for {c%d {Bdays and {c%d {Bhours.\r\n", playing_time.day,
+                           playing_time.hours);
 
     sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{BTitle:  {w%s{x\r\n{BStatus:  {W", GET_TITLE(pl));
   }
 
   switch (GET_POS(pl)) {
-    case POS_DEAD:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{RDEAD as a doornail.\r\n");
-      break;
-    case POS_MORTALLYW:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "Mortally Wounded, and going to Die.\r\n");
-      break;
-    case POS_INCAP:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "Incapacitated, slowly fading away...\r\n");
-      break;
-    case POS_STUNNED:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "Stunned, unable to move!\r\n");
-      break;
-    case POS_SLEEPING:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are sleeping.\r\n");
-      break;
-    case POS_RESTING:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are resting.\r\n");
-      break;
-    case POS_SITTING:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are sitting.\r\n");
-      break;
-    case POS_FIGHTING:
-      if (FIGHTING(pl)) {
-        sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are fighting {c%s.\r\n", PERS(FIGHTING(pl), pl));
-      } else {
-        sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are fighting thin air.\r\n");
-      }
-      break;
-    case POS_STANDING:
-      if (IS_AFFECTED(pl, AFF_FLY)) {
-        sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are flying.\r\n");
-      } else {
-        sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are standing.\r\n");
-      }
-      break;
-    default:
-      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are floating.\r\n");
-      break;
+  case POS_DEAD:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "{RDEAD as a doornail.\r\n");
+    break;
+  case POS_MORTALLYW:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "Mortally Wounded, and going to Die.\r\n");
+    break;
+  case POS_INCAP:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "Incapacitated, slowly fading away...\r\n");
+    break;
+  case POS_STUNNED:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "Stunned, unable to move!\r\n");
+    break;
+  case POS_SLEEPING:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are sleeping.\r\n");
+    break;
+  case POS_RESTING:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are resting.\r\n");
+    break;
+  case POS_SITTING:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are sitting.\r\n");
+    break;
+  case POS_FIGHTING:
+    if (FIGHTING(pl)) {
+      sclen +=
+          safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are fighting {c%s.\r\n", PERS(FIGHTING(pl), pl));
+    } else {
+      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are fighting thin air.\r\n");
+    }
+    break;
+  case POS_STANDING:
+    if (IS_AFFECTED(pl, AFF_FLY)) {
+      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are flying.\r\n");
+    } else {
+      sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are standing.\r\n");
+    }
+    break;
+  default:
+    sclen += safe_snprintf(buf + sclen, MAX_STRING_LENGTH - sclen, "You are floating.\r\n");
+    break;
   }
 
   if (GET_COND(pl, FULL) == 0) {
@@ -1361,20 +1383,20 @@ ACMD(do_score)
     }
   }
   switch (GET_RACE(pl)) {
-    case RACE_HALFELF:
-    case RACE_OGRE:
-    case RACE_TROLL:
-      send_to_char("{WInnate Abilities: {cInfravision\r\n", pl);
-      break;
-    case RACE_ELF:
-      send_to_char("{WInnate Abilities: {cInfravision, Sneak\r\n", pl);
-      break;
-    case RACE_DWARF:
-      send_to_char("{WInnate Abilities: {cDetect Alignment, Infravision\r\n", pl);
-      break;
-    case RACE_HALFLING:
-      send_to_char("{WInnate Abilities: {cSneak\r\n", pl);
-      break;
+  case RACE_HALFELF:
+  case RACE_OGRE:
+  case RACE_TROLL:
+    send_to_char("{WInnate Abilities: {cInfravision\r\n", pl);
+    break;
+  case RACE_ELF:
+    send_to_char("{WInnate Abilities: {cInfravision, Sneak\r\n", pl);
+    break;
+  case RACE_DWARF:
+    send_to_char("{WInnate Abilities: {cDetect Alignment, Infravision\r\n", pl);
+    break;
+  case RACE_HALFLING:
+    send_to_char("{WInnate Abilities: {cSneak\r\n", pl);
+    break;
   }
   if (GET_DRAGGING(pl)) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "{xDragging: %s\r\n", OBJS(GET_DRAGGING(pl), pl));
@@ -1382,8 +1404,7 @@ ACMD(do_score)
   }
 }
 
-ACMD(do_inventory)
-{
+ACMD(do_inventory) {
   struct char_data *pl;
 
   one_argument(argument, arg);
@@ -1403,11 +1424,9 @@ ACMD(do_inventory)
     send_to_char(buf, ch);
     list_obj_to_char(pl->carrying, ch, 1, TRUE);
   }
-
 }
 
-ACMD(do_equipment)
-{
+ACMD(do_equipment) {
   struct char_data *pl;
   int i, found = 0;
 
@@ -1447,8 +1466,7 @@ ACMD(do_equipment)
   }
 }
 
-ACMD(do_time)
-{
+ACMD(do_time) {
   char *suf;
   int weekday, day;
   extern struct time_info_data time_info;
@@ -1462,7 +1480,9 @@ ACMD(do_time)
   /* 35 days in a month */
   weekday = ((35 * time_info.month) + time_info.day + 1) % 7;
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{CIt is {c%d %s{C, on{y %s\r\n", ((time_info.hours % 12 == 0) ? 12 : ((time_info.hours) % 12)), ((time_info.hours >= 12) ? "pm" : "am"), weekdays[weekday]);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "{CIt is {c%d %s{C, on{y %s\r\n",
+                ((time_info.hours % 12 == 0) ? 12 : ((time_info.hours) % 12)), ((time_info.hours >= 12) ? "pm" : "am"),
+                weekdays[weekday]);
   send_to_char(buf, ch);
 
   day = time_info.day + 1; /* day in [1..35] */
@@ -1485,30 +1505,31 @@ ACMD(do_time)
     suf = "th";
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{CThe {c%d%s {CDay of the {y%s{C, Year {c%d{C.{x\r\n", day, suf, month_name[(int) time_info.month], time_info.year);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "{CThe {c%d%s {CDay of the {y%s{C, Year {c%d{C.{x\r\n", day, suf,
+                month_name[(int)time_info.month], time_info.year);
 
   send_to_char(buf, ch);
 
   mytime = time(0);
 
-  tmstr = (char*) asctime(localtime(&mytime));
+  tmstr = (char *)asctime(localtime(&mytime));
   *(tmstr + strlen(tmstr) - 1) = '\0';
   safe_snprintf(buf, MAX_STRING_LENGTH, "\r\n{CCurrent machine time: {c%s{x\r\n", tmstr);
   send_to_char(buf, ch);
   mytime = boot_time;
-  tmstr = (char*) asctime(localtime(&mytime));
+  tmstr = (char *)asctime(localtime(&mytime));
   *(tmstr + strlen(tmstr) - 1) = '\0';
   mytime = time(0) - boot_time;
   d = mytime / 86400;
   h = (mytime / 3600) % 24;
   m = (mytime / 60) % 60;
-  safe_snprintf(buf, MAX_STRING_LENGTH, "{CUp since {c%s : %d {Cday%s, {c%d {Chour%s {c%d {Cminute%s{x\r\n", tmstr, d, ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
+  safe_snprintf(buf, MAX_STRING_LENGTH, "{CUp since {c%s : %d {Cday%s, {c%d {Chour%s {c%d {Cminute%s{x\r\n", tmstr, d,
+                ((d == 1) ? "" : "s"), h, ((h == 1) ? "" : "s"), m, ((m == 1) ? "" : "s"));
 
   send_to_char(buf, ch);
 }
 
-ACMD(do_weather)
-{
+ACMD(do_weather) {
   struct new_weather_data cond = GET_ZONE_COND(IN_ZONE(ch));
   char *weather_msg[] = {
       "A violent scorching wind blows hard in the face of any poor travellers in the area.\r\n",
@@ -1562,8 +1583,7 @@ ACMD(do_weather)
       "A light snow is being tossed about by a fierce wind.\r\n",
       "A lightly falling snow is being driven by a strong wind.\r\n",
       "A light snow is falling admidst an unsettled wind.\r\n",
-      "It is lightly snowing.\r\n"
-  };
+      "It is lightly snowing.\r\n"};
 
   if (cond.precip_rate == 0) {
     if (cond.windspeed > 60) {
@@ -1694,41 +1714,19 @@ ACMD(do_weather)
   }
 }
 
-#define WHO_FORMAT \
-"format: who [[minlev[-maxlev]] [name] [class] [race] [gods]]\r\n"
+#define WHO_FORMAT "format: who [[minlev[-maxlev]] [name] [class] [race] [gods]]\r\n"
 
-ACMD(do_who)
-{
+ACMD(do_who) {
   int minlev = 0;
   int tmp;
   int maxlev = LVL_IMMORT;
-  int race = (
-          (1 << RACE_HUMAN) +
-          (1 << RACE_TROLL) +
-          (1 << RACE_OGRE) +
-          (1 << RACE_DWARF) +
-          (1 << RACE_ELF) +
-          (1 << RACE_HALFELF) +
-          (1 << RACE_GNOME) +
-          (1 << RACE_HALFLING));
-  int class = (
-          (1 << CLASS_WARRIOR) +
-          (1 << CLASS_ROGUE) +
-          (1 << CLASS_THIEF) +
-          (1 << CLASS_SORCERER) +
-          (1 << CLASS_WIZARD) +
-          (1 << CLASS_ENCHANTER) +
-          (1 << CLASS_CONJURER) +
-          (1 << CLASS_NECROMANCER) +
-          (1 << CLASS_CLERIC) +
-          (1 << CLASS_PRIEST) +
-          (1 << CLASS_SHAMAN) +
-          (1 << CLASS_MONK) +
-          (1 << CLASS_DRUID) +
-          (1 << CLASS_ASSASSIN) +
-          (1 << CLASS_BARD) +
-          (1 << CLASS_RANGER) +
-          (1 << CLASS_MERCENARY));
+  int race = ((1 << RACE_HUMAN) + (1 << RACE_TROLL) + (1 << RACE_OGRE) + (1 << RACE_DWARF) + (1 << RACE_ELF) +
+              (1 << RACE_HALFELF) + (1 << RACE_GNOME) + (1 << RACE_HALFLING));
+  int class =
+      ((1 << CLASS_WARRIOR) + (1 << CLASS_ROGUE) + (1 << CLASS_THIEF) + (1 << CLASS_SORCERER) + (1 << CLASS_WIZARD) +
+       (1 << CLASS_ENCHANTER) + (1 << CLASS_CONJURER) + (1 << CLASS_NECROMANCER) + (1 << CLASS_CLERIC) +
+       (1 << CLASS_PRIEST) + (1 << CLASS_SHAMAN) + (1 << CLASS_MONK) + (1 << CLASS_DRUID) + (1 << CLASS_ASSASSIN) +
+       (1 << CLASS_BARD) + (1 << CLASS_RANGER) + (1 << CLASS_MERCENARY));
   char name[MAX_NAME_LENGTH + 1];
 
   skip_spaces(&argument);
@@ -1770,8 +1768,7 @@ ACMD(do_who)
   display_who_list(ch, minlev, maxlev, class, race, name);
 }
 
-void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, int race, char *name)
-{
+void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, int race, char *name) {
   struct descriptor_data *d;
   struct char_data *wch = NULL;
   char godbuf[MAX_STRING_LENGTH];
@@ -1791,15 +1788,22 @@ void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, i
 
   size_t godlen, mortlen;
   if (!*name) {
-    godlen = safe_snprintf(godbuf, sizeof(godbuf), " {BListing of the Immortals\r\n{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n");
-    mortlen = safe_snprintf(mortbuf, sizeof(mortbuf), " {BListing of the Mortals\r\n{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n");
+    godlen = safe_snprintf(godbuf, sizeof(godbuf),
+                           " {BListing of the Immortals\r\n{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                 "
+                           "      -=-=-=-=-=-{x\r\n");
+    mortlen = safe_snprintf(mortbuf, sizeof(mortbuf),
+                            " {BListing of the Mortals\r\n{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                  "
+                            "     -=-=-=-=-=-{x\r\n");
   } else {
-    godlen = safe_snprintf(godbuf, sizeof(godbuf), "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                        -=-=-=-=-=-{x\r\n");
-    mortlen = safe_snprintf(mortbuf, sizeof(mortbuf), "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                        -=-=-=-=-=-{x\r\n");
+    godlen = safe_snprintf(godbuf, sizeof(godbuf),
+                           "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                        -=-=-=-=-=-{x\r\n");
+    mortlen = safe_snprintf(mortbuf, sizeof(mortbuf),
+                            "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                        -=-=-=-=-=-{x\r\n");
   }
 
   for (d = descriptor_list; d; d = d->next) {
-    if (d->connected && d->connected != CON_MEDIT && d->connected != CON_OEDIT && d->connected != CON_REDIT && d->connected != CON_SEDIT && d->connected != CON_ZEDIT) {
+    if (d->connected && d->connected != CON_MEDIT && d->connected != CON_OEDIT && d->connected != CON_REDIT &&
+        d->connected != CON_SEDIT && d->connected != CON_ZEDIT) {
       continue;
     }
 
@@ -1860,14 +1864,22 @@ void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, i
           }
           whospecout[i] = '\0';
 
-          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[%s%s%s] %s%s %s", CBBLU(ch, C_SPR), CBWHT(ch, C_SPR), whospecout, CBBLU(ch, C_SPR), (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR)
-          , GET_NAME(wch), GET_TITLE(wch));
+          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[%s%s%s] %s%s %s", CBBLU(ch, C_SPR),
+                                  CBWHT(ch, C_SPR), whospecout, CBBLU(ch, C_SPR),
+                                  (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR), GET_NAME(wch),
+                                  GET_TITLE(wch));
         } else {
-          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[%s%s%s] %s%s %s", CBBLU(ch, C_SPR), CBWHT(ch, C_SPR), godlevs[GET_LEVEL(wch) - LVL_IMMORT], CBBLU(ch, C_SPR), (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR), GET_NAME(wch), GET_TITLE(wch));
+          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[%s%s%s] %s%s %s", CBBLU(ch, C_SPR),
+                                  CBWHT(ch, C_SPR), godlevs[GET_LEVEL(wch) - LVL_IMMORT], CBBLU(ch, C_SPR),
+                                  (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR), GET_NAME(wch),
+                                  GET_TITLE(wch));
         }
         gods++;
       } else {
-        mortlen += safe_snprintf(mortbuf + mortlen, sizeof(mortbuf) - mortlen, "%s[%s%2d %s%s] %s%s %s %s(%s%s)", CBBLU(ch, C_SPR), CBWHT(ch, C_SPR), GET_LEVEL(wch), CLASS_ABBR(wch), CBBLU(ch, C_SPR), (!(wch->desc->original) ? ((NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CCCYN(ch, C_SPR)) : ""),
+        mortlen += safe_snprintf(
+            mortbuf + mortlen, sizeof(mortbuf) - mortlen, "%s[%s%2d %s%s] %s%s %s %s(%s%s)", CBBLU(ch, C_SPR),
+            CBWHT(ch, C_SPR), GET_LEVEL(wch), CLASS_ABBR(wch), CBBLU(ch, C_SPR),
+            (!(wch->desc->original) ? ((NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CCCYN(ch, C_SPR)) : ""),
 
             GET_NAME(wch), GET_TITLE(wch), CBBLU(ch, C_SPR), GET_RACE_NAME_COLOR(wch), CBBLU(ch, C_SPR));
         morts++;
@@ -1876,7 +1888,7 @@ void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, i
       if (GET_LEVEL(wch) >= LVL_IMMORT) {
         if (WHOSPEC(wch)) {
           charctr = 0;
-          i=0;
+          i = 0;
           *whospecout = '\0';
           safe_snprintf(whospecout, sizeof(whospecout), "%s", WHOSPEC(wch));
           while (charctr < 13) {
@@ -1899,15 +1911,26 @@ void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, i
           }
           whospecout[i] = '\0';
 
-          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[%s%s%s] %s%s %s", CBBLU(ch, C_SPR), CBWHT(ch, C_SPR), whospecout, CBBLU(ch, C_SPR), (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR), GET_NAME(wch), GET_TITLE(wch));
+          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[%s%s%s] %s%s %s", CBBLU(ch, C_SPR),
+                                  CBWHT(ch, C_SPR), whospecout, CBBLU(ch, C_SPR),
+                                  (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR), GET_NAME(wch),
+                                  GET_TITLE(wch));
         } else {
-          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[{D -Anonymous- {x%s] %s%s %s", CBBLU(ch, C_SPR), CBBLU(ch, C_SPR), (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR), GET_NAME(wch), GET_TITLE(wch));
+          godlen += safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "%s[{D -Anonymous- {x%s] %s%s %s",
+                                  CBBLU(ch, C_SPR), CBBLU(ch, C_SPR),
+                                  (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CBCYN(ch, C_SPR), GET_NAME(wch),
+                                  GET_TITLE(wch));
         }
         gods++;
       } else {
-        mortlen += safe_snprintf(mortbuf + mortlen, sizeof(mortbuf) - mortlen, "%s[{D-Anon-{x%s] %s%s %s %s(%s%s)", CBBLU(ch, C_SPR), CBBLU(ch, C_SPR), (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CCCYN(ch, C_SPR), GET_NAME(wch), GET_TITLE(wch), CBBLU(ch, C_SPR), GET_RACE_NAME_COLOR(wch), CBBLU(ch
+        mortlen += safe_snprintf(mortbuf + mortlen, sizeof(mortbuf) - mortlen, "%s[{D-Anon-{x%s] %s%s %s %s(%s%s)",
+                                 CBBLU(ch, C_SPR), CBBLU(ch, C_SPR),
+                                 (NAMECOLOR(wch) && color) ? NAMECOLOR(wch) : CCCYN(ch, C_SPR), GET_NAME(wch),
+                                 GET_TITLE(wch), CBBLU(ch, C_SPR), GET_RACE_NAME_COLOR(wch),
+                                 CBBLU(ch
 
-                , C_SPR));
+                                       ,
+                                       C_SPR));
         morts++;
       }
     }
@@ -1946,20 +1969,28 @@ void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, i
   } /* end of for */
 
   if (gods != 0 && !*name) {
-    safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n{rThere %s {W%d{r immortal%s shown.{x\r\n", (gods == 1 ? "is" : "are"), gods, (gods == 1 ? "" : "s"));
+    safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen,
+                  "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n{rThere %s "
+                  "{W%d{r immortal%s shown.{x\r\n",
+                  (gods == 1 ? "is" : "are"), gods, (gods == 1 ? "" : "s"));
     page_string(ch->desc, godbuf, 1);
     send_to_char("\r\n", ch);
   } else if (*name && gods) {
-    safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen, "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n");
+    safe_snprintf(godbuf + godlen, sizeof(godbuf) - godlen,
+                  "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n");
     page_string(ch->desc, godbuf, 1);
     send_to_char("\r\n", ch);
   }
 
   if (morts != 0 && !*name) {
-    safe_snprintf(mortbuf + mortlen, sizeof(mortbuf) - mortlen, "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n{rThere %s {W%d{r mortal%s shown.{x\r\n", (morts == 1 ? "is" : "are"), morts, (morts == 1 ? "" : "s"));
+    safe_snprintf(mortbuf + mortlen, sizeof(mortbuf) - mortlen,
+                  "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n{rThere %s "
+                  "{W%d{r mortal%s shown.{x\r\n",
+                  (morts == 1 ? "is" : "are"), morts, (morts == 1 ? "" : "s"));
     page_string(ch->desc, mortbuf, 1);
   } else if (*name && morts) {
-    safe_snprintf(mortbuf + mortlen, sizeof(mortbuf) - mortlen, "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n");
+    safe_snprintf(mortbuf + mortlen, sizeof(mortbuf) - mortlen,
+                  "{b-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                       -=-=-=-=-=-{x\r\n");
     page_string(ch->desc, mortbuf, 1);
   }
 
@@ -1967,19 +1998,19 @@ void display_who_list(struct char_data *ch, int minlev, int maxlev, int class, i
     max_players = gods + morts;
   }
   size_t totlen = safe_snprintf(buf, MAX_STRING_LENGTH, "{wTotal visible players: {W%d{x.\r\n", gods + morts);
-  safe_snprintf(buf + totlen, MAX_STRING_LENGTH - totlen, "{wMaximum number of players on this boot: {W%d{x.\r\n", max_players);
+  safe_snprintf(buf + totlen, MAX_STRING_LENGTH - totlen, "{wMaximum number of players on this boot: {W%d{x.\r\n",
+                max_players);
   send_to_char(buf, ch);
 }
 
-#define USERS_FORMAT \
-"{gformat: users -l -n -h -c -o -p{x\r\n"\
-"        {gusers -l minlevel-maxlevel{x\r\n"\
-"        {gusers -n playername{x\r\n"\
-"        {gusers -h host{x\r\n"\
-"        {gusers -c playerclass{x\r\n"
+#define USERS_FORMAT                           \
+  "{gformat: users -l -n -h -c -o -p{x\r\n"    \
+  "        {gusers -l minlevel-maxlevel{x\r\n" \
+  "        {gusers -n playername{x\r\n"        \
+  "        {gusers -h host{x\r\n"              \
+  "        {gusers -c playerclass{x\r\n"
 
-ACMD(do_users)
-{
+ACMD(do_users) {
   extern char *connected_types[];
   char line[200], line2[220], idletime[10], classname[20], hostname[24];
   char state[30], *timeptr;
@@ -2004,36 +2035,36 @@ ACMD(do_users)
     if (*arg == '-') {
       mode = *(arg + 1); /* just in case; we destroy arg in the switch */
       switch (mode) {
-        case 'o':
-        case 'k':
-          outlaws = 1;
-          playing = 1;
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s", buf1);
-          break;
-        case 'p':
-          playing = 1;
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s", buf1);
-          break;
-        case 'd':
-          deadweight = 1;
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s", buf1);
-          break;
-        case 'l':
-          playing = 1;
-          half_chop(buf1, arg, buf);
-          sscanf(arg, "%d-%d", &low, &high);
-          break;
-        case 'n':
-          playing = 1;
-          half_chop(buf1, name_search, buf);
-          break;
-        case 'h':
-          playing = 1;
-          half_chop(buf1, host_search, buf);
-          break;
-        default:
-          send_to_char(USERS_FORMAT, ch);
-          return;
+      case 'o':
+      case 'k':
+        outlaws = 1;
+        playing = 1;
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", buf1);
+        break;
+      case 'p':
+        playing = 1;
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", buf1);
+        break;
+      case 'd':
+        deadweight = 1;
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s", buf1);
+        break;
+      case 'l':
+        playing = 1;
+        half_chop(buf1, arg, buf);
+        sscanf(arg, "%d-%d", &low, &high);
+        break;
+      case 'n':
+        playing = 1;
+        half_chop(buf1, name_search, buf);
+        break;
+      case 'h':
+        playing = 1;
+        half_chop(buf1, host_search, buf);
+        break;
+      default:
+        send_to_char(USERS_FORMAT, ch);
+        return;
       } /* end of switch */
 
     } else { /* endif */
@@ -2041,13 +2072,16 @@ ACMD(do_users)
       return;
     }
   } /* end while (parser) */
-  safe_snprintf(line, sizeof(line), "\r\n{gNum Class    Name         State          Idl Login@   Site{x\r\n{G--- -------- ------------ -------------- --- -------- -----------------------{x\r\n");
+  safe_snprintf(line, sizeof(line),
+                "\r\n{gNum Class    Name         State          Idl Login@   Site{x\r\n{G--- -------- ------------ "
+                "-------------- --- -------- -----------------------{x\r\n");
   send_to_char(line, ch);
 
   one_argument(argument, arg);
 
   for (d = descriptor_list; d; d = d->next) {
-    if (d->connected && playing && d->connected != CON_MEDIT && d->connected != CON_OEDIT && d->connected != CON_REDIT) {
+    if (d->connected && playing && d->connected != CON_MEDIT && d->connected != CON_OEDIT &&
+        d->connected != CON_REDIT) {
       continue;
     }
     if (!d->connected && deadweight) {
@@ -2077,9 +2111,11 @@ ACMD(do_users)
       }
 
       if (d->original) {
-        safe_snprintf(classname, sizeof(classname), "{B[{W%2d %s{B]{x", GET_LEVEL(d->original), CLASS_ABBR(d->original));
+        safe_snprintf(classname, sizeof(classname), "{B[{W%2d %s{B]{x", GET_LEVEL(d->original),
+                      CLASS_ABBR(d->original));
       } else {
-        safe_snprintf(classname, sizeof(classname), "{B[{W%2d %s{B]{x", GET_LEVEL(d->character), CLASS_ABBR(d->character));
+        safe_snprintf(classname, sizeof(classname), "{B[{W%2d %s{B]{x", GET_LEVEL(d->character),
+                      CLASS_ABBR(d->character));
       }
     } else {
       safe_snprintf(classname, sizeof(classname), "   -    ");
@@ -2099,7 +2135,8 @@ ACMD(do_users)
      if (d->character && !d->connected && !COM_FLAGGED(d->character, COM_QUEST))
      */
     if (d->character && !d->connected) {
-      safe_snprintf(idletime, sizeof(idletime), "%3d", d->character->char_specials.timer * SECS_PER_MUD_HOUR / SECS_PER_REAL_MIN);
+      safe_snprintf(idletime, sizeof(idletime), "%3d",
+                    d->character->char_specials.timer * SECS_PER_MUD_HOUR / SECS_PER_REAL_MIN);
     } else {
       idletime[0] = '\0';
     }
@@ -2109,9 +2146,11 @@ ACMD(do_users)
     size_t llen;
     if (d->character && d->character->player.name) {
       if (d->original) {
-        llen = safe_snprintf(line, sizeof(line), format, d->desc_num, classname, d->original->player.name, state, idletime, timeptr);
+        llen = safe_snprintf(line, sizeof(line), format, d->desc_num, classname, d->original->player.name, state,
+                             idletime, timeptr);
       } else {
-        llen = safe_snprintf(line, sizeof(line), format, d->desc_num, classname, d->character->player.name, state, idletime, timeptr);
+        llen = safe_snprintf(line, sizeof(line), format, d->desc_num, classname, d->character->player.name, state,
+                             idletime, timeptr);
       }
     } else {
       llen = safe_snprintf(line, sizeof(line), format, d->desc_num, "   -   ", "UNDEFINED", state, idletime, timeptr);
@@ -2119,7 +2158,8 @@ ACMD(do_users)
 
     if (d->character && *GET_HOST(d->character)) {
       safe_snprintf(hostname, sizeof(hostname), "%.23s", GET_HOST(d->character));
-      safe_snprintf(line + llen, sizeof(line) - llen, "%s[%s%-23s%s]%s\r\n", CCCYN(ch, C_CMP), CBWHT(ch, C_SPR), hostname, CCCYN(ch, C_SPR), CCNRM(ch, C_SPR));
+      safe_snprintf(line + llen, sizeof(line) - llen, "%s[%s%-23s%s]%s\r\n", CCCYN(ch, C_CMP), CBWHT(ch, C_SPR),
+                    hostname, CCCYN(ch, C_SPR), CCNRM(ch, C_SPR));
     } else {
       safe_snprintf(line + llen, sizeof(line) - llen, "[Hostname unknown]\r\n");
     }
@@ -2138,73 +2178,73 @@ ACMD(do_users)
   send_to_char(line, ch);
 }
 
-/* Generic page_string function for displaying text */ACMD(do_gen_ps)
-{
+/* Generic page_string function for displaying text */ ACMD(do_gen_ps) {
   extern char circlemud_version[];
 
   switch (subcmd) {
-    case SCMD_CREDITS:
-      page_string(ch->desc, credits, 1);
-      break;
-    case SCMD_NEWS:
-      page_string(ch->desc, news, 1);
-      break;
-    case SCMD_INFO:
-      page_string(ch->desc, info, 1);
-      break;
-    case SCMD_WIZLIST:
-      file_to_string_alloc(WIZLIST_FILE, &wizlist);
-      page_string(ch->desc, wizlist, 1);
-      break;
-    case SCMD_IMMLIST:
-      file_to_string_alloc(IMMLIST_FILE, &immlist);
-      page_string(ch->desc, immlist, 1);
-      break;
-    case SCMD_HANDBOOK:
-      page_string(ch->desc, handbook, 1);
-      break;
-    case SCMD_POLICIES:
-      page_string(ch->desc, policies, 1);
-      break;
-    case SCMD_NAMEPOL:
-      page_string(ch->desc, namepol, 1);
-      break;
-    case SCMD_MOTD:
-      page_string(ch->desc, motd, 1);
-      break;
-    case SCMD_NMOTD:
-      page_string(ch->desc, nmotd, 1);
-      break;
-    case SCMD_IMOTD:
-      page_string(ch->desc, imotd, 1);
-      break;
-    case SCMD_CLEAR:
-      send_to_char("\033[H\033[J", ch);
-      break;
-    case SCMD_VERSION:
-      send_to_char(circlemud_version, ch);
-      break;
-    case SCMD_WHOAMI:
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", GET_NAME(ch));
-      send_to_char(buf, ch);
-      break;
-    case SCMD_QM:
-      page_string(ch->desc, quest, 1);
-      break;
-    case SCMD_SIGNOFF:
-      page_string(ch->desc, signoff, 1);
-      break;
-    default:
-      return;
+  case SCMD_CREDITS:
+    page_string(ch->desc, credits, 1);
+    break;
+  case SCMD_NEWS:
+    page_string(ch->desc, news, 1);
+    break;
+  case SCMD_INFO:
+    page_string(ch->desc, info, 1);
+    break;
+  case SCMD_WIZLIST:
+    file_to_string_alloc(WIZLIST_FILE, &wizlist);
+    page_string(ch->desc, wizlist, 1);
+    break;
+  case SCMD_IMMLIST:
+    file_to_string_alloc(IMMLIST_FILE, &immlist);
+    page_string(ch->desc, immlist, 1);
+    break;
+  case SCMD_HANDBOOK:
+    page_string(ch->desc, handbook, 1);
+    break;
+  case SCMD_POLICIES:
+    page_string(ch->desc, policies, 1);
+    break;
+  case SCMD_NAMEPOL:
+    page_string(ch->desc, namepol, 1);
+    break;
+  case SCMD_MOTD:
+    page_string(ch->desc, motd, 1);
+    break;
+  case SCMD_NMOTD:
+    page_string(ch->desc, nmotd, 1);
+    break;
+  case SCMD_IMOTD:
+    page_string(ch->desc, imotd, 1);
+    break;
+  case SCMD_CLEAR:
+    send_to_char("\033[H\033[J", ch);
+    break;
+  case SCMD_VERSION:
+    send_to_char(circlemud_version, ch);
+    break;
+  case SCMD_WHOAMI:
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s\r\n", GET_NAME(ch));
+    send_to_char(buf, ch);
+    break;
+  case SCMD_QM:
+    page_string(ch->desc, quest, 1);
+    break;
+  case SCMD_SIGNOFF:
+    page_string(ch->desc, signoff, 1);
+    break;
+  default:
+    return;
   }
 }
 
-void print_object_location(int num, struct obj_data * obj, struct char_data * ch, char *abuff, int recur)
-{
+void print_object_location(int num, struct obj_data *obj, struct char_data *ch, char *abuff, int recur) {
   size_t abuffsize = MAX_STRING_LENGTH * 8;
   size_t alen = strlen(abuff);
   if (num > 0) {
-    alen += safe_snprintf(abuff + alen, abuffsize - alen, "O%3d. %-25s [%5d] - ", num, (obj->cshort_description ? obj->cshort_description : obj->short_description), GET_OBJ_VNUM(obj));
+    alen +=
+        safe_snprintf(abuff + alen, abuffsize - alen, "O%3d. %-25s [%5d] - ", num,
+                      (obj->cshort_description ? obj->cshort_description : obj->short_description), GET_OBJ_VNUM(obj));
   } else {
     alen += safe_snprintf(abuff + alen, abuffsize - alen, "%42s", " - ");
   }
@@ -2216,7 +2256,9 @@ void print_object_location(int num, struct obj_data * obj, struct char_data * ch
   } else if (obj->worn_by) {
     safe_snprintf(abuff + alen, abuffsize - alen, "worn by %s\r\n", PERS(obj->worn_by, ch));
   } else if (obj->in_obj) {
-    safe_snprintf(abuff + alen, abuffsize - alen, "inside %s%s\n\r", (obj->in_obj->cshort_description ? obj->in_obj->cshort_description : obj->in_obj->short_description), (recur ? ", which is" : " "));
+    safe_snprintf(abuff + alen, abuffsize - alen, "inside %s%s\n\r",
+                  (obj->in_obj->cshort_description ? obj->in_obj->cshort_description : obj->in_obj->short_description),
+                  (recur ? ", which is" : " "));
     if (recur) {
       print_object_location(0, obj->in_obj, ch, abuff, recur);
     }
@@ -2225,8 +2267,7 @@ void print_object_location(int num, struct obj_data * obj, struct char_data * ch
   }
 }
 
-void perform_immort_where(struct char_data * ch, char *arg)
-{
+void perform_immort_where(struct char_data *ch, char *arg) {
   register struct char_data *i;
   register struct obj_data *k;
   struct descriptor_data *d;
@@ -2242,9 +2283,12 @@ void perform_immort_where(struct char_data * ch, char *arg)
         i = (d->original ? d->original : d->character);
         if (i && CAN_SEE(ch, i) && (i->in_room != NOWHERE)) {
           if (d->original) {
-            alen += safe_snprintf(abuff + alen, sizeof(abuff) - alen, "%-20s - [%5d] %s (in %s)\r\n", GET_NAME(i), world[d->character->in_room].number, world[d->character->in_room].name, GET_NAME(d->character));
+            alen += safe_snprintf(abuff + alen, sizeof(abuff) - alen, "%-20s - [%5d] %s (in %s)\r\n", GET_NAME(i),
+                                  world[d->character->in_room].number, world[d->character->in_room].name,
+                                  GET_NAME(d->character));
           } else {
-            alen += safe_snprintf(abuff + alen, sizeof(abuff) - alen, "%-20s - [%5d] %s\r\n", GET_NAME(i), world[i->in_room].number, world[i->in_room].name);
+            alen += safe_snprintf(abuff + alen, sizeof(abuff) - alen, "%-20s - [%5d] %s\r\n", GET_NAME(i),
+                                  world[i->in_room].number, world[i->in_room].name);
           }
         }
       }
@@ -2253,8 +2297,10 @@ void perform_immort_where(struct char_data * ch, char *arg)
     for (i = character_list; i; i = i->next) {
       if (CAN_SEE(ch, i) && i->in_room != NOWHERE && isname(arg, i->player.name) && check_access(ch, i->in_room)) {
         found = 1;
-        alen += safe_snprintf(abuff + alen, sizeof(abuff) - alen, "%c%3d. %-25s [%5ld] - [%5d] %s\r\n", IS_NPC(i) ? 'M' : 'P', ++num, GET_NAME(i), IS_NPC(i) ? (long) GET_MOB_VNUM(i) : (long) GET_IDNUM(i),
-        world[i->in_room].number, world[i->in_room].name);
+        alen += safe_snprintf(abuff + alen, sizeof(abuff) - alen, "%c%3d. %-25s [%5ld] - [%5d] %s\r\n",
+                              IS_NPC(i) ? 'M' : 'P', ++num, GET_NAME(i),
+                              IS_NPC(i) ? (long)GET_MOB_VNUM(i) : (long)GET_IDNUM(i), world[i->in_room].number,
+                              world[i->in_room].name);
       }
     }
     for (num = 0, k = object_list; k; k = k->next) {
@@ -2290,8 +2336,7 @@ void perform_immort_where(struct char_data * ch, char *arg)
   }
 }
 
-ACMD(do_where)
-{
+ACMD(do_where) {
   one_argument(argument, arg);
 
   if (GET_LEVEL(ch) >= LVL_IMMORT) {
@@ -2301,8 +2346,7 @@ ACMD(do_where)
   }
 }
 
-ACMD(do_consider)
-{
+ACMD(do_consider) {
   struct char_data *victim;
   int diff;
 
@@ -2359,8 +2403,7 @@ ACMD(do_consider)
   }
 }
 
-ACMD(do_diagnose)
-{
+ACMD(do_diagnose) {
   struct char_data *vict;
 
   one_argument(argument, buf);
@@ -2381,8 +2424,7 @@ ACMD(do_diagnose)
   }
 }
 
-ACMD(do_toggle)
-{
+ACMD(do_toggle) {
   struct follow_type *j, *k;
 
   if (IS_NPC(ch)) {
@@ -2395,37 +2437,68 @@ ACMD(do_toggle)
       safe_snprintf(buf2, MAX_STRING_LENGTH, "%-3d", GET_WIMP_LEV(ch));
     }
 
-    safe_snprintf(buf, MAX_STRING_LENGTH, "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n"
-        "{c    Hit Display:{x %-3s    " "{c   Move Display:{x %-3s    " "{c   Mana Display:{x %-3s\r\n"
-        "{c  Tankname disp:{x %-3s    " "{c  Tankcond disp:{x %-3s    " "{c Enemyname disp:{x %-3s\r\n"
-        "{c Enemycond disp:{x %-3s    " "{c            AFK:{x %-3s    " "{c           Anon:{x %-3s\r\n"
-        "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n"
-        "{c     Brief Mode:{x %-3s    " "{c   Compact Mode:{x %-3s    " "{c           Tell:{x %-3s\r\n"
-        "{c   Repeat Comm.:{x %-3s    " "{c       Autoexit:{x %-3s    " "{c     Wimp Level:{x %-3s\r\n"
-        "{c       Autoloot:{x %-3s    " "{c      Autosplit:{x %-3s    " "{c      Autocoins:{x %-3s\r\n"
-        "{c   Chat Channel:{x %-3s    " "{c  Shout Channel:{x %-3s    " "{c          Color:{x %s  \r\n"
-        "{c     Whois info:{x %-3s    " "{c      Num lines:{x %-3d    " "{c    Num columns:{x %-3d\r\n"
-        /*"{c     Fightcolor:{x %-3s\r\n"*/
-        "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n",
+    safe_snprintf(buf, MAX_STRING_LENGTH,
+                  "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n"
+                  "{c    Hit Display:{x %-3s    "
+                  "{c   Move Display:{x %-3s    "
+                  "{c   Mana Display:{x %-3s\r\n"
+                  "{c  Tankname disp:{x %-3s    "
+                  "{c  Tankcond disp:{x %-3s    "
+                  "{c Enemyname disp:{x %-3s\r\n"
+                  "{c Enemycond disp:{x %-3s    "
+                  "{c            AFK:{x %-3s    "
+                  "{c           Anon:{x %-3s\r\n"
+                  "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n"
+                  "{c     Brief Mode:{x %-3s    "
+                  "{c   Compact Mode:{x %-3s    "
+                  "{c           Tell:{x %-3s\r\n"
+                  "{c   Repeat Comm.:{x %-3s    "
+                  "{c       Autoexit:{x %-3s    "
+                  "{c     Wimp Level:{x %-3s\r\n"
+                  "{c       Autoloot:{x %-3s    "
+                  "{c      Autosplit:{x %-3s    "
+                  "{c      Autocoins:{x %-3s\r\n"
+                  "{c   Chat Channel:{x %-3s    "
+                  "{c  Shout Channel:{x %-3s    "
+                  "{c          Color:{x %s  \r\n"
+                  "{c     Whois info:{x %-3s    "
+                  "{c      Num lines:{x %-3d    "
+                  "{c    Num columns:{x %-3d\r\n"
+                  /*"{c     Fightcolor:{x %-3s\r\n"*/
+                  "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n",
 
-    ONOFF(IS_SET(GET_PROMPT(ch), PRM_HP)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_MOVE)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_MANA)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_TANKNAME)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_TANKCOND)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_ENEMYNAME)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_ENEMYCOND)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_AFK)), ONOFF(PRF_FLAGGED(ch, PRF_ANONYMOUS)),
+                  ONOFF(IS_SET(GET_PROMPT(ch), PRM_HP)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_MOVE)),
+                  ONOFF(IS_SET(GET_PROMPT(ch), PRM_MANA)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_TANKNAME)),
+                  ONOFF(IS_SET(GET_PROMPT(ch), PRM_TANKCOND)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_ENEMYNAME)),
+                  ONOFF(IS_SET(GET_PROMPT(ch), PRM_ENEMYCOND)), ONOFF(IS_SET(GET_PROMPT(ch), PRM_AFK)),
+                  ONOFF(PRF_FLAGGED(ch, PRF_ANONYMOUS)),
 
-    ONOFF((PRF_FLAGGED(ch, PRF_BRIEF)||PRF_FLAGGED(ch, PRF_BRIEF2))), ONOFF(PRF_FLAGGED(ch, PRF_COMPACT)), ONOFF(!PRF_FLAGGED(ch, PRF_NOTELL)), ONOFF(!PRF_FLAGGED(ch, PRF_NOREPEAT)), ONOFF(PRF_FLAGGED(ch, PRF_AUTOEXIT)), buf2, ONOFF(PRF_FLAGGED(ch, PRF_AUTOLOOT)), ONOFF(PRF_FLAGGED(ch, PRF_AUTOSPLIT)), ONOFF(PRF_FLAGGED(ch, PRF_AUTOGOLD)), ONOFF(!PRF_FLAGGED(ch, PRF_NOCHAT)), ONOFF(!PRF_FLAGGED(ch, PRF_DEAF)), ONOFF(PRF_FLAGGED(ch, PRF_COLOR_2)), ONOFF(PRF_FLAGGED(ch, PRF_WHOIS)), GET_SCREEN_HEIGHT(ch), GET_SCREEN_WIDTH(ch)/*,
-     ONOFF(PRF_FLAGGED(ch, PRF_FIGHTCOLOR))*/
+                  ONOFF((PRF_FLAGGED(ch, PRF_BRIEF) || PRF_FLAGGED(ch, PRF_BRIEF2))),
+                  ONOFF(PRF_FLAGGED(ch, PRF_COMPACT)), ONOFF(!PRF_FLAGGED(ch, PRF_NOTELL)),
+                  ONOFF(!PRF_FLAGGED(ch, PRF_NOREPEAT)), ONOFF(PRF_FLAGGED(ch, PRF_AUTOEXIT)), buf2,
+                  ONOFF(PRF_FLAGGED(ch, PRF_AUTOLOOT)), ONOFF(PRF_FLAGGED(ch, PRF_AUTOSPLIT)),
+                  ONOFF(PRF_FLAGGED(ch, PRF_AUTOGOLD)), ONOFF(!PRF_FLAGGED(ch, PRF_NOCHAT)),
+                  ONOFF(!PRF_FLAGGED(ch, PRF_DEAF)), ONOFF(PRF_FLAGGED(ch, PRF_COLOR_2)),
+                  ONOFF(PRF_FLAGGED(ch, PRF_WHOIS)), GET_SCREEN_HEIGHT(ch), GET_SCREEN_WIDTH(ch) /*,
+ONOFF(PRF_FLAGGED(ch, PRF_FIGHTCOLOR))*/
     );
 
     send_to_char(buf, ch);
     if (COM_FLAGGED(ch, COM_IMMORT)) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "{c       Nohassle:{x %-3s    "
-          "{c    Wiz channel:{x %-3s    "
-          "{c Iquest channel:{x %-3s\r\n"
+      safe_snprintf(buf, MAX_STRING_LENGTH,
+                    "{c       Nohassle:{x %-3s    "
+                    "{c    Wiz channel:{x %-3s    "
+                    "{c Iquest channel:{x %-3s\r\n"
 
-          "{c      Roomflags:{x %-3s    "
-          "{c      Holylight:{x %-3s    "
-          "{c        Mobdeaf:{x %-3s\r\n"
-          "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n", ONOFF(PRF_FLAGGED(ch, PRF_NOHASSLE)), ONOFF(!PRF_FLAGGED(ch, PRF_NOWIZ)), ONOFF(!PRF_FLAGGED(ch, PRF_NOIMMQUEST)),
+                    "{c      Roomflags:{x %-3s    "
+                    "{c      Holylight:{x %-3s    "
+                    "{c        Mobdeaf:{x %-3s\r\n"
+                    "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\r\n",
+                    ONOFF(PRF_FLAGGED(ch, PRF_NOHASSLE)), ONOFF(!PRF_FLAGGED(ch, PRF_NOWIZ)),
+                    ONOFF(!PRF_FLAGGED(ch, PRF_NOIMMQUEST)),
 
-      ONOFF(PRF_FLAGGED(ch, PRF_ROOMFLAGS)), ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)), ONOFF(PRF_FLAGGED(ch, PRF_MOBDEAF)));
+                    ONOFF(PRF_FLAGGED(ch, PRF_ROOMFLAGS)), ONOFF(PRF_FLAGGED(ch, PRF_HOLYLIGHT)),
+                    ONOFF(PRF_FLAGGED(ch, PRF_MOBDEAF)));
       send_to_char(buf, ch);
     }
   } else {
@@ -2626,7 +2699,8 @@ ACMD(do_toggle)
           } else if (wimp_lev > (GET_MAX_HIT(ch) >> 1)) {
             send_to_char("You can't set your wimp level above half your hit points.\r\n", ch);
           } else {
-            safe_snprintf(buf, MAX_STRING_LENGTH, "Okay, you'll wimp out if you drop below %d hit points.\r\n", wimp_lev);
+            safe_snprintf(buf, MAX_STRING_LENGTH, "Okay, you'll wimp out if you drop below %d hit points.\r\n",
+                          wimp_lev);
             send_to_char(buf, ch);
             GET_WIMP_LEV(ch) = wimp_lev;
           }
@@ -2715,7 +2789,8 @@ ACMD(do_toggle)
 
       if (!*second_arg) {
         if (GET_SCREEN_HEIGHT(ch)) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "Your current screen length is set at %d lines.\r\n", GET_SCREEN_HEIGHT(ch));
+          safe_snprintf(buf, MAX_STRING_LENGTH, "Your current screen length is set at %d lines.\r\n",
+                        GET_SCREEN_HEIGHT(ch));
           send_to_char(buf, ch);
           return;
         }
@@ -2740,9 +2815,8 @@ ACMD(do_toggle)
 
        if (!*second_arg) {
        if (GET_SCREEN_WIDTH(ch)) {
-       safe_snprintf(buf, MAX_STRING_LENGTH, "Your current screen width is set at %d columns.\r\n", GET_SCREEN_WIDTH(ch));
-       send_to_char(buf, ch);
-       return;
+       safe_snprintf(buf, MAX_STRING_LENGTH, "Your current screen width is set at %d columns.\r\n",
+       GET_SCREEN_WIDTH(ch)); send_to_char(buf, ch); return;
        }
        }
        if (isdigit(*second_arg)) {
@@ -2767,8 +2841,7 @@ ACMD(do_toggle)
   }
 }
 
-ACMD(do_commands)
-{
+ACMD(do_commands) {
   int no, i;
   int socials = 0;
   struct char_data *vict = ch;
@@ -2797,11 +2870,15 @@ ACMD(do_commands)
     socials = 1;
   }
 
-  size_t cmdlen = safe_snprintf(buf, MAX_STRING_LENGTH, "The following %s are available to %s:\r\n", socials ? "socials" : "commands", vict == ch ? "you" : GET_NAME(vict));
+  size_t cmdlen = safe_snprintf(buf, MAX_STRING_LENGTH, "The following %s are available to %s:\r\n",
+                                socials ? "socials" : "commands", vict == ch ? "you" : GET_NAME(vict));
 
   if (subcmd == SCMD_SOCIALS) { /* socials */
     for (no = 1, i = 1; cmd_info[i].command[0] != '\n'; i++) {
-      if (cmd_info[i].minimum_level >= 0 && (GET_LEVEL(vict) >= cmd_info[i].minimum_level) && (cmd_info[i].minimum_level < LVL_IMMORT) && (!AFF_FLAGGED(ch, cmd_info[i].anti_aff)) && (!AFF2_FLAGGED(ch, cmd_info[i].anti_aff2)) && (!AFF3_FLAGGED(ch, cmd_info[i].anti_aff3)) && (cmd_info[i].command_pointer == do_action)) {
+      if (cmd_info[i].minimum_level >= 0 && (GET_LEVEL(vict) >= cmd_info[i].minimum_level) &&
+          (cmd_info[i].minimum_level < LVL_IMMORT) && (!AFF_FLAGGED(ch, cmd_info[i].anti_aff)) &&
+          (!AFF2_FLAGGED(ch, cmd_info[i].anti_aff2)) && (!AFF3_FLAGGED(ch, cmd_info[i].anti_aff3)) &&
+          (cmd_info[i].command_pointer == do_action)) {
 
         if (!(no % 7)) {
           cmdlen += safe_snprintf(buf + cmdlen, MAX_STRING_LENGTH - cmdlen, "%-11s\r\n", cmd_info[i].command);
@@ -2814,7 +2891,13 @@ ACMD(do_commands)
     }
   } else { /* commands */
     for (no = 1, i = 1; cmd_info[i].command[0] != '\n'; i++) {
-      if ((cmd_info[i].minimum_position <= GET_POS(vict)) && cmd_info[i].minimum_level >= 0 && (GET_LEVEL(vict) >= cmd_info[i].minimum_level) && (cmd_info[i].minimum_level < LVL_IMMORT) && (cmd_info[i].command_pointer != do_action) && (!AFF_FLAGGED(ch, cmd_info[i].anti_aff)) && (!AFF2_FLAGGED(ch, cmd_info[i].anti_aff2)) && (!AFF3_FLAGGED(ch, cmd_info[i].anti_aff3)) && (strncmp(cmd_info[i].command, "mp", 2) != 0) && (strcmp(cmd_info[i].command, "return") != 0) && (strcmp(cmd_info[i].command, "sing") != 0) && (strcmp(cmd_info[i].command, "wiznet") != 0) && (strcmp(cmd_info[i].command, "helpn") != 0) && (cmd_info[i].command[0] != ';')) {
+      if ((cmd_info[i].minimum_position <= GET_POS(vict)) && cmd_info[i].minimum_level >= 0 &&
+          (GET_LEVEL(vict) >= cmd_info[i].minimum_level) && (cmd_info[i].minimum_level < LVL_IMMORT) &&
+          (cmd_info[i].command_pointer != do_action) && (!AFF_FLAGGED(ch, cmd_info[i].anti_aff)) &&
+          (!AFF2_FLAGGED(ch, cmd_info[i].anti_aff2)) && (!AFF3_FLAGGED(ch, cmd_info[i].anti_aff3)) &&
+          (strncmp(cmd_info[i].command, "mp", 2) != 0) && (strcmp(cmd_info[i].command, "return") != 0) &&
+          (strcmp(cmd_info[i].command, "sing") != 0) && (strcmp(cmd_info[i].command, "wiznet") != 0) &&
+          (strcmp(cmd_info[i].command, "helpn") != 0) && (cmd_info[i].command[0] != ';')) {
 
         if (!(no % 7)) {
           cmdlen += safe_snprintf(buf + cmdlen, MAX_STRING_LENGTH - cmdlen, "%-11s\r\n", cmd_info[i].command);
@@ -2829,4 +2912,3 @@ ACMD(do_commands)
   safe_snprintf(buf + cmdlen, MAX_STRING_LENGTH - cmdlen, "\r\n");
   page_string(ch->desc, buf, 1);
 }
-

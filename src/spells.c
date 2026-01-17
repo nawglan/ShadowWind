@@ -4,16 +4,16 @@
  * DikuMUD, Copyright (C) 1990, 1991.
  */
 
-#include <stdio.h>
-#include <string.h>
+#include "spells.h"
+#include "comm.h"
+#include "db.h"
+#include "event.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "structs.h"
 #include "utils.h"
-#include "comm.h"
-#include "event.h"
-#include "spells.h"
-#include "handler.h"
-#include "db.h"
-#include "interpreter.h"
+#include <stdio.h>
+#include <string.h>
 
 extern struct room_data *world;
 extern struct zone_data *zone_table;
@@ -34,18 +34,17 @@ extern char weapon_verbs[];
 extern int *max_ac_applys;
 extern struct apply_mod_defaults *apmd;
 
-void clearMemory(struct char_data * ch);
-void act(char *str, int i, struct char_data * c, struct obj_data * o, void *vict_obj, int j);
+void clearMemory(struct char_data *ch);
+void act(char *str, int i, struct char_data *c, struct obj_data *o, void *vict_obj, int j);
 
 void improve_skill(struct char_data *ch, int skill, int chance);
 
-void weight_change_object(struct obj_data * obj, int weight);
-void add_follower(struct char_data * ch, struct char_data * leader);
-int mag_savingthrow(struct char_data * ch, int type);
+void weight_change_object(struct obj_data *obj, int weight);
+void add_follower(struct char_data *ch, struct char_data *leader);
+int mag_savingthrow(struct char_data *ch, int type);
 char *get_spell_name(int spellnum);
 
-int magic_ok(struct char_data *ch, int aggressive)
-{
+int magic_ok(struct char_data *ch, int aggressive) {
   if (!IS_NPC(ch) && COM_FLAGGED(ch, COM_IMMORT))
     return 1;
 
@@ -60,9 +59,11 @@ int magic_ok(struct char_data *ch, int aggressive)
   }
   if (IS_SET(ROOM_FLAGS(ch->in_room), ROOM_PEACEFUL) && aggressive) {
     send_to_char("A flash of white light fills the room, dispelling your "
-        "violent magic!\r\n", ch);
+                 "violent magic!\r\n",
+                 ch);
     act("White light from no particular source suddenly fills the room, "
-        "then vanishes.", FALSE, ch, 0, 0, TO_ROOM);
+        "then vanishes.",
+        FALSE, ch, 0, 0, TO_ROOM);
     return 0;
   }
 
@@ -70,19 +71,18 @@ int magic_ok(struct char_data *ch, int aggressive)
 }
 
 /* check if a player is allowed to access a certain room */
-int check_teleport(struct char_data *ch, int room)
-{
+int check_teleport(struct char_data *ch, int room) {
   if (IS_NPC(ch))
     return 1;
 
-  if (IS_SET(zone_table[world[room].zone].bits, ZONE_NOTELEPORT) || ROOM_FLAGGED(room, ROOM_NOTELEPORT) || ROOM_FLAGGED(room, ROOM_NOMAGIC) || ROOM_FLAGGED(room, ROOM_GODROOM) || ROOM_FLAGGED(room, ROOM_PRIVATE))
+  if (IS_SET(zone_table[world[room].zone].bits, ZONE_NOTELEPORT) || ROOM_FLAGGED(room, ROOM_NOTELEPORT) ||
+      ROOM_FLAGGED(room, ROOM_NOMAGIC) || ROOM_FLAGGED(room, ROOM_GODROOM) || ROOM_FLAGGED(room, ROOM_PRIVATE))
     return 0;
 
   return 1;
 }
 
-int check_ch_ability(struct char_data *ch, struct spell_info_type *sinfo, int isobj, char *target, int waitstate)
-{
+int check_ch_ability(struct char_data *ch, struct spell_info_type *sinfo, int isobj, char *target, int waitstate) {
   int bonus = 0;
 
   bonus = (IS_MAGE(ch) ? GET_INT(ch) : GET_WIS(ch));
@@ -103,8 +103,7 @@ int check_ch_ability(struct char_data *ch, struct spell_info_type *sinfo, int is
   return 0;
 }
 
-int check_mob_ability(struct char_data *ch, struct spell_info_type *sinfo, int isobj, char *target, int waitstate)
-{
+int check_mob_ability(struct char_data *ch, struct spell_info_type *sinfo, int isobj, char *target, int waitstate) {
   SET_BIT(AFF2_FLAGS(ch), AFF2_CASTING);
   if (!isobj) {
     if (GET_LEVEL(ch) > number(1, 61)) {
@@ -127,8 +126,7 @@ int check_mob_ability(struct char_data *ch, struct spell_info_type *sinfo, int i
  * Special spells appear below.
  */
 
-ASPELL(spell_dam)
-{
+ASPELL(spell_dam) {
   char *target = NULL;
   if (!isobj) {
     if (IS_CASTING(ch)) {
@@ -154,8 +152,7 @@ ASPELL(spell_dam)
   }
 }
 
-ASPELL(spell_char)
-{
+ASPELL(spell_char) {
   event *tempevent;
   if (!isobj) {
     if (IS_CASTING(ch)) {
@@ -180,8 +177,7 @@ ASPELL(spell_char)
   }
 }
 
-ASPELL(spell_general)
-{
+ASPELL(spell_general) {
   if (!isobj) {
     if (IS_CASTING(ch)) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
@@ -199,15 +195,15 @@ ASPELL(spell_general)
   }
 }
 
-ASPELL(spell_obj_char)
-{
+ASPELL(spell_obj_char) {
   if (!isobj) {
     if (IS_CASTING(ch)) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("You're already casting something.", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
-    if (!arg && (!get_char_room_vis(ch, arg) && !get_obj_in_list_vis(ch, arg, ch->carrying) && !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents))) {
+    if (!arg && (!get_char_room_vis(ch, arg) && !get_obj_in_list_vis(ch, arg, ch->carrying) &&
+                 !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents))) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on who or what?", TRUE, ch, 0, 0, TO_CHAR);
       return;
@@ -223,15 +219,15 @@ ASPELL(spell_obj_char)
   }
 }
 
-ASPELL(spell_obj)
-{
+ASPELL(spell_obj) {
   if (!isobj) {
     if (IS_CASTING(ch)) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("You're already casting something.", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
-    if (!arg || (arg && (!get_obj_in_list_vis(ch, arg, ch->carrying) && !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents)))) {
+    if (!arg || (arg && (!get_obj_in_list_vis(ch, arg, ch->carrying) &&
+                         !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents)))) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on what?", TRUE, ch, 0, 0, TO_CHAR);
       return;
@@ -247,15 +243,15 @@ ASPELL(spell_obj)
   }
 }
 
-ASPELL(spell_obj_room)
-{
+ASPELL(spell_obj_room) {
   if (!isobj) {
     if (IS_CASTING(ch)) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("You're already casting something.", TRUE, ch, 0, 0, TO_CHAR);
       return;
     }
-    if (arg && (!get_obj_in_list_vis(ch, arg, ch->carrying) && !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents))) {
+    if (arg &&
+        (!get_obj_in_list_vis(ch, arg, ch->carrying) && !get_obj_in_list_vis(ch, arg, world[ch->in_room].contents))) {
       act("$n stops casting.", TRUE, ch, 0, 0, TO_ROOM);
       act("Cast on what?", TRUE, ch, 0, 0, TO_CHAR);
       return;

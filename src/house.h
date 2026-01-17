@@ -1,18 +1,18 @@
-#define MAX_HOUSES	100
-#define MAX_GUESTS	10
+#define MAX_HOUSES 100
+#define MAX_GUESTS 10
 
-#define HOUSE_PRIVATE	0
+#define HOUSE_PRIVATE 0
 
 struct house_control_rec {
-  sh_int vnum; /* vnum of this house		*/
-  sh_int atrium; /* vnum of atrium		*/
-  sh_int exit_num; /* direction of house's exit	*/
-  time_t built_on; /* date this house was built	*/
-  int mode; /* mode of ownership		*/
-  char owner[MAX_NAME_LENGTH]; /* idnum of house's owner	*/
-  int num_of_guests; /* how many guests for house	*/
+  sh_int vnum;                              /* vnum of this house		*/
+  sh_int atrium;                            /* vnum of atrium		*/
+  sh_int exit_num;                          /* direction of house's exit	*/
+  time_t built_on;                          /* date this house was built	*/
+  int mode;                                 /* mode of ownership		*/
+  char owner[MAX_NAME_LENGTH];              /* idnum of house's owner	*/
+  int num_of_guests;                        /* how many guests for house	*/
   char guests[MAX_GUESTS][MAX_NAME_LENGTH]; /* names of house's guests	*/
-  time_t last_payment; /* date of last house payment   */
+  time_t last_payment;                      /* date of last house payment   */
   long spare0;
   long spare1;
   long spare2;
@@ -23,12 +23,11 @@ struct house_control_rec {
   long spare7;
 };
 
-#define TOROOM(room, dir) (world[room].dir_option[dir] ? \
-			    world[room].dir_option[dir]->to_room : NOWHERE)
+#define TOROOM(room, dir) (world[room].dir_option[dir] ? world[room].dir_option[dir]->to_room : NOWHERE)
 
 void House_listrent(struct char_data *ch, int vnum);
 void House_boot(void);
 void House_save_all(void);
 int House_can_enter(struct char_data *ch, sh_int house);
 void House_crashsave(int vnum);
-char * House_find_owner(sh_int vnum);
+char *House_find_owner(sh_int vnum);

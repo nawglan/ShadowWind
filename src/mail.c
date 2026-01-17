@@ -14,36 +14,35 @@
 
  *************************************************************************/
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <assert.h>
 #include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
 #include "db.h"
-#include "interpreter.h"
 #include "handler.h"
+#include "interpreter.h"
 #include "mail.h"
+#include "structs.h"
+#include "utils.h"
 
-void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int cmd, char *arg);
-void postmaster_check_mail(struct char_data * ch, struct char_data *mailman, int cmd, char *arg);
-void postmaster_receive_mail(struct char_data * ch, struct char_data *mailman, int cmd, char *arg);
+void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
+void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
+void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg);
 
 extern struct room_data *world;
 extern struct index_data *mob_index;
 extern int no_mail;
 int find_name(char *name);
 
-mail_index_type *mail_index = 0;/* list of recs in the mail file  */
+mail_index_type *mail_index = 0;   /* list of recs in the mail file  */
 position_list_type *free_list = 0; /* list of free positions in file */
-long file_end_pos = 0; /* length of file */
+long file_end_pos = 0;             /* length of file */
 
-void push_free_list(long pos)
-{
+void push_free_list(long pos) {
   position_list_type *new_pos;
 
   CREATE(new_pos, position_list_type, 1);
@@ -52,8 +51,7 @@ void push_free_list(long pos)
   free_list = new_pos;
 }
 
-long pop_free_list(void)
-{
+long pop_free_list(void) {
   position_list_type *old_pos;
   long return_value;
 
@@ -66,8 +64,7 @@ long pop_free_list(void)
     return file_end_pos;
 }
 
-mail_index_type *find_char_in_index(char *searchee)
-{
+mail_index_type *find_char_in_index(char *searchee) {
   mail_index_type *tmp;
 
   if (searchee == 0) {
@@ -80,8 +77,7 @@ mail_index_type *find_char_in_index(char *searchee)
   return tmp;
 }
 
-void write_to_file(void *buf, int size, long filepos)
-{
+void write_to_file(void *buf, int size, long filepos) {
   FILE *mail_file;
 
   mail_file = fopen(MAIL_FILE, "r+b");
@@ -101,8 +97,7 @@ void write_to_file(void *buf, int size, long filepos)
   return;
 }
 
-void read_from_file(void *buf, int size, long filepos)
-{
+void read_from_file(void *buf, int size, long filepos) {
   FILE *mail_file;
 
   mail_file = fopen(MAIL_FILE, "r+b");
@@ -118,8 +113,7 @@ void read_from_file(void *buf, int size, long filepos)
   return;
 }
 
-void index_mail(char *name_to_index, long pos)
-{
+void index_mail(char *name_to_index, long pos) {
   mail_index_type *new_index;
   position_list_type *new_position;
 
@@ -143,8 +137,7 @@ void index_mail(char *name_to_index, long pos)
 /* SCAN_FILE */
 /* scan_file is called once during boot-up.  It scans through the mail file
  and indexes all entries currently in the mail file. */
-int scan_file(void)
-{
+int scan_file(void) {
   FILE *mail_file;
   header_block_type next_block;
   int total_messages = 0, block_num = 0;
@@ -181,8 +174,7 @@ int scan_file(void)
 
 /* HAS_MAIL */
 /* a simple little function which tells you if the guy has mail or not */
-int has_mail(char *recipient)
-{
+int has_mail(char *recipient) {
   if (find_char_in_index(recipient))
     return 1;
   return 0;
@@ -194,8 +186,7 @@ int has_mail(char *recipient)
  actual message text (char *).
  */
 
-void store_mail(char *to, char *from, char *message_pointer)
-{
+void store_mail(char *to, char *from, char *message_pointer) {
   header_block_type header;
   data_block_type data;
   long last_address, target_address;
@@ -206,7 +197,7 @@ void store_mail(char *to, char *from, char *message_pointer)
   assert(sizeof(header_block_type) == sizeof(data_block_type));
   assert(sizeof(header_block_type) == BLOCK_SIZE);
 
-  memset((char *) &header, 0, sizeof(header)); /* clear the record */
+  memset((char *)&header, 0, sizeof(header)); /* clear the record */
   header.block_type = HEADER_BLOCK;
   header.header_data.next_block = LAST_BLOCK;
   safe_snprintf(header.header_data.from, sizeof(header.header_data.from), "%s", from);
@@ -216,7 +207,7 @@ void store_mail(char *to, char *from, char *message_pointer)
   header.txt[HEADER_BLOCK_DATASIZE] = '\0';
 
   target_address = pop_free_list(); /* find next free block */
-  index_mail(to, target_address); /* add it to mail index in memory */
+  index_mail(to, target_address);   /* add it to mail index in memory */
   write_to_file(&header, BLOCK_SIZE, target_address);
 
   if (strlen(msg_txt) <= HEADER_BLOCK_DATASIZE)
@@ -235,7 +226,7 @@ void store_mail(char *to, char *from, char *message_pointer)
   write_to_file(&header, BLOCK_SIZE, last_address);
 
   /* now write the current data block */
-  memset((char *) &data, 0, sizeof(data)); /* clear the record */
+  memset((char *)&data, 0, sizeof(data)); /* clear the record */
   data.block_type = LAST_BLOCK;
   strncpy(data.txt, msg_txt, DATA_BLOCK_DATASIZE);
   data.txt[DATA_BLOCK_DATASIZE] = '\0';
@@ -250,7 +241,7 @@ void store_mail(char *to, char *from, char *message_pointer)
    * this is kind of a hack, but if the block size is big enough it won't
    * matter anyway.  Hopefully, MUD players won't pour their life stories out
    * into the Mud Mail System anyway.
-   * 
+   *
    * Note that the block_type data field in data blocks is either a number >=0,
    * meaning a link to the next block, or LAST_BLOCK flag (-2) meaning the
    * last block in the current message.  This works much like DOS' FAT.
@@ -293,7 +284,7 @@ char *read_delete(char *recipient)
   char *message, *tmstr, buf[200];
   size_t string_size;
 
-  if (recipient < (char*) NULL) {
+  if (recipient < (char *)NULL) {
     stderr_log("SYSERR: Mail system -- non-fatal error #6.");
     return 0;
   }
@@ -341,10 +332,12 @@ char *read_delete(char *recipient)
   tmstr = asctime(localtime(&header.header_data.mail_time));
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, " * * * * Weirvane Mail System * * * *\r\n"
-      "Date: %s\r\n"
-      "  To: %s\r\n"
-      "From: %s\r\n\r\n", tmstr, recipient, header.header_data.from);
+  safe_snprintf(buf, MAX_STRING_LENGTH,
+                " * * * * Weirvane Mail System * * * *\r\n"
+                "Date: %s\r\n"
+                "  To: %s\r\n"
+                "From: %s\r\n\r\n",
+                tmstr, recipient, header.header_data.from);
 
   string_size = (sizeof(char) * (strlen(buf) + strlen(header.txt) + 1));
   CREATE(message, char, string_size);
@@ -380,8 +373,7 @@ char *read_delete(char *recipient)
  ** routines.  Written by Jeremy Elson (jelson@server.cs.jhu.edu) **
  *****************************************************************/
 
-SPECIAL(postmaster)
-{
+SPECIAL(postmaster) {
   if (!ch->desc || IS_NPC(ch))
     return 0; /* so mobs don't get caught here */
 
@@ -406,13 +398,13 @@ SPECIAL(postmaster)
     return 0;
 }
 
-void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int cmd, char *arg)
-{
+void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg) {
   char buf[256];
   char addressee[256];
 
   if (GET_LEVEL(ch) < MIN_MAIL_LEVEL) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'Sorry, you have to be level %d to send mail!'", MIN_MAIL_LEVEL);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'Sorry, you have to be level %d to send mail!'",
+                  MIN_MAIL_LEVEL);
     act(buf, FALSE, mailman, 0, ch, TO_VICT);
     return;
   }
@@ -427,8 +419,10 @@ void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int 
       GET_GOLD(ch) += STAMP_PRICE;
       GET_BANK_GOLD(ch) -= STAMP_PRICE;
     } else {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'A stamp costs %d coins.'\r\n"
-          "$n tells you, '...which I see you can't afford.'", STAMP_PRICE);
+      safe_snprintf(buf, MAX_STRING_LENGTH,
+                    "$n tells you, 'A stamp costs %d coins.'\r\n"
+                    "$n tells you, '...which I see you can't afford.'",
+                    STAMP_PRICE);
       act(buf, FALSE, mailman, 0, ch, TO_VICT);
       return;
     }
@@ -440,8 +434,10 @@ void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int 
   act("$n starts to write some mail.", TRUE, ch, 0, 0, TO_ROOM);
   if (GET_LEVEL(ch) < LVL_IMMORT) {
     GET_GOLD(ch) -= STAMP_PRICE;
-    safe_snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'I'll take %d coins for the stamp.'\r\n"
-        "$n tells you, 'Write your message. (/s saves /h for help)'", STAMP_PRICE);
+    safe_snprintf(buf, MAX_STRING_LENGTH,
+                  "$n tells you, 'I'll take %d coins for the stamp.'\r\n"
+                  "$n tells you, 'Write your message. (/s saves /h for help)'",
+                  STAMP_PRICE);
   } else
     safe_snprintf(buf, MAX_STRING_LENGTH, "$n tells you, 'Write your message. (/s saves /h for help)'");
   act(buf, FALSE, mailman, 0, ch, TO_VICT);
@@ -450,13 +446,12 @@ void postmaster_send_mail(struct char_data * ch, struct char_data *mailman, int 
   mudlog(buf, 'G', COM_ADMIN, TRUE);
 
   ch->desc->mail_to = strdup(addressee);
-  ch->desc->str = (char **) malloc(sizeof(char *));
+  ch->desc->str = (char **)malloc(sizeof(char *));
   *(ch->desc->str) = NULL;
   ch->desc->max_str = MAX_MAIL_SIZE;
 }
 
-void postmaster_check_mail(struct char_data * ch, struct char_data *mailman, int cmd, char *arg)
-{
+void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg) {
   char buf[256];
 
   if (has_mail(GET_NAME(ch)))
@@ -466,8 +461,7 @@ void postmaster_check_mail(struct char_data * ch, struct char_data *mailman, int
   act(buf, FALSE, mailman, 0, ch, TO_VICT);
 }
 
-void postmaster_receive_mail(struct char_data * ch, struct char_data *mailman, int cmd, char *arg)
-{
+void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *arg) {
   char buf[256];
   struct obj_data *obj;
 

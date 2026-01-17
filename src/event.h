@@ -15,7 +15,7 @@ struct spell_info_type;
 typedef void event(void *causer, void *victim, long info, struct spell_info_type *sinfo, long info2);
 typedef void spell(struct spell_info_type *sinfo, int waitstate, struct char_data *ch, char *arg, int isobj);
 
-#define EVENT(name) void (name) (void *causer, void *victim, long info, struct spell_info_type *sinfo, long info2)
+#define EVENT(name) void(name)(void *causer, void *victim, long info, struct spell_info_type *sinfo, long info2)
 /* for spells
  causer = caster,
  victim = vict,
@@ -35,12 +35,12 @@ struct spell_info_type {
   event *event_pointer;
 
   int min_position; /* Position for caster   */
-  int mana_min; /* Min amount of mana used by a spell (highest lev) */
-  int mana_max; /* Max amount of mana used by a spell (lowest lev) */
-  int mana_change; /* Change in mana used by spell from lev to lev */
-  int spellindex; /* index of spell/skill into spells array */
-  int aggressive; /* is spell aggressive */
-  int difficulty; /* Skill diffculty */
+  int mana_min;     /* Min amount of mana used by a spell (highest lev) */
+  int mana_max;     /* Max amount of mana used by a spell (lowest lev) */
+  int mana_change;  /* Change in mana used by spell from lev to lev */
+  int spellindex;   /* index of spell/skill into spells array */
+  int aggressive;   /* is spell aggressive */
+  int difficulty;   /* Skill diffculty */
   int realm;
   int invisible;
   int quest_only;
@@ -101,7 +101,8 @@ struct event_info {
   int type;
 };
 
-void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo, char *command, int info2);
+void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo,
+               char *command, int info2);
 void run_events();
 bool clean_events(void *pointer, EVENT(*func));
 bool clean_causer_events(void *pointer, int type);

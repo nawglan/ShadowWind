@@ -21,23 +21,22 @@
 /*                                                                            */
 /******************************************************************************/
 
-#include <stdio.h>
 #include <dirent.h>
-#include <time.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <string.h>
-#include <unistd.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
+#include <unistd.h>
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
 
-  DIR *dirp; /* Directory pointer used to read the directory */
+  DIR *dirp;              /* Directory pointer used to read the directory */
   struct dirent *idirent; /* Entry struct in the directory */
-  struct stat filestat; /* contains information about the file */
-  char filename[1024]; /* used to store the filename in the directory */
-  time_t currtime; /* holds the current time */
+  struct stat filestat;   /* contains information about the file */
+  char filename[1024];    /* used to store the filename in the directory */
+  time_t currtime;        /* holds the current time */
 
   /* ensure that the minimum number of parameters have been supplied */
   if (argc < 2) {

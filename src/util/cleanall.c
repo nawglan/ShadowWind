@@ -8,11 +8,10 @@
 #define WLDDIR "lib/world/wld/"
 #define SHPDIR "lib/world/shp/"
 
-int main(void)
-{
-  FILE* index;
-  FILE* input;
-  FILE* output;
+int main(void) {
+  FILE *index;
+  FILE *input;
+  FILE *output;
   char filename[100];
   char newfilename[100];
   char buf[900];

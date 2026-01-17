@@ -8,11 +8,11 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
-#include <stdio.h>
-#include "structs.h"
 #include "db.h"
 #include "interpreter.h"
+#include "structs.h"
 #include "utils.h"
+#include <stdio.h>
 
 extern struct room_data *world;
 extern int top_of_world;
@@ -22,8 +22,7 @@ extern struct index_data *obj_index;
 
 /* functions to perform assignments */
 
-void ASSIGNMOB(int mob, SPECIAL(fname), int type)
-{
+void ASSIGNMOB(int mob, SPECIAL(fname), int type) {
   if (real_mobile(mob) >= 0) {
     mob_index[real_mobile(mob)].func = fname;
     mob_index[real_mobile(mob)].spec_type = type;
@@ -33,8 +32,7 @@ void ASSIGNMOB(int mob, SPECIAL(fname), int type)
   }
 }
 
-void ASSIGNOBJ(int obj, SPECIAL(fname), int type)
-{
+void ASSIGNOBJ(int obj, SPECIAL(fname), int type) {
   if (real_object(obj) >= 0) {
     obj_index[real_object(obj)].func = fname;
     obj_index[real_object(obj)].spec_type = type;
@@ -44,8 +42,7 @@ void ASSIGNOBJ(int obj, SPECIAL(fname), int type)
   }
 }
 
-void ASSIGNROOM(int room, SPECIAL(fname), int type)
-{
+void ASSIGNROOM(int room, SPECIAL(fname), int type) {
   if (real_room(room) >= 0) {
     world[real_room(room)].func = fname;
     world[real_room(room)].spec_type = type;
@@ -60,8 +57,7 @@ void ASSIGNROOM(int room, SPECIAL(fname), int type)
  ******************************************************************** */
 
 /* assign special procedures to mobiles */
-void assign_mobiles(void)
-{
+void assign_mobiles(void) {
   SPECIAL(postmaster);
   SPECIAL(cityguard);
   SPECIAL(receptionist);
@@ -248,11 +244,11 @@ void assign_mobiles(void)
 
   /*
    *** ASSIGNMOB's below here are all removed from the game because
-   the zone is not in use anymore or the mob nolonger exists. *** 
+   the zone is not in use anymore or the mob nolonger exists. ***
    */
 
   /*
-   ASSIGNMOB(3071, auctioneer, SPEC_STANDARD);  
+   ASSIGNMOB(3071, auctioneer, SPEC_STANDARD);
    */
 
   /* SEWERS */
@@ -269,7 +265,7 @@ void assign_mobiles(void)
    ASSIGNMOB(6115, magic_user, SPEC_STANDARD);
    ASSIGNMOB(6112, magic_user, SPEC_STANDARD);
    ASSIGNMOB(6114, magic_user, SPEC_STANDARD);
-   ASSIGNMOB(6116, magic_user, SPEC_STANDARD); 
+   ASSIGNMOB(6116, magic_user, SPEC_STANDARD);
    */
 
   /* ARACHNOS */
@@ -278,7 +274,7 @@ void assign_mobiles(void)
    ASSIGNMOB(6314, magic_user, SPEC_STANDARD);
    ASSIGNMOB(6315, magic_user, SPEC_STANDARD);
    ASSIGNMOB(6309, magic_user, SPEC_STANDARD);
-   ASSIGNMOB(6302, magic_user, SPEC_STANDARD); 
+   ASSIGNMOB(6302, magic_user, SPEC_STANDARD);
    */
 
   /* Thalos */
@@ -288,7 +284,7 @@ void assign_mobiles(void)
    ASSIGNMOB(5200, magic_user, SPEC_STANDARD);
    ASSIGNMOB(5201, magic_user, SPEC_STANDARD);
    ASSIGNMOB(5004, magic_user, SPEC_STANDARD);
-   ASSIGNMOB(5352, magic_user, SPEC_STANDARD); 
+   ASSIGNMOB(5352, magic_user, SPEC_STANDARD);
    */
 
   /* DWARVEN KINGDOM */
@@ -296,34 +292,34 @@ void assign_mobiles(void)
    ASSIGNMOB(6502, magic_user, SPEC_STANDARD);
    ASSIGNMOB(6516, magic_user, SPEC_STANDARD);
    ASSIGNMOB(6509, magic_user, SPEC_STANDARD);
-   ASSIGNMOB(6500, cityguard, SPEC_STANDARD); 
+   ASSIGNMOB(6500, cityguard, SPEC_STANDARD);
    */
 
   /* OCEANIA */
   /*
    ASSIGNMOB(9501, serpent, SPEC_STANDARD);
-   ASSIGNMOB(9503, leviathan, SPEC_STANDARD); 
+   ASSIGNMOB(9503, leviathan, SPEC_STANDARD);
    */
 
   /* GHENNA */
   /*
    ASSIGNMOB(9913, magic_user, SPEC_STANDARD);
-   ASSIGNMOB(9914, magic_user, SPEC_STANDARD);  
+   ASSIGNMOB(9914, magic_user, SPEC_STANDARD);
    ASSIGNMOB(9923, magic_user, SPEC_STANDARD);
    ASSIGNMOB(9909, magic_user, SPEC_STANDARD);
    ASSIGNMOB(9910, magic_user, SPEC_STANDARD);
    ASSIGNMOB(9908, magic_user, SPEC_STANDARD);
-   ASSIGNMOB(9907, magic_user, SPEC_STANDARD); 
+   ASSIGNMOB(9907, magic_user, SPEC_STANDARD);
    */
 
   /* TRADE ROAD */
-  /* 
-   ASSIGNMOB(9711, cityguard, SPEC_STANDARD); Taken out by Farrot 
+  /*
+   ASSIGNMOB(9711, cityguard, SPEC_STANDARD); Taken out by Farrot
    */
 
   /* New Dwarven zone */
   /*
-   ASSIGNMOB(13024, receptionist, SPEC_STANDARD); 
+   ASSIGNMOB(13024, receptionist, SPEC_STANDARD);
    */
 
   /* ASTRAL AREA */
@@ -356,7 +352,7 @@ void assign_mobiles(void)
    ASSIGNMOB(12106, vice_master, SPEC_STANDARD);
    ASSIGNMOB(12110, magic_user, SPEC_STANDARD);
    ASSIGNMOB(12114, high_priest_of_terror, SPEC_STANDARD);
-   ASSIGNMOB(12119, magic_user, SPEC_STANDARD); 
+   ASSIGNMOB(12119, magic_user, SPEC_STANDARD);
    */
 
   /* High Tower Of Sorcery */
@@ -407,15 +403,13 @@ void assign_mobiles(void)
   /* Intelligent mobiles */
   /*   ASSIGNMOB(1220, magic_user, SPEC_HEARTBEAT | SPEC_COMMAND); removed by TIG */
 
-  /*  ASSIGNMOB(5001, guild_guard, SPEC_STANDARD); *//* brass dragon */
+  /*  ASSIGNMOB(5001, guild_guard, SPEC_STANDARD); */ /* brass dragon */
   /*  ASSIGNMOB(4061, cityguard, SPEC_STANDARD); */
   /* a dog?!  ASSIGNMOB(3062, guild_guard, SPEC_STANDARD); */
-
 }
 
 /* assign special procedures to objects */
-void assign_objects(void)
-{
+void assign_objects(void) {
   SPECIAL(bank);
   SPECIAL(gen_board);
   SPECIAL(tunnel_key);
@@ -434,21 +428,21 @@ void assign_objects(void)
   ASSIGNOBJ(3900, statue_39, SPEC_STANDARD);
 
   /* Godzone Objects */
-  ASSIGNOBJ(1291, gen_board, SPEC_STANDARD); /* Market Board */
-  ASSIGNOBJ(1292, gen_board, SPEC_STANDARD); /* Board of creation */
-  ASSIGNOBJ(1293, gen_board, SPEC_STANDARD); /* Code board */
-  ASSIGNOBJ(1294, gen_board, SPEC_STANDARD); /* Worldwide board */
-  ASSIGNOBJ(1295, gen_board, SPEC_STANDARD); /* Mortal board */
-  ASSIGNOBJ(1296, gen_board, SPEC_STANDARD); /* Freeze board */
-  ASSIGNOBJ(1297, gen_board, SPEC_STANDARD); /* Immortal board */
-  ASSIGNOBJ(1298, gen_board, SPEC_STANDARD); /* God board */
-  ASSIGNOBJ(1299, gen_board, SPEC_STANDARD); /* Quest board */
+  ASSIGNOBJ(1291, gen_board, SPEC_STANDARD);         /* Market Board */
+  ASSIGNOBJ(1292, gen_board, SPEC_STANDARD);         /* Board of creation */
+  ASSIGNOBJ(1293, gen_board, SPEC_STANDARD);         /* Code board */
+  ASSIGNOBJ(1294, gen_board, SPEC_STANDARD);         /* Worldwide board */
+  ASSIGNOBJ(1295, gen_board, SPEC_STANDARD);         /* Mortal board */
+  ASSIGNOBJ(1296, gen_board, SPEC_STANDARD);         /* Freeze board */
+  ASSIGNOBJ(1297, gen_board, SPEC_STANDARD);         /* Immortal board */
+  ASSIGNOBJ(1298, gen_board, SPEC_STANDARD);         /* God board */
+  ASSIGNOBJ(1299, gen_board, SPEC_STANDARD);         /* Quest board */
   ASSIGNOBJ(1203, wraithform_corpse, SPEC_STANDARD); /* corpses */
-  ASSIGNOBJ(1287, portal, SPEC_STANDARD); /* portal */
-  ASSIGNOBJ(1280, portal, SPEC_STANDARD); /* portal */
-  ASSIGNOBJ(1281, portal, SPEC_STANDARD); /* portal */
-  ASSIGNOBJ(1285, portal, SPEC_STANDARD); /* portal */
-  ASSIGNOBJ(1286, portal, SPEC_STANDARD); /* portal */
+  ASSIGNOBJ(1287, portal, SPEC_STANDARD);            /* portal */
+  ASSIGNOBJ(1280, portal, SPEC_STANDARD);            /* portal */
+  ASSIGNOBJ(1281, portal, SPEC_STANDARD);            /* portal */
+  ASSIGNOBJ(1285, portal, SPEC_STANDARD);            /* portal */
+  ASSIGNOBJ(1286, portal, SPEC_STANDARD);            /* portal */
 
   /* Bank teller */
   ASSIGNOBJ(3034, bank, SPEC_STANDARD); /* atm */
@@ -464,7 +458,7 @@ void assign_objects(void)
 
   /*
    *** ASSIGNOBJ's below here are all removed from the game because
-   the zone is not in use anymore or the mob nolonger exists. *** 
+   the zone is not in use anymore or the mob nolonger exists. ***
    */
 
   /*
@@ -479,12 +473,10 @@ void assign_objects(void)
   /*  Autumns Retreat
    ASSIGNOBJ(4228, statue_of_autumn, SPEC_STANDARD);
    */
-
 }
 
 /* assign special procedures to rooms */
-void assign_rooms(void)
-{
+void assign_rooms(void) {
   extern int dts_are_dumps;
   int i;
   SPECIAL(dump);
@@ -538,7 +530,6 @@ void assign_rooms(void)
    */
 
   /*
-   ASSIGNROOM(3031, pet_shops, SPEC_STANDARD); 
+   ASSIGNROOM(3031, pet_shops, SPEC_STANDARD);
    */
-
 }

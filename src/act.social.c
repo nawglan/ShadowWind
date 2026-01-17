@@ -12,12 +12,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "comm.h"
+#include "db.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "structs.h"
 #include "utils.h"
-#include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
-#include "db.h"
 
 /* extern variables */
 extern struct room_data *world;
@@ -25,7 +25,7 @@ extern struct descriptor_data *descriptor_list;
 extern struct room_data *world;
 
 /* extern functions */
-char *fread_action(FILE * fl, int nr);
+char *fread_action(FILE *fl, int nr);
 
 /* local globals */
 static int list_top = -1;
@@ -52,8 +52,7 @@ struct social_messg {
   char *others_auto;
 } *soc_mess_list = NULL;
 
-int find_action(int cmd)
-{
+int find_action(int cmd) {
   int bot, top, mid;
 
   bot = 0;
@@ -81,8 +80,7 @@ int find_action(int cmd)
   }
 }
 
-ACMD(do_action)
-{
+ACMD(do_action) {
   int act_nr;
   struct social_messg *action;
   struct char_data *vict;
@@ -128,8 +126,7 @@ ACMD(do_action)
   }
 }
 
-ACMD(do_insult)
-{
+ACMD(do_insult) {
   struct char_data *victim;
 
   one_argument(argument, arg);
@@ -143,27 +140,27 @@ ACMD(do_insult)
         send_to_char(buf, ch);
 
         switch (number(0, 2)) {
-          case 0:
-            if (GET_SEX(ch) == SEX_MALE) {
-              if (GET_SEX(victim) == SEX_MALE) {
-                act("$n accuses you of fighting like a woman!", FALSE, ch, 0, victim, TO_VICT);
-              } else {
-                act("$n says that women can't fight.", FALSE, ch, 0, victim, TO_VICT);
-              }
-            } else { /* Ch == Woman */
-              if (GET_SEX(victim) == SEX_MALE) {
-                act("$n accuses you of having the smallest... (brain?)", FALSE, ch, 0, victim, TO_VICT);
-              } else {
-                act("$n tells you that you'd lose a beauty contest against a troll.", FALSE, ch, 0, victim, TO_VICT);
-              }
+        case 0:
+          if (GET_SEX(ch) == SEX_MALE) {
+            if (GET_SEX(victim) == SEX_MALE) {
+              act("$n accuses you of fighting like a woman!", FALSE, ch, 0, victim, TO_VICT);
+            } else {
+              act("$n says that women can't fight.", FALSE, ch, 0, victim, TO_VICT);
             }
-            break;
-          case 1:
-            act("$n calls your mother a bitch!", FALSE, ch, 0, victim, TO_VICT);
-            break;
-          default:
-            act("$n tells you to get lost!", FALSE, ch, 0, victim, TO_VICT);
-            break;
+          } else { /* Ch == Woman */
+            if (GET_SEX(victim) == SEX_MALE) {
+              act("$n accuses you of having the smallest... (brain?)", FALSE, ch, 0, victim, TO_VICT);
+            } else {
+              act("$n tells you that you'd lose a beauty contest against a troll.", FALSE, ch, 0, victim, TO_VICT);
+            }
+          }
+          break;
+        case 1:
+          act("$n calls your mother a bitch!", FALSE, ch, 0, victim, TO_VICT);
+          break;
+        default:
+          act("$n tells you to get lost!", FALSE, ch, 0, victim, TO_VICT);
+          break;
         } /* end switch */
 
         act("$n insults $N.", TRUE, ch, 0, victim, TO_NOTVICT);
@@ -176,8 +173,7 @@ ACMD(do_insult)
   }
 }
 
-char *fread_action(FILE * fl, int nr)
-{
+char *fread_action(FILE *fl, int nr) {
   char buf[MAX_STRING_LENGTH], *rslt;
 
   fgets(buf, MAX_STRING_LENGTH, fl);
@@ -196,8 +192,7 @@ char *fread_action(FILE * fl, int nr)
   }
 }
 
-void boot_social_messages(void)
-{
+void boot_social_messages(void) {
   FILE *fl;
   int nr, i, hide, min_pos, curr_soc = -1;
   char next_soc[100];
@@ -280,4 +275,3 @@ void boot_social_messages(void)
     }
   }
 }
-

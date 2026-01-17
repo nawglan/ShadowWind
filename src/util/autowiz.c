@@ -16,18 +16,18 @@
  -- The Management
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <signal.h>
-#include <string.h>
-#include <ctype.h>
+#include "../db.h"
 #include "../structs.h"
 #include "../utils.h"
-#include "../db.h"
+#include <ctype.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define IMM_LMARG "   "
-#define IMM_NSIZE  16
-#define LINE_LEN   64
+#define IMM_NSIZE 16
+#define LINE_LEN  64
 #define MIN_LEVEL LVL_IMMORT
 
 /* max level that should be in columns instead of centered */
@@ -49,26 +49,25 @@ struct level_rec {
   struct name_rec *names;
 };
 
-struct control_rec level_params[] = { {COM_IMMORT, "Immortals"}, {COM_QUEST, "Quest Managers"}, {COM_BUILDER, "Builders"}, {COM_ADMIN, "Admin"}, {0, ""}};
+struct control_rec level_params[] = {
+    {COM_IMMORT, "Immortals"}, {COM_QUEST, "Quest Managers"}, {COM_BUILDER, "Builders"}, {COM_ADMIN, "Admin"}, {0, ""}};
 
 struct level_rec *levels = 0;
 
-void initialize(void)
-{
+void initialize(void) {
   struct level_rec *tmp;
   byte i = 0;
 
-  while (level_params[(int) i].level > 0) {
-    tmp = (struct level_rec *) malloc(sizeof(struct level_rec));
+  while (level_params[(int)i].level > 0) {
+    tmp = (struct level_rec *)malloc(sizeof(struct level_rec));
     tmp->names = 0;
-    tmp->params = &(level_params[(int) i++]);
+    tmp->params = &(level_params[(int)i++]);
     tmp->next = levels;
     levels = tmp;
   }
 }
 
-void read_file(void)
-{
+void read_file(void) {
   /*
   void add_name(int level, char *name);
 
@@ -82,16 +81,16 @@ void read_file(void)
 
   while (!feof(fl)) {
     fread(&player, sizeof(struct char_file_u), 1, fl);
-    if (!feof(fl) && (player.player_specials_saved.commands & COM_IMMORT) && !(IS_SET(player.char_specials_saved.act, PLR_FROZEN)) && !(IS_SET(player.char_specials_saved.act, PLR_NOWIZLIST)) && !(IS_SET(player.char_specials_saved.act, PLR_DELETED)))
-      add_name(player.player_specials_saved.commands, player.name);
+    if (!feof(fl) && (player.player_specials_saved.commands & COM_IMMORT) && !(IS_SET(player.char_specials_saved.act,
+  PLR_FROZEN)) && !(IS_SET(player.char_specials_saved.act, PLR_NOWIZLIST)) && !(IS_SET(player.char_specials_saved.act,
+  PLR_DELETED))) add_name(player.player_specials_saved.commands, player.name);
   }
 
   fclose(fl);
   */
 }
 
-void add_name(int level, char *name)
-{
+void add_name(int level, char *name) {
   struct name_rec *tmp;
   struct level_rec *curr_level;
   char *ptr;
@@ -103,7 +102,7 @@ void add_name(int level, char *name)
     if (!isalpha(*ptr))
       return;
 
-  tmp = (struct name_rec *) malloc(sizeof(struct name_rec));
+  tmp = (struct name_rec *)malloc(sizeof(struct name_rec));
   strcpy(tmp->name, name);
   tmp->next = 0;
 
@@ -115,8 +114,7 @@ void add_name(int level, char *name)
   curr_level->names = tmp;
 }
 
-void sort_names(void)
-{
+void sort_names(void) {
   struct level_rec *curr_level;
   struct name_rec *a, *b;
   char temp[100];
@@ -134,16 +132,15 @@ void sort_names(void)
   }
 }
 
-void write_wizlist(FILE *out, int minlev, int maxlev)
-{
+void write_wizlist(FILE *out, int minlev, int maxlev) {
   char buf[100];
   struct level_rec *curr_level;
   struct name_rec *curr_name;
   int i, j;
 
   fprintf(out, "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\n"
-      "{b   These are the powerful beings of ShadowWind... Treat them with respect!{x\n"
-      "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\n\n");
+               "{b   These are the powerful beings of ShadowWind... Treat them with respect!{x\n"
+               "{B=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-={x\n\n");
 
   for (curr_level = levels; curr_level; curr_level = curr_level->next) {
     if (curr_level->params->level < minlev || curr_level->params->level > maxlev)
@@ -198,10 +195,9 @@ void write_wizlist(FILE *out, int minlev, int maxlev)
   }
 }
 
-void main(int argc, char **argv)
-{
+void main(int argc, char **argv) {
   int wizlevel, immlevel, pid = 0;
-  FILE * fl;
+  FILE *fl;
 
   if (argc != 5 && argc != 6) {
     printf("Format: %s wizlev wizlistfile immlev immlistfile [pid to signal]\n", argv[0]);
@@ -223,4 +219,3 @@ void main(int argc, char **argv)
   if (pid)
     kill(pid, SIGUSR1);
 }
-

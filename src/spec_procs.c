@@ -8,20 +8,20 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include <sys/types.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "event.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 /*   external vars  */
 extern struct char_data *combat_list; /* head of l-list of fighting chars */
@@ -41,8 +41,8 @@ extern struct char_data *mob_proto;
 struct char_data *find_hunted_char(int idnum);
 int find_skill_num(char *name);
 int find_spell_num(char *name);
-void add_follower(struct char_data * ch, struct char_data * leader);
-void hunt_victim(struct char_data * ch);
+void add_follower(struct char_data *ch, struct char_data *leader);
+void hunt_victim(struct char_data *ch);
 char *skill_prac_price_text(struct char_data *ch, struct spell_info_type *sinfo);
 int skill_prac_price(struct char_data *ch, struct spell_info_type *sinfo);
 
@@ -51,33 +51,29 @@ struct social_type {
   int next_line;
 };
 
-void global_echo(char *string)
-{
+void global_echo(char *string) {
   struct descriptor_data *i;
 
   if (string)
     for (i = descriptor_list; i; i = i->next)
       if (!i->connected && !PLR_FLAGGED(i->character, PLR_WRITING) && !PLR_FLAGGED(i->character, PLR_EDITING))
         SEND_TO_Q(string, i);
-
 }
-void zone_echo(struct char_data *ch, char *string)
-{
+void zone_echo(struct char_data *ch, char *string) {
   struct descriptor_data *i;
 
   if (string && ch)
     for (i = descriptor_list; i; i = i->next)
-      if (!i->connected && !PLR_FLAGGED(i->character, PLR_WRITING) && !PLR_FLAGGED(i->character, PLR_EDITING) && (world[ch->in_room].zone == world[i->character->in_room].zone))
+      if (!i->connected && !PLR_FLAGGED(i->character, PLR_WRITING) && !PLR_FLAGGED(i->character, PLR_EDITING) &&
+          (world[ch->in_room].zone == world[i->character->in_room].zone))
         SEND_TO_Q_COLOR(string, i);
-
 }
 
 /* ********************************************************************
  *  Special procedures for mobiles                                     *
  ******************************************************************** */
 
-char *how_good(int percent)
-{
+char *how_good(int percent) {
   if (percent == 0)
     return " {c({Ynot learned{c){x";
   else if (percent <= 10)
@@ -102,10 +98,10 @@ char *how_good(int percent)
 
 char *prac_types[] = {"spell", "skill"};
 
-#define LEARNED_LEVEL  0  /* % known which is considered "learned" */
-#define MAX_PER_PRAC  1  /* max percent gain in skill per practice */
-#define MIN_PER_PRAC  2  /* min percent gain in skill per practice */
-#define PRAC_TYPE  3  /* should it say 'spell' or 'skill'?   */
+#define LEARNED_LEVEL 0 /* % known which is considered "learned" */
+#define MAX_PER_PRAC  1 /* max percent gain in skill per practice */
+#define MIN_PER_PRAC  2 /* min percent gain in skill per practice */
+#define PRAC_TYPE     3 /* should it say 'spell' or 'skill'?   */
 
 /* actual prac_params are in class.c */
 extern int prac_params[4][NUM_CLASSES];
@@ -113,28 +109,32 @@ extern int prac_params[4][NUM_CLASSES];
 #define LEARNED(ch) (prac_params[LEARNED_LEVEL][(int)GET_CLASS(ch)])
 #define MINGAIN(ch) (prac_params[MIN_PER_PRAC][(int)GET_CLASS(ch)])
 #define MAXGAIN(ch) (prac_params[MAX_PER_PRAC][(int)GET_CLASS(ch)])
-#define SPLSKL(ch) (prac_types[prac_params[PRAC_TYPE][(int)GET_CLASS(ch)]])
+#define SPLSKL(ch)  (prac_types[prac_params[PRAC_TYPE][(int)GET_CLASS(ch)]])
 
-void show_skills(struct char_data * ch, struct char_data *vict)
-{
+void show_skills(struct char_data *ch, struct char_data *vict) {
   int i;
 
   size_t len;
   if (ch == vict)
     len = safe_snprintf(buf2, MAX_STRING_LENGTH, "You know of the following:\r\n\r\n{cSkills{C: {m-------{x\r\n");
   else
-    len = safe_snprintf(buf2, MAX_STRING_LENGTH, "%s knows the following:\r\n\r\n{cSkills{C: {m-------{x\r\n", GET_NAME(vict));
+    len = safe_snprintf(buf2, MAX_STRING_LENGTH, "%s knows the following:\r\n\r\n{cSkills{C: {m-------{x\r\n",
+                        GET_NAME(vict));
 
   for (i = 1; spells[i].command[0] != '\n'; i++) {
     if (len >= MAX_STRING_LENGTH - 32) {
       len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "**OVERFLOW**\r\n");
       break;
     }
-    if ((GET_LEVEL(vict) >= spells[i].min_level[(int) GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
+    if ((GET_LEVEL(vict) >= spells[i].min_level[(int)GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) &&
+        !spells[i].spell_pointer && spells[i].command[0] != '<') {
       if (!PRACS_COST || ch == vict) {
-        len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s\r\n", spells[i].command, how_good(GET_SKILL(vict, spells[i].spellindex)));
+        len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s\r\n", spells[i].command,
+                             how_good(GET_SKILL(vict, spells[i].spellindex)));
       } else {
-        len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s %s\r\n", spells[i].command, how_good(GET_SKILL(vict, spells[i].spellindex)), skill_prac_price_text(vict, (spells + i)));
+        len +=
+            safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s %s\r\n", spells[i].command,
+                          how_good(GET_SKILL(vict, spells[i].spellindex)), skill_prac_price_text(vict, (spells + i)));
       }
     }
   }
@@ -152,23 +152,26 @@ void show_skills(struct char_data * ch, struct char_data *vict)
       break;
     }
     if (!PRACS_COST || ch == vict) {
-      if ((GET_LEVEL(vict) >= spells[i].min_level[(int) GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) && spells[i].spell_pointer) {
-        len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s\r\n", spells[i].command, (GET_SKILL(vict, spells[i].spellindex) ? " " : "(unlearned)"));
+      if ((GET_LEVEL(vict) >= spells[i].min_level[(int)GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) &&
+          spells[i].spell_pointer) {
+        len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s\r\n", spells[i].command,
+                             (GET_SKILL(vict, spells[i].spellindex) ? " " : "(unlearned)"));
       }
     } else {
-      if ((GET_LEVEL(vict) >= spells[i].min_level[(int) GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) && spells[i].spell_pointer) {
+      if ((GET_LEVEL(vict) >= spells[i].min_level[(int)GET_CLASS(vict)] || GET_SKILL(vict, spells[i].spellindex)) &&
+          spells[i].spell_pointer) {
         if (GET_SKILL(ch, spells[i].spellindex))
           len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s\r\n", spells[i].command);
         else
-          len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s (unlearned) %s\r\n", spells[i].command, skill_prac_price_text(ch, (spells + i)));
+          len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s (unlearned) %s\r\n", spells[i].command,
+                               skill_prac_price_text(ch, (spells + i)));
       }
     }
   }
   page_string(ch->desc, buf2, 1);
 }
 
-void list_skills(struct char_data * ch)
-{
+void list_skills(struct char_data *ch) {
   int i;
   int found = 0;
   int circle;
@@ -182,8 +185,10 @@ void list_skills(struct char_data * ch)
       len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "**OVERFLOW**\r\n");
       break;
     }
-    if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
-      len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s\r\n", spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)));
+    if ((GET_LEVEL(ch) >= spells[i].min_level[(int)GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) &&
+        !spells[i].spell_pointer && spells[i].command[0] != '<') {
+      len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "%-20s %s\r\n", spells[i].command,
+                           how_good(GET_SKILL(ch, spells[i].spellindex)));
     }
   }
 
@@ -202,8 +207,11 @@ void list_skills(struct char_data * ch)
         len += safe_snprintf(buf2 + len, MAX_STRING_LENGTH - len, "**OVERFLOW**\r\n");
         break;
       }
-      if ((((spells[i].min_level[(int) GET_CLASS(ch)] + 4) / 5) == circle) && (GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && spells[i].spell_pointer) {
-        alen += safe_snprintf(abuf + alen, sizeof(abuf) - alen, "\t%-20s %s\r\n", spells[i].command, (GET_SKILL(ch, spells[i].spellindex) ? "" : "(unlearned)"));
+      if ((((spells[i].min_level[(int)GET_CLASS(ch)] + 4) / 5) == circle) &&
+          (GET_LEVEL(ch) >= spells[i].min_level[(int)GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) &&
+          spells[i].spell_pointer) {
+        alen += safe_snprintf(abuf + alen, sizeof(abuf) - alen, "\t%-20s %s\r\n", spells[i].command,
+                              (GET_SKILL(ch, spells[i].spellindex) ? "" : "(unlearned)"));
         found = 1;
       }
     }
@@ -213,33 +221,30 @@ void list_skills(struct char_data * ch)
   page_string(ch->desc, buf2, 1);
 }
 
-char *skill_prac_price_text(struct char_data *ch, struct spell_info_type *sinfo)
-{
+char *skill_prac_price_text(struct char_data *ch, struct spell_info_type *sinfo) {
   return make_money_text(skill_prac_price(ch, sinfo));
 }
 
-int getStat(struct char_data *ch, int val)
-{
+int getStat(struct char_data *ch, int val) {
   switch (val) {
-    case STAT_STR:
-      return GET_STR(ch);
-    case STAT_DEX:
-      return GET_DEX(ch);
-    case STAT_INT:
-      return GET_INT(ch);
-    case STAT_WIS:
-      return GET_WIS(ch);
-    case STAT_CON:
-      return GET_CON(ch);
-    case STAT_AGI:
-      return GET_AGI(ch);
+  case STAT_STR:
+    return GET_STR(ch);
+  case STAT_DEX:
+    return GET_DEX(ch);
+  case STAT_INT:
+    return GET_INT(ch);
+  case STAT_WIS:
+    return GET_WIS(ch);
+  case STAT_CON:
+    return GET_CON(ch);
+  case STAT_AGI:
+    return GET_AGI(ch);
   }
 
   return 49;
 }
 
-int skill_prac_price(struct char_data *ch, struct spell_info_type *sinfo)
-{
+int skill_prac_price(struct char_data *ch, struct spell_info_type *sinfo) {
   int cost;
   int c;
   int prime;
@@ -280,8 +285,7 @@ int skill_prac_price(struct char_data *ch, struct spell_info_type *sinfo)
   return cost;
 }
 
-void list_skills_cost(struct char_data * ch)
-{
+void list_skills_cost(struct char_data *ch) {
   int i;
   int found = 0;
   int circle;
@@ -295,8 +299,10 @@ void list_skills_cost(struct char_data * ch)
       buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "**OVERFLOW**\r\n");
       break;
     }
-    if ((GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
-      buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "%-20s %s %s\r\n", spells[i].command, how_good(GET_SKILL(ch, spells[i].spellindex)), skill_prac_price_text(ch, (spells + i)));
+    if ((GET_LEVEL(ch) >= spells[i].min_level[(int)GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) &&
+        !spells[i].spell_pointer && spells[i].command[0] != '<') {
+      buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "%-20s %s %s\r\n", spells[i].command,
+                               how_good(GET_SKILL(ch, spells[i].spellindex)), skill_prac_price_text(ch, (spells + i)));
     }
   }
 
@@ -315,11 +321,14 @@ void list_skills_cost(struct char_data * ch)
         buf2len += safe_snprintf(buf2 + buf2len, MAX_STRING_LENGTH - buf2len, "**OVERFLOW**\r\n");
         break;
       }
-      if ((((spells[i].min_level[(int) GET_CLASS(ch)] + 4) / 5) == circle) && (GET_LEVEL(ch) >= spells[i].min_level[(int) GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) && spells[i].spell_pointer) {
+      if ((((spells[i].min_level[(int)GET_CLASS(ch)] + 4) / 5) == circle) &&
+          (GET_LEVEL(ch) >= spells[i].min_level[(int)GET_CLASS(ch)] || GET_SKILL(ch, spells[i].spellindex)) &&
+          spells[i].spell_pointer) {
         if (GET_SKILL(ch, spells[i].spellindex))
           abuflen += safe_snprintf(abuf + abuflen, sizeof(abuf) - abuflen, "\t%-20s\r\n", spells[i].command);
         else
-          abuflen += safe_snprintf(abuf + abuflen, sizeof(abuf) - abuflen, "\t%-20s (unlearned) %s\r\n", spells[i].command, skill_prac_price_text(ch, (spells + i)));
+          abuflen += safe_snprintf(abuf + abuflen, sizeof(abuf) - abuflen, "\t%-20s (unlearned) %s\r\n",
+                                   spells[i].command, skill_prac_price_text(ch, (spells + i)));
         found = 1;
       }
     }
@@ -329,8 +338,7 @@ void list_skills_cost(struct char_data * ch)
   page_string(ch->desc, buf2, 1);
 }
 
-SPECIAL(weapon)
-{
+SPECIAL(weapon) {
   int skill_num, percent;
 
   extern sh_int stats[11][101];
@@ -351,7 +359,7 @@ SPECIAL(weapon)
 
   skill_num = find_skill_num(argument);
 
-  if (skill_num < 1 || GET_LEVEL(ch) < spells[skill_num].min_level[(int) GET_CLASS(ch)] || (skill_num < skillnum)) {
+  if (skill_num < 1 || GET_LEVEL(ch) < spells[skill_num].min_level[(int)GET_CLASS(ch)] || (skill_num < skillnum)) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "What kind of combat technique is that?\r\n");
     send_to_char(buf, ch);
     return 1;
@@ -374,8 +382,7 @@ SPECIAL(weapon)
   return 1;
 }
 
-SPECIAL(statue_39)
-{
+SPECIAL(statue_39) {
 
   if (IS_NPC(ch) || !CMD_IS("kneel") || !IS_MAGE(ch))
     return 0;
@@ -387,8 +394,7 @@ SPECIAL(statue_39)
   return 1;
 }
 
-SPECIAL(guild)
-{
+SPECIAL(guild) {
   int skill_num, percent;
   int newpercent;
   int temp;
@@ -412,8 +418,9 @@ SPECIAL(guild)
     return 1;
   } else if (!*argument) {
     send_to_char("You may specialize in one of the following:\r\n"
-        "general realm, creation realm, divination realm, elemental realm,\r\n"
-        "enchantment realm, healing realm, protection realm, or summoning realm.\r\n", ch);
+                 "general realm, creation realm, divination realm, elemental realm,\r\n"
+                 "enchantment realm, healing realm, protection realm, or summoning realm.\r\n",
+                 ch);
     return 1;
   }
 
@@ -426,57 +433,58 @@ SPECIAL(guild)
       return 1;
     }
     switch (*argument) {
-      case 'c':
-      case 'C':
-        send_to_char("You have chosen to specialize in the creation realm of magic.\r\n", ch);
-        GET_SPECIALIZED(ch) = (1 << 1);
-        break;
-      case 'd':
-      case 'D':
-        send_to_char("You have chosen to specialize in the divination realm of magic.\r\n", ch);
-        GET_SPECIALIZED(ch) = (1 << 2);
-        break;
-      case 'e':
-      case 'E':
-        if (argument[1] == 'l' || argument[1] == 'L') {
-          send_to_char("You have chosen to specialize in the elemental realm of magic.\r\n", ch);
-          GET_SPECIALIZED(ch) = (1 << 3);
-        } else {
-          send_to_char("You have chosen to specialize in the elemental realm of magic.\r\n", ch);
-          GET_SPECIALIZED(ch) = (1 << 7);
-        }
-        break;
-      case 'g':
-      case 'G':
-        send_to_char("You have chosen to specialize in the general realm of magic.\r\n", ch);
-        GET_SPECIALIZED(ch) = (1 << 0);
-        break;
-      case 'h':
-      case 'H':
-        send_to_char("You have chosen to specialize in the healing realm of magic.\r\n", ch);
-        GET_SPECIALIZED(ch) = (1 << 4);
-        break;
-      case 'p':
-      case 'P':
-        send_to_char("You have chosen to specialize in the protection realm of magic.\r\n", ch);
-        GET_SPECIALIZED(ch) = (1 << 5);
-        break;
-      case 's':
-      case 'S':
-        send_to_char("You have chosen to specialize in the summoning realm of magic.\r\n", ch);
-        GET_SPECIALIZED(ch) = (1 << 6);
-        break;
-      default:
-        send_to_char("You may specialize in one of the following:\r\n"
-            "general realm, creation realm, divination realm, elemental realm,\r\n"
-            "healing realm, protection realm, or summoning realm.\r\n", ch);
-        break;
+    case 'c':
+    case 'C':
+      send_to_char("You have chosen to specialize in the creation realm of magic.\r\n", ch);
+      GET_SPECIALIZED(ch) = (1 << 1);
+      break;
+    case 'd':
+    case 'D':
+      send_to_char("You have chosen to specialize in the divination realm of magic.\r\n", ch);
+      GET_SPECIALIZED(ch) = (1 << 2);
+      break;
+    case 'e':
+    case 'E':
+      if (argument[1] == 'l' || argument[1] == 'L') {
+        send_to_char("You have chosen to specialize in the elemental realm of magic.\r\n", ch);
+        GET_SPECIALIZED(ch) = (1 << 3);
+      } else {
+        send_to_char("You have chosen to specialize in the elemental realm of magic.\r\n", ch);
+        GET_SPECIALIZED(ch) = (1 << 7);
+      }
+      break;
+    case 'g':
+    case 'G':
+      send_to_char("You have chosen to specialize in the general realm of magic.\r\n", ch);
+      GET_SPECIALIZED(ch) = (1 << 0);
+      break;
+    case 'h':
+    case 'H':
+      send_to_char("You have chosen to specialize in the healing realm of magic.\r\n", ch);
+      GET_SPECIALIZED(ch) = (1 << 4);
+      break;
+    case 'p':
+    case 'P':
+      send_to_char("You have chosen to specialize in the protection realm of magic.\r\n", ch);
+      GET_SPECIALIZED(ch) = (1 << 5);
+      break;
+    case 's':
+    case 'S':
+      send_to_char("You have chosen to specialize in the summoning realm of magic.\r\n", ch);
+      GET_SPECIALIZED(ch) = (1 << 6);
+      break;
+    default:
+      send_to_char("You may specialize in one of the following:\r\n"
+                   "general realm, creation realm, divination realm, elemental realm,\r\n"
+                   "healing realm, protection realm, or summoning realm.\r\n",
+                   ch);
+      break;
     }
     return 1;
   }
   skill_num = find_skill_num(argument);
 
-  if (skill_num < 1 || GET_LEVEL(ch) < spells[skill_num].min_level[(int) GET_CLASS(ch)] || (skill_num >= MAX_SKILLS)) {
+  if (skill_num < 1 || GET_LEVEL(ch) < spells[skill_num].min_level[(int)GET_CLASS(ch)] || (skill_num >= MAX_SKILLS)) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "You do not know of that %s.\r\n", SPLSKL(ch));
     send_to_char(buf, ch);
     return 1;
@@ -489,8 +497,10 @@ SPECIAL(guild)
   }
 
   if (spells[skill_num].quest_only) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "I cannot teach you that %s.\r\n"
-        "Perhapse you should seek out %s.\r\n", SPLSKL(ch), GET_MOB_NAME(mob_proto + real_mobile(spells[skill_num].qvnum)));
+    safe_snprintf(buf, MAX_STRING_LENGTH,
+                  "I cannot teach you that %s.\r\n"
+                  "Perhapse you should seek out %s.\r\n",
+                  SPLSKL(ch), GET_MOB_NAME(mob_proto + real_mobile(spells[skill_num].qvnum)));
     send_to_char(buf, ch);
     return 1;
   }
@@ -505,7 +515,7 @@ SPECIAL(guild)
   }
   /* Code to allow for new skills added after player creation */
   if ((GET_PRACS(ch, spells[skill_num].spellindex) == 0) && (GET_SKILL(ch, spells[skill_num].spellindex) == 0)) {
-    GET_PRACS(ch, spells[skill_num].spellindex) = (GET_LEVEL(ch) - spells[skill_num].min_level[(int) GET_CLASS(ch)]);
+    GET_PRACS(ch, spells[skill_num].spellindex) = (GET_LEVEL(ch) - spells[skill_num].min_level[(int)GET_CLASS(ch)]);
     SET_SKILL(ch, spells[skill_num].spellindex, 15);
   }
 
@@ -515,12 +525,15 @@ SPECIAL(guild)
   }
 
   percent = GET_SKILL(ch, spells[skill_num].spellindex);
-  if (max_lvl_skill[0][spells[skill_num].difficulty][(int) GET_LEVEL(ch)] > percent) {
+  if (max_lvl_skill[0][spells[skill_num].difficulty][(int)GET_LEVEL(ch)] > percent) {
     newpercent = percent + BOUNDED(MINGAIN(ch), stats[INT_LEARN][GET_INT(ch)], MAXGAIN(ch));
-    if (max_lvl_skill[0][spells[skill_num].difficulty][(int) GET_LEVEL(ch)] < newpercent)
-      newpercent = max_lvl_skill[0][spells[skill_num].difficulty][(int) GET_LEVEL(ch)];
+    if (max_lvl_skill[0][spells[skill_num].difficulty][(int)GET_LEVEL(ch)] < newpercent)
+      newpercent = max_lvl_skill[0][spells[skill_num].difficulty][(int)GET_LEVEL(ch)];
     send_to_char("You practice for a while...\r\n", ch);
-    safe_snprintf(buf2, MAX_STRING_LENGTH, "SKILLIMPROVE: %s practiced skill %s, int = %d, wis = %d, improved by = %d, now = %d\n", GET_NAME(ch), spells[skill_num].command, GET_INT(ch), GET_WIS(ch), newpercent - percent, MIN(LEARNED(ch), newpercent));
+    safe_snprintf(buf2, MAX_STRING_LENGTH,
+                  "SKILLIMPROVE: %s practiced skill %s, int = %d, wis = %d, improved by = %d, now = %d\n", GET_NAME(ch),
+                  spells[skill_num].command, GET_INT(ch), GET_WIS(ch), newpercent - percent,
+                  MIN(LEARNED(ch), newpercent));
     mudlog(buf2, 'D', COM_IMMORT, TRUE);
     SET_SKILL(ch, spells[skill_num].spellindex, MIN(LEARNED(ch), newpercent));
     GET_PRACS(ch, spells[skill_num].spellindex)--;
@@ -635,8 +648,7 @@ SPECIAL(guild)
   return 1;
 }
 
-SPECIAL(dump)
-{
+SPECIAL(dump) {
   struct obj_data *k;
   int value = 0;
 
@@ -674,8 +686,7 @@ SPECIAL(dump)
   return 1;
 }
 
-SPECIAL(mayor)
-{
+SPECIAL(mayor) {
   static char open_path[] = "W3a3003b33000c111d0d111Oe333333Oe22c222112212111a1S.";
 
   static char close_path[] = "W3a3003b33000c111d0d111CE333333CE22c222112212111a1S.";
@@ -704,62 +715,61 @@ SPECIAL(mayor)
     return FALSE;
 
   switch (path[index]) {
-    case '0':
-    case '1':
-    case '2':
-    case '3':
-      perform_move(ch, path[index] - '0', 1);
-      break;
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+    perform_move(ch, path[index] - '0', 1);
+    break;
 
-    case 'W':
-      GET_POS(ch) = POS_STANDING;
-      act("$n awakens and groans loudly.", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'W':
+    GET_POS(ch) = POS_STANDING;
+    act("$n awakens and groans loudly.", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'S':
-      GET_POS(ch) = POS_SLEEPING;
-      act("$n lies down and instantly falls asleep.", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'S':
+    GET_POS(ch) = POS_SLEEPING;
+    act("$n lies down and instantly falls asleep.", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'a':
-      act("$n says 'Hello Honey!'", FALSE, ch, 0, 0, TO_ROOM);
-      act("$n smirks.", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'a':
+    act("$n says 'Hello Honey!'", FALSE, ch, 0, 0, TO_ROOM);
+    act("$n smirks.", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'b':
-      act("$n says 'What a view!  I must get something done about that dump!'", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'b':
+    act("$n says 'What a view!  I must get something done about that dump!'", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'c':
-      act("$n says 'Vandals!  Youngsters nowadays have no respect for anything!'", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'c':
+    act("$n says 'Vandals!  Youngsters nowadays have no respect for anything!'", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'd':
-      act("$n says 'Good day, citizens!'", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'd':
+    act("$n says 'Good day, citizens!'", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'e':
-      act("$n says 'I hereby declare the bazaar open!'", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'e':
+    act("$n says 'I hereby declare the bazaar open!'", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'E':
-      act("$n says 'I hereby declare Midgaard closed!'", FALSE, ch, 0, 0, TO_ROOM);
-      break;
+  case 'E':
+    act("$n says 'I hereby declare Midgaard closed!'", FALSE, ch, 0, 0, TO_ROOM);
+    break;
 
-    case 'O':
-      do_unlock(ch, "gate", 0, 0);
-      do_open(ch, "gate", 0, 0);
-      break;
+  case 'O':
+    do_unlock(ch, "gate", 0, 0);
+    do_open(ch, "gate", 0, 0);
+    break;
 
-    case 'C':
-      do_close(ch, "gate", 0, 0);
-      do_lock(ch, "gate", 0, 0);
-      break;
+  case 'C':
+    do_close(ch, "gate", 0, 0);
+    do_lock(ch, "gate", 0, 0);
+    break;
 
-    case '.':
-      move = FALSE;
-      break;
-
+  case '.':
+    move = FALSE;
+    break;
   }
 
   index++;
@@ -770,8 +780,7 @@ SPECIAL(mayor)
  *  General special procedures for mobiles                             *
  ******************************************************************** */
 
-void npc_steal(struct char_data * ch, struct char_data * victim)
-{
+void npc_steal(struct char_data *ch, struct char_data *victim) {
   int coins;
 
   if (IS_NPC(victim))
@@ -785,52 +794,53 @@ void npc_steal(struct char_data * ch, struct char_data * victim)
   } else {
     /* Steal some gold coins */
     switch (number(0, 3)) {
-      case 0:
-        coins = (int) ((GET_PLAT(victim) * number(1, 10)) / 100);
-        if (coins > 0) {
-          GET_PLAT(ch) += coins;
-          GET_PLAT(victim) -= coins;
-          GET_TEMP_GOLD(victim) -= coins * 1000;
-          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d plat from %s", GET_NAME(ch), coins, GET_NAME(victim));
-          mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
-        }
-        break;
-      case 1:
-        coins = (int) ((GET_GOLD(victim) * number(1, 10)) / 100);
-        if (coins > 0) {
-          GET_GOLD(ch) += coins;
-          GET_GOLD(victim) -= coins;
-          GET_TEMP_GOLD(victim) -= coins * 100;
-          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d gold from %s", GET_NAME(ch), coins, GET_NAME(victim));
-          mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
-        }
-        break;
-      case 2:
-        coins = (int) ((GET_SILVER(victim) * number(1, 10)) / 100);
-        if (coins > 0) {
-          GET_SILVER(ch) += coins;
-          GET_SILVER(victim) -= coins;
-          GET_TEMP_GOLD(victim) -= coins * 10;
-          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d silver from %s", GET_NAME(ch), coins, GET_NAME(victim));
-          mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
-        }
-        break;
-      case 3:
-        coins = (int) ((GET_COPPER(victim) * number(1, 10)) / 100);
-        if (coins > 0) {
-          GET_COPPER(ch) += coins;
-          GET_COPPER(victim) -= coins;
-          GET_TEMP_GOLD(victim) -= coins;
-          safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d copper from %s", GET_NAME(ch), coins, GET_NAME(victim));
-          mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
-        }
-        break;
+    case 0:
+      coins = (int)((GET_PLAT(victim) * number(1, 10)) / 100);
+      if (coins > 0) {
+        GET_PLAT(ch) += coins;
+        GET_PLAT(victim) -= coins;
+        GET_TEMP_GOLD(victim) -= coins * 1000;
+        safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d plat from %s", GET_NAME(ch), coins, GET_NAME(victim));
+        mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
+      }
+      break;
+    case 1:
+      coins = (int)((GET_GOLD(victim) * number(1, 10)) / 100);
+      if (coins > 0) {
+        GET_GOLD(ch) += coins;
+        GET_GOLD(victim) -= coins;
+        GET_TEMP_GOLD(victim) -= coins * 100;
+        safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d gold from %s", GET_NAME(ch), coins, GET_NAME(victim));
+        mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
+      }
+      break;
+    case 2:
+      coins = (int)((GET_SILVER(victim) * number(1, 10)) / 100);
+      if (coins > 0) {
+        GET_SILVER(ch) += coins;
+        GET_SILVER(victim) -= coins;
+        GET_TEMP_GOLD(victim) -= coins * 10;
+        safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d silver from %s", GET_NAME(ch), coins,
+                      GET_NAME(victim));
+        mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
+      }
+      break;
+    case 3:
+      coins = (int)((GET_COPPER(victim) * number(1, 10)) / 100);
+      if (coins > 0) {
+        GET_COPPER(ch) += coins;
+        GET_COPPER(victim) -= coins;
+        GET_TEMP_GOLD(victim) -= coins;
+        safe_snprintf(logbuffer, sizeof(logbuffer), "%s stole %d copper from %s", GET_NAME(ch), coins,
+                      GET_NAME(victim));
+        mudlog(logbuffer, 'Y', COM_IMMORT, TRUE);
+      }
+      break;
     }
   }
 }
 
-SPECIAL(snake)
-{
+SPECIAL(snake) {
   if (cmd)
     return FALSE;
 
@@ -848,8 +858,7 @@ SPECIAL(snake)
   return FALSE;
 }
 
-SPECIAL(thief)
-{
+SPECIAL(thief) {
   struct char_data *cons;
 
   if (cmd)
@@ -866,8 +875,7 @@ SPECIAL(thief)
   return FALSE;
 }
 
-SPECIAL(magic_user)
-{
+SPECIAL(magic_user) {
   struct char_data *vict;
 
   if (cmd || GET_POS(ch) != POS_FIGHTING)
@@ -931,19 +939,17 @@ SPECIAL(magic_user)
    }
    */
   return TRUE;
-
 }
 
 /* ********************************************************************
  *  Special procedures for mobiles                                      *
  ******************************************************************** */
 
-SPECIAL(healer)
-{
+SPECIAL(healer) {
   int numspells = 4;
   int healer_costs[] = {0, 15000, 35000, 25000, 15000};
   int buying;
-  struct char_data *healer = (struct char_data *) me;
+  struct char_data *healer = (struct char_data *)me;
   /*
    int healer_spells[5];
 
@@ -976,7 +982,8 @@ SPECIAL(healer)
         GET_POS(healer) = POS_STANDING;
         /*
          cast_spell(healer, ch, NULL, healer_spells[buying]);
-         */GET_POS(healer) = POS_SITTING;
+         */
+        GET_POS(healer) = POS_SITTING;
         return 1;
       } else {
         send_to_char("You dont seem to have enough money to buy that.\r\n", ch);
@@ -990,9 +997,8 @@ SPECIAL(healer)
   return 0;
 }
 
-SPECIAL(ticket_vendor)
-{
-  struct char_data *guard = (struct char_data *) me;
+SPECIAL(ticket_vendor) {
+  struct char_data *guard = (struct char_data *)me;
   char *buf = "You bump into the rope, drawing an angry glance from the vendor.";
   char *buf2 = "$n tries to walk through the rope, drawing the attention of the vendor.";
 
@@ -1008,15 +1014,14 @@ SPECIAL(ticket_vendor)
   return FALSE;
 }
 
-SPECIAL(guild_guard)
-{
+SPECIAL(guild_guard) {
   int i, flag;
   int roomnum, topzone, botzone;
   extern struct zone_data *zone_table;
-  void raw_kill(struct char_data *ch, struct char_data *killer);
-  void stop_fighting(struct char_data *ch);
+  void raw_kill(struct char_data * ch, struct char_data * killer);
+  void stop_fighting(struct char_data * ch);
   extern int guild_info[][3];
-  struct char_data *guard = (struct char_data *) me;
+  struct char_data *guard = (struct char_data *)me;
   struct obj_data *corpse;
   extern const struct command_info cmd_info[];
   char *buf = "$N humiliates you, and blocks your way.";
@@ -1067,8 +1072,7 @@ SPECIAL(guild_guard)
   return FALSE;
 }
 
-SPECIAL(fido)
-{
+SPECIAL(fido) {
 
   struct obj_data *i, *temp, *next_obj;
 
@@ -1090,8 +1094,7 @@ SPECIAL(fido)
   return (FALSE);
 }
 
-SPECIAL(janitor)
-{
+SPECIAL(janitor) {
   struct obj_data *i;
 
   if (cmd || !AWAKE(ch))
@@ -1111,8 +1114,7 @@ SPECIAL(janitor)
   return FALSE;
 }
 
-SPECIAL(cityguard)
-{
+SPECIAL(cityguard) {
   ACMD(do_move);
   struct char_data *tch, *evil, *next_tch;
   struct char_data *hunted_ch;
@@ -1144,70 +1146,74 @@ SPECIAL(cityguard)
       hunt_victim(ch);
     }
     switch (number(0, 40)) {
-      case 0:
-        if (ch && tch) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Stand arms guards, %s is a threat to the peace!!!'\r\n", GET_NAME(ch), GET_NAME(tch));
-          zone_echo(ch, buf);
-        }
-        break;
-      case 1:
-        if (ch && tch) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Come here %s, justice will be done!'\r\n", GET_NAME(ch), GET_NAME(tch));
-          zone_echo(ch, buf);
-        }
-        break;
-      case 2:
-        if (ch && tch) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'You will be caught %s!!'\r\n", GET_NAME(ch), GET_NAME(tch));
-          zone_echo(ch, buf);
-        }
-        break;
-      case 3:
-        if (ch && tch) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Where are you %s, you cannot run forever!'\r\n", GET_NAME(ch), GET_NAME(tch));
-          zone_echo(ch, buf);
-        }
-        break;
-      case 4:
-        if (ch && tch) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells '%s, you can run, but you can't hide!'\r\n", GET_NAME(ch), GET_NAME(tch));
-          zone_echo(ch, buf);
-        }
-        break;
-      default:
-        break;
+    case 0:
+      if (ch && tch) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Stand arms guards, %s is a threat to the peace!!!'\r\n",
+                      GET_NAME(ch), GET_NAME(tch));
+        zone_echo(ch, buf);
+      }
+      break;
+    case 1:
+      if (ch && tch) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Come here %s, justice will be done!'\r\n", GET_NAME(ch),
+                      GET_NAME(tch));
+        zone_echo(ch, buf);
+      }
+      break;
+    case 2:
+      if (ch && tch) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'You will be caught %s!!'\r\n", GET_NAME(ch), GET_NAME(tch));
+        zone_echo(ch, buf);
+      }
+      break;
+    case 3:
+      if (ch && tch) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells 'Where are you %s, you cannot run forever!'\r\n", GET_NAME(ch),
+                      GET_NAME(tch));
+        zone_echo(ch, buf);
+      }
+      break;
+    case 4:
+      if (ch && tch) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "%s yells '%s, you can run, but you can't hide!'\r\n", GET_NAME(ch),
+                      GET_NAME(tch));
+        zone_echo(ch, buf);
+      }
+      break;
+    default:
+      break;
     }
     return 1;
   }
 
   if (GET_POS(ch) != POS_SLEEPING) {
     switch (number(0, 90)) {
-      case 1:
-        act("$n stands proud.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      case 2:
-        act("$n yawns as $s shift draws near.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      case 3:
-        act("$n coughs loudly.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      case 4:
-        act("$n spits over $s left shoulder.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      case 5:
-        act("$n smiles happily.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      case 6:
-        act("$n paces back and forth.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      case 7:
-        act("$n peers around, as if looking for something he can't see.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      case 8:
-        act("$n glares over $s shoulder.", TRUE, ch, 0, 0, TO_ROOM);
-        break;
-      default:
-        break;
+    case 1:
+      act("$n stands proud.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    case 2:
+      act("$n yawns as $s shift draws near.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    case 3:
+      act("$n coughs loudly.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    case 4:
+      act("$n spits over $s left shoulder.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    case 5:
+      act("$n smiles happily.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    case 6:
+      act("$n paces back and forth.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    case 7:
+      act("$n peers around, as if looking for something he can't see.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    case 8:
+      act("$n glares over $s shoulder.", TRUE, ch, 0, 0, TO_ROOM);
+      break;
+    default:
+      break;
     }
   }
 
@@ -1241,7 +1247,8 @@ SPECIAL(cityguard)
             return (TRUE);
           }
         }
-      } else if (_2ND_EXIT(ch, i) && _2ND_EXIT(ch, i)->to_room != NOWHERE && !IS_SET(_2ND_EXIT(ch, i)->exit_info, EX_CLOSED)) {
+      } else if (_2ND_EXIT(ch, i) && _2ND_EXIT(ch, i)->to_room != NOWHERE &&
+                 !IS_SET(_2ND_EXIT(ch, i)->exit_info, EX_CLOSED)) {
         if (world[_2ND_EXIT(ch, i)->to_room].people) {
           for (evil = world[_2ND_EXIT(ch, i)->to_room].people; evil; evil = evil->next_in_room) {
             if (FIGHTING(evil)) {
@@ -1271,7 +1278,8 @@ SPECIAL(cityguard)
     }
   }
 
-  if (evil && number(0, 5) && FIGHTING(evil) && IS_MOB(FIGHTING(evil)) && GET_MOB_RACE(FIGHTING(evil)) == GET_MOB_RACE(ch)) {
+  if (evil && number(0, 5) && FIGHTING(evil) && IS_MOB(FIGHTING(evil)) &&
+      GET_MOB_RACE(FIGHTING(evil)) == GET_MOB_RACE(ch)) {
     if (GET_LEVEL(evil) < LVL_IMMORT) {
       act("$n screams 'STOP this fighting NOW! Peace will be maintained!'", FALSE, ch, 0, 0, TO_ROOM);
       act("$n strikes you on the head, knocking you out!.", FALSE, ch, 0, evil, TO_VICT);
@@ -1320,8 +1328,7 @@ SPECIAL(cityguard)
   return (FALSE);
 }
 
-SPECIAL(pet_shops)
-{
+SPECIAL(pet_shops) {
   char buf[MAX_STRING_LENGTH], pet_name[256];
   int pet_room;
   struct char_data *pet;
@@ -1360,14 +1367,15 @@ SPECIAL(pet_shops)
       /* FREE(pet->player.name); don't free the prototype! */
       pet->player.name = strdup(buf);
 
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%sA small sign on a chain around the neck says 'My name is %s'\r\n", pet->player.description, pet_name);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%sA small sign on a chain around the neck says 'My name is %s'\r\n",
+                    pet->player.description, pet_name);
       /* FREE(pet->player.description); don't free the prototype! */
       pet->player.description = strdup(buf);
     }
     char_to_room(pet, ch->in_room);
     add_follower(pet, ch);
 
-    /* Be certain that pets can't get/carry/use/wield/wear items */IS_CARRYING_W(pet) = 1000;
+    /* Be certain that pets can't get/carry/use/wield/wear items */ IS_CARRYING_W(pet) = 1000;
     IS_CARRYING_N(pet) = 100;
 
     send_to_char("May you enjoy your pet.\r\n", ch);
@@ -1383,8 +1391,7 @@ SPECIAL(pet_shops)
  *  Special procedures for objects                                     *
  ******************************************************************** */
 
-SPECIAL(slot_machine)
-{
+SPECIAL(slot_machine) {
   long amount;
   int lucky;
 
@@ -1439,8 +1446,7 @@ SPECIAL(slot_machine)
   return 0;
 }
 
-SPECIAL(bank)
-{
+SPECIAL(bank) {
   int amount;
   int is_plat = 0;
   int is_gold = 0;
@@ -1450,11 +1456,13 @@ SPECIAL(bank)
   char type1[50];
   char type2[50];
   int has_money = GET_BANK_PLAT(ch) || GET_BANK_GOLD(ch) || GET_BANK_SILVER(ch) || GET_BANK_COPPER(ch);
-  struct obj_data *obj = (struct obj_data*) me;
+  struct obj_data *obj = (struct obj_data *)me;
 
   if (CMD_IS("balance")) {
     if (has_money)
-      safe_snprintf(buf, MAX_STRING_LENGTH, "Your current balance is {W%d platinum {Y%d gold {w%d silver {y%d copper{x.\r\n", GET_BANK_PLAT(ch), GET_BANK_GOLD(ch), GET_BANK_SILVER(ch), GET_BANK_COPPER(ch));
+      safe_snprintf(buf, MAX_STRING_LENGTH,
+                    "Your current balance is {W%d platinum {Y%d gold {w%d silver {y%d copper{x.\r\n", GET_BANK_PLAT(ch),
+                    GET_BANK_GOLD(ch), GET_BANK_SILVER(ch), GET_BANK_COPPER(ch));
     else
       safe_snprintf(buf, MAX_STRING_LENGTH, "You currently have no money deposited.\r\n");
     send_to_char(buf, ch);
@@ -1470,58 +1478,58 @@ SPECIAL(bank)
       return 1;
     }
     switch (type1[0]) {
-      case 'P':
-      case 'p':
-        if (GET_PLAT(ch) < amount) {
-          send_to_char("You don't have that much platinum!\r\n", ch);
-          return 1;
-        }
-        GET_PLAT(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount * 1000;
-        GET_BANK_PLAT(ch) += amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {W%d platinum{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+    case 'P':
+    case 'p':
+      if (GET_PLAT(ch) < amount) {
+        send_to_char("You don't have that much platinum!\r\n", ch);
         return 1;
-      case 'G':
-      case 'g':
-        if (GET_GOLD(ch) < amount) {
-          send_to_char("You don't have that much gold!\r\n", ch);
-          return 1;
-        }
-        GET_GOLD(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount * 100;
-        GET_BANK_GOLD(ch) += amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {Y%d gold{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      }
+      GET_PLAT(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount * 1000;
+      GET_BANK_PLAT(ch) += amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {W%d platinum{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
+    case 'G':
+    case 'g':
+      if (GET_GOLD(ch) < amount) {
+        send_to_char("You don't have that much gold!\r\n", ch);
         return 1;
-      case 'S':
-      case 's':
-        if (GET_SILVER(ch) < amount) {
-          send_to_char("You don't have that much silver!\r\n", ch);
-          return 1;
-        }
-        GET_SILVER(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount * 10;
-        GET_BANK_SILVER(ch) += amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {w%d silver{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      }
+      GET_GOLD(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount * 100;
+      GET_BANK_GOLD(ch) += amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {Y%d gold{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
+    case 'S':
+    case 's':
+      if (GET_SILVER(ch) < amount) {
+        send_to_char("You don't have that much silver!\r\n", ch);
         return 1;
-      case 'C':
-      case 'c':
-        if (GET_COPPER(ch) < amount) {
-          send_to_char("You don't have that much copper!\r\n", ch);
-          return 1;
-        }
-        GET_COPPER(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount;
-        GET_BANK_COPPER(ch) += amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {y%d copper{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      }
+      GET_SILVER(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount * 10;
+      GET_BANK_SILVER(ch) += amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {w%d silver{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
+    case 'C':
+    case 'c':
+      if (GET_COPPER(ch) < amount) {
+        send_to_char("You don't have that much copper!\r\n", ch);
         return 1;
+      }
+      GET_COPPER(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount;
+      GET_BANK_COPPER(ch) += amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You deposit {y%d copper{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
     }
   } else if (CMD_IS("withdraw")) {
     two_arguments(argument, value, type1);
@@ -1534,58 +1542,58 @@ SPECIAL(bank)
       return 1;
     }
     switch (type1[0]) {
-      case 'P':
-      case 'p':
-        if (GET_BANK_PLAT(ch) < amount) {
-          send_to_char("You don't have that much platinum deposited!\r\n", ch);
-          return 1;
-        }
-        GET_PLAT(ch) += amount;
-        GET_TEMP_GOLD(ch) += amount * 1000;
-        GET_BANK_PLAT(ch) -= amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {W%d platinum{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+    case 'P':
+    case 'p':
+      if (GET_BANK_PLAT(ch) < amount) {
+        send_to_char("You don't have that much platinum deposited!\r\n", ch);
         return 1;
-      case 'G':
-      case 'g':
-        if (GET_BANK_GOLD(ch) < amount) {
-          send_to_char("You don't have that much gold deposited!\r\n", ch);
-          return 1;
-        }
-        GET_GOLD(ch) += amount;
-        GET_TEMP_GOLD(ch) += amount * 100;
-        GET_BANK_GOLD(ch) -= amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {Y%d gold{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      }
+      GET_PLAT(ch) += amount;
+      GET_TEMP_GOLD(ch) += amount * 1000;
+      GET_BANK_PLAT(ch) -= amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {W%d platinum{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
+    case 'G':
+    case 'g':
+      if (GET_BANK_GOLD(ch) < amount) {
+        send_to_char("You don't have that much gold deposited!\r\n", ch);
         return 1;
-      case 'S':
-      case 's':
-        if (GET_BANK_SILVER(ch) < amount) {
-          send_to_char("You don't have that much silver deposited!\r\n", ch);
-          return 1;
-        }
-        GET_SILVER(ch) += amount;
-        GET_TEMP_GOLD(ch) += amount * 10;
-        GET_BANK_SILVER(ch) -= amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {w%d silver{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      }
+      GET_GOLD(ch) += amount;
+      GET_TEMP_GOLD(ch) += amount * 100;
+      GET_BANK_GOLD(ch) -= amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {Y%d gold{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
+    case 'S':
+    case 's':
+      if (GET_BANK_SILVER(ch) < amount) {
+        send_to_char("You don't have that much silver deposited!\r\n", ch);
         return 1;
-      case 'C':
-      case 'c':
-        if (GET_BANK_COPPER(ch) < amount) {
-          send_to_char("You don't have that much copper deposited!\r\n", ch);
-          return 1;
-        }
-        GET_COPPER(ch) += amount;
-        GET_TEMP_GOLD(ch) += amount;
-        GET_BANK_COPPER(ch) -= amount;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {y%d copper{x.\r\n", amount);
-        send_to_char(buf, ch);
-        act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      }
+      GET_SILVER(ch) += amount;
+      GET_TEMP_GOLD(ch) += amount * 10;
+      GET_BANK_SILVER(ch) -= amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {w%d silver{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
+    case 'C':
+    case 'c':
+      if (GET_BANK_COPPER(ch) < amount) {
+        send_to_char("You don't have that much copper deposited!\r\n", ch);
         return 1;
+      }
+      GET_COPPER(ch) += amount;
+      GET_TEMP_GOLD(ch) += amount;
+      GET_BANK_COPPER(ch) -= amount;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "You withdraw {y%d copper{x.\r\n", amount);
+      send_to_char(buf, ch);
+      act("$n makes a bank transaction.", TRUE, ch, 0, FALSE, TO_ROOM);
+      return 1;
     }
   } else if (CMD_IS("exchange")) {
     three_arguments(argument, value, type1, type2);
@@ -1606,162 +1614,177 @@ SPECIAL(bank)
       return 1;
     }
     switch (type1[0]) {
-      case 'P':
-      case 'p':
-        if (GET_PLAT(ch) < amount) {
-          send_to_char("You don't have that much platinum to exchange.\r\n", ch);
-          return 1;
-        }
-        GET_PLAT(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount * 1000;
-        is_plat = 1;
-        break;
-      case 'G':
-      case 'g':
-        if (GET_GOLD(ch) < amount) {
-          send_to_char("You don't have that much gold to exchange.\r\n", ch);
-          return 1;
-        } else if ((type2[0] == 'p' || type2[0] == 'P') && amount < (10 + GET_OBJ_SVAL(obj, 0))) {
-          send_to_char("You need more gold to complete that exchange.\r\n", ch);
-          return 1;
-        }
-        GET_GOLD(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount * 100;
-        is_gold = 1;
-        break;
-      case 'S':
-      case 's':
-        if (GET_SILVER(ch) < amount) {
-          send_to_char("You don't have that much silver to exchange.\r\n", ch);
-          return 1;
-        } else if ((type2[0] == 'p' || type2[0] == 'P') && amount < (100 + (10 * GET_OBJ_SVAL(obj, 0)))) {
-          send_to_char("You need more silver to complete that exchange.\r\n", ch);
-          return 1;
-        } else if ((type2[0] == 'g' || type2[0] == 'G') && amount < (10 + GET_OBJ_SVAL(obj, 0))) {
-          send_to_char("You need more silver to complete that exchange.\r\n", ch);
-          return 1;
-        }
-        GET_SILVER(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount * 10;
-        is_silver = 1;
-        break;
-      case 'C':
-      case 'c':
-        if (GET_COPPER(ch) < amount) {
-          send_to_char("You don't have that much copper to exchange.\r\n", ch);
-          return 1;
-        } else if ((type2[0] == 'p' || type2[0] == 'P') && (amount < (1000 + (100 * GET_OBJ_SVAL(obj, 0))))) {
-          send_to_char("You need more copper to complete that exchange.\r\n", ch);
-          return 1;
-        } else if ((type2[0] == 'g' || type2[0] == 'G') && (amount < (100 + (10 * GET_OBJ_SVAL(obj, 0))))) {
-          send_to_char("You need more copper to complete that exchange.\r\n", ch);
-          return 1;
-        } else if ((type2[0] == 's' || type2[0] == 'S') && (amount < (10 + GET_OBJ_SVAL(obj, 0)))) {
-          send_to_char("You need more copper to complete that exchange.\r\n", ch);
-          return 1;
-        }
-        GET_COPPER(ch) -= amount;
-        GET_TEMP_GOLD(ch) -= amount;
-        is_copper = 1;
-        break;
-      default: {
-        send_to_char("What kind of money is that?\r\n", ch);
+    case 'P':
+    case 'p':
+      if (GET_PLAT(ch) < amount) {
+        send_to_char("You don't have that much platinum to exchange.\r\n", ch);
         return 1;
       }
+      GET_PLAT(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount * 1000;
+      is_plat = 1;
+      break;
+    case 'G':
+    case 'g':
+      if (GET_GOLD(ch) < amount) {
+        send_to_char("You don't have that much gold to exchange.\r\n", ch);
+        return 1;
+      } else if ((type2[0] == 'p' || type2[0] == 'P') && amount < (10 + GET_OBJ_SVAL(obj, 0))) {
+        send_to_char("You need more gold to complete that exchange.\r\n", ch);
+        return 1;
+      }
+      GET_GOLD(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount * 100;
+      is_gold = 1;
+      break;
+    case 'S':
+    case 's':
+      if (GET_SILVER(ch) < amount) {
+        send_to_char("You don't have that much silver to exchange.\r\n", ch);
+        return 1;
+      } else if ((type2[0] == 'p' || type2[0] == 'P') && amount < (100 + (10 * GET_OBJ_SVAL(obj, 0)))) {
+        send_to_char("You need more silver to complete that exchange.\r\n", ch);
+        return 1;
+      } else if ((type2[0] == 'g' || type2[0] == 'G') && amount < (10 + GET_OBJ_SVAL(obj, 0))) {
+        send_to_char("You need more silver to complete that exchange.\r\n", ch);
+        return 1;
+      }
+      GET_SILVER(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount * 10;
+      is_silver = 1;
+      break;
+    case 'C':
+    case 'c':
+      if (GET_COPPER(ch) < amount) {
+        send_to_char("You don't have that much copper to exchange.\r\n", ch);
+        return 1;
+      } else if ((type2[0] == 'p' || type2[0] == 'P') && (amount < (1000 + (100 * GET_OBJ_SVAL(obj, 0))))) {
+        send_to_char("You need more copper to complete that exchange.\r\n", ch);
+        return 1;
+      } else if ((type2[0] == 'g' || type2[0] == 'G') && (amount < (100 + (10 * GET_OBJ_SVAL(obj, 0))))) {
+        send_to_char("You need more copper to complete that exchange.\r\n", ch);
+        return 1;
+      } else if ((type2[0] == 's' || type2[0] == 'S') && (amount < (10 + GET_OBJ_SVAL(obj, 0)))) {
+        send_to_char("You need more copper to complete that exchange.\r\n", ch);
+        return 1;
+      }
+      GET_COPPER(ch) -= amount;
+      GET_TEMP_GOLD(ch) -= amount;
+      is_copper = 1;
+      break;
+    default: {
+      send_to_char("What kind of money is that?\r\n", ch);
+      return 1;
+    }
     }
     switch (type2[0]) {
-      case 'P':
-      case 'p':
-        if (is_gold && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {W%d platinum{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
-          send_to_char(buf, ch);
-          GET_PLAT(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += (amount * 100) % (10 + GET_OBJ_SVAL(obj, 0));
-        } else if (is_silver && (amount >= (100 + (GET_OBJ_SVAL(obj, 0) * 10)))) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {W%d platinum{x.\r\n", amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))), amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
-          send_to_char(buf, ch);
-          GET_PLAT(ch) += amount / (100 + (10 * GET_OBJ_SVAL(obj, 0)));
-          GET_SILVER(ch) += amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)));
-          GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += (amount * 10) % (10 + GET_OBJ_SVAL(obj, 0));
-        } else if (is_copper && (amount >= (1000 + (GET_OBJ_SVAL(obj, 0) * 100)))) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {W%d platinum{x.\r\n", amount - (amount % (1000 + (100 * GET_OBJ_SVAL(obj, 0)))), amount / (1000 + (100 * GET_OBJ_SVAL(obj, 0))));
-          send_to_char(buf, ch);
-          GET_PLAT(ch) += amount / (1000 + (100 * GET_OBJ_SVAL(obj, 0)));
-          GET_COPPER(ch) += amount % (1000 + (100 * GET_OBJ_SVAL(obj, 0)));
-          GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
-        }
-        break;
-      case 'G':
-      case 'g':
-        if (is_plat) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {Y%d gold{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
-          send_to_char(buf, ch);
-          GET_GOLD(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
-          GET_TEMP_GOLD(ch) += (amount * 1000) * (10 - GET_OBJ_SVAL(obj, 0) / 2);
-        } else if (is_silver && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {Y%d gold{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
-          send_to_char(buf, ch);
-          GET_GOLD(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_SILVER(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += (amount * 100) / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += (amount * 10) % (10 + GET_OBJ_SVAL(obj, 0));
-        } else if (is_copper && (amount >= (100 + (GET_OBJ_SVAL(obj, 0) * 10)))) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {Y%d gold{x.\r\n", amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))), amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
-          send_to_char(buf, ch);
-          GET_GOLD(ch) += amount / (100 + (10 * GET_OBJ_SVAL(obj, 0)));
-          GET_COPPER(ch) += amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)));
-          GET_TEMP_GOLD(ch) += (amount * 100) / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
-        }
-        break;
-      case 'S':
-      case 's':
-        if (is_plat) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {w%d silver{x.\r\n", amount, amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
-          send_to_char(buf, ch);
-          GET_SILVER(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
-          GET_TEMP_GOLD(ch) += (amount * 10) * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
-        } else if (is_gold) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {w%d silver{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
-          send_to_char(buf, ch);
-          GET_SILVER(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
-          GET_TEMP_GOLD(ch) += (amount * 10) * (10 - GET_OBJ_SVAL(obj, 0) / 2);
-        } else if (is_copper && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {w%d silver{x.\r\n", amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
-          send_to_char(buf, ch);
-          GET_SILVER(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_COPPER(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += (amount * 10) / (10 + GET_OBJ_SVAL(obj, 0));
-          GET_TEMP_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
-        }
-        break;
-      case 'C':
-      case 'c':
-        if (is_plat) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {y%d copper{x.\r\n", amount, amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2)));
-          send_to_char(buf, ch);
-          GET_COPPER(ch) += amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2));
-          GET_TEMP_GOLD(ch) += amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2));
-        } else if (is_gold) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {y%d copper{x.\r\n", amount, amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
-          send_to_char(buf, ch);
-          GET_COPPER(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
-          GET_TEMP_GOLD(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
-        } else if (is_silver) {
-          safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {y%d copper{x.\r\n", amount, amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
-          send_to_char(buf, ch);
-          GET_COPPER(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
-          GET_TEMP_GOLD(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
-        }
-        break;
-      default: {
-        send_to_char("What kind of money is that?\r\n", ch);
-        return 1;
+    case 'P':
+    case 'p':
+      if (is_gold && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {W%d platinum{x.\r\n",
+                      amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
+        send_to_char(buf, ch);
+        GET_PLAT(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += (amount * 100) % (10 + GET_OBJ_SVAL(obj, 0));
+      } else if (is_silver && (amount >= (100 + (GET_OBJ_SVAL(obj, 0) * 10)))) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {W%d platinum{x.\r\n",
+                      amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))),
+                      amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
+        send_to_char(buf, ch);
+        GET_PLAT(ch) += amount / (100 + (10 * GET_OBJ_SVAL(obj, 0)));
+        GET_SILVER(ch) += amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)));
+        GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += (amount * 10) % (10 + GET_OBJ_SVAL(obj, 0));
+      } else if (is_copper && (amount >= (1000 + (GET_OBJ_SVAL(obj, 0) * 100)))) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {W%d platinum{x.\r\n",
+                      amount - (amount % (1000 + (100 * GET_OBJ_SVAL(obj, 0)))),
+                      amount / (1000 + (100 * GET_OBJ_SVAL(obj, 0))));
+        send_to_char(buf, ch);
+        GET_PLAT(ch) += amount / (1000 + (100 * GET_OBJ_SVAL(obj, 0)));
+        GET_COPPER(ch) += amount % (1000 + (100 * GET_OBJ_SVAL(obj, 0)));
+        GET_TEMP_GOLD(ch) += (amount * 1000) / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
       }
+      break;
+    case 'G':
+    case 'g':
+      if (is_plat) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {Y%d gold{x.\r\n", amount,
+                      amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
+        send_to_char(buf, ch);
+        GET_GOLD(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
+        GET_TEMP_GOLD(ch) += (amount * 1000) * (10 - GET_OBJ_SVAL(obj, 0) / 2);
+      } else if (is_silver && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {Y%d gold{x.\r\n",
+                      amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
+        send_to_char(buf, ch);
+        GET_GOLD(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_SILVER(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += (amount * 100) / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += (amount * 10) % (10 + GET_OBJ_SVAL(obj, 0));
+      } else if (is_copper && (amount >= (100 + (GET_OBJ_SVAL(obj, 0) * 10)))) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {Y%d gold{x.\r\n",
+                      amount - (amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)))),
+                      amount / (100 + (10 * GET_OBJ_SVAL(obj, 0))));
+        send_to_char(buf, ch);
+        GET_GOLD(ch) += amount / (100 + (10 * GET_OBJ_SVAL(obj, 0)));
+        GET_COPPER(ch) += amount % (100 + (10 * GET_OBJ_SVAL(obj, 0)));
+        GET_TEMP_GOLD(ch) += (amount * 100) / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
+      }
+      break;
+    case 'S':
+    case 's':
+      if (is_plat) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {w%d silver{x.\r\n", amount,
+                      amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
+        send_to_char(buf, ch);
+        GET_SILVER(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
+        GET_TEMP_GOLD(ch) += (amount * 10) * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
+      } else if (is_gold) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {w%d silver{x.\r\n", amount,
+                      amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
+        send_to_char(buf, ch);
+        GET_SILVER(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
+        GET_TEMP_GOLD(ch) += (amount * 10) * (10 - GET_OBJ_SVAL(obj, 0) / 2);
+      } else if (is_copper && (amount >= (10 + GET_OBJ_SVAL(obj, 0)))) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {y%d copper{x for {w%d silver{x.\r\n",
+                      amount - (amount % (10 + GET_OBJ_SVAL(obj, 0))), amount / (10 + GET_OBJ_SVAL(obj, 0)));
+        send_to_char(buf, ch);
+        GET_SILVER(ch) += amount / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_COPPER(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += (amount * 10) / (10 + GET_OBJ_SVAL(obj, 0));
+        GET_TEMP_GOLD(ch) += amount % (10 + GET_OBJ_SVAL(obj, 0));
+      }
+      break;
+    case 'C':
+    case 'c':
+      if (is_plat) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {W%d platinum{x for {y%d copper{x.\r\n", amount,
+                      amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2)));
+        send_to_char(buf, ch);
+        GET_COPPER(ch) += amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2));
+        GET_TEMP_GOLD(ch) += amount * (1000 - (100 * GET_OBJ_SVAL(obj, 0) / 2));
+      } else if (is_gold) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {Y%d gold{x for {y%d copper{x.\r\n", amount,
+                      amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2)));
+        send_to_char(buf, ch);
+        GET_COPPER(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
+        GET_TEMP_GOLD(ch) += amount * (100 - (10 * GET_OBJ_SVAL(obj, 0) / 2));
+      } else if (is_silver) {
+        safe_snprintf(buf, MAX_STRING_LENGTH, "You exchange {w%d silver{x for {y%d copper{x.\r\n", amount,
+                      amount * (10 - GET_OBJ_SVAL(obj, 0) / 2));
+        send_to_char(buf, ch);
+        GET_COPPER(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
+        GET_TEMP_GOLD(ch) += amount * (10 - GET_OBJ_SVAL(obj, 0) / 2);
+      }
+      break;
+    default: {
+      send_to_char("What kind of money is that?\r\n", ch);
+      return 1;
+    }
     }
     return 1;
   } else
@@ -1769,8 +1792,7 @@ SPECIAL(bank)
   return 1;
 }
 
-SPECIAL(toggle_qa)
-{
+SPECIAL(toggle_qa) {
   struct char_data *pl;
 
   if (CMD_IS("use") && COM_FLAGGED(ch, COM_QUEST)) {
@@ -1795,7 +1817,6 @@ SPECIAL(toggle_qa)
 
     } else
       return 0;
-
   }
   return 0;
 }
@@ -1851,7 +1872,6 @@ SPECIAL(serpent) /* Fireball, 5% on people below lvl-10, 40% on people above */
    */
 
   return TRUE;
-
 }
 
 SPECIAL(leviathan) /* 50% cure critic if low, casts tidal wave 10% */
@@ -1874,8 +1894,7 @@ SPECIAL(leviathan) /* 50% cure critic if low, casts tidal wave 10% */
 /* SPECIALS FOR TUNNELS OF SIN */
 
 int called_this_fight;
-SPECIAL(slave)
-{
+SPECIAL(slave) {
   int i;
   if (cmd)
     return FALSE;
@@ -1906,8 +1925,7 @@ SPECIAL(slave)
   return FALSE;
 }
 
-/* Troglodyte worker special, another lame talking mob with a bit of randomness */SPECIAL(troglodyte)
-{
+/* Troglodyte worker special, another lame talking mob with a bit of randomness */ SPECIAL(troglodyte) {
   int i;
   if (cmd)
     return FALSE;
@@ -1937,8 +1955,7 @@ SPECIAL(slave)
     return FALSE;
   return FALSE;
 }
-/* Special process for black dragon's acid spray */SPECIAL(black_dragon)
-{
+/* Special process for black dragon's acid spray */ SPECIAL(black_dragon) {
   struct char_data *vict;
   int dam;
 
@@ -1958,7 +1975,9 @@ SPECIAL(slave)
 
   /* Dragon will spray 33% of the time */
   if (((rand() % 100) <= 33) || (called_this_fight == 0)) {
-    act("Green fumes rise from the nostrils of the Black Dragon, and he slowly draws \nhis head backwards. With a sudden thrust forward, he opens his mouth and \nshowers the room with a spray of green acid! ", FALSE, ch, 0, 0, TO_ROOM);
+    act("Green fumes rise from the nostrils of the Black Dragon, and he slowly draws \nhis head backwards. With a "
+        "sudden thrust forward, he opens his mouth and \nshowers the room with a spray of green acid! ",
+        FALSE, ch, 0, 0, TO_ROOM);
 
     /* Hit each mortal in the room with the spray*/
     for (vict = world[ch->in_room].people; vict; vict = vict->next_in_room) {
@@ -1971,7 +1990,6 @@ SPECIAL(slave)
         /*I think this should work with*/
         /*no problems....              */
       }
-
     }
     /* This line prevents the special from spraying the next time round... */
     called_this_fight = called_this_fight + 1;
@@ -1980,8 +1998,7 @@ SPECIAL(slave)
   return FALSE;
 }
 
-/* Special proc for the dark being, random spell to random opponent. */SPECIAL(dark_being)
-{
+/* Special proc for the dark being, random spell to random opponent. */ SPECIAL(dark_being) {
   struct char_data *vict;
   int i, p;
 
@@ -2031,7 +2048,8 @@ SPECIAL(slave)
     return TRUE;
   }
   if (i == 2) {
-    act("$n quickly throws back the hood of his robe revealing a horid face  and a pair of flaming red eyes!", FALSE, ch, 0, 0, TO_ROOM);
+    act("$n quickly throws back the hood of his robe revealing a horid face  and a pair of flaming red eyes!", FALSE,
+        ch, 0, 0, TO_ROOM);
     /*
      cast_spell(ch, vict, NULL, SPELL_BLINDNESS);
      */
@@ -2040,8 +2058,7 @@ SPECIAL(slave)
   return FALSE;
 }
 
-/* Black sould special, lame talking mob deal. */SPECIAL(black_soul)
-{
+/* Black sould special, lame talking mob deal. */ SPECIAL(black_soul) {
 
   if (cmd)
     return FALSE;
@@ -2062,14 +2079,15 @@ SPECIAL(slave)
  keys in his/her possesion. (Note! Spec_procs are normally not called
  when the object is in a container) */
 
-SPECIAL(tunnel_key)
-{
+SPECIAL(tunnel_key) {
   struct obj_data *key;
 
   if (world[ch->in_room].number < 5800 || world[ch->in_room].number > 5887) {
     key = me;
     if (key->in_room == NOWHERE) { /* carried by player */
-      act("Suddenly, $p begins to glow bright red.\r\nIt becomes extremely hot, and you are forced to drop it. When it\r\nhit the ground, it explodes into a pile of ashes!", FALSE, ch, key, 0, TO_CHAR);
+      act("Suddenly, $p begins to glow bright red.\r\nIt becomes extremely hot, and you are forced to drop it. When "
+          "it\r\nhit the ground, it explodes into a pile of ashes!",
+          FALSE, ch, key, 0, TO_CHAR);
       act("$n screams loudly as he drops $p.", FALSE, ch, key, 0, TO_ROOM);
     } else { /* this should not happen very often, only when loaded by an immo :) */
       act("Suddenly, $p begins to glow bright red and\r\nexplodes into a pile of ashes.", FALSE, 0, key, 0, TO_ROOM);
@@ -2085,8 +2103,7 @@ SPECIAL(tunnel_key)
  argument. (This is a room spec_proc, and only runs when obj #5835 is loaded
  into the room) */
 
-SPECIAL(gargoyle)
-{
+SPECIAL(gargoyle) {
   struct obj_data *k;
   struct char_data *mob;
 
@@ -2099,8 +2116,14 @@ SPECIAL(gargoyle)
 
     for (k = world[ch->in_room].contents; k; k = k->next_content) {
       if (GET_OBJ_VNUM(k) == 5835) {
-        send_to_char("As you reach to open the golden door, you suddenly realize that the\r\ntwo demon statues are not real at all! With two loud shrieks, their\r\nwings start to flap, and in no time you see 8 sets of razor-sharp\r\ntalons flying straight at your face!\r\n", ch);
-        act("As $n reach to open the golden door, you suddenly realize that the\r\ntwo demon statues are not real at all! With two loud shrieks, their\r\nwings start to flap, and in no time you see 8 sets of razor-sharp\r\ntalons flying straight at $n's face!", FALSE, ch, 0, 0, TO_ROOM);
+        send_to_char("As you reach to open the golden door, you suddenly realize that the\r\ntwo demon statues are not "
+                     "real at all! With two loud shrieks, their\r\nwings start to flap, and in no time you see 8 sets "
+                     "of razor-sharp\r\ntalons flying straight at your face!\r\n",
+                     ch);
+        act("As $n reach to open the golden door, you suddenly realize that the\r\ntwo demon statues are not real at "
+            "all! With two loud shrieks, their\r\nwings start to flap, and in no time you see 8 sets of "
+            "razor-sharp\r\ntalons flying straight at $n's face!",
+            FALSE, ch, 0, 0, TO_ROOM);
         extract_obj(k);
         mob = read_mobile(5803, VIRTUAL);
         char_to_room(mob, ch->in_room);
@@ -2117,8 +2140,7 @@ SPECIAL(gargoyle)
 
 /* I know this one sucks, I'll work on it later */
 
-SPECIAL(mist_room)
-{
+SPECIAL(mist_room) {
 
   if (time_info.hours < 9) {
     world[real_room(5804)].dir_option[NORTH]->exit_info = 0;
@@ -2147,8 +2169,7 @@ SPECIAL(mist_room)
   return FALSE;
 }
 
-SPECIAL(pentagram)
-{
+SPECIAL(pentagram) {
   struct obj_data *obj;
   static byte dropped;
   int j, vnums[] = {5807, 5822, 5808}; /* items that should be dropped */
@@ -2203,15 +2224,20 @@ SPECIAL(pentagram)
   }
   if (vnums[j] != GET_OBJ_VNUM(obj)) /* nopes, return control to standard drop routine */
     return FALSE;
-  act("As you drop $p it slowly rolls to one of\r\nthe points in the incompleted pentagram.", FALSE, ch, obj, 0, TO_CHAR);
-  act("As $n drop $p it slowly rolls\r\nto one of the points in the incompleted pentagram.", FALSE, ch, obj, 0, TO_ROOM);
+  act("As you drop $p it slowly rolls to one of\r\nthe points in the incompleted pentagram.", FALSE, ch, obj, 0,
+      TO_CHAR);
+  act("As $n drop $p it slowly rolls\r\nto one of the points in the incompleted pentagram.", FALSE, ch, obj, 0,
+      TO_ROOM);
 
   obj_from_char(obj);
   extract_obj(obj);
   SET_BIT(dropped, (1 << j));
   /* set object as dropped */
   if (dropped == 7) { /* has all needed items been dropped? */
-    send_to_room("As the pentagram is completed, it starts to glow bright blue. Slowly\r\nit rises into the sky, and with a quick burst of light it disappears.\r\nSuddenly, a large ring of blue flames burst up from the center of the\r\nroom. Hoof-beats are heard in the distance.\r\n", ch->in_room);
+    send_to_room("As the pentagram is completed, it starts to glow bright blue. Slowly\r\nit rises into the sky, and "
+                 "with a quick burst of light it disappears.\r\nSuddenly, a large ring of blue flames burst up from "
+                 "the center of the\r\nroom. Hoof-beats are heard in the distance.\r\n",
+                 ch->in_room);
     obj = read_object(5840, VIRTUAL); /* load a ring of fire */
     obj_to_room(obj, ch->in_room);
     for (obj = world[ch->in_room].contents; obj; obj = obj->next_content) {
@@ -2224,11 +2250,10 @@ SPECIAL(pentagram)
   return TRUE;
 }
 
-SPECIAL(master_sin)
-{
+SPECIAL(master_sin) {
   struct obj_data *obj;
   struct char_data *vict;
-  struct char_data *master = (struct char_data *) me;
+  struct char_data *master = (struct char_data *)me;
   static int run;
 
   if (GET_POS(master) == POS_FIGHTING || cmd || GET_POS(master) < POS_RESTING)
@@ -2249,7 +2274,8 @@ SPECIAL(master_sin)
       return FALSE;
     if (vict == master)
       return FALSE;
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s shouts, '%s! You have what rightfully belongs to me!'\r\n", GET_NAME(master), GET_NAME(vict));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s shouts, '%s! You have what rightfully belongs to me!'\r\n",
+                  GET_NAME(master), GET_NAME(vict));
     global_echo(buf);
     char_from_room(vict);
     act("$N disappears in a cloud of dust.", TRUE, vict, 0, ch, TO_ROOM);
@@ -2262,8 +2288,7 @@ SPECIAL(master_sin)
   return FALSE;
 }
 
-SPECIAL(icecube)
-{
+SPECIAL(icecube) {
   struct obj_data *cube = me;
 
   cube->spec_vars[0]--;
@@ -2275,15 +2300,14 @@ SPECIAL(icecube)
   return FALSE;
 }
 
-SPECIAL(pray)
-{
+SPECIAL(pray) {
   int l;
   struct obj_data *obj;
 
   struct pray_info {
     char *name;
     int vnum;
-  } pray_list[] = { {"kiwi", 1514}, {"doll", 1247}, {"dagger", 3020}, {"bag", 3032}, {"\n", 0}};
+  } pray_list[] = {{"kiwi", 1514}, {"doll", 1247}, {"dagger", 3020}, {"bag", 3032}, {"\n", 0}};
 
   if (CMD_IS("pray") && GET_LEVEL(ch) >= LVL_IMMORT) {
 
@@ -2310,8 +2334,7 @@ SPECIAL(pray)
 
 /* Vice Island */
 
-SPECIAL(vice_master)
-{
+SPECIAL(vice_master) {
   char buf[MAX_STRING_LENGTH];
   ACMD(do_order);
 
@@ -2319,36 +2342,35 @@ SPECIAL(vice_master)
     return (FALSE);
 
   switch (number(0, 8)) {
-    case 0:
-    case 1:
-    case 2:
-      if (GET_POS(ch) != POS_FIGHTING) {
-        act("The master looks at his minions and growls, 'get to work, bitches!'", FALSE, ch, 0, 0, TO_ROOM);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "followers bow master");
-        do_order(ch, buf, 0, 0);
-        return (TRUE);
-      }
-      break;
-    case 3:
-    case 4:
-    case 5:
-    case 6:
-      if (GET_POS(ch) == POS_FIGHTING) {
-        act("The master screams loudly, 'HELP ME, MY SLAVES!'", FALSE, ch, 0, 0, TO_ROOM);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "followers kill %s", GET_NAME(ch->char_specials.fighting));
-        do_order(ch, buf, 0, 0);
-        return (TRUE);
-      }
+  case 0:
+  case 1:
+  case 2:
+    if (GET_POS(ch) != POS_FIGHTING) {
+      act("The master looks at his minions and growls, 'get to work, bitches!'", FALSE, ch, 0, 0, TO_ROOM);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "followers bow master");
+      do_order(ch, buf, 0, 0);
+      return (TRUE);
+    }
+    break;
+  case 3:
+  case 4:
+  case 5:
+  case 6:
+    if (GET_POS(ch) == POS_FIGHTING) {
+      act("The master screams loudly, 'HELP ME, MY SLAVES!'", FALSE, ch, 0, 0, TO_ROOM);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "followers kill %s", GET_NAME(ch->char_specials.fighting));
+      do_order(ch, buf, 0, 0);
+      return (TRUE);
+    }
 
-      break;
-    default:
-      return (FALSE);
+    break;
+  default:
+    return (FALSE);
   }
   return (TRUE);
 }
 
-SPECIAL(vice_slave)
-{
+SPECIAL(vice_slave) {
   struct char_data *master;
   char buf[MAX_STRING_LENGTH];
 
@@ -2372,8 +2394,7 @@ SPECIAL(vice_slave)
   return (FALSE);
 }
 
-SPECIAL(tarbaby)
-{
+SPECIAL(tarbaby) {
   struct char_data *vict, *temp;
 
   if (cmd != 224)
@@ -2457,10 +2478,13 @@ SPECIAL(tarbaby)
  }
  */
 
-SPECIAL(elemental)
-{
+SPECIAL(elemental) {
   int vnum;
-  char *dis_msg[] = {"$n is caught up in a wind and carried away.", "$n turns into a fine mist and disappears.", "$n crumbles to dust and blows away.", "$n burns itself out and turns into a pile of ash.", "$n is brought back to the dead by the gods.", "$n is brought back to the dead by the gods.", "$n is brought back to the dead by the gods.", "$n is brought back to the dead by the gods.", "$n is brought back to the dead by the gods.", "\n"};
+  char *dis_msg[] = {"$n is caught up in a wind and carried away.", "$n turns into a fine mist and disappears.",
+                     "$n crumbles to dust and blows away.",         "$n burns itself out and turns into a pile of ash.",
+                     "$n is brought back to the dead by the gods.", "$n is brought back to the dead by the gods.",
+                     "$n is brought back to the dead by the gods.", "$n is brought back to the dead by the gods.",
+                     "$n is brought back to the dead by the gods.", "\n"};
   if (ch->mob_specials.timer == 0 || ch->master == NULL || (ch->master && !AFF_FLAGGED(ch, AFF_CHARM))) {
     vnum = GET_MOB_VNUM(ch);
     vnum = vnum - 1201;
@@ -2470,13 +2494,11 @@ SPECIAL(elemental)
   (ch->mob_specials.timer)--;
 
   return TRUE;
-
 }
 
 /* rabdu rana assassins guild */
 
-SPECIAL(weep_blade)
-{
+SPECIAL(weep_blade) {
   struct obj_data *blade = me;
   struct char_data *owner = NULL;
 
@@ -2486,46 +2508,43 @@ SPECIAL(weep_blade)
     owner = blade->carried_by;
   if (owner) {
     switch (number(0, 20)) {
-      case 1:
-        send_to_room("The weeping blade sniffs sadly.\r\n", owner->in_room);
-        break;
-      case 2:
-        send_to_room("The weeping blade bursts into tears.\r\n", owner->in_room);
-        break;
-      case 3:
-        send_to_room("The weeping blade sobs quietly to itself.\r\n", owner->in_room);
-        break;
-      case 4:
-        command_interpreter(owner, "cry");
-        break;
-      case 5:
-        command_interpreter(owner, "sniff");
-        break;
-      case 6:
-        command_interpreter(owner, "sad");
-        break;
-      case 7:
-        command_interpreter(owner, "sad self");
-        break;
+    case 1:
+      send_to_room("The weeping blade sniffs sadly.\r\n", owner->in_room);
+      break;
+    case 2:
+      send_to_room("The weeping blade bursts into tears.\r\n", owner->in_room);
+      break;
+    case 3:
+      send_to_room("The weeping blade sobs quietly to itself.\r\n", owner->in_room);
+      break;
+    case 4:
+      command_interpreter(owner, "cry");
+      break;
+    case 5:
+      command_interpreter(owner, "sniff");
+      break;
+    case 6:
+      command_interpreter(owner, "sad");
+      break;
+    case 7:
+      command_interpreter(owner, "sad self");
+      break;
     }
   }
 
   return FALSE;
-
 }
 
 /* Intelligent mobiles */
 
-SPECIAL(intelligent)
-{
+SPECIAL(intelligent) {
   return FALSE;
 }
 
-SPECIAL(portal)
-{
+SPECIAL(portal) {
   ACMD(do_look);
   extern const struct command_info cmd_info[];
-  struct obj_data* portal = (struct obj_data*) me;
+  struct obj_data *portal = (struct obj_data *)me;
 
   if (!strcmp(cmd_info[cmd].command, "enter")) {
     if (strstr(argument, "portal") || strstr(argument, "moonwell")) {
@@ -2552,34 +2571,34 @@ SPECIAL(portal)
   }
 
   return FALSE;
-
 }
 
-void file_list_skills(struct char_data * ch, FILE* f)
-{
+void file_list_skills(struct char_data *ch, FILE *f) {
   int i;
 
   for (i = 1; spells[i].command[0] != '\n'; i++) {
     if (GET_SKILL(ch, spells[i].spellindex) && !spells[i].spell_pointer && spells[i].command[0] != '<') {
-      fprintf(f, "-%s- %d %d\n", spells[i].command, GET_SKILL(ch, spells[i].spellindex), GET_PRACS(ch, spells[i].spellindex));
+      fprintf(f, "-%s- %d %d\n", spells[i].command, GET_SKILL(ch, spells[i].spellindex),
+              GET_PRACS(ch, spells[i].spellindex));
     }
   }
   for (i = 1; spells[i].command[0] != '\n'; i++) {
     if (GET_SKILL(ch, spells[i].spellindex) && spells[i].spell_pointer) {
-      fprintf(f, "-%s- %d %d\n", spells[i].command, GET_SKILL(ch, spells[i].spellindex), GET_PRACS(ch, spells[i].spellindex));
+      fprintf(f, "-%s- %d %d\n", spells[i].command, GET_SKILL(ch, spells[i].spellindex),
+              GET_PRACS(ch, spells[i].spellindex));
     }
   }
 }
-SPECIAL(wraithform_corpse)
-{
+SPECIAL(wraithform_corpse) {
   extern const struct command_info cmd_info[];
-  struct obj_data* corpse = (struct obj_data*) me;
-  struct obj_data* tobj;
-  struct obj_data* tobj2;
+  struct obj_data *corpse = (struct obj_data *)me;
+  struct obj_data *tobj;
+  struct obj_data *tobj2;
 
   skip_spaces(&argument);
   if (CMD_IS("enter") && AFF2_FLAGGED(ch, AFF2_WRAITHFORM)) {
-    if ((strcmp(corpse->owner, GET_NAME(ch)) == 0) && (strstr(argument, "corpse") || (strncasecmp(argument, GET_NAME(ch), strlen(argument)) == 0))) {
+    if ((strcmp(corpse->owner, GET_NAME(ch)) == 0) &&
+        (strstr(argument, "corpse") || (strncasecmp(argument, GET_NAME(ch), strlen(argument)) == 0))) {
       act("$n's soul merges with $s corpse, which springs forth with new life.", FALSE, ch, me, 0, TO_ROOM);
       act("Your soul merges with your corpse, which springs forth with new life.", FALSE, ch, me, 0, TO_CHAR);
       for (tobj = corpse->contains; tobj != NULL; tobj = tobj2) {

@@ -11,14 +11,14 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
 #include "db.h"
 #include "event.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 /* external vars  */
 extern struct room_data *world;
@@ -31,9 +31,9 @@ extern char *arrived_from[];
 extern struct obj_data *object_list;
 
 /* external functs */
-void death_cry(struct char_data * ch);
-void mprog_greet_trigger(struct char_data * ch);
-void mprog_entry_trigger(struct char_data * mob);
+void death_cry(struct char_data *ch);
+void mprog_greet_trigger(struct char_data *ch);
+void mprog_entry_trigger(struct char_data *mob);
 #define MOB_AGGR_TO_ALIGN MOB_AGGR_EVIL | MOB_AGGR_NEUTRAL | MOB_AGGR_GOOD
 
 /* do_simple_move assumes
@@ -44,8 +44,7 @@ void mprog_entry_trigger(struct char_data * mob);
  *   1 : If succes.
  *   0 : If fail
  */
-int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
-{
+int do_simple_move(struct char_data *ch, int dir, int need_specials_check) {
   int was_in, need_movement, has_boat = 0, found, i;
   struct char_data *vict, *fakech, *ch_list;
   struct obj_data *obj;
@@ -92,7 +91,8 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   }
   /* if this room or the one we're going to needs a boat, check for one */
 
-  if ((world[ch->in_room].sector_type == SECT_WATER_NOSWIM) || (world[EXIT(ch, dir)->to_room].sector_type == SECT_WATER_NOSWIM)) {
+  if ((world[ch->in_room].sector_type == SECT_WATER_NOSWIM) ||
+      (world[EXIT(ch, dir)->to_room].sector_type == SECT_WATER_NOSWIM)) {
     if (AFF2_FLAGGED(ch, AFF2_WRAITHFORM)) {
       has_boat = TRUE;
     }
@@ -101,7 +101,7 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
         has_boat = TRUE;
       }
     }
-    if (!IS_AFFECTED(ch,AFF_WATERWALK) && !has_boat && !IS_AFFECTED(ch,AFF_FLY) && (GET_LEVEL(ch) < LVL_IMMORT)) {
+    if (!IS_AFFECTED(ch, AFF_WATERWALK) && !has_boat && !IS_AFFECTED(ch, AFF_FLY) && (GET_LEVEL(ch) < LVL_IMMORT)) {
       send_to_char("You need a boat to go there.\r\n", ch);
       return 0;
     }
@@ -110,8 +110,9 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
     return 0;
   }
 
-  need_movement = ((movement_loss[IN_SECTOR(IN_ROOM(ch))] + movement_loss[IN_SECTOR(EXIT(ch, dir)->to_room)]) >> 1) + EXIT(ch, dir)->add_move;
-  if (IS_AFFECTED(ch,AFF_FLY) || MOUNTING(ch)) {
+  need_movement = ((movement_loss[IN_SECTOR(IN_ROOM(ch))] + movement_loss[IN_SECTOR(EXIT(ch, dir)->to_room)]) >> 1) +
+                  EXIT(ch, dir)->add_move;
+  if (IS_AFFECTED(ch, AFF_FLY) || MOUNTING(ch)) {
     need_movement >>= 1;
   }
   if (COM_FLAGGED(ch, COM_IMMORT)) {
@@ -153,13 +154,13 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
     /*  WAIT_STATE(ch, (need_movement-1)*4); */
   }
 
-  if (!IS_AFFECTED(ch, AFF_SNEAK) && !IS_AFFECTED(ch,AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
+  if (!IS_AFFECTED(ch, AFF_SNEAK) && !IS_AFFECTED(ch, AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
     safe_snprintf(buf2, MAX_STRING_LENGTH, "$n walks %s.", dirs[dir]);
     act(buf2, TRUE, ch, 0, 0, TO_ROOM);
   }
 
   /* If player is flying, show different message */
-  if (!IS_AFFECTED(ch, AFF_SNEAK) && IS_AFFECTED(ch,AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
+  if (!IS_AFFECTED(ch, AFF_SNEAK) && IS_AFFECTED(ch, AFF_FLY) && !MOUNTING(ch) && !MOUNTED_BY(ch)) {
     safe_snprintf(buf2, MAX_STRING_LENGTH, "$n flies %s.", dirs[dir]);
     act(buf2, TRUE, ch, 0, 0, TO_ROOM);
   }
@@ -201,7 +202,8 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
         affect_remove(ch, ch->affected);
       }
       send_to_char("There is a brief flash of light\r\n"
-          "You feel slightly different.\r\n", ch);
+                   "You feel slightly different.\r\n",
+                   ch);
     }
   }
 
@@ -218,7 +220,8 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   if (!AFF2_FLAGGED(ch, AFF2_WRAITHFORM) && !IS_NPC(ch) && !IS_AFFECTED(ch, AFF_SNEAK)) {
     /* add !found to fakech in first loop to have intelligen attacking */
     for (fakech = world[ch->in_room].people; fakech; fakech = fakech->next_in_room) {
-      if (IS_NPC(fakech) && MOB_FLAGGED(fakech, MOB_AGGRESSIVE | MOB_AGGR_TO_ALIGN) && AWAKE(fakech) && !FIGHTING(fakech) && !HUNTING(fakech)) {
+      if (IS_NPC(fakech) && MOB_FLAGGED(fakech, MOB_AGGRESSIVE | MOB_AGGR_TO_ALIGN) && AWAKE(fakech) &&
+          !FIGHTING(fakech) && !HUNTING(fakech)) {
         for (vict = world[fakech->in_room].people; vict && !found; vict = vict->next_in_room) {
           if (!CAN_SEE(fakech, vict) || PRF_FLAGGED(vict, PRF_NOHASSLE)) {
             continue;
@@ -235,7 +238,9 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
           if (IS_NPC(vict) && !IS_AFFECTED(vict, AFF_CHARM)) {
             continue;
           }
-          if (!MOB_FLAGGED(fakech, MOB_AGGR_TO_ALIGN) || (MOB_FLAGGED(fakech, MOB_AGGR_EVIL) && IS_EVIL(vict)) || (MOB_FLAGGED(fakech, MOB_AGGR_NEUTRAL) && IS_NEUTRAL(vict)) || (MOB_FLAGGED(fakech, MOB_AGGR_GOOD) && IS_GOOD(vict))) {
+          if (!MOB_FLAGGED(fakech, MOB_AGGR_TO_ALIGN) || (MOB_FLAGGED(fakech, MOB_AGGR_EVIL) && IS_EVIL(vict)) ||
+              (MOB_FLAGGED(fakech, MOB_AGGR_NEUTRAL) && IS_NEUTRAL(vict)) ||
+              (MOB_FLAGGED(fakech, MOB_AGGR_GOOD) && IS_GOOD(vict))) {
             for (i = 0; (i < 10); i++) {
               if (vict->player_specials->hunters[i] == NULL && vict->player_specials->hunters[i] != fakech) {
                 vict->player_specials->hunters[i] = fakech;
@@ -257,36 +262,37 @@ int do_simple_move(struct char_data * ch, int dir, int need_specials_check)
   return 1;
 }
 
-int perform_move(struct char_data * ch, int dir, int need_specials_check)
-{
+int perform_move(struct char_data *ch, int dir, int need_specials_check) {
   int was_in;
   struct follow_type *k, *next;
 
   if (ch == NULL || dir < 0 || dir >= NUM_OF_DIRS) {
     return 0;
-  } else if (!EXIT(ch, dir) || EXIT(ch, dir)->to_room == NOWHERE || (!(AFF2_FLAGGED(ch, AFF2_WRAITHFORM) && !IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN)) && IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED))) {
+  } else if (!EXIT(ch, dir) || EXIT(ch, dir)->to_room == NOWHERE ||
+             (!(AFF2_FLAGGED(ch, AFF2_WRAITHFORM) && !IS_SET(EXIT(ch, dir)->exit_info, EX_HIDDEN)) &&
+              IS_SET(EXIT(ch, dir)->exit_info, EX_CLOSED))) {
     switch (number(0, 6)) {
-      case 0:
-        send_to_char("Alas, you cannot go that way...\r\n", ch);
-        break;
-      case 1:
-        send_to_char("Your path is obstructed.\r\n", ch);
-        break;
-      case 2:
-        send_to_char("Excuse me, you cant go there!!.\r\n", ch);
-        break;
-      case 3:
-        send_to_char("Try as you might, the gods refuse to let you go that way.\r\n", ch);
-        break;
-      case 4:
-        send_to_char("OOMPH! Was that a wall?\r\n", ch);
-        break;
-      case 5:
-        send_to_char("After further analysis, you decide that there is no exit in that direction.\r\n", ch);
-        break;
-      default:
-        send_to_char("You cannot walk through walls... yet!\r\n", ch);
-        break;
+    case 0:
+      send_to_char("Alas, you cannot go that way...\r\n", ch);
+      break;
+    case 1:
+      send_to_char("Your path is obstructed.\r\n", ch);
+      break;
+    case 2:
+      send_to_char("Excuse me, you cant go there!!.\r\n", ch);
+      break;
+    case 3:
+      send_to_char("Try as you might, the gods refuse to let you go that way.\r\n", ch);
+      break;
+    case 4:
+      send_to_char("OOMPH! Was that a wall?\r\n", ch);
+      break;
+    case 5:
+      send_to_char("After further analysis, you decide that there is no exit in that direction.\r\n", ch);
+      break;
+    default:
+      send_to_char("You cannot walk through walls... yet!\r\n", ch);
+      break;
     }
   } else {
     if (!ch->followers && !MOUNTING(ch)) {
@@ -304,23 +310,24 @@ int perform_move(struct char_data * ch, int dir, int need_specials_check)
 
     for (k = ch->followers; k; k = next) {
       next = k->next;
-      if (CAN_SEE(k->follower, ch) && (was_in == k->follower->in_room) && (GET_POS(k->follower) >= POS_STANDING) && !AFF2_FLAGGED(k->follower, AFF2_CASTING)) {
+      if (CAN_SEE(k->follower, ch) && (was_in == k->follower->in_room) && (GET_POS(k->follower) >= POS_STANDING) &&
+          !AFF2_FLAGGED(k->follower, AFF2_CASTING)) {
         act("You follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
         perform_move(k->follower, dir, 1);
       } else if (CAN_SEE(k->follower, ch) && (was_in == k->follower->in_room)) {
         switch (GET_POS(k->follower)) {
-          case POS_SITTING:
-            act("You cannot follow $N while sitting.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
-            break;
-          case POS_RESTING:
-            act("You are too comfortable to follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
-            break;
-          case POS_FIGHTING:
-            act("You are too engaged in combat to follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
-            break;
-          default:
-            act("You are unable to follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
-            break;
+        case POS_SITTING:
+          act("You cannot follow $N while sitting.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
+          break;
+        case POS_RESTING:
+          act("You are too comfortable to follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
+          break;
+        case POS_FIGHTING:
+          act("You are too engaged in combat to follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
+          break;
+        default:
+          act("You are unable to follow $N.\r\n", FALSE, k->follower, 0, ch, TO_CHAR);
+          break;
         }
       }
     }
@@ -329,8 +336,7 @@ int perform_move(struct char_data * ch, int dir, int need_specials_check)
   return 0;
 }
 
-ACMD(do_move)
-{
+ACMD(do_move) {
   extern sh_int stats[11][101];
   /*
    * This is basically a mapping of cmd numbers to perform_move indexes.
@@ -360,16 +366,16 @@ ACMD(do_move)
   }
 }
 
-int find_door(struct char_data * ch, char *type, char *dir)
-{
+int find_door(struct char_data *ch, char *type, char *dir) {
   int door;
 
-  if (*dir) { /* a direction was specified */
+  if (*dir) {                                            /* a direction was specified */
     if ((door = search_block(dir, dirs, FALSE)) == -1) { /* Partial Match */
       send_to_char("That's not a direction.\r\n", ch);
       return -1;
     }
-    if (EXIT(ch, door) && EXIT(ch, door)->keyword && isname(type, EXIT(ch, door)->keyword) && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
+    if (EXIT(ch, door) && EXIT(ch, door)->keyword && isname(type, EXIT(ch, door)->keyword) &&
+        !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN)) {
       return door;
     } else if (EXIT(ch, door) && EXIT(ch, door)->keyword) {
       safe_snprintf(buf2, MAX_STRING_LENGTH, "I see no %s there.\r\n", type);
@@ -383,7 +389,8 @@ int find_door(struct char_data * ch, char *type, char *dir)
     }
   } else { /* try to locate the keyword */
     for (door = 0; door < NUM_OF_DIRS; door++) {
-      if (EXIT(ch, door) && EXIT(ch, door)->keyword && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN) && isname(type, EXIT(ch, door)->keyword)) {
+      if (EXIT(ch, door) && EXIT(ch, door)->keyword && !IS_SET(EXIT(ch, door)->exit_info, EX_HIDDEN) &&
+          isname(type, EXIT(ch, door)->keyword)) {
         return door;
       }
     }
@@ -394,8 +401,7 @@ int find_door(struct char_data * ch, char *type, char *dir)
   return -1;
 }
 
-ACMD(do_open)
-{
+ACMD(do_open) {
   int door, other_room;
   char type[MAX_INPUT_LENGTH], dir[MAX_INPUT_LENGTH];
   struct room_direction_data *back;
@@ -445,10 +451,11 @@ ACMD(do_open)
             if (back->keyword) {
               safe_snprintf(buf, MAX_STRING_LENGTH, "The %s is opened from the other side.", fname(back->keyword));
               /* send_to_room(buf, EXIT(ch, door)->to_room); */
-              act(buf, 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
+              act(buf, 0, ch, NULL, (void *)(long)EXIT(ch, door)->to_room, TO_EXIT);
             } else {
               /* send_to_room("The door is opened from the other side.\r\n", EXIT(ch, door)->to_room); */
-              act("The door is opened from the other side.", 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
+              act("The door is opened from the other side.", 0, ch, NULL, (void *)(long)EXIT(ch, door)->to_room,
+                  TO_EXIT);
             }
           }
         }
@@ -457,8 +464,7 @@ ACMD(do_open)
   }
 }
 
-ACMD(do_close)
-{
+ACMD(do_close) {
   int door, other_room;
   char type[MAX_INPUT_LENGTH], dir[MAX_INPUT_LENGTH];
   struct room_direction_data *back;
@@ -504,10 +510,10 @@ ACMD(do_close)
             if (back->keyword) {
               safe_snprintf(buf, MAX_STRING_LENGTH, "The %s closes quietly.", fname(back->keyword));
               /* send_to_room(buf, EXIT(ch, door)->to_room); */
-              act(buf, 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
+              act(buf, 0, ch, NULL, (void *)(long)EXIT(ch, door)->to_room, TO_EXIT);
             } else {
               /* send_to_room("The door closes quietly.\r\n", EXIT(ch, door)->to_room); */
-              act("The door closes quietly.", 0, ch, NULL, (void*) (long) EXIT(ch, door)->to_room, TO_EXIT);
+              act("The door closes quietly.", 0, ch, NULL, (void *)(long)EXIT(ch, door)->to_room, TO_EXIT);
             }
           }
         }
@@ -516,8 +522,7 @@ ACMD(do_close)
   }
 }
 
-int has_key(struct char_data * ch, int key)
-{
+int has_key(struct char_data *ch, int key) {
   struct obj_data *o;
 
   for (o = ch->carrying; o; o = o->next_content) {
@@ -535,8 +540,7 @@ int has_key(struct char_data * ch, int key)
   return 0;
 }
 
-ACMD(do_lock)
-{
+ACMD(do_lock) {
   int door, other_room;
   char type[MAX_INPUT_LENGTH], dir[MAX_INPUT_LENGTH];
   struct room_direction_data *back;
@@ -596,8 +600,7 @@ ACMD(do_lock)
   }
 }
 
-ACMD(do_unlock)
-{
+ACMD(do_unlock) {
   int door, other_room;
   char type[MAX_INPUT_LENGTH], dir[MAX_INPUT_LENGTH];
   struct room_direction_data *back;
@@ -657,8 +660,7 @@ ACMD(do_unlock)
   }
 }
 
-ACMD(do_enter)
-{
+ACMD(do_enter) {
   extern struct transport_data transport_list[MAX_TRANSPORT];
   extern ACMD(do_look);
   register struct obj_data *k;
@@ -677,7 +679,9 @@ ACMD(do_enter)
   for (i = 0; i < MAX_TRANSPORT; i++) {
     for (k = object_list; k; k = k->next) {
       if (CAN_SEE_OBJ(ch, k) && isname(buf, k->name)) {
-        if (obj_index[k->item_number].virtual == transport_list[i].obj_vnum && (real_room(transport_list[i].enter_vnum) == ch->in_room || real_room(transport_list[i].exit_vnum) == ch->in_room)) {
+        if (obj_index[k->item_number].virtual == transport_list[i].obj_vnum &&
+            (real_room(transport_list[i].enter_vnum) == ch->in_room ||
+             real_room(transport_list[i].exit_vnum) == ch->in_room)) {
           valid = TRUE;
           transport = i;
         }
@@ -722,8 +726,7 @@ ACMD(do_enter)
   }
 }
 
-ACMD(do_leave)
-{
+ACMD(do_leave) {
   extern struct transport_data transport_list[MAX_TRANSPORT];
   extern ACMD(do_look);
   register struct obj_data *k, *obj = NULL;
@@ -790,122 +793,117 @@ ACMD(do_leave)
   do_look(ch, "room", 0, 0);
 }
 
-ACMD(do_stand)
-{
+ACMD(do_stand) {
   switch (GET_POS(ch)) {
-    case POS_STANDING:
-      act("You are already standing.", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    case POS_SITTING:
-      act("You stand up.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n clambers onto $s feet.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_STANDING;
-      break;
-    case POS_RESTING:
-      act("You stop resting, and stand up.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n stops resting, and clambers onto $s feet.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_STANDING;
-      break;
-    case POS_SLEEPING:
-      act("You have to wake up first!", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    case POS_FIGHTING:
-      act("Do you not consider fighting as standing?", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    default:
-      act("You stop floating around, and put your feet on the ground.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n stops floating around, and puts $s feet on the ground.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_STANDING;
-      break;
+  case POS_STANDING:
+    act("You are already standing.", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  case POS_SITTING:
+    act("You stand up.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n clambers onto $s feet.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_STANDING;
+    break;
+  case POS_RESTING:
+    act("You stop resting, and stand up.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n stops resting, and clambers onto $s feet.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_STANDING;
+    break;
+  case POS_SLEEPING:
+    act("You have to wake up first!", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  case POS_FIGHTING:
+    act("Do you not consider fighting as standing?", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  default:
+    act("You stop floating around, and put your feet on the ground.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n stops floating around, and puts $s feet on the ground.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_STANDING;
+    break;
   }
 }
 
-ACMD(do_sit)
-{
+ACMD(do_sit) {
   switch (GET_POS(ch)) {
-    case POS_STANDING:
-      act("You sit down.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_SITTING;
-      break;
-    case POS_SITTING:
-      send_to_char("You're sitting already.\r\n", ch);
-      break;
-    case POS_RESTING:
-      act("You stop resting, and sit up.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n stops resting.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_SITTING;
-      break;
-    case POS_SLEEPING:
-      act("You have to wake up first.", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    case POS_FIGHTING:
-      act("Sit down while fighting? are you MAD?", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    default:
-      act("You stop floating around, and sit down.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n stops floating around, and sits down.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_SITTING;
-      break;
+  case POS_STANDING:
+    act("You sit down.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n sits down.", FALSE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_SITTING;
+    break;
+  case POS_SITTING:
+    send_to_char("You're sitting already.\r\n", ch);
+    break;
+  case POS_RESTING:
+    act("You stop resting, and sit up.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n stops resting.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_SITTING;
+    break;
+  case POS_SLEEPING:
+    act("You have to wake up first.", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  case POS_FIGHTING:
+    act("Sit down while fighting? are you MAD?", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  default:
+    act("You stop floating around, and sit down.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n stops floating around, and sits down.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_SITTING;
+    break;
   }
 }
 
-ACMD(do_rest)
-{
+ACMD(do_rest) {
   switch (GET_POS(ch)) {
-    case POS_STANDING:
-      act("You sit down and rest your tired bones.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n sits down and rests.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_RESTING;
-      break;
-    case POS_SITTING:
-      act("You rest your tired bones.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n rests.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_RESTING;
-      break;
-    case POS_RESTING:
-      act("You are already resting.", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    case POS_SLEEPING:
-      act("You have to wake up first.", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    case POS_FIGHTING:
-      act("Rest while fighting?  Are you MAD?", FALSE, ch, 0, 0, TO_CHAR);
-      break;
-    default:
-      act("You stop floating around, and stop to rest your tired bones.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n stops floating around, and rests.", FALSE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_SITTING;
-      break;
+  case POS_STANDING:
+    act("You sit down and rest your tired bones.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n sits down and rests.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_RESTING;
+    break;
+  case POS_SITTING:
+    act("You rest your tired bones.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n rests.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_RESTING;
+    break;
+  case POS_RESTING:
+    act("You are already resting.", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  case POS_SLEEPING:
+    act("You have to wake up first.", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  case POS_FIGHTING:
+    act("Rest while fighting?  Are you MAD?", FALSE, ch, 0, 0, TO_CHAR);
+    break;
+  default:
+    act("You stop floating around, and stop to rest your tired bones.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n stops floating around, and rests.", FALSE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_SITTING;
+    break;
   }
 }
 
-ACMD(do_sleep)
-{
+ACMD(do_sleep) {
   switch (GET_POS(ch)) {
-    case POS_STANDING:
-    case POS_SITTING:
-    case POS_RESTING:
-      send_to_char("You go to sleep.\r\n", ch);
-      act("$n lies down and falls asleep.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_SLEEPING;
-      break;
-    case POS_SLEEPING:
-      send_to_char("You are already sound asleep.\r\n", ch);
-      break;
-    case POS_FIGHTING:
-      send_to_char("Sleep while fighting?  Are you MAD?\r\n", ch);
-      break;
-    default:
-      act("You stop floating around, and lie down to sleep.", FALSE, ch, 0, 0, TO_CHAR);
-      act("$n stops floating around, and lie down to sleep.", TRUE, ch, 0, 0, TO_ROOM);
-      GET_POS(ch) = POS_SLEEPING;
-      break;
+  case POS_STANDING:
+  case POS_SITTING:
+  case POS_RESTING:
+    send_to_char("You go to sleep.\r\n", ch);
+    act("$n lies down and falls asleep.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_SLEEPING;
+    break;
+  case POS_SLEEPING:
+    send_to_char("You are already sound asleep.\r\n", ch);
+    break;
+  case POS_FIGHTING:
+    send_to_char("Sleep while fighting?  Are you MAD?\r\n", ch);
+    break;
+  default:
+    act("You stop floating around, and lie down to sleep.", FALSE, ch, 0, 0, TO_CHAR);
+    act("$n stops floating around, and lie down to sleep.", TRUE, ch, 0, 0, TO_ROOM);
+    GET_POS(ch) = POS_SLEEPING;
+    break;
   }
 }
 
-ACMD(do_wake)
-{
+ACMD(do_wake) {
   struct char_data *vict;
   int self = 0;
 
@@ -945,8 +943,7 @@ ACMD(do_wake)
   }
 }
 
-ACMD(do_follow)
-{
+ACMD(do_follow) {
   struct char_data *leader;
 
   void stop_follower(struct char_data * ch);
@@ -990,4 +987,3 @@ ACMD(do_follow)
     }
   }
 }
-

@@ -1,21 +1,21 @@
 /* QIC system, written by Mattias Larsson 1995 ml@eniac.campus.luth.se */
 
-#include <stdio.h>
-#include <stdlib.h>
 #include <assert.h>
 #include <ctype.h>
+#include <dirent.h>
+#include <errno.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <errno.h>
-#include <dirent.h>
 
+#include "comm.h"
+#include "db.h"
+#include "handler.h"
+#include "interpreter.h"
 #include "screen.h"
 #include "structs.h"
 #include "utils.h"
-#include "comm.h"
-#include "db.h"
-#include "interpreter.h"
-#include "handler.h"
 
 /* External Structures */
 extern struct descriptor_data *descriptor_list;
@@ -29,12 +29,11 @@ extern int top_of_p_table;
 /* Global variables for qic system */
 
 FILE *qic_fl = NULL; /* File identification for qic file */
-int qic_items; /* Number of items in database */
+int qic_items;       /* Number of items in database */
 
 int qic_vnums[500];
 
-void save_record(int j)
-{ /* save one record */
+void save_record(int j) { /* save one record */
   struct qic_data q;
 
   q.vnum = obj_index[j].virtual;
@@ -47,8 +46,7 @@ void save_record(int j)
   }
 }
 
-void load_qic(void)
-{
+void load_qic(void) {
   int size, i, nr, j;
   struct qic_data q;
 
@@ -104,8 +102,7 @@ void load_qic(void)
 
 } /* end of load thing */
 
-void save_qic(void)
-{ /* save the whole qic database */
+void save_qic(void) { /* save the whole qic database */
   struct qic_data q;
   int j;
 
@@ -137,18 +134,16 @@ void save_qic(void)
  QIC's and then returns TRUE to the caller. Otherwise it returns FALSE,
  and doesnt touch any counter at all. */
 
-int load_qic_check(int rnum)
-{
+int load_qic_check(int rnum) {
   if (obj_index[rnum].qic == NULL)
     return 1; /* okay to load, go ahead, no QIC record */
   if (obj_index[rnum].qic->items >= obj_index[rnum].qic->limit)
-    return 0; /* too many items in the game already */
+    return 0;                   /* too many items in the game already */
   obj_index[rnum].qic->items++; /* okay.. increase items counter */
-  return 1; /* and return true */
+  return 1;                     /* and return true */
 }
 
-void purge_qic(int rnum)
-{
+void purge_qic(int rnum) {
   if (obj_index[rnum].qic == NULL) {
     return;
   } else {
@@ -157,8 +152,7 @@ void purge_qic(int rnum)
   }
 }
 
-void qic_load(int rnum)
-{
+void qic_load(int rnum) {
   if (obj_index[rnum].qic == NULL) {
     return;
   } else {
@@ -166,8 +160,7 @@ void qic_load(int rnum)
   }
 }
 
-void add_owner(int nr, char *name)
-{
+void add_owner(int nr, char *name) {
   int i;
 
   if (name == NULL)
@@ -182,12 +175,10 @@ void add_owner(int nr, char *name)
       safe_snprintf(obj_index[nr].qic->owners[i], sizeof(obj_index[nr].qic->owners[i]), "%s", name);
       return;
     }
-
 }
 
 /* Scan a single rent database file for QIC's */
-void qic_scan_file(char * name, long id)
-{
+void qic_scan_file(char *name, long id) {
   char fname[MAX_STRING_LENGTH];
   int j, nr, vnum;
   FILE *fl;
@@ -219,7 +210,7 @@ void qic_scan_file(char * name, long id)
         if (vnum == qic_vnums[j]) { /* okay, found a qic */
           if ((nr = real_object(vnum)) >= 0) {
             obj_index[nr].qic->items++; /* maybe a check to add for NULL qic? */
-            add_owner(nr, name); /* add owner to owner list */
+            add_owner(nr, name);        /* add owner to owner list */
           } /* end real_obj */
         }
       } /* for */
@@ -231,8 +222,7 @@ void qic_scan_file(char * name, long id)
 }
 
 /* Scans through the whole rent database and sets the current QIC values */
-void qic_scan_rent(void)
-{
+void qic_scan_rent(void) {
   int i;
   DIR *rp;
   struct dirent *dirp;
@@ -314,8 +304,7 @@ void qic_scan_rent(void)
   return;
 }
 
-ACMD(do_setqic)
-{
+ACMD(do_setqic) {
   struct qic_data *q;
   int i, j;
 
@@ -349,28 +338,25 @@ ACMD(do_setqic)
     CREATE(q, struct qic_data, 1);
     obj_index[i].qic = q;
     q->vnum = qic_items; /* rec in database file */
-    q->items = 0; /* since it's a new QIC, no items loaded */
-    q->limit = j; /* the QIC limit */
-    qic_items++; /* increase max pointer */
+    q->items = 0;        /* since it's a new QIC, no items loaded */
+    q->limit = j;        /* the QIC limit */
+    qic_items++;         /* increase max pointer */
   } else {
     q = obj_index[i].qic; /* we already have a QIC record */
-    q->limit = j; /* set the new limit */
+    q->limit = j;         /* set the new limit */
   }
   save_record(i); /* save the QIC record */
   send_to_char(OK, ch);
 }
 
-ACMD(do_qicsave)
-{
+ACMD(do_qicsave) {
 
   send_to_char("Forcing save and reload of QIC item database.\r\n", ch);
   save_qic();
   load_qic();
-
 }
 
-ACMD(do_qicinfo)
-{
+ACMD(do_qicinfo) {
   int i;
   size_t sblen;
 
@@ -378,18 +364,20 @@ ACMD(do_qicinfo)
 
   for (i = 0; i < top_of_objt; i++) {
     if (obj_index[i].qic != NULL) {
-      sblen += safe_snprintf(string_buf + sblen, MAX_STRING_LENGTH * 2 - sblen, "%s[%s%5d%s]%s %-50s %sIn:%s %2d%s, Lim: %s%2d%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].virtual, CBBLU(ch, C_CMP), CCCYN(ch, C_CMP), obj_proto[i].short_description, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->items, CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->limit, CCNRM(ch, C_NRM));
+      sblen += safe_snprintf(string_buf + sblen, MAX_STRING_LENGTH * 2 - sblen,
+                             "%s[%s%5d%s]%s %-50s %sIn:%s %2d%s, Lim: %s%2d%s\r\n", CBBLU(ch, C_CMP), CBWHT(ch, C_CMP),
+                             obj_index[i].virtual, CBBLU(ch, C_CMP), CCCYN(ch, C_CMP), obj_proto[i].short_description,
+                             CBBLU(ch, C_CMP), CBWHT(ch, C_CMP), obj_index[i].qic->items, CBBLU(ch, C_CMP),
+                             CBWHT(ch, C_CMP), obj_index[i].qic->limit, CCNRM(ch, C_NRM));
     }
     if (sblen > MAX_STRING_LENGTH * 2 - 256)
       break;
   }
 
   page_string(ch->desc, string_buf, 0);
-
 }
 
-/* List owners of a QIC item */ACMD(do_owners)
-{
+/* List owners of a QIC item */ ACMD(do_owners) {
   int i, j;
 
   one_argument(argument, arg);
@@ -409,21 +397,21 @@ ACMD(do_qicinfo)
     return;
   }
 
-  safe_snprintf(buf, MAX_STRING_LENGTH, "Registered owners at boot (item #%d - %s):\r\n", obj_index[i].virtual, obj_proto[i].short_description);
+  safe_snprintf(buf, MAX_STRING_LENGTH, "Registered owners at boot (item #%d - %s):\r\n", obj_index[i].virtual,
+                obj_proto[i].short_description);
   send_to_char(buf, ch);
 
   for (j = 0; j < QIC_OWNERS; j += 2) {
     if (obj_index[i].qic->owners[j][0] == '\0')
       break;
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%20.20s  %20.20s\r\n", obj_index[i].qic->owners[j], obj_index[i].qic->owners[j + 1] ? obj_index[i].qic->owners[j + 1] : "");
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%20.20s  %20.20s\r\n", obj_index[i].qic->owners[j],
+                  obj_index[i].qic->owners[j + 1] ? obj_index[i].qic->owners[j + 1] : "");
     send_to_char(buf, ch);
   }
   send_to_char("\r\n", ch);
-
 }
 
-ACMD(do_qload)
-{
+ACMD(do_qload) {
   struct obj_data *obj;
   int number, r_num;
 

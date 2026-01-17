@@ -12,14 +12,14 @@
 #include <stdlib.h>
 #include <string.h>
 
+#include "comm.h"
+#include "db.h"
+#include "event.h"
+#include "handler.h"
+#include "interpreter.h"
+#include "spells.h"
 #include "structs.h"
 #include "utils.h"
-#include "db.h"
-#include "comm.h"
-#include "interpreter.h"
-#include "handler.h"
-#include "event.h"
-#include "spells.h"
 
 /* external structs */
 extern struct zone_data *zone_table;
@@ -32,18 +32,18 @@ extern sh_int stats[11][101];
 extern struct spell_info_type *spells;
 
 int find_skill_num(char *name);
-void mprog_random_trigger(struct char_data * mob);
-void mprog_wordlist_check(char *arg, struct char_data * mob, struct char_data * actor, struct obj_data * obj, void *vo, int type);
+void mprog_random_trigger(struct char_data *mob);
+void mprog_wordlist_check(char *arg, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
+                          int type);
 extern int is_empty(int zone_nr);
-extern void raw_kill(struct char_data * ch, struct char_data * killer);
-extern void hunt_aggro(struct char_data * ch);
-extern void hunt_room(struct char_data * ch);
+extern void raw_kill(struct char_data *ch, struct char_data *killer);
+extern void hunt_aggro(struct char_data *ch);
+extern void hunt_room(struct char_data *ch);
 void improve_skill(struct char_data *ch, int skill, int chance);
 
 #define MOB_AGGR_TO_ALIGN MOB_AGGR_EVIL | MOB_AGGR_NEUTRAL | MOB_AGGR_GOOD
 
-void perform_mob_defense(void)
-{
+void perform_mob_defense(void) {
   struct char_data *ch;
   struct char_data *next_ch;
   int mobdef = 0;
@@ -61,30 +61,30 @@ void perform_mob_defense(void)
 
     if (IS_MOB(ch) && MOB_FLAGGED(ch, MOB_HAS_MAGE)) {
       switch (number(0, 5)) {
-        case 1:
-          mobdef = 1;
-          if (!AFF2_FLAGGED(ch, AFF2_FIRESHIELD) && !AFF2_FLAGGED(ch, AFF2_ICESHIELD)) {
-            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'fire shield' me");
-          }
-          break;
-        case 2:
-          mobdef = 1;
-          if (!AFF2_FLAGGED(ch, AFF2_ICESHIELD) && !AFF2_FLAGGED(ch, AFF2_FIRESHIELD)) {
-            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'ice shield' me");
-          }
-          break;
-        case 3:
-          mobdef = 1;
-          if (!AFF2_FLAGGED(ch, AFF2_STONESKIN)) {
-            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'stoneskin' me");
-          }
-          break;
-        case 4:
-          mobdef = 1;
-          if (!AFF2_FLAGGED(ch, AFF2_VAMPTOUCH)) {
-            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'vampiric touch' me");
-          }
-          break;
+      case 1:
+        mobdef = 1;
+        if (!AFF2_FLAGGED(ch, AFF2_FIRESHIELD) && !AFF2_FLAGGED(ch, AFF2_ICESHIELD)) {
+          safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'fire shield' me");
+        }
+        break;
+      case 2:
+        mobdef = 1;
+        if (!AFF2_FLAGGED(ch, AFF2_ICESHIELD) && !AFF2_FLAGGED(ch, AFF2_FIRESHIELD)) {
+          safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'ice shield' me");
+        }
+        break;
+      case 3:
+        mobdef = 1;
+        if (!AFF2_FLAGGED(ch, AFF2_STONESKIN)) {
+          safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'stoneskin' me");
+        }
+        break;
+      case 4:
+        mobdef = 1;
+        if (!AFF2_FLAGGED(ch, AFF2_VAMPTOUCH)) {
+          safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'vampiric touch' me");
+        }
+        break;
       }
       if (mobdef) {
         command_interpreter(ch, mobdefbuf);
@@ -100,48 +100,48 @@ void perform_mob_defense(void)
       }
       if (!mobdef) {
         switch (AFF_FLAGGED(ch, AFF_BLIND) ? 7 : number(0, 6)) {
-          case 1:
-            mobdef = 1;
-            if (!AFF_FLAGGED(ch, AFF_AID)) {
-              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'aid' me");
-            }
-            break;
-          case 2:
-            mobdef = 1;
-            if (!AFF_FLAGGED(ch, AFF_BLESS)) {
-              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'bless' me");
-            }
-            break;
-          case 3:
-            mobdef = 1;
-            if (!AFF2_FLAGGED(ch, AFF2_BARKSKIN)) {
-              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'barkskin' me");
-            }
-            break;
-          case 4:
-            mobdef = 1;
-            if (!AFF2_FLAGGED(ch, AFF2_ARMOR)) {
-              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'armor' me");
-            }
-            break;
-          case 5:
-            mobdef = 1;
-            if (AFF_FLAGGED(ch, AFF_POISON)) {
-              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure poison' me");
-            }
-            break;
-          case 6:
-            mobdef = 1;
-            if (AFF_FLAGGED(ch, AFF_DISEASE)) {
-              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure disease' me");
-            }
-            break;
-          case 7:
-            mobdef = 1;
-            if (AFF_FLAGGED(ch, AFF_BLIND)) {
-              safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure blind' me");
-            }
-            break;
+        case 1:
+          mobdef = 1;
+          if (!AFF_FLAGGED(ch, AFF_AID)) {
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'aid' me");
+          }
+          break;
+        case 2:
+          mobdef = 1;
+          if (!AFF_FLAGGED(ch, AFF_BLESS)) {
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'bless' me");
+          }
+          break;
+        case 3:
+          mobdef = 1;
+          if (!AFF2_FLAGGED(ch, AFF2_BARKSKIN)) {
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'barkskin' me");
+          }
+          break;
+        case 4:
+          mobdef = 1;
+          if (!AFF2_FLAGGED(ch, AFF2_ARMOR)) {
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'armor' me");
+          }
+          break;
+        case 5:
+          mobdef = 1;
+          if (AFF_FLAGGED(ch, AFF_POISON)) {
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure poison' me");
+          }
+          break;
+        case 6:
+          mobdef = 1;
+          if (AFF_FLAGGED(ch, AFF_DISEASE)) {
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure disease' me");
+          }
+          break;
+        case 7:
+          mobdef = 1;
+          if (AFF_FLAGGED(ch, AFF_BLIND)) {
+            safe_snprintf(mobdefbuf, sizeof(mobdefbuf), "cast 'cure blind' me");
+          }
+          break;
         }
       }
       if (mobdef) {
@@ -151,23 +151,23 @@ void perform_mob_defense(void)
   }
 }
 
-void mobile_activity(void)
-{
+void mobile_activity(void) {
   register struct char_data *ch, *next_ch, *vict;
   struct obj_data *obj, *best_obj;
   struct mob_action_data *action;
   int door, found, max;
   memory_rec *names;
   int skillnum = spells[find_skill_num("aggressive")].spellindex;
-  char *resetpos[] = {"stand", /* dead  */
-  "stand", /* mort  */
-  "stand", /* incap */
-  "stand", /* stunn */
-  "sleep", /* sleep */
-  "rest", /* rest  */
-  "sit", /* sit   */
-  "stand", /* fight */
-  "stand" /* stand */
+  char *resetpos[] = {
+      "stand", /* dead  */
+      "stand", /* mort  */
+      "stand", /* incap */
+      "stand", /* stunn */
+      "sleep", /* sleep */
+      "rest",  /* rest  */
+      "sit",   /* sit   */
+      "stand", /* fight */
+      "stand"  /* stand */
   };
 
   extern int no_specials;
@@ -178,7 +178,8 @@ void mobile_activity(void)
     if (!IS_MOB(ch) || FIGHTING(ch) || AFF2_FLAGGED(ch, AFF2_CASTING))
       continue;
     /* Examine call for special procedure */
-    if (!no_specials && GET_MOB_SPEC(ch) != NULL && (IS_SET(SPEC_MOB_TYPE(ch), SPEC_STANDARD) || IS_SET(SPEC_MOB_TYPE(ch), SPEC_HEARTBEAT))) {
+    if (!no_specials && GET_MOB_SPEC(ch) != NULL &&
+        (IS_SET(SPEC_MOB_TYPE(ch), SPEC_STANDARD) || IS_SET(SPEC_MOB_TYPE(ch), SPEC_HEARTBEAT))) {
       if ((mob_index[GET_MOB_RNUM(ch)].func)(ch, ch, 0, "", SPEC_HEARTBEAT))
         continue; /* go to next char */
     }
@@ -195,7 +196,8 @@ void mobile_activity(void)
     }
 
     /* Scavenger (picking up objects) */
-    if (MOB_FLAGGED(ch, MOB_SCAVENGER) && !FIGHTING(ch) && AWAKE(ch) && !AFF2_FLAGGED(ch, AFF2_MINOR_PARALIZED) && !AFF_FLAGGED(ch, AFF_MAJOR_PARALIZED))
+    if (MOB_FLAGGED(ch, MOB_SCAVENGER) && !FIGHTING(ch) && AWAKE(ch) && !AFF2_FLAGGED(ch, AFF2_MINOR_PARALIZED) &&
+        !AFF_FLAGGED(ch, AFF_MAJOR_PARALIZED))
       if (world[ch->in_room].contents && !number(0, 10)) {
         max = 1;
         best_obj = NULL;
@@ -212,14 +214,21 @@ void mobile_activity(void)
       }
 
     /* Mob Movement */
-    if (!HUNTING(ch) && !AFF2_FLAGGED(ch, AFF2_MINOR_PARALIZED) && !AFF_FLAGGED(ch, AFF_MAJOR_PARALIZED) && !MOUNTED_BY(ch) && !MOB_FLAGGED(ch, MOB_SENTINEL) && (GET_POS(ch) == POS_STANDING) && ((door = number(0, 18)) < NUM_OF_DIRS) && CAN_GO(ch, door) && !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_NOMOB | ROOM_DEATH) && (!MOB_FLAGGED(ch, MOB_STAY_ZONE) || (world[EXIT(ch, door)->to_room].zone == world[ch->in_room].zone)) && !(MOB_FLAGGED(ch, MOB_WATERONLY) && (world[EXIT(ch, door)->to_room].sector_type != SECT_WATER_NOSWIM && world[EXIT(ch, door)->to_room].sector_type != SECT_WATER_SWIM && world[EXIT(ch, door)->to_room].sector_type != SECT_UNDERWATER))) {
+    if (!HUNTING(ch) && !AFF2_FLAGGED(ch, AFF2_MINOR_PARALIZED) && !AFF_FLAGGED(ch, AFF_MAJOR_PARALIZED) &&
+        !MOUNTED_BY(ch) && !MOB_FLAGGED(ch, MOB_SENTINEL) && (GET_POS(ch) == POS_STANDING) &&
+        ((door = number(0, 18)) < NUM_OF_DIRS) && CAN_GO(ch, door) &&
+        !ROOM_FLAGGED(EXIT(ch, door)->to_room, ROOM_NOMOB | ROOM_DEATH) &&
+        (!MOB_FLAGGED(ch, MOB_STAY_ZONE) || (world[EXIT(ch, door)->to_room].zone == world[ch->in_room].zone)) &&
+        !(MOB_FLAGGED(ch, MOB_WATERONLY) && (world[EXIT(ch, door)->to_room].sector_type != SECT_WATER_NOSWIM &&
+                                             world[EXIT(ch, door)->to_room].sector_type != SECT_WATER_SWIM &&
+                                             world[EXIT(ch, door)->to_room].sector_type != SECT_UNDERWATER))) {
       perform_move(ch, door, 1);
     }
     if (GET_POS(ch) != GET_DEFAULT_POS(ch)) {
       if (GET_POS(ch) == POS_SLEEPING && GET_DEFAULT_POS(ch) != POS_SLEEPING) {
         command_interpreter(ch, "wake");
       }
-      command_interpreter(ch, resetpos[(int) GET_DEFAULT_POS(ch)]);
+      command_interpreter(ch, resetpos[(int)GET_DEFAULT_POS(ch)]);
     }
     if (!HUNTING(ch) && MOB_FLAGGED(ch, MOB_SENTINEL) && ch->in_room != ch->loadin) {
       HUNTINGRM(ch) = ch->loadin;
@@ -237,7 +246,9 @@ void mobile_activity(void)
           continue;
         if (AFF2_FLAGGED(ch, AFF2_MINOR_PARALIZED) || AFF_FLAGGED(ch, AFF_MAJOR_PARALIZED))
           continue;
-        if (!MOB_FLAGGED(ch, MOB_AGGR_TO_ALIGN) || (MOB_FLAGGED(ch, MOB_AGGR_EVIL) && IS_EVIL(vict)) || (MOB_FLAGGED(ch, MOB_AGGR_NEUTRAL) && IS_NEUTRAL(vict)) || (MOB_FLAGGED(ch, MOB_AGGR_GOOD) && IS_GOOD(vict))) {
+        if (!MOB_FLAGGED(ch, MOB_AGGR_TO_ALIGN) || (MOB_FLAGGED(ch, MOB_AGGR_EVIL) && IS_EVIL(vict)) ||
+            (MOB_FLAGGED(ch, MOB_AGGR_NEUTRAL) && IS_NEUTRAL(vict)) ||
+            (MOB_FLAGGED(ch, MOB_AGGR_GOOD) && IS_GOOD(vict))) {
           if (GET_SKILL(vict, skillnum) > number(0, 101)) {
             improve_skill(vict, skillnum, SKUSE_AVERAGE);
             hit(vict, ch, TYPE_UNDEFINED);
@@ -267,7 +278,8 @@ void mobile_activity(void)
     if (MOB_FLAGGED(ch, MOB_HELPER)) {
       found = FALSE;
       for (vict = world[ch->in_room].people; vict && !found; vict = vict->next_in_room) {
-        if (ch && vict && ch != vict && IS_NPC(vict) && GET_MOB_RACE(vict) == GET_MOB_RACE(ch) && FIGHTING(vict) && CAN_SEE(ch, vict) && CAN_SEE(ch, FIGHTING(vict)) && !AFF_FLAGGED(ch, AFF_CHARM)) {
+        if (ch && vict && ch != vict && IS_NPC(vict) && GET_MOB_RACE(vict) == GET_MOB_RACE(ch) && FIGHTING(vict) &&
+            CAN_SEE(ch, vict) && CAN_SEE(ch, FIGHTING(vict)) && !AFF_FLAGGED(ch, AFF_CHARM)) {
           if (!IS_NPC(FIGHTING(vict)) || (IS_NPC(FIGHTING(vict)) && AFF_FLAGGED(FIGHTING(vict), AFF_CHARM))) {
             act("$n jumps to the aid of $N!", FALSE, ch, 0, vict, TO_ROOM);
             hit(ch, FIGHTING(vict), TYPE_UNDEFINED);
@@ -279,10 +291,13 @@ void mobile_activity(void)
 
     if (MOB_FLAGGED(ch, MOB_WATERONLY)) {
       found = FALSE;
-      if (!(world[ch->in_room].sector_type == SECT_WATER_NOSWIM || world[ch->in_room].sector_type == SECT_WATER_SWIM || world[ch->in_room].sector_type == SECT_UNDERWATER)) {
+      if (!(world[ch->in_room].sector_type == SECT_WATER_NOSWIM || world[ch->in_room].sector_type == SECT_WATER_SWIM ||
+            world[ch->in_room].sector_type == SECT_UNDERWATER)) {
         act("$n lies on the ground, suffering from being on dry land!", FALSE, ch, 0, 0, TO_ROOM);
         act("$n chokes to death!", FALSE, ch, 0, 0, TO_ROOM);
-        send_to_char("Argh! Where is the water? This is not the right element for you!\r\nYou fall down on the ground, in terrible pain! You are dead!\r\n", ch);
+        send_to_char("Argh! Where is the water? This is not the right element for you!\r\nYou fall down on the ground, "
+                     "in terrible pain! You are dead!\r\n",
+                     ch);
         raw_kill(ch, ch);
       }
     }
@@ -292,7 +307,8 @@ void mobile_activity(void)
       } else if (isname("fire", GET_NAME(ch))) {
         act("With a loud puffing sound, $n disolves in a puff of smoke!", FALSE, ch, 0, 0, TO_ROOM);
       } else if (isname("earth", GET_NAME(ch))) {
-        act("With a loud crash, $n dives into the ground. Only small stones remain where it once stood.", FALSE, ch, 0, 0, TO_ROOM);
+        act("With a loud crash, $n dives into the ground. Only small stones remain where it once stood.", FALSE, ch, 0,
+            0, TO_ROOM);
       } else if (isname("air", GET_NAME(ch))) {
         act("$n dissipates in a gust of wind!", FALSE, ch, 0, 0, TO_ROOM);
       }
@@ -313,8 +329,7 @@ void mobile_activity(void)
 /* Mob Memory Routines */
 
 /* make ch remember victim */
-void remember(struct char_data * ch, struct char_data * victim)
-{
+void remember(struct char_data *ch, struct char_data *victim) {
   memory_rec *tmp;
   bool present = FALSE;
 
@@ -334,8 +349,7 @@ void remember(struct char_data * ch, struct char_data * victim)
 }
 
 /* make ch forget victim */
-void forget(struct char_data * ch, struct char_data * victim)
-{
+void forget(struct char_data *ch, struct char_data *victim) {
   memory_rec *curr = NULL, *prev = NULL;
 
   if (!ch || !victim) {
@@ -363,8 +377,7 @@ void forget(struct char_data * ch, struct char_data * victim)
 }
 
 /* erase ch's memory */
-void clearMemory(struct char_data * ch)
-{
+void clearMemory(struct char_data *ch) {
   memory_rec *curr, *next;
 
   curr = MEMORY(ch);
@@ -378,8 +391,7 @@ void clearMemory(struct char_data * ch)
   MEMORY(ch) = NULL;
 }
 
-void perform_mob_hunt()
-{
+void perform_mob_hunt() {
   register struct char_data *ch, *next_ch;
 
   for (ch = character_list; ch; ch = next_ch) {
@@ -397,8 +409,7 @@ void perform_mob_hunt()
   }
 }
 
-void perform_mobprog_activity()
-{
+void perform_mobprog_activity() {
   register struct char_data *ch, *next_ch;
 
   for (ch = character_list; ch; ch = next_ch) {

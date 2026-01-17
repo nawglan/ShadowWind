@@ -1,4 +1,6 @@
-#include <stdlib.h>
+#include "lookup_process.h"
+#include "../ident.h"
+#include "../structs.h"
 #include <ctype.h>
 #include <errno.h>
 #include <fcntl.h>
@@ -6,14 +8,12 @@
 #include <netinet/in.h>
 #include <signal.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/socket.h>
 #include <sys/time.h>
 #include <sys/wait.h>
 #include <unistd.h>
-#include "../structs.h"
-#include "../ident.h"
-#include "lookup_process.h"
 
 extern pid_t getpid(void);
 
@@ -24,17 +24,15 @@ static pid_t parent_pid;
 
 static int get_message(int type, void *buffer, int msgsz);
 static void clean_up(void);
-static void setup_pid_file(char* dir);
+static void setup_pid_file(char *dir);
 static void setup_signals(void);
 
-void clean_up(void)
-{
+void clean_up(void) {
   raise(SIGKILL);
   exit(1);
 }
 
-void setup_pid_file(char* dir)
-{
+void setup_pid_file(char *dir) {
   FILE *pid_file;
   char filename[MAX_STRING_LENGTH];
 
@@ -45,7 +43,7 @@ void setup_pid_file(char* dir)
   if ((pid_file = fopen(filename, "r")) != NULL) {
     pid_t old_pid;
 
-    if (fscanf(pid_file, "%d", (int*) &old_pid)) {
+    if (fscanf(pid_file, "%d", (int *)&old_pid)) {
       /* okay.. got a pid number... now lets try to find if it exists and kill it if so */
       if (old_pid && kill(old_pid, SIGTERM)) {
         /* errno:  ESRCH:   No such PID.
@@ -64,24 +62,22 @@ void setup_pid_file(char* dir)
     fprintf(stderr, "Unable to open %s for writing\n", filename);
     raise(SIGABRT);
   }
-  fprintf(pid_file, "%d\n", (int) getpid());
+  fprintf(pid_file, "%d\n", (int)getpid());
   fclose(pid_file);
 }
 
-void setup_signals(void)
-{
-  signal(SIGINT, (void *) clean_up); /* keyboard interrupt */
-  signal(SIGQUIT, (void *) clean_up); /* quit from keyboard */
-  signal(SIGABRT, (void *) clean_up); /* abort */
-  signal(SIGFPE, (void *) clean_up); /* floating point exception */
-  signal(SIGKILL, (void *) clean_up); /* termination signal */
-  signal(SIGSEGV, (void *) clean_up); /* segmentation fault */
-  signal(SIGALRM, (void *) clean_up); /* alarm */
-  signal(SIGTERM, (void *) clean_up); /* termination signal */
+void setup_signals(void) {
+  signal(SIGINT, (void *)clean_up);  /* keyboard interrupt */
+  signal(SIGQUIT, (void *)clean_up); /* quit from keyboard */
+  signal(SIGABRT, (void *)clean_up); /* abort */
+  signal(SIGFPE, (void *)clean_up);  /* floating point exception */
+  signal(SIGKILL, (void *)clean_up); /* termination signal */
+  signal(SIGSEGV, (void *)clean_up); /* segmentation fault */
+  signal(SIGALRM, (void *)clean_up); /* alarm */
+  signal(SIGTERM, (void *)clean_up); /* termination signal */
 }
 
-int get_message(int type, void *buffer, int msgsz)
-{
+int get_message(int type, void *buffer, int msgsz) {
   if (read(dns_send_fifo, buffer, msgsz) == -1) {
     if (errno == EAGAIN) {
       return -1;
@@ -94,8 +90,7 @@ int get_message(int type, void *buffer, int msgsz)
   return 1;
 }
 
-int main(int argc, char** argv)
-{
+int main(int argc, char **argv) {
   struct host_answer ans_buf;
   struct host_request req_buf;
   struct hostent *from;
@@ -106,17 +101,17 @@ int main(int argc, char** argv)
 
   while ((pos < argc) && (*(argv[pos]) == '-')) {
     switch (*(argv[pos] + 1)) {
-      case 'd':
-        if (*(argv[pos] + 2))
-          dir = argv[pos] + 2;
-        else if (++pos < argc)
-          dir = argv[pos];
-        else {
-          fprintf(stderr, "Directory arg expected after option -d.\n");
-          fflush(NULL);
-          exit(1);
-        }
-        break;
+    case 'd':
+      if (*(argv[pos] + 2))
+        dir = argv[pos] + 2;
+      else if (++pos < argc)
+        dir = argv[pos];
+      else {
+        fprintf(stderr, "Directory arg expected after option -d.\n");
+        fflush(NULL);
+        exit(1);
+      }
+      break;
     }
   }
 
@@ -141,11 +136,11 @@ int main(int argc, char** argv)
   }
   parent_pid = getppid(); /* if my parent pid changes, then it must mean that my parent died... so
    I should as well */
-  fprintf(stderr, "%s lookup process started with parent ID %d\n", my_name, (int) parent_pid);
+  fprintf(stderr, "%s lookup process started with parent ID %d\n", my_name, (int)parent_pid);
   fflush(NULL);
 
   while (1) {
-    while ((found = get_message(MSG_HOST_REQ, (void *) &req_buf, sizeof(struct host_request))) == -1)
+    while ((found = get_message(MSG_HOST_REQ, (void *)&req_buf, sizeof(struct host_request))) == -1)
       ;
     if (found) {
 
@@ -160,7 +155,7 @@ int main(int argc, char** argv)
       ans_buf.desc = req_buf.desc;
       strcpy(ans_buf.addr, req_buf.addr);
 
-      if (!(from = gethostbyaddr((char *) &req_buf.sock.sin_addr, sizeof(req_buf.sock.sin_addr), AF_INET))) {
+      if (!(from = gethostbyaddr((char *)&req_buf.sock.sin_addr, sizeof(req_buf.sock.sin_addr), AF_INET))) {
         if (h_errno != 1)
           strcpy(ans_buf.hostname, req_buf.addr);
       } else {
@@ -169,7 +164,7 @@ int main(int argc, char** argv)
       }
 
       /* send the answer back... */
-      if (write(dns_receive_fifo, (void *) &ans_buf, sizeof(struct host_answer)) == -1) {
+      if (write(dns_receive_fifo, (void *)&ans_buf, sizeof(struct host_answer)) == -1) {
         perror("write");
         clean_up();
         break;

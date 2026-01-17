@@ -8,21 +8,21 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#include <ctype.h>
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
-#include <errno.h>
 
-#include "structs.h"
 #include "comm.h"
-#include "handler.h"
 #include "db.h"
-#include "interpreter.h"
-#include "utils.h"
+#include "handler.h"
 #include "house.h"
+#include "interpreter.h"
+#include "structs.h"
+#include "utils.h"
 
 extern char *dirs[];
 extern struct room_data *world;
@@ -32,7 +32,7 @@ extern struct index_data *obj_index;
 extern int load_qic_check(int rnum);
 
 struct obj_data *Obj_from_store(struct obj_file_elem object);
-int Obj_to_store(struct obj_data * obj, int pos, FILE * fl);
+int Obj_to_store(struct obj_data *obj, int pos, FILE *fl);
 
 struct house_control_rec house_control[MAX_HOUSES];
 int num_of_houses = 0;
@@ -43,8 +43,7 @@ int obj_count;
 /* First, the basics: finding the filename; loading/saving objects */
 
 /* Return a filename given a house vnum */
-int House_get_filename(int vnum, char *filename)
-{
+int House_get_filename(int vnum, char *filename) {
   if (vnum < 0)
     return 0;
 
@@ -54,8 +53,7 @@ int House_get_filename(int vnum, char *filename)
 
 /* Modified by Rasmus Bertelsen */
 /* Load all objects for a house */
-int House_load(int vnum)
-{
+int House_load(int vnum) {
   FILE *fl;
   char fname[MAX_STRING_LENGTH];
   struct obj_file_elem object;
@@ -116,8 +114,7 @@ int House_load(int vnum)
 /* Modified by Rasmus Bertelsen */
 /* Save all objects for a house (recursive; initial call must be followed
  by a call to House_restore_weight)  Assumes file is open already. */
-int House_save(struct obj_data * obj, int pos, FILE * fp)
-{
+int House_save(struct obj_data *obj, int pos, FILE *fp) {
   int Crash_obj_weight(struct obj_data * obj);
   int result;
 
@@ -135,14 +132,12 @@ int House_save(struct obj_data * obj, int pos, FILE * fp)
 
     House_save(obj->contains, obj_count, fp);
     House_save(obj->next_content, pos, fp);
-
   }
   return 1;
 }
 
 /* restore weight of containers after House_save has changed them for saving */
-void House_restore_weight(struct obj_data * obj)
-{
+void House_restore_weight(struct obj_data *obj) {
   if (obj) {
     House_restore_weight(obj->contains);
     House_restore_weight(obj->next_content);
@@ -153,8 +148,7 @@ void House_restore_weight(struct obj_data * obj)
 
 /* Modified by Rasmus Bertelsen */
 /* Save all objects in a house */
-void House_crashsave(int vnum)
-{
+void House_crashsave(int vnum) {
   int rnum;
   char buf[MAX_STRING_LENGTH];
   FILE *fp;
@@ -179,8 +173,7 @@ void House_crashsave(int vnum)
 }
 
 /* Delete a house save file */
-void House_delete_file(int vnum)
-{
+void House_delete_file(int vnum) {
   char buf[MAX_INPUT_LENGTH], fname[MAX_INPUT_LENGTH];
   FILE *fl;
 
@@ -201,8 +194,7 @@ void House_delete_file(int vnum)
 }
 
 /* List all objects in a house file */
-void House_listrent(struct char_data * ch, int vnum)
-{
+void House_listrent(struct char_data *ch, int vnum) {
   FILE *fl;
   char fname[MAX_STRING_LENGTH];
   char buf[MAX_STRING_LENGTH];
@@ -224,7 +216,8 @@ void House_listrent(struct char_data * ch, int vnum)
       return;
     }
     if (!feof(fl) && (obj = Obj_from_store(object)) != NULL) {
-      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " [%5d] (%5dau) %s\r\n", GET_OBJ_VNUM(obj), GET_OBJ_RENT(obj), obj->short_description);
+      safe_snprintf(buf + strlen(buf), MAX_STRING_LENGTH - strlen(buf), " [%5d] (%5dau) %s\r\n", GET_OBJ_VNUM(obj),
+                    GET_OBJ_RENT(obj), obj->short_description);
       free_obj(obj);
     }
   }
@@ -237,8 +230,7 @@ void House_listrent(struct char_data * ch, int vnum)
  *  Functions for house administration (creation, deletion, etc.  *
  *****************************************************************/
 
-int find_house(sh_int vnum)
-{
+int find_house(sh_int vnum) {
   int i;
 
   for (i = 0; i < num_of_houses; i++)
@@ -248,8 +240,7 @@ int find_house(sh_int vnum)
   return -1;
 }
 
-char* House_find_owner(sh_int vnum)
-{
+char *House_find_owner(sh_int vnum) {
   int i;
 
   for (i = 0; i < num_of_houses; i++)
@@ -260,8 +251,7 @@ char* House_find_owner(sh_int vnum)
 }
 
 /* Save the house control information */
-void House_save_control(void)
-{
+void House_save_control(void) {
   FILE *fl;
 
   if (!(fl = fopen(HCONTROL_FILE, "wb"))) {
@@ -276,13 +266,12 @@ void House_save_control(void)
 
 /* call from boot_db - will load control recs, load objs, set atrium bits */
 /* should do sanity checks on vnums & remove invalid records */
-void House_boot(void)
-{
+void House_boot(void) {
   struct house_control_rec temp_house;
   sh_int real_house, real_atrium;
   FILE *fl;
 
-  memset((char *) house_control, 0, sizeof(struct house_control_rec) * MAX_HOUSES);
+  memset((char *)house_control, 0, sizeof(struct house_control_rec) * MAX_HOUSES);
 
   if (!(fl = fopen(HCONTROL_FILE, "rb"))) {
     log("House control file does not exist.");
@@ -323,11 +312,10 @@ void House_boot(void)
 /* "House Control" functions */
 
 char *HCONTROL_FORMAT = "Usage: hcontrol build <house vnum> <exit direction> <player name>\r\n"
-    "       hcontrol destroy <house vnum>\r\n"
-    "       hcontrol pay <house vnum>\r\n";
+                        "       hcontrol destroy <house vnum>\r\n"
+                        "       hcontrol pay <house vnum>\r\n";
 
-void hcontrol_list_houses(struct char_data * ch)
-{
+void hcontrol_list_houses(struct char_data *ch) {
   int i, j;
   char *timestr;
   char built_on[50], last_pay[50], own_name[50];
@@ -336,8 +324,10 @@ void hcontrol_list_houses(struct char_data * ch)
     send_to_char("No houses have been defined.\r\n", ch);
     return;
   }
-  size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Address  Atrium  Build Date  Guests  Owner        Last Paymt\r\n");
-  len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "-------  ------  ----------  ------  ------------ ----------\r\n");
+  size_t len =
+      safe_snprintf(buf, MAX_STRING_LENGTH, "Address  Atrium  Build Date  Guests  Owner        Last Paymt\r\n");
+  len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len,
+                       "-------  ------  ----------  ------  ------------ ----------\r\n");
 
   for (i = 0; i < num_of_houses; i++) {
     if (house_control[i].built_on) {
@@ -356,7 +346,9 @@ void hcontrol_list_houses(struct char_data * ch)
 
     safe_snprintf(own_name, sizeof(own_name), "%s", house_control[i].owner);
 
-    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%7d %7d  %-10s    %2d    %-12s %s\r\n", house_control[i].vnum, house_control[i].atrium, built_on, house_control[i].num_of_guests, CAP(own_name), last_pay);
+    len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "%7d %7d  %-10s    %2d    %-12s %s\r\n",
+                         house_control[i].vnum, house_control[i].atrium, built_on, house_control[i].num_of_guests,
+                         CAP(own_name), last_pay);
 
     if (house_control[i].num_of_guests) {
       len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "     Guests: ");
@@ -370,8 +362,7 @@ void hcontrol_list_houses(struct char_data * ch)
   send_to_char(buf, ch);
 }
 
-void hcontrol_build_house(struct char_data * ch, char *arg)
-{
+void hcontrol_build_house(struct char_data *ch, char *arg) {
   char arg1[MAX_INPUT_LENGTH];
   struct house_control_rec temp_house;
   sh_int virt_house, real_house, real_atrium, virt_atrium, exit_num;
@@ -453,8 +444,7 @@ void hcontrol_build_house(struct char_data * ch, char *arg)
   House_save_control();
 }
 
-void hcontrol_destroy_house(struct char_data * ch, char *arg)
-{
+void hcontrol_destroy_house(struct char_data *ch, char *arg) {
   int i, j;
   sh_int real_atrium, real_house;
 
@@ -496,8 +486,7 @@ void hcontrol_destroy_house(struct char_data * ch, char *arg)
       SET_BIT(ROOM_FLAGS(real_atrium), ROOM_ATRIUM);
 }
 
-void hcontrol_pay_house(struct char_data * ch, char *arg)
-{
+void hcontrol_pay_house(struct char_data *ch, char *arg) {
   int i;
 
   if (!*arg)
@@ -514,8 +503,7 @@ void hcontrol_pay_house(struct char_data * ch, char *arg)
   }
 }
 
-/* The hcontrol command itself, used by imms to create/destroy houses */ACMD(do_hcontrol)
-{
+/* The hcontrol command itself, used by imms to create/destroy houses */ ACMD(do_hcontrol) {
   char arg1[MAX_INPUT_LENGTH], arg2[MAX_INPUT_LENGTH];
 
   half_chop(argument, arg1, arg2);
@@ -532,8 +520,7 @@ void hcontrol_pay_house(struct char_data * ch, char *arg)
     send_to_char(HCONTROL_FORMAT, ch);
 }
 
-/* The house command, used by mortal house owners to assign guests */ACMD(do_house)
-{
+/* The house command, used by mortal house owners to assign guests */ ACMD(do_house) {
   int i, j;
 
   one_argument(argument, arg);
@@ -575,8 +562,7 @@ void hcontrol_pay_house(struct char_data * ch, char *arg)
 /* Misc. administrative functions */
 
 /* crash-save all the houses */
-void House_save_all(void)
-{
+void House_save_all(void) {
   int i;
   sh_int real_house;
 
@@ -587,22 +573,21 @@ void House_save_all(void)
 }
 
 /* note: arg passed must be house vnum, so there. */
-int House_can_enter(struct char_data * ch, sh_int house)
-{
+int House_can_enter(struct char_data *ch, sh_int house) {
   int i, j;
 
   if (COM_FLAGGED(ch, COM_BUILDER) || (i = find_house(house)) < 0)
     return 1;
 
   switch (house_control[i].mode) {
-    case HOUSE_PRIVATE:
-      if (!strcmp(GET_NAME(ch), house_control[i].owner))
+  case HOUSE_PRIVATE:
+    if (!strcmp(GET_NAME(ch), house_control[i].owner))
+      return 1;
+    for (j = 0; j < house_control[i].num_of_guests; j++)
+      if (!strcmp(GET_NAME(ch), house_control[i].guests[j]))
         return 1;
-      for (j = 0; j < house_control[i].num_of_guests; j++)
-        if (!strcmp(GET_NAME(ch), house_control[i].guests[j]))
-          return 1;
-      return 0;
-      break;
+    return 0;
+    break;
   }
 
   return 0;

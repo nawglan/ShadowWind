@@ -1,12 +1,12 @@
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include "structs.h"
+#include "comm.h"
+#include "db.h"
 #include "event.h"
 #include "spells.h"
+#include "structs.h"
 #include "utils.h"
-#include "db.h"
-#include "comm.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define QFLAGS(i) (mob_quests[(i)].flags)
 
@@ -17,10 +17,10 @@ extern struct obj_data *obj_proto;
 extern struct index_data *obj_index;
 int find_spell_num(char *name);
 int find_skill_num(char *name);
-void extract_obj(struct obj_data * obj);
-void obj_from_char(struct obj_data * object);
+void extract_obj(struct obj_data *obj);
+void obj_from_char(struct obj_data *object);
 void parse_pline(char *line, char *field, char *value);
-void obj_to_char(struct obj_data * object, struct char_data * ch);
+void obj_to_char(struct obj_data *object, struct char_data *ch);
 long asciiflag_conv(char *flag);
 int search_block(char *arg, char **list, bool exact);
 int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict);
@@ -28,8 +28,7 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict);
 char *goal_list[] = {"knowledge", "object", "experience", "skill", "\n"};
 char *needs_list[] = {"money", "object", "\n"};
 
-void parse_quest(FILE *quest_file, int vnum)
-{
+void parse_quest(FILE *quest_file, int vnum) {
   static int i = 0;
 
   struct char_data *mob = NULL;
@@ -60,132 +59,131 @@ void parse_quest(FILE *quest_file, int vnum)
     numval = atoi(value);
 
     switch (UPPER(*field)) {
-      case 'A':
-        if (strcmp(field, "amount") == 0) {
-          (mob_quests + i)->needs[numneeds].amount = numval;
-          numneeds++;
-          (mob_quests + i)->maxneeds = numneeds;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'C':
-        if (strcmp(field, "classlist") == 0) {
-          (mob_quests + i)->classlist = asciiflag_conv(value);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'D':
-        if (strcmp(field, "destroy") == 0) {
-          if (strcasecmp(value, "no") == 0) {
-            (mob_quests + i)->needs[numneeds].destroy = 0;
-          }
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'F':
-        if (strcmp(field, "flags") == 0) {
-          (mob_quests + i)->flags = asciiflag_conv(value);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'G':
-        if (strcmp(field, "goal") == 0) {
-          (mob_quests + i)->goal = search_block(value, goal_list, FALSE);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'K':
-        if (strcmp(field, "keywords") == 0) {
-          RECREATE((mob_quests + i)->messages, struct quest_message_data, nummsgs + 1);
-          (mob_quests + i)->messages[nummsgs].keywords = strdup(value);
-        } else if (strcmp(field, "knowledge") == 0) {
-          line[0] = '\0';
-          (mob_quests + i)->knowledge = fread_string(quest_file, line);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'M':
-        if (strcmp(field, "maxlevel") == 0) {
-          (mob_quests + i)->maxlevel = numval;
-        } else if (strcmp(field, "message") == 0) {
-          line[0] = '\0';
-          (mob_quests + i)->messages[nummsgs].message = fread_string(quest_file, line);
-          nummsgs++;
-          (mob_quests + i)->maxmsgs = nummsgs;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'N':
-        if (strcmp(field, "needs") == 0) {
-          RECREATE((mob_quests + i)->needs, struct quest_needs_data, numneeds + 1);
-          (mob_quests + i)->needs[numneeds].destroy = 1;
-          (mob_quests + i)->needs[numneeds].participants = NULL;
-          (mob_quests + i)->needs[numneeds].type = search_block(value, needs_list, FALSE);
-          (mob_quests + i)->needs[numneeds].complete = 0;
-          (mob_quests + i)->needs[numneeds].needs_complete_msg = NULL;
-          (mob_quests + i)->needs[numneeds].need_more_msg = NULL;
-        } else if (strcmp(field, "need_more_msg") == 0) {
-          line[0] = '\0';
-          (mob_quests + i)->needs[numneeds].need_more_msg = fread_string(quest_file, line);
-        } else if (strcmp(field, "needs_complete_msg") == 0) {
-          line[0] = '\0';
-          (mob_quests + i)->needs[numneeds].needs_complete_msg = fread_string(quest_file, line);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'R':
-        if (strcmp(field, "racelist") == 0) {
-          (mob_quests + i)->racelist = asciiflag_conv(value);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'S':
-        if (strcmp(field, "skillname") == 0) {
-          (mob_quests + i)->skillname = strdup(value);
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      case 'V':
-        if (strcmp(field, "value") == 0) {
-          (mob_quests + i)->value = numval;
-        } else if (strcmp(field, "vnum") == 0) {
-          (mob_quests + i)->needs[numneeds].vnum = numval;
-        } else {
-          safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
-          stderr_log(buf2);
-        }
-        break;
-      default:
+    case 'A':
+      if (strcmp(field, "amount") == 0) {
+        (mob_quests + i)->needs[numneeds].amount = numval;
+        numneeds++;
+        (mob_quests + i)->maxneeds = numneeds;
+      } else {
         safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
         stderr_log(buf2);
-        break;
+      }
+      break;
+    case 'C':
+      if (strcmp(field, "classlist") == 0) {
+        (mob_quests + i)->classlist = asciiflag_conv(value);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'D':
+      if (strcmp(field, "destroy") == 0) {
+        if (strcasecmp(value, "no") == 0) {
+          (mob_quests + i)->needs[numneeds].destroy = 0;
+        }
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'F':
+      if (strcmp(field, "flags") == 0) {
+        (mob_quests + i)->flags = asciiflag_conv(value);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'G':
+      if (strcmp(field, "goal") == 0) {
+        (mob_quests + i)->goal = search_block(value, goal_list, FALSE);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'K':
+      if (strcmp(field, "keywords") == 0) {
+        RECREATE((mob_quests + i)->messages, struct quest_message_data, nummsgs + 1);
+        (mob_quests + i)->messages[nummsgs].keywords = strdup(value);
+      } else if (strcmp(field, "knowledge") == 0) {
+        line[0] = '\0';
+        (mob_quests + i)->knowledge = fread_string(quest_file, line);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'M':
+      if (strcmp(field, "maxlevel") == 0) {
+        (mob_quests + i)->maxlevel = numval;
+      } else if (strcmp(field, "message") == 0) {
+        line[0] = '\0';
+        (mob_quests + i)->messages[nummsgs].message = fread_string(quest_file, line);
+        nummsgs++;
+        (mob_quests + i)->maxmsgs = nummsgs;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'N':
+      if (strcmp(field, "needs") == 0) {
+        RECREATE((mob_quests + i)->needs, struct quest_needs_data, numneeds + 1);
+        (mob_quests + i)->needs[numneeds].destroy = 1;
+        (mob_quests + i)->needs[numneeds].participants = NULL;
+        (mob_quests + i)->needs[numneeds].type = search_block(value, needs_list, FALSE);
+        (mob_quests + i)->needs[numneeds].complete = 0;
+        (mob_quests + i)->needs[numneeds].needs_complete_msg = NULL;
+        (mob_quests + i)->needs[numneeds].need_more_msg = NULL;
+      } else if (strcmp(field, "need_more_msg") == 0) {
+        line[0] = '\0';
+        (mob_quests + i)->needs[numneeds].need_more_msg = fread_string(quest_file, line);
+      } else if (strcmp(field, "needs_complete_msg") == 0) {
+        line[0] = '\0';
+        (mob_quests + i)->needs[numneeds].needs_complete_msg = fread_string(quest_file, line);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'R':
+      if (strcmp(field, "racelist") == 0) {
+        (mob_quests + i)->racelist = asciiflag_conv(value);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'S':
+      if (strcmp(field, "skillname") == 0) {
+        (mob_quests + i)->skillname = strdup(value);
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    case 'V':
+      if (strcmp(field, "value") == 0) {
+        (mob_quests + i)->value = numval;
+      } else if (strcmp(field, "vnum") == 0) {
+        (mob_quests + i)->needs[numneeds].vnum = numval;
+      } else {
+        safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+        stderr_log(buf2);
+      }
+      break;
+    default:
+      safe_snprintf(buf2, MAX_STRING_LENGTH, "Unknown Quest field [%s]", field);
+      stderr_log(buf2);
+      break;
     }
   }
   i++;
 }
 
-void add_participant(struct char_data *ch, struct quest_data *quest, int i)
-{
+void add_participant(struct char_data *ch, struct quest_data *quest, int i) {
   struct quest_participant_data *p;
   if (!ch || !quest) {
     return;
@@ -197,8 +195,7 @@ void add_participant(struct char_data *ch, struct quest_data *quest, int i)
   quest->needs[i].participants = p;
 }
 
-struct quest_participant_data *find_participant(struct char_data *ch, struct quest_data *quest, int i)
-{
+struct quest_participant_data *find_participant(struct char_data *ch, struct quest_data *quest, int i) {
   struct quest_participant_data *p;
   struct quest_participant_data *next_p;
 
@@ -212,8 +209,7 @@ struct quest_participant_data *find_participant(struct char_data *ch, struct que
   return NULL;
 }
 
-int check_quest_status(struct char_data *me, struct char_data *player, struct quest_data *quest)
-{
+int check_quest_status(struct char_data *me, struct char_data *player, struct quest_data *quest) {
   char qbuf[32768];
 
   if (IS_SET(quest->flags, QUEST_ONCEPLAYER)) {
@@ -224,7 +220,10 @@ int check_quest_status(struct char_data *me, struct char_data *player, struct qu
   }
 
   if (quest->maxlevel < GET_LEVEL(player)) {
-    safe_snprintf(qbuf, sizeof(qbuf), "$n says, 'Aren't you a bit advanced for this quest?  You must be of level %d or less to participate.'", quest->maxlevel);
+    safe_snprintf(
+        qbuf, sizeof(qbuf),
+        "$n says, 'Aren't you a bit advanced for this quest?  You must be of level %d or less to participate.'",
+        quest->maxlevel);
     act(qbuf, TRUE, me, 0, player, TO_VICT);
     return 0;
   }
@@ -246,8 +245,7 @@ int check_quest_status(struct char_data *me, struct char_data *player, struct qu
   return 1;
 }
 
-int check_quest_completed(struct quest_data *quest, struct char_data *ch)
-{
+int check_quest_completed(struct quest_data *quest, struct char_data *ch) {
   int i;
   int completed = 0;
   int skillnum;
@@ -292,42 +290,48 @@ int check_quest_completed(struct quest_data *quest, struct char_data *ch)
       send_to_char(quest->knowledge, ch);
     }
     switch (quest->goal) {
-      case GOAL_OBJECT:
-        if (quest->value) {
-          obj = read_object(quest->value, VIRTUAL);
-          if (obj) {
-            safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %s (%d) as reward.", GET_NAME(ch), quest->qnum, (obj->cshort_description ? obj->cshort_description : (obj->short_description ? obj->short_description : "something")), quest->value);
-            mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
-            obj_to_char(obj, ch);
-          }
-        }
-        break;
-      case GOAL_EXPERIENCE:
-        if (quest->value) {
-          safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %d exp as reward.", GET_NAME(ch), quest->qnum, quest->value);
+    case GOAL_OBJECT:
+      if (quest->value) {
+        obj = read_object(quest->value, VIRTUAL);
+        if (obj) {
+          safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %s (%d) as reward.",
+                        GET_NAME(ch), quest->qnum,
+                        (obj->cshort_description ? obj->cshort_description
+                                                 : (obj->short_description ? obj->short_description : "something")),
+                        quest->value);
           mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
-          gain_exp(ch, quest->value);
+          obj_to_char(obj, ch);
         }
-        break;
-      case GOAL_SKILL:
-        skillnum = find_skill_num(quest->skillname);
-        if (skillnum < 0) {
-          skillnum = find_spell_num(quest->skillname);
-        }
-        if (skillnum >= 0) {
-          safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %s skill as reward.", GET_NAME(ch), quest->qnum, quest->skillname);
-          mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
-          SET_SKILL(ch, spells[skillnum].spellindex, 15);
-        }
-        break;
+      }
+      break;
+    case GOAL_EXPERIENCE:
+      if (quest->value) {
+        safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %d exp as reward.", GET_NAME(ch),
+                      quest->qnum, quest->value);
+        mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
+        gain_exp(ch, quest->value);
+      }
+      break;
+    case GOAL_SKILL:
+      skillnum = find_skill_num(quest->skillname);
+      if (skillnum < 0) {
+        skillnum = find_spell_num(quest->skillname);
+      }
+      if (skillnum >= 0) {
+        safe_snprintf(logbuffer, sizeof(logbuffer), "%s completed quest #%d, received %s skill as reward.",
+                      GET_NAME(ch), quest->qnum, quest->skillname);
+        mudlog(logbuffer, 'Q', COM_IMMORT, TRUE);
+        SET_SKILL(ch, spells[skillnum].spellindex, 15);
+      }
+      break;
     }
     return 1;
   }
   return 0;
 }
 
-int give_quest_item(struct quest_data *quest, int type, struct obj_data* obj, int amount, struct char_data *ch, int worktogether)
-{
+int give_quest_item(struct quest_data *quest, int type, struct obj_data *obj, int amount, struct char_data *ch,
+                    int worktogether) {
   struct quest_participant_data *p;
   int i;
   int ok = 0;
@@ -368,7 +372,8 @@ int give_quest_item(struct quest_data *quest, int type, struct obj_data* obj, in
         } else {
           if (quest->needs[i].need_more_msg) {
             if (amount) {
-              safe_snprintf(tbuf, sizeof(tbuf), quest->needs[i].need_more_msg, make_money_text(quest->needs[i].amount - p->given));
+              safe_snprintf(tbuf, sizeof(tbuf), quest->needs[i].need_more_msg,
+                            make_money_text(quest->needs[i].amount - p->given));
             } else {
               safe_snprintf(tbuf, sizeof(tbuf), quest->needs[i].need_more_msg, quest->needs[i].amount - p->given);
             }
@@ -401,8 +406,7 @@ int give_quest_item(struct quest_data *quest, int type, struct obj_data* obj, in
   return -1;
 }
 
-int quest_bribe_trigger(struct char_data *me, struct char_data *player, int amount)
-{
+int quest_bribe_trigger(struct char_data *me, struct char_data *player, int amount) {
   int temp;
   int questnum;
   int i;
@@ -523,8 +527,7 @@ int quest_bribe_trigger(struct char_data *me, struct char_data *player, int amou
   return flag;
 }
 
-int quest_give_trigger(struct char_data *me, struct char_data *player, struct obj_data *obj)
-{
+int quest_give_trigger(struct char_data *me, struct char_data *player, struct obj_data *obj) {
   int questnum;
   int i;
   int flag = 0;
@@ -617,8 +620,7 @@ int quest_give_trigger(struct char_data *me, struct char_data *player, struct ob
 }
 
 /* buf2 is the question, ch is asker, vict is mob */
-int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
-{
+int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict) {
   int nummsgs = 0;
   int numneeds = 0;
   int questnum = 0;
@@ -662,43 +664,52 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
         for (i = 0; i < mob_quests[questnum].maxneeds; i++) {
           if (mob_quests[questnum].needs[numneeds].participants) {
             switch (mob_quests[questnum].needs[i].type) {
-              case QUEST_MONEY:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  p = find_participant(ch, mob_quests + questnum, i);
-                  if (!p) {
-                    safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
-                  } else {
-                    if (!p->complete) {
-                      safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - p->given));
-                    }
+            case QUEST_MONEY:
+              if (!mob_quests[questnum].needs[i].complete) {
+                p = find_participant(ch, mob_quests + questnum, i);
+                if (!p) {
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n",
+                                make_money_text(mob_quests[questnum].needs[i].amount));
+                } else {
+                  if (!p->complete) {
+                    safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n",
+                                  make_money_text(mob_quests[questnum].needs[i].amount - p->given));
                   }
                 }
-                break;
-              case QUEST_OBJECT:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  p = find_participant(ch, mob_quests + questnum, i);
-                  if (!p) {
-                    safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
-                  } else {
-                    if (!p->complete) {
-                      safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - p->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
-                    }
+              }
+              break;
+            case QUEST_OBJECT:
+              if (!mob_quests[questnum].needs[i].complete) {
+                p = find_participant(ch, mob_quests + questnum, i);
+                if (!p) {
+                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n",
+                                mob_quests[questnum].needs[i].amount,
+                                OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+                } else {
+                  if (!p->complete) {
+                    safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n",
+                                  mob_quests[questnum].needs[i].amount - p->given,
+                                  OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
                   }
                 }
-                break;
+              }
+              break;
             }
           } else {
             switch (mob_quests[questnum].needs[i].type) {
-              case QUEST_MONEY:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
-                }
-                break;
-              case QUEST_OBJECT:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
-                }
-                break;
+            case QUEST_MONEY:
+              if (!mob_quests[questnum].needs[i].complete) {
+                safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n",
+                              make_money_text(mob_quests[questnum].needs[i].amount));
+              }
+              break;
+            case QUEST_OBJECT:
+              if (!mob_quests[questnum].needs[i].complete) {
+                safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n",
+                              mob_quests[questnum].needs[i].amount,
+                              OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+              }
+              break;
             }
           }
         }
@@ -716,29 +727,36 @@ int quest_ask_trigger(char *buf2, struct char_data *ch, struct char_data *vict)
         for (i = 0; i < mob_quests[questnum].maxneeds; i++) {
           if (mob_quests[questnum].needs[i].participants) {
             switch (mob_quests[questnum].needs[i].type) {
-              case QUEST_MONEY:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given));
-                }
-                break;
-              case QUEST_OBJECT:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given, OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
-                }
-                break;
+            case QUEST_MONEY:
+              if (!mob_quests[questnum].needs[i].complete) {
+                safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n",
+                              make_money_text(mob_quests[questnum].needs[i].amount -
+                                              mob_quests[questnum].needs[i].participants->given));
+              }
+              break;
+            case QUEST_OBJECT:
+              if (!mob_quests[questnum].needs[i].complete) {
+                safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n",
+                              mob_quests[questnum].needs[i].amount - mob_quests[questnum].needs[i].participants->given,
+                              OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+              }
+              break;
             }
           } else {
             switch (mob_quests[questnum].needs[i].type) {
-              case QUEST_MONEY:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n", make_money_text(mob_quests[questnum].needs[i].amount));
-                }
-                break;
-              case QUEST_OBJECT:
-                if (!mob_quests[questnum].needs[i].complete) {
-                  safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n", mob_quests[questnum].needs[i].amount, OBJS((obj_proto +real_object(mob_quests[questnum].needs[i].vnum)), ch));
-                }
-                break;
+            case QUEST_MONEY:
+              if (!mob_quests[questnum].needs[i].complete) {
+                safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "%s\r\n",
+                              make_money_text(mob_quests[questnum].needs[i].amount));
+              }
+              break;
+            case QUEST_OBJECT:
+              if (!mob_quests[questnum].needs[i].complete) {
+                safe_snprintf(qbuf + strlen(qbuf), sizeof(qbuf) - strlen(qbuf), "(%d) %s\r\n",
+                              mob_quests[questnum].needs[i].amount,
+                              OBJS((obj_proto + real_object(mob_quests[questnum].needs[i].vnum)), ch));
+              }
+              break;
             }
           }
         }

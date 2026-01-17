@@ -16,7 +16,8 @@ void affect_to_char(struct char_data *ch, struct affected_type *af);
 void affect_remove(struct char_data *ch, struct affected_type *af);
 void affect_from_char(struct char_data *ch, sh_int type);
 bool affected_by_spell(struct char_data *ch, sh_int type);
-void affect_join(struct char_data *ch, struct affected_type *af, bool add_dur, bool avg_dur, bool add_mod, bool avg_mod);
+void affect_join(struct char_data *ch, struct affected_type *af, bool add_dur, bool avg_dur, bool add_mod,
+                 bool avg_mod);
 
 /* utility */
 char *money_desc(int amount);
@@ -72,20 +73,20 @@ struct obj_data *get_object_in_equip_vis(struct char_data *ch, char *arg, struct
 
 int find_all_dots(char *arg);
 
-#define FIND_INDIV	0
-#define FIND_ALL	1
-#define FIND_ALLDOT	2
+#define FIND_INDIV  0
+#define FIND_ALL    1
+#define FIND_ALLDOT 2
 
 /* Generic Find */
 
 int generic_find(char *arg, int bitvector, struct char_data *ch, struct char_data **tar_ch, struct obj_data **tar_obj);
 
-#define FIND_CHAR_ROOM     1
-#define FIND_CHAR_WORLD    2
-#define FIND_OBJ_INV       4
-#define FIND_OBJ_ROOM      8
-#define FIND_OBJ_WORLD    16
-#define FIND_OBJ_EQUIP    32
+#define FIND_CHAR_ROOM  1
+#define FIND_CHAR_WORLD 2
+#define FIND_OBJ_INV    4
+#define FIND_OBJ_ROOM   8
+#define FIND_OBJ_WORLD  16
+#define FIND_OBJ_EQUIP  32
 
 int Delete_file(char *name, int mode);
 
@@ -114,5 +115,6 @@ void stop_follower(struct char_data *ch);
 void hit(struct char_data *ch, struct char_data *victim, int type);
 void forget(struct char_data *ch, struct char_data *victim);
 void remember(struct char_data *ch, struct char_data *victim);
-void damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype, int damorig, int damtype, int is_spell, int hide);
+void damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype, int damorig, int damtype,
+            int is_spell, int hide);
 int skill_message(int dam, struct char_data *ch, struct char_data *vict, int attacktype, int hide);

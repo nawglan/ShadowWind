@@ -8,19 +8,19 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <assert.h>
-#include <string.h>
-#include "structs.h"
-#include "utils.h"
-#include "event.h"
-#include "spells.h"
 #include "comm.h"
 #include "db.h"
+#include "event.h"
 #include "handler.h"
+#include "spells.h"
+#include "structs.h"
+#include "utils.h"
+#include <assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
+#include <unistd.h>
 
 extern struct char_data *character_list;
 extern struct obj_data *object_list;
@@ -44,8 +44,7 @@ void Crash_save(struct char_data *ch, int type);
  */
 
 /* manapoint gain pr. game hour */
-int mana_gain(struct char_data * ch, int tickcount)
-{
+int mana_gain(struct char_data *ch, int tickcount) {
 
   int gain = 0;
 
@@ -54,54 +53,56 @@ int mana_gain(struct char_data * ch, int tickcount)
     return (ROOM_FLAGGED(IN_ROOM(ch), ROOM_FASTHEAL) ? (GET_LEVEL(ch) + (GET_LEVEL(ch) >> 1)) : GET_LEVEL(ch));
   }
 
-  if ((IS_AFFECTED(ch, AFF_POISON) || (IS_AFFECTED(ch, AFF_DISEASE)) || (GET_COND(ch, FULL) == 0) || (GET_COND(ch, THIRST) == 0)) && number(1, 5) < 4)
+  if ((IS_AFFECTED(ch, AFF_POISON) || (IS_AFFECTED(ch, AFF_DISEASE)) || (GET_COND(ch, FULL) == 0) ||
+       (GET_COND(ch, THIRST) == 0)) &&
+      number(1, 5) < 4)
     return 0;
 
   /* Position bases */
   switch (GET_POS(ch)) {
-    case POS_FIGHTING:
-      if (!((tickcount + 2) % 8)) { /* 1pt per 8 */
-        gain++;
-      }
-      break;
-    case POS_STUNNED:
-    case POS_STANDING:
-    case POS_SITTING:
-      if (!((tickcount + 2) % 4)) { /* 1pt per 4 */
-        gain++;
-      }
-      break;
-    case POS_RESTING:
-      if (!((tickcount + 2) % 3)) { /* 1pt per 3 */
-        gain++;
-      }
-      break;
-    case POS_SLEEPING:
-      if (!((tickcount + 2) % 2)) { /* 1pt per 2 */
-        gain++;
-      }
-      break;
-    default:
-      return 0;
+  case POS_FIGHTING:
+    if (!((tickcount + 2) % 8)) { /* 1pt per 8 */
+      gain++;
+    }
+    break;
+  case POS_STUNNED:
+  case POS_STANDING:
+  case POS_SITTING:
+    if (!((tickcount + 2) % 4)) { /* 1pt per 4 */
+      gain++;
+    }
+    break;
+  case POS_RESTING:
+    if (!((tickcount + 2) % 3)) { /* 1pt per 3 */
+      gain++;
+    }
+    break;
+  case POS_SLEEPING:
+    if (!((tickcount + 2) % 2)) { /* 1pt per 2 */
+      gain++;
+    }
+    break;
+  default:
+    return 0;
   }
   /* Racial mods */
   switch (GET_RACE(ch)) {
-    case RACE_ELF: /* 25% chance of 1pt/4sec */
-      if (!((tickcount + 2) % 2) && !number(0, 3)) {
-        gain++;
-      }
-      break;
-    case RACE_GNOME: /* 12% chance of 1pt/4sec */
-      if (!((tickcount + 2) % 2) && !number(0, 7)) {
-        gain++;
-      }
-      break;
+  case RACE_ELF: /* 25% chance of 1pt/4sec */
+    if (!((tickcount + 2) % 2) && !number(0, 3)) {
+      gain++;
+    }
+    break;
+  case RACE_GNOME: /* 12% chance of 1pt/4sec */
+    if (!((tickcount + 2) % 2) && !number(0, 7)) {
+      gain++;
+    }
+    break;
   }
 
   /* Int and Wis modifiers */
   if ((GET_INT(ch) < 35) && (GET_INT(ch) < GET_WIS(ch))) { /*chance of no */
-    if (gain && ((50 - GET_INT(ch)) >= (number(1, 250)))) /*mana gain at */
-      gain--; /* int 7: 7%    int 3: 15%     int or wis   */
+    if (gain && ((50 - GET_INT(ch)) >= (number(1, 250))))  /*mana gain at */
+      gain--;                                              /* int 7: 7%    int 3: 15%     int or wis   */
   } else if (GET_WIS(ch) < 35) {
     if (gain && ((50 - GET_WIS(ch)) >= (number(1, 250))))
       gain--; /* wis 7: 7%    wis 3: 15% */
@@ -117,7 +118,7 @@ int mana_gain(struct char_data * ch, int tickcount)
   return (gain);
 }
 
-int hit_gain(struct char_data * ch, int tickcount)
+int hit_gain(struct char_data *ch, int tickcount)
 /* Hitpoint gain RL sec for PCs */
 {
   /* struct char_data *temp; */
@@ -128,51 +129,53 @@ int hit_gain(struct char_data * ch, int tickcount)
     return (ROOM_FLAGGED(IN_ROOM(ch), ROOM_FASTHEAL) ? (GET_LEVEL(ch) + (GET_LEVEL(ch) >> 1)) : GET_LEVEL(ch));
   }
 
-  if ((IS_AFFECTED(ch, AFF_POISON) || (IS_AFFECTED(ch, AFF_DISEASE)) || (GET_COND(ch, FULL) == 0) || (GET_COND(ch, THIRST) == 0)) && number(1, 5) < 4)
+  if ((IS_AFFECTED(ch, AFF_POISON) || (IS_AFFECTED(ch, AFF_DISEASE)) || (GET_COND(ch, FULL) == 0) ||
+       (GET_COND(ch, THIRST) == 0)) &&
+      number(1, 5) < 4)
     return 0;
 
   /* Position Bases */
   switch (GET_POS(ch)) {
-    case POS_FIGHTING:
-      if (!(tickcount % 10)) { /* 1pt per 10 */
-        gain++;
-      }
-      break;
-    case POS_STUNNED:
-    case POS_SITTING:
-    case POS_STANDING:
-      if (!(tickcount % 5)) { /* 1pt per 5 */
-        gain++;
-      }
-      break;
-    case POS_RESTING:
-      if (!(tickcount % 4)) { /* 1pt per 4 */
-        gain++;
-      }
-      break;
-    case POS_SLEEPING:
-      if (!(tickcount % 2)) { /* 1pt per 3 */
-        gain++;
-      }
-      break;
-    default:
-      return -1;
+  case POS_FIGHTING:
+    if (!(tickcount % 10)) { /* 1pt per 10 */
+      gain++;
+    }
+    break;
+  case POS_STUNNED:
+  case POS_SITTING:
+  case POS_STANDING:
+    if (!(tickcount % 5)) { /* 1pt per 5 */
+      gain++;
+    }
+    break;
+  case POS_RESTING:
+    if (!(tickcount % 4)) { /* 1pt per 4 */
+      gain++;
+    }
+    break;
+  case POS_SLEEPING:
+    if (!(tickcount % 2)) { /* 1pt per 3 */
+      gain++;
+    }
+    break;
+  default:
+    return -1;
   }
 
   /* Racial mods */
   switch (GET_RACE(ch)) {
-    case RACE_TROLL:
-      if (!((tickcount + 2) % 2) && !number(0, 3)) {
-        gain++;
-      }
-      break;
-    case RACE_OGRE:
-      if (!((tickcount + 2) % 4) && !number(0, 5)) {
-        gain--;
-      }
-      break;
-    default:
-      break;
+  case RACE_TROLL:
+    if (!((tickcount + 2) % 2) && !number(0, 3)) {
+      gain++;
+    }
+    break;
+  case RACE_OGRE:
+    if (!((tickcount + 2) % 4) && !number(0, 5)) {
+      gain--;
+    }
+    break;
+  default:
+    break;
   }
 
   /* Constitution mods */
@@ -189,7 +192,7 @@ int hit_gain(struct char_data * ch, int tickcount)
   return (gain);
 }
 
-int move_gain(struct char_data * ch, int tickcount)
+int move_gain(struct char_data *ch, int tickcount)
 /* move gain pr. game hour */
 {
   int gain = 0;
@@ -203,51 +206,53 @@ int move_gain(struct char_data * ch, int tickcount)
     }
   }
 
-  if ((IS_AFFECTED(ch, AFF_POISON) || (GET_COND(ch, FULL) == 0) || (IS_AFFECTED(ch, AFF_DISEASE)) || (GET_COND(ch, THIRST) == 0)) && number(1, 5) < 4)
+  if ((IS_AFFECTED(ch, AFF_POISON) || (GET_COND(ch, FULL) == 0) || (IS_AFFECTED(ch, AFF_DISEASE)) ||
+       (GET_COND(ch, THIRST) == 0)) &&
+      number(1, 5) < 4)
     return 0;
 
   /* Position bases    */
   switch (GET_POS(ch)) {
-    case POS_FIGHTING:
-      if (!(tickcount % 8)) {
-        gain++;
-      }
-      break;
-    case POS_STUNNED:
-    case POS_STANDING:
-    case POS_SITTING:
-      if (!(tickcount % 4)) {
-        gain++;
-      }
-      break;
-    case POS_RESTING:
-      if (!(tickcount % 3)) {
-        gain++;
-      }
-      break;
-    case POS_SLEEPING:
-      if (!(tickcount % 2) && (number(1, 100) <= 75)) {
-        gain++;
-      }
-      break;
-    default:
-      return 0;
+  case POS_FIGHTING:
+    if (!(tickcount % 8)) {
+      gain++;
+    }
+    break;
+  case POS_STUNNED:
+  case POS_STANDING:
+  case POS_SITTING:
+    if (!(tickcount % 4)) {
+      gain++;
+    }
+    break;
+  case POS_RESTING:
+    if (!(tickcount % 3)) {
+      gain++;
+    }
+    break;
+  case POS_SLEEPING:
+    if (!(tickcount % 2) && (number(1, 100) <= 75)) {
+      gain++;
+    }
+    break;
+  default:
+    return 0;
   }
 
   /* Racial mods */
   switch (GET_RACE(ch)) {
-    case RACE_OGRE: /* 20% chance of 1pt/4sec */
-      if (!((tickcount + 2) % 4) && !number(0, 3)) {
-        gain++;
-      }
-      break;
-    case RACE_DWARF: /* 10% chance of 1pt/4sec */
-      if (!((tickcount + 2) % 4) && !number(0, 9)) {
-        gain++;
-      }
-      break;
-    default:
-      break;
+  case RACE_OGRE: /* 20% chance of 1pt/4sec */
+    if (!((tickcount + 2) % 4) && !number(0, 3)) {
+      gain++;
+    }
+    break;
+  case RACE_DWARF: /* 10% chance of 1pt/4sec */
+    if (!((tickcount + 2) % 4) && !number(0, 9)) {
+      gain++;
+    }
+    break;
+  default:
+    break;
   }
 
   /* Constitution mods */
@@ -263,8 +268,7 @@ int move_gain(struct char_data * ch, int tickcount)
   return (gain);
 }
 
-void set_title(struct char_data * ch, char *title)
-{
+void set_title(struct char_data *ch, char *title) {
 
   if (title != NULL) {
     safe_snprintf(buf, MAX_STRING_LENGTH, "%s", title);
@@ -276,21 +280,20 @@ void set_title(struct char_data * ch, char *title)
   }
 }
 
-void check_autowiz(struct char_data * ch)
-{
+void check_autowiz(struct char_data *ch) {
   char buf[100];
   extern int use_autowiz;
   extern int min_wizlist_lev;
 
   if (use_autowiz && GET_LEVEL(ch) >= LVL_IMMORT) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "nice ../bin/autowiz %d %s %d %s %d &", min_wizlist_lev, WIZLIST_FILE, LVL_IMMORT, IMMLIST_FILE, (int) getpid());
+    safe_snprintf(buf, MAX_STRING_LENGTH, "nice ../bin/autowiz %d %s %d %s %d &", min_wizlist_lev, WIZLIST_FILE,
+                  LVL_IMMORT, IMMLIST_FILE, (int)getpid());
     mudlog("Initiating autowiz.", 'S', COM_ADMIN, FALSE);
     system(buf);
   }
 }
 
-void gain_exp(struct char_data * ch, int gain)
-{
+void gain_exp(struct char_data *ch, int gain) {
   int is_altered = FALSE;
   int lower_max_exp_gain;
   int lower_max_exp_loss;
@@ -310,8 +313,8 @@ void gain_exp(struct char_data * ch, int gain)
    * like they used to. With our damage limits in place, it should
    * now take a minimum of 9 kills to level once
    */
-  lower_max_exp_gain = (MaxExperience[GET_LEVEL(ch) + 1] - MaxExperience[(int) GET_LEVEL(ch)]) / 20;
-  lower_max_exp_loss = (MaxExperience[GET_LEVEL(ch) + 1] - MaxExperience[(int) GET_LEVEL(ch)]) / 3;
+  lower_max_exp_gain = (MaxExperience[GET_LEVEL(ch) + 1] - MaxExperience[(int)GET_LEVEL(ch)]) / 20;
+  lower_max_exp_loss = (MaxExperience[GET_LEVEL(ch) + 1] - MaxExperience[(int)GET_LEVEL(ch)]) / 3;
 
   if (gain > 0) {
     /* put a cap on the max gain per kill */
@@ -336,7 +339,7 @@ void gain_exp(struct char_data * ch, int gain)
   } else if (gain < 0) {
     gain = MAX(-lower_max_exp_loss, gain); /* Cap max exp lost per death */
     GET_EXP(ch) += gain;
-    if (GET_LEVEL(ch) > 1 && GET_EXP(ch) < MaxExperience[(int) GET_LEVEL(ch)]) {
+    if (GET_LEVEL(ch) > 1 && GET_EXP(ch) < MaxExperience[(int)GET_LEVEL(ch)]) {
       lose_level(ch);
       send_to_char("You lose a level!\r\n", ch);
       GET_LEVEL(ch)--;
@@ -346,8 +349,7 @@ void gain_exp(struct char_data * ch, int gain)
   }
 }
 
-void gain_exp_regardless(struct char_data * ch, int gain)
-{
+void gain_exp_regardless(struct char_data *ch, int gain) {
   int is_altered = FALSE;
 
   GET_EXP(ch) += gain;
@@ -370,8 +372,7 @@ void gain_exp_regardless(struct char_data * ch, int gain)
   }
 }
 
-void gain_condition(struct char_data * ch, int condition, int value)
-{
+void gain_condition(struct char_data *ch, int condition, int value) {
   bool intoxicated;
 
   if (!ch || GET_COND(ch, condition) == -1) /* No change */
@@ -392,24 +393,22 @@ void gain_condition(struct char_data * ch, int condition, int value)
     return;
 
   switch (condition) {
-    case FULL:
-      send_to_char("You are hungry.\r\n", ch);
-      return;
-    case THIRST:
-      send_to_char("You are thirsty.\r\n", ch);
-      return;
-    case DRUNK:
-      if (intoxicated)
-        send_to_char("You are now sober.\r\n", ch);
-      return;
-    default:
-      break;
+  case FULL:
+    send_to_char("You are hungry.\r\n", ch);
+    return;
+  case THIRST:
+    send_to_char("You are thirsty.\r\n", ch);
+    return;
+  case DRUNK:
+    if (intoxicated)
+      send_to_char("You are now sober.\r\n", ch);
+    return;
+  default:
+    break;
   }
-
 }
 
-void check_idling(struct char_data * ch)
-{
+void check_idling(struct char_data *ch) {
   extern int free_rent;
 
   if (++(ch->char_specials.timer) > 8 && !COM_FLAGGED(ch, COM_QUEST)) {
@@ -451,8 +450,7 @@ void check_idling(struct char_data * ch)
   }
 }
 
-void char_regen(void)
-{
+void char_regen(void) {
   struct char_data *i, *next_char;
   static sh_int tickcount = 1;
   int oldhit = 0;
@@ -510,11 +508,10 @@ void char_regen(void)
 }
 
 /* Update PCs, NPCs, and objects */
-void point_update(void)
-{
+void point_update(void) {
   void update_char_objects(struct char_data * ch); /* handler.c */
-  void extract_obj(struct obj_data * obj); /* handler.c */
-  void do_wake(struct char_data *ch, char *argument, int cmd, int subcmd);
+  void extract_obj(struct obj_data * obj);         /* handler.c */
+  void do_wake(struct char_data * ch, char *argument, int cmd, int subcmd);
   struct char_data *i, *next_char;
   struct obj_data *j, *next_thing, *jj, *next_thing2;
   int spellnum = spells[find_spell_num("poison")].spellindex;
@@ -585,32 +582,32 @@ void point_update(void)
     }
     if (!IS_NPC(i)) {
       switch (GET_RACE(i)) {
-        case RACE_HALFLING:
-        case RACE_GNOME:
-          gain_condition(i, FULL, -1);
-          break;
-        case RACE_DWARF:
-        case RACE_ELF:
-          if (number(0, 1)) {
-            gain_condition(i, FULL, -2);
-          } else {
-            gain_condition(i, FULL, -1);
-          }
-          break;
-        case RACE_HALFELF:
-        case RACE_HUMAN:
+      case RACE_HALFLING:
+      case RACE_GNOME:
+        gain_condition(i, FULL, -1);
+        break;
+      case RACE_DWARF:
+      case RACE_ELF:
+        if (number(0, 1)) {
           gain_condition(i, FULL, -2);
-          break;
-        case RACE_TROLL:
-          if (number(0, 1)) {
-            gain_condition(i, FULL, -3);
-          } else {
-            gain_condition(i, FULL, -2);
-          }
-          break;
-        case RACE_OGRE:
+        } else {
+          gain_condition(i, FULL, -1);
+        }
+        break;
+      case RACE_HALFELF:
+      case RACE_HUMAN:
+        gain_condition(i, FULL, -2);
+        break;
+      case RACE_TROLL:
+        if (number(0, 1)) {
           gain_condition(i, FULL, -3);
-          break;
+        } else {
+          gain_condition(i, FULL, -2);
+        }
+        break;
+      case RACE_OGRE:
+        gain_condition(i, FULL, -3);
+        break;
       }
     } else {
       gain_condition(i, FULL, -1);

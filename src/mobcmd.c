@@ -31,17 +31,17 @@
  *  such installation can be found in INSTALL.  Enjoy........    N'Atas-Ha *
  ***************************************************************************/
 
-#include <sys/types.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <ctype.h>
-#include "structs.h"
+#include "comm.h"
 #include "db.h"
-#include "utils.h"
 #include "handler.h"
 #include "interpreter.h"
-#include "comm.h"
+#include "structs.h"
+#include "utils.h"
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/types.h>
 
 extern int mob_idnum; /* mob idnums are negative */
 extern int top_of_world;
@@ -60,73 +60,77 @@ extern struct index_data *get_obj_index(int vnum);
  * look around, you may find it :) -- brr
  */
 
-extern sh_int find_target_room(struct char_data * ch, char *rawroomstr);
+extern sh_int find_target_room(struct char_data *ch, char *rawroomstr);
 
-extern void handle_mpdelay(char* delay, char* cmnd, struct char_data* mob, struct char_data* actor, struct obj_data* obj, void* vo, struct char_data* rndm);
+extern void handle_mpdelay(char *delay, char *cmnd, struct char_data *mob, struct char_data *actor,
+                           struct obj_data *obj, void *vo, struct char_data *rndm);
 
-#define bug(x, y) { safe_snprintf(buf2, MAX_STRING_LENGTH, (x), (y)); stderr_log(buf2); }
+#define bug(x, y)                                     \
+  {                                                   \
+    safe_snprintf(buf2, MAX_STRING_LENGTH, (x), (y)); \
+    stderr_log(buf2);                                 \
+  }
 
 /*
  * Local functions.
  */
 
-char * mprog_type_to_name(int type);
+char *mprog_type_to_name(int type);
 
-void mprog_mppurge(char* argument, char* cmnd, struct char_data* ch, struct char_data *actor, struct obj_data* obj, void* vo, struct char_data* rndm);
+void mprog_mppurge(char *argument, char *cmnd, struct char_data *ch, struct char_data *actor, struct obj_data *obj,
+                   void *vo, struct char_data *rndm);
 
-void mprog_mpextract(struct char_data* mob);
+void mprog_mpextract(struct char_data *mob);
 
 /* This routine transfers between alpha and numeric forms of the
  *  mob_prog bitvector types. It allows the words to show up in mpstat to
  *  make it just a hair bit easier to see what a mob should be doing.
  */
 
-char *mprog_type_to_name(int type)
-{
+char *mprog_type_to_name(int type) {
   switch (type) {
-    case IN_FILE_PROG:
-      return "in_file_prog";
-    case ACT_PROG:
-      return "act_prog";
-    case SPEECH_PROG:
-      return "speech_prog";
-    case RAND_PROG:
-      return "rand_prog";
-    case FIGHT_PROG:
-      return "fight_prog";
-    case HITPRCNT_PROG:
-      return "hitprcnt_prog";
-    case DEATH_PROG:
-      return "death_prog";
-    case ENTRY_PROG:
-      return "entry_prog";
-    case GREET_PROG:
-      return "greet_prog";
-    case ALL_GREET_PROG:
-      return "all_greet_prog";
-    case GIVE_PROG:
-      return "give_prog";
-    case BRIBE_PROG:
-      return "bribe_prog";
-    case SHOUT_PROG:
-      return "shout_prog";
-    case HOLLER_PROG:
-      return "holler_prog";
-    case TELL_PROG:
-      return "tell_prog";
-    case TIME_PROG:
-      return "time_prog";
-    case ASK_PROG:
-      return "ask_prog";
-    default:
-      return "ERROR_PROG";
+  case IN_FILE_PROG:
+    return "in_file_prog";
+  case ACT_PROG:
+    return "act_prog";
+  case SPEECH_PROG:
+    return "speech_prog";
+  case RAND_PROG:
+    return "rand_prog";
+  case FIGHT_PROG:
+    return "fight_prog";
+  case HITPRCNT_PROG:
+    return "hitprcnt_prog";
+  case DEATH_PROG:
+    return "death_prog";
+  case ENTRY_PROG:
+    return "entry_prog";
+  case GREET_PROG:
+    return "greet_prog";
+  case ALL_GREET_PROG:
+    return "all_greet_prog";
+  case GIVE_PROG:
+    return "give_prog";
+  case BRIBE_PROG:
+    return "bribe_prog";
+  case SHOUT_PROG:
+    return "shout_prog";
+  case HOLLER_PROG:
+    return "holler_prog";
+  case TELL_PROG:
+    return "tell_prog";
+  case TIME_PROG:
+    return "time_prog";
+  case ASK_PROG:
+    return "ask_prog";
+  default:
+    return "ERROR_PROG";
   }
 }
 
 /* string prefix routine */
 
-bool str_prefix(const char *astr, const char *bstr)
-{
+bool str_prefix(const char *astr, const char *bstr) {
   if (!astr) {
     stderr_log("Strn_cmp: null astr.");
     return TRUE;
@@ -144,8 +148,7 @@ bool str_prefix(const char *astr, const char *bstr)
 
 /* logs a message on the Q channel */
 
-ACMD (do_mplog)
-{
+ACMD(do_mplog) {
   char *p;
 
   if (!IS_NPC(ch)) {
@@ -159,7 +162,6 @@ ACMD (do_mplog)
     p++;
 
   mudlog(p, 'Q', COM_QUEST, TRUE);
-
 }
 
 /* sets up the necessary info so that a mobprog
@@ -176,8 +178,7 @@ ACMD (do_mplog)
  * will actually be used is handle_mpdelay.
  */
 
-ACMD(do_mpdelay)
-{
+ACMD(do_mpdelay) {
   if (!IS_NPC(ch)) {
     send_to_char("You're not a mob.... technically.\r\n", ch);
     return;
@@ -188,8 +189,7 @@ ACMD(do_mpdelay)
 
 /* prints the argument to all the rooms aroud the mobile */
 
-ACMD(do_mpasound)
-{
+ACMD(do_mpasound) {
   char *p;
   room_num was_in_room;
   int door;
@@ -217,7 +217,8 @@ ACMD(do_mpasound)
   for (door = 0; door <= 5; door++) {
     struct room_direction_data *pexit;
 
-    if ((pexit = world[was_in_room].dir_option[door]) != NULL && pexit->to_room != NOWHERE && pexit->to_room != was_in_room) {
+    if ((pexit = world[was_in_room].dir_option[door]) != NULL && pexit->to_room != NOWHERE &&
+        pexit->to_room != was_in_room) {
       ch->in_room = pexit->to_room;
       MOBTrigger = FALSE;
       act(p, FALSE, ch, NULL, NULL, TO_ROOM);
@@ -226,15 +227,13 @@ ACMD(do_mpasound)
 
   ch->in_room = was_in_room;
   return;
-
 }
 
 /* lets the mobile kill any player or mobile without murder*/
 
-ACMD(do_mprawkill)
-{
+ACMD(do_mprawkill) {
   char arg[MAX_INPUT_LENGTH];
-  void raw_kill(struct char_data *vict, struct char_data *ch);
+  void raw_kill(struct char_data * vict, struct char_data * ch);
   struct char_data *victim;
 
   if (!ch) {
@@ -277,8 +276,7 @@ ACMD(do_mprawkill)
   return;
 }
 
-ACMD(do_mpkill)
-{
+ACMD(do_mpkill) {
   char arg[MAX_INPUT_LENGTH];
   struct char_data *victim;
 
@@ -322,8 +320,7 @@ ACMD(do_mpkill)
   return;
 }
 
-ACMD(do_mphunt)
-{
+ACMD(do_mphunt) {
   char arg[MAX_INPUT_LENGTH];
   struct char_data *victim;
   int i = 0;
@@ -365,8 +362,7 @@ ACMD(do_mphunt)
   HUNTING(ch) = GET_IDNUM(victim);
 }
 
-ACMD(do_mphuntrm)
-{
+ACMD(do_mphuntrm) {
   char arg[MAX_INPUT_LENGTH];
   sh_int location;
 
@@ -399,8 +395,7 @@ ACMD(do_mphuntrm)
  it can also destroy a worn object and it can destroy
  items using all.xxxxx or just plain all of them */
 
-ACMD(do_mpjunk)
-{
+ACMD(do_mpjunk) {
   char arg[MAX_INPUT_LENGTH];
   int pos;
   struct obj_data *obj;
@@ -449,8 +444,7 @@ ACMD(do_mpjunk)
 
 /* prints the message to everyone in the room other than the mob and victim */
 
-ACMD(do_mpechoaround)
-{
+ACMD(do_mpechoaround) {
   char arg[MAX_INPUT_LENGTH];
   struct char_data *victim;
   char *p;
@@ -486,8 +480,7 @@ ACMD(do_mpechoaround)
 
 /* prints the message to only the victim */
 
-ACMD(do_mpechoat)
-{
+ACMD(do_mpechoat) {
   char arg[MAX_INPUT_LENGTH];
   struct char_data *victim;
   char *p;
@@ -523,8 +516,7 @@ ACMD(do_mpechoat)
 
 /* prints the message to the room at large */
 
-ACMD(do_mpecho)
-{
+ACMD(do_mpecho) {
   char *p;
 
   if (!ch) {
@@ -554,8 +546,7 @@ ACMD(do_mpecho)
  are loaded into inventory.  you can specify a level with
  the load object portion as well. */
 
-ACMD(do_mpmload)
-{
+ACMD(do_mpmload) {
   char arg[MAX_INPUT_LENGTH];
   struct char_data *victim;
 
@@ -588,8 +579,7 @@ ACMD(do_mpmload)
   return;
 }
 
-ACMD(do_mpoload)
-{
+ACMD(do_mpoload) {
   char arg1[MAX_INPUT_LENGTH];
   struct obj_data *obj;
 
@@ -636,8 +626,7 @@ ACMD(do_mpoload)
  itself, but this had best be the last command in the MOBprogram
  otherwise ugly stuff will happen */
 
-ACMD(do_mppurge)
-{
+ACMD(do_mppurge) {
   struct char_data *vict, *next_v;
   struct obj_data *obj, *next_o;
 
@@ -647,7 +636,7 @@ ACMD(do_mppurge)
   one_argument(argument, buf);
 
   if (*buf) { /* argument supplied. destroy single object
-   * or char */
+               * or char */
     if ((vict = get_char_room_vis(ch, buf))) {
       if (!IS_NPC(vict) || (vict == ch)) {
         return;
@@ -678,8 +667,7 @@ ACMD(do_mppurge)
   }
 }
 
-void mprog_mpextract(struct char_data* mob)
-{
+void mprog_mpextract(struct char_data *mob) {
   if (!(mob)) {
     mudlog("ERROR: Attempting to extract non-existant mob.", 'E', COM_IMMORT, TRUE);
     return;
@@ -687,8 +675,8 @@ void mprog_mpextract(struct char_data* mob)
     extract_char(mob, 0);
 }
 
-void mprog_mppurge(char* argument, char* cmnd, struct char_data* ch, struct char_data *actor, struct obj_data* object, void* vo, struct char_data* rndm)
-{
+void mprog_mppurge(char *argument, char *cmnd, struct char_data *ch, struct char_data *actor, struct obj_data *object,
+                   void *vo, struct char_data *rndm) {
   struct char_data *victim;
   struct obj_data *obj;
 
@@ -755,8 +743,7 @@ void mprog_mppurge(char* argument, char* cmnd, struct char_data* ch, struct char
 
 /* lets the mobile goto any location it wishes that is not private */
 
-ACMD(do_mpgoto)
-{
+ACMD(do_mpgoto) {
   char arg[MAX_INPUT_LENGTH];
   sh_int location;
 
@@ -792,8 +779,7 @@ ACMD(do_mpgoto)
 
 /* lets the mobile do a command at another location. Very useful */
 
-ACMD(do_mpat)
-{
+ACMD(do_mpat) {
   char arg[MAX_INPUT_LENGTH];
   sh_int location;
   sh_int original;
@@ -841,8 +827,7 @@ ACMD(do_mpat)
 /* lets the mobile transfer people.  the all argument transfers
  everyone in the current room to the specified location */
 
-ACMD(do_mptransfer)
-{
+ACMD(do_mptransfer) {
   char arg1[MAX_INPUT_LENGTH];
   char arg2[MAX_INPUT_LENGTH];
   sh_int location;
@@ -876,7 +861,7 @@ ACMD(do_mptransfer)
           bug("Mptransfer - no such location: vnum %d.", mob_index[ch->nr].virtual);
           return;
         }
-        if (IS_SET (world[location].room_flags, ROOM_PRIVATE)) {
+        if (IS_SET(world[location].room_flags, ROOM_PRIVATE)) {
           bug("Mptransfer - Private room: vnum %d.", mob_index[ch->nr].virtual);
           return;
         }
@@ -915,7 +900,6 @@ ACMD(do_mptransfer)
         safe_snprintf(buf, MAX_STRING_LENGTH, "%s drags $p along with $m.", GET_NAME(victim));
         act(buf, TRUE, victim, GET_DRAGGING(victim), 0, TO_ROOM);
       }
-
     }
     return;
   }
@@ -999,8 +983,7 @@ ACMD(do_mptransfer)
  -- will not be able to be trained.
 
  */
-ACMD(do_mptrain)
-{
+ACMD(do_mptrain) {
 
   /*   unsigned long    security; */
   /*   int              max_skill_level,
@@ -1029,7 +1012,6 @@ ACMD(do_mptrain)
       bug("Mptrain - bad syntax: no ending quote on skill - mob: %d", mob_index[ch->nr].virtual);
       return;
     }
-
   }
 
   runner++;
@@ -1066,8 +1048,7 @@ ACMD(do_mptrain)
 /* lets the mobile force someone to do something.  must be mortal level
  and the all argument only affects those in the room with the mobile */
 
-ACMD(do_mpforce)
-{
+ACMD(do_mpforce) {
   char arg[MAX_INPUT_LENGTH];
 
   if (!ch) {
@@ -1118,4 +1099,3 @@ ACMD(do_mpforce)
 
   return;
 }
-

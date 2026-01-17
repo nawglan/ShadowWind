@@ -7,22 +7,19 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
 #include "db.h"
 #include "interpreter.h"
+#include "structs.h"
+#include "utils.h"
 
 extern struct descriptor_data *descriptor_list;
 
-ACMD(do_guild)
-{
+ACMD(do_guild) {
 }
-ACMD(do_guildtitle)
-{
+ACMD(do_guildtitle) {
 }
-ACMD(do_guildchat)
-{
+ACMD(do_guildchat) {
   struct descriptor_data *i;
 
   if (!PRF_FLAGGED(ch, PRF_GCHAT) && !IS_NPC(ch)) {
@@ -56,6 +53,5 @@ ACMD(do_guildchat)
         act(buf, 0, ch, 0, i->character, TO_VICT | TO_SLEEP);
   }
 }
-ACMD(do_guildedit)
-{
+ACMD(do_guildedit) {
 }

@@ -8,20 +8,20 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
-#include <string.h>
+#include <assert.h>
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-#include <assert.h>
+#include <string.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
 #include "db.h"
+#include "event.h"
 #include "handler.h"
 #include "interpreter.h"
-#include "event.h"
 #include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 /* external vars */
 extern struct spell_info_type *spells;
@@ -40,15 +40,14 @@ extern int SECS_PER_MUD_YEAR;
 void remove_consent(struct char_data *ch);
 int find_skill_num_def(int define);
 void add_innates(struct char_data *ch);
-void free_char(struct char_data * ch);
-void stop_fighting(struct char_data * ch);
-void clearMemory(struct char_data * ch);
-void mob_delay_purge(struct char_data* ch);
+void free_char(struct char_data *ch);
+void stop_fighting(struct char_data *ch);
+void clearMemory(struct char_data *ch);
+void mob_delay_purge(struct char_data *ch);
 bool clean_events(void *pointer, EVENT(*func));
 char *strip_color(char *from, char *to, int length);
 
-char *fname(char *namelist)
-{
+char *fname(char *namelist) {
   static char holder[30];
   register char *point;
 
@@ -61,8 +60,7 @@ char *fname(char *namelist)
 }
 
 /* check if a player is allowed to access a certain room */
-int check_access(struct char_data *ch, int room)
-{
+int check_access(struct char_data *ch, int room) {
   int oktosee = 0;
   int zonenum = 0;
   int i;
@@ -84,15 +82,14 @@ int check_access(struct char_data *ch, int room)
     }
   }
 
-  if (IS_SET(zone_table[world[room].zone].bits, ZONE_RESTRICTED) && !PLR_FLAGGED(ch, PLR_ZONEOK) && !COM_FLAGGED(ch, COM_QUEST))
+  if (IS_SET(zone_table[world[room].zone].bits, ZONE_RESTRICTED) && !PLR_FLAGGED(ch, PLR_ZONEOK) &&
+      !COM_FLAGGED(ch, COM_QUEST))
     return 0;
 
   return 1;
-
 }
 
-int isname(char *str, char *namelist)
-{
+int isname(char *str, char *namelist) {
   char *curstr;
   char temp[80];
   char *p;
@@ -113,8 +110,7 @@ int isname(char *str, char *namelist)
   return 0;
 }
 
-void obj_affect_modify(struct char_data * ch, int loc, int mod, long bitv, long bitv2, long bitv3, bool add)
-{
+void obj_affect_modify(struct char_data *ch, int loc, int mod, long bitv, long bitv2, long bitv3, bool add) {
   char abuf[80];
 
   if (add) {
@@ -127,129 +123,128 @@ void obj_affect_modify(struct char_data * ch, int loc, int mod, long bitv, long 
   }
 
   switch (loc) {
-    case APPLY_NONE:
-      break;
+  case APPLY_NONE:
+    break;
 
-    case APPLY_STR:
-      GET_VSTR(ch) += mod;
-      GET_STR(ch) = MIN(100, GET_VSTR(ch));
-      break;
+  case APPLY_STR:
+    GET_VSTR(ch) += mod;
+    GET_STR(ch) = MIN(100, GET_VSTR(ch));
+    break;
 
-    case APPLY_DEX:
-      GET_VDEX(ch) += mod;
-      GET_DEX(ch) = MIN(100, GET_VDEX(ch));
-      break;
+  case APPLY_DEX:
+    GET_VDEX(ch) += mod;
+    GET_DEX(ch) = MIN(100, GET_VDEX(ch));
+    break;
 
-    case APPLY_INT:
-      GET_VINT(ch) += mod;
-      GET_INT(ch) = MIN(100, GET_VINT(ch));
-      break;
+  case APPLY_INT:
+    GET_VINT(ch) += mod;
+    GET_INT(ch) = MIN(100, GET_VINT(ch));
+    break;
 
-    case APPLY_WIS:
-      GET_VWIS(ch) += mod;
-      GET_WIS(ch) = MIN(100, GET_VWIS(ch));
-      break;
+  case APPLY_WIS:
+    GET_VWIS(ch) += mod;
+    GET_WIS(ch) = MIN(100, GET_VWIS(ch));
+    break;
 
-    case APPLY_CON:
-      GET_VCON(ch) += mod;
-      GET_CON(ch) = MIN(100, GET_VCON(ch));
-      break;
+  case APPLY_CON:
+    GET_VCON(ch) += mod;
+    GET_CON(ch) = MIN(100, GET_VCON(ch));
+    break;
 
-    case APPLY_AGI:
-      GET_VAGI(ch) += mod;
-      GET_AGI(ch) = MIN(100, GET_VAGI(ch));
-      break;
+  case APPLY_AGI:
+    GET_VAGI(ch) += mod;
+    GET_AGI(ch) = MIN(100, GET_VAGI(ch));
+    break;
 
-    case APPLY_AGE:
-      ch->player.time.birth -= (mod * SECS_PER_MUD_YEAR);
-      break;
+  case APPLY_AGE:
+    ch->player.time.birth -= (mod * SECS_PER_MUD_YEAR);
+    break;
 
-    case APPLY_CHAR_WEIGHT:
-      GET_WEIGHT(ch) += mod;
-      break;
+  case APPLY_CHAR_WEIGHT:
+    GET_WEIGHT(ch) += mod;
+    break;
 
-    case APPLY_CHAR_HEIGHT:
-      GET_HEIGHT(ch) += mod;
-      break;
+  case APPLY_CHAR_HEIGHT:
+    GET_HEIGHT(ch) += mod;
+    break;
 
-    case APPLY_MANA:
-      GET_MAX_MANA(ch) += mod;
-      GET_MANA(ch) += mod;
-      break;
+  case APPLY_MANA:
+    GET_MAX_MANA(ch) += mod;
+    GET_MANA(ch) += mod;
+    break;
 
-    case APPLY_HIT:
-      GET_MAX_HIT(ch) += mod;
-      GET_HIT(ch) += mod;
-      break;
+  case APPLY_HIT:
+    GET_MAX_HIT(ch) += mod;
+    GET_HIT(ch) += mod;
+    break;
 
-    case APPLY_MOVE:
-      GET_MAX_MOVE(ch) += mod;
-      GET_MOVE(ch) += mod;
-      break;
+  case APPLY_MOVE:
+    GET_MAX_MOVE(ch) += mod;
+    GET_MOVE(ch) += mod;
+    break;
 
-    case APPLY_AC:
-      if (!IS_MONK(ch))
-        GET_AC(ch) += mod;
-      break;
+  case APPLY_AC:
+    if (!IS_MONK(ch))
+      GET_AC(ch) += mod;
+    break;
 
-    case APPLY_HITROLL:
-      if ((GET_HITROLL(ch) >= -120) && (GET_HITROLL(ch) <= 120)) {
-        if (IS_MOB(ch)) {
-          GET_HITROLL(ch) -= mod;
-        } else {
-          GET_HITROLL(ch) += mod;
-        }
+  case APPLY_HITROLL:
+    if ((GET_HITROLL(ch) >= -120) && (GET_HITROLL(ch) <= 120)) {
+      if (IS_MOB(ch)) {
+        GET_HITROLL(ch) -= mod;
+      } else {
+        GET_HITROLL(ch) += mod;
       }
-      break;
+    }
+    break;
 
-    case APPLY_DAMROLL:
-      if ((GET_DAMROLL(ch) >= -120) && (GET_DAMROLL(ch) <= 120)) {
-        GET_DAMROLL(ch) += mod;
-      }
-      break;
+  case APPLY_DAMROLL:
+    if ((GET_DAMROLL(ch) >= -120) && (GET_DAMROLL(ch) <= 120)) {
+      GET_DAMROLL(ch) += mod;
+    }
+    break;
 
-    case APPLY_SAVING_PARA:
-      GET_SAVE(ch, SAVING_PARA) += mod;
-      break;
+  case APPLY_SAVING_PARA:
+    GET_SAVE(ch, SAVING_PARA) += mod;
+    break;
 
-    case APPLY_SAVING_ROD:
-      GET_SAVE(ch, SAVING_ROD) += mod;
-      break;
+  case APPLY_SAVING_ROD:
+    GET_SAVE(ch, SAVING_ROD) += mod;
+    break;
 
-    case APPLY_SAVING_PETRI:
-      GET_SAVE(ch, SAVING_PETRI) += mod;
-      break;
+  case APPLY_SAVING_PETRI:
+    GET_SAVE(ch, SAVING_PETRI) += mod;
+    break;
 
-    case APPLY_SAVING_BREATH:
-      GET_SAVE(ch, SAVING_BREATH) += mod;
-      break;
+  case APPLY_SAVING_BREATH:
+    GET_SAVE(ch, SAVING_BREATH) += mod;
+    break;
 
-    case APPLY_SAVING_SPELL:
-      GET_SAVE(ch, SAVING_SPELL) += mod;
-      break;
+  case APPLY_SAVING_SPELL:
+    GET_SAVE(ch, SAVING_SPELL) += mod;
+    break;
 
-    case APPLY_MAX_HIT:
-      GET_MAX_HIT(ch) += mod;
-      break;
+  case APPLY_MAX_HIT:
+    GET_MAX_HIT(ch) += mod;
+    break;
 
-    case APPLY_MAX_MANA:
-      GET_MAX_MANA(ch) += mod;
-      break;
+  case APPLY_MAX_MANA:
+    GET_MAX_MANA(ch) += mod;
+    break;
 
-    case APPLY_MAX_MOVE:
-      GET_MAX_MOVE(ch) += mod;
-      break;
+  case APPLY_MAX_MOVE:
+    GET_MAX_MOVE(ch) += mod;
+    break;
 
-    default:
-      stderr_log("SYSERR: Unknown apply adjust attempt (affect_modify).");
-      safe_snprintf(abuf, sizeof(abuf), "Name = %s, apply adjust = %d", GET_NAME(ch), loc);
-      stderr_log(abuf);
-      break;
+  default:
+    stderr_log("SYSERR: Unknown apply adjust attempt (affect_modify).");
+    safe_snprintf(abuf, sizeof(abuf), "Name = %s, apply adjust = %d", GET_NAME(ch), loc);
+    stderr_log(abuf);
+    break;
   } /* switch */
 }
 
-void affect_modify(struct char_data * ch, int loc[], int mod[], long bitv, long bitv2, long bitv3, bool add)
-{
+void affect_modify(struct char_data *ch, int loc[], int mod[], long bitv, long bitv2, long bitv3, bool add) {
   int i;
   int location[NUM_MODIFY];
   int modifier[NUM_MODIFY];
@@ -283,195 +278,196 @@ void affect_modify(struct char_data * ch, int loc[], int mod[], long bitv, long 
   for (i = 0; i < NUM_MODIFY; i++) {
     if (location[i])
       switch (location[i]) {
-        case APPLY_NONE:
-          break;
+      case APPLY_NONE:
+        break;
 
-        case APPLY_STR:
-          GET_VSTR(ch) += modifier[i];
-          GET_STR(ch) = MIN(100, GET_VSTR(ch));
-          break;
+      case APPLY_STR:
+        GET_VSTR(ch) += modifier[i];
+        GET_STR(ch) = MIN(100, GET_VSTR(ch));
+        break;
 
-        case APPLY_DEX:
-          GET_VDEX(ch) += modifier[i];
-          GET_DEX(ch) = MIN(100, GET_VDEX(ch));
-          break;
+      case APPLY_DEX:
+        GET_VDEX(ch) += modifier[i];
+        GET_DEX(ch) = MIN(100, GET_VDEX(ch));
+        break;
 
-        case APPLY_INT:
-          GET_VINT(ch) += modifier[i];
-          GET_INT(ch) = MIN(100, GET_VINT(ch));
-          break;
+      case APPLY_INT:
+        GET_VINT(ch) += modifier[i];
+        GET_INT(ch) = MIN(100, GET_VINT(ch));
+        break;
 
-        case APPLY_WIS:
-          GET_VWIS(ch) += modifier[i];
-          GET_WIS(ch) = MIN(100, GET_VWIS(ch));
-          break;
+      case APPLY_WIS:
+        GET_VWIS(ch) += modifier[i];
+        GET_WIS(ch) = MIN(100, GET_VWIS(ch));
+        break;
 
-        case APPLY_CON:
-          GET_VCON(ch) += modifier[i];
-          GET_CON(ch) = MIN(100, GET_VCON(ch));
-          break;
+      case APPLY_CON:
+        GET_VCON(ch) += modifier[i];
+        GET_CON(ch) = MIN(100, GET_VCON(ch));
+        break;
 
-        case APPLY_AGI:
-          GET_VAGI(ch) += modifier[i];
-          GET_AGI(ch) = MIN(100, GET_VAGI(ch));
-          break;
+      case APPLY_AGI:
+        GET_VAGI(ch) += modifier[i];
+        GET_AGI(ch) = MIN(100, GET_VAGI(ch));
+        break;
 
-        case APPLY_AGE:
-          ch->player.time.birth -= (modifier[i] * SECS_PER_MUD_YEAR);
-          break;
+      case APPLY_AGE:
+        ch->player.time.birth -= (modifier[i] * SECS_PER_MUD_YEAR);
+        break;
 
-        case APPLY_CHAR_WEIGHT:
-          GET_WEIGHT(ch) += modifier[i];
-          break;
+      case APPLY_CHAR_WEIGHT:
+        GET_WEIGHT(ch) += modifier[i];
+        break;
 
-        case APPLY_CHAR_HEIGHT:
-          GET_HEIGHT(ch) += modifier[i];
-          break;
+      case APPLY_CHAR_HEIGHT:
+        GET_HEIGHT(ch) += modifier[i];
+        break;
 
-        case APPLY_MANA:
-          GET_MANA(ch) += modifier[i];
-          GET_MAX_MANA(ch) += modifier[i];
-          break;
+      case APPLY_MANA:
+        GET_MANA(ch) += modifier[i];
+        GET_MAX_MANA(ch) += modifier[i];
+        break;
 
-        case APPLY_MAX_MANA:
-          GET_MAX_MANA(ch) += modifier[i];
-          break;
+      case APPLY_MAX_MANA:
+        GET_MAX_MANA(ch) += modifier[i];
+        break;
 
-        case APPLY_HIT:
-          GET_HIT(ch) += modifier[i];
-          GET_MAX_HIT(ch) += modifier[i];
-          break;
+      case APPLY_HIT:
+        GET_HIT(ch) += modifier[i];
+        GET_MAX_HIT(ch) += modifier[i];
+        break;
 
-        case APPLY_MAX_HIT:
-          GET_MAX_HIT(ch) += modifier[i];
-          break;
+      case APPLY_MAX_HIT:
+        GET_MAX_HIT(ch) += modifier[i];
+        break;
 
-        case APPLY_MOVE:
-          GET_MOVE(ch) += modifier[i];
-          GET_MAX_MOVE(ch) += modifier[i];
-          break;
+      case APPLY_MOVE:
+        GET_MOVE(ch) += modifier[i];
+        GET_MAX_MOVE(ch) += modifier[i];
+        break;
 
-        case APPLY_MAX_MOVE:
-          GET_MAX_MOVE(ch) += modifier[i];
-          break;
+      case APPLY_MAX_MOVE:
+        GET_MAX_MOVE(ch) += modifier[i];
+        break;
 
-        case APPLY_AC:
-          if (!IS_MONK(ch))
-            GET_AC(ch) += modifier[i];
-          break;
+      case APPLY_AC:
+        if (!IS_MONK(ch))
+          GET_AC(ch) += modifier[i];
+        break;
 
-        case APPLY_HITROLL:
-          if ((GET_HITROLL(ch) >= -120) && (GET_HITROLL(ch) <= 120))
-            GET_HITROLL(ch) += modifier[i];
-          break;
+      case APPLY_HITROLL:
+        if ((GET_HITROLL(ch) >= -120) && (GET_HITROLL(ch) <= 120))
+          GET_HITROLL(ch) += modifier[i];
+        break;
 
-        case APPLY_DAMROLL:
-          if ((GET_DAMROLL(ch) >= -120) && (GET_DAMROLL(ch) <= 120))
-            GET_DAMROLL(ch) += modifier[i];
-          break;
+      case APPLY_DAMROLL:
+        if ((GET_DAMROLL(ch) >= -120) && (GET_DAMROLL(ch) <= 120))
+          GET_DAMROLL(ch) += modifier[i];
+        break;
 
-        case APPLY_SAVING_PARA:
-          GET_SAVE(ch, SAVING_PARA) += modifier[i];
-          break;
+      case APPLY_SAVING_PARA:
+        GET_SAVE(ch, SAVING_PARA) += modifier[i];
+        break;
 
-        case APPLY_SAVING_ROD:
-          GET_SAVE(ch, SAVING_ROD) += modifier[i];
-          break;
+      case APPLY_SAVING_ROD:
+        GET_SAVE(ch, SAVING_ROD) += modifier[i];
+        break;
 
-        case APPLY_SAVING_PETRI:
-          GET_SAVE(ch, SAVING_PETRI) += modifier[i];
-          break;
+      case APPLY_SAVING_PETRI:
+        GET_SAVE(ch, SAVING_PETRI) += modifier[i];
+        break;
 
-        case APPLY_SAVING_BREATH:
-          GET_SAVE(ch, SAVING_BREATH) += modifier[i];
-          break;
+      case APPLY_SAVING_BREATH:
+        GET_SAVE(ch, SAVING_BREATH) += modifier[i];
+        break;
 
-        case APPLY_SAVING_SPELL:
-          GET_SAVE(ch, SAVING_SPELL) += modifier[i];
-          break;
+      case APPLY_SAVING_SPELL:
+        GET_SAVE(ch, SAVING_SPELL) += modifier[i];
+        break;
 
-        case APPLY_RES_LIGHT:
-          GET_RESIST(ch, DAM_LIGHT) += modifier[i];
-          break;
+      case APPLY_RES_LIGHT:
+        GET_RESIST(ch, DAM_LIGHT) += modifier[i];
+        break;
 
-        case APPLY_RES_DARK:
-          GET_RESIST(ch, DAM_DARK) += modifier[i];
-          break;
+      case APPLY_RES_DARK:
+        GET_RESIST(ch, DAM_DARK) += modifier[i];
+        break;
 
-        case APPLY_RES_FIRE:
-          GET_RESIST(ch, DAM_FIRE) += modifier[i];
-          break;
+      case APPLY_RES_FIRE:
+        GET_RESIST(ch, DAM_FIRE) += modifier[i];
+        break;
 
-        case APPLY_RES_COLD:
-          GET_RESIST(ch, DAM_COLD) += modifier[i];
-          break;
+      case APPLY_RES_COLD:
+        GET_RESIST(ch, DAM_COLD) += modifier[i];
+        break;
 
-        case APPLY_RES_ACID:
-          GET_RESIST(ch, DAM_ACID) += modifier[i];
-          break;
+      case APPLY_RES_ACID:
+        GET_RESIST(ch, DAM_ACID) += modifier[i];
+        break;
 
-        case APPLY_RES_POISON:
-          GET_RESIST(ch, DAM_POISON) += modifier[i];
-          break;
+      case APPLY_RES_POISON:
+        GET_RESIST(ch, DAM_POISON) += modifier[i];
+        break;
 
-        case APPLY_RES_DISEASE:
-          GET_RESIST(ch, DAM_DISEASE) += modifier[i];
-          break;
+      case APPLY_RES_DISEASE:
+        GET_RESIST(ch, DAM_DISEASE) += modifier[i];
+        break;
 
-        case APPLY_RES_CHARM:
-          GET_RESIST(ch, DAM_CHARM) += modifier[i];
-          break;
+      case APPLY_RES_CHARM:
+        GET_RESIST(ch, DAM_CHARM) += modifier[i];
+        break;
 
-        case APPLY_RES_SLEEP:
-          GET_RESIST(ch, DAM_SLEEP) += modifier[i];
-          break;
+      case APPLY_RES_SLEEP:
+        GET_RESIST(ch, DAM_SLEEP) += modifier[i];
+        break;
 
-        case APPLY_RES_SLASH:
-          GET_RESIST(ch, DAM_SLASH) += modifier[i];
-          break;
+      case APPLY_RES_SLASH:
+        GET_RESIST(ch, DAM_SLASH) += modifier[i];
+        break;
 
-        case APPLY_RES_PIERCE:
-          GET_RESIST(ch, DAM_PIERCE) += modifier[i];
-          break;
+      case APPLY_RES_PIERCE:
+        GET_RESIST(ch, DAM_PIERCE) += modifier[i];
+        break;
 
-        case APPLY_RES_BLUDGEON:
-          GET_RESIST(ch, DAM_BLUDGEON) += modifier[i];
-          break;
+      case APPLY_RES_BLUDGEON:
+        GET_RESIST(ch, DAM_BLUDGEON) += modifier[i];
+        break;
 
-        case APPLY_RES_NWEAP:
-          GET_RESIST(ch, DAM_NWEAP) += modifier[i];
-          break;
+      case APPLY_RES_NWEAP:
+        GET_RESIST(ch, DAM_NWEAP) += modifier[i];
+        break;
 
-        case APPLY_RES_MWEAP:
-          GET_RESIST(ch, DAM_MWEAP) += modifier[i];
-          break;
+      case APPLY_RES_MWEAP:
+        GET_RESIST(ch, DAM_MWEAP) += modifier[i];
+        break;
 
-        case APPLY_RES_MAGIC:
-          GET_RESIST(ch, DAM_MAGIC) += modifier[i];
-          break;
+      case APPLY_RES_MAGIC:
+        GET_RESIST(ch, DAM_MAGIC) += modifier[i];
+        break;
 
-        case APPLY_RES_ELECTRICITY:
-          GET_RESIST(ch, DAM_ELECTRICITY) += modifier[i];
-          break;
+      case APPLY_RES_ELECTRICITY:
+        GET_RESIST(ch, DAM_ELECTRICITY) += modifier[i];
+        break;
 
-        default:
-          stderr_log("SYSERR: Unknown apply adjust attempt (affect_modify).");
-          break;
+      default:
+        stderr_log("SYSERR: Unknown apply adjust attempt (affect_modify).");
+        break;
       } /* switch */
   }
 }
 
 /* This updates a character by subtracting everything he is affected by */
 /* restoring original abilities, and then affecting all again           */
-void affect_total(struct char_data * ch)
-{
+void affect_total(struct char_data *ch) {
   struct affected_type *af;
   int i, j, c;
 
   for (i = 0; i < NUM_WEARS; i++) {
     if (ch->equipment[i]) {
       for (j = 0; j < MAX_OBJ_AFFECT; j++)
-        obj_affect_modify(ch, ch->equipment[i]->affected[j].location, ch->equipment[i]->affected[j].modifier, ch->equipment[i]->obj_flags.bitvector, ch->equipment[i]->obj_flags.bitvector2, ch->equipment[i]->obj_flags.bitvector3, FALSE);
+        obj_affect_modify(ch, ch->equipment[i]->affected[j].location, ch->equipment[i]->affected[j].modifier,
+                          ch->equipment[i]->obj_flags.bitvector, ch->equipment[i]->obj_flags.bitvector2,
+                          ch->equipment[i]->obj_flags.bitvector3, FALSE);
       for (c = 0; c < MAX_DAM_TYPE; c++)
         GET_RESIST(ch, c) -= ch->equipment[i]->resists[c];
     }
@@ -491,7 +487,9 @@ void affect_total(struct char_data * ch)
   for (i = 0; i < NUM_WEARS; i++) {
     if (ch->equipment[i]) {
       for (j = 0; j < MAX_OBJ_AFFECT; j++)
-        obj_affect_modify(ch, ch->equipment[i]->affected[j].location, ch->equipment[i]->affected[j].modifier, ch->equipment[i]->obj_flags.bitvector, ch->equipment[i]->obj_flags.bitvector2, ch->equipment[i]->obj_flags.bitvector3, TRUE);
+        obj_affect_modify(ch, ch->equipment[i]->affected[j].location, ch->equipment[i]->affected[j].modifier,
+                          ch->equipment[i]->obj_flags.bitvector, ch->equipment[i]->obj_flags.bitvector2,
+                          ch->equipment[i]->obj_flags.bitvector3, TRUE);
       for (c = 0; c < MAX_DAM_TYPE; c++)
         GET_RESIST(ch, c) += ch->equipment[i]->resists[c];
     }
@@ -507,13 +505,11 @@ void affect_total(struct char_data * ch)
   GET_WIS(ch) = BOUNDED(0, GET_WIS(ch), 100);
   GET_CON(ch) = BOUNDED(0, GET_CON(ch), 100);
   GET_STR(ch) = BOUNDED(0, GET_STR(ch), 100);
-
 }
 
 /* Insert an affect_type in a char_data structure
  Automatically sets apropriate bits and apply's */
-void affect_to_char(struct char_data * ch, struct affected_type * af)
-{
+void affect_to_char(struct char_data *ch, struct affected_type *af) {
   struct affected_type *affected_alloc;
 
   CREATE(affected_alloc, struct affected_type, 1);
@@ -531,8 +527,7 @@ void affect_to_char(struct char_data * ch, struct affected_type * af)
  * reaches zero). Pointer *af must never be NIL!  Frees mem and calls
  * affect_location_apply
  */
-void affect_remove(struct char_data * ch, struct affected_type * af)
-{
+void affect_remove(struct char_data *ch, struct affected_type *af) {
   struct affected_type *temp;
 
   assert(ch->affected);
@@ -544,8 +539,7 @@ void affect_remove(struct char_data * ch, struct affected_type * af)
 }
 
 /* Call affect_remove with every spell of spelltype "skill" */
-void affect_from_char(struct char_data * ch, sh_int type)
-{
+void affect_from_char(struct char_data *ch, sh_int type) {
   struct affected_type *hjp;
   struct affected_type *next_hjp;
 
@@ -557,8 +551,7 @@ void affect_from_char(struct char_data * ch, sh_int type)
   add_innates(ch);
 }
 
-int reduce_affect(struct char_data * ch, int type, int how_much)
-{
+int reduce_affect(struct char_data *ch, int type, int how_much) {
   struct affected_type *hjp;
   struct affected_type *nexthjp;
   int retval = 0;
@@ -584,8 +577,7 @@ int reduce_affect(struct char_data * ch, int type, int how_much)
  * Return if a char is affected by a spell (SPELL_XXX), NULL indicates
  * not affected
  */
-bool affected_by_spell(struct char_data * ch, sh_int type)
-{
+bool affected_by_spell(struct char_data *ch, sh_int type) {
   struct affected_type *hjp;
 
   for (hjp = ch->affected; hjp; hjp = hjp->next)
@@ -595,8 +587,8 @@ bool affected_by_spell(struct char_data * ch, sh_int type)
   return FALSE;
 }
 
-void affect_join(struct char_data * ch, struct affected_type * af, bool add_dur, bool avg_dur, bool add_mod, bool avg_mod)
-{
+void affect_join(struct char_data *ch, struct affected_type *af, bool add_dur, bool avg_dur, bool add_mod,
+                 bool avg_mod) {
   struct affected_type *hjp;
   bool found = FALSE;
   int i;
@@ -626,8 +618,7 @@ void affect_join(struct char_data * ch, struct affected_type * af, bool add_dur,
 }
 
 /* move a player out of a room */
-void char_from_room(struct char_data * ch)
-{
+void char_from_room(struct char_data *ch) {
   struct char_data *temp;
   int i;
   struct obj_data *tobj;
@@ -667,8 +658,7 @@ void char_from_room(struct char_data * ch)
 }
 
 /* place a character in a room */
-void char_to_room(struct char_data * ch, int room)
-{
+void char_to_room(struct char_data *ch, int room) {
   int i;
   struct obj_data *tobj;
   struct obj_data *tobj_next;
@@ -706,8 +696,7 @@ void char_to_room(struct char_data * ch, int room)
 }
 
 /* give an object to a char   */
-void obj_to_char(struct obj_data * object, struct char_data * ch)
-{
+void obj_to_char(struct obj_data *object, struct char_data *ch) {
   if (object && ch) {
     object->next_content = ch->carrying;
     ch->carrying = object;
@@ -730,8 +719,7 @@ void obj_to_char(struct obj_data * object, struct char_data * ch)
 }
 
 /* take an object from a char */
-void obj_from_char(struct obj_data * object)
-{
+void obj_from_char(struct obj_data *object) {
   struct obj_data *temp;
 
   if (object == NULL) {
@@ -748,7 +736,8 @@ void obj_from_char(struct obj_data * object)
   SET_BIT(PLR_FLAGS(object->carried_by), PLR_CRASH);
   if (GET_OBJ_RNUM(object) > -1)
     if (obj_index[GET_OBJ_RNUM(object)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from character %s", object->short_description, GET_NAME(object->carried_by));
+      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from character %s", object->short_description,
+                    GET_NAME(object->carried_by));
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
   IS_CARRYING_W(object->carried_by) -= GET_OBJ_WEIGHT(object);
@@ -758,8 +747,7 @@ void obj_from_char(struct obj_data * object)
 }
 
 /* Return the effect of a piece of armor in position eq_pos */
-int apply_ac(struct char_data * ch, int eq_pos)
-{
+int apply_ac(struct char_data *ch, int eq_pos) {
   int factor;
 
   assert(ch->equipment[eq_pos]);
@@ -771,36 +759,37 @@ int apply_ac(struct char_data * ch, int eq_pos)
 
   switch (eq_pos) {
 
-    case WEAR_BODY:
-      factor = 3;
-      break; /* 30% */
-    case WEAR_HEAD:
-      factor = 2;
-      break; /* 20% */
-    case WEAR_LEGS:
-      factor = 2;
-      break; /* 20% */
-    default:
-      factor = 1;
-      break; /* all others 10% */
+  case WEAR_BODY:
+    factor = 3;
+    break; /* 30% */
+  case WEAR_HEAD:
+    factor = 2;
+    break; /* 20% */
+  case WEAR_LEGS:
+    factor = 2;
+    break; /* 20% */
+  default:
+    factor = 1;
+    break; /* all others 10% */
   }
 
   return (factor * GET_OBJ_VAL(ch->equipment[eq_pos], 0));
 }
 
-void equip_char(struct char_data * ch, struct obj_data * obj, int pos)
-{
+void equip_char(struct char_data *ch, struct obj_data *obj, int pos) {
   int j;
-  int invalid_class(struct char_data *ch, struct obj_data *obj);
+  int invalid_class(struct char_data * ch, struct obj_data * obj);
 
   if (!(pos >= 0 && pos < NUM_WEARS)) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Invalid position (ch: %s, obj: %s, pos: %d)", GET_NAME(ch), obj->short_description, pos);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Invalid position (ch: %s, obj: %s, pos: %d)", GET_NAME(ch),
+                  obj->short_description, pos);
     stderr_log(buf);
     return;
   }
 
   if (ch->equipment[pos]) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Char is already equipped: %s, %s", GET_NAME(ch), obj->short_description);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "SYSERR: Char is already equipped: %s, %s", GET_NAME(ch),
+                  obj->short_description);
     stderr_log(buf);
     return;
   }
@@ -812,7 +801,8 @@ void equip_char(struct char_data * ch, struct obj_data * obj, int pos)
     stderr_log("SYSERR: EQUIP: Obj is in_room when equip.");
     return;
   }
-  if ((IS_OBJ_STAT(obj, ITEM_ANTI_EVIL) && IS_EVIL(ch)) || (IS_OBJ_STAT(obj, ITEM_ANTI_GOOD) && IS_GOOD(ch)) || (IS_OBJ_STAT(obj, ITEM_ANTI_NEUTRAL) && IS_NEUTRAL(ch)) || invalid_class(ch, obj)) {
+  if ((IS_OBJ_STAT(obj, ITEM_ANTI_EVIL) && IS_EVIL(ch)) || (IS_OBJ_STAT(obj, ITEM_ANTI_GOOD) && IS_GOOD(ch)) ||
+      (IS_OBJ_STAT(obj, ITEM_ANTI_NEUTRAL) && IS_NEUTRAL(ch)) || invalid_class(ch, obj)) {
     if (ch->in_room != NOWHERE) {
       act("You are zapped by $p and instantly let go of it.", FALSE, ch, obj, 0, TO_CHAR);
       act("$n is zapped by $p and instantly lets go of it.", FALSE, ch, obj, 0, TO_ROOM);
@@ -847,7 +837,8 @@ void equip_char(struct char_data * ch, struct obj_data * obj, int pos)
    stderr_log("SYSERR: ch->in_room = NOWHERE when equipping char."); */
 
   for (j = 0; j < MAX_OBJ_AFFECT; j++)
-    obj_affect_modify(ch, obj->affected[j].location, obj->affected[j].modifier, GET_OBJ_BITV(obj), GET_OBJ_BITV2(obj), GET_OBJ_BITV3(obj), TRUE);
+    obj_affect_modify(ch, obj->affected[j].location, obj->affected[j].modifier, GET_OBJ_BITV(obj), GET_OBJ_BITV2(obj),
+                      GET_OBJ_BITV3(obj), TRUE);
 
   for (j = 0; j < MAX_DAM_TYPE; j++)
     GET_RESIST(ch, j) += obj->resists[j];
@@ -855,8 +846,7 @@ void equip_char(struct char_data * ch, struct obj_data * obj, int pos)
   affect_total(ch);
 }
 
-struct obj_data *unequip_char(struct char_data * ch, int pos)
-{
+struct obj_data *unequip_char(struct char_data *ch, int pos) {
   int j;
   struct obj_data *obj;
 
@@ -891,7 +881,8 @@ struct obj_data *unequip_char(struct char_data * ch, int pos)
   ch->equipment[pos] = NULL;
 
   for (j = 0; j < MAX_OBJ_AFFECT; j++)
-    obj_affect_modify(ch, obj->affected[j].location, obj->affected[j].modifier, GET_OBJ_BITV(obj), GET_OBJ_BITV2(obj), GET_OBJ_BITV3(obj), FALSE);
+    obj_affect_modify(ch, obj->affected[j].location, obj->affected[j].modifier, GET_OBJ_BITV(obj), GET_OBJ_BITV2(obj),
+                      GET_OBJ_BITV3(obj), FALSE);
 
   for (j = 0; j < MAX_DAM_TYPE; j++)
     GET_RESIST(ch, j) -= obj->resists[j];
@@ -901,8 +892,7 @@ struct obj_data *unequip_char(struct char_data * ch, int pos)
   return (obj);
 }
 
-int get_number(char **name)
-{
+int get_number(char **name) {
   int i;
   char *ppos;
   char number[MAX_INPUT_LENGTH];
@@ -924,8 +914,7 @@ int get_number(char **name)
 }
 
 /* Search a given list for an object number, and return a ptr to that obj */
-struct obj_data *get_obj_in_list_num(int num, struct obj_data * list)
-{
+struct obj_data *get_obj_in_list_num(int num, struct obj_data *list) {
   struct obj_data *i;
 
   for (i = list; i != NULL; i = i->next_content)
@@ -936,8 +925,7 @@ struct obj_data *get_obj_in_list_num(int num, struct obj_data * list)
 }
 
 /* Search a given list for an object vnum, and return a ptr to that obj */
-struct obj_data *get_obj_in_list_vnum(int vnum, struct obj_data * list)
-{
+struct obj_data *get_obj_in_list_vnum(int vnum, struct obj_data *list) {
   struct obj_data *i;
 
   for (i = list; i != NULL; i = i->next_content)
@@ -948,8 +936,7 @@ struct obj_data *get_obj_in_list_vnum(int vnum, struct obj_data * list)
 }
 
 /* search the entire world for an object number, and return a pointer  */
-struct obj_data *get_obj_num(int nr)
-{
+struct obj_data *get_obj_num(int nr) {
   struct obj_data *i;
 
   for (i = object_list; i != NULL; i = i->next)
@@ -960,8 +947,7 @@ struct obj_data *get_obj_num(int nr)
 }
 
 /* search a room for a char, and return a pointer if found..  */
-struct char_data *get_char_room(char *name, int room)
-{
+struct char_data *get_char_room(char *name, int room) {
   struct char_data *i;
   int j = 0, number;
   char tmpname[MAX_INPUT_LENGTH];
@@ -980,8 +966,7 @@ struct char_data *get_char_room(char *name, int room)
 }
 
 /* search all over the world for a char num, and return a pointer if found */
-struct char_data *get_char_num(int nr)
-{
+struct char_data *get_char_num(int nr) {
   struct char_data *i;
 
   for (i = character_list; i != NULL; i = i->next)
@@ -992,8 +977,7 @@ struct char_data *get_char_num(int nr)
 }
 
 /* put an object in a room */
-void obj_to_room(struct obj_data * object, int room)
-{
+void obj_to_room(struct obj_data *object, int room) {
   struct obj_data *obj;
   int plat;
   int gold;
@@ -1029,11 +1013,11 @@ void obj_to_room(struct obj_data * object, int room)
     object->carried_by = NULL;
     if (!IS_OBJ_STAT(object, ITEM_FLOAT) && !(GET_OBJ_TYPE(object) == ITEM_PCORPSE)) {
       switch (GET_SECT(room)) {
-        case SECT_WATER_SWIM:
-        case SECT_WATER_NOSWIM:
-          act("$p slips silently into the water, vanishing without a trace.", TRUE, NULL, object, NULL, TO_ROOM);
-          SET_BIT(GET_OBJ_EXTRA(object), ITEM_UNDERWATER);
-          break;
+      case SECT_WATER_SWIM:
+      case SECT_WATER_NOSWIM:
+        act("$p slips silently into the water, vanishing without a trace.", TRUE, NULL, object, NULL, TO_ROOM);
+        SET_BIT(GET_OBJ_EXTRA(object), ITEM_UNDERWATER);
+        break;
       }
     }
     if (IS_OBJ_STAT(object, ITEM_ISLIGHT))
@@ -1045,13 +1029,11 @@ void obj_to_room(struct obj_data * object, int room)
         safe_snprintf(logbuffer, sizeof(logbuffer), "%s to room %s", object->short_description, world[room].name);
         mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
       }
-
   }
 }
 
 /* Take an object from a room */
-void obj_from_room(struct obj_data * object)
-{
+void obj_from_room(struct obj_data *object) {
   struct obj_data *temp;
 
   if (!object || object->in_room == NOWHERE) {
@@ -1065,7 +1047,8 @@ void obj_from_room(struct obj_data * object)
 
   if (GET_OBJ_RNUM(object) > -1)
     if (obj_index[GET_OBJ_RNUM(object)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from room %s", object->short_description, world[object->in_room].name);
+      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from room %s", object->short_description,
+                    world[object->in_room].name);
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
@@ -1076,8 +1059,7 @@ void obj_from_room(struct obj_data * object)
 }
 
 /* put an object in an object (quaint)  */
-void obj_to_obj(struct obj_data * obj, struct obj_data * obj_to)
-{
+void obj_to_obj(struct obj_data *obj, struct obj_data *obj_to) {
   struct obj_data *tmp_obj;
 
   if (GET_OBJ_RNUM(obj) > -1)
@@ -1093,14 +1075,13 @@ void obj_to_obj(struct obj_data * obj, struct obj_data * obj_to)
   for (tmp_obj = obj->in_obj; tmp_obj->in_obj != NULL; tmp_obj = tmp_obj->in_obj)
     GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
 
-  /* top level object.  Subtract weight from inventory if necessary. */GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
+  /* top level object.  Subtract weight from inventory if necessary. */ GET_OBJ_WEIGHT(tmp_obj) += GET_OBJ_WEIGHT(obj);
   if (tmp_obj->carried_by != NULL)
     IS_CARRYING_W(tmp_obj->carried_by) += GET_OBJ_WEIGHT(obj);
 }
 
 /* put an object in an object WEIGHTLESS !  */
-void obj_to_obj2(struct obj_data * obj, struct obj_data * obj_to)
-{
+void obj_to_obj2(struct obj_data *obj, struct obj_data *obj_to) {
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
       safe_snprintf(logbuffer, sizeof(logbuffer), "%s to obj %s", obj->short_description, obj_to->short_description);
@@ -1110,12 +1091,10 @@ void obj_to_obj2(struct obj_data * obj, struct obj_data * obj_to)
   obj->next_content = obj_to->contains;
   obj_to->contains = obj;
   obj->in_obj = obj_to;
-
 }
 
 /* remove an object from an object */
-void obj_from_obj(struct obj_data * obj)
-{
+void obj_from_obj(struct obj_data *obj) {
   struct obj_data *temp, *obj_from;
 
   if (obj->in_obj == NULL) {
@@ -1127,7 +1106,8 @@ void obj_from_obj(struct obj_data * obj)
 
   if (GET_OBJ_RNUM(obj) > -1)
     if (obj_index[GET_OBJ_RNUM(obj)].qic) {
-      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from obj %s", obj->short_description, obj_from->short_description);
+      safe_snprintf(logbuffer, sizeof(logbuffer), "%s from obj %s", obj->short_description,
+                    obj_from->short_description);
       mudlog(logbuffer, 'J', COM_ADMIN, FALSE);
     }
 
@@ -1135,7 +1115,7 @@ void obj_from_obj(struct obj_data * obj)
   for (temp = obj->in_obj; temp->in_obj != NULL; temp = temp->in_obj)
     GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
 
-  /* Subtract weight from char that carries the object */GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
+  /* Subtract weight from char that carries the object */ GET_OBJ_WEIGHT(temp) -= GET_OBJ_WEIGHT(obj);
   if (temp->carried_by != NULL)
     IS_CARRYING_W(temp->carried_by) -= GET_OBJ_WEIGHT(obj);
 
@@ -1147,8 +1127,7 @@ void obj_from_obj(struct obj_data * obj)
 }
 
 /* Set all carried_by to point to new owner */
-void object_list_new_owner(struct obj_data * list, struct char_data * ch)
-{
+void object_list_new_owner(struct obj_data *list, struct char_data *ch) {
   if (list) {
     if (list->contains) {
       object_list_new_owner(list->contains, ch);
@@ -1161,8 +1140,7 @@ void object_list_new_owner(struct obj_data * list, struct char_data * ch)
 }
 
 /* Extract an object from the world */
-void extract_obj(struct obj_data * obj)
-{
+void extract_obj(struct obj_data *obj) {
   struct obj_data *temp = NULL;
   struct obj_data *tmpobj = NULL;
   struct obj_data *next_obj = NULL;
@@ -1269,8 +1247,7 @@ void extract_obj(struct obj_data * obj)
 }
 
 /* Extract an object from the world without QIC check/log */
-void extract_obj_q(struct obj_data * obj)
-{
+void extract_obj_q(struct obj_data *obj) {
   struct obj_data *temp;
   struct obj_data *tmpobj;
   struct obj_data *next_obj;
@@ -1355,8 +1332,7 @@ void extract_obj_q(struct obj_data * obj)
   }
 }
 
-void update_object(struct obj_data * obj, int use)
-{
+void update_object(struct obj_data *obj, int use) {
   if (GET_OBJ_TIMER(obj) > 0)
     GET_OBJ_TIMER(obj) -= use;
   if (obj->contains)
@@ -1365,8 +1341,7 @@ void update_object(struct obj_data * obj, int use)
     update_object(obj->next_content, use);
 }
 
-void update_char_objects(struct char_data * ch)
-{
+void update_char_objects(struct char_data *ch) {
   int i;
 
   if (ch->equipment[WEAR_HOLD] != NULL)
@@ -1397,8 +1372,7 @@ void update_char_objects(struct char_data * ch)
 }
 
 /* Extract a ch completely from the world, and leave his stuff behind */
-void extract_char(struct char_data * ch, int dropeq)
-{
+void extract_char(struct char_data *ch, int dropeq) {
   struct char_data *k, *temp;
   struct descriptor_data *t_desc;
   struct obj_data *obj;
@@ -1511,8 +1485,7 @@ void extract_char(struct char_data * ch, int dropeq)
  which incorporate the actual player-data.
  *********************************************************************** */
 
-struct char_data *get_player_vis(struct char_data * ch, char *name, int inroom)
-{
+struct char_data *get_player_vis(struct char_data *ch, char *name, int inroom) {
   struct char_data *i;
 
   for (i = character_list; i; i = i->next)
@@ -1522,8 +1495,7 @@ struct char_data *get_player_vis(struct char_data * ch, char *name, int inroom)
   return NULL;
 }
 
-struct char_data *get_char_room_vis(struct char_data * ch, char *name)
-{
+struct char_data *get_char_room_vis(struct char_data *ch, char *name) {
   struct char_data *i;
   int j = 0, number;
   char tmpname[MAX_INPUT_LENGTH];
@@ -1554,8 +1526,7 @@ struct char_data *get_char_room_vis(struct char_data * ch, char *name)
   return NULL;
 }
 
-struct char_data *get_char_vis(struct char_data * ch, char *name)
-{
+struct char_data *get_char_vis(struct char_data *ch, char *name) {
   struct char_data *i;
   int j = 0, number;
   char tmpname[MAX_INPUT_LENGTH];
@@ -1577,8 +1548,7 @@ struct char_data *get_char_vis(struct char_data * ch, char *name)
   return NULL;
 }
 
-struct obj_data *get_obj_in_list_vis(struct char_data * ch, char *name, struct obj_data * list)
-{
+struct obj_data *get_obj_in_list_vis(struct char_data *ch, char *name, struct obj_data *list) {
   struct obj_data *i;
   struct obj_data *next;
   int j = 0, number;
@@ -1604,8 +1574,7 @@ struct obj_data *get_obj_in_list_vis(struct char_data * ch, char *name, struct o
 }
 
 /* search the entire world for an object, and return a pointer  */
-struct obj_data *get_obj_vis(struct char_data * ch, char *name)
-{
+struct obj_data *get_obj_vis(struct char_data *ch, char *name) {
   struct obj_data *i;
   int j = 0, number;
   char tmpname[MAX_INPUT_LENGTH];
@@ -1637,8 +1606,7 @@ struct obj_data *get_obj_vis(struct char_data * ch, char *name)
   return NULL;
 }
 
-struct obj_data *get_object_in_equip_vis(struct char_data * ch, char *arg, struct obj_data * equipment[], int *j)
-{
+struct obj_data *get_object_in_equip_vis(struct char_data *ch, char *arg, struct obj_data *equipment[], int *j) {
   for ((*j) = 0; (*j) < NUM_WEARS; (*j)++)
     if (equipment[(*j)])
       if (CAN_SEE_OBJ(ch, equipment[(*j)]))
@@ -1648,8 +1616,7 @@ struct obj_data *get_object_in_equip_vis(struct char_data * ch, char *arg, struc
   return NULL;
 }
 
-char *money_desc(int amount)
-{
+char *money_desc(int amount) {
   if (amount <= 0) {
     stderr_log("SYSERR: Try to create negative or 0 money.");
     return NULL;
@@ -1686,8 +1653,7 @@ char *money_desc(int amount)
     return "an absolutely colossal mountain of coins";
 }
 
-struct obj_data *create_money(int plat, int gold, int silver, int copper)
-{
+struct obj_data *create_money(int plat, int gold, int silver, int copper) {
   struct obj_data *obj;
   struct extra_descr_data *new_descr;
   char buf[200];
@@ -1713,7 +1679,10 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper)
     obj->description = strdup(CAP(buf));
 
     new_descr->keyword = strdup("coins");
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You guess there are, maybe, %dp %dg %ds %dc.", 1000 * ((plat / 1000) + number(0, (plat / 1000))), 1000 * ((gold / 1000) + number(0, (gold / 1000))), 1000 * ((silver / 1000) + number(0, (silver / 1000))), 1000 * ((copper / 1000) + number(0, (copper / 1000))));
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You guess there are, maybe, %dp %dg %ds %dc.",
+                  1000 * ((plat / 1000) + number(0, (plat / 1000))), 1000 * ((gold / 1000) + number(0, (gold / 1000))),
+                  1000 * ((silver / 1000) + number(0, (silver / 1000))),
+                  1000 * ((copper / 1000) + number(0, (copper / 1000))));
     new_descr->description = strdup(buf);
   }
 
@@ -1746,8 +1715,7 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper)
 /* The routine returns a pointer to the next word in *arg (just like the  */
 /* one_argument routine).                                                 */
 
-int generic_find(char *arg, int bitvector, struct char_data * ch, struct char_data ** tar_ch, struct obj_data ** tar_obj)
-{
+int generic_find(char *arg, int bitvector, struct char_data *ch, struct char_data **tar_ch, struct obj_data **tar_obj) {
   int i, found;
   char name[256];
 
@@ -1798,8 +1766,7 @@ int generic_find(char *arg, int bitvector, struct char_data * ch, struct char_da
 }
 
 /* a function to scan for "all" or "all.x" */
-int find_all_dots(char *arg)
-{
+int find_all_dots(char *arg) {
   if (!strcmp(arg, "all"))
     return FIND_ALL;
   else if (!strncmp(arg, "all.", 4)) {

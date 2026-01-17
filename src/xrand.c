@@ -9,8 +9,7 @@
  */
 static int rgiState[2 + 55];
 
-void init_mm()
-{
+void init_mm() {
   int *piState;
   int iState;
   struct timeval last_time;
@@ -23,7 +22,7 @@ void init_mm()
   piState[-2] = 55 - 55;
   piState[-1] = 55 - 24;
 
-  piState[0] = ((int) current_time) & ((1 << 30) - 1);
+  piState[0] = ((int)current_time) & ((1 << 30) - 1);
   piState[1] = 1;
   for (iState = 2; iState < 55; iState++) {
     piState[iState] = (piState[iState - 1] + piState[iState - 2]) & ((1 << 30) - 1);
@@ -31,8 +30,7 @@ void init_mm()
   return;
 }
 
-int number_mm(void)
-{
+int number_mm(void) {
   int *piState;
   int iState1;
   int iState2;
@@ -55,8 +53,7 @@ int number_mm(void)
 /*
  * Generate a random number.
  */
-int number_range(int from, int to)
-{
+int number_range(int from, int to) {
   int power;
   int number;
 
@@ -75,8 +72,7 @@ int number_range(int from, int to)
 /*
  * Generate a percentile roll.
  */
-int number_percent(void)
-{
+int number_percent(void) {
   int percent;
 
   while ((percent = number_mm() & (128 - 1)) > 99)
@@ -84,4 +80,3 @@ int number_percent(void)
 
   return 1 + percent;
 }
-

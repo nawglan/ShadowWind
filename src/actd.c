@@ -1,22 +1,21 @@
 /* actd support */
 
+#include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <assert.h>
 
-#include "structs.h"
-#include "utils.h"
 #include "comm.h"
+#include "db.h"
 #include "handler.h"
 #include "interpreter.h"
-#include "db.h"
 #include "screen.h"
+#include "structs.h"
+#include "utils.h"
 
 struct actd_msg *actd_list = NULL;
 
-struct actd_msg *get_actd(int vnum)
-{
+struct actd_msg *get_actd(int vnum) {
   struct actd_msg *actd;
 
   actd = actd_list;
@@ -30,8 +29,7 @@ struct actd_msg *get_actd(int vnum)
   return NULL;
 }
 
-void load_actd(void)
-{
+void load_actd(void) {
   FILE *fl;
   int type;
   struct actd_msg *actd;
@@ -79,8 +77,7 @@ void load_actd(void)
   fclose(fl);
 }
 
-ACMD(do_actd)
-{
+ACMD(do_actd) {
   int j;
   struct actd_msg *actd;
 
@@ -134,4 +131,3 @@ ACMD(do_actd)
     send_to_char("\r\n", ch);
   }
 }
-

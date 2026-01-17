@@ -14,11 +14,11 @@ int waiting_for_ident(struct descriptor_data *d);
 extern int ident;
 
 #ifndef IDBUFSIZE
-#  define IDBUFSIZE 2048
+#define IDBUFSIZE 2048
 #endif
 
 #ifndef IDPORT
-#  define IDPORT	113
+#define IDPORT 113
 #endif
 
 typedef struct {
@@ -27,15 +27,15 @@ typedef struct {
 } ident_t;
 
 typedef struct {
-  int lport; /* Local port */
-  int fport; /* Far (remote) port */
+  int lport;        /* Local port */
+  int fport;        /* Far (remote) port */
   char *identifier; /* Normally user name */
-  char *opsys; /* OS */
-  char *charset; /* Charset (what did you expect?) */
-} IDENT; /* For higher-level routines */
+  char *opsys;      /* OS */
+  char *charset;    /* Charset (what did you expect?) */
+} IDENT;            /* For higher-level routines */
 
 /* Low-level calls and macros */
-#define id_fileno(ID)	((ID)->fd)
+#define id_fileno(ID) ((ID)->fd)
 
 /* High-level calls */
 extern char id_version[];

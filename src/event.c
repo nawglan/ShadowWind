@@ -2,14 +2,14 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "structs.h"
-#include "event.h"
-#include "utils.h"
 #include "comm.h"
+#include "db.h"
+#include "event.h"
 #include "handler.h"
 #include "interpreter.h"
-#include "db.h"
 #include "spells.h"
+#include "structs.h"
+#include "utils.h"
 
 int in_event_handler = 0;
 struct event_info *pending_events = NULL;
@@ -24,7 +24,7 @@ int find_spell_num(char *name);
 void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct obj_data *tobj);
 void Crash_save(struct char_data *ch, int type);
 int mag_savingthrow(struct char_data *ch, int type);
-struct obj_data *unequip_char(struct char_data * ch, int pos);
+struct obj_data *unequip_char(struct char_data *ch, int pos);
 void mag_affect_obj(struct char_data *caster, struct obj_data *object, struct spell_info_type *sinfo, int value);
 void mag_points_char(struct spell_info_type *sinfo, struct char_data *caster, struct char_data *vict, int value);
 int check_teleport(struct char_data *ch, int room);
@@ -43,8 +43,7 @@ int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, stru
 extern int pk_allowed;
 extern int top_of_world;
 
-int getSpellDam(struct spell_info_type *sinfo, struct char_data *ch)
-{
+int getSpellDam(struct spell_info_type *sinfo, struct char_data *ch) {
   int dam;
   if (!sinfo->num_dice2) { /* only 1 set of dice */
     if (!sinfo->size_limit && !sinfo->dice_limit) {
@@ -58,44 +57,63 @@ int getSpellDam(struct spell_info_type *sinfo, struct char_data *ch)
     }
   } else { /* using 2 dice */
     if (!sinfo->size_limit && !sinfo->dice_limit && !sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, sinfo->size_dice) + dice(sinfo->num_dice2, sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, sinfo->size_dice) + dice(sinfo->num_dice2, sinfo->size_dice2) + sinfo->dice_add +
+            sinfo->dice_add2;
     } else if (!sinfo->size_limit && !sinfo->dice_limit && !sinfo->size_limit2 && sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, sinfo->size_dice) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, sinfo->size_dice) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) +
+            sinfo->dice_add + sinfo->dice_add2;
     } else if (!sinfo->size_limit && !sinfo->dice_limit && sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, sinfo->size_dice) + dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, sinfo->size_dice) + dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) +
+            sinfo->dice_add + sinfo->dice_add2;
     } else if (!sinfo->size_limit && !sinfo->dice_limit && sinfo->size_limit2 && sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, sinfo->size_dice) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, sinfo->size_dice) +
+            dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add +
+            sinfo->dice_add2;
     } else if (!sinfo->size_limit && sinfo->dice_limit && !sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) + dice(sinfo->num_dice2, sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) + dice(sinfo->num_dice2, sinfo->size_dice2) +
+            sinfo->dice_add + sinfo->dice_add2;
     } else if (!sinfo->size_limit && sinfo->dice_limit && !sinfo->size_limit2 && sinfo->dice_limit2) {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) +
+            dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
     } else if (!sinfo->size_limit && sinfo->dice_limit && sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) + dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) +
+            dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
     } else if (!sinfo->size_limit && sinfo->dice_limit && sinfo->size_limit2 && sinfo->dice_limit2) {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), sinfo->size_dice) +
+            dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add +
+            sinfo->dice_add2;
     } else if (sinfo->size_limit && !sinfo->dice_limit && !sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(sinfo->num_dice2, sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(sinfo->num_dice2, sinfo->size_dice2) +
+            sinfo->dice_add + sinfo->dice_add2;
     } else if (sinfo->size_limit && !sinfo->dice_limit && !sinfo->size_limit2 && sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) +
+            dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
     } else if (sinfo->size_limit && !sinfo->dice_limit && sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) +
+            dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
     } else if (sinfo->size_limit && !sinfo->dice_limit && sinfo->size_limit2 && sinfo->dice_limit2) {
-      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(sinfo->num_dice, MIN(sinfo->size_dice, GET_LEVEL(ch))) +
+            dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add +
+            sinfo->dice_add2;
     } else if (sinfo->size_limit && sinfo->dice_limit && !sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(sinfo->num_dice2, sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) +
+            dice(sinfo->num_dice2, sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
     } else if (sinfo->size_limit && sinfo->dice_limit && !sinfo->size_limit2 && sinfo->dice_limit2) {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) +
+            dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), sinfo->size_dice2) + sinfo->dice_add + sinfo->dice_add2;
     } else if (sinfo->size_limit && sinfo->dice_limit && sinfo->size_limit2 && !sinfo->dice_limit2) {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) +
+            dice(sinfo->num_dice2, MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
     } else {
-      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) + dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add + sinfo->dice_add2;
+      dam = dice(MIN(sinfo->num_dice, GET_LEVEL(ch)), MIN(sinfo->size_dice, GET_LEVEL(ch))) +
+            dice(MIN(sinfo->num_dice2, GET_LEVEL(ch)), MIN(sinfo->size_dice2, GET_LEVEL(ch))) + sinfo->dice_add +
+            sinfo->dice_add2;
     }
   }
   return dam;
 }
 
-int modBySpecialization(struct char_data *ch, struct spell_info_type *sinfo, int dam)
-{
+int modBySpecialization(struct char_data *ch, struct spell_info_type *sinfo, int dam) {
   int newdam = dam;
 
   if (GET_SPECIALIZED(ch)) {
@@ -111,8 +129,7 @@ int modBySpecialization(struct char_data *ch, struct spell_info_type *sinfo, int
   return newdam;
 }
 
-int getMaxCircle(struct spell_info_type *sinfo)
-{
+int getMaxCircle(struct spell_info_type *sinfo) {
   int i;
   int best = 1;
 
@@ -127,18 +144,24 @@ int getMaxCircle(struct spell_info_type *sinfo)
   return (best + 4) / 5;
 }
 
-int is_area_spell(struct spell_info_type *sinfo)
-{
-  return (sinfo->spell_pointer == spell_general || sinfo->event_pointer == spell_area_event || sinfo->event_pointer == spell_area_points_event || sinfo->event_pointer == spell_area_dam_event || sinfo->event_pointer == spell_room_event || sinfo->event_pointer == spell_group_event || sinfo->event_pointer == spell_create_obj_event || sinfo->event_pointer == spell_create_mob_event || sinfo->event_pointer == spell_word_recall_event || sinfo->event_pointer == spell_group_points_event);
+int is_area_spell(struct spell_info_type *sinfo) {
+  return (sinfo->spell_pointer == spell_general || sinfo->event_pointer == spell_area_event ||
+          sinfo->event_pointer == spell_area_points_event || sinfo->event_pointer == spell_area_dam_event ||
+          sinfo->event_pointer == spell_room_event || sinfo->event_pointer == spell_group_event ||
+          sinfo->event_pointer == spell_create_obj_event || sinfo->event_pointer == spell_create_mob_event ||
+          sinfo->event_pointer == spell_word_recall_event || sinfo->event_pointer == spell_group_points_event);
 }
 
-int spell_has_vict(struct spell_info_type *sinfo)
-{
-  return (sinfo->spell_pointer != spell_general && sinfo->event_pointer != spell_create_obj_event && sinfo->event_pointer != spell_create_mob_event && sinfo->event_pointer != spell_area_event && sinfo->event_pointer != spell_area_points_event && sinfo->event_pointer != spell_area_dam_event && sinfo->event_pointer != spell_room_event && sinfo->event_pointer != spell_word_recall_event && sinfo->event_pointer != spell_group_event && sinfo->event_pointer != spell_group_points_event && sinfo->event_pointer != spell_locate_obj_event);
+int spell_has_vict(struct spell_info_type *sinfo) {
+  return (sinfo->spell_pointer != spell_general && sinfo->event_pointer != spell_create_obj_event &&
+          sinfo->event_pointer != spell_create_mob_event && sinfo->event_pointer != spell_area_event &&
+          sinfo->event_pointer != spell_area_points_event && sinfo->event_pointer != spell_area_dam_event &&
+          sinfo->event_pointer != spell_room_event && sinfo->event_pointer != spell_word_recall_event &&
+          sinfo->event_pointer != spell_group_event && sinfo->event_pointer != spell_group_points_event &&
+          sinfo->event_pointer != spell_locate_obj_event);
 }
-#define EVENT_CH ((struct char_data*)temp->causer)
-void run_events()
-{
+#define EVENT_CH ((struct char_data *)temp->causer)
+void run_events() {
   struct event_info *temp, *prox;
   int i;
   char abuf[256];
@@ -171,7 +194,8 @@ void run_events()
         REMOVE_BIT(AFF2_FLAGS(EVENT_CH), AFF2_CASTING);
         WAIT_STATE(EVENT_CH, 0);
       }
-    } else if (!(!IS_MOB(EVENT_CH) && COM_FLAGGED(EVENT_CH, COM_IMMORT)) && temp->sinfo && temp->type == EVENT_SPELL && !temp->info2 && !(temp->ticker--)) {
+    } else if (!(!IS_MOB(EVENT_CH) && COM_FLAGGED(EVENT_CH, COM_IMMORT)) && temp->sinfo && temp->type == EVENT_SPELL &&
+               !temp->info2 && !(temp->ticker--)) {
       circle = GET_CIRCLE_DIFF(EVENT_CH, temp->sinfo);
       if (IS_MAGE(EVENT_CH))
         bonus = GET_INT(EVENT_CH);
@@ -230,7 +254,7 @@ void run_events()
       if (!temp->func) {
         stderr_log("SYSERR: Attempting to run a NULL event. Ignoring");
       } else {
-        (temp->func)(temp->causer, temp->victim, (long) temp->info, temp->sinfo, temp->info2);
+        (temp->func)(temp->causer, temp->victim, (long)temp->info, temp->sinfo, temp->info2);
       }
 
       /* remove the event from the list. */
@@ -270,8 +294,8 @@ void run_events()
   in_event_handler = 0;
 }
 
-void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo, char *command, int info2)
-{
+void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo,
+               char *command, int info2) {
   struct event_info *new;
 
   CREATE(new, struct event_info, 1);
@@ -296,15 +320,14 @@ void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, vo
     prev = pending_events;
 }
 
-bool clean_events(void *pointer, EVENT(*func))
-{
+bool clean_events(void *pointer, EVENT(*func)) {
   struct event_info *temp, *prox;
   bool completed = 0;
 
   if (!func) {
     for (temp = pending_events; temp; temp = prox) {
       prox = temp->next;
-      if (temp->causer == pointer || temp->victim == pointer || (void *) (temp->func) == pointer) {
+      if (temp->causer == pointer || temp->victim == pointer || (void *)(temp->func) == pointer) {
         completed = 1;
         temp->ticks_to_go = -1;
       }
@@ -312,7 +335,7 @@ bool clean_events(void *pointer, EVENT(*func))
   } else {
     for (temp = pending_events; temp; temp = prox) {
       prox = temp->next;
-      if ((temp->causer == pointer || temp->victim == pointer) && ((event *) (temp->func) == func)) {
+      if ((temp->causer == pointer || temp->victim == pointer) && ((event *)(temp->func) == func)) {
         completed = 1;
         temp->ticks_to_go = -1;
       }
@@ -321,8 +344,7 @@ bool clean_events(void *pointer, EVENT(*func))
   return completed;
 }
 
-bool clean_causer_events(void *pointer, int type)
-{
+bool clean_causer_events(void *pointer, int type) {
   struct event_info *temp, *prox;
   bool completed = 0;
 
@@ -337,8 +359,7 @@ bool clean_causer_events(void *pointer, int type)
   return completed;
 }
 
-bool check_events(void *pointer, EVENT(*func))
-{
+bool check_events(void *pointer, EVENT(*func)) {
   struct event_info *temp, *prox;
 
   if (!func) {
@@ -350,20 +371,19 @@ bool check_events(void *pointer, EVENT(*func))
   } else {
     for (temp = pending_events; temp; temp = prox) {
       prox = temp->next;
-      if ((temp->causer == pointer || temp->victim == pointer) && ((event *) (temp->func) == func) && temp->ticks_to_go)
+      if ((temp->causer == pointer || temp->victim == pointer) && ((event *)(temp->func) == func) && temp->ticks_to_go)
         return 1;
     }
   }
   return 0;
 }
 
-struct event_info *find_event(struct char_data *ch, int type)
-{
+struct event_info *find_event(struct char_data *ch, int type) {
   struct event_info *temp, *prox;
 
   for (temp = pending_events; temp; temp = prox) {
     prox = temp->next;
-    if (temp->causer == (void*) ch && temp->type == type) {
+    if (temp->causer == (void *)ch && temp->type == type) {
       return temp;
     }
   }
@@ -375,8 +395,7 @@ struct event_info *find_event(struct char_data *ch, int type)
  *  Pre-defined events.(Just examples)  *
  * ************************************ */
 
-EVENT(spell_teleport_event)
-{
+EVENT(spell_teleport_event) {
   int destin = 0;
   int tries = 0;
 
@@ -401,7 +420,9 @@ EVENT(spell_teleport_event)
     if (tries == 100) {
       break;
     }
-  } while (!IS_NPC(CAUSER_CH) && (IN_ZONE(CAUSER_CH) != world[destin].zone || ROOM_FLAGGED(destin, ROOM_PRIVATE | ROOM_GODROOM) || !check_teleport(CAUSER_CH, destin)));
+  } while (!IS_NPC(CAUSER_CH) &&
+           (IN_ZONE(CAUSER_CH) != world[destin].zone || ROOM_FLAGGED(destin, ROOM_PRIVATE | ROOM_GODROOM) ||
+            !check_teleport(CAUSER_CH, destin)));
 
   if (tries < 100) {
     act("$n slowly fades from existence.", TRUE, CAUSER_CH, 0, 0, TO_ROOM);
@@ -414,18 +435,16 @@ EVENT(spell_teleport_event)
   }
 }
 
-EVENT(knockedout)
-{
+EVENT(knockedout) {
   send_to_char("Your head stops hurting, you are now sleeping normally.\r\n", CAUSER_CH);
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_KNOCKEDOUT);
 }
 
-EVENT(camp)
-{
+EVENT(camp) {
   int i;
   int unrentables = 0;
 
-  if ((int) (CAUSER_CH->in_room) == (int) info) {
+  if ((int)(CAUSER_CH->in_room) == (int)info) {
     unrentables = Crash_report_unrentables(CAUSER_CH, NULL, CAUSER_CH->carrying);
     for (i = 0; i < NUM_WEARS; i++) {
       unrentables = Crash_report_unrentables(CAUSER_CH, NULL, GET_EQ(CAUSER_CH, i));
@@ -433,7 +452,8 @@ EVENT(camp)
     if (unrentables) {
       return;
     }
-    safe_snprintf(buf, MAX_STRING_LENGTH, "%s has camped in room #%d.", GET_NAME(CAUSER_CH), world[IN_ROOM(CAUSER_CH)].number);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "%s has camped in room #%d.", GET_NAME(CAUSER_CH),
+                  world[IN_ROOM(CAUSER_CH)].number);
     mudlog(buf, 'C', COM_IMMORT, TRUE);
     plog(buf, CAUSER_CH, 0);
     safe_snprintf(buf, MAX_STRING_LENGTH, "Goodbye, %s... Come back soon!\r\n", CAUSER_CH->player.name);
@@ -454,21 +474,21 @@ EVENT(camp)
   }
 }
 
-ACMD(do_camp)
-{
+ACMD(do_camp) {
   if (GET_LEVEL(ch) < LVL_IMMORT) {
     if (GET_SECT(ch->in_room) == SECT_CITY)
       send_to_char("This is not a good place to camp for the night. Try an inn.\r\n", ch);
     else if (ROOM_FLAGGED(ch->in_room, ROOM_INDOORS))
       send_to_char("You cannot camp indoors. Try an inn.\r\n", ch);
-    else if (GET_SECT(ch->in_room) == SECT_WATER_SWIM || GET_SECT(ch->in_room) == SECT_WATER_NOSWIM || GET_SECT(ch->in_room) == SECT_UNDERWATER || GET_SECT(ch->in_room) == SECT_FLYING)
+    else if (GET_SECT(ch->in_room) == SECT_WATER_SWIM || GET_SECT(ch->in_room) == SECT_WATER_NOSWIM ||
+             GET_SECT(ch->in_room) == SECT_UNDERWATER || GET_SECT(ch->in_room) == SECT_FLYING)
       send_to_char("You must camp on solid ground.\r\n", ch);
     else if (ROOM_FLAGGED(ch->in_room, ROOM_NOCAMP))
       send_to_char("Camping is not allowed here.\r\n", ch);
     else {
       if (!check_events(ch, camp)) {
         SET_BIT(AFF_FLAGS(ch), AFF_CAMPING);
-        add_event(120, camp, EVENT_CAMP, ch, NULL, (void *) (long) ch->in_room, NULL, NULL, 0);
+        add_event(120, camp, EVENT_CAMP, ch, NULL, (void *)(long)ch->in_room, NULL, NULL, 0);
         send_to_char("You start setting up your campsite.\r\n", ch);
       } else {
         send_to_char("You're camp preperations are not yet complete.\r\n", ch);
@@ -479,15 +499,13 @@ ACMD(do_camp)
   return;
 }
 
-EVENT(fail_spell_event)
-{
+EVENT(fail_spell_event) {
   act("$n fails miserably!", TRUE, CAUSER_CH, 0, 0, TO_ROOM);
   act("You fail miserably!", TRUE, CAUSER_CH, 0, 0, TO_CHAR);
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 }
 
-EVENT(spell_magic_missile_event)
-{
+EVENT(spell_magic_missile_event) {
   int amount = BOUNDED(1, GET_SKILL(CAUSER_CH, sinfo->realm) / 10, 5);
   int i;
   int origdam;
@@ -504,10 +522,10 @@ EVENT(spell_magic_missile_event)
     dam = 1;
   }
   origdam = dam;
-  if ((char*) info) {
-    vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  if ((char *)info) {
+    vict = get_char_room_vis(CAUSER_CH, (char *)info);
     if (!vict) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -543,7 +561,8 @@ EVENT(spell_magic_missile_event)
     for (i = 0; i < amount; i++) {
       if (vict && GET_POS(vict) > POS_DEAD) {
         if (IS_MOB(CAUSER_CH)) {
-          safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+          safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH),
+                        sinfo->command, GET_NAME(vict), dam);
           mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
         }
         if (CAUSER_CH != vict && sinfo->aggressive) {
@@ -574,8 +593,7 @@ EVENT(spell_magic_missile_event)
   FIGHT_STATE(CAUSER_CH, 2);
 }
 
-EVENT(spell_word_recall_event)
-{
+EVENT(spell_word_recall_event) {
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -603,8 +621,7 @@ EVENT(spell_word_recall_event)
   look_at_room(CAUSER_CH, 0);
 }
 
-EVENT(spell_dam_event)
-{
+EVENT(spell_dam_event) {
   int dam;
   struct char_data *vict;
   char abuf[256];
@@ -617,10 +634,10 @@ EVENT(spell_dam_event)
     dam = modBySpecialization(CAUSER_CH, sinfo, dam);
     dam = dam * GET_SKILL(CAUSER_CH, sinfo->realm) / 100;
   }
-  if ((char*) info) {
-    vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  if ((char *)info) {
+    vict = get_char_room_vis(CAUSER_CH, (char *)info);
     if (!vict) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -666,7 +683,8 @@ EVENT(spell_dam_event)
       say_spell(CAUSER_CH, sinfo->spellindex, vict, NULL);
     }
     if (IS_MOB(CAUSER_CH)) {
-      safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+      safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH),
+                    sinfo->command, GET_NAME(vict), dam);
       mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
     }
     damage(CAUSER_CH, vict, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
@@ -678,17 +696,16 @@ EVENT(spell_dam_event)
   }
 }
 
-EVENT(spell_char_event)
-{
+EVENT(spell_char_event) {
   struct char_data *vict;
   char abuf[256];
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
-  if ((char*) info) {
-    vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  if ((char *)info) {
+    vict = get_char_room_vis(CAUSER_CH, (char *)info);
     if (!vict) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -786,17 +803,16 @@ EVENT(spell_char_event)
   }
 }
 
-EVENT(spell_points_event)
-{
+EVENT(spell_points_event) {
   struct char_data *vict;
   char abuf[256];
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
-  if ((char*) info) {
-    vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  if ((char *)info) {
+    vict = get_char_room_vis(CAUSER_CH, (char *)info);
     if (!vict) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -859,20 +875,19 @@ EVENT(spell_points_event)
   }
 }
 
-EVENT(spell_obj_event)
-{
+EVENT(spell_obj_event) {
   char abuf[256];
   struct obj_data *object = NULL;
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
-  if ((char*) info) {
-    object = get_obj_in_list_vis(CAUSER_CH, (char*) info, CAUSER_CH->carrying);
+  if ((char *)info) {
+    object = get_obj_in_list_vis(CAUSER_CH, (char *)info, CAUSER_CH->carrying);
     if (!object) {
-      object = get_obj_in_list_vis(CAUSER_CH, (char*) info, world[CAUSER_CH->in_room].contents);
+      object = get_obj_in_list_vis(CAUSER_CH, (char *)info, world[CAUSER_CH->in_room].contents);
     }
     if (!object) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -905,21 +920,20 @@ EVENT(spell_obj_event)
   }
 }
 
-EVENT(spell_obj_room_event)
-{
+EVENT(spell_obj_room_event) {
   char abuf[256];
   struct obj_data *object = NULL;
   int is_room = 0;
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
-  if ((char*) info) {
-    object = get_obj_in_list_vis(CAUSER_CH, (char*) info, CAUSER_CH->carrying);
+  if ((char *)info) {
+    object = get_obj_in_list_vis(CAUSER_CH, (char *)info, CAUSER_CH->carrying);
     if (!object) {
-      object = get_obj_in_list_vis(CAUSER_CH, (char*) info, world[CAUSER_CH->in_room].contents);
+      object = get_obj_in_list_vis(CAUSER_CH, (char *)info, world[CAUSER_CH->in_room].contents);
     }
     if (!object) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -957,8 +971,7 @@ EVENT(spell_obj_room_event)
   }
 }
 
-EVENT(spell_room_event)
-{
+EVENT(spell_room_event) {
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
   if (!info2) {
@@ -978,8 +991,7 @@ EVENT(spell_room_event)
   }
 }
 
-EVENT(spell_area_event)
-{
+EVENT(spell_area_event) {
   struct char_data *vict;
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -1015,8 +1027,7 @@ EVENT(spell_area_event)
   }
 }
 
-EVENT(spell_dimdoor_event)
-{
+EVENT(spell_dimdoor_event) {
   struct char_data *vict;
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
@@ -1025,7 +1036,7 @@ EVENT(spell_dimdoor_event)
     return;
   }
 
-  vict = get_char_vis(CAUSER_CH, (char*) info);
+  vict = get_char_vis(CAUSER_CH, (char *)info);
 
   if (CAUSER_CH == NULL || vict == NULL) {
     send_to_char("That person is not present in the realms.\r\n", CAUSER_CH);
@@ -1070,17 +1081,18 @@ EVENT(spell_dimdoor_event)
     GET_DRAGGING(CAUSER_CH)->dragged_by = NULL;
     GET_DRAGGING(CAUSER_CH) = NULL;
   }
-  act("{DA dark shimmering portal opens, as $n steps in it dissipates into thin air.{x", TRUE, CAUSER_CH, NULL, NULL, TO_ROOM);
+  act("{DA dark shimmering portal opens, as $n steps in it dissipates into thin air.{x", TRUE, CAUSER_CH, NULL, NULL,
+      TO_ROOM);
   char_from_room(CAUSER_CH);
   char_to_room(CAUSER_CH, vict->in_room);
-  act("{DA dark shimmering portal opens, as $n steps out it dissipates into thin air.{x", TRUE, CAUSER_CH, NULL, NULL, TO_ROOM);
+  act("{DA dark shimmering portal opens, as $n steps out it dissipates into thin air.{x", TRUE, CAUSER_CH, NULL, NULL,
+      TO_ROOM);
   look_at_room(CAUSER_CH, 0);
 }
 
-EVENT(spell_locate_obj_event)
-{
+EVENT(spell_locate_obj_event) {
   struct obj_data *i;
-  struct obj_data *obj = get_obj_vis(CAUSER_CH, (char*) info);
+  struct obj_data *obj = get_obj_vis(CAUSER_CH, (char *)info);
   char name[MAX_INPUT_LENGTH];
   int j;
 
@@ -1105,13 +1117,15 @@ EVENT(spell_locate_obj_event)
     }
 
     if (i->carried_by && IS_MOB(i->carried_by)) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is being carried by %s.\n\r", i->short_description, PERS(i->carried_by, CAUSER_CH));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is being carried by %s.\n\r", i->short_description,
+                    PERS(i->carried_by, CAUSER_CH));
     } else if (i->in_room != NOWHERE) {
       safe_snprintf(buf, MAX_STRING_LENGTH, "%s is in %s.\n\r", i->short_description, world[i->in_room].name);
     } else if (i->in_obj) {
       safe_snprintf(buf, MAX_STRING_LENGTH, "%s is in %s.\n\r", i->short_description, i->in_obj->short_description);
     } else if (i->worn_by && IS_MOB(i->worn_by)) {
-      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is being worn by %s.\n\r", i->short_description, PERS(i->worn_by, CAUSER_CH));
+      safe_snprintf(buf, MAX_STRING_LENGTH, "%s is being worn by %s.\n\r", i->short_description,
+                    PERS(i->worn_by, CAUSER_CH));
     } else {
       safe_snprintf(buf, MAX_STRING_LENGTH, "%s's location is uncertain.\n\r", i->short_description);
     }
@@ -1125,8 +1139,7 @@ EVENT(spell_locate_obj_event)
     send_to_char("You sense nothing.\n\r", CAUSER_CH);
 }
 
-EVENT(spell_create_obj_event)
-{
+EVENT(spell_create_obj_event) {
   struct obj_data *object = NULL;
   struct char_data *vict;
   int success = 0;
@@ -1139,7 +1152,8 @@ EVENT(spell_create_obj_event)
   }
 
   if (strcmp(sinfo->command, "flame blade") == 0) {
-    if (GET_EQ(CAUSER_CH, WEAR_WIELD) || GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_SHIELD) || GET_EQ(CAUSER_CH, WEAR_2HANDED) || GET_EQ(CAUSER_CH, WEAR_WIELD_2) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) {
+    if (GET_EQ(CAUSER_CH, WEAR_WIELD) || GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_SHIELD) ||
+        GET_EQ(CAUSER_CH, WEAR_2HANDED) || GET_EQ(CAUSER_CH, WEAR_WIELD_2) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) {
       send_to_char("Your hands are too full.", CAUSER_CH);
       return;
     }
@@ -1149,7 +1163,8 @@ EVENT(spell_create_obj_event)
     CAUSER_CH->player_specials->saved.weapontimer = GET_LEVEL(CAUSER_CH);
     send_to_char(OK, CAUSER_CH);
   } else if (strcmp(sinfo->command, "spiritual hammer") == 0) {
-    if (GET_EQ(CAUSER_CH, WEAR_WIELD) || GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_SHIELD) || GET_EQ(CAUSER_CH, WEAR_2HANDED) || GET_EQ(CAUSER_CH, WEAR_WIELD_2) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) {
+    if (GET_EQ(CAUSER_CH, WEAR_WIELD) || GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_SHIELD) ||
+        GET_EQ(CAUSER_CH, WEAR_2HANDED) || GET_EQ(CAUSER_CH, WEAR_WIELD_2) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) {
       send_to_char("Your hands are too full.", CAUSER_CH);
       return;
     }
@@ -1167,20 +1182,20 @@ EVENT(spell_create_obj_event)
     obj_to_room(object, CAUSER_CH->in_room);
     success = 1;
   } else if (strcmp(sinfo->command, "minor creation") == 0) {
-    if ((char*) info) {
-      if (strncmp((char*) info, "ration", strlen((char*) info)) == 0) {
+    if ((char *)info) {
+      if (strncmp((char *)info, "ration", strlen((char *)info)) == 0) {
         object = read_object(sinfo->vnum_list[0], VIRTUAL);
         obj_to_room(object, CAUSER_CH->in_room);
         success = 1;
-      } else if (strncmp((char*) info, "barrel", strlen((char*) info)) == 0) {
+      } else if (strncmp((char *)info, "barrel", strlen((char *)info)) == 0) {
         object = read_object(sinfo->vnum_list[1], VIRTUAL);
         obj_to_room(object, CAUSER_CH->in_room);
         success = 1;
-      } else if (strncmp((char*) info, "torch", strlen((char*) info)) == 0) {
+      } else if (strncmp((char *)info, "torch", strlen((char *)info)) == 0) {
         object = read_object(sinfo->vnum_list[2], VIRTUAL);
         obj_to_room(object, CAUSER_CH->in_room);
         success = 1;
-      } else if (strncmp((char*) info, "raft", strlen((char*) info)) == 0) {
+      } else if (strncmp((char *)info, "raft", strlen((char *)info)) == 0) {
         object = read_object(sinfo->vnum_list[3], VIRTUAL);
         obj_to_room(object, CAUSER_CH->in_room);
         success = 1;
@@ -1189,10 +1204,10 @@ EVENT(spell_create_obj_event)
       send_to_char("You can create: ration, barrel, torch, or raft.\r\n", CAUSER_CH);
     }
   } else if (strcmp(sinfo->command, "moonwell") == 0) {
-    if ((char*) info) {
-      vict = get_char_vis(CAUSER_CH, (char*) info);
+    if ((char *)info) {
+      vict = get_char_vis(CAUSER_CH, (char *)info);
       if (!vict || IS_MOB(vict) || IS_IMMO(vict)) {
-        safe_snprintf(abuf, sizeof(abuf), "You can not see %s.\r\n", (char*) info);
+        safe_snprintf(abuf, sizeof(abuf), "You can not see %s.\r\n", (char *)info);
         send_to_char(abuf, CAUSER_CH);
         return;
       }
@@ -1248,8 +1263,7 @@ EVENT(spell_create_obj_event)
   }
 }
 
-EVENT(spell_area_points_event)
-{
+EVENT(spell_area_points_event) {
   struct char_data *vict;
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -1281,9 +1295,8 @@ EVENT(spell_area_points_event)
   }
 }
 
-EVENT(spell_summon_event)
-{
-  struct char_data *vict = get_char_vis(CAUSER_CH, (char*) info);
+EVENT(spell_summon_event) {
+  struct char_data *vict = get_char_vis(CAUSER_CH, (char *)info);
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -1337,8 +1350,7 @@ EVENT(spell_summon_event)
   look_at_room(vict, 0);
 }
 
-EVENT(spell_create_mob_event)
-{
+EVENT(spell_create_mob_event) {
   extern int mental_dice[12][2];
   int success = 0;
   struct affected_type *af;
@@ -1370,28 +1382,28 @@ EVENT(spell_create_mob_event)
     }
     success = 1;
     switch (number(1, 4)) {
-      case 1: /* air mental */
-        mob = read_mobile(real_mobile(sinfo->vnum_list[0]), REAL | NOEQUIP);
-        GET_MANA(mob) = mental_dice[mag_circle][1];
-        GET_AC(mob) = -100;
-        SET_BIT(MOB_FLAGS(mob), MOB_WRAITHLIKE);
-        break;
-      case 2: /* water mental */
-        mob = read_mobile(real_mobile(sinfo->vnum_list[1]), REAL | NOEQUIP);
-        GET_MANA(mob) = 2 * mental_dice[mag_circle][1];
-        GET_AC(mob) = number(-50, 50);
-        break;
-      case 3: /* earth mental */
-        mob = read_mobile(real_mobile(sinfo->vnum_list[2]), REAL | NOEQUIP);
-        GET_MANA(mob) = (int) (2.5 * mental_dice[mag_circle][1]);
-        GET_AC(mob) = number(-50, 50);
-        break;
-      case 4: /* fire mental */
-        mob = read_mobile(real_mobile(sinfo->vnum_list[3]), REAL | NOEQUIP);
-        GET_MANA(mob) = (int) (1.5 * mental_dice[mag_circle][1]);
-        GET_AC(mob) = -100;
-        SET_BIT(MOB_FLAGS(mob), MOB_WRAITHLIKE);
-        break;
+    case 1: /* air mental */
+      mob = read_mobile(real_mobile(sinfo->vnum_list[0]), REAL | NOEQUIP);
+      GET_MANA(mob) = mental_dice[mag_circle][1];
+      GET_AC(mob) = -100;
+      SET_BIT(MOB_FLAGS(mob), MOB_WRAITHLIKE);
+      break;
+    case 2: /* water mental */
+      mob = read_mobile(real_mobile(sinfo->vnum_list[1]), REAL | NOEQUIP);
+      GET_MANA(mob) = 2 * mental_dice[mag_circle][1];
+      GET_AC(mob) = number(-50, 50);
+      break;
+    case 3: /* earth mental */
+      mob = read_mobile(real_mobile(sinfo->vnum_list[2]), REAL | NOEQUIP);
+      GET_MANA(mob) = (int)(2.5 * mental_dice[mag_circle][1]);
+      GET_AC(mob) = number(-50, 50);
+      break;
+    case 4: /* fire mental */
+      mob = read_mobile(real_mobile(sinfo->vnum_list[3]), REAL | NOEQUIP);
+      GET_MANA(mob) = (int)(1.5 * mental_dice[mag_circle][1]);
+      GET_AC(mob) = -100;
+      SET_BIT(MOB_FLAGS(mob), MOB_WRAITHLIKE);
+      break;
     }
     GET_HIT(mob) = mental_dice[mag_circle][0];
     GET_MOVE(mob) = 2 * number(1, GET_LEVEL(CAUSER_CH));
@@ -1402,7 +1414,7 @@ EVENT(spell_create_mob_event)
     GET_CLASS(mob) = CLASS_ELEMENTAL;
   } else if (strcmp(sinfo->command, "animate dead") == 0) {
     success = 1;
-    corpse = get_obj_in_list_vis(CAUSER_CH, (char*) info, world[CAUSER_CH->in_room].contents);
+    corpse = get_obj_in_list_vis(CAUSER_CH, (char *)info, world[CAUSER_CH->in_room].contents);
     if (!corpse || !(GET_OBJ_TYPE(corpse) == ITEM_CONTAINER && GET_OBJ_VAL(corpse, 3))) {
       send_to_char("Which corpse do you wish to animate?\r\n", CAUSER_CH);
       return;
@@ -1418,71 +1430,71 @@ EVENT(spell_create_mob_event)
       corpsename++;
     }
     switch (number(1, 20)) {
-      case 1: /* skeleton */
-      case 2:
-      case 3:
-      case 4:
-      case 5:
-      case 6:
-        mob = read_mobile(real_mobile(sinfo->vnum_list[0]), REAL | NOEQUIP);
-        IS_ANIMATED(mob) = 1;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "The skeleton of %s stands here.", corpsename);
-        if (GET_ADESC(mob)) {
-          FREE(GET_ADESC(mob));
-        }
-        GET_ADESC(mob) = strdup(buf);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "the skeleton of %s", corpsename);
-        break;
-      case 7: /* zombie */
-      case 8:
-      case 9:
-      case 10:
-      case 11:
-        mob = read_mobile(real_mobile(sinfo->vnum_list[1]), REAL | NOEQUIP);
-        IS_ANIMATED(mob) = 1;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "The zombie of %s stands here.", corpsename);
-        if (GET_ADESC(mob)) {
-          FREE(GET_ADESC(mob));
-        }
-        GET_ADESC(mob) = strdup(buf);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "the zombie of %s", corpsename);
-        break;
-      case 12: /* spectre */
-      case 13:
-      case 14:
-      case 15:
-        mob = read_mobile(real_mobile(sinfo->vnum_list[2]), REAL | NOEQUIP);
-        IS_ANIMATED(mob) = 1;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "The spectre of %s stands here.", corpsename);
-        if (GET_ADESC(mob)) {
-          FREE(GET_ADESC(mob));
-        }
-        GET_ADESC(mob) = strdup(buf);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "the spectre of %s", corpsename);
-        break;
-      case 16: /* vampire */
-      case 17:
-      case 18:
-        mob = read_mobile(real_mobile(sinfo->vnum_list[3]), REAL | NOEQUIP);
-        IS_ANIMATED(mob) = 1;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "The vampire of %s stands here.", corpsename);
-        if (GET_ADESC(mob)) {
-          FREE(GET_ADESC(mob));
-        }
-        GET_ADESC(mob) = strdup(buf);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "the vampire of %s", corpsename);
-        break;
-      case 19: /* wraith */
-      case 20:
-        mob = read_mobile(real_mobile(sinfo->vnum_list[4]), REAL | NOEQUIP);
-        IS_ANIMATED(mob) = 1;
-        safe_snprintf(buf, MAX_STRING_LENGTH, "The wraith of %s stands here.", corpsename);
-        if (GET_ADESC(mob)) {
-          FREE(GET_ADESC(mob));
-        }
-        GET_ADESC(mob) = strdup(buf);
-        safe_snprintf(buf, MAX_STRING_LENGTH, "the wraith of %s", corpsename);
-        break;
+    case 1: /* skeleton */
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      mob = read_mobile(real_mobile(sinfo->vnum_list[0]), REAL | NOEQUIP);
+      IS_ANIMATED(mob) = 1;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "The skeleton of %s stands here.", corpsename);
+      if (GET_ADESC(mob)) {
+        FREE(GET_ADESC(mob));
+      }
+      GET_ADESC(mob) = strdup(buf);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "the skeleton of %s", corpsename);
+      break;
+    case 7: /* zombie */
+    case 8:
+    case 9:
+    case 10:
+    case 11:
+      mob = read_mobile(real_mobile(sinfo->vnum_list[1]), REAL | NOEQUIP);
+      IS_ANIMATED(mob) = 1;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "The zombie of %s stands here.", corpsename);
+      if (GET_ADESC(mob)) {
+        FREE(GET_ADESC(mob));
+      }
+      GET_ADESC(mob) = strdup(buf);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "the zombie of %s", corpsename);
+      break;
+    case 12: /* spectre */
+    case 13:
+    case 14:
+    case 15:
+      mob = read_mobile(real_mobile(sinfo->vnum_list[2]), REAL | NOEQUIP);
+      IS_ANIMATED(mob) = 1;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "The spectre of %s stands here.", corpsename);
+      if (GET_ADESC(mob)) {
+        FREE(GET_ADESC(mob));
+      }
+      GET_ADESC(mob) = strdup(buf);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "the spectre of %s", corpsename);
+      break;
+    case 16: /* vampire */
+    case 17:
+    case 18:
+      mob = read_mobile(real_mobile(sinfo->vnum_list[3]), REAL | NOEQUIP);
+      IS_ANIMATED(mob) = 1;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "The vampire of %s stands here.", corpsename);
+      if (GET_ADESC(mob)) {
+        FREE(GET_ADESC(mob));
+      }
+      GET_ADESC(mob) = strdup(buf);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "the vampire of %s", corpsename);
+      break;
+    case 19: /* wraith */
+    case 20:
+      mob = read_mobile(real_mobile(sinfo->vnum_list[4]), REAL | NOEQUIP);
+      IS_ANIMATED(mob) = 1;
+      safe_snprintf(buf, MAX_STRING_LENGTH, "The wraith of %s stands here.", corpsename);
+      if (GET_ADESC(mob)) {
+        FREE(GET_ADESC(mob));
+      }
+      GET_ADESC(mob) = strdup(buf);
+      safe_snprintf(buf, MAX_STRING_LENGTH, "the wraith of %s", corpsename);
+      break;
     }
     GET_ANIMATED_MOB_NAME(mob) = strdup(buf);
     GET_CLASS(mob) = CLASS_UNDEAD;
@@ -1512,8 +1524,7 @@ EVENT(spell_create_mob_event)
   }
 }
 
-EVENT(spell_group_points_event)
-{
+EVENT(spell_group_points_event) {
   struct char_data *tch, *k;
   struct follow_type *f, *f_next;
 
@@ -1591,8 +1602,7 @@ EVENT(spell_group_points_event)
   }
 }
 
-EVENT(spell_group_event)
-{
+EVENT(spell_group_event) {
   struct char_data *tch, *k;
   struct follow_type *f, *f_next;
 
@@ -1674,21 +1684,20 @@ EVENT(spell_group_event)
   }
 }
 
-EVENT(spell_obj_char_event)
-{
+EVENT(spell_obj_char_event) {
   int i = 0;
   struct char_data *vict;
   struct obj_data *object = NULL;
   char abuf[256];
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
-  if ((char*) info) {
-    vict = get_char_room_vis(CAUSER_CH, (char*) info);
-    object = get_obj_in_list_vis(CAUSER_CH, (char*) info, CAUSER_CH->carrying);
+  if ((char *)info) {
+    vict = get_char_room_vis(CAUSER_CH, (char *)info);
+    object = get_obj_in_list_vis(CAUSER_CH, (char *)info, CAUSER_CH->carrying);
     if (!object) {
-      object = get_obj_in_list_vis(CAUSER_CH, (char*) info, world[CAUSER_CH->in_room].contents);
+      object = get_obj_in_list_vis(CAUSER_CH, (char *)info, world[CAUSER_CH->in_room].contents);
     }
     if (!vict && !object) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -1830,8 +1839,7 @@ EVENT(spell_obj_char_event)
  * charmed mobs in CRIMEOK rooms
  */
 
-EVENT(spell_area_dam_event)
-{
+EVENT(spell_area_dam_event) {
   struct char_data *tch, *next_tch;
   int dam;
 
@@ -1862,7 +1870,9 @@ EVENT(spell_area_dam_event)
     if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!pk_allowed && !IS_MOB(CAUSER_CH) && !IS_MOB(tch))) {
       continue;
     }
-    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM) && GET_RESIST(tch, sinfo->resist_type) < 101)) {
+    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) &&
+        (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM) &&
+         GET_RESIST(tch, sinfo->resist_type) < 101)) {
       continue;
     }
 
@@ -1871,7 +1881,8 @@ EVENT(spell_area_dam_event)
         dam >>= 1;
       }
       if (IS_MOB(CAUSER_CH)) {
-        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(tch), dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH),
+                      sinfo->command, GET_NAME(tch), dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
@@ -1880,10 +1891,9 @@ EVENT(spell_area_dam_event)
   FIGHT_STATE(CAUSER_CH, 2);
 }
 
-EVENT(spell_confusion_event)
-{
+EVENT(spell_confusion_event) {
   struct char_data *targ;
-  struct char_data *vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  struct char_data *vict = get_char_room_vis(CAUSER_CH, (char *)info);
   int prob;
   ACMD(do_flee);
 
@@ -1952,10 +1962,9 @@ EVENT(spell_confusion_event)
   }
 }
 
-EVENT(spell_charm_event)
-{
+EVENT(spell_charm_event) {
   struct affected_type af;
-  struct char_data *vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  struct char_data *vict = get_char_room_vis(CAUSER_CH, (char *)info);
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -2011,19 +2020,18 @@ EVENT(spell_charm_event)
   }
 }
 
-EVENT(spell_dispel_magic_event)
-{
+EVENT(spell_dispel_magic_event) {
   struct char_data *vict;
   char abuf[256];
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
-  if ((struct char_data*) victim) {
-    vict = (struct char_data*) victim;
-  } else if ((char*) info) {
-    vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  if ((struct char_data *)victim) {
+    vict = (struct char_data *)victim;
+  } else if ((char *)info) {
+    vict = get_char_room_vis(CAUSER_CH, (char *)info);
     if (!vict) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -2081,8 +2089,7 @@ EVENT(spell_dispel_magic_event)
   }
 }
 
-EVENT(spell_telekinesis_event)
-{
+EVENT(spell_telekinesis_event) {
   struct obj_data *obj;
   struct obj_data *next_obj;
   char telebuf[256];
@@ -2092,7 +2099,8 @@ EVENT(spell_telekinesis_event)
   for (obj = world[CAUSER_CH->in_room].contents; obj; obj = next_obj) {
     next_obj = obj->next_content;
     if (IS_OBJ_STAT(obj, ITEM_UNDERWATER)) {
-      safe_snprintf(telebuf, sizeof(telebuf), "You are able to raise %s from the depths of water.\r\n", OBJS(obj, CAUSER_CH));
+      safe_snprintf(telebuf, sizeof(telebuf), "You are able to raise %s from the depths of water.\r\n",
+                    OBJS(obj, CAUSER_CH));
       send_to_char(telebuf, CAUSER_CH);
       act("$n raises $p from the murky depths.", TRUE, CAUSER_CH, obj, NULL, TO_ROOM);
       REMOVE_BIT(GET_OBJ_EXTRA(obj), ITEM_UNDERWATER);
@@ -2102,18 +2110,15 @@ EVENT(spell_telekinesis_event)
   send_to_char("You are unable to find anything here.\r\n", CAUSER_CH);
 }
 
-EVENT(spell_magical_lock_event)
-{
+EVENT(spell_magical_lock_event) {
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 }
 
-EVENT(spell_magical_unlock_event)
-{
+EVENT(spell_magical_unlock_event) {
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 }
 
-EVENT(spell_disintegrate_event)
-{
+EVENT(spell_disintegrate_event) {
   int dam = 600;
   struct char_data *vict;
   char abuf[256];
@@ -2122,12 +2127,12 @@ EVENT(spell_disintegrate_event)
   int eq;
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
-  if ((struct char_data*) victim) {
-    vict = (struct char_data*) victim;
-  } else if ((char*) info) {
-    vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  if ((struct char_data *)victim) {
+    vict = (struct char_data *)victim;
+  } else if ((char *)info) {
+    vict = get_char_room_vis(CAUSER_CH, (char *)info);
     if (!vict) {
-      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char*) info);
+      safe_snprintf(abuf, sizeof(abuf), "You don't see %s here.\r\n", (char *)info);
       send_to_char(abuf, CAUSER_CH);
       return;
     }
@@ -2176,7 +2181,8 @@ EVENT(spell_disintegrate_event)
         if (number(0, 1)) {
           act("$p{Y disintegrates into a cloud of dust!{x", FALSE, vict, GET_EQ(vict, eq), NULL, TO_CHAR);
           if (!IS_NPC(vict)) {
-            safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (disintegrate)", GET_NAME(vict), GET_EQ(vict, eq)->short_description);
+            safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (disintegrate)", GET_NAME(vict),
+                          GET_EQ(vict, eq)->short_description);
             mudlog(pbuf, 'Q', COM_IMMORT, TRUE);
             plog(pbuf, vict, 0);
           }
@@ -2191,16 +2197,14 @@ EVENT(spell_disintegrate_event)
   }
 }
 
-EVENT(spell_resurrection_event)
-{
+EVENT(spell_resurrection_event) {
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 }
 
-EVENT(spell_turn_undead_event)
-{
+EVENT(spell_turn_undead_event) {
   int prob = 0, dam = 0;
   ACMD(do_flee);
-  struct char_data *vict = get_char_room_vis(CAUSER_CH, (char*) info);
+  struct char_data *vict = get_char_room_vis(CAUSER_CH, (char *)info);
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -2223,7 +2227,8 @@ EVENT(spell_turn_undead_event)
     if (prob < 50) {
       dam = GET_HIT(vict) + 30;
       if (IS_MOB(CAUSER_CH)) {
-        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH),
+                      sinfo->command, GET_NAME(vict), dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, vict, dam, sinfo->spellindex, 0, DAM_MAGIC, TRUE, info2 ? 1 : 0);
@@ -2232,7 +2237,8 @@ EVENT(spell_turn_undead_event)
     }
   } else if ((GET_LEVEL(CAUSER_CH) - GET_LEVEL(vict)) > 4) {
     if (IS_MOB(CAUSER_CH)) {
-      safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(vict), dam);
+      safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH),
+                    sinfo->command, GET_NAME(vict), dam);
       mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
     }
     damage(CAUSER_CH, vict, GET_LEVEL(CAUSER_CH), sinfo->spellindex, 0, DAM_MAGIC, TRUE, info2 ? 1 : 0);
@@ -2246,8 +2252,7 @@ EVENT(spell_turn_undead_event)
   }
 }
 
-EVENT(spell_identify_event)
-{
+EVENT(spell_identify_event) {
   int i;
   int found;
 
@@ -2257,7 +2262,7 @@ EVENT(spell_identify_event)
   extern char *apply_types[];
   extern char *affected_bits[];
   extern char *affected_bits2[];
-  struct obj_data *obj = get_obj_vis(CAUSER_CH, (char*) info);
+  struct obj_data *obj = get_obj_vis(CAUSER_CH, (char *)info);
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -2301,44 +2306,41 @@ EVENT(spell_identify_event)
     send_to_char(buf, CAUSER_CH);
 
     switch (GET_OBJ_TYPE(obj)) {
-      case ITEM_SCROLL:
-      case ITEM_POTION:
-        {
-          size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
+    case ITEM_SCROLL:
+    case ITEM_POTION: {
+      size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int)GET_OBJ_TYPE(obj)]);
 
-          if (GET_OBJ_VAL(obj, 1) >= 1) {
-            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 1)));
-          }
-          if (GET_OBJ_VAL(obj, 2) >= 1) {
-            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 2)));
-          }
-          if (GET_OBJ_VAL(obj, 3) >= 1) {
-            len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 3)));
-          }
-          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
-          send_to_char(buf, CAUSER_CH);
-        }
-        break;
-      case ITEM_WAND:
-      case ITEM_STAFF:
-        {
-          size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int) GET_OBJ_TYPE(obj)]);
-          len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s\r\n", get_spell_name(GET_OBJ_VAL(obj, 3)));
-          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "It has %d maximum charge%s and %d remaining.\r\n", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 1) == 1 ? "" : "s", GET_OBJ_VAL(obj, 2));
-          send_to_char(buf, CAUSER_CH);
-        }
-        break;
-      case ITEM_WEAPON:
-        {
-          size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "Damage Dice is '%dD%d'", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2));
-          safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " for an average per-round damage of %.1f.\r\n", ((GET_OBJ_VAL(obj, 1) + (GET_OBJ_VAL(obj,1) * GET_OBJ_VAL(obj, 2))) / 2.0));
-          send_to_char(buf, CAUSER_CH);
-        }
-        break;
-      case ITEM_ARMOR:
-        safe_snprintf(buf, MAX_STRING_LENGTH, "AC-apply is %d\r\n", GET_OBJ_VAL(obj, 0));
-        send_to_char(buf, CAUSER_CH);
-        break;
+      if (GET_OBJ_VAL(obj, 1) >= 1) {
+        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 1)));
+      }
+      if (GET_OBJ_VAL(obj, 2) >= 1) {
+        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 2)));
+      }
+      if (GET_OBJ_VAL(obj, 3) >= 1) {
+        len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s", get_spell_name(GET_OBJ_VAL(obj, 3)));
+      }
+      safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "\r\n");
+      send_to_char(buf, CAUSER_CH);
+    } break;
+    case ITEM_WAND:
+    case ITEM_STAFF: {
+      size_t len = safe_snprintf(buf, MAX_STRING_LENGTH, "This %s casts: ", item_types[(int)GET_OBJ_TYPE(obj)]);
+      len += safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " %s\r\n", get_spell_name(GET_OBJ_VAL(obj, 3)));
+      safe_snprintf(buf + len, MAX_STRING_LENGTH - len, "It has %d maximum charge%s and %d remaining.\r\n",
+                    GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 1) == 1 ? "" : "s", GET_OBJ_VAL(obj, 2));
+      send_to_char(buf, CAUSER_CH);
+    } break;
+    case ITEM_WEAPON: {
+      size_t len =
+          safe_snprintf(buf, MAX_STRING_LENGTH, "Damage Dice is '%dD%d'", GET_OBJ_VAL(obj, 1), GET_OBJ_VAL(obj, 2));
+      safe_snprintf(buf + len, MAX_STRING_LENGTH - len, " for an average per-round damage of %.1f.\r\n",
+                    ((GET_OBJ_VAL(obj, 1) + (GET_OBJ_VAL(obj, 1) * GET_OBJ_VAL(obj, 2))) / 2.0));
+      send_to_char(buf, CAUSER_CH);
+    } break;
+    case ITEM_ARMOR:
+      safe_snprintf(buf, MAX_STRING_LENGTH, "AC-apply is %d\r\n", GET_OBJ_VAL(obj, 0));
+      send_to_char(buf, CAUSER_CH);
+      break;
     }
     found = FALSE;
     for (i = 0; i < MAX_OBJ_AFFECT; i++) {
@@ -2353,17 +2355,16 @@ EVENT(spell_identify_event)
       }
     }
   } else {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char*) info);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char *)info);
     send_to_char(buf, CAUSER_CH);
   }
 }
 
-EVENT(spell_create_water_event)
-{
+EVENT(spell_create_water_event) {
   int water;
   void name_to_drinkcon(struct obj_data * obj, int type);
   void name_from_drinkcon(struct obj_data * obj);
-  struct obj_data *obj = get_obj_vis(CAUSER_CH, (char*) info);
+  struct obj_data *obj = get_obj_vis(CAUSER_CH, (char *)info);
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 
@@ -2372,7 +2373,7 @@ EVENT(spell_create_water_event)
   }
 
   if (obj == NULL) {
-    safe_snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char*) info);
+    safe_snprintf(buf, MAX_STRING_LENGTH, "You don't see %s here.\r\n", (char *)info);
     send_to_char(buf, CAUSER_CH);
     return;
   }
@@ -2395,11 +2396,10 @@ EVENT(spell_create_water_event)
   }
 }
 
-EVENT(scribe_event)
-{
+EVENT(scribe_event) {
   int time = GET_SPELL_CIRCLE(CAUSER_CH, GET_SCRIBING(CAUSER_CH)) * 5; /* five seconds per page */
   int meditate = spells[find_skill_num("meditate")].spellindex;
-  int page = (int) info2; /* slot to store spell in */
+  int page = (int)info2; /* slot to store spell in */
   /* priests don't need a writing instrument they "pray" their spells into
    * their holy symbol.
    */
@@ -2407,8 +2407,9 @@ EVENT(scribe_event)
   if (IS_IMMO(CAUSER_CH)) {
     time = 1;
   }
-  if ((int) info != 0) {
-    if ((IS_MAGE(CAUSER_CH) && GET_EQ(CAUSER_CH, WEAR_HOLD) && GET_EQ(CAUSER_CH, WEAR_HOLD_2)) || ((GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) && IS_PRI(CAUSER_CH))) {
+  if ((int)info != 0) {
+    if ((IS_MAGE(CAUSER_CH) && GET_EQ(CAUSER_CH, WEAR_HOLD) && GET_EQ(CAUSER_CH, WEAR_HOLD_2)) ||
+        ((GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) && IS_PRI(CAUSER_CH))) {
       if (GET_OBJ_TYPE(GET_EQ(CAUSER_CH, WEAR_HOLD)) == ITEM_SPELLBOOK) {
         if (IS_PRI(CAUSER_CH) || GET_OBJ_TYPE(GET_EQ(CAUSER_CH, WEAR_HOLD_2)) == ITEM_PEN) {
           if (LIGHT_OK(CAUSER_CH)) {
@@ -2427,7 +2428,8 @@ EVENT(scribe_event)
                 if (!GET_COND(CAUSER_CH, THIRST) || !GET_COND(CAUSER_CH, FULL)) {
                   time <<= 1;
                 }
-                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *) (long) (info - 1), NULL, NULL, page);
+                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *)(long)(info - 1), NULL, NULL,
+                          page);
               } else { /* lost your pen? */
                 REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_SCRIBING);
                 send_to_char("You seem to have missplaced your writing instrument.\r\n", CAUSER_CH);
@@ -2470,7 +2472,8 @@ EVENT(scribe_event)
                 if (!GET_COND(CAUSER_CH, THIRST) || !GET_COND(CAUSER_CH, FULL)) {
                   time *= 2;
                 }
-                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *) (long) (info - 1), NULL, NULL, page);
+                add_event(time, scribe_event, EVENT_SCRIBE, CAUSER_CH, NULL, (void *)(long)(info - 1), NULL, NULL,
+                          page);
               } else { /* lost your spellbook? */
                 REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_SCRIBING);
                 if (IS_PRI(CAUSER_CH)) {
@@ -2513,7 +2516,8 @@ EVENT(scribe_event)
     }
   } else { /* add spell to spellbook and remove scribing bit */
     REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_SCRIBING);
-    if ((IS_MAGE(CAUSER_CH) && GET_EQ(CAUSER_CH, WEAR_HOLD) && GET_EQ(CAUSER_CH, WEAR_HOLD_2)) || ((GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) && IS_PRI(CAUSER_CH))) {
+    if ((IS_MAGE(CAUSER_CH) && GET_EQ(CAUSER_CH, WEAR_HOLD) && GET_EQ(CAUSER_CH, WEAR_HOLD_2)) ||
+        ((GET_EQ(CAUSER_CH, WEAR_HOLD) || GET_EQ(CAUSER_CH, WEAR_HOLD_2)) && IS_PRI(CAUSER_CH))) {
       if (GET_OBJ_TYPE(GET_EQ(CAUSER_CH, WEAR_HOLD)) == ITEM_SPELLBOOK) {
         if (IS_PRI(CAUSER_CH) || GET_OBJ_TYPE(GET_EQ(CAUSER_CH, WEAR_HOLD_2)) == ITEM_PEN) {
           if (LIGHT_OK(CAUSER_CH)) {
@@ -2597,13 +2601,11 @@ EVENT(scribe_event)
   }
 }
 
-EVENT(memorize_event)
-{
+EVENT(memorize_event) {
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_MEMMING);
 }
 
-EVENT(spell_destroy_inventory_event)
-{
+EVENT(spell_destroy_inventory_event) {
   struct char_data *tch, *next_tch;
   struct obj_data *obj, *next_obj;
   char pbuf[256];
@@ -2639,7 +2641,8 @@ EVENT(spell_destroy_inventory_event)
     if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!pk_allowed && !IS_MOB(CAUSER_CH) && !IS_MOB(tch))) {
       continue;
     }
-    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM))) {
+    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) &&
+        (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM))) {
       continue;
     }
     if (AFF2_FLAGGED(tch, AFF2_PROT_FIRE) && strcmp(sinfo->command, "fire breath") == 0) {
@@ -2665,7 +2668,8 @@ EVENT(spell_destroy_inventory_event)
               } else {
                 act("$p{B shatters into tiny frozen shards!{x", FALSE, tch, obj, NULL, TO_CHAR);
               }
-              safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (dragonbreath)", GET_NAME(tch), obj->short_description);
+              safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (dragonbreath)", GET_NAME(tch),
+                            obj->short_description);
               mudlog(pbuf, 'Q', COM_IMMORT, TRUE);
               plog(pbuf, tch, 0);
               extract_obj(obj);
@@ -2674,7 +2678,8 @@ EVENT(spell_destroy_inventory_event)
         }
       }
       if (IS_MOB(CAUSER_CH)) {
-        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, GET_NAME(tch), dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s' %s> dam = %d", GET_MOB_NAME(CAUSER_CH),
+                      sinfo->command, GET_NAME(tch), dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
@@ -2682,8 +2687,7 @@ EVENT(spell_destroy_inventory_event)
   }
 }
 
-EVENT(spell_destroy_equipment_event)
-{
+EVENT(spell_destroy_equipment_event) {
   struct char_data *tch, *next_tch;
   char pbuf[256];
   int eq;
@@ -2719,7 +2723,8 @@ EVENT(spell_destroy_equipment_event)
     if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!pk_allowed && !IS_MOB(CAUSER_CH) && !IS_MOB(tch))) {
       continue;
     }
-    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM))) {
+    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) &&
+        (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM))) {
       continue;
     }
     if (AFF2_FLAGGED(tch, AFF2_PROT_ACID) && strcmp(sinfo->command, "acid breath") == 0) {
@@ -2743,7 +2748,8 @@ EVENT(spell_destroy_equipment_event)
               if (strcmp(sinfo->command, "acid breath") == 0) {
                 act("$p{Y dissolves!{x", FALSE, tch, GET_EQ(tch, eq), NULL, TO_CHAR);
               }
-              safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (dragonbreath)", GET_NAME(tch), GET_EQ(tch, eq)->short_description);
+              safe_snprintf(pbuf, sizeof(pbuf), "%s lost item %s (dragonbreath)", GET_NAME(tch),
+                            GET_EQ(tch, eq)->short_description);
               mudlog(pbuf, 'Q', COM_IMMORT, TRUE);
               plog(pbuf, tch, 0);
               extract_obj(unequip_char(tch, eq));
@@ -2752,7 +2758,8 @@ EVENT(spell_destroy_equipment_event)
         }
       }
       if (IS_MOB(CAUSER_CH)) {
-        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s'> dam = %d", GET_MOB_NAME(CAUSER_CH), sinfo->command, dam);
+        safe_snprintf(debugbuf, sizeof(debugbuf), "MOB CAST: <%s '%s'> dam = %d", GET_MOB_NAME(CAUSER_CH),
+                      sinfo->command, dam);
         mudlog(debugbuf, 'D', COM_IMMORT, TRUE);
       }
       damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
@@ -2760,13 +2767,11 @@ EVENT(spell_destroy_equipment_event)
   }
 }
 
-EVENT(spell_add_dam_event)
-{
+EVENT(spell_add_dam_event) {
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 }
 
-EVENT(spell_prismatic_spray_event)
-{
+EVENT(spell_prismatic_spray_event) {
   struct char_data *tch;
   struct char_data *tch2;
   int dam, t, t2, t3, t4;
@@ -2793,7 +2798,9 @@ EVENT(spell_prismatic_spray_event)
     if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!pk_allowed && !IS_MOB(CAUSER_CH) && !IS_MOB(tch))) {
       continue;
     }
-    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) && (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM) && GET_RESIST(tch, sinfo->resist_type) < 101)) {
+    if (!ROOM_FLAGGED(IN_ROOM(CAUSER_CH), ROOM_CRIMEOK) &&
+        (!IS_MOB(CAUSER_CH) && IS_MOB(tch) && IS_AFFECTED(tch, AFF_CHARM) &&
+         GET_RESIST(tch, sinfo->resist_type) < 101)) {
       continue;
     }
     t4 = number(2, 5) / 2;
@@ -2806,90 +2813,90 @@ EVENT(spell_prismatic_spray_event)
         }
         t3 = t;
         switch (t3) {
-          case 0:
-            /* red */
-            dam = 420;
-            dam = modBySpecialization(CAUSER_CH, sinfo, dam);
-            dam = dam * GET_SKILL(CAUSER_CH, sinfo->realm) / 110;
-            if (mag_savingthrow(tch, sinfo->saving_throw)) {
-              dam >>= 1;
-            }
-            damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
-            act("You send a {RRED{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {RRED{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {RRed{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            break;
-          case 1:
-            /* orange */
-            dam = 280;
-            dam = modBySpecialization(CAUSER_CH, sinfo, dam);
-            dam = dam * GET_SKILL(CAUSER_CH, sinfo->realm) / 110;
-            if (mag_savingthrow(tch, sinfo->saving_throw)) {
-              dam >>= 1;
-            }
-            damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
-            act("You send a {yORANGE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {yORANGE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {yORANGE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            break;
-          case 2:
-            /* yellow */
-            dam = 140;
-            dam = modBySpecialization(CAUSER_CH, sinfo, dam);
-            dam = dam * GET_SKILL(CAUSER_CH, sinfo->realm) / 110;
-            if (mag_savingthrow(tch, sinfo->saving_throw)) {
-              dam >>= 1;
-            }
-            damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
-            act("You send a {YYELLOW{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {YYELLOW{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {YYELLOW{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            break;
-          case 3:
-            /* blue */
-            /* major para */
-            sinfo2 = (spells + find_spell_num("major paralysis"));
-            act("You send a {BBLUE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {BBLUE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {BBLUE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
-            break;
-          case 4:
-            /* indigo */
-            /* feeblemind */
-            sinfo2 = (spells + find_spell_num("feeble mind"));
-            act("You send a {bINDIGO{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {bINDIGO{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {bINDIGO{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
-            break;
-          case 5:
-            /* green */
-            /* poison */
-            sinfo2 = (spells + find_spell_num("poison"));
-            act("You send a {GGREEN{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {GGREEN{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {GGREEN{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
-            break;
-          case 6:
-            /* violet */
-            /* dispel magic */
-            sinfo2 = (spells + find_spell_num("dispel magic"));
-            act("You send a {MVIOLET{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {MVIOLET{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {MVIOLET{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            spell_dispel_magic_event(CAUSER_CH, tch, info, sinfo2, 1);
-            break;
-          case 7:
-            /* azure */
-            /* blind */
-            sinfo2 = (spells + find_spell_num("blindness"));
-            act("You send a {CAZURE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
-            act("$N is bathed in a {CAZURE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
-            act("You are bathed in a {CAZURE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
-            mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
-            break;
+        case 0:
+          /* red */
+          dam = 420;
+          dam = modBySpecialization(CAUSER_CH, sinfo, dam);
+          dam = dam * GET_SKILL(CAUSER_CH, sinfo->realm) / 110;
+          if (mag_savingthrow(tch, sinfo->saving_throw)) {
+            dam >>= 1;
+          }
+          damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
+          act("You send a {RRED{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {RRED{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {RRed{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          break;
+        case 1:
+          /* orange */
+          dam = 280;
+          dam = modBySpecialization(CAUSER_CH, sinfo, dam);
+          dam = dam * GET_SKILL(CAUSER_CH, sinfo->realm) / 110;
+          if (mag_savingthrow(tch, sinfo->saving_throw)) {
+            dam >>= 1;
+          }
+          damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
+          act("You send a {yORANGE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {yORANGE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {yORANGE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          break;
+        case 2:
+          /* yellow */
+          dam = 140;
+          dam = modBySpecialization(CAUSER_CH, sinfo, dam);
+          dam = dam * GET_SKILL(CAUSER_CH, sinfo->realm) / 110;
+          if (mag_savingthrow(tch, sinfo->saving_throw)) {
+            dam >>= 1;
+          }
+          damage(CAUSER_CH, tch, dam, sinfo->spellindex, 0, sinfo->resist_type, TRUE, info2 ? 1 : 0);
+          act("You send a {YYELLOW{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {YYELLOW{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {YYELLOW{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          break;
+        case 3:
+          /* blue */
+          /* major para */
+          sinfo2 = (spells + find_spell_num("major paralysis"));
+          act("You send a {BBLUE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {BBLUE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {BBLUE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+          break;
+        case 4:
+          /* indigo */
+          /* feeblemind */
+          sinfo2 = (spells + find_spell_num("feeble mind"));
+          act("You send a {bINDIGO{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {bINDIGO{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {bINDIGO{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+          break;
+        case 5:
+          /* green */
+          /* poison */
+          sinfo2 = (spells + find_spell_num("poison"));
+          act("You send a {GGREEN{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {GGREEN{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {GGREEN{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+          break;
+        case 6:
+          /* violet */
+          /* dispel magic */
+          sinfo2 = (spells + find_spell_num("dispel magic"));
+          act("You send a {MVIOLET{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {MVIOLET{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {MVIOLET{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          spell_dispel_magic_event(CAUSER_CH, tch, info, sinfo2, 1);
+          break;
+        case 7:
+          /* azure */
+          /* blind */
+          sinfo2 = (spells + find_spell_num("blindness"));
+          act("You send a {CAZURE{x beam of light at $N.", TRUE, CAUSER_CH, NULL, tch, TO_CHAR);
+          act("$N is bathed in a {CAZURE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_ROOM);
+          act("You are bathed in a {CAZURE{x beam of light.", TRUE, CAUSER_CH, NULL, tch, TO_VICT);
+          mag_affect_char(sinfo2, 0, CAUSER_CH, tch, GET_LEVEL(CAUSER_CH));
+          break;
         }
         if (IS_NPC(tch) && tch->master != CAUSER_CH && sinfo->aggressive && number(0, 1)) {
           hit(tch, CAUSER_CH, TYPE_UNDEFINED);

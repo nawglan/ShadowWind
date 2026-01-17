@@ -8,56 +8,151 @@
  *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
  ************************************************************************ */
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
+#include "../db.h"
 #include "../structs.h"
 #include "../utils.h"
-#include "../db.h"
 
-#define GET_ALIAS(mob) ((mob)->player.name)
-#define GET_SDESC(mob) ((mob)->player.short_descr)
-#define GET_DDESC(mob) ((mob)->player.description)
-#define GET_SIZE(mob) ((mob)->mob_specials.size)
-#define GET_ATTACKS(mob) ((mob)->mob_specials.mob_attacks)
-#define GET_EQUIP(mob) ((mob)->mob_specials.mob_equip)
-#define GET_ACTION(mob) ((mob)->mob_specials.mob_action)
-#define GET_ATTACK(mob) ((mob)->mob_specials.mob_attacks->attack_type)
-#define GET_ST_HPD(level) (mob_stats[(int) (level)].hp_dice)
-#define GET_ST_HPS(level) (mob_stats[(int) (level)].hp_sides)
-#define GET_ST_HPB(level) (mob_stats[(int) (level)].hp_bonus)
-#define GET_ST_EXP(level) (mob_stats[(int) (level)].experience)
-#define GET_ST_GOLD(level) (mob_stats[(int) (level)].gold)
-#define GET_ST_THAC0(level) (mob_stats[(int) (level)].thac0)
-#define GET_ST_AC(level) (mob_stats[(int) (level)].ac)
-#define GET_MPROG(mob)    (mob_index[(mob)->nr].mobprogs)
+#define GET_ALIAS(mob)      ((mob)->player.name)
+#define GET_SDESC(mob)      ((mob)->player.short_descr)
+#define GET_DDESC(mob)      ((mob)->player.description)
+#define GET_SIZE(mob)       ((mob)->mob_specials.size)
+#define GET_ATTACKS(mob)    ((mob)->mob_specials.mob_attacks)
+#define GET_EQUIP(mob)      ((mob)->mob_specials.mob_equip)
+#define GET_ACTION(mob)     ((mob)->mob_specials.mob_action)
+#define GET_ATTACK(mob)     ((mob)->mob_specials.mob_attacks->attack_type)
+#define GET_ST_HPD(level)   (mob_stats[(int)(level)].hp_dice)
+#define GET_ST_HPS(level)   (mob_stats[(int)(level)].hp_sides)
+#define GET_ST_HPB(level)   (mob_stats[(int)(level)].hp_bonus)
+#define GET_ST_EXP(level)   (mob_stats[(int)(level)].experience)
+#define GET_ST_GOLD(level)  (mob_stats[(int)(level)].gold)
+#define GET_ST_THAC0(level) (mob_stats[(int)(level)].thac0)
+#define GET_ST_AC(level)    (mob_stats[(int)(level)].ac)
+#define GET_MPROG(mob)      (mob_index[(mob)->nr].mobprogs)
 
 char buf1[MAX_STRING_LENGTH];
 char buf2[MAX_STRING_LENGTH];
 int num_mobs_in_zone = 0;
 
 const struct max_mob_stats mob_stats[] = {
-/* level, hp_dice, hp_sides, hp_bonus, exp, gold, thac0, ac, damage */
-{0, 1, 1, 5, 20, 10, 20, 10, 1}, {1, 1, 1, 10, 150, 50, 19, 9, 1}, {2, 1, 1, 20, 300, 150, 19, 9, 2}, {3, 2, 2, 30, 600, 190, 18, 8, 3}, {4, 2, 2, 40, 1000, 270, 18, 8, 4}, {5, 3, 3, 50, 1600, 350, 17, 7, 5}, {6, 3, 3, 60, 2400, 450, 17, 7, 6}, {7, 4, 4, 70, 2900, 540, 16, 6, 7}, {8, 4, 4, 80, 3500, 600, 16, 6, 8}, {9, 5, 5, 90, 4200, 690, 15, 5, 9}, {10, 5, 5, 100, 5000, 800, 15, 5, 10}, {11, 6, 6, 110, 6900, 880, 14, 4, 11}, {12, 6, 6, 120, 7500, 950, 14, 4, 12}, {13, 7, 7, 130, 8700, 1000, 14, 3, 13}, {14, 7, 7, 140, 9900, 1080, 14, 3, 14}, {15, 8, 8, 150, 11000, 1150, 14, 2, 15}, {16, 8, 8, 160, 12500, 1200, 13, 2, 16}, {17, 9, 9, 170, 14300, 1280, 13, 1, 17}, {18, 9, 9, 180, 16800, 1340, 13, 1, 18}, {19, 10, 10, 190, 20000, 1430, 12, 0, 19}, {20, 10, 10, 200, 25000, 1500, 12, 0, 20}, {21, 11, 11, 210, 27500, 1600, 12, -1, 21}, {22, 11, 11, 220, 31000, 1750, 11, -1, 22}, {23, 12, 12, 230, 35000, 2000, 11, -2, 23}, {24, 12, 12, 240, 40000, 2200, 11, -2, 24}, {25, 13, 13, 250, 45500, 2650, 10, -3, 25}, {26, 13, 13, 260, 51000, 3000, 10, -3, 26}, {27, 14, 14, 270, 55500, 3400, 10, -4, 27}, {28, 14, 14, 280, 61000, 3900, 9, -4, 28}, {29, 15, 15, 290, 70000, 4400, 9, -5, 29}, {30, 15, 15, 300, 80000, 5000, 9, -5, 30}, {31, 16, 16, 310, 85000, 5100, 8, -6, 31}, {32, 16, 16, 320, 92000, 5250, 8, -6, 32}, {33, 17, 17, 330, 99000, 5500, 8, -7, 33}, {34, 17, 17, 340, 106000, 5800, 7, -7, 34}, {35, 18, 18, 350, 112000, 6100, 7, -8, 35}, {36, 18, 18, 360, 118000, 6500, 7, -8, 36}, {37, 19, 19, 370, 124000, 6900, 6, -9, 37}, {38, 19, 19, 380, 132000, 7200, 6, -9, 38}, {39, 20, 20, 390, 140000, 7600, 6, -10, 39}, {40, 20, 20, 400, 150000, 8000, 5, -10, 40}, {41, 21, 21, 410, 165000, 8100, 5, -10, 41}, {42, 21, 21, 420, 190000, 8200, 5, -10, 42}, {43, 22, 22, 430, 220000, 8300, 4, -10, 43}, {44, 22, 22, 440, 250000, 8500, 4, -10, 44}, {45, 23, 23, 450, 280000, 8700, 4, -10, 45}, {46, 23, 23, 460, 310000, 8900, 3, -10, 46}, {47, 24, 24, 470, 350000, 9100, 3, -10, 47}, {48, 24, 24, 480, 390000, 9400, 3, -10, 48}, {49, 25, 25, 490, 440000, 9700, 2, -10, 49}, {50, 25, 25, 500, 500000, 10000, 2, -10, 50}, {51, 26, 26, 1510, 1500000, 20000, 2, -10, 99999}, {52, 26, 26, 2520, 2600000, 20000, 1, -10, 99999}, {53, 27, 27, 3530, 3700000, 20000, 1, -10, 99999}, {54, 27, 27, 4540, 4800000, 20000, 1, -10, 99999}, {55, 28, 28, 5550, 6000000, 20000, 0, -10, 99999}, {56, 28, 28, 7650, 7000000, 20000, 0, -10, 99999}, {57, 29, 29, 9650, 8000000, 20000, 0, -10, 99999}, {58, 29, 29, 13580, 9000000, 20000, 0, -10, 99999}, {59, 30, 30, 19000, 9500000, 20000, 0, -10, 99999}, {60, 30, 30, 30000, 10000000, 20000, 0, -10, 99999}};
+    /* level, hp_dice, hp_sides, hp_bonus, exp, gold, thac0, ac, damage */
+    {0, 1, 1, 5, 20, 10, 20, 10, 1},
+    {1, 1, 1, 10, 150, 50, 19, 9, 1},
+    {2, 1, 1, 20, 300, 150, 19, 9, 2},
+    {3, 2, 2, 30, 600, 190, 18, 8, 3},
+    {4, 2, 2, 40, 1000, 270, 18, 8, 4},
+    {5, 3, 3, 50, 1600, 350, 17, 7, 5},
+    {6, 3, 3, 60, 2400, 450, 17, 7, 6},
+    {7, 4, 4, 70, 2900, 540, 16, 6, 7},
+    {8, 4, 4, 80, 3500, 600, 16, 6, 8},
+    {9, 5, 5, 90, 4200, 690, 15, 5, 9},
+    {10, 5, 5, 100, 5000, 800, 15, 5, 10},
+    {11, 6, 6, 110, 6900, 880, 14, 4, 11},
+    {12, 6, 6, 120, 7500, 950, 14, 4, 12},
+    {13, 7, 7, 130, 8700, 1000, 14, 3, 13},
+    {14, 7, 7, 140, 9900, 1080, 14, 3, 14},
+    {15, 8, 8, 150, 11000, 1150, 14, 2, 15},
+    {16, 8, 8, 160, 12500, 1200, 13, 2, 16},
+    {17, 9, 9, 170, 14300, 1280, 13, 1, 17},
+    {18, 9, 9, 180, 16800, 1340, 13, 1, 18},
+    {19, 10, 10, 190, 20000, 1430, 12, 0, 19},
+    {20, 10, 10, 200, 25000, 1500, 12, 0, 20},
+    {21, 11, 11, 210, 27500, 1600, 12, -1, 21},
+    {22, 11, 11, 220, 31000, 1750, 11, -1, 22},
+    {23, 12, 12, 230, 35000, 2000, 11, -2, 23},
+    {24, 12, 12, 240, 40000, 2200, 11, -2, 24},
+    {25, 13, 13, 250, 45500, 2650, 10, -3, 25},
+    {26, 13, 13, 260, 51000, 3000, 10, -3, 26},
+    {27, 14, 14, 270, 55500, 3400, 10, -4, 27},
+    {28, 14, 14, 280, 61000, 3900, 9, -4, 28},
+    {29, 15, 15, 290, 70000, 4400, 9, -5, 29},
+    {30, 15, 15, 300, 80000, 5000, 9, -5, 30},
+    {31, 16, 16, 310, 85000, 5100, 8, -6, 31},
+    {32, 16, 16, 320, 92000, 5250, 8, -6, 32},
+    {33, 17, 17, 330, 99000, 5500, 8, -7, 33},
+    {34, 17, 17, 340, 106000, 5800, 7, -7, 34},
+    {35, 18, 18, 350, 112000, 6100, 7, -8, 35},
+    {36, 18, 18, 360, 118000, 6500, 7, -8, 36},
+    {37, 19, 19, 370, 124000, 6900, 6, -9, 37},
+    {38, 19, 19, 380, 132000, 7200, 6, -9, 38},
+    {39, 20, 20, 390, 140000, 7600, 6, -10, 39},
+    {40, 20, 20, 400, 150000, 8000, 5, -10, 40},
+    {41, 21, 21, 410, 165000, 8100, 5, -10, 41},
+    {42, 21, 21, 420, 190000, 8200, 5, -10, 42},
+    {43, 22, 22, 430, 220000, 8300, 4, -10, 43},
+    {44, 22, 22, 440, 250000, 8500, 4, -10, 44},
+    {45, 23, 23, 450, 280000, 8700, 4, -10, 45},
+    {46, 23, 23, 460, 310000, 8900, 3, -10, 46},
+    {47, 24, 24, 470, 350000, 9100, 3, -10, 47},
+    {48, 24, 24, 480, 390000, 9400, 3, -10, 48},
+    {49, 25, 25, 490, 440000, 9700, 2, -10, 49},
+    {50, 25, 25, 500, 500000, 10000, 2, -10, 50},
+    {51, 26, 26, 1510, 1500000, 20000, 2, -10, 99999},
+    {52, 26, 26, 2520, 2600000, 20000, 1, -10, 99999},
+    {53, 27, 27, 3530, 3700000, 20000, 1, -10, 99999},
+    {54, 27, 27, 4540, 4800000, 20000, 1, -10, 99999},
+    {55, 28, 28, 5550, 6000000, 20000, 0, -10, 99999},
+    {56, 28, 28, 7650, 7000000, 20000, 0, -10, 99999},
+    {57, 29, 29, 9650, 8000000, 20000, 0, -10, 99999},
+    {58, 29, 29, 13580, 9000000, 20000, 0, -10, 99999},
+    {59, 30, 30, 19000, 9500000, 20000, 0, -10, 99999},
+    {60, 30, 30, 30000, 10000000, 20000, 0, -10, 99999}};
 
-const struct balance_type balance_table[] = { /* hitnum,hitsize,hitadd,exp,thac0,ac,damnum,damsize,damadd,gold */
-{1, 9, 1, 25, 20, 10, 1, 4, 0, 0}, /* 0 */
-{1, 11, 11, 100, 20, 9, 1, 5, 0, 10}, {1, 12, 23, 200, 19, 8, 1, 6, 0, 50}, {1, 11, 36, 350, 18, 7, 1, 7, 0, 100}, {1, 12, 48, 600, 17, 6, 1, 8, 0, 200}, {1, 11, 61, 900, 16, 5, 2, 4, 0, 300}, /* 5 */
-{1, 12, 73, 1500, 15, 4, 1, 8, 1, 400}, {1, 11, 86, 2250, 14, 4, 2, 4, 1, 500}, {1, 12, 98, 3750, 13, 3, 2, 5, 1, 600}, {1, 11, 111, 6000, 12, 3, 2, 5, 1, 800}, {1, 12, 123, 9000, 11, 2, 2, 6, 1, 1000}, /* 10 */
-{1, 11, 136, 11000, 10, 2, 2, 6, 1, 1200}, {1, 12, 148, 13000, 9, 2, 2, 7, 1, 1400}, {1, 11, 161, 16000, 8, 2, 2, 7, 1, 1600}, {1, 12, 173, 18000, 7, 1, 2, 8, 1, 1800}, {1, 11, 186, 21000, 6, 1, 2, 8, 2, 2000}, /* 15 */
-{1, 12, 198, 24000, 5, 1, 2, 8, 2, 2400}, {1, 11, 211, 28000, 4, 1, 3, 6, 2, 2800}, {1, 12, 223, 30000, 3, 0, 3, 6, 2, 3200}, {1, 11, 236, 35000, 2, 0, 3, 6, 3, 3600}, {1, 12, 248, 40000, 1, 0, 3, 6, 4, 4000}, /* 20 */
-{1, 11, 261, 50000, 0, -1, 3, 7, 5, 5000}, {1, 12, 274, 60000, 0, -1, 3, 8, 4, 6000}, {1, 11, 286, 80000, 0, -2, 3, 8, 4, 7000}, {1, 12, 299, 100000, 0, -2, 3, 8, 4, 8000}, {1, 11, 311, 110000, 0, -3, 4, 6, 4, 9000}, /* 25 */
-{1, 12, 324, 120000, 0, -3, 4, 6, 4, 10000}, {1, 11, 336, 130000, 0, -4, 4, 6, 4, 11000}, {1, 12, 349, 140000, 0, -4, 4, 6, 5, 12000}, {1, 11, 361, 150000, 0, -5, 4, 7, 5, 13000}, {1, 12, 374, 160000, 0, -5, 4, 8, 5, 14000}, /* 30 */
-{1, 15, 385, 180000, 0, -6, 4, 8, 5, 15000}, {1, 50, 401, 200000, 0, -6, 4, 8, 5, 16000}, {1, 50, 451, 220000, 0, -7, 4, 8, 6, 17000}, {1, 50, 501, 240000, 0, -7, 4, 8, 6, 18000}, {1, 50, 551, 260000, 0, -8, 4, 8, 6, 19000}, /* 35 */
-{1, 100, 601, 280000, 0, -8, 4, 8, 6, 20000}, {1, 100, 701, 300000, 0, -9, 4, 9, 6, 21000}, {1, 100, 801, 320000, 0, -9, 4, 9, 6, 22000}, {1, 200, 900, 340000, 0, -10, 4, 9, 6, 23000}, {1, 400, 1101, 360000, 0, -10, 5, 9, 6, 240000} /* 40 */
+const struct balance_type balance_table[] = {
+    /* hitnum,hitsize,hitadd,exp,thac0,ac,damnum,damsize,damadd,gold */
+    {1, 9, 1, 25, 20, 10, 1, 4, 0, 0}, /* 0 */
+    {1, 11, 11, 100, 20, 9, 1, 5, 0, 10},
+    {1, 12, 23, 200, 19, 8, 1, 6, 0, 50},
+    {1, 11, 36, 350, 18, 7, 1, 7, 0, 100},
+    {1, 12, 48, 600, 17, 6, 1, 8, 0, 200},
+    {1, 11, 61, 900, 16, 5, 2, 4, 0, 300}, /* 5 */
+    {1, 12, 73, 1500, 15, 4, 1, 8, 1, 400},
+    {1, 11, 86, 2250, 14, 4, 2, 4, 1, 500},
+    {1, 12, 98, 3750, 13, 3, 2, 5, 1, 600},
+    {1, 11, 111, 6000, 12, 3, 2, 5, 1, 800},
+    {1, 12, 123, 9000, 11, 2, 2, 6, 1, 1000}, /* 10 */
+    {1, 11, 136, 11000, 10, 2, 2, 6, 1, 1200},
+    {1, 12, 148, 13000, 9, 2, 2, 7, 1, 1400},
+    {1, 11, 161, 16000, 8, 2, 2, 7, 1, 1600},
+    {1, 12, 173, 18000, 7, 1, 2, 8, 1, 1800},
+    {1, 11, 186, 21000, 6, 1, 2, 8, 2, 2000}, /* 15 */
+    {1, 12, 198, 24000, 5, 1, 2, 8, 2, 2400},
+    {1, 11, 211, 28000, 4, 1, 3, 6, 2, 2800},
+    {1, 12, 223, 30000, 3, 0, 3, 6, 2, 3200},
+    {1, 11, 236, 35000, 2, 0, 3, 6, 3, 3600},
+    {1, 12, 248, 40000, 1, 0, 3, 6, 4, 4000}, /* 20 */
+    {1, 11, 261, 50000, 0, -1, 3, 7, 5, 5000},
+    {1, 12, 274, 60000, 0, -1, 3, 8, 4, 6000},
+    {1, 11, 286, 80000, 0, -2, 3, 8, 4, 7000},
+    {1, 12, 299, 100000, 0, -2, 3, 8, 4, 8000},
+    {1, 11, 311, 110000, 0, -3, 4, 6, 4, 9000}, /* 25 */
+    {1, 12, 324, 120000, 0, -3, 4, 6, 4, 10000},
+    {1, 11, 336, 130000, 0, -4, 4, 6, 4, 11000},
+    {1, 12, 349, 140000, 0, -4, 4, 6, 5, 12000},
+    {1, 11, 361, 150000, 0, -5, 4, 7, 5, 13000},
+    {1, 12, 374, 160000, 0, -5, 4, 8, 5, 14000}, /* 30 */
+    {1, 15, 385, 180000, 0, -6, 4, 8, 5, 15000},
+    {1, 50, 401, 200000, 0, -6, 4, 8, 5, 16000},
+    {1, 50, 451, 220000, 0, -7, 4, 8, 6, 17000},
+    {1, 50, 501, 240000, 0, -7, 4, 8, 6, 18000},
+    {1, 50, 551, 260000, 0, -8, 4, 8, 6, 19000}, /* 35 */
+    {1, 100, 601, 280000, 0, -8, 4, 8, 6, 20000},
+    {1, 100, 701, 300000, 0, -9, 4, 9, 6, 21000},
+    {1, 100, 801, 320000, 0, -9, 4, 9, 6, 22000},
+    {1, 200, 900, 340000, 0, -10, 4, 9, 6, 23000},
+    {1, 400, 1101, 360000, 0, -10, 5, 9, 6, 240000} /* 40 */
 };
 
-const char *resist_short_name[] = {"ResLight", "ResDark", "ResFire", "ResCold", "ResAcid", "ResPoison", "ResDisease", "ResCharm", "ResSleep", "ResSlash", "ResPierce", "ResBludgeon", "ResNWeap", "ResMWeap", "ResMagic", "ResElectricity", "\n"};
+const char *resist_short_name[] = {"ResLight",   "ResDark",  "ResFire",  "ResCold",        "ResAcid",   "ResPoison",
+                                   "ResDisease", "ResCharm", "ResSleep", "ResSlash",       "ResPierce", "ResBludgeon",
+                                   "ResNWeap",   "ResMWeap", "ResMagic", "ResElectricity", "\n"};
 
 void discrete_save(FILE *mob_file, int zone);
-void mprog_read_programs(FILE * fp, struct index_data * pMobIndex);
+void mprog_read_programs(FILE *fp, struct index_data *pMobIndex);
 void strip_string(char *string);
 
 /**************************************************************************
@@ -65,37 +160,34 @@ void strip_string(char *string);
  ************************************************************************ */
 
 struct char_data *character_list = NULL; /* global linked list of
- * chars         */
-struct index_data *mob_index; /* index table for mobile file         */
-struct char_data *mob_proto; /* prototypes for mobs                 */
-int top_of_mobt = 0; /* top of mobile index table         */
-int new_top_mobt = 0; /* new top, used for OLC         */
-int mob_idnum = -1; /* mobs have a negative idnum    */
+                                          * chars         */
+struct index_data *mob_index;            /* index table for mobile file         */
+struct char_data *mob_proto;             /* prototypes for mobs                 */
+int top_of_mobt = 0;                     /* top of mobile index table         */
+int new_top_mobt = 0;                    /* new top, used for OLC         */
+int mob_idnum = -1;                      /* mobs have a negative idnum    */
 struct player_special_data dummy_mob;
 
 /* local functions */
-void setup_dir(FILE * fl, int room, int dir);
+void setup_dir(FILE *fl, int room, int dir);
 void index_boot(int mode);
-void discrete_load(FILE * fl, int mode, int reset);
-void parse_mobile(FILE * mob_f, int nr, int reset);
+void discrete_load(FILE *fl, int mode, int reset);
+void parse_mobile(FILE *mob_f, int nr, int reset);
 int is_empty(int zone_nr);
-void clear_char(struct char_data * ch);
+void clear_char(struct char_data *ch);
 void parse_pline(char *line, char *field, char *value);
 
-int MIN(int a, int b)
-{
+int MIN(int a, int b) {
   return a < b ? a : b;
 }
 
-int MAX(int a, int b)
-{
+int MAX(int a, int b) {
   return a > b ? a : b;
 }
 
 /* returns: 0 if equal, 1 if arg1 > arg2, -1 if arg1 < arg2  */
 /* scan 'till found different or end of both                 */
-int str_cmp(char *arg1, char *arg2)
-{
+int str_cmp(char *arg1, char *arg2) {
   if (arg1 == NULL || arg2 == NULL) {
     printf("NULL argument in str_cmp\n");
     return (0);
@@ -108,8 +200,7 @@ int str_cmp(char *arg1, char *arg2)
  saved to a file.  Use it only on buffers, not on the oringinal
  strings.*/
 
-void strip_string(char *buffer)
-{
+void strip_string(char *buffer) {
   char *pointer;
 
   pointer = buffer;
@@ -118,8 +209,7 @@ void strip_string(char *buffer)
     strcpy(pointer, pointer + 1);
 }
 
-void olc_print_bitvectors(FILE* f, long bitvector, long max)
-{
+void olc_print_bitvectors(FILE *f, long bitvector, long max) {
   int i;
   int counter = 0;
 
@@ -140,49 +230,47 @@ void olc_print_bitvectors(FILE* f, long bitvector, long max)
 /*
  * Get the type of MobProg.
  */
-const char *medit_get_mprog_type(struct mob_prog_data *mprog)
-{
+const char *medit_get_mprog_type(struct mob_prog_data *mprog) {
   switch (mprog->type) {
-    case IN_FILE_PROG:
-      return ">in_file_prog";
-    case ACT_PROG:
-      return ">act_prog";
-    case SPEECH_PROG:
-      return ">speech_prog";
-    case RAND_PROG:
-      return ">rand_prog";
-    case FIGHT_PROG:
-      return ">fight_prog";
-    case HITPRCNT_PROG:
-      return ">hitprcnt_prog";
-    case DEATH_PROG:
-      return ">death_prog";
-    case ENTRY_PROG:
-      return ">entry_prog";
-    case GREET_PROG:
-      return ">greet_prog";
-    case ALL_GREET_PROG:
-      return ">all_greet_prog";
-    case GIVE_PROG:
-      return ">give_prog";
-    case BRIBE_PROG:
-      return ">bribe_prog";
-    case SHOUT_PROG:
-      return ">shout_prog";
-    case HOLLER_PROG:
-      return ">holler_prog";
-    case TELL_PROG:
-      return ">tell_prog";
-    case TIME_PROG:
-      return ">time_prog";
-    case ASK_PROG:
-      return ">ask_prog";
+  case IN_FILE_PROG:
+    return ">in_file_prog";
+  case ACT_PROG:
+    return ">act_prog";
+  case SPEECH_PROG:
+    return ">speech_prog";
+  case RAND_PROG:
+    return ">rand_prog";
+  case FIGHT_PROG:
+    return ">fight_prog";
+  case HITPRCNT_PROG:
+    return ">hitprcnt_prog";
+  case DEATH_PROG:
+    return ">death_prog";
+  case ENTRY_PROG:
+    return ">entry_prog";
+  case GREET_PROG:
+    return ">greet_prog";
+  case ALL_GREET_PROG:
+    return ">all_greet_prog";
+  case GIVE_PROG:
+    return ">give_prog";
+  case BRIBE_PROG:
+    return ">bribe_prog";
+  case SHOUT_PROG:
+    return ">shout_prog";
+  case HOLLER_PROG:
+    return ">holler_prog";
+  case TELL_PROG:
+    return ">tell_prog";
+  case TIME_PROG:
+    return ">time_prog";
+  case ASK_PROG:
+    return ">ask_prog";
   }
   return ">ERROR_PROG";
 }
 
-char *fname(char *namelist)
-{
+char *fname(char *namelist) {
   static char holder[30];
   register char *point;
 
@@ -195,8 +283,7 @@ char *fname(char *namelist)
 }
 
 /* returns the real number of the monster with given virtual number */
-int real_mobile(int virtual)
-{
+int real_mobile(int virtual) {
   int bot, top, mid;
 
   bot = 0;
@@ -225,8 +312,7 @@ int real_mobile(int virtual)
  * Returns the number of lines advanced in the file.
  */
 
-int get_line(FILE * fl, char *buf)
-{
+int get_line(FILE *fl, char *buf) {
   char temp[256];
   int lines = 0;
 
@@ -250,8 +336,7 @@ int get_line(FILE * fl, char *buf)
  * unget_line rewinds one line in the file
  */
 
-void unget_line(FILE * fl)
-{
+void unget_line(FILE *fl) {
   do {
     fseek(fl, -2, SEEK_CUR);
   } while (fgetc(fl) != '\n');
@@ -262,16 +347,14 @@ void unget_line(FILE * fl)
  *********************************************************************** */
 
 /* body of the booting system */
-void boot_db(void)
-{
+void boot_db(void) {
   printf("Fixmobs -- BEGIN.\n");
   index_boot(DB_BOOT_MOB);
   printf("Fixmobs -- END.\n");
 }
 
 /* function to count how many hash-mark delimited records exist in a file */
-int count_hash_records(FILE * fl)
-{
+int count_hash_records(FILE *fl) {
   char buf[128];
   int count = 0;
 
@@ -282,8 +365,7 @@ int count_hash_records(FILE * fl)
   return count;
 }
 
-void index_boot(int mode)
-{
+void index_boot(int mode) {
   char *index_filename, *prefix;
   FILE *index, *db_file, *new_db_file;
   int zone;
@@ -338,8 +420,7 @@ void index_boot(int mode)
   fclose(index);
 }
 
-void discrete_load(FILE * fl, int mode, int reset)
-{
+void discrete_load(FILE *fl, int mode, int reset) {
   int nr = -1, last = 0;
   char line[256];
 
@@ -379,8 +460,7 @@ void discrete_load(FILE * fl, int mode, int reset)
   }
 }
 
-long asciiflag_conv(char *flag)
-{
+long asciiflag_conv(char *flag) {
   long flags = 0;
   int is_number = 1;
   register char *p;
@@ -401,8 +481,7 @@ long asciiflag_conv(char *flag)
   return flags;
 }
 
-char fread_letter(FILE *fp)
-{
+char fread_letter(FILE *fp) {
   char c;
   do {
     c = getc(fp);
@@ -410,8 +489,7 @@ char fread_letter(FILE *fp)
   return c;
 }
 
-void parse_simple_mob(FILE *mob_f, int i, int nr)
-{
+void parse_simple_mob(FILE *mob_f, int i, int nr) {
   int t[10], j;
   char line[256];
   struct mob_attacks_data *new_attack;
@@ -425,8 +503,10 @@ void parse_simple_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %dd%d+%d %dd%d+%d ", t, t + 1, t + 2, t + 3, t + 4, t + 5, t + 6, t + 7, t + 8) != 9) {
-    fprintf(stderr, "Format error in mob #%d, first line after S flag\n"
-        "...expecting line of form '# # # #d#+# #d#+#'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after S flag\n"
+            "...expecting line of form '# # # #d#+# #d#+#'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -486,11 +566,9 @@ void parse_simple_mob(FILE *mob_f, int i, int nr)
    */
   for (j = 0; j < 5; j++)
     GET_SAVE(mob_proto + i, j) = 0;
-
 }
 
-void parse_another_mob(FILE * mob_f, int i, int nr)
-{
+void parse_another_mob(FILE *mob_f, int i, int nr) {
   int j, t[10], tmp;
   char line[256], letter;
   struct mob_attacks_data *new_attack;
@@ -504,8 +582,10 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %dd%d+%d %dd%d+%d ", t, t + 1, t + 2, t + 3, t + 4, t + 5, t + 6, t + 7, t + 8) != 9) {
-    fprintf(stderr, "Format error in mob #%d, first line after A flag\n"
-        "...expecting line of form '# # # #d#+# #d#+#'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after A flag\n"
+            "...expecting line of form '# # # #d#+# #d#+#'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -582,7 +662,6 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
     new_attack->attack_type = t[4];
     new_attack->next = mob_proto[i].mob_specials.mob_attacks;
     mob_proto[i].mob_specials.mob_attacks = new_attack;
-
   };
 
   mob_proto[i].player.weight = 200;
@@ -597,7 +676,6 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
    */
   for (j = 0; j < 5; j++)
     GET_SAVE(mob_proto + i, j) = 0;
-
 }
 
 /*
@@ -607,11 +685,10 @@ void parse_another_mob(FILE * mob_f, int i, int nr)
  * function!  No other changes need to be made anywhere in the code.
  */
 
-#define CASE(test) if (!matched && !str_cmp(keyword, test) && (matched = 1))
+#define CASE(test)       if (!matched && !str_cmp(keyword, test) && (matched = 1))
 #define RANGE(low, high) (num_arg = MAX((low), MIN((high), (num_arg))))
 
-void interpret_espec(char *keyword, char *value, int i, int nr)
-{
+void interpret_espec(char *keyword, char *value, int i, int nr) {
   int num_arg, matched = 0;
 
   num_arg = atoi(value);
@@ -654,7 +731,6 @@ void interpret_espec(char *keyword, char *value, int i, int nr)
   CASE("Gold") {
     RANGE(0, 10000000);
     GET_TEMP_GOLD(mob_proto + i) = num_arg;
-
   }
 
   CASE("Exp") {
@@ -750,8 +826,7 @@ void interpret_espec(char *keyword, char *value, int i, int nr)
 #undef CASE
 #undef RANGE
 
-void parse_espec(char *buf, int i, int nr)
-{
+void parse_espec(char *buf, int i, int nr) {
   char *ptr;
 
   if ((ptr = strchr(buf, ':')) != NULL) {
@@ -764,8 +839,7 @@ void parse_espec(char *buf, int i, int nr)
   interpret_espec(buf, ptr, i, nr);
 }
 
-void parse_enhanced_mob(FILE *mob_f, int i, int nr)
-{
+void parse_enhanced_mob(FILE *mob_f, int i, int nr) {
   char line[256];
 
   parse_simple_mob(mob_f, i, nr);
@@ -786,8 +860,7 @@ void parse_enhanced_mob(FILE *mob_f, int i, int nr)
   exit(1);
 }
 
-void parse_extensions(FILE *mob_f, int i, int nr)
-{
+void parse_extensions(FILE *mob_f, int i, int nr) {
   struct mob_attacks_data *new_attack;
   struct mob_equipment_data *new_equip;
   struct mob_action_data *new_action;
@@ -797,7 +870,7 @@ void parse_extensions(FILE *mob_f, int i, int nr)
 
   while (get_line(mob_f, line)) {
     if (*line == '#' || *line == '>') { /* end of extension fields */
-      unget_line(mob_f); /* unget the line.. arhem? */
+      unget_line(mob_f);                /* unget the line.. arhem? */
       return;
     }
     if (line[0] == 'T' && line[1] == ' ') { /* parse attacks field */
@@ -862,18 +935,16 @@ void parse_extensions(FILE *mob_f, int i, int nr)
         fflush(NULL);
         exit(1);
       }
-      GET_MOB_QUEST(mob_proto +i) = t[0];
+      GET_MOB_QUEST(mob_proto + i) = t[0];
 
     } else
       /* well.. assume it's an E-Spec */
       parse_espec(line, i, nr);
   }
   return; /* end of file */
-
 }
 
-void parse_balanced_mob(FILE *mob_f, int i, int nr)
-{
+void parse_balanced_mob(FILE *mob_f, int i, int nr) {
   int t[10], j;
   char line[256];
   struct mob_attacks_data *new_attack;
@@ -887,8 +958,10 @@ void parse_balanced_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %d ", t, t + 1, t + 2, t + 3) != 4) {
-    fprintf(stderr, "Format error in mob #%d, first line after B flag\n"
-        "...expecting line of form '# # # #'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after B flag\n"
+            "...expecting line of form '# # # #'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -938,11 +1011,9 @@ void parse_balanced_mob(FILE *mob_f, int i, int nr)
 
   for (j = 0; j < 5; j++)
     GET_SAVE(mob_proto + i, j) = 0;
-
 }
 
-void parse_extended_mob(FILE *mob_f, int i, int nr)
-{
+void parse_extended_mob(FILE *mob_f, int i, int nr) {
   int t[10], j;
   char line[256];
   struct mob_attacks_data *new_attack;
@@ -956,8 +1027,10 @@ void parse_extended_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %dd%d+%d", t, t + 1, t + 2, t + 3, t + 4, t + 5) != 6) {
-    fprintf(stderr, "Format error in mob #%d, first line after X flag\n"
-        "...expecting line of form '# # # #d#+#'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, first line after X flag\n"
+            "...expecting line of form '# # # #d#+#'\n",
+            nr);
     fflush(NULL);
     exit(1);
   }
@@ -985,8 +1058,10 @@ void parse_extended_mob(FILE *mob_f, int i, int nr)
 
   get_line(mob_f, line);
   if (sscanf(line, " %d %d %d %d %d %d ", t, t + 1, t + 2, t + 3, t + 4, t + 5) != 6)
-    fprintf(stderr, "Format error in mob #%d, third line after X flag\n"
-        "...expecting line of form '# # # # # #'\n", nr);
+    fprintf(stderr,
+            "Format error in mob #%d, third line after X flag\n"
+            "...expecting line of form '# # # # # #'\n",
+            nr);
 
   mob_proto[i].char_specials.position = t[0];
   mob_proto[i].mob_specials.default_pos = t[1];
@@ -1015,17 +1090,15 @@ void parse_extended_mob(FILE *mob_f, int i, int nr)
     /* new combat system */
     new_attack->next = mob_proto[i].mob_specials.mob_attacks;
     mob_proto[i].mob_specials.mob_attacks = new_attack;
-    new_attack->nodice = balance_table[(int) GET_LEVEL(mob_proto + i)].dam_dicenum;
-    new_attack->sizedice = balance_table[(int) GET_LEVEL(mob_proto + i)].dam_dicesize;
-    new_attack->damroll = balance_table[(int) GET_LEVEL(mob_proto + i)].dam_add;
+    new_attack->nodice = balance_table[(int)GET_LEVEL(mob_proto + i)].dam_dicenum;
+    new_attack->sizedice = balance_table[(int)GET_LEVEL(mob_proto + i)].dam_dicesize;
+    new_attack->damroll = balance_table[(int)GET_LEVEL(mob_proto + i)].dam_add;
     new_attack->attack_type = 0;
     new_attack->attacks = 100;
   }
-
 }
 
-void parse_mobile(FILE * mob_f, int nr, int reset)
-{
+void parse_mobile(FILE *mob_f, int nr, int reset) {
   static int i = 0;
   int g, j, t[10];
   char line[256], *tmpptr, letter;
@@ -1072,26 +1145,26 @@ void parse_mobile(FILE * mob_f, int nr, int reset)
     GET_MOB_INVIS_LEV(mob_proto + i) = 51;
 
   switch (letter) {
-    case 'S': /* Simple monsters */
-      parse_simple_mob(mob_f, i, nr);
-      break;
-    case 'A': /* AnotherWorld monsters */
-      parse_another_mob(mob_f, i, nr);
-      break;
-    case 'E': /* CircleMUD 3.00 E-Spec monsters */
-      parse_enhanced_mob(mob_f, i, nr);
-      break;
-    case 'B': /* Balanced AnotherWorld extended monsters */
-      parse_balanced_mob(mob_f, i, nr);
-      break;
-    case 'X': /* Standard AnotherWorld extended monsters */
-      parse_extended_mob(mob_f, i, nr);
-      break;
-    default:
-      fprintf(stderr, "Unsupported mob type %c in mob #%d\n", letter, nr);
-      fflush(NULL);
-      exit(1);
-      break;
+  case 'S': /* Simple monsters */
+    parse_simple_mob(mob_f, i, nr);
+    break;
+  case 'A': /* AnotherWorld monsters */
+    parse_another_mob(mob_f, i, nr);
+    break;
+  case 'E': /* CircleMUD 3.00 E-Spec monsters */
+    parse_enhanced_mob(mob_f, i, nr);
+    break;
+  case 'B': /* Balanced AnotherWorld extended monsters */
+    parse_balanced_mob(mob_f, i, nr);
+    break;
+  case 'X': /* Standard AnotherWorld extended monsters */
+    parse_extended_mob(mob_f, i, nr);
+    break;
+  default:
+    fprintf(stderr, "Unsupported mob type %c in mob #%d\n", letter, nr);
+    fflush(NULL);
+    exit(1);
+    break;
   }
 
   mob_proto[i].aff_abils = mob_proto[i].real_abils;
@@ -1105,7 +1178,7 @@ void parse_mobile(FILE * mob_f, int nr, int reset)
   letter = fread_letter(mob_f);
   if (letter == '>') {
     ungetc(letter, mob_f);
-    (void) mprog_read_programs(mob_f, &mob_index[i]);
+    (void)mprog_read_programs(mob_f, &mob_index[i]);
   } else
     ungetc(letter, mob_f);
 
@@ -1117,8 +1190,7 @@ void parse_mobile(FILE * mob_f, int nr, int reset)
  ********************************************************************** */
 
 /* read and allocate space for a '~'-terminated string from a given file */
-char *fread_string(FILE * fl, char *error)
-{
+char *fread_string(FILE *fl, char *error) {
   char buf[MAX_STRING_LENGTH], tmp[512], *rslt;
   register char *point;
   int done = 0, length = 0, templength = 0;
@@ -1170,9 +1242,8 @@ char *fread_string(FILE * fl, char *error)
 }
 
 /* clear ALL the working variables of a char; do NOT free any space alloc'ed */
-void clear_char(struct char_data * ch)
-{
-  memset((char *) ch, 0, sizeof(struct char_data));
+void clear_char(struct char_data *ch) {
+  memset((char *)ch, 0, sizeof(struct char_data));
 
   GET_DRAGGING(ch) = NULL;
   ch->in_room = NOWHERE;
@@ -1195,8 +1266,7 @@ void clear_char(struct char_data * ch)
  *  mob/script files.
  */
 
-int mprog_name_to_type(char *name)
-{
+int mprog_name_to_type(char *name) {
   if (!str_cmp(name, "in_file_prog"))
     return IN_FILE_PROG;
   if (!str_cmp(name, "act_prog"))
@@ -1238,8 +1308,7 @@ int mprog_name_to_type(char *name)
 /*
  * Read a number from a file.
  */
-int fread_number(FILE *fp)
-{
+int fread_number(FILE *fp) {
   int number;
   bool sign;
   char c;
@@ -1283,8 +1352,7 @@ int fread_number(FILE *fp)
 /*
  * Read to end of line (for comments).
  */
-void fread_to_eol(FILE *fp)
-{
+void fread_to_eol(FILE *fp) {
   char c;
 
   do {
@@ -1302,8 +1370,7 @@ void fread_to_eol(FILE *fp)
 /*
  * Read one word (into static buffer).
  */
-char *fread_word(FILE *fp)
-{
+char *fread_word(FILE *fp) {
   static char word[MAX_INPUT_LENGTH];
   char *pword;
   char cEnd;
@@ -1338,8 +1405,7 @@ char *fread_word(FILE *fp)
 
 /* This routine reads in scripts of MOBprograms from a file */
 
-MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIndex)
-{
+MPROG_DATA *mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIndex) {
 
   char MOBProgfile[MAX_INPUT_LENGTH];
   MPROG_DATA *mprg2;
@@ -1357,54 +1423,54 @@ MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
 
   mprg2 = mprg;
   switch (fread_letter(progfile)) {
-    case '>':
-      break;
-    case '|':
-      printf("empty mobprog file.\n");
-      fflush(NULL);
-      exit(1);
-      break;
-    default:
-      printf("in mobprog file syntax error.\n");
-      fflush(NULL);
-      exit(1);
-      break;
+  case '>':
+    break;
+  case '|':
+    printf("empty mobprog file.\n");
+    fflush(NULL);
+    exit(1);
+    break;
+  default:
+    printf("in mobprog file syntax error.\n");
+    fflush(NULL);
+    exit(1);
+    break;
   }
 
   while (!done) {
     mprg2->type = mprog_name_to_type(fread_word(progfile));
     switch (mprg2->type) {
-      case ERROR_PROG:
-        printf("mobprog file type error\n");
-        fflush(NULL);
-        exit(1);
+    case ERROR_PROG:
+      printf("mobprog file type error\n");
+      fflush(NULL);
+      exit(1);
+      break;
+    case IN_FILE_PROG:
+      printf("mprog file contains a call to file.\n");
+      fflush(NULL);
+      exit(1);
+      break;
+    default:
+      sprintf(buf2, "Error in file %s\n", f);
+      pMobIndex->progtypes = pMobIndex->progtypes | mprg2->type;
+      mprg2->arglist = fread_string(progfile, buf2);
+      mprg2->comlist = fread_string(progfile, buf2);
+      switch (fread_letter(progfile)) {
+      case '>':
+        mprg2->next = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
+        mprg2 = mprg2->next;
+        mprg2->next = NULL;
         break;
-      case IN_FILE_PROG:
-        printf("mprog file contains a call to file.\n");
-        fflush(NULL);
-        exit(1);
+      case '|':
+        done = TRUE;
         break;
       default:
-        sprintf(buf2, "Error in file %s\n", f);
-        pMobIndex->progtypes = pMobIndex->progtypes | mprg2->type;
-        mprg2->arglist = fread_string(progfile, buf2);
-        mprg2->comlist = fread_string(progfile, buf2);
-        switch (fread_letter(progfile)) {
-          case '>':
-            mprg2->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
-            mprg2 = mprg2->next;
-            mprg2->next = NULL;
-            break;
-          case '|':
-            done = TRUE;
-            break;
-          default:
-            printf("in mobprog file %s syntax error.\n", f);
-            fflush(NULL);
-            exit(1);
-            break;
-        }
+        printf("in mobprog file %s syntax error.\n", f);
+        fflush(NULL);
+        exit(1);
         break;
+      }
+      break;
     }
   }
   fclose(progfile);
@@ -1414,8 +1480,7 @@ MPROG_DATA* mprog_file_read(char *f, MPROG_DATA *mprg, struct index_data *pMobIn
 /* This procedure is responsible for reading any in_file MOBprograms.
  */
 
-void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
-{
+void mprog_read_programs(FILE *fp, struct index_data *pMobIndex) {
   MPROG_DATA *mprg;
   char letter;
   bool done = FALSE;
@@ -1425,62 +1490,62 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
     fflush(NULL);
     exit(1);
   }
-  pMobIndex->mobprogs = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
+  pMobIndex->mobprogs = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
   mprg = pMobIndex->mobprogs;
 
   while (!done) {
     mprg->type = mprog_name_to_type(fread_word(fp));
     switch (mprg->type) {
-      case ERROR_PROG:
-        printf("Load_mobiles: vnum %d MOBPROG type.\n", pMobIndex->virtual);
+    case ERROR_PROG:
+      printf("Load_mobiles: vnum %d MOBPROG type.\n", pMobIndex->virtual);
+      fflush(NULL);
+      exit(1);
+      break;
+    case IN_FILE_PROG:
+      sprintf(buf2, "Mobprog for mob #%d", pMobIndex->virtual);
+      mprg = mprog_file_read(fread_word(fp), mprg, pMobIndex);
+      fread_to_eol(fp); /* need to strip off that silly ~*/
+      switch (letter = fread_letter(fp)) {
+      case '>':
+        mprg->next = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
+        mprg = mprg->next;
+        mprg->next = NULL;
+        break;
+      case '|':
+        mprg->next = NULL;
+        fread_to_eol(fp);
+        done = TRUE;
+        break;
+      default:
+        printf("Load_mobiles: vnum %d bad MOBPROG.\n", pMobIndex->virtual);
         fflush(NULL);
         exit(1);
         break;
-      case IN_FILE_PROG:
-        sprintf(buf2, "Mobprog for mob #%d", pMobIndex->virtual);
-        mprg = mprog_file_read(fread_word(fp), mprg, pMobIndex);
-        fread_to_eol(fp); /* need to strip off that silly ~*/
-        switch (letter = fread_letter(fp)) {
-          case '>':
-            mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
-            mprg = mprg->next;
-            mprg->next = NULL;
-            break;
-          case '|':
-            mprg->next = NULL;
-            fread_to_eol(fp);
-            done = TRUE;
-            break;
-          default:
-            printf("Load_mobiles: vnum %d bad MOBPROG.\n", pMobIndex->virtual);
-            fflush(NULL);
-            exit(1);
-            break;
-        }
+      }
+      break;
+    default:
+      sprintf(buf2, "Mobprog for mob #%d", pMobIndex->virtual);
+      pMobIndex->progtypes = pMobIndex->progtypes | mprg->type;
+      mprg->arglist = fread_string(fp, buf2);
+      mprg->comlist = fread_string(fp, buf2);
+      switch (letter = fread_letter(fp)) {
+      case '>':
+        mprg->next = (MPROG_DATA *)malloc(sizeof(MPROG_DATA));
+        mprg = mprg->next;
+        mprg->next = NULL;
+        break;
+      case '|':
+        mprg->next = NULL;
+        fread_to_eol(fp);
+        done = TRUE;
         break;
       default:
-        sprintf(buf2, "Mobprog for mob #%d", pMobIndex->virtual);
-        pMobIndex->progtypes = pMobIndex->progtypes | mprg->type;
-        mprg->arglist = fread_string(fp, buf2);
-        mprg->comlist = fread_string(fp, buf2);
-        switch (letter = fread_letter(fp)) {
-          case '>':
-            mprg->next = (MPROG_DATA *) malloc(sizeof(MPROG_DATA));
-            mprg = mprg->next;
-            mprg->next = NULL;
-            break;
-          case '|':
-            mprg->next = NULL;
-            fread_to_eol(fp);
-            done = TRUE;
-            break;
-          default:
-            printf("Load_mobiles: vnum %d bad MOBPROG (%c).\n", pMobIndex->virtual, letter);
-            fflush(NULL);
-            exit(1);
-            break;
-        }
+        printf("Load_mobiles: vnum %d bad MOBPROG (%c).\n", pMobIndex->virtual, letter);
+        fflush(NULL);
+        exit(1);
         break;
+      }
+      break;
     }
   }
 
@@ -1489,12 +1554,11 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex)
 /*-------------------------------------------------------------------*/
 
 /*
- * Save ALL mobiles for a zone to their .mob file, mobs are all 
+ * Save ALL mobiles for a zone to their .mob file, mobs are all
  * saved in Extended format, regardless of whether they have any
  * extended fields.  Thanks to Sammy for ideas on this bit of code.
  */
-void discrete_save(FILE *mob_file, int zone)
-{
+void discrete_save(FILE *mob_file, int zone) {
   int i, rmob_num, top, counter;
   struct char_data *mob;
   struct mob_attacks_data *attack;
@@ -1534,24 +1598,31 @@ void discrete_save(FILE *mob_file, int zone)
       strcpy(buf2, ((GET_DDESC(mob) && *GET_DDESC(mob)) ? GET_DDESC(mob) : "undefined"));
       strip_string(buf2);
 
-      fprintf(mob_file, "%s~\n"
-          "%s~\n"
-          "%s~\n"
-          "%s~\n", ((GET_ALIAS(mob) && *GET_ALIAS(mob)) ? GET_ALIAS(mob) : "undefined"), ((GET_SDESC(mob) && *GET_SDESC(mob)) ? GET_SDESC(mob) : "undefined"), buf1, buf2);
+      fprintf(mob_file,
+              "%s~\n"
+              "%s~\n"
+              "%s~\n"
+              "%s~\n",
+              ((GET_ALIAS(mob) && *GET_ALIAS(mob)) ? GET_ALIAS(mob) : "undefined"),
+              ((GET_SDESC(mob) && *GET_SDESC(mob)) ? GET_SDESC(mob) : "undefined"), buf1, buf2);
       olc_print_bitvectors(mob_file, MOB_FLAGS(mob), NUM_MOB_FLAGS);
       olc_print_bitvectors(mob_file, AFF_FLAGS(mob), NUM_AFF_FLAGS);
 
       fprintf(mob_file, "%d X ", GET_ALIGNMENT(mob));
       olc_print_bitvectors(mob_file, AFF2_FLAGS(mob), NUM_AFF2_FLAGS);
-      fprintf(mob_file, "\n"
-          "%d %d %d %dd%d+%d\n"
-          "%d %d\n"
-          "%d %d %d %d %d %d\n", GET_LEVEL(mob), GET_HITROLL(mob), /* Hitroll -> THAC0 */
-      GET_AC(mob) / 10, GET_HIT(mob), GET_MANA(mob), GET_MOVE(mob), 0, /* all gold reset to 0 */
-      GET_EXP(mob), GET_POS(mob), GET_DEFAULT_POS(mob), GET_SEX(mob), GET_CLASS(mob), GET_MOB_RACE(mob), GET_SIZE(mob));
+      fprintf(mob_file,
+              "\n"
+              "%d %d %d %dd%d+%d\n"
+              "%d %d\n"
+              "%d %d %d %d %d %d\n",
+              GET_LEVEL(mob), GET_HITROLL(mob),                                /* Hitroll -> THAC0 */
+              GET_AC(mob) / 10, GET_HIT(mob), GET_MANA(mob), GET_MOVE(mob), 0, /* all gold reset to 0 */
+              GET_EXP(mob), GET_POS(mob), GET_DEFAULT_POS(mob), GET_SEX(mob), GET_CLASS(mob), GET_MOB_RACE(mob),
+              GET_SIZE(mob));
 
       while (attack) {
-        fprintf(mob_file, "T %d %dd%d+%d %d\n", attack->attacks, attack->nodice, attack->sizedice, attack->damroll, attack->attack_type);
+        fprintf(mob_file, "T %d %dd%d+%d %d\n", attack->attacks, attack->nodice, attack->sizedice, attack->damroll,
+                attack->attack_type);
         attack = attack->next;
       }
 
@@ -1607,8 +1678,7 @@ void discrete_save(FILE *mob_file, int zone)
   fclose(mob_file);
 }
 
-int main(void)
-{
+int main(void) {
   boot_db();
   return 0;
 }

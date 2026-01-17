@@ -1,31 +1,30 @@
+#include "maze.h"
+#include "db.h"
+#include "structs.h"
+#include "utils.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/time.h>
 #include <time.h>
-#include <string.h>
 #include <unistd.h>
-#include "structs.h"
-#include "db.h"
-#include "utils.h"
-#include "maze.h"
 
-#define TOP_WALL 0
+#define TOP_WALL    0
 #define BOTTOM_WALL 1
-#define OTHER_WALL 1
+#define OTHER_WALL  1
 
-void create_rooms(maze * m, char log_filename[80]);
-void create_maze(maze * m);
-void print_maze(maze * m, FILE * f);
-int choose_exit(maze * m);
-int place_wall(maze * m);
-int backup(maze * m);
+void create_rooms(maze *m, char log_filename[80]);
+void create_maze(maze *m);
+void print_maze(maze *m, FILE *f);
+int choose_exit(maze *m);
+int place_wall(maze *m);
+int backup(maze *m);
 int boot_mazes();
-void reboot_maze(maze * m, int zone_num);
-void free_dir(struct room_data * world, int i, int dir);
-void free_wall(struct room_data * world, int i, int wall);
+void reboot_maze(maze *m, int zone_num);
+void free_dir(struct room_data *world, int i, int dir);
+void free_wall(struct room_data *world, int i, int wall);
 
-void free_dir(struct room_data * world, int i, int dir)
-{
+void free_dir(struct room_data *world, int i, int dir) {
   if (world[i].dir_option[dir]->general_description) {
     FREE(world[i].dir_option[dir]->general_description);
   }
@@ -36,8 +35,7 @@ void free_dir(struct room_data * world, int i, int dir)
   world[i].dir_option[dir] = NULL;
 }
 
-void free_wall(struct room_data * world, int i, int wall)
-{
+void free_wall(struct room_data *world, int i, int wall) {
   int x;
 
   if (wall == TOP_WALL) {
@@ -138,8 +136,7 @@ void free_wall(struct room_data * world, int i, int wall)
   }
 }
 
-void reboot_maze(maze * m, int zone_num)
-{
+void reboot_maze(maze *m, int zone_num) {
   int room_nr = 0;
   int zone_number = 0;
   int i = 0;
@@ -222,8 +219,7 @@ void reboot_maze(maze * m, int zone_num)
   }
 }
 
-void create_rooms(maze * m, char log_filename[80])
-{
+void create_rooms(maze *m, char log_filename[80]) {
   int room_nr = 0;
   int zone_number = 0;
   int i = 0;
@@ -379,8 +375,7 @@ void create_rooms(maze * m, char log_filename[80])
   }
 }
 
-void create_maze(maze * m)
-{
+void create_maze(maze *m) {
   int i;
   int j;
   struct timeval t;
@@ -441,26 +436,26 @@ void create_maze(maze * m)
     }
 
     switch (m->lastdir) {
-      case 0:
-        m->path[m->x][m->y] |= DONORTH;
-        m->y--;
-        m->path[m->x][m->y] |= DOSOUTH;
-        break;
-      case 1:
-        m->path[m->x][m->y] |= DOEAST;
-        m->x++;
-        m->path[m->x][m->y] |= DOWEST;
-        break;
-      case 2:
-        m->path[m->x][m->y] |= DOSOUTH;
-        m->y++;
-        m->path[m->x][m->y] |= DONORTH;
-        break;
-      case 3:
-        m->path[m->x][m->y] |= DOWEST;
-        m->x--;
-        m->path[m->x][m->y] |= DOEAST;
-        break;
+    case 0:
+      m->path[m->x][m->y] |= DONORTH;
+      m->y--;
+      m->path[m->x][m->y] |= DOSOUTH;
+      break;
+    case 1:
+      m->path[m->x][m->y] |= DOEAST;
+      m->x++;
+      m->path[m->x][m->y] |= DOWEST;
+      break;
+    case 2:
+      m->path[m->x][m->y] |= DOSOUTH;
+      m->y++;
+      m->path[m->x][m->y] |= DONORTH;
+      break;
+    case 3:
+      m->path[m->x][m->y] |= DOWEST;
+      m->x--;
+      m->path[m->x][m->y] |= DOEAST;
+      break;
     }
     m->step++;
     if (m->x == 9 && m->y == 9) {
@@ -476,8 +471,7 @@ void create_maze(maze * m)
   }
 }
 
-int backup(maze * m)
-{
+int backup(maze *m) {
   m->step--;
   if (m->step >= 0) {
     m->x = m->saved_path[m->step].x;
@@ -486,8 +480,7 @@ int backup(maze * m)
   return (m->step);
 }
 
-int choose_exit(maze * m)
-{
+int choose_exit(maze *m) {
   int choice[3];
   int num_choice = 0;
 
@@ -531,8 +524,7 @@ int choose_exit(maze * m)
   return (choice[rand() % num_choice]);
 }
 
-void print_maze(maze * m, FILE * f)
-{
+void print_maze(maze *m, FILE *f) {
   int x;
   int y;
   int i;
@@ -610,8 +602,7 @@ void print_maze(maze * m, FILE * f)
   fclose(f);
 }
 
-int boot_mazes(void)
-{
+int boot_mazes(void) {
   FILE *index = NULL;
   FILE *f = NULL;
   char index_filename[80];

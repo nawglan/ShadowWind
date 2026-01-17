@@ -39,39 +39,48 @@
  Last field must always be 0.
  */
 
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 #include <sys/time.h>
 #include <time.h>
 #include <unistd.h>
 
-#include "structs.h"
-#include "utils.h"
+#include "boards.h"
 #include "comm.h"
 #include "db.h"
-#include "boards.h"
-#include "interpreter.h"
 #include "handler.h"
+#include "interpreter.h"
 #include "screen.h"
+#include "structs.h"
+#include "utils.h"
 
 extern struct room_data *world;
 extern struct descriptor_data *descriptor_list;
 
-int Board_display_msg(int board_type, struct char_data * ch, char *arg);
-int Board_show_board(int board_type, struct char_data * ch, char *arg);
-int Board_remove_msg(int board_type, struct char_data * ch, char *arg);
+int Board_display_msg(int board_type, struct char_data *ch, char *arg);
+int Board_show_board(int board_type, struct char_data *ch, char *arg);
+int Board_remove_msg(int board_type, struct char_data *ch, char *arg);
 void Board_save_board(int board_type);
 void Board_load_board(int board_type);
 void Board_reset_board(int board_num);
-void Board_write_message(int board_type, struct char_data * ch, char *arg);
+void Board_write_message(int board_type, struct char_data *ch, char *arg);
 
 /*
  format:	vnum, read lvl, write lvl, remove lvl, filename, 0 at end
  Be sure to also change NUM_OF_BOARDS in board.h
  */
-struct board_info_type board_info[NUM_OF_BOARDS] = { {1291, 0, 0, COM_BUILDER, "etc/board.market", 0}, {1292, COM_IMMORT, COM_IMMORT, COM_BUILDER, "etc/board.creation", 0}, {1293, COM_ADMIN, COM_ADMIN, COM_ADMIN, "etc/board.coders", 0}, {1294, COM_IMMORT, COM_IMMORT, COM_QUEST, "etc/board.world", 0}, {1295, 0, 0, COM_BUILDER, "etc/board.mort", 0}, {1296, COM_IMMORT, COM_IMMORT, COM_ADMIN, "etc/board.freeze", 0}, {1297, COM_IMMORT, COM_IMMORT, COM_BUILDER, "etc/board.immort", 0}, {1298, COM_BUILDER, COM_BUILDER, COM_ADMIN, "etc/board.god", 0}, {1299, COM_IMMORT, COM_IMMORT, COM_QUEST, "etc/board.quest", 0}};
+struct board_info_type board_info[NUM_OF_BOARDS] = {
+    {1291, 0, 0, COM_BUILDER, "etc/board.market", 0},
+    {1292, COM_IMMORT, COM_IMMORT, COM_BUILDER, "etc/board.creation", 0},
+    {1293, COM_ADMIN, COM_ADMIN, COM_ADMIN, "etc/board.coders", 0},
+    {1294, COM_IMMORT, COM_IMMORT, COM_QUEST, "etc/board.world", 0},
+    {1295, 0, 0, COM_BUILDER, "etc/board.mort", 0},
+    {1296, COM_IMMORT, COM_IMMORT, COM_ADMIN, "etc/board.freeze", 0},
+    {1297, COM_IMMORT, COM_IMMORT, COM_BUILDER, "etc/board.immort", 0},
+    {1298, COM_BUILDER, COM_BUILDER, COM_ADMIN, "etc/board.god", 0},
+    {1299, COM_IMMORT, COM_IMMORT, COM_QUEST, "etc/board.quest", 0}};
 
 char *msg_storage[INDEX_SIZE];
 int msg_storage_taken[INDEX_SIZE];
@@ -79,8 +88,7 @@ int num_of_msgs[NUM_OF_BOARDS];
 int CMD_READ, CMD_LOOK, CMD_WRITE, CMD_REMOVE;
 struct board_msginfo msg_index[NUM_OF_BOARDS][MAX_BOARD_MESSAGES];
 
-int find_slot(void)
-{
+int find_slot(void) {
   int i;
 
   for (i = 0; i < INDEX_SIZE; i++)
@@ -92,8 +100,7 @@ int find_slot(void)
 }
 
 /* search the room ch is standing in to find which board he's looking at */
-int find_board(struct char_data * ch)
-{
+int find_board(struct char_data *ch) {
   struct obj_data *obj;
   int i;
 
@@ -105,8 +112,7 @@ int find_board(struct char_data * ch)
   return -1;
 }
 
-void init_boards(void)
-{
+void init_boards(void) {
   int i, j, fatal_error = 0;
   char buf[256];
 
@@ -123,7 +129,7 @@ void init_boards(void)
     }
     num_of_msgs[i] = 0;
     for (j = 0; j < MAX_BOARD_MESSAGES; j++) {
-      memset((char *) &(msg_index[i][j]), 0, sizeof(struct board_msginfo));
+      memset((char *)&(msg_index[i][j]), 0, sizeof(struct board_msginfo));
       msg_index[i][j].slot_num = -1;
     }
     Board_load_board(i);
@@ -141,8 +147,7 @@ void init_boards(void)
   }
 }
 
-SPECIAL(gen_board)
-{
+SPECIAL(gen_board) {
   int board_type;
   static int loaded = 0;
 
@@ -173,8 +178,7 @@ SPECIAL(gen_board)
     return 0;
 }
 
-void Board_write_message(int board_type, struct char_data * ch, char *arg)
-{
+void Board_write_message(int board_type, struct char_data *ch, char *arg) {
   char *tmstr;
   int len;
   time_t ct;
@@ -202,20 +206,21 @@ void Board_write_message(int board_type, struct char_data * ch, char *arg)
     return;
   }
   ct = time(0);
-  tmstr = (char *) asctime(localtime(&ct));
+  tmstr = (char *)asctime(localtime(&ct));
   *(tmstr + strlen(tmstr) - 1) = '\0';
 
   safe_snprintf(buf2, MAX_STRING_LENGTH, "(%s)", GET_NAME(ch));
   safe_snprintf(buf, MAX_STRING_LENGTH, "%6.10s %-12s :: %s", tmstr, buf2, arg);
   len = strlen(buf) + 1;
-  if (!(NEW_MSG_INDEX(board_type).heading = (char *) malloc(sizeof(char) * len))) {
+  if (!(NEW_MSG_INDEX(board_type).heading = (char *)malloc(sizeof(char) * len))) {
     send_to_char("The board is malfunctioning - sorry.\r\n", ch);
     return;
   }
   safe_snprintf(NEW_MSG_INDEX(board_type).heading, len, "%s", buf);
   NEW_MSG_INDEX(board_type).heading[len - 1] = '\0';
   NEW_MSG_INDEX(board_type).level = GET_LEVEL(ch);
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s writing new message (%s) on board in #%d", GET_NAME(ch), buf, world[ch->in_room].number);
+  safe_snprintf(logbuffer, sizeof(logbuffer), "%s writing new message (%s) on board in #%d", GET_NAME(ch), buf,
+                world[ch->in_room].number);
   mudlog(logbuffer, 'B', COM_ADMIN, FALSE);
   send_to_char("Write your message. (/s saves /h for help)\r\n\r\n", ch);
   act("$n starts to write a message.", TRUE, ch, 0, 0, TO_ROOM);
@@ -225,13 +230,12 @@ void Board_write_message(int board_type, struct char_data * ch, char *arg)
 
   ch->desc->str = &(msg_storage[NEW_MSG_INDEX(board_type).slot_num]);
   ch->desc->max_str = MAX_MESSAGE_LENGTH;
-  ch->desc->mail_to = (char*) (long)(board_type + BOARD_MAGIC);
+  ch->desc->mail_to = (char *)(long)(board_type + BOARD_MAGIC);
 
   num_of_msgs[board_type]++;
 }
 
-int Board_show_board(int board_type, struct char_data * ch, char *arg)
-{
+int Board_show_board(int board_type, struct char_data *ch, char *arg) {
   int i;
   char tmp[MAX_STRING_LENGTH], buf[MAX_STRING_LENGTH];
 
@@ -250,32 +254,34 @@ int Board_show_board(int board_type, struct char_data * ch, char *arg)
   act("$n studies the board.", TRUE, ch, 0, 0, TO_ROOM);
 
   {
-    size_t buflen = safe_snprintf(buf, sizeof(buf), "This is a bulletin board.  Usage: READ/REMOVE <messg #>, WRITE <header>.\r\n"
-        "You will need to look at the board to save your message.\r\n");
+    size_t buflen = safe_snprintf(buf, sizeof(buf),
+                                  "This is a bulletin board.  Usage: READ/REMOVE <messg #>, WRITE <header>.\r\n"
+                                  "You will need to look at the board to save your message.\r\n");
     if (!num_of_msgs[board_type])
       buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "The board is empty.\r\n");
     else {
-      buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "There are %d messages on the board.\r\n", num_of_msgs[board_type]);
+      buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "There are %d messages on the board.\r\n",
+                              num_of_msgs[board_type]);
       /* uncomment below if want most recent message at bottom */
       /* for (i = 0; i < num_of_msgs[board_type]; i++) { */
       for (i = num_of_msgs[board_type] - 1; i >= 0; i--) {
         if (MSG_HEADING(board_type, i))
-          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "%s%-2d%s : %s%s\r\n", CBWHT(ch, C_NRM), i + 1, CCCYN(ch, C_NRM), MSG_HEADING(board_type, i), CCNRM(ch, C_NRM));
-      else {
-        stderr_log("SYSERR: The board is fubar'd.");
-        send_to_char("Sorry, the board isn't working.\r\n", ch);
-        return 1;
+          buflen += safe_snprintf(buf + buflen, sizeof(buf) - buflen, "%s%-2d%s : %s%s\r\n", CBWHT(ch, C_NRM), i + 1,
+                                  CCCYN(ch, C_NRM), MSG_HEADING(board_type, i), CCNRM(ch, C_NRM));
+        else {
+          stderr_log("SYSERR: The board is fubar'd.");
+          send_to_char("Sorry, the board isn't working.\r\n", ch);
+          return 1;
+        }
       }
     }
-  }
   }
   page_string(ch->desc, buf, 1);
 
   return 1;
 }
 
-int Board_display_msg(int board_type, struct char_data * ch, char *arg)
-{
+int Board_display_msg(int board_type, struct char_data *ch, char *arg) {
   char number[MAX_STRING_LENGTH], buffer[MAX_STRING_LENGTH];
   int msg, ind;
 
@@ -313,15 +319,15 @@ int Board_display_msg(int board_type, struct char_data * ch, char *arg)
     send_to_char("That message seems to be empty.\r\n", ch);
     return 1;
   }
-  safe_snprintf(buffer, sizeof(buffer), "Message %d : %s\r\n\r\n%s\r\n", msg, MSG_HEADING(board_type, ind), msg_storage[MSG_SLOTNUM(board_type, ind)]);
+  safe_snprintf(buffer, sizeof(buffer), "Message %d : %s\r\n\r\n%s\r\n", msg, MSG_HEADING(board_type, ind),
+                msg_storage[MSG_SLOTNUM(board_type, ind)]);
 
   page_string(ch->desc, buffer, 1);
 
   return 1;
 }
 
-int Board_remove_msg(int board_type, struct char_data * ch, char *arg)
-{
+int Board_remove_msg(int board_type, struct char_data *ch, char *arg) {
   int ind, msg, slot_num;
   char number[MAX_INPUT_LENGTH], buf[MAX_INPUT_LENGTH];
   struct descriptor_data *d;
@@ -347,7 +353,8 @@ int Board_remove_msg(int board_type, struct char_data * ch, char *arg)
     return 1;
   }
   safe_snprintf(buf, MAX_STRING_LENGTH, "(%s)", GET_NAME(ch));
-  if (REMOVE_LVL(board_type) != 0 && !COM_FLAGGED(ch, REMOVE_LVL(board_type)) && !(strstr(MSG_HEADING(board_type, ind), buf))) {
+  if (REMOVE_LVL(board_type) != 0 && !COM_FLAGGED(ch, REMOVE_LVL(board_type)) &&
+      !(strstr(MSG_HEADING(board_type, ind), buf))) {
     send_to_char("You are not holy enough to remove other people's messages.\r\n", ch);
     return 1;
   }
@@ -367,7 +374,8 @@ int Board_remove_msg(int board_type, struct char_data * ch, char *arg)
       return 1;
     }
 
-  safe_snprintf(logbuffer, sizeof(logbuffer), "%s removed message #%d (%s) from board #%d", GET_NAME(ch), msg, MSG_HEADING(board_type, ind), world[ch->in_room].number);
+  safe_snprintf(logbuffer, sizeof(logbuffer), "%s removed message #%d (%s) from board #%d", GET_NAME(ch), msg,
+                MSG_HEADING(board_type, ind), world[ch->in_room].number);
   mudlog(logbuffer, 'B', COM_ADMIN, FALSE);
 
   if (msg_storage[slot_num])
@@ -391,8 +399,7 @@ int Board_remove_msg(int board_type, struct char_data * ch, char *arg)
   return 1;
 }
 
-void Board_save_board(int board_type)
-{
+void Board_save_board(int board_type) {
   FILE *fl;
   int i;
   char *tmp1 = 0, *tmp2 = 0;
@@ -413,7 +420,8 @@ void Board_save_board(int board_type)
     else
       msg_index[board_type][i].heading_len = 0;
 
-    if (MSG_SLOTNUM(board_type, i) < 0 || MSG_SLOTNUM(board_type, i) >= INDEX_SIZE || (!(tmp2 = msg_storage[MSG_SLOTNUM(board_type, i)])))
+    if (MSG_SLOTNUM(board_type, i) < 0 || MSG_SLOTNUM(board_type, i) >= INDEX_SIZE ||
+        (!(tmp2 = msg_storage[MSG_SLOTNUM(board_type, i)])))
       msg_index[board_type][i].message_len = 0;
     else
       msg_index[board_type][i].message_len = strlen(tmp2) + 1;
@@ -428,8 +436,7 @@ void Board_save_board(int board_type)
   fclose(fl);
 }
 
-void Board_load_board(int board_type)
-{
+void Board_load_board(int board_type) {
   FILE *fl;
   int i, len1 = 0, len2 = 0;
   char *tmp1 = NULL, *tmp2 = NULL;
@@ -451,7 +458,7 @@ void Board_load_board(int board_type)
       Board_reset_board(board_type);
       return;
     }
-    if (!(tmp1 = (char *) malloc(sizeof(char) * len1))) {
+    if (!(tmp1 = (char *)malloc(sizeof(char) * len1))) {
       stderr_log("SYSERR: Error - malloc failed for board header");
       fflush(NULL);
       exit(1);
@@ -465,7 +472,7 @@ void Board_load_board(int board_type)
         Board_reset_board(board_type);
         return;
       }
-      if (!(tmp2 = (char *) malloc(sizeof(char) * len2))) {
+      if (!(tmp2 = (char *)malloc(sizeof(char) * len2))) {
         stderr_log("SYSERR: malloc failed for board text");
         fflush(NULL);
         exit(1);
@@ -478,8 +485,7 @@ void Board_load_board(int board_type)
   fclose(fl);
 }
 
-void Board_reset_board(int board_type)
-{
+void Board_reset_board(int board_type) {
   int i;
 
   for (i = 0; i < MAX_BOARD_MESSAGES; i++) {
@@ -488,7 +494,7 @@ void Board_reset_board(int board_type)
     if (msg_storage[MSG_SLOTNUM(board_type, i)])
       FREE(msg_storage[MSG_SLOTNUM(board_type, i)]);
     msg_storage_taken[MSG_SLOTNUM(board_type, i)] = 0;
-    memset((char *) &(msg_index[board_type][i]), 0, sizeof(struct board_msginfo));
+    memset((char *)&(msg_index[board_type][i]), 0, sizeof(struct board_msginfo));
     msg_index[board_type][i].slot_num = -1;
   }
   num_of_msgs[board_type] = 0;
