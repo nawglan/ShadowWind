@@ -5,7 +5,7 @@ IMAGE := shadowwind
 WEBCLIENT_IMAGE := shadowwind-webclient
 TAG := latest
 
-.PHONY: all build clean docker-build docker-push webclient-build webclient-push k8s-deploy k8s-delete k8s-logs k8s-logs-webclient k8s-status k8s-port-forward deploy
+.PHONY: all build clean docker-build docker-push webclient-build webclient-push k8s-deploy k8s-delete k8s-logs k8s-logs-webclient k8s-status k8s-port-forward deploy format format-check lint
 
 # Default target - build the MUD binary
 all: build
@@ -61,3 +61,16 @@ k8s-port-forward:
 
 # Full deployment pipeline
 deploy: k8s-deploy k8s-status
+
+# Code formatting with clang-format
+format:
+	find src -name '*.c' -o -name '*.h' | xargs clang-format -i
+
+# Check formatting without modifying (CI-friendly)
+format-check:
+	find src -name '*.c' -o -name '*.h' | xargs clang-format --dry-run --Werror
+
+# Static analysis with cppcheck
+lint:
+	cppcheck --enable=warning,style,performance --suppress=missingIncludeSystem \
+		--error-exitcode=1 src/
