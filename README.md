@@ -8,15 +8,31 @@ This codebase is in **maintenance mode**. No new features are planned.
 
 ## Prerequisites
 
+### Build Requirements
 - GCC compiler
+- make
 - libsodium development library
+
+### Development Tools
 - clang-format (for code formatting)
 - cppcheck (for static analysis)
+
+### Deployment Requirements
+- Docker (for containerized deployment)
+- kubectl (for Kubernetes deployment)
 
 ### Ubuntu/Debian
 
 ```bash
-sudo apt-get install gcc make libsodium-dev clang-format cppcheck
+# Build essentials
+sudo apt-get install gcc make libsodium-dev
+
+# Development tools
+sudo apt-get install clang-format cppcheck
+
+# Deployment tools (optional)
+sudo apt-get install docker.io
+# For kubectl, see: https://kubernetes.io/docs/tasks/tools/
 ```
 
 ## Building
@@ -47,12 +63,36 @@ The compiled binary will be at `bin/shadowwind`.
 ## Docker
 
 ```bash
-# Build Docker image
+# Build MUD Docker image
 make docker-build
 
-# Run with Docker
-docker run -p 9999:9999 shadowwind
+# Build webclient Docker image
+make webclient-build
+
+# Push images to registry (default: localhost:30500)
+make docker-push
+make webclient-push
+
+# Run locally with Docker
+docker run -p 9999:9999 localhost:30500/shadowwind:latest
 ```
+
+## Kubernetes Deployment
+
+```bash
+# Full deployment (builds, pushes, and deploys)
+make deploy
+
+# Or step by step:
+make k8s-deploy      # Deploy to Kubernetes
+make k8s-status      # Check deployment status
+make k8s-logs        # View MUD container logs
+make k8s-logs-webclient  # View webclient logs
+make k8s-port-forward    # Port-forward webclient to localhost:8080
+make k8s-delete      # Remove deployment
+```
+
+Kubernetes manifests are in `deploy/k8s/`.
 
 ## Development
 
