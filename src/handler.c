@@ -1,6 +1,17 @@
 /* ************************************************************************
  *   File: handler.c                                     Part of CircleMUD *
- *  Usage: internal funcs: moving and finding chars/objs                   *
+ *  Usage: Core object and character lifecycle management                  *
+ *                                                                         *
+ *  This file contains essential functions for:                            *
+ *    - Character/object placement (char_to_room, obj_to_char, etc.)       *
+ *    - Equipment management (equip_char, unequip_char)                    *
+ *    - Spell affects (affect_to_char, affect_remove, affect_total)        *
+ *    - Object/character extraction (cleanup when removing from game)      *
+ *    - Name matching and entity lookup (isname, generic_find)             *
+ *                                                                         *
+ *  IMPORTANT: Many functions here have side effects on linked lists.      *
+ *  Always use the proper char_from_room/char_to_room pair when moving     *
+ *  characters, and obj_from_char/obj_to_char for objects.                 *
  *                                                                         *
  *  All rights reserved.  See license.doc for complete information.        *
  *                                                                         *
@@ -47,6 +58,11 @@ void mob_delay_purge(struct char_data *ch);
 bool clean_events(void *pointer, EVENT(*func));
 char *strip_color(char *from, char *to, int length);
 
+/**************************************************************************
+ * Name Matching and Utility Functions
+ *************************************************************************/
+
+/* fname - Extract the first word from a space-separated name list */
 char *fname(char *namelist) {
   static char holder[30];
   register char *point;
@@ -59,7 +75,15 @@ char *fname(char *namelist) {
   return (holder);
 }
 
-/* check if a player is allowed to access a certain room */
+/*
+ * check_access - Verify if an immortal can access a room for OLC editing
+ *
+ * Non-immortals and NPCs always have access. Immortals are restricted to:
+ *   - Their assigned OLC zones (ch->olc_zones[])
+ *   - Certain public zones (12, 30, 31)
+ *   - Admin flag bypasses all restrictions
+ *   - ZONE_RESTRICTED requires PLR_ZONEOK or COM_QUEST flags
+ */
 int check_access(struct char_data *ch, int room) {
   int oktosee = 0;
   int zonenum = 0;
@@ -89,6 +113,12 @@ int check_access(struct char_data *ch, int room) {
   return 1;
 }
 
+/*
+ * isname - Check if a word exists in a space-separated name list
+ *
+ * Case-insensitive comparison. Strips color codes from namelist.
+ * Used for matching player input against object/mob keywords.
+ */
 int isname(char *str, char *namelist) {
   char *curstr;
   char temp[80];
@@ -110,6 +140,20 @@ int isname(char *str, char *namelist) {
   return 0;
 }
 
+/**************************************************************************
+ * Affect System Functions
+ *
+ * Characters have temporary affects from spells and equipment.
+ * Affects modify stats (STR, DEX, AC, etc.) and set bitvector flags.
+ * Equipment uses obj_affect_modify; spells use affect_modify.
+ *************************************************************************/
+
+/*
+ * obj_affect_modify - Apply or remove a single stat modifier from equipment
+ *
+ * Called when equipping/unequipping items. Handles the APPLY_* constants
+ * to modify character stats. The 'add' parameter determines direction.
+ */
 void obj_affect_modify(struct char_data *ch, int loc, int mod, long bitv, long bitv2, long bitv3, bool add) {
   char abuf[80];
 
@@ -244,6 +288,13 @@ void obj_affect_modify(struct char_data *ch, int loc, int mod, long bitv, long b
   } /* switch */
 }
 
+/*
+ * affect_modify - Apply or remove multiple stat modifiers from a spell affect
+ *
+ * Handles up to NUM_MODIFY stat changes per affect. Used for spells that
+ * modify multiple stats simultaneously. Invalid apply locations cause
+ * the affect to be removed and affect_total() recalculated.
+ */
 void affect_modify(struct char_data *ch, int loc[], int mod[], long bitv, long bitv2, long bitv3, bool add) {
   int i;
   int location[NUM_MODIFY];
@@ -456,8 +507,13 @@ void affect_modify(struct char_data *ch, int loc[], int mod[], long bitv, long b
   }
 }
 
-/* This updates a character by subtracting everything he is affected by */
-/* restoring original abilities, and then affecting all again           */
+/*
+ * affect_total - Recalculate all character stats from scratch
+ *
+ * Removes all equipment and spell affects, resets to base abilities,
+ * then reapplies everything. Called after any affect change to ensure
+ * stats are correct. Also bounds stats to 0-100 range.
+ */
 void affect_total(struct char_data *ch) {
   struct affected_type *af;
   int i, j, c;
@@ -617,7 +673,21 @@ void affect_join(struct char_data *ch, struct affected_type *af, bool add_dur, b
     affect_to_char(ch, af);
 }
 
-/* move a player out of a room */
+/**************************************************************************
+ * Character and Object Placement Functions
+ *
+ * These functions manage the linked list relationships for characters
+ * and objects. ALWAYS use the from/to pairs together - never modify
+ * the linked lists directly.
+ *************************************************************************/
+
+/*
+ * char_from_room - Remove a character from their current room
+ *
+ * Updates room light levels based on light sources the character has.
+ * Must be paired with char_to_room() when moving characters.
+ * FATAL ERROR if called on a character not in a room.
+ */
 void char_from_room(struct char_data *ch) {
   struct char_data *temp;
   int i;
@@ -657,7 +727,12 @@ void char_from_room(struct char_data *ch) {
   ch->next_in_room = NULL;
 }
 
-/* place a character in a room */
+/*
+ * char_to_room - Place a character into a room
+ *
+ * Adds character to room's people list and updates light levels.
+ * The room parameter is the real room number (array index), not vnum.
+ */
 void char_to_room(struct char_data *ch, int room) {
   int i;
   struct obj_data *tobj;
@@ -695,7 +770,12 @@ void char_to_room(struct char_data *ch, int room) {
   }
 }
 
-/* give an object to a char   */
+/*
+ * obj_to_char - Give an object to a character's inventory
+ *
+ * Updates carrying weight/count and sets PLR_CRASH flag for autosave.
+ * Logs QIC (Quest Item Counter) items for tracking.
+ */
 void obj_to_char(struct obj_data *object, struct char_data *ch) {
   if (object && ch) {
     object->next_content = ch->carrying;
@@ -718,7 +798,12 @@ void obj_to_char(struct obj_data *object, struct char_data *ch) {
     stderr_log("SYSERR: NULL obj or char passed to obj_to_char");
 }
 
-/* take an object from a char */
+/*
+ * obj_from_char - Remove an object from a character's inventory
+ *
+ * Updates carrying weight/count. Does NOT free the object.
+ * Call extract_obj() if the object should be destroyed.
+ */
 void obj_from_char(struct obj_data *object) {
   struct obj_data *temp;
 
@@ -776,6 +861,13 @@ int apply_ac(struct char_data *ch, int eq_pos) {
   return (factor * GET_OBJ_VAL(ch->equipment[eq_pos], 0));
 }
 
+/*
+ * equip_char - Place an object in a character's equipment slot
+ *
+ * Applies object affects and stat modifiers. Handles alignment/class
+ * restrictions by "zapping" incompatible items to inventory.
+ * Updates room lighting if equipping a light source.
+ */
 void equip_char(struct char_data *ch, struct obj_data *obj, int pos) {
   int j;
   int invalid_class(struct char_data * ch, struct obj_data * obj);
@@ -1128,7 +1220,7 @@ void obj_from_obj(struct obj_data *obj) {
   obj->worn_by = NULL;
 }
 
-/* Set all carried_by to point to new owner */
+/* Set all carried_by to point to new owner (recursive) */
 void object_list_new_owner(struct obj_data *list, struct char_data *ch) {
   if (list) {
     if (list->contains) {
@@ -1141,7 +1233,13 @@ void object_list_new_owner(struct obj_data *list, struct char_data *ch) {
   }
 }
 
-/* Extract an object from the world */
+/*
+ * extract_obj - Remove an object from the game world and free memory
+ *
+ * Handles all container relationships - recursively extracts contained
+ * objects. Removes from room, character, or parent container as needed.
+ * Cleans up the global object_list and decrements prototype counts.
+ */
 void extract_obj(struct obj_data *obj) {
   struct obj_data *temp = NULL;
   struct obj_data *tmpobj = NULL;
@@ -1373,7 +1471,23 @@ void update_char_objects(struct char_data *ch) {
     update_object(ch->carrying, 1);
 }
 
-/* Extract a ch completely from the world, and leave his stuff behind */
+/*
+ * extract_char - Remove a character completely from the game world
+ *
+ * This is the primary cleanup function for removing characters. It:
+ *   - Cleans up pending mob programs
+ *   - Handles switched immortals (returns them)
+ *   - Dissolves master/follower relationships
+ *   - Removes snooping connections
+ *   - Optionally drops equipment to room (dropeq flag)
+ *   - Stops all combat involving this character
+ *   - Cleans up pending events
+ *   - Removes from room and global character_list
+ *   - For players: shows menu or closes connection
+ *   - For NPCs: frees memory
+ *
+ * FATAL ERROR if character is not in a room.
+ */
 void extract_char(struct char_data *ch, int dropeq) {
   struct char_data *k, *temp;
   struct descriptor_data *t_desc;
@@ -1703,20 +1817,24 @@ struct obj_data *create_money(int plat, int gold, int silver, int copper) {
   return obj;
 }
 
-/* Generic Find, designed to find any object/character                    */
-/* Calling :                                                              */
-/*  *g_arg     is the sting containing the string to be searched for.       */
-/*           This string doesn't have to be a single word, the routine    */
-/*           extracts the next word itself.                               */
-/*  bitv..   All those bits that you want to "search through".            */
-/*           Bit found will be result of the function                     */
-/*  *ch      This is the person that is trying to "find"                  */
-/*  **tar_ch Will be NULL if no character was found, otherwise points     */
-/* **tar_obj Will be NULL if no object was found, otherwise points        */
-/*                                                                        */
-/* The routine returns a pointer to the next word in *g_arg (just like the  */
-/* one_argument routine).                                                 */
+/**************************************************************************
+ * Entity Lookup Functions
+ *************************************************************************/
 
+/*
+ * generic_find - Unified search for characters and objects
+ *
+ * Searches for a target based on bitvector flags. Checks in order:
+ *   FIND_CHAR_ROOM  - Characters in same room
+ *   FIND_CHAR_WORLD - Characters anywhere in world
+ *   FIND_OBJ_ROOM   - Objects on ground in room
+ *   FIND_OBJ_INV    - Objects in character's inventory
+ *   FIND_OBJ_EQUIP  - Objects character is wearing
+ *   FIND_OBJ_WORLD  - Objects anywhere in world
+ *
+ * Returns: The FIND_* constant indicating what was found, or 0 if not found.
+ * Sets tar_ch or tar_obj to the found entity.
+ */
 int generic_find(char *g_arg, int bitvector, struct char_data *ch, struct char_data **tar_ch,
                  struct obj_data **tar_obj) {
   int i, found;

@@ -1,3 +1,43 @@
+/* ************************************************************************
+ *   File: maze.c                                        Part of CircleMUD *
+ *  Usage: Dynamic maze generation at runtime                              *
+ *                                                                         *
+ *  This file implements a maze generation system that creates randomized  *
+ *  mazes in designated zones at boot time and can regenerate them.        *
+ *                                                                         *
+ *  Algorithm: Recursive Backtracker (depth-first search)                  *
+ *    1. Start at cell (0,0)                                               *
+ *    2. Mark current cell as visited                                      *
+ *    3. Pick random unvisited neighbor, carve passage to it               *
+ *    4. If no unvisited neighbors, backtrack to previous cell             *
+ *    5. Repeat until all cells visited                                    *
+ *                                                                         *
+ *  The algorithm guarantees a "perfect" maze (exactly one path between    *
+ *  any two cells) and always completes.                                   *
+ *                                                                         *
+ *  Maze Layout:                                                           *
+ *    - 10x10 grid of rooms (100 total)                                    *
+ *    - Entrance at (0,0), exit at (9,9)                                   *
+ *    - Zone must have rooms with vnums ending 00-99                       *
+ *                                                                         *
+ *  Path Bitmask System (defined in maze.h):                               *
+ *    DONORTH (1)  - Can go north (passage exists)                         *
+ *    DOEAST  (2)  - Can go east                                           *
+ *    DOSOUTH (4)  - Can go south                                          *
+ *    DOWEST  (8)  - Can go west                                           *
+ *    WNORTH (16)  - Wall to north (cannot carve)                          *
+ *    WEAST  (32)  - Wall to east                                          *
+ *    WSOUTH (64)  - Wall to south                                         *
+ *    WWEST (128)  - Wall to west                                          *
+ *    DOANY       - Any passage exists (DONORTH|DOEAST|DOSOUTH|DOWEST)     *
+ *                                                                         *
+ *  Key Functions:                                                         *
+ *    boot_mazes()   - Initialize all mazes from index file at startup     *
+ *    create_maze()  - Generate maze paths using backtracker algorithm     *
+ *    create_rooms() - Apply maze paths to game world room exits           *
+ *    reboot_maze()  - Regenerate a maze zone (for zone reset)             *
+ ************************************************************************ */
+
 #include "maze.h"
 #include "db.h"
 #include "structs.h"
@@ -9,9 +49,10 @@
 #include <time.h>
 #include <unistd.h>
 
-#define TOP_WALL    0
-#define BOTTOM_WALL 1
-#define OTHER_WALL  1
+/* Wall position identifiers for free_wall() */
+#define TOP_WALL    0  /* Top row of maze (y=0) */
+#define BOTTOM_WALL 1  /* Bottom row (y=9) */
+#define OTHER_WALL  1  /* Interior rows */
 
 void create_rooms(maze *m, char log_filename[80]);
 void create_maze(maze *m);
@@ -24,6 +65,16 @@ void reboot_maze(maze *m, int zone_num);
 void free_dir(struct room_data *world, int i, int dir);
 void free_wall(struct room_data *world, int i, int wall);
 
+/***************************************************************************
+ * Room Exit Cleanup Functions
+ *
+ * Before regenerating a maze, existing exits must be freed to avoid
+ * memory leaks. These functions handle the cleanup.
+ ***************************************************************************/
+
+/*
+ * free_dir - Free a single directional exit from a room
+ */
 void free_dir(struct room_data *world, int i, int dir) {
   if (world[i].dir_option[dir]->general_description) {
     FREE(world[i].dir_option[dir]->general_description);
@@ -375,22 +426,39 @@ void create_rooms(maze *m, char log_filename[80]) {
   }
 }
 
+/***************************************************************************
+ * Maze Generation Core
+ ***************************************************************************/
+
+/*
+ * create_maze - Generate maze paths using recursive backtracker algorithm
+ *
+ * Starting from (0,0), carves passages through the 10x10 grid until all
+ * cells are visited. Uses saved_path[] as a stack for backtracking.
+ *
+ * When the path reaches (9,9), saves the solution path in solve_path[]
+ * (though this continues carving to ensure all cells are reachable).
+ *
+ * The path[] array stores bitmasks indicating which directions have
+ * passages (DOxxx bits) and which are blocked (Wxxx bits).
+ */
 void create_maze(maze *m) {
   int i;
   int j;
   struct timeval t;
   int c_time;
 
-  m->x = 0;
+  m->x = 0;   /* Current position */
   m->y = 0;
   m->lastdir = 0;
-  m->step = 0;
+  m->step = 0; /* Stack depth for backtracking */
 
+  /* Seed random number generator */
   gettimeofday(&t, 0);
   c_time = t.tv_sec;
   srand(c_time);
   for (i = 0; i < 1000; i++) {
-    rand();
+    rand(); /* Warm up the RNG */
   }
 
   for (i = 0; i < 10; i++) {
@@ -471,6 +539,14 @@ void create_maze(maze *m) {
   }
 }
 
+/*
+ * backup - Backtrack to previous cell in the path
+ *
+ * Called when choose_exit() finds no valid exits. Pops the last
+ * position off the saved_path stack and moves back there.
+ *
+ * Returns: New step count, or -1 if maze is complete (stack empty)
+ */
 int backup(maze *m) {
   m->step--;
   if (m->step >= 0) {
@@ -480,6 +556,16 @@ int backup(maze *m) {
   return (m->step);
 }
 
+/*
+ * choose_exit - Pick a random unvisited neighbor to carve passage to
+ *
+ * Examines all four directions. For each:
+ *   - If already walled or has passage, skip
+ *   - If neighbor already visited (has DOANY), add wall (can't carve)
+ *   - Otherwise, add to choice list
+ *
+ * Returns: Direction (0=N, 1=E, 2=S, 3=W) or -1 if no valid exits
+ */
 int choose_exit(maze *m) {
   int choice[3];
   int num_choice = 0;
@@ -605,6 +691,22 @@ void print_maze(maze *m, FILE *f) {
   fclose(f);
 }
 
+/***************************************************************************
+ * Maze System Initialization
+ ***************************************************************************/
+
+/*
+ * boot_mazes - Initialize all maze zones at server startup
+ *
+ * Reads MAZE_PREFIX/index to get list of maze zone numbers.
+ * For each zone:
+ *   1. Generates a new random maze (create_maze)
+ *   2. Writes solution to log file (print_maze)
+ *   3. Applies maze to game world rooms (create_rooms)
+ *
+ * The index file format is one zone number per line, ending with $.
+ * Sleeps 1 second between mazes to ensure different random seeds.
+ */
 int boot_mazes(void) {
   FILE *index = NULL;
   FILE *f = NULL;

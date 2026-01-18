@@ -1,3 +1,27 @@
+/* ************************************************************************
+ *   File: event.c                                       Part of CircleMUD *
+ *  Usage: Event queue system for timed/delayed actions                    *
+ *                                                                         *
+ *  The event system manages all delayed game actions including:           *
+ *    - Spell casting (with casting time delays and concentration checks)  *
+ *    - Camping (delayed logout with location save)                        *
+ *    - Spell memorization                                                 *
+ *    - Scribing spells to spellbooks                                      *
+ *    - Knockout recovery                                                  *
+ *                                                                         *
+ *  Events are stored in a singly-linked list (pending_events) and         *
+ *  processed each game pulse by run_events(). Each event has a            *
+ *  ticks_to_go counter that decrements until reaching 0, at which         *
+ *  point the event's callback function is executed.                       *
+ *                                                                         *
+ *  See event.h for the event_info structure and EVENT macro definitions.  *
+ *                                                                         *
+ *  All rights reserved.  See license.doc for complete information.        *
+ *                                                                         *
+ *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
+ *  CircleMUD is based on DikuMUD, Copyright (C) 1990, 1991.               *
+ ************************************************************************ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -11,6 +35,19 @@
 #include "structs.h"
 #include "utils.h"
 
+/**************************************************************************
+ * Global Variables
+ *
+ * pending_events: Head of the event queue linked list. Events are added
+ *                 at the head (LIFO for new events, but order doesn't
+ *                 matter since all are processed each pulse).
+ *
+ * in_event_handler: Reentrance guard flag. Set to 1 while run_events()
+ *                   is executing to handle events added during processing.
+ *
+ * prev: Used during event list traversal to maintain the previous node
+ *       for list removal operations.
+ *************************************************************************/
 int in_event_handler = 0;
 struct event_info *pending_events = NULL;
 struct event_info *prev = NULL;
@@ -43,6 +80,22 @@ int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, stru
 extern int pk_allowed;
 extern int top_of_world;
 
+/**************************************************************************
+ * Spell Damage and Utility Functions
+ *************************************************************************/
+
+/*
+ * getSpellDam - Calculate spell damage based on dice configuration
+ *
+ * Spells can use one or two sets of dice for damage calculation.
+ * Each set has optional limits that cap dice count/size to caster level:
+ *   - dice_limit: caps num_dice to GET_LEVEL(ch)
+ *   - size_limit: caps size_dice to GET_LEVEL(ch)
+ *
+ * Formula: dice(num, size) + dice_add [+ dice(num2, size2) + dice_add2]
+ *
+ * The 16 branches handle all combinations of limit flags for both dice sets.
+ */
 int getSpellDam(struct spell_info_type *sinfo, struct char_data *ch) {
   int dam;
   if (!sinfo->num_dice2) { /* only 1 set of dice */
@@ -113,6 +166,14 @@ int getSpellDam(struct spell_info_type *sinfo, struct char_data *ch) {
   return dam;
 }
 
+/*
+ * modBySpecialization - Apply specialization damage multiplier
+ *
+ * Specialized casters get bonus damage when their realm skill check passes:
+ *   - Skill check success (skill >= random 1-101): 2x damage
+ *   - Skill check fail but 20% chance: 1.5x damage
+ *   - Otherwise: no bonus
+ */
 int modBySpecialization(struct char_data *ch, struct spell_info_type *sinfo, int dam) {
   int newdam = dam;
 
@@ -129,6 +190,14 @@ int modBySpecialization(struct char_data *ch, struct spell_info_type *sinfo, int
   return newdam;
 }
 
+/*
+ * getMaxCircle - Determine spell circle from class level requirements
+ *
+ * Finds the highest min_level across all classes (excluding level 51 which
+ * indicates "not available to this class") and converts to circle.
+ * Circle formula: (best_level + 4) / 5
+ *   Level 1-5 = Circle 1, Level 6-10 = Circle 2, etc.
+ */
 int getMaxCircle(struct spell_info_type *sinfo) {
   int i;
   int best = 1;
@@ -144,6 +213,12 @@ int getMaxCircle(struct spell_info_type *sinfo) {
   return (best + 4) / 5;
 }
 
+/*
+ * is_area_spell - Check if spell targets multiple entities or the room
+ *
+ * Returns true for spells that affect areas, groups, or create objects/mobs
+ * rather than targeting a single victim.
+ */
 int is_area_spell(struct spell_info_type *sinfo) {
   return (sinfo->spell_pointer == spell_general || sinfo->event_pointer == spell_area_event ||
           sinfo->event_pointer == spell_area_points_event || sinfo->event_pointer == spell_area_dam_event ||
@@ -152,6 +227,12 @@ int is_area_spell(struct spell_info_type *sinfo) {
           sinfo->event_pointer == spell_word_recall_event || sinfo->event_pointer == spell_group_points_event);
 }
 
+/*
+ * spell_has_vict - Check if spell requires a specific victim target
+ *
+ * Returns true for spells that target a single character/object.
+ * Returns false for area effects, room effects, object creation, etc.
+ */
 int spell_has_vict(struct spell_info_type *sinfo) {
   return (sinfo->spell_pointer != spell_general && sinfo->event_pointer != spell_create_obj_event &&
           sinfo->event_pointer != spell_create_mob_event && sinfo->event_pointer != spell_area_event &&
@@ -160,7 +241,34 @@ int spell_has_vict(struct spell_info_type *sinfo) {
           sinfo->event_pointer != spell_group_event && sinfo->event_pointer != spell_group_points_event &&
           sinfo->event_pointer != spell_locate_obj_event);
 }
+
+/**************************************************************************
+ * Event Queue Management Functions
+ *************************************************************************/
+
+/* EVENT_CH macro for convenient access to the caster within run_events() */
 #define EVENT_CH ((struct char_data *)temp->causer)
+
+/*
+ * run_events - Main event processor, called once per game pulse from comm.c
+ *
+ * Iterates through all pending events and:
+ *   1. Decrements ticks_to_go counter
+ *   2. For spell events: validates target still exists and checks concentration
+ *   3. For quick chant skill: may halve remaining cast time
+ *   4. When ticks_to_go reaches 0: executes the event callback
+ *   5. Removes completed or cancelled (ticks_to_go < 0) events from queue
+ *
+ * Concentration check (for spell events):
+ *   - Triggered periodically based on ticker countdown
+ *   - circle = GET_CIRCLE_DIFF(caster, spell) measures spell difficulty
+ *   - If circle < 2 (spell is 2+ circles above caster level):
+ *     Player: fails if (realm_skill + int/wis) < random(1,195)
+ *     NPC: fails if (random(1,61) + int/wis) < random(1,156)
+ *
+ * Events are removed by setting ticks_to_go to -1, then cleaned up on
+ * the next iteration. This allows safe removal during list traversal.
+ */
 void run_events() {
   struct event_info *temp, *prox;
   int i;
@@ -294,6 +402,23 @@ void run_events() {
   in_event_handler = 0;
 }
 
+/*
+ * add_event - Queue a new event for delayed execution
+ *
+ * Parameters:
+ *   delay   - Number of game pulses until event fires
+ *   func    - Callback function to execute (EVENT type)
+ *   type    - Event type constant (EVENT_SPELL, EVENT_CAMP, etc.)
+ *   causer  - Entity causing the event (usually caster)
+ *   victim  - Target of the event (may be NULL)
+ *   info    - Additional data (often target name string for spells)
+ *   sinfo   - Spell info structure (for spell events)
+ *   command - Command name for display during casting
+ *   info2   - Additional flag (isobj for spells)
+ *
+ * Events are inserted at the head of pending_events list.
+ * The ticker field is randomized for concentration check timing.
+ */
 void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, void *info, struct spell_info_type *sinfo,
                char *command, int info2) {
   struct event_info *new;
@@ -320,6 +445,19 @@ void add_event(int delay, EVENT(*func), int type, void *causer, void *victim, vo
     prev = pending_events;
 }
 
+/*
+ * clean_events - Cancel pending events associated with a pointer
+ *
+ * Used when a character or object is being extracted to prevent
+ * events from firing on invalid pointers.
+ *
+ * If func is NULL: cancels all events where pointer matches causer,
+ *                  victim, or the function pointer itself.
+ * If func is set:  cancels only events with matching func AND
+ *                  pointer matches causer or victim.
+ *
+ * Returns true if any events were cancelled.
+ */
 bool clean_events(void *pointer, EVENT(*func)) {
   struct event_info *temp, *prox;
   bool completed = 0;
@@ -344,6 +482,12 @@ bool clean_events(void *pointer, EVENT(*func)) {
   return completed;
 }
 
+/*
+ * clean_causer_events - Cancel all events of a specific type for a causer
+ *
+ * Used to cancel a specific event type (e.g., all spell casting events)
+ * for a character without affecting other event types.
+ */
 bool clean_causer_events(void *pointer, int type) {
   struct event_info *temp, *prox;
   bool completed = 0;
@@ -359,6 +503,12 @@ bool clean_causer_events(void *pointer, int type) {
   return completed;
 }
 
+/*
+ * check_events - Check if any pending events exist for a pointer
+ *
+ * Returns true if any active events (ticks_to_go > 0) exist where the
+ * pointer matches causer or victim, optionally filtered by function.
+ */
 bool check_events(void *pointer, EVENT(*func)) {
   struct event_info *temp, *prox;
 
@@ -378,6 +528,12 @@ bool check_events(void *pointer, EVENT(*func)) {
   return 0;
 }
 
+/*
+ * find_event - Find a pending event by character and type
+ *
+ * Returns the event_info structure if found, NULL otherwise.
+ * Used to access event details (e.g., remaining cast time).
+ */
 struct event_info *find_event(struct char_data *ch, int type) {
   struct event_info *temp, *prox;
 
@@ -391,10 +547,28 @@ struct event_info *find_event(struct char_data *ch, int type) {
   return NULL;
 }
 
-/* ************************************ *
- *  Pre-defined events.(Just examples)  *
- * ************************************ */
+/**************************************************************************
+ * Spell Event Handlers
+ *
+ * Each spell event handler is called when a spell's cast time completes.
+ * Common pattern:
+ *   1. REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING) - clear casting flag
+ *   2. Validate target still exists
+ *   3. Check PK restrictions
+ *   4. Apply saving throws for aggressive spells
+ *   5. Check globe of invulnerability protection
+ *   6. Execute spell effect (damage, affect, create, etc.)
+ *   7. Send messages to caster, victim, and room
+ *
+ * CAUSER_CH macro provides typed access to the caster.
+ * info parameter is typically the target name string.
+ * info2 indicates if cast from an object (wand/scroll).
+ *************************************************************************/
 
+/*
+ * spell_teleport_event - Random teleport within current zone
+ * Restricted to non-immortals. Tries up to 100 times to find a valid room.
+ */
 EVENT(spell_teleport_event) {
   int destin = 0;
   int tries = 0;
@@ -435,11 +609,16 @@ EVENT(spell_teleport_event) {
   }
 }
 
+/* knockedout - Recovery event after being knocked unconscious */
 EVENT(knockedout) {
   send_to_char("Your head stops hurting, you are now sleeping normally.\r\n", CAUSER_CH);
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_KNOCKEDOUT);
 }
 
+/*
+ * camp - Delayed logout that saves character at current location
+ * Validates player hasn't moved and has no unrentable items.
+ */
 EVENT(camp) {
   int i;
   int unrentables = 0;
@@ -499,12 +678,20 @@ ACMD(do_camp) {
   return;
 }
 
+/* fail_spell_event - Called when a spell casting attempt fails */
 EVENT(fail_spell_event) {
   act("$n fails miserably!", TRUE, CAUSER_CH, 0, 0, TO_ROOM);
   act("You fail miserably!", TRUE, CAUSER_CH, 0, 0, TO_CHAR);
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
 }
 
+/*
+ * spell_magic_missile_event - Multi-projectile damage spell
+ *
+ * Fires 1-5 missiles based on realm skill / 10.
+ * Each missile deals: (dice + level) / 2, scaled by realm skill.
+ * Respects minor/major globe of invulnerability.
+ */
 EVENT(spell_magic_missile_event) {
   int amount = BOUNDED(1, GET_SKILL(CAUSER_CH, sinfo->realm) / 10, 5);
   int i;
@@ -593,6 +780,7 @@ EVENT(spell_magic_missile_event) {
   FIGHT_STATE(CAUSER_CH, 2);
 }
 
+/* spell_word_recall_event - Teleport caster to their hometown */
 EVENT(spell_word_recall_event) {
 
   REMOVE_BIT(AFF2_FLAGS(CAUSER_CH), AFF2_CASTING);
@@ -621,6 +809,12 @@ EVENT(spell_word_recall_event) {
   look_at_room(CAUSER_CH, 0);
 }
 
+/*
+ * spell_dam_event - Generic single-target damage spell
+ *
+ * Uses getSpellDam() for dice-based damage, applies specialization and
+ * realm skill modifiers. Damage halved if target makes saving throw.
+ */
 EVENT(spell_dam_event) {
   int dam;
   struct char_data *vict;
@@ -696,6 +890,13 @@ EVENT(spell_dam_event) {
   }
 }
 
+/*
+ * spell_char_event - Apply spell affects to a character
+ *
+ * Used for buff/debuff spells. Calls mag_affect_char() to apply
+ * the spell's defined affects. Can also remove affects (unaffect field).
+ * Special handling for mutually exclusive shields (fire/ice).
+ */
 EVENT(spell_char_event) {
   struct char_data *vict;
   char abuf[256];

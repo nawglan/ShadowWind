@@ -1,6 +1,27 @@
-/************************************************************************
+/* ************************************************************************
  *   File: interpreter.c                                 Part of CircleMUD *
- *  Usage: parse user commands, search for specials, call ACMD functions   *
+ *  Usage: Command parsing, login state machine, and ACMD dispatch         *
+ *                                                                         *
+ *  This file contains:                                                    *
+ *    - cmd_info[] - Master command table with permissions and handlers    *
+ *    - command_interpreter() - Parse and dispatch player commands         *
+ *    - nanny() - Login/character creation state machine                   *
+ *    - special() - Execute special procedures on mobs/objects/rooms       *
+ *    - Argument parsing utilities (one_argument, two_arguments, etc.)     *
+ *                                                                         *
+ *  Command Flow:                                                          *
+ *    1. Player input received in comm.c                                   *
+ *    2. command_interpreter() parses first word                           *
+ *    3. Searches cmd_info[] for matching command                          *
+ *    4. Checks position, level, and other requirements                    *
+ *    5. Calls special() for mob/room/object special procs                 *
+ *    6. If not handled by special, calls the ACMD function                *
+ *                                                                         *
+ *  Login State Machine (nanny):                                           *
+ *    CON_GET_NAME -> CON_PASSWORD -> CON_RMOTD -> CON_PLAYING             *
+ *    New chars: CON_GET_NAME -> CON_NAME_CNFRM -> CON_NEW_PASSWORD ->     *
+ *               CON_CNFPASSWD -> CON_QSEX -> CON_QRACE -> CON_QCLASS ->   *
+ *               CON_RMOTD -> CON_PLAYING                                  *
  *                                                                         *
  *  All rights reserved.  See license.doc for complete information.        *
  *                                                                         *
@@ -278,6 +299,22 @@ ACMD(do_write);
 ACMD(do_xname);
 ACMD(do_zreset);
 ACMD(do_zecho);
+
+/**************************************************************************
+ * Master Command Table
+ *
+ * Each entry: { command, min_position, function, min_level, subcmd,
+ *               flag, aff_block, aff2_block, aff3_block }
+ *
+ * min_position: Minimum position to execute (POS_DEAD, POS_RESTING, etc.)
+ * function:     ACMD function pointer to execute
+ * min_level:    Minimum level required (0 = all players)
+ * subcmd:       Sub-command number passed to ACMD function
+ * flag:         COM_* flag required (COM_ADMIN, COM_QUEST, etc.)
+ * aff_block:    AFF_* flags that prevent command execution
+ * aff2_block:   AFF2_* flags that prevent command execution
+ * aff3_block:   AFF3_* flags that prevent command execution
+ *************************************************************************/
 
 /* This is the Master Command List(tm).
  *
@@ -995,10 +1032,23 @@ char *fill[] = {"in", "from", "with", "the", "on", "at", "to", "\n"};
 
 char *reserved[] = {"self", "me", "all", "room", "someone", "something", "\n"};
 
+/**************************************************************************
+ * Command Processing Functions
+ *************************************************************************/
+
 /*
- * This is the actual command interpreter called from game_loop() in comm.c
- * It makes sure you are the proper level and position to execute the command,
- * then calls the appropriate function.
+ * command_interpreter - Main command dispatcher
+ *
+ * Called from game_loop() in comm.c for each line of player input.
+ * Parses the first word, searches cmd_info[] for a match, validates
+ * level/position requirements, tries special procedures, then executes
+ * the ACMD function.
+ *
+ * Special handling:
+ *   - Color code filtering for low-level players
+ *   - Unknown commands default to "say" for convenience
+ *   - Removes HIDE flag on any command
+ *   - Mob program command triggers
  */
 void command_interpreter(struct char_data *ch, char *argument) {
   int cmd, say_cmd = -1, length;
@@ -1555,7 +1605,30 @@ int _parse_name(char *g_arg, char *name) {
   return 0;
 }
 
-/* deal with newcomers and other non-playing sockets */
+/**************************************************************************
+ * Login and Character Creation State Machine
+ *************************************************************************/
+
+/*
+ * nanny - Handle connection states for non-playing sockets
+ *
+ * Implements a state machine for login and character creation.
+ * Called from game_loop() for connections not in CON_PLAYING state.
+ *
+ * Key connection states (defined in structs.h):
+ *   CON_GET_NAME     - Prompt for character name
+ *   CON_NAME_CNFRM   - Confirm new character name
+ *   CON_PASSWORD     - Verify password for existing character
+ *   CON_NEW_PASSWORD - Set password for new character
+ *   CON_CNFPASSWD    - Confirm new password
+ *   CON_QSEX         - Select gender
+ *   CON_QRACE        - Select race
+ *   CON_QCLASS       - Select class(es)
+ *   CON_RMOTD        - Display MOTD, press enter to continue
+ *   CON_MENU         - Main menu (enter game, change password, etc.)
+ *   CON_PLAYING      - In-game (handled by command_interpreter)
+ *   CON_*EDIT        - OLC editing states
+ */
 void nanny(struct descriptor_data *d, char *g_arg) {
   /* extern functions */
   int load_char_text(char *name, struct char_data *char_element);

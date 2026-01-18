@@ -1,11 +1,32 @@
-/*
- magic.c
- Written by Fred Merkel
- Modified heavily for ShadowWind, by Desmond Daignault
- Copyright (C) 1993 Trustees of The Johns Hopkins Unversity
- All Rights Reserved.
- Based on DikuMUD, Copyright (C) 1990, 1991.
- */
+/* ************************************************************************
+ *   File: magic.c                                       Part of CircleMUD *
+ *  Usage: Spell effect application and saving throws                      *
+ *                                                                         *
+ *  Written by Fred Merkel                                                 *
+ *  Modified heavily for ShadowWind, by Desmond Daignault                  *
+ *  Copyright (C) 1993 Trustees of The Johns Hopkins Unversity             *
+ *  All Rights Reserved.                                                   *
+ *  Based on DikuMUD, Copyright (C) 1990, 1991.                            *
+ *                                                                         *
+ *  This file handles the mechanical application of spell effects,         *
+ *  separate from spell_parser.c which handles casting and targeting.      *
+ *                                                                         *
+ *  Saving Throws:                                                         *
+ *    Five types: PARA (paralysis), ROD, PETRI, BREATH, SPELL              *
+ *    Base save from class/race tables, modified by level and equipment    *
+ *    Formula: save = class_base - (level/3 or /4) + race_mod + equipment  *
+ *    Success: roll d20 > save value                                       *
+ *                                                                         *
+ *  Affect Application:                                                    *
+ *    mag_affect_char() - Apply timed buffs/debuffs to characters          *
+ *    mag_affect_obj()  - Enchant objects (weapons, shields, etc.)         *
+ *    mag_points_char() - Instant stat/point modifications (heals, etc.)   *
+ *                                                                         *
+ *  Key Functions:                                                         *
+ *    mag_savingthrow() - Calculate and roll saving throw                  *
+ *    affect_update()   - Called each tick to decrement/expire effects     *
+ *    mag_materials()   - Check for and consume spell reagents             *
+ ************************************************************************ */
 
 #include "comm.h"
 #include "db.h"
@@ -55,6 +76,21 @@ int modBySpecialization(struct char_data *ch, struct spell_info_type *sinfo, int
 
 struct char_data *read_mobile(int, int);
 
+/***************************************************************************
+ * Saving Throw System
+ ***************************************************************************/
+
+/*
+ * mag_savingthrow - Calculate and roll a saving throw
+ *
+ * Formula: base_save = class_table[class][type] - (level / 3 or 4)
+ *                    + race_table[race][type] + equipment_bonuses
+ *
+ * NPCs use warrior base and divide level by 3.
+ * PCs use their class base and divide level by 4.
+ *
+ * Returns: TRUE if save is successful (avoided effect), FALSE if failed
+ */
 int mag_savingthrow(struct char_data *ch, int type) {
   int save;
 

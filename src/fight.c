@@ -1,6 +1,21 @@
 /* ************************************************************************
  *   File: fight.c                                       Part of CircleMUD *
- *  Usage: Combat system                                                   *
+ *  Usage: Combat system - melee attacks, damage, and death handling       *
+ *                                                                         *
+ *  This file implements the core combat mechanics:                        *
+ *    - Combat round processing (perform_violence)                         *
+ *    - Attack resolution and multiple hits (hit, multiple_hit)            *
+ *    - Damage calculation and application (damage)                        *
+ *    - Death handling and corpse creation (die, make_corpse)              *
+ *    - Experience distribution (group_gain, solo_gain)                    *
+ *    - Combat state management (set_fighting, stop_fighting)              *
+ *                                                                         *
+ *  Combat Flow:                                                           *
+ *    1. perform_violence() called each PULSE_VIOLENCE from comm.c         *
+ *    2. For each character in combat_list, calls hit() when timer ready   *
+ *    3. hit() resolves attack with hitroll vs AC, calls damage()          *
+ *    4. damage() applies HP loss, triggers death if HP <= 0               *
+ *    5. die() handles XP loss, corpse creation, and character extraction  *
  *                                                                         *
  *  All rights reserved.  See license.doc for complete information.        *
  *                                                                         *
@@ -25,7 +40,13 @@
 #include "utils.h"
 
 extern struct spell_info_type *spells;
-struct char_data *combat_list = NULL; /* head of l-list of fighting chars */
+
+/*
+ * Global combat list - linked list of all characters currently in combat.
+ * Characters are added via set_fighting() and removed via stop_fighting().
+ * perform_violence() iterates this list each combat pulse.
+ */
+struct char_data *combat_list = NULL;
 struct char_data *next_combat_list = NULL;
 
 /* External structures */
@@ -67,7 +88,17 @@ bool clean_events(void *pointer, EVENT(*func));
 EVENT(camp);
 int get_weapon_speed(struct char_data *ch, int type);
 
-/* Weapon attack texts */
+/**************************************************************************
+ * Combat Data Tables
+ *
+ * These arrays define weapon properties indexed by weapon type.
+ * Weapon types 0-20 are player weapons, 21-28 are mob-only attacks.
+ *************************************************************************/
+
+/*
+ * attack_hit_text - Weapon type to attack message and damage type mapping
+ * Each entry: { singular, plural, damage_type }
+ */
 struct attack_hit_type attack_hit_text[] = {
     {"hit", "hits", DAM_BLUDGEON},           /* 0 Barehanded    */
     {"pierce", "pierces", DAM_PIERCE},       /* 1 Shortsword    */
@@ -144,10 +175,19 @@ int weapon_speed[] = {
 
 #define IS_WEAPON(type) (((type) >= TYPE_HIT) && ((type) < TYPE_SUFFERING))
 
-/* The Fight related routines */
+/**************************************************************************
+ * Combat Functions
+ *************************************************************************/
 
-/* calculates the PC attack timer */
-
+/*
+ * multiple_hit - Execute multiple attacks in a single combat round
+ *
+ * Non-monks with multi-attack skill get up to 3 extra attacks (4 with haste).
+ * Each extra attack has decreasing chance: skill - (i * 45) vs random 1-41.
+ *
+ * Monks get attacks based on level/10, but only when fighting unarmed.
+ * Wielding any weapon limits monks to a single attack.
+ */
 void multiple_hit(struct char_data *ch, struct char_data *vict, int type) {
   int i;
   int j;
@@ -478,7 +518,13 @@ void check_killer(struct char_data *ch, struct char_data *vict) {
   }
 }
 
-/* start one char fighting another (yes, it is horrible, I know... )  */
+/*
+ * set_fighting - Initiate combat between two characters
+ *
+ * Adds attacker (ch) to the global combat_list. Initializes fight timers,
+ * removes sleep effect, updates position to POS_FIGHTING, and calls
+ * check_killer() for PK flagging. Tracks attacked_by list for XP sharing.
+ */
 void set_fighting(struct char_data *ch, struct char_data *vict) {
   struct mob_attacks_data *this;
   int i, j;
@@ -567,7 +613,12 @@ void set_fighting(struct char_data *ch, struct char_data *vict) {
   } /* end if() */
 }
 
-/* remove a char from the list of fighting chars */
+/*
+ * stop_fighting - Remove a character from combat
+ *
+ * Removes character from combat_list and resets FIGHTING pointer.
+ * Also stops anyone fighting this character. Sets position to standing.
+ */
 void stop_fighting(struct char_data *ch) {
   struct char_data *tmp;
   struct char_data *tmp2;
@@ -614,6 +665,17 @@ void stop_fighting(struct char_data *ch) {
   update_pos(ch);
 }
 
+/**************************************************************************
+ * Death Handling Functions
+ *************************************************************************/
+
+/*
+ * make_corpse - Create a corpse object from a dead character
+ *
+ * Creates a corpse container object (vnum 1203) and transfers the dead
+ * character's equipment and inventory into it. Sets corpse name, decay
+ * timer, and places it in the room. Elementals skip corpse creation.
+ */
 void make_corpse(struct char_data *ch) {
   struct obj_data *corpse, *o;
   struct obj_data *money;
@@ -761,6 +823,12 @@ void death_cry(struct char_data *ch) {
   }
 }
 
+/*
+ * raw_kill - Low-level death handler
+ *
+ * Stops combat, removes all affects, cleans up pending events,
+ * triggers mob death programs, creates corpse, and extracts character.
+ */
 void raw_kill(struct char_data *ch, struct char_data *killer) {
   if (killer == NULL) {
     killer = ch;
@@ -794,6 +862,17 @@ void raw_kill(struct char_data *ch, struct char_data *killer) {
   extract_char(ch, 0);
 }
 
+/*
+ * die - Full death processing for players and NPCs
+ *
+ * For players: applies XP loss penalty, increments death counter, logs death,
+ * awards killer XP via group_gain, removes PK/thief flags.
+ *
+ * For NPCs: distributes XP to all attackers via attacked_by list, handles
+ * XP distribution for grouped attackers.
+ *
+ * Calls raw_kill() for actual corpse creation and extraction.
+ */
 void die(struct char_data *ch, struct char_data *killer) {
   ACMD(do_get);
 
@@ -1362,6 +1441,28 @@ int resist_modify(struct char_data *ch, struct char_data *victim, int dam, int a
   return dam;
 }
 
+/*
+ * damage - Apply damage to a victim from an attacker
+ *
+ * Central damage processing function. Handles:
+ *   - Immortal damage reduction
+ *   - Shopkeeper protection
+ *   - Stoneskin and paralysis absorption
+ *   - Elemental protection spells (halve damage)
+ *   - Fire/ice shield interactions (double opposing element damage)
+ *   - Resistance calculations
+ *   - Fire/ice shield reflective damage
+ *   - Combat message display
+ *   - Death when HP <= 0
+ *   - Mob fight/hitpercent triggers
+ *
+ * Parameters:
+ *   attacktype - TYPE_* constant or spell number
+ *   damorig    - Original damage before modifications (unused?)
+ *   damtype    - DAM_* constant for resistance calculations
+ *   is_spell   - TRUE if damage is from a spell
+ *   hide       - TRUE to suppress damage messages
+ */
 void damage(struct char_data *ch, struct char_data *victim, int dam, int attacktype, int damorig, int damtype,
             int is_spell, int hide) {
   struct char_data *tmp_ch;
@@ -1938,6 +2039,26 @@ void damage(struct char_data *ch, struct char_data *victim, int dam, int attackt
   }
 }
 
+/**************************************************************************
+ * Attack Resolution Functions
+ *************************************************************************/
+
+/*
+ * hit - Resolve a single melee attack
+ *
+ * Calculates attack roll (THAC0 vs AC) and damage if hit.
+ * Handles:
+ *   - Backstab multiplier for thieves/assassins
+ *   - Dodge skill checks
+ *   - Dual wielding (calls itself recursively for second weapon)
+ *   - Monk unarmed damage by level
+ *   - Weapon skill improvement
+ *   - Poisoned weapons
+ *   - Fumbles (natural 1)
+ *   - Critical hits (may be implemented in damage())
+ *
+ * type: TYPE_UNDEFINED for normal attacks, TYPE_BACKSTAB for backstabs
+ */
 void hit(struct char_data *ch, struct char_data *victim, int type) {
   struct obj_data *wielded = ch->equipment[WEAR_WIELD];
   int damorig = 0;
@@ -2305,7 +2426,18 @@ void perform_mob_defense_fight(struct char_data *ch) {
   }
 }
 
-/* control the fights going on. Called every tick from comm.c. */
+/*
+ * perform_violence - Main combat round processor
+ *
+ * Called once per PULSE_VIOLENCE from comm.c's game_loop().
+ * Iterates through combat_list and for each fighter:
+ *   - NPCs: Decrements attack timers, performs mob defense/offense
+ *   - Players: Checks fight_timer, calls multiple_hit() when ready
+ *
+ * NPC attack frequency is controlled by mob_attacks_data->fight_timer.
+ * Player attack frequency is controlled by char_specials.fight_timer
+ * which is based on weapon speed and dexterity.
+ */
 void perform_violence(void) {
   struct char_data *ch;
   struct mob_attacks_data *this;

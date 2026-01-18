@@ -2,6 +2,44 @@
  *   File: objsave.c                                     Part of CircleMUD *
  *  Usage: loading/saving player objects for rent and crash-save           *
  *                                                                         *
+ *  This file handles all aspects of player object persistence:            *
+ *                                                                         *
+ *  Rent Types (defined in structs.h):                                     *
+ *    RENT_UNDEF    - Undefined/error state                                *
+ *    RENT_CRASH    - Crash-save (periodic auto-save of player items)      *
+ *    RENT_RENTED   - Normal rent via receptionist                         *
+ *    RENT_CRYO     - Cryogenic storage (long-term rent)                   *
+ *    RENT_FORCED   - Forced save (copyover, shutdown)                     *
+ *    RENT_TIMEDOUT - Idle timeout save                                    *
+ *    RENT_CAMPED   - Camping save (wilderness logout)                     *
+ *                                                                         *
+ *  File Format (RENT_VERSION 3 - tagged ASCII):                           *
+ *    -rent_version- <version>                                             *
+ *    -rent_time- <unix_timestamp>                                         *
+ *    -rent_type- <type>                                                   *
+ *    -obj_begin-                                                          *
+ *      -obj_number- <vnum>                                                *
+ *      -obj_tnum- <tracking_number>                                       *
+ *      -obj_pos- <container_or_wear_slot>                                 *
+ *      -obj_value0- through -obj_value4-                                  *
+ *      -obj_timer- -obj_extra_flags- -obj_bitvector-                      *
+ *      -obj_affect_loc- / -obj_affect_mod- pairs                          *
+ *      -obj_spell1- -obj_spell2- -obj_spell3- (for magic items)           *
+ *      -obj_spellbook_entry- (for spellbooks)                             *
+ *    -obj_end-                                                            *
+ *    -end_rent-                                                           *
+ *                                                                         *
+ *  Container Nesting:                                                     *
+ *    Objects use obj_tnum for unique identification within the file.      *
+ *    obj_pos values: positive = in container with that tnum               *
+ *                    negative = equipped at wear position abs(obj_pos)    *
+ *                                                                         *
+ *  Key Functions:                                                         *
+ *    Crash_save()  - Save player objects to rent file                     *
+ *    Crash_load()  - Load player objects from rent file                   *
+ *    Crash_save_all() - Emergency save for all connected players          *
+ *    corpsesaveall() / corpseloadall() - Persist player corpses           *
+ *                                                                         *
  *  All rights reserved.  See license.doc for complete information.        *
  *                                                                         *
  *  Copyright (C) 1993, 94 by the Trustees of the Johns Hopkins University *
@@ -53,8 +91,25 @@ void weight_change_object(struct obj_data *obj, int amount);
 
 bool doneload = FALSE;
 
-/* Text saving (alias/poofs/whoset) - Modified by Mattias Larsson */
+/***************************************************************************
+ * Player Text Data (Aliases, Poofs, Whoset)
+ *
+ * These functions manage per-player text settings stored in ETEXT_FILE:
+ *   - Aliases: command shortcuts (type, alias, replacement)
+ *   - WHOSPEC: custom WHO listing string
+ *   - POOFIN/POOFOUT: immortal appearance/departure messages
+ *   - WHOSTR: title shown in WHO
+ *   - NAMECOLOR: custom name color
+ *
+ * File format: alias entries followed by text fields (or !UNUSED!)
+ ***************************************************************************/
 
+/*
+ * load_text - Load player aliases and custom text from ETEXT_FILE
+ *
+ * Reads aliases (limited to 200 for safety), then optional custom text
+ * fields. Uses !UNUSED! marker for empty fields.
+ */
 void load_text(struct char_data *ch) {
   FILE *fil = NULL;
   char fname[MAX_INPUT_LENGTH];
@@ -208,6 +263,28 @@ void save_text(struct char_data *ch) {
   return;
 }
 
+/***************************************************************************
+ * Object Serialization
+ *
+ * Converts objects to/from tagged ASCII format for rent files.
+ * Uses negative obj_pos for equipped items (wear slot) and positive
+ * for items in containers (parent object's tracking number).
+ ***************************************************************************/
+
+/*
+ * Obj_to_store - Write a single object to rent file
+ *
+ * Writes object data in tagged format. Special handling for:
+ *   - Spellbooks (spell list entries)
+ *   - Potions/Scrolls (spell values by name)
+ *   - Wands/Staves (spell values by name)
+ *
+ * Parameters:
+ *   obj     - Object to save
+ *   objnum  - Unique tracking number for this save session
+ *   obj_pos - Container's objnum (positive) or wear position (negative)
+ *   fl      - Output file handle
+ */
 void Obj_to_store(struct obj_data *obj, int objnum, int obj_pos, FILE *fl) {
   void olc_print_bitvectors(FILE * f, long bitvector, long max);
   int j;
@@ -582,11 +659,24 @@ void Crash_listrent(struct char_data *ch, char *name) {
   fclose(fl);
 }
 
-/* Modified by Rasmus Bertelsen */
-/* return values:
- 0 - successful load, keep char in rent room.
- 1 - load failure or load of crash items -- put char in temple.
- 2 - rented equipment lost (no $)
+/***************************************************************************
+ * Crash Load/Save Core Functions
+ ***************************************************************************/
+
+/*
+ * Crash_load - Load player objects from rent file
+ *
+ * Reads the player's CRASH_FILE and reconstructs their inventory
+ * and equipment. Uses a stack to handle nested containers.
+ *
+ * After loading, immediately crash-saves to update the file.
+ *
+ * Returns:
+ *   0 - Successful load, keep char in rent room
+ *   1 - Load failure or crash items loaded - put char in temple
+ *   2 - Rented equipment lost (no money for rent - unused)
+ *
+ * Modified by Rasmus Bertelsen
  */
 int Crash_load(struct char_data *ch) {
   void Crash_save(struct char_data * ch, int type);
@@ -875,6 +965,11 @@ int Crash_load(struct char_data *ch) {
   return 0;
 }
 
+/*
+ * Crash_is_unrentable - Check if object cannot be saved to rent
+ *
+ * Objects that fail: ITEM_NORENT flag, invalid rnum, or keys.
+ */
 int Crash_is_unrentable(struct obj_data *obj) {
   if (!obj) {
     return 0;
@@ -887,6 +982,19 @@ int Crash_is_unrentable(struct obj_data *obj) {
   return 0;
 }
 
+/*
+ * Crash_save - Save player objects to rent file
+ *
+ * Writes header (version, time, type) followed by all carried and
+ * equipped objects. Uses a stack to traverse nested containers.
+ *
+ * RENT_CRASH type saves even NORENT items (emergency backup).
+ * Normal rent (RENT_RENTED) skips unrentable items.
+ *
+ * Parameters:
+ *   ch   - Player character
+ *   type - Rent type (RENT_CRASH, RENT_RENTED, RENT_CRYO, etc.)
+ */
 void Crash_save(struct char_data *ch, int type) {
   char buf[MAX_INPUT_LENGTH];
   struct obj_data *tmpobj = NULL;
@@ -1137,6 +1245,22 @@ void all_crashsave(void) {
   }
 }
 
+/***************************************************************************
+ * Player Corpse Persistence
+ *
+ * Player corpses (ITEM_PCORPSE) persist across reboots. They are saved
+ * to CORPSE_FILE with full object data including container contents.
+ *
+ * Corpse format is different from rent files - uses a more compact
+ * format with tilde-terminated strings and single-character tags.
+ ***************************************************************************/
+
+/*
+ * corpsesaveall - Save all player corpses in world to CORPSE_FILE
+ *
+ * Iterates through object_list finding ITEM_PCORPSE objects that
+ * are in rooms (not carried/contained). Deletes file if no corpses.
+ */
 void corpsesaveall() {
   FILE *tofile = NULL;
   struct obj_data *obj;

@@ -1,7 +1,39 @@
-/**************************************************************************
- * MOBProgram ported for CircleMUD 3.0 by Mattias Larsson               *
- * Traveller@AnotherWorld (ml@eniac.campus.luth.se 4000)                *
- **************************************************************************/
+/* ************************************************************************
+ *   File: mobprog.c                                     Part of CircleMUD *
+ *  Usage: MOBProgram scripting system for NPC behavior                    *
+ *                                                                         *
+ *  MOBPrograms allow builders to script NPC behavior without coding.      *
+ *  Scripts are triggered by events and can execute commands, check        *
+ *  conditions, and control flow.                                          *
+ *                                                                         *
+ *  Trigger Types (defined in mob files):                                  *
+ *    act_prog     - Triggered by act() messages matching a keyword        *
+ *    speech_prog  - Triggered when player says matching text              *
+ *    rand_prog    - Random chance each tick (percentage based)            *
+ *    fight_prog   - Each combat round while fighting                      *
+ *    hitprcnt_prog- When HP falls below percentage threshold              *
+ *    death_prog   - When mob is killed                                    *
+ *    entry_prog   - When mob enters a room                                *
+ *    greet_prog   - When a player enters mob's room                       *
+ *    give_prog    - When player gives item to mob                         *
+ *    bribe_prog   - When player gives money to mob                        *
+ *    time_prog    - At specific game hours                                *
+ *                                                                         *
+ *  Script Language:                                                       *
+ *    if/else/endif - Conditional blocks                                   *
+ *    or            - Alternative condition in if                          *
+ *    break         - Exit current if block                                *
+ *    Variables: $n (actor), $t (target), $r (random), $i (self), etc.     *
+ *                                                                         *
+ *  Key Functions:                                                         *
+ *    mprog_driver()       - Main script interpreter                       *
+ *    mprog_do_ifchck()    - Evaluate if conditions                        *
+ *    mprog_translate()    - Variable substitution ($n, $t, etc.)          *
+ *    mprog_*_trigger()    - Event trigger entry points                    *
+ *                                                                         *
+ *  MOBProgram ported for CircleMUD 3.0 by Mattias Larsson                 *
+ *  Traveller@AnotherWorld (ml@eniac.campus.luth.se 4000)                  *
+ ************************************************************************ */
 
 /***************************************************************************
  *  Original Diku Mud copyright (C) 1990, 1991 by Sebastian Hammer,        *
@@ -10,25 +42,8 @@
  *  Merc Diku Mud improvments copyright (C) 1992, 1993 by Michael          *
  *  Chastain, Michael Quan, and Mitchell Tse.                              *
  *                                                                         *
- *  In order to use any part of this Merc Diku Mud, you must comply with   *
- *  both the original Diku license in 'license.doc' as well the Merc       *
- *  license in 'license.txt'.  In particular, you may not remove either of *
- *  these copyright notices.                                               *
- *                                                                         *
- *  Much time and thought has gone into this software and you are          *
- *  benefitting.  We hope that you share your changes too.  What goes      *
- *  around, comes around.                                                  *
- ***************************************************************************/
-
-/***************************************************************************
  *  The MOBprograms have been contributed by N'Atas-ha.  Any support for   *
- *  these routines should not be expected from Merc Industries.  However,  *
- *  under no circumstances should the blame for bugs, etc be placed on     *
- *  Merc Industries.  They are not guaranteed to work on all systems due   *
- *  to their frequent use of strxxx functions.  They are also not the most *
- *  efficient way to perform their tasks, but hopefully should be in the   *
- *  easiest possible way to install and begin using. Documentation for     *
- *  such installation can be found in INSTALL.  Enjoy...         N'Atas-Ha *
+ *  these routines should not be expected from Merc Industries.            *
  ***************************************************************************/
 
 #include "db.h"
@@ -316,15 +331,51 @@ int mprog_veval(int lhs, char *opr, int rhs) {
   return 0;
 }
 
-/* This function performs the evaluation of the if checks.  It is
- * here that you can add any ifchecks which you so desire. Hopefully
- * it is clear from what follows how one would go about adding your
- * own. The syntax for an if check is: ifchck (g_arg) [opr val]
- * where the parenthesis are required and the opr and val fields are
- * optional but if one is there then both must be. The spaces are all
- * optional. The evaluation of the opr expressions is farmed out
- * to reduce the redundancy of the mammoth if statement list.
- * If there are errors, then return -1 otherwise return boolean 1,0
+/***************************************************************************
+ * If-Check Condition Evaluation
+ *
+ * Available if-checks (syntax: ifchck($var) [operator value]):
+ *
+ *   Boolean checks (no operator needed):
+ *     rand(num)        - Random percentage check (1-100)
+ *     ispc($x)         - Is $x a player character?
+ *     isnpc($x)        - Is $x an NPC?
+ *     isgood($x)       - Is $x good aligned?
+ *     isfight($x)      - Is $x in combat?
+ *     isimmort($x)     - Is $x an immortal?
+ *     ischarmed($x)    - Is $x charmed?
+ *     isfollow($x)     - Is $x following someone in same room?
+ *     isaffected($x) val - Is $x affected by affect bit 'val'?
+ *     istime(timespec) - Does current time match timespec?
+ *
+ *   Numeric comparisons (require operator and value):
+ *     hitprcnt($x)     - $x's HP percentage
+ *     inroom($x)       - $x's room vnum
+ *     sex($x)          - $x's sex (0=neuter, 1=male, 2=female)
+ *     position($x)     - $x's position
+ *     level($x)        - $x's level
+ *     class($x)        - $x's class
+ *     goldamt($x)      - $x's gold amount
+ *     number($x)       - $x's vnum (for NPCs/objects)
+ *     objtype($o)      - Object type
+ *     objval0-3($o)    - Object value fields
+ *
+ *   String comparisons:
+ *     name($x)         - $x's name (use == or /)
+ *
+ *   Operators: ==, !=, >, <, >=, <=, & (bitwise and), | (bitwise or)
+ *              / (substring match for strings), !/ (no substring)
+ *
+ *   Variable references: $i=self, $n=actor, $t=target, $r=random, $o/$p=objects
+ ***************************************************************************/
+
+/*
+ * mprog_do_ifchck - Evaluate a single if-check condition
+ *
+ * Parses the if-check syntax: ifchck(arg) [operator value]
+ * Evaluates the condition against the provided context (mob, actor, etc.)
+ *
+ * Returns: 1 if condition is true, 0 if false, -1 on error
  */
 int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                     struct char_data *rndm) {
@@ -1260,16 +1311,56 @@ char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, stru
   return null;
 }
 
-/* This routine handles the variables for command expansion.
- * If you want to add any go right ahead, it should be fairly
- * clear how it is done and they are quite easy to do, so you
- * can be as creative as you want. The only catch is to check
- * that your variables exist before you use them. At the moment,
- * using $t when the secondary target refers to an object
- * i.e. >prog_act drops~<nl>if ispc($t)<nl>sigh<nl>endif<nl>~<nl>
- * probably makes the mud crash (vice versa as well) The cure
- * would be to change act() so that vo becomes vict & v_obj.
- * but this would require a lot of small changes all over the code.
+/***************************************************************************
+ * Variable Substitution Reference
+ *
+ * Variables are used with $ prefix in MOBprog commands.
+ *
+ *   Character variables (lowercase=keyword, UPPERCASE=full name/desc):
+ *     $i / $I  - The mob itself (self)
+ *     $n / $N  - The actor (player/mob who triggered the prog)
+ *     $t / $T  - The target victim (from vo parameter)
+ *     $r / $R  - Random visible mortal player in room
+ *
+ *   Pronoun variables (based on actor $n):
+ *     $e       - he/she/it (subjective)
+ *     $m       - him/her/it (objective)
+ *     $s       - his/her/its (possessive)
+ *
+ *   Pronoun variables (based on target $t):
+ *     $E       - he/she/it
+ *     $M       - him/her/it
+ *     $S       - his/her/its
+ *
+ *   Pronoun variables (based on self $i):
+ *     $j       - he/she/it
+ *     $k       - him/her/it
+ *     $l       - his/her/its
+ *
+ *   Pronoun variables (based on random $r):
+ *     $J       - he/she/it
+ *     $K       - him/her/it
+ *     $L       - his/her/its
+ *
+ *   Object variables (lowercase=keyword, UPPERCASE=short desc):
+ *     $o / $O  - Primary object (obj parameter)
+ *     $p / $P  - Secondary object (from vo parameter)
+ *
+ *   Article variables:
+ *     $a       - "a" or "an" for primary object
+ *     $A       - "a" or "an" for secondary object
+ *
+ *   Escape:
+ *     $$       - Literal $ character
+ *
+ * Note: Using $t/$T when vo is an object (or vice versa) may crash.
+ ***************************************************************************/
+
+/*
+ * mprog_translate - Substitute a variable character with its value
+ *
+ * Given a variable character (after $), writes the expanded string to t.
+ * Uses visibility checks - outputs "Someone" or "something" if mob can't see.
  */
 void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                      struct char_data *rndm) {
@@ -1605,10 +1696,19 @@ void mprog_process_cmnd(char *cmnd, struct char_data *mob, struct char_data *act
   return;
 }
 
-/* The main focus of the MOBprograms.  This routine is called
- *  whenever a trigger is successful.  It is responsible for parsing
- *  the command list and figuring out what to do. However, like all
- *  complex procedures, everything is farmed out to the other guys.
+/*
+ * mprog_driver - Main MOBprogram script interpreter
+ *
+ * Called by trigger functions when a MOBprog fires. Iterates through the
+ * command list, executing each command while handling flow control:
+ *   - Recognizes 'if' statements and delegates to mprog_process_if()
+ *   - Handles re-entrant programs via mpdelay (else/endif at top level)
+ *   - Expands variables and executes commands via mprog_process_cmnd()
+ *
+ * The rndm parameter provides a random visible mortal in the room for $r
+ * variable substitution. If NULL, one is selected automatically.
+ *
+ * Charmed mobs will not execute their programs (safety feature).
  */
 void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                   struct char_data *rndm) {
@@ -1681,11 +1781,25 @@ void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor
   return;
 }
 
-/* mprog_pulse is the counter for mpdelay. This function
- * will get called at each game pulse (currently, could
- * change) and process all (if any) delayed mobprogs
- */
+/***************************************************************************
+ * Delayed MOBprogram System
+ *
+ * The mpdelay command allows MOBprograms to pause execution.
+ * Delayed programs are stored in a linked list (delayed_mprog) and
+ * processed each game pulse by mprog_pulse().
+ *
+ * Usage in MOBprog:  mpdelay <pulses>
+ *                    <commands to execute after delay>
+ *
+ * This enables mobs to have timed responses, patrol routes, etc.
+ ***************************************************************************/
 
+/*
+ * mprog_pulse - Process delayed MOBprograms each game pulse
+ *
+ * Decrements delay counters and executes programs when ready.
+ * Called from the main game loop.
+ */
 void mprog_pulse() {
 
   struct delayed_mprog_type *current;
@@ -1706,12 +1820,39 @@ void mprog_pulse() {
 }
 
 /***************************************************************************
- * Global function code and brief comments.
- */
+ * Trigger Functions
+ *
+ * These functions check if conditions are met and invoke mprog_driver().
+ * Each trigger type corresponds to a game event:
+ *
+ *   mprog_act_trigger()      - Called when act() generates a message
+ *                              Queues for later processing via mpact list
+ *   mprog_bribe_trigger()    - When player gives money to mob
+ *                              Fires if amount >= program threshold
+ *   mprog_death_trigger()    - When mob dies, before corpse/loot
+ *   mprog_entry_trigger()    - When mob enters a new room
+ *   mprog_fight_trigger()    - Each combat round while mob is fighting
+ *   mprog_give_trigger()     - When player gives object to mob
+ *   mprog_greet_trigger()    - When player enters mob's room (if visible)
+ *   mprog_hitprcnt_trigger() - When mob HP% drops below threshold
+ *   mprog_random_trigger()   - Random chance each tick
+ *   mprog_speech_trigger()   - When player says matching text in room
+ *   mprog_shout_trigger()    - When player shouts matching text in zone
+ *   mprog_tell_trigger()     - When player tells matching text to mob
+ *   mprog_ask_trigger()      - When player asks mob matching text
+ *   mprog_time_trigger()     - At specific game hours
+ *
+ * Two base functions handle the actual checking:
+ *   mprog_wordlist_check() - For text-matching triggers (speech, act, etc.)
+ *   mprog_percent_check()  - For percentage-based triggers (rand, fight, etc.)
+ ***************************************************************************/
 
-/* The next two routines are the basic trigger types. Either trigger
- *  on a certain percent, or trigger on a keyword or word phrase.
- *  To see how this works, look at the various trigger routines..
+/*
+ * mprog_wordlist_check - Check if text matches trigger keywords
+ *
+ * For triggers like speech_prog and act_prog that match on text content.
+ * Arglist starting with "p " requires exact phrase match.
+ * Otherwise matches any word from a word list.
  */
 void mprog_wordlist_check(char *g_arg, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                           int type) {

@@ -1,3 +1,35 @@
+/* ************************************************************************
+ *   File: newmagic.c                                    Part of CircleMUD *
+ *  Usage: Spell memorization and scribing system                          *
+ *                                                                         *
+ *  This file implements the Vancian magic system where spellcasters must  *
+ *  memorize/pray spells into "slots" before casting. Each circle has a    *
+ *  limited number of slots based on character level.                      *
+ *                                                                         *
+ *  Spell Memory System:                                                   *
+ *    - Players have spell_memory[65] slots for memorized spells           *
+ *    - Each slot tracks: spellindex, has_mem (count), is_mem, time_left   *
+ *    - can_mem[11] tracks slots available per circle                      *
+ *                                                                         *
+ *  Scribing (Mages):                                                      *
+ *    Mages write spells into spellbooks using pen + spellbook.            *
+ *    Requires: guildmaster present, sitting, light, items equipped        *
+ *    Spellbook value[0]=pages, value[1]=free, value[2]=class restriction  *
+ *                                                                         *
+ *  Praying (Priests):                                                     *
+ *    Priests infuse spells into religious symbols.                        *
+ *    Same mechanics as scribing but different flavor text.                *
+ *                                                                         *
+ *  Meditation:                                                            *
+ *    AFF_MEDITATING halves scribing/memorization time with skill check.   *
+ *                                                                         *
+ *  Key Functions:                                                         *
+ *    do_scribe()    - Scribe spell to spellbook (deeply nested validation)*
+ *    do_memorize()  - View/manage memorized spells                        *
+ *    do_meditate()  - Enter meditation state                              *
+ *    do_abort()     - Cancel spell casting in progress                    *
+ ************************************************************************ */
+
 #include "comm.h"
 #include "db.h"
 #include "event.h"
@@ -8,7 +40,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define NUM_NPC_SPELLS 4 /* Number of npc spells per circle */
+#define NUM_NPC_SPELLS 4 /* Number of NPC spells per circle */
 
 extern struct spell_info_type *spells;
 extern struct room_data *world;
@@ -19,9 +51,20 @@ int find_spell_num(char *name);
 void improve_skill(struct char_data *ch, int skill, int chance);
 int find_skill_num_def(int spellindex);
 
+/* NPC spell lists by circle - populated by set_npc_spells() */
 int NPC_mage_spells[65];
 int NPC_cleric_spells[65];
 
+/***************************************************************************
+ * Spell Memory Management
+ ***************************************************************************/
+
+/*
+ * clear_magic_memory - Reset all spell memory slots to empty
+ *
+ * Called on character creation and when losing equipment that was
+ * providing memory (if that feature were implemented).
+ */
 void clear_magic_memory(struct char_data *ch) {
   int i;
 
@@ -73,6 +116,30 @@ ACMD(do_meditate) {
   SET_BIT(AFF_FLAGS(ch), AFF_MEDITATING);
 }
 
+/***************************************************************************
+ * Scribing System
+ ***************************************************************************/
+
+/*
+ * do_scribe - Write/pray a spell into spellbook or religious symbol
+ *
+ * Complex validation tree checking:
+ *   1. Class restriction (mage or priest only)
+ *   2. Location (must be at guildmaster)
+ *   3. Position (sitting or resting)
+ *   4. Spell validity and circle requirement
+ *   5. Equipment (spellbook+pen for mage, symbol for priest)
+ *   6. Light level and item visibility
+ *   7. Class-matching spellbook (can't use another class's book)
+ *   8. Page availability
+ *   9. Spell not already in book (unless relearning)
+ *
+ * On success, starts EVENT_SCRIBE with time based on spell circle.
+ * Meditation skill can halve the time. Hunger/thirst doubles it.
+ *
+ * Note: The deep nesting handles both equipment slots (WEAR_HOLD and
+ * WEAR_HOLD_2) in either order, resulting in duplicated code blocks.
+ */
 ACMD(do_scribe) {
   SPECIAL(guild);
   int time;
@@ -83,9 +150,6 @@ ACMD(do_scribe) {
   struct char_data *p;
   struct char_data *nextp;
   int found = 0;
-  /* priests don't need a writing instrument they "pray" their spells into
-   * their holy symbol.
-   */
 
   if (!IS_MAGE(ch) && !IS_PRI(ch)) {
     send_to_char("The gods ignore your attempt to learn magic.\r\n", ch);
@@ -452,6 +516,19 @@ ACMD(do_abort) {
   clean_causer_events(ch, EVENT_SPELL);
 }
 
+/***************************************************************************
+ * NPC Spell System
+ *
+ * NPCs with MOB_HAS_MAGE or MOB_HAS_CLERIC flags get spells assigned
+ * from these lists. give_npc_spells() populates their spell_memory.
+ ***************************************************************************/
+
+/*
+ * set_npc_spells - Initialize NPC spell lists by circle
+ *
+ * Called at boot time to populate NPC_mage_spells[] and NPC_cleric_spells[]
+ * arrays with spell indices. Spells are organized by circle level.
+ */
 void set_npc_spells(void) {
   /* MAGE */
   /* first circle */

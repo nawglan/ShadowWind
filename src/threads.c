@@ -1,4 +1,26 @@
-/* multithreading support */
+/* ************************************************************************
+ *   File: threads.c                                     Part of CircleMUD *
+ *  Usage: Multithreading support (STUB/INCOMPLETE)                        *
+ *                                                                         *
+ *  STATUS: This file is a stub for future threading support.              *
+ *          The functions are defined but not integrated into the main     *
+ *          game loop. The current implementation only demonstrates        *
+ *          basic pthread creation with a simple logging thread.           *
+ *                                                                         *
+ *  CURRENT FUNCTIONALITY:                                                 *
+ *    new_thread()         - Test thread that logs "hello!" every 10 secs  *
+ *    start_main_threads() - Creates the test thread (not called anywhere) *
+ *    stop_main_threads()  - Calls pthread_exit (incomplete cleanup)       *
+ *                                                                         *
+ *  POTENTIAL FUTURE USE:                                                  *
+ *    - Background DNS resolution for player connections                   *
+ *    - Asynchronous file I/O for player saves                             *
+ *    - Parallel zone reset processing                                     *
+ *                                                                         *
+ *  WARNING: CircleMUD's core architecture is not thread-safe. Many        *
+ *           global data structures (character_list, object_list, world)   *
+ *           would need mutex protection before enabling threading.        *
+ ************************************************************************ */
 
 #include <assert.h>
 #include <ctype.h>
