@@ -1022,8 +1022,8 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
    char *tmpstr;
    */
 
-  g_buf[0] = '\0';
-  point2 = g_buf;
+  buf[0] = '\0';
+  point2 = buf;
 
   if (!d)
     return;
@@ -1041,7 +1041,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
     for (point = str; *point; point++) {
       if (*point == '{') {
         point++;
-        size_t remaining = sizeof(g_buf) - (point2 - g_buf);
+        size_t remaining = sizeof(buf) - (point2 - buf);
         const char *color = colorf(*point, d->character);
         size_t clen = strlen(color);
         if (clen < remaining) {
@@ -1054,7 +1054,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
       *++point2 = '\0';
     }
     *point2 = '\0';
-    str = g_buf;
+    str = buf;
   } else {
     for (point = str; *point; point++) {
       if (*point == '{') {
@@ -1065,7 +1065,7 @@ void page_string(struct descriptor_data *d, char *str, int keep_internal) {
       *++point2 = '\0';
     }
     *point2 = '\0';
-    str = g_buf;
+    str = buf;
   }
 
   /*convert_linefeed(str);*/
@@ -1102,8 +1102,8 @@ void page_string_no_color(struct descriptor_data *d, char *str, int keep_interna
    char *tmpstr;
    */
 
-  g_buf[0] = '\0';
-  point2 = g_buf;
+  buf[0] = '\0';
+  point2 = buf;
 
   if (!d)
     return;
@@ -1126,7 +1126,7 @@ void page_string_no_color(struct descriptor_data *d, char *str, int keep_interna
     *++point2 = '\0';
   }
   *point2 = '\0';
-  str = g_buf;
+  str = buf;
   /*convert_linefeed(str);*/
   /* use with wordwrap
    CREATE(d->showstr_vector, char *, d->showstr_count = count_pages(tmpstr, d->character));

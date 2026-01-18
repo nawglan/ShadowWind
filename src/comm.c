@@ -1682,14 +1682,14 @@ void send_to_char(char *messg, struct char_data *ch) {
     return;
   }
 
-  g_buf[0] = '\0';
-  point2 = g_buf;
+  buf[0] = '\0';
+  point2 = buf;
   if (messg && ch->desc) {
     if (PRF_FLAGGED(ch, PRF_COLOR_2)) {
       for (point = messg; point && *point; point++) {
         if (*point == '{') {
           point++;
-          size_t remaining = sizeof(g_buf) - (point2 - g_buf);
+          size_t remaining = sizeof(buf) - (point2 - buf);
           if (remaining > 1) {
             safe_snprintf(point2, remaining, "%s", colorf(*point, ch));
             for (; *point2; point2++)
@@ -1697,28 +1697,28 @@ void send_to_char(char *messg, struct char_data *ch) {
           }
           continue;
         }
-        if (point2 - g_buf < (int)sizeof(g_buf) - 1) {
+        if (point2 - buf < (int)sizeof(buf) - 1) {
           *point2 = *point;
           *++point2 = '\0';
         }
       }
       *point2 = '\0';
-      SEND_TO_Q(g_buf, ch->desc);
+      SEND_TO_Q(buf, ch->desc);
     } else {
       for (point = messg; *point; point++) {
         if (*point == '{') {
           point++;
-          if (*point == '{' && point2 - g_buf < (int)sizeof(g_buf) - 1)
+          if (*point == '{' && point2 - buf < (int)sizeof(buf) - 1)
             *point2 = '{';
           continue;
         }
-        if (point2 - g_buf < (int)sizeof(g_buf) - 1) {
+        if (point2 - buf < (int)sizeof(buf) - 1) {
           *point2 = *point;
           *++point2 = '\0';
         }
       }
       *point2 = '\0';
-      SEND_TO_Q(g_buf, ch->desc);
+      SEND_TO_Q(buf, ch->desc);
     }
   }
   return;
@@ -1729,13 +1729,13 @@ void SEND_TO_Q_COLOR(char *messg, struct descriptor_data *d) {
   char *point2;
   char buf[MAX_STRING_LENGTH * 4];
 
-  g_buf[0] = '\0';
-  point2 = g_buf;
+  buf[0] = '\0';
+  point2 = buf;
   if (d->color) {
     for (point = messg; *point; point++) {
       if (*point == '{') {
         point++;
-        size_t remaining = sizeof(g_buf) - (point2 - g_buf);
+        size_t remaining = sizeof(buf) - (point2 - buf);
         if (remaining > 1) {
           safe_snprintf(point2, remaining, "%s", colorf_d(*point));
           for (; *point2; point2++)
@@ -1743,13 +1743,13 @@ void SEND_TO_Q_COLOR(char *messg, struct descriptor_data *d) {
         }
         continue;
       }
-      if (point2 - g_buf < (int)sizeof(g_buf) - 1) {
+      if (point2 - buf < (int)sizeof(buf) - 1) {
         *point2 = *point;
         *++point2 = '\0';
       }
     }
     *point2 = '\0';
-    SEND_TO_Q(g_buf, d);
+    SEND_TO_Q(buf, d);
   } else {
     for (point = messg; *point; point++) {
       if (*point == '{') {
@@ -1762,7 +1762,7 @@ void SEND_TO_Q_COLOR(char *messg, struct descriptor_data *d) {
       *++point2 = '\0';
     }
     *point2 = '\0';
-    SEND_TO_Q(g_buf, d);
+    SEND_TO_Q(buf, d);
   }
   return;
 }

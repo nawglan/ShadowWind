@@ -41,7 +41,7 @@ spec:
       initContainers:
         - name: init-dirs
           image: busybox:1.36
-          command: ['sh', '-c', 'mkdir -p /data/plrdata/A-E /data/plrdata/F-J /data/plrdata/K-O /data/plrdata/P-T /data/plrdata/U-Z /data/plrdata/ZZZ /data/plrlogs/A-E /data/plrlogs/F-J /data/plrlogs/K-O /data/plrlogs/P-T /data/plrlogs/U-Z /data/plrlogs/ZZZ /data/plrobjs/A-E /data/plrobjs/F-J /data/plrobjs/K-O /data/plrobjs/P-T /data/plrobjs/U-Z /data/plrobjs/ZZZ /data/plrtext/A-E /data/plrtext/F-J /data/plrtext/K-O /data/plrtext/P-T /data/plrtext/U-Z /data/plrtext/ZZZ /data/etc /data/house']
+          command: ['sh', '-c', 'mkdir -p /data/plrdata/A-E /data/plrdata/F-J /data/plrdata/K-O /data/plrdata/P-T /data/plrdata/U-Z /data/plrdata/ZZZ /data/plrlogs/A-E /data/plrlogs/F-J /data/plrlogs/K-O /data/plrlogs/P-T /data/plrlogs/U-Z /data/plrlogs/ZZZ /data/plrobjs/A-E /data/plrobjs/F-J /data/plrobjs/K-O /data/plrobjs/P-T /data/plrobjs/U-Z /data/plrobjs/ZZZ /data/plrtext/A-E /data/plrtext/F-J /data/plrtext/K-O /data/plrtext/P-T /data/plrtext/U-Z /data/plrtext/ZZZ /data/etc /data/house && chmod -R 777 /data']
           volumeMounts:
             - name: playerdata
               mountPath: /data
