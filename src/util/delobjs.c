@@ -29,18 +29,21 @@ struct name_element *name_list = 0;
 void do_purge(int argc, char **argv) {
   int x;
   struct name_element *tmp;
-  char name[30], buf[100];
+  char name[30], buf[256];
   int found;
+  char *dot;
 
   for (x = 2; x < argc; x++) {
     found = 0;
-    strcpy(name, argv[x]);
-    *(strchr(name, '.')) = '\0';
+    snprintf(name, sizeof(name), "%s", argv[x]);
+    dot = strchr(name, '.');
+    if (dot)
+      *dot = '\0';
     for (tmp = name_list; !found && tmp; tmp = tmp->next)
       if (!strcmp(tmp->name, name))
         found = 1;
     if (!found) {
-      sprintf(buf, "rm -f %s", argv[x]);
+      snprintf(buf, sizeof(buf), "rm -f %s", argv[x]);
       system(buf);
       printf("Deleting %s\n", argv[x]);
     }
@@ -84,7 +87,7 @@ int main(int argc, char **argv) {
     if (okay) {
       tmp = malloc(sizeof(struct name_element));
       tmp->next = name_list;
-      strcpy(tmp->name, player.name);
+      snprintf(tmp->name, sizeof(tmp->name), "%s", player.name);
       name_list = tmp;
     }
   }

@@ -49,9 +49,6 @@ int mag_manacost(struct char_data *ch, int spellnum) {
 
 /* say_spell erodes g_buf, g_buf1, g_buf2 */
 void say_spell(struct char_data *ch, int spellnum, struct char_data *tch, struct obj_data *tobj) {
-  char buf[256];
-  char buf1[256];
-  char buf2[256];
   char lbuf[256];
   char *pName;
   int x;

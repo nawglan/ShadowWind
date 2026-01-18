@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
     exit(1);
   }
 
-  sprintf(buf, "%s.tmp", argv[1]);
+  snprintf(buf, sizeof(buf), "%s.tmp", argv[1]);
   o = fopen(buf, "w");
 
   fgets(buf, 80, f);

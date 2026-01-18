@@ -1,3 +1,9 @@
+# Build artifacts
+bin/
+src/*.o
+src/util/*.o
+
+# Runtime data
 lib/etc/board.*
 lib/etc/auction
 lib/etc/badsites
@@ -5,8 +11,15 @@ lib/etc/plrmail
 lib/etc/qicdb
 lib/plr*
 lib/misc/*.pid
-src/*.o
-*.swp
-.killscript
-syslog
 lib/text/helpneeded
+syslog
+log/
+
+# Control files
+.killscript
+.fastboot
+pause
+
+# Editor files
+*.swp
+*~

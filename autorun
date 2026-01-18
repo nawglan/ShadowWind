@@ -1,8 +1,16 @@
 #!/usr/bin/tcsh
+#
+# ShadowWind MUD autorun script
+#
+# Usage: Run from the ShadowWind installation directory, or set MUDDIR below.
+# The script auto-restarts the MUD if it crashes and rotates logs.
+#
+
 set PORT=9999
 
 set LOCKDIR='/tmp/shadowwind'
-set MUDDIR='/home/dez/sw'
+# Use current directory as MUDDIR - run this script from the ShadowWind root
+set MUDDIR=`pwd`
 set FLAGS="-d $MUDDIR/lib"
 
 mkdir $LOCKDIR >>& /dev/null

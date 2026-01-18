@@ -98,6 +98,7 @@ char *get_text(char *fname) {
   static char t[MAX_FILESIZE];
   char tmp[LINEBUF_SIZE + 2];
   FILE *fl = NULL;
+  size_t tlen = 0;
 
   *t = '\0';
 
@@ -113,9 +114,14 @@ char *get_text(char *fname) {
   }
 
   while (fgets(tmp, LINEBUF_SIZE, fl)) {
-    if (strlen(tmp) + strlen(t) < MAX_FILESIZE - 1)
-      strcat(t, strcat(tmp, "\r"));
-    else {
+    size_t tmplen = strlen(tmp);
+    /* Add room for \r and null terminator */
+    if (tlen + tmplen + 2 < MAX_FILESIZE) {
+      memcpy(t + tlen, tmp, tmplen);
+      tlen += tmplen;
+      t[tlen++] = '\r';
+      t[tlen] = '\0';
+    } else {
       fprintf(stderr, "String too long.  Truncated.\n");
       break;
     }
