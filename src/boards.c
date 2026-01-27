@@ -114,7 +114,6 @@ int find_board(struct char_data *ch) {
 
 void init_boards(void) {
   int i, j, fatal_error = 0;
-  char buf[256];
 
   for (i = 0; i < INDEX_SIZE; i++) {
     msg_storage[i] = 0;
@@ -179,10 +178,9 @@ SPECIAL(gen_board) {
 }
 
 void Board_write_message(int board_type, struct char_data *ch, char *g_arg) {
-  char *tmstr;
+  char tmstr[26];
   int len;
   time_t ct;
-  char buf[MAX_INPUT_LENGTH], buf2[MAX_INPUT_LENGTH];
 
   if (WRITE_LVL(board_type) != 0 && !COM_FLAGGED(ch, WRITE_LVL(board_type))) {
     send_to_char("You are not holy enough to write on this board.\r\n", ch);
@@ -206,8 +204,7 @@ void Board_write_message(int board_type, struct char_data *ch, char *g_arg) {
     return;
   }
   ct = time(0);
-  tmstr = (char *)asctime(localtime(&ct));
-  *(tmstr + strlen(tmstr) - 1) = '\0';
+  strftime(tmstr, sizeof(tmstr), "%a %b %d %H:%M:%S %Y", localtime(&ct));
 
   safe_snprintf(g_buf2, sizeof(g_buf2), "(%s)", GET_NAME(ch));
   safe_snprintf(g_buf, sizeof(g_buf), "%6.10s %-12s :: %s", tmstr, g_buf2, g_arg);

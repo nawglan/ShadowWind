@@ -657,7 +657,6 @@ void calc_light_zone(struct zone_data *zone) {
 
 char get_season(struct zone_data *zone) {
   char season_num;
-  char buf[MAX_STRING_LENGTH];
 
   switch (zone->climate.season_pattern) {
   case ONE_SEASON:

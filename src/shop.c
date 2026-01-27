@@ -53,8 +53,6 @@ int cmd_say, cmd_tell, cmd_emote, cmd_slap, cmd_puke, cmd_push;
 const char *operator_str[] = {"[({", "])}", "|+", "&*", "^'"};
 
 int is_ok_char(struct char_data *keeper, struct char_data *ch, int shop_nr) {
-  char buf[200];
-
   if (!(CAN_SEE(keeper, ch))) {
     do_say(keeper, MSG_NO_SEE_CHAR, cmd_say, 0);
     return (FALSE);
@@ -81,8 +79,6 @@ int is_ok_char(struct char_data *keeper, struct char_data *ch, int shop_nr) {
 }
 
 int is_open(struct char_data *keeper, int shop_nr, int msg) {
-  char buf[200];
-
   *g_buf = 0;
   if (SHOP_OPEN1(shop_nr) > time_info.hours) {
     safe_snprintf(g_buf, sizeof(g_buf), "%s", MSG_NOT_OPEN_YET);
@@ -338,7 +334,7 @@ struct obj_data *get_hash_obj_vis(struct char_data *ch, char *name, struct obj_d
 }
 
 struct obj_data *get_purchase_obj(struct char_data *ch, char *g_arg, struct char_data *keeper, int shop_nr, int msg) {
-  char buf[MAX_STRING_LENGTH], name[MAX_INPUT_LENGTH];
+  char name[MAX_INPUT_LENGTH];
   struct obj_data *obj;
 
   one_argument(g_arg, name);
@@ -538,7 +534,6 @@ void shopping_buy(char *g_arg, struct char_data *ch, struct char_data *keeper, i
 }
 
 struct obj_data *get_selling_obj(struct char_data *ch, char *name, struct char_data *keeper, int shop_nr, int msg) {
-  char buf[MAX_STRING_LENGTH];
   struct obj_data *obj;
   int result;
 
@@ -708,7 +703,6 @@ void shopping_sell(char *g_arg, struct char_data *ch, struct char_data *keeper, 
 }
 
 void shopping_value(char *g_arg, struct char_data *ch, struct char_data *keeper, int shop_nr) {
-  char buf[MAX_STRING_LENGTH];
   struct obj_data *obj;
   char name[MAX_INPUT_LENGTH];
   int temp = 0;
@@ -736,7 +730,7 @@ void shopping_value(char *g_arg, struct char_data *ch, struct char_data *keeper,
 char *list_object(struct obj_data *obj, int cnt, int index, int shop_nr) {
   int j;
   static char g_buf[256];
-  char buf2[300], buf3[300], buf4[80];
+  char buf4[80];
   char *p;
   char *p2;
   int temp;
@@ -791,7 +785,7 @@ char *list_object(struct obj_data *obj, int cnt, int index, int shop_nr) {
 }
 
 void shopping_list(char *g_arg, struct char_data *ch, struct char_data *keeper, int shop_nr) {
-  char buf[MAX_STRING_LENGTH], name[200];
+  char name[200];
   struct obj_data *obj, *last_obj = 0;
   int cnt = 0, index = 0;
 

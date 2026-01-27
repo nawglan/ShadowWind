@@ -207,7 +207,6 @@ ACMD(do_help) {
 
 /* function to count how many hash-mark delimited records exist in a file */
 int count_help_records(FILE *fl) {
-  char buf[128];
   int count = 0;
 
   while (fgets(g_buf, 128, fl))
@@ -231,7 +230,7 @@ int count_help_records(FILE *fl) {
 struct help_index_element *build_help_index(int *num, int type) {
   int nr = -1, issorted, i;
   struct help_index_element *list = 0, mem;
-  char buf[128], *scan;
+  char *scan;
   long pos;
   int tablesize;
   FILE *fl;

@@ -576,7 +576,6 @@ void update_obj_file(void) {
 void Crash_listrent(struct char_data *ch, char *name) {
   FILE *fl;
   char fname[MAX_INPUT_LENGTH];
-  char buf[MAX_STRING_LENGTH];
   char input[MAX_INPUT_LENGTH + 1];
   char tag[MAX_INPUT_LENGTH + 1];
   char tag_arguments[MAX_INPUT_LENGTH + 1];
@@ -682,7 +681,6 @@ int Crash_load(struct char_data *ch) {
   void Crash_save(struct char_data * ch, int type);
   FILE *fl;
   char fname[MAX_STRING_LENGTH];
-  char buf[MAX_STRING_LENGTH];
   char input[MAX_INPUT_LENGTH + 1];
   char tag[MAX_INPUT_LENGTH + 1];
   char tag_arguments[MAX_INPUT_LENGTH + 1];
@@ -996,7 +994,6 @@ int Crash_is_unrentable(struct obj_data *obj) {
  *   type - Rent type (RENT_CRASH, RENT_RENTED, RENT_CRYO, etc.)
  */
 void Crash_save(struct char_data *ch, int type) {
-  char buf[MAX_INPUT_LENGTH];
   struct obj_data *tmpobj = NULL;
   struct obj_data *next_obj = NULL;
   struct corpse_obj_save *crash_save_stack = NULL;
@@ -1120,7 +1117,6 @@ void Crash_save(struct char_data *ch, int type) {
  ************************************************************************* */
 
 int Crash_report_unrentables(struct char_data *ch, struct char_data *recep, struct obj_data *obj) {
-  char buf[128];
   int has_norents = 0;
 
   if (obj) {

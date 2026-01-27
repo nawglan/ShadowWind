@@ -33,7 +33,7 @@
  * its options up, binds it, and listens.
  */
 int init_socket(int port) {
-  int s, opt;
+  int s;
   struct sockaddr_in sa;
 
   /*

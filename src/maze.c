@@ -50,9 +50,9 @@
 #include <unistd.h>
 
 /* Wall position identifiers for free_wall() */
-#define TOP_WALL    0  /* Top row of maze (y=0) */
-#define BOTTOM_WALL 1  /* Bottom row (y=9) */
-#define OTHER_WALL  1  /* Interior rows */
+#define TOP_WALL    0 /* Top row of maze (y=0) */
+#define BOTTOM_WALL 1 /* Bottom row (y=9) */
+#define OTHER_WALL  1 /* Interior rows */
 
 void create_rooms(maze *m, char log_filename[80]);
 void create_maze(maze *m);
@@ -281,7 +281,6 @@ void create_rooms(maze *m, char log_filename[80]) {
   extern int top_of_world;
   extern struct zone_data *zone_table;
   extern int top_of_zone_table;
-  char buf[80];
   int room_count = 0;
   int found = 0;
   int start_room = 0;
@@ -448,7 +447,7 @@ void create_maze(maze *m) {
   struct timeval t;
   int c_time;
 
-  m->x = 0;   /* Current position */
+  m->x = 0; /* Current position */
   m->y = 0;
   m->lastdir = 0;
   m->step = 0; /* Stack depth for backtracking */

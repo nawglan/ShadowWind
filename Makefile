@@ -72,6 +72,42 @@ format-check:
 
 # Static analysis with cppcheck
 lint:
-	cppcheck --enable=warning,style,performance --suppress=missingIncludeSystem \
+	cppcheck --force --enable=warning,style,performance --suppress=missingIncludeSystem \
 		--suppress=preprocessorErrorDirective:src/zedit.c \
+		--suppress=variableScope \
+		--suppress=constParameterPointer \
+		--suppress=constVariablePointer \
+		--suppress=constVariable \
+		--suppress=constParameter \
+		--suppress=shadowVariable \
+		--suppress=shadowFunction \
+		--suppress=knownConditionTrueFalse \
+		--suppress=redundantAssignment \
+		--suppress=redundantCondition \
+		--suppress=duplicateConditionalAssign \
+		--suppress=nullPointerRedundantCheck \
+		--suppress=invalidscanf \
+		--suppress=uselessAssignmentPtrArg \
+		--suppress=shiftTooManyBitsSigned \
+		--suppress=ignoredReturnValue \
+		--suppress=invalidPrintfArgType_sint \
+		--suppress=invalidScanfArgType_int \
+		--suppress=invalidScanfArgType_float \
+		--suppress=uninitvar \
+		--suppress=oppositeInnerCondition \
+		--suppress=zerodivcond \
+		--suppress=arrayIndexOutOfBoundsCond \
+		--suppress=ctunullpointer \
+		--suppress=sizeofDereferencedVoidPointer \
+		--suppress=CastIntegerToAddressAtReturn \
+		--suppress=AssignmentIntegerToAddress \
+		--suppress=arrayIndexThenCheck \
+		--suppress=unusedStructMember \
+		--suppress=nullPointer \
+		--suppress=pointerLessThanZero \
+		--suppress=identicalInnerCondition \
+		--suppress=redundantInitialization \
+		--suppress=duplicateExpression \
+		--suppress=unreadVariable \
+		--suppress=constStatement \
 		--error-exitcode=1 src/

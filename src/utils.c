@@ -102,7 +102,6 @@ int str_cmp(char *arg1, char *arg2) {
 
 /* log a death trap hit */
 void log_death_trap(struct char_data *ch) {
-  char buf[150];
   extern struct room_data *world;
 
   safe_snprintf(g_buf, sizeof(g_buf), "%s hit death trap #%d (%s)", GET_NAME(ch), world[ch->in_room].number,
@@ -115,12 +114,11 @@ void log_death_trap(struct char_data *ch) {
 void stderr_log(char *str) {
   time_t ct;
   char newlog[MAX_STRING_LENGTH];
-  char *tmstr = NULL;
+  char tmstr[26];
 
   memset(newlog, 0, MAX_STRING_LENGTH);
   ct = time(0);
-  tmstr = asctime(localtime(&ct));
-  *(tmstr + strlen(tmstr) - 1) = '\0';
+  strftime(tmstr, sizeof(tmstr), "%a %b %d %H:%M:%S %Y", localtime(&ct));
 
   strip_color(str, newlog, strlen(str));
   fprintf(stderr, "%-19.19s :: %s\n", tmstr, newlog);
@@ -141,18 +139,17 @@ int touch(char *path) {
 
 /* New PROC: syslog by Fen Jul 3, 1992 */
 void mudlog(char *str, char type, sbyte level, byte file) {
-  char buf[8 * MAX_STRING_LENGTH], buf1[8 * MAX_STRING_LENGTH + 6];
   char temp[8 * MAX_STRING_LENGTH];
   char newlog[8 * MAX_STRING_LENGTH];
   extern struct descriptor_data *descriptor_list;
   extern long asciiflag_conv(char *flag);
   struct descriptor_data *i;
   struct descriptor_data *next_i;
-  char *tmp;
+  char tmp[26];
   time_t ct;
 
   ct = time(0);
-  tmp = asctime(localtime(&ct));
+  strftime(tmp, sizeof(tmp), "%a %b %d %H:%M:%S %Y", localtime(&ct));
   g_arg[0] = type;
   g_arg[1] = '\0';
 
@@ -654,7 +651,7 @@ int get_filename(char *orig_name, char *filename, int mode) {
 void plog(char *logtext, struct char_data *ch, int level) {
   time_t ltime;
   FILE *fil = NULL;
-  char *tmstr;
+  char tmstr[26];
   char fname[MAX_INPUT_LENGTH];
   char newlog[MAX_STRING_LENGTH];
 
@@ -674,8 +671,7 @@ void plog(char *logtext, struct char_data *ch, int level) {
   memset(newlog, 0, MAX_STRING_LENGTH);
   strip_color(logtext, newlog, strlen(logtext));
   ltime = time(0);
-  tmstr = asctime(localtime(&ltime));
-  *(tmstr + strlen(tmstr) - 1) = '\0';
+  strftime(tmstr, sizeof(tmstr), "%a %b %d %H:%M:%S %Y", localtime(&ltime));
   fprintf(fil, "%d %ld %-19.19s :: %s\n", level, ltime, tmstr, newlog);
 
   fclose(fil);

@@ -428,7 +428,6 @@ void reset_time(void) {
 
 /* function to count how many hash-mark delimited records exist in a file */
 int count_hash_records(FILE *fl) {
-  char buf[128];
   int count = 0;
 
   while (fgets(g_buf, 128, fl))
@@ -2239,7 +2238,6 @@ void zone_update(void) {
   int i;
   struct reset_q_element *update_u, *temp;
   static int timer = 0;
-  char buf[128];
 
   /* jelson 10/22/92 */
   if (((++timer * PULSE_ZONE) / PASSES_PER_SEC) >= 60) {
@@ -2301,8 +2299,6 @@ void zone_update(void) {
 }
 
 void log_zone_error(int zone, int cmd_no, char *message) {
-  char buf[256];
-
   safe_snprintf(g_buf, sizeof(g_buf), "SYSERR: error in zone file: %s", message);
   mudlog(g_buf, 'E', COM_IMMORT, TRUE);
 
@@ -2615,7 +2611,6 @@ int load_char_text(char *name, struct char_data *char_element) {
   char line2[MAX_INPUT_LENGTH + 21];
   char value[MAX_INPUT_LENGTH + 1];
   char filename[80];
-  char buf2[80];
   char *p;
   char *cp;
   struct char_data *ctmp = char_element;
@@ -3506,7 +3501,7 @@ void save_char_text(struct char_data *ch, sh_int load_room) {
 
 /* read and allocate space for a '~'-terminated string from a given file */
 char *fread_string(FILE *fl, char *error) {
-  char buf[MAX_STRING_LENGTH], tmp[512], *rslt;
+  char tmp[512], *rslt;
   register char *point;
   int done = 0, length = 0, templength = 0;
   int i;
@@ -4448,8 +4443,6 @@ void mprog_read_programs(FILE *fp, struct index_data *pMobIndex) {
 }
 
 event *get_spell_event(char *spell_event) {
-  char buf2[80];
-
   switch (spell_event[0]) {
   case 'A':
   case 'a':
@@ -4622,7 +4615,6 @@ event *get_spell_event(char *spell_event) {
 }
 
 spell *get_spell_type(char *spell_type) {
-  char buf2[80];
   ASPELL(spell_general);
   ASPELL(spell_char);
   ASPELL(spell_dam);
@@ -4652,8 +4644,6 @@ spell *get_spell_type(char *spell_type) {
 
 void load_spells(void) {
   FILE *f = fopen(SPELL_FILE, "r");
-  char buf[256];
-  char buf2[256];
   extern int numspells;
   char *p;
   char *cp;

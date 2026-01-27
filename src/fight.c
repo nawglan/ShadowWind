@@ -498,7 +498,6 @@ void check_killer(struct char_data *ch, struct char_data *vict) {
 
   if (!PLR_FLAGGED(vict, PLR_KILLER) && !PLR_FLAGGED(vict, PLR_THIEF) && !PLR_FLAGGED(ch, PLR_KILLER) && !IS_NPC(ch) &&
       !IS_NPC(vict) && (ch != vict) && (!IS_NPC(ch) && !IS_NPC(vict) && GET_LEVEL(ch) < LVL_IMMORT)) {
-    char buf[256];
     if (!pk_allowed) {
       SET_BIT(PLR_FLAGS(ch), PLR_KILLER);
       safe_snprintf(g_buf, sizeof(g_buf), "PC Killer bit set on %s for initiating attack on %s at %s.", GET_NAME(ch),

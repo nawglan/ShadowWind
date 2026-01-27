@@ -140,7 +140,6 @@ void mprog_pulse();
  ********************************************************************* */
 
 int main(int argc, char **argv) {
-  char buf[512];
   int pos = 1;
   char *dir;
   FILE *pid_file;
@@ -825,7 +824,6 @@ struct timeval timediff(struct timeval *a, struct timeval *b) {
 void record_usage(void) {
   int sockets_connected = 0, sockets_playing = 0;
   struct descriptor_data *d;
-  char buf[256];
 
   for (d = descriptor_list; d; d = d->next) {
     sockets_connected++;
@@ -1463,7 +1461,6 @@ int perform_subst(struct descriptor_data *t, char *orig, char *subst) {
 
 void close_socket(struct descriptor_data *d) {
   struct descriptor_data *temp;
-  char buf[100];
 
   close(d->descriptor);
   flush_queues(d);
@@ -1897,10 +1894,10 @@ void perform_act(char *orig, struct char_data *ch, struct obj_data *obj, void *v
 
   if (*lbuf2 == '{') {
     lbuf2 += 2;
-    CAP(lbuf2);
+    (void)CAP(lbuf2);
     lbuf2 -= 2;
   } else {
-    CAP(lbuf2);
+    (void)CAP(lbuf2);
   }
 
   for (;;) {

@@ -291,7 +291,6 @@ void show_obj_to_char(struct obj_data *object, struct char_data *ch, int mode) {
 
 void list_obj_to_char(struct obj_data *list, struct char_data *ch, int mode, bool show) {
   struct obj_data *i, *j;
-  char buf[10];
   bool found;
   int num;
 
@@ -361,7 +360,7 @@ void diag_char_to_char(struct char_data *i, struct char_data *ch) {
   }
 
   safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", PERS(i, ch));
-  CAP(g_buf);
+  (void)CAP(g_buf);
   size_t dlen = strlen(g_buf);
 
   if (percent >= 100) {
@@ -518,7 +517,7 @@ void list_one_char(struct char_data *i, struct char_data *ch) {
       clen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "*%s", CAP(i->player.short_descr));
     } else {
       clen = safe_snprintf(g_buf, MAX_STRING_LENGTH, "%s", i->player.short_descr);
-      CAP(g_buf);
+      (void)CAP(g_buf);
     }
   } else {
     if (IS_AFFECTED(i, AFF_INVISIBLE)) {

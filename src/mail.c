@@ -145,7 +145,6 @@ int scan_file(void) {
   FILE *mail_file;
   header_block_type next_block;
   int total_messages = 0, block_num = 0;
-  char buf[100];
 
   if (!(mail_file = fopen(MAIL_FILE, "r"))) {
     stderr_log("Mail file non-existant... creating new file.");
@@ -285,7 +284,7 @@ char *read_delete(char *recipient)
   mail_index_type *mail_pointer, *prev_mail;
   position_list_type *position_pointer;
   long mail_address, following_block;
-  char *message, *tmstr, g_buf[200];
+  char *message, tmstr[26], g_buf[200];
   size_t string_size;
 
   if (recipient < (char *)NULL) {
@@ -333,8 +332,7 @@ char *read_delete(char *recipient)
     stderr_log("SYSERR: Mail system disabled!  -- Error #9.");
     return 0;
   }
-  tmstr = asctime(localtime(&header.header_data.mail_time));
-  *(tmstr + strlen(tmstr) - 1) = '\0';
+  strftime(tmstr, sizeof(tmstr), "%a %b %d %H:%M:%S %Y", localtime(&header.header_data.mail_time));
 
   safe_snprintf(g_buf, sizeof(g_buf),
                 " * * * * Weirvane Mail System * * * *\r\n"
@@ -403,7 +401,6 @@ SPECIAL(postmaster) {
 }
 
 void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg) {
-  char buf[256];
   char addressee[256];
 
   if (GET_LEVEL(ch) < MIN_MAIL_LEVEL) {
@@ -455,8 +452,6 @@ void postmaster_send_mail(struct char_data *ch, struct char_data *mailman, int c
 }
 
 void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg) {
-  char buf[256];
-
   if (has_mail(GET_NAME(ch)))
     safe_snprintf(g_buf, sizeof(g_buf), "$n tells you, '{WYou have {Rmail {Wwaiting.{x'");
   else
@@ -465,7 +460,6 @@ void postmaster_check_mail(struct char_data *ch, struct char_data *mailman, int 
 }
 
 void postmaster_receive_mail(struct char_data *ch, struct char_data *mailman, int cmd, char *g_arg) {
-  char buf[256];
   struct obj_data *obj;
 
   if (!has_mail(GET_NAME(ch))) {

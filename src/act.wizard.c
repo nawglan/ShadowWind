@@ -1838,9 +1838,8 @@ void do_stat_character(struct char_data *ch, struct char_data *k) {
   send_to_char(g_buf, ch);
 
   if (!IS_NPC(k)) {
-    safe_snprintf(g_buf1, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.birth))));
-    safe_snprintf(g_buf2, MAX_STRING_LENGTH, "%s", asctime(localtime(&(k->player.time.logon))));
-    g_buf1[10] = g_buf2[10] = '\0';
+    strftime(g_buf1, MAX_STRING_LENGTH, "%a %b %d", localtime(&(k->player.time.birth)));
+    strftime(g_buf2, MAX_STRING_LENGTH, "%a %b %d", localtime(&(k->player.time.logon)));
 
     safe_snprintf(g_buf, MAX_STRING_LENGTH,
                   "{BCreated: [{c%s{B], Last Logon: [{c%s{B], Played [{c%dh %dm{B], Age [{c%d{B]{x\r\n", g_buf1, g_buf2,

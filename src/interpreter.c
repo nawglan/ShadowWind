@@ -1652,7 +1652,6 @@ void nanny(struct descriptor_data *d, char *g_arg) {
   extern char *race_menu;
 
   /* local variables */
-  char buf[MAX_STRING_LENGTH];
   int load_result = 0, playing = 0, tmp_num = 0;
   char tmp_name[MAX_INPUT_LENGTH];
   char tmp_policy[MAX_STRING_LENGTH];

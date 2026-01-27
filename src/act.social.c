@@ -174,7 +174,7 @@ ACMD(do_insult) {
 }
 
 char *fread_action(FILE *fl, int nr) {
-  char buf[MAX_STRING_LENGTH], *rslt;
+  char *rslt;
 
   fgets(g_buf, MAX_STRING_LENGTH, fl);
   if (feof(fl)) {

@@ -317,7 +317,6 @@ char *HCONTROL_FORMAT = "Usage: hcontrol build <house vnum> <exit direction> <pl
 
 void hcontrol_list_houses(struct char_data *ch) {
   int i, j;
-  char *timestr;
   char built_on[50], last_pay[50], own_name[50];
 
   if (!num_of_houses) {
@@ -331,16 +330,12 @@ void hcontrol_list_houses(struct char_data *ch) {
 
   for (i = 0; i < num_of_houses; i++) {
     if (house_control[i].built_on) {
-      timestr = asctime(localtime(&(house_control[i].built_on)));
-      *(timestr + 10) = 0;
-      safe_snprintf(built_on, sizeof(built_on), "%s", timestr);
+      strftime(built_on, sizeof(built_on), "%a %b %d", localtime(&(house_control[i].built_on)));
     } else
       safe_snprintf(built_on, sizeof(built_on), "Unknown");
 
     if (house_control[i].last_payment) {
-      timestr = asctime(localtime(&(house_control[i].last_payment)));
-      *(timestr + 10) = 0;
-      safe_snprintf(last_pay, sizeof(last_pay), "%s", timestr);
+      strftime(last_pay, sizeof(last_pay), "%a %b %d", localtime(&(house_control[i].last_payment)));
     } else
       safe_snprintf(last_pay, sizeof(last_pay), "None");
 

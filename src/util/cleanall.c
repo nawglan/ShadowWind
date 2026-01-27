@@ -32,9 +32,7 @@ int main(void) {
     strcat(newfilename, ".new");
     output = fopen(newfilename, "w");
     while (fscanf(input, "%c", &tmp) != EOF) {
-      if (tmp == '\r')
-        tmp = tmp;
-      else
+      if (tmp != '\r')
         fprintf(output, "%c", tmp);
     }
     fclose(output);
@@ -62,9 +60,7 @@ int main(void) {
     strcat(newfilename, ".new");
     output = fopen(newfilename, "w");
     while (fscanf(input, "%c", &tmp) != EOF) {
-      if (tmp == '\r')
-        tmp = tmp;
-      else
+      if (tmp != '\r')
         fprintf(output, "%c", tmp);
     }
     fclose(input);
@@ -92,9 +88,7 @@ int main(void) {
     strcat(newfilename, ".new");
     output = fopen(newfilename, "w");
     while (fscanf(input, "%c", &tmp) != EOF) {
-      if (tmp == '\r')
-        tmp = tmp;
-      else
+      if (tmp != '\r')
         fprintf(output, "%c", tmp);
     }
     fclose(input);
@@ -122,9 +116,7 @@ int main(void) {
     strcat(newfilename, ".new");
     output = fopen(newfilename, "w");
     while (fscanf(input, "%c", &tmp) != EOF) {
-      if (tmp == '\r')
-        tmp = tmp;
-      else
+      if (tmp != '\r')
         fprintf(output, "%c", tmp);
     }
     fclose(input);
@@ -152,9 +144,7 @@ int main(void) {
     strcat(newfilename, ".new");
     output = fopen(newfilename, "w");
     while (fscanf(input, "%c", &tmp) != EOF) {
-      if (tmp == '\r')
-        tmp = tmp;
-      else
+      if (tmp != '\r')
         fprintf(output, "%c", tmp);
     }
     fclose(input);

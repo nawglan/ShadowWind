@@ -684,7 +684,6 @@ char *stat_msg(sbyte stat) {
 }
 
 void display_stats(struct char_data *ch) {
-  char buf1[2046];
   size_t buflen;
 
   buflen = safe_snprintf(g_buf1, sizeof(g_buf1), "\r\nYour stats are:\r\n\r\n");

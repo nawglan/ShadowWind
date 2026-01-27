@@ -156,8 +156,6 @@ char *find_endif(char *com_list, struct char_data *mob) {
 
   char *cmnd = '\0';
 
-  char buf[MAX_INPUT_LENGTH];
-
   while (if_scope > 0) {
     cmnd = com_list;
 
@@ -194,8 +192,6 @@ char *find_else(char *com_list, struct char_data *mob) {
   int if_scope = 1;
 
   char *cmnd = '\0';
-
-  char buf[MAX_INPUT_LENGTH];
 
   while (if_scope > 0) {
     cmnd = com_list;
@@ -379,8 +375,6 @@ int mprog_veval(int lhs, char *opr, int rhs) {
  */
 int mprog_do_ifchck(char *ifchck, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                     struct char_data *rndm) {
-  char buf[MAX_INPUT_LENGTH];
-  char arg[MAX_INPUT_LENGTH];
   char opr[MAX_INPUT_LENGTH];
   char val[MAX_INPUT_LENGTH];
   struct char_data *vict = (struct char_data *)vo;
@@ -1168,7 +1162,6 @@ char null[1];
 char *mprog_process_if(char *ifchck, char *com_list, struct char_data *mob, struct char_data *actor,
                        struct obj_data *obj, void *vo, struct char_data *rndm) {
 
-  char buf[MAX_INPUT_LENGTH * 2];
   char local_buf2[MAX_INPUT_LENGTH * 2];
   char *morebuf = NULL;
   char *cmnd = NULL;
@@ -1606,7 +1599,6 @@ void mprog_translate(char ch, char *t, struct char_data *mob, struct char_data *
  */
 void mprog_process_cmnd(char *cmnd, struct char_data *mob, struct char_data *actor, struct obj_data *obj, void *vo,
                         struct char_data *rndm) {
-  char buf[MAX_INPUT_LENGTH];
   char *command_list;
   char *morebuf;
   char tmp[MAX_INPUT_LENGTH * 2];
@@ -1714,7 +1706,6 @@ void mprog_driver(char *com_list, struct char_data *mob, struct char_data *actor
                   struct char_data *rndm) {
 
   char tmpcmndlst[MAX_STRING_LENGTH];
-  char buf[MAX_INPUT_LENGTH * 2];
   char local_buf2[MAX_INPUT_LENGTH * 2];
   char *morebuf;
   char *command_list;
@@ -2013,7 +2004,6 @@ void mprog_fight_trigger(struct char_data *mob, struct char_data *ch) {
 
 void mprog_give_trigger(struct char_data *mob, struct char_data *ch, struct obj_data *obj) {
 
-  char buf[MAX_INPUT_LENGTH];
   MPROG_DATA *mprg;
 
   if (IS_NPC(mob) && (mob->mob_specials.mp_toggle == FALSE) && (mob_index[mob->nr].progtypes & GIVE_PROG))
@@ -2135,8 +2125,6 @@ void mprog_ask_trigger(char *txt, struct char_data *mob, struct char_data *vmob)
 void mprog_time_trigger(struct time_info_data time)
 
 {
-
-  char buf[MAX_INPUT_LENGTH];
 
   struct char_data *list;
 

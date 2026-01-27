@@ -227,7 +227,6 @@ void qic_scan_rent(void) {
   DIR *rp;
   struct dirent *dirp;
   char *cp;
-  char buf[80];
 
   /* okay, first of all, clean out the item counters loaded by load_qic() */
 

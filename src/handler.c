@@ -1772,7 +1772,6 @@ char *money_desc(int amount) {
 struct obj_data *create_money(int plat, int gold, int silver, int copper) {
   struct obj_data *obj;
   struct extra_descr_data *new_descr;
-  char buf[200];
   int amount = (plat * 1000) + (gold * 100) + (silver * 10) + copper;
 
   if (amount <= 0) {
