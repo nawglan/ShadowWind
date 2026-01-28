@@ -34,6 +34,7 @@
  */
 int init_socket(int port) {
   int s;
+  int opt;
   struct sockaddr_in sa;
 
   /*
